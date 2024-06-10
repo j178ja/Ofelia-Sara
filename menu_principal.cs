@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class Form1 : Form
+    public partial class menu_principal : Form
     {
-        public Form1()
+        public menu_principal()
         {
             InitializeComponent();
         }

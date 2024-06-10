@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class Form1
+    partial class menu_principal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
