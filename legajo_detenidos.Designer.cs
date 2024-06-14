@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class legajo_detenidos
+    partial class LegajoDetenidos
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "legajo_detenidos";
             this.Text = "LEGAJO DE DETENIDOS";
+            this.Load += new System.EventHandler(this.LegajoDetenidosLoad);
             this.ResumeLayout(false);
 
         }

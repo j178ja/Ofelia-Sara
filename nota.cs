@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class nota : Form
+    public partial class Nota : Form
     {
-        public nota()
+        public Nota()
         {
             InitializeComponent();
+        }
+
+        private void NotaLoad(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class legajo_automotor : Form
+    public partial class LegajoAutomotor : Form
     {
-        public legajo_automotor()
+        public LegajoAutomotor()
         {
             InitializeComponent();
+        }
+
+        private void LegajoAutomotorLoad(object sender, EventArgs e)
+        {
+
         }
     }
 }

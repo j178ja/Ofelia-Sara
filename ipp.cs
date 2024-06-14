@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class ipp : Form
+    public partial class Ipp : IconoEscudoPolProvincia
     {
-        public ipp()
+        public Ipp()
         {
             InitializeComponent();
+        }
+
+        private void IppLoad(object sender, EventArgs e)
+        {
+
         }
     }
 }

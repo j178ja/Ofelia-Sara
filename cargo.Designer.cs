@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "cargo";
             this.Text = "CARGO ";
+            this.Load += new System.EventHandler(this.Cargo_Load);
             this.ResumeLayout(false);
 
         }

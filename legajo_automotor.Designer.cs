@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class legajo_automotor
+    partial class LegajoAutomotor
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "legajo_automotor";
             this.Text = "LEGAJO AUTOMOTOR";
+            this.Load += new System.EventHandler(this.LegajoAutomotorLoad);
             this.ResumeLayout(false);
 
         }

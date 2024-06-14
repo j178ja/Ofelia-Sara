@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "contravenciones";
             this.Text = "CONTRAVENCIONES";
+            this.Load += new System.EventHandler(this.Contravenciones_Load);
             this.ResumeLayout(false);
 
         }

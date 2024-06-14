@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class legajo_detenidos : Form
+    public partial class LegajoDetenidos : Form
     {
-        public legajo_detenidos()
+        public LegajoDetenidos()
         {
             InitializeComponent();
+        }
+
+        private void LegajoDetenidosLoad(object sender, EventArgs e)
+        {
+
         }
     }
 }

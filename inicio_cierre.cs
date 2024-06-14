@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class inicio_cierre : Form
+    public partial class InicioCierre : IconoEscudoPolProvincia
     {
-        public inicio_cierre()
+        public InicioCierre()
         {
             InitializeComponent();
+        }
+
+        private void InicioCierreLoad(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class menu_principal : Form
+    public partial class MenuPrincipal : IconoEscudoPolProvincia
     {
-        public menu_principal()
+        public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void MenuPrincipalLoad(object sender, EventArgs e)
+        {
+
         }
     }
 }

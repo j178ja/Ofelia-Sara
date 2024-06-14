@@ -70,8 +70,19 @@
     <Compile Include="expedientes.Designer.cs">
       <DependentUpon>expedientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="general\Clases.cs" />
-    <Compile Include="general\metodos.cs" />
+    <Compile Include="general\clases\apariencia_formularios.cs" />
+    <Compile Include="general\clases\cabecera.cs" />
+    <Compile Include="general\clases\cambio_de_tema.cs" />
+    <Compile Include="general\clases\footer.cs" />
+    <Compile Include="general\clases\guardar_archivo.cs" />
+    <Compile Include="general\clases\imprimir.cs" />
+    <Compile Include="general\clases\incono_escudo_pol_provincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general\clases\limpiar_formulario.cs" />
+    <Compile Include="general\clases\mayuscula.cs" />
+    <Compile Include="general\clases\salto_de_input.cs" />
+    <Compile Include="general\clases\verificacion_formulario_completo.cs" />
     <Compile Include="inicio_cierre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +121,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cargo.resx">
+      <DependentUpon>cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="contravenciones.resx">
+      <DependentUpon>contravenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="denuncia.resx">
+      <DependentUpon>denuncia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="expedientes.resx">
+      <DependentUpon>expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inicio_cierre.resx">
+      <DependentUpon>inicio_cierre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ipp.resx">
+      <DependentUpon>ipp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="legajo_automotor.resx">
+      <DependentUpon>legajo_automotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="legajo_detenidos.resx">
+      <DependentUpon>legajo_detenidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_principal.resx">
+      <DependentUpon>menu_principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nota.resx">
+      <DependentUpon>nota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

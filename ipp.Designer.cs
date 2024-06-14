@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class ipp
+    partial class Ipp
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "ipp";
             this.Text = "ACTUACIONES SUMARIALES  I.P.P.";
+            this.Load += new System.EventHandler(this.IppLoad);
             this.ResumeLayout(false);
 
         }
