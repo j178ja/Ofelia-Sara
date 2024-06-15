@@ -71,14 +71,15 @@
       <DependentUpon>expedientes.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\apariencia_formularios.cs" />
+    <Compile Include="general\clases\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="general\clases\cabecera.cs" />
     <Compile Include="general\clases\cambio_de_tema.cs" />
     <Compile Include="general\clases\footer.cs" />
     <Compile Include="general\clases\guardar_archivo.cs" />
+    <Compile Include="general\clases\Iconos.cs" />
     <Compile Include="general\clases\imprimir.cs" />
-    <Compile Include="general\clases\incono_escudo_pol_provincia.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="general\clases\limpiar_formulario.cs" />
     <Compile Include="general\clases\mayuscula.cs" />
     <Compile Include="general\clases\salto_de_input.cs" />
@@ -132,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="expedientes.resx">
       <DependentUpon>expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inicio_cierre.resx">
       <DependentUpon>inicio_cierre.cs</DependentUpon>

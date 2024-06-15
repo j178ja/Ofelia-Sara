@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class contravenciones : IconoEscudoPolProvincia
+    public partial class contravenciones : BaseForm
     {
         public contravenciones()
         {

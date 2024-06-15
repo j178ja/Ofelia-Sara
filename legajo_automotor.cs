@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class LegajoAutomotor : Form
+    public partial class LegajoAutomotor : BaseForm
     {
         public LegajoAutomotor()
         {

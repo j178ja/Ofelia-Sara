@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class cargo : IconoEscudoPolProvincia
+    public partial class Cargo : BaseForm
+    
     {
-        public cargo()
+        public Cargo()
         {
             InitializeComponent();
         }

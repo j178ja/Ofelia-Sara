@@ -11,8 +11,8 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class InicioCierre : IconoEscudoPolProvincia
-    {
+    public partial class InicioCierre : BaseForm
+    { 
         public InicioCierre()
         {
             InitializeComponent();
@@ -24,3 +24,4 @@ namespace Ofelia_Sara
         }
     }
 }
+

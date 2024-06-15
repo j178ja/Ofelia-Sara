@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class denuncia : IconoEscudoPolProvincia
+    public partial class denuncia : BaseForm
     {
         public denuncia()
         {

@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class MenuPrincipal : IconoEscudoPolProvincia
+    public partial class MenuPrincipal : BaseForm
+    
     {
         public MenuPrincipal()
         {
@@ -19,6 +20,31 @@ namespace Ofelia_Sara
         }
 
         private void MenuPrincipalLoad(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_InicioCierre_Click(object sender, EventArgs e)
         {
 
         }

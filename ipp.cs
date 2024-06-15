@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class Ipp : IconoEscudoPolProvincia
+    public partial class Ipp : BaseForm
     {
         public Ipp()
         {

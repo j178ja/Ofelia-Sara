@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class cargo
+    partial class Cargo
     {
         /// <summary>
         /// Required designer variable.
