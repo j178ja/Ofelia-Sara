@@ -12,35 +12,34 @@ using System.Windows.Forms;
 namespace Ofelia_Sara
 {
     public partial class MenuPrincipal : BaseForm
-    
     {
         public MenuPrincipal()
         {
             InitializeComponent();
-            //inicializar el evento click sobre la imagen
-            pictureBox1.Click += new EventHandler(Btn_Configuracion_Click);
-            pictureBox1.Click += new EventHandler(Btn_CambiarTema_Click); 
-
+            // Inicializar el evento click sobre la imagen
+            btn_Configuracion.Click += new EventHandler(Btn_Configuracion_Click);
+            Btn_CambiarTema.Click += new EventHandler(Btn_CambiarTema_Click);
         }
 
-        private void MenuPrincipalLoad(object sender, EventArgs e)
+        private void MenuPrincipal_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Btn_Configuracion(object sender, EventArgs e)
+        private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
             // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
-            MessageBox.Show("Este botón esta en desarrollo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            // Tu lógica aquí
+        }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            // Tu lógica aquí
         }
 
         private void Btn_Cargo_Click(object sender, EventArgs e)
@@ -61,6 +60,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             inicioCierreForm.Show();
         }
+
         //------BOTON IPP-----------------
         private void Btn_Ipp_Click(object sender, EventArgs e)
         {
@@ -70,6 +70,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             IppForm.Show();
         }
+
         //-------------BOTON CONTRAVENCIONES------------
         private void Btn_Contravenciones_Click(object sender, EventArgs e)
         {
@@ -79,6 +80,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             ContravencionesForm.Show();
         }
+
         //----------------BOTON EXPEDIENTES-----------
         private void Btn_Expedientes_Click(object sender, EventArgs e)
         {
@@ -88,6 +90,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             ExpedientesForm.Show();
         }
+
         //-----------BOTON LEGAJO DETENIDOS-----------
         private void Btn_LegajoDetenidos_Click(object sender, EventArgs e)
         {
@@ -97,6 +100,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             LegajoDetenidosForm.Show();
         }
+
         //-----------BOTON LEGAJO AUTOMOTOR-----------
         private void Btn_LegajoAutomotor_Click(object sender, EventArgs e)
         {
@@ -106,6 +110,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             LegajoAutomotorForm.Show();
         }
+
         //---------BOTON DENUNCIAS-------------
         private void Btn_Denuncias_Click(object sender, EventArgs e)
         {
@@ -124,6 +129,7 @@ namespace Ofelia_Sara
             // Mostrar el formulario
             NotasForm.Show();
         }
+
         //----------BOTON INSPECCIONES-------------
         private void Btn_Inspecciones_Click(object sender, EventArgs e)
         {
@@ -132,14 +138,12 @@ namespace Ofelia_Sara
 
             // Mostrar el formulario
             InspeccionesForm.Show();
-
         }
 
         private void Btn_CambiarTema_Click(object sender, EventArgs e)
         {
-                // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
-                MessageBox.Show("Este botón esta en desarrollo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
+            MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

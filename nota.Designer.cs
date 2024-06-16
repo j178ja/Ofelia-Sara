@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class Nota
+    partial class Notas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // nota
+            // Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "nota";
+            this.Name = "Notas";
             this.Text = "NOTAS";
-            this.Load += new System.EventHandler(this.NotaLoad);
+            this.Load += new System.EventHandler(this.Notas_Load);
             this.ResumeLayout(false);
 
         }

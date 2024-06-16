@@ -57,7 +57,7 @@
             this.btn_Configuracion.Size = new System.Drawing.Size(46, 50);
             this.btn_Configuracion.TabIndex = 0;
             this.btn_Configuracion.TabStop = false;
-            this.btn_Configuracion.Click += new System.EventHandler(this.btn_Configuracion_Click);
+            this.btn_Configuracion.Click += new System.EventHandler(this.Btn_Configuracion_Click);
             // 
             // Btn_CambiarTema
             // 
@@ -212,7 +212,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPrincipal";
             this.Text = "MENU PRINCIPAL";
-            this.Load += new System.EventHandler(this.MenuPrincipalLoad);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

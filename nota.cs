@@ -18,9 +18,9 @@ namespace Ofelia_Sara
             InitializeComponent();
         }
 
-        private void NotaLoad(object sender, EventArgs e)
+        private void Notas_Load(object sender, EventArgs e)
         {
-
+            // Aquí puedes agregar el código que necesites al cargar el formulario
         }
     }
 }

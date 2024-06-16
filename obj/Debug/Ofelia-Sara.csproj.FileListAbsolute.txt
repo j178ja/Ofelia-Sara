@@ -1,10 +1,8 @@
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.AssemblyReference.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.cargo.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.contravenciones.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.denuncia.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.expedientes.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.ipp.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.nota.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Properties.Resources.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.GenerateResource.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.CoreCompileInputs.cache
