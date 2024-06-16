@@ -18,3 +18,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.LegajoAut
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.LegajoDetenidos.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.MenuPrincipal.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.BaseForm.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Denuncias.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Inspecciones.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Notas.resources

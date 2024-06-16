@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class contravenciones
+    partial class Contravenciones
     {
         /// <summary>
         /// Required designer variable.

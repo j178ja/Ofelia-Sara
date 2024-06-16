@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara
 {
-    partial class Expedientes
+    partial class Denuncias
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // expedientes
+            // denuncia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "expedientes";
-            this.Text = "EXPEDIENTES";
-            this.Load += new System.EventHandler(this.Expedientes_Load);
+            this.Name = "denuncia";
+            this.Text = "DENUNCIAS";
+            this.Load += new System.EventHandler(this.Denuncias_Load);
             this.ResumeLayout(false);
 
         }

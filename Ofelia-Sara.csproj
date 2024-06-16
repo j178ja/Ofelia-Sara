@@ -46,29 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cargo.cs">
+    <Compile Include="Cargo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cargo.Designer.cs">
-      <DependentUpon>cargo.cs</DependentUpon>
+    <Compile Include="Cargo.Designer.cs">
+      <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
-    <Compile Include="contravenciones.cs">
+    <Compile Include="Contravenciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="contravenciones.Designer.cs">
-      <DependentUpon>contravenciones.cs</DependentUpon>
+    <Compile Include="Contravenciones.Designer.cs">
+      <DependentUpon>Contravenciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="denuncia.cs">
+    <Compile Include="Denuncias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="denuncia.Designer.cs">
-      <DependentUpon>denuncia.cs</DependentUpon>
+    <Compile Include="Denuncias.Designer.cs">
+      <DependentUpon>Denuncias.cs</DependentUpon>
     </Compile>
-    <Compile Include="expedientes.cs">
+    <Compile Include="Expedientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="expedientes.Designer.cs">
-      <DependentUpon>expedientes.cs</DependentUpon>
+    <Compile Include="Expedientes.Designer.cs">
+      <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\apariencia_formularios.cs" />
     <Compile Include="general\clases\BaseForm.cs">
@@ -90,11 +90,17 @@
     <Compile Include="inicio_cierre.Designer.cs">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </Compile>
-    <Compile Include="ipp.cs">
+    <Compile Include="Inspecciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ipp.Designer.cs">
-      <DependentUpon>ipp.cs</DependentUpon>
+    <Compile Include="Inspecciones.Designer.cs">
+      <DependentUpon>Inspecciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ipp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ipp.Designer.cs">
+      <DependentUpon>Ipp.cs</DependentUpon>
     </Compile>
     <Compile Include="legajo_automotor.cs">
       <SubType>Form</SubType>
@@ -114,25 +120,25 @@
     <Compile Include="menu_principal.Designer.cs">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="nota.cs">
+    <Compile Include="Nota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nota.Designer.cs">
-      <DependentUpon>nota.cs</DependentUpon>
+    <Compile Include="Nota.Designer.cs">
+      <DependentUpon>Nota.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="cargo.resx">
-      <DependentUpon>cargo.cs</DependentUpon>
+    <EmbeddedResource Include="Cargo.resx">
+      <DependentUpon>Cargo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="contravenciones.resx">
-      <DependentUpon>contravenciones.cs</DependentUpon>
+    <EmbeddedResource Include="Contravenciones.resx">
+      <DependentUpon>Contravenciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="denuncia.resx">
-      <DependentUpon>denuncia.cs</DependentUpon>
+    <EmbeddedResource Include="Denuncias.resx">
+      <DependentUpon>Denuncias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="expedientes.resx">
-      <DependentUpon>expedientes.cs</DependentUpon>
+    <EmbeddedResource Include="Expedientes.resx">
+      <DependentUpon>Expedientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -140,8 +146,11 @@
     <EmbeddedResource Include="inicio_cierre.resx">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ipp.resx">
-      <DependentUpon>ipp.cs</DependentUpon>
+    <EmbeddedResource Include="Inspecciones.resx">
+      <DependentUpon>Inspecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ipp.resx">
+      <DependentUpon>Ipp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="legajo_automotor.resx">
       <DependentUpon>legajo_automotor.cs</DependentUpon>
@@ -152,8 +161,8 @@
     <EmbeddedResource Include="menu_principal.resx">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nota.resx">
-      <DependentUpon>nota.cs</DependentUpon>
+    <EmbeddedResource Include="Nota.resx">
+      <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

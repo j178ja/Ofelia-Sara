@@ -29,50 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.Btn_Configuracion = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_Configuracion = new System.Windows.Forms.PictureBox();
+            this.Btn_CambiarTema = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Denuncias = new System.Windows.Forms.Button();
-            this.btn_expedientes = new System.Windows.Forms.Button();
+            this.btn_Expedientes = new System.Windows.Forms.Button();
             this.btn_Ipp = new System.Windows.Forms.Button();
             this.btn_Notas = new System.Windows.Forms.Button();
             this.btn_LegajoDetenidos = new System.Windows.Forms.Button();
             this.btn_LegajoAutomotor = new System.Windows.Forms.Button();
             this.btn_Contravenciones = new System.Windows.Forms.Button();
-            this.btn_cargo = new System.Windows.Forms.Button();
+            this.btn_Cargo = new System.Windows.Forms.Button();
             this.btn_Inspecciones = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_Configuracion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Configuracion
             // 
-            this.Btn_Configuracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Configuracion.BackgroundImage")));
-            this.Btn_Configuracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Btn_Configuracion.Location = new System.Drawing.Point(41, 18);
-            this.Btn_Configuracion.Name = "Btn_Configuracion";
-            this.Btn_Configuracion.Size = new System.Drawing.Size(46, 50);
-            this.Btn_Configuracion.TabIndex = 0;
-            this.Btn_Configuracion.TabStop = false;
-            this.Btn_Configuracion.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btn_Configuracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Configuracion.BackgroundImage")));
+            this.btn_Configuracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Configuracion.Location = new System.Drawing.Point(41, 18);
+            this.btn_Configuracion.Name = "Btn_Configuracion";
+            this.btn_Configuracion.Size = new System.Drawing.Size(46, 50);
+            this.btn_Configuracion.TabIndex = 0;
+            this.btn_Configuracion.TabStop = false;
+            this.btn_Configuracion.Click += new System.EventHandler(this.btn_Configuracion_Click);
             // 
-            // pictureBox2
+            // Btn_CambiarTema
             // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(454, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 50);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.Btn_CambiarTema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_CambiarTema.BackgroundImage")));
+            this.Btn_CambiarTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Btn_CambiarTema.Location = new System.Drawing.Point(454, 18);
+            this.Btn_CambiarTema.Name = "Btn_CambiarTema";
+            this.Btn_CambiarTema.Size = new System.Drawing.Size(51, 50);
+            this.Btn_CambiarTema.TabIndex = 1;
+            this.Btn_CambiarTema.TabStop = false;
+            this.Btn_CambiarTema.Click += new System.EventHandler(this.Btn_CambiarTema_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(130, 44);
-            this.textBox1.Name = "textBox1";
+            this.textBox1.Name = "Btn_BuscarBarra";
             this.textBox1.Size = new System.Drawing.Size(230, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -96,7 +97,7 @@
             this.btn_InicioCierre.TabIndex = 5;
             this.btn_InicioCierre.Text = "INICIO-CIERRE";
             this.btn_InicioCierre.UseVisualStyleBackColor = true;
-            this.btn_InicioCierre.Click += new System.EventHandler(this.btn_InicioCierre_Click);
+            this.btn_InicioCierre.Click += new System.EventHandler(this.Btn_InicioCierre_Click);
             // 
             // btn_Denuncias
             // 
@@ -106,15 +107,17 @@
             this.btn_Denuncias.TabIndex = 6;
             this.btn_Denuncias.Text = "DENUNCIAS";
             this.btn_Denuncias.UseVisualStyleBackColor = true;
+            this.btn_Denuncias.Click += new System.EventHandler(this.Btn_Denuncias_Click);
             // 
-            // btn_expedientes
+            // btn_Expedientes
             // 
-            this.btn_expedientes.Location = new System.Drawing.Point(65, 194);
-            this.btn_expedientes.Name = "btn_expedientes";
-            this.btn_expedientes.Size = new System.Drawing.Size(104, 31);
-            this.btn_expedientes.TabIndex = 7;
-            this.btn_expedientes.Text = "EXPEDIENTES";
-            this.btn_expedientes.UseVisualStyleBackColor = true;
+            this.btn_Expedientes.Location = new System.Drawing.Point(65, 194);
+            this.btn_Expedientes.Name = "btn_Expedientes";
+            this.btn_Expedientes.Size = new System.Drawing.Size(104, 31);
+            this.btn_Expedientes.TabIndex = 7;
+            this.btn_Expedientes.Text = "EXPEDIENTES";
+            this.btn_Expedientes.UseVisualStyleBackColor = true;
+            this.btn_Expedientes.Click += new System.EventHandler(this.Btn_Expedientes_Click);
             // 
             // btn_Ipp
             // 
@@ -124,6 +127,7 @@
             this.btn_Ipp.TabIndex = 8;
             this.btn_Ipp.Text = "I.P.P.";
             this.btn_Ipp.UseVisualStyleBackColor = true;
+            this.btn_Ipp.Click += new System.EventHandler(this.Btn_Ipp_Click);
             // 
             // btn_Notas
             // 
@@ -133,6 +137,7 @@
             this.btn_Notas.TabIndex = 9;
             this.btn_Notas.Text = "NOTAS";
             this.btn_Notas.UseVisualStyleBackColor = true;
+            this.btn_Notas.Click += new System.EventHandler(this.Btn_Notas_Click);
             // 
             // btn_LegajoDetenidos
             // 
@@ -142,6 +147,7 @@
             this.btn_LegajoDetenidos.TabIndex = 10;
             this.btn_LegajoDetenidos.Text = "LEGAJO DETENIDOS";
             this.btn_LegajoDetenidos.UseVisualStyleBackColor = true;
+            this.btn_LegajoDetenidos.Click += new System.EventHandler(this.Btn_LegajoDetenidos_Click);
             // 
             // btn_LegajoAutomotor
             // 
@@ -151,6 +157,7 @@
             this.btn_LegajoAutomotor.TabIndex = 11;
             this.btn_LegajoAutomotor.Text = "LEGAJO AUTOMOTOR";
             this.btn_LegajoAutomotor.UseVisualStyleBackColor = true;
+            this.btn_LegajoAutomotor.Click += new System.EventHandler(this.Btn_LegajoAutomotor_Click);
             // 
             // btn_Contravenciones
             // 
@@ -160,16 +167,17 @@
             this.btn_Contravenciones.TabIndex = 12;
             this.btn_Contravenciones.Text = "CONTRAVENCIONES";
             this.btn_Contravenciones.UseVisualStyleBackColor = true;
+            this.btn_Contravenciones.Click += new System.EventHandler(this.Btn_Contravenciones_Click);
             // 
-            // btn_cargo
+            // btn_Cargo
             // 
-            this.btn_cargo.Location = new System.Drawing.Point(408, 142);
-            this.btn_cargo.Name = "btn_cargo";
-            this.btn_cargo.Size = new System.Drawing.Size(75, 31);
-            this.btn_cargo.TabIndex = 13;
-            this.btn_cargo.Text = "CARGO";
-            this.btn_cargo.UseVisualStyleBackColor = true;
-            this.btn_cargo.Click += new System.EventHandler(this.button9_Click);
+            this.btn_Cargo.Location = new System.Drawing.Point(408, 142);
+            this.btn_Cargo.Name = "btn_Cargo";
+            this.btn_Cargo.Size = new System.Drawing.Size(75, 31);
+            this.btn_Cargo.TabIndex = 13;
+            this.btn_Cargo.Text = "CARGO";
+            this.btn_Cargo.UseVisualStyleBackColor = true;
+            this.btn_Cargo.Click += new System.EventHandler(this.Btn_Cargo_Click);
             // 
             // btn_Inspecciones
             // 
@@ -179,6 +187,7 @@
             this.btn_Inspecciones.TabIndex = 14;
             this.btn_Inspecciones.Text = "INSPECIONES";
             this.btn_Inspecciones.UseVisualStyleBackColor = true;
+            this.btn_Inspecciones.Click += new System.EventHandler(this.Btn_Inspecciones_Click);
             // 
             // MenuPrincipal
             // 
@@ -187,25 +196,25 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(542, 506);
             this.Controls.Add(this.btn_Inspecciones);
-            this.Controls.Add(this.btn_cargo);
+            this.Controls.Add(this.btn_Cargo);
             this.Controls.Add(this.btn_Contravenciones);
             this.Controls.Add(this.btn_LegajoAutomotor);
             this.Controls.Add(this.btn_LegajoDetenidos);
             this.Controls.Add(this.btn_Notas);
             this.Controls.Add(this.btn_Ipp);
-            this.Controls.Add(this.btn_expedientes);
+            this.Controls.Add(this.btn_Expedientes);
             this.Controls.Add(this.btn_Denuncias);
             this.Controls.Add(this.btn_InicioCierre);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.Btn_Configuracion);
+            this.Controls.Add(this.Btn_CambiarTema);
+            this.Controls.Add(this.btn_Configuracion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPrincipal";
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MenuPrincipalLoad);
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_Configuracion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,19 +223,19 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox Btn_Configuracion;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btn_Configuracion;
+        private System.Windows.Forms.PictureBox Btn_CambiarTema;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_InicioCierre;
         private System.Windows.Forms.Button btn_Denuncias;
-        private System.Windows.Forms.Button btn_expedientes;
+        private System.Windows.Forms.Button btn_Expedientes;
         private System.Windows.Forms.Button btn_Ipp;
         private System.Windows.Forms.Button btn_Notas;
         private System.Windows.Forms.Button btn_LegajoDetenidos;
         private System.Windows.Forms.Button btn_LegajoAutomotor;
         private System.Windows.Forms.Button btn_Contravenciones;
-        private System.Windows.Forms.Button btn_cargo;
+        private System.Windows.Forms.Button btn_Cargo;
         private System.Windows.Forms.Button btn_Inspecciones;
     }
 }

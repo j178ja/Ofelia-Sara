@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class Expedientes : BaseForm
+    public partial class Denuncias : BaseForm
     {
-        public Expedientes()
+        public Denuncias()
         {
             InitializeComponent();
         }
 
-        private void Expedientes_Load(object sender, EventArgs e)
+        private void Denuncias_Load(object sender, EventArgs e)
         {
 
         }

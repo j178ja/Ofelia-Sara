@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class Nota : BaseForm
+    public partial class Notas : BaseForm
     {
-        public Nota()
+        public Notas()
         {
             InitializeComponent();
         }

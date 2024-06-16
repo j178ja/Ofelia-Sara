@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class contravenciones : BaseForm
+    public partial class Contravenciones : BaseForm
     {
-        public contravenciones()
+        public Contravenciones()
         {
             InitializeComponent();
         }
