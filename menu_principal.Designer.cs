@@ -76,7 +76,7 @@
             this.textBox1.Name = "Btn_BuscarBarra";
             this.textBox1.Size = new System.Drawing.Size(230, 20);
             this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // pictureBox3
             // 
@@ -87,7 +87,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(36, 36);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // btn_InicioCierre
             // 
