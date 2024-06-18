@@ -46,14 +46,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Cargo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Cargo.Designer.cs">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contravenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contravenciones.Designer.cs">
+      <DependentUpon>Contravenciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Denuncias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Denuncias.Designer.cs">
+      <DependentUpon>Denuncias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expedientes.Designer.cs">
+      <DependentUpon>Expedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general\clases\apariencia_formularios.cs" />
+    <Compile Include="general\clases\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general\clases\cabecera.cs" />
+    <Compile Include="general\clases\cambio_de_tema.cs" />
+    <Compile Include="general\clases\footer.cs" />
+    <Compile Include="general\clases\guardar_archivo.cs" />
+    <Compile Include="general\clases\Iconos.cs" />
+    <Compile Include="general\clases\imprimir.cs" />
+    <Compile Include="general\clases\limpiar_formulario.cs" />
+    <Compile Include="general\clases\mayuscula.cs" />
+    <Compile Include="general\clases\salto_de_input.cs" />
+    <Compile Include="general\clases\verificacion_formulario_completo.cs" />
+    <Compile Include="inicio_cierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inicio_cierre.Designer.cs">
+      <DependentUpon>inicio_cierre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspecciones.Designer.cs">
+      <DependentUpon>Inspecciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ipp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ipp.Designer.cs">
+      <DependentUpon>Ipp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="legajo_automotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="legajo_automotor.Designer.cs">
+      <DependentUpon>legajo_automotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="legajo_detenidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="legajo_detenidos.Designer.cs">
+      <DependentUpon>legajo_detenidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu_principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_principal.Designer.cs">
+      <DependentUpon>menu_principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nota.Designer.cs">
+      <DependentUpon>Nota.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cargo.resx">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contravenciones.resx">
+      <DependentUpon>Contravenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Denuncias.resx">
+      <DependentUpon>Denuncias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expedientes.resx">
+      <DependentUpon>Expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inicio_cierre.resx">
+      <DependentUpon>inicio_cierre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspecciones.resx">
+      <DependentUpon>Inspecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ipp.resx">
+      <DependentUpon>Ipp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="legajo_automotor.resx">
+      <DependentUpon>legajo_automotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="legajo_detenidos.resx">
+      <DependentUpon>legajo_detenidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_principal.resx">
+      <DependentUpon>menu_principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nota.resx">
+      <DependentUpon>Nota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +185,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imagenes\" />
+    <Folder Include="sonidos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

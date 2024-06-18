@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
-    public partial class Form1 : Form
+    public partial class Expedientes : BaseForm
     {
-        public Form1()
+        public Expedientes()
         {
             InitializeComponent();
+        }
+
+        private void Expedientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
