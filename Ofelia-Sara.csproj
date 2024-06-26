@@ -187,8 +187,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="imagenes\" />
-    <Folder Include="sonidos\" />
+    <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
