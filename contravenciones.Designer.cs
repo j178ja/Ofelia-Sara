@@ -183,7 +183,7 @@
             this.textBox1.Location = new System.Drawing.Point(103, 69);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 13;
+            this.textBox1.TabIndex = 1;
             // 
             // label13
             // 
@@ -209,7 +209,7 @@
             this.comboBox2.Location = new System.Drawing.Point(167, 101);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(55, 21);
-            this.comboBox2.TabIndex = 19;
+            this.comboBox2.TabIndex = 2;
             // 
             // comboBox3
             // 
@@ -217,7 +217,7 @@
             this.comboBox3.Location = new System.Drawing.Point(256, 101);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(96, 21);
-            this.comboBox3.TabIndex = 20;
+            this.comboBox3.TabIndex = 3;
             // 
             // comboBox4
             // 
@@ -225,63 +225,63 @@
             this.comboBox4.Location = new System.Drawing.Point(386, 101);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(77, 21);
-            this.comboBox4.TabIndex = 21;
+            this.comboBox4.TabIndex = 4;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(139, 187);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 20);
-            this.textBox2.TabIndex = 22;
+            this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(139, 212);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(241, 20);
-            this.textBox3.TabIndex = 23;
+            this.textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(139, 238);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 24;
+            this.textBox4.TabIndex = 7;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(431, 238);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(77, 20);
-            this.textBox5.TabIndex = 25;
+            this.textBox5.TabIndex = 8;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(431, 267);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(163, 20);
-            this.textBox6.TabIndex = 26;
+            this.textBox6.TabIndex = 10;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(431, 293);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(163, 20);
-            this.textBox7.TabIndex = 27;
+            this.textBox7.TabIndex = 12;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(139, 290);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(193, 20);
-            this.textBox8.TabIndex = 28;
+            this.textBox8.TabIndex = 11;
             // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(167, 263);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(165, 20);
-            this.textBox9.TabIndex = 29;
+            this.textBox9.TabIndex = 9;
             // 
             // label15
             // 
@@ -335,7 +335,7 @@
             this.comboBox1.Location = new System.Drawing.Point(154, 378);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(296, 21);
-            this.comboBox1.TabIndex = 35;
+            this.comboBox1.TabIndex = 13;
             // 
             // comboBox5
             // 
@@ -343,7 +343,7 @@
             this.comboBox5.Location = new System.Drawing.Point(154, 405);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(296, 21);
-            this.comboBox5.TabIndex = 36;
+            this.comboBox5.TabIndex = 14;
             // 
             // comboBox6
             // 
@@ -351,7 +351,7 @@
             this.comboBox6.Location = new System.Drawing.Point(154, 429);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(296, 21);
-            this.comboBox6.TabIndex = 37;
+            this.comboBox6.TabIndex = 15;
             // 
             // comboBox7
             // 
@@ -359,7 +359,7 @@
             this.comboBox7.Location = new System.Drawing.Point(154, 456);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(55, 21);
-            this.comboBox7.TabIndex = 38;
+            this.comboBox7.TabIndex = 16;
             // 
             // label20
             // 
@@ -385,7 +385,7 @@
             this.comboBox8.Location = new System.Drawing.Point(243, 456);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(96, 21);
-            this.comboBox8.TabIndex = 41;
+            this.comboBox8.TabIndex = 17;
             // 
             // comboBox9
             // 
@@ -393,7 +393,7 @@
             this.comboBox9.Location = new System.Drawing.Point(373, 456);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(77, 21);
-            this.comboBox9.TabIndex = 42;
+            this.comboBox9.TabIndex = 18;
             // 
             // button1
             // 
