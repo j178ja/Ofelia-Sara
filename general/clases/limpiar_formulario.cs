@@ -6,10 +6,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases
 {
-    internal class limpiar_formulario
+    public static class LimpiarFormulario
     {
+        // Método estático para limpiar todos los controles dentro del formulario
+        public static void Limpiar(Control control)
+        {
+            // Itera a través de todos los controles dentro del control proporcionado (form o panel, por ejemplo)
+            foreach (Control c in control.Controls)
+            {
+                // Si el control es un TextBox, limpia su contenido
+                if (c is TextBox textBox)
+                {
+                    textBox.Clear();
+                }
+                // Si el control es un ComboBox, restablece su selección a "-1" (ninguna selección)
+                else if (c is ComboBox comboBox)
+                {
+                    comboBox.SelectedIndex = -1;
+                }
+
+                // Puedes agregar más lógica para limpiar otros tipos de controles aquí
+
+                // Limpia los controles anidados si existen
+                if (c.HasChildren)
+                {
+                    Limpiar(c);
+                }
+            }
+        }
     }
 }

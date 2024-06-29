@@ -22,21 +22,33 @@ namespace Ofelia_Sara.general.clases
             //  InitializeComponent(); COMENTADO PORQUE SE SACO EL CAMBIO DE COLOR EN LA BARRA DE TITULO
             InitializeFooterLabel();
 
+            //-----------------------------------------------------------------------
+            //-------para usar fondo estandar (en modificacion por el momento-----
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
-            Color activeCaptionColor = SystemColors.ActiveCaption; // Color ActiveCaption
-            AparienciaFormularios.CambiarColorDeFondo(this, activeCaptionColor);
+            //Color activeCaptionColor = SystemColors.ControlDark; // Color ActiveCaption
+            //AparienciaFormularios.CambiarColorDeFondo(this, activeCaptionColor);
+            //-----------------------------------------------------------------------
+
+            //------------------CAMBIAR FONDO----------------------------------------------------
+            // Cambiar el color de fondo del formulario usando AparienciaFormularios
+            Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
+                                                             //---ESTE COLOR PERTENECE AL ACTUAL DE MINISTERIO DE SEGURIDAD-----
+            AparienciaFormularios.CambiarColorDeFondo(this, customColor);
+            //--------------------------------------------------------------------------
 
             // Configurar la navegación entre controles
             _saltoDeImput = new SaltoDeImput(this);
 
+            //// Suscribir todos los TextBox al método ConvertirTextoAMayusculas
+            //foreach (Control control in this.Controls)
+            //{
+            //    if (control is TextBox textBox)
+            //    {
+            //        TextoEnMayuscula.ConvertirTextoAMayusculas(textBox);
+            //    }
+            //}
             // Suscribir todos los TextBox al método ConvertirTextoAMayusculas
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
-                {
-                    TextoEnMayuscula.ConvertirTextoAMayusculas(textBox);
-                }
-            }
+            TextoEnMayuscula.ConvertirTextoAMayusculas(this);
         }
 
 
@@ -64,6 +76,11 @@ namespace Ofelia_Sara.general.clases
         //}
 
         //---------------------------------------------------------------------------------------------
+        // Evento de clic para el botón que limpia el formulario
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+        }
 
         private void InitializeFooterLabel()
         {
