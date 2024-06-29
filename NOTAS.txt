@@ -1,0 +1,8 @@
+PARA APLICAR COLOR OFICIAL DE MINISTERIO DE SEGURIDAD:
+
+// Cambiar el color de fondo del formulario usando AparienciaFormularios
+ Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
+ //---ESTE COLOR PERTENECE AL ACTUAL DE MINISTERIO DE SEGURIDAD-----
+ AparienciaFormularios.CambiarColorDeFondo(this, customColor);
+
+PARA EL FORMULARIO QUEDA MUY OSCURO
