@@ -121,7 +121,7 @@
   <data name="btn_Buscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAC7pJREFUaEPdmglwVdUZx+NSjZCwJIZANrITXlayAdkJCSEGQsi+r2RpZLSdSlPF
+        vAAADrwBlbxySQAAC7pJREFUaEPdmglwVdUZx+NSjZCwJIZANrITXlayAdkJCSEGQsi+r2RpZLSdSlPF
         Lg4jIFSBhJBAViJLoKgFBzvtqNVWaus2uBQkKoJCRmmtrbIFyP33+84953lffL7KdEDaO/PPy7vv3PP9
         fuece999L7H7f9tuotxGGUcZfwOG2ZjR6naLnaOb84K2oZbifWf/ULP/wqGaA3pqDalTefrCoWWGNMg0
         HrQd1c54LPel+jXWUvWZhZnSNg212Nk5OgvWMdvNlDujHzm6JXYAWnAvEEIJ6wMi+oFZ24EoSvQAEPs4
@@ -180,7 +180,7 @@
   <data name="btn_Guardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAACmhJREFUaEPdWAlQVecVtltMWycz6aixaWk6TSaTzthMM7ZJF02MmpRqjVYlaqpR
+        vAAADrwBlbxySQAACmhJREFUaEPdWAlQVecVtltMWycz6aixaWk6TSaTzthMM7ZJF02MmpRqjVYlaqpR
         idUYMzaSao3RqOAKgqAYRFB2HrzHIvp8gMjqY3ns+75vArKJYIxGTr9zvRcvj3sR8SWZyZn55r/vvnv/
         +33/Wf5z74TvjPn6+j4bFBT0r4dFYGDgOxhXBAcHv43RBliKc0swLsa5tzAuxLgA43yM1hqN5k1/f/83
         AgIC5uK61/F7No5/LtIYv2Fy28zMTKqqqnoYDAJ3q6ur7wC3a2pqbmH8AuMA0F9bW9sHXAd6gO66urpO
@@ -312,7 +312,7 @@
   <data name="btn_Imprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAGo5JREFUeF7NWwlcTukXtqRdRXbGVrKGSiJLi1ZKWqWkUMoSyVJJsib7ki1UGGMZ
+        vAAADrwBlbxySQAAGo5JREFUeF7NWwlcTukXtqRdRXbGVrKGSiJLi1ZKWqWkUMoSyVJJsib7ki1UGGMZ
         YzQMBtm3yTCMfRtrtiQiqq+6z/+c9+tLyMyY/5hx/M7v26573+c5+3tvFcqRiqSVSCt/ZuXrfHGiRmpI
         ak/q+Anai9SZtPdf1J6kbUhVSb8oMWjfvv1PKckpOUlJSX9Z165d+3L9+vW5f1U3bNiQ6+ruup2u11x+
         2S9HmqupqR18mpmJzymSJGH16tVZdD32BA6HL0aqkc5ISUmRStb62eTu3btSpUqVIuh6muLKX4gokTo5
