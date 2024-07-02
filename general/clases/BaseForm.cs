@@ -12,6 +12,7 @@ namespace Ofelia_Sara.general.clases
     {
         private Label footerLabel;
         private SaltoDeImput _saltoDeImput; // Declaración a nivel de clase
+        private Panel mainPanel; // Panel que contiene los TextBox
 
         public BaseForm()
         {
@@ -47,8 +48,17 @@ namespace Ofelia_Sara.general.clases
             //        TextoEnMayuscula.ConvertirTextoAMayusculas(textBox);
             //    }
             //}
-            // Suscribir todos los TextBox al método ConvertirTextoAMayusculas
-            TextoEnMayuscula.ConvertirTextoAMayusculas(this);
+
+            // Inicializa el panel principal
+            mainPanel = new Panel { Dock = DockStyle.Fill };
+            this.Controls.Add(mainPanel);
+
+            // Verificación adicional para asegurar que mainPanel no sea nulo
+            if (mainPanel != null)
+            {
+                // Suscribe todos los TextBox dentro del panel al método ConvertirTextoAMayusculas
+                TextoEnMayuscula.ConvertirTextoAMayusculas(mainPanel);
+            }
         }
 
 
@@ -110,6 +120,7 @@ namespace Ofelia_Sara.general.clases
         private void BaseForm_Load_1(object sender, EventArgs e)
         {
 
+              
         }
     }
 }
