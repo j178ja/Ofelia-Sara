@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioCierre));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
-            this.comboBox_FechaDia = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,10 +48,6 @@
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox_FechaMes = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox_FechaAño = new System.Windows.Forms.ComboBox();
             this.combox_Dr = new System.Windows.Forms.ComboBox();
             this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
             this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
@@ -67,6 +62,7 @@
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,14 +83,6 @@
             this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(100, 20);
             this.textBox_NumeroIpp.TabIndex = 3;
-            // 
-            // comboBox_FechaDia
-            // 
-            this.comboBox_FechaDia.FormattingEnabled = true;
-            this.comboBox_FechaDia.Location = new System.Drawing.Point(135, 281);
-            this.comboBox_FechaDia.Name = "comboBox_FechaDia";
-            this.comboBox_FechaDia.Size = new System.Drawing.Size(50, 21);
-            this.comboBox_FechaDia.TabIndex = 13;
             // 
             // label2
             // 
@@ -240,40 +228,6 @@
             this.comboBox_Dependencia.Size = new System.Drawing.Size(279, 21);
             this.comboBox_Dependencia.TabIndex = 12;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(191, 284);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "DE";
-            // 
-            // comboBox_FechaMes
-            // 
-            this.comboBox_FechaMes.FormattingEnabled = true;
-            this.comboBox_FechaMes.Location = new System.Drawing.Point(219, 281);
-            this.comboBox_FechaMes.Name = "comboBox_FechaMes";
-            this.comboBox_FechaMes.Size = new System.Drawing.Size(90, 21);
-            this.comboBox_FechaMes.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(315, 284);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "DE";
-            // 
-            // comboBox_FechaAño
-            // 
-            this.comboBox_FechaAño.FormattingEnabled = true;
-            this.comboBox_FechaAño.Location = new System.Drawing.Point(340, 281);
-            this.comboBox_FechaAño.Name = "comboBox_FechaAño";
-            this.comboBox_FechaAño.Size = new System.Drawing.Size(74, 21);
-            this.comboBox_FechaAño.TabIndex = 15;
-            // 
             // combox_Dr
             // 
             this.combox_Dr.FormattingEnabled = true;
@@ -366,6 +320,7 @@
             // 
             // btn_AgregarCausa
             // 
+            this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarCausa.Location = new System.Drawing.Point(399, 74);
             this.btn_AgregarCausa.Name = "btn_AgregarCausa";
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
@@ -376,6 +331,7 @@
             // 
             // btn_AgregarVictima
             // 
+            this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarVictima.Location = new System.Drawing.Point(399, 103);
             this.btn_AgregarVictima.Name = "btn_AgregarVictima";
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
@@ -386,6 +342,7 @@
             // 
             // btn_AgregarImputado
             // 
+            this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarImputado.Location = new System.Drawing.Point(399, 132);
             this.btn_AgregarImputado.Name = "btn_AgregarImputado";
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
@@ -401,13 +358,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.datoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_AgregarImputado);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_AgregarVictima);
             this.panel1.Controls.Add(this.textBox_NumeroIpp);
             this.panel1.Controls.Add(this.btn_AgregarCausa);
-            this.panel1.Controls.Add(this.comboBox_FechaDia);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.label3);
@@ -425,13 +382,9 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.combox_Dr);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.comboBox_FechaAño);
             this.panel1.Controls.Add(this.textBox_Caratula);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox_Victima);
-            this.panel1.Controls.Add(this.comboBox_FechaMes);
             this.panel1.Controls.Add(this.textBox_Imputado);
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox_Dependencia);
             this.panel1.Controls.Add(this.comboBox_Instructor);
@@ -440,6 +393,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(452, 445);
             this.panel1.TabIndex = 30;
+            // 
+            // datoFecha
+            // 
+            this.datoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.datoFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datoFecha.Location = new System.Drawing.Point(135, 278);
+            this.datoFecha.Name = "datoFecha";
+            this.datoFecha.Size = new System.Drawing.Size(279, 24);
+            this.datoFecha.TabIndex = 30;
+            this.datoFecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label15
             // 
@@ -477,7 +440,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_NumeroIpp;
-        private System.Windows.Forms.ComboBox comboBox_FechaDia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -494,10 +456,6 @@
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox_FechaMes;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox_FechaAño;
         private System.Windows.Forms.ComboBox combox_Dr;
         private System.Windows.Forms.ComboBox comboBox_Ipp1;
         private System.Windows.Forms.ComboBox comboBox_Ipp2;
@@ -513,5 +471,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker datoFecha;
     }
 }

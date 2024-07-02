@@ -37,6 +37,22 @@ namespace Ofelia_Sara
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            // Cambiar el formato personalizado del DateTimePicker
+            datoFecha.CustomFormat = "dd/MM/yyyy";  // Asegúrate de usar el nombre correcto del DateTimePicker
+
+            // Obtener el texto actual del DateTimePicker
+            string texto = datoFecha.Text;
+
+            // Convertir el texto a mayúsculas
+            texto = texto.ToUpper();
+
+            // Asignar el texto modificado de nuevo al DateTimePicker
+            datoFecha.Text = texto;
+        }
+
     }
 }
 
