@@ -6,6 +6,7 @@
         /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button Btn_Configuracion;
 
         /// <summary>
         /// Limpiar los recursos que se estén usando.
@@ -44,6 +45,7 @@
             this.btn_Cargo = new System.Windows.Forms.Button();
             this.btn_Inspecciones = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Formularios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -54,7 +56,7 @@
             // 
             this.btn_Configuracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Configuracion.BackgroundImage")));
             this.btn_Configuracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Configuracion.Location = new System.Drawing.Point(42, 39);
+            this.btn_Configuracion.Location = new System.Drawing.Point(24, 26);
             this.btn_Configuracion.Name = "btn_Configuracion";
             this.btn_Configuracion.Size = new System.Drawing.Size(46, 50);
             this.btn_Configuracion.TabIndex = 0;
@@ -65,7 +67,7 @@
             // 
             this.Btn_CambiarTema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_CambiarTema.BackgroundImage")));
             this.Btn_CambiarTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Btn_CambiarTema.Location = new System.Drawing.Point(455, 39);
+            this.Btn_CambiarTema.Location = new System.Drawing.Point(462, 26);
             this.Btn_CambiarTema.Name = "Btn_CambiarTema";
             this.Btn_CambiarTema.Size = new System.Drawing.Size(51, 50);
             this.Btn_CambiarTema.TabIndex = 1;
@@ -147,7 +149,7 @@
             // btn_Notas
             // 
             this.btn_Notas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Notas.Location = new System.Drawing.Point(157, 341);
+            this.btn_Notas.Location = new System.Drawing.Point(169, 341);
             this.btn_Notas.Name = "btn_Notas";
             this.btn_Notas.Size = new System.Drawing.Size(75, 34);
             this.btn_Notas.TabIndex = 10;
@@ -214,7 +216,7 @@
             // btn_Inspecciones
             // 
             this.btn_Inspecciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Inspecciones.Location = new System.Drawing.Point(238, 341);
+            this.btn_Inspecciones.Location = new System.Drawing.Point(260, 341);
             this.btn_Inspecciones.Name = "btn_Inspecciones";
             this.btn_Inspecciones.Size = new System.Drawing.Size(104, 34);
             this.btn_Inspecciones.TabIndex = 11;
@@ -225,6 +227,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_Formularios);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btn_Configuracion);
             this.panel1.Controls.Add(this.btn_Inspecciones);
@@ -243,6 +246,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(532, 404);
             this.panel1.TabIndex = 12;
+            // 
+            // btn_Formularios
+            // 
+            this.btn_Formularios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Formularios.Location = new System.Drawing.Point(381, 341);
+            this.btn_Formularios.Name = "btn_Formularios";
+            this.btn_Formularios.Size = new System.Drawing.Size(104, 34);
+            this.btn_Formularios.TabIndex = 12;
+            this.btn_Formularios.Text = "FORMULARIOS";
+            this.btn_Formularios.UseVisualStyleBackColor = true;
             // 
             // MenuPrincipal
             // 
@@ -284,6 +297,8 @@
         private System.Windows.Forms.Button btn_Cargo;
         private System.Windows.Forms.Button btn_Inspecciones;
         private System.Windows.Forms.Panel panel1;
-    }
-}
+        private System.Windows.Forms.Button btn_Formularios;
+    }    
+ }
+
 

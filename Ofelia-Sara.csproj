@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccesoPrincipal.Designer.cs">
+      <DependentUpon>AccesoPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,7 @@
     </Compile>
     <Compile Include="general\clases\cabecera.cs" />
     <Compile Include="general\clases\cambio_de_tema.cs" />
+    <Compile Include="general\clases\Configuracion.cs" />
     <Compile Include="general\clases\footer.cs" />
     <Compile Include="general\clases\guardar_archivo.cs" />
     <Compile Include="general\clases\Iconos.cs" />
@@ -128,6 +135,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AccesoPrincipal.resx">
+      <DependentUpon>AccesoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
     </EmbeddedResource>

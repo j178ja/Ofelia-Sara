@@ -13,23 +13,45 @@ namespace Ofelia_Sara
 {
     public partial class MenuPrincipal : BaseForm
     {
+        private ConfiguracionMenu configuracionMenu;
+
         public MenuPrincipal()
         {
             InitializeComponent();
-            // Inicializar el evento click sobre la imagen
-            btn_Configuracion.Click += new EventHandler(Btn_Configuracion_Click);
-            Btn_CambiarTema.Click += new EventHandler(Btn_CambiarTema_Click);
+
+            // Inicializar el evento click sobre el botón de configuración
+            //Btn_CambiarTema.Click += Btn_CambiarTema_Click;
+
+
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
+            // Inicializar el manejador del menú de configuración
+            configuracionMenu = new ConfiguracionMenu();
 
-        }
+            // Asociar el menú contextual al botón Btn_Configuracion si no es nulo
+            if (Btn_Configuracion != null)
+            {
+                Btn_Configuracion.Click += (s, args) =>
+                {
+                    configuracionMenu.ShowMenu(Btn_Configuracion, new Point(0, Btn_Configuracion.Height));
+                };
+            }
+        } 
 
         private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
-            // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
-            MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Mostrar el menú contextual en la posición del cursor del mouse
+            MouseEventArgs mouseEventArgs = e as MouseEventArgs;
+            if (mouseEventArgs != null && mouseEventArgs.Button == MouseButtons.Left)
+            {
+                //configuracionMenu.ShowMenu(Btn_Configuracion, mouseEventArgs.Location);
+             
+                //------POSICIONAR EL MENU JUSTO DEAJO DEL BOTON-------------
+                configuracionMenu.ShowMenu(Btn_Configuracion, new Point(0, Btn_Configuracion.Height));
+
+            }
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -121,6 +143,7 @@ namespace Ofelia_Sara
             DenunciasForm.Show();
         }
 
+        //---------BOTON NOTAS------------------
         private void Btn_Notas_Click(object sender, EventArgs e)
         {
             // Crea una instancia del formulario a abrir
@@ -140,6 +163,7 @@ namespace Ofelia_Sara
             InspeccionesForm.Show();
         }
 
+        //------------BOTON CAMBIAR TEMA------------
         private void Btn_CambiarTema_Click(object sender, EventArgs e)
         {
             // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
