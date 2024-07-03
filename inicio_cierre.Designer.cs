@@ -62,6 +62,7 @@
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -305,6 +306,7 @@
             this.btn_Limpiar.TabIndex = 18;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Imprimir
             // 
@@ -358,6 +360,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.progressBar);
             this.panel1.Controls.Add(this.datoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_AgregarImputado);
@@ -393,6 +396,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(452, 445);
             this.panel1.TabIndex = 30;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(450, 43);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(2, 390);
+            this.progressBar.TabIndex = 31;
             // 
             // datoFecha
             // 
@@ -472,5 +482,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker datoFecha;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

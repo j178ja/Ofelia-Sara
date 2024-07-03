@@ -65,10 +65,10 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.fechaActuaciones = new System.Windows.Forms.DateTimePicker();
             this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.fechaActuaciones = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -381,6 +381,7 @@
             this.btnLimpiar.TabIndex = 46;
             this.toolTip1.SetToolTip(this.btnLimpiar, "Limpiar formulario");
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btn_Imprimir
             // 
@@ -438,6 +439,15 @@
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
             // 
+            // fechaActuaciones
+            // 
+            this.fechaActuaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fechaActuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaActuaciones.Location = new System.Drawing.Point(153, 476);
+            this.fechaActuaciones.Name = "fechaActuaciones";
+            this.fechaActuaciones.Size = new System.Drawing.Size(297, 24);
+            this.fechaActuaciones.TabIndex = 49;
+            // 
             // datoFecha
             // 
             this.datoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -458,15 +468,6 @@
             this.label22.Size = new System.Drawing.Size(242, 25);
             this.label22.TabIndex = 49;
             this.label22.Text = "CONTRAVENCIONES";
-            // 
-            // fechaActuaciones
-            // 
-            this.fechaActuaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fechaActuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaActuaciones.Location = new System.Drawing.Point(153, 476);
-            this.fechaActuaciones.Name = "fechaActuaciones";
-            this.fechaActuaciones.Size = new System.Drawing.Size(297, 24);
-            this.fechaActuaciones.TabIndex = 49;
             // 
             // Contravenciones
             // 

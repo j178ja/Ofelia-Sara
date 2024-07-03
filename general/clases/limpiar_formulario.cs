@@ -26,9 +26,15 @@ namespace Ofelia_Sara.general.clases
                 // Si el control es un ComboBox, restablece su selección a "-1" (ninguna selección)
                 else if (c is ComboBox comboBox)
                 {
-                    comboBox.SelectedIndex = -1;
+                    // comboBox.SelectedIndex = -1;
+                   // comboBox.SelectedItem = null;
+                    comboBox.Text = string.Empty;
                 }
-
+                // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha predeterminada
+                else if (c is DateTimePicker dateTimePicker)
+                {
+                    dateTimePicker.Value = DateTime.Now; // o una fecha predeterminada si lo prefieres
+                }
                 // Puedes agregar más lógica para limpiar otros tipos de controles aquí
 
                 // Limpia los controles anidados si existen

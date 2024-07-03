@@ -9,17 +9,17 @@ namespace Ofelia_Sara.general.clases
 {
     public static class TextoEnMayuscula
     {
-        // Método para suscribir TextBox al evento TextChanged que convierte texto a mayúsculas y filtra números y caracteres especiales
-        public static void ConvertirTextoAMayusculas(Panel panel)
+        // Método para suscribir TextBox y ComboBox al evento TextChanged/KeyPress que convierte texto a mayúsculas y filtra números y caracteres especiales
+        public static void ConvertirTextoAMayusculas(Control control)
         {
-            // Verifica si el panel no es nulo
-            if (panel == null)
+            // Verifica si el control no es nulo
+            if (control == null)
             {
-                throw new ArgumentNullException(nameof(panel), "El panel no puede ser nulo.");
+                throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
             }
 
-            // Recorre todos los controles hijos del panel
-            foreach (Control c in panel.Controls)
+            // Recorre todos los controles hijos del control proporcionado
+            foreach (Control c in control.Controls)
             {
                 // Verifica si el control actual es un TextBox
                 if (c is TextBox textBox)
@@ -36,6 +36,31 @@ namespace Ofelia_Sara.general.clases
                         // Restaura la posición del cursor
                         textBox.SelectionStart = selectionStart;
                     };
+                }
+                // Verifica si el control actual es un ComboBox
+                else if (c is ComboBox comboBox)
+                {
+                    // Suscribe el evento KeyPress del ComboBox para manejar la entrada de texto
+                    comboBox.KeyPress += (sender, e) =>
+                    {
+                        // Verifica si la tecla presionada no es un número ni un carácter especial
+                        if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+                        {
+                            // Si es un número o un carácter especial, cancela el evento
+                            e.Handled = true;
+                        }
+                        else
+                        {
+                            // Si es una letra, convierte a mayúsculas
+                            e.KeyChar = char.ToUpper(e.KeyChar);
+                        }
+                    };
+                }
+
+                // Aplica la misma lógica a los controles anidados si existen
+                if (c.HasChildren)
+                {
+                    ConvertirTextoAMayusculas(c);
                 }
             }
         }

@@ -89,6 +89,7 @@
     <Compile Include="general\clases\imprimir.cs" />
     <Compile Include="general\clases\limpiar_formulario.cs" />
     <Compile Include="general\clases\mayuscula.cs" />
+    <Compile Include="general\clases\ProgressBar.cs" />
     <Compile Include="general\clases\salto_de_input.cs" />
     <Compile Include="general\clases\verificacion_formulario_completo.cs" />
     <Compile Include="inicio_cierre.cs">

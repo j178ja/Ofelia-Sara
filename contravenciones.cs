@@ -27,5 +27,12 @@ namespace Ofelia_Sara
         {
 
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+                                             // Mensaje para confirmar la limpieza
+            MessageBox.Show("Formulario eliminado.");
+        }
     }
 }

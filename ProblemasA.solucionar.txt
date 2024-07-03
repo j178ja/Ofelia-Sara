@@ -1,0 +1,18 @@
+        
+        
+        PROBLEMAS DE APLICACION
+
+                                  //solicionado         1)NO SE ESTA APLICANDO CONVERSION A MAYUSCULA
+                                 //solicionado          2) NO SE ESTA APLICANDO IGNORAR CARACTERES ESPECIALES
+3)NO SE ESTA APLICANDO SALTO DE INPUT
+4) NO SE ESTA APLICANDO MENU DESPLEGABLE EN Btn_Configuracion (problemas manejador de eventos)
+5) EL FONDO SE SUPERPONE AL CONTENIDO EJ Ipp.cs
+                                  //solicionado         6) NO SE ESTA APLICANDO LA LIMPIEZA DEL FORMULARIO
+
+         FALTA HACER
+
+1) que la fecha no tenga el dia
+2 ) que el menu desplegable permita incorporar elementos a los combo box
+3) que el boton de imprimir  cambie recuadro a verde cuando este completo el formulario
+4) que si se apreta imprimir y no esta completo indique el campo que falta
+5) Que los botones agregar amplien el formulario agregando un nuevo campo justo debajo 
