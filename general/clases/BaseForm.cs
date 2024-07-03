@@ -87,7 +87,7 @@ namespace Ofelia_Sara.general.clases
 
         //---------------------------------------------------------------------------------------------
         // Evento de clic para el botón que limpia el formulario
-        private void BtnLimpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
         }

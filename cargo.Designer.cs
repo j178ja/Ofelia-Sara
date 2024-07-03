@@ -58,12 +58,8 @@
             this.dependencia = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
@@ -189,10 +185,12 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(119, 387);
+            this.label12.Location = new System.Drawing.Point(97, 375);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(243, 17);
+            this.label12.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
+            this.label12.Size = new System.Drawing.Size(283, 25);
             this.label12.TabIndex = 11;
             this.label12.Text = "DESCRIPCION DE LA MUESTRA";
             // 
@@ -330,51 +328,10 @@
             this.comboBox9.Size = new System.Drawing.Size(43, 21);
             this.comboBox9.TabIndex = 6;
             // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(150, 325);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(52, 21);
-            this.comboBox8.TabIndex = 15;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(208, 328);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(22, 13);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "DE";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(236, 325);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(81, 21);
-            this.comboBox10.TabIndex = 16;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(326, 330);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(22, 13);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "DE";
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(354, 327);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(75, 21);
-            this.comboBox11.TabIndex = 17;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.datoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
@@ -384,15 +341,10 @@
             this.panel1.Controls.Add(this.btn_AgregarCausa);
             this.panel1.Controls.Add(this.comboBox7);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox11);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox10);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.comboBox8);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comboBox9);
             this.panel1.Controls.Add(this.label7);
@@ -421,6 +373,15 @@
             this.panel1.Size = new System.Drawing.Size(470, 674);
             this.panel1.TabIndex = 33;
             // 
+            // datoFecha
+            // 
+            this.datoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.datoFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datoFecha.Location = new System.Drawing.Point(149, 327);
+            this.datoFecha.Name = "datoFecha";
+            this.datoFecha.Size = new System.Drawing.Size(279, 24);
+            this.datoFecha.TabIndex = 49;
+            // 
             // btn_Imprimir
             // 
             this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
@@ -442,6 +403,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 21;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -554,11 +516,6 @@
         private System.Windows.Forms.ComboBox dependencia;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_AgregarCausa;
         private System.Windows.Forms.Button btn_AgregarVictima;
@@ -568,5 +525,6 @@
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker datoFecha;
     }
 }
