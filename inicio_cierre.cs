@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
-    { 
+    {
         public InicioCierre()
         {
             InitializeComponent();
@@ -89,6 +89,41 @@ namespace Ofelia_Sara
             }
         }
 
+        //private void ActualizarProgressBar(object sender, EventArgs e)
+        //{
+        //    int totalCampos = 0;
+        //    int camposCompletados = 0;
+
+        //    foreach (Control control in this.Controls)
+        //    {
+        //        if (control is TextBox textBox)
+        //        {
+        //            totalCampos++;
+        //            if (!string.IsNullOrEmpty(textBox.Text))
+        //            {
+        //                camposCompletados++;
+        //            }
+        //        }
+        //        else if (control is ComboBox comboBox)
+        //        {
+        //            totalCampos++;
+        //            if (comboBox.SelectedIndex >= 0)
+        //            {
+        //                camposCompletados++;
+        //            }
+        //        }
+        //        else if (control is DateTimePicker dateTimePicker)
+        //        {
+        //            totalCampos++;
+        //            if (dateTimePicker.Value != DateTimePicker.MinimumDateTime)
+        //            {
+        //                camposCompletados++;
+        //            }
+        //        }
+        //    }
+
+
+
         private void ActualizarProgressBar(object sender, EventArgs e)
         {
             int totalCampos = 0;
@@ -122,14 +157,19 @@ namespace Ofelia_Sara
                 }
             }
 
-            // Calcular el porcentaje de campos completados
-            int progreso = (int)((camposCompletados / (float)totalCampos) * 100);
+            if (totalCampos > 0)
+            {
+                // Calcular el porcentaje de campos completados
+                int progreso = (int)((camposCompletados / (float)totalCampos) * 100);
 
-            // Actualizar el valor de la ProgressBar
-            ProgressBarHelper.UpdateProgressBar(progressBar, progreso);
+                // Actualizar el valor de la ProgressBar
+                ProgressBarHelper.UpdateProgressBar(progressBar, progreso);
+                
+            }
         }
     }
 }
+
     
 
 

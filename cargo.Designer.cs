@@ -68,6 +68,8 @@
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
             this.btn_AgregarCausa = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -306,9 +308,9 @@
             // dependencia
             // 
             this.dependencia.FormattingEnabled = true;
-            this.dependencia.Location = new System.Drawing.Point(150, 298);
+            this.dependencia.Location = new System.Drawing.Point(148, 298);
             this.dependencia.Name = "dependencia";
-            this.dependencia.Size = new System.Drawing.Size(279, 21);
+            this.dependencia.Size = new System.Drawing.Size(281, 21);
             this.dependencia.TabIndex = 14;
             // 
             // label14
@@ -331,6 +333,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Controls.Add(this.progressBar);
             this.panel1.Controls.Add(this.datoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_Limpiar);
@@ -377,7 +381,7 @@
             // 
             this.datoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.datoFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datoFecha.Location = new System.Drawing.Point(149, 327);
+            this.datoFecha.Location = new System.Drawing.Point(150, 327);
             this.datoFecha.Name = "datoFecha";
             this.datoFecha.Size = new System.Drawing.Size(279, 24);
             this.datoFecha.TabIndex = 49;
@@ -466,6 +470,20 @@
             this.label17.TabIndex = 34;
             this.label17.Text = "CARGOS PARA SECUESTROS";
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(465, 48);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(2, 595);
+            this.progressBar.TabIndex = 51;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 43);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(2, 595);
+            this.progressBar1.TabIndex = 52;
+            // 
             // Cargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,5 +544,7 @@
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DateTimePicker datoFecha;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
