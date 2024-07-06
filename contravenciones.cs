@@ -34,5 +34,10 @@ namespace Ofelia_Sara
                                              // Mensaje para confirmar la limpieza
             MessageBox.Show("Formulario eliminado.");
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
