@@ -23,24 +23,47 @@ namespace Ofelia_Sara.general.clases
                 {
                     textBox.Clear();
                 }
-                // Si el control es un ComboBox, restablece su selección a "-1" (ninguna selección)
+                // Si el control es un ComboBox, limpia y restablece su estado
                 else if (c is ComboBox comboBox)
                 {
-                    // comboBox.SelectedIndex = -1;
-                   // comboBox.SelectedItem = null;
-                    comboBox.Text = string.Empty;
+                    LimpiarYRestaurarComboBox(comboBox);
                 }
                 // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha predeterminada
                 else if (c is DateTimePicker dateTimePicker)
                 {
                     dateTimePicker.Value = DateTime.Now; // o una fecha predeterminada si lo prefieres
                 }
-                // Puedes agregar más lógica para limpiar otros tipos de controles aquí
 
                 // Limpia los controles anidados si existen
                 if (c.HasChildren)
                 {
                     Limpiar(c);
+                }
+            }
+        }
+
+        // Método para limpiar y restaurar ComboBox
+        private static void LimpiarYRestaurarComboBox(ComboBox comboBox)
+        {
+            // Limpiar el ComboBox
+            comboBox.SelectedIndex = -1;
+            comboBox.Text = string.Empty;
+
+            // Restablecer al valor predeterminado si existe
+            if (comboBox.Items.Count > 0)
+            {
+                // Ejemplo: Establecer diferentes índices predeterminados según el ComboBox
+                if (comboBox.Name == "comboBox_Ipp1")
+                {
+                    comboBox.SelectedIndex =3 ; 
+                }
+                else if (comboBox.Name == "comboBox_Ipp2")
+                {
+                    comboBox.SelectedIndex = 3; 
+                }
+                else
+                {
+                    comboBox.SelectedIndex = 0; // Establece el primer índice por defecto para otros ComboBoxes
                 }
             }
         }

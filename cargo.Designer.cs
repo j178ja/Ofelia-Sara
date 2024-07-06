@@ -59,6 +59,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -68,8 +70,6 @@
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
             this.btn_AgregarCausa = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -377,6 +377,20 @@
             this.panel1.Size = new System.Drawing.Size(470, 674);
             this.panel1.TabIndex = 33;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 43);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(2, 595);
+            this.progressBar1.TabIndex = 52;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(465, 48);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(2, 595);
+            this.progressBar.TabIndex = 51;
+            // 
             // datoFecha
             // 
             this.datoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -419,6 +433,7 @@
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 20;
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // btn_Buscar
             // 
@@ -469,20 +484,6 @@
             this.label17.Size = new System.Drawing.Size(299, 24);
             this.label17.TabIndex = 34;
             this.label17.Text = "CARGOS PARA SECUESTROS";
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(465, 48);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(2, 595);
-            this.progressBar.TabIndex = 51;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 43);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(2, 595);
-            this.progressBar1.TabIndex = 52;
             // 
             // Cargo
             // 

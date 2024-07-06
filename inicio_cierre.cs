@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Ofelia_Sara
 {
@@ -16,6 +17,9 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
+           // ProgressBar ProgressBar = new ProgressBar();
+            //ProgressBar.Location = new Point(50, 50); // Ubicación en el formulario
+           // this.Controls.Add(customProgressBar);
             SuscribirEventos();
         }
 
@@ -25,35 +29,46 @@ namespace Ofelia_Sara
             TextoEnMayuscula.ConvertirTextoAMayusculas(this);
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        //---------BOTON GUARDAR--------------
+        private void btn_Guardar_Click(object sender, EventArgs e)
         {
-
+            // Verificar si los campos están completados
+            if (string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Imputado.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Victima.Text))
+            {
+                // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
+                // crea ventana con icono de advertencia y titulo de advertencia
+                MessageBox.Show("Debe completar los campos Caratula, Imputado y Victima.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Si todos los campos están completos, mostrar el mensaje de confirmación
+                //Crea ventana con icono especial de confirmacion y titulo confirmacion
+                MessageBox.Show("Formulario guardado.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
+        //-----FORMATO ESPECIAL DateTimePicker------------
+        // !!!! HACER METODO APARTE!!!--------------------
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // Cambiar el formato personalizado del DateTimePicker
-            datoFecha.CustomFormat = "dd/MM/yyyy";  // Asegúrate de usar el nombre correcto del DateTimePicker
+            pickTime_DatoFecha.CustomFormat = "dd/MM/yyyy";  // Asegúrate de usar el nombre correcto del DateTimePicker
 
             // Obtener el texto actual del DateTimePicker
-            string texto = datoFecha.Text;
+            string texto = pickTime_DatoFecha.Text;
 
             // Convertir el texto a mayúsculas
             texto = texto.ToUpper();
 
             // Asignar el texto modificado de nuevo al DateTimePicker
-            datoFecha.Text = texto;
+            pickTime_DatoFecha.Text = texto;
         }
+        //-------------------------------------------------------
+
+        //----BOTON LIMPIAR/ELIMINAR-----------------------
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
@@ -62,113 +77,45 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.");
         }
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-            //sin uso al momento
-        }
 
-        //---------PROGRESSBAR-------------
+
         //---------manejador de eventos--------
         private void SuscribirEventos()
         {
             // Suscribe los eventos de los controles a los métodos de actualización
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
-                {
-                    textBox.TextChanged += new EventHandler(ActualizarProgressBar);
-                }
-                else if (control is ComboBox comboBox)
-                {
-                    comboBox.SelectedIndexChanged += new EventHandler(ActualizarProgressBar);
-                }
-                else if (control is DateTimePicker dateTimePicker)
-                {
-                    dateTimePicker.ValueChanged += new EventHandler(ActualizarProgressBar);
-                }
-            }
+          //  foreach (Control control in this.Controls)
+            //{
+            //    if (control is TextBox textBox)
+            //    {
+            //         textBox.TextChanged += new EventHandler(ActualizarProgressBar);
+            //    }
+            //    else if (control is ComboBox comboBox)
+            //    {
+            //          comboBox.SelectedIndexChanged += new EventHandler(ActualizarProgressBar);
+            //    }
+            //    else if (control is DateTimePicker dateTimePicker)
+            //    {
+            //         dateTimePicker.ValueChanged += new EventHandler(ActualizarProgressBar);
+            //    }
+            //}
         }
 
-        //private void ActualizarProgressBar(object sender, EventArgs e)
-        //{
-        //    int totalCampos = 0;
-        //    int camposCompletados = 0;
 
-        //    foreach (Control control in this.Controls)
-        //    {
-        //        if (control is TextBox textBox)
-        //        {
-        //            totalCampos++;
-        //            if (!string.IsNullOrEmpty(textBox.Text))
-        //            {
-        //                camposCompletados++;
-        //            }
-        //        }
-        //        else if (control is ComboBox comboBox)
-        //        {
-        //            totalCampos++;
-        //            if (comboBox.SelectedIndex >= 0)
-        //            {
-        //                camposCompletados++;
-        //            }
-        //        }
-        //        else if (control is DateTimePicker dateTimePicker)
-        //        {
-        //            totalCampos++;
-        //            if (dateTimePicker.Value != DateTimePicker.MinimumDateTime)
-        //            {
-        //                camposCompletados++;
-        //            }
-        //        }
-        //    }
-
-
-
-        private void ActualizarProgressBar(object sender, EventArgs e)
+        //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
+        //--------EL TEXTBOX DE NUMERO DE IPP---------------------
+        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int totalCampos = 0;
-            int camposCompletados = 0;
 
-            foreach (Control control in this.Controls)
+            // Verificar si el carácter presionado es un número o una tecla de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                if (control is TextBox textBox)
-                {
-                    totalCampos++;
-                    if (!string.IsNullOrEmpty(textBox.Text))
-                    {
-                        camposCompletados++;
-                    }
-                }
-                else if (control is ComboBox comboBox)
-                {
-                    totalCampos++;
-                    if (comboBox.SelectedIndex >= 0)
-                    {
-                        camposCompletados++;
-                    }
-                }
-                else if (control is DateTimePicker dateTimePicker)
-                {
-                    totalCampos++;
-                    if (dateTimePicker.Value != DateTimePicker.MinimumDateTime)
-                    {
-                        camposCompletados++;
-                    }
-                }
-            }
-
-            if (totalCampos > 0)
-            {
-                // Calcular el porcentaje de campos completados
-                int progreso = (int)((camposCompletados / (float)totalCampos) * 100);
-
-                // Actualizar el valor de la ProgressBar
-                ProgressBarHelper.UpdateProgressBar(progressBar, progreso);
-                
+                // Si no es un número ni una tecla de control, cancelar el evento KeyPress
+                e.Handled = true;
             }
         }
+       }
     }
-}
+
 
     
 

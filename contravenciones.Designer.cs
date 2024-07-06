@@ -65,12 +65,12 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.fechaActuaciones = new System.Windows.Forms.DateTimePicker();
             this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -371,6 +371,7 @@
             this.btnGuardar.TabIndex = 45;
             this.toolTip1.SetToolTip(this.btnGuardar, "Guardar formulario");
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
@@ -443,6 +444,20 @@
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 33);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(2, 564);
+            this.progressBar1.TabIndex = 51;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(685, 33);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(2, 564);
+            this.progressBar.TabIndex = 50;
+            // 
             // fechaActuaciones
             // 
             this.fechaActuaciones.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -472,20 +487,6 @@
             this.label22.Size = new System.Drawing.Size(242, 25);
             this.label22.TabIndex = 49;
             this.label22.Text = "CONTRAVENCIONES";
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(685, 33);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(2, 564);
-            this.progressBar.TabIndex = 50;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 33);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(2, 564);
-            this.progressBar1.TabIndex = 51;
             // 
             // Contravenciones
             // 
