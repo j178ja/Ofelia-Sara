@@ -71,6 +71,9 @@ namespace Ofelia_Sara.general.clases
             this.footerLabel = FooterHelper.CreateFooterLabel(this);
             this.Controls.Add(this.footerLabel);
         }
+        
+        //-------------------------------------------------------
+
 
         private void InitializeComponent()
         {

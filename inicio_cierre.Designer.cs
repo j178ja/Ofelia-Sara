@@ -65,13 +65,9 @@ namespace Ofelia_Sara
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            //this.ProgressBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
-            //this.ProgressBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.pickTime_DatoFecha = new System.Windows.Forms.DateTimePicker();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            //this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Dr
@@ -90,7 +86,7 @@ namespace Ofelia_Sara
             this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(100, 20);
             this.textBox_NumeroIpp.TabIndex = 3;
-            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
             // 
             // lbl_Ipp
             // 
@@ -257,7 +253,6 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
-            comboBox_Ipp1.SelectedIndex = 3;   // Establecer el índice predeterminado
             this.comboBox_Ipp1.Location = new System.Drawing.Point(135, 43);
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
@@ -277,7 +272,6 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
-            comboBox_Ipp2.SelectedIndex = 3;   // Establecer el índice predeterminado
             this.comboBox_Ipp2.Location = new System.Drawing.Point(186, 43);
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
@@ -299,7 +293,6 @@ namespace Ofelia_Sara
             "24",
             "25",
             "26"});
-            comboBox_Ipp4.SelectedIndex = 0;   // Establecer el índice predeterminado
             this.comboBox_Ipp4.Location = new System.Drawing.Point(363, 43);
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
@@ -354,7 +347,7 @@ namespace Ofelia_Sara
             this.btn_Imprimir.TabIndex = 17;
             this.toolTip1.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
-        //    this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
+            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
             // btn_AgregarCausa
             // 
@@ -392,8 +385,6 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            //this.panel1.Controls.Add(this.ProgressBar2);
-            //this.panel1.Controls.Add(this.ProgressBar1);
             this.panel1.Controls.Add(this.pickTime_DatoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_AgregarImputado);
@@ -430,26 +421,6 @@ namespace Ofelia_Sara
             this.panel1.Size = new System.Drawing.Size(452, 445);
             this.panel1.TabIndex = 30;
             // 
-            // ProgressBar2
-            // 
-            //this.ProgressBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            //this.ProgressBar2.ForeColor = System.Drawing.Color.Red;
-            //this.ProgressBar2.Location = new System.Drawing.Point(449, 43);
-            //this.ProgressBar2.Name = "ProgressBar2";
-            //this.ProgressBar2.Size = new System.Drawing.Size(3, 382);
-            //this.ProgressBar2.TabIndex = 31;
-            //this.ProgressBar2.Value = 100;
-            //// 
-            //// ProgressBar1
-            //// 
-            //this.ProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            //this.ProgressBar1.ForeColor = System.Drawing.Color.Red;
-            //this.ProgressBar1.Location = new System.Drawing.Point(0, 46);
-            //this.ProgressBar1.Name = "ProgressBar1";
-            //this.ProgressBar1.Size = new System.Drawing.Size(3, 378);
-            //this.ProgressBar1.TabIndex = 0;
-            //this.ProgressBar1.Value = 100;
-            // 
             // pickTime_DatoFecha
             // 
             this.pickTime_DatoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -472,10 +443,6 @@ namespace Ofelia_Sara
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
             // 
-            // errorProvider1
-            // 
-            //this.errorProvider1.ContainerControl = this;
-            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,7 +459,6 @@ namespace Ofelia_Sara
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-           // ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
