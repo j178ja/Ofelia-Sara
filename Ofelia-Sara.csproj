@@ -86,6 +86,9 @@
     <Compile Include="general\clases\cabecera.cs" />
     <Compile Include="general\clases\cambio_de_tema.cs" />
     <Compile Include="general\clases\Configuracion.cs" />
+    <Compile Include="general\clases\CustomProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="general\clases\EliminarBotonMaximizar.cs" />
     <Compile Include="general\clases\footer.cs" />
     <Compile Include="general\clases\guardar_archivo.cs" />
@@ -93,6 +96,12 @@
     <Compile Include="general\clases\imprimir.cs" />
     <Compile Include="general\clases\limpiar_formulario.cs" />
     <Compile Include="general\clases\mayuscula.cs" />
+    <Compile Include="general\clases\MensajeCargarImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general\clases\MensajePersonalizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="general\clases\salto_de_input.cs" />
     <Compile Include="general\clases\verificacion_formulario_completo.cs" />
     <Compile Include="inicio_cierre.cs">
@@ -201,6 +210,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="general\clases\Botones\" />
+    <Folder Include="general\clases\ProgressBar\" />
     <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>
