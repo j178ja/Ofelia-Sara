@@ -111,16 +111,7 @@ namespace Ofelia_Sara
 
         //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
         //--------EL TEXTBOX DE NUMERO DE IPP---------------------
-        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
-        { // keypress ideal para manejar los caracteres ingresados 
-
-            //// Verificar si el carácter presionado es un número o una tecla de control
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Si no es un número ni una tecla de control, cancelar el evento KeyPress
-                e.Handled = true;
-            }
-        }
+       
 
         //--------------METODO PARA LIMITAR LOS CARACTERES A 6--------------
         private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
@@ -135,6 +126,54 @@ namespace Ofelia_Sara
                 textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
             }
         }
+        //-------------------------------------------------------------
+        //----LIMITACION A DOS CARACTERRES------------------
+
+
+
+
+        private void comboBox_Ipp1_TextUpdate(object sender, EventArgs e)
+        {
+            // Limitar a 2 caracteres
+            if (comboBox_Ipp1.Text.Length > 2)
+            {
+                // Si el texto excede los 2 caracteres, cortar el exceso
+                comboBox_Ipp1.Text = comboBox_Ipp1.Text.Substring(0, 2);
+
+                // Mover el cursor al final del texto
+                comboBox_Ipp1.SelectionStart = comboBox_Ipp1.Text.Length;
+            }
+        }
+
+
+        private void comboBox_Ipp2_TextUpdate(object sender, EventArgs e)
+        {
+            // Limitar a 2 caracteres
+            if (comboBox_Ipp2.Text.Length > 2)
+            {
+                // Si el texto excede los 2 caracteres, cortar el exceso
+                comboBox_Ipp2.Text = comboBox_Ipp2.Text.Substring(0, 2);
+
+                // Mover el cursor al final del texto
+                comboBox_Ipp2.SelectionStart = comboBox_Ipp2.Text.Length;
+            }
+        }
+
+
+        private void comboBox_Ipp4_TextUpdate(object sender, EventArgs e)
+        {
+            // Limitar a 2 caracteres
+            if (comboBox_Ipp4.Text.Length > 2)
+            {
+                // Si el texto excede los 2 caracteres, cortar el exceso
+                comboBox_Ipp4.Text = comboBox_Ipp4.Text.Substring(0, 2);
+
+                // Mover el cursor al final del texto
+                comboBox_Ipp4.SelectionStart = comboBox_Ipp4.Text.Length;
+            }
+        }
+
+        //-----------------------------------------------------
         //------------BOTON IMPRIMIR---------------
         private void MostrarProgreso()
         {
@@ -148,11 +187,10 @@ namespace Ofelia_Sara
         {
             MostrarProgreso();
         }
-        //-----------------------------------------------------
-
+        //----------------------------------------------------------
 
     }
-    }
+}
 
 
     
