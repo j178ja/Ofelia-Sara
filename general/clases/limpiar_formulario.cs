@@ -49,23 +49,23 @@ namespace Ofelia_Sara.general.clases
             comboBox.SelectedIndex = -1;
             comboBox.Text = string.Empty;
 
-            // Restablecer al valor predeterminado si existe
+            //// Restablecer al valor predeterminado si existe
             if (comboBox.Items.Count > 0)
             {
                 // Ejemplo: Establecer diferentes índices predeterminados según el ComboBox
                 if (comboBox.Name == "comboBox_Ipp1")
                 {
-                    comboBox.SelectedIndex =3 ; 
+                    comboBox.SelectedIndex = 3;
                 }
                 else if (comboBox.Name == "comboBox_Ipp2")
                 {
-                    comboBox.SelectedIndex = 3; 
-                }
+                    comboBox.SelectedIndex = 3;
+        }
                 else
                 {
                     comboBox.SelectedIndex = 0; // Establece el primer índice por defecto para otros ComboBoxes
                 }
-            }
+}
         }
     }
 }

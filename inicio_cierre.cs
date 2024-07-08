@@ -17,13 +17,18 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
-           // ProgressBar ProgressBar = new ProgressBar();
+            // ProgressBar ProgressBar = new ProgressBar();
             //ProgressBar.Location = new Point(50, 50); // Ubicación en el formulario
-           // this.Controls.Add(customProgressBar);
-           // SuscribirEventos();
+            // this.Controls.Add(customProgressBar);
+            // SuscribirEventos();
             // Suscribirse a los eventos
-           // textBox_NumeroIpp.KeyPress += new KeyPressEventHandler(textBox_NumeroIpp_KeyPress);
-            textBox_NumeroIpp.TextChanged += new EventHandler(textBox_NumeroIpp_TextChanged);
+            // textBox_NumeroIpp.KeyPress += new KeyPressEventHandler(textBox_NumeroIpp_KeyPress);
+            // textBox_NumeroIpp.TextChanged += new EventHandler(textBox_NumeroIpp_TextChanged);
+            ValidacionControles();
+        }
+        private void ValidacionControles()
+        { // Llama a TextoEnMayuscula.ConvertirTextoAMayusculas y pasa los ComboBox necesarios
+            TextoEnMayuscula.ConvertirTextoAMayusculas(this, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
         }
 
         private void InicioCierreLoad(object sender, EventArgs e)
@@ -108,17 +113,17 @@ namespace Ofelia_Sara
 
         //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
         //--------EL TEXTBOX DE NUMERO DE IPP---------------------
-        //private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
-        //{ // keypress ideal para manejar los caracteres ingresados 
+        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        { // keypress ideal para manejar los caracteres ingresados 
 
-        //    // Verificar si el carácter presionado es un número o una tecla de control
-        //    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-        //    {
-        //        // Si no es un número ni una tecla de control, cancelar el evento KeyPress
-        //        e.Handled = true;
-        //    }
-        //}
-        
+            // Verificar si el carácter presionado es un número o una tecla de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Si no es un número ni una tecla de control, cancelar el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
         //--------------METODO PARA LIMITAR LOS CARACTERES A 6--------------
         private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {
