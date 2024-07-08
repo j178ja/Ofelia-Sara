@@ -46,11 +46,11 @@ namespace Ofelia_Sara.general.clases
             this.Controls.Add(mainPanel);
 
             // Verificación adicional para asegurar que mainPanel no sea nulo
-            if (mainPanel != null)
-            {
-                // Suscribe todos los TextBox dentro del panel al método ConvertirTextoAMayusculas
-                TextoEnMayuscula.ConvertirTextoAMayusculas(mainPanel);
-            }
+            //if (mainPanel != null)
+            //{
+            //    // Suscribe todos los TextBox dentro del panel al método ConvertirTextoAMayusculas
+            //    TextoEnMayuscula.ConvertirTextoAMayusculas(mainPanel);
+            //}
         }
         //---------------------------------------------------------------------------------------------
 

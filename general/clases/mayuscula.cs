@@ -10,7 +10,7 @@ namespace Ofelia_Sara.general.clases
     public static class TextoEnMayuscula
     {
         // Método para suscribir TextBox y ComboBox al evento TextChanged/KeyPress que convierte texto a mayúsculas y filtra números y caracteres especiales
-        public static void ConvertirTextoAMayusculas(Control control, params ComboBox[] comboBoxesNumericos)
+        public static void ConvertirTextoAMayusculas(Control control, TextBox textBox_NumeroIpp, params ComboBox[] comboBoxesNumericos)
         {
             if (control == null)
             {
@@ -21,14 +21,30 @@ namespace Ofelia_Sara.general.clases
             {
                 if (c is TextBox textBox)
                 {
-                    textBox.TextChanged += (sender, e) =>
+                    if (textBox == textBox_NumeroIpp)
                     {
-                        int selectionStart = textBox.SelectionStart;
-                        string filteredText = FiltrarTexto(textBox.Text);
-                        textBox.Text = filteredText.ToUpper();
-                        textBox.SelectionStart = selectionStart;
-                    };
+                        // Solo permitir dígitos y teclas de control en textBox_NumeroIpp
+                        textBox.KeyPress += (sender, e) =>
+                        {
+                            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                            {
+                                e.Handled = true;
+                            }
+                        };
+                    }
+                    else
+                    {
+                        // Para todos los demás TextBox, aplicar la lógica de filtrado y conversión a mayúsculas
+                        textBox.TextChanged += (sender, e) =>
+                        {
+                            int selectionStart = textBox.SelectionStart;
+                            string filteredText = FiltrarTexto(textBox.Text);
+                            textBox.Text = filteredText.ToUpper();
+                            textBox.SelectionStart = selectionStart;
+                        };
+                    }
                 }
+
                 else if (c is ComboBox comboBox)
                 {
                     if (Array.Exists(comboBoxesNumericos, element => element == comboBox))
@@ -58,7 +74,7 @@ namespace Ofelia_Sara.general.clases
                 }
 
                 // Llama recursivamente al método para procesar controles anidados
-                ConvertirTextoAMayusculas(c, comboBoxesNumericos);
+                ConvertirTextoAMayusculas(c, textBox_NumeroIpp, comboBoxesNumericos);
             }
         }
 

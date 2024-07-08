@@ -28,14 +28,12 @@ namespace Ofelia_Sara
         }
         private void ValidacionControles()
         { // Llama a TextoEnMayuscula.ConvertirTextoAMayusculas y pasa los ComboBox necesarios
-            TextoEnMayuscula.ConvertirTextoAMayusculas(this, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
-        }
+            TextoEnMayuscula.ConvertirTextoAMayusculas(this, textBox_NumeroIpp, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
+         }
 
         private void InicioCierreLoad(object sender, EventArgs e)
         {
-            // Llama al método para convertir el texto a mayúsculas y filtrar caracteres en este formulario
-            TextoEnMayuscula.ConvertirTextoAMayusculas(this);
-        }
+           }
 
         //---------BOTON GUARDAR--------------
         private void btn_Guardar_Click(object sender, EventArgs e)
@@ -116,7 +114,7 @@ namespace Ofelia_Sara
         private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         { // keypress ideal para manejar los caracteres ingresados 
 
-            // Verificar si el carácter presionado es un número o una tecla de control
+            //// Verificar si el carácter presionado es un número o una tecla de control
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 // Si no es un número ni una tecla de control, cancelar el evento KeyPress
