@@ -96,5 +96,3 @@ namespace Ofelia_Sara.general.clases
 
 
 
-//-----------------------------------------------------------------------------------
-//-------PROBANDO UN METODO DIFERENTE, MAS COMPLETO Y A SIN POSIBILIDAD DE ERRORES-----------
