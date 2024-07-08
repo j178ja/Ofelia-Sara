@@ -15,7 +15,7 @@ namespace Ofelia_Sara.general.clases
         // Método estático para limpiar todos los controles dentro del formulario
         public static void Limpiar(Control control)
         {
-            // Itera a través de todos los controles dentro del control proporcionado (form o panel, por ejemplo)
+            // Itera a través de todos los controles dentro del control proporcionado (form o panel)
             foreach (Control c in control.Controls)
             {
                 // Si el control es un TextBox, limpia su contenido
@@ -28,10 +28,10 @@ namespace Ofelia_Sara.general.clases
                 {
                     LimpiarYRestaurarComboBox(comboBox);
                 }
-                // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha predeterminada
+                // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha actual
                 else if (c is DateTimePicker dateTimePicker)
                 {
-                    dateTimePicker.Value = DateTime.Now; // o una fecha predeterminada si lo prefieres
+                    dateTimePicker.Value = DateTime.Now; //se refiere a fecha ACTUAL
                 }
 
                 // Limpia los controles anidados si existen

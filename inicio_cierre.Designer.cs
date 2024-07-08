@@ -210,6 +210,10 @@ namespace Ofelia_Sara
             // comboBox_Instructor
             // 
             this.comboBox_Instructor.FormattingEnabled = true;
+            this.comboBox_Instructor.Items.AddRange(new object[] { 
+            "Comisario Miguel Moreno",
+            "subcomisario Melisa Perea Peña",
+            "Comisario Arias"});
             this.comboBox_Instructor.Location = new System.Drawing.Point(135, 190);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(279, 21);
@@ -218,6 +222,13 @@ namespace Ofelia_Sara
             // comboBox_Secretario
             // 
             this.comboBox_Secretario.FormattingEnabled = true;
+            this.comboBox_Secretario.Items.AddRange(new object[] {
+            "Oficial Ayudante Jorge A. Bonato",
+            "Oficial Subayudante Ariel Vasquez",
+            "Oficial Subinspector Martin Ali Bonato",
+            "Sargento Nerea Sandoval",
+            "Sargento Eleana Dirocco"});
+            this.comboBox_Secretario.SelectedIndex = 0;//INDICE PREDETERMINADO Para que se vea al cargar el formulario
             this.comboBox_Secretario.Location = new System.Drawing.Point(135, 219);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(279, 21);
@@ -226,6 +237,12 @@ namespace Ofelia_Sara
             // comboBox_Dependencia
             // 
             this.comboBox_Dependencia.FormattingEnabled = true;
+            this.comboBox_Dependencia.Items.AddRange(new object[] {
+            "EPC I PINAMAR",
+            "EPC II OSTENDE",
+            "EPC III VALERIA DEL MAR",
+            "EPC IV CARILÓ"});
+            this.comboBox_Dependencia.SelectedIndex = 0;//INDICE PREDETERMINADO Para que se vea al cargar el formulario
             this.comboBox_Dependencia.Location = new System.Drawing.Point(135, 248);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(279, 21);
@@ -253,6 +270,7 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
+            this.comboBox_Ipp1.SelectedIndex = 3;//INDICE PREDETERMINADO Para que se vea al cargar el formulario
             this.comboBox_Ipp1.Location = new System.Drawing.Point(135, 43);
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
@@ -272,6 +290,7 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
+            this.comboBox_Ipp2.SelectedIndex = 3;//INDICE PREDETERMINADO Para que se vea al cargar el formulario
             this.comboBox_Ipp2.Location = new System.Drawing.Point(186, 43);
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
@@ -293,6 +312,7 @@ namespace Ofelia_Sara
             "24",
             "25",
             "26"});
+            this.comboBox_Ipp4.SelectedIndex = 1;//INDICE PREDETERMINADO Para que se vea al cargar el formulario
             this.comboBox_Ipp4.Location = new System.Drawing.Point(363, 43);
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
