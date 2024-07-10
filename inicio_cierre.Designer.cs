@@ -5,6 +5,8 @@ namespace Ofelia_Sara
 {
     partial class InicioCierre
     {
+       
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -53,15 +55,9 @@ namespace Ofelia_Sara
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
             this.comboBox_Dr = new System.Windows.Forms.ComboBox();
             this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
-            comboBox_Ipp1.TextUpdate += comboBox_Ipp1_TextUpdate;       //  Agregado para limitar la cantidad de caracteres a 2
-
             this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
-            comboBox_Ipp2.TextUpdate += comboBox_Ipp2_TextUpdate;        //  Agregado para limitar la cantidad de caracteres a 2
-
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox_Ipp4 = new System.Windows.Forms.ComboBox();
-            comboBox_Ipp4.TextUpdate += comboBox_Ipp4_TextUpdate;       //  Agregado para limitar la cantidad de caracteres a 2
-
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -88,10 +84,12 @@ namespace Ofelia_Sara
             // 
             // textBox_NumeroIpp
             // 
+            this.textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_NumeroIpp.Location = new System.Drawing.Point(238, 43);
             this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(100, 20);
             this.textBox_NumeroIpp.TabIndex = 3;
+            this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
             // 
             // lbl_Ipp
@@ -212,7 +210,6 @@ namespace Ofelia_Sara
             "04",
             "05",
             "08"});
-            this.comboBox_Ufid.SelectedIndex = 0; //indice predeterminado
             this.comboBox_Ufid.Location = new System.Drawing.Point(135, 160);
             this.comboBox_Ufid.Name = "comboBox_Ufid";
             this.comboBox_Ufid.Size = new System.Drawing.Size(78, 21);
@@ -220,19 +217,20 @@ namespace Ofelia_Sara
             // 
             // comboBox_Instructor
             // 
+            this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Instructor.FormattingEnabled = true;
             this.comboBox_Instructor.Items.AddRange(new object[] {
             "Comisario Miguel Moreno",
             "subcomisario Melisa Perea Peña",
             "Comisario Arias"});
-            this.comboBox_Instructor.SelectedIndex = 0; //indice predeterminado
             this.comboBox_Instructor.Location = new System.Drawing.Point(135, 190);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
-            this.comboBox_Instructor.Size = new System.Drawing.Size(279, 21);
+            this.comboBox_Instructor.Size = new System.Drawing.Size(279, 24);
             this.comboBox_Instructor.TabIndex = 10;
             // 
             // comboBox_Secretario
             // 
+            this.comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Secretario.FormattingEnabled = true;
             this.comboBox_Secretario.Items.AddRange(new object[] {
             "Oficial Ayudante Jorge A. Bonato",
@@ -240,10 +238,9 @@ namespace Ofelia_Sara
             "Oficial Subinspector Martin Ali Bonato",
             "Sargento Nerea Sandoval",
             "Sargento Eleana Dirocco"});
-            this.comboBox_Secretario.SelectedIndex = 0; //indice predeterminado
             this.comboBox_Secretario.Location = new System.Drawing.Point(135, 219);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
-            this.comboBox_Secretario.Size = new System.Drawing.Size(279, 21);
+            this.comboBox_Secretario.Size = new System.Drawing.Size(279, 24);
             this.comboBox_Secretario.TabIndex = 11;
             // 
             // comboBox_Dependencia
@@ -254,7 +251,6 @@ namespace Ofelia_Sara
             "EPC II OSTENDE",
             "EPC III VALERIA DEL MAR",
             "EPC IV CARILÓ"});
-            this.comboBox_Dependencia.SelectedIndex = 0; //indice predeterminado
             this.comboBox_Dependencia.Location = new System.Drawing.Point(135, 248);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(279, 21);
@@ -262,15 +258,15 @@ namespace Ofelia_Sara
             // 
             // comboBox_Dr
             // 
+            this.comboBox_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Dr.FormattingEnabled = true;
             this.comboBox_Dr.Items.AddRange(new object[] {
             "Calderón Pablo",
             "Mercuri Walter",
             "Zamboni Veronica"});
-            this.comboBox_Dr.SelectedIndex = 0; //indice predeterminado
             this.comboBox_Dr.Location = new System.Drawing.Point(254, 161);
             this.comboBox_Dr.Name = "comboBox_Dr";
-            this.comboBox_Dr.Size = new System.Drawing.Size(160, 21);
+            this.comboBox_Dr.Size = new System.Drawing.Size(160, 24);
             this.comboBox_Dr.TabIndex = 9;
             // 
             // comboBox_Ipp1
@@ -287,12 +283,10 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
-            this.comboBox_Ipp1.SelectedIndex = 3; //indice predeterminado
             this.comboBox_Ipp1.Location = new System.Drawing.Point(135, 43);
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 1;
-           
             // 
             // comboBox_Ipp2
             // 
@@ -308,12 +302,10 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
-            this.comboBox_Ipp2.SelectedIndex = 3; //indice predeterminado
             this.comboBox_Ipp2.Location = new System.Drawing.Point(186, 43);
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 2;
-           
             // 
             // label13
             // 
@@ -331,12 +323,10 @@ namespace Ofelia_Sara
             "24",
             "25",
             "26"});
-            this.comboBox_Ipp4.SelectedIndex = 0; //indice predeterminado
             this.comboBox_Ipp4.Location = new System.Drawing.Point(363, 43);
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 4;
-            
             // 
             // btn_Buscar
             // 
@@ -399,6 +389,7 @@ namespace Ofelia_Sara
             this.btn_AgregarCausa.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
             this.btn_AgregarCausa.UseVisualStyleBackColor = true;
+            this.btn_AgregarCausa.Click += new System.EventHandler(this.btn_AgregarCausa_Click);
             // 
             // btn_AgregarVictima
             // 
