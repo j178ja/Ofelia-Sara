@@ -86,7 +86,7 @@
     <Compile Include="general\clases\cabecera.cs" />
     <Compile Include="general\clases\cambio_de_tema.cs" />
     <Compile Include="general\clases\Configuracion.cs" />
-    <Compile Include="general\clases\CustomProgressBar.cs">
+    <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="general\clases\EliminarBotonMaximizar.cs" />
@@ -166,6 +166,12 @@
     <EmbeddedResource Include="general\clases\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\MensajeCargarImprimir.resx">
+      <DependentUpon>MensajeCargarImprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Barras personalizadas\CustomProgressBar.resx">
+      <DependentUpon>CustomProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inicio_cierre.resx">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,7 +218,6 @@
   <ItemGroup>
     <Folder Include="general\clases\Botones\" />
     <Folder Include="general\clases\Mensajes\" />
-    <Folder Include="general\clases\ProgressBar\" />
     <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>

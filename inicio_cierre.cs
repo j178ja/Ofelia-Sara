@@ -17,9 +17,7 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
-            // ProgressBar ProgressBar = new ProgressBar();
-            //ProgressBar.Location = new Point(50, 50); // Ubicación en el formulario
-            // this.Controls.Add(customProgressBar);
+           
             // SuscribirEventos();
             // Suscribirse a los eventos
             // textBox_NumeroIpp.KeyPress += new KeyPressEventHandler(textBox_NumeroIpp_KeyPress);
@@ -58,12 +56,13 @@ namespace Ofelia_Sara
 
         //-----FORMATO ESPECIAL DateTimePicker------------
         // !!!! HACER METODO APARTE!!!--------------------
+        //---Este metodo no se aplica..crear modificacion para que se aplique mediante label--
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // Obtener la fecha seleccionada del DateTimePicker
             DateTime fechaSeleccionada = pickTime_DatoFecha.Value;
 
-            // Formatear el texto para mostrar solo el mes y el año
+            // Formatear el texto para mostrar solo el mes y el año (no se esta aplicando)
             string mesEnMayusculas = fechaSeleccionada.ToString("MM/yyyy");
 
             // Convertir el mes a mayúsculas
@@ -127,11 +126,8 @@ namespace Ofelia_Sara
             }
         }
         //-------------------------------------------------------------
-        //----LIMITACION A DOS CARACTERRES------------------
-
-
-
-
+        //---------------COMBO BOX IPP 1      ------------------
+        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void comboBox_Ipp1_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
@@ -145,7 +141,8 @@ namespace Ofelia_Sara
             }
         }
 
-
+        //---------------COMBO BOX IPP 2      ------------------
+        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void comboBox_Ipp2_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
@@ -159,7 +156,8 @@ namespace Ofelia_Sara
             }
         }
 
-
+        //---------------COMBO BOX IPP 4      ------------------
+        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void comboBox_Ipp4_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
@@ -186,6 +184,21 @@ namespace Ofelia_Sara
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
             MostrarProgreso();
+        }
+
+        //-----------AGREGAR CAUSA-----------------
+        private void btn_AgregarCausa_Click(object sender, EventArgs e)
+        {
+            // Crear TextBox
+            System.Windows.Forms.TextBox nuevoTextBox_Causa = new System.Windows.Forms.TextBox();
+            nuevoTextBox_Causa.Size = new Size(279, 24);  // Tamaño
+            nuevoTextBox_Causa.Location = new Point(135, 105);  // Posición
+
+            // Cambiar el color de fondo a rojo
+            nuevoTextBox_Causa.BackColor = Color.Red;
+
+            // Agregar al formulario
+            this.Controls.Add(nuevoTextBox_Causa);
         }
         //----------------------------------------------------------
 
