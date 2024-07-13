@@ -35,9 +35,39 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.");
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        //------------BOTON GUARDAR---------------
+        private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            //Verificar si los campos están completados
+            if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.Text) ||
+                string.IsNullOrWhiteSpace(textBox_NombreInfractor.Text) ||
+                string.IsNullOrWhiteSpace(textBox_ApellidoInfractor.Text) ||
+                string.IsNullOrWhiteSpace(textBox_DniInfractor.Text))
+            {
+                // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
+                // crea ventana con icono de advertencia y titulo de advertencia
+                MessageBox.Show("Debe completar los campos Art, Nombre, Apellido y DNI ", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Si todos los campos están completos, mostrar el mensaje de confirmación
+                //Crea ventana con icono especial de confirmacion y titulo confirmacion
+                MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
+        //------------BOTON IMPRIMIR---------------
+        private void MostrarProgreso()
+        {
+            using (
+                MensajeCargarImprimir progressMessageBox = new MensajeCargarImprimir())
+            {
+                progressMessageBox.ShowDialog();
+            }
+        }
+        private void btn_Imprimir_Click(object sender, EventArgs e)
+        {
+            MostrarProgreso();
         }
     }
 }

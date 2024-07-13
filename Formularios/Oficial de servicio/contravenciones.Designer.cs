@@ -42,10 +42,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_ArtInfraccion = new System.Windows.Forms.TextBox();
+            this.textBox_NombreInfractor = new System.Windows.Forms.TextBox();
+            this.textBox_ApellidoInfractor = new System.Windows.Forms.TextBox();
+            this.textBox_DniInfractor = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -61,7 +61,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.btn_AgregarArtContravencion = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -198,33 +198,33 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "EDAD";
             // 
-            // textBox1
+            // textBox_ArtInfraccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox_ArtInfraccion.Location = new System.Drawing.Point(82, 76);
+            this.textBox_ArtInfraccion.Name = "textBox_ArtInfraccion";
+            this.textBox_ArtInfraccion.Size = new System.Drawing.Size(65, 20);
+            this.textBox_ArtInfraccion.TabIndex = 1;
             // 
-            // textBox2
+            // textBox_NombreInfractor
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBox_NombreInfractor.Location = new System.Drawing.Point(125, 205);
+            this.textBox_NombreInfractor.Name = "textBox_NombreInfractor";
+            this.textBox_NombreInfractor.Size = new System.Drawing.Size(241, 20);
+            this.textBox_NombreInfractor.TabIndex = 5;
             // 
-            // textBox3
+            // textBox_ApellidoInfractor
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 230);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 20);
-            this.textBox3.TabIndex = 6;
+            this.textBox_ApellidoInfractor.Location = new System.Drawing.Point(125, 230);
+            this.textBox_ApellidoInfractor.Name = "textBox_ApellidoInfractor";
+            this.textBox_ApellidoInfractor.Size = new System.Drawing.Size(241, 20);
+            this.textBox_ApellidoInfractor.TabIndex = 6;
             // 
-            // textBox4
+            // textBox_DniInfractor
             // 
-            this.textBox4.Location = new System.Drawing.Point(125, 256);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(241, 20);
-            this.textBox4.TabIndex = 7;
+            this.textBox_DniInfractor.Location = new System.Drawing.Point(125, 256);
+            this.textBox_DniInfractor.Name = "textBox_DniInfractor";
+            this.textBox_DniInfractor.Size = new System.Drawing.Size(241, 20);
+            this.textBox_DniInfractor.TabIndex = 7;
             // 
             // textBox5
             // 
@@ -360,18 +360,18 @@
             this.toolTip1.SetToolTip(this.btnBuscar, "Buscar archivos guardados");
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // btnGuardar
+            // btn_Guardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(209, 530);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 67);
-            this.btnGuardar.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar formulario");
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
+            this.btn_Guardar.Location = new System.Drawing.Point(209, 530);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Guardar.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar formulario");
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // btnLimpiar
             // 
@@ -397,6 +397,7 @@
             this.btn_Imprimir.TabIndex = 47;
             this.toolTip1.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
+            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
             // panel1
             // 
@@ -405,12 +406,12 @@
             this.panel1.Controls.Add(this.progressBar);
             this.panel1.Controls.Add(this.fechaActuaciones);
             this.panel1.Controls.Add(this.datoFecha);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox_NombreInfractor);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnGuardar);
+            this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.label4);
@@ -426,16 +427,16 @@
             this.panel1.Controls.Add(this.comboBox5);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBox_ArtInfraccion);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox_ApellidoInfractor);
             this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox_DniInfractor);
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox6);
@@ -497,6 +498,7 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.panel1);
             this.Name = "Contravenciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONTRAVENCIONES";
             this.Load += new System.EventHandler(this.Contravenciones_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -522,10 +524,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_ArtInfraccion;
+        private System.Windows.Forms.TextBox textBox_NombreInfractor;
+        private System.Windows.Forms.TextBox textBox_ApellidoInfractor;
+        private System.Windows.Forms.TextBox textBox_DniInfractor;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
@@ -541,7 +543,7 @@
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Button btn_AgregarArtContravencion;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel1;

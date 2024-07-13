@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.general.clases;
+﻿
+using Ofelia_Sara.general.clases;
 using System.Drawing;
 
 namespace Ofelia_Sara
@@ -67,10 +68,19 @@ namespace Ofelia_Sara
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.pickTime_DatoFecha = new System.Windows.Forms.DateTimePicker();
+            this.progressVerticalBar1A = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
+            // 
+            // progressVerticalBar1
+            // 
+            this.progressVerticalBar1.Location = new System.Drawing.Point(446, 43);
+            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 381);
             // 
             // lbl_Dr
             // 
@@ -422,6 +432,8 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.progressVerticalBar2);
+            this.panel1.Controls.Add(this.progressVerticalBar1);
             this.panel1.Controls.Add(this.pickTime_DatoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_AgregarImputado);
@@ -457,6 +469,49 @@ namespace Ofelia_Sara
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(452, 445);
             this.panel1.TabIndex = 30;
+            this.panel1.Controls.SetChildIndex(this.comboBox_Ipp1, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Secretario, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Instructor, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Dependencia, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Ufid, 0);
+            this.panel1.Controls.SetChildIndex(this.textBox_Imputado, 0);
+            this.panel1.Controls.SetChildIndex(this.textBox_Victima, 0);
+            this.panel1.Controls.SetChildIndex(this.textBox_Caratula, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Dependencia, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Dr, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Fecha, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Secretario, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Ipp2, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Instructor, 0);
+            this.panel1.Controls.SetChildIndex(this.label13, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Ufid, 0);
+            this.panel1.Controls.SetChildIndex(this.comboBox_Ipp4, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Imputado, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Buscar, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Victima, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Guardar, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Caratula, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Limpiar, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Ipp, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_AgregarCausa, 0);
+            this.panel1.Controls.SetChildIndex(this.textBox_NumeroIpp, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_AgregarVictima, 0);
+            this.panel1.Controls.SetChildIndex(this.lbl_Dr, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_AgregarImputado, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Imprimir, 0);
+            this.panel1.Controls.SetChildIndex(this.pickTime_DatoFecha, 0);
+            this.panel1.Controls.SetChildIndex(this.progressVerticalBar1, 0);
+            this.panel1.Controls.SetChildIndex(this.progressVerticalBar2, 0);
+            // 
+            // progressVerticalBar2
+            // 
+            this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressVerticalBar2.BackColor = System.Drawing.Color.LightBlue;
+            this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressVerticalBar2.Location = new System.Drawing.Point(3, 43);
+            this.progressVerticalBar2.Name = "progressVerticalBar2";
+            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 376);
+            this.progressVerticalBar2.TabIndex = 32;
             // 
             // pickTime_DatoFecha
             // 
@@ -467,6 +522,17 @@ namespace Ofelia_Sara
             this.pickTime_DatoFecha.Size = new System.Drawing.Size(279, 24);
             this.pickTime_DatoFecha.TabIndex = 30;
             this.pickTime_DatoFecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // progressVerticalBar1A
+            // 
+            this.progressVerticalBar1A.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressVerticalBar1A.BackColor = System.Drawing.Color.LightBlue;
+            this.progressVerticalBar1A.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressVerticalBar1A.Location = new System.Drawing.Point(448, 46);
+            this.progressVerticalBar1A.Name = "progressVerticalBar1A";
+            this.progressVerticalBar1A.Size = new System.Drawing.Size(3, 376);
+            this.progressVerticalBar1A.TabIndex = 31;
+            this.progressVerticalBar1A.Value = 50;
             // 
             // lbl_Titulo
             // 
@@ -480,6 +546,10 @@ namespace Ofelia_Sara
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,7 +558,6 @@ namespace Ofelia_Sara
             this.ClientSize = new System.Drawing.Size(500, 531);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(516, 570);
             this.Name = "InicioCierre";
@@ -499,6 +568,7 @@ namespace Ofelia_Sara
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,6 +611,9 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.DateTimePicker pickTime_DatoFecha;
 
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+      //  private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private ProgressVerticalBar progressVerticalBar1A;
+        private ProgressVerticalBar progressVerticalBar2;
     }
 }

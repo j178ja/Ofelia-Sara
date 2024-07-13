@@ -23,7 +23,7 @@ namespace Ofelia_Sara.general.clases
         private Label label3;
         private Label label2;
         private PictureBox iconoEscudo;
-        private Button btnCancel;
+        private Button btn_Cancel;
 
         public MensajeCargarImprimir()
         {
