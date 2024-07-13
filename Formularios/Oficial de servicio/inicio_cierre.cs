@@ -17,11 +17,6 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
-           
-            // SuscribirEventos();
-            // Suscribirse a los eventos
-            // textBox_NumeroIpp.KeyPress += new KeyPressEventHandler(textBox_NumeroIpp_KeyPress);
-            // textBox_NumeroIpp.TextChanged += new EventHandler(textBox_NumeroIpp_TextChanged);
             ValidacionControles();
         }
         private void ValidacionControles()
@@ -63,7 +58,7 @@ namespace Ofelia_Sara
             DateTime fechaSeleccionada = pickTime_DatoFecha.Value;
 
             // Formatear el texto para mostrar solo el mes y el año (no se esta aplicando)
-            string mesEnMayusculas = fechaSeleccionada.ToString("MM/yyyy");
+            string mesEnMayusculas = fechaSeleccionada.ToString("d/MMM/yyyy");
 
             // Convertir el mes a mayúsculas
             mesEnMayusculas = mesEnMayusculas.Substring(0, 2).ToUpper() + mesEnMayusculas.Substring(2);
@@ -83,34 +78,12 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-
-
-
-        //---------manejador de eventos--------
-        //private void SuscribirEventos()
-        //{
-        // Suscribe los eventos de los controles a los métodos de actualización
-        //  foreach (Control control in this.Controls)
-        //{
-        //    if (control is TextBox textBox)
-        //    {
-        //         textBox.TextChanged += new EventHandler(ActualizarProgressBar);
-        //    }
-        //    else if (control is ComboBox comboBox)
-        //    {
-        //          comboBox.SelectedIndexChanged += new EventHandler(ActualizarProgressBar);
-        //    }
-        //    else if (control is DateTimePicker dateTimePicker)
-        //    {
-        //         dateTimePicker.ValueChanged += new EventHandler(ActualizarProgressBar);
-        //    }
-        //}
-        //}
-
+        //-------------------------------------------------------------------------------
+ 
 
         //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
         //--------EL TEXTBOX DE NUMERO DE IPP---------------------
-       
+
 
         //--------------METODO PARA LIMITAR LOS CARACTERES A 6--------------
         private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
@@ -200,6 +173,7 @@ namespace Ofelia_Sara
             // Agregar al formulario
             this.Controls.Add(nuevoTextBox_Causa);
         }
+
         //----------------------------------------------------------
 
     }
