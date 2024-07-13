@@ -265,6 +265,10 @@
             this.ClientSize = new System.Drawing.Size(589, 608);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(0, 0);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(605, 647);
+            this.MinimumSize = new System.Drawing.Size(605, 647);
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";

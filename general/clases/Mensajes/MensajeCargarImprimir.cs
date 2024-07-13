@@ -186,11 +186,11 @@ namespace Ofelia_Sara.general.clases
             // 
             // progressBar1
             // 
-     /*       this.progressBar1.Location = new System.Drawing.Point(15, 38);
+            this.progressBar1.Location = new System.Drawing.Point(15, 38);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(300, 23);
             this.progressBar1.TabIndex = 0;
-            this.progressBar1.Value = 50;*/
+            this.progressBar1.Value = 50;
             // 
             // MensajeCargarImprimir
             // 

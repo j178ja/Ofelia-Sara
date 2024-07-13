@@ -19,6 +19,8 @@ namespace Ofelia_Sara
         {
             InitializeComponent();
 
+            //CENTRADO NO SE ESTA APLICANDO
+           // this.StartPosition = FormStartPosition.CenterScreen;  // Asegúrate de que esta línea esté presente
             // Inicializar el evento click sobre el botón de configuración
             //Btn_CambiarTema.Click += Btn_CambiarTema_Click;
 

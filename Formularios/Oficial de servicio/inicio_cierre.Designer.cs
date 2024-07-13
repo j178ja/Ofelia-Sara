@@ -185,6 +185,7 @@ namespace Ofelia_Sara
             // textBox_Caratula
             // 
             this.textBox_Caratula.Location = new System.Drawing.Point(135, 76);
+            this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
             this.textBox_Caratula.TabIndex = 5;
@@ -284,9 +285,12 @@ namespace Ofelia_Sara
             "08",
             "09"});
             this.comboBox_Ipp1.Location = new System.Drawing.Point(135, 43);
+            this.comboBox_Ipp1.MaxDropDownItems = 10;
+            this.comboBox_Ipp1.MaxLength = 2;
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 1;
+            this.comboBox_Ipp1.TextUpdate += new System.EventHandler(this.comboBox_Ipp1_TextUpdate);
             // 
             // comboBox_Ipp2
             // 
@@ -306,6 +310,7 @@ namespace Ofelia_Sara
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 2;
+            this.comboBox_Ipp2.TextUpdate += new System.EventHandler(this.comboBox_Ipp2_TextUpdate);
             // 
             // label13
             // 
@@ -327,6 +332,7 @@ namespace Ofelia_Sara
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 4;
+            this.comboBox_Ipp4.TextUpdate += new System.EventHandler(this.comboBox_Ipp4_TextUpdate);
             // 
             // btn_Buscar
             // 
@@ -436,7 +442,6 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.lbl_Instructor);
             this.panel1.Controls.Add(this.comboBox_Ipp2);
             this.panel1.Controls.Add(this.lbl_Secretario);
-            this.panel1.Controls.Add(this.comboBox_Ipp1);
             this.panel1.Controls.Add(this.lbl_Fecha);
             this.panel1.Controls.Add(this.comboBox_Dr);
             this.panel1.Controls.Add(this.lbl_Dependencia);
@@ -447,6 +452,7 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.comboBox_Dependencia);
             this.panel1.Controls.Add(this.comboBox_Instructor);
             this.panel1.Controls.Add(this.comboBox_Secretario);
+            this.panel1.Controls.Add(this.comboBox_Ipp1);
             this.panel1.Location = new System.Drawing.Point(23, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(452, 445);
@@ -483,7 +489,10 @@ namespace Ofelia_Sara
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(0, 0);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(516, 570);
             this.Name = "InicioCierre";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO - CIERRE";
             this.Load += new System.EventHandler(this.InicioCierreLoad);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -533,7 +542,5 @@ namespace Ofelia_Sara
         private System.Windows.Forms.DateTimePicker pickTime_DatoFecha;
 
         private System.Windows.Forms.ErrorProvider errorProvider1;
-       
-
     }
 }

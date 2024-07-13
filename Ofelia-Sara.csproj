@@ -46,151 +46,151 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoPrincipal.cs">
+    <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccesoPrincipal.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.Designer.cs">
       <DependentUpon>AccesoPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cargo.cs">
+    <Compile Include="Formularios\Oficial de servicio\Cargo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cargo.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Cargo.Designer.cs">
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Contravenciones.cs">
+    <Compile Include="Formularios\Oficial de servicio\Contravenciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contravenciones.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Contravenciones.Designer.cs">
       <DependentUpon>Contravenciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Denuncias.cs">
+    <Compile Include="Formularios\Oficial de servicio\Denuncias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Denuncias.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Denuncias.Designer.cs">
       <DependentUpon>Denuncias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Expedientes.cs">
+    <Compile Include="Formularios\Oficial de servicio\Expedientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Expedientes.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Expedientes.Designer.cs">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="general\clases\apariencia_formularios.cs" />
-    <Compile Include="general\clases\BarraVerticalProgreso.cs">
+    <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
+    <Compile Include="general\clases\Barras personalizadas\BarraVerticalProgreso.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="general\clases\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\cabecera.cs" />
-    <Compile Include="general\clases\cambio_de_tema.cs" />
-    <Compile Include="general\clases\Configuracion.cs" />
+    <Compile Include="general\clases\Apariencia General\cabecera.cs" />
+    <Compile Include="general\clases\Botones\cambio_de_tema.cs" />
+    <Compile Include="general\clases\Botones\Configuracion.cs" />
     <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="general\clases\EliminarBotonMaximizar.cs" />
-    <Compile Include="general\clases\footer.cs" />
-    <Compile Include="general\clases\guardar_archivo.cs" />
-    <Compile Include="general\clases\Iconos.cs" />
-    <Compile Include="general\clases\imprimir.cs" />
-    <Compile Include="general\clases\limpiar_formulario.cs" />
-    <Compile Include="general\clases\mayuscula.cs" />
-    <Compile Include="general\clases\MensajeCargarImprimir.cs">
+    <Compile Include="general\clases\Apariencia General\EliminarBotonMaximizar.cs" />
+    <Compile Include="general\clases\Apariencia General\footer.cs" />
+    <Compile Include="general\clases\Botones\guardar_archivo.cs" />
+    <Compile Include="general\clases\Apariencia General\Iconos.cs" />
+    <Compile Include="general\clases\Botones\imprimir.cs" />
+    <Compile Include="general\clases\Botones\limpiar_formulario.cs" />
+    <Compile Include="general\clases\Apariencia General\mayuscula.cs" />
+    <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\MensajePersonalizado.cs">
+    <Compile Include="general\clases\Mensajes\MensajePersonalizado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\salto_de_input.cs" />
-    <Compile Include="general\clases\verificacion_formulario_completo.cs" />
-    <Compile Include="inicio_cierre.cs">
+    <Compile Include="general\clases\Apariencia General\salto_de_input.cs" />
+    <Compile Include="general\clases\Apariencia General\verificacion_formulario_completo.cs" />
+    <Compile Include="Formularios\Oficial de servicio\inicio_cierre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inicio_cierre.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\inicio_cierre.Designer.cs">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inspecciones.cs">
+    <Compile Include="Formularios\Oficial de servicio\Inspecciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inspecciones.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Inspecciones.Designer.cs">
       <DependentUpon>Inspecciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ipp.cs">
+    <Compile Include="Formularios\Oficial de servicio\Ipp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ipp.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Ipp.Designer.cs">
       <DependentUpon>Ipp.cs</DependentUpon>
     </Compile>
-    <Compile Include="legajo_automotor.cs">
+    <Compile Include="Formularios\Oficial de servicio\legajo_automotor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="legajo_automotor.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\legajo_automotor.Designer.cs">
       <DependentUpon>legajo_automotor.cs</DependentUpon>
     </Compile>
-    <Compile Include="legajo_detenidos.cs">
+    <Compile Include="Formularios\Oficial de servicio\legajo_detenidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="legajo_detenidos.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\legajo_detenidos.Designer.cs">
       <DependentUpon>legajo_detenidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu_principal.cs">
+    <Compile Include="Formularios\Oficial de servicio\menu_principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu_principal.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\menu_principal.Designer.cs">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nota.cs">
+    <Compile Include="Formularios\Oficial de servicio\Nota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nota.Designer.cs">
+    <Compile Include="Formularios\Oficial de servicio\Nota.Designer.cs">
       <DependentUpon>Nota.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AccesoPrincipal.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\AccesoPrincipal.resx">
       <DependentUpon>AccesoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cargo.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contravenciones.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Contravenciones.resx">
       <DependentUpon>Contravenciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Denuncias.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Denuncias.resx">
       <DependentUpon>Denuncias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Expedientes.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="general\clases\MensajeCargarImprimir.resx">
+    <EmbeddedResource Include="general\clases\Mensajes\MensajeCargarImprimir.resx">
       <DependentUpon>MensajeCargarImprimir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Barras personalizadas\CustomProgressBar.resx">
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inicio_cierre.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\inicio_cierre.resx">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inspecciones.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Inspecciones.resx">
       <DependentUpon>Inspecciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ipp.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Ipp.resx">
       <DependentUpon>Ipp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="legajo_automotor.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\legajo_automotor.resx">
       <DependentUpon>legajo_automotor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="legajo_detenidos.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\legajo_detenidos.resx">
       <DependentUpon>legajo_detenidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu_principal.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\menu_principal.resx">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nota.resx">
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,8 +216,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="general\clases\Botones\" />
-    <Folder Include="general\clases\Mensajes\" />
     <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>
