@@ -18,6 +18,8 @@ namespace Ofelia_Sara
         {
             InitializeComponent();
             ValidacionControles();
+            progressVerticalBar1A = new ProgressVerticalBar();
+            progressVerticalBar2 = new ProgressVerticalBar();
         }
         private void ValidacionControles()
         { // Llama a TextoEnMayuscula.ConvertirTextoAMayusculas y pasa los ComboBox necesarios
@@ -76,7 +78,6 @@ namespace Ofelia_Sara
                                              // Mensaje para confirmar la limpieza
             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
         //-------------------------------------------------------------------------------
  

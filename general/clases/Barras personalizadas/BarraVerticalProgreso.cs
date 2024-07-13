@@ -15,18 +15,16 @@ namespace Ofelia_Sara.general.clases
     {
         public ProgressVerticalBar()
         {
-            // Para evitar parpadeos al dibujar
+            // Establecer características predeterminadas
             this.SetStyle(ControlStyles.UserPaint, true);
-
-            // Establecer los colores de primer plano y fondo
-            this.ForeColor = Color.BlueViolet; //CAMBIAR A HEIGHTLIGHT
-            this.BackColor = Color.Green;      //CAMBIAR A COLOR DE PANEL
-
-            // TAMAÑO de la barra de progreso
-            this.Size = new Size(30, 380); // Cambiado a vertical
-
-            // Establecer el valor inicial
-            this.Value = 0;
+            this.BackColor = Color.LightBlue; // Color de fondo LightBlue
+            this.ForeColor = Color.DodgerBlue; // Color de frente DodgerBlue
+            this.Value = 0; // Valor inicial 0
+            this.Width = 30; // Ancho predeterminado
+            this.Width = 4; // Ancho específico 3 píxeles
+           
+            // Anclar el control al borde superior e inferior
+            this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -34,21 +32,13 @@ namespace Ofelia_Sara.general.clases
             Rectangle rect = this.ClientRectangle;
             Graphics g = e.Graphics;
 
-            // Dibujar el fondo
-            using (SolidBrush brush = new SolidBrush(this.BackColor))
-            {
-                g.FillRectangle(brush, rect);
-            }
+            ProgressBarRenderer.DrawVerticalBar(g, rect);
 
-            // Dibujar el progreso
+            rect.Inflate(0, 0); // Ajustar la reducción del rectángulo interno
             if (this.Value > 0)
             {
-                // Ajustar para barra de progreso vertical
-                Rectangle clip = new Rectangle(rect.X, rect.Y + rect.Height - (int)Math.Round((float)this.Value / this.Maximum * rect.Height), rect.Width, (int)Math.Round((float)this.Value / this.Maximum * rect.Height));
-                using (SolidBrush brush = new SolidBrush(this.ForeColor))
-                {
-                    g.FillRectangle(brush, clip);
-                }
+                Rectangle chunk = new Rectangle(rect.X, rect.Y, rect.Width, (int)(rect.Height * ((double)this.Value / this.Maximum)));
+                ProgressBarRenderer.DrawVerticalChunks(g, chunk);
             }
         }
     }

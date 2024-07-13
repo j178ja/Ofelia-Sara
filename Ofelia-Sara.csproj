@@ -146,6 +146,7 @@
     <Compile Include="Formularios\Oficial de servicio\Nota.Designer.cs">
       <DependentUpon>Nota.cs</DependentUpon>
     </Compile>
+    <Compile Include="general\clases\Validaciones\ValidacionError.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Oficial de servicio\AccesoPrincipal.resx">
