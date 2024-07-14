@@ -30,11 +30,12 @@ namespace Ofelia_Sara
             TextoEnMayuscula.ConvertirTextoAMayusculas(this, textBox_NumeroIpp, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
          }
 
-        private void InicioCierreLoad(object sender, EventArgs e)
+        private void InicioCierre_Load(object sender, EventArgs e)
         {
-            // Al cargar el formulario, actualizar el estado inicial del botón Imprimir
+            InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
             ActualizarEstadoBotonImprimir();
         }
+       
 
 
         //---------BOTON GUARDAR--------------
@@ -158,7 +159,6 @@ namespace Ofelia_Sara
         //------logica de validacion para desbloquear boton imprimir-----
 
         // Función para verificar si todos los campos están completos
-        // Función para verificar si todos los campos están completos
         private bool VerificarCamposCompletos()
         {
             foreach (Control control in Controls)
@@ -179,58 +179,21 @@ namespace Ofelia_Sara
         // Método para actualizar el estado del botón Imprimir
         private void ActualizarEstadoBotonImprimir()
         {
-            bool camposCompletos = VerificarCamposCompletos();
+            btn_Imprimir.Enabled = VerificarCamposCompletos();
 
-            // Determinar la opacidad deseada (80%)
-            int alpha = 204;
-
-            if (camposCompletos)
+            if (btn_Imprimir.Enabled)
             {
-                // Configurar el color de fondo del botón con la opacidad deseada
-                btn_Imprimir.BackColor = Color.FromArgb(alpha, SystemColors.Control);
-
-                // Cambiar el cursor a la mano (indicando que es clickeable)
-                btn_Imprimir.Cursor = Cursors.Hand;
-
-                // Aplicar opacidad a la imagen del botón si existe
-                if (btn_Imprimir.Image != null)
-                {
-                    btn_Imprimir.Image = ApplyImageOpacity(btn_Imprimir.Image, alpha);
-                }
+                // Si todos los campos están completos, habilitar el botón y poner el fondo en verde
+                btn_Imprimir.Enabled = true;
+                //btn_Imprimir.BackColor = Color.Green; /*COLOR NORMAL*/
+                btn_Imprimir.BackColor = Color.FromArgb(102, 255, 51);//FromArgb permite uso RGB
             }
             else
             {
-                // Si no todos los campos están completos, deshabilitar el botón y ajustar la apariencia
+                // Si no todos los campos están completos, deshabilitar el botón y poner el fondo en rojo
                 btn_Imprimir.Enabled = false;
-                btn_Imprimir.BackColor = SystemColors.Control;
-                btn_Imprimir.Cursor = Cursors.Default;
-                btn_Imprimir.Image = null; // Quitar la imagen del botón
+                btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47);
             }
-        }
-
-        // Método para aplicar opacidad a una imagen
-        private Image ApplyImageOpacity(Image image, int opacity)
-        {
-            // Crear una imagen con las mismas dimensiones que la imagen original
-            Bitmap transparentImage = new Bitmap(image.Width, image.Height);
-
-            // Configurar el atributo de color con la opacidad deseada
-            float alpha = opacity / 255.0f;
-            ColorMatrix matrix = new ColorMatrix();
-            matrix.Matrix33 = alpha; // Configurar la opacidad en la matriz de color
-
-            // Crear un atributo de imagen con la matriz de color
-            ImageAttributes imageAttributes = new ImageAttributes();
-            imageAttributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-
-            // Dibujar la imagen original en la imagen transparente con el atributo de imagen
-            using (Graphics g = Graphics.FromImage(transparentImage))
-            {
-                g.DrawImage(image, new Rectangle(0, 0, transparentImage.Width, transparentImage.Height),
-                            0, 0, image.Width, image.Height, GraphicsUnit.Pixel, imageAttributes);
-            }
-
-            return transparentImage;
         }
 
         // Método para mostrar progreso en el progressBar
@@ -248,7 +211,23 @@ namespace Ofelia_Sara
             MostrarProgreso();
         }
 
-       
+        //---------------------------------------------------------------------------------
+        //--Para corregir el error de que los indices predeterminados no se cargan al inicio, sino tras ejecutar la logica de btm_limpiar
+        // y si se carga directamente en . designer, se borran los indices predeterminados
+        //----SE ASIGNARA LOS INDICE PREDETERMINADOS EN ESTE METODO  "LOAD" PARA QUE SE CARGE AL INICIO
+        // Establecer índices predeterminados de ComboBox aquí
+        private void InicializarComboBox()
+        {
+            comboBox_Ipp1.SelectedIndex = 3;
+            comboBox_Ipp2.SelectedIndex = 3;
+            comboBox_Ipp4.SelectedIndex = 0;
+            comboBox_Ufid.SelectedIndex = 0;
+            comboBox_Dr.SelectedIndex = 0;
+            comboBox_Instructor.SelectedIndex = 0;
+            comboBox_Secretario.SelectedIndex = 0;
+            comboBox_Dependencia.SelectedIndex = 0;
+        }         //---------------------------------------------------------------------------------
+         
 
         // Evento TextChanged o SelectedIndexChanged de los controles relevantes
         private void Control_TextChanged(object sender, EventArgs e)
