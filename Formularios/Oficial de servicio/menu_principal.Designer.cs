@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
             this.Btn_CambiarTema = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Denuncias = new System.Windows.Forms.Button();
             this.btn_Expedientes = new System.Windows.Forms.Button();
@@ -48,9 +46,10 @@
             this.btn_Formularios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            
             // 
             // btn_Configuracion
             // 
@@ -73,25 +72,6 @@
             this.Btn_CambiarTema.TabIndex = 1;
             this.Btn_CambiarTema.TabStop = false;
             this.Btn_CambiarTema.Click += new System.EventHandler(this.Btn_CambiarTema_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(125, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Location = new System.Drawing.Point(381, 53);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // btn_InicioCierre
             // 
@@ -228,12 +208,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.btn_Formularios);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btn_Configuracion);
             this.panel1.Controls.Add(this.btn_Inspecciones);
             this.panel1.Controls.Add(this.Btn_CambiarTema);
             this.panel1.Controls.Add(this.btn_Cargo);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.btn_Contravenciones);
             this.panel1.Controls.Add(this.btn_InicioCierre);
             this.panel1.Controls.Add(this.btn_LegajoAutomotor);
@@ -265,7 +243,6 @@
             this.ClientSize = new System.Drawing.Size(589, 608);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(0, 0);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(605, 647);
             this.MinimumSize = new System.Drawing.Size(605, 647);
@@ -273,12 +250,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            //this.Controls.SetChildIndex(this.progressVerticalBar1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,8 +264,6 @@
 
         private System.Windows.Forms.PictureBox btn_Configuracion;
         private System.Windows.Forms.PictureBox Btn_CambiarTema;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_InicioCierre;
         private System.Windows.Forms.Button btn_Denuncias;
         private System.Windows.Forms.Button btn_Expedientes;

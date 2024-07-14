@@ -37,8 +37,7 @@ namespace Ofelia_Sara.general.clases
             errorProvider = new ErrorProvider();
 
             AplicarConversionMayusculas(mainPanel);
-                                //-------barra de progreso------------
-            InitializeProgressVerticalBar();
+                               
 
         }
 
@@ -51,22 +50,7 @@ namespace Ofelia_Sara.general.clases
         }
 
         //-----------------------------------------------------------------------------------------
-        //------------BARRA DE PROGRESO---------------------------------
-        private void InitializeProgressVerticalBar()
-        {
-            progressVerticalBar1 = new ProgressVerticalBar
-            {
-                Location = new Point(12, 12), // Ubicación de ejemplo
-                Size = new Size(3, this.ClientSize.Height - 24), // Tamaño ajustado
-                Maximum = 100,
-                Minimum = 0,
-                Step = 1,
-                Value = 0,
-                Anchor = AnchorStyles.Top | AnchorStyles.Bottom // Anclar al borde superior e inferior
-            };
-
-            this.Controls.Add(progressVerticalBar1);
-        }
+        
 
         //--------BOTON LIMPIAR FORMULARIO --------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)

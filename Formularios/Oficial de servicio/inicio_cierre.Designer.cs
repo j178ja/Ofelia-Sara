@@ -73,20 +73,16 @@ namespace Ofelia_Sara
             this.progressVerticalBar1A = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // progressVerticalBar1
-            // 
-            this.progressVerticalBar1.Location = new System.Drawing.Point(446, 43);
-            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 381);
             // 
             // lbl_Dr
             // 
             this.lbl_Dr.AutoSize = true;
             this.lbl_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dr.Location = new System.Drawing.Point(229, 164);
+            this.lbl_Dr.Location = new System.Drawing.Point(227, 165);
             this.lbl_Dr.Name = "lbl_Dr";
             this.lbl_Dr.Size = new System.Drawing.Size(26, 15);
             this.lbl_Dr.TabIndex = 0;
@@ -95,9 +91,9 @@ namespace Ofelia_Sara
             // textBox_NumeroIpp
             // 
             this.textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroIpp.Location = new System.Drawing.Point(238, 43);
+            this.textBox_NumeroIpp.Location = new System.Drawing.Point(234, 44);
             this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
-            this.textBox_NumeroIpp.Size = new System.Drawing.Size(100, 20);
+            this.textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
             this.textBox_NumeroIpp.TabIndex = 3;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
@@ -316,7 +312,7 @@ namespace Ofelia_Sara
             "07",
             "08",
             "09"});
-            this.comboBox_Ipp2.Location = new System.Drawing.Point(186, 43);
+            this.comboBox_Ipp2.Location = new System.Drawing.Point(184, 43);
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 2;
@@ -325,11 +321,11 @@ namespace Ofelia_Sara
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(341, 46);
+            this.label13.Location = new System.Drawing.Point(390, 48);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(24, 13);
             this.label13.TabIndex = 26;
-            this.label13.Text = "00/";
+            this.label13.Text = "/00";
             // 
             // comboBox_Ipp4
             // 
@@ -338,7 +334,7 @@ namespace Ofelia_Sara
             "24",
             "25",
             "26"});
-            this.comboBox_Ipp4.Location = new System.Drawing.Point(363, 43);
+            this.comboBox_Ipp4.Location = new System.Drawing.Point(336, 43);
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 4;
@@ -432,8 +428,8 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.progressVerticalBar2);
             this.panel1.Controls.Add(this.progressVerticalBar1);
+            this.panel1.Controls.Add(this.progressVerticalBar2);
             this.panel1.Controls.Add(this.pickTime_DatoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_AgregarImputado);
@@ -469,39 +465,6 @@ namespace Ofelia_Sara
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(452, 445);
             this.panel1.TabIndex = 30;
-            this.panel1.Controls.SetChildIndex(this.comboBox_Ipp1, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Secretario, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Instructor, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Dependencia, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Ufid, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox_Imputado, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox_Victima, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox_Caratula, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Dependencia, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Dr, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Fecha, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Secretario, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Ipp2, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Instructor, 0);
-            this.panel1.Controls.SetChildIndex(this.label13, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Ufid, 0);
-            this.panel1.Controls.SetChildIndex(this.comboBox_Ipp4, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Imputado, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Buscar, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Victima, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Guardar, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Caratula, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Limpiar, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Ipp, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_AgregarCausa, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox_NumeroIpp, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_AgregarVictima, 0);
-            this.panel1.Controls.SetChildIndex(this.lbl_Dr, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_AgregarImputado, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Imprimir, 0);
-            this.panel1.Controls.SetChildIndex(this.pickTime_DatoFecha, 0);
-            this.panel1.Controls.SetChildIndex(this.progressVerticalBar1, 0);
-            this.panel1.Controls.SetChildIndex(this.progressVerticalBar2, 0);
             // 
             // progressVerticalBar2
             // 
@@ -550,6 +513,16 @@ namespace Ofelia_Sara
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // progressVerticalBar1
+            // 
+            this.progressVerticalBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressVerticalBar1.BackColor = System.Drawing.Color.LightBlue;
+            this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressVerticalBar1.Location = new System.Drawing.Point(445, 43);
+            this.progressVerticalBar1.Name = "progressVerticalBar1";
+            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 376);
+            this.progressVerticalBar1.TabIndex = 33;
+            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,7 +536,7 @@ namespace Ofelia_Sara
             this.Name = "InicioCierre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO - CIERRE";
-            this.Load += new System.EventHandler(this.InicioCierreLoad);
+            this.Load += new System.EventHandler(this.InicioCierre_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
@@ -615,5 +588,6 @@ namespace Ofelia_Sara
         private System.Windows.Forms.ErrorProvider errorProvider;
         private ProgressVerticalBar progressVerticalBar1A;
         private ProgressVerticalBar progressVerticalBar2;
+        private ProgressVerticalBar progressVerticalBar1;
     }
 }
