@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="general\clases\Apariencia General\EliminarBotonMaximizar.cs" />
     <Compile Include="general\clases\Apariencia General\footer.cs" />
+    <Compile Include="general\clases\Botones\EstiloBotones.cs" />
     <Compile Include="general\clases\Botones\guardar_archivo.cs" />
     <Compile Include="general\clases\Apariencia General\Iconos.cs" />
     <Compile Include="general\clases\Botones\imprimir.cs" />

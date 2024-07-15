@@ -68,12 +68,11 @@ namespace Ofelia_Sara
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.pickTime_DatoFecha = new System.Windows.Forms.DateTimePicker();
-            this.progressVerticalBar1A = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -351,6 +350,7 @@ namespace Ofelia_Sara
             this.btn_Buscar.TabIndex = 19;
             this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.MouseHover += new System.EventHandler(this.btn_Buscar_MouseHover);
             // 
             // btn_Guardar
             // 
@@ -364,6 +364,7 @@ namespace Ofelia_Sara
             this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.MouseHover += new System.EventHandler(this.btn_Guardar_MouseHover);
             // 
             // btn_Limpiar
             // 
@@ -377,13 +378,14 @@ namespace Ofelia_Sara
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.MouseHover += new System.EventHandler(this.btn_Limpiar_MouseHover);
             // 
             // btn_Imprimir
             // 
             this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
-            this.btn_Imprimir.Location = new System.Drawing.Point(344, 351);
+            this.btn_Imprimir.Location = new System.Drawing.Point(333, 348);
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
             this.btn_Imprimir.TabIndex = 17;
@@ -394,6 +396,7 @@ namespace Ofelia_Sara
             // btn_AgregarCausa
             // 
             this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarCausa.Location = new System.Drawing.Point(399, 74);
             this.btn_AgregarCausa.Name = "btn_AgregarCausa";
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
@@ -406,6 +409,7 @@ namespace Ofelia_Sara
             // btn_AgregarVictima
             // 
             this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarVictima.Location = new System.Drawing.Point(399, 103);
             this.btn_AgregarVictima.Name = "btn_AgregarVictima";
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
@@ -417,6 +421,7 @@ namespace Ofelia_Sara
             // btn_AgregarImputado
             // 
             this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarImputado.Location = new System.Drawing.Point(399, 132);
             this.btn_AgregarImputado.Name = "btn_AgregarImputado";
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
@@ -466,10 +471,20 @@ namespace Ofelia_Sara
             this.panel1.Size = new System.Drawing.Size(452, 445);
             this.panel1.TabIndex = 30;
             // 
+            // progressVerticalBar1
+            // 
+            this.progressVerticalBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressVerticalBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressVerticalBar1.Location = new System.Drawing.Point(445, 43);
+            this.progressVerticalBar1.Name = "progressVerticalBar1";
+            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 376);
+            this.progressVerticalBar1.TabIndex = 33;
+            // 
             // progressVerticalBar2
             // 
             this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressVerticalBar2.BackColor = System.Drawing.Color.LightBlue;
+            this.progressVerticalBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.progressVerticalBar2.Location = new System.Drawing.Point(3, 43);
             this.progressVerticalBar2.Name = "progressVerticalBar2";
@@ -486,17 +501,6 @@ namespace Ofelia_Sara
             this.pickTime_DatoFecha.TabIndex = 30;
             this.pickTime_DatoFecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // progressVerticalBar1A
-            // 
-            this.progressVerticalBar1A.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressVerticalBar1A.BackColor = System.Drawing.Color.LightBlue;
-            this.progressVerticalBar1A.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar1A.Location = new System.Drawing.Point(448, 46);
-            this.progressVerticalBar1A.Name = "progressVerticalBar1A";
-            this.progressVerticalBar1A.Size = new System.Drawing.Size(3, 376);
-            this.progressVerticalBar1A.TabIndex = 31;
-            this.progressVerticalBar1A.Value = 50;
-            // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
@@ -512,16 +516,6 @@ namespace Ofelia_Sara
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // progressVerticalBar1
-            // 
-            this.progressVerticalBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressVerticalBar1.BackColor = System.Drawing.Color.LightBlue;
-            this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar1.Location = new System.Drawing.Point(445, 43);
-            this.progressVerticalBar1.Name = "progressVerticalBar1";
-            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 376);
-            this.progressVerticalBar1.TabIndex = 33;
             // 
             // InicioCierre
             // 
@@ -583,10 +577,7 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.DateTimePicker pickTime_DatoFecha;
-
-      //  private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private ProgressVerticalBar progressVerticalBar1A;
         private ProgressVerticalBar progressVerticalBar2;
         private ProgressVerticalBar progressVerticalBar1;
     }
