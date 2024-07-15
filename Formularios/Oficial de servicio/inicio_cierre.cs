@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Ofelia_Sara.general.clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,32 +16,46 @@ namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
     {
+
         public InicioCierre()
         {
             InitializeComponent();
             ValidacionControles();
-            progressVerticalBar1A = new ProgressVerticalBar();
+            progressVerticalBar1 = new ProgressVerticalBar();
             progressVerticalBar2 = new ProgressVerticalBar();
-            
-            // Actualizar el estado inicial del botón Imprimir
-            ActualizarEstadoBotonImprimir();
+
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Buscar);
+
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBotonAgregar(btn_AgregarCausa);
+            InicializarEstiloBotonAgregar(btn_AgregarVictima);
+            InicializarEstiloBotonAgregar(btn_AgregarImputado);
         }
+
+        //-----------------------------------------------------------------
         private void ValidacionControles()
         { // Llama a TextoEnMayuscula.ConvertirTextoAMayusculas y pasa los ComboBox necesarios
             TextoEnMayuscula.ConvertirTextoAMayusculas(this, textBox_NumeroIpp, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
-         }
+        }
+
+        //-------------------------------------------------------------------
 
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
             ActualizarEstadoBotonImprimir();
         }
-       
+
 
 
         //---------BOTON GUARDAR--------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+
+
             // Verificar si los campos están completados
             if (string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Imputado.Text) ||
@@ -56,8 +71,16 @@ namespace Ofelia_Sara
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
                 MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+        }
+        //--------------------------------------------------------------
+        //---------------evento para boton GUARDAR
+        private void btn_Guardar_MouseHover(object sender, EventArgs e)
+        {
+            btn_Guardar.BackColor = Color.DodgerBlue;
         }
 
+        //------------------------------------------------------------------
 
         //-----FORMATO ESPECIAL DateTimePicker------------
         // !!!! HACER METODO APARTE!!!--------------------
@@ -84,11 +107,19 @@ namespace Ofelia_Sara
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
-            //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //-------------------------------------------------------------------------------
- 
+        //--------------------------------------------------------------
+        //---------------evento para boton ELIMINAR
+
+        private void btn_Limpiar_MouseHover(object sender, EventArgs e)
+        {
+            btn_Limpiar.BackColor = Color.DodgerBlue;
+        }
+        //----------------------------------------------------------
+
 
         //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
         //--------EL TEXTBOX DE NUMERO DE IPP---------------------
@@ -156,43 +187,25 @@ namespace Ofelia_Sara
         //-----------------------------------------------------
         //------------BOTON IMPRIMIR---------------
 
-        //------logica de validacion para desbloquear boton imprimir-----
 
-        // Función para verificar si todos los campos están completos
-        private bool VerificarCamposCompletos()
-        {
-            foreach (Control control in Controls)
-            {
-                // Verificar solo TextBox y ComboBox de System.Windows.Forms
-                if (control is System.Windows.Forms.TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    return false; // Si algún TextBox está vacío, retornar falso
-                }
-                else if (control is System.Windows.Forms.ComboBox comboBox && string.IsNullOrWhiteSpace(comboBox.Text))
-                {
-                    return false; // Si algún ComboBox está vacío, retornar falso
-                }
-            }
-            return true; // Todos los campos están completos
-        }
 
         // Método para actualizar el estado del botón Imprimir
         private void ActualizarEstadoBotonImprimir()
         {
-            btn_Imprimir.Enabled = VerificarCamposCompletos();
+            btn_Imprimir.Enabled = ValidadorCamposImpresion.VerificarCamposCompletos(Controls);
 
             if (btn_Imprimir.Enabled)
             {
                 // Si todos los campos están completos, habilitar el botón y poner el fondo en verde
                 btn_Imprimir.Enabled = true;
                 //btn_Imprimir.BackColor = Color.Green; /*COLOR NORMAL*/
-                btn_Imprimir.BackColor = Color.FromArgb(102, 255, 51);//FromArgb permite uso RGB
+                btn_Imprimir.BackColor = Color.FromArgb(102, 255, 51);//FromArgb permite uso RGB (este seria color verder)
             }
             else
             {
                 // Si no todos los campos están completos, deshabilitar el botón y poner el fondo en rojo
                 btn_Imprimir.Enabled = false;
-                btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47);
+                btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47); //Color rojo
             }
         }
 
@@ -227,7 +240,7 @@ namespace Ofelia_Sara
             comboBox_Secretario.SelectedIndex = 0;
             comboBox_Dependencia.SelectedIndex = 0;
         }         //---------------------------------------------------------------------------------
-         
+
 
         // Evento TextChanged o SelectedIndexChanged de los controles relevantes
         private void Control_TextChanged(object sender, EventArgs e)
@@ -253,7 +266,12 @@ namespace Ofelia_Sara
             this.Controls.Add(nuevoTextBox_Causa);
         }
 
-        //----------------------------------------------------------
+        //-----------BOTON BUSCAR---------------------------
+        //----eventos boton buscar 
+        private void btn_Buscar_MouseHover(object sender, EventArgs e)
+        {
+            btn_Buscar.BackColor = Color.DodgerBlue;
+        }
 
     }
 }

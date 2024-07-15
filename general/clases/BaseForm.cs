@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.general.clases.Validaciones;
 namespace Ofelia_Sara.general.clases
 
@@ -12,9 +14,9 @@ namespace Ofelia_Sara.general.clases
         private SaltoDeImput _saltoDeImput; // Declaración a nivel de clase
         private Panel mainPanel; // Panel que contiene los TextBox
         private ErrorProvider errorProvider;
-        protected ProgressVerticalBar progressVerticalBar1;
-       // protected ProgressVerticalBar progressVerticalBar2;
-
+        // protected ProgressVerticalBar progressVerticalBar1;
+        // protected ProgressVerticalBar progressVerticalBar2;
+        
         public BaseForm()
         {
                       //---buscar alternativa para que obtenga el archivo desde almacenamiento interno----
@@ -37,7 +39,7 @@ namespace Ofelia_Sara.general.clases
             errorProvider = new ErrorProvider();
 
             AplicarConversionMayusculas(mainPanel);
-                               
+        
 
         }
 
@@ -97,5 +99,114 @@ namespace Ofelia_Sara.general.clases
 
         }
 
+        ////----clase para asociar los botones-----------
+        ///
+        //-----NO FUNCIONA  !!!
+        //
+        //private void AsociarEventosBotones(Control.ControlCollection controls)
+        //{
+        //    foreach (Control control in controls)
+        //    {
+        //        if (control is Button btn)
+        //        {
+        //            new EstiloBotones(btn); // Asocia los eventos al botón
+        //        }
+        //        // Si el control tiene hijos (por ejemplo, paneles), aplicar recursivamente
+        //        if (control.HasChildren)
+        //        {
+        //            AsociarEventosBotones(control.Controls);
+        //        }
+        //    }
+        //}
+        //------------------------------------------------------------
+
+        //------------------------------------------------------------
+        //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
+        //-------BUSCAR----GUARDAR----LIMPIAR---------
+        protected void InicializarEstiloBoton(Button boton)
+        {
+            Size originalSize = boton.Size;
+            Point originalLocation = boton.Location;
+
+            // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
+            boton.MouseEnter += (sender, e) =>
+            {
+                // Calcula el incremento para centrar el cambio de tamaño
+                int incremento = 12;
+                int nuevoAncho = originalSize.Width + incremento;
+                int nuevoAlto = originalSize.Height + incremento;
+                int deltaX = (nuevoAncho - originalSize.Width) / 2;
+                int deltaY = (nuevoAlto - originalSize.Height) / 2;
+
+                boton.Size = new Size(nuevoAncho, nuevoAlto);
+                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
+
+                boton.BackColor = Color.DodgerBlue;
+
+               
+            };
+
+            // Evento MouseHover: Cambia solo el color de fondo
+            boton.MouseHover += (sender, e) =>
+            {
+                boton.BackColor = Color.DodgerBlue;
+            };
+
+            // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
+            boton.MouseLeave += (sender, e) =>
+            {
+                boton.Size = originalSize;
+                boton.Location = originalLocation;
+                boton.BackColor = Color.SkyBlue;
+            };
+        }
+
+        //------------------------------------------------------------
+        //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
+        //-------BUSCAR----GUARDAR----LIMPIAR---------
+        protected void InicializarEstiloBotonAgregar(Button boton)
+        {
+            Size originalSize = boton.Size;
+            Point originalLocation = boton.Location;
+          
+            
+
+            // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
+            boton.MouseEnter += (sender, e) =>
+            {
+                // Calcula el incremento para centrar el cambio de tamaño
+                int incremento = 7;
+                int nuevoAncho = originalSize.Width + incremento;
+                int nuevoAlto = originalSize.Height + incremento;
+                int deltaX = (nuevoAncho - originalSize.Width) / 2;
+                int deltaY = (nuevoAlto - originalSize.Height) / 2;
+
+                boton.Size = new Size(nuevoAncho, nuevoAlto);
+                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
+
+                boton.ForeColor = Color.White; // Cambia el color del texto a blanco
+               
+            };
+
+            // Evento MouseHover: Cambia solo el color de fondo
+            boton.MouseHover += (sender, e) =>
+            {
+            
+                boton.BackColor = Color.FromArgb(0, 204, 0);
+            };
+
+            // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
+            boton.MouseLeave += (sender, e) =>
+            {
+                boton.Size = originalSize;
+                boton.Location = originalLocation;
+                boton.BackColor = Color.White;
+                boton.ForeColor = SystemColors.ControlText;
+            };
+        }
+
     }
-    }
+
+}
+    
+   

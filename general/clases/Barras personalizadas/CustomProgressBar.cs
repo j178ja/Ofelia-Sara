@@ -15,6 +15,10 @@ namespace Ofelia_Sara.general.clases
         {
             // Permitir estilos de propietario
             this.SetStyle(ControlStyles.UserPaint, true);// Esto permite que el control maneje su propio pintado en lugar de dejar que Windows lo haga.
+                                                         // Establecer características predeterminadas
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.BackColor = Color.FromArgb(178, 213, 230); // Color de fondo igual a panel1
+            this.ForeColor = Color.FromArgb(30, 144, 255); // Color de dodgeblue
         }
 
         protected override void OnPaint(PaintEventArgs e) //Este método se llama cada vez que el control necesita repintarse.

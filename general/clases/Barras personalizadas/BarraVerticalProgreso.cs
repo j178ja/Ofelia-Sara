@@ -17,10 +17,9 @@ namespace Ofelia_Sara.general.clases
         {
             // Establecer características predeterminadas
             this.SetStyle(ControlStyles.UserPaint, true);
-            this.BackColor = Color.LightBlue; // Color de fondo LightBlue
-            this.ForeColor = Color.DodgerBlue; // Color de frente DodgerBlue
+            this.BackColor = Color.FromArgb(178, 213, 230); // Color de fondo igual a panel1
+            this.ForeColor = Color.DodgerBlue;//FromArgb(30, 144, 255); // Color de dodgeblue
             this.Value = 0; // Valor inicial 0
-            this.Width = 30; // Ancho predeterminado
             this.Width = 4; // Ancho específico 3 píxeles
            
             // Anclar el control al borde superior e inferior
