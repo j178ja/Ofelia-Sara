@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -21,7 +15,7 @@ namespace Ofelia_Sara.general.clases
             this.ForeColor = Color.DodgerBlue;//FromArgb(30, 144, 255); // Color de dodgeblue
             this.Value = 0; // Valor inicial 0
             this.Width = 4; // Ancho específico 3 píxeles
-           
+
             // Anclar el control al borde superior e inferior
             this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
         }

@@ -3,12 +3,7 @@
     2) ICONO ESCUDO ESCRIBIENTE
  */
 
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases
@@ -18,8 +13,8 @@ namespace Ofelia_Sara.general.clases
         // Método para establecer el icono en la barra de título del formulario
         public static void SetFormIcon(Form form, string iconFilePath)
         {
-               form.Icon = new Icon(iconFilePath); // Carga el icono desde el archivo especificado
-            }
-           
+            form.Icon = new Icon(iconFilePath); // Carga el icono desde el archivo especificado
+        }
+
     }
 }

@@ -2,10 +2,6 @@
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases
@@ -60,12 +56,12 @@ namespace Ofelia_Sara.general.clases
                 else if (comboBox.Name == "comboBox_Ipp2")
                 {
                     comboBox.SelectedIndex = 3;
-        }
+                }
                 else
                 {
                     comboBox.SelectedIndex = 0; // Establece el primer índice por defecto para otros ComboBoxes
                 }
-}
+            }
         }
     }
 }
