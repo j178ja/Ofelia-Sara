@@ -1,25 +1,19 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE DARLE APARIENCIA A LOS FORMULARIOS
   --------------COLOR/TAMAÑO/--------------*/
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases
 {
-    public static  class AparienciaFormularios
+    public static class AparienciaFormularios
     {
-     // Método para cambiar el color de fondo del formulario
+        // Método para cambiar el color de fondo del formulario
         public static void CambiarColorDeFondo(Form form, Color color)
-    {
-        form.BackColor = color;
+        {
+            form.BackColor = color;
+        }
     }
-}
 }
 
 ////----- CAMBIAR COLOR DE BARRA SUPERIOR------------

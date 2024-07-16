@@ -5,12 +5,6 @@
          3) "A FUTURO: AGREGAR FUNCION QUE HABRA DIRECTO A IMPRESION
         ---------------------------------------*/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Ofelia_Sara.general.clases
 {
     using System.Windows.Forms;

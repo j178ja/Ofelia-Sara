@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Ofelia_Sara.general.clases.Validaciones;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Botones;
-using Ofelia_Sara.general.clases.Validaciones;
 namespace Ofelia_Sara.general.clases
 
 {
@@ -14,17 +11,16 @@ namespace Ofelia_Sara.general.clases
         private SaltoDeImput _saltoDeImput; // Declaración a nivel de clase
         private Panel mainPanel; // Panel que contiene los TextBox
         private ErrorProvider errorProvider;
-        // protected ProgressVerticalBar progressVerticalBar1;
-        // protected ProgressVerticalBar progressVerticalBar2;
-        
+
+
         public BaseForm()
         {
-                      //---buscar alternativa para que obtenga el archivo desde almacenamiento interno----
+            //---buscar alternativa para que obtenga el archivo desde almacenamiento interno----
             IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/general/imagenes/IconoEscudoPolicia.ico");
-     
+
             InitializeFooterLabel();
-                          //------------------CAMBIAR FONDO----------------------------------------------------
-                         // Cambiar el color de fondo del formulario usando AparienciaFormularios
+            //------------------CAMBIAR FONDO----------------------------------------------------
+            // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
                                                              //---ESTE COLOR PERTENECE AL ACTUAL DE MINISTERIO DE SEGURIDAD-----
             AparienciaFormularios.CambiarColorDeFondo(this, customColor);//llama a la clase que modifica el color de fondo
@@ -39,7 +35,7 @@ namespace Ofelia_Sara.general.clases
             errorProvider = new ErrorProvider();
 
             AplicarConversionMayusculas(mainPanel);
-        
+
 
         }
 
@@ -52,16 +48,16 @@ namespace Ofelia_Sara.general.clases
         }
 
         //-----------------------------------------------------------------------------------------
-        
+
 
         //--------BOTON LIMPIAR FORMULARIO --------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)
-            {
-                LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            }
-                            //--------BOTON GUARDAR-IMPRIMIR --------------------
-                                //para que valide en todos los formularios
-                                //que se encuentran con todos los campos completos
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+        }
+        //--------BOTON GUARDAR-IMPRIMIR --------------------
+        //para que valide en todos los formularios
+        //que se encuentran con todos los campos completos
         private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
             bool allValid = ValidacionError.ValidacionFaltanteCampos(this, errorProvider);
@@ -70,16 +66,16 @@ namespace Ofelia_Sara.general.clases
                 // Lógica adicional para guardar e imprimir si es necesario
             }
         }
-       
-        
-        
+
+
+
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLabel()
-            {
-                        // Llama al método estático de FooterHelper para obtener el footerLabel configurado
-                this.footerLabel = FooterHelper.CreateFooterLabel(this);
-                this.Controls.Add(this.footerLabel);
-            }
+        {
+            // Llama al método estático de FooterHelper para obtener el footerLabel configurado
+            this.footerLabel = FooterHelper.CreateFooterLabel(this);
+            this.Controls.Add(this.footerLabel);
+        }
 
         private void InitializeComponent()
         {
@@ -99,26 +95,7 @@ namespace Ofelia_Sara.general.clases
 
         }
 
-        ////----clase para asociar los botones-----------
-        ///
-        //-----NO FUNCIONA  !!!
-        //
-        //private void AsociarEventosBotones(Control.ControlCollection controls)
-        //{
-        //    foreach (Control control in controls)
-        //    {
-        //        if (control is Button btn)
-        //        {
-        //            new EstiloBotones(btn); // Asocia los eventos al botón
-        //        }
-        //        // Si el control tiene hijos (por ejemplo, paneles), aplicar recursivamente
-        //        if (control.HasChildren)
-        //        {
-        //            AsociarEventosBotones(control.Controls);
-        //        }
-        //    }
-        //}
-        //------------------------------------------------------------
+
 
         //------------------------------------------------------------
         //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
@@ -143,7 +120,7 @@ namespace Ofelia_Sara.general.clases
 
                 boton.BackColor = Color.DodgerBlue;
 
-               
+
             };
 
             // Evento MouseHover: Cambia solo el color de fondo
@@ -168,8 +145,8 @@ namespace Ofelia_Sara.general.clases
         {
             Size originalSize = boton.Size;
             Point originalLocation = boton.Location;
-          
-            
+
+
 
             // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
             boton.MouseEnter += (sender, e) =>
@@ -185,13 +162,13 @@ namespace Ofelia_Sara.general.clases
                 boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
 
                 boton.ForeColor = Color.White; // Cambia el color del texto a blanco
-               
+
             };
 
             // Evento MouseHover: Cambia solo el color de fondo
             boton.MouseHover += (sender, e) =>
             {
-            
+
                 boton.BackColor = Color.FromArgb(0, 204, 0);
             };
 
@@ -208,5 +185,5 @@ namespace Ofelia_Sara.general.clases
     }
 
 }
-    
-   
+
+

@@ -1,28 +1,29 @@
 ﻿using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Ofelia_Sara.general.clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
     {
+        private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
+        private int camposCompletos;
 
         public InicioCierre()
         {
             InitializeComponent();
             ValidacionControles();
+
             progressVerticalBar1 = new ProgressVerticalBar();
             progressVerticalBar2 = new ProgressVerticalBar();
+
+            //------------inicialización de totalCampos y camposCompletos
+            totalCampos = ObtenerTotalCampos();
+            camposCompletos = ObtenerCamposCompletos();
+
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -33,6 +34,12 @@ namespace Ofelia_Sara
             InicializarEstiloBotonAgregar(btn_AgregarCausa);
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
+
+            // Actualizar los ProgressVerticalBar según los campos completos
+            ActualizarProgressBars();
+
+            // Inicializar el DateTimePicker y asignar el evento
+            //pickTime_DatoFecha.ValueChanged += new EventHandler(dateTimePicker_ValueChanged);
         }
 
         //-----------------------------------------------------------------
@@ -47,6 +54,7 @@ namespace Ofelia_Sara
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
             ActualizarEstadoBotonImprimir();
+            ActualizarProgressBars();
         }
 
 
@@ -87,17 +95,7 @@ namespace Ofelia_Sara
         //---Este metodo no se aplica..crear modificacion para que se aplique mediante label--
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            // Obtener la fecha seleccionada del DateTimePicker
-            DateTime fechaSeleccionada = pickTime_DatoFecha.Value;
 
-            // Formatear el texto para mostrar solo el mes y el año (no se esta aplicando)
-            string mesEnMayusculas = fechaSeleccionada.ToString("d/MMM/yyyy");
-
-            // Convertir el mes a mayúsculas
-            mesEnMayusculas = mesEnMayusculas.Substring(0, 2).ToUpper() + mesEnMayusculas.Substring(2);
-
-            // Establecer el formato personalizado del DateTimePicker
-            pickTime_DatoFecha.CustomFormat = mesEnMayusculas;
         }
         //-------------------------------------------------------
 
@@ -199,7 +197,7 @@ namespace Ofelia_Sara
                 // Si todos los campos están completos, habilitar el botón y poner el fondo en verde
                 btn_Imprimir.Enabled = true;
                 //btn_Imprimir.BackColor = Color.Green; /*COLOR NORMAL*/
-                btn_Imprimir.BackColor = Color.FromArgb(102, 255, 51);//FromArgb permite uso RGB (este seria color verder)
+                btn_Imprimir.BackColor = Color.FromArgb(0, 204, 0);//FromArgb permite uso RGB (este seria color verder)
             }
             else
             {
@@ -222,6 +220,34 @@ namespace Ofelia_Sara
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
             MostrarProgreso();
+        }
+
+        //--------------------------------------------------------------------------------
+        //---------METODO PARA MOSTRAR EL AVANCE DE ProgressVerticalBar--------------------
+        //-------este metodo esta presente en BaseForm---------------------------------
+        // Suponiendo que tienes progressBar1 y progressBar2 en tu formulario
+
+        private void ActualizarProgressBars()
+        {
+
+            ControladorProgressVerticalBar.ConfigurarProgressVerticalBar(progressVerticalBar1, progressVerticalBar2, camposCompletos, totalCampos);
+        }
+        private int ObtenerTotalCampos()
+        {
+            // Lógica para obtener el número total de campos específica para este formulario
+            return this.Controls.OfType<System.Windows.Forms.TextBox>().Count();
+        }
+
+        private int ObtenerCamposCompletos()
+        {
+            // Lógica para obtener el número de campos completos específica para este formulario
+            int completos = 0;
+            foreach (System.Windows.Forms.TextBox textBox in this.Controls.OfType<System.Windows.Forms.TextBox>())
+            {
+                if (!string.IsNullOrWhiteSpace(textBox.Text))
+                    completos++;
+            }
+            return completos;
         }
 
         //---------------------------------------------------------------------------------
@@ -273,10 +299,14 @@ namespace Ofelia_Sara
             btn_Buscar.BackColor = Color.DodgerBlue;
         }
 
+        private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
+        }
     }
 }
 
 
-    
+
 
 

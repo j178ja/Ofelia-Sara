@@ -70,9 +70,9 @@ namespace Ofelia_Sara
             this.panel1 = new System.Windows.Forms.Panel();
             this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
-            this.pickTime_DatoFecha = new System.Windows.Forms.DateTimePicker();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -433,9 +433,9 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.timePickerPersonalizado1);
             this.panel1.Controls.Add(this.progressVerticalBar1);
             this.panel1.Controls.Add(this.progressVerticalBar2);
-            this.panel1.Controls.Add(this.pickTime_DatoFecha);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_AgregarImputado);
             this.panel1.Controls.Add(this.lbl_Dr);
@@ -491,16 +491,6 @@ namespace Ofelia_Sara
             this.progressVerticalBar2.Size = new System.Drawing.Size(4, 376);
             this.progressVerticalBar2.TabIndex = 32;
             // 
-            // pickTime_DatoFecha
-            // 
-            this.pickTime_DatoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pickTime_DatoFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickTime_DatoFecha.Location = new System.Drawing.Point(135, 278);
-            this.pickTime_DatoFecha.Name = "pickTime_DatoFecha";
-            this.pickTime_DatoFecha.Size = new System.Drawing.Size(279, 24);
-            this.pickTime_DatoFecha.TabIndex = 30;
-            this.pickTime_DatoFecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
@@ -517,6 +507,17 @@ namespace Ofelia_Sara
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // timePickerPersonalizado1
+            // 
+            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.RosyBrown;
+            this.timePickerPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePickerPersonalizado1.Location = new System.Drawing.Point(135, 276);
+            this.timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
+            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 17, 40, 1, 20);
+            this.timePickerPersonalizado1.Size = new System.Drawing.Size(278, 21);
+            this.timePickerPersonalizado1.TabIndex = 34;
+            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +526,7 @@ namespace Ofelia_Sara
             this.ClientSize = new System.Drawing.Size(500, 531);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(516, 570);
             this.Name = "InicioCierre";
@@ -576,9 +578,9 @@ namespace Ofelia_Sara
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Titulo;
-        private System.Windows.Forms.DateTimePicker pickTime_DatoFecha;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private ProgressVerticalBar progressVerticalBar2;
         private ProgressVerticalBar progressVerticalBar1;
+        private general.clases.Apariencia_General.TimePickerPersonalizado timePickerPersonalizado1;
     }
 }

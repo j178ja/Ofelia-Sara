@@ -1,7 +1,6 @@
 ﻿
 //---------CREA UNA BARRA PERSONALIZADA----------------------------
 
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -26,7 +25,7 @@ namespace Ofelia_Sara.general.clases
             Rectangle rec = e.ClipRectangle; //Obtiene el rectángulo que representa el área del control.
 
             rec.Width = (int)(rec.Width * ((double)Value / Maximum)) - 4;
-            if (ProgressBarRenderer.IsSupported) 
+            if (ProgressBarRenderer.IsSupported)
                 ProgressBarRenderer.DrawHorizontalBar(e.Graphics, e.ClipRectangle); //Obtiene el objeto Graphics que se utiliza para dibujar en el control.
             rec.Height = rec.Height - 4;
             e.Graphics.FillRectangle(Brushes.DarkCyan, 2, 2, rec.Width, rec.Height);

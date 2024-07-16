@@ -5,7 +5,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
 
 namespace Ofelia_Sara.general.clases
 {
@@ -30,7 +29,7 @@ namespace Ofelia_Sara.general.clases
             InitializeComponent();
         }
 
-         private void MensajeCargarImprimir_Load(object sender, EventArgs e)
+        private void MensajeCargarImprimir_Load(object sender, EventArgs e)
         {
             // Verificar que progressBar1 se inicializó correctamente en InitializeComponent()
             if (progressBar1 != null)
@@ -140,7 +139,7 @@ namespace Ofelia_Sara.general.clases
             this.innerPanel.Controls.Add(this.iconoEscudo);
             this.innerPanel.Controls.Add(this.btn_CancelarImpresion);
             this.innerPanel.Controls.Add(this.label1);
-//            this.innerPanel.Controls.Add(this.progressBar1);
+            //            this.innerPanel.Controls.Add(this.progressBar1);
             this.innerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.innerPanel.Location = new System.Drawing.Point(10, 30);
             this.innerPanel.Name = "innerPanel";

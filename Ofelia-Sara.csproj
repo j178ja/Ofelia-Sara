@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +47,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.cs">
@@ -77,9 +83,16 @@
       <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
+    <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.Designer.cs">
+      <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Barras personalizadas\BarraVerticalProgreso.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="general\clases\Barras personalizadas\ControladorProgressVerticalBar.cs" />
     <Compile Include="general\clases\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +104,6 @@
     </Compile>
     <Compile Include="general\clases\Apariencia General\EliminarBotonMaximizar.cs" />
     <Compile Include="general\clases\Apariencia General\footer.cs" />
-    <Compile Include="general\clases\Botones\EstiloBotones.cs" />
     <Compile Include="general\clases\Botones\guardar_archivo.cs" />
     <Compile Include="general\clases\Apariencia General\Iconos.cs" />
     <Compile Include="general\clases\Botones\imprimir.cs" />
@@ -164,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\DataTimePickerPersonalizado.resx">
+      <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
