@@ -1,0 +1,14 @@
+
+
+colores para aplicar en el progressVerticalBar
+
+
+    90,208,255          //color inicial hasta 20%
+
+    30,175, 255         // hasta 45%
+
+    30,144,255          // color dodgerBlue  hasta 80%
+
+     0; 154; 174     // color final cerca de born imprimir
+
+     verde extremo final 

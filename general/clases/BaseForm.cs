@@ -1,17 +1,19 @@
-﻿using Ofelia_Sara.general.clases.Validaciones;
+﻿
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 namespace Ofelia_Sara.general.clases
 
 {
+    using Ofelia_Sara.general.clases.Apariencia_General;
+    using System.Windows.Forms;
     public class BaseForm : Form
     {
         private Label footerLabel;
         private SaltoDeImput _saltoDeImput; // Declaración a nivel de clase
         private Panel mainPanel; // Panel que contiene los TextBox
-        private ErrorProvider errorProvider;
-
+        protected Button btn_Imprimir;
+        protected TimePickerPersonalizado timePickerPersonalizado1;
 
         public BaseForm()
         {
@@ -32,16 +34,15 @@ namespace Ofelia_Sara.general.clases
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
 
-            errorProvider = new ErrorProvider();
-
             AplicarConversionMayusculas(mainPanel);
 
-
+            this.Load += new System.EventHandler(this.BaseForm_Load);
         }
 
+    
 
-        //----CLASE PRIVADA PARA QUE SE APLIQUE MAYUSCULA--------
-        private void AplicarConversionMayusculas(Control control)
+            //----CLASE PRIVADA PARA QUE SE APLIQUE MAYUSCULA--------
+            private void AplicarConversionMayusculas(Control control)
         {
             // Invocar el método de TextoEnMayuscula para convertir texto a mayúsculas
             TextoEnMayuscula.ConvertirTextoAMayusculas(control, null); // Pasar null si no se necesita filtrar ningún TextBox específico
@@ -58,20 +59,14 @@ namespace Ofelia_Sara.general.clases
         //--------BOTON GUARDAR-IMPRIMIR --------------------
         //para que valide en todos los formularios
         //que se encuentran con todos los campos completos
-        private void Btn_Imprimir_Click(object sender, EventArgs e)
-        {
-            bool allValid = ValidacionError.ValidacionFaltanteCampos(this, errorProvider);
-            if (allValid)
-            {
-                // Lógica adicional para guardar e imprimir si es necesario
-            }
-        }
+       
 
 
 
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLabel()
         {
+            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             // Llama al método estático de FooterHelper para obtener el footerLabel configurado
             this.footerLabel = FooterHelper.CreateFooterLabel(this);
             this.Controls.Add(this.footerLabel);
@@ -92,7 +87,8 @@ namespace Ofelia_Sara.general.clases
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-
+            // Suponiendo que 'timePickerPersonalizado1' es el nombre del control en el BaseForm
+            timePickerPersonalizado1.SelectedDate = DateTime.Now;
         }
 
 
@@ -118,15 +114,17 @@ namespace Ofelia_Sara.general.clases
                 boton.Size = new Size(nuevoAncho, nuevoAlto);
                 boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
 
-                boton.BackColor = Color.DodgerBlue;
-
-
+                //boton.BackColor = Color.DodgerBlue;
+                //boton.BackColor = Color.FromArgb(0, 154, 174);
+                boton.BackColor = Color.FromArgb(51, 174, 189);
             };
 
             // Evento MouseHover: Cambia solo el color de fondo
             boton.MouseHover += (sender, e) =>
             {
-                boton.BackColor = Color.DodgerBlue;
+                //boton.BackColor = Color.DodgerBlue;
+                //boton.BackColor = Color.FromArgb(0, 154, 174); // COLOR "OFICIAL" USADO EN FONDO FORMULARIO
+                boton.BackColor = Color.FromArgb(51, 174, 189); //20% MAS CLARO QUE EL COLOR OFICIAL Y DE FONDO
             };
 
             // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
@@ -140,7 +138,7 @@ namespace Ofelia_Sara.general.clases
 
         //------------------------------------------------------------
         //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
-        //-------BUSCAR----GUARDAR----LIMPIAR---------
+        //-------AGREGAR --->CARATULA-->IMPUTADO--->VICTIMA---------
         protected void InicializarEstiloBotonAgregar(Button boton)
         {
             Size originalSize = boton.Size;
@@ -181,7 +179,7 @@ namespace Ofelia_Sara.general.clases
                 boton.ForeColor = SystemColors.ControlText;
             };
         }
-
+               
     }
 
 }

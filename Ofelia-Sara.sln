@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ofelia-Sara", "Ofelia-Sara.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{F85F4946-EF92-4542-9436-4EE64DF159AB}"
 	ProjectSection(SolutionItems) = preProject
+		NotasBarrasPersonalizadas.txt = NotasBarrasPersonalizadas.txt
 		ProblemasA.solucionar.txt = ProblemasA.solucionar.txt
 	EndProjectSection
 EndProject

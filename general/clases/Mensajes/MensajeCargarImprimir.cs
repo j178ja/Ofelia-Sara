@@ -27,6 +27,13 @@ namespace Ofelia_Sara.general.clases
         public MensajeCargarImprimir()
         {
             InitializeComponent();
+            // Establecer el intervalo del temporizador (en milisegundos)
+            this.timer1.Interval = 100;
+
+            // Asociar el evento Tick del temporizador al manejador de eventos timer1_Tick
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
+            this.Load += new System.EventHandler(this.MensajeCargarImprimir_Load); // Asocia el evento Load
         }
 
         private void MensajeCargarImprimir_Load(object sender, EventArgs e)
@@ -37,8 +44,8 @@ namespace Ofelia_Sara.general.clases
                 progressBar1.Location = new System.Drawing.Point(15, 38); // Establecer la ubicación de progressBar1
                 progressBar1.Maximum = 100; // Establecer el valor máximo de la barra de progreso
                 progressBar1.Value = 0; // Inicializar el valor actual de la barra de progreso
-                progressBar1.ForeColor = Color.FromArgb(0, 154, 174); // Establecer el color de la barra de progreso
-
+                //progressBar1.ForeColor = Color.FromArgb(0, 154, 174); // Establecer el color de la barra de progreso
+                //------------------no afecta que este o no---------------
                 // Iniciar el temporizador para simular el progreso
                 timer1.Start();
             }
@@ -58,7 +65,10 @@ namespace Ofelia_Sara.general.clases
                 if (progressBar1.Value == 50) // Suponiendo que el ProgressBar tarda 4 segundos en completarse
                 {
                     label1.Text = "Preparando archivo para impresión...";
-                    label1.ForeColor = System.Drawing.Color.LightGray;
+                    //label1.TextAlign = ContentAlignment.MiddleLeft;
+                    label1.Location = new System.Drawing.Point(15, label1.Location.Y); 
+
+                    label1.ForeColor = System.Drawing.Color.White;
                 }
             }
             else
@@ -139,7 +149,7 @@ namespace Ofelia_Sara.general.clases
             this.innerPanel.Controls.Add(this.iconoEscudo);
             this.innerPanel.Controls.Add(this.btn_CancelarImpresion);
             this.innerPanel.Controls.Add(this.label1);
-            //            this.innerPanel.Controls.Add(this.progressBar1);
+            this.innerPanel.Controls.Add(this.progressBar1);
             this.innerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.innerPanel.Location = new System.Drawing.Point(10, 30);
             this.innerPanel.Name = "innerPanel";
@@ -209,6 +219,7 @@ namespace Ofelia_Sara.general.clases
             ((System.ComponentModel.ISupportInitialize)(this.iconoEscudo)).EndInit();
             this.ResumeLayout(false);
 
+            
         }
 
         private void outerPanel_Paint(object sender, PaintEventArgs e)
@@ -231,7 +242,7 @@ namespace Ofelia_Sara.general.clases
                 Graphics g = e.Graphics;
 
                 ProgressBarRenderer.DrawHorizontalBar(g, rect);
-                rect.Inflate(-3, -3);
+                rect.Inflate(-2, -2);
 
                 if (this.Value > 0)
                 {
