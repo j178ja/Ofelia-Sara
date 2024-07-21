@@ -5,7 +5,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General
 {
     public partial class TimePickerPersonalizado : UserControl
     {
-        public   TimePickerPersonalizado()
+        public TimePickerPersonalizado()
         {
             InitializeComponent();
             // Configurar el DateTimePicker para mostrar el formato personalizado
@@ -39,6 +39,11 @@ namespace Ofelia_Sara.general.clases.Apariencia_General
         {
             get => dateTimePickerGeneral.Value;
             set => dateTimePickerGeneral.Value = value;
+        }
+
+        private void dateTimePickerGeneral_ValueChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

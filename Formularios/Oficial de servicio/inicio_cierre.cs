@@ -1,5 +1,5 @@
 ﻿using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Ofelia_Sara.general.clases;
+//using Ofelia_Sara.general.clases.Ofelia_Sara.general.clases;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -7,11 +7,13 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara
 {
+    
+    
     public partial class InicioCierre : BaseForm
     {
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
         private int camposCompletos;
-
+      
         public InicioCierre()
         {
             InitializeComponent();
@@ -38,8 +40,8 @@ namespace Ofelia_Sara
             // Actualizar los ProgressVerticalBar según los campos completos
             ActualizarProgressBars();
 
-            // Inicializar el DateTimePicker y asignar el evento
-            //pickTime_DatoFecha.ValueChanged += new EventHandler(dateTimePicker_ValueChanged);
+            this.Load += new System.EventHandler(this.InicioCierre_Load);
+
         }
 
         //-----------------------------------------------------------------
@@ -49,12 +51,14 @@ namespace Ofelia_Sara
         }
 
         //-------------------------------------------------------------------
-
+  
+          
+        //-------------------------------------------------------------------
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
-            ActualizarEstadoBotonImprimir();
             ActualizarProgressBars();
+            timePickerPersonalizado1.SelectedDate = DateTime.Now;
         }
 
 
@@ -90,14 +94,7 @@ namespace Ofelia_Sara
 
         //------------------------------------------------------------------
 
-        //-----FORMATO ESPECIAL DateTimePicker------------
-        // !!!! HACER METODO APARTE!!!--------------------
-        //---Este metodo no se aplica..crear modificacion para que se aplique mediante label--
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        //-------------------------------------------------------
+    
 
         //----BOTON LIMPIAR/ELIMINAR-----------------------
 
@@ -187,39 +184,49 @@ namespace Ofelia_Sara
 
 
 
-        // Método para actualizar el estado del botón Imprimir
-        private void ActualizarEstadoBotonImprimir()
-        {
-            btn_Imprimir.Enabled = ValidadorCamposImpresion.VerificarCamposCompletos(Controls);
+        //// Método para actualizar el estado del botón Imprimir
+        //private void ActualizarEstadoBotonImprimir()
+        //{
+        //    btn_Imprimir.Enabled = ValidadorCamposImpresion.VerificarCamposCompletos(Controls);
 
-            if (btn_Imprimir.Enabled)
-            {
-                // Si todos los campos están completos, habilitar el botón y poner el fondo en verde
-                btn_Imprimir.Enabled = true;
-                //btn_Imprimir.BackColor = Color.Green; /*COLOR NORMAL*/
-                btn_Imprimir.BackColor = Color.FromArgb(0, 204, 0);//FromArgb permite uso RGB (este seria color verder)
-            }
-            else
-            {
-                // Si no todos los campos están completos, deshabilitar el botón y poner el fondo en rojo
-                btn_Imprimir.Enabled = false;
-                btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47); //Color rojo
-            }
-        }
+        //    if (btn_Imprimir.Enabled)
+        //    {
+        //        // Si todos los campos están completos, habilitar el botón y poner el fondo en verde
+        //        btn_Imprimir.Enabled = true;
+        //        //btn_Imprimir.BackColor = Color.Green; /*COLOR NORMAL*/
+        //        btn_Imprimir.BackColor = Color.FromArgb(0, 204, 0);//FromArgb permite uso RGB (este seria color verder)
+        //    }
+        //    else
+        //    {
+        //        // Si no todos los campos están completos, deshabilitar el botón y poner el fondo en rojo
+        //        btn_Imprimir.Enabled = false;
+        //        btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47); //Color rojo
+        //    }
+        //}
 
-        // Método para mostrar progreso en el progressBar
-        private void MostrarProgreso()
+        
+
+
+
+
+        // Crea ventana que muestra archivo cargando
+        private void CargarImpresion()
         {
-            using (MensajeCargarImprimir progressMessageBox = new MensajeCargarImprimir())
+            using (MensajeCargarImprimir imprimirMessageBox = new MensajeCargarImprimir())
             {
-                progressMessageBox.ShowDialog();
+                imprimirMessageBox.ShowDialog();//showdialog implica "bloquea interaccion con ventana principal hasta que se cierra"
             }
         }
 
         // Evento Click del botón Imprimir
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
-            MostrarProgreso();
+
+            if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
+            {
+                //logica para guardar el archivo en base de datos
+                CargarImpresion();
+            }
         }
 
         //--------------------------------------------------------------------------------
@@ -265,44 +272,20 @@ namespace Ofelia_Sara
             comboBox_Instructor.SelectedIndex = 0;
             comboBox_Secretario.SelectedIndex = 0;
             comboBox_Dependencia.SelectedIndex = 0;
+            comboBox_Localidad.SelectedIndex = 0;
+            comboBox_DeptoJudicial.SelectedIndex = 0;
         }         //---------------------------------------------------------------------------------
 
 
         // Evento TextChanged o SelectedIndexChanged de los controles relevantes
-        private void Control_TextChanged(object sender, EventArgs e)
-        {
-            // Al cambiar el texto o la selección en un control relevante, actualizar el estado del botón Imprimir
-            ActualizarEstadoBotonImprimir();
-        }
+        //private void Control_TextChanged(object sender, EventArgs e)
+        //{
+        //    ValidadorCamposImpresion.VerificarYActualizarBotonImprimir(this, btn_Imprimir);
+        //}
 
         //----------------------------------------------------------------------
 
-        //-----------AGREGAR CAUSA-----------------
-        private void btn_AgregarCausa_Click(object sender, EventArgs e)
-        {
-            // Crear TextBox
-            System.Windows.Forms.TextBox nuevoTextBox_Causa = new System.Windows.Forms.TextBox();
-            nuevoTextBox_Causa.Size = new Size(279, 24);  // Tamaño
-            nuevoTextBox_Causa.Location = new Point(135, 105);  // Posición
 
-            // Cambiar el color de fondo a rojo
-            nuevoTextBox_Causa.BackColor = Color.Red;
-
-            // Agregar al formulario
-            this.Controls.Add(nuevoTextBox_Causa);
-        }
-
-        //-----------BOTON BUSCAR---------------------------
-        //----eventos boton buscar 
-        private void btn_Buscar_MouseHover(object sender, EventArgs e)
-        {
-            btn_Buscar.BackColor = Color.DodgerBlue;
-        }
-
-        private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
-        {
-
-        }
     }
 }
 
