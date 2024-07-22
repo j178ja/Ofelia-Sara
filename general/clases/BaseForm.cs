@@ -13,7 +13,7 @@ namespace Ofelia_Sara.general.clases
         private SaltoDeImput _saltoDeImput; // Declaración a nivel de clase
         private Panel mainPanel; // Panel que contiene los TextBox
         protected Button btn_Imprimir;
-        protected TimePickerPersonalizado timePickerPersonalizado1;
+        protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
         public BaseForm()
         {
@@ -66,7 +66,7 @@ namespace Ofelia_Sara.general.clases
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLabel()
         {
-            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            this.timePickerPersonalizadoFecha = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             // Llama al método estático de FooterHelper para obtener el footerLabel configurado
             this.footerLabel = FooterHelper.CreateFooterLabel(this);
             this.Controls.Add(this.footerLabel);
@@ -88,7 +88,7 @@ namespace Ofelia_Sara.general.clases
         private void BaseForm_Load(object sender, EventArgs e)
         {
             // Suponiendo que 'timePickerPersonalizado1' es el nombre del control en el BaseForm
-            timePickerPersonalizado1.SelectedDate = DateTime.Now;
+            timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
         }
 
 
