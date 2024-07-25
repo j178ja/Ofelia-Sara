@@ -72,7 +72,7 @@ namespace Ofelia_Sara.general.clases
             this.Controls.Add(this.footerLabel);
         }
 
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.SuspendLayout();
             // 

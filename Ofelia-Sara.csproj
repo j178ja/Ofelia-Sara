@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -82,6 +86,12 @@
     <Compile Include="Formularios\Oficial de servicio\Expedientes.Designer.cs">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonales.Designer.cs">
+      <DependentUpon>AgregarDatosPersonales.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
@@ -115,6 +125,7 @@
     <Compile Include="general\clases\Botones\imprimir.cs" />
     <Compile Include="general\clases\Botones\limpiar_formulario.cs" />
     <Compile Include="general\clases\Apariencia General\mayuscula.cs" />
+    <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +192,9 @@
     <EmbeddedResource Include="Formularios\Oficial de servicio\Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonales.resx">
+      <DependentUpon>AgregarDatosPersonales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +240,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -244,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

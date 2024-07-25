@@ -24,3 +24,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.c
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.CustomProgressBar.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Barras_personalizadas.ProgressVerticalBarAlfa.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales.AgregarDatosPersonales.resources

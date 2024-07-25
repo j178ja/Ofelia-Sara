@@ -1,9 +1,14 @@
 ﻿using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.GenerarDocumentos;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+
 //using Ofelia_Sara.general.clases.Ofelia_Sara.general.clases;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Ofelia_Sara
 {
@@ -226,6 +231,16 @@ namespace Ofelia_Sara
             {
                 //logica para guardar el archivo en base de datos
                 CargarImpresion();
+
+                var generador = new GeneradorDocumentos();
+                var datosFormulario = ObtenerDatosFormulario();
+
+                // Definir rutas
+                string rutaPlantilla = @"C:\Users\Usuario\OneDrive\Escritorio\.net\plantillaPrototipo.dotx";
+                string rutaArchivoSalida = @"C:\Users\Usuario\OneDrive\Escritorio\.net\archivos de salida";
+
+                generador.GenerarDocumento(rutaPlantilla, rutaArchivoSalida, datosFormulario);
+
             }
         }
 
@@ -285,7 +300,39 @@ namespace Ofelia_Sara
 
         //----------------------------------------------------------------------
 
+        //--------Diccionario para cargar los datos a los marcadores del documento-------------
+        private Dictionary<string, string> ObtenerDatosFormulario()
+        {
+            var datosFormulario = new Dictionary<string, string>
+    {
+        { "caratula", textBox_Caratula.Text },
+        { "victima", textBox_Caratula.Text },
+        { "imputado", textBox_Caratula.Text },
+        { "instructor", textBox_Caratula.Text },
+        { "secretario", textBox_Caratula.Text },
+        { "DeptoJudicial", textBox_Caratula.Text },
+      //  { "fecha", dateTimePicker_Fecha.Value.ToString("dd/MM/yyyy") },  // Convertir a string con formato
+       // { "ufid", numericUpDown_Edad.Value.ToString() }  // Convertir a string
+        // Agrega aquí más datos y sus respectivos marcadores
+    };
 
+            return datosFormulario;
+        }
+
+        private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //-------------------------------------------------------------------------------
+        //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
+        private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
+        {
+            AgregarDatosPersonales agregarDatosPersonales = new AgregarDatosPersonales();
+            
+            agregarDatosPersonales.TextoNombre = textBox_Imputado.Text; // Pasa el contenido del TextBox
+            agregarDatosPersonales.Show();
+        }
     }
 }
 
