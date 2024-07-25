@@ -76,8 +76,14 @@ namespace Ofelia_Sara
             this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
+            this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // timePickerPersonalizadoFecha
+            // 
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 24, 18, 43, 35, 659);
             // 
             // lbl_Dr
             // 
@@ -353,7 +359,6 @@ namespace Ofelia_Sara
             this.btn_Buscar.TabIndex = 18;
             this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
-            
             // 
             // btn_Guardar
             // 
@@ -407,7 +412,6 @@ namespace Ofelia_Sara
             this.btn_AgregarCausa.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
             this.btn_AgregarCausa.UseVisualStyleBackColor = true;
-            
             // 
             // btn_AgregarVictima
             // 
@@ -436,6 +440,8 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_AgregarDatosVictima);
+            this.panel1.Controls.Add(this.btn_AgregarDatosImputado);
             this.panel1.Controls.Add(this.lbl_Localida);
             this.panel1.Controls.Add(this.comboBox_Localidad);
             this.panel1.Controls.Add(this.lbl_DeptoJudicial);
@@ -473,9 +479,9 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.comboBox_Instructor);
             this.panel1.Controls.Add(this.comboBox_Secretario);
             this.panel1.Controls.Add(this.comboBox_Ipp1);
-            this.panel1.Location = new System.Drawing.Point(23, 43);
+            this.panel1.Location = new System.Drawing.Point(20, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 487);
+            this.panel1.Size = new System.Drawing.Size(455, 487);
             this.panel1.TabIndex = 30;
             // 
             // lbl_Localida
@@ -536,7 +542,7 @@ namespace Ofelia_Sara
             this.progressVerticalBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.progressVerticalBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar1.Location = new System.Drawing.Point(445, 43);
+            this.progressVerticalBar1.Location = new System.Drawing.Point(449, 44);
             this.progressVerticalBar1.Name = "progressVerticalBar1";
             this.progressVerticalBar1.Size = new System.Drawing.Size(4, 418);
             this.progressVerticalBar1.TabIndex = 33;
@@ -546,7 +552,7 @@ namespace Ofelia_Sara
             this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.progressVerticalBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar2.Location = new System.Drawing.Point(3, 43);
+            this.progressVerticalBar2.Location = new System.Drawing.Point(0, 43);
             this.progressVerticalBar2.Name = "progressVerticalBar2";
             this.progressVerticalBar2.Size = new System.Drawing.Size(4, 418);
             this.progressVerticalBar2.TabIndex = 32;
@@ -563,12 +569,36 @@ namespace Ofelia_Sara
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
             // 
+            // btn_AgregarDatosImputado
+            // 
+            this.btn_AgregarDatosImputado.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosImputado.Image")));
+            this.btn_AgregarDatosImputado.Location = new System.Drawing.Point(10, 132);
+            this.btn_AgregarDatosImputado.Name = "btn_AgregarDatosImputado";
+            this.btn_AgregarDatosImputado.Size = new System.Drawing.Size(27, 23);
+            this.btn_AgregarDatosImputado.TabIndex = 38;
+            this.btn_AgregarDatosImputado.Text = "+";
+            this.toolTip1.SetToolTip(this.btn_AgregarDatosImputado, "Agregar datos personales de Imputado");
+            this.btn_AgregarDatosImputado.UseVisualStyleBackColor = true;
+            this.btn_AgregarDatosImputado.Click += new System.EventHandler(this.btn_AgregarDatosImputado_Click);
+            // 
+            // btn_AgregarDatosVictima
+            // 
+            this.btn_AgregarDatosVictima.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosVictima.Image")));
+            this.btn_AgregarDatosVictima.Location = new System.Drawing.Point(10, 104);
+            this.btn_AgregarDatosVictima.Name = "btn_AgregarDatosVictima";
+            this.btn_AgregarDatosVictima.Size = new System.Drawing.Size(27, 23);
+            this.btn_AgregarDatosVictima.TabIndex = 39;
+            this.btn_AgregarDatosVictima.Text = "+";
+            this.toolTip1.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
+            this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
+            this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.btn_AgregarDatosVictima_Click);
+            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(500, 573);
+            this.ClientSize = new System.Drawing.Size(499, 573);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -629,5 +659,7 @@ namespace Ofelia_Sara
         private System.Windows.Forms.ComboBox comboBox_DeptoJudicial;
         private System.Windows.Forms.Label lbl_Localida;
         private System.Windows.Forms.ComboBox comboBox_Localidad;
+        private System.Windows.Forms.Button btn_AgregarDatosVictima;
+        private System.Windows.Forms.Button btn_AgregarDatosImputado;
     }
 }

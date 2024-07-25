@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		ProblemasA.solucionar.txt = ProblemasA.solucionar.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plantillas", "Plantillas", "{9C901A91-EE43-4CFA-8D48-73881610CDDF}"
+	ProjectSection(SolutionItems) = preProject
+		..\.net\plantillaPrototipo.dotx = ..\.net\plantillaPrototipo.dotx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C901A91-EE43-4CFA-8D48-73881610CDDF} = {F85F4946-EF92-4542-9436-4EE64DF159AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FEE3EF2D-1521-4468-A6E8-B6082F41B957}
