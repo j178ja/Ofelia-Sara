@@ -74,6 +74,12 @@
     <Compile Include="Formularios\Oficial de servicio\Contravenciones.Designer.cs">
       <DependentUpon>Contravenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.Designer.cs">
+      <DependentUpon>AgregarDatosPersonalesVictima.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Oficial de servicio\Denuncias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +92,11 @@
     <Compile Include="Formularios\Oficial de servicio\Expedientes.Designer.cs">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonales.cs">
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonales.Designer.cs">
-      <DependentUpon>AgregarDatosPersonales.cs</DependentUpon>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.Designer.cs">
+      <DependentUpon>AgregarDatosPersonalesImputado.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.cs">
@@ -186,14 +192,17 @@
     <EmbeddedResource Include="Formularios\Oficial de servicio\Contravenciones.resx">
       <DependentUpon>Contravenciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.resx">
+      <DependentUpon>AgregarDatosPersonalesVictima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Denuncias.resx">
       <DependentUpon>Denuncias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonales.resx">
-      <DependentUpon>AgregarDatosPersonales.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.resx">
+      <DependentUpon>AgregarDatosPersonalesImputado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
