@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using Ofelia_Sara.general.clases.Apariencia_General;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 {
-    public partial class AgregarDatosPersonales : BaseForm
+    public partial class AgregarDatosPersonalesImputado : BaseForm
     {
         // Propiedad pública para establecer el texto del TextBox
         public string TextoNombre
@@ -22,7 +23,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             set { textBox_Nombre.Text = value; }
         }
 
-        public  AgregarDatosPersonales()
+        public  AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
             
@@ -31,23 +32,32 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
-            pictureBox1.AllowDrop = true;
-            pictureBox2.AllowDrop = true;//permite que pictureBox reciba imagenes
-            pictureBox3.AllowDrop = true;
-            pictureBox4.AllowDrop = true;
+            pictureBox_Frente.AllowDrop = true;
+            pictureBox_PerfilDerecho.AllowDrop = true;//permite que pictureBox reciba imagenes
+            pictureBox_PerfilIzquierdo.AllowDrop = true;
+            pictureBox_CuerpoEntero.AllowDrop = true;
 
             // Asocia los eventos DragEnter y DragDrop para cada PictureBox
-            pictureBox1.DragEnter += new DragEventHandler(pictureBox_DragEnter);
-            pictureBox1.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+            pictureBox_Frente.DragEnter += new DragEventHandler(pictureBox_DragEnter);
+            pictureBox_Frente.DragDrop += new DragEventHandler(pictureBox_DragDrop);
 
-            pictureBox2.DragEnter += new DragEventHandler(pictureBox_DragEnter);
-            pictureBox2.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+            pictureBox_PerfilDerecho.DragEnter += new DragEventHandler(pictureBox_DragEnter);
+            pictureBox_PerfilDerecho.DragDrop += new DragEventHandler(pictureBox_DragDrop);
 
-            pictureBox3.DragEnter += new DragEventHandler(pictureBox_DragEnter);
-            pictureBox3.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+            pictureBox_PerfilIzquierdo.DragEnter += new DragEventHandler(pictureBox_DragEnter);
+            pictureBox_PerfilIzquierdo.DragDrop += new DragEventHandler(pictureBox_DragDrop);
 
-            pictureBox4.DragEnter += new DragEventHandler(pictureBox_DragEnter);
-            pictureBox4.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+            pictureBox_CuerpoEntero.DragEnter += new DragEventHandler(pictureBox_DragEnter);
+            pictureBox_CuerpoEntero.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+
+            //Convertir texto en mayuscula
+            var textBoxExcepciones = new Dictionary<string, bool>
+             {
+                { textBox_Dni.Name, true },
+             { textBox_Edad.Name, true },
+             { textBox_FechaNacimiento.Name, true },
+                };
+              AplicarConversionMayusculas(panel1); 
 
             // Asociar el evento KeyPress al TextBox_Edad
             textBox_Edad.KeyPress += new KeyPressEventHandler(textBox_Edad_KeyPress);
@@ -55,7 +65,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             // Asociar el evento KeyPress al TextBox_Dni
             textBox_Dni.KeyPress += new KeyPressEventHandler(textBox_Dni_KeyPress);
+
+       
         }
+        
 
         //-----------------------------------------------------------------------------
         //-------ARRASTRAR IMAGEN A CADA PICKTUREBOX--------------------------------
@@ -153,6 +166,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true;
             }
         }
-     
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+                                             // Mensaje para confirmar la limpieza
+                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

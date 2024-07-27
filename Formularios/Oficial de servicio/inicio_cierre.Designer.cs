@@ -372,7 +372,7 @@ namespace Ofelia_Sara
             this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
-            this.btn_Guardar.MouseHover += new System.EventHandler(this.btn_Guardar_MouseHover);
+           
             // 
             // btn_Limpiar
             // 
@@ -386,7 +386,6 @@ namespace Ofelia_Sara
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
-            this.btn_Limpiar.MouseHover += new System.EventHandler(this.btn_Limpiar_MouseHover);
             // 
             // btn_Imprimir
             // 

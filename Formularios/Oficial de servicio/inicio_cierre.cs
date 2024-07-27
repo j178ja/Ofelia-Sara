@@ -52,7 +52,7 @@ namespace Ofelia_Sara
         //-----------------------------------------------------------------
         private void ValidacionControles()
         { // Llama a TextoEnMayuscula.ConvertirTextoAMayusculas y pasa los ComboBox necesarios
-            TextoEnMayuscula.ConvertirTextoAMayusculas(this, textBox_NumeroIpp, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
+            //TextoEnMayuscula.ConvertirTextoAMayusculas(this, textBox_NumeroIpp, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
         }
 
         //-------------------------------------------------------------------
@@ -91,11 +91,7 @@ namespace Ofelia_Sara
 
         }
         //--------------------------------------------------------------
-        //---------------evento para boton GUARDAR
-        private void btn_Guardar_MouseHover(object sender, EventArgs e)
-        {
-            btn_Guardar.BackColor = Color.DodgerBlue;
-        }
+       
 
         //------------------------------------------------------------------
 
@@ -111,13 +107,8 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //-------------------------------------------------------------------------------
-        //--------------------------------------------------------------
-        //---------------evento para boton ELIMINAR
-
-        private void btn_Limpiar_MouseHover(object sender, EventArgs e)
-        {
-            btn_Limpiar.BackColor = Color.DodgerBlue;
-        }
+        
+      
         //----------------------------------------------------------
 
 
@@ -321,6 +312,10 @@ namespace Ofelia_Sara
 
         private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
+            AgregarDatosPersonalesVictima agregarDatosPersonales = new AgregarDatosPersonalesVictima();
+
+            agregarDatosPersonales.TextoNombre = textBox_Victima.Text; // Pasa el contenido del TextBox
+            agregarDatosPersonales.Show();
 
         }
 
@@ -328,7 +323,7 @@ namespace Ofelia_Sara
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
         private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            AgregarDatosPersonales agregarDatosPersonales = new AgregarDatosPersonales();
+            AgregarDatosPersonalesImputado agregarDatosPersonales = new AgregarDatosPersonalesImputado();
             
             agregarDatosPersonales.TextoNombre = textBox_Imputado.Text; // Pasa el contenido del TextBox
             agregarDatosPersonales.Show();

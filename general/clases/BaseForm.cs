@@ -1,8 +1,11 @@
-﻿
+﻿using Ofelia_Sara.general.clases.Apariencia_General;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+
 namespace Ofelia_Sara.general.clases
+
 
 {
     using Ofelia_Sara.general.clases.Apariencia_General;
@@ -42,10 +45,10 @@ namespace Ofelia_Sara.general.clases
     
 
             //----CLASE PRIVADA PARA QUE SE APLIQUE MAYUSCULA--------
-            private void AplicarConversionMayusculas(Control control)
+            protected void AplicarConversionMayusculas(Control control)
         {
             // Invocar el método de TextoEnMayuscula para convertir texto a mayúsculas
-            TextoEnMayuscula.ConvertirTextoAMayusculas(control, null); // Pasar null si no se necesita filtrar ningún TextBox específico
+            //TextoEnMayuscula.ConvertirTextoAMayusculas(control, null); // Pasar null si no se necesita filtrar ningún TextBox específico
         }
 
         //-----------------------------------------------------------------------------------------
