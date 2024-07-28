@@ -50,5 +50,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckBox checkBox_Notificacion258;
         private System.Windows.Forms.Label label_Notificacion258;
+        private System.Windows.Forms.Button btn_Buscar;
     }
 }

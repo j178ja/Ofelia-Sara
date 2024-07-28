@@ -26,7 +26,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void AgregarDatosPersonalesVictima_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void InitializeComponent()
@@ -63,6 +63,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label_Notificacion258 = new System.Windows.Forms.Label();
             this.checkBox_Notificacion258 = new System.Windows.Forms.CheckBox();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -75,6 +76,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.checkBox_Notificacion258);
             this.panel1.Controls.Add(this.label_Notificacion258);
             this.panel1.Controls.Add(this.btn_Limpiar);
@@ -350,7 +352,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(121, 391);
+            this.btn_Limpiar.Location = new System.Drawing.Point(243, 391);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 75;
@@ -363,7 +365,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(318, 391);
+            this.btn_Guardar.Location = new System.Drawing.Point(408, 391);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 74;
@@ -391,6 +393,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.toolTip1.SetToolTip(this.checkBox_Notificacion258, "Marcar si requiere notificacion de pericia");
             this.checkBox_Notificacion258.UseVisualStyleBackColor = true;
             // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+            this.btn_Buscar.Location = new System.Drawing.Point(73, 391);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Buscar.TabIndex = 78;
+            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            // 
             // AgregarDatosPersonalesVictima
             // 
             this.ClientSize = new System.Drawing.Size(608, 542);
@@ -410,7 +424,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void AgregarDatosPersonalesVictima_Load_1(object sender, EventArgs e)
         {
-
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Buscar);
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)

@@ -9,16 +9,19 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Ofelia_Sara
 {
-    
-    
+
+
     public partial class InicioCierre : BaseForm
     {
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
         private int camposCompletos;
-      
+        private ToolTip toolTip;
+        private Timer toolTipTimer;
+        private Timer timer;//para controlar la posicion del mause y ver si pasa por btn "descativado" y asi mostrar tooltip
         public InicioCierre()
         {
             InitializeComponent();
@@ -47,6 +50,27 @@ namespace Ofelia_Sara
 
             this.Load += new System.EventHandler(this.InicioCierre_Load);
 
+            // Asocia el evento TextChanged al método de validación
+            textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
+
+            // Inicialmente, deshabilita el botón
+            btn_AgregarDatosVictima.Enabled = false;
+            btn_AgregarDatosVictima.BackColor = Color.Tomato;
+
+            // Inicialmente, deshabilita el botón
+            btn_AgregarDatosImputado.Enabled = false;
+            btn_AgregarDatosImputado.BackColor = Color.Tomato;
+
+            // Inicializar el ToolTip
+            toolTip = new ToolTip();
+
+            // Inicializar y configurar el Timer
+            toolTipTimer = new Timer();
+            toolTipTimer.Interval = 100; // Verificar cada 100 milisegundos
+            toolTipTimer.Tick += Timer_Tick;
+            toolTipTimer.Start();
+
+            
         }
 
         //-----------------------------------------------------------------
@@ -56,14 +80,15 @@ namespace Ofelia_Sara
         }
 
         //-------------------------------------------------------------------
-  
-          
+
+
         //-------------------------------------------------------------------
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
             ActualizarProgressBars();
             timePickerPersonalizado1.SelectedDate = DateTime.Now;
+           
         }
 
 
@@ -91,11 +116,11 @@ namespace Ofelia_Sara
 
         }
         //--------------------------------------------------------------
-       
+
 
         //------------------------------------------------------------------
 
-    
+
 
         //----BOTON LIMPIAR/ELIMINAR-----------------------
 
@@ -107,8 +132,8 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //-------------------------------------------------------------------------------
-        
-      
+
+
         //----------------------------------------------------------
 
 
@@ -200,7 +225,7 @@ namespace Ofelia_Sara
         //    }
         //}
 
-        
+
 
 
 
@@ -324,9 +349,62 @@ namespace Ofelia_Sara
         private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
             AgregarDatosPersonalesImputado agregarDatosPersonales = new AgregarDatosPersonalesImputado();
-            
+
             agregarDatosPersonales.TextoNombre = textBox_Imputado.Text; // Pasa el contenido del TextBox
             agregarDatosPersonales.Show();
+        }
+
+        private void textBox_Victima_TextChanged(object sender, EventArgs e)
+        {
+            // Habilita o deshabilita el botón según si el TextBox tiene texto
+            if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
+            {
+                btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
+            }
+            else
+            {
+                btn_AgregarDatosVictima.BackColor = Color.Tomato;
+            }
+        }
+
+        private void textBox_Imputado_TextChanged(object sender, EventArgs e)
+        {
+            // Habilita o deshabilita el botón según si el TextBox tiene texto
+            if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text))
+            {
+                btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
+            }
+            else
+            {
+                btn_AgregarDatosImputado.BackColor = Color.Tomato;
+            }
+        }
+      
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Mostrar el ToolTip si el mouse está sobre el botón deshabilitado
+           if (!btn_AgregarDatosVictima.Enabled && btn_AgregarDatosVictima.ClientRectangle.Contains(btn_AgregarDatosVictima.PointToClient(MousePosition)))
+              {
+                toolTip.Show("Completar el nombre de la victima para poder agregar demas datos", btn_AgregarDatosVictima, btn_AgregarDatosVictima.Width / 2, btn_AgregarDatosVictima.Height / 2);
+            }
+            else
+            {
+                toolTip.Hide(btn_AgregarDatosVictima);
+            }
+        }
+        // Sobrescribir el evento FormClosing para detener y eliminar el Timer
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            // Detener el Timer
+            if (toolTipTimer != null)
+            {
+                toolTipTimer.Stop();
+                toolTipTimer.Tick -= Timer_Tick;
+                toolTipTimer.Dispose();
+                toolTipTimer = null;
+            }
+
+            base.OnFormClosing(e);
         }
     }
 }
