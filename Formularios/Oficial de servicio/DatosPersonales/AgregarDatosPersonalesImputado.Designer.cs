@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesImputado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.checkBox_NotArt60 = new System.Windows.Forms.CheckBox();
@@ -67,7 +68,8 @@
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.textBox_Telefono = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -84,6 +86,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.textBox_Telefono);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.checkBox_LegajoDetenido);
@@ -125,6 +129,18 @@
             this.panel1.Size = new System.Drawing.Size(575, 629);
             this.panel1.TabIndex = 0;
             // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+            this.btn_Buscar.Location = new System.Drawing.Point(59, 547);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Buscar.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            // 
             // label_Titulo
             // 
             this.label_Titulo.AutoSize = true;
@@ -141,7 +157,7 @@
             // checkBox_LegajoDetenido
             // 
             this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(454, 268);
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(454, 284);
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 8;
@@ -151,7 +167,7 @@
             // checkBox_NotArt60
             // 
             this.checkBox_NotArt60.AutoSize = true;
-            this.checkBox_NotArt60.Location = new System.Drawing.Point(224, 268);
+            this.checkBox_NotArt60.Location = new System.Drawing.Point(224, 284);
             this.checkBox_NotArt60.Name = "checkBox_NotArt60";
             this.checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
             this.checkBox_NotArt60.TabIndex = 7;
@@ -162,7 +178,7 @@
             // 
             this.label_LegajoDetenido.AutoSize = true;
             this.label_LegajoDetenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoDetenido.Location = new System.Drawing.Point(296, 266);
+            this.label_LegajoDetenido.Location = new System.Drawing.Point(296, 282);
             this.label_LegajoDetenido.Name = "label_LegajoDetenido";
             this.label_LegajoDetenido.Size = new System.Drawing.Size(144, 16);
             this.label_LegajoDetenido.TabIndex = 31;
@@ -172,7 +188,7 @@
             // 
             this.label_NotArt60.AutoSize = true;
             this.label_NotArt60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NotArt60.Location = new System.Drawing.Point(36, 266);
+            this.label_NotArt60.Location = new System.Drawing.Point(36, 282);
             this.label_NotArt60.Name = "label_NotArt60";
             this.label_NotArt60.Size = new System.Drawing.Size(182, 16);
             this.label_NotArt60.TabIndex = 30;
@@ -472,17 +488,22 @@
             this.label_CircunstanciasPersonales.TabIndex = 0;
             this.label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
             // 
-            // btn_Buscar
+            // textBox_Telefono
             // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(59, 547);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Buscar.TabIndex = 51;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
-            this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.textBox_Telefono.Location = new System.Drawing.Point(124, 244);
+            this.textBox_Telefono.Name = "textBox_Telefono";
+            this.textBox_Telefono.Size = new System.Drawing.Size(271, 20);
+            this.textBox_Telefono.TabIndex = 72;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 15);
+            this.label1.TabIndex = 73;
+            this.label1.Text = "TELEFONO :";
             // 
             // AgregarDatosPersonalesImputado
             // 
@@ -547,5 +568,7 @@
         private System.Windows.Forms.CheckBox checkBox_NotArt60;
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.TextBox textBox_Telefono;
+        private System.Windows.Forms.Label label1;
     }
 }

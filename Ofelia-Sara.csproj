@@ -131,6 +131,7 @@
     <Compile Include="general\clases\Botones\imprimir.cs" />
     <Compile Include="general\clases\Botones\limpiar_formulario.cs" />
     <Compile Include="general\clases\Apariencia General\mayuscula.cs" />
+    <Compile Include="general\clases\Botones\TooltipEnBtnDesactivado.cs" />
     <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
