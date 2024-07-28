@@ -67,6 +67,7 @@
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_Buscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -83,6 +84,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.checkBox_LegajoDetenido);
             this.panel1.Controls.Add(this.checkBox_NotArt60);
@@ -215,7 +217,7 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(180, 547);
+            this.btn_Limpiar.Location = new System.Drawing.Point(224, 547);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 14;
@@ -228,7 +230,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(339, 547);
+            this.btn_Guardar.Location = new System.Drawing.Point(376, 547);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 13;
@@ -470,6 +472,18 @@
             this.label_CircunstanciasPersonales.TabIndex = 0;
             this.label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
             // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+            this.btn_Buscar.Location = new System.Drawing.Point(59, 547);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Buscar.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            // 
             // AgregarDatosPersonalesImputado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,5 +546,6 @@
         private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
         private System.Windows.Forms.CheckBox checkBox_NotArt60;
         private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.Button btn_Buscar;
     }
 }

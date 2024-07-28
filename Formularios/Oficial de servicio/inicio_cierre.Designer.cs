@@ -67,6 +67,8 @@ namespace Ofelia_Sara
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
+            this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Localida = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
@@ -76,8 +78,6 @@ namespace Ofelia_Sara
             this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
-            this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,6 +209,7 @@ namespace Ofelia_Sara
             this.textBox_Victima.Name = "textBox_Victima";
             this.textBox_Victima.Size = new System.Drawing.Size(265, 20);
             this.textBox_Victima.TabIndex = 5;
+            this.textBox_Victima.TextChanged += new System.EventHandler(this.textBox_Victima_TextChanged);
             // 
             // textBox_Imputado
             // 
@@ -216,6 +217,7 @@ namespace Ofelia_Sara
             this.textBox_Imputado.Name = "textBox_Imputado";
             this.textBox_Imputado.Size = new System.Drawing.Size(265, 20);
             this.textBox_Imputado.TabIndex = 6;
+            this.textBox_Imputado.TextChanged += new System.EventHandler(this.textBox_Imputado_TextChanged);
             // 
             // comboBox_Ufid
             // 
@@ -372,7 +374,6 @@ namespace Ofelia_Sara
             this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
-           
             // 
             // btn_Limpiar
             // 
@@ -435,6 +436,31 @@ namespace Ofelia_Sara
             this.btn_AgregarImputado.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarImputado, "Agregar imputado");
             this.btn_AgregarImputado.UseVisualStyleBackColor = true;
+            // 
+            // btn_AgregarDatosImputado
+            // 
+            this.btn_AgregarDatosImputado.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosImputado.Image")));
+            this.btn_AgregarDatosImputado.Location = new System.Drawing.Point(10, 132);
+            this.btn_AgregarDatosImputado.Name = "btn_AgregarDatosImputado";
+            this.btn_AgregarDatosImputado.Size = new System.Drawing.Size(27, 23);
+            this.btn_AgregarDatosImputado.TabIndex = 38;
+            this.btn_AgregarDatosImputado.Text = "+";
+            this.toolTip1.SetToolTip(this.btn_AgregarDatosImputado, "Agregar datos personales de Imputado");
+            this.btn_AgregarDatosImputado.UseVisualStyleBackColor = true;
+            this.btn_AgregarDatosImputado.Click += new System.EventHandler(this.btn_AgregarDatosImputado_Click);
+            // 
+            // btn_AgregarDatosVictima
+            // 
+            this.btn_AgregarDatosVictima.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosVictima.Image")));
+            this.btn_AgregarDatosVictima.Location = new System.Drawing.Point(10, 104);
+            this.btn_AgregarDatosVictima.Name = "btn_AgregarDatosVictima";
+            this.btn_AgregarDatosVictima.Size = new System.Drawing.Size(27, 23);
+            this.btn_AgregarDatosVictima.TabIndex = 39;
+            this.btn_AgregarDatosVictima.Text = "+";
+            this.toolTip1.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
+            this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
+            this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.btn_AgregarDatosVictima_Click);
+           
             // 
             // panel1
             // 
@@ -567,30 +593,6 @@ namespace Ofelia_Sara
             this.lbl_Titulo.Size = new System.Drawing.Size(411, 24);
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
-            // 
-            // btn_AgregarDatosImputado
-            // 
-            this.btn_AgregarDatosImputado.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosImputado.Image")));
-            this.btn_AgregarDatosImputado.Location = new System.Drawing.Point(10, 132);
-            this.btn_AgregarDatosImputado.Name = "btn_AgregarDatosImputado";
-            this.btn_AgregarDatosImputado.Size = new System.Drawing.Size(27, 23);
-            this.btn_AgregarDatosImputado.TabIndex = 38;
-            this.btn_AgregarDatosImputado.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarDatosImputado, "Agregar datos personales de Imputado");
-            this.btn_AgregarDatosImputado.UseVisualStyleBackColor = true;
-            this.btn_AgregarDatosImputado.Click += new System.EventHandler(this.btn_AgregarDatosImputado_Click);
-            // 
-            // btn_AgregarDatosVictima
-            // 
-            this.btn_AgregarDatosVictima.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosVictima.Image")));
-            this.btn_AgregarDatosVictima.Location = new System.Drawing.Point(10, 104);
-            this.btn_AgregarDatosVictima.Name = "btn_AgregarDatosVictima";
-            this.btn_AgregarDatosVictima.Size = new System.Drawing.Size(27, 23);
-            this.btn_AgregarDatosVictima.TabIndex = 39;
-            this.btn_AgregarDatosVictima.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
-            this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
-            this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.btn_AgregarDatosVictima_Click);
             // 
             // InicioCierre
             // 

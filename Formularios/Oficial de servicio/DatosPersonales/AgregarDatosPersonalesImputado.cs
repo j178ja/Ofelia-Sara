@@ -66,7 +66,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Asociar el evento KeyPress al TextBox_Dni
             textBox_Dni.KeyPress += new KeyPressEventHandler(textBox_Dni_KeyPress);
 
-       
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Buscar);
         }
         
 
