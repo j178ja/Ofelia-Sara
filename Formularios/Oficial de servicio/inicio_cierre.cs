@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.Diagnostics.Eventing.Reader;
+using Ofelia_Sara.general.clases.Botones;
 
 namespace Ofelia_Sara
 {
@@ -20,8 +21,8 @@ namespace Ofelia_Sara
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
         private int camposCompletos;
         private ToolTip toolTip;
-        private Timer toolTipTimer;
-        private Timer timer;//para controlar la posicion del mause y ver si pasa por btn "descativado" y asi mostrar tooltip
+
+
         public InicioCierre()
         {
             InitializeComponent();
@@ -61,16 +62,8 @@ namespace Ofelia_Sara
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
 
-            // Inicializar el ToolTip
-            toolTip = new ToolTip();
 
-            // Inicializar y configurar el Timer
-            toolTipTimer = new Timer();
-            toolTipTimer.Interval = 100; // Verificar cada 100 milisegundos
-            toolTipTimer.Tick += Timer_Tick;
-            toolTipTimer.Start();
 
-            
         }
 
         //-----------------------------------------------------------------
@@ -88,7 +81,9 @@ namespace Ofelia_Sara
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
             ActualizarProgressBars();
             timePickerPersonalizado1.SelectedDate = DateTime.Now;
-           
+            TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
+            TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
+
         }
 
 
@@ -379,37 +374,6 @@ namespace Ofelia_Sara
                 btn_AgregarDatosImputado.BackColor = Color.Tomato;
             }
         }
-      
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            // Mostrar el ToolTip si el mouse está sobre el botón deshabilitado
-           if (!btn_AgregarDatosVictima.Enabled && btn_AgregarDatosVictima.ClientRectangle.Contains(btn_AgregarDatosVictima.PointToClient(MousePosition)))
-              {
-                toolTip.Show("Completar el nombre de la victima para poder agregar demas datos", btn_AgregarDatosVictima, btn_AgregarDatosVictima.Width / 2, btn_AgregarDatosVictima.Height / 2);
-            }
-            else
-            {
-                toolTip.Hide(btn_AgregarDatosVictima);
-            }
-        }
-        // Sobrescribir el evento FormClosing para detener y eliminar el Timer
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            // Detener el Timer
-            if (toolTipTimer != null)
-            {
-                toolTipTimer.Stop();
-                toolTipTimer.Tick -= Timer_Tick;
-                toolTipTimer.Dispose();
-                toolTipTimer = null;
-            }
 
-            base.OnFormClosing(e);
-        }
     }
 }
-
-
-
-
-
