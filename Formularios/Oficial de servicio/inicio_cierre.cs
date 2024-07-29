@@ -1,8 +1,6 @@
 ﻿using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.GenerarDocumentos;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-
-//using Ofelia_Sara.general.clases.Ofelia_Sara.general.clases;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,11 +9,11 @@ using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.Diagnostics.Eventing.Reader;
 using Ofelia_Sara.general.clases.Botones;
+using Ofelia_Sara.general.clases.Apariencia_General;
+
 
 namespace Ofelia_Sara
 {
-
-
     public partial class InicioCierre : BaseForm
     {
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
@@ -26,8 +24,7 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
-            ValidacionControles();
-
+           
             progressVerticalBar1 = new ProgressVerticalBar();
             progressVerticalBar2 = new ProgressVerticalBar();
 
@@ -53,7 +50,9 @@ namespace Ofelia_Sara
 
             // Asocia el evento TextChanged al método de validación
             textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
-
+            
+            //--------------------------------------------------------------------------------
+            //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
             btn_AgregarDatosVictima.Enabled = false;
             btn_AgregarDatosVictima.BackColor = Color.Tomato;
@@ -61,19 +60,15 @@ namespace Ofelia_Sara
             // Inicialmente, deshabilita el botón
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
+            //--------------------------------------------------------------------------------
 
-
-
+            //-----------CONVERSION A MAYUSCULAS--------------------------------------
+          
         }
 
         //-----------------------------------------------------------------
-        private void ValidacionControles()
-        { // Llama a TextoEnMayuscula.ConvertirTextoAMayusculas y pasa los ComboBox necesarios
-            //TextoEnMayuscula.ConvertirTextoAMayusculas(this, textBox_NumeroIpp, comboBox_Ipp1, comboBox_Ipp2, comboBox_Ipp4, comboBox_Ufid);
-        }
 
-        //-------------------------------------------------------------------
-
+      
 
         //-------------------------------------------------------------------
         private void InicioCierre_Load(object sender, EventArgs e)
@@ -83,6 +78,21 @@ namespace Ofelia_Sara
             timePickerPersonalizado1.SelectedDate = DateTime.Now;
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
+
+            //-------------------------------------------------------------------------------
+            // Define las excepciones para los TextBox y ComboBox.
+            var textBoxExcepciones = new Dictionary<string, bool>
+        {
+            { "textBox_NumeroIpp", true }  // Este TextBox solo acepta números.
+        };
+
+            var comboBoxExcepciones = new Dictionary<string, bool>
+        {
+            { "ComboBox_Ufid", true }  // Este ComboBox acepta letras, números y espacios.
+        };
+
+            // Aplica la configuración a todos los controles del formulario.
+            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
 
         }
 

@@ -32,8 +32,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
+            //permite que pictureBox reciba imagenes
             pictureBox_Frente.AllowDrop = true;
-            pictureBox_PerfilDerecho.AllowDrop = true;//permite que pictureBox reciba imagenes
+            pictureBox_PerfilDerecho.AllowDrop = true;
             pictureBox_PerfilIzquierdo.AllowDrop = true;
             pictureBox_CuerpoEntero.AllowDrop = true;
 
@@ -50,14 +51,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_CuerpoEntero.DragEnter += new DragEventHandler(pictureBox_DragEnter);
             pictureBox_CuerpoEntero.DragDrop += new DragEventHandler(pictureBox_DragDrop);
 
-            //Convertir texto en mayuscula
-            var textBoxExcepciones = new Dictionary<string, bool>
-             {
-                { textBox_Dni.Name, true },
-             { textBox_Edad.Name, true },
-             { textBox_FechaNacimiento.Name, true },
-                };
-              AplicarConversionMayusculas(panel1); 
+          
 
             // Asociar el evento KeyPress al TextBox_Edad
             textBox_Edad.KeyPress += new KeyPressEventHandler(textBox_Edad_KeyPress);
