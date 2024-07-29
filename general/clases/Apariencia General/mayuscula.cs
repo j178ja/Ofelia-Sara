@@ -6,228 +6,116 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using Ofelia_Sara.general.clases.Apariencia_General;
+// Esta clase contiene métodos para convertir texto a mayúsculas y filtrar caracteres especiales y números.
+public static class TextoEnMayuscula
+{
+    // Método principal para aplicar la lógica de conversión a controles dentro de un formulario o panel.
+    public static void AplicarAControles(Control control, Dictionary<string, bool> textBoxExcepciones = null, Dictionary<string, bool> comboBoxExcepciones = null)
+    {
+        // Verifica si el control no es nulo.
+        if (control == null)
+            throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
 
-//namespace Ofelia_Sara.general.clases
-//{
-//    public static class TextoEnMayuscula
-//    {
-//        //// Método para suscribir TextBox y ComboBox al evento TextChanged/KeyPress que convierte texto a mayúsculas y filtra números y caracteres especiales
-//        //public static void ConvertirTextoAMayusculas(Control control, TextBox textBox_NumeroIpp, params ComboBox[] comboBoxesNumericos)
-//        //{
-//        //    if (control == null)
-//        //    {
-//        //        throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
-//        //    }
+        // Recorre todos los controles hijos del control proporcionado.
+        foreach (Control c in control.Controls)
+        {
+            // Configura los TextBox según las excepciones especificadas.
+            if (c is TextBox textBox)
+            {
+                ConfigurarTextBox(textBox, textBoxExcepciones);
+            }
+            // Configura los ComboBox según las excepciones especificadas.
+            else if (c is ComboBox comboBox)
+            {
+                ConfigurarComboBox(comboBox, comboBoxExcepciones);
+            }
+            // Llama recursivamente para aplicar la configuración a los controles anidados.
+            else if (c.HasChildren)
+            {
+                AplicarAControles(c, textBoxExcepciones, comboBoxExcepciones);
+            }
+        }
+    }
 
-//        //    foreach (Control c in control.Controls)
-//        //    {
-//        //        if (c is TextBox textBox)
-//        //        {
-//        //            if (textBox == textBox_NumeroIpp || 
-//        //                textBox == textBox_Edad ||
-//        //                textBox == textBox_Dni ||
-//        //                textBox == textBox_FechaNacimiento)
-//        //            {
-//        //                // Solo permitir dígitos y teclas de control en textBox_NumeroIpp
-//        //                textBox.KeyPress += (sender, e) =>
-//        //                {
-//        //                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-//        //                    {
-//        //                        e.Handled = true;
-//        //                    }
-//        //                };
-//        //            }
+    // Método para configurar un TextBox.
+    public static void ConfigurarTextBox(TextBox textBox, Dictionary<string, bool> textBoxExcepciones)
+    {
+        // Verifica si el TextBox está en la lista de excepciones para solo permitir dígitos.
+        if (textBoxExcepciones != null && textBoxExcepciones.ContainsKey(textBox.Name) && textBoxExcepciones[textBox.Name])
+        {
+            // Maneja el evento KeyPress para permitir solo números.
+            textBox.KeyPress += (sender, e) =>
+            {
+                // Permite solo caracteres de control y dígitos.
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true; // Rechaza otros caracteres.
+                }
+            };
+        }
+        else
+        {
+            // Maneja el evento TextChanged para convertir el texto a mayúsculas y filtrar caracteres especiales.
+            textBox.TextChanged += (sender, e) =>
+            {
+                int selectionStart = textBox.SelectionStart; // Guarda la posición del cursor.
+                string filteredText = FiltrarTexto(textBox.Text); // Filtra el texto.
+                textBox.Text = filteredText.ToUpper(); // Convierte el texto a mayúsculas.
+                textBox.SelectionStart = selectionStart; // Restaura la posición del cursor.
+            };
+        }
+    }
 
-//        //            else
-//        //            {
-//        //                // Para todos los demás TextBox, aplicar la lógica de filtrado y conversión a mayúsculas
-//        //                textBox.TextChanged += (sender, e) =>
-//        //                {
-//        //                    int selectionStart = textBox.SelectionStart;
-//        //                    string filteredText = FiltrarTexto(textBox.Text);
-//        //                    textBox.Text = filteredText.ToUpper();
-//        //                    textBox.SelectionStart = selectionStart;
-//        //                };
-//        //            }
-//        //        }
-//        //---------------------------------------------
-//        public static void ConvertirTextoAMayusculas(Control control, Dictionary<string, bool> textBoxExcepciones)
-//        {
-//            foreach (Control c in control.Controls)
-//            {
-//                if (c is TextBox textBox)
-//                {
-//                    if (textBoxExcepciones != null && textBoxExcepciones.ContainsKey(textBox.Name) && textBoxExcepciones[textBox.Name])
-//                    {
-//                        // Solo permitir dígitos y teclas de control en los TextBox excepcionados
-//                        textBox.KeyPress += (sender, e) =>
-//                        {
-//                            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-//                            {
-//                                e.Handled = true;
-//                            }
-//                        };
-//                    }
-//                    else
-//                    {
-//                        // Para todos los demás TextBox, aplicar la lógica de filtrado y conversión a mayúsculas
-//                        textBox.TextChanged += (sender, e) =>
-//                        {
-//                            int selectionStart = textBox.SelectionStart;
-//                            string filteredText = FiltrarTexto(textBox.Text);
-//                            textBox.Text = filteredText.ToUpper();
-//                            textBox.SelectionStart = selectionStart;
-//                        };
-//                    }
-//                }
+    // Método para configurar un ComboBox.
+    public static void ConfigurarComboBox(ComboBox comboBox, Dictionary<string, bool> comboBoxExcepciones)
+    {
+        // Verifica si el ComboBox tiene una excepción específica.
+        if (comboBoxExcepciones != null && comboBoxExcepciones.ContainsKey(comboBox.Name) && comboBoxExcepciones[comboBox.Name])
+        {
+            // Configuración para ComboBox con excepciones específicas (acepta letras, números y espacios).
+            comboBox.KeyPress += (sender, e) =>
+            {
+                // Permite letras, dígitos, espacios y caracteres de control.
+                if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+                {
+                    e.Handled = true; // Rechaza caracteres no válidos.
+                }
+                else
+                {
+                    e.KeyChar = char.ToUpper(e.KeyChar); // Convierte el carácter a mayúsculas.
+                }
+            };
+        }
+        else
+        {
+            // Configuración por defecto (acepta letras y espacios, convierte las letras a mayúsculas).
+            comboBox.KeyPress += (sender, e) =>
+            {
+                // Permite letras, dígitos, espacios y caracteres de control.
+                if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+                {
+                    e.Handled = true; // Rechaza caracteres no válidos.
+                }
+                else
+                {
+                    e.KeyChar = char.ToUpper(e.KeyChar); // Convierte el carácter a mayúsculas.
+                }
+            };
+        }
+    }
 
-//               else if (c is ComboBox comboBox)
-//                {
-//                    if (comboBoxesNumericos.Contains(comboBox))
-//                    {
-//                        comboBox.KeyPress += (sender, e) =>
-//                        {
-//                            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-//                            {
-//                                e.Handled = true;
-//                            }
-//                        };
-//                    }
-//                    else
-//                    {
-//                        comboBox.KeyPress += (sender, e) =>
-//                        {
-//                            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-//                            {
-//                                e.Handled = true;
-//                            }
-//                            else
-//                            {
-//                                e.KeyChar = char.ToUpper(e.KeyChar);
-//                            }
-//                        };
-//                    }
-//                }
-
-//                //// Llama recursivamente al método para procesar controles anidados
-//                //ConvertirTextoAMayusculas(c, textBox_NumeroIpp, comboBoxesNumericos);
-//                // Aplica recursivamente para los controles hijos
-//                if (c.HasChildren)
-//                {
-//                    ConvertirTextoAMayusculas(c, textBoxExcepciones);
-//                }
-//            }
-//        }
-
-//        // Método auxiliar para filtrar caracteres no deseados
-//        private static string FiltrarTexto(string input)
-//        {
-//            StringBuilder filteredText = new StringBuilder();
-//            foreach (char c in input)
-//            {
-//                if (char.IsLetter(c) || char.IsWhiteSpace(c))
-//                {
-//                    filteredText.Append(c);
-//                }
-//            }
-//            return filteredText.ToString();
-//        }
-//    }
-//}
-//private static readonly ComboBox[] comboBoxesNumericos =
-//{
-//    comboBox_NumeroIpp,
-//    comboBox_Edad,
-
-//};
-
-
-//namespace Ofelia_Sara.general.clases
-//{
-//    public static class TextoEnMayuscula
-//    {
-//        // Método para convertir texto a mayúsculas y aplicar validaciones
-//        public static void ConvertirTextoAMayusculas(Control control, Dictionary<string, bool> textBoxExcepciones, ComboBox[] comboBoxesNumericos)
-//        {
-//            foreach (Control c in control.Controls)
-//            {
-//                if (c is TextBox textBox)
-//                {
-//                    if (textBoxExcepciones != null && textBoxExcepciones.ContainsKey(textBox.Name) && textBoxExcepciones[textBox.Name])
-//                    {
-//                        // Solo permitir dígitos y teclas de control en los TextBox excepcionados
-//                        textBox.KeyPress += (sender, e) =>
-//                        {
-//                            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-//                            {
-//                                e.Handled = true;
-//                            }
-//                        };
-//                    }
-//                    else
-//                    {
-//                        // Para todos los demás TextBox, aplicar la lógica de filtrado y conversión a mayúsculas
-//                        textBox.TextChanged += (sender, e) =>
-//                        {
-//                            int selectionStart = textBox.SelectionStart;
-//                            string filteredText = FiltrarTexto(textBox.Text);
-//                            textBox.Text = filteredText.ToUpper();
-//                            textBox.SelectionStart = selectionStart;
-//                        };
-//                    }
-//                }
-//                else if (c is ComboBox comboBox)
-//                {
-//                    if (Array.Exists(comboBoxesNumericos, element => element == comboBox))
-//                    {
-//                        // Solo permitir dígitos y teclas de control en ComboBox numéricos
-//                        comboBox.KeyPress += (sender, e) =>
-//                        {
-//                            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-//                            {
-//                                e.Handled = true;
-//                            }
-//                        };
-//                    }
-//                    else
-//                    {
-//                        // Aplicar la lógica para otros ComboBox (solo letras y convertir a mayúsculas)
-//                        comboBox.KeyPress += (sender, e) =>
-//                        {
-//                            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-//                            {
-//                                e.Handled = true;
-//                            }
-//                            else
-//                            {
-//                                e.KeyChar = char.ToUpper(e.KeyChar);
-//                            }
-//                        };
-//                    }
-//                }
-
-//                // Aplica recursivamente para los controles hijos
-//                if (c.HasChildren)
-//                {
-//                    ConvertirTextoAMayusculas(c, textBoxExcepciones, comboBoxesNumericos);
-//                }
-//            }
-//        }
-
-//        // Método auxiliar para filtrar caracteres no deseados
-//        private static string FiltrarTexto(string input)
-//        {
-//            StringBuilder filteredText = new StringBuilder();
-//            foreach (char c in input)
-//            {
-//                if (char.IsLetter(c) || char.IsWhiteSpace(c))
-//                {
-//                    filteredText.Append(c);
-//                }
-//            }
-//            return filteredText.ToString();
-//        }
-//    }
-//}
-
-
+    // Método para filtrar el texto, permitiendo solo letras y espacios en blanco.
+    private static string FiltrarTexto(string input)
+    {
+        StringBuilder filteredText = new StringBuilder();
+        foreach (char c in input)
+        {
+            if (char.IsLetter(c) || char.IsWhiteSpace(c))
+            {
+                filteredText.Append(c); // Agrega caracteres válidos al texto filtrado.
+            }
+        }
+        return filteredText.ToString(); // Devuelve el texto filtrado.
+    }
+}

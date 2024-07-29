@@ -37,34 +37,18 @@ namespace Ofelia_Sara.general.clases
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
 
-            AplicarConversionMayusculas(mainPanel);
+           
 
             this.Load += new System.EventHandler(this.BaseForm_Load);
         }
 
     
-
-            //----CLASE PRIVADA PARA QUE SE APLIQUE MAYUSCULA--------
-            protected void AplicarConversionMayusculas(Control control)
-        {
-            // Invocar el método de TextoEnMayuscula para convertir texto a mayúsculas
-            //TextoEnMayuscula.ConvertirTextoAMayusculas(control, null); // Pasar null si no se necesita filtrar ningún TextBox específico
-        }
-
-        //-----------------------------------------------------------------------------------------
-
-
         //--------BOTON LIMPIAR FORMULARIO --------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
         }
-        //--------BOTON GUARDAR-IMPRIMIR --------------------
-        //para que valide en todos los formularios
-        //que se encuentran con todos los campos completos
-       
-
-
+        
 
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLabel()
@@ -116,17 +100,12 @@ namespace Ofelia_Sara.general.clases
 
                 boton.Size = new Size(nuevoAncho, nuevoAlto);
                 boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
-
-                //boton.BackColor = Color.DodgerBlue;
-                //boton.BackColor = Color.FromArgb(0, 154, 174);
                 boton.BackColor = Color.FromArgb(51, 174, 189);
             };
 
             // Evento MouseHover: Cambia solo el color de fondo
             boton.MouseHover += (sender, e) =>
             {
-                //boton.BackColor = Color.DodgerBlue;
-                //boton.BackColor = Color.FromArgb(0, 154, 174); // COLOR "OFICIAL" USADO EN FONDO FORMULARIO
                 boton.BackColor = Color.FromArgb(51, 174, 189); //20% MAS CLARO QUE EL COLOR OFICIAL Y DE FONDO
             };
 
@@ -146,8 +125,6 @@ namespace Ofelia_Sara.general.clases
         {
             Size originalSize = boton.Size;
             Point originalLocation = boton.Location;
-
-
 
             // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
             boton.MouseEnter += (sender, e) =>
