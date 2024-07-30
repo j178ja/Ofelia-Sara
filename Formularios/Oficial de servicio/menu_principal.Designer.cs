@@ -29,8 +29,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.btn_Configuracion = new System.Windows.Forms.PictureBox();
             this.Btn_CambiarTema = new System.Windows.Forms.PictureBox();
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Denuncias = new System.Windows.Forms.Button();
@@ -43,24 +43,38 @@
             this.btn_Cargo = new System.Windows.Forms.Button();
             this.btn_Inspecciones = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Formularios = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
+            this.menu_Configurar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.aGREGARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNSTRUCTORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uFIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aGENTEFISCALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bUSCARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nIPPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cARATULAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vICTIMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iMPUTADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fECHAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sECRETARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNSTRUCTORToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEPENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sELLOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEDALLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eSCALERAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fOLIADORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).BeginInit();
             this.panel1.SuspendLayout();
+            this.menu_Configurar.SuspendLayout();
             this.SuspendLayout();
             // 
-            
+            // timePickerPersonalizadoFecha
             // 
-            // btn_Configuracion
-            // 
-            this.btn_Configuracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Configuracion.BackgroundImage")));
-            this.btn_Configuracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Configuracion.Location = new System.Drawing.Point(24, 26);
-            this.btn_Configuracion.Name = "btn_Configuracion";
-            this.btn_Configuracion.Size = new System.Drawing.Size(46, 50);
-            this.btn_Configuracion.TabIndex = 0;
-            this.btn_Configuracion.TabStop = false;
-            this.btn_Configuracion.Click += new System.EventHandler(this.Btn_Configuracion_Click);
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 30, 11, 48, 18, 815);
             // 
             // Btn_CambiarTema
             // 
@@ -207,8 +221,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_Configurar);
             this.panel1.Controls.Add(this.btn_Formularios);
-            this.panel1.Controls.Add(this.btn_Configuracion);
             this.panel1.Controls.Add(this.btn_Inspecciones);
             this.panel1.Controls.Add(this.Btn_CambiarTema);
             this.panel1.Controls.Add(this.btn_Cargo);
@@ -225,6 +239,21 @@
             this.panel1.Size = new System.Drawing.Size(532, 404);
             this.panel1.TabIndex = 12;
             // 
+            // btn_Configurar
+            // 
+            this.btn_Configurar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Configurar.BackgroundImage")));
+            this.btn_Configurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Configurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Configurar.FlatAppearance.BorderSize = 0;
+            this.btn_Configurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Configurar.Location = new System.Drawing.Point(40, 26);
+            this.btn_Configurar.Name = "btn_Configurar";
+            this.btn_Configurar.Size = new System.Drawing.Size(52, 50);
+            this.btn_Configurar.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btn_Configurar, "Configuración formularios");
+            this.btn_Configurar.UseVisualStyleBackColor = false;
+            this.btn_Configurar.Click += new System.EventHandler(this.btn_Configurar_Click);
+            // 
             // btn_Formularios
             // 
             this.btn_Formularios.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -234,6 +263,155 @@
             this.btn_Formularios.TabIndex = 12;
             this.btn_Formularios.Text = "FORMULARIOS";
             this.btn_Formularios.UseVisualStyleBackColor = true;
+            // 
+            // menu_Configurar
+            // 
+            this.menu_Configurar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aGREGARToolStripMenuItem,
+            this.bUSCARToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.menu_Configurar.Name = "menu_Configurar";
+            this.menu_Configurar.Size = new System.Drawing.Size(181, 92);
+            // 
+            // aGREGARToolStripMenuItem
+            // 
+            this.aGREGARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iNSTRUCTORToolStripMenuItem,
+            this.sECToolStripMenuItem,
+            this.uFIDToolStripMenuItem,
+            this.aGENTEFISCALToolStripMenuItem,
+            this.dEPENToolStripMenuItem,
+            this.sELLOSToolStripMenuItem});
+            this.aGREGARToolStripMenuItem.Name = "aGREGARToolStripMenuItem";
+            this.aGREGARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aGREGARToolStripMenuItem.Text = "AGREGAR";
+            // 
+            // iNSTRUCTORToolStripMenuItem
+            // 
+            this.iNSTRUCTORToolStripMenuItem.Name = "iNSTRUCTORToolStripMenuItem";
+            this.iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iNSTRUCTORToolStripMenuItem.Text = "INSTRUCTOR";
+            // 
+            // sECToolStripMenuItem
+            // 
+            this.sECToolStripMenuItem.Name = "sECToolStripMenuItem";
+            this.sECToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sECToolStripMenuItem.Text = "SECRETARIO";
+            // 
+            // uFIDToolStripMenuItem
+            // 
+            this.uFIDToolStripMenuItem.Name = "uFIDToolStripMenuItem";
+            this.uFIDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uFIDToolStripMenuItem.Text = "U.F.I.D.";
+            // 
+            // aGENTEFISCALToolStripMenuItem
+            // 
+            this.aGENTEFISCALToolStripMenuItem.Name = "aGENTEFISCALToolStripMenuItem";
+            this.aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aGENTEFISCALToolStripMenuItem.Text = "AGENTE FISCAL";
+            // 
+            // bUSCARToolStripMenuItem
+            // 
+            this.bUSCARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nIPPToolStripMenuItem,
+            this.cARATULAToolStripMenuItem,
+            this.vICTIMAToolStripMenuItem,
+            this.iMPUTADOToolStripMenuItem,
+            this.fECHAToolStripMenuItem,
+            this.sECRETARIOToolStripMenuItem,
+            this.iNSTRUCTORToolStripMenuItem1,
+            this.dEPENDENCIAToolStripMenuItem});
+            this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bUSCARToolStripMenuItem.Text = "BUSCAR";
+            // 
+            // nIPPToolStripMenuItem
+            // 
+            this.nIPPToolStripMenuItem.Name = "nIPPToolStripMenuItem";
+            this.nIPPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nIPPToolStripMenuItem.Text = "N° IPP";
+            // 
+            // cARATULAToolStripMenuItem
+            // 
+            this.cARATULAToolStripMenuItem.Name = "cARATULAToolStripMenuItem";
+            this.cARATULAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cARATULAToolStripMenuItem.Text = "CARATULA";
+            // 
+            // vICTIMAToolStripMenuItem
+            // 
+            this.vICTIMAToolStripMenuItem.Name = "vICTIMAToolStripMenuItem";
+            this.vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vICTIMAToolStripMenuItem.Text = "VICTIMA";
+            // 
+            // iMPUTADOToolStripMenuItem
+            // 
+            this.iMPUTADOToolStripMenuItem.Name = "iMPUTADOToolStripMenuItem";
+            this.iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iMPUTADOToolStripMenuItem.Text = "IMPUTADO";
+            // 
+            // fECHAToolStripMenuItem
+            // 
+            this.fECHAToolStripMenuItem.Name = "fECHAToolStripMenuItem";
+            this.fECHAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fECHAToolStripMenuItem.Text = "FECHA";
+            // 
+            // sECRETARIOToolStripMenuItem
+            // 
+            this.sECRETARIOToolStripMenuItem.Name = "sECRETARIOToolStripMenuItem";
+            this.sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sECRETARIOToolStripMenuItem.Text = "SECRETARIO";
+            // 
+            // iNSTRUCTORToolStripMenuItem1
+            // 
+            this.iNSTRUCTORToolStripMenuItem1.Name = "iNSTRUCTORToolStripMenuItem1";
+            this.iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.iNSTRUCTORToolStripMenuItem1.Text = "INSTRUCTOR";
+            // 
+            // dEPENDENCIAToolStripMenuItem
+            // 
+            this.dEPENDENCIAToolStripMenuItem.Name = "dEPENDENCIAToolStripMenuItem";
+            this.dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dEPENDENCIAToolStripMenuItem.Text = "DEPENDENCIA";
+            // 
+            // dEPENToolStripMenuItem
+            // 
+            this.dEPENToolStripMenuItem.Name = "dEPENToolStripMenuItem";
+            this.dEPENToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dEPENToolStripMenuItem.Text = "DEPENDENCIA";
+            // 
+            // sELLOSToolStripMenuItem
+            // 
+            this.sELLOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mEDALLAToolStripMenuItem,
+            this.eSCALERAToolStripMenuItem,
+            this.fOLIADORToolStripMenuItem});
+            this.sELLOSToolStripMenuItem.Name = "sELLOSToolStripMenuItem";
+            this.sELLOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sELLOSToolStripMenuItem.Text = "SELLOS";
+            // 
+            // mEDALLAToolStripMenuItem
+            // 
+            this.mEDALLAToolStripMenuItem.Name = "mEDALLAToolStripMenuItem";
+            this.mEDALLAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mEDALLAToolStripMenuItem.Text = "MEDALLA";
+            // 
+            // eSCALERAToolStripMenuItem
+            // 
+            this.eSCALERAToolStripMenuItem.Name = "eSCALERAToolStripMenuItem";
+            this.eSCALERAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eSCALERAToolStripMenuItem.Text = "ESCALERA";
+            // 
+            // fOLIADORToolStripMenuItem
+            // 
+            this.fOLIADORToolStripMenuItem.Name = "fOLIADORToolStripMenuItem";
+            this.fOLIADORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fOLIADORToolStripMenuItem.Text = "FOLIADOR";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
             // 
             // MenuPrincipal
             // 
@@ -250,19 +428,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-            //this.Controls.SetChildIndex(this.progressVerticalBar1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.menu_Configurar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox btn_Configuracion;
         private System.Windows.Forms.PictureBox Btn_CambiarTema;
         private System.Windows.Forms.Button btn_InicioCierre;
         private System.Windows.Forms.Button btn_Denuncias;
@@ -276,6 +451,29 @@
         private System.Windows.Forms.Button btn_Inspecciones;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Formularios;
+        private System.Windows.Forms.Button btn_Configurar;
+        private System.Windows.Forms.ContextMenuStrip menu_Configurar;
+        private System.Windows.Forms.ToolStripMenuItem aGREGARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iNSTRUCTORToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sECToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uFIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aGENTEFISCALToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bUSCARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nIPPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cARATULAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vICTIMAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iMPUTADOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fECHAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sECRETARIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iNSTRUCTORToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dEPENDENCIAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dEPENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sELLOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mEDALLAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eSCALERAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fOLIADORToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }    
  }
 
