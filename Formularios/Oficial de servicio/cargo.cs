@@ -14,18 +14,20 @@ namespace Ofelia_Sara
 
         private void Cargo_Load(object sender, EventArgs e)
         {
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Buscar);
 
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBotonAgregar(btn_AgregarCausa);
+            InicializarEstiloBotonAgregar(btn_AgregarVictima);
+            InicializarEstiloBotonAgregar(btn_AgregarImputado);
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {

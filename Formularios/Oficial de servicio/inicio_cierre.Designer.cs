@@ -104,6 +104,7 @@ namespace Ofelia_Sara
             this.textBox_NumeroIpp.TabIndex = 2;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
+            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
             // 
             // lbl_Ipp
             // 
@@ -460,7 +461,6 @@ namespace Ofelia_Sara
             this.toolTip1.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
             this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
             this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.btn_AgregarDatosVictima_Click);
-           
             // 
             // panel1
             // 
@@ -508,6 +508,7 @@ namespace Ofelia_Sara
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(455, 487);
             this.panel1.TabIndex = 30;
+            this.panel1.TabStop = true;
             // 
             // lbl_Localida
             // 
@@ -603,12 +604,14 @@ namespace Ofelia_Sara
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(516, 570);
             this.Name = "InicioCierre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO - CIERRE";
             this.Load += new System.EventHandler(this.InicioCierre_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InicioCierre_KeyDown);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);

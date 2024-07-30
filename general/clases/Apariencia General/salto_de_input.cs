@@ -12,21 +12,23 @@ namespace Ofelia_Sara.general.clases
         private Form _form;
         private Dictionary<Keys, Func<bool>> _keyActions;
 
-
         public SaltoDeImput(Form form)
         {
             _form = form;
 
             // Inicialización del diccionario _keyActions que mapea teclas a funciones booleanas
             _keyActions = new Dictionary<Keys, Func<bool>>
-        {
-            { Keys.Enter, MoveNextControl },   // Al presionar Enter, mueve al siguiente control
-            { Keys.Tab, MoveNextControl },     // Al presionar Tab, mueve al siguiente control
-            { Keys.Right, MoveNextControl },   // Al presionar Flecha Derecha, mueve al siguiente control
-            { Keys.Down, MoveNextControl },    // Al presionar Flecha Abajo, mueve al siguiente control
-            { Keys.Left, MovePreviousControl },// Al presionar Flecha Izquierda, mueve al control anterior
-            { Keys.Up, MovePreviousControl }   // Al presionar Flecha Arriba, mueve al control anterior
-        };
+            {
+                { Keys.Enter, MoveNextControl },   // Al presionar Enter, mueve al siguiente control
+                { Keys.Tab, MoveNextControl },     // Al presionar Tab, mueve al siguiente control
+                { Keys.Right, MoveNextControl },   // Al presionar Flecha Derecha, mueve al siguiente control
+                { Keys.Down, MoveNextControl },    // Al presionar Flecha Abajo, mueve al siguiente control
+                { Keys.Left, MovePreviousControl },// Al presionar Flecha Izquierda, mueve al control anterior
+                { Keys.Up, MovePreviousControl }   // Al presionar Flecha Arriba, mueve al control anterior
+            };
+
+            // Configura el formulario para recibir eventos de teclado antes de que los controles los manejen
+            _form.KeyPreview = true;
 
             // Suscribe el método Form_KeyDown al evento KeyDown del formulario _form
             _form.KeyDown += Form_KeyDown;
@@ -40,7 +42,7 @@ namespace Ofelia_Sara.general.clases
                 // Ejecuta la función asociada a la tecla y obtiene el resultado (true o false)
                 bool handled = _keyActions[e.KeyCode]();
 
-                // Si la acción fue manejada (handled es true), se suprime la pulsación de tecla
+                // Si la acción fue manejada (handled es true), suprime la pulsación de tecla
                 if (handled)
                 {
                     e.Handled = true;

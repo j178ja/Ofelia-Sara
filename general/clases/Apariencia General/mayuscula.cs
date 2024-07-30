@@ -56,6 +56,14 @@ public static class TextoEnMayuscula
         }
         else
         {
+            // Maneja el evento KeyPress para permitir solo letras y espacios.
+            textBox.KeyPress += (sender, e) =>
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true; // Rechaza otros caracteres.
+                }
+            };
             // Maneja el evento TextChanged para convertir el texto a mayúsculas y filtrar caracteres especiales.
             textBox.TextChanged += (sender, e) =>
             {

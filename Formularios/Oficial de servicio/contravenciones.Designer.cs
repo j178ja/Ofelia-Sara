@@ -60,9 +60,9 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.btn_AgregarArtContravencion = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -73,6 +73,10 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // timePickerPersonalizadoFecha
+            // 
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 29, 22, 8, 20, 556);
             // 
             // label1
             // 
@@ -312,7 +316,6 @@
             this.label19.Size = new System.Drawing.Size(51, 15);
             this.label19.TabIndex = 34;
             this.label19.Text = "FECHA";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // comboBox1
             // 
@@ -348,17 +351,17 @@
             this.toolTip1.SetToolTip(this.btn_AgregarArtContravencion, "Agregar Art Infraccion");
             this.btn_AgregarArtContravencion.UseVisualStyleBackColor = true;
             // 
-            // btnBuscar
+            // btn_Buscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(46, 530);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 67);
-            this.btnBuscar.TabIndex = 44;
-            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar archivos guardados");
-            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+            this.btn_Buscar.Location = new System.Drawing.Point(46, 530);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Buscar.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
+            this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // btn_Guardar
             // 
@@ -373,18 +376,18 @@
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
-            // btnLimpiar
+            // btn_Limpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(375, 530);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 67);
-            this.btnLimpiar.TabIndex = 46;
-            this.toolTip1.SetToolTip(this.btnLimpiar, "Limpiar formulario");
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
+            this.btn_Limpiar.Location = new System.Drawing.Point(375, 530);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Limpiar.TabIndex = 46;
+            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btn_Imprimir
             // 
@@ -409,11 +412,11 @@
             this.panel1.Controls.Add(this.textBox_NombreInfractor);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnLimpiar);
+            this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btn_AgregarArtContravencion);
             this.panel1.Controls.Add(this.label5);
@@ -542,9 +545,9 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Button btn_AgregarArtContravencion;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Guardar;
-        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label22;

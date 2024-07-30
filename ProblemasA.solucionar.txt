@@ -27,7 +27,7 @@ NO FUNCIONA ELIMINAR EL BOTON MAXIMIZAR, SOLO FUNCIONA DESHABILITAR (se puede so
 
          FALTA HACER
 
-1) que la fecha no tenga el dia
+                                  //solucionado             1) que la fecha no tenga el dia
 2 ) que el menu desplegable permita incorporar elementos a los combo box
 3) que el boton de imprimir  cambie recuadro a verde cuando este completo el formulario
 4) que si se apreta imprimir y no esta completo indique el campo que falta

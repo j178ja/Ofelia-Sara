@@ -29,6 +29,11 @@ namespace Ofelia_Sara.general.clases
                 {
                     dateTimePicker.Value = DateTime.Now; //se refiere a fecha ACTUAL
                 }
+                else if (c is CheckBox checkBox)
+                {
+                    checkBox.Checked = false; //limpia el check
+                }
+
 
                 // Limpia los controles anidados si existen
                 if (c.HasChildren)

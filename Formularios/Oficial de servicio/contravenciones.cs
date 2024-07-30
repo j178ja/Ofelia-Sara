@@ -13,13 +13,14 @@ namespace Ofelia_Sara
 
         private void Contravenciones_Load(object sender, EventArgs e)
         {
+            //// Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Buscar);
 
-        }
+           }
 
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
