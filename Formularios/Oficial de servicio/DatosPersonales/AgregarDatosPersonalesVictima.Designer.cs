@@ -40,10 +40,10 @@
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Dni;
         private System.Windows.Forms.Label label_Nombre;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_Email;
+        private System.Windows.Forms.Label label_Email;
+        private System.Windows.Forms.TextBox textBox_Telefono;
+        private System.Windows.Forms.Label label_Telefono;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
@@ -51,5 +51,9 @@
         private System.Windows.Forms.CheckBox checkBox_Notificacion258;
         private System.Windows.Forms.Label label_Notificacion258;
         private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.TextBox textBox_LugarNacimiento;
+        private System.Windows.Forms.Label label_LugarNacimiento;
+        private System.Windows.Forms.TextBox textBox_Ocupacion;
+        private System.Windows.Forms.Label label_Ocupacion;
     }
 }

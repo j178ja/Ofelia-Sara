@@ -22,7 +22,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             get { return textBox_Nombre.Text; }
             set { textBox_Nombre.Text = value; }
         }
-
+        //-------------------------------------------------------------------
         public  AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
@@ -64,6 +64,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Buscar);
+
+            //-------------------------------------------------------------------------------
+            // Define las excepciones para los TextBox y ComboBox.
+            var textBoxExcepciones = new Dictionary<string, bool>
+        {
+            { "textBox_Dni", true },  // Este TextBox solo acepta números.
+            {"textBox_Edad", true },
+            {"textBox_Telefono", true }
+            }; 
+
+            // Aplica la configuración a todos los controles del formulario.
+            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
         }
         
 
@@ -146,7 +158,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
         //---------------------------------------------------------------------
-        //------------limitar textBox_Dni a 6 digitos--------------------------
+        //------------limitar textBox_Dni a 8 digitos--------------------------
         private void textBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -157,7 +169,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
             // Verificar si el texto actual del TextBox tiene menos de 6 caracteres
-            if (textBox_Dni.Text.Length >= 6 && !char.IsControl(e.KeyChar))
+            if (textBox_Dni.Text.Length >= 8 && !char.IsControl(e.KeyChar))
             {
                 // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
@@ -175,6 +187,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //------------------------------------------------------------------------------------
+        //------------EVENTO PARA QUE EL COMBOBOX ESPECIFICO DE NACIONALIDAD ACEPTE SOLO LETRAS
+
+        private void comboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es una letra
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar la entrada si no es una letra
+            }
         }
     }
 }

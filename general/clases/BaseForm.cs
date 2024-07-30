@@ -13,10 +13,10 @@ namespace Ofelia_Sara.general.clases
     public class BaseForm : Form
     {
         private Label footerLabel;
-        private SaltoDeImput _saltoDeImput; // Declaración a nivel de clase
         private Panel mainPanel; // Panel que contiene los TextBox
-        protected Button btn_Imprimir;
+      
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
+        
 
         public BaseForm()
         {
@@ -24,31 +24,29 @@ namespace Ofelia_Sara.general.clases
             IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/general/imagenes/IconoEscudoPolicia.ico");
 
             InitializeFooterLabel();
+
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
                                                              //---ESTE COLOR PERTENECE AL ACTUAL DE MINISTERIO DE SEGURIDAD-----
             AparienciaFormularios.CambiarColorDeFondo(this, customColor);//llama a la clase que modifica el color de fondo
-                                                                         //-----------SALTOS DE INPUT---------------------------
-                                                                         // Configurar la navegación entre controles
-            _saltoDeImput = new SaltoDeImput(this);// llama a la clase salto_de_Input
-                                                   //-------------------------------------------------------------------------
-                                                   // Inicializa el panel principal
+            //-------------------------------------------------------------------------
+            
+            // Inicializa el panel principal
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
-
-           
-
             this.Load += new System.EventHandler(this.BaseForm_Load);
+            this.Load += BaseForm_Load;
         }
 
-    
+
+
         //--------BOTON LIMPIAR FORMULARIO --------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
         }
-        
+
 
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLabel()
@@ -76,8 +74,17 @@ namespace Ofelia_Sara.general.clases
         {
             // Suponiendo que 'timePickerPersonalizado1' es el nombre del control en el BaseForm
             timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
-        }
 
+
+
+        }
+      
+
+        //------METODO PARA VERIFICAR CAMPOS COMPLETOS Y CACTIVAR BOTON------------
+        private void Control_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
 
 
         //------------------------------------------------------------
@@ -159,9 +166,15 @@ namespace Ofelia_Sara.general.clases
                 boton.ForeColor = SystemColors.ControlText;
             };
         }
-               
+
+
+        //--eventos para evitar conflictos-------------
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+           
+        }
     }
-
 }
-
 

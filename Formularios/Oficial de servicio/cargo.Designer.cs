@@ -132,7 +132,7 @@
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 5;
             this.label6.Text = "U.F.I.D.";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // label7
             // 
@@ -257,7 +257,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(267, 20);
             this.textBox4.TabIndex = 7;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            
             // 
             // textBox5
             // 

@@ -10,6 +10,7 @@ using Word = Microsoft.Office.Interop.Word;
 using System.Diagnostics.Eventing.Reader;
 using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using System.Diagnostics;
 
 
 namespace Ofelia_Sara
@@ -24,7 +25,12 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
-           
+
+            //----------------------------------------------
+            //---manejador de teclado--------------
+            panel1.KeyDown += new KeyEventHandler(InicioCierre_KeyDown);
+            panel1.Focus(); // Asegúrate de que el panel tenga el foco para recibir eventos
+
             progressVerticalBar1 = new ProgressVerticalBar();
             progressVerticalBar2 = new ProgressVerticalBar();
 
@@ -62,13 +68,20 @@ namespace Ofelia_Sara
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
             //--------------------------------------------------------------------------------
 
-            //-----------CONVERSION A MAYUSCULAS--------------------------------------
-          
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(InicioCierre_KeyDown);
+
+            //-----------control de saltos de input--------------------------------------
+            // Registra el método Form_KeyDown al evento KeyDown del formulario
+            //this.KeyDown += InicioCierre_KeyDown;
         }
 
         //-----------------------------------------------------------------
 
-      
+        private void Control_Enter(object sender, EventArgs e)
+        {
+            Debug.WriteLine($"Control con foco: {((Control)sender)?.Name}");
+        }
 
         //-------------------------------------------------------------------
         private void InicioCierre_Load(object sender, EventArgs e)
@@ -79,6 +92,7 @@ namespace Ofelia_Sara
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
 
+          
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
@@ -94,10 +108,12 @@ namespace Ofelia_Sara
             // Aplica la configuración a todos los controles del formulario.
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
 
+ 
         }
 
 
-
+        //-----------------------------------------------------------------------------
+       
         //---------BOTON GUARDAR--------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -121,10 +137,6 @@ namespace Ofelia_Sara
 
         }
         //--------------------------------------------------------------
-
-
-        //------------------------------------------------------------------
-
 
 
         //----BOTON LIMPIAR/ELIMINAR-----------------------
@@ -384,6 +396,90 @@ namespace Ofelia_Sara
                 btn_AgregarDatosImputado.BackColor = Color.Tomato;
             }
         }
+
+        //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
+        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Obtiene el TextBox que disparó el evento
+                TextBox textBox = sender as TextBox;
+
+                if (textBox != null)
+                {
+                    // Obtiene el texto actual del TextBox
+                    string currentText = textBox.Text;
+
+                    // Verifica si el texto es numérico
+                    if (int.TryParse(currentText, out _))
+                    {
+                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                        string completedText = currentText.PadLeft(6, '0');
+
+                        // Actualiza el texto del TextBox
+                        textBox.Text = completedText;
+                    }
+                }
+
+                // Marca el evento como manejado para evitar el comportamiento predeterminado
+                e.Handled = true;
+            }
+        }
+
+        //---prueba para ver si logro implementar manejo de teclas
+        private void InicioCierre_KeyDown(object sender, KeyEventArgs e)
+        {
+            Debug.WriteLine($"Tecla presionada: {e.KeyCode}"); // Verifica si el evento se activa
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true; // Suprime el efecto predeterminado del Tab
+                SelectNextControl(ActiveControl, true, true, true, true); // Mueve al siguiente control
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                MoveToPreviousControl();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                MoveToNextControl();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void MoveToNextControl()
+        {
+            var controls = this.Controls.Cast<Control>().ToList();
+            var currentIndex = controls.IndexOf(ActiveControl);
+            if (currentIndex >= 0 && currentIndex < controls.Count - 1)
+            {
+                var nextControl = controls[currentIndex + 1];
+                Debug.WriteLine($"Moviendo foco a: {nextControl.Name}, Habilitado: {nextControl.Enabled}, Visible: {nextControl.Visible}");
+                if (nextControl.Enabled && nextControl.Visible)
+                {
+                    nextControl.Focus();
+                }
+            }
+        }
+
+        private void MoveToPreviousControl()
+        {
+            var controls = this.Controls.Cast<Control>().ToList();
+            var currentIndex = controls.IndexOf(ActiveControl);
+            if (currentIndex > 0)
+            {
+                var previousControl = controls[currentIndex - 1];
+                Debug.WriteLine($"Moviendo foco a: {previousControl.Name}, Habilitado: {previousControl.Enabled}, Visible: {previousControl.Visible}");
+                if (previousControl.Enabled && previousControl.Visible)
+                {
+                    previousControl.Focus();
+                }
+            }
+        }
+
+
+
 
     }
 }
