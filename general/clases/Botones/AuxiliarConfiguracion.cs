@@ -89,7 +89,7 @@ namespace Ofelia_Sara.general.clases.Botones
             subItem_Buscar_Instructor.Click += (sender, e) => MessageBox.Show("Seleccionaste INSTRUCTOR");
             subItem_Buscar_Dependencia.Click += (sender, e) => MessageBox.Show("Seleccionaste DEPENDENCIA");
 
-           item_Salir.Click += (sender, e) => menu_Configurar.Close();
+           item_Salir.Click += (sender, e) => menu_Configurar.Close(); // para que se cierre el menu
 
             return menu_Configurar;
         }
