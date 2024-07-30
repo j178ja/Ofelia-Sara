@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases.Agregar_Componentes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,18 +66,40 @@ namespace Ofelia_Sara.general.clases.Botones
             item_Buscar.DropDownItems.Add(subItem_Buscar_Instructor);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Dependencia);
 
+            // Crear el ítem "REMOVER"
+            ToolStripMenuItem item_Remover = new ToolStripMenuItem("REMOVER");
+
             // Crear el ítem "SALIR"
             ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
 
             // Añadir todos los ítems al ContextMenuStrip
             menu_Configurar.Items.Add(item_Agregar);
             menu_Configurar.Items.Add(item_Buscar);
+            menu_Configurar.Items.Add(item_Remover);
             menu_Configurar.Items.Add(item_Salir);
 
-            // Manejar eventos de clic en los ítems
-            subItem_Agregar_Secretario.Click += (sender, e) => MessageBox.Show("Seleccionaste SECRETARIO");
-            subItem_Agregar_Instructor.Click += (sender, e) => MessageBox.Show("Seleccionaste INSTRUCTOR");
-            subItem_Agregar_Dependencia.Click += (sender, e) => MessageBox.Show("Seleccionaste DEPENDENCIA");
+            // ----MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU-----
+
+            //--------para abrir formulario agregar secretario
+            subItem_Agregar_Secretario.Click += (sender, e) => {
+                NuevoSecretario nuevoSecretarioForm = new NuevoSecretario(); // Crear una instancia del formulario NuevoSecretario
+                nuevoSecretarioForm.ShowDialog();
+            };
+
+            //---------Para abrir formulario AGREGAR INSTRUCTOR-----
+            subItem_Agregar_Instructor.Click += (sender, e) =>{
+                NuevoInstructor nuevoInstructor = new NuevoInstructor();
+                nuevoInstructor.ShowDialog();
+            };
+
+            //---------Para abrir formulario AGREGAR DEPENDENCIA-----
+            subItem_Agregar_Dependencia.Click += (sender, e) => {
+                NuevaDependencia nuevaDependencia = new NuevaDependencia();
+                nuevaDependencia.ShowDialog();
+            };
+
+
+        
             subItem_Agregar_UFID.Click += (sender, e) => MessageBox.Show("Seleccionaste U.F.I.D.");
             subItem_Agregar_AgenteFiscal.Click += (sender, e) => MessageBox.Show("Seleccionaste AGENTE FISCAL");
 

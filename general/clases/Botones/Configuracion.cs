@@ -71,12 +71,16 @@ namespace Ofelia_Sara.general.clases
             item_Buscar.DropDownItems.Add(subItem_Buscar_Instructor);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Dependencia);
 
+            // Crear el ítem "REMOVER"
+            ToolStripMenuItem item_Remover = new ToolStripMenuItem("REMOVER");
+
             // Crear el ítem "SALIR"
             ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
 
             // Añadir todos los ítems al ContextMenuStrip
             menu_Configurar.Items.Add(item_Agregar);
             menu_Configurar.Items.Add(item_Buscar);
+            menu_Configurar.Items.Add(item_Remover);
             menu_Configurar.Items.Add(item_Salir);
 
             // Asociar el ContextMenuStrip al botón
