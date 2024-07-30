@@ -127,3 +127,4 @@ public static class TextoEnMayuscula
         return filteredText.ToString(); // Devuelve el texto filtrado.
     }
 }
+

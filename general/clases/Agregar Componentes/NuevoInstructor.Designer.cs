@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoInstructor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox_FirmaDigitalizada = new System.Windows.Forms.PictureBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label_Funcion = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label_Apellido = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label_Nombre = new System.Windows.Forms.Label();
             this.checkBox_AgregarSellos = new System.Windows.Forms.CheckBox();
             this.label_AgregaFirma = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -37,13 +44,6 @@
             this.textBox_Dependencia = new System.Windows.Forms.TextBox();
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.label_NuevoInstructor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_Nombre = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label_Apellido = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label_Funcion = new System.Windows.Forms.Label();
-            this.pictureBox_FirmaDigitalizada = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FirmaDigitalizada)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,71 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 364);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureBox_FirmaDigitalizada
+            // 
+            this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
+            this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(378, 178);
+            this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
+            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_FirmaDigitalizada.TabIndex = 37;
+            this.pictureBox_FirmaDigitalizada.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(152, 140);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(326, 21);
+            this.textBox3.TabIndex = 36;
+            // 
+            // label_Funcion
+            // 
+            this.label_Funcion.AutoSize = true;
+            this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Funcion.Location = new System.Drawing.Point(45, 143);
+            this.label_Funcion.Name = "label_Funcion";
+            this.label_Funcion.Size = new System.Drawing.Size(82, 16);
+            this.label_Funcion.TabIndex = 35;
+            this.label_Funcion.Text = "FUNCION :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(152, 111);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(326, 21);
+            this.textBox2.TabIndex = 34;
+            // 
+            // label_Apellido
+            // 
+            this.label_Apellido.AutoSize = true;
+            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Apellido.Location = new System.Drawing.Point(45, 114);
+            this.label_Apellido.Name = "label_Apellido";
+            this.label_Apellido.Size = new System.Drawing.Size(87, 16);
+            this.label_Apellido.TabIndex = 33;
+            this.label_Apellido.Text = "APELLIDO :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(152, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(326, 21);
+            this.textBox1.TabIndex = 32;
+            // 
+            // label_Nombre
+            // 
+            this.label_Nombre.AutoSize = true;
+            this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Nombre.Location = new System.Drawing.Point(45, 85);
+            this.label_Nombre.Name = "label_Nombre";
+            this.label_Nombre.Size = new System.Drawing.Size(80, 16);
+            this.label_Nombre.TabIndex = 31;
+            this.label_Nombre.Text = "NOMBRE :";
             // 
             // checkBox_AgregarSellos
             // 
@@ -104,6 +169,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 28;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -115,6 +181,7 @@
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 27;
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // textBox_Dependencia
             // 
@@ -147,79 +214,18 @@
             this.label_NuevoInstructor.TabIndex = 22;
             this.label_NuevoInstructor.Text = "NUEVO INSTRUCTOR";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(152, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 21);
-            this.textBox1.TabIndex = 32;
-            // 
-            // label_Nombre
-            // 
-            this.label_Nombre.AutoSize = true;
-            this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(45, 85);
-            this.label_Nombre.Name = "label_Nombre";
-            this.label_Nombre.Size = new System.Drawing.Size(80, 16);
-            this.label_Nombre.TabIndex = 31;
-            this.label_Nombre.Text = "NOMBRE :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(152, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(326, 21);
-            this.textBox2.TabIndex = 34;
-            // 
-            // label_Apellido
-            // 
-            this.label_Apellido.AutoSize = true;
-            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(45, 114);
-            this.label_Apellido.Name = "label_Apellido";
-            this.label_Apellido.Size = new System.Drawing.Size(87, 16);
-            this.label_Apellido.TabIndex = 33;
-            this.label_Apellido.Text = "APELLIDO :";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(152, 140);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(326, 21);
-            this.textBox3.TabIndex = 36;
-            // 
-            // label_Funcion
-            // 
-            this.label_Funcion.AutoSize = true;
-            this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(45, 143);
-            this.label_Funcion.Name = "label_Funcion";
-            this.label_Funcion.Size = new System.Drawing.Size(82, 16);
-            this.label_Funcion.TabIndex = 35;
-            this.label_Funcion.Text = "FUNCION :";
-            // 
-            // pictureBox_FirmaDigitalizada
-            // 
-            this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
-            this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(378, 178);
-            this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
-            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox_FirmaDigitalizada.TabIndex = 37;
-            this.pictureBox_FirmaDigitalizada.TabStop = false;
-            // 
             // NuevoInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 442);
             this.Controls.Add(this.panel1);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevoInstructor";
-            this.Text = "NuevoInstructor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AGREGAR NUEVO INSTRUCTOR";
             this.Load += new System.EventHandler(this.NuevoInstructor_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);

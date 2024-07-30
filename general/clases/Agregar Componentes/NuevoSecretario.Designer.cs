@@ -28,12 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoSecretario));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox_FirmaDigitalizada = new System.Windows.Forms.PictureBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label_Funcion = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label_Apellido = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label_Nombre = new System.Windows.Forms.Label();
+            this.checkBox_AgregarSellos = new System.Windows.Forms.CheckBox();
+            this.label_AgregaFirma = new System.Windows.Forms.Label();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.textBox_Dependencia = new System.Windows.Forms.TextBox();
+            this.label_Dependencia = new System.Windows.Forms.Label();
+            this.label_NuevoSecretario = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FirmaDigitalizada)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // timePickerPersonalizadoFecha
+            // 
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 30, 16, 45, 55, 651);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.pictureBox_FirmaDigitalizada);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label_Funcion);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label_Apellido);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label_Nombre);
+            this.panel1.Controls.Add(this.checkBox_AgregarSellos);
+            this.panel1.Controls.Add(this.label_AgregaFirma);
+            this.panel1.Controls.Add(this.btn_Limpiar);
+            this.panel1.Controls.Add(this.btn_Guardar);
+            this.panel1.Controls.Add(this.textBox_Dependencia);
+            this.panel1.Controls.Add(this.label_Dependencia);
+            this.panel1.Controls.Add(this.label_NuevoSecretario);
+            this.panel1.Location = new System.Drawing.Point(23, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(506, 359);
+            this.panel1.TabIndex = 2;
+            // 
+            // pictureBox_FirmaDigitalizada
+            // 
+            this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
+            this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(366, 177);
+            this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
+            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_FirmaDigitalizada.TabIndex = 51;
+            this.pictureBox_FirmaDigitalizada.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(140, 139);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(326, 21);
+            this.textBox3.TabIndex = 50;
+            // 
+            // label_Funcion
+            // 
+            this.label_Funcion.AutoSize = true;
+            this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Funcion.Location = new System.Drawing.Point(33, 142);
+            this.label_Funcion.Name = "label_Funcion";
+            this.label_Funcion.Size = new System.Drawing.Size(82, 16);
+            this.label_Funcion.TabIndex = 49;
+            this.label_Funcion.Text = "FUNCION :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(140, 110);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(326, 21);
+            this.textBox2.TabIndex = 48;
+            // 
+            // label_Apellido
+            // 
+            this.label_Apellido.AutoSize = true;
+            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Apellido.Location = new System.Drawing.Point(33, 113);
+            this.label_Apellido.Name = "label_Apellido";
+            this.label_Apellido.Size = new System.Drawing.Size(87, 16);
+            this.label_Apellido.TabIndex = 47;
+            this.label_Apellido.Text = "APELLIDO :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(140, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(326, 21);
+            this.textBox1.TabIndex = 46;
+            // 
+            // label_Nombre
+            // 
+            this.label_Nombre.AutoSize = true;
+            this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Nombre.Location = new System.Drawing.Point(33, 84);
+            this.label_Nombre.Name = "label_Nombre";
+            this.label_Nombre.Size = new System.Drawing.Size(80, 16);
+            this.label_Nombre.TabIndex = 45;
+            this.label_Nombre.Text = "NOMBRE :";
+            // 
+            // checkBox_AgregarSellos
+            // 
+            this.checkBox_AgregarSellos.AutoSize = true;
+            this.checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_AgregarSellos.Location = new System.Drawing.Point(300, 191);
+            this.checkBox_AgregarSellos.Name = "checkBox_AgregarSellos";
+            this.checkBox_AgregarSellos.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_AgregarSellos.TabIndex = 44;
+            this.checkBox_AgregarSellos.UseVisualStyleBackColor = true;
+            // 
+            // label_AgregaFirma
+            // 
+            this.label_AgregaFirma.AutoSize = true;
+            this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AgregaFirma.Location = new System.Drawing.Point(30, 189);
+            this.label_AgregaFirma.Name = "label_AgregaFirma";
+            this.label_AgregaFirma.Size = new System.Drawing.Size(237, 16);
+            this.label_AgregaFirma.TabIndex = 43;
+            this.label_AgregaFirma.Text = "AGREGAR FIRMA DIGITALIZADA";
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
+            this.btn_Limpiar.Location = new System.Drawing.Point(140, 264);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Limpiar.TabIndex = 42;
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
+            this.btn_Guardar.Location = new System.Drawing.Point(391, 264);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Guardar.TabIndex = 41;
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // textBox_Dependencia
+            // 
+            this.textBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Dependencia.Location = new System.Drawing.Point(140, 54);
+            this.textBox_Dependencia.Name = "textBox_Dependencia";
+            this.textBox_Dependencia.Size = new System.Drawing.Size(326, 21);
+            this.textBox_Dependencia.TabIndex = 40;
+            // 
+            // label_Dependencia
+            // 
+            this.label_Dependencia.AutoSize = true;
+            this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Dependencia.Location = new System.Drawing.Point(33, 57);
+            this.label_Dependencia.Name = "label_Dependencia";
+            this.label_Dependencia.Size = new System.Drawing.Size(101, 16);
+            this.label_Dependencia.TabIndex = 39;
+            this.label_Dependencia.Text = "JERARQUIA :";
+            // 
+            // label_NuevoSecretario
+            // 
+            this.label_NuevoSecretario.AutoSize = true;
+            this.label_NuevoSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_NuevoSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_NuevoSecretario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_NuevoSecretario.Location = new System.Drawing.Point(145, -1);
+            this.label_NuevoSecretario.Name = "label_NuevoSecretario";
+            this.label_NuevoSecretario.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label_NuevoSecretario.Size = new System.Drawing.Size(240, 24);
+            this.label_NuevoSecretario.TabIndex = 38;
+            this.label_NuevoSecretario.Text = "NUEVO SECRETARIO";
+            // 
+            // NuevoSecretario
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "NuevoSecretario";
+            this.ClientSize = new System.Drawing.Size(551, 432);
+            this.Controls.Add(this.panel1);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "NuevoSecretario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AGREGAR NUEVO SECRETARIO";
+            this.Load += new System.EventHandler(this.NuevoSecretario_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FirmaDigitalizada)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox_FirmaDigitalizada;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label_Funcion;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label_Apellido;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label_Nombre;
+        private System.Windows.Forms.CheckBox checkBox_AgregarSellos;
+        private System.Windows.Forms.Label label_AgregaFirma;
+        private System.Windows.Forms.Button btn_Limpiar;
+        private System.Windows.Forms.Button btn_Guardar;
+        private System.Windows.Forms.TextBox textBox_Dependencia;
+        private System.Windows.Forms.Label label_Dependencia;
+        private System.Windows.Forms.Label label_NuevoSecretario;
     }
 }

@@ -51,6 +51,11 @@
             this.sECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uFIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aGENTEFISCALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEPENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sELLOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEDALLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eSCALERAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fOLIADORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bUSCARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nIPPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cARATULAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,13 +65,8 @@
             this.sECRETARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSTRUCTORToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dEPENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sELLOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mEDALLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eSCALERAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fOLIADORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Btn_CambiarTema)).BeginInit();
             this.panel1.SuspendLayout();
             this.menu_Configurar.SuspendLayout();
@@ -271,7 +271,7 @@
             this.bUSCARToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menu_Configurar.Name = "menu_Configurar";
-            this.menu_Configurar.Size = new System.Drawing.Size(181, 92);
+            this.menu_Configurar.Size = new System.Drawing.Size(127, 70);
             // 
             // aGREGARToolStripMenuItem
             // 
@@ -283,32 +283,66 @@
             this.dEPENToolStripMenuItem,
             this.sELLOSToolStripMenuItem});
             this.aGREGARToolStripMenuItem.Name = "aGREGARToolStripMenuItem";
-            this.aGREGARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aGREGARToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aGREGARToolStripMenuItem.Text = "AGREGAR";
             // 
             // iNSTRUCTORToolStripMenuItem
             // 
             this.iNSTRUCTORToolStripMenuItem.Name = "iNSTRUCTORToolStripMenuItem";
-            this.iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.iNSTRUCTORToolStripMenuItem.Text = "INSTRUCTOR";
             // 
             // sECToolStripMenuItem
             // 
             this.sECToolStripMenuItem.Name = "sECToolStripMenuItem";
-            this.sECToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sECToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.sECToolStripMenuItem.Text = "SECRETARIO";
             // 
             // uFIDToolStripMenuItem
             // 
             this.uFIDToolStripMenuItem.Name = "uFIDToolStripMenuItem";
-            this.uFIDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uFIDToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.uFIDToolStripMenuItem.Text = "U.F.I.D.";
             // 
             // aGENTEFISCALToolStripMenuItem
             // 
             this.aGENTEFISCALToolStripMenuItem.Name = "aGENTEFISCALToolStripMenuItem";
-            this.aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.aGENTEFISCALToolStripMenuItem.Text = "AGENTE FISCAL";
+            // 
+            // dEPENToolStripMenuItem
+            // 
+            this.dEPENToolStripMenuItem.Name = "dEPENToolStripMenuItem";
+            this.dEPENToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.dEPENToolStripMenuItem.Text = "DEPENDENCIA";
+            // 
+            // sELLOSToolStripMenuItem
+            // 
+            this.sELLOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mEDALLAToolStripMenuItem,
+            this.eSCALERAToolStripMenuItem,
+            this.fOLIADORToolStripMenuItem});
+            this.sELLOSToolStripMenuItem.Name = "sELLOSToolStripMenuItem";
+            this.sELLOSToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.sELLOSToolStripMenuItem.Text = "SELLOS";
+            // 
+            // mEDALLAToolStripMenuItem
+            // 
+            this.mEDALLAToolStripMenuItem.Name = "mEDALLAToolStripMenuItem";
+            this.mEDALLAToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.mEDALLAToolStripMenuItem.Text = "MEDALLA";
+            // 
+            // eSCALERAToolStripMenuItem
+            // 
+            this.eSCALERAToolStripMenuItem.Name = "eSCALERAToolStripMenuItem";
+            this.eSCALERAToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.eSCALERAToolStripMenuItem.Text = "ESCALERA";
+            // 
+            // fOLIADORToolStripMenuItem
+            // 
+            this.fOLIADORToolStripMenuItem.Name = "fOLIADORToolStripMenuItem";
+            this.fOLIADORToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.fOLIADORToolStripMenuItem.Text = "FOLIADOR";
             // 
             // bUSCARToolStripMenuItem
             // 
@@ -322,95 +356,61 @@
             this.iNSTRUCTORToolStripMenuItem1,
             this.dEPENDENCIAToolStripMenuItem});
             this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.bUSCARToolStripMenuItem.Text = "BUSCAR";
             // 
             // nIPPToolStripMenuItem
             // 
             this.nIPPToolStripMenuItem.Name = "nIPPToolStripMenuItem";
-            this.nIPPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nIPPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nIPPToolStripMenuItem.Text = "N° IPP";
             // 
             // cARATULAToolStripMenuItem
             // 
             this.cARATULAToolStripMenuItem.Name = "cARATULAToolStripMenuItem";
-            this.cARATULAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cARATULAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cARATULAToolStripMenuItem.Text = "CARATULA";
             // 
             // vICTIMAToolStripMenuItem
             // 
             this.vICTIMAToolStripMenuItem.Name = "vICTIMAToolStripMenuItem";
-            this.vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vICTIMAToolStripMenuItem.Text = "VICTIMA";
             // 
             // iMPUTADOToolStripMenuItem
             // 
             this.iMPUTADOToolStripMenuItem.Name = "iMPUTADOToolStripMenuItem";
-            this.iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iMPUTADOToolStripMenuItem.Text = "IMPUTADO";
             // 
             // fECHAToolStripMenuItem
             // 
             this.fECHAToolStripMenuItem.Name = "fECHAToolStripMenuItem";
-            this.fECHAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fECHAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fECHAToolStripMenuItem.Text = "FECHA";
             // 
             // sECRETARIOToolStripMenuItem
             // 
             this.sECRETARIOToolStripMenuItem.Name = "sECRETARIOToolStripMenuItem";
-            this.sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sECRETARIOToolStripMenuItem.Text = "SECRETARIO";
             // 
             // iNSTRUCTORToolStripMenuItem1
             // 
             this.iNSTRUCTORToolStripMenuItem1.Name = "iNSTRUCTORToolStripMenuItem1";
-            this.iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.iNSTRUCTORToolStripMenuItem1.Text = "INSTRUCTOR";
             // 
             // dEPENDENCIAToolStripMenuItem
             // 
             this.dEPENDENCIAToolStripMenuItem.Name = "dEPENDENCIAToolStripMenuItem";
-            this.dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dEPENDENCIAToolStripMenuItem.Text = "DEPENDENCIA";
-            // 
-            // dEPENToolStripMenuItem
-            // 
-            this.dEPENToolStripMenuItem.Name = "dEPENToolStripMenuItem";
-            this.dEPENToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dEPENToolStripMenuItem.Text = "DEPENDENCIA";
-            // 
-            // sELLOSToolStripMenuItem
-            // 
-            this.sELLOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mEDALLAToolStripMenuItem,
-            this.eSCALERAToolStripMenuItem,
-            this.fOLIADORToolStripMenuItem});
-            this.sELLOSToolStripMenuItem.Name = "sELLOSToolStripMenuItem";
-            this.sELLOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sELLOSToolStripMenuItem.Text = "SELLOS";
-            // 
-            // mEDALLAToolStripMenuItem
-            // 
-            this.mEDALLAToolStripMenuItem.Name = "mEDALLAToolStripMenuItem";
-            this.mEDALLAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mEDALLAToolStripMenuItem.Text = "MEDALLA";
-            // 
-            // eSCALERAToolStripMenuItem
-            // 
-            this.eSCALERAToolStripMenuItem.Name = "eSCALERAToolStripMenuItem";
-            this.eSCALERAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eSCALERAToolStripMenuItem.Text = "ESCALERA";
-            // 
-            // fOLIADORToolStripMenuItem
-            // 
-            this.fOLIADORToolStripMenuItem.Name = "fOLIADORToolStripMenuItem";
-            this.fOLIADORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fOLIADORToolStripMenuItem.Text = "FOLIADOR";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // MenuPrincipal
@@ -423,6 +423,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(605, 647);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(605, 647);
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
