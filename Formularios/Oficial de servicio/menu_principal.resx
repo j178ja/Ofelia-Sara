@@ -118,24 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_Configuracion.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAArFJREFUWEfFl79rFEEUx/cvsPPfEHv/gTR3RwqbZC8S0MIioHtneWW0SwoLSQIW
-        CsI1ipWlCGqhNlqkE0RCiEFBjTnI6d74PrMzcW7v7d1mL/G+8IXZN+/H/HpvZqOymLu8cr6xmFytx61H
-        9TjZbsTJYaPZMpbSRkYfOug6s+nRWGhfFOfdejM5Og44gaLfxwZb5+bkmFtcOVeLk816s/VHC1KGMogU
-        H/hybsuhttS+IMYfNadViC98OvfjUVu4cUkMvmuOpiE+8e3C6HAzLxW8c+ee+XHwy5K2ppOnHUTRSrBP
-        LJVmqPH12w/Gg7amo5EY6pngsGgG8fWOWV2/b+av3BqS9fu/XXhj28h8P7rYhLKQxHJhM9hUU047Dj59
-        3rVB9va/ma2HT8zGg8dmZ/eLlYVARh86e/tfrQxbbRCyCulQioqgm1eCzGJa3BYfmm9i2uBUraIiw1Iy
-        86rANty6kDKAvq2YlE5NwZMlDTEYDMzzl+9M0lk380ttS9rI6AuBrebzmBJbll/qt9bpyL56EODuVlfV
-        g/SFg8BW0/MkNvu/rXVCDlB44Jhl2H/t5qplKEPHA9uiTIDEjoZuNUcKC7kdphpgqb3O02cvnNTYtpcn
-        nTUnzYAPfGnFSgbQi/JC+PPg0Jn/Q5qmdr/pZ9Z5+JVARwMVM4zhWXoA4GwG8B+24NWb98VbMPNDeNpp
-        GKJUGlYvRGt2vyFtZJUKkS3FUhY1hawUZxdLFUwsxcvu8Sofs7uMgHv5pnklDlC16zi7wEpfx2Dcg4RZ
-        hEuJLExR2mEgdLHRgsORBwk46ZOM3PY4lScZqPIopWpqRUYjvic+z8/2Wd4e/yz3cCsxmx8TD/aJwyLG
-        I9lRltjio3DPy8ClaFeoFiuN6GIzkmrTIP97LuwFAXuZzP2e+wo3EVH0F0oQgN5/f1faAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
   <data name="Btn_CambiarTema.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -180,6 +162,33 @@
         iHxJXN50daR7PVrv02tv90/I/xZr1vwTSdU+SdaODScAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>164, 17</value>
+  </metadata>
+  <data name="btn_Configurar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAArFJREFUWEfFl79rFEEUx/cvsPPfEHv/gTR3RwqbZC8S0MIioHtneWW0SwoLSQIW
+        CsI1ipWlCGqhNlqkE0RCiEFBjTnI6d74PrMzcW7v7d1mL/G+8IXZN+/H/HpvZqOymLu8cr6xmFytx61H
+        9TjZbsTJYaPZMpbSRkYfOug6s+nRWGhfFOfdejM5Og44gaLfxwZb5+bkmFtcOVeLk816s/VHC1KGMogU
+        H/hybsuhttS+IMYfNadViC98OvfjUVu4cUkMvmuOpiE+8e3C6HAzLxW8c+ee+XHwy5K2ppOnHUTRSrBP
+        LJVmqPH12w/Gg7amo5EY6pngsGgG8fWOWV2/b+av3BqS9fu/XXhj28h8P7rYhLKQxHJhM9hUU047Dj59
+        3rVB9va/ma2HT8zGg8dmZ/eLlYVARh86e/tfrQxbbRCyCulQioqgm1eCzGJa3BYfmm9i2uBUraIiw1Iy
+        86rANty6kDKAvq2YlE5NwZMlDTEYDMzzl+9M0lk380ttS9rI6AuBrebzmBJbll/qt9bpyL56EODuVlfV
+        g/SFg8BW0/MkNvu/rXVCDlB44Jhl2H/t5qplKEPHA9uiTIDEjoZuNUcKC7kdphpgqb3O02cvnNTYtpcn
+        nTUnzYAPfGnFSgbQi/JC+PPg0Jn/Q5qmdr/pZ9Z5+JVARwMVM4zhWXoA4GwG8B+24NWb98VbMPNDeNpp
+        GKJUGlYvRGt2vyFtZJUKkS3FUhY1hawUZxdLFUwsxcvu8Sofs7uMgHv5pnklDlC16zi7wEpfx2Dcg4RZ
+        hEuJLExR2mEgdLHRgsORBwk46ZOM3PY4lScZqPIopWpqRUYjvic+z8/2Wd4e/yz3cCsxmx8TD/aJwyLG
+        I9lRltjio3DPy8ClaFeoFiuN6GIzkmrTIP97LuwFAXuZzP2e+wo3EVH0F0oQgN5/f1faAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <metadata name="menu_Configurar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>164, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIACm/AAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv

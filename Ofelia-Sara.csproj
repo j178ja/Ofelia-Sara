@@ -119,6 +119,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="general\clases\Apariencia General\cabecera.cs" />
+    <Compile Include="general\clases\Botones\AuxiliarConfiguracion.cs" />
     <Compile Include="general\clases\Botones\cambio_de_tema.cs" />
     <Compile Include="general\clases\Botones\Configuracion.cs" />
     <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">

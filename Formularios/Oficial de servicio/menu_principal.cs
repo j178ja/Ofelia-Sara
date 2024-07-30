@@ -1,48 +1,46 @@
 ﻿using Ofelia_Sara.general.clases;
 using System;
 using System.Drawing;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using Ofelia_Sara.general.clases.Botones;
 
 namespace Ofelia_Sara
 {
     public partial class MenuPrincipal : BaseForm
     {
-        private ConfiguracionMenu configuracionMenu;
+       
+        private ContextMenuStrip contextMenu;
+        private AuxiliarConfiguracion auxiliarConfiguracion;
+
 
         public MenuPrincipal()
         {
             InitializeComponent();
+            auxiliarConfiguracion = new AuxiliarConfiguracion();
 
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            // Inicializar el manejador del menú de configuración
-            ConfiguracionMenu configuracionMenu1 = new ConfiguracionMenu();
-            configuracionMenu = configuracionMenu1;
-            // Asociar el menú contextual al botón Btn_Configuracion si no es nulo
-            if (Btn_Configuracion != null)
-            {
-                Btn_Configuracion.Click += (s, args) =>
-                {
-                    configuracionMenu.ShowMenu(Btn_Configuracion, new Point(0, Btn_Configuracion.Height));
-                };
-            }
+            // Configurar el botón para usar el menú de contexto
+            btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();
         }
+        //--------------------------------------------------------------------------------
+    
+        
 
-        private void Btn_Configuracion_Click(object sender, EventArgs e)
+        //------------BOTON CONFIGURAR--------------------------------------------------
+        private void btn_Configurar_Click(object sender, EventArgs e)
         {
-            // Mostrar el menú contextual en la posición del cursor del mouse
-            ////MouseEventArgs mouseEventArgs = e as MouseEventArgs;
-            //if (mouseEventArgs != null && mouseEventArgs.Button == MouseButtons.Left)
-            //{
-            //    configuracionMenu.ShowMenu(Btn_Configuracion, mouseEventArgs.Location);
-
-            //    //------POSICIONAR EL MENU JUSTO DEAJO DEL BOTON-------------
-            //    configuracionMenu.ShowMenu(Btn_Configuracion, new Point(0, Btn_Configuracion.Height));
-
-            //}
+            // Mostrar el ContextMenuStrip en la posición del botón
+            Point botonPosicion = btn_Configurar.PointToScreen(Point.Empty);
+            btn_Configurar.ContextMenuStrip.Show(botonPosicion);
         }
+
+
+       
+     
 
         //------BOTON CARGO--------------------------------------------
         private void Btn_Cargo_Click(object sender, EventArgs e)
@@ -140,5 +138,43 @@ namespace Ofelia_Sara
             // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
             MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+      
+        //--------------------------------------------------------------------------------
+
+        ////---------------BOTON CONFIGURACION-----------------------
+        ////---------para incrementar el tamaño------------------
+        //private void InicializarEstiloBotonConfiguracion(Button boton)
+        //{
+        //    Size originalSize = boton.Size;
+        //    Point originalLocation = boton.Location;
+
+        //    // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
+        //    boton.MouseHover += (sender, e) =>
+        //    {
+        //        // Calcula el incremento para centrar el cambio de tamaño
+        //        int incremento = 120;
+        //        int nuevoAncho = originalSize.Width + incremento;
+        //        int nuevoAlto = originalSize.Height + incremento;
+        //        int deltaX = (nuevoAncho - originalSize.Width) / 2;
+        //        int deltaY = (nuevoAlto - originalSize.Height) / 2;
+
+        //        boton.Size = new Size(nuevoAncho, nuevoAlto);
+        //        boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
+
+        //    };
+
+
+
+        //    // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
+        //    boton.MouseLeave += (sender, e) =>
+        //    {
+        //        boton.Size = originalSize;
+        //        boton.Location = originalLocation;
+
+        //    };
+        //}
+
+
     }
 }
