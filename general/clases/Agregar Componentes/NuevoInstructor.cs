@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
-    public partial class NuevoInstructor : Form
+    public partial class NuevoInstructor : BaseForm
     {
         public NuevoInstructor()
         {
             InitializeComponent();
+        }
+
+        private void NuevoInstructor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
