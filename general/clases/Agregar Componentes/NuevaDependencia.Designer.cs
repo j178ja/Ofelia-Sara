@@ -88,6 +88,7 @@
             // 
             // btn_Limpiar
             // 
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
@@ -97,6 +98,7 @@
             this.btn_Limpiar.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+          
             // 
             // btn_Guardar
             // 

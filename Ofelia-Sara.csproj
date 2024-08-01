@@ -98,6 +98,8 @@
     <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.Designer.cs">
       <DependentUpon>AgregarDatosPersonalesImputado.cs</DependentUpon>
     </Compile>
+    <Compile Include="general\clases\Agregar Componentes\ConfiguradorTextBox.cs" />
+    <Compile Include="general\clases\Agregar Componentes\ManejoDeNuevosComponentes.cs" />
     <Compile Include="general\clases\Agregar Componentes\NuevaDependencia.cs">
       <SubType>Form</SubType>
     </Compile>

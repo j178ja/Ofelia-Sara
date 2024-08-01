@@ -11,6 +11,7 @@ using System.Diagnostics.Eventing.Reader;
 using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using System.Diagnostics;
+using Ofelia_Sara.general.clases.Agregar_Componentes;
 
 
 namespace Ofelia_Sara
@@ -20,7 +21,7 @@ namespace Ofelia_Sara
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
         private int camposCompletos;
         private ToolTip toolTip;
-
+        private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
 
         public InicioCierre()
         {
@@ -56,7 +57,7 @@ namespace Ofelia_Sara
 
             // Asocia el evento TextChanged al método de validación
             textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
-            
+
             //--------------------------------------------------------------------------------
             //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
@@ -74,8 +75,10 @@ namespace Ofelia_Sara
             //-----------control de saltos de input--------------------------------------
             // Registra el método Form_KeyDown al evento KeyDown del formulario
             //this.KeyDown += InicioCierre_KeyDown;
-        }
 
+            // Cargar ítems en el ComboBox al iniciar el formulario
+            //ComboBoxManager.LoadComboBoxItems(comboBox_Dependencia, ComboBoxFilePath);
+        }
         //-----------------------------------------------------------------
 
         private void Control_Enter(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace Ofelia_Sara
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
 
-          
+            ComboBoxManager.ItemAdded += ComboBoxManager_ItemAdded;//para recargar y agregar nuevos items en comboBox
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
@@ -106,9 +109,10 @@ namespace Ofelia_Sara
         };
 
             // Aplica la configuración a todos los controles del formulario.
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
+            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones); //para guardar los items
 
- 
+            //------------------------------------
+          
         }
 
 
@@ -479,7 +483,18 @@ namespace Ofelia_Sara
         }
 
 
+        //-------------------------------------------------------------------------
+        //----eventos PARA ACTUALIZAR COMBO BOX---------------------------------
+        private void InicioCierre_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ComboBoxManager.ItemAdded -= ComboBoxManager_ItemAdded;
+        }
 
+        private void ComboBoxManager_ItemAdded(string nuevoItem)
+        {
+            // Aquí puedes actualizar el ComboBox o realizar otras acciones
+            comboBox_Dependencia.Items.Add(nuevoItem);
+        }
 
     }
 }
