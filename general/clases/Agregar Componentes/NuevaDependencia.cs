@@ -9,29 +9,72 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
     public partial class NuevaDependencia : BaseForm
-    {
+    { // Define un delegado para el evento ItemAgregado
+        public delegate void ItemAgregadoEventHandler(object sender, string nuevoItem);
+        // Evento que se dispara cuando se agrega un nuevo ítem
+        public event ItemAgregadoEventHandler ItemAgregado;
+
+        // Definición de ComboBoxFilePath como propiedad
+        private string ComboBoxFilePath { get; set; }
         public NuevaDependencia()
         {
             InitializeComponent();
+            // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
             this.Load += new EventHandler(NuevaDependencia_Load);
-
-            btn_Limpiar.Click += new EventHandler(btn_Limpiar_Click);
-
-            // Llamada para aplicar el estilo de boton de BaseForm
+            // Aplica el estilo de botón de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
-            
+            this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
         }
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
+
+            // Inicialización o asignación de ComboBoxFilePath
+            ComboBoxFilePath = "ruta_del_archivo.txt"; // Ejemplo de asignación
         }
 
+        private void NuevaDependencia_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        //------------------------------------------------------------------------------
+        //------------BOTON GUARDAR----------------------------------------------------
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            string nuevoItem = textBox_Dependencia.Text;
+
+            if (!string.IsNullOrEmpty(nuevoItem))
+            {
+                ComboBoxManager.AddItemToComboBox(this, "comboBox_Dependencia", nuevoItem);
+                ItemAgregado?.Invoke(this, nuevoItem);
+
+                MessageBox.Show("Se ha cargado nueva Dependencia a lista en formularios", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese el nombre completo de la nueva Dependencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        //------------------------------------------------------------------------------
+        //------------BOTON LIMPIAR/ELIMINAR ----------------------------------------------------
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            // Limpia el formulario
+            LimpiarFormulario.Limpiar(this);
+            // Muestra un mensaje de información
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
         private void ConfigurarTextBoxes(Control parent)
         {
             foreach (Control control in parent.Controls)
@@ -55,24 +98,6 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 }
             }
         }
-        //----BOTON LIMPIAR/ELIMINAR-----------------------
-
-        private void btn_Limpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        //-------------------------------------------------------------------------------
-
-        //----------BOTON GUARDAR---------------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ha cargado nueva Dependencia a lista de ComboBox.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-       
     }
 }
+
