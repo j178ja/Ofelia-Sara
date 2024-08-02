@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Botones;
+using Ofelia_Sara.Formularios.Oficial_de_servicio;
 
 namespace Ofelia_Sara
 {
@@ -138,8 +139,57 @@ namespace Ofelia_Sara
             // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
             MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        //--------------------------------------------------------------------------
+        //-------------EVENTOS CLICK PARA ITEMS DE MENU-------------------------
+        private void nIPPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //evento click para btn IPP
 
-      
+        }
+
+        private void cARATULAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // evento click para CARATULA
+            // Crear una instancia del formulario de destino
+            BuscarForm buscarForm = new BuscarForm();
+
+            // Mostrar el formulario
+            buscarForm.Show();
+            // Posicionar el cursor en el textBox específico
+            buscarForm.PosicionarCursorEnTextBox();
+        }
+
+        private void vICTIMAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // evento click para VICTIMA
+           // textBox_Victima();
+        }
+
+        private void iMPUTADOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // evento click para IMPUTADO
+            //textBox_Imputado();
+        }
+
+        private void sECRETARIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // evento click para SECRETARIO
+           // textBox_Secretario();
+        }
+
+        private void iNSTRUCTORToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // evento click para INSTRUCTOR
+           // textBox_Instructor();
+        }
+
+        private void dEPENDENCIAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // evento click para DEPENDENCIA
+           // textBox_Dependencia();
+        }
+
+
         //--------------------------------------------------------------------------------
 
         ////---------------BOTON CONFIGURACION-----------------------

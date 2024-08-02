@@ -87,94 +87,94 @@ namespace Ofelia_Sara.general.clases
             boton.ContextMenuStrip = menu_Configurar;
 
             // Manejar eventos de clic en los ítems
-            subItem_Agregar_Secretario.Click += SubItem_Agregar_Secretario_Click;
-            subItem_Agregar_Instructor.Click += SubItem_Agregar_Instructor_Click;
-            subItem_Agregar_Dependencia.Click += SubItem_Agregar_Dependencia_Click;
-            subItem_Agregar_UFID.Click += SubItem_Agregar_UFID_Click;
-            subItem_Agregar_AgenteFiscal.Click += SubItem_Agregar_AgenteFiscal_Click;
+            //subItem_Agregar_Secretario.Click += SubItem_Agregar_Secretario_Click;
+            //subItem_Agregar_Instructor.Click += SubItem_Agregar_Instructor_Click;
+            //subItem_Agregar_Dependencia.Click += SubItem_Agregar_Dependencia_Click;
+            //subItem_Agregar_UFID.Click += SubItem_Agregar_UFID_Click;
+            //subItem_Agregar_AgenteFiscal.Click += SubItem_Agregar_AgenteFiscal_Click;
 
-            subItem_Buscar_NIP.Click += SubItem_Buscar_NIP_Click;
-            subItem_Buscar_Caratula.Click += SubItem_Buscar_Caratula_Click;
-            subItem_Buscar_Victima.Click += SubItem_Buscar_Victima_Click;
-            subItem_Buscar_Imputado.Click += SubItem_Buscar_Imputado_Click;
-            subItem_Buscar_Fecha.Click += SubItem_Buscar_Fecha_Click;
-            subItem_Buscar_Secretario.Click += SubItem_Buscar_Secretario_Click;
-            subItem_Buscar_Instructor.Click += SubItem_Buscar_Instructor_Click;
-            subItem_Buscar_Dependencia.Click += SubItem_Buscar_Dependencia_Click;
+            //subItem_Buscar_NIP.Click += SubItem_Buscar_NIP_Click;
+            //subItem_Buscar_Caratula.Click += SubItem_Buscar_Caratula_Click;
+            //subItem_Buscar_Victima.Click += SubItem_Buscar_Victima_Click;
+            //subItem_Buscar_Imputado.Click += SubItem_Buscar_Imputado_Click;
+            //subItem_Buscar_Fecha.Click += SubItem_Buscar_Fecha_Click;
+            //subItem_Buscar_Secretario.Click += SubItem_Buscar_Secretario_Click;
+            //subItem_Buscar_Instructor.Click += SubItem_Buscar_Instructor_Click;
+            //subItem_Buscar_Dependencia.Click += SubItem_Buscar_Dependencia_Click;
 
-            item_Salir.Click += Item_Salir_Click;
+            //item_Salir.Click += Item_Salir_Click;
         }
 
-        // Métodos para manejar los clics en los subítems
-        private void SubItem_Agregar_Secretario_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste SECRETARIO");
-        }
+        //// Métodos para manejar los clics en los subítems
+        //private void SubItem_Agregar_Secretario_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste SECRETARIO");
+        //}
 
-        private void SubItem_Agregar_Instructor_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste INSTRUCTOR");
-        }
+        //private void SubItem_Agregar_Instructor_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste INSTRUCTOR");
+        //}
 
-        private void SubItem_Agregar_Dependencia_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste DEPENDENCIA");
-        }
+        //private void SubItem_Agregar_Dependencia_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste DEPENDENCIA");
+        //}
 
-        private void SubItem_Agregar_UFID_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste U.F.I.D.");
-        }
+        //private void SubItem_Agregar_UFID_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste U.F.I.D.");
+        //}
 
-        private void SubItem_Agregar_AgenteFiscal_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste AGENTE FISCAL");
-        }
+        //private void SubItem_Agregar_AgenteFiscal_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste AGENTE FISCAL");
+        //}
 
-        private void SubItem_Buscar_NIP_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste N° I.P.P.");
-        }
+        //private void SubItem_Buscar_NIP_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste N° I.P.P.");
+        //}
 
-        private void SubItem_Buscar_Caratula_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste CARATULA");
-        }
+        //private void SubItem_Buscar_Caratula_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste CARATULA");
+        //}
 
-        private void SubItem_Buscar_Victima_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste VICTIMA");
-        }
+        //private void SubItem_Buscar_Victima_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste VICTIMA");
+        //}
 
-        private void SubItem_Buscar_Imputado_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste IMPUTADO");
-        }
+        //private void SubItem_Buscar_Imputado_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste IMPUTADO");
+        //}
 
-        private void SubItem_Buscar_Fecha_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste FECHA");
-        }
+        //private void SubItem_Buscar_Fecha_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste FECHA");
+        //}
 
-        private void SubItem_Buscar_Secretario_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste SECRETARIO");
-        }
+        //private void SubItem_Buscar_Secretario_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste SECRETARIO");
+        //}
 
-        private void SubItem_Buscar_Instructor_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste INSTRUCTOR");
-        }
+        //private void SubItem_Buscar_Instructor_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste INSTRUCTOR");
+        //}
 
-        private void SubItem_Buscar_Dependencia_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Seleccionaste DEPENDENCIA");
-        }
+        //private void SubItem_Buscar_Dependencia_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Seleccionaste DEPENDENCIA");
+        //}
 
-        private void Item_Salir_Click(object sender, EventArgs e)
-        {
-            // Implementar la acción deseada al hacer clic en SALIR, como ocultar el menú.
-            MessageBox.Show("Salir seleccionado");
-        }
+        //private void Item_Salir_Click(object sender, EventArgs e)
+        //{
+        //    // Implementar la acción deseada al hacer clic en SALIR, como ocultar el menú.
+        //    MessageBox.Show("Salir seleccionado");
+        //}
     }
 }
