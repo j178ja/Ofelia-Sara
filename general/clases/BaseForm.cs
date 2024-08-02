@@ -12,7 +12,7 @@ namespace Ofelia_Sara.general.clases
     using System.Windows.Forms;
     public class BaseForm : Form
     {
-        private Label footerLabel;
+        private LinkLabel footerLinkLabel;
         private Panel mainPanel; // Panel que contiene los TextBox
       
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
@@ -23,8 +23,8 @@ namespace Ofelia_Sara.general.clases
             //---buscar alternativa para que obtenga el archivo desde almacenamiento interno----
             IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/general/imagenes/IconoEscudoPolicia.ico");
 
-            InitializeFooterLabel();
-
+            InitializeFooterLinkLabel();
+            this.timePickerPersonalizadoFecha = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -49,12 +49,12 @@ namespace Ofelia_Sara.general.clases
 
 
         //-----METODO PARA MOSTRAR FOOTER-----------------------
-        private void InitializeFooterLabel()
+        private void InitializeFooterLinkLabel()
         {
-            this.timePickerPersonalizadoFecha = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            
             // Llama al método estático de FooterHelper para obtener el footerLabel configurado
-            this.footerLabel = FooterHelper.CreateFooterLabel(this);
-            this.Controls.Add(this.footerLabel);
+            this.footerLinkLabel = FooterHelper.CreateFooterLinkLabel(this);
+            this.Controls.Add(this.footerLinkLabel);
         }
 
         protected void InitializeComponent()

@@ -56,11 +56,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Contacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Contacto.Designer.cs">
+      <DependentUpon>Contacto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.Designer.cs">
       <DependentUpon>AccesoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\BuscarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\BuscarForm.Designer.cs">
+      <DependentUpon>BuscarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\Cargo.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,7 @@
       <DependentUpon>NuevoSecretario.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
+    <Compile Include="general\clases\Apariencia General\CamelCase.cs" />
     <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +139,7 @@
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\MayusculaSimple.cs" />
+    <Compile Include="general\clases\Barra Busqueda\AsignacionDeTareas.cs" />
     <Compile Include="general\clases\Barras personalizadas\BarraVerticalProgreso.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -140,9 +154,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="general\clases\Apariencia General\cabecera.cs" />
-    <Compile Include="general\clases\Botones\AuxiliarConfiguracion.cs" />
+    <Compile Include="general\clases\Botones\btn_Configuracion\AuxiliarConfiguracion.cs" />
     <Compile Include="general\clases\Botones\cambio_de_tema.cs" />
-    <Compile Include="general\clases\Botones\Configuracion.cs" />
+    <Compile Include="general\clases\Botones\btn_Configuracion\Configuracion.cs" />
     <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -206,8 +220,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Contacto.resx">
+      <DependentUpon>Contacto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\AccesoPrincipal.resx">
       <DependentUpon>AccesoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\BuscarForm.resx">
+      <DependentUpon>BuscarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>

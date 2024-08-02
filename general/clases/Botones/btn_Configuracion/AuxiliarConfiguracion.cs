@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios.Oficial_de_servicio;
 
 namespace Ofelia_Sara.general.clases.Botones
 {
@@ -87,7 +88,7 @@ namespace Ofelia_Sara.general.clases.Botones
             };
 
             //---------Para abrir formulario AGREGAR INSTRUCTOR-----
-            subItem_Agregar_Instructor.Click += (sender, e) =>{
+            subItem_Agregar_Instructor.Click += (sender, e) => {
                 NuevoInstructor nuevoInstructor = new NuevoInstructor();
                 nuevoInstructor.ShowDialog();
             };
@@ -99,20 +100,24 @@ namespace Ofelia_Sara.general.clases.Botones
             };
 
 
-        
-            subItem_Agregar_UFID.Click += (sender, e) => MessageBox.Show("Seleccionaste U.F.I.D.");
-            subItem_Agregar_AgenteFiscal.Click += (sender, e) => MessageBox.Show("Seleccionaste AGENTE FISCAL");
 
-            subItem_Buscar_NIP.Click += (sender, e) => MessageBox.Show("Seleccionaste N° I.P.P.");
-            subItem_Buscar_Caratula.Click += (sender, e) => MessageBox.Show("Seleccionaste CARATULA");
-            subItem_Buscar_Victima.Click += (sender, e) => MessageBox.Show("Seleccionaste VICTIMA");
-            subItem_Buscar_Imputado.Click += (sender, e) => MessageBox.Show("Seleccionaste IMPUTADO");
-            subItem_Buscar_Fecha.Click += (sender, e) => MessageBox.Show("Seleccionaste FECHA");
-            subItem_Buscar_Secretario.Click += (sender, e) => MessageBox.Show("Seleccionaste SECRETARIO");
-            subItem_Buscar_Instructor.Click += (sender, e) => MessageBox.Show("Seleccionaste INSTRUCTOR");
-            subItem_Buscar_Dependencia.Click += (sender, e) => MessageBox.Show("Seleccionaste DEPENDENCIA");
+            //subItem_Agregar_UFID.Click += (sender, e) => MessageBox.Show("Seleccionaste U.F.I.D.");
+            //subItem_Agregar_AgenteFiscal.Click += (sender, e) => MessageBox.Show("Seleccionaste AGENTE FISCAL");
 
-           item_Salir.Click += (sender, e) => menu_Configurar.Close(); // para que se cierre el menu
+            //subItem_Buscar_NIP.Click += (sender, e) => MessageBox.Show("Seleccionaste N° I.P.P.");
+            subItem_Buscar_Caratula.Click += (sender, e) => {// Crear una instancia del formulario de destino
+                     BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();// Mostrar el formulario
+            buscarForm.PosicionarCursorEnTextBox();// Posicionar el cursor en el textBox específico
+            };
+        //subItem_Buscar_Victima.Click += (sender, e) => MessageBox.Show("Seleccionaste VICTIMA");
+        //subItem_Buscar_Imputado.Click += (sender, e) => MessageBox.Show("Seleccionaste IMPUTADO");
+        //subItem_Buscar_Fecha.Click += (sender, e) => MessageBox.Show("Seleccionaste FECHA");
+        //subItem_Buscar_Secretario.Click += (sender, e) => MessageBox.Show("Seleccionaste SECRETARIO");
+        //subItem_Buscar_Instructor.Click += (sender, e) => MessageBox.Show("Seleccionaste INSTRUCTOR");
+        //subItem_Buscar_Dependencia.Click += (sender, e) => MessageBox.Show("Seleccionaste DEPENDENCIA");
+
+        item_Salir.Click += (sender, e) => menu_Configurar.Close(); // para que se cierre el menu
 
             return menu_Configurar;
         }

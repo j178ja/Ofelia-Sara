@@ -43,6 +43,8 @@
             this.btn_Cargo = new System.Windows.Forms.Button();
             this.btn_Inspecciones = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_BuscarTarea = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Formularios = new System.Windows.Forms.Button();
             this.menu_Configurar = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -74,13 +76,13 @@
             // 
             // timePickerPersonalizadoFecha
             // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 30, 11, 48, 18, 815);
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 2, 17, 6, 33, 453);
             // 
             // Btn_CambiarTema
             // 
             this.Btn_CambiarTema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_CambiarTema.BackgroundImage")));
             this.Btn_CambiarTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Btn_CambiarTema.Location = new System.Drawing.Point(462, 26);
+            this.Btn_CambiarTema.Location = new System.Drawing.Point(478, 3);
             this.Btn_CambiarTema.Name = "Btn_CambiarTema";
             this.Btn_CambiarTema.Size = new System.Drawing.Size(51, 50);
             this.Btn_CambiarTema.TabIndex = 1;
@@ -221,6 +223,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_BuscarTarea);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.btn_Configurar);
             this.panel1.Controls.Add(this.btn_Formularios);
             this.panel1.Controls.Add(this.btn_Inspecciones);
@@ -239,6 +243,28 @@
             this.panel1.Size = new System.Drawing.Size(532, 404);
             this.panel1.TabIndex = 12;
             // 
+            // btn_BuscarTarea
+            // 
+            this.btn_BuscarTarea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_BuscarTarea.BackgroundImage")));
+            this.btn_BuscarTarea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_BuscarTarea.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BuscarTarea.FlatAppearance.BorderSize = 0;
+            this.btn_BuscarTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BuscarTarea.Location = new System.Drawing.Point(98, 51);
+            this.btn_BuscarTarea.Name = "btn_BuscarTarea";
+            this.btn_BuscarTarea.Size = new System.Drawing.Size(53, 46);
+            this.btn_BuscarTarea.TabIndex = 15;
+            this.btn_BuscarTarea.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(153, 60);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(294, 28);
+            this.comboBox1.TabIndex = 14;
+            // 
             // btn_Configurar
             // 
             this.btn_Configurar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Configurar.BackgroundImage")));
@@ -246,7 +272,7 @@
             this.btn_Configurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Configurar.FlatAppearance.BorderSize = 0;
             this.btn_Configurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Configurar.Location = new System.Drawing.Point(40, 26);
+            this.btn_Configurar.Location = new System.Drawing.Point(3, 3);
             this.btn_Configurar.Name = "btn_Configurar";
             this.btn_Configurar.Size = new System.Drawing.Size(52, 50);
             this.btn_Configurar.TabIndex = 13;
@@ -271,7 +297,7 @@
             this.bUSCARToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menu_Configurar.Name = "menu_Configurar";
-            this.menu_Configurar.Size = new System.Drawing.Size(127, 70);
+            this.menu_Configurar.Size = new System.Drawing.Size(181, 92);
             // 
             // aGREGARToolStripMenuItem
             // 
@@ -283,7 +309,7 @@
             this.dEPENToolStripMenuItem,
             this.sELLOSToolStripMenuItem});
             this.aGREGARToolStripMenuItem.Name = "aGREGARToolStripMenuItem";
-            this.aGREGARToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aGREGARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aGREGARToolStripMenuItem.Text = "AGREGAR";
             // 
             // iNSTRUCTORToolStripMenuItem
@@ -356,61 +382,68 @@
             this.iNSTRUCTORToolStripMenuItem1,
             this.dEPENDENCIAToolStripMenuItem});
             this.bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.bUSCARToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bUSCARToolStripMenuItem.Text = "BUSCAR";
             // 
             // nIPPToolStripMenuItem
             // 
             this.nIPPToolStripMenuItem.Name = "nIPPToolStripMenuItem";
-            this.nIPPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nIPPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nIPPToolStripMenuItem.Text = "N° IPP";
+            this.nIPPToolStripMenuItem.Click += new System.EventHandler(this.nIPPToolStripMenuItem_Click);
             // 
             // cARATULAToolStripMenuItem
             // 
             this.cARATULAToolStripMenuItem.Name = "cARATULAToolStripMenuItem";
-            this.cARATULAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cARATULAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cARATULAToolStripMenuItem.Text = "CARATULA";
+            this.cARATULAToolStripMenuItem.Click += new System.EventHandler(this.cARATULAToolStripMenuItem_Click);
             // 
             // vICTIMAToolStripMenuItem
             // 
             this.vICTIMAToolStripMenuItem.Name = "vICTIMAToolStripMenuItem";
-            this.vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vICTIMAToolStripMenuItem.Text = "VICTIMA";
+            this.vICTIMAToolStripMenuItem.Click += new System.EventHandler(this.vICTIMAToolStripMenuItem_Click);
             // 
             // iMPUTADOToolStripMenuItem
             // 
             this.iMPUTADOToolStripMenuItem.Name = "iMPUTADOToolStripMenuItem";
-            this.iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iMPUTADOToolStripMenuItem.Text = "IMPUTADO";
+            this.iMPUTADOToolStripMenuItem.Click += new System.EventHandler(this.iMPUTADOToolStripMenuItem_Click);
             // 
             // fECHAToolStripMenuItem
             // 
             this.fECHAToolStripMenuItem.Name = "fECHAToolStripMenuItem";
-            this.fECHAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fECHAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fECHAToolStripMenuItem.Text = "FECHA";
             // 
             // sECRETARIOToolStripMenuItem
             // 
             this.sECRETARIOToolStripMenuItem.Name = "sECRETARIOToolStripMenuItem";
-            this.sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sECRETARIOToolStripMenuItem.Text = "SECRETARIO";
+            this.sECRETARIOToolStripMenuItem.Click += new System.EventHandler(this.sECRETARIOToolStripMenuItem_Click);
             // 
             // iNSTRUCTORToolStripMenuItem1
             // 
             this.iNSTRUCTORToolStripMenuItem1.Name = "iNSTRUCTORToolStripMenuItem1";
-            this.iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.iNSTRUCTORToolStripMenuItem1.Text = "INSTRUCTOR";
+            this.iNSTRUCTORToolStripMenuItem1.Click += new System.EventHandler(this.iNSTRUCTORToolStripMenuItem1_Click);
             // 
             // dEPENDENCIAToolStripMenuItem
             // 
             this.dEPENDENCIAToolStripMenuItem.Name = "dEPENDENCIAToolStripMenuItem";
-            this.dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dEPENDENCIAToolStripMenuItem.Text = "DEPENDENCIA";
+            this.dEPENDENCIAToolStripMenuItem.Click += new System.EventHandler(this.dEPENDENCIAToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // MenuPrincipal
@@ -475,6 +508,8 @@
         private System.Windows.Forms.ToolStripMenuItem fOLIADORToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_BuscarTarea;
     }    
  }
 
