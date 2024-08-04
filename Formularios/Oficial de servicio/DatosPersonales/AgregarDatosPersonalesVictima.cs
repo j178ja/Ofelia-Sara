@@ -471,7 +471,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.ClientSize = new System.Drawing.Size(608, 542);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MinimumSize = new System.Drawing.Size(624, 581);
             this.Name = "AgregarDatosPersonalesVictima";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CIRCUNSTANCIAS PERSONALES VICTIMA";
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load_1);
             this.Controls.SetChildIndex(this.panel1, 0);

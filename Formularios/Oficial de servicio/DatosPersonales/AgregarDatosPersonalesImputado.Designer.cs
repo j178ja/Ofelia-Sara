@@ -563,8 +563,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 747);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(632, 786);
             this.Name = "AgregarDatosPersonalesImputado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CIRCUNSTANCIAS PERSONALES  IMPUTADO";
             this.Load += new System.EventHandler(this.AgregarDatosPersonales_Load);
             this.Controls.SetChildIndex(this.panel1, 0);

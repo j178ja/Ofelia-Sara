@@ -45,9 +45,18 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         //---------BOTON GUARDAR---------------------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha cargado nuevo Instructor a lista de ComboBox.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if
+              (string.IsNullOrWhiteSpace(textBox_Jerarquia.Text) ||
+               string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+               string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+            {
+                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Se ha cargado nuevo Instructor a lista de Instructores en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
         private void ConfigurarTextBoxes(Control parent)
@@ -72,6 +81,15 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                     ConfigurarTextBoxes(control);
                 }
             }
+        }
+
+        private void NuevoInstructor_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+                // Mostrar un mensaje de ayuda
+                MessageBox.Show("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor" , "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
         }
     }
 }

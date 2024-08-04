@@ -111,6 +111,12 @@
       <DependentUpon>AgregarDatosPersonalesImputado.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Agregar Componentes\ConfiguradorTextBox.cs" />
+    <Compile Include="general\clases\Agregar Componentes\NuevaFiscalia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general\clases\Agregar Componentes\NuevaFiscalia.Designer.cs">
+      <DependentUpon>NuevaFiscalia.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Agregar Componentes\ManejoDeNuevosComponentes.cs" />
     <Compile Include="general\clases\Agregar Componentes\NuevaDependencia.cs">
       <SubType>Form</SubType>
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="general\clases\Agregar Componentes\NuevoSecretario.Designer.cs">
       <DependentUpon>NuevoSecretario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general\clases\Agregar Componentes\SellosDependencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general\clases\Agregar Componentes\SellosDependencia.Designer.cs">
+      <DependentUpon>SellosDependencia.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\CamelCase.cs" />
@@ -247,6 +259,9 @@
     <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.resx">
       <DependentUpon>AgregarDatosPersonalesImputado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Agregar Componentes\NuevaFiscalia.resx">
+      <DependentUpon>NuevaFiscalia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Agregar Componentes\NuevaDependencia.resx">
       <DependentUpon>NuevaDependencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Agregar Componentes\NuevoSecretario.resx">
       <DependentUpon>NuevoSecretario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Agregar Componentes\SellosDependencia.resx">
+      <DependentUpon>SellosDependencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
