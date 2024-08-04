@@ -45,11 +45,21 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         //-------------BOTON GUARDAR--------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha cargado nuevo Secretario a lista de ComboBox.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if
+                (string.IsNullOrWhiteSpace(textBox_Jerarquia.Text) ||
+                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+                 string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+        { 
+            MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        //----------------------------------------------------------------------------
-        //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
-        private void ConfigurarTextBoxes(Control parent)
+         else 
+            { 
+                MessageBox.Show("Se ha cargado nuevo Secretario a lista de Secretarios en los formularios", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             }
+        }
+    //----------------------------------------------------------------------------
+    //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
+    private void ConfigurarTextBoxes(Control parent)
         {
             foreach (Control control in parent.Controls)
             {
@@ -71,6 +81,15 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                     ConfigurarTextBoxes(control);
                 }
             }
+        }
+
+        private void NuevoSecretario_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            // Mostrar un mensaje de ayuda
+            MessageBox.Show("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
         }
     }
 }

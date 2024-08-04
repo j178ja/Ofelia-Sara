@@ -98,6 +98,15 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 }
             }
         }
+
+        private void NuevaDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            // Mostrar un mensaje de ayuda
+            MessageBox.Show("Debe ingresar el nombre de la dependencia tal y como se usa en actuaciones."+"El domicilio será empleado en plantilla de Inspeccion Ocular", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
+        }
     }
 }
 

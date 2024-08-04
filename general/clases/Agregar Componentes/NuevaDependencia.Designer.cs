@@ -88,7 +88,6 @@
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
@@ -98,7 +97,7 @@
             this.btn_Limpiar.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-          
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -168,12 +167,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 346);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevaDependencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AGREGAR NUEVA DEPENDENCIA";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.NuevaDependencia_HelpButtonClicked);
             this.Load += new System.EventHandler(this.NuevaDependencia_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
