@@ -29,6 +29,14 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
             this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
+
+            // Inicializa el estado del Label, el CheckBox y los PictureBox al cargar el formulario
+            ActualizarEstado();
+
+            // Asocia el evento TextChanged del TextBox
+            textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
+
+
         }
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
@@ -38,6 +46,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Inicialización o asignación de ComboBoxFilePath
             ComboBoxFilePath = "ruta_del_archivo.txt"; // Ejemplo de asignación
+
+           
         }
 
         private void NuevaDependencia_FormClosed(object sender, FormClosedEventArgs e)
@@ -106,6 +116,42 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
+        }
+
+        private void checkBox_AgregarSellos_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verifica si el CheckBox está marcado
+            if (checkBox_AgregarSellos.Checked)
+            {
+                // Crear una instancia del formulario SellosDependencia
+                SellosDependencia sellosDependenciaForm = new SellosDependencia();
+
+                sellosDependenciaForm.TextBoxText = textBox_Dependencia.Text;
+
+                // Mostrar el formulario como una ventana modal
+                sellosDependenciaForm.ShowDialog();
+            }
+        }
+        //-------------------------------------------------------------------------
+        //--Para habilitar check y modificar label
+        private void ActualizarEstado()
+        {
+            // Verifica si textBox_Dependencia no está vacío ni solo con espacios
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text);
+
+            // Actualiza el color del label y el estado del checkbox según el texto del TextBox
+            label_AgregarSellos.ForeColor = esTextoValido ? Color.Black : Color.Tomato;
+            label_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.Gray;
+            
+            // Actualiza el color de fondo del CheckBox y su estado habilitado/deshabilitado
+            checkBox_AgregarSellos.Enabled = esTextoValido;
+            checkBox_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
+
+        }
+
+        private void textBox_Dependencia_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstado();//habilita check y modifica label
         }
     }
 }

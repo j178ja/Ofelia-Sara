@@ -19,13 +19,11 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             this.Load += new EventHandler(NuevoInstructor_Load);// inicializar Load
 
-            btn_Limpiar.Click += new EventHandler(btn_Limpiar_Click);// inicializar btn_Limpiar
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
-            
         }
 
         private void NuevoInstructor_Load(object sender, EventArgs e)

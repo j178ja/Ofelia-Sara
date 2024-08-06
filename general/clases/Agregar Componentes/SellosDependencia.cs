@@ -15,11 +15,31 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         public SellosDependencia()
         {
             InitializeComponent();
+
+            // Llama a ActualizarPictureBox al iniciar el formulario
+            ActualizarPictureBox(new PictureBox[] { pictureBox_SelloMedalla, pictureBox_SelloEscalera, pictureBox_SelloFoliador }, true);
+            // Asocia el evento Paint a todos los PictureBox
+
+            pictureBox_SelloMedalla.Paint += PictureBox_Paint;
+            pictureBox_SelloEscalera.Paint += PictureBox_Paint;
+            pictureBox_SelloFoliador.Paint += PictureBox_Paint;
         }
 
         private void SellosDependencia_Load(object sender, EventArgs e)
         {
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
 
+        
+        }
+
+        //-------------------------------------------------------------------------
+        //---Propiedad para que traiga el nombre de la dependencia desde el otro formulario
+        public string TextBoxText
+        {
+            get { return textBox_Dependencia.Text; }
+            set { textBox_Dependencia.Text = value; }
         }
 
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -33,7 +53,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+            if (string.IsNullOrWhiteSpace(textBox_Dependencia.Text))
             {
                 MessageBox.Show("Debe ingresar a que dependencia corresponden los sellos.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -48,5 +68,52 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 MessageBox.Show("Se ha cargado exitosamente a sellos de la dependencia", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        //---------------------------------------------------------------------------------
+        //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
+
+
+        private void ActualizarPictureBox(PictureBox[] pictureBoxes, bool habilitar)
+        {
+            // Verifica si textBox_Dependencia no está vacío ni solo con espacios
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text);
+
+            foreach (var pictureBox in pictureBoxes)
+            {
+                if (esTextoValido && habilitar)
+                {
+                    pictureBox.Enabled = true;
+                    pictureBox.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
+                    pictureBox.BackColor = SystemColors.ControlLight;
+                }
+                else
+                {
+                    pictureBox.Enabled = false;
+                    pictureBox.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+                    pictureBox.BackColor = Color.DarkGray;
+                }
+
+                pictureBox.Invalidate(); // Redibuja el borde
+            }
+        }
+
+
+        private void PictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
+
+                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
+                {
+                    // Dibuja el borde exterior con un margen pequeño
+                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
+                }
+            }
+        }
+
+
+
     }
 }

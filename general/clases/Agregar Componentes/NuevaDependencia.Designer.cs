@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaDependencia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox_AgregarSellos = new System.Windows.Forms.CheckBox();
-            this.label_AgregaSellos = new System.Windows.Forms.Label();
+            this.label_AgregarSellos = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.textBox_Domicilio = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.checkBox_AgregarSellos);
-            this.panel1.Controls.Add(this.label_AgregaSellos);
+            this.panel1.Controls.Add(this.label_AgregarSellos);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.textBox_Domicilio);
@@ -69,22 +69,23 @@
             // checkBox_AgregarSellos
             // 
             this.checkBox_AgregarSellos.AutoSize = true;
-            this.checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_AgregarSellos.Location = new System.Drawing.Point(184, 134);
             this.checkBox_AgregarSellos.Name = "checkBox_AgregarSellos";
             this.checkBox_AgregarSellos.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarSellos.TabIndex = 2;
             this.checkBox_AgregarSellos.UseVisualStyleBackColor = true;
+            this.checkBox_AgregarSellos.CheckedChanged += new System.EventHandler(this.checkBox_AgregarSellos_CheckedChanged);
             // 
-            // label_AgregaSellos
+            // label_AgregarSellos
             // 
-            this.label_AgregaSellos.AutoSize = true;
-            this.label_AgregaSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregaSellos.Location = new System.Drawing.Point(15, 132);
-            this.label_AgregaSellos.Name = "label_AgregaSellos";
-            this.label_AgregaSellos.Size = new System.Drawing.Size(142, 16);
-            this.label_AgregaSellos.TabIndex = 20;
-            this.label_AgregaSellos.Text = "AGREGAR SELLOS";
+            this.label_AgregarSellos.AutoSize = true;
+            this.label_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AgregarSellos.Location = new System.Drawing.Point(15, 132);
+            this.label_AgregarSellos.Name = "label_AgregarSellos";
+            this.label_AgregarSellos.Size = new System.Drawing.Size(142, 16);
+            this.label_AgregarSellos.TabIndex = 20;
+            this.label_AgregarSellos.Text = "AGREGAR SELLOS";
             // 
             // btn_Limpiar
             // 
@@ -127,6 +128,7 @@
             this.textBox_Dependencia.Name = "textBox_Dependencia";
             this.textBox_Dependencia.Size = new System.Drawing.Size(326, 21);
             this.textBox_Dependencia.TabIndex = 0;
+            this.textBox_Dependencia.TextChanged += new System.EventHandler(this.textBox_Dependencia_TextChanged);
             // 
             // label_Domicilio
             // 
@@ -192,7 +194,7 @@
         private System.Windows.Forms.TextBox textBox_Dependencia;
         private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.Label label_Dependencia;
-        private System.Windows.Forms.Label label_AgregaSellos;
+        private System.Windows.Forms.Label label_AgregarSellos;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.CheckBox checkBox_AgregarSellos;
