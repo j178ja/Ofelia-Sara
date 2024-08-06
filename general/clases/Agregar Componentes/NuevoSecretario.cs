@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SkiaSharp;//biblioteca para efecto visual
+//using SkiaSharp;//biblioteca para efecto visual
 using System.Drawing.Imaging;
 
 
