@@ -21,7 +21,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InitializeComponent();
             this.Load += new EventHandler(NuevoSecretario_Load);// inicializar Load
 
-            btn_Limpiar.Click += new EventHandler(btn_Limpiar_Click);// inicializar btn_Limpiar
+            //btn_Limpiar.Click += new EventHandler(btn_Limpiar_Click);// inicializar btn_Limpiar
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -39,8 +39,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+                                             
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
@@ -87,6 +86,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             }
         }
 
+
+        //-------------MENSAJE DE AYUDA BOTON HELP---------
         private void NuevoSecretario_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
