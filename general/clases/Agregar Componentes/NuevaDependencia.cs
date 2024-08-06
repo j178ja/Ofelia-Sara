@@ -13,9 +13,10 @@ using System.Windows.Forms;
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
     public partial class NuevaDependencia : BaseForm
-    { // Define un delegado para el evento ItemAgregado
+    { 
+                       // Define un delegado para el evento ItemAgregado
         public delegate void ItemAgregadoEventHandler(object sender, string nuevoItem);
-        // Evento que se dispara cuando se agrega un nuevo ítem
+                           // Evento que se dispara cuando se agrega un nuevo ítem
         public event ItemAgregadoEventHandler ItemAgregado;
 
         // Definición de ComboBoxFilePath como propiedad
@@ -23,9 +24,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         public NuevaDependencia()
         {
             InitializeComponent();
-            // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
+                            // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
             this.Load += new EventHandler(NuevaDependencia_Load);
-            // Aplica el estilo de botón de BaseForm
+                           // Aplica el estilo de botón de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
             this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
@@ -56,6 +57,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         }
 
         //------------------------------------------------------------------------------
+
+
         //------------BOTON GUARDAR----------------------------------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
