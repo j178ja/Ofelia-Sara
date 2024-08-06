@@ -142,16 +142,16 @@
     <Compile Include="general\clases\Agregar Componentes\SellosDependencia.Designer.cs">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\apariencia_formularios.cs" />
-    <Compile Include="general\clases\Apariencia General\CamelCase.cs" />
-    <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.cs">
+    <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
+    <Compile Include="general\clases\Apariencia General\Texto\CamelCase.cs" />
+    <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.Designer.cs">
+    <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.Designer.cs">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Botones\IncrementarTamaño.cs" />
-    <Compile Include="general\clases\Apariencia General\MayusculaSimple.cs" />
+    <Compile Include="general\clases\Apariencia General\Texto\MayusculaSimple.cs" />
     <Compile Include="general\clases\Barra Busqueda\AsignacionDeTareas.cs" />
     <Compile Include="general\clases\Barras personalizadas\BarraVerticalProgreso.cs">
       <SubType>Component</SubType>
@@ -166,19 +166,19 @@
     <Compile Include="general\clases\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\cabecera.cs" />
+    <Compile Include="general\clases\Apariencia General\Generales\cabecera.cs" />
     <Compile Include="general\clases\Botones\btn_Configuracion\AuxiliarConfiguracion.cs" />
     <Compile Include="general\clases\Botones\cambio_de_tema.cs" />
     <Compile Include="general\clases\Botones\btn_Configuracion\Configuracion.cs" />
     <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\footer.cs" />
+    <Compile Include="general\clases\Apariencia General\Generales\footer.cs" />
     <Compile Include="general\clases\Botones\guardar_archivo.cs" />
-    <Compile Include="general\clases\Apariencia General\Iconos.cs" />
+    <Compile Include="general\clases\Apariencia General\Generales\Iconos.cs" />
     <Compile Include="general\clases\Botones\imprimir.cs" />
     <Compile Include="general\clases\Botones\limpiar_formulario.cs" />
-    <Compile Include="general\clases\Apariencia General\mayuscula.cs" />
+    <Compile Include="general\clases\Apariencia General\Texto\mayuscula.cs" />
     <Compile Include="general\clases\Botones\TooltipEnBtnDesactivado.cs" />
     <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
@@ -274,7 +274,7 @@
     <EmbeddedResource Include="general\clases\Agregar Componentes\SellosDependencia.resx">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="general\clases\Apariencia General\DataTimePickerPersonalizado.resx">
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Barras personalizadas\ProgressVerticalBarAlfa.resx">
