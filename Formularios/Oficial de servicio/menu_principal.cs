@@ -194,6 +194,11 @@ namespace Ofelia_Sara
            // textBox_Dependencia();
         }
 
+        private void sELLOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //--------------------------------------------------------------------------------
 

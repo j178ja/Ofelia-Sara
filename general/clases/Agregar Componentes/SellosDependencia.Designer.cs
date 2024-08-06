@@ -90,6 +90,7 @@
             this.pictureBox_SelloFoliador.Size = new System.Drawing.Size(171, 213);
             this.pictureBox_SelloFoliador.TabIndex = 40;
             this.pictureBox_SelloFoliador.TabStop = false;
+            this.pictureBox_SelloFoliador.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // pictureBox_SelloEscalera
             // 
@@ -101,6 +102,7 @@
             this.pictureBox_SelloEscalera.Size = new System.Drawing.Size(171, 213);
             this.pictureBox_SelloEscalera.TabIndex = 39;
             this.pictureBox_SelloEscalera.TabStop = false;
+            this.pictureBox_SelloEscalera.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // pictureBox_SelloMedalla
             // 
@@ -112,6 +114,7 @@
             this.pictureBox_SelloMedalla.Size = new System.Drawing.Size(171, 213);
             this.pictureBox_SelloMedalla.TabIndex = 38;
             this.pictureBox_SelloMedalla.TabStop = false;
+            this.pictureBox_SelloMedalla.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // label_SelloFoliador
             // 
@@ -186,6 +189,7 @@
             this.textBox_Dependencia.Name = "textBox_Dependencia";
             this.textBox_Dependencia.Size = new System.Drawing.Size(356, 24);
             this.textBox_Dependencia.TabIndex = 42;
+            this.textBox_Dependencia.TextChanged += new System.EventHandler(this.textBox_Dependencia_TextChanged);
             // 
             // SellosDependencia
             // 

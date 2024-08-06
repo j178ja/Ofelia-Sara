@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.general.clases.Apariencia_General;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,12 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
     public partial class SellosDependencia : BaseForm
     {
+        public string TextoDependencia { get; set; }
         public SellosDependencia()
         {
             InitializeComponent();
 
-            // Llama a ActualizarPictureBox al iniciar el formulario
-            ActualizarPictureBox(new PictureBox[] { pictureBox_SelloMedalla, pictureBox_SelloEscalera, pictureBox_SelloFoliador }, true);
-            // Asocia el evento Paint a todos los PictureBox
-
-            pictureBox_SelloMedalla.Paint += PictureBox_Paint;
-            pictureBox_SelloEscalera.Paint += PictureBox_Paint;
-            pictureBox_SelloFoliador.Paint += PictureBox_Paint;
+          
         }
 
         private void SellosDependencia_Load(object sender, EventArgs e)
@@ -31,17 +27,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
-        
+            ActualizarControles();//Inicializa  el estado de los controles pictureBox
         }
-
-        //-------------------------------------------------------------------------
-        //---Propiedad para que traiga el nombre de la dependencia desde el otro formulario
-        public string TextBoxText
-        {
-            get { return textBox_Dependencia.Text; }
-            set { textBox_Dependencia.Text = value; }
-        }
-
+        //-----------------------------------------------------------------------------
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -50,6 +38,29 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
+        //--------------------------------------------------------------------------------
+        private void textBox_Dependencia_TextChanged(object sender, EventArgs e)
+        {
+            // Convierte el texto a mayúsculas ignorando caracteres especiales
+            string textoConvertido = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox_Dependencia.Text);
+
+            // Mantiene la posición del cursor
+            int selectionStart = textBox_Dependencia.SelectionStart;
+            int selectionLength = textBox_Dependencia.SelectionLength;
+
+            // Actualiza el texto del TextBox
+            textBox_Dependencia.Text = textoConvertido;
+
+            // Restablece la posición del cursor
+            textBox_Dependencia.SelectionStart = selectionStart;
+            textBox_Dependencia.SelectionLength = selectionLength;
+
+            // Actualiza los controles
+            ActualizarControles();
+        }
+
+
+        //-------------------------------------------------------------------------------
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -57,8 +68,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             {
                 MessageBox.Show("Debe ingresar a que dependencia corresponden los sellos.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-                // Verificar que el PictureBox_SelloMedalla tenga una imagen
-                if (pictureBox_SelloMedalla.Image == null)
+            // Verificar que el PictureBox_SelloMedalla tenga una imagen
+            if (pictureBox_SelloMedalla.Image == null)
             {
                 MessageBox.Show("Debe agregar una imagen al campo SELLO MEDALLA.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -73,30 +84,43 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
 
 
-        private void ActualizarPictureBox(PictureBox[] pictureBoxes, bool habilitar)
+        //---Propiedad para que traiga el nombre de la dependencia desde el otro formulario
+        public string TextBoxText
         {
-            // Verifica si textBox_Dependencia no está vacío ni solo con espacios
-            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text);
-
-            foreach (var pictureBox in pictureBoxes)
-            {
-                if (esTextoValido && habilitar)
-                {
-                    pictureBox.Enabled = true;
-                    pictureBox.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
-                    pictureBox.BackColor = SystemColors.ControlLight;
-                }
-                else
-                {
-                    pictureBox.Enabled = false;
-                    pictureBox.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
-                    pictureBox.BackColor = Color.DarkGray;
-                }
-
-                pictureBox.Invalidate(); // Redibuja el borde
-            }
+            get { return textBox_Dependencia.Text; }
+            set { textBox_Dependencia.Text = value; }
         }
 
+        //-----------------------------------------------------------------------------------
+
+        private void ActualizarControles()
+        {
+            // Verifica si TextoDependencia tiene texto
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text);
+
+            // Actualiza el estado de los PictureBox
+            ActualizarPictureBox(pictureBox_SelloMedalla, esTextoValido);
+            ActualizarPictureBox(pictureBox_SelloEscalera, esTextoValido);
+            ActualizarPictureBox(pictureBox_SelloFoliador, esTextoValido);
+        }
+
+        private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
+        {
+            if (habilitar)
+            {
+                pictureBox.Enabled = true;
+                pictureBox.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
+                pictureBox.BackColor = SystemColors.ControlLight;
+            }
+            else
+            {
+                pictureBox.Enabled = false;
+                pictureBox.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+                pictureBox.BackColor = Color.DarkGray;
+            }
+
+            pictureBox.Invalidate(); // Redibuja el borde
+        }
 
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
@@ -107,13 +131,12 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
                 using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
                 {
-                    // Dibuja el borde exterior con un margen pequeño
+                    // Dibuja el borde exterior
                     e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
                 }
             }
+
+
         }
-
-
-
     }
 }
