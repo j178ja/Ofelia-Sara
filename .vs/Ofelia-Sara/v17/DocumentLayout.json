@@ -5,6 +5,7 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
+<<<<<<< HEAD
       "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
@@ -18,6 +19,10 @@
           ]
         }
       ]
+=======
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": []
+>>>>>>> aplicacion_clases
     }
   ]
 }
