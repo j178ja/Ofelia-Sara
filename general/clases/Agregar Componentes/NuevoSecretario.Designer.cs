@@ -97,7 +97,7 @@
             // 
             this.label_Funcion.AutoSize = true;
             this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(33, 142);
+            this.label_Funcion.Location = new System.Drawing.Point(52, 142);
             this.label_Funcion.Name = "label_Funcion";
             this.label_Funcion.Size = new System.Drawing.Size(82, 16);
             this.label_Funcion.TabIndex = 49;
@@ -115,7 +115,7 @@
             // 
             this.label_Apellido.AutoSize = true;
             this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(33, 113);
+            this.label_Apellido.Location = new System.Drawing.Point(47, 113);
             this.label_Apellido.Name = "label_Apellido";
             this.label_Apellido.Size = new System.Drawing.Size(87, 16);
             this.label_Apellido.TabIndex = 47;
@@ -133,7 +133,7 @@
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(33, 84);
+            this.label_Nombre.Location = new System.Drawing.Point(54, 84);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(80, 16);
             this.label_Nombre.TabIndex = 45;
@@ -207,7 +207,7 @@
             this.label_NuevoSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label_NuevoSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_NuevoSecretario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_NuevoSecretario.Location = new System.Drawing.Point(145, -1);
+            this.label_NuevoSecretario.Location = new System.Drawing.Point(145, 0);
             this.label_NuevoSecretario.Name = "label_NuevoSecretario";
             this.label_NuevoSecretario.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label_NuevoSecretario.Size = new System.Drawing.Size(240, 24);
