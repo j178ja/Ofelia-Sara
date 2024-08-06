@@ -84,6 +84,7 @@
             this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(100, 50);
             this.pictureBox_FirmaDigitalizada.TabIndex = 51;
             this.pictureBox_FirmaDigitalizada.TabStop = false;
+            this.pictureBox_FirmaDigitalizada.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_FirmaDigitalizada_Paint);
             // 
             // textBox_Funcion
             // 
@@ -148,6 +149,7 @@
             this.checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarFirma.TabIndex = 4;
             this.checkBox_AgregarFirma.UseVisualStyleBackColor = true;
+            this.checkBox_AgregarFirma.CheckedChanged += new System.EventHandler(this.checkBox_AgregarFirma_CheckedChanged);
             // 
             // label_AgregaFirma
             // 
