@@ -35,21 +35,25 @@
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox_Secretario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Instructor = new System.Windows.Forms.TextBox();
-            this.textBox_Ipp = new System.Windows.Forms.TextBox();
-            this.textBox_Dependencia = new System.Windows.Forms.TextBox();
+            this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
             this.textBox_Imputado = new System.Windows.Forms.TextBox();
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp4 = new System.Windows.Forms.ComboBox();
+            this.label_00 = new System.Windows.Forms.Label();
+            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
+            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
+            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,21 +64,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel2.Controls.Add(this.timePickerPersonalizado1);
+            this.panel2.Controls.Add(this.comboBox_Secretario);
+            this.panel2.Controls.Add(this.comboBox_Instructor);
+            this.panel2.Controls.Add(this.comboBox_Dependencia);
+            this.panel2.Controls.Add(this.label_00);
+            this.panel2.Controls.Add(this.comboBox_Ipp4);
+            this.panel2.Controls.Add(this.comboBox_Ipp2);
+            this.panel2.Controls.Add(this.comboBox_Ipp1);
             this.panel2.Controls.Add(this.label_Caratula);
             this.panel2.Controls.Add(this.textBox_Caratula);
             this.panel2.Controls.Add(this.btn_Buscar);
             this.panel2.Controls.Add(this.btn_Limpiar);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox_Secretario);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox_Instructor);
-            this.panel2.Controls.Add(this.textBox_Ipp);
-            this.panel2.Controls.Add(this.textBox_Dependencia);
+            this.panel2.Controls.Add(this.textBox_NumeroIpp);
             this.panel2.Controls.Add(this.textBox_Imputado);
             this.panel2.Controls.Add(this.textBox_Victima);
             this.panel2.Controls.Add(this.label_Ipp);
@@ -117,6 +125,7 @@
             // 
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
             this.btn_Limpiar.Location = new System.Drawing.Point(142, 435);
             this.btn_Limpiar.Name = "btn_Limpiar";
@@ -124,22 +133,6 @@
             this.btn_Limpiar.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Eliminar busqueda");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(142, 369);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(363, 26);
-            this.textBox7.TabIndex = 7;
-            // 
-            // textBox_Secretario
-            // 
-            this.textBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Secretario.Location = new System.Drawing.Point(142, 325);
-            this.textBox_Secretario.Name = "textBox_Secretario";
-            this.textBox_Secretario.Size = new System.Drawing.Size(363, 26);
-            this.textBox_Secretario.TabIndex = 6;
             // 
             // label6
             // 
@@ -201,29 +194,13 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "VICTIMA";
             // 
-            // textBox_Instructor
+            // textBox_NumeroIpp
             // 
-            this.textBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Instructor.Location = new System.Drawing.Point(142, 280);
-            this.textBox_Instructor.Name = "textBox_Instructor";
-            this.textBox_Instructor.Size = new System.Drawing.Size(363, 26);
-            this.textBox_Instructor.TabIndex = 5;
-            // 
-            // textBox_Ipp
-            // 
-            this.textBox_Ipp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Ipp.Location = new System.Drawing.Point(142, 59);
-            this.textBox_Ipp.Name = "textBox_Ipp";
-            this.textBox_Ipp.Size = new System.Drawing.Size(363, 26);
-            this.textBox_Ipp.TabIndex = 0;
-            // 
-            // textBox_Dependencia
-            // 
-            this.textBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Dependencia.Location = new System.Drawing.Point(142, 235);
-            this.textBox_Dependencia.Name = "textBox_Dependencia";
-            this.textBox_Dependencia.Size = new System.Drawing.Size(363, 26);
-            this.textBox_Dependencia.TabIndex = 4;
+            this.textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_NumeroIpp.Location = new System.Drawing.Point(268, 60);
+            this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
+            this.textBox_NumeroIpp.Size = new System.Drawing.Size(128, 26);
+            this.textBox_NumeroIpp.TabIndex = 0;
             // 
             // textBox_Imputado
             // 
@@ -250,6 +227,107 @@
             this.label_Ipp.Size = new System.Drawing.Size(43, 16);
             this.label_Ipp.TabIndex = 0;
             this.label_Ipp.Text = "I.P.P.";
+            // 
+            // comboBox_Ipp1
+            // 
+            this.comboBox_Ipp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Ipp1.FormattingEnabled = true;
+            this.comboBox_Ipp1.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09"});
+            this.comboBox_Ipp1.Location = new System.Drawing.Point(142, 60);
+            this.comboBox_Ipp1.Name = "comboBox_Ipp1";
+            this.comboBox_Ipp1.Size = new System.Drawing.Size(57, 26);
+            this.comboBox_Ipp1.TabIndex = 3;
+            // 
+            // comboBox_Ipp2
+            // 
+            this.comboBox_Ipp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Ipp2.FormattingEnabled = true;
+            this.comboBox_Ipp2.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09"});
+            this.comboBox_Ipp2.Location = new System.Drawing.Point(205, 60);
+            this.comboBox_Ipp2.Name = "comboBox_Ipp2";
+            this.comboBox_Ipp2.Size = new System.Drawing.Size(57, 26);
+            this.comboBox_Ipp2.TabIndex = 23;
+            // 
+            // comboBox_Ipp4
+            // 
+            this.comboBox_Ipp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Ipp4.FormattingEnabled = true;
+            this.comboBox_Ipp4.Items.AddRange(new object[] {
+            "24",
+            "25",
+            "26"});
+            this.comboBox_Ipp4.Location = new System.Drawing.Point(402, 60);
+            this.comboBox_Ipp4.Name = "comboBox_Ipp4";
+            this.comboBox_Ipp4.Size = new System.Drawing.Size(57, 26);
+            this.comboBox_Ipp4.TabIndex = 24;
+            // 
+            // label_00
+            // 
+            this.label_00.AutoSize = true;
+            this.label_00.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_00.Location = new System.Drawing.Point(465, 66);
+            this.label_00.Name = "label_00";
+            this.label_00.Size = new System.Drawing.Size(28, 16);
+            this.label_00.TabIndex = 25;
+            this.label_00.Text = "/00";
+            // 
+            // comboBox_Dependencia
+            // 
+            this.comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Dependencia.FormattingEnabled = true;
+            this.comboBox_Dependencia.Location = new System.Drawing.Point(142, 236);
+            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
+            this.comboBox_Dependencia.Size = new System.Drawing.Size(363, 26);
+            this.comboBox_Dependencia.TabIndex = 26;
+            // 
+            // comboBox_Instructor
+            // 
+            this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Instructor.FormattingEnabled = true;
+            this.comboBox_Instructor.Location = new System.Drawing.Point(142, 281);
+            this.comboBox_Instructor.Name = "comboBox_Instructor";
+            this.comboBox_Instructor.Size = new System.Drawing.Size(363, 26);
+            this.comboBox_Instructor.TabIndex = 27;
+            // 
+            // comboBox_Secretario
+            // 
+            this.comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Secretario.FormattingEnabled = true;
+            this.comboBox_Secretario.Location = new System.Drawing.Point(142, 326);
+            this.comboBox_Secretario.Name = "comboBox_Secretario";
+            this.comboBox_Secretario.Size = new System.Drawing.Size(363, 26);
+            this.comboBox_Secretario.TabIndex = 28;
+            // 
+            // timePickerPersonalizado1
+            // 
+            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.timePickerPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePickerPersonalizado1.Location = new System.Drawing.Point(142, 375);
+            this.timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
+            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 8, 6, 15, 6, 13, 359);
+            this.timePickerPersonalizado1.Size = new System.Drawing.Size(364, 30);
+            this.timePickerPersonalizado1.TabIndex = 29;
             // 
             // BuscarForm
             // 
@@ -278,13 +356,9 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label_Ipp;
-        private System.Windows.Forms.TextBox textBox_Instructor;
-        private System.Windows.Forms.TextBox textBox_Ipp;
-        private System.Windows.Forms.TextBox textBox_Dependencia;
+        private System.Windows.Forms.TextBox textBox_NumeroIpp;
         private System.Windows.Forms.TextBox textBox_Imputado;
         private System.Windows.Forms.TextBox textBox_Victima;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox_Secretario;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -296,5 +370,13 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label_Caratula;
         private System.Windows.Forms.TextBox textBox_Caratula;
+        private System.Windows.Forms.Label label_00;
+        private System.Windows.Forms.ComboBox comboBox_Ipp4;
+        private System.Windows.Forms.ComboBox comboBox_Ipp2;
+        private System.Windows.Forms.ComboBox comboBox_Ipp1;
+        private System.Windows.Forms.ComboBox comboBox_Secretario;
+        private System.Windows.Forms.ComboBox comboBox_Instructor;
+        private System.Windows.Forms.ComboBox comboBox_Dependencia;
+        private general.clases.Apariencia_General.TimePickerPersonalizado timePickerPersonalizado1;
     }
 }
