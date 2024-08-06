@@ -150,6 +150,7 @@
     <Compile Include="general\clases\Apariencia General\DataTimePickerPersonalizado.Designer.cs">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </Compile>
+    <Compile Include="general\clases\Botones\IncrementarTamaño.cs" />
     <Compile Include="general\clases\Apariencia General\MayusculaSimple.cs" />
     <Compile Include="general\clases\Barra Busqueda\AsignacionDeTareas.cs" />
     <Compile Include="general\clases\Barras personalizadas\BarraVerticalProgreso.cs">
@@ -172,7 +173,6 @@
     <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\EliminarBotonMaximizar.cs" />
     <Compile Include="general\clases\Apariencia General\footer.cs" />
     <Compile Include="general\clases\Botones\guardar_archivo.cs" />
     <Compile Include="general\clases\Apariencia General\Iconos.cs" />
