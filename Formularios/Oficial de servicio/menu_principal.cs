@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.general.clases.Apariencia_General;
 
 namespace Ofelia_Sara
 {
@@ -26,6 +27,10 @@ namespace Ofelia_Sara
         {
             // Configurar el botón para usar el menú de contexto
             btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();
+
+            //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
+            IncrementarTamaño.Incrementar(btn_Configurar);
+            IncrementarTamaño.Incrementar(btn_CambiarTema);
         }
         //--------------------------------------------------------------------------------
     
