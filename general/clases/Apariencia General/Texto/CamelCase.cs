@@ -22,7 +22,9 @@ namespace Ofelia_Sara.general.clases.Apariencia_General
             {
                 if (char.IsWhiteSpace(c))
                 {
-                    // Si el carácter es un espacio en blanco, la próxima letra debe ser mayúscula
+                    // Si el carácter es un espacio en blanco, añade el espacio tal cual
+                    resultado.Append(c);
+                    // La próxima letra debe ser mayúscula
                     proximaMayuscula = true;
                 }
                 else if (char.IsLetter(c))
@@ -39,10 +41,18 @@ namespace Ofelia_Sara.general.clases.Apariencia_General
                     // Después de agregar una letra, la siguiente no debe ser mayúscula
                     proximaMayuscula = false;
                 }
+                // Si el carácter es un dígito, lo añade tal cual
+                else if (char.IsDigit(c))
+                {
+                    resultado.Append(c);
+                    // Si es un dígito, la próxima letra no debe ser mayúscula
+                    proximaMayuscula = false;
+                }
+                // Si el carácter es especial, se ignora
                 else
                 {
-                    // Si no es una letra ni espacio, se añade tal cual
-                    resultado.Append(c);
+                    // No hace nada si es un carácter especial
+                    continue;
                 }
             }
 
