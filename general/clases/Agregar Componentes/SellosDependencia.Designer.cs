@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SellosDependencia));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_Dependencia = new System.Windows.Forms.TextBox();
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.pictureBox_SelloFoliador = new System.Windows.Forms.PictureBox();
             this.pictureBox_SelloEscalera = new System.Windows.Forms.PictureBox();
@@ -40,7 +41,6 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.label_SellosDependencia = new System.Windows.Forms.Label();
-            this.textBox_Dependencia = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelloFoliador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelloEscalera)).BeginInit();
@@ -70,6 +70,15 @@
             this.panel1.Size = new System.Drawing.Size(689, 546);
             this.panel1.TabIndex = 0;
             // 
+            // textBox_Dependencia
+            // 
+            this.textBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Dependencia.Location = new System.Drawing.Point(223, 72);
+            this.textBox_Dependencia.Name = "textBox_Dependencia";
+            this.textBox_Dependencia.Size = new System.Drawing.Size(356, 24);
+            this.textBox_Dependencia.TabIndex = 42;
+            this.textBox_Dependencia.TextChanged += new System.EventHandler(this.textBox_Dependencia_TextChanged);
+            // 
             // label_Dependencia
             // 
             this.label_Dependencia.AutoSize = true;
@@ -90,6 +99,9 @@
             this.pictureBox_SelloFoliador.Size = new System.Drawing.Size(171, 213);
             this.pictureBox_SelloFoliador.TabIndex = 40;
             this.pictureBox_SelloFoliador.TabStop = false;
+            this.pictureBox_SelloFoliador.Click += new System.EventHandler(this.PictureBox_Click);
+            this.pictureBox_SelloFoliador.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_SelloFoliador.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             this.pictureBox_SelloFoliador.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // pictureBox_SelloEscalera
@@ -102,6 +114,9 @@
             this.pictureBox_SelloEscalera.Size = new System.Drawing.Size(171, 213);
             this.pictureBox_SelloEscalera.TabIndex = 39;
             this.pictureBox_SelloEscalera.TabStop = false;
+            this.pictureBox_SelloEscalera.Click += new System.EventHandler(this.PictureBox_Click);
+            this.pictureBox_SelloEscalera.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_SelloEscalera.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             this.pictureBox_SelloEscalera.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // pictureBox_SelloMedalla
@@ -114,6 +129,9 @@
             this.pictureBox_SelloMedalla.Size = new System.Drawing.Size(171, 213);
             this.pictureBox_SelloMedalla.TabIndex = 38;
             this.pictureBox_SelloMedalla.TabStop = false;
+            this.pictureBox_SelloMedalla.Click += new System.EventHandler(this.PictureBox_Click);
+            this.pictureBox_SelloMedalla.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_SelloMedalla.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             this.pictureBox_SelloMedalla.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // label_SelloFoliador
@@ -156,6 +174,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 5;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -181,15 +200,6 @@
             this.label_SellosDependencia.Size = new System.Drawing.Size(377, 30);
             this.label_SellosDependencia.TabIndex = 0;
             this.label_SellosDependencia.Text = "SELLOS NUEVA DEPENDENCIA";
-            // 
-            // textBox_Dependencia
-            // 
-            this.textBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Dependencia.Location = new System.Drawing.Point(223, 72);
-            this.textBox_Dependencia.Name = "textBox_Dependencia";
-            this.textBox_Dependencia.Size = new System.Drawing.Size(356, 24);
-            this.textBox_Dependencia.TabIndex = 42;
-            this.textBox_Dependencia.TextChanged += new System.EventHandler(this.textBox_Dependencia_TextChanged);
             // 
             // SellosDependencia
             // 
