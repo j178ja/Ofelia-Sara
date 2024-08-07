@@ -5,7 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
+
+
+
 
 namespace Ofelia_Sara.general.clases.Botones
 {
@@ -181,6 +185,14 @@ namespace Ofelia_Sara.general.clases.Botones
                 BuscarForm buscarForm = new BuscarForm();
                 buscarForm.Show();
                 buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["comboBox_Dependencia"]);
+            };
+            //------------------PARA REMOVER-------------------------------------
+
+            item_Remover.Click += (sender, e) =>
+            {
+                UsuarioForm usuarioForm = new UsuarioForm();// Crear una instancia del formulario de registro
+
+                usuarioForm.ShowDialog();
             };
 
             item_Salir.Click += (sender, e) => menu_Configurar.Close(); // para que se cierre el menu
