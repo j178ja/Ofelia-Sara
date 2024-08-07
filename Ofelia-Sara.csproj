@@ -80,6 +80,18 @@
     <Compile Include="Formularios\Contacto.Designer.cs">
       <DependentUpon>Contacto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Oficial de servicio\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\UsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\UsuarioForm.Designer.cs">
+      <DependentUpon>UsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +288,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.resx">
       <DependentUpon>AgregarDatosPersonalesImputado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\UsuarioForm.resx">
+      <DependentUpon>UsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Agregar Componentes\NuevaFiscalia.resx">
       <DependentUpon>NuevaFiscalia.cs</DependentUpon>

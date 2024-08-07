@@ -45,5 +45,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 control.Focus();
             }
         }
+
+        private void BuscarForm_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            // Mostrar un mensaje de ayuda
+            MessageBox.Show("Complete alguno de los campos requeridos para iniciar la busqueda." , "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
+        }
     }
 }

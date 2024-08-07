@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label_Validacion = new System.Windows.Forms.Label();
-            this.label_Usuario = new System.Windows.Forms.Label();
-            this.label_Contraseña = new System.Windows.Forms.Label();
-            this.textBox_Usuario = new System.Windows.Forms.TextBox();
-            this.textBox_Contraseña = new System.Windows.Forms.TextBox();
-            this.btn_Ingresar = new System.Windows.Forms.Button();
             this.btn_Registrarse = new System.Windows.Forms.Button();
+            this.btn_Ingresar = new System.Windows.Forms.Button();
+            this.textBox_Contraseña = new System.Windows.Forms.TextBox();
+            this.textBox_Usuario = new System.Windows.Forms.TextBox();
+            this.label_Contraseña = new System.Windows.Forms.Label();
+            this.label_Usuario = new System.Windows.Forms.Label();
+            this.label_Validacion = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,63 @@
             this.panel2.Size = new System.Drawing.Size(537, 239);
             this.panel2.TabIndex = 3;
             // 
+            // btn_Registrarse
+            // 
+            this.btn_Registrarse.Location = new System.Drawing.Point(189, 163);
+            this.btn_Registrarse.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btn_Registrarse.Name = "btn_Registrarse";
+            this.btn_Registrarse.Size = new System.Drawing.Size(104, 33);
+            this.btn_Registrarse.TabIndex = 6;
+            this.btn_Registrarse.Text = "REGISTRARSE";
+            this.btn_Registrarse.UseVisualStyleBackColor = true;
+            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
+            // 
+            // btn_Ingresar
+            // 
+            this.btn_Ingresar.Location = new System.Drawing.Point(333, 163);
+            this.btn_Ingresar.Name = "btn_Ingresar";
+            this.btn_Ingresar.Size = new System.Drawing.Size(88, 33);
+            this.btn_Ingresar.TabIndex = 5;
+            this.btn_Ingresar.Text = "INGRESAR";
+            this.btn_Ingresar.UseVisualStyleBackColor = true;
+            // 
+            // textBox_Contraseña
+            // 
+            this.textBox_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Contraseña.Location = new System.Drawing.Point(189, 114);
+            this.textBox_Contraseña.Name = "textBox_Contraseña";
+            this.textBox_Contraseña.PasswordChar = '*';
+            this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
+            this.textBox_Contraseña.TabIndex = 4;
+            // 
+            // textBox_Usuario
+            // 
+            this.textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Usuario.Location = new System.Drawing.Point(189, 80);
+            this.textBox_Usuario.Name = "textBox_Usuario";
+            this.textBox_Usuario.Size = new System.Drawing.Size(232, 24);
+            this.textBox_Usuario.TabIndex = 3;
+            // 
+            // label_Contraseña
+            // 
+            this.label_Contraseña.AutoSize = true;
+            this.label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Contraseña.Location = new System.Drawing.Point(53, 119);
+            this.label_Contraseña.Name = "label_Contraseña";
+            this.label_Contraseña.Size = new System.Drawing.Size(119, 16);
+            this.label_Contraseña.TabIndex = 2;
+            this.label_Contraseña.Text = "CONTRASEÑA :";
+            // 
+            // label_Usuario
+            // 
+            this.label_Usuario.AutoSize = true;
+            this.label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Usuario.Location = new System.Drawing.Point(89, 85);
+            this.label_Usuario.Name = "label_Usuario";
+            this.label_Usuario.Size = new System.Drawing.Size(83, 16);
+            this.label_Usuario.TabIndex = 1;
+            this.label_Usuario.Text = "USUARIO :";
+            // 
             // label_Validacion
             // 
             this.label_Validacion.AutoSize = true;
@@ -71,73 +128,20 @@
             this.label_Validacion.TabIndex = 0;
             this.label_Validacion.Text = "VALIDACION DE USUARIOS";
             // 
-            // label_Usuario
-            // 
-            this.label_Usuario.AutoSize = true;
-            this.label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Usuario.Location = new System.Drawing.Point(89, 85);
-            this.label_Usuario.Name = "label_Usuario";
-            this.label_Usuario.Size = new System.Drawing.Size(83, 16);
-            this.label_Usuario.TabIndex = 1;
-            this.label_Usuario.Text = "USUARIO :";
-            // 
-            // label_Contraseña
-            // 
-            this.label_Contraseña.AutoSize = true;
-            this.label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Contraseña.Location = new System.Drawing.Point(53, 119);
-            this.label_Contraseña.Name = "label_Contraseña";
-            this.label_Contraseña.Size = new System.Drawing.Size(119, 16);
-            this.label_Contraseña.TabIndex = 2;
-            this.label_Contraseña.Text = "CONTRASEÑA :";
-            // 
-            // textBox_Usuario
-            // 
-            this.textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Usuario.Location = new System.Drawing.Point(189, 80);
-            this.textBox_Usuario.Name = "textBox_Usuario";
-            this.textBox_Usuario.Size = new System.Drawing.Size(232, 24);
-            this.textBox_Usuario.TabIndex = 3;
-            // 
-            // textBox_Contraseña
-            // 
-            this.textBox_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Contraseña.Location = new System.Drawing.Point(189, 114);
-            this.textBox_Contraseña.Name = "textBox_Contraseña";
-            this.textBox_Contraseña.PasswordChar = '*';
-            this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
-            this.textBox_Contraseña.TabIndex = 4;
-            // 
-            // btn_Ingresar
-            // 
-            this.btn_Ingresar.Location = new System.Drawing.Point(346, 162);
-            this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Ingresar.TabIndex = 5;
-            this.btn_Ingresar.Text = "INGRESAR";
-            this.btn_Ingresar.UseVisualStyleBackColor = true;
-            // 
-            // btn_Registrarse
-            // 
-            this.btn_Registrarse.Location = new System.Drawing.Point(189, 162);
-            this.btn_Registrarse.Name = "btn_Registrarse";
-            this.btn_Registrarse.Size = new System.Drawing.Size(96, 23);
-            this.btn_Registrarse.TabIndex = 6;
-            this.btn_Registrarse.Text = "REGISTRARSE";
-            this.btn_Registrarse.UseVisualStyleBackColor = true;
-            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
-            // 
-            // Usuario
+            // UsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 305);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Usuario";
+            this.Name = "UsuarioForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VALIDACION DE PERMISOS";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.UsuarioForm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Usuario_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.panel2.ResumeLayout(false);

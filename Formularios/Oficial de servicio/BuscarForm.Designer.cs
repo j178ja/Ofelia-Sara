@@ -343,6 +343,7 @@
             this.Name = "BuscarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR EN BASE DE DATOS";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarForm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Buscar_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.panel2.ResumeLayout(false);
