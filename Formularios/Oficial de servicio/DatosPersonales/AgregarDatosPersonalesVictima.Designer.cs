@@ -23,9 +23,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.Label label_CircunstanciasPersonales;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
+        private System.Windows.Forms.PictureBox pictureBox_Domicilio;
         private System.Windows.Forms.Label label_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Localidad;
         private System.Windows.Forms.TextBox textBox_Domicilio;
@@ -34,7 +33,6 @@
         private System.Windows.Forms.TextBox textBox_Dni;
         private System.Windows.Forms.TextBox textBox_Nombre;
         private System.Windows.Forms.Label label_Localidad;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.Label label_Edad;
         private System.Windows.Forms.Label label_FechaNacimiento;
@@ -55,5 +53,8 @@
         private System.Windows.Forms.Label label_LugarNacimiento;
         private System.Windows.Forms.TextBox textBox_Ocupacion;
         private System.Windows.Forms.Label label_Ocupacion;
+        private System.Windows.Forms.Label label_AgregarDomicilio;
+        private System.Windows.Forms.Label label_agrGeo2;
+        private System.Windows.Forms.Label label_agrGeo;
     }
 }
