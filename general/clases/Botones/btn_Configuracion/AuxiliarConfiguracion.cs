@@ -106,13 +106,31 @@ namespace Ofelia_Sara.general.clases.Botones
                 NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
                 nuevaFiscalia.ShowDialog();
             };
-
+            //------------------------------------------------------
+            // eventos para agregar sellos
             subItem_Agregar_Sellos.Click += (sender, e) =>
             {
                 SellosDependencia sellosDependencia = new SellosDependencia();
                 sellosDependencia.ShowDialog();
             };
-           
+
+            subItem_Sello_Medalla.Click += (sender, e) =>
+            {
+                SellosDependencia sellosDependencia = new SellosDependencia();
+                sellosDependencia.ShowDialog();
+            };
+            subItem_Escalera.Click += (sender, e) =>
+            {
+                SellosDependencia sellosDependencia = new SellosDependencia();
+                sellosDependencia.ShowDialog();
+            };
+
+            subItem_Foliador.Click += (sender, e) =>
+            {
+                SellosDependencia sellosDependencia = new SellosDependencia();
+                sellosDependencia.ShowDialog();
+            };
+            //---------------------------------------------------------
 
             subItem_Agregar_AgenteFiscal.Click += (sender, e) =>
             {
