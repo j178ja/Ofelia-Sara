@@ -24,6 +24,12 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
+            // Configura el arrastrar y soltar para los PictureBox
+            pictureBox_FirmaDigitalizada.AllowDrop = true;
+            pictureBox_FirmaDigitalizada.DragEnter += PictureBox_DragEnter;
+            pictureBox_FirmaDigitalizada.DragDrop += PictureBox_DragDrop;
+            // Ajusta el SizeMode de cada PictureBox
+            pictureBox_FirmaDigitalizada.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void NuevoInstructor_Load(object sender, EventArgs e)
@@ -134,6 +140,70 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 {
                     // Dibuja el borde exterior
                     e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
+                }
+            }
+        }
+        //---------------------------------------------------------------------
+        //Eventos para cargar imagenes en los pictureBox
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+        //----------------------------------------------------
+        private void PictureBox_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length > 0 && (files[0].EndsWith(".jpg") || files[0].EndsWith(".jpeg") || files[0].EndsWith(".png") || files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+        }
+        //------------------------------------------------------------
+        private void PictureBox_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                try
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    if (files.Length > 0)
+                    {
+                        // Cargar la imagen desde el archivo
+                        Image img = Image.FromFile(files[0]);
+
+                        // Establecer la imagen en el PictureBox
+                        pictureBox.Image = img;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
                 }
             }
         }
