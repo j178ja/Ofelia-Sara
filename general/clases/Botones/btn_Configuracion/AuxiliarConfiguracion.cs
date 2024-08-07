@@ -104,15 +104,21 @@ namespace Ofelia_Sara.general.clases.Botones
             subItem_Agregar_UFID.Click += (sender, e) =>
             {
                 NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
-                nuevaFiscalia.Show();
+                nuevaFiscalia.ShowDialog();
             };
 
             subItem_Agregar_Sellos.Click += (sender, e) =>
             {
                 SellosDependencia sellosDependencia = new SellosDependencia();
-                sellosDependencia.Show();
+                sellosDependencia.ShowDialog();
             };
-            //subItem_Agregar_AgenteFiscal.Click += (sender, e) => MessageBox.Show("Seleccionaste AGENTE FISCAL");
+           
+
+            subItem_Agregar_AgenteFiscal.Click += (sender, e) =>
+            {
+                NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
+                nuevaFiscalia.ShowDialog();
+            };
 
             //subItem_Buscar_NIP.Click += (sender, e) => MessageBox.Show("Seleccionaste N° I.P.P.");
             subItem_Buscar_Caratula.Click += (sender, e) => {// Crear una instancia del formulario de destino

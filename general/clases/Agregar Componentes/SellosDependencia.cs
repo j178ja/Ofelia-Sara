@@ -28,6 +28,24 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Guardar);
 
             ActualizarControles();//Inicializa  el estado de los controles pictureBox
+
+            // Configura el arrastrar y soltar para los PictureBox
+            pictureBox_SelloMedalla.AllowDrop = true;
+            pictureBox_SelloEscalera.AllowDrop = true;
+            pictureBox_SelloFoliador.AllowDrop = true;
+
+            pictureBox_SelloMedalla.DragEnter += PictureBox_DragEnter;
+            pictureBox_SelloEscalera.DragEnter += PictureBox_DragEnter;
+            pictureBox_SelloFoliador.DragEnter += PictureBox_DragEnter;
+
+            pictureBox_SelloMedalla.DragDrop += PictureBox_DragDrop;
+            pictureBox_SelloEscalera.DragDrop += PictureBox_DragDrop;
+            pictureBox_SelloFoliador.DragDrop += PictureBox_DragDrop;
+
+            // Ajusta el SizeMode de cada PictureBox
+            pictureBox_SelloMedalla.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_SelloEscalera.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_SelloFoliador.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         //-----------------------------------------------------------------------------
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -61,24 +79,39 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
 
         //-------------------------------------------------------------------------------
-
+        //---------------------BOTON LIMPIAR------------------------
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+                                             
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        //-------------------------------------------------------------------------------
+        //---------------------BOTON GUARDAR------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            // Verifica que se haya ingresado texto en el textBox_Dependencia
             if (string.IsNullOrWhiteSpace(textBox_Dependencia.Text))
             {
-                MessageBox.Show("Debe ingresar a que dependencia corresponden los sellos.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            // Verificar que el PictureBox_SelloMedalla tenga una imagen
-            if (pictureBox_SelloMedalla.Image == null)
-            {
-                MessageBox.Show("Debe agregar una imagen al campo SELLO MEDALLA.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe ingresar a qué dependencia corresponden los sellos.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else
+
+            // Verifica que al menos uno de los PictureBox tenga una imagen
+            bool tieneImagen = pictureBox_SelloMedalla.Image != null ||
+                                pictureBox_SelloEscalera.Image != null ||
+                                pictureBox_SelloFoliador.Image != null;
+
+            if (!tieneImagen)
             {
-                MessageBox.Show("Se ha cargado exitosamente a sellos de la dependencia", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe agregar al menos una imagen a los campos de sello.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            // Si se ingresó el texto y se cargaron imágenes, muestra un mensaje de éxito
+            MessageBox.Show("Se ha cargado exitosamente los sellos de la dependencia.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         //---------------------------------------------------------------------------------
         //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
@@ -135,8 +168,71 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                     e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
                 }
             }
-
-
         }
+        //---------------------------------------------------------------------
+        //Eventos para cargar imagenes en los pictureBox
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+        //----------------------------------------------------
+        private void PictureBox_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length > 0 && (files[0].EndsWith(".jpg") || files[0].EndsWith(".jpeg") || files[0].EndsWith(".png") || files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+        }
+        //------------------------------------------------------------
+        private void PictureBox_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                try
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    if (files.Length > 0)
+                    {
+                        // Cargar la imagen desde el archivo
+                        Image img = Image.FromFile(files[0]);
+
+                        // Establecer la imagen en el PictureBox
+                        pictureBox.Image = img;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                }
+            }
+        }
+
     }
 }
