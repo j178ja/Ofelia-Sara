@@ -79,9 +79,9 @@
             this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
             this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(378, 178);
+            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(347, 178);
             this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
-            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(131, 62);
             this.pictureBox_FirmaDigitalizada.TabIndex = 37;
             this.pictureBox_FirmaDigitalizada.TabStop = false;
             this.pictureBox_FirmaDigitalizada.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_FirmaDigitalizada_Paint);
@@ -98,7 +98,7 @@
             // 
             this.label_Funcion.AutoSize = true;
             this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(45, 143);
+            this.label_Funcion.Location = new System.Drawing.Point(64, 143);
             this.label_Funcion.Name = "label_Funcion";
             this.label_Funcion.Size = new System.Drawing.Size(82, 16);
             this.label_Funcion.TabIndex = 35;
@@ -116,7 +116,7 @@
             // 
             this.label_Apellido.AutoSize = true;
             this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(45, 114);
+            this.label_Apellido.Location = new System.Drawing.Point(59, 114);
             this.label_Apellido.Name = "label_Apellido";
             this.label_Apellido.Size = new System.Drawing.Size(87, 16);
             this.label_Apellido.TabIndex = 33;
@@ -134,7 +134,7 @@
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(45, 85);
+            this.label_Nombre.Location = new System.Drawing.Point(66, 87);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(80, 16);
             this.label_Nombre.TabIndex = 31;
@@ -144,7 +144,7 @@
             // 
             this.checkBox_AgregarFirma.AutoSize = true;
             this.checkBox_AgregarFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(312, 192);
+            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(315, 199);
             this.checkBox_AgregarFirma.Name = "checkBox_AgregarFirma";
             this.checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarFirma.TabIndex = 4;
@@ -155,7 +155,7 @@
             // 
             this.label_AgregaFirma.AutoSize = true;
             this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregaFirma.Location = new System.Drawing.Point(42, 190);
+            this.label_AgregaFirma.Location = new System.Drawing.Point(45, 197);
             this.label_AgregaFirma.Name = "label_AgregaFirma";
             this.label_AgregaFirma.Size = new System.Drawing.Size(237, 16);
             this.label_AgregaFirma.TabIndex = 29;

@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\contacto.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:contacto.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,51 +31,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NuevoInstructor.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAIA3wCIAAAAFAAAA",
+              "Title": "Contacto.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Contacto.Designer.cs",
+              "RelativeDocumentMoniker": "Contacto.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Contacto.Designer.cs*",
+              "RelativeToolTip": "Contacto.Designer.cs*",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAgwMkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T02:00:19.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NuevoInstructor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs [Dise\u00F1o]",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T02:00:17.041Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SellosDependencia.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\SellosDependencia.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\SellosDependencia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\SellosDependencia.cs*",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\SellosDependencia.cs*",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAgwHEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T01:36:00.3Z",
+              "WhenOpened": "2024-08-07T18:00:52.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SellosDependencia.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\SellosDependencia.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\SellosDependencia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\SellosDependencia.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\SellosDependencia.cs [Dise\u00F1o]*",
+              "Title": "Contacto.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Contacto.cs",
+              "RelativeDocumentMoniker": "Contacto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Contacto.cs*",
+              "RelativeToolTip": "Contacto.cs*",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAowGwAAAB3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T01:33:53.159Z",
+              "WhenOpened": "2024-08-07T17:41:46.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Contacto.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Contacto.cs",
+              "RelativeDocumentMoniker": "Contacto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Contacto.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Contacto.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T17:19:37.921Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
