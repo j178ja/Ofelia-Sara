@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Ofelia_Sara.general.clases;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using System.Windows.Controls;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -30,12 +31,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Buscar_Load(object sender, EventArgs e)
         {
-            PosicionarCursorEnTextBox();
+            
+
+            // Aplica el estilo de botón de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Buscar);
         }
         // Método para posicionar el cursor en el textBox específico
-        public void PosicionarCursorEnTextBox()
+        public void PosicionarCursorEnTextBox(System.Windows.Forms.Control control)
         {
-            textBox_Caratula.Focus();
+            if (control != null)
+            {
+                control.Focus();
+            }
         }
     }
 }
