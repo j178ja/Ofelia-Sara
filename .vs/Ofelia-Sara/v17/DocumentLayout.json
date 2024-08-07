@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\menu_principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\buscarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\buscarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\buscarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\buscarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,66 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuxiliarConfiguracion.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs*",
-              "RelativeToolTip": "general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs*",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAwwIUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T03:13:20.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NuevoInstructor.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "ViewState": "AQIAALcAAAAAAAAAAAAwwNEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T03:07:17.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NuevoInstructor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoInstructor.cs [Dise\u00F1o]",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\NuevoInstructor.cs [Dise\u00F1o]",
+              "Title": "menu_principal.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.Designer.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.Designer.cs*",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.Designer.cs*",
+              "ViewState": "AQIAAHsBAAAAAAAAAIAwwIkBAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T03:07:15.31Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-08-07T04:05:47.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NuevoSecretario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\NuevoSecretario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\NuevoSecretario.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAQwJcAAAAEAAAA",
+              "DocumentIndex": 0,
+              "Title": "menu_principal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs*",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJMAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T02:57:25.7Z",
+              "WhenOpened": "2024-08-07T04:00:55.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "NuevoSecretario.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Agregar Componentes\\NuevoSecretario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Agregar Componentes\\NuevoSecretario.cs [Dise\u00F1o]",
-              "RelativeToolTip": "general\\clases\\Agregar Componentes\\NuevoSecretario.cs [Dise\u00F1o]",
+              "Title": "BuscarForm.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\BuscarForm.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\BuscarForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\BuscarForm.cs",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\BuscarForm.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAhwCgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T02:57:22.29Z",
+              "WhenOpened": "2024-08-07T03:34:32.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BuscarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\BuscarForm.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\BuscarForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\BuscarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\BuscarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T03:34:31.186Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuxiliarConfiguracion.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "RelativeToolTip": "general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAIAwwIwAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T03:23:23.979Z",
+              "EditorCaption": ""
             }
           ]
         }
