@@ -235,6 +235,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 496);
             this.Controls.Add(this.panel4);
+<<<<<<< HEAD
+=======
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+>>>>>>> plantillas
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
