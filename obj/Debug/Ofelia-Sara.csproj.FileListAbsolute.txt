@@ -49,8 +49,8 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Memory.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-S.9C75B350.Up2Date
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.CalendarForm.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\general\clases\Apariencia General\Controles\DateNacimiento.resx
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\general\clases\Apariencia General\Controles\DateNacimiento.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\general\clases\Apariencia General\Controles\DateNacimiento.Designer.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.CALENDARIO.resources

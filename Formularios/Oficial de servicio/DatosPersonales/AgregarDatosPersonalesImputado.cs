@@ -384,18 +384,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             checkBox_LegajoDetenido.Enabled = esTextoValido;
             checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
-        //-----------------------------------------------------------------------------
-        //---METODO PARA FORMATEAR FECHA DE NACIMIENTO
-        //private void buttonCalendar_Click(object sender, EventArgs e)
-        //{
-        //    using (var calendar = new MonthCalendar())
-        //    {
-        //        if (calendar.ShowDialog() == DialogResult.OK)
-        //        {
-        //            textBox1.Text = calendar.SelectionStart.ToShortDateString();
-        //        }
-        //    }
-        //}
+       
 
     }
 }

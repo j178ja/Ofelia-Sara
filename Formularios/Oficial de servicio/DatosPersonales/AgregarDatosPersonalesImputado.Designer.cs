@@ -149,6 +149,7 @@
             this.customDateTextBox1.Name = "customDateTextBox1";
             this.customDateTextBox1.Size = new System.Drawing.Size(149, 18);
             this.customDateTextBox1.TabIndex = 90;
+            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione la fecha");
             // 
             // label_agrGeo2
             // 

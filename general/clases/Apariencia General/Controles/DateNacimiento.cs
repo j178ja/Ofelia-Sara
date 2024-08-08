@@ -25,7 +25,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 
         private void buttonCalendar_Click(object sender, EventArgs e)
         {
-            using (var calendarForm = new CalendarForm())
+            using (var calendarForm = new CALENDARIO())
             {
                 if (calendarForm.ShowDialog() == DialogResult.OK)
                 {
