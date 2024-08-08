@@ -74,10 +74,8 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Contacto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Contacto.Designer.cs">
+    <Compile Include="Contacto.cs" />
+    <Compile Include="Contacto.Designer.cs">
       <DependentUpon>Contacto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.cs">
@@ -159,6 +157,17 @@
     </Compile>
     <Compile Include="general\clases\Agregar Componentes\SellosDependencia.Designer.cs">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\CalendarForm.cs" />
+    <Compile Include="general\clases\Apariencia General\Controles\CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\DateNacimiento.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\DateNacimiento.Designer.cs">
+      <DependentUpon>DateNacimiento.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\Texto\CamelCase.cs" />
@@ -250,7 +259,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Contacto.resx">
+    <EmbeddedResource Include="Contacto.resx">
       <DependentUpon>Contacto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\AccesoPrincipal.resx">
@@ -291,6 +300,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Agregar Componentes\SellosDependencia.resx">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\DateNacimiento.resx">
+      <DependentUpon>DateNacimiento.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
@@ -352,6 +368,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Base de Datos\Personal\" />
+    <Folder Include="Base de Datos\Usuarios\" />
     <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>
