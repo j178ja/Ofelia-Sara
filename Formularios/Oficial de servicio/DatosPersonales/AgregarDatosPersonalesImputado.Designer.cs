@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesImputado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.label_Nacionalidad = new System.Windows.Forms.Label();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
             this.textBox_Domicilio = new System.Windows.Forms.TextBox();
-            this.textBox_FechaNacimiento = new System.Windows.Forms.TextBox();
             this.textBox_Edad = new System.Windows.Forms.TextBox();
             this.textBox_Dni = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
@@ -93,6 +93,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.customDateTextBox1);
             this.panel1.Controls.Add(this.label_agrGeo2);
             this.panel1.Controls.Add(this.label_agrGeo);
             this.panel1.Controls.Add(this.label_AgregarDomicilio);
@@ -127,7 +128,6 @@
             this.panel1.Controls.Add(this.label_Nacionalidad);
             this.panel1.Controls.Add(this.textBox_Localidad);
             this.panel1.Controls.Add(this.textBox_Domicilio);
-            this.panel1.Controls.Add(this.textBox_FechaNacimiento);
             this.panel1.Controls.Add(this.textBox_Edad);
             this.panel1.Controls.Add(this.textBox_Dni);
             this.panel1.Controls.Add(this.textBox_Nombre);
@@ -142,6 +142,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 780);
             this.panel1.TabIndex = 0;
+            // 
+            // customDateTextBox1
+            // 
+            this.customDateTextBox1.Location = new System.Drawing.Point(403, 124);
+            this.customDateTextBox1.Name = "customDateTextBox1";
+            this.customDateTextBox1.Size = new System.Drawing.Size(149, 18);
+            this.customDateTextBox1.TabIndex = 90;
             // 
             // label_agrGeo2
             // 
@@ -235,7 +242,6 @@
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(151, 21);
             this.comboBox_Nacionalidad.TabIndex = 77;
-         
             this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
             // 
             // textBox_Ocupacion
@@ -512,13 +518,6 @@
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
             // 
-            // textBox_FechaNacimiento
-            // 
-            this.textBox_FechaNacimiento.Location = new System.Drawing.Point(409, 124);
-            this.textBox_FechaNacimiento.Name = "textBox_FechaNacimiento";
-            this.textBox_FechaNacimiento.Size = new System.Drawing.Size(114, 20);
-            this.textBox_FechaNacimiento.TabIndex = 2;
-            // 
             // textBox_Edad
             // 
             this.textBox_Edad.Location = new System.Drawing.Point(90, 149);
@@ -540,7 +539,6 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(399, 20);
             this.textBox_Nombre.TabIndex = 0;
-           
             // 
             // label_Localidad
             // 
@@ -658,7 +656,6 @@
         private System.Windows.Forms.Label label_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Localidad;
         private System.Windows.Forms.TextBox textBox_Domicilio;
-        private System.Windows.Forms.TextBox textBox_FechaNacimiento;
         private System.Windows.Forms.TextBox textBox_Edad;
         private System.Windows.Forms.TextBox textBox_Dni;
         private System.Windows.Forms.TextBox textBox_Nombre;
@@ -692,5 +689,6 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
+        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
     }
 }
