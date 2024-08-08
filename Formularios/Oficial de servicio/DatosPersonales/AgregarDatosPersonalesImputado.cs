@@ -27,13 +27,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             InitializeComponent();
 
-           
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
-           
-                    //para domicilio
+           //-----INICIALIZAR EVENTOS PICKTUREBOX-------------
+           //-----Del domicilio------------------
             pictureBox_Domicilio.AllowDrop = true;
             pictureBox_Geoposicionamiento.AllowDrop = true;
 
@@ -47,9 +46,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_Domicilio.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
             //----------------------------------------------------
+
             //----------PARA IMAGENES DEL LEGAJO----------------------
-            //permite que pictureBox reciba imagenes
-            pictureBox_Frente.AllowDrop = true;
+            pictureBox_Frente.AllowDrop = true;//permite que pictureBox reciba imagenes
             pictureBox_PerfilDerecho.AllowDrop = true;
             pictureBox_PerfilIzquierdo.AllowDrop = true;
             pictureBox_CuerpoEntero.AllowDrop = true;
@@ -242,12 +241,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         //evento para que si se completa control domicilio y localidad se habiliten los pickture
         private void textBox_Domicilio_TextChanged(object sender, EventArgs e)
         {
-            ActualizarControlesPicture();
+            ActualizarControlesPictureDOM();
         }
 
         private void textBox_Localidad_TextChanged(object sender, EventArgs e)
         {
-            ActualizarControlesPicture();
+            ActualizarControlesPictureDOM();
         }
         //------------limitar textBox_Edad a 2 digitos--------------------------
         private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
