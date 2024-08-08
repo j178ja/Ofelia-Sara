@@ -33,6 +33,11 @@ namespace Ofelia_Sara.general.clases
                 {
                     checkBox.Checked = false; //limpia el check
                 }
+                // Si el control es un PictureBox, limpiar su imagen
+                else if (c is PictureBox pictureBox)
+                {
+                    pictureBox.Image = null;
+                }
 
 
                 // Limpia los controles anidados si existen

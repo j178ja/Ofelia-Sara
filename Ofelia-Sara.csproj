@@ -74,7 +74,13 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Contacto.cs" />
+=======
+    <Compile Include="Contacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> plantillas
     <Compile Include="Contacto.Designer.cs">
       <DependentUpon>Contacto.cs</DependentUpon>
     </Compile>
@@ -158,11 +164,21 @@
     <Compile Include="general\clases\Agregar Componentes\SellosDependencia.Designer.cs">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="general\clases\Apariencia General\Controles\CalendarForm.cs" />
+=======
+    <Compile Include="general\clases\Apariencia General\Controles\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> plantillas
     <Compile Include="general\clases\Apariencia General\Controles\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\DateNacimiento.cs">
+<<<<<<< HEAD
+=======
+      <SubType>UserControl</SubType>
+>>>>>>> plantillas
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\DateNacimiento.Designer.cs">
