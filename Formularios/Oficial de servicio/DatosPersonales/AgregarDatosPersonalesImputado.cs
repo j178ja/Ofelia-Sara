@@ -26,14 +26,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public  AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
-            
-            
+
+            // Asigna el evento TextChanged de textBox_Nombre a ActualizarEstado
+            textBox_Nombre.TextChanged += (sender, e) => ActualizarEstado();
+
+            // Asigna el evento TextChanged de textBox_Dni a ActualizarEstado
+            textBox_Dni.TextChanged += (sender, e) => ActualizarEstado();
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
-            //permite que pictureBox reciba imagenes
-            pictureBox_Frente.AllowDrop = true;
+           //-----INICIALIZAR EVENTOS PICKTUREBOX-------------
+           //-----Del domicilio------------------
+            pictureBox_Domicilio.AllowDrop = true;
+            pictureBox_Geoposicionamiento.AllowDrop = true;
+
+            pictureBox_Domicilio.DragEnter += new DragEventHandler(pictureBox_DragEnter);
+            pictureBox_Domicilio.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+
+            pictureBox_Geoposicionamiento.DragEnter += new DragEventHandler(pictureBox_DragEnter);
+            pictureBox_Geoposicionamiento.DragDrop += new DragEventHandler(pictureBox_DragDrop);
+
+            // Ajusta el SizeMode de cada PictureBox
+            pictureBox_Domicilio.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
+            //----------------------------------------------------
+
+            //----------PARA IMAGENES DEL LEGAJO----------------------
+            pictureBox_Frente.AllowDrop = true;//permite que pictureBox reciba imagenes
             pictureBox_PerfilDerecho.AllowDrop = true;
             pictureBox_PerfilIzquierdo.AllowDrop = true;
             pictureBox_CuerpoEntero.AllowDrop = true;
@@ -50,8 +70,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             pictureBox_CuerpoEntero.DragEnter += new DragEventHandler(pictureBox_DragEnter);
             pictureBox_CuerpoEntero.DragDrop += new DragEventHandler(pictureBox_DragDrop);
-
-          
+             
+            pictureBox_Frente.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_PerfilDerecho.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_PerfilIzquierdo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_CuerpoEntero.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // Asociar el evento KeyPress al TextBox_Edad
             textBox_Edad.KeyPress += new KeyPressEventHandler(textBox_Edad_KeyPress);
@@ -65,6 +88,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Buscar);
 
+            ActualizarControlesPictureDOM();
+
+            // Asocia los eventos Paint
+            AsociarEventosPaint();
+
+            // Inicializa los PictureBox como deshabilitados
+            ActualizarControlesPicture();
+
+            // Actualiza el estado de los PictureBox basado en el estado del CheckBox
+            actualizarCheckBox();
+
+            // Inicializa los PictureBox como deshabilitados
+            pictureBox_Frente.Enabled = true;
+            pictureBox_PerfilDerecho.Enabled = true;
+            pictureBox_PerfilIzquierdo.Enabled = true;
+            pictureBox_CuerpoEntero.Enabled = true;
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
@@ -76,8 +115,85 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             // Aplica la configuración a todos los controles del formulario.
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
+            //------------------------------------------------------------------------------------
+
+            ActualizarEstado();
         }
-        
+
+        //-------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------
+        //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
+        private void ActualizarControlesPictureDOM()
+        {
+            // Verifica si TextoDomicilio y localidad tienen texto
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Domicilio.Text) && !string.IsNullOrWhiteSpace(textBox_Localidad.Text);
+
+            // Actualiza el estado de los PictureBox
+            ActualizarPictureBox(pictureBox_Geoposicionamiento, esTextoValido);
+            ActualizarPictureBox(pictureBox_Domicilio, esTextoValido);
+
+            pictureBox_Geoposicionamiento.Paint += PictureBox_Paint;
+            pictureBox_Domicilio.Paint += PictureBox_Paint;
+
+        }
+
+        private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
+        {
+            if (habilitar)
+            {
+                pictureBox.Enabled = true;
+                pictureBox.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
+                pictureBox.BackColor = SystemColors.ControlLight;
+            }
+            else
+            {
+                pictureBox.Enabled = false;
+                pictureBox.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+                pictureBox.BackColor = Color.DarkGray;
+            }
+
+            pictureBox.Invalidate(); // Redibuja el borde
+        }
+
+        private void PictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
+
+                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
+                {
+                    // Dibuja el borde exterior
+                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
+                }
+            }
+        }
+        //---------------------------------------------------------------------
+        //Eventos para cargar imagenes en los pictureBox
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+        //----------------------------------------------------
 
         //-----------------------------------------------------------------------------
         //-------ARRASTRAR IMAGEN A CADA PICKTUREBOX--------------------------------
@@ -130,6 +246,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
         //---------------------------------------------------------------------
+        //evento para que si se completa control domicilio y localidad se habiliten los pickture
+        private void textBox_Domicilio_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarControlesPictureDOM();
+        }
+
+        private void textBox_Localidad_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarControlesPictureDOM();
+        }
         //------------limitar textBox_Edad a 2 digitos--------------------------
         private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -200,5 +326,65 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true; // Ignorar la entrada si no es una letra
             }
         }
+
+        //-----METODO PARA HABILITAR FOTOS DEL LEGAJO---------------
+        // Método para asociar los eventos Paint
+        private void AsociarEventosPaint()
+        {
+            pictureBox_Frente.Paint += PictureBox_Paint;
+            pictureBox_PerfilDerecho.Paint += PictureBox_Paint;
+            pictureBox_PerfilIzquierdo.Paint += PictureBox_Paint;
+            pictureBox_CuerpoEntero.Paint += PictureBox_Paint;
+        }
+
+        // Método para actualizar el estado de los PictureBox
+        private void ActualizarControlesPicture()
+        {
+            pictureBox_Frente.Enabled = false;
+            pictureBox_PerfilDerecho.Enabled = false;
+            pictureBox_PerfilIzquierdo.Enabled = false;
+            pictureBox_CuerpoEntero.Enabled = false;
+
+            ActualizarPictureBox(pictureBox_Frente, false);
+            ActualizarPictureBox(pictureBox_PerfilDerecho, false);
+            ActualizarPictureBox(pictureBox_PerfilIzquierdo, false);
+            ActualizarPictureBox(pictureBox_CuerpoEntero, false);
+        }
+        private void checkBox_LegajoDetenido_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizarCheckBox();
+        }
+
+        private void actualizarCheckBox()
+        {
+            bool isChecked = checkBox_LegajoDetenido.Checked;
+
+            ActualizarPictureBox(pictureBox_Frente, isChecked);
+            ActualizarPictureBox(pictureBox_PerfilDerecho, isChecked);
+            ActualizarPictureBox(pictureBox_PerfilIzquierdo, isChecked);
+            ActualizarPictureBox(pictureBox_CuerpoEntero, isChecked);
+        }
+
+        //-------------------------------------------------------------------------
+        //--Para habilitar check y modificar label
+        private void ActualizarEstado()
+        {
+            // Verifica si textBox_Nombre y textBox_Dni no están vacíos ni solo con espacios
+            bool esTextoValidoNombre = !string.IsNullOrWhiteSpace(textBox_Nombre.Text);
+            bool esTextoValidoDni = !string.IsNullOrWhiteSpace(textBox_Dni.Text);
+
+            // Ambos textos deben ser válidos para que el estado sea verdadero
+            bool esTextoValido = esTextoValidoNombre && esTextoValidoDni;
+
+            // Actualiza el color del label y el estado del checkbox según el texto de los TextBoxes
+            label_LegajoDetenido.ForeColor = esTextoValido ? Color.Black : Color.Tomato;
+            label_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Gray;
+
+            // Actualiza el color de fondo del CheckBox y su estado habilitado/deshabilitado
+            checkBox_LegajoDetenido.Enabled = esTextoValido;
+            checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
+        }
+       
+
     }
 }

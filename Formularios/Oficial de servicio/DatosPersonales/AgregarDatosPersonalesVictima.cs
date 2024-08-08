@@ -22,6 +22,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesVictima()
         {
             InitializeComponent();
+
+            this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load);
         }
 
         private void AgregarDatosPersonalesVictima_Load(object sender, EventArgs e)
@@ -30,6 +32,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Buscar);
+
+            // Configura el arrastrar y soltar para los PictureBox
+            pictureBox_Domicilio.AllowDrop = true;
+            pictureBox_Geoposicionamiento.AllowDrop = true;
+
+            pictureBox_Domicilio.DragEnter += PictureBox_DragEnter;
+            pictureBox_Geoposicionamiento.DragEnter += PictureBox_DragEnter;
+
+            pictureBox_Geoposicionamiento.DragDrop += PictureBox_DragDrop;
+            pictureBox_Domicilio.DragDrop += PictureBox_DragDrop;
+
+            // Ajusta el SizeMode de cada PictureBox
+            pictureBox_Domicilio.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
@@ -49,6 +65,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_agrGeo2 = new System.Windows.Forms.Label();
+            this.label_agrGeo = new System.Windows.Forms.Label();
+            this.label_AgregarDomicilio = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
             this.textBox_Ocupacion = new System.Windows.Forms.TextBox();
@@ -63,9 +82,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Email = new System.Windows.Forms.Label();
             this.textBox_Telefono = new System.Windows.Forms.TextBox();
             this.label_Telefono = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox_Geoposicionamiento = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Domicilio = new System.Windows.Forms.PictureBox();
             this.label_Nacionalidad = new System.Windows.Forms.Label();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
             this.textBox_Domicilio = new System.Windows.Forms.TextBox();
@@ -74,7 +92,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Dni = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.label_Localidad = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label_Domicilio = new System.Windows.Forms.Label();
             this.label_Edad = new System.Windows.Forms.Label();
             this.label_FechaNacimiento = new System.Windows.Forms.Label();
@@ -84,8 +101,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -95,6 +112,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.label_agrGeo2);
+            this.panel1.Controls.Add(this.label_agrGeo);
+            this.panel1.Controls.Add(this.label_AgregarDomicilio);
             this.panel1.Controls.Add(this.textBox_LugarNacimiento);
             this.panel1.Controls.Add(this.label_LugarNacimiento);
             this.panel1.Controls.Add(this.textBox_Ocupacion);
@@ -109,9 +129,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_Email);
             this.panel1.Controls.Add(this.textBox_Telefono);
             this.panel1.Controls.Add(this.label_Telefono);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.pictureBox_Geoposicionamiento);
+            this.panel1.Controls.Add(this.pictureBox_Domicilio);
             this.panel1.Controls.Add(this.label_Nacionalidad);
             this.panel1.Controls.Add(this.textBox_Localidad);
             this.panel1.Controls.Add(this.textBox_Domicilio);
@@ -120,7 +139,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.textBox_Dni);
             this.panel1.Controls.Add(this.textBox_Nombre);
             this.panel1.Controls.Add(this.label_Localidad);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label_Domicilio);
             this.panel1.Controls.Add(this.label_Edad);
             this.panel1.Controls.Add(this.label_FechaNacimiento);
@@ -130,8 +148,38 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Location = new System.Drawing.Point(24, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(555, 480);
+            this.panel1.Size = new System.Drawing.Size(555, 639);
             this.panel1.TabIndex = 2;
+            // 
+            // label_agrGeo2
+            // 
+            this.label_agrGeo2.AutoSize = true;
+            this.label_agrGeo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_agrGeo2.Location = new System.Drawing.Point(75, 306);
+            this.label_agrGeo2.Name = "label_agrGeo2";
+            this.label_agrGeo2.Size = new System.Drawing.Size(94, 15);
+            this.label_agrGeo2.TabIndex = 84;
+            this.label_agrGeo2.Text = "de domicilio :";
+            // 
+            // label_agrGeo
+            // 
+            this.label_agrGeo.AutoSize = true;
+            this.label_agrGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_agrGeo.Location = new System.Drawing.Point(31, 287);
+            this.label_agrGeo.Name = "label_agrGeo";
+            this.label_agrGeo.Size = new System.Drawing.Size(195, 15);
+            this.label_agrGeo.TabIndex = 83;
+            this.label_agrGeo.Text = "Agregar geoposicionamiento ";
+            // 
+            // label_AgregarDomicilio
+            // 
+            this.label_AgregarDomicilio.AutoSize = true;
+            this.label_AgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AgregarDomicilio.Location = new System.Drawing.Point(26, 355);
+            this.label_AgregarDomicilio.Name = "label_AgregarDomicilio";
+            this.label_AgregarDomicilio.Size = new System.Drawing.Size(200, 15);
+            this.label_AgregarDomicilio.TabIndex = 82;
+            this.label_AgregarDomicilio.Text = "Agregar imagen de domicilio :";
             // 
             // textBox_LugarNacimiento
             // 
@@ -172,7 +220,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(73, 391);
+            this.btn_Buscar.Location = new System.Drawing.Point(74, 538);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 78;
@@ -182,7 +230,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // checkBox_Notificacion258
             // 
             this.checkBox_Notificacion258.AutoSize = true;
-            this.checkBox_Notificacion258.Location = new System.Drawing.Point(228, 346);
+            this.checkBox_Notificacion258.Location = new System.Drawing.Point(229, 493);
             this.checkBox_Notificacion258.Name = "checkBox_Notificacion258";
             this.checkBox_Notificacion258.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Notificacion258.TabIndex = 11;
@@ -193,7 +241,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Notificacion258.AutoSize = true;
             this.label_Notificacion258.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Notificacion258.Location = new System.Drawing.Point(33, 344);
+            this.label_Notificacion258.Location = new System.Drawing.Point(34, 491);
             this.label_Notificacion258.Name = "label_Notificacion258";
             this.label_Notificacion258.Size = new System.Drawing.Size(175, 15);
             this.label_Notificacion258.TabIndex = 76;
@@ -204,7 +252,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(243, 391);
+            this.btn_Limpiar.Location = new System.Drawing.Point(244, 538);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
@@ -217,7 +265,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(408, 391);
+            this.btn_Guardar.Location = new System.Drawing.Point(409, 538);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
@@ -241,13 +289,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             "URUGUAYA"});
             this.comboBox_Nacionalidad.Location = new System.Drawing.Point(393, 192);
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
-            this.comboBox_Nacionalidad.Size = new System.Drawing.Size(133, 21);
+            this.comboBox_Nacionalidad.Size = new System.Drawing.Size(131, 21);
             this.comboBox_Nacionalidad.TabIndex = 6;
             this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
             // 
             // textBox_Email
             // 
-            this.textBox_Email.Location = new System.Drawing.Point(123, 299);
+            this.textBox_Email.Location = new System.Drawing.Point(124, 446);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(271, 20);
             this.textBox_Email.TabIndex = 10;
@@ -256,7 +304,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Email.AutoSize = true;
             this.label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Email.Location = new System.Drawing.Point(33, 299);
+            this.label_Email.Location = new System.Drawing.Point(34, 446);
             this.label_Email.Name = "label_Email";
             this.label_Email.Size = new System.Drawing.Size(56, 15);
             this.label_Email.TabIndex = 73;
@@ -264,7 +312,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // textBox_Telefono
             // 
-            this.textBox_Telefono.Location = new System.Drawing.Point(124, 273);
+            this.textBox_Telefono.Location = new System.Drawing.Point(125, 420);
             this.textBox_Telefono.Name = "textBox_Telefono";
             this.textBox_Telefono.Size = new System.Drawing.Size(270, 20);
             this.textBox_Telefono.TabIndex = 9;
@@ -273,47 +321,41 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Telefono.AutoSize = true;
             this.label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono.Location = new System.Drawing.Point(33, 274);
+            this.label_Telefono.Location = new System.Drawing.Point(34, 421);
             this.label_Telefono.Name = "label_Telefono";
             this.label_Telefono.Size = new System.Drawing.Size(87, 15);
             this.label_Telefono.TabIndex = 71;
             this.label_Telefono.Text = "TELEFONO :";
             // 
-            // pictureBox6
+            // pictureBox_Geoposicionamiento
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox6.Location = new System.Drawing.Point(446, 248);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(78, 19);
-            this.pictureBox6.TabIndex = 70;
-            this.pictureBox6.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox6, "Arrastrar imagen aqui");
+            this.pictureBox_Geoposicionamiento.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBox_Geoposicionamiento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Geoposicionamiento.BackgroundImage")));
+            this.pictureBox_Geoposicionamiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_Geoposicionamiento.Location = new System.Drawing.Point(229, 275);
+            this.pictureBox_Geoposicionamiento.Name = "pictureBox_Geoposicionamiento";
+            this.pictureBox_Geoposicionamiento.Size = new System.Drawing.Size(295, 55);
+            this.pictureBox_Geoposicionamiento.TabIndex = 70;
+            this.pictureBox_Geoposicionamiento.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox_Geoposicionamiento, "Arrastrar imagen aqui");
+            this.pictureBox_Geoposicionamiento.Click += new System.EventHandler(this.PictureBox_Click);
+            this.pictureBox_Geoposicionamiento.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_Geoposicionamiento.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
-            // pictureBox5
+            // pictureBox_Domicilio
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(446, 223);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(78, 19);
-            this.pictureBox5.TabIndex = 69;
-            this.pictureBox5.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox5, "Arrastrar imagen aqui");
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Location = new System.Drawing.Point(401, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(39, 25);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "+";
-            this.toolTip1.SetToolTip(this.button2, "Buscar imagen en galeria");
-            this.button2.UseVisualStyleBackColor = true;
+            this.pictureBox_Domicilio.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBox_Domicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Domicilio.BackgroundImage")));
+            this.pictureBox_Domicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_Domicilio.Location = new System.Drawing.Point(229, 336);
+            this.pictureBox_Domicilio.Name = "pictureBox_Domicilio";
+            this.pictureBox_Domicilio.Size = new System.Drawing.Size(295, 55);
+            this.pictureBox_Domicilio.TabIndex = 69;
+            this.pictureBox_Domicilio.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox_Domicilio, "Arrastrar imagen aqui");
+            this.pictureBox_Domicilio.Click += new System.EventHandler(this.PictureBox_Click);
+            this.pictureBox_Domicilio.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_Domicilio.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // label_Nacionalidad
             // 
@@ -329,15 +371,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.textBox_Localidad.Location = new System.Drawing.Point(125, 247);
             this.textBox_Localidad.Name = "textBox_Localidad";
-            this.textBox_Localidad.Size = new System.Drawing.Size(270, 20);
+            this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
+            this.textBox_Localidad.TextChanged += new System.EventHandler(this.textBox_Localidad_TextChanged);
             // 
             // textBox_Domicilio
             // 
             this.textBox_Domicilio.Location = new System.Drawing.Point(125, 221);
             this.textBox_Domicilio.Name = "textBox_Domicilio";
-            this.textBox_Domicilio.Size = new System.Drawing.Size(270, 20);
+            this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
             this.textBox_Domicilio.TabIndex = 7;
+            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
             // 
             // textBox_FechaNacimiento
             // 
@@ -380,17 +424,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Localidad.Size = new System.Drawing.Size(90, 15);
             this.label_Localidad.TabIndex = 65;
             this.label_Localidad.Text = "LOCALIDAD :";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Location = new System.Drawing.Point(401, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 25);
-            this.button1.TabIndex = 67;
-            this.toolTip1.SetToolTip(this.button1, "buscar en GoogleMaps");
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label_Domicilio
             // 
@@ -469,9 +502,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // AgregarDatosPersonalesVictima
             // 
-            this.ClientSize = new System.Drawing.Size(608, 542);
+            this.ClientSize = new System.Drawing.Size(608, 702);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(624, 581);
             this.Name = "AgregarDatosPersonalesVictima";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -480,8 +515,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,8 +528,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Buscar);
+
+            ActualizarControlesPicture();
         }
 
+
+        //---------BOTON LIMPIAR----------------------------
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
@@ -503,11 +542,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //---------BOTON GUARDAR----------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //-------CONTROL DE CARACTERES EN NACIONALIDAD-----------------------
         private void comboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es una letra
@@ -563,5 +604,129 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
         //------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------
+        //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
+        private void ActualizarControlesPicture()
+        {
+            // Verifica si TextoDomicilio y localidad tienen texto
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Domicilio.Text) && !string.IsNullOrWhiteSpace(textBox_Localidad.Text);
+
+            // Actualiza el estado de los PictureBox
+            ActualizarPictureBox(pictureBox_Geoposicionamiento, esTextoValido);
+            ActualizarPictureBox(pictureBox_Domicilio, esTextoValido);
+
+            pictureBox_Geoposicionamiento.Paint += PictureBox_Paint;
+            pictureBox_Domicilio.Paint += PictureBox_Paint;
+
+        }
+
+        private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
+        {
+            if (habilitar)
+            {
+                pictureBox.Enabled = true;
+                pictureBox.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
+                pictureBox.BackColor = SystemColors.ControlLight;
+            }
+            else
+            {
+                pictureBox.Enabled = false;
+                pictureBox.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+                pictureBox.BackColor = Color.DarkGray;
+            }
+
+            pictureBox.Invalidate(); // Redibuja el borde
+        }
+
+        private void PictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
+
+                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
+                {
+                    // Dibuja el borde exterior
+                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
+                }
+            }
+        }
+        //---------------------------------------------------------------------
+        //Eventos para cargar imagenes en los pictureBox
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+        //----------------------------------------------------
+        private void PictureBox_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length > 0 && (files[0].EndsWith(".jpg") || files[0].EndsWith(".jpeg") || files[0].EndsWith(".png") || files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+        }
+        //------------------------------------------------------------
+        private void PictureBox_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                try
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    if (files.Length > 0)
+                    {
+                        // Cargar la imagen desde el archivo
+                        Image img = Image.FromFile(files[0]);
+
+                        // Establecer la imagen en el PictureBox
+                        pictureBox.Image = img;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                }
+            }
+        }
+
+
+        //---- METODOS PARA QUE SE ACTUALICE DEPENDIENDO LO QUE SE INGRESE EN DOMICILIO Y LOCALIDAD-------
+        private void textBox_Domicilio_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarControlesPicture();
+        }
+
+        private void textBox_Localidad_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarControlesPicture();
+        }
     }
 }
