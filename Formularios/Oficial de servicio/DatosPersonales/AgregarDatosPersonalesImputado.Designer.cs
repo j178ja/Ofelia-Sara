@@ -235,6 +235,7 @@
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(151, 21);
             this.comboBox_Nacionalidad.TabIndex = 77;
+         
             this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
             // 
             // textBox_Ocupacion
@@ -524,6 +525,7 @@
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
+            this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
             // 
             // textBox_Dni
             // 
@@ -538,6 +540,7 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(399, 20);
             this.textBox_Nombre.TabIndex = 0;
+           
             // 
             // label_Localidad
             // 

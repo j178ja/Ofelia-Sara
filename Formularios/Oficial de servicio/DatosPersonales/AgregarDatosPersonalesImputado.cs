@@ -27,6 +27,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             InitializeComponent();
 
+            // Asigna el evento TextChanged de textBox_Nombre a ActualizarEstado
+            textBox_Nombre.TextChanged += (sender, e) => ActualizarEstado();
+
+            // Asigna el evento TextChanged de textBox_Dni a ActualizarEstado
+            textBox_Dni.TextChanged += (sender, e) => ActualizarEstado();
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
@@ -110,6 +115,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             // Aplica la configuración a todos los controles del formulario.
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
+            //------------------------------------------------------------------------------------
+
+            ActualizarEstado();
         }
 
         //-------------------------------------------------------------------------------------
@@ -356,5 +364,27 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarPictureBox(pictureBox_PerfilIzquierdo, isChecked);
             ActualizarPictureBox(pictureBox_CuerpoEntero, isChecked);
         }
+
+        //-------------------------------------------------------------------------
+        //--Para habilitar check y modificar label
+        private void ActualizarEstado()
+        {
+            // Verifica si textBox_Nombre y textBox_Dni no están vacíos ni solo con espacios
+            bool esTextoValidoNombre = !string.IsNullOrWhiteSpace(textBox_Nombre.Text);
+            bool esTextoValidoDni = !string.IsNullOrWhiteSpace(textBox_Dni.Text);
+
+            // Ambos textos deben ser válidos para que el estado sea verdadero
+            bool esTextoValido = esTextoValidoNombre && esTextoValidoDni;
+
+            // Actualiza el color del label y el estado del checkbox según el texto de los TextBoxes
+            label_LegajoDetenido.ForeColor = esTextoValido ? Color.Black : Color.Tomato;
+            label_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Gray;
+
+            // Actualiza el color de fondo del CheckBox y su estado habilitado/deshabilitado
+            checkBox_LegajoDetenido.Enabled = esTextoValido;
+            checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
+        }
+
+
     }
 }
