@@ -375,6 +375,7 @@
   <ItemGroup>
     <Folder Include="Base de Datos\Personal\" />
     <Folder Include="Base de Datos\Usuarios\" />
+    <Folder Include="Formularios\Remover\" />
     <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>
