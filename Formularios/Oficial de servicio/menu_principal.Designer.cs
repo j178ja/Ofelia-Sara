@@ -351,7 +351,7 @@
             this.sELLOSToolStripMenuItem.Name = "sELLOSToolStripMenuItem";
             this.sELLOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sELLOSToolStripMenuItem.Text = "SELLOS";
-            this.sELLOSToolStripMenuItem.Click += new System.EventHandler(this.sELLOSToolStripMenuItem_Click);
+           
             // 
             // mEDALLAToolStripMenuItem
             // 
@@ -391,28 +391,28 @@
             this.nIPPToolStripMenuItem.Name = "nIPPToolStripMenuItem";
             this.nIPPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nIPPToolStripMenuItem.Text = "N° IPP";
-            this.nIPPToolStripMenuItem.Click += new System.EventHandler(this.nIPPToolStripMenuItem_Click);
+           
             // 
             // cARATULAToolStripMenuItem
             // 
             this.cARATULAToolStripMenuItem.Name = "cARATULAToolStripMenuItem";
             this.cARATULAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cARATULAToolStripMenuItem.Text = "CARATULA";
-            this.cARATULAToolStripMenuItem.Click += new System.EventHandler(this.cARATULAToolStripMenuItem_Click);
+            
             // 
             // vICTIMAToolStripMenuItem
             // 
             this.vICTIMAToolStripMenuItem.Name = "vICTIMAToolStripMenuItem";
             this.vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vICTIMAToolStripMenuItem.Text = "VICTIMA";
-            this.vICTIMAToolStripMenuItem.Click += new System.EventHandler(this.vICTIMAToolStripMenuItem_Click);
+           
             // 
             // iMPUTADOToolStripMenuItem
             // 
             this.iMPUTADOToolStripMenuItem.Name = "iMPUTADOToolStripMenuItem";
             this.iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iMPUTADOToolStripMenuItem.Text = "IMPUTADO";
-            this.iMPUTADOToolStripMenuItem.Click += new System.EventHandler(this.iMPUTADOToolStripMenuItem_Click);
+            
             // 
             // fECHAToolStripMenuItem
             // 
@@ -425,21 +425,21 @@
             this.sECRETARIOToolStripMenuItem.Name = "sECRETARIOToolStripMenuItem";
             this.sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sECRETARIOToolStripMenuItem.Text = "SECRETARIO";
-            this.sECRETARIOToolStripMenuItem.Click += new System.EventHandler(this.sECRETARIOToolStripMenuItem_Click);
+            
             // 
             // iNSTRUCTORToolStripMenuItem1
             // 
             this.iNSTRUCTORToolStripMenuItem1.Name = "iNSTRUCTORToolStripMenuItem1";
             this.iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.iNSTRUCTORToolStripMenuItem1.Text = "INSTRUCTOR";
-            this.iNSTRUCTORToolStripMenuItem1.Click += new System.EventHandler(this.iNSTRUCTORToolStripMenuItem1_Click);
+           
             // 
             // dEPENDENCIAToolStripMenuItem
             // 
             this.dEPENDENCIAToolStripMenuItem.Name = "dEPENDENCIAToolStripMenuItem";
             this.dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dEPENDENCIAToolStripMenuItem.Text = "DEPENDENCIA";
-            this.dEPENDENCIAToolStripMenuItem.Click += new System.EventHandler(this.dEPENDENCIAToolStripMenuItem_Click);
+           
             // 
             // salirToolStripMenuItem
             // 
