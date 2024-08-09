@@ -186,6 +186,12 @@
       <DependentUpon>DateNacimiento.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\NuevaPersonaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\NuevaPersonaControl.Designer.cs">
+      <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\Texto\CamelCase.cs" />
     <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.cs">
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\NuevaPersonaControl.resx">
+      <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Barras personalizadas\ProgressVerticalBarAlfa.resx">
       <DependentUpon>ProgressVerticalBarAlfa.cs</DependentUpon>
