@@ -54,3 +54,5 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\general\clases\Aparie
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\general\clases\Apariencia General\Controles\DateNacimiento.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\general\clases\Apariencia General\Controles\DateNacimiento.Designer.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.CALENDARIO.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Oficial_de_servicio.Registro.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.UsuarioForm.resources

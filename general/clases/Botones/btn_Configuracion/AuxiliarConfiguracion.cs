@@ -5,7 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
+
+
+
 
 namespace Ofelia_Sara.general.clases.Botones
 {
@@ -48,7 +52,7 @@ namespace Ofelia_Sara.general.clases.Botones
             // Crear el ítem "BUSCAR" y sus subítems
             ToolStripMenuItem item_Buscar = new ToolStripMenuItem("BUSCAR ...");
 
-            ToolStripMenuItem subItem_Buscar_NIP = new ToolStripMenuItem("N° I.P.P.");
+            ToolStripMenuItem subItem_Buscar_Ipp = new ToolStripMenuItem("N° I.P.P.");
             ToolStripMenuItem subItem_Buscar_Caratula = new ToolStripMenuItem("CARATULA");
             ToolStripMenuItem subItem_Buscar_Victima = new ToolStripMenuItem("VICTIMA");
             ToolStripMenuItem subItem_Buscar_Imputado = new ToolStripMenuItem("IMPUTADO");
@@ -58,7 +62,7 @@ namespace Ofelia_Sara.general.clases.Botones
             ToolStripMenuItem subItem_Buscar_Dependencia = new ToolStripMenuItem("DEPENDENCIA");
 
             // Añadir los subítems al ítem "BUSCAR"
-            item_Buscar.DropDownItems.Add(subItem_Buscar_NIP);
+            item_Buscar.DropDownItems.Add(subItem_Buscar_Ipp);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Caratula);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Victima);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Imputado);
@@ -106,34 +110,92 @@ namespace Ofelia_Sara.general.clases.Botones
                 NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
                 nuevaFiscalia.ShowDialog();
             };
-
+            //------------------------------------------------------
+            // ------PARA ABRIR SELLOS--------------------
             subItem_Agregar_Sellos.Click += (sender, e) =>
             {
                 SellosDependencia sellosDependencia = new SellosDependencia();
                 sellosDependencia.ShowDialog();
             };
-           
 
+            subItem_Sello_Medalla.Click += (sender, e) =>
+            {
+                SellosDependencia sellosDependencia = new SellosDependencia();
+                sellosDependencia.ShowDialog();
+            };
+            subItem_Escalera.Click += (sender, e) =>
+            {
+                SellosDependencia sellosDependencia = new SellosDependencia();
+                sellosDependencia.ShowDialog();
+            };
+
+            subItem_Foliador.Click += (sender, e) =>
+            {
+                SellosDependencia sellosDependencia = new SellosDependencia();
+                sellosDependencia.ShowDialog();
+            };
+            //---------------------------------------------------------
+            //--------PARA AGREGAR FISCAL---------------------
             subItem_Agregar_AgenteFiscal.Click += (sender, e) =>
             {
                 NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
                 nuevaFiscalia.ShowDialog();
             };
 
-            //subItem_Buscar_NIP.Click += (sender, e) => MessageBox.Show("Seleccionaste N° I.P.P.");
-            subItem_Buscar_Caratula.Click += (sender, e) => {// Crear una instancia del formulario de destino
-                     BuscarForm buscarForm = new BuscarForm();
-            buscarForm.Show();// Mostrar el formulario
-            buscarForm.PosicionarCursorEnTextBox();// Posicionar el cursor en el textBox específico
+            // ------PARA BUSCAR Y DERIVADOS----------------------
+            subItem_Buscar_Ipp.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                System.Windows.Forms.Control controlIpp = buscarForm.Controls["comboBox_Ipp1"];
+                buscarForm.PosicionarCursorEnTextBox(controlIpp);
             };
-        //subItem_Buscar_Victima.Click += (sender, e) => MessageBox.Show("Seleccionaste VICTIMA");
-        //subItem_Buscar_Imputado.Click += (sender, e) => MessageBox.Show("Seleccionaste IMPUTADO");
-        //subItem_Buscar_Fecha.Click += (sender, e) => MessageBox.Show("Seleccionaste FECHA");
-        //subItem_Buscar_Secretario.Click += (sender, e) => MessageBox.Show("Seleccionaste SECRETARIO");
-        //subItem_Buscar_Instructor.Click += (sender, e) => MessageBox.Show("Seleccionaste INSTRUCTOR");
-        //subItem_Buscar_Dependencia.Click += (sender, e) => MessageBox.Show("Seleccionaste DEPENDENCIA");
 
-        item_Salir.Click += (sender, e) => menu_Configurar.Close(); // para que se cierre el menu
+            subItem_Buscar_Caratula.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                System.Windows.Forms.Control controlCaratula = buscarForm.Controls["textBox_Caratula"];
+                buscarForm.PosicionarCursorEnTextBox(controlCaratula);
+            };
+
+            subItem_Buscar_Victima.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Victima"]);
+            };
+
+            subItem_Buscar_Imputado.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Imputado"]);
+            };
+
+            subItem_Buscar_Secretario.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["comboBox_Secretario"]);
+            };
+
+            subItem_Buscar_Instructor.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["comboBox_Instructor"]);
+            };
+
+            subItem_Buscar_Dependencia.Click += (sender, e) => {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["comboBox_Dependencia"]);
+            };
+            //------------------PARA REMOVER-------------------------------------
+
+            item_Remover.Click += (sender, e) =>
+            {
+                UsuarioForm usuarioForm = new UsuarioForm();// Crear una instancia del formulario de registro
+
+                usuarioForm.ShowDialog();
+            };
+
+            item_Salir.Click += (sender, e) => menu_Configurar.Close(); // para que se cierre el menu
 
             return menu_Configurar;
         }
