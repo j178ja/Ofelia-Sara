@@ -499,12 +499,72 @@ namespace Ofelia_Sara
 
         private void btn_AgregarVictima_Click(object sender, EventArgs e)
         {
-            AgregarNuevoControl("Victima", panel_Victima);
+            // Crear una instancia de NuevaPersonaControl
+            NuevaPersonaControl nuevaVictimaControl = new NuevaPersonaControl
+            {
+                TipoPersona = "Victima"
+            };
+
+            // Establecer la posición del nuevo control
+            if (panel_Victima.Controls.Count == 0)
+            {
+                // Si es el primer control, colócalo justo debajo del botón
+                // Ajusta la coordenada Y según la posición del botón
+                nuevaVictimaControl.Location = new Point(3, btn_AgregarVictima.Bottom + 4);
+            }
+            else
+            {
+                // Para otros controles, colócalos debajo del último control agregado
+                var ultimoControl = panel_Victima.Controls[panel_Victima.Controls.Count - 1];
+                nuevaVictimaControl.Location = new Point(3, ultimoControl.Bottom + 1); // Ajusta la distancia entre controles
+            }
+            // Agregar el nuevo control al panel_Victima
+            panel_Victima.Controls.Add(nuevaVictimaControl);
+
+            // Ajustar la altura del panel_Victima para incluir el nuevo control
+            AjustarAlturaPanel(panel_Victima);
+
+            // Ajustar la posición de los paneles siguientes para que se muevan hacia abajo
+            AjustarPosicionPanelesSiguientes(panel_Victima);
+
+            // Ajustar la posición de los paneles siguientes
+            AjustarPosicionPanelesInferiores();
+
         }
 
         private void btn_AgregarImputado_Click(object sender, EventArgs e)
         {
-            AgregarNuevoControl("Imputado", panel_Imputado);
+            // Crear una instancia de NuevaPersonaControl
+            NuevaPersonaControl nuevoImputadoControl = new NuevaPersonaControl
+            {
+                TipoPersona = "Imputado"
+            };
+
+            // Establecer la posición del nuevo control
+            if (panel_Imputado.Controls.Count == 0)
+            {
+                // Si es el primer control, colócalo justo debajo del botón
+                // Ajusta la coordenada Y según la posición del botón
+                nuevoImputadoControl.Location = new Point(3, btn_AgregarImputado.Bottom + 4);
+            }
+            else
+            {
+                // Para otros controles, colócalos debajo del último control agregado
+                var ultimoControl = panel_Imputado.Controls[panel_Imputado.Controls.Count - 1];
+                nuevoImputadoControl.Location = new Point(0, ultimoControl.Bottom + 1); // Ajusta la distancia entre controles
+            }
+            // Agregar el nuevo control al panel_Imputado
+            panel_Imputado.Controls.Add(nuevoImputadoControl);
+
+            // Ajustar la altura del panel_Imputado
+            AjustarAlturaPanel(panel_Imputado);
+
+            // Ajustar la posición de los paneles siguientes
+            AjustarPosicionPanelesSiguientes(panel_Imputado);
+
+            // Ajustar la posición de los paneles siguientes
+            AjustarPosicionPanelesInferiores();
+
         }
 
         private void AgregarNuevoControl(string tipoPersona, Panel panel)
@@ -561,6 +621,44 @@ namespace Ofelia_Sara
             panel.Height = nuevaAltura;
         }
 
+        private void AjustarPosicionPanelesSiguientes(Panel panelAjustado)
+        {
+            // Determinar la referencia al panel que contiene los controles inferiores
+            Panel panelControlesInferiores = panel_ControlesInferiores;
+
+            // Ajustar la posición del panel que contiene los controles inferiores
+            if (panelControlesInferiores != null)
+            {
+                panelControlesInferiores.Location = new Point(panelControlesInferiores.Location.X, panelAjustado.Bottom + 10); // Ajuste de 10 píxeles
+            }
+
+            // Finalmente, ajustar la altura del formulario principal si es necesario
+            Form formularioPrincipal = panelAjustado.FindForm();
+            if (formularioPrincipal != null)
+            {
+                formularioPrincipal.Height = formularioPrincipal.Controls.OfType<Control>().Max(c => c.Bottom) + 20;
+            }
+        }
+
+        private void AjustarAlturaFormulario()
+        {
+            // Calcular la altura total necesaria para el formulario
+            int nuevaAltura = panel_Victima.Bottom + panel_Imputado.Height + panel_ControlesInferiores.Height + 20; // Ajustar el margen según sea necesario
+
+            // Asegurarse de que la altura del formulario sea suficiente para incluir todos los paneles
+            if (this.Height < nuevaAltura)
+            {
+                this.Height = nuevaAltura;
+            }
+        }
+        private void AjustarPosicionPanelesInferiores()
+        {
+            // Ajustar la posición del panel_Imputado
+            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 10); // Ajustar la distancia entre paneles si es necesario
+
+            // Ajustar la posición del panel_ControlesInferiores
+            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10); // Ajustar la distancia entre paneles si es necesario
+        }
 
 
     }
