@@ -112,7 +112,11 @@ namespace Ofelia_Sara
             // Aplica la configuración a todos los controles del formulario.
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones); //para guardar los items
 
-            //------------------------------------
+            //-----------------------------------------------------------------
+            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
 
         }
 
@@ -365,6 +369,12 @@ namespace Ofelia_Sara
             agregarDatosPersonales.Show();
 
         }
+        //------------------------------------------------------------------------------
+        //-----METODO HABILITA BTN AGREGAR CAUSA
+        private void textBox_Caratula_TextChanged(object sender, EventArgs e)
+        {
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);
+        }
 
         //-------------------------------------------------------------------------------
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
@@ -382,11 +392,15 @@ namespace Ofelia_Sara
             if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
             {
                 btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
+                
             }
             else
             {
                 btn_AgregarDatosVictima.BackColor = Color.Tomato;
+              
             }
+            // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
         }
 
         private void textBox_Imputado_TextChanged(object sender, EventArgs e)
@@ -400,6 +414,8 @@ namespace Ofelia_Sara
             {
                 btn_AgregarDatosImputado.BackColor = Color.Tomato;
             }
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);// deshabilita el btn agregarImputado si el textBox no tiene texto
+
         }
 
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
@@ -499,6 +515,8 @@ namespace Ofelia_Sara
 
         private void btn_AgregarVictima_Click(object sender, EventArgs e)
         {
+
+
             // Crear una instancia de NuevaPersonaControl
             NuevaPersonaControl nuevaVictimaControl = new NuevaPersonaControl
             {
@@ -510,7 +528,7 @@ namespace Ofelia_Sara
             {
                 // Si es el primer control, colócalo justo debajo del botón
                 // Ajusta la coordenada Y según la posición del botón
-                nuevaVictimaControl.Location = new Point(3, btn_AgregarVictima.Bottom + 4);
+                nuevaVictimaControl.Location = new Point(3, btn_AgregarVictima.Bottom + 6);
             }
             else
             {
@@ -529,6 +547,9 @@ namespace Ofelia_Sara
 
             // Ajustar la posición de los paneles siguientes
             AjustarPosicionPanelesInferiores();
+
+            // Reposicionar panel_Imputado y panel_ControlesInferiores
+            ReposicionarPanelesDinamicamente();
 
         }
 
@@ -564,6 +585,9 @@ namespace Ofelia_Sara
 
             // Ajustar la posición de los paneles siguientes
             AjustarPosicionPanelesInferiores();
+
+            // Reposicionar panel_ControlesInferiores
+            ReposicionarPanelesDinamicamente();
 
         }
 
@@ -660,6 +684,21 @@ namespace Ofelia_Sara
             panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10); // Ajustar la distancia entre paneles si es necesario
         }
 
+        private void ReposicionarPanelesDinamicamente()
+        {
+            // Ajustar la posición de panel_Imputado con respecto a panel_Victima
+            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 10);
 
+            // Ajustar la posición de panel_ControlesInferiores con respecto a panel_Imputado
+            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10);
+
+            // Ajustar la altura del formulario si es necesario
+            AjustarAlturaFormulario();
+        }
+
+        private void btn_AgregarCausa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

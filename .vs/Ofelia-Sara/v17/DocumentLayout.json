@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\apariencia general\\controles\\nuevapersonacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\controles\\nuevapersonacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\apariencia general\\controles\\nuevapersonacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\controles\\nuevapersonacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\apariencia general\\controles\\nuevapersonacontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\controles\\nuevapersonacontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,16 +34,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "inicio_cierre.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.Designer.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.Designer.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.Designer.cs",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.Designer.cs",
-              "ViewState": "AQIAAKQBAAAAAAAAAAAlwLEBAABKAAAA",
+              "DocumentIndex": 1,
+              "Title": "NuevaPersonaControl.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs [Dise\u00F1o]",
+              "RelativeToolTip": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T04:54:18.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-10T20:34:58.656Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -51,49 +50,48 @@
               "Title": "inicio_cierre.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
               "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs*",
-              "ViewState": "AQIAAAACAAAAAAAAAAAkwAYCAABUAAAA",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACICAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T03:40:02.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NuevaPersonaControl.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.Designer.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.Designer.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.Designer.cs",
-              "RelativeToolTip": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.Designer.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAlwEoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T00:51:10.999Z",
+              "WhenOpened": "2024-08-10T20:21:58.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NuevaPersonaControl.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
-              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
-              "RelativeToolTip": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
-              "ViewState": "AQIAAKcAAAAAAAAAAAAIwGIAAAAJAAAA",
+              "Title": "inicio_cierre.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T00:32:51.292Z",
+              "WhenOpened": "2024-08-10T20:10:34.263Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseForm.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\BaseForm.cs",
+              "RelativeDocumentMoniker": "general\\clases\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\BaseForm.cs",
+              "RelativeToolTip": "general\\clases\\BaseForm.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAAAH8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T19:37:05.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "inicio_cierre.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]*",
+              "DocumentIndex": 4,
+              "Title": "BaseForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\BaseForm.cs",
+              "RelativeDocumentMoniker": "general\\clases\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\BaseForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "general\\clases\\BaseForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T00:07:51.828Z",
+              "WhenOpened": "2024-08-10T19:37:03.637Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

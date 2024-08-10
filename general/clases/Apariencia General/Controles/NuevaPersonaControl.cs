@@ -95,6 +95,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 
                 // Reajustar la altura del panel
                 AjustarAlturaPanel(panel);
+               
             }
         }
 

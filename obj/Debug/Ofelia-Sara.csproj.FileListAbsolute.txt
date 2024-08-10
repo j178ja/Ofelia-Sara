@@ -57,3 +57,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.c
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Oficial_de_servicio.Registro.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.UsuarioForm.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.NuevaPersonaControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Guna.UI2.dll
