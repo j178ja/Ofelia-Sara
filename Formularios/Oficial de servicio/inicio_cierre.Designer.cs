@@ -70,15 +70,19 @@ namespace Ofelia_Sara
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Imputado = new System.Windows.Forms.Panel();
+            this.panel_Victima = new System.Windows.Forms.Panel();
             this.lbl_Localida = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
+            this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_DeptoJudicial = new System.Windows.Forms.Label();
             this.comboBox_DeptoJudicial = new System.Windows.Forms.ComboBox();
             this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
-            this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel_Imputado.SuspendLayout();
+            this.panel_Victima.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -130,7 +134,7 @@ namespace Ofelia_Sara
             // 
             this.lbl_Victima.AutoSize = true;
             this.lbl_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Victima.Location = new System.Drawing.Point(63, 106);
+            this.lbl_Victima.Location = new System.Drawing.Point(56, 4);
             this.lbl_Victima.Name = "lbl_Victima";
             this.lbl_Victima.Size = new System.Drawing.Size(60, 15);
             this.lbl_Victima.TabIndex = 5;
@@ -140,7 +144,7 @@ namespace Ofelia_Sara
             // 
             this.lbl_Imputado.AutoSize = true;
             this.lbl_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Imputado.Location = new System.Drawing.Point(45, 135);
+            this.lbl_Imputado.Location = new System.Drawing.Point(35, 4);
             this.lbl_Imputado.Name = "lbl_Imputado";
             this.lbl_Imputado.Size = new System.Drawing.Size(78, 15);
             this.lbl_Imputado.TabIndex = 6;
@@ -206,7 +210,7 @@ namespace Ofelia_Sara
             // 
             // textBox_Victima
             // 
-            this.textBox_Victima.Location = new System.Drawing.Point(135, 105);
+            this.textBox_Victima.Location = new System.Drawing.Point(128, 3);
             this.textBox_Victima.Name = "textBox_Victima";
             this.textBox_Victima.Size = new System.Drawing.Size(265, 20);
             this.textBox_Victima.TabIndex = 5;
@@ -214,7 +218,7 @@ namespace Ofelia_Sara
             // 
             // textBox_Imputado
             // 
-            this.textBox_Imputado.Location = new System.Drawing.Point(135, 134);
+            this.textBox_Imputado.Location = new System.Drawing.Point(125, 3);
             this.textBox_Imputado.Name = "textBox_Imputado";
             this.textBox_Imputado.Size = new System.Drawing.Size(265, 20);
             this.textBox_Imputado.TabIndex = 6;
@@ -406,7 +410,7 @@ namespace Ofelia_Sara
             // 
             this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarCausa.Location = new System.Drawing.Point(399, 74);
+            this.btn_AgregarCausa.Location = new System.Drawing.Point(399, 75);
             this.btn_AgregarCausa.Name = "btn_AgregarCausa";
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarCausa.TabIndex = 27;
@@ -418,30 +422,32 @@ namespace Ofelia_Sara
             // 
             this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarVictima.Location = new System.Drawing.Point(399, 103);
+            this.btn_AgregarVictima.Location = new System.Drawing.Point(392, 1);
             this.btn_AgregarVictima.Name = "btn_AgregarVictima";
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarVictima.TabIndex = 28;
             this.btn_AgregarVictima.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarVictima, "Agregar victima");
             this.btn_AgregarVictima.UseVisualStyleBackColor = true;
+            this.btn_AgregarVictima.Click += new System.EventHandler(this.btn_AgregarVictima_Click);
             // 
             // btn_AgregarImputado
             // 
             this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarImputado.Location = new System.Drawing.Point(399, 132);
+            this.btn_AgregarImputado.Location = new System.Drawing.Point(389, 1);
             this.btn_AgregarImputado.Name = "btn_AgregarImputado";
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarImputado.TabIndex = 29;
             this.btn_AgregarImputado.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarImputado, "Agregar imputado");
             this.btn_AgregarImputado.UseVisualStyleBackColor = true;
+            this.btn_AgregarImputado.Click += new System.EventHandler(this.btn_AgregarImputado_Click);
             // 
             // btn_AgregarDatosImputado
             // 
             this.btn_AgregarDatosImputado.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosImputado.Image")));
-            this.btn_AgregarDatosImputado.Location = new System.Drawing.Point(10, 132);
+            this.btn_AgregarDatosImputado.Location = new System.Drawing.Point(0, 1);
             this.btn_AgregarDatosImputado.Name = "btn_AgregarDatosImputado";
             this.btn_AgregarDatosImputado.Size = new System.Drawing.Size(27, 23);
             this.btn_AgregarDatosImputado.TabIndex = 38;
@@ -453,7 +459,7 @@ namespace Ofelia_Sara
             // btn_AgregarDatosVictima
             // 
             this.btn_AgregarDatosVictima.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosVictima.Image")));
-            this.btn_AgregarDatosVictima.Location = new System.Drawing.Point(10, 104);
+            this.btn_AgregarDatosVictima.Location = new System.Drawing.Point(3, 0);
             this.btn_AgregarDatosVictima.Name = "btn_AgregarDatosVictima";
             this.btn_AgregarDatosVictima.Size = new System.Drawing.Size(27, 23);
             this.btn_AgregarDatosVictima.TabIndex = 39;
@@ -464,29 +470,26 @@ namespace Ofelia_Sara
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.btn_AgregarDatosVictima);
-            this.panel1.Controls.Add(this.btn_AgregarDatosImputado);
+            this.panel1.Controls.Add(this.panel_Imputado);
+            this.panel1.Controls.Add(this.panel_Victima);
             this.panel1.Controls.Add(this.lbl_Localida);
             this.panel1.Controls.Add(this.comboBox_Localidad);
+            this.panel1.Controls.Add(this.progressVerticalBar2);
             this.panel1.Controls.Add(this.lbl_DeptoJudicial);
             this.panel1.Controls.Add(this.comboBox_DeptoJudicial);
             this.panel1.Controls.Add(this.timePickerPersonalizado1);
             this.panel1.Controls.Add(this.progressVerticalBar1);
-            this.panel1.Controls.Add(this.progressVerticalBar2);
             this.panel1.Controls.Add(this.btn_Imprimir);
-            this.panel1.Controls.Add(this.btn_AgregarImputado);
             this.panel1.Controls.Add(this.lbl_Dr);
-            this.panel1.Controls.Add(this.btn_AgregarVictima);
             this.panel1.Controls.Add(this.textBox_NumeroIpp);
             this.panel1.Controls.Add(this.btn_AgregarCausa);
             this.panel1.Controls.Add(this.lbl_Ipp);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.lbl_Caratula);
             this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.lbl_Victima);
             this.panel1.Controls.Add(this.btn_Buscar);
-            this.panel1.Controls.Add(this.lbl_Imputado);
             this.panel1.Controls.Add(this.comboBox_Ipp4);
             this.panel1.Controls.Add(this.lbl_Ufid);
             this.panel1.Controls.Add(this.lbl_00);
@@ -497,8 +500,6 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.comboBox_Dr);
             this.panel1.Controls.Add(this.lbl_Dependencia);
             this.panel1.Controls.Add(this.textBox_Caratula);
-            this.panel1.Controls.Add(this.textBox_Victima);
-            this.panel1.Controls.Add(this.textBox_Imputado);
             this.panel1.Controls.Add(this.comboBox_Ufid);
             this.panel1.Controls.Add(this.comboBox_Dependencia);
             this.panel1.Controls.Add(this.comboBox_Instructor);
@@ -506,9 +507,37 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.comboBox_Ipp1);
             this.panel1.Location = new System.Drawing.Point(20, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 487);
+            this.panel1.Size = new System.Drawing.Size(455, 484);
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
+            // 
+            // panel_Imputado
+            // 
+            this.panel_Imputado.AutoSize = true;
+            this.panel_Imputado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_Imputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel_Imputado.Controls.Add(this.textBox_Imputado);
+            this.panel_Imputado.Controls.Add(this.lbl_Imputado);
+            this.panel_Imputado.Controls.Add(this.btn_AgregarDatosImputado);
+            this.panel_Imputado.Controls.Add(this.btn_AgregarImputado);
+            this.panel_Imputado.Location = new System.Drawing.Point(10, 132);
+            this.panel_Imputado.Name = "panel_Imputado";
+            this.panel_Imputado.Size = new System.Drawing.Size(407, 27);
+            this.panel_Imputado.TabIndex = 41;
+            // 
+            // panel_Victima
+            // 
+            this.panel_Victima.AutoSize = true;
+            this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_Victima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel_Victima.Controls.Add(this.textBox_Victima);
+            this.panel_Victima.Controls.Add(this.btn_AgregarDatosVictima);
+            this.panel_Victima.Controls.Add(this.lbl_Victima);
+            this.panel_Victima.Controls.Add(this.btn_AgregarVictima);
+            this.panel_Victima.Location = new System.Drawing.Point(7, 102);
+            this.panel_Victima.Name = "panel_Victima";
+            this.panel_Victima.Size = new System.Drawing.Size(410, 27);
+            this.panel_Victima.TabIndex = 40;
             // 
             // lbl_Localida
             // 
@@ -532,6 +561,16 @@ namespace Ofelia_Sara
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(278, 24);
             this.comboBox_Localidad.TabIndex = 9;
+            // 
+            // progressVerticalBar2
+            // 
+            this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressVerticalBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressVerticalBar2.Location = new System.Drawing.Point(0, 43);
+            this.progressVerticalBar2.Name = "progressVerticalBar2";
+            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 383);
+            this.progressVerticalBar2.TabIndex = 32;
             // 
             // lbl_DeptoJudicial
             // 
@@ -570,18 +609,8 @@ namespace Ofelia_Sara
             this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.progressVerticalBar1.Location = new System.Drawing.Point(449, 44);
             this.progressVerticalBar1.Name = "progressVerticalBar1";
-            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 418);
+            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 415);
             this.progressVerticalBar1.TabIndex = 33;
-            // 
-            // progressVerticalBar2
-            // 
-            this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressVerticalBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar2.Location = new System.Drawing.Point(0, 43);
-            this.progressVerticalBar2.Name = "progressVerticalBar2";
-            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 418);
-            this.progressVerticalBar2.TabIndex = 32;
             // 
             // lbl_Titulo
             // 
@@ -600,7 +629,7 @@ namespace Ofelia_Sara
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(499, 573);
+            this.ClientSize = new System.Drawing.Size(496, 564);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -616,6 +645,10 @@ namespace Ofelia_Sara
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_Imputado.ResumeLayout(false);
+            this.panel_Imputado.PerformLayout();
+            this.panel_Victima.ResumeLayout(false);
+            this.panel_Victima.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,5 +698,7 @@ namespace Ofelia_Sara
         private System.Windows.Forms.ComboBox comboBox_Localidad;
         private System.Windows.Forms.Button btn_AgregarDatosVictima;
         private System.Windows.Forms.Button btn_AgregarDatosImputado;
+        private System.Windows.Forms.Panel panel_Victima;
+        private System.Windows.Forms.Panel panel_Imputado;
     }
 }

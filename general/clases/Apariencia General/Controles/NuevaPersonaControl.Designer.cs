@@ -32,6 +32,7 @@
             this.btn_AgregarDatosPersona = new System.Windows.Forms.Button();
             this.label_Persona = new System.Windows.Forms.Label();
             this.textBox_Persona = new System.Windows.Forms.TextBox();
+            this.btn_EliminarControl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_AgregarDatosPersona
@@ -49,18 +50,28 @@
             // 
             this.label_Persona.BackColor = System.Drawing.Color.Transparent;
             this.label_Persona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Persona.Location = new System.Drawing.Point(33, 1);
+            this.label_Persona.Location = new System.Drawing.Point(28, 1);
             this.label_Persona.Name = "label_Persona";
             this.label_Persona.Size = new System.Drawing.Size(94, 19);
             this.label_Persona.TabIndex = 40;
-            this.label_Persona.Text = "VICTIMA n°";
             // 
             // textBox_Persona
             // 
-            this.textBox_Persona.Location = new System.Drawing.Point(131, 0);
+            this.textBox_Persona.Location = new System.Drawing.Point(124, 1);
             this.textBox_Persona.Name = "textBox_Persona";
             this.textBox_Persona.Size = new System.Drawing.Size(265, 20);
             this.textBox_Persona.TabIndex = 41;
+            // 
+            // btn_EliminarControl
+            // 
+            this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EliminarControl.Location = new System.Drawing.Point(389, 0);
+            this.btn_EliminarControl.Name = "btn_EliminarControl";
+            this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
+            this.btn_EliminarControl.TabIndex = 43;
+            this.btn_EliminarControl.Text = "-";
+            this.btn_EliminarControl.UseVisualStyleBackColor = true;
             // 
             // NuevaPersonaControl
             // 
@@ -69,11 +80,12 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btn_EliminarControl);
             this.Controls.Add(this.btn_AgregarDatosPersona);
             this.Controls.Add(this.label_Persona);
             this.Controls.Add(this.textBox_Persona);
             this.Name = "NuevaPersonaControl";
-            this.Size = new System.Drawing.Size(399, 25);
+            this.Size = new System.Drawing.Size(407, 26);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button btn_AgregarDatosPersona;
         private System.Windows.Forms.Label label_Persona;
         private System.Windows.Forms.TextBox textBox_Persona;
+        private System.Windows.Forms.Button btn_EliminarControl;
     }
 }
