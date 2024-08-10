@@ -12,6 +12,7 @@ using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using System.Diagnostics;
 using Ofelia_Sara.general.clases.Agregar_Componentes;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 
 
 namespace Ofelia_Sara
@@ -112,12 +113,12 @@ namespace Ofelia_Sara
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones); //para guardar los items
 
             //------------------------------------
-          
+
         }
 
 
         //-----------------------------------------------------------------------------
-       
+
         //---------BOTON GUARDAR--------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -495,6 +496,72 @@ namespace Ofelia_Sara
             // Aquí puedes actualizar el ComboBox o realizar otras acciones
             comboBox_Dependencia.Items.Add(nuevoItem);
         }
+
+        private void btn_AgregarVictima_Click(object sender, EventArgs e)
+        {
+            AgregarNuevoControl("Victima", panel_Victima);
+        }
+
+        private void btn_AgregarImputado_Click(object sender, EventArgs e)
+        {
+            AgregarNuevoControl("Imputado", panel_Imputado);
+        }
+
+        private void AgregarNuevoControl(string tipoPersona, Panel panel)
+        {
+            // Crear una nueva instancia del control NuevaPersonaControl
+            NuevaPersonaControl nuevoControl = new NuevaPersonaControl
+            {
+                TipoPersona = tipoPersona
+            };
+            // Establecer la posición inicial en el panel
+            int y = 10; // Posición vertical inicial
+            int x = 0; // Posición horizontal
+
+            // Determinar la posición para el nuevo control
+            if (panel.Controls.Count > 0)
+            {
+                // Obtener el último control para determinar la nueva posición
+                Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
+                y = ultimoControl.Bottom + 6; // 9 es el espacio entre controles
+            }
+
+            // Configurar la posición del nuevo control
+            nuevoControl.Location = new Point(x, y);
+
+            // Agregar el nuevo control al panel
+            panel.Controls.Add(nuevoControl);
+
+            // Ajustar la altura del panel para acomodar el nuevo control
+            AjustarAlturaPanel(panel);
+
+        }
+
+        private void AjustarAlturaPanel(Panel panel)
+        {
+            // Calcular la altura necesaria del panel basada en todos los controles visibles
+            int nuevaAltura = 0;
+
+            foreach (Control ctrl in panel.Controls)
+            {
+                if (ctrl.Visible)
+                {
+                    int posicionYConAltura = ctrl.Bottom;
+                    if (posicionYConAltura > nuevaAltura)
+                    {
+                        nuevaAltura = posicionYConAltura;
+                    }
+                }
+            }
+
+            // Añadir un margen para evitar que el panel esté justo en el borde
+            nuevaAltura += 6; // Ajustar según el margen deseado
+
+            // Establecer la nueva altura del panel
+            panel.Height = nuevaAltura;
+        }
+
+
 
     }
 }
