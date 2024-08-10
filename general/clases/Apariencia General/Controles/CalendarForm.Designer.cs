@@ -70,7 +70,7 @@
             this.MinimizeBox = false;
             this.Name = "CALENDARIO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CALENDARIO";
+            this.Text = "FECHA NACIMIENTO";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.CALENDARIO_HelpButtonClicked);
             this.Load += new System.EventHandler(this.CalendarForm_Load);
             this.ResumeLayout(false);

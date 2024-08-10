@@ -47,7 +47,7 @@
             // 
             // label_Persona
             // 
-            this.label_Persona.BackColor = System.Drawing.SystemColors.Control;
+            this.label_Persona.BackColor = System.Drawing.Color.Transparent;
             this.label_Persona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Persona.Location = new System.Drawing.Point(33, 1);
             this.label_Persona.Name = "label_Persona";
@@ -61,7 +61,6 @@
             this.textBox_Persona.Name = "textBox_Persona";
             this.textBox_Persona.Size = new System.Drawing.Size(265, 20);
             this.textBox_Persona.TabIndex = 41;
-            
             // 
             // NuevaPersonaControl
             // 

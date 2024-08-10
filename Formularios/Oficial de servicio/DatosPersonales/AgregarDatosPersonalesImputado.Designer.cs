@@ -344,13 +344,13 @@
             // 
             // label_LegajoDetenido
             // 
-            this.label_LegajoDetenido.AutoSize = true;
             this.label_LegajoDetenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoDetenido.Location = new System.Drawing.Point(330, 439);
+            this.label_LegajoDetenido.Location = new System.Drawing.Point(325, 436);
             this.label_LegajoDetenido.Name = "label_LegajoDetenido";
-            this.label_LegajoDetenido.Size = new System.Drawing.Size(144, 16);
+            this.label_LegajoDetenido.Size = new System.Drawing.Size(188, 23);
             this.label_LegajoDetenido.TabIndex = 31;
-            this.label_LegajoDetenido.Text = "Legajo de Detenido";
+            this.label_LegajoDetenido.Text = "Legajo de Detenido     ";
+            this.label_LegajoDetenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_NotArt60
             // 
