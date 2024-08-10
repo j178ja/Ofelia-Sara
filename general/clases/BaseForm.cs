@@ -74,10 +74,7 @@ namespace Ofelia_Sara.general.clases
         {
             // Suponiendo que 'timePickerPersonalizado1' es el nombre del control en el BaseForm
             timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
-
-
-
-        }
+         }
       
 
         //------METODO PARA VERIFICAR CAMPOS COMPLETOS Y CACTIVAR BOTON------------

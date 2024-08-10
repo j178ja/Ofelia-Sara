@@ -70,21 +70,23 @@ namespace Ofelia_Sara
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_Imputado = new System.Windows.Forms.Panel();
-            this.panel_Victima = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.lbl_Localida = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
-            this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_DeptoJudicial = new System.Windows.Forms.Label();
             this.comboBox_DeptoJudicial = new System.Windows.Forms.ComboBox();
             this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            this.panel_Imputado = new System.Windows.Forms.Panel();
+            this.panel_Victima = new System.Windows.Forms.Panel();
             this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
+            this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel_ControlesInferiores.SuspendLayout();
             this.panel_Imputado.SuspendLayout();
             this.panel_Victima.SuspendLayout();
-            this.panel_ControlesInferiores.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -126,7 +128,7 @@ namespace Ofelia_Sara
             // 
             this.lbl_Caratula.AutoSize = true;
             this.lbl_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Caratula.Location = new System.Drawing.Point(47, 77);
+            this.lbl_Caratula.Location = new System.Drawing.Point(1, 4);
             this.lbl_Caratula.Name = "lbl_Caratula";
             this.lbl_Caratula.Size = new System.Drawing.Size(76, 15);
             this.lbl_Caratula.TabIndex = 4;
@@ -204,11 +206,12 @@ namespace Ofelia_Sara
             // 
             // textBox_Caratula
             // 
-            this.textBox_Caratula.Location = new System.Drawing.Point(135, 76);
+            this.textBox_Caratula.Location = new System.Drawing.Point(89, 2);
             this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
             this.textBox_Caratula.TabIndex = 4;
+            this.textBox_Caratula.TextChanged += new System.EventHandler(this.textBox_Caratula_TextChanged);
             // 
             // textBox_Victima
             // 
@@ -249,7 +252,7 @@ namespace Ofelia_Sara
             "Comisario Arias"});
             this.comboBox_Instructor.Location = new System.Drawing.Point(116, 94);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
-            this.comboBox_Instructor.Size = new System.Drawing.Size(279, 24);
+            this.comboBox_Instructor.Size = new System.Drawing.Size(281, 24);
             this.comboBox_Instructor.TabIndex = 11;
             // 
             // comboBox_Secretario
@@ -264,7 +267,7 @@ namespace Ofelia_Sara
             "Sargento Eleana Dirocco"});
             this.comboBox_Secretario.Location = new System.Drawing.Point(116, 123);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
-            this.comboBox_Secretario.Size = new System.Drawing.Size(279, 24);
+            this.comboBox_Secretario.Size = new System.Drawing.Size(281, 24);
             this.comboBox_Secretario.TabIndex = 12;
             // 
             // comboBox_Dependencia
@@ -277,7 +280,7 @@ namespace Ofelia_Sara
             "EPC IV CARILÓ"});
             this.comboBox_Dependencia.Location = new System.Drawing.Point(116, 152);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
-            this.comboBox_Dependencia.Size = new System.Drawing.Size(279, 21);
+            this.comboBox_Dependencia.Size = new System.Drawing.Size(281, 21);
             this.comboBox_Dependencia.TabIndex = 13;
             // 
             // comboBox_Dr
@@ -290,7 +293,7 @@ namespace Ofelia_Sara
             "Zamboni Veronica"});
             this.comboBox_Dr.Location = new System.Drawing.Point(235, 2);
             this.comboBox_Dr.Name = "comboBox_Dr";
-            this.comboBox_Dr.Size = new System.Drawing.Size(160, 24);
+            this.comboBox_Dr.Size = new System.Drawing.Size(162, 24);
             this.comboBox_Dr.TabIndex = 8;
             // 
             // comboBox_Ipp1
@@ -412,19 +415,20 @@ namespace Ofelia_Sara
             // 
             this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarCausa.Location = new System.Drawing.Point(399, 75);
+            this.btn_AgregarCausa.Location = new System.Drawing.Point(356, 1);
             this.btn_AgregarCausa.Name = "btn_AgregarCausa";
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarCausa.TabIndex = 27;
             this.btn_AgregarCausa.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
             this.btn_AgregarCausa.UseVisualStyleBackColor = true;
+            this.btn_AgregarCausa.Click += new System.EventHandler(this.btn_AgregarCausa_Click);
             // 
             // btn_AgregarVictima
             // 
             this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarVictima.Location = new System.Drawing.Point(392, 1);
+            this.btn_AgregarVictima.Location = new System.Drawing.Point(395, 1);
             this.btn_AgregarVictima.Name = "btn_AgregarVictima";
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarVictima.TabIndex = 28;
@@ -437,7 +441,7 @@ namespace Ofelia_Sara
             // 
             this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarImputado.Location = new System.Drawing.Point(389, 1);
+            this.btn_AgregarImputado.Location = new System.Drawing.Point(392, 1);
             this.btn_AgregarImputado.Name = "btn_AgregarImputado";
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarImputado.TabIndex = 29;
@@ -473,55 +477,69 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoScrollMargin = new System.Drawing.Size(5, 0);
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_Imputado);
             this.panel1.Controls.Add(this.panel_Victima);
             this.panel1.Controls.Add(this.progressVerticalBar1);
             this.panel1.Controls.Add(this.textBox_NumeroIpp);
-            this.panel1.Controls.Add(this.btn_AgregarCausa);
             this.panel1.Controls.Add(this.lbl_Ipp);
             this.panel1.Controls.Add(this.progressVerticalBar2);
-            this.panel1.Controls.Add(this.lbl_Caratula);
             this.panel1.Controls.Add(this.comboBox_Ipp4);
             this.panel1.Controls.Add(this.lbl_00);
             this.panel1.Controls.Add(this.comboBox_Ipp2);
-            this.panel1.Controls.Add(this.textBox_Caratula);
             this.panel1.Controls.Add(this.comboBox_Ipp1);
             this.panel1.Location = new System.Drawing.Point(20, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 488);
+            this.panel1.Size = new System.Drawing.Size(456, 482);
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
             // 
-            // panel_Imputado
+            // panel2
             // 
-            this.panel_Imputado.AutoSize = true;
-            this.panel_Imputado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Imputado.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Imputado.Controls.Add(this.textBox_Imputado);
-            this.panel_Imputado.Controls.Add(this.lbl_Imputado);
-            this.panel_Imputado.Controls.Add(this.btn_AgregarDatosImputado);
-            this.panel_Imputado.Controls.Add(this.btn_AgregarImputado);
-            this.panel_Imputado.Location = new System.Drawing.Point(10, 132);
-            this.panel_Imputado.Name = "panel_Imputado";
-            this.panel_Imputado.Size = new System.Drawing.Size(407, 27);
-            this.panel_Imputado.TabIndex = 41;
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.textBox_Caratula);
+            this.panel2.Controls.Add(this.lbl_Caratula);
+            this.panel2.Controls.Add(this.btn_AgregarCausa);
+            this.panel2.Location = new System.Drawing.Point(46, 74);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(374, 27);
+            this.panel2.TabIndex = 43;
             // 
-            // panel_Victima
+            // panel_ControlesInferiores
             // 
-            this.panel_Victima.AutoSize = true;
-            this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Victima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel_Victima.Controls.Add(this.textBox_Victima);
-            this.panel_Victima.Controls.Add(this.btn_AgregarDatosVictima);
-            this.panel_Victima.Controls.Add(this.lbl_Victima);
-            this.panel_Victima.Controls.Add(this.btn_AgregarVictima);
-            this.panel_Victima.Location = new System.Drawing.Point(7, 102);
-            this.panel_Victima.Name = "panel_Victima";
-            this.panel_Victima.Size = new System.Drawing.Size(410, 27);
-            this.panel_Victima.TabIndex = 40;
+            this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Secretario);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Instructor);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Localida);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Dependencia);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Localidad);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Ufid);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Dependencia);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_DeptoJudicial);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Dr);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_DeptoJudicial);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Fecha);
+            this.panel_ControlesInferiores.Controls.Add(this.timePickerPersonalizado1);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Secretario);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Instructor);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Ufid);
+            this.panel_ControlesInferiores.Controls.Add(this.lbl_Dr);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(20, 161);
+            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(410, 321);
+            this.panel_ControlesInferiores.TabIndex = 42;
             // 
             // lbl_Localida
             // 
@@ -543,18 +561,8 @@ namespace Ofelia_Sara
             "GRAL. MADARIAGA"});
             this.comboBox_Localidad.Location = new System.Drawing.Point(116, 33);
             this.comboBox_Localidad.Name = "comboBox_Localidad";
-            this.comboBox_Localidad.Size = new System.Drawing.Size(278, 24);
+            this.comboBox_Localidad.Size = new System.Drawing.Size(280, 24);
             this.comboBox_Localidad.TabIndex = 9;
-            // 
-            // progressVerticalBar2
-            // 
-            this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressVerticalBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar2.Location = new System.Drawing.Point(-176, 19);
-            this.progressVerticalBar2.Name = "progressVerticalBar2";
-            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 387);
-            this.progressVerticalBar2.TabIndex = 32;
             // 
             // lbl_DeptoJudicial
             // 
@@ -574,7 +582,7 @@ namespace Ofelia_Sara
             "DOLORES"});
             this.comboBox_DeptoJudicial.Location = new System.Drawing.Point(116, 63);
             this.comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
-            this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(279, 24);
+            this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(281, 24);
             this.comboBox_DeptoJudicial.TabIndex = 10;
             // 
             // timePickerPersonalizado1
@@ -583,18 +591,56 @@ namespace Ofelia_Sara
             this.timePickerPersonalizado1.Location = new System.Drawing.Point(116, 179);
             this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
             this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
-            this.timePickerPersonalizado1.Size = new System.Drawing.Size(278, 24);
+            this.timePickerPersonalizado1.Size = new System.Drawing.Size(281, 24);
             this.timePickerPersonalizado1.TabIndex = 14;
+            // 
+            // panel_Imputado
+            // 
+            this.panel_Imputado.AutoSize = true;
+            this.panel_Imputado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_Imputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel_Imputado.Controls.Add(this.textBox_Imputado);
+            this.panel_Imputado.Controls.Add(this.lbl_Imputado);
+            this.panel_Imputado.Controls.Add(this.btn_AgregarDatosImputado);
+            this.panel_Imputado.Controls.Add(this.btn_AgregarImputado);
+            this.panel_Imputado.Location = new System.Drawing.Point(10, 132);
+            this.panel_Imputado.Name = "panel_Imputado";
+            this.panel_Imputado.Size = new System.Drawing.Size(410, 27);
+            this.panel_Imputado.TabIndex = 41;
+            // 
+            // panel_Victima
+            // 
+            this.panel_Victima.AutoSize = true;
+            this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_Victima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel_Victima.Controls.Add(this.textBox_Victima);
+            this.panel_Victima.Controls.Add(this.btn_AgregarDatosVictima);
+            this.panel_Victima.Controls.Add(this.lbl_Victima);
+            this.panel_Victima.Controls.Add(this.btn_AgregarVictima);
+            this.panel_Victima.Location = new System.Drawing.Point(7, 102);
+            this.panel_Victima.Name = "panel_Victima";
+            this.panel_Victima.Size = new System.Drawing.Size(413, 27);
+            this.panel_Victima.TabIndex = 40;
             // 
             // progressVerticalBar1
             // 
             this.progressVerticalBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.progressVerticalBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar1.Location = new System.Drawing.Point(449, 44);
+            this.progressVerticalBar1.Location = new System.Drawing.Point(450, 44);
             this.progressVerticalBar1.Name = "progressVerticalBar1";
-            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 419);
+            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 413);
             this.progressVerticalBar1.TabIndex = 33;
+            // 
+            // progressVerticalBar2
+            // 
+            this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressVerticalBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressVerticalBar2.Location = new System.Drawing.Point(-175, 19);
+            this.progressVerticalBar2.Name = "progressVerticalBar2";
+            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 381);
+            this.progressVerticalBar2.TabIndex = 32;
             // 
             // lbl_Titulo
             // 
@@ -608,48 +654,18 @@ namespace Ofelia_Sara
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
             // 
-            // panel_ControlesInferiores
-            // 
-            this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Secretario);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Instructor);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Localida);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Dependencia);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Localidad);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Ufid);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Dependencia);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_DeptoJudicial);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Dr);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_DeptoJudicial);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Fecha);
-            this.panel_ControlesInferiores.Controls.Add(this.timePickerPersonalizado1);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Secretario);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Instructor);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Ufid);
-            this.panel_ControlesInferiores.Controls.Add(this.lbl_Dr);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(19, 161);
-            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(410, 327);
-            this.panel_ControlesInferiores.TabIndex = 42;
-            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(500, 565);
+            this.ClientSize = new System.Drawing.Size(500, 559);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(516, 570);
+            this.MinimumSize = new System.Drawing.Size(516, 598);
             this.Name = "InicioCierre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO - CIERRE";
@@ -659,12 +675,14 @@ namespace Ofelia_Sara
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel_ControlesInferiores.ResumeLayout(false);
+            this.panel_ControlesInferiores.PerformLayout();
             this.panel_Imputado.ResumeLayout(false);
             this.panel_Imputado.PerformLayout();
             this.panel_Victima.ResumeLayout(false);
             this.panel_Victima.PerformLayout();
-            this.panel_ControlesInferiores.ResumeLayout(false);
-            this.panel_ControlesInferiores.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -717,5 +735,6 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Panel panel_Victima;
         private System.Windows.Forms.Panel panel_Imputado;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
+        private System.Windows.Forms.Panel panel2;
     }
 }
