@@ -49,7 +49,7 @@
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
             this.textBox_Caratula.TabIndex = 42;
-            this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
+           // this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
             // 
             // btn_EliminarControl
             // 

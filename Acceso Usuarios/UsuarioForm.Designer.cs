@@ -60,23 +60,31 @@
             // 
             // btn_Registrarse
             // 
+            this.btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Registrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Registrarse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Registrarse.Location = new System.Drawing.Point(189, 163);
-            this.btn_Registrarse.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btn_Registrarse.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Registrarse.Name = "btn_Registrarse";
-            this.btn_Registrarse.Size = new System.Drawing.Size(104, 33);
+            this.btn_Registrarse.Size = new System.Drawing.Size(116, 33);
             this.btn_Registrarse.TabIndex = 6;
             this.btn_Registrarse.Text = "REGISTRARSE";
-            this.btn_Registrarse.UseVisualStyleBackColor = true;
+            this.btn_Registrarse.UseVisualStyleBackColor = false;
             this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
             // 
             // btn_Ingresar
             // 
+            this.btn_Ingresar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Ingresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Ingresar.FlatAppearance.BorderSize = 0;
+            this.btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Ingresar.Location = new System.Drawing.Point(333, 163);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(88, 33);
             this.btn_Ingresar.TabIndex = 5;
             this.btn_Ingresar.Text = "INGRESAR";
-            this.btn_Ingresar.UseVisualStyleBackColor = true;
+            this.btn_Ingresar.UseVisualStyleBackColor = false;
             // 
             // textBox_Contraseña
             // 

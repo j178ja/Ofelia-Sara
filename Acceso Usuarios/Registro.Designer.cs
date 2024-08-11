@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Registrarse = new System.Windows.Forms.Button();
             this.label_Legajo = new System.Windows.Forms.Label();
             this.textBox_Legajo = new System.Windows.Forms.TextBox();
             this.label_Apellido = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.textBox_Usuario = new System.Windows.Forms.TextBox();
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Registrarse = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(469, 422);
             this.panel4.TabIndex = 4;
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
+            this.btn_Limpiar.Location = new System.Drawing.Point(99, 334);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Limpiar.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // btn_Registrarse
+            // 
+            this.btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Registrarse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Registrarse.Image = ((System.Drawing.Image)(resources.GetObject("btn_Registrarse.Image")));
+            this.btn_Registrarse.Location = new System.Drawing.Point(328, 334);
+            this.btn_Registrarse.Name = "btn_Registrarse";
+            this.btn_Registrarse.Size = new System.Drawing.Size(75, 67);
+            this.btn_Registrarse.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.btn_Registrarse, "REGISTRARSE");
+            this.btn_Registrarse.UseVisualStyleBackColor = false;
+            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
             // 
             // label_Legajo
             // 
@@ -159,12 +185,12 @@
             this.label_Registro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label_Registro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Registro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Registro.Location = new System.Drawing.Point(95, 0);
+            this.label_Registro.Location = new System.Drawing.Point(45, 0);
             this.label_Registro.Name = "label_Registro";
             this.label_Registro.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.label_Registro.Size = new System.Drawing.Size(291, 26);
+            this.label_Registro.Size = new System.Drawing.Size(370, 26);
             this.label_Registro.TabIndex = 13;
-            this.label_Registro.Text = "REGISTRO DE USUARIOS";
+            this.label_Registro.Text = "REGISTRO DE NUEVOS USUARIOS";
             // 
             // textBox_Contraseña
             // 
@@ -203,42 +229,13 @@
             this.label_Usuario.TabIndex = 7;
             this.label_Usuario.Text = "USUARIO :";
             // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(99, 334);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Limpiar.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
-            // 
-            // btn_Registrarse
-            // 
-            this.btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Registrarse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Registrarse.Image = ((System.Drawing.Image)(resources.GetObject("btn_Registrarse.Image")));
-            this.btn_Registrarse.Location = new System.Drawing.Point(328, 334);
-            this.btn_Registrarse.Name = "btn_Registrarse";
-            this.btn_Registrarse.Size = new System.Drawing.Size(75, 67);
-            this.btn_Registrarse.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btn_Registrarse, "REGISTRARSE");
-            this.btn_Registrarse.UseVisualStyleBackColor = false;
-            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 496);
             this.Controls.Add(this.panel4);
-
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -79,7 +79,6 @@ namespace Ofelia_Sara
             this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
-            this.progressVerticalBar1 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -424,7 +423,7 @@ namespace Ofelia_Sara
             this.btn_AgregarCausa.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
             this.btn_AgregarCausa.UseVisualStyleBackColor = false;
-            this.btn_AgregarCausa.Click += new System.EventHandler(this.btn_AgregarCausa_Click);
+            this.btn_AgregarCausa.Click += new System.EventHandler(this.Btn_AgregarCausa_Click);
             // 
             // btn_AgregarVictima
             // 
@@ -439,7 +438,7 @@ namespace Ofelia_Sara
             this.btn_AgregarVictima.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarVictima, "Agregar victima");
             this.btn_AgregarVictima.UseVisualStyleBackColor = false;
-            this.btn_AgregarVictima.Click += new System.EventHandler(this.btn_AgregarVictima_Click);
+            this.btn_AgregarVictima.Click += new System.EventHandler(this.Btn_AgregarVictima_Click);
             // 
             // btn_AgregarImputado
             // 
@@ -452,7 +451,7 @@ namespace Ofelia_Sara
             this.btn_AgregarImputado.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarImputado, "Agregar imputado");
             this.btn_AgregarImputado.UseVisualStyleBackColor = true;
-            this.btn_AgregarImputado.Click += new System.EventHandler(this.btn_AgregarImputado_Click);
+            this.btn_AgregarImputado.Click += new System.EventHandler(this.Btn_AgregarImputado_Click);
             // 
             // btn_AgregarDatosImputado
             // 
@@ -489,7 +488,6 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_Imputado);
             this.panel1.Controls.Add(this.panel_Victima);
-            this.panel1.Controls.Add(this.progressVerticalBar1);
             this.panel1.Controls.Add(this.textBox_NumeroIpp);
             this.panel1.Controls.Add(this.lbl_Ipp);
             this.panel1.Controls.Add(this.progressVerticalBar2);
@@ -626,16 +624,6 @@ namespace Ofelia_Sara
             this.panel_Victima.Size = new System.Drawing.Size(413, 27);
             this.panel_Victima.TabIndex = 40;
             // 
-            // progressVerticalBar1
-            // 
-            this.progressVerticalBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressVerticalBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.progressVerticalBar1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressVerticalBar1.Location = new System.Drawing.Point(450, 44);
-            this.progressVerticalBar1.Name = "progressVerticalBar1";
-            this.progressVerticalBar1.Size = new System.Drawing.Size(4, 413);
-            this.progressVerticalBar1.TabIndex = 33;
-            // 
             // progressVerticalBar2
             // 
             this.progressVerticalBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -674,7 +662,7 @@ namespace Ofelia_Sara
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO - CIERRE";
             this.Load += new System.EventHandler(this.InicioCierre_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InicioCierre_KeyDown);
+            
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
@@ -728,7 +716,6 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Titulo;
         private ProgressVerticalBar progressVerticalBar2;
-        private ProgressVerticalBar progressVerticalBar1;
         private general.clases.Apariencia_General.TimePickerPersonalizado timePickerPersonalizado1;
         private System.Windows.Forms.Label lbl_DeptoJudicial;
         private System.Windows.Forms.ComboBox comboBox_DeptoJudicial;
