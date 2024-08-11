@@ -413,7 +413,9 @@ namespace Ofelia_Sara
             // 
             // btn_AgregarCausa
             // 
+            this.btn_AgregarCausa.BackColor = System.Drawing.Color.White;
             this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarCausa.FlatAppearance.BorderSize = 3;
             this.btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarCausa.Location = new System.Drawing.Point(356, 1);
             this.btn_AgregarCausa.Name = "btn_AgregarCausa";
@@ -421,12 +423,14 @@ namespace Ofelia_Sara
             this.btn_AgregarCausa.TabIndex = 27;
             this.btn_AgregarCausa.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
-            this.btn_AgregarCausa.UseVisualStyleBackColor = true;
+            this.btn_AgregarCausa.UseVisualStyleBackColor = false;
             this.btn_AgregarCausa.Click += new System.EventHandler(this.btn_AgregarCausa_Click);
             // 
             // btn_AgregarVictima
             // 
+            this.btn_AgregarVictima.BackColor = System.Drawing.Color.White;
             this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarVictima.FlatAppearance.BorderSize = 0;
             this.btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarVictima.Location = new System.Drawing.Point(395, 1);
             this.btn_AgregarVictima.Name = "btn_AgregarVictima";
@@ -434,7 +438,7 @@ namespace Ofelia_Sara
             this.btn_AgregarVictima.TabIndex = 28;
             this.btn_AgregarVictima.Text = "+";
             this.toolTip1.SetToolTip(this.btn_AgregarVictima, "Agregar victima");
-            this.btn_AgregarVictima.UseVisualStyleBackColor = true;
+            this.btn_AgregarVictima.UseVisualStyleBackColor = false;
             this.btn_AgregarVictima.Click += new System.EventHandler(this.btn_AgregarVictima_Click);
             // 
             // btn_AgregarImputado
@@ -503,7 +507,7 @@ namespace Ofelia_Sara
             // 
             this.panel2.AutoSize = true;
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.textBox_Caratula);
             this.panel2.Controls.Add(this.lbl_Caratula);
             this.panel2.Controls.Add(this.btn_AgregarCausa);
@@ -515,7 +519,7 @@ namespace Ofelia_Sara
             // panel_ControlesInferiores
             // 
             this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
             this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Secretario);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Instructor);
@@ -598,7 +602,7 @@ namespace Ofelia_Sara
             // 
             this.panel_Imputado.AutoSize = true;
             this.panel_Imputado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Imputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel_Imputado.BackColor = System.Drawing.Color.Transparent;
             this.panel_Imputado.Controls.Add(this.textBox_Imputado);
             this.panel_Imputado.Controls.Add(this.lbl_Imputado);
             this.panel_Imputado.Controls.Add(this.btn_AgregarDatosImputado);
@@ -612,7 +616,7 @@ namespace Ofelia_Sara
             // 
             this.panel_Victima.AutoSize = true;
             this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Victima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel_Victima.BackColor = System.Drawing.Color.Transparent;
             this.panel_Victima.Controls.Add(this.textBox_Victima);
             this.panel_Victima.Controls.Add(this.btn_AgregarDatosVictima);
             this.panel_Victima.Controls.Add(this.lbl_Victima);
