@@ -70,7 +70,7 @@ namespace Ofelia_Sara
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_Caratula = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.lbl_Localida = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
@@ -83,7 +83,7 @@ namespace Ofelia_Sara
             this.progressVerticalBar2 = new Ofelia_Sara.general.clases.ProgressVerticalBar();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel_Caratula.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
             this.panel_Imputado.SuspendLayout();
             this.panel_Victima.SuspendLayout();
@@ -485,7 +485,7 @@ namespace Ofelia_Sara
             this.panel1.AutoScrollMargin = new System.Drawing.Size(5, 0);
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel_Caratula);
             this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_Imputado);
             this.panel1.Controls.Add(this.panel_Victima);
@@ -503,23 +503,23 @@ namespace Ofelia_Sara
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
             // 
-            // panel2
+            // panel_Caratula
             // 
-            this.panel2.AutoSize = true;
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.textBox_Caratula);
-            this.panel2.Controls.Add(this.lbl_Caratula);
-            this.panel2.Controls.Add(this.btn_AgregarCausa);
-            this.panel2.Location = new System.Drawing.Point(46, 74);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(374, 27);
-            this.panel2.TabIndex = 43;
+            this.panel_Caratula.AutoSize = true;
+            this.panel_Caratula.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_Caratula.BackColor = System.Drawing.Color.Yellow;
+            this.panel_Caratula.Controls.Add(this.textBox_Caratula);
+            this.panel_Caratula.Controls.Add(this.lbl_Caratula);
+            this.panel_Caratula.Controls.Add(this.btn_AgregarCausa);
+            this.panel_Caratula.Location = new System.Drawing.Point(46, 74);
+            this.panel_Caratula.Name = "panel_Caratula";
+            this.panel_Caratula.Size = new System.Drawing.Size(374, 27);
+            this.panel_Caratula.TabIndex = 43;
             // 
             // panel_ControlesInferiores
             // 
             this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Secretario);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Instructor);
@@ -602,7 +602,7 @@ namespace Ofelia_Sara
             // 
             this.panel_Imputado.AutoSize = true;
             this.panel_Imputado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Imputado.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Imputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel_Imputado.Controls.Add(this.textBox_Imputado);
             this.panel_Imputado.Controls.Add(this.lbl_Imputado);
             this.panel_Imputado.Controls.Add(this.btn_AgregarDatosImputado);
@@ -616,7 +616,7 @@ namespace Ofelia_Sara
             // 
             this.panel_Victima.AutoSize = true;
             this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Victima.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Victima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel_Victima.Controls.Add(this.textBox_Victima);
             this.panel_Victima.Controls.Add(this.btn_AgregarDatosVictima);
             this.panel_Victima.Controls.Add(this.lbl_Victima);
@@ -679,8 +679,8 @@ namespace Ofelia_Sara
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel_Caratula.ResumeLayout(false);
+            this.panel_Caratula.PerformLayout();
             this.panel_ControlesInferiores.ResumeLayout(false);
             this.panel_ControlesInferiores.PerformLayout();
             this.panel_Imputado.ResumeLayout(false);
@@ -739,6 +739,6 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Panel panel_Victima;
         private System.Windows.Forms.Panel panel_Imputado;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_Caratula;
     }
 }
