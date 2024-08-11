@@ -306,7 +306,7 @@ namespace Ofelia_Sara
         //-----------------METODO HABILITA BTN AGREGAR CAUSA------------------------------
         private void textBox_Caratula_TextChanged(object sender, EventArgs e)
         {
-            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//habilita el btn_AgregarCausa en caso de tener texto
         }
 
         //-------------------------------------------------------------------------------
@@ -356,168 +356,111 @@ namespace Ofelia_Sara
 
         //--------------------------------------------------------------------------------------------------------
 
+        //-------------------BOTON AGREGAR CAUSA---------------------
+        private void Btn_AgregarCausa_Click(object sender, EventArgs e)
+        {
+            //if (ValidarUltimaCaratula())
+            //{
+            //    var nuevaCaratula = new NuevaCaratulaControl();
+            //    nuevaCaratula.Location = new Point(10, ObtenerPosicionSiguiente(panel_Caratula));
+            //    panel_Caratula.Controls.Add(nuevaCaratula);
+            //    ReposicionarPanelesInferiores(panel_Caratula);
+            //}
+        }
 
         //------------BOTON AGREGAR VICTIMA----------------------------
         private void Btn_AgregarVictima_Click(object sender, EventArgs e)
         {
-            if (ValidarUltimaPersona(panel_Victima))
-            {
-                var nuevaVictima = new NuevaPersonaControl("Victima");
-                nuevaVictima.Location = new Point(0, ObtenerPosicionSiguiente(panel_Victima));
-                panel_Imputado.Controls.Add(nuevaVictima);
-                ReposicionarPanelesInferiores(panel_Victima);
-            }
+            //if (ValidarUltimaPersona(panel_Victima))
+            //{
+            //    var nuevaVictima = new NuevaPersonaControl("Victima");
+            //    nuevaVictima.Location = new Point(0, ObtenerPosicionSiguiente(panel_Victima));
+            //    panel_Imputado.Controls.Add(nuevaVictima);
+            //    ReposicionarPanelesInferiores(panel_Victima);
+            //}
+            AgregarNuevoControl("Victima", panel_Victima);
+            ReposicionarPanelesInferiores();
         }
         //-------------BOTON AGREGAR IMPUTADO------------------------------
         private void Btn_AgregarImputado_Click(object sender, EventArgs e)
         {
-            if (ValidarUltimaPersona(panel_Imputado))
-            {
-                var nuevoImputado = new NuevaPersonaControl("Imputado");
-                nuevoImputado.Location = new Point(0, ObtenerPosicionSiguiente(panel_Imputado));
-                panel_Imputado.Controls.Add(nuevoImputado);
-                ReposicionarPanelesInferiores(panel_Imputado);
-            }
+            //if (ValidarUltimaPersona(panel_Imputado))
+            //{
+            //    var nuevoImputado = new NuevaPersonaControl("Imputado");
+            //    nuevoImputado.Location = new Point(0, ObtenerPosicionSiguiente(panel_Imputado));
+            //    panel_Imputado.Controls.Add(nuevoImputado);
+            //    ReposicionarPanelesInferiores(panel_Imputado);
+            //}
         }
 
-        //private void AgregarNuevoControl(string tipoPersona, Panel panel)
-        //{
-        //    // Crear una nueva instancia del control NuevaPersonaControl
-        //    NuevaPersonaControl nuevoControl = new NuevaPersonaControl
-        //    {
-        //        TipoPersona = tipoPersona
-        //    };
-        //    // Establecer la posición inicial en el panel
-        //    int y = 10; // Posición vertical inicial
-        //    int x = 0; // Posición horizontal
+        // Método para agregar un nuevo control dinámico al panel especificado
+        private void AgregarNuevoControl(string tipoPersona, Panel panel)
+        {
+            // Crear una nueva instancia del control NuevaPersonaControl
+            NuevaPersonaControl nuevoControl = new NuevaPersonaControl(tipoPersona);
 
-        //    // Determinar la posición para el nuevo control
-        //    if (panel.Controls.Count > 0)
-        //    {
-        //        // Obtener el último control para determinar la nueva posición
-        //        Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
-        //        y = ultimoControl.Bottom + 6; // 9 es el espacio entre controles
-        //    }
+            // Determinar la posición para el nuevo control
+            int nuevaPosicionY = ObtenerPosicionSiguiente(panel);
 
-        //    // Configurar la posición del nuevo control
-        //    nuevoControl.Location = new Point(x, y);
+            // Configurar la posición del nuevo control
+            nuevoControl.Location = new Point(0, nuevaPosicionY);
 
-        //    // Agregar el nuevo control al panel
-        //    panel.Controls.Add(nuevoControl);
+            // Agregar el nuevo control al panel
+            panel.Controls.Add(nuevoControl);
 
-        //    // Ajustar la altura del panel para acomodar el nuevo control
-        //    AjustarAlturaPanel(panel);
+            // Ajustar la altura del panel para acomodar el nuevo control
+            AjustarAlturaPanel(panel);
+        }
+        // Método para obtener la posición Y donde se debe agregar el siguiente control
+        private int ObtenerPosicionSiguiente(Panel panel)
+        {
+            if (panel.Controls.Count == 0) return 2; // Si no hay controles, iniciar en 10
+            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
+            return ultimoControl.Bottom + 2; // Agregar 10 píxeles de espacio entre controles
+        }
 
-        //}
-
+        // Método para ajustar la altura del panel según los controles agregados
         private void AjustarAlturaPanel(Panel panel)
         {
-            // Calcular la altura necesaria del panel basada en todos los controles visibles
-            int nuevaAltura = 0;
+            if (panel.Controls.Count == 0) return;
 
-            foreach (Control ctrl in panel.Controls)
-            {
-                if (ctrl.Visible)
-                {
-                    int posicionYConAltura = ctrl.Bottom;
-                    if (posicionYConAltura > nuevaAltura)
-                    {
-                        nuevaAltura = posicionYConAltura;
-                    }
-                }
-            }
-
-            // Añadir un margen para evitar que el panel esté justo en el borde
-            nuevaAltura += 6; // Ajustar según el margen deseado
+            // Calcular la altura total del panel basada en el último control
+            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
+            int nuevaAltura = ultimoControl.Bottom + 2; // Agregar 10 píxeles de margen
 
             // Establecer la nueva altura del panel
             panel.Height = nuevaAltura;
         }
 
-        private void AjustarPosicionPanelesSiguientes(Panel panelAjustado)
+        // Método para reposicionar los paneles inferiores cuando se agrega un nuevo control
+        private void ReposicionarPanelesInferiores()
         {
-            // Determinar la referencia al panel que contiene los controles inferiores
-            Panel panelControlesInferiores = panel_ControlesInferiores;
+            // Ajustar la posición del panel de Imputados respecto al panel de Víctimas
+            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 10);
 
-            // Ajustar la posición del panel que contiene los controles inferiores
-            if (panelControlesInferiores != null)
-            {
-                panelControlesInferiores.Location = new Point(panelControlesInferiores.Location.X, panelAjustado.Bottom + 10); // Ajuste de 10 píxeles
-            }
+            // Ajustar la posición del panel de controles inferiores respecto al panel de Imputados
+            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10);
 
-            // Finalmente, ajustar la altura del formulario principal si es necesario
-            Form formularioPrincipal = panelAjustado.FindForm();
+            // Si es necesario, ajustar la altura del formulario principal para acomodar los paneles
+            Form formularioPrincipal = this.FindForm();
             if (formularioPrincipal != null)
             {
                 formularioPrincipal.Height = formularioPrincipal.Controls.OfType<Control>().Max(c => c.Bottom) + 20;
             }
         }
 
-        private void AjustarPosicionPanelesInferiores()
-        {
-            // Ajustar la posición del panel_Imputado
-            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 10); // Ajustar la distancia entre paneles si es necesario
+        //private bool ValidarUltimaCaratula()
+        //{
+        //    if (panel_Caratula.Controls.Count == 0) return true;
+        //    var ultimaCaratula = panel_Caratula.Controls[panel_Caratula.Controls.Count - 1] as NuevaCaratulaControl;
+        //    return ultimaCaratula != null && !string.IsNullOrEmpty(ultimaCaratula.TextBox_Caratula.Text);
+        //}
 
-            // Ajustar la posición del panel_ControlesInferiores
-            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10); // Ajustar la distancia entre paneles si es necesario
-        }
-
-        private void ReposicionarPanelesDinamicamente()
-        {
-            // Ajustar la posición de panel_Imputado con respecto a panel_Victima
-            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 10);
-
-            // Ajustar la posición de panel_ControlesInferiores con respecto a panel_Imputado
-            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10);
-
-            
-        }
-
-
-
-        //-------------------BOTON AGREGAR CAUSA---------------------
-        private void Btn_AgregarCausa_Click(object sender, EventArgs e)
-        {
-            if (ValidarUltimaCaratula())
-            {
-                var nuevaCaratula = new NuevaCaratulaControl();
-                nuevaCaratula.Location = new Point(10, ObtenerPosicionSiguiente(panel_Caratula));
-                panel_Caratula.Controls.Add(nuevaCaratula);
-                ReposicionarPanelesInferiores(panel_Caratula);
-            }
-        }
-
-        //------------------------------------------------------------------------------------
-        //--------------REPOSICIONAMIENTOS DE PANELES Y COMPONENTES------------------------------
-        private int ObtenerPosicionSiguiente(Panel panel)
-        {
-            if (panel.Controls.Count == 0) return 10;
-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            return ultimoControl.Location.Y + ultimoControl.Height + 10;
-        }
-
-        private void ReposicionarPanelesInferiores(Panel panelSuperior)
-        {
-            int nuevaPosicionY = panelSuperior.Location.Y + panelSuperior.Height + 10;
-            panel_Victima.Location = new Point(panel_Victima.Location.X, nuevaPosicionY);
-            nuevaPosicionY += panel_Victima.Height + 10;
-            panel_Imputado.Location = new Point(panel_Imputado.Location.X, nuevaPosicionY);
-            nuevaPosicionY += panel_Imputado.Height + 10;
-            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
-        }
-
-        private bool ValidarUltimaCaratula()
-        {
-            if (panel_Caratula.Controls.Count == 0) return true;
-            var ultimaCaratula = panel_Caratula.Controls[panel_Caratula.Controls.Count - 1] as NuevaCaratulaControl;
-            return ultimaCaratula != null && !string.IsNullOrEmpty(ultimaCaratula.TextBox_Caratula.Text);
-        }
-
-        private bool ValidarUltimaPersona(Panel panel)
-        {
-            if (panel.Controls.Count == 0) return true;
-            var ultimaPersona = panel.Controls[panel.Controls.Count - 1] as NuevaPersonaControl;
-            return ultimaPersona != null && !string.IsNullOrEmpty(ultimaPersona.TextBox_Persona.Text);
-        }
+        //private bool ValidarUltimaPersona(Panel panel)
+        //{
+        //    if (panel.Controls.Count == 0) return true;
+        //    var ultimaPersona = panel.Controls[panel.Controls.Count - 1] as NuevaPersonaControl;
+        //    return ultimaPersona != null && !string.IsNullOrEmpty(ultimaPersona.TextBox_Persona.Text);
+        //}
     }
 }
