@@ -9,6 +9,7 @@ namespace Ofelia_Sara.general.clases
 
 {
     using Ofelia_Sara.general.clases.Apariencia_General;
+    using System.Drawing.Drawing2D;
     using System.Windows.Forms;
     public class BaseForm : Form
     {
@@ -130,11 +131,50 @@ namespace Ofelia_Sara.general.clases
             Size originalSize = boton.Size;
             Point originalLocation = boton.Location;
 
-            // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
+            // Evento Paint: Dibuja un borde redondeado y aplica el color del texto solo si el botón está habilitado
+            boton.Paint += (sender, e) =>
+            {
+                int bordeGrosor;
+                int bordeRadio;
+                Color bordeColor;
+                Color textoColor;
+
+                if (boton.Enabled)
+                {
+                    bordeGrosor = 3;
+                    bordeRadio = 4;
+                    bordeColor = Color.LightGreen;
+                    textoColor = Color.Green; // Color del texto cuando el botón está habilitado
+                }
+                else
+                {
+                    bordeGrosor = 2;
+                    bordeRadio = 8;
+                    bordeColor = Color.Tomato;
+                    textoColor = Color.Red;// Color del texto cuando el botón está deshabilitado //NO FUNCIONA!!
+                }
+
+                using (GraphicsPath path = new GraphicsPath())
+                {
+                    // Define el rectángulo con el radio especificado
+                    path.AddArc(new Rectangle(0, 0, bordeRadio, bordeRadio), 180, 90);
+                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, 0, bordeRadio, bordeRadio), 270, 90);
+                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 0, 90);
+                    path.AddArc(new Rectangle(0, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 90, 90);
+                    path.CloseAllFigures();
+
+                    // Dibuja el borde con el color especificado
+                    e.Graphics.DrawPath(new Pen(bordeColor, bordeGrosor), path);
+                }
+
+                // Establece el color del texto
+                boton.ForeColor = textoColor;
+            };
+
+            // Evento MouseEnter: Cambia el tamaño desde el centro y el color del texto
             boton.MouseEnter += (sender, e) =>
             {
-                // Calcula el incremento para centrar el cambio de tamaño
-                int incremento = 7;
+                int incremento = 5;
                 int nuevoAncho = originalSize.Width + incremento;
                 int nuevoAlto = originalSize.Height + incremento;
                 int deltaX = (nuevoAncho - originalSize.Width) / 2;
@@ -143,27 +183,33 @@ namespace Ofelia_Sara.general.clases
                 boton.Size = new Size(nuevoAncho, nuevoAlto);
                 boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
 
-                boton.ForeColor = Color.White; // Cambia el color del texto a blanco
-
+                boton.ForeColor = Color.Green; // Cambia el color del texto a verde
+                boton.Invalidate(); // Redibuja el botón para aplicar el borde
             };
 
             // Evento MouseHover: Cambia solo el color de fondo
             boton.MouseHover += (sender, e) =>
             {
-
-                boton.BackColor = Color.FromArgb(0, 204, 0);
+                boton.BackColor = Color.FromArgb(15, 209, 29);
+                boton.ForeColor = Color.White; // Cambia el color del texto a blanco
             };
 
-            // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
+            // Evento MouseLeave: Restaura el tamaño, la posición y el color del texto original
             boton.MouseLeave += (sender, e) =>
             {
                 boton.Size = originalSize;
                 boton.Location = originalLocation;
                 boton.BackColor = Color.White;
-                boton.ForeColor = SystemColors.ControlText;
+                boton.ForeColor = Color.Green; // Mantiene el color del texto en verde
+                boton.Invalidate(); // Redibuja el botón para aplicar el borde
             };
+
+            // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
+            boton.Invalidate();
         }
 
+
+        //--------------------------------------------------------------------------------------------------------
 
         //--eventos para evitar conflictos-------------
         protected override void OnLoad(EventArgs e)
