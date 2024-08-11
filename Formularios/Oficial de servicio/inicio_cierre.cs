@@ -28,19 +28,6 @@ namespace Ofelia_Sara
         {
             InitializeComponent();
 
-            //----------------------------------------------
-            //---manejador de teclado--------------
-            panel1.KeyDown += new KeyEventHandler(InicioCierre_KeyDown);
-            panel1.Focus(); // Asegúrate de que el panel tenga el foco para recibir eventos
-
-            progressVerticalBar1 = new ProgressVerticalBar();
-            progressVerticalBar2 = new ProgressVerticalBar();
-
-            //------------inicialización de totalCampos y camposCompletos
-            totalCampos = ObtenerTotalCampos();
-            camposCompletos = ObtenerCamposCompletos();
-
-
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -51,15 +38,13 @@ namespace Ofelia_Sara
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
-            // Actualizar los ProgressVerticalBar según los campos completos
-            ActualizarProgressBars();
+           
 
             this.Load += new System.EventHandler(this.InicioCierre_Load);
 
             // Asocia el evento TextChanged al método de validación
             textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
-
-            //--------------------------------------------------------------------------------
+  
             //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
             btn_AgregarDatosVictima.Enabled = false;
@@ -68,35 +53,24 @@ namespace Ofelia_Sara
             // Inicialmente, deshabilita el botón
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
-            //--------------------------------------------------------------------------------
+           
 
-            this.KeyPreview = true;
-            this.KeyDown += new KeyEventHandler(InicioCierre_KeyDown);
+            //----Inicializar evento click para botones AGREGAR---------
+            btn_AgregarCausa.Click += Btn_AgregarCausa_Click;
+            btn_AgregarVictima.Click += Btn_AgregarVictima_Click;
+            btn_AgregarImputado.Click += Btn_AgregarImputado_Click;
 
-            //-----------control de saltos de input--------------------------------------
-            // Registra el método Form_KeyDown al evento KeyDown del formulario
-            //this.KeyDown += InicioCierre_KeyDown;
-
-            // Cargar ítems en el ComboBox al iniciar el formulario
-            //ComboBoxManager.LoadComboBoxItems(comboBox_Dependencia, ComboBoxFilePath);
         }
-        //-----------------------------------------------------------------
-
-        private void Control_Enter(object sender, EventArgs e)
-        {
-            Debug.WriteLine($"Control con foco: {((Control)sender)?.Name}");
-        }
-
-        //-------------------------------------------------------------------
+      
+       
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
-            ActualizarProgressBars();
+            
             timePickerPersonalizado1.SelectedDate = DateTime.Now;
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
-
-            ComboBoxManager.ItemAdded += ComboBoxManager_ItemAdded;//para recargar y agregar nuevos items en comboBox
+ 
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
@@ -120,13 +94,11 @@ namespace Ofelia_Sara
 
         }
 
-
         //-----------------------------------------------------------------------------
 
         //---------BOTON GUARDAR--------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-
 
             // Verificar si los campos están completados
             if (string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
@@ -160,13 +132,8 @@ namespace Ofelia_Sara
         //-------------------------------------------------------------------------------
 
 
-        //----------------------------------------------------------
-
-
         //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
         //--------EL TEXTBOX DE NUMERO DE IPP---------------------
-
-
         //--------------METODO PARA LIMITAR LOS CARACTERES A 6--------------
         private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {
@@ -225,199 +192,6 @@ namespace Ofelia_Sara
                 comboBox_Ipp4.SelectionStart = comboBox_Ipp4.Text.Length;
             }
         }
-
-        //-----------------------------------------------------
-        //------------BOTON IMPRIMIR---------------
-
-
-
-        //// Método para actualizar el estado del botón Imprimir
-        //private void ActualizarEstadoBotonImprimir()
-        //{
-        //    btn_Imprimir.Enabled = ValidadorCamposImpresion.VerificarCamposCompletos(Controls);
-
-        //    if (btn_Imprimir.Enabled)
-        //    {
-        //        // Si todos los campos están completos, habilitar el botón y poner el fondo en verde
-        //        btn_Imprimir.Enabled = true;
-        //        //btn_Imprimir.BackColor = Color.Green; /*COLOR NORMAL*/
-        //        btn_Imprimir.BackColor = Color.FromArgb(0, 204, 0);//FromArgb permite uso RGB (este seria color verder)
-        //    }
-        //    else
-        //    {
-        //        // Si no todos los campos están completos, deshabilitar el botón y poner el fondo en rojo
-        //        btn_Imprimir.Enabled = false;
-        //        btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47); //Color rojo
-        //    }
-        //}
-
-
-
-
-
-
-        // Crea ventana que muestra archivo cargando
-        private void CargarImpresion()
-        {
-            using (MensajeCargarImprimir imprimirMessageBox = new MensajeCargarImprimir())
-            {
-                imprimirMessageBox.ShowDialog();//showdialog implica "bloquea interaccion con ventana principal hasta que se cierra"
-            }
-        }
-
-        // Evento Click del botón Imprimir
-        private void btn_Imprimir_Click(object sender, EventArgs e)
-        {
-
-            if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
-            {
-                //logica para guardar el archivo en base de datos
-                CargarImpresion();
-
-                var generador = new GeneradorDocumentos();
-                var datosFormulario = ObtenerDatosFormulario();
-
-                // Definir rutas
-                string rutaPlantilla = @"C:\Users\Usuario\OneDrive\Escritorio\.net\plantillaPrototipo.dotx";
-                string rutaArchivoSalida = @"C:\Users\Usuario\OneDrive\Escritorio\.net\archivos de salida";
-
-                generador.GenerarDocumento(rutaPlantilla, rutaArchivoSalida, datosFormulario);
-
-            }
-        }
-
-        //--------------------------------------------------------------------------------
-        //---------METODO PARA MOSTRAR EL AVANCE DE ProgressVerticalBar--------------------
-        //-------este metodo esta presente en BaseForm---------------------------------
-        // Suponiendo que tienes progressBar1 y progressBar2 en tu formulario
-
-        private void ActualizarProgressBars()
-        {
-
-            ControladorProgressVerticalBar.ConfigurarProgressVerticalBar(progressVerticalBar1, progressVerticalBar2, camposCompletos, totalCampos);
-        }
-        private int ObtenerTotalCampos()
-        {
-            // Lógica para obtener el número total de campos específica para este formulario
-            return this.Controls.OfType<System.Windows.Forms.TextBox>().Count();
-        }
-
-        private int ObtenerCamposCompletos()
-        {
-            // Lógica para obtener el número de campos completos específica para este formulario
-            int completos = 0;
-            foreach (System.Windows.Forms.TextBox textBox in this.Controls.OfType<System.Windows.Forms.TextBox>())
-            {
-                if (!string.IsNullOrWhiteSpace(textBox.Text))
-                    completos++;
-            }
-            return completos;
-        }
-
-        //---------------------------------------------------------------------------------
-        //--Para corregir el error de que los indices predeterminados no se cargan al inicio, sino tras ejecutar la logica de btm_limpiar
-        // y si se carga directamente en . designer, se borran los indices predeterminados
-        //----SE ASIGNARA LOS INDICE PREDETERMINADOS EN ESTE METODO  "LOAD" PARA QUE SE CARGE AL INICIO
-        // Establecer índices predeterminados de ComboBox aquí
-        private void InicializarComboBox()
-        {
-            comboBox_Ipp1.SelectedIndex = 3;
-            comboBox_Ipp2.SelectedIndex = 3;
-            comboBox_Ipp4.SelectedIndex = 0;
-            comboBox_Ufid.SelectedIndex = 0;
-            comboBox_Dr.SelectedIndex = 0;
-            comboBox_Instructor.SelectedIndex = 0;
-            comboBox_Secretario.SelectedIndex = 0;
-            comboBox_Dependencia.SelectedIndex = 0;
-            comboBox_Localidad.SelectedIndex = 0;
-            comboBox_DeptoJudicial.SelectedIndex = 0;
-        }         //---------------------------------------------------------------------------------
-
-
-        // Evento TextChanged o SelectedIndexChanged de los controles relevantes
-        //private void Control_TextChanged(object sender, EventArgs e)
-        //{
-        //    ValidadorCamposImpresion.VerificarYActualizarBotonImprimir(this, btn_Imprimir);
-        //}
-
-        //----------------------------------------------------------------------
-
-        //--------Diccionario para cargar los datos a los marcadores del documento-------------
-        private Dictionary<string, string> ObtenerDatosFormulario()
-        {
-            var datosFormulario = new Dictionary<string, string>
-    {
-        { "caratula", textBox_Caratula.Text },
-        { "victima", textBox_Caratula.Text },
-        { "imputado", textBox_Caratula.Text },
-        { "instructor", textBox_Caratula.Text },
-        { "secretario", textBox_Caratula.Text },
-        { "DeptoJudicial", textBox_Caratula.Text },
-      //  { "fecha", dateTimePicker_Fecha.Value.ToString("dd/MM/yyyy") },  // Convertir a string con formato
-       // { "ufid", numericUpDown_Edad.Value.ToString() }  // Convertir a string
-        // Agrega aquí más datos y sus respectivos marcadores
-    };
-
-            return datosFormulario;
-        }
-
-        private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
-        {
-            AgregarDatosPersonalesVictima agregarDatosPersonales = new AgregarDatosPersonalesVictima();
-
-            agregarDatosPersonales.TextoNombre = textBox_Victima.Text; // Pasa el contenido del TextBox
-            agregarDatosPersonales.Show();
-
-        }
-        //------------------------------------------------------------------------------
-        //-----METODO HABILITA BTN AGREGAR CAUSA
-        private void textBox_Caratula_TextChanged(object sender, EventArgs e)
-        {
-            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);
-        }
-
-        //-------------------------------------------------------------------------------
-        //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
-        private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
-        {
-            AgregarDatosPersonalesImputado agregarDatosPersonales = new AgregarDatosPersonalesImputado();
-
-            agregarDatosPersonales.TextoNombre = textBox_Imputado.Text; // Pasa el contenido del TextBox
-            agregarDatosPersonales.Show();
-        }
-
-        private void textBox_Victima_TextChanged(object sender, EventArgs e)
-        {
-            // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
-            {
-                btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
-                
-            }
-            else
-            {
-                btn_AgregarDatosVictima.BackColor = Color.Tomato;
-              
-            }
-            // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
-            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
-        }
-
-        private void textBox_Imputado_TextChanged(object sender, EventArgs e)
-        {
-            // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text))
-            {
-                btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
-            }
-            else
-            {
-                btn_AgregarDatosImputado.BackColor = Color.Tomato;
-            }
-            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);// deshabilita el btn agregarImputado si el textBox no tiene texto
-
-        }
-
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
         private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -447,181 +221,194 @@ namespace Ofelia_Sara
                 e.Handled = true;
             }
         }
+        //--------------------------------------------------------------------------------------------
+        //--------BOTON IMPRIMIR-------------------------------
 
-        //---prueba para ver si logro implementar manejo de teclas
-        private void InicioCierre_KeyDown(object sender, KeyEventArgs e)
+        // Crea ventana que muestra archivo cargando
+        private void CargarImpresion()
         {
-            Debug.WriteLine($"Tecla presionada: {e.KeyCode}"); // Verifica si el evento se activa
-            if (e.KeyCode == Keys.Tab)
+            using (MensajeCargarImprimir imprimirMessageBox = new MensajeCargarImprimir())
             {
-                e.SuppressKeyPress = true; // Suprime el efecto predeterminado del Tab
-                SelectNextControl(ActiveControl, true, true, true, true); // Mueve al siguiente control
-            }
-            else if (e.KeyCode == Keys.Up)
-            {
-                MoveToPreviousControl();
-                e.SuppressKeyPress = true;
-            }
-            else if (e.KeyCode == Keys.Down)
-            {
-                MoveToNextControl();
-                e.SuppressKeyPress = true;
+                imprimirMessageBox.ShowDialog();//showdialog implica "bloquea interaccion con ventana principal hasta que se cierra"
             }
         }
 
-        private void MoveToNextControl()
+        // Evento Click del botón Imprimir
+        private void btn_Imprimir_Click(object sender, EventArgs e)
         {
-            var controls = this.Controls.Cast<Control>().ToList();
-            var currentIndex = controls.IndexOf(ActiveControl);
-            if (currentIndex >= 0 && currentIndex < controls.Count - 1)
+            
+            if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
-                var nextControl = controls[currentIndex + 1];
-                Debug.WriteLine($"Moviendo foco a: {nextControl.Name}, Habilitado: {nextControl.Enabled}, Visible: {nextControl.Visible}");
-                if (nextControl.Enabled && nextControl.Visible)
-                {
-                    nextControl.Focus();
-                }
+                //logica para guardar el archivo en base de datos
+                CargarImpresion();
+
+                var generador = new GeneradorDocumentos();
+                var datosFormulario = ObtenerDatosFormulario();
+
+                // Definir rutas
+                string rutaPlantilla = @"C:\Users\Usuario\OneDrive\Escritorio\.net\plantillaPrototipo.dotx";
+                string rutaArchivoSalida = @"C:\Users\Usuario\OneDrive\Escritorio\.net\archivos de salida";
+
+                generador.GenerarDocumento(rutaPlantilla, rutaArchivoSalida, datosFormulario);
+
             }
         }
 
-        private void MoveToPreviousControl()
+        //--------------------------------------------------------------------------------
+        
+      
+
+        //---------------------------------------------------------------------------------
+        //--Para corregir el error de que los indices predeterminados no se cargan al inicio, sino tras ejecutar la logica de btm_limpiar
+        // y si se carga directamente en . designer, se borran los indices predeterminados
+        //----SE ASIGNARA LOS INDICE PREDETERMINADOS EN ESTE METODO  "LOAD" PARA QUE SE CARGE AL INICIO
+        // Establecer índices predeterminados de ComboBox aquí
+        private void InicializarComboBox()
         {
-            var controls = this.Controls.Cast<Control>().ToList();
-            var currentIndex = controls.IndexOf(ActiveControl);
-            if (currentIndex > 0)
-            {
-                var previousControl = controls[currentIndex - 1];
-                Debug.WriteLine($"Moviendo foco a: {previousControl.Name}, Habilitado: {previousControl.Enabled}, Visible: {previousControl.Visible}");
-                if (previousControl.Enabled && previousControl.Visible)
-                {
-                    previousControl.Focus();
-                }
-            }
+            comboBox_Ipp1.SelectedIndex = 3;
+            comboBox_Ipp2.SelectedIndex = 3;
+            comboBox_Ipp4.SelectedIndex = 0;
+            comboBox_Ufid.SelectedIndex = 0;
+            comboBox_Dr.SelectedIndex = 0;
+            comboBox_Instructor.SelectedIndex = 0;
+            comboBox_Secretario.SelectedIndex = 0;
+            comboBox_Dependencia.SelectedIndex = 0;
+            comboBox_Localidad.SelectedIndex = 0;
+            comboBox_DeptoJudicial.SelectedIndex = 0;
+        }         
+        //----------------------------------------------------------------------
+
+        //--------Diccionario para cargar los datos a los marcadores del documento-------------
+        private Dictionary<string, string> ObtenerDatosFormulario()
+        {
+            var datosFormulario = new Dictionary<string, string>
+    {
+        { "caratula", textBox_Caratula.Text },
+        { "victima", textBox_Caratula.Text },
+        { "imputado", textBox_Caratula.Text },
+        { "instructor", textBox_Caratula.Text },
+        { "secretario", textBox_Caratula.Text },
+        { "DeptoJudicial", textBox_Caratula.Text },
+         };
+              return datosFormulario;
         }
 
-
-        //-------------------------------------------------------------------------
-        //----eventos PARA ACTUALIZAR COMBO BOX---------------------------------
-        private void InicioCierre_FormClosed(object sender, FormClosedEventArgs e)
+        //----BOTON AGREGAR DATOS VICTIMA-----------------------------
+        private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
-            ComboBoxManager.ItemAdded -= ComboBoxManager_ItemAdded;
+            AgregarDatosPersonalesVictima agregarDatosPersonales = new AgregarDatosPersonalesVictima();
+
+            agregarDatosPersonales.TextoNombre = textBox_Victima.Text; // Pasa el contenido del TextBox
+            agregarDatosPersonales.Show();
+
+        }
+        //------------------------------------------------------------------------------
+        //-----------------METODO HABILITA BTN AGREGAR CAUSA------------------------------
+        private void textBox_Caratula_TextChanged(object sender, EventArgs e)
+        {
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);
         }
 
-        private void ComboBoxManager_ItemAdded(string nuevoItem)
+        //-------------------------------------------------------------------------------
+        //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
+        private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            // Aquí puedes actualizar el ComboBox o realizar otras acciones
-            comboBox_Dependencia.Items.Add(nuevoItem);
+            AgregarDatosPersonalesImputado agregarDatosPersonales = new AgregarDatosPersonalesImputado();
+
+            agregarDatosPersonales.TextoNombre = textBox_Imputado.Text; // Pasa el contenido del TextBox
+            agregarDatosPersonales.Show();
         }
-//--------------------------------------------------------------------------------------------------------
 
-
-        //------------BOTN AGREGAR VICTIMA----------------------------
-        private void btn_AgregarVictima_Click(object sender, EventArgs e)
+        //-------------------TEXTBOX VICTIMA------------------------------------------------------------
+        private void textBox_Victima_TextChanged(object sender, EventArgs e)
         {
-
-            // Crear una instancia de NuevaPersonaControl
-            NuevaPersonaControl nuevaVictimaControl = new NuevaPersonaControl
+            // Habilita o deshabilita el botón según si el TextBox tiene texto
+            if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
             {
-                TipoPersona = "Victima"
-            };
-
-            // Establecer la posición del nuevo control
-            if (panel_Victima.Controls.Count == 0)
-            {
-                // Si es el primer control, colócalo justo debajo del botón
-                // Ajusta la coordenada Y según la posición del botón
-                nuevaVictimaControl.Location = new Point(3, btn_AgregarVictima.Bottom + 6);
+                btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
+                
             }
             else
             {
-                // Para otros controles, colócalos debajo del último control agregado
-                var ultimoControl = panel_Victima.Controls[panel_Victima.Controls.Count - 1];
-                nuevaVictimaControl.Location = new Point(3, ultimoControl.Bottom + 1); // Ajusta la distancia entre controles
+                btn_AgregarDatosVictima.BackColor = Color.Tomato;
+              
             }
-            // Agregar el nuevo control al panel_Victima
-            panel_Victima.Controls.Add(nuevaVictimaControl);
-
-            // Ajustar la altura del panel_Victima para incluir el nuevo control
-            AjustarAlturaPanel(panel_Victima);
-
-            // Ajustar la posición de los paneles siguientes para que se muevan hacia abajo
-            AjustarPosicionPanelesSiguientes(panel_Victima);
-
-            // Ajustar la posición de los paneles siguientes
-            AjustarPosicionPanelesInferiores();
-
-            // Reposicionar panel_Imputado y panel_ControlesInferiores
-            ReposicionarPanelesDinamicamente();
-
+            // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
         }
-
-        private void btn_AgregarImputado_Click(object sender, EventArgs e)
+        
+        //-------------------TEXTBOX IMPUTADO------------------------------------------------------------
+        private void textBox_Imputado_TextChanged(object sender, EventArgs e)
         {
-            // Crear una instancia de NuevaPersonaControl
-            NuevaPersonaControl nuevoImputadoControl = new NuevaPersonaControl
+            // Habilita o deshabilita el botón según si el TextBox tiene texto
+            if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text))
             {
-                TipoPersona = "Imputado"
-            };
-
-            // Establecer la posición del nuevo control
-            if (panel_Imputado.Controls.Count == 0)
-            {
-                // Si es el primer control, colócalo justo debajo del botón
-                // Ajusta la coordenada Y según la posición del botón
-                nuevoImputadoControl.Location = new Point(3, btn_AgregarImputado.Bottom + 4);
+                btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
             }
             else
             {
-                // Para otros controles, colócalos debajo del último control agregado
-                var ultimoControl = panel_Imputado.Controls[panel_Imputado.Controls.Count - 1];
-                nuevoImputadoControl.Location = new Point(0, ultimoControl.Bottom + 1); // Ajusta la distancia entre controles
+                btn_AgregarDatosImputado.BackColor = Color.Tomato;
             }
-            // Agregar el nuevo control al panel_Imputado
-            panel_Imputado.Controls.Add(nuevoImputadoControl);
-
-            // Ajustar la altura del panel_Imputado
-            AjustarAlturaPanel(panel_Imputado);
-
-            // Ajustar la posición de los paneles siguientes
-            AjustarPosicionPanelesSiguientes(panel_Imputado);
-
-            // Ajustar la posición de los paneles siguientes
-            AjustarPosicionPanelesInferiores();
-
-            // Reposicionar panel_ControlesInferiores
-            ReposicionarPanelesDinamicamente();
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);// deshabilita el btn agregarImputado si el textBox no tiene texto
 
         }
 
-        private void AgregarNuevoControl(string tipoPersona, Panel panel)
+
+        //--------------------------------------------------------------------------------------------------------
+
+
+        //------------BOTON AGREGAR VICTIMA----------------------------
+        private void Btn_AgregarVictima_Click(object sender, EventArgs e)
         {
-            // Crear una nueva instancia del control NuevaPersonaControl
-            NuevaPersonaControl nuevoControl = new NuevaPersonaControl
+            if (ValidarUltimaPersona(panel_Victima))
             {
-                TipoPersona = tipoPersona
-            };
-            // Establecer la posición inicial en el panel
-            int y = 10; // Posición vertical inicial
-            int x = 0; // Posición horizontal
-
-            // Determinar la posición para el nuevo control
-            if (panel.Controls.Count > 0)
-            {
-                // Obtener el último control para determinar la nueva posición
-                Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
-                y = ultimoControl.Bottom + 6; // 9 es el espacio entre controles
+                var nuevaVictima = new NuevaPersonaControl("Victima");
+                nuevaVictima.Location = new Point(0, ObtenerPosicionSiguiente(panel_Victima));
+                panel_Imputado.Controls.Add(nuevaVictima);
+                ReposicionarPanelesInferiores(panel_Victima);
             }
-
-            // Configurar la posición del nuevo control
-            nuevoControl.Location = new Point(x, y);
-
-            // Agregar el nuevo control al panel
-            panel.Controls.Add(nuevoControl);
-
-            // Ajustar la altura del panel para acomodar el nuevo control
-            AjustarAlturaPanel(panel);
-
         }
+        //-------------BOTON AGREGAR IMPUTADO------------------------------
+        private void Btn_AgregarImputado_Click(object sender, EventArgs e)
+        {
+            if (ValidarUltimaPersona(panel_Imputado))
+            {
+                var nuevoImputado = new NuevaPersonaControl("Imputado");
+                nuevoImputado.Location = new Point(0, ObtenerPosicionSiguiente(panel_Imputado));
+                panel_Imputado.Controls.Add(nuevoImputado);
+                ReposicionarPanelesInferiores(panel_Imputado);
+            }
+        }
+
+        //private void AgregarNuevoControl(string tipoPersona, Panel panel)
+        //{
+        //    // Crear una nueva instancia del control NuevaPersonaControl
+        //    NuevaPersonaControl nuevoControl = new NuevaPersonaControl
+        //    {
+        //        TipoPersona = tipoPersona
+        //    };
+        //    // Establecer la posición inicial en el panel
+        //    int y = 10; // Posición vertical inicial
+        //    int x = 0; // Posición horizontal
+
+        //    // Determinar la posición para el nuevo control
+        //    if (panel.Controls.Count > 0)
+        //    {
+        //        // Obtener el último control para determinar la nueva posición
+        //        Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
+        //        y = ultimoControl.Bottom + 6; // 9 es el espacio entre controles
+        //    }
+
+        //    // Configurar la posición del nuevo control
+        //    nuevoControl.Location = new Point(x, y);
+
+        //    // Agregar el nuevo control al panel
+        //    panel.Controls.Add(nuevoControl);
+
+        //    // Ajustar la altura del panel para acomodar el nuevo control
+        //    AjustarAlturaPanel(panel);
+
+        //}
 
         private void AjustarAlturaPanel(Panel panel)
         {
@@ -666,17 +453,6 @@ namespace Ofelia_Sara
             }
         }
 
-        private void AjustarAlturaFormulario()
-        {
-            // Calcular la altura total necesaria para el formulario
-            int nuevaAltura = panel_Victima.Bottom + panel_Imputado.Height + panel_ControlesInferiores.Height + 20; // Ajustar el margen según sea necesario
-
-            // Asegurarse de que la altura del formulario sea suficiente para incluir todos los paneles
-            if (this.Height < nuevaAltura)
-            {
-                this.Height = nuevaAltura;
-            }
-        }
         private void AjustarPosicionPanelesInferiores()
         {
             // Ajustar la posición del panel_Imputado
@@ -694,44 +470,54 @@ namespace Ofelia_Sara
             // Ajustar la posición de panel_ControlesInferiores con respecto a panel_Imputado
             panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10);
 
-            // Ajustar la altura del formulario si es necesario
-            AjustarAlturaFormulario();
+            
         }
 
-        private void btn_AgregarCausa_Click(object sender, EventArgs e)
+
+
+        //-------------------BOTON AGREGAR CAUSA---------------------
+        private void Btn_AgregarCausa_Click(object sender, EventArgs e)
         {
-            // Crear una instancia de NuevaPersonaControl
-            NuevaCaratulaControl nuevaCaratulaControl = new NuevaCaratulaControl();
-           
-
-            // Establecer la posición del nuevo control
-            if (panel_Caratula.Controls.Count == 0)
+            if (ValidarUltimaCaratula())
             {
-                // Si es el primer control, colócalo justo debajo del botón
-                // Ajusta la coordenada Y según la posición del botón
-                nuevaCaratulaControl.Location = new Point(0, btn_AgregarCausa.Bottom + 6);
+                var nuevaCaratula = new NuevaCaratulaControl();
+                nuevaCaratula.Location = new Point(10, ObtenerPosicionSiguiente(panel_Caratula));
+                panel_Caratula.Controls.Add(nuevaCaratula);
+                ReposicionarPanelesInferiores(panel_Caratula);
             }
-            else
-            {
-                // Para otros controles, colócalos debajo del último control agregado
-                var ultimoControl = panel_Imputado.Controls[panel_Caratula.Controls.Count - 1];
-                nuevaCaratulaControl.Location = new Point(0, ultimoControl.Bottom + 6); // Ajusta la distancia entre controles
-            }
-            // Agregar el nuevo control al panel_Caratula
-            panel_Caratula.Controls.Add(nuevaCaratulaControl);
+        }
 
-            // Ajustar la altura del panel_Caratula
-            AjustarAlturaPanel(panel_Caratula);
+        //------------------------------------------------------------------------------------
+        //--------------REPOSICIONAMIENTOS DE PANELES Y COMPONENTES------------------------------
+        private int ObtenerPosicionSiguiente(Panel panel)
+        {
+            if (panel.Controls.Count == 0) return 10;
+            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
+            return ultimoControl.Location.Y + ultimoControl.Height + 10;
+        }
 
-            // Ajustar la posición de los paneles siguientes
-            AjustarPosicionPanelesSiguientes(panel_Caratula);
+        private void ReposicionarPanelesInferiores(Panel panelSuperior)
+        {
+            int nuevaPosicionY = panelSuperior.Location.Y + panelSuperior.Height + 10;
+            panel_Victima.Location = new Point(panel_Victima.Location.X, nuevaPosicionY);
+            nuevaPosicionY += panel_Victima.Height + 10;
+            panel_Imputado.Location = new Point(panel_Imputado.Location.X, nuevaPosicionY);
+            nuevaPosicionY += panel_Imputado.Height + 10;
+            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
+        }
 
-            // Ajustar la posición de los paneles siguientes
-            AjustarPosicionPanelesInferiores();
+        private bool ValidarUltimaCaratula()
+        {
+            if (panel_Caratula.Controls.Count == 0) return true;
+            var ultimaCaratula = panel_Caratula.Controls[panel_Caratula.Controls.Count - 1] as NuevaCaratulaControl;
+            return ultimaCaratula != null && !string.IsNullOrEmpty(ultimaCaratula.TextBox_Caratula.Text);
+        }
 
-            // Reposicionar panel_ControlesInferiores
-            ReposicionarPanelesDinamicamente();
-
+        private bool ValidarUltimaPersona(Panel panel)
+        {
+            if (panel.Controls.Count == 0) return true;
+            var ultimaPersona = panel.Controls[panel.Controls.Count - 1] as NuevaPersonaControl;
+            return ultimaPersona != null && !string.IsNullOrEmpty(ultimaPersona.TextBox_Persona.Text);
         }
     }
 }

@@ -86,7 +86,7 @@
             this.Controls.Add(this.textBox_Persona);
             this.Name = "NuevaPersonaControl";
             this.Size = new System.Drawing.Size(407, 26);
-            this.Load += new System.EventHandler(this.NuevaPersonaControl_Load);
+           // this.Load += new System.EventHandler(this.NuevaPersonaControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -26,7 +26,7 @@ namespace Ofelia_Sara.Formularios
         {
             InicializarEstiloBoton(btn_Registrarse);
             InicializarEstiloBoton(btn_Ingresar);
-        }
+         }
 
         private void btn_Registrarse_Click(object sender, EventArgs e)
         {

@@ -1,91 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 {
     public partial class NuevaCaratulaControl : UserControl
     {
+        // Asegúrate de definir el TextBox_Caratula
+        public TextBox TextBox_Caratula { get; private set; }
+        public static int ContadorCaratulas { get; set; } = 2; // Inicia en II
+
         public NuevaCaratulaControl()
         {
             InitializeComponent();
+            label_Caratula.Text = "Causa " + ConvertToRoman(ContadorCaratulas++);
+            TextBox_Caratula = new TextBox(); // Inicializa el TextBox
+            // Configuración adicional del TextBox si es necesario
+            this.Controls.Add(TextBox_Caratula); // Agrega el TextBox al control
         }
 
-        private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
+        private string ConvertToRoman(int number)
         {
-            // Convertir el texto a mayúsculas y eliminar caracteres especiales
-            textBox_Caratula.Text = LimpiarTexto(textBox_Caratula.Text);
-            textBox_Caratula.SelectionStart = textBox_Caratula.Text.Length; // Mantener el cursor al final del texto
-        }
-
-        private string LimpiarTexto(string texto)
-        {
-            // Convertir a mayúsculas
-            texto = texto.ToUpper();
-
-            // Eliminar caracteres especiales y mantener solo letras y espacios
-            var caracteresValidos = texto.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c));
-            return new string(caracteresValidos.ToArray());
+            // Convertir número a romano (simplificado para este caso)
+            if (number == 1) return "I";
+            if (number == 2) return "II";
+            // Añadir más conversiones si es necesario
+            return number.ToString();
         }
 
         private void Btn_EliminarControl_Click(object sender, EventArgs e)
         {
-            // Obtener la referencia al panel que contiene este control
             Panel panel = this.Parent as Panel;
-
             if (panel != null)
             {
-                // Obtener la posición Y del control a eliminar
                 int posicionY = this.Location.Y;
-
-                // Remover el control actual del panel
                 panel.Controls.Remove(this);
-
-                // Reposicionar los controles que están por debajo del control eliminado
-                foreach (Control ctrl in panel.Controls)
-                {
-                    if (ctrl.Location.Y > posicionY)
-                    {
-                        ctrl.Location = new Point(ctrl.Location.X, ctrl.Location.Y - this.Height - 9);
-                    }
-                }
-
-                // Reajustar la altura del panel
-                AjustarAlturaPanel(panel);
-
+                ReposicionarControles(panel, posicionY);
+                ContadorCaratulas--; // Decrementar contador al eliminar
             }
         }
 
-        private void AjustarAlturaPanel(Panel panel)
+        private void ReposicionarControles(Panel panel, int posicionY)
         {
-            // Calcular la altura necesaria del panel basada en todos los controles visibles
-            int nuevaAltura = 0;
-
             foreach (Control ctrl in panel.Controls)
             {
-                if (ctrl.Visible)
+                if (ctrl.Location.Y > posicionY)
                 {
-                    int posicionYConAltura = ctrl.Top + ctrl.Height;
-                    if (posicionYConAltura > nuevaAltura)
-                    {
-                        nuevaAltura = posicionYConAltura;
-                    }
+                    ctrl.Location = new Point(ctrl.Location.X, ctrl.Location.Y - this.Height - 10);
                 }
             }
-
-            // Añadir un margen para evitar que el panel esté justo en el borde
-            nuevaAltura += 6; // Ajustar según el margen deseado
-
-            // Establecer la nueva altura del panel
-            panel.Height = nuevaAltura;
         }
-
-
     }
 }
