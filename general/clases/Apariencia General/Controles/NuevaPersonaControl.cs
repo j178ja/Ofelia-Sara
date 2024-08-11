@@ -141,6 +141,11 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             // Establecer la nueva altura del panel
             panel.Height = nuevaAltura;
         }
+
+        private void NuevaPersonaControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

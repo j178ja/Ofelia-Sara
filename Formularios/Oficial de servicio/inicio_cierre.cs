@@ -512,10 +512,12 @@ namespace Ofelia_Sara
             // Aquí puedes actualizar el ComboBox o realizar otras acciones
             comboBox_Dependencia.Items.Add(nuevoItem);
         }
+//--------------------------------------------------------------------------------------------------------
 
+
+        //------------BOTN AGREGAR VICTIMA----------------------------
         private void btn_AgregarVictima_Click(object sender, EventArgs e)
         {
-
 
             // Crear una instancia de NuevaPersonaControl
             NuevaPersonaControl nuevaVictimaControl = new NuevaPersonaControl
@@ -698,6 +700,37 @@ namespace Ofelia_Sara
 
         private void btn_AgregarCausa_Click(object sender, EventArgs e)
         {
+            // Crear una instancia de NuevaPersonaControl
+            NuevaCaratulaControl nuevaCaratulaControl = new NuevaCaratulaControl();
+           
+
+            // Establecer la posición del nuevo control
+            if (panel_Caratula.Controls.Count == 0)
+            {
+                // Si es el primer control, colócalo justo debajo del botón
+                // Ajusta la coordenada Y según la posición del botón
+                nuevaCaratulaControl.Location = new Point(0, btn_AgregarCausa.Bottom + 6);
+            }
+            else
+            {
+                // Para otros controles, colócalos debajo del último control agregado
+                var ultimoControl = panel_Imputado.Controls[panel_Caratula.Controls.Count - 1];
+                nuevaCaratulaControl.Location = new Point(0, ultimoControl.Bottom + 6); // Ajusta la distancia entre controles
+            }
+            // Agregar el nuevo control al panel_Caratula
+            panel_Caratula.Controls.Add(nuevaCaratulaControl);
+
+            // Ajustar la altura del panel_Caratula
+            AjustarAlturaPanel(panel_Caratula);
+
+            // Ajustar la posición de los paneles siguientes
+            AjustarPosicionPanelesSiguientes(panel_Caratula);
+
+            // Ajustar la posición de los paneles siguientes
+            AjustarPosicionPanelesInferiores();
+
+            // Reposicionar panel_ControlesInferiores
+            ReposicionarPanelesDinamicamente();
 
         }
     }

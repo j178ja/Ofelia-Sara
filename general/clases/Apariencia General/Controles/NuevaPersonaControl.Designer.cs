@@ -52,7 +52,7 @@
             this.label_Persona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Persona.Location = new System.Drawing.Point(28, 1);
             this.label_Persona.Name = "label_Persona";
-            this.label_Persona.Size = new System.Drawing.Size(94, 19);
+            this.label_Persona.Size = new System.Drawing.Size(95, 19);
             this.label_Persona.TabIndex = 40;
             // 
             // textBox_Persona
@@ -86,6 +86,7 @@
             this.Controls.Add(this.textBox_Persona);
             this.Name = "NuevaPersonaControl";
             this.Size = new System.Drawing.Size(407, 26);
+            this.Load += new System.EventHandler(this.NuevaPersonaControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

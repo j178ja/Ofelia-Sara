@@ -56,7 +56,14 @@
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // timePickerPersonalizadoFecha
+            // 
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 11, 1, 25, 29, 482);
             // 
             // label1
             // 
@@ -292,11 +299,31 @@
             this.comboBox11.Size = new System.Drawing.Size(45, 21);
             this.comboBox11.TabIndex = 4;
             // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2GradientPanel1.BorderRadius = 8;
+            this.guna2GradientPanel1.BorderThickness = 5;
+            this.guna2GradientPanel1.Controls.Add(this.guna2CustomGradientPanel1);
+            this.guna2GradientPanel1.CustomBorderColor = System.Drawing.Color.Magenta;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(30, 30);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(200, 100);
+            this.guna2GradientPanel1.TabIndex = 27;
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(79, 26);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(80, 58);
+            this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
             // Ipp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 504);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.comboBox11);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBox10);
@@ -328,6 +355,36 @@
             this.Name = "Ipp";
             this.Text = "ACTUACIONES SUMARIALES  I.P.P.";
             this.Load += new System.EventHandler(this.IppLoad);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.textBox2, 0);
+            this.Controls.SetChildIndex(this.textBox3, 0);
+            this.Controls.SetChildIndex(this.textBox4, 0);
+            this.Controls.SetChildIndex(this.comboBox2, 0);
+            this.Controls.SetChildIndex(this.comboBox3, 0);
+            this.Controls.SetChildIndex(this.comboBox4, 0);
+            this.Controls.SetChildIndex(this.comboBox5, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.comboBox6, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.comboBox7, 0);
+            this.Controls.SetChildIndex(this.comboBox8, 0);
+            this.Controls.SetChildIndex(this.comboBox9, 0);
+            this.Controls.SetChildIndex(this.comboBox10, 0);
+            this.Controls.SetChildIndex(this.label13, 0);
+            this.Controls.SetChildIndex(this.comboBox11, 0);
+            this.Controls.SetChildIndex(this.guna2GradientPanel1, 0);
+            this.guna2GradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +420,7 @@
         private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox11;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
     }
 }

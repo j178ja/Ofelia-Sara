@@ -192,6 +192,12 @@
       <DependentUpon>DateNacimiento.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\NuevaCaratulaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\NuevaCaratulaControl.Designer.cs">
+      <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\NuevaPersonaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\NuevaCaratulaControl.resx">
+      <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\NuevaPersonaControl.resx">
       <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
