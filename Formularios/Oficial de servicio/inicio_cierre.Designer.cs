@@ -205,6 +205,7 @@ namespace Ofelia_Sara
             // 
             // textBox_Caratula
             // 
+            this.textBox_Caratula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Caratula.Location = new System.Drawing.Point(89, 2);
             this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
@@ -412,6 +413,7 @@ namespace Ofelia_Sara
             // 
             // btn_AgregarCausa
             // 
+            this.btn_AgregarCausa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AgregarCausa.BackColor = System.Drawing.Color.White;
             this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarCausa.FlatAppearance.BorderSize = 3;
@@ -455,6 +457,7 @@ namespace Ofelia_Sara
             // 
             // btn_AgregarDatosImputado
             // 
+            this.btn_AgregarDatosImputado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarDatosImputado.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosImputado.Image")));
             this.btn_AgregarDatosImputado.Location = new System.Drawing.Point(0, 1);
             this.btn_AgregarDatosImputado.Name = "btn_AgregarDatosImputado";
@@ -467,6 +470,7 @@ namespace Ofelia_Sara
             // 
             // btn_AgregarDatosVictima
             // 
+            this.btn_AgregarDatosVictima.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarDatosVictima.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosVictima.Image")));
             this.btn_AgregarDatosVictima.Location = new System.Drawing.Point(3, 0);
             this.btn_AgregarDatosVictima.Name = "btn_AgregarDatosVictima";
@@ -480,7 +484,6 @@ namespace Ofelia_Sara
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel1.AutoScroll = true;
             this.panel1.AutoScrollMargin = new System.Drawing.Size(5, 0);
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -496,22 +499,21 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.comboBox_Ipp2);
             this.panel1.Controls.Add(this.comboBox_Ipp1);
             this.panel1.Location = new System.Drawing.Point(20, 43);
+            this.panel1.MinimumSize = new System.Drawing.Size(456, 482);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 482);
+            this.panel1.Size = new System.Drawing.Size(456, 594);
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
             // 
             // panel_Caratula
             // 
-            this.panel_Caratula.AutoSize = true;
-            this.panel_Caratula.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_Caratula.BackColor = System.Drawing.Color.Yellow;
             this.panel_Caratula.Controls.Add(this.textBox_Caratula);
             this.panel_Caratula.Controls.Add(this.lbl_Caratula);
             this.panel_Caratula.Controls.Add(this.btn_AgregarCausa);
-            this.panel_Caratula.Location = new System.Drawing.Point(46, 74);
+            this.panel_Caratula.Location = new System.Drawing.Point(48, 74);
             this.panel_Caratula.Name = "panel_Caratula";
-            this.panel_Caratula.Size = new System.Drawing.Size(374, 27);
+            this.panel_Caratula.Size = new System.Drawing.Size(372, 60);
             this.panel_Caratula.TabIndex = 43;
             // 
             // panel_ControlesInferiores
@@ -538,9 +540,9 @@ namespace Ofelia_Sara
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(20, 161);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(20, 277);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(410, 321);
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(410, 317);
             this.panel_ControlesInferiores.TabIndex = 42;
             // 
             // lbl_Localida
@@ -599,29 +601,27 @@ namespace Ofelia_Sara
             // panel_Imputado
             // 
             this.panel_Imputado.AutoSize = true;
-            this.panel_Imputado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_Imputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel_Imputado.Controls.Add(this.textBox_Imputado);
             this.panel_Imputado.Controls.Add(this.lbl_Imputado);
             this.panel_Imputado.Controls.Add(this.btn_AgregarDatosImputado);
             this.panel_Imputado.Controls.Add(this.btn_AgregarImputado);
-            this.panel_Imputado.Location = new System.Drawing.Point(10, 132);
+            this.panel_Imputado.Location = new System.Drawing.Point(10, 205);
             this.panel_Imputado.Name = "panel_Imputado";
-            this.panel_Imputado.Size = new System.Drawing.Size(410, 27);
+            this.panel_Imputado.Size = new System.Drawing.Size(410, 75);
             this.panel_Imputado.TabIndex = 41;
             // 
             // panel_Victima
             // 
             this.panel_Victima.AutoSize = true;
-            this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_Victima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel_Victima.Controls.Add(this.textBox_Victima);
             this.panel_Victima.Controls.Add(this.btn_AgregarDatosVictima);
             this.panel_Victima.Controls.Add(this.lbl_Victima);
             this.panel_Victima.Controls.Add(this.btn_AgregarVictima);
-            this.panel_Victima.Location = new System.Drawing.Point(7, 102);
+            this.panel_Victima.Location = new System.Drawing.Point(7, 133);
             this.panel_Victima.Name = "panel_Victima";
-            this.panel_Victima.Size = new System.Drawing.Size(413, 27);
+            this.panel_Victima.Size = new System.Drawing.Size(413, 73);
             this.panel_Victima.TabIndex = 40;
             // 
             // progressVerticalBar2
@@ -631,11 +631,12 @@ namespace Ofelia_Sara
             this.progressVerticalBar2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.progressVerticalBar2.Location = new System.Drawing.Point(-175, 19);
             this.progressVerticalBar2.Name = "progressVerticalBar2";
-            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 381);
+            this.progressVerticalBar2.Size = new System.Drawing.Size(4, 285);
             this.progressVerticalBar2.TabIndex = 32;
             // 
             // lbl_Titulo
             // 
+            this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -652,7 +653,7 @@ namespace Ofelia_Sara
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(500, 559);
+            this.ClientSize = new System.Drawing.Size(500, 676);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
@@ -662,7 +663,6 @@ namespace Ofelia_Sara
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO - CIERRE";
             this.Load += new System.EventHandler(this.InicioCierre_Load);
-            
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);

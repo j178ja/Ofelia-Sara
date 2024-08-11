@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label_Caratula = new System.Windows.Forms.Label();
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.btn_EliminarControl = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label_Caratula
@@ -49,17 +51,19 @@
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
             this.textBox_Caratula.TabIndex = 42;
-           // this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
+            this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
             // 
             // btn_EliminarControl
             // 
             this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EliminarControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarControl.Location = new System.Drawing.Point(356, 0);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
             this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
             this.btn_EliminarControl.TabIndex = 44;
             this.btn_EliminarControl.Text = "-";
+            this.toolTip1.SetToolTip(this.btn_EliminarControl, "Eliminar");
             this.btn_EliminarControl.UseVisualStyleBackColor = true;
             this.btn_EliminarControl.Click += new System.EventHandler(this.Btn_EliminarControl_Click);
             // 
@@ -69,11 +73,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btn_EliminarControl);
             this.Controls.Add(this.textBox_Caratula);
             this.Controls.Add(this.label_Caratula);
             this.Name = "NuevaCaratulaControl";
             this.Size = new System.Drawing.Size(374, 26);
+            this.Load += new System.EventHandler(this.NuevaCaratulaControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,5 +90,6 @@
         private System.Windows.Forms.Label label_Caratula;
         private System.Windows.Forms.TextBox textBox_Caratula;
         private System.Windows.Forms.Button btn_EliminarControl;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
