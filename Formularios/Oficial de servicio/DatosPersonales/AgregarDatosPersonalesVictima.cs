@@ -87,7 +87,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Nacionalidad = new System.Windows.Forms.Label();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
             this.textBox_Domicilio = new System.Windows.Forms.TextBox();
-            this.textBox_FechaNacimiento = new System.Windows.Forms.TextBox();
             this.textBox_Edad = new System.Windows.Forms.TextBox();
             this.textBox_Dni = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
@@ -100,6 +99,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
@@ -112,6 +112,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.customDateTextBox1);
             this.panel1.Controls.Add(this.label_agrGeo2);
             this.panel1.Controls.Add(this.label_agrGeo);
             this.panel1.Controls.Add(this.label_AgregarDomicilio);
@@ -134,7 +135,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_Nacionalidad);
             this.panel1.Controls.Add(this.textBox_Localidad);
             this.panel1.Controls.Add(this.textBox_Domicilio);
-            this.panel1.Controls.Add(this.textBox_FechaNacimiento);
             this.panel1.Controls.Add(this.textBox_Edad);
             this.panel1.Controls.Add(this.textBox_Dni);
             this.panel1.Controls.Add(this.textBox_Nombre);
@@ -148,7 +148,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Location = new System.Drawing.Point(24, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(555, 639);
+            this.panel1.Size = new System.Drawing.Size(562, 639);
             this.panel1.TabIndex = 2;
             // 
             // label_agrGeo2
@@ -383,13 +383,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
             // 
-            // textBox_FechaNacimiento
-            // 
-            this.textBox_FechaNacimiento.Location = new System.Drawing.Point(408, 134);
-            this.textBox_FechaNacimiento.Name = "textBox_FechaNacimiento";
-            this.textBox_FechaNacimiento.Size = new System.Drawing.Size(116, 20);
-            this.textBox_FechaNacimiento.TabIndex = 2;
-            // 
             // textBox_Edad
             // 
             this.textBox_Edad.Location = new System.Drawing.Point(90, 165);
@@ -499,6 +492,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Titulo.Size = new System.Drawing.Size(194, 25);
             this.label_Titulo.TabIndex = 51;
             this.label_Titulo.Text = "DATOS VICTIMA";
+            // 
+            // customDateTextBox1
+            // 
+            this.customDateTextBox1.Location = new System.Drawing.Point(403, 133);
+            this.customDateTextBox1.Name = "customDateTextBox1";
+            this.customDateTextBox1.Size = new System.Drawing.Size(149, 20);
+            this.customDateTextBox1.TabIndex = 91;
+            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione la fecha");
             // 
             // AgregarDatosPersonalesVictima
             // 

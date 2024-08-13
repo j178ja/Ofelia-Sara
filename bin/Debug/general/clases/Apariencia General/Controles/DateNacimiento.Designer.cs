@@ -37,7 +37,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             this.buttonCalendar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonCalendar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCalendar.Location = new System.Drawing.Point(127, -1);
+            this.buttonCalendar.Location = new System.Drawing.Point(127, 1);
             this.buttonCalendar.Name = "buttonCalendar";
             this.buttonCalendar.Size = new System.Drawing.Size(18, 20);
             this.buttonCalendar.TabIndex = 1;

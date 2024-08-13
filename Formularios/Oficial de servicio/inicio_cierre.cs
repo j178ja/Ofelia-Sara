@@ -440,7 +440,7 @@ namespace Ofelia_Sara
             foreach (Control control in panel.Controls)
             {
                 var personaControl = control as NuevaPersonaControl;
-                if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
+                 if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
                 {
                     return false; // Retorna false si se encuentra un control vacío
                 }

@@ -80,8 +80,9 @@ namespace Ofelia_Sara
             this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
-            
             this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.label_RatificacionPersonal = new System.Windows.Forms.Label();
+            this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel_Ipp.SuspendLayout();
             this.panel_Caratula.SuspendLayout();
@@ -368,7 +369,7 @@ namespace Ofelia_Sara
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(16, 229);
+            this.btn_Buscar.Location = new System.Drawing.Point(13, 261);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 18;
@@ -380,7 +381,7 @@ namespace Ofelia_Sara
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(116, 229);
+            this.btn_Guardar.Location = new System.Drawing.Point(113, 261);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 15;
@@ -393,7 +394,7 @@ namespace Ofelia_Sara
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(215, 229);
+            this.btn_Limpiar.Location = new System.Drawing.Point(212, 261);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 17;
@@ -406,7 +407,7 @@ namespace Ofelia_Sara
             this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
-            this.btn_Imprimir.Location = new System.Drawing.Point(314, 221);
+            this.btn_Imprimir.Location = new System.Drawing.Point(311, 253);
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
             this.btn_Imprimir.TabIndex = 16;
@@ -496,11 +497,10 @@ namespace Ofelia_Sara
             this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_Imputado);
             this.panel1.Controls.Add(this.panel_Victima);
-            
             this.panel1.Location = new System.Drawing.Point(20, 43);
             this.panel1.MinimumSize = new System.Drawing.Size(456, 482);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 482);
+            this.panel1.Size = new System.Drawing.Size(456, 514);
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
             // 
@@ -533,6 +533,8 @@ namespace Ofelia_Sara
             // 
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
+            this.panel_ControlesInferiores.Controls.Add(this.checkBox_LegajoDetenido);
+            this.panel_ControlesInferiores.Controls.Add(this.label_RatificacionPersonal);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Secretario);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Instructor);
@@ -553,9 +555,9 @@ namespace Ofelia_Sara
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(23, 156);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(23, 160);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(430, 323);
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(430, 351);
             this.panel_ControlesInferiores.TabIndex = 42;
             // 
             // lbl_Localida
@@ -637,7 +639,6 @@ namespace Ofelia_Sara
             this.panel_Victima.Size = new System.Drawing.Size(418, 27);
             this.panel_Victima.TabIndex = 40;
             // 
-          
             // lbl_Titulo
             // 
             this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -651,12 +652,32 @@ namespace Ofelia_Sara
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
             // 
+            // label_RatificacionPersonal
+            // 
+            this.label_RatificacionPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RatificacionPersonal.Location = new System.Drawing.Point(9, 208);
+            this.label_RatificacionPersonal.Name = "label_RatificacionPersonal";
+            this.label_RatificacionPersonal.Size = new System.Drawing.Size(236, 28);
+            this.label_RatificacionPersonal.TabIndex = 38;
+            this.label_RatificacionPersonal.Text = "Ratificacion testimonial   ";
+            this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // checkBox_LegajoDetenido
+            // 
+            this.checkBox_LegajoDetenido.AutoSize = true;
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(212, 218);
+            this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
+            this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_LegajoDetenido.TabIndex = 39;
+            this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere legajo");
+            this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
+            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(500, 559);
+            this.ClientSize = new System.Drawing.Size(500, 594);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
@@ -733,5 +754,7 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Panel panel_ControlesInferiores;
         private System.Windows.Forms.Panel panel_Caratula;
         private System.Windows.Forms.Panel panel_Ipp;
+        private System.Windows.Forms.Label label_RatificacionPersonal;
+        private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
     }
 }

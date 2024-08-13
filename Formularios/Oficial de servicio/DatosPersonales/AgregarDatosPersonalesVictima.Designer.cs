@@ -28,7 +28,6 @@
         private System.Windows.Forms.Label label_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Localidad;
         private System.Windows.Forms.TextBox textBox_Domicilio;
-        private System.Windows.Forms.TextBox textBox_FechaNacimiento;
         private System.Windows.Forms.TextBox textBox_Edad;
         private System.Windows.Forms.TextBox textBox_Dni;
         private System.Windows.Forms.TextBox textBox_Nombre;
@@ -56,5 +55,6 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.Label label_agrGeo2;
         private System.Windows.Forms.Label label_agrGeo;
+        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
     }
 }
