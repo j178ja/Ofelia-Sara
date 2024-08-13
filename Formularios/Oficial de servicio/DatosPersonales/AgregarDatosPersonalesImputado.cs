@@ -378,13 +378,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             // Actualiza el color del label y el estado del checkbox según el texto de los TextBoxes
             label_LegajoDetenido.ForeColor = esTextoValido ? Color.Black : Color.Tomato;
-            label_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Gray;
+            label_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.FromArgb(211, 211, 211);
+
 
             // Actualiza el color de fondo del CheckBox y su estado habilitado/deshabilitado
             checkBox_LegajoDetenido.Enabled = esTextoValido;
             checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
-       
 
+        
     }
 }

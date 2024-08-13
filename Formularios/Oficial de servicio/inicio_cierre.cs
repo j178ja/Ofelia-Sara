@@ -13,12 +13,14 @@ using Ofelia_Sara.general.clases.Apariencia_General;
 using System.Diagnostics;
 using Ofelia_Sara.general.clases.Agregar_Componentes;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
+using System.Web.UI.WebControls.WebParts;
 
 
 namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
     {
+       
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
         private int camposCompletos;
         private ToolTip toolTip;
@@ -55,11 +57,6 @@ namespace Ofelia_Sara
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
            
 
-            //----Inicializar evento click para botones AGREGAR---------
-            btn_AgregarCausa.Click += Btn_AgregarCausa_Click;
-            btn_AgregarVictima.Click += Btn_AgregarVictima_Click;
-            btn_AgregarImputado.Click += Btn_AgregarImputado_Click;
-
         }
       
        
@@ -91,6 +88,7 @@ namespace Ofelia_Sara
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
+
 
         }
 
@@ -125,8 +123,11 @@ namespace Ofelia_Sara
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+
+            ReposicionarPanelesInferiores();
+            // Forzar redibujado del formulario para reflejar los cambios
+            this.Refresh();
+
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //-------------------------------------------------------------------------------
@@ -366,21 +367,33 @@ namespace Ofelia_Sara
             //    panel_Caratula.Controls.Add(nuevaCaratula);
             //    ReposicionarPanelesInferiores(panel_Caratula);
             //}
+            // Llamar al método en el UserControl para agregar el control
+            NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
+           ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
+                                            // Reposicionar paneles después de eliminar un control
+            
         }
 
         //------------BOTON AGREGAR VICTIMA----------------------------
         private void Btn_AgregarVictima_Click(object sender, EventArgs e)
         {
-            //if (ValidarUltimaPersona(panel_Victima))
-            //{
-            //    var nuevaVictima = new NuevaPersonaControl("Victima");
-            //    nuevaVictima.Location = new Point(0, ObtenerPosicionSiguiente(panel_Victima));
-            //    panel_Imputado.Controls.Add(nuevaVictima);
-            //    ReposicionarPanelesInferiores(panel_Victima);
-            //}
-            AgregarNuevoControl("Victima", panel_Victima);
-            ReposicionarPanelesInferiores();
+            // Primero, valida todos los controles existentes en el panel
+            bool controlesCompletos = ValidarControlesExistentes(panel_Victima);
+
+            if (!controlesCompletos)
+            {
+                // Muestra un mensaje si algún control en el panel está vacío
+                MessageBox.Show("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Sal de la función para evitar agregar un nuevo control
+            }
+            else
+            {
+                // Llamar al método en el UserControl para agregar el control
+                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
+                ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
+            }
         }
+
         //-------------BOTON AGREGAR IMPUTADO------------------------------
         private void Btn_AgregarImputado_Click(object sender, EventArgs e)
         {
@@ -391,76 +404,49 @@ namespace Ofelia_Sara
             //    panel_Imputado.Controls.Add(nuevoImputado);
             //    ReposicionarPanelesInferiores(panel_Imputado);
             //}
+            // Llamar al método en el UserControl para agregar el control
+            NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
+            ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
+           
         }
 
-        // Método para agregar un nuevo control dinámico al panel especificado
-        private void AgregarNuevoControl(string tipoPersona, Panel panel)
-        {
-            // Crear una nueva instancia del control NuevaPersonaControl
-            NuevaPersonaControl nuevoControl = new NuevaPersonaControl(tipoPersona);
 
-            // Determinar la posición para el nuevo control
-            int nuevaPosicionY = ObtenerPosicionSiguiente(panel);
-
-            // Configurar la posición del nuevo control
-            nuevoControl.Location = new Point(0, nuevaPosicionY);
-
-            // Agregar el nuevo control al panel
-            panel.Controls.Add(nuevoControl);
-
-            // Ajustar la altura del panel para acomodar el nuevo control
-            AjustarAlturaPanel(panel);
-        }
-        // Método para obtener la posición Y donde se debe agregar el siguiente control
-        private int ObtenerPosicionSiguiente(Panel panel)
-        {
-            if (panel.Controls.Count == 0) return 2; // Si no hay controles, iniciar en 10
-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            return ultimoControl.Bottom + 2; // Agregar 10 píxeles de espacio entre controles
-        }
-
-        // Método para ajustar la altura del panel según los controles agregados
-        private void AjustarAlturaPanel(Panel panel)
-        {
-            if (panel.Controls.Count == 0) return;
-
-            // Calcular la altura total del panel basada en el último control
-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            int nuevaAltura = ultimoControl.Bottom + 2; // Agregar 10 píxeles de margen
-
-            // Establecer la nueva altura del panel
-            panel.Height = nuevaAltura;
-        }
 
         // Método para reposicionar los paneles inferiores cuando se agrega un nuevo control
-        private void ReposicionarPanelesInferiores()
+        public void ReposicionarPanelesInferiores()
         {
+            // Ajustar la posición del panel de Victima respecto al panel de Caratula
+            panel_Victima.Location = new Point(panel_Victima.Location.X, panel_Caratula.Bottom + 2);
+
             // Ajustar la posición del panel de Imputados respecto al panel de Víctimas
-            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 10);
+            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 2);
 
             // Ajustar la posición del panel de controles inferiores respecto al panel de Imputados
-            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 10);
+            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 2);
 
-            // Si es necesario, ajustar la altura del formulario principal para acomodar los paneles
+            
             Form formularioPrincipal = this.FindForm();
             if (formularioPrincipal != null)
             {
-                formularioPrincipal.Height = formularioPrincipal.Controls.OfType<Control>().Max(c => c.Bottom) + 20;
+                formularioPrincipal.Height = formularioPrincipal.Controls.OfType<Control>().Max(c => c.Bottom) + 2;
+                formularioPrincipal.Invalidate(); // Forzar redibujado del formulario
             }
+
         }
 
-        //private bool ValidarUltimaCaratula()
-        //{
-        //    if (panel_Caratula.Controls.Count == 0) return true;
-        //    var ultimaCaratula = panel_Caratula.Controls[panel_Caratula.Controls.Count - 1] as NuevaCaratulaControl;
-        //    return ultimaCaratula != null && !string.IsNullOrEmpty(ultimaCaratula.TextBox_Caratula.Text);
-        //}
+        // ---METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL
+        private bool ValidarControlesExistentes(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                var personaControl = control as NuevaPersonaControl;
+                if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
+                {
+                    return false; // Retorna false si se encuentra un control vacío
+                }
+            }
+            return true; // Todos los controles están completos
+        }
 
-        //private bool ValidarUltimaPersona(Panel panel)
-        //{
-        //    if (panel.Controls.Count == 0) return true;
-        //    var ultimaPersona = panel.Controls[panel.Controls.Count - 1] as NuevaPersonaControl;
-        //    return ultimaPersona != null && !string.IsNullOrEmpty(ultimaPersona.TextBox_Persona.Text);
-        //}
     }
 }

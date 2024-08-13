@@ -351,6 +351,7 @@
             this.label_LegajoDetenido.TabIndex = 31;
             this.label_LegajoDetenido.Text = "Legajo de Detenido     ";
             this.label_LegajoDetenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
             // 
             // label_NotArt60
             // 

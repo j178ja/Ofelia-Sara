@@ -39,15 +39,16 @@
             // 
             this.label_Caratula.BackColor = System.Drawing.Color.Transparent;
             this.label_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Caratula.Location = new System.Drawing.Point(0, 3);
+            this.label_Caratula.Location = new System.Drawing.Point(0, 0);
             this.label_Caratula.Name = "label_Caratula";
-            this.label_Caratula.Size = new System.Drawing.Size(95, 19);
+            this.label_Caratula.Size = new System.Drawing.Size(83, 22);
             this.label_Caratula.TabIndex = 41;
             this.label_Caratula.Text = "Caratula ";
+            this.label_Caratula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox_Caratula
             // 
-            this.textBox_Caratula.Location = new System.Drawing.Point(90, 2);
+            this.textBox_Caratula.Location = new System.Drawing.Point(89, 1);
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
             this.textBox_Caratula.TabIndex = 42;
@@ -55,16 +56,20 @@
             // 
             // btn_EliminarControl
             // 
+            this.btn_EliminarControl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EliminarControl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_EliminarControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarControl.Location = new System.Drawing.Point(356, 0);
+            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EliminarControl.ForeColor = System.Drawing.Color.IndianRed;
+            this.btn_EliminarControl.Location = new System.Drawing.Point(355, 0);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
             this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
             this.btn_EliminarControl.TabIndex = 44;
             this.btn_EliminarControl.Text = "-";
             this.toolTip1.SetToolTip(this.btn_EliminarControl, "Eliminar");
-            this.btn_EliminarControl.UseVisualStyleBackColor = true;
+            this.btn_EliminarControl.UseVisualStyleBackColor = false;
             this.btn_EliminarControl.Click += new System.EventHandler(this.Btn_EliminarControl_Click);
             // 
             // NuevaCaratulaControl
@@ -78,7 +83,7 @@
             this.Controls.Add(this.textBox_Caratula);
             this.Controls.Add(this.label_Caratula);
             this.Name = "NuevaCaratulaControl";
-            this.Size = new System.Drawing.Size(374, 26);
+            this.Size = new System.Drawing.Size(373, 26);
             this.Load += new System.EventHandler(this.NuevaCaratulaControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
