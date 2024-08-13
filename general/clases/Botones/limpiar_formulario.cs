@@ -1,6 +1,7 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
+using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System;
 using System.Windows.Forms;
 
@@ -37,6 +38,12 @@ namespace Ofelia_Sara.general.clases
                 else if (c is PictureBox pictureBox)
                 {
                     pictureBox.Image = null;
+                }
+                // Si el control es un tipo específico (NuevaCaratulaControl, NuevaPersonaControl), elimínalo
+                else if (c is NuevaCaratulaControl || c is NuevaPersonaControl)
+                {
+                    control.Controls.Remove(c);
+                    c.Dispose(); // Libera los recursos del control
                 }
 
 
