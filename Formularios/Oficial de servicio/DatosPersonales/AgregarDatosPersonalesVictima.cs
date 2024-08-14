@@ -54,6 +54,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             { "textBox_Dni", true },  // Este TextBox solo acepta números.
             {"textBox_Edad", true },
+              {"textBox_DateDIA", true },
+            {"textBox_DateMES", true },
+            {"textBox_DateAÑO", true },
             {"textBox_FechaNacimiento", true },
             {"textBox_Telefono", true }
             };
@@ -235,6 +238,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Buscar.TabIndex = 78;
             this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // checkBox_Notificacion258
             // 
@@ -598,10 +602,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true;
             }
 
-            // Verificar si el texto actual del TextBox tiene menos de 6 caracteres
-            if (textBox_Dni.Text.Length >= 8 && !char.IsControl(e.KeyChar))
+            // Verificar si el texto actual del TextBox tiene  10 caracteres
+            if (textBox_Dni.Text.Length >= 10 && !char.IsControl(e.KeyChar))
             {
-                // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
+                // Si ya tiene 10 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
             }
         }
@@ -750,6 +754,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPicture();
         }
 
-       
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            // Crear y mostrar el formulario BuscarPersonal
+            BuscarForm buscarForm = new BuscarForm();
+
+            buscarForm.ShowDialog();
+        }
     }
 }
