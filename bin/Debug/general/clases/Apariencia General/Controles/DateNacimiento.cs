@@ -137,11 +137,16 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             {
                 if (calendarForm.ShowDialog() == DialogResult.OK)
                 {
-                    textBox_Date.Text = calendarForm.SelectedDate.ToShortDateString();
+                    DateTime selectedDate = calendarForm.SelectedDate;
+
+                    // Dividir la fecha seleccionada en día, mes y año
+                    textBox_DateDIA.Text = selectedDate.Day.ToString("00");  // Día con dos dígitos
+                    textBox_DateMES.Text = selectedDate.Month.ToString("00"); // Mes con dos dígitos
+                    textBox_DateAÑO.Text = selectedDate.Year.ToString(); // Año completo
+                                                                         
+                    textBox_DateAÑO.ForeColor = Color.Black;// Cambiar el color del texto del TextBox a negro
                 }
             }
         }
-
-      
     }
 }
