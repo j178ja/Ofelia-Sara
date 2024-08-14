@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Registro_de_personal
         }
 
 
-        //-----------------------METODO PARA LOS NUMEROS EN TEXTBOX NUMERO LEGAJO-----------------
+        //-----------------METODO PARA LOS NUMEROS EN TEXTBOX NUMERO LEGAJO-----------------
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite dígitos y teclas de control
@@ -67,6 +67,8 @@ namespace Ofelia_Sara.Registro_de_personal
                 // Actualizar el texto en el TextBox y restaurar la posición del cursor
                 textBox.Text = textoFormateado;
                 textBox.SelectionStart = textoFormateado.Length;
+
+               
             }
         }
 
@@ -77,22 +79,33 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
         }
-
+        
         private void btn_AgregarPersonal_Click(object sender, EventArgs e)
         {
-            // Crear una nueva instancia del control PersonaSeleccionadaControl
-            PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
+            // Validar que el texto no sea menor a 6 caracteres
+            string textoFormateado = textBox_NumeroLegajo.Text;
+            if (textoFormateado.Length < 6)
+            {
+                MessageBox.Show("El número no correspone a un número de legajo valido, verifique que el número sea correcto.", "Número Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Crear una nueva instancia del control PersonaSeleccionadaControl
+                PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
 
-            // Configurar la ubicación del nuevo control si es necesario
-            // Por ejemplo, puedes colocarlo al final del panel o en una posición específica
-            int nuevaPosicionY = ObtenerPosicionSiguienteControl(panel_PersonalSeleccionado);
-            nuevoControl.Location = new Point(0, nuevaPosicionY);
+                //posicionar el nuevo control
+                int nuevaPosicionY = ObtenerPosicionSiguienteControl(panel_PersonalSeleccionado);
+                nuevoControl.Location = new Point(0, nuevaPosicionY);
 
-            // Añadir el nuevo control al panel_PersonalSeleccionado
-            panel_PersonalSeleccionado.Controls.Add(nuevoControl);
+                // Añadir el nuevo control al panel_PersonalSeleccionado
+                panel_PersonalSeleccionado.Controls.Add(nuevoControl);
 
-            // Ajustar la altura del panel si es necesario
-            AjustarAlturaPanel(panel_PersonalSeleccionado);
+                // Ajustar la altura del panel si es necesario
+                AjustarAlturaPanel(panel_PersonalSeleccionado);
+
+                // Limpiar el contenido del TextBox
+                textBox_NumeroLegajo.Text = string.Empty;
+            }
         }
         private int ObtenerPosicionSiguienteControl(Panel panel)
         {
@@ -103,7 +116,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             // Obtener la posición Y del último control en el panel
             Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            return ultimoControl.Bottom + 10; // Ajusta el espacio entre controles según sea necesario
+            return ultimoControl.Bottom + 20; // Espacio entre controles
         }
 
         private void AjustarAlturaPanel(Panel panel)
@@ -112,7 +125,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             // Ajustar la altura del panel según el último control agregado
             Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            panel.Height = ultimoControl.Bottom + 10; // Ajusta el espacio inferior según sea necesario
+            panel.Height = ultimoControl.Bottom + 1; // Ajusta el espacio inferior según sea necesario
         }
     }
  }
