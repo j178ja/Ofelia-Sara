@@ -43,12 +43,12 @@
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Fecha = new System.Windows.Forms.Label();
+            this.label_Secretario = new System.Windows.Forms.Label();
+            this.label_Instructor = new System.Windows.Forms.Label();
+            this.label_Dependencia = new System.Windows.Forms.Label();
+            this.label_Imputado = new System.Windows.Forms.Label();
+            this.label_Victima = new System.Windows.Forms.Label();
             this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
             this.textBox_Imputado = new System.Windows.Forms.TextBox();
             this.textBox_Victima = new System.Windows.Forms.TextBox();
@@ -76,12 +76,12 @@
             this.panel2.Controls.Add(this.textBox_Caratula);
             this.panel2.Controls.Add(this.btn_Buscar);
             this.panel2.Controls.Add(this.btn_Limpiar);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label_Fecha);
+            this.panel2.Controls.Add(this.label_Secretario);
+            this.panel2.Controls.Add(this.label_Instructor);
+            this.panel2.Controls.Add(this.label_Dependencia);
+            this.panel2.Controls.Add(this.label_Imputado);
+            this.panel2.Controls.Add(this.label_Victima);
             this.panel2.Controls.Add(this.textBox_NumeroIpp);
             this.panel2.Controls.Add(this.textBox_Imputado);
             this.panel2.Controls.Add(this.textBox_Victima);
@@ -234,66 +234,67 @@
             this.btn_Limpiar.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Eliminar busqueda");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
-            // label6
+            // label_Fecha
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(77, 375);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 16);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "FECHA";
+            this.label_Fecha.AutoSize = true;
+            this.label_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Fecha.Location = new System.Drawing.Point(77, 375);
+            this.label_Fecha.Name = "label_Fecha";
+            this.label_Fecha.Size = new System.Drawing.Size(57, 16);
+            this.label_Fecha.TabIndex = 11;
+            this.label_Fecha.Text = "FECHA";
             // 
-            // label5
+            // label_Secretario
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 331);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "SECRETARIO";
+            this.label_Secretario.AutoSize = true;
+            this.label_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Secretario.Location = new System.Drawing.Point(30, 331);
+            this.label_Secretario.Name = "label_Secretario";
+            this.label_Secretario.Size = new System.Drawing.Size(104, 16);
+            this.label_Secretario.TabIndex = 10;
+            this.label_Secretario.Text = "SECRETARIO";
             // 
-            // label4
+            // label_Instructor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 286);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "INSTRUCTOR";
+            this.label_Instructor.AutoSize = true;
+            this.label_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Instructor.Location = new System.Drawing.Point(30, 286);
+            this.label_Instructor.Name = "label_Instructor";
+            this.label_Instructor.Size = new System.Drawing.Size(106, 16);
+            this.label_Instructor.TabIndex = 9;
+            this.label_Instructor.Text = "INSTRUCTOR";
             // 
-            // label3
+            // label_Dependencia
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "DEPENDENCIA";
+            this.label_Dependencia.AutoSize = true;
+            this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Dependencia.Location = new System.Drawing.Point(21, 241);
+            this.label_Dependencia.Name = "label_Dependencia";
+            this.label_Dependencia.Size = new System.Drawing.Size(115, 16);
+            this.label_Dependencia.TabIndex = 8;
+            this.label_Dependencia.Text = "DEPENDENCIA";
             // 
-            // label2
+            // label_Imputado
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "IMPUTADO";
+            this.label_Imputado.AutoSize = true;
+            this.label_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Imputado.Location = new System.Drawing.Point(50, 195);
+            this.label_Imputado.Name = "label_Imputado";
+            this.label_Imputado.Size = new System.Drawing.Size(86, 16);
+            this.label_Imputado.TabIndex = 7;
+            this.label_Imputado.Text = "IMPUTADO";
             // 
-            // label1
+            // label_Victima
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "VICTIMA";
+            this.label_Victima.AutoSize = true;
+            this.label_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Victima.Location = new System.Drawing.Point(69, 149);
+            this.label_Victima.Name = "label_Victima";
+            this.label_Victima.Size = new System.Drawing.Size(67, 16);
+            this.label_Victima.TabIndex = 6;
+            this.label_Victima.Text = "VICTIMA";
             // 
             // textBox_NumeroIpp
             // 
@@ -343,6 +344,7 @@
             this.Name = "BuscarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR EN BASE DE DATOS";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarForm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Buscar_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.panel2.ResumeLayout(false);
@@ -359,12 +361,12 @@
         private System.Windows.Forms.TextBox textBox_NumeroIpp;
         private System.Windows.Forms.TextBox textBox_Imputado;
         private System.Windows.Forms.TextBox textBox_Victima;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Fecha;
+        private System.Windows.Forms.Label label_Secretario;
+        private System.Windows.Forms.Label label_Instructor;
+        private System.Windows.Forms.Label label_Dependencia;
+        private System.Windows.Forms.Label label_Imputado;
+        private System.Windows.Forms.Label label_Victima;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.ToolTip toolTip1;

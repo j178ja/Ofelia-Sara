@@ -375,6 +375,7 @@ namespace Ofelia_Sara
             this.btn_Buscar.TabIndex = 18;
             this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // btn_Guardar
             // 

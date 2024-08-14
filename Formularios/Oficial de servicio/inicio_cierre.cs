@@ -1,6 +1,7 @@
 ﻿using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.GenerarDocumentos;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -459,6 +460,14 @@ namespace Ofelia_Sara
               
                 buscarPersonalForm.ShowDialog();
             }
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            // Crear y mostrar el formulario BuscarPersonal
+            BuscarForm buscarForm = new BuscarForm();
+
+            buscarForm.ShowDialog();
         }
     }
 }

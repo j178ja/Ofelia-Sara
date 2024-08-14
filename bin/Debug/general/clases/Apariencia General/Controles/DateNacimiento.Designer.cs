@@ -19,8 +19,10 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonCalendar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // textBox1
@@ -42,6 +44,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             this.buttonCalendar.Size = new System.Drawing.Size(18, 20);
             this.buttonCalendar.TabIndex = 1;
             this.buttonCalendar.Text = "...";
+            this.toolTip1.SetToolTip(this.buttonCalendar, "Seleccione fecha");
             this.buttonCalendar.UseVisualStyleBackColor = false;
             this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
             // 
@@ -55,5 +58,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             this.PerformLayout();
 
         }
+
+        private ToolTip toolTip1;
     }
 }

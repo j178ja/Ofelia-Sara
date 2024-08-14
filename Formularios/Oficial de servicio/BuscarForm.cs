@@ -32,7 +32,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Buscar_Load(object sender, EventArgs e)
         {
 
-
             // Aplica el estilo de botón de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Buscar);
@@ -53,6 +52,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
+        }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -127,6 +127,15 @@ namespace Ofelia_Sara.Registro_de_personal
             Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
             panel.Height = ultimoControl.Bottom + 1; // Ajusta el espacio inferior según sea necesario
         }
+
+        private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            // Mostrar un mensaje de ayuda
+            MessageBox.Show("Ingrese un número de legajo policial válido para caragar nueva ratificacion testimonial", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
+        }
     }
  }
 

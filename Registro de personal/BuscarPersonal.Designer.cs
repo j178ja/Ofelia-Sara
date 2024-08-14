@@ -50,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_PersonalSeleccionado);
@@ -57,16 +58,17 @@
             this.panel1.Controls.Add(this.textBox_NumeroLegajo);
             this.panel1.Controls.Add(this.lbl_Legajo);
             this.panel1.Controls.Add(this.lbl_Titulo);
-            this.panel1.Location = new System.Drawing.Point(24, 25);
+            this.panel1.Location = new System.Drawing.Point(24, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 401);
+            this.panel1.Size = new System.Drawing.Size(671, 224);
             this.panel1.TabIndex = 2;
             // 
             // panel_ControlesInferiores
             // 
+            this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(77, 298);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(77, 121);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             this.panel_ControlesInferiores.Size = new System.Drawing.Size(458, 100);
             this.panel_ControlesInferiores.TabIndex = 39;
@@ -101,7 +103,7 @@
             // 
             // panel_PersonalSeleccionado
             // 
-            this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.Transparent;
             this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(16, 95);
             this.panel_PersonalSeleccionado.Name = "panel_PersonalSeleccionado";
             this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(640, 24);
@@ -162,14 +164,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 452);
+            this.ClientSize = new System.Drawing.Size(718, 299);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(734, 338);
             this.Name = "BuscarPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR PERSONAL POLICIAL";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarPersonal_HelpButtonClicked);
             this.Load += new System.EventHandler(this.BuscarPersonal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
