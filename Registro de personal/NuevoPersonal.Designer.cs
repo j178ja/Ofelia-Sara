@@ -236,7 +236,6 @@
             this.customDateTextBox2.Name = "customDateTextBox2";
             this.customDateTextBox2.Size = new System.Drawing.Size(149, 20);
             this.customDateTextBox2.TabIndex = 107;
-            this.toolTip1.SetToolTip(this.customDateTextBox2, "Seleccione fecha de ingreso a institución");
             // 
             // label_Ingreso
             // 
@@ -294,7 +293,6 @@
             this.customDateTextBox1.Name = "customDateTextBox1";
             this.customDateTextBox1.Size = new System.Drawing.Size(149, 20);
             this.customDateTextBox1.TabIndex = 100;
-            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione fecha de nacimiento");
             // 
             // textBox_LugarNacimiento
             // 
@@ -457,6 +455,7 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.btn_Limpiar, "LIMPIAR formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
@@ -469,7 +468,7 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 37;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar Efectivo Policial");
+            this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR nuevo efectivo policial");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             // 
             // textBox_NumeroLegajo
@@ -505,10 +504,6 @@
             this.lbl_Titulo.Size = new System.Drawing.Size(341, 24);
             this.lbl_Titulo.TabIndex = 32;
             this.lbl_Titulo.Text = "REGISTRAR NUEVO PERSONAL";
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipTitle = "Limpiar Formulario";
             // 
             // NuevoPersonal
             // 

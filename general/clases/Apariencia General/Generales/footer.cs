@@ -11,6 +11,12 @@ namespace Ofelia_Sara.general.clases
     {
         public static LinkLabel CreateFooterLinkLabel(Form form)
         {
+            // Verificar si el formulario es una instancia de Contacto
+            if (form is Contacto)
+            {
+                return null; // No agregar el LinkLabel si es el formulario Contacto
+            }
+
             LinkLabel footerLinkLabel = new LinkLabel();
             footerLinkLabel.AutoSize = true;
             footerLinkLabel.Location = new System.Drawing.Point(50, form.ClientSize.Height - 50); // Ajusta la ubicación en Y
