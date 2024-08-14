@@ -114,6 +114,7 @@
             this.btn_EliminarControl.BackColor = System.Drawing.Color.Transparent;
             this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EliminarControl.FlatAppearance.BorderSize = 0;
+            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarControl.Location = new System.Drawing.Point(589, 0);
             this.btn_EliminarControl.Name = "btn_EliminarControl";

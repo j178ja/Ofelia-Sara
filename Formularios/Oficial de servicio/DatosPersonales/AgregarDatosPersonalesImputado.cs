@@ -111,6 +111,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             { "textBox_Dni", true },  // Este TextBox solo acepta números.
             {"textBox_Edad", true },
+            {"textBox_DateDIA", true },
+            {"textBox_DateMES", true },
+            {"textBox_DateAÑO", true },
             {"textBox_Telefono", true }
             }; 
 
