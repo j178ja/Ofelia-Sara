@@ -209,27 +209,26 @@ namespace Ofelia_Sara
             // 
             // textBox_Caratula
             // 
-            this.textBox_Caratula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Caratula.Location = new System.Drawing.Point(89, 2);
+            this.textBox_Caratula.Location = new System.Drawing.Point(87, 2);
             this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
-            this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
+            this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
             this.textBox_Caratula.TabIndex = 4;
             this.textBox_Caratula.TextChanged += new System.EventHandler(this.textBox_Caratula_TextChanged);
             // 
             // textBox_Victima
             // 
-            this.textBox_Victima.Location = new System.Drawing.Point(128, 3);
+            this.textBox_Victima.Location = new System.Drawing.Point(126, 3);
             this.textBox_Victima.Name = "textBox_Victima";
-            this.textBox_Victima.Size = new System.Drawing.Size(265, 20);
+            this.textBox_Victima.Size = new System.Drawing.Size(286, 20);
             this.textBox_Victima.TabIndex = 5;
             this.textBox_Victima.TextChanged += new System.EventHandler(this.textBox_Victima_TextChanged);
             // 
             // textBox_Imputado
             // 
-            this.textBox_Imputado.Location = new System.Drawing.Point(127, 3);
+            this.textBox_Imputado.Location = new System.Drawing.Point(126, 3);
             this.textBox_Imputado.Name = "textBox_Imputado";
-            this.textBox_Imputado.Size = new System.Drawing.Size(265, 20);
+            this.textBox_Imputado.Size = new System.Drawing.Size(286, 20);
             this.textBox_Imputado.TabIndex = 6;
             this.textBox_Imputado.TextChanged += new System.EventHandler(this.textBox_Imputado_TextChanged);
             // 
@@ -418,12 +417,11 @@ namespace Ofelia_Sara
             // 
             // btn_AgregarCausa
             // 
-            this.btn_AgregarCausa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AgregarCausa.BackColor = System.Drawing.Color.White;
             this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarCausa.FlatAppearance.BorderSize = 3;
             this.btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarCausa.Location = new System.Drawing.Point(356, 1);
+            this.btn_AgregarCausa.Location = new System.Drawing.Point(377, 1);
             this.btn_AgregarCausa.Name = "btn_AgregarCausa";
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarCausa.TabIndex = 27;
@@ -438,7 +436,7 @@ namespace Ofelia_Sara
             this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarVictima.FlatAppearance.BorderSize = 0;
             this.btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarVictima.Location = new System.Drawing.Point(395, 2);
+            this.btn_AgregarVictima.Location = new System.Drawing.Point(416, 2);
             this.btn_AgregarVictima.Name = "btn_AgregarVictima";
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarVictima.TabIndex = 28;
@@ -451,7 +449,7 @@ namespace Ofelia_Sara
             // 
             this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarImputado.Location = new System.Drawing.Point(394, 1);
+            this.btn_AgregarImputado.Location = new System.Drawing.Point(415, 1);
             this.btn_AgregarImputado.Name = "btn_AgregarImputado";
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarImputado.TabIndex = 29;
@@ -538,7 +536,7 @@ namespace Ofelia_Sara
             this.panel_Caratula.Controls.Add(this.btn_AgregarCausa);
             this.panel_Caratula.Location = new System.Drawing.Point(46, 81);
             this.panel_Caratula.Name = "panel_Caratula";
-            this.panel_Caratula.Size = new System.Drawing.Size(372, 25);
+            this.panel_Caratula.Size = new System.Drawing.Size(407, 25);
             this.panel_Caratula.TabIndex = 43;
             // 
             // panel_ControlesInferiores
@@ -645,7 +643,7 @@ namespace Ofelia_Sara
             this.panel_Imputado.Controls.Add(this.btn_AgregarImputado);
             this.panel_Imputado.Location = new System.Drawing.Point(8, 131);
             this.panel_Imputado.Name = "panel_Imputado";
-            this.panel_Imputado.Size = new System.Drawing.Size(413, 27);
+            this.panel_Imputado.Size = new System.Drawing.Size(445, 27);
             this.panel_Imputado.TabIndex = 41;
             // 
             // panel_Victima
@@ -658,7 +656,7 @@ namespace Ofelia_Sara
             this.panel_Victima.Controls.Add(this.btn_AgregarVictima);
             this.panel_Victima.Location = new System.Drawing.Point(7, 105);
             this.panel_Victima.Name = "panel_Victima";
-            this.panel_Victima.Size = new System.Drawing.Size(418, 27);
+            this.panel_Victima.Size = new System.Drawing.Size(446, 27);
             this.panel_Victima.TabIndex = 40;
             // 
             // lbl_Titulo

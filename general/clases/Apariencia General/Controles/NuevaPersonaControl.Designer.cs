@@ -63,9 +63,9 @@
             // 
             // textBox_Persona
             // 
-            this.textBox_Persona.Location = new System.Drawing.Point(127, 2);
+            this.textBox_Persona.Location = new System.Drawing.Point(125, 2);
             this.textBox_Persona.Name = "textBox_Persona";
-            this.textBox_Persona.Size = new System.Drawing.Size(265, 20);
+            this.textBox_Persona.Size = new System.Drawing.Size(287, 20);
             this.textBox_Persona.TabIndex = 41;
             this.textBox_Persona.TextChanged += new System.EventHandler(this.textBox_Persona_TextChanged);
             // 
@@ -74,7 +74,7 @@
             this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarControl.Location = new System.Drawing.Point(394, 0);
+            this.btn_EliminarControl.Location = new System.Drawing.Point(415, 0);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
             this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
             this.btn_EliminarControl.TabIndex = 43;
@@ -95,7 +95,7 @@
             this.Controls.Add(this.label_Persona);
             this.Controls.Add(this.textBox_Persona);
             this.Name = "NuevaPersonaControl";
-            this.Size = new System.Drawing.Size(412, 27);
+            this.Size = new System.Drawing.Size(433, 27);
             this.Load += new System.EventHandler(this.NuevaPersonaControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
