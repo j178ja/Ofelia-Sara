@@ -351,7 +351,6 @@
             this.label_LegajoDetenido.TabIndex = 31;
             this.label_LegajoDetenido.Text = "Legajo de Detenido     ";
             this.label_LegajoDetenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
             // 
             // label_NotArt60
             // 
@@ -534,6 +533,8 @@
             this.textBox_Dni.Name = "textBox_Dni";
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
+            this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
             // 
             // textBox_Nombre
             // 

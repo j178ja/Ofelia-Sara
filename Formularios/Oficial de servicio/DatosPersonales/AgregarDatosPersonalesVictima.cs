@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -65,6 +66,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -99,7 +101,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
@@ -150,6 +151,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(562, 639);
             this.panel1.TabIndex = 2;
+            // 
+            // customDateTextBox1
+            // 
+            this.customDateTextBox1.Location = new System.Drawing.Point(403, 133);
+            this.customDateTextBox1.Name = "customDateTextBox1";
+            this.customDateTextBox1.Size = new System.Drawing.Size(149, 20);
+            this.customDateTextBox1.TabIndex = 91;
+            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione la fecha");
             // 
             // label_agrGeo2
             // 
@@ -399,6 +408,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Dni.Name = "textBox_Dni";
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
+            this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
             this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Dni_KeyPress);
             // 
             // textBox_Nombre
@@ -492,14 +502,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Titulo.Size = new System.Drawing.Size(194, 25);
             this.label_Titulo.TabIndex = 51;
             this.label_Titulo.Text = "DATOS VICTIMA";
-            // 
-            // customDateTextBox1
-            // 
-            this.customDateTextBox1.Location = new System.Drawing.Point(403, 133);
-            this.customDateTextBox1.Name = "customDateTextBox1";
-            this.customDateTextBox1.Size = new System.Drawing.Size(149, 20);
-            this.customDateTextBox1.TabIndex = 91;
-            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione la fecha");
             // 
             // AgregarDatosPersonalesVictima
             // 
@@ -602,6 +604,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
             }
+        }
+        //-------METODO PARA MANEJAR EL NUMERO DNI---------------------------
+
+        private void textBox_Dni_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            // Obtener la posición del cursor antes del formateo
+            int cursorPosition = textBox.SelectionStart;
+
+            // Usar la clase separada para formatear el texto con puntos
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+            // Actualizar el texto en el TextBox
+            textBox.Text = textoFormateado;
+
+            // Asegurarse de que el cursor se posicione al final del texto
+            textBox.SelectionStart = textBox.Text.Length;
         }
 
         //------------------------------------------------------------------------
@@ -729,5 +749,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             ActualizarControlesPicture();
         }
+
+       
     }
 }

@@ -48,9 +48,9 @@
             // 
             // textBox_Caratula
             // 
-            this.textBox_Caratula.Location = new System.Drawing.Point(89, 1);
+            this.textBox_Caratula.Location = new System.Drawing.Point(87, 1);
             this.textBox_Caratula.Name = "textBox_Caratula";
-            this.textBox_Caratula.Size = new System.Drawing.Size(265, 20);
+            this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
             this.textBox_Caratula.TabIndex = 42;
             this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
             // 
@@ -63,7 +63,7 @@
             this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarControl.ForeColor = System.Drawing.Color.IndianRed;
-            this.btn_EliminarControl.Location = new System.Drawing.Point(355, 0);
+            this.btn_EliminarControl.Location = new System.Drawing.Point(376, 0);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
             this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
             this.btn_EliminarControl.TabIndex = 44;
@@ -83,7 +83,7 @@
             this.Controls.Add(this.textBox_Caratula);
             this.Controls.Add(this.label_Caratula);
             this.Name = "NuevaCaratulaControl";
-            this.Size = new System.Drawing.Size(373, 26);
+            this.Size = new System.Drawing.Size(394, 26);
             this.Load += new System.EventHandler(this.NuevaCaratulaControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

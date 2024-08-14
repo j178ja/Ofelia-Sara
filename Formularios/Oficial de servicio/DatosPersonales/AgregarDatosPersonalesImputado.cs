@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
@@ -294,13 +295,31 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true;
             }
 
-            // Verificar si el texto actual del TextBox tiene menos de 6 caracteres
-            if (textBox_Dni.Text.Length >= 8 && !char.IsControl(e.KeyChar))
+            // Verificar si el texto actual del TextBox tiene  10 caracteres
+            if (textBox_Dni.Text.Length >= 10 && !char.IsControl(e.KeyChar))
             {
-                // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
+                // Si ya tiene 10 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
             }
         }
+        private void textBox_Dni_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            // Obtener la posición del cursor antes del formateo
+            int cursorPosition = textBox.SelectionStart;
+
+            // Usar la clase separada para formatear el texto con puntos
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+            // Actualizar el texto en el TextBox
+            textBox.Text = textoFormateado;
+
+            // Asegurarse de que el cursor se posicione al final del texto
+            textBox.SelectionStart = textBox.Text.Length;
+        }
+
+        //________________________________________________________________________________
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -386,6 +405,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
 
-        
+      
     }
 }
