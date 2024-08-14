@@ -69,10 +69,12 @@ namespace Ofelia_Sara
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
+            this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Ipp = new System.Windows.Forms.Panel();
             this.panel_Caratula = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            this.label_RatificacionPersonal = new System.Windows.Forms.Label();
             this.lbl_Localida = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
             this.lbl_DeptoJudicial = new System.Windows.Forms.Label();
@@ -81,8 +83,6 @@ namespace Ofelia_Sara
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.label_RatificacionPersonal = new System.Windows.Forms.Label();
-            this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel_Ipp.SuspendLayout();
             this.panel_Caratula.SuspendLayout();
@@ -485,6 +485,17 @@ namespace Ofelia_Sara
             this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
             this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.btn_AgregarDatosVictima_Click);
             // 
+            // checkBox_LegajoDetenido
+            // 
+            this.checkBox_LegajoDetenido.AutoSize = true;
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(201, 217);
+            this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
+            this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_LegajoDetenido.TabIndex = 39;
+            this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere RATIFICACION TESTIMONIAL");
+            this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
+            this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.checkBox_LegajoDetenido_CheckedChanged);
+            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -559,6 +570,16 @@ namespace Ofelia_Sara
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             this.panel_ControlesInferiores.Size = new System.Drawing.Size(430, 351);
             this.panel_ControlesInferiores.TabIndex = 42;
+            // 
+            // label_RatificacionPersonal
+            // 
+            this.label_RatificacionPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RatificacionPersonal.Location = new System.Drawing.Point(9, 208);
+            this.label_RatificacionPersonal.Name = "label_RatificacionPersonal";
+            this.label_RatificacionPersonal.Size = new System.Drawing.Size(236, 28);
+            this.label_RatificacionPersonal.TabIndex = 38;
+            this.label_RatificacionPersonal.Text = "Ratificacion testimonial   ";
+            this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_Localida
             // 
@@ -651,26 +672,6 @@ namespace Ofelia_Sara
             this.lbl_Titulo.Size = new System.Drawing.Size(411, 24);
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
-            // 
-            // label_RatificacionPersonal
-            // 
-            this.label_RatificacionPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RatificacionPersonal.Location = new System.Drawing.Point(9, 208);
-            this.label_RatificacionPersonal.Name = "label_RatificacionPersonal";
-            this.label_RatificacionPersonal.Size = new System.Drawing.Size(236, 28);
-            this.label_RatificacionPersonal.TabIndex = 38;
-            this.label_RatificacionPersonal.Text = "Ratificacion testimonial   ";
-            this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // checkBox_LegajoDetenido
-            // 
-            this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(212, 218);
-            this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
-            this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_LegajoDetenido.TabIndex = 39;
-            this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere legajo");
-            this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
             // 
             // InicioCierre
             // 

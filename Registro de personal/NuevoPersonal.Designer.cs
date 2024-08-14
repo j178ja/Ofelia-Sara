@@ -28,8 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
+            this.label_Meses = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label_Años = new System.Windows.Forms.Label();
+            this.textBox_Antiguedad = new System.Windows.Forms.TextBox();
+            this.label_Antiguedad = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_DestinoLaboral = new System.Windows.Forms.Label();
+            this.label_SituacionRevista = new System.Windows.Forms.Label();
+            this.label_DatosPersonales = new System.Windows.Forms.Label();
+            this.customDateTextBox2 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
+            this.label_Ingreso = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label_Subescalafon = new System.Windows.Forms.Label();
+            this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
+            this.label_Jerarquia = new System.Windows.Forms.Label();
             this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
@@ -52,23 +70,7 @@
             this.textBox_NumeroLegajo = new System.Windows.Forms.TextBox();
             this.lbl_Legajo = new System.Windows.Forms.Label();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.label_Jerarquia = new System.Windows.Forms.Label();
-            this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label_Subescalafon = new System.Windows.Forms.Label();
-            this.label_Ingreso = new System.Windows.Forms.Label();
-            this.customDateTextBox2 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
-            this.label_DatosPersonales = new System.Windows.Forms.Label();
-            this.label_SituacionRevista = new System.Windows.Forms.Label();
-            this.label_DestinoLaboral = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_Antiguedad = new System.Windows.Forms.Label();
-            this.textBox_Antiguedad = new System.Windows.Forms.TextBox();
-            this.label_Años = new System.Windows.Forms.Label();
-            this.label_Meses = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,12 +125,176 @@
             this.panel1.Size = new System.Drawing.Size(619, 722);
             this.panel1.TabIndex = 3;
             // 
+            // comboBox_Dependencia
+            // 
+            this.comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Dependencia.FormattingEnabled = true;
+            this.comboBox_Dependencia.Location = new System.Drawing.Point(162, 512);
+            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
+            this.comboBox_Dependencia.Size = new System.Drawing.Size(414, 21);
+            this.comboBox_Dependencia.TabIndex = 118;
+            // 
+            // label_Meses
+            // 
+            this.label_Meses.AutoSize = true;
+            this.label_Meses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Meses.Location = new System.Drawing.Point(527, 388);
+            this.label_Meses.Name = "label_Meses";
+            this.label_Meses.Size = new System.Drawing.Size(49, 15);
+            this.label_Meses.TabIndex = 117;
+            this.label_Meses.Text = "meses";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(494, 386);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(30, 20);
+            this.textBox2.TabIndex = 116;
+            // 
+            // label_Años
+            // 
+            this.label_Años.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Años.Location = new System.Drawing.Point(455, 388);
+            this.label_Años.Name = "label_Años";
+            this.label_Años.Size = new System.Drawing.Size(38, 15);
+            this.label_Años.TabIndex = 115;
+            this.label_Años.Text = "años";
+            // 
+            // textBox_Antiguedad
+            // 
+            this.textBox_Antiguedad.Location = new System.Drawing.Point(422, 386);
+            this.textBox_Antiguedad.Name = "textBox_Antiguedad";
+            this.textBox_Antiguedad.Size = new System.Drawing.Size(30, 20);
+            this.textBox_Antiguedad.TabIndex = 114;
+            // 
+            // label_Antiguedad
+            // 
+            this.label_Antiguedad.AutoSize = true;
+            this.label_Antiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Antiguedad.Location = new System.Drawing.Point(321, 387);
+            this.label_Antiguedad.Name = "label_Antiguedad";
+            this.label_Antiguedad.Size = new System.Drawing.Size(102, 15);
+            this.label_Antiguedad.TabIndex = 113;
+            this.label_Antiguedad.Text = "ANTIGUEDAD :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(166, 411);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(410, 20);
+            this.textBox1.TabIndex = 111;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(89, 412);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 15);
+            this.label1.TabIndex = 112;
+            this.label1.Text = "FUNCION :";
+            // 
+            // label_DestinoLaboral
+            // 
+            this.label_DestinoLaboral.AutoSize = true;
+            this.label_DestinoLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DestinoLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DestinoLaboral.Location = new System.Drawing.Point(143, 466);
+            this.label_DestinoLaboral.Name = "label_DestinoLaboral";
+            this.label_DestinoLaboral.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
+            this.label_DestinoLaboral.Size = new System.Drawing.Size(220, 28);
+            this.label_DestinoLaboral.TabIndex = 110;
+            this.label_DestinoLaboral.Text = "DESTINO LABORAL";
+            // 
+            // label_SituacionRevista
+            // 
+            this.label_SituacionRevista.AutoSize = true;
+            this.label_SituacionRevista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_SituacionRevista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_SituacionRevista.Location = new System.Drawing.Point(143, 284);
+            this.label_SituacionRevista.Name = "label_SituacionRevista";
+            this.label_SituacionRevista.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
+            this.label_SituacionRevista.Size = new System.Drawing.Size(257, 28);
+            this.label_SituacionRevista.TabIndex = 109;
+            this.label_SituacionRevista.Text = "SITUACION DE REVISTA";
+            // 
+            // label_DatosPersonales
+            // 
+            this.label_DatosPersonales.AutoSize = true;
+            this.label_DatosPersonales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DatosPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DatosPersonales.Location = new System.Drawing.Point(148, 91);
+            this.label_DatosPersonales.Name = "label_DatosPersonales";
+            this.label_DatosPersonales.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
+            this.label_DatosPersonales.Size = new System.Drawing.Size(240, 28);
+            this.label_DatosPersonales.TabIndex = 108;
+            this.label_DatosPersonales.Text = "DATOS PERSONALES";
+            // 
+            // customDateTextBox2
+            // 
+            this.customDateTextBox2.Location = new System.Drawing.Point(166, 383);
+            this.customDateTextBox2.Name = "customDateTextBox2";
+            this.customDateTextBox2.Size = new System.Drawing.Size(149, 20);
+            this.customDateTextBox2.TabIndex = 107;
+            this.toolTip1.SetToolTip(this.customDateTextBox2, "Seleccione fecha de ingreso a institución");
+            // 
+            // label_Ingreso
+            // 
+            this.label_Ingreso.AutoSize = true;
+            this.label_Ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Ingreso.Location = new System.Drawing.Point(42, 387);
+            this.label_Ingreso.Name = "label_Ingreso";
+            this.label_Ingreso.Size = new System.Drawing.Size(125, 15);
+            this.label_Ingreso.TabIndex = 106;
+            this.label_Ingreso.Text = "FECHA INGRESO :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            ""});
+            this.comboBox1.Location = new System.Drawing.Point(166, 356);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(286, 21);
+            this.comboBox1.TabIndex = 105;
+            // 
+            // label_Subescalafon
+            // 
+            this.label_Subescalafon.AutoSize = true;
+            this.label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Subescalafon.Location = new System.Drawing.Point(60, 357);
+            this.label_Subescalafon.Name = "label_Subescalafon";
+            this.label_Subescalafon.Size = new System.Drawing.Size(107, 15);
+            this.label_Subescalafon.TabIndex = 104;
+            this.label_Subescalafon.Text = "Sub Escalafón :";
+            // 
+            // comboBox_Localidad
+            // 
+            this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Localidad.FormattingEnabled = true;
+            this.comboBox_Localidad.Location = new System.Drawing.Point(166, 329);
+            this.comboBox_Localidad.Name = "comboBox_Localidad";
+            this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
+            this.comboBox_Localidad.TabIndex = 103;
+            // 
+            // label_Jerarquia
+            // 
+            this.label_Jerarquia.AutoSize = true;
+            this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Jerarquia.Location = new System.Drawing.Point(76, 330);
+            this.label_Jerarquia.Name = "label_Jerarquia";
+            this.label_Jerarquia.Size = new System.Drawing.Size(91, 15);
+            this.label_Jerarquia.TabIndex = 102;
+            this.label_Jerarquia.Text = "JERARQUIA :";
+            // 
             // customDateTextBox1
             // 
             this.customDateTextBox1.Location = new System.Drawing.Point(449, 168);
             this.customDateTextBox1.Name = "customDateTextBox1";
             this.customDateTextBox1.Size = new System.Drawing.Size(149, 20);
             this.customDateTextBox1.TabIndex = 100;
+            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione fecha de nacimiento");
             // 
             // textBox_LugarNacimiento
             // 
@@ -292,6 +458,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 38;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -302,6 +469,7 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar Efectivo Policial");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             // 
             // textBox_NumeroLegajo
@@ -312,6 +480,7 @@
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 20);
             this.textBox_NumeroLegajo.TabIndex = 34;
             this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroLegajo_KeyPress);
             // 
             // lbl_Legajo
             // 
@@ -337,178 +506,9 @@
             this.lbl_Titulo.TabIndex = 32;
             this.lbl_Titulo.Text = "REGISTRAR NUEVO PERSONAL";
             // 
-            // label_Jerarquia
+            // toolTip1
             // 
-            this.label_Jerarquia.AutoSize = true;
-            this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Jerarquia.Location = new System.Drawing.Point(76, 330);
-            this.label_Jerarquia.Name = "label_Jerarquia";
-            this.label_Jerarquia.Size = new System.Drawing.Size(91, 15);
-            this.label_Jerarquia.TabIndex = 102;
-            this.label_Jerarquia.Text = "JERARQUIA :";
-            // 
-            // comboBox_Localidad
-            // 
-            this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Localidad.FormattingEnabled = true;
-            this.comboBox_Localidad.Items.AddRange(new object[] {
-            "PINAMAR",
-            "VILLA GESELL",
-            "GRAL. MADARIAGA"});
-            this.comboBox_Localidad.Location = new System.Drawing.Point(166, 329);
-            this.comboBox_Localidad.Name = "comboBox_Localidad";
-            this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Localidad.TabIndex = 103;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PINAMAR",
-            "VILLA GESELL",
-            "GRAL. MADARIAGA"});
-            this.comboBox1.Location = new System.Drawing.Point(166, 356);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(286, 21);
-            this.comboBox1.TabIndex = 105;
-            // 
-            // label_Subescalafon
-            // 
-            this.label_Subescalafon.AutoSize = true;
-            this.label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Subescalafon.Location = new System.Drawing.Point(60, 357);
-            this.label_Subescalafon.Name = "label_Subescalafon";
-            this.label_Subescalafon.Size = new System.Drawing.Size(107, 15);
-            this.label_Subescalafon.TabIndex = 104;
-            this.label_Subescalafon.Text = "Sub Escalafón :";
-            // 
-            // label_Ingreso
-            // 
-            this.label_Ingreso.AutoSize = true;
-            this.label_Ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Ingreso.Location = new System.Drawing.Point(42, 387);
-            this.label_Ingreso.Name = "label_Ingreso";
-            this.label_Ingreso.Size = new System.Drawing.Size(125, 15);
-            this.label_Ingreso.TabIndex = 106;
-            this.label_Ingreso.Text = "FECHA INGRESO :";
-            // 
-            // customDateTextBox2
-            // 
-            this.customDateTextBox2.Location = new System.Drawing.Point(166, 383);
-            this.customDateTextBox2.Name = "customDateTextBox2";
-            this.customDateTextBox2.Size = new System.Drawing.Size(149, 20);
-            this.customDateTextBox2.TabIndex = 107;
-            this.customDateTextBox2.Load += new System.EventHandler(this.customDateTextBox2_Load);
-            // 
-            // label_DatosPersonales
-            // 
-            this.label_DatosPersonales.AutoSize = true;
-            this.label_DatosPersonales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DatosPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DatosPersonales.Location = new System.Drawing.Point(148, 91);
-            this.label_DatosPersonales.Name = "label_DatosPersonales";
-            this.label_DatosPersonales.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label_DatosPersonales.Size = new System.Drawing.Size(240, 28);
-            this.label_DatosPersonales.TabIndex = 108;
-            this.label_DatosPersonales.Text = "DATOS PERSONALES";
-            // 
-            // label_SituacionRevista
-            // 
-            this.label_SituacionRevista.AutoSize = true;
-            this.label_SituacionRevista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_SituacionRevista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_SituacionRevista.Location = new System.Drawing.Point(143, 284);
-            this.label_SituacionRevista.Name = "label_SituacionRevista";
-            this.label_SituacionRevista.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label_SituacionRevista.Size = new System.Drawing.Size(257, 28);
-            this.label_SituacionRevista.TabIndex = 109;
-            this.label_SituacionRevista.Text = "SITUACION DE REVISTA";
-            // 
-            // label_DestinoLaboral
-            // 
-            this.label_DestinoLaboral.AutoSize = true;
-            this.label_DestinoLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DestinoLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DestinoLaboral.Location = new System.Drawing.Point(143, 466);
-            this.label_DestinoLaboral.Name = "label_DestinoLaboral";
-            this.label_DestinoLaboral.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label_DestinoLaboral.Size = new System.Drawing.Size(220, 28);
-            this.label_DestinoLaboral.TabIndex = 110;
-            this.label_DestinoLaboral.Text = "DESTINO LABORAL";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(166, 411);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(410, 20);
-            this.textBox1.TabIndex = 111;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(89, 412);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 15);
-            this.label1.TabIndex = 112;
-            this.label1.Text = "FUNCION :";
-            // 
-            // label_Antiguedad
-            // 
-            this.label_Antiguedad.AutoSize = true;
-            this.label_Antiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Antiguedad.Location = new System.Drawing.Point(321, 387);
-            this.label_Antiguedad.Name = "label_Antiguedad";
-            this.label_Antiguedad.Size = new System.Drawing.Size(102, 15);
-            this.label_Antiguedad.TabIndex = 113;
-            this.label_Antiguedad.Text = "ANTIGUEDAD :";
-            // 
-            // textBox_Antiguedad
-            // 
-            this.textBox_Antiguedad.Location = new System.Drawing.Point(422, 386);
-            this.textBox_Antiguedad.Name = "textBox_Antiguedad";
-            this.textBox_Antiguedad.Size = new System.Drawing.Size(30, 20);
-            this.textBox_Antiguedad.TabIndex = 114;
-            // 
-            // label_Años
-            // 
-            this.label_Años.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Años.Location = new System.Drawing.Point(455, 388);
-            this.label_Años.Name = "label_Años";
-            this.label_Años.Size = new System.Drawing.Size(38, 15);
-            this.label_Años.TabIndex = 115;
-            this.label_Años.Text = "años";
-            // 
-            // label_Meses
-            // 
-            this.label_Meses.AutoSize = true;
-            this.label_Meses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Meses.Location = new System.Drawing.Point(527, 388);
-            this.label_Meses.Name = "label_Meses";
-            this.label_Meses.Size = new System.Drawing.Size(49, 15);
-            this.label_Meses.TabIndex = 117;
-            this.label_Meses.Text = "meses";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(494, 386);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(30, 20);
-            this.textBox2.TabIndex = 116;
-            // 
-            // comboBox_Dependencia
-            // 
-            this.comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Dependencia.FormattingEnabled = true;
-            this.comboBox_Dependencia.Items.AddRange(new object[] {
-            "PINAMAR",
-            "VILLA GESELL",
-            "GRAL. MADARIAGA"});
-            this.comboBox_Dependencia.Location = new System.Drawing.Point(162, 512);
-            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
-            this.comboBox_Dependencia.Size = new System.Drawing.Size(414, 21);
-            this.comboBox_Dependencia.TabIndex = 118;
+            this.toolTip1.ToolTipTitle = "Limpiar Formulario";
             // 
             // NuevoPersonal
             // 
@@ -520,7 +520,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevoPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRAR NUEVO PERSONAL";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.NuevoPersonal_HelpButtonClicked);
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
@@ -572,5 +574,6 @@
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
         private System.Windows.Forms.Label label_Meses;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

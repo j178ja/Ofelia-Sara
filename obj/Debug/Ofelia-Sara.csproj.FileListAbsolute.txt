@@ -61,3 +61,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Guna.UI2.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.NuevaCaratulaControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Registro_de_personal.BuscarPersonal.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Registro_de_personal.NuevoPersonal.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.PersonalSeleccionadoControl.resources
