@@ -72,7 +72,7 @@
             // 
             this.label_Jerarquia.AutoSize = true;
             this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Jerarquia.Location = new System.Drawing.Point(179, 0);
+            this.label_Jerarquia.Location = new System.Drawing.Point(179, 2);
             this.label_Jerarquia.Name = "label_Jerarquia";
             this.label_Jerarquia.Size = new System.Drawing.Size(185, 13);
             this.label_Jerarquia.TabIndex = 39;
@@ -102,7 +102,7 @@
             // 
             this.label_NombrePersonal.AutoSize = true;
             this.label_NombrePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NombrePersonal.Location = new System.Drawing.Point(384, 0);
+            this.label_NombrePersonal.Location = new System.Drawing.Point(384, 2);
             this.label_NombrePersonal.Name = "label_NombrePersonal";
             this.label_NombrePersonal.Size = new System.Drawing.Size(170, 13);
             this.label_NombrePersonal.TabIndex = 42;

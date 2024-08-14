@@ -31,16 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.personalSeleccionado1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.PersonalSeleccionadoControl();
-            this.panel_PersonalSeleccionado = new System.Windows.Forms.Panel();
-            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.btn_Registrar = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.panel_PersonalSeleccionado = new System.Windows.Forms.Panel();
             this.btn_AgregarPersonal = new System.Windows.Forms.Button();
             this.textBox_NumeroLegajo = new System.Windows.Forms.TextBox();
             this.lbl_Legajo = new System.Windows.Forms.Label();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
+            this.panel_ControlesInferiores.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -50,10 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.personalSeleccionado1);
+            this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_PersonalSeleccionado);
-            this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.btn_Registrar);
             this.panel1.Controls.Add(this.btn_AgregarPersonal);
             this.panel1.Controls.Add(this.textBox_NumeroLegajo);
             this.panel1.Controls.Add(this.lbl_Legajo);
@@ -63,34 +62,14 @@
             this.panel1.Size = new System.Drawing.Size(671, 401);
             this.panel1.TabIndex = 2;
             // 
-            // personalSeleccionado1
+            // panel_ControlesInferiores
             // 
-            this.personalSeleccionado1.AutoSize = true;
-            this.personalSeleccionado1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.personalSeleccionado1.Location = new System.Drawing.Point(34, 241);
-            this.personalSeleccionado1.Name = "personalSeleccionado1";
-            this.personalSeleccionado1.Size = new System.Drawing.Size(607, 62);
-            this.personalSeleccionado1.TabIndex = 39;
-            // 
-            // panel_PersonalSeleccionado
-            // 
-            this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(16, 95);
-            this.panel_PersonalSeleccionado.Name = "panel_PersonalSeleccionado";
-            this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(640, 24);
-            this.panel_PersonalSeleccionado.TabIndex = 38;
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(430, 125);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 37;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR personal seleccionado");
-            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(77, 298);
+            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(458, 100);
+            this.panel_ControlesInferiores.TabIndex = 39;
             // 
             // btn_Registrar
             // 
@@ -98,7 +77,7 @@
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Registrar.Location = new System.Drawing.Point(179, 130);
+            this.btn_Registrar.Location = new System.Drawing.Point(107, 19);
             this.btn_Registrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Registrar.Name = "btn_Registrar";
             this.btn_Registrar.Size = new System.Drawing.Size(116, 62);
@@ -108,6 +87,26 @@
             this.btn_Registrar.UseVisualStyleBackColor = false;
             this.btn_Registrar.Click += new System.EventHandler(this.btn_Registrar_Click);
             // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
+            this.btn_Guardar.Location = new System.Drawing.Point(358, 14);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Guardar.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR personal seleccionado");
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            // 
+            // panel_PersonalSeleccionado
+            // 
+            this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(16, 95);
+            this.panel_PersonalSeleccionado.Name = "panel_PersonalSeleccionado";
+            this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(640, 24);
+            this.panel_PersonalSeleccionado.TabIndex = 38;
+            // 
             // btn_AgregarPersonal
             // 
             this.btn_AgregarPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -115,7 +114,7 @@
             this.btn_AgregarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarPersonal.FlatAppearance.BorderSize = 3;
             this.btn_AgregarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarPersonal.Location = new System.Drawing.Point(478, 45);
+            this.btn_AgregarPersonal.Location = new System.Drawing.Point(478, 44);
             this.btn_AgregarPersonal.Name = "btn_AgregarPersonal";
             this.btn_AgregarPersonal.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarPersonal.TabIndex = 35;
@@ -126,10 +125,10 @@
             // 
             // textBox_NumeroLegajo
             // 
-            this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(312, 47);
+            this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(309, 45);
             this.textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
-            this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 20);
+            this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 22);
             this.textBox_NumeroLegajo.TabIndex = 34;
             this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_NumeroLegajo.TextChanged += new System.EventHandler(this.textBox_NumeroLegajo_TextChanged);
@@ -175,6 +174,7 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_ControlesInferiores.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Panel panel_PersonalSeleccionado;
-        private general.clases.Apariencia_General.Controles.PersonalSeleccionadoControl personalSeleccionado1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel_ControlesInferiores;
     }
 }

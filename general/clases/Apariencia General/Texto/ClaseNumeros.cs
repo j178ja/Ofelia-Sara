@@ -11,6 +11,12 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Texto
     {
         public static string FormatearNumeroConPuntos(string texto)
         {
+            // Limitar el texto a 9 caracteres
+            if (texto.Length > 10)
+            {
+                texto = texto.Substring(0, 10);
+            }
+
             // Remover puntos existentes
             texto = texto.Replace(".", "");
 
