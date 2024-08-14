@@ -14,6 +14,7 @@ using System.Diagnostics;
 using Ofelia_Sara.general.clases.Agregar_Componentes;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System.Web.UI.WebControls.WebParts;
+using Ofelia_Sara.Registro_de_personal;
 
 
 namespace Ofelia_Sara
@@ -448,5 +449,16 @@ namespace Ofelia_Sara
             return true; // Todos los controles están completos
         }
 
+        private void checkBox_LegajoDetenido_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verificar si el CheckBox está marcado
+            if (checkBox_LegajoDetenido.Checked)
+            {
+                // Crear y mostrar el formulario BuscarPersonal
+                BuscarPersonal buscarPersonalForm = new BuscarPersonal();
+              
+                buscarPersonalForm.ShowDialog();
+            }
+        }
     }
 }

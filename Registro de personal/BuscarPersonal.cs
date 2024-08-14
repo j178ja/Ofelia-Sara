@@ -1,4 +1,6 @@
 ﻿using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles;
+using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,98 @@ namespace Ofelia_Sara.Registro_de_personal
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
         {
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Registrar);
 
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBotonAgregar(btn_AgregarPersonal);
+            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
+        }
+
+        private void btn_Registrar_Click(object sender, EventArgs e)
+        {
+            // Obtener el texto del TextBox_NumeroLegajo en BuscarPersonal
+            string numeroLegajo = textBox_NumeroLegajo.Text;
+
+            // Crear y mostrar el formulario NuevoPersonal, pasando el número de legajo
+            NuevoPersonal nuevoPersonalForm = new NuevoPersonal(numeroLegajo);
+            nuevoPersonalForm.ShowDialog();
+        }
+
+
+        //-----------------------METODO PARA LOS NUMEROS EN TEXTBOX NUMERO LEGAJO-----------------
+        private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite dígitos y teclas de control
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Si el carácter es dígito, continúa con el procesamiento
+            if (char.IsDigit(e.KeyChar))
+            {
+                // Inserta el carácter en la posición actual
+                TextBox textBox = sender as TextBox;
+                int selectionStart = textBox.SelectionStart;
+                textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
+                e.Handled = true;
+
+                // Usar la clase separada para formatear el texto
+                string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+                // Actualizar el texto en el TextBox y restaurar la posición del cursor
+                textBox.Text = textoFormateado;
+                textBox.SelectionStart = textoFormateado.Length;
+            }
+        }
+
+        //_________________________________________________________________________________________
+
+        //-------VALIDACION ACTIVACION BTN_AGREGAR PERSONAL------------------------------------------
+        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
+        }
+
+        private void btn_AgregarPersonal_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del control PersonaSeleccionadaControl
+            PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
+
+            // Configurar la ubicación del nuevo control si es necesario
+            // Por ejemplo, puedes colocarlo al final del panel o en una posición específica
+            int nuevaPosicionY = ObtenerPosicionSiguienteControl(panel_PersonalSeleccionado);
+            nuevoControl.Location = new Point(0, nuevaPosicionY);
+
+            // Añadir el nuevo control al panel_PersonalSeleccionado
+            panel_PersonalSeleccionado.Controls.Add(nuevoControl);
+
+            // Ajustar la altura del panel si es necesario
+            AjustarAlturaPanel(panel_PersonalSeleccionado);
+        }
+        private int ObtenerPosicionSiguienteControl(Panel panel)
+        {
+            if (panel.Controls.Count == 0)
+            {
+                return 0; // Si no hay controles, coloca el nuevo control en la posición inicial
+            }
+
+            // Obtener la posición Y del último control en el panel
+            Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
+            return ultimoControl.Bottom + 10; // Ajusta el espacio entre controles según sea necesario
+        }
+
+        private void AjustarAlturaPanel(Panel panel)
+        {
+            if (panel.Controls.Count == 0) return;
+
+            // Ajustar la altura del panel según el último control agregado
+            Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
+            panel.Height = ultimoControl.Bottom + 10; // Ajusta el espacio inferior según sea necesario
         }
     }
-}
+ }
+
