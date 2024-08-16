@@ -25,6 +25,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InitializeComponent();
 
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load);
+
+
         }
 
         private void AgregarDatosPersonalesVictima_Load(object sender, EventArgs e)

@@ -11,10 +11,12 @@ using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 {
+   
     public partial class AgregarDatosPersonalesImputado : BaseForm
     {
         // Propiedad pública para establecer el texto del TextBox
@@ -33,6 +35,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             // Asigna el evento TextChanged de textBox_Dni a ActualizarEstado
             textBox_Dni.TextChanged += (sender, e) => ActualizarEstado();
+
+            // Suscribirse al evento FormClosing
+            this.FormClosing += AgregarDatosPersonales_FormClosing;
+
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
@@ -125,9 +131,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
         //-------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------
-        //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
-        private void ActualizarControlesPictureDOM()
+        //-----METODO BANDERA PARA QUE NO SE MUESTRE MENSAJE DE ADVERTENCIA CUANDO SE LIMPIA TEXTBOX AÑO DE FECHA DE NACIEMIENTO
+        private void AgregarDatosPersonales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Llamar al método HandleFormClosing en la instancia de CustomDateTextBox
+            if (customDateTextBox1 != null)
+            {
+                customDateTextBox1.HandleFormClosing();
+            }
+        }
+
+            //-----------------------------------------------------------------------------------
+            //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
+            private void ActualizarControlesPictureDOM()
         {
             // Verifica si TextoDomicilio y localidad tienen texto
             bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Domicilio.Text) && !string.IsNullOrWhiteSpace(textBox_Localidad.Text);

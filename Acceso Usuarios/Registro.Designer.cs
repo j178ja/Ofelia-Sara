@@ -241,7 +241,7 @@
             this.MinimizeBox = false;
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro";
+            this.Text = "REGISTRAR NUEVO USUARIO";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Registro_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Registro_Load);
             this.Controls.SetChildIndex(this.panel4, 0);

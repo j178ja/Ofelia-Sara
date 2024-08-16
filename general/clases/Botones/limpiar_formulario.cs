@@ -4,53 +4,65 @@
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace Ofelia_Sara.general.clases
 {
     public static class LimpiarFormulario
     {
+
         // Método estático para limpiar todos los controles dentro del formulario
+   // Itera a través de todos los controles dentro del control proporcionado (form o panel)
+
         public static void Limpiar(Control control)
         {
-            // Itera a través de todos los controles dentro del control proporcionado (form o panel)
             foreach (Control c in control.Controls)
             {
-                // Si el control es un TextBox, limpia su contenido
-                if (c is TextBox textBox)
+                switch (c)
                 {
-                    textBox.Clear();
-                }
-                // Si el control es un ComboBox, limpia y restablece su estado
-                else if (c is ComboBox comboBox)
-                {
-                    LimpiarYRestaurarComboBox(comboBox);
-                }
-                // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha actual
-                else if (c is DateTimePicker dateTimePicker)
-                {
-                    dateTimePicker.Value = DateTime.Now; //se refiere a fecha ACTUAL
-                }
-                else if (c is CheckBox checkBox)
-                {
-                    checkBox.Checked = false; //limpia el check
-                }
-                // Si el control es un PictureBox, limpiar su imagen
-                else if (c is PictureBox pictureBox)
-                {
-                    pictureBox.Image = null;
-                }
-                // Si el control es un tipo específico (NuevaCaratulaControl, NuevaPersonaControl), elimínalo
-                else if (c is NuevaCaratulaControl || c is NuevaPersonaControl)
-                {
-                    control.Controls.Remove(c);
-                    c.Dispose(); // Libera los recursos del control
-                }
+                    // Si el control es un TextBox, limpia su contenido
+                    case TextBox textBox:
+                        textBox.Clear();
+                        break;
+
+                    // Si el control es un ComboBox, limpia y restablece su estado
+                    case ComboBox comboBox:
+                        LimpiarYRestaurarComboBox(comboBox);
+                        break;
+
+                    // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha actual
+                    case DateTimePicker dateTimePicker:
+                        dateTimePicker.Value = DateTime.Now;
+                        break;
+
+                    // si es un checkbox -->limpiar
+                    case CheckBox checkBox:
+                        checkBox.Checked = false;
+                        break;
+
+                    // Si el control es un PictureBox, limpiar su imagen
+                    case PictureBox pictureBox:
+                        pictureBox.Image = null;
+                        break;
+
+                    // Si el control es FECHA DE NACIMIENTO
+                    case CustomDateTextBox customDateTextBox:
+                        customDateTextBox.ClearDate(); // Limpiar el control personalizado
+                        customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
+                        break;
 
 
-                // Limpia los controles anidados si existen
-                if (c.HasChildren)
-                {
-                    Limpiar(c);
+                    case Control nestedControl when nestedControl.HasChildren:
+                        Limpiar(nestedControl);
+                        break;
+
+                    // Si el control es un tipo específico (NuevaCaratulaControl, NuevaPersonaControl), 
+                    case NuevaCaratulaControl _:
+                    case NuevaPersonaControl _:
+                        control.Controls.Remove(c);
+                        c.Dispose();
+                        break;
                 }
             }
         }
@@ -80,5 +92,7 @@ namespace Ofelia_Sara.general.clases
                 }
             }
         }
+
+      
     }
 }

@@ -12,6 +12,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 {
     public partial class CustomDateTextBox : UserControl
     {
+        private bool isClosing = false; // Declarar la variable a nivel de clase
         public CustomDateTextBox()
         {
             InitializeComponent();
@@ -32,7 +33,9 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         }
         private void CustomDateTextBox_Load(object sender, EventArgs e)
         {
-            SetPlaceholder(textBox_DateAÑO, "1990");
+            SetPlaceholder(textBox_DateDIA, "dd");
+            SetPlaceholder(textBox_DateMES, "mm");
+            SetPlaceholder(textBox_DateAÑO, "aaaa");
         }
 
 
@@ -93,42 +96,44 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
                     textBox_DateAÑO.Clear(); // Método para limpiar el TextBox
                 }
             }
-        
-            else if (textBox_DateAÑO.Text.Length == 4)
-            {
-                // Mensaje de error si no es un número válido y ya tiene 4 caracteres
-                MessageBox.Show("El año ingresado no es válido. Asegúrese de ingresar solo números.", "Año Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBox_DateAÑO.Text = ""; // Opcional: limpiar el TextBox
-            }
+
+            //MODIFICAR ESTA LOGICA YA QUE SE LANZA EL MENSAJE CON CADA DIGITO
+            //HACER VALIDACION CUANDO CAMBIA DE CONTROL
+
+
+            //else if (textBox_DateAÑO.Text.Length < 4)
+            //{
+            //    // Mensaje de error si no es un número válido y ya tiene 4 caracteres
+            //    MessageBox.Show("El año ingresado no es válido. Asegúrese de ingresar 4 Digitos de un año válido.", "Año Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    textBox_DateAÑO.Text = ""; // Opcional: limpiar el TextBox
+            //}
         }
 
 
         private void SetPlaceholder(TextBox textBox, string placeholder)
         {
-            // Establecer el texto inicial y el color del placeholder
             textBox.Text = placeholder;
-            textBox.ForeColor = Color.LightGray;
+            textBox.ForeColor = Color.Gray;
 
             textBox.Enter += (sender, e) =>
             {
-                // Cuando el usuario entra en el TextBox, eliminar el placeholder si está presente
                 if (textBox.Text == placeholder)
                 {
                     textBox.Text = "";
-                    textBox.ForeColor = Color.Black; // Cambiar el color del texto al normal
+                    textBox.ForeColor = Color.Black;
                 }
             };
 
             textBox.Leave += (sender, e) =>
             {
-                // Cuando el usuario deja el TextBox, mostrar el placeholder si está vacío
                 if (textBox.Text == "")
                 {
                     textBox.Text = placeholder;
-                    textBox.ForeColor = Color.LightGray; // Cambiar el color del texto al del placeholder
+                    textBox.ForeColor = Color.Gray;
                 }
             };
         }
+
 
 
         private void btn_Calendario_Click(object sender, EventArgs e)
@@ -143,10 +148,61 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
                     textBox_DateDIA.Text = selectedDate.Day.ToString("00");  // Día con dos dígitos
                     textBox_DateMES.Text = selectedDate.Month.ToString("00"); // Mes con dos dígitos
                     textBox_DateAÑO.Text = selectedDate.Year.ToString(); // Año completo
-                                                                         
+
+                    textBox_DateDIA.ForeColor = Color.Black;
+                    textBox_DateMES.ForeColor = Color.Black;
                     textBox_DateAÑO.ForeColor = Color.Black;// Cambiar el color del texto del TextBox a negro
                 }
             }
         }
+
+
+        public void RestorePlaceholders()
+        {
+            SetPlaceholder(textBox_DateDIA, "dd");
+            SetPlaceholder(textBox_DateMES, "mm");
+            SetPlaceholder(textBox_DateAÑO, "aaaa");
+        }
+
+        public void ClearDate()
+        {
+            textBox_DateDIA.Clear();
+            textBox_DateMES.Clear();
+            textBox_DateAÑO.Clear();
+        }
+
+
+        // Método para manejar el evento de cierre del formulario
+        /*con este evento se pretende que no se muestre el mensaje de advertencia cuandos e elimina
+         el formulario, indicando que debe tener 4 digitos */
+        // Método para manejar el cierre del formulario
+        public void HandleFormClosing()
+        {
+            // Marca que el formulario se está cerrando para evitar mostrar mensajes de advertencia
+            isClosing = true;
+        }
+
+        
+         private void textBox_DateAÑO_Validating(object sender, CancelEventArgs e)
+        {
+            if (!isClosing)
+            {
+                // Lógica de validación y mostrar mensaje de advertencia si es necesario
+                if (textBox_DateAÑO.Text.Length < 4)
+                {
+                    // Mostrar mensaje de advertencia
+                    MessageBox.Show("El año debe tener al menos 4 dígitos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    e.Cancel = true; // Previene que se cierre el formulario
+                }
+            }
+            else
+            {
+                // Resetea la bandera después de usarla
+                isClosing = false;
+            }
+        }
     }
+
 }
+
+

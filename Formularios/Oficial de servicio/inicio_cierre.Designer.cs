@@ -577,7 +577,7 @@ namespace Ofelia_Sara
             this.label_RatificacionPersonal.Name = "label_RatificacionPersonal";
             this.label_RatificacionPersonal.Size = new System.Drawing.Size(236, 28);
             this.label_RatificacionPersonal.TabIndex = 38;
-            this.label_RatificacionPersonal.Text = "Ratificacion testimonial   ";
+            this.label_RatificacionPersonal.Text = "Ratificación testimonial   ";
             this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_Localida
