@@ -70,7 +70,7 @@
             // 
             this.checkBox_AgregarSellos.AutoSize = true;
             this.checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_AgregarSellos.Location = new System.Drawing.Point(184, 134);
+            this.checkBox_AgregarSellos.Location = new System.Drawing.Point(186, 135);
             this.checkBox_AgregarSellos.Name = "checkBox_AgregarSellos";
             this.checkBox_AgregarSellos.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarSellos.TabIndex = 2;
@@ -79,13 +79,13 @@
             // 
             // label_AgregarSellos
             // 
-            this.label_AgregarSellos.AutoSize = true;
             this.label_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregarSellos.Location = new System.Drawing.Point(15, 132);
+            this.label_AgregarSellos.Location = new System.Drawing.Point(12, 130);
             this.label_AgregarSellos.Name = "label_AgregarSellos";
-            this.label_AgregarSellos.Size = new System.Drawing.Size(142, 16);
+            this.label_AgregarSellos.Size = new System.Drawing.Size(207, 25);
             this.label_AgregarSellos.TabIndex = 20;
-            this.label_AgregarSellos.Text = "AGREGAR SELLOS";
+            this.label_AgregarSellos.Text = " AGREGAR SELLOS";
+            this.label_AgregarSellos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_Limpiar
             // 

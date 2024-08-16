@@ -1,4 +1,5 @@
 ﻿using System;
+using MySql.Data.MySqlClient;//Para vincular a base de datos
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
