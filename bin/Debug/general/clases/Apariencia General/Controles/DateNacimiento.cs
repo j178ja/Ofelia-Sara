@@ -98,7 +98,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             }
 
             //MODIFICAR ESTA LOGICA YA QUE SE LANZA EL MENSAJE CON CADA DIGITO
-            //HACER VALIDACION CUANDO CAMBIA DE CONTROL
+            //HACER VALIDACION CUANDO CAMBIA DE CONTROL        
 
 
             //else if (textBox_DateAÑO.Text.Length < 4)
