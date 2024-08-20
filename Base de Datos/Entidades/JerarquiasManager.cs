@@ -12,12 +12,12 @@ namespace Ofelia_Sara.Base_de_Datos
   // Diccionario que asocia escalafones con sus respectivas jerarquías
         private static readonly Dictionary<string, List<string>> escalafonJerarquias = new Dictionary<string, List<string>>()
         {
-            { "COMANDO", new List<string> { "Oficial Subayudante", "Oficial Ayudante", "Oficial SubInspector", "Oficial Inspector", "Oficial Principal", "Subcomisario","Comisario","Comisario Inspector","Comisario Mayor","Comisario General" } },
-            { "GENERAL", new List<string> { "Cadete","Oficial","Sargento","Subteniente","Teniente", "Teniente 1°","Capitan", "Mayor"  } },
-            { "ADMINISTRATIVO", new List<string> { "Oficial Subayudante", "Oficial Ayudante", "Oficial SubInspector", "Oficial Inspector", "Oficial Principal", "Subcomisario", "Comisario", "Comisario Inspector", "Comisario Mayor", "Comisario General" } },
+            { "COMANDO", new List<string> { "OFICIAL SUBAYUDANTE", "OFICIAL AYUDANTE", "OFICIAL SUBINSPECTOR", "OFICIAL INSPECTOR", "OFICIAL PRINCIPAL", "SUBCOMISARIO","COMISARIO","COMISARIO INSPECTOR","COMISARIO MAYOR","COMISARIO GENERAL" } },
+            { "GENERAL", new List<string> { "CADETE","OFICIAL","SARGENTO","SUBTENIENTE","TENIENTE", "TENIENTE 1°","CAPITAN", "MAYOR"  } },
+            { "ADMINISTRATIVO", new List<string> { "OFICIAL SUBAYUDANTE", "OFICIAL AYUDANTE", "OFICIAL SUBINSPECTOR", "OFICIAL INSPECTOR", "OFICIAL PRINCIPAL", "SUBCOMISARIO","COMISARIO","COMISARIO INSPECTOR","COMISARIO MAYOR","COMISARIO GENERAL" } },
             { "TECNICO", new List<string> { "Indique Jerarquia" } },
             { "PROFESIONAL", new List<string> { "Indique Jerarquia" } },
-            { "SERVICIOS GENERALES", new List<string> { "Oficial", "Sargento", "Subteniente", "Teniente", "Teniente 1°", "Capitan", "Mayor" } },
+            { "SERVICIOS GENERALES", new List<string> { "CADETE","OFICIAL","SARGENTO","SUBTENIENTE","TENIENTE", "TENIENTE 1°","CAPITAN", "MAYOR"  } },
             { "EMERGENCIAS TELEFONICAS 911", new List<string> { "Indique Jerarquia" } },
             { "PERSONAL CIVIL", new List<string> { "Indique Jerarquia" } }
         };
