@@ -532,12 +532,7 @@ namespace Ofelia_Sara
         //-----para inicializar los COMBOBOX FISCALIA----------------
         private void InicializarComboBoxFISCALIA()
         {
-            // Desactivar temporalmente los ComboBoxes
-            comboBox_Fiscalia.Enabled = false;
-            comboBox_AgenteFiscal.Enabled = false;
-            comboBox_Localidad.Enabled = false;
-            comboBox_DeptoJudicial.Enabled = false;
-
+            
             // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
             List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
             List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
@@ -550,11 +545,11 @@ namespace Ofelia_Sara
             comboBox_Localidad.DataSource = localidades;
             comboBox_DeptoJudicial.DataSource = deptosJudiciales;
 
-            // Reactivar los ComboBoxes
-            comboBox_Fiscalia.Enabled = true;
-            comboBox_AgenteFiscal.Enabled = true;
-            comboBox_Localidad.Enabled = true;
-            comboBox_DeptoJudicial.Enabled = true;
+      
+            comboBox_Fiscalia.SelectedIndex = -1;
+            comboBox_AgenteFiscal.SelectedIndex = -1;
+            comboBox_Localidad.SelectedIndex = -1;
+            comboBox_DeptoJudicial.SelectedIndex = -1;
         }
 
         private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
