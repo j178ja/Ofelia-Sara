@@ -493,6 +493,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Registro de personal\BuscarPersonal.resx">
       <DependentUpon>BuscarPersonal.cs</DependentUpon>
@@ -517,10 +518,13 @@
   <ItemGroup>
     <Folder Include="Base de Datos\Personal\" />
     <Folder Include="Base de Datos\Usuarios\" />
-    <Folder Include="general\imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="general\imagenes\ojoCerrado.png" />
+    <Content Include="general\imagenes\ojo_Contraseña.png" />
+    <None Include="Resources\ojoAbierto.png" />
+    <None Include="Resources\ojoCerrado.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

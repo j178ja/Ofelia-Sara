@@ -17,7 +17,7 @@ namespace Ofelia_Sara.Base_de_Datos
             { "ADMINISTRATIVO", new List<string> { "OFICIAL SUBAYUDANTE", "OFICIAL AYUDANTE", "OFICIAL SUBINSPECTOR", "OFICIAL INSPECTOR", "OFICIAL PRINCIPAL", "SUBCOMISARIO","COMISARIO","COMISARIO INSPECTOR","COMISARIO MAYOR","COMISARIO GENERAL" } },
             { "TECNICO", new List<string> { "Indique Jerarquia" } },
             { "PROFESIONAL", new List<string> { "Indique Jerarquia" } },
-            { "SERVICIOS GENERALES", new List<string> { "CADETE","OFICIAL","SARGENTO","SUBTENIENTE","TENIENTE", "TENIENTE 1°","CAPITAN", "MAYOR"  } },
+            { "SERVICIOS GENERALES", new List<string> { "OFICIAL","SARGENTO","SUBTENIENTE","TENIENTE", "TENIENTE 1°","CAPITAN", "MAYOR"  } },
             { "EMERGENCIAS TELEFONICAS 911", new List<string> { "Indique Jerarquia" } },
             { "PERSONAL CIVIL", new List<string> { "Indique Jerarquia" } }
         };

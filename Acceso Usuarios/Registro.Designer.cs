@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
+            this.label_Subescalafon = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Registrarse = new System.Windows.Forms.Button();
             this.label_Legajo = new System.Windows.Forms.Label();
@@ -46,10 +49,9 @@
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label_Subescalafon = new System.Windows.Forms.Label();
-            this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
-            this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
+            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -59,6 +61,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel4.Controls.Add(this.pictureBox_OjoContraseña);
             this.panel4.Controls.Add(this.comboBox_Jerarquia);
             this.panel4.Controls.Add(this.comboBox_Escalafon);
             this.panel4.Controls.Add(this.label_Subescalafon);
@@ -80,6 +83,34 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(469, 422);
             this.panel4.TabIndex = 4;
+            // 
+            // comboBox_Jerarquia
+            // 
+            this.comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Jerarquia.FormattingEnabled = true;
+            this.comboBox_Jerarquia.Location = new System.Drawing.Point(169, 79);
+            this.comboBox_Jerarquia.Name = "comboBox_Jerarquia";
+            this.comboBox_Jerarquia.Size = new System.Drawing.Size(232, 24);
+            this.comboBox_Jerarquia.TabIndex = 26;
+            // 
+            // comboBox_Escalafon
+            // 
+            this.comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Escalafon.FormattingEnabled = true;
+            this.comboBox_Escalafon.Location = new System.Drawing.Point(169, 49);
+            this.comboBox_Escalafon.Name = "comboBox_Escalafon";
+            this.comboBox_Escalafon.Size = new System.Drawing.Size(232, 24);
+            this.comboBox_Escalafon.TabIndex = 25;
+            // 
+            // label_Subescalafon
+            // 
+            this.label_Subescalafon.AutoSize = true;
+            this.label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Subescalafon.Location = new System.Drawing.Point(28, 52);
+            this.label_Subescalafon.Name = "label_Subescalafon";
+            this.label_Subescalafon.Size = new System.Drawing.Size(135, 16);
+            this.label_Subescalafon.TabIndex = 24;
+            this.label_Subescalafon.Text = "SUBESCALAFON :";
             // 
             // btn_Limpiar
             // 
@@ -224,33 +255,15 @@
             this.label_Usuario.TabIndex = 7;
             this.label_Usuario.Text = "USUARIO :";
             // 
-            // label_Subescalafon
+            // pictureBox_OjoContraseña
             // 
-            this.label_Subescalafon.AutoSize = true;
-            this.label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Subescalafon.Location = new System.Drawing.Point(28, 52);
-            this.label_Subescalafon.Name = "label_Subescalafon";
-            this.label_Subescalafon.Size = new System.Drawing.Size(135, 16);
-            this.label_Subescalafon.TabIndex = 24;
-            this.label_Subescalafon.Text = "SUBESCALAFON :";
-            // 
-            // comboBox_Escalafon
-            // 
-            this.comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Escalafon.FormattingEnabled = true;
-            this.comboBox_Escalafon.Location = new System.Drawing.Point(169, 49);
-            this.comboBox_Escalafon.Name = "comboBox_Escalafon";
-            this.comboBox_Escalafon.Size = new System.Drawing.Size(232, 24);
-            this.comboBox_Escalafon.TabIndex = 25;
-            // 
-            // comboBox_Jerarquia
-            // 
-            this.comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Jerarquia.FormattingEnabled = true;
-            this.comboBox_Jerarquia.Location = new System.Drawing.Point(169, 79);
-            this.comboBox_Jerarquia.Name = "comboBox_Jerarquia";
-            this.comboBox_Jerarquia.Size = new System.Drawing.Size(232, 24);
-            this.comboBox_Jerarquia.TabIndex = 26;
+            this.pictureBox_OjoContraseña.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_OjoContraseña.BackgroundImage")));
+            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(409, 272);
+            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
+            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 24);
+            this.pictureBox_OjoContraseña.TabIndex = 27;
+            this.pictureBox_OjoContraseña.TabStop = false;
             // 
             // Registro
             // 
@@ -270,6 +283,7 @@
             this.Controls.SetChildIndex(this.panel4, 0);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +309,6 @@
         private System.Windows.Forms.ComboBox comboBox_Jerarquia;
         private System.Windows.Forms.ComboBox comboBox_Escalafon;
         private System.Windows.Forms.Label label_Subescalafon;
+        private System.Windows.Forms.PictureBox pictureBox_OjoContraseña;
     }
 }

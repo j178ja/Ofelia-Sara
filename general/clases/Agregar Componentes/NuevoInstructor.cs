@@ -206,5 +206,10 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             }
         }
+
+        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
