@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.Base_de_Datos;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -26,10 +27,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InicializarEstiloBoton(btn_Registrarse);
             InicializarEstiloBoton(btn_Limpiar);
-            
-        }
 
-       
+            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
+            // Configurar el comportamiento de los ComboBox
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
+            comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
+            comboBox_Jerarquia.Enabled = false;
+            comboBox_Jerarquia.DataSource = null;
+        }
+        //-----------------------------------------------------------------
+        protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
+        {
+            comboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
+        }
+       //--------------------------------------------------------------------------
+
+
         private void textBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir dígitos y el carácter de control de retroceso

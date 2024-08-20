@@ -67,7 +67,7 @@ namespace Ofelia_Sara.Base_de_Datos
                     CREATE TABLE IF NOT EXISTS Fiscalia (
                         ID INTEGER PRIMARY KEY AUTOINCREMENT,
                         UFID VARCHAR(50) NOT NULL,
-                        DR VARCHAR(50) NOT NULL,
+                        AGENTE_FISCAL VARCHAR(50) NOT NULL,
                         LOCALIDAD VARCHAR(50) NOT NULL,
                         DPTO_JUDICIAL VARCHAR(50) NOT NULL
                     );";

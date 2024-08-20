@@ -50,11 +50,11 @@ namespace Ofelia_Sara
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.textBox_Imputado = new System.Windows.Forms.TextBox();
-            this.comboBox_Ufid = new System.Windows.Forms.ComboBox();
+            this.comboBox_Fiscalia = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
-            this.comboBox_Dr = new System.Windows.Forms.ComboBox();
+            this.comboBox_AgenteFiscal = new System.Windows.Forms.ComboBox();
             this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
             this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
             this.lbl_00 = new System.Windows.Forms.Label();
@@ -232,18 +232,18 @@ namespace Ofelia_Sara
             this.textBox_Imputado.TabIndex = 6;
             this.textBox_Imputado.TextChanged += new System.EventHandler(this.textBox_Imputado_TextChanged);
             // 
-            // comboBox_Ufid
+            // comboBox_Fiscalia
             // 
-            this.comboBox_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Ufid.FormattingEnabled = true;
-            this.comboBox_Ufid.Items.AddRange(new object[] {
+            this.comboBox_Fiscalia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Fiscalia.FormattingEnabled = true;
+            this.comboBox_Fiscalia.Items.AddRange(new object[] {
             "04",
             "05",
             "08"});
-            this.comboBox_Ufid.Location = new System.Drawing.Point(111, 2);
-            this.comboBox_Ufid.Name = "comboBox_Ufid";
-            this.comboBox_Ufid.Size = new System.Drawing.Size(91, 21);
-            this.comboBox_Ufid.TabIndex = 7;
+            this.comboBox_Fiscalia.Location = new System.Drawing.Point(111, 2);
+            this.comboBox_Fiscalia.Name = "comboBox_Fiscalia";
+            this.comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
+            this.comboBox_Fiscalia.TabIndex = 7;
             // 
             // comboBox_Instructor
             // 
@@ -286,18 +286,18 @@ namespace Ofelia_Sara
             this.comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Dependencia.TabIndex = 13;
             // 
-            // comboBox_Dr
+            // comboBox_AgenteFiscal
             // 
-            this.comboBox_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Dr.FormattingEnabled = true;
-            this.comboBox_Dr.Items.AddRange(new object[] {
+            this.comboBox_AgenteFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_AgenteFiscal.FormattingEnabled = true;
+            this.comboBox_AgenteFiscal.Items.AddRange(new object[] {
             "Calderón Pablo",
             "Mercuri Walter",
             "Zamboni Veronica"});
-            this.comboBox_Dr.Location = new System.Drawing.Point(235, 2);
-            this.comboBox_Dr.Name = "comboBox_Dr";
-            this.comboBox_Dr.Size = new System.Drawing.Size(162, 21);
-            this.comboBox_Dr.TabIndex = 8;
+            this.comboBox_AgenteFiscal.Location = new System.Drawing.Point(235, 2);
+            this.comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
+            this.comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
+            this.comboBox_AgenteFiscal.TabIndex = 8;
             // 
             // comboBox_Ipp1
             // 
@@ -551,10 +551,10 @@ namespace Ofelia_Sara
             this.panel_ControlesInferiores.Controls.Add(this.lbl_Localida);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Dependencia);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_Localidad);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Ufid);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Fiscalia);
             this.panel_ControlesInferiores.Controls.Add(this.lbl_Dependencia);
             this.panel_ControlesInferiores.Controls.Add(this.lbl_DeptoJudicial);
-            this.panel_ControlesInferiores.Controls.Add(this.comboBox_Dr);
+            this.panel_ControlesInferiores.Controls.Add(this.comboBox_AgenteFiscal);
             this.panel_ControlesInferiores.Controls.Add(this.comboBox_DeptoJudicial);
             this.panel_ControlesInferiores.Controls.Add(this.lbl_Fecha);
             this.panel_ControlesInferiores.Controls.Add(this.timePickerPersonalizado1);
@@ -722,11 +722,11 @@ namespace Ofelia_Sara
         private System.Windows.Forms.TextBox textBox_Caratula;
         private System.Windows.Forms.TextBox textBox_Victima;
         private System.Windows.Forms.TextBox textBox_Imputado;
-        private System.Windows.Forms.ComboBox comboBox_Ufid;
+        private System.Windows.Forms.ComboBox comboBox_Fiscalia;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private System.Windows.Forms.ComboBox comboBox_Dr;
+        private System.Windows.Forms.ComboBox comboBox_AgenteFiscal;
         private System.Windows.Forms.ComboBox comboBox_Ipp1;
         private System.Windows.Forms.ComboBox comboBox_Ipp2;
         private System.Windows.Forms.Label lbl_00;

@@ -122,13 +122,12 @@
             this.comboBox_Escalafon.Name = "comboBox_Escalafon";
             this.comboBox_Escalafon.Size = new System.Drawing.Size(326, 21);
             this.comboBox_Escalafon.TabIndex = 61;
-            
             // 
             // label_Escalafon
             // 
             this.label_Escalafon.AutoSize = true;
             this.label_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Escalafon.Location = new System.Drawing.Point(14, 81);
+            this.label_Escalafon.Location = new System.Drawing.Point(15, 82);
             this.label_Escalafon.Name = "label_Escalafon";
             this.label_Escalafon.Size = new System.Drawing.Size(135, 16);
             this.label_Escalafon.TabIndex = 60;

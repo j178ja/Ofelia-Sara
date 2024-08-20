@@ -81,17 +81,17 @@ namespace Ofelia_Sara.Base_de_Datos
             }
         }
 
-        public void GuardarFiscalia(string ufid, string dr, string localidad, string deptoJudicial)
+        public void GuardarFiscalia(string ufid, string agente_Fiscal, string localidad, string deptoJudicial)
         {
             using (var connection = dbManager.GetConnection()) // Abre la conexión
             using (var command = connection.CreateCommand()) // Crea el comando
             {
                 command.CommandText = @"
-            INSERT INTO Ficalia (Ufid,Dr,Localidad,DeptoJudcial)
-            VALUES (@Ufid,@Dr,@Localidad,@DeptoJudicial)";
+            INSERT INTO Ficalia (Ufid,agente_Fiscal,Localidad,DeptoJudcial)
+            VALUES (@Ufid,@Agente_Fiscal,@Localidad,@DeptoJudicial)";
 
                 command.Parameters.AddWithValue("@Ufid", ufid);
-                command.Parameters.AddWithValue("@Dr", dr);
+                command.Parameters.AddWithValue("@Agente_Fiscal", agente_Fiscal);
                 command.Parameters.AddWithValue("@Localidad", localidad);
                 command.Parameters.AddWithValue("@DeptoJudicial", deptoJudicial);
               

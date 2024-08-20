@@ -18,6 +18,8 @@ using System.Web.UI.WebControls.WebParts;
 using Ofelia_Sara.Registro_de_personal;
 //using Ofelia_Sara.Base_de_Datos;
 using Mysqlx.Cursor;
+using Ofelia_Sara.Base_de_Datos.Entidades;
+
 
 
 namespace Ofelia_Sara
@@ -48,13 +50,13 @@ namespace Ofelia_Sara
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
-           
+
 
             this.Load += new System.EventHandler(this.InicioCierre_Load);
 
             // Asocia el evento TextChanged al método de validación
             textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
-  
+
             //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
             btn_AgregarDatosVictima.Enabled = false;
@@ -63,19 +65,19 @@ namespace Ofelia_Sara
             // Inicialmente, deshabilita el botón
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
-           
+
 
         }
-      
-       
+
+
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
-            
+
             timePickerPersonalizado1.SelectedDate = DateTime.Now;
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
- 
+
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
@@ -97,7 +99,7 @@ namespace Ofelia_Sara
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
 
-
+            InicializarComboBoxFiscalia();
         }
 
         //-----------------------------------------------------------------------------
@@ -105,8 +107,8 @@ namespace Ofelia_Sara
         {
             // Obtener los datos del formulario
             int numeroIpp = int.Parse(textBox_NumeroIpp.Text);
-            string ufid = comboBox_Ufid.Text;
-            string dr = comboBox_Dr.Text;
+            string ufid = comboBox_Fiscalia.Text;
+            string dr = comboBox_AgenteFiscal.Text;
             string localidad = comboBox_Localidad.Text;
             string DeptoJudicial = comboBox_DeptoJudicial.Text;
             string instructor = comboBox_Instructor.Text;
@@ -132,8 +134,8 @@ namespace Ofelia_Sara
             //dataInserter.GuardarIPP(numeroIpp, ufid, dr, localidad, DeptoJudicial, instructor, secretario, dependencia, fecha, victimas, imputados);
 
         }
-//---------BOTON GUARDAR--------------
-private void btn_Guardar_Click(object sender, EventArgs e)
+        //---------BOTON GUARDAR--------------
+        private void btn_Guardar_Click(object sender, EventArgs e)
         {
 
             // Verificar si los campos están completados
@@ -276,7 +278,7 @@ private void btn_Guardar_Click(object sender, EventArgs e)
         // Evento Click del botón Imprimir
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
-            
+
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
                 GuardarDatos();
@@ -296,8 +298,8 @@ private void btn_Guardar_Click(object sender, EventArgs e)
         }
 
         //--------------------------------------------------------------------------------
-        
-      
+
+
 
         //---------------------------------------------------------------------------------
         //--Para corregir el error de que los indices predeterminados no se cargan al inicio, sino tras ejecutar la logica de btm_limpiar
@@ -309,14 +311,14 @@ private void btn_Guardar_Click(object sender, EventArgs e)
             comboBox_Ipp1.SelectedIndex = 3;
             comboBox_Ipp2.SelectedIndex = 3;
             comboBox_Ipp4.SelectedIndex = 0;
-            comboBox_Ufid.SelectedIndex = 0;
-            comboBox_Dr.SelectedIndex = 0;
+            comboBox_Fiscalia.SelectedIndex = 0;
+            comboBox_AgenteFiscal.SelectedIndex = 0;
             comboBox_Instructor.SelectedIndex = 0;
             comboBox_Secretario.SelectedIndex = 0;
             comboBox_Dependencia.SelectedIndex = 0;
             comboBox_Localidad.SelectedIndex = 0;
             comboBox_DeptoJudicial.SelectedIndex = 0;
-        }         
+        }
         //----------------------------------------------------------------------
 
         //--------Diccionario para cargar los datos a los marcadores del documento-------------
@@ -331,7 +333,7 @@ private void btn_Guardar_Click(object sender, EventArgs e)
         { "secretario", textBox_Caratula.Text },
         { "DeptoJudicial", textBox_Caratula.Text },
          };
-              return datosFormulario;
+            return datosFormulario;
         }
 
         //----BOTON AGREGAR DATOS VICTIMA-----------------------------
@@ -367,17 +369,17 @@ private void btn_Guardar_Click(object sender, EventArgs e)
             if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
             {
                 btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
-                
+
             }
             else
             {
                 btn_AgregarDatosVictima.BackColor = Color.Tomato;
-              
+
             }
             // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
         }
-        
+
         //-------------------TEXTBOX IMPUTADO------------------------------------------------------------
         private void textBox_Imputado_TextChanged(object sender, EventArgs e)
         {
@@ -409,9 +411,9 @@ private void btn_Guardar_Click(object sender, EventArgs e)
             //}
             // Llamar al método en el UserControl para agregar el control
             NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
-           ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
+            ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
                                             // Reposicionar paneles después de eliminar un control
-            
+
         }
 
         //------------BOTON AGREGAR VICTIMA----------------------------
@@ -422,7 +424,7 @@ private void btn_Guardar_Click(object sender, EventArgs e)
 
             if (!controlesCompletos)
             {
-                
+
                 // Muestra un mensaje si algún control en el panel está vacío
                 MessageBox.Show("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Sal de la función para evitar agregar un nuevo control
@@ -483,7 +485,7 @@ private void btn_Guardar_Click(object sender, EventArgs e)
             // Ajustar la posición del panel de controles inferiores respecto al panel de Imputados
             panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 2);
 
-            
+
             Form formularioPrincipal = this.FindForm();
             if (formularioPrincipal != null)
             {
@@ -499,7 +501,7 @@ private void btn_Guardar_Click(object sender, EventArgs e)
             foreach (Control control in panel.Controls)
             {
                 var personaControl = control as NuevaPersonaControl;
-                 if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
+                if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
                 {
                     return false; // Retorna false si se encuentra un control vacío
                 }
@@ -514,7 +516,7 @@ private void btn_Guardar_Click(object sender, EventArgs e)
             {
                 // Crear y mostrar el formulario BuscarPersonal
                 BuscarPersonal buscarPersonalForm = new BuscarPersonal();
-              
+
                 buscarPersonalForm.ShowDialog();
             }
         }
@@ -526,5 +528,20 @@ private void btn_Guardar_Click(object sender, EventArgs e)
 
             buscarForm.ShowDialog();
         }
+        //------------------------------------------------------------------------------
+        //-----para inicializar los COMBOBOX FISCALIA----------------
+       private void InicializarComboBoxFiscalia()
+            {
+            comboBox_Fiscalia.DataSource = null;
+            comboBox_AgenteFiscal.DataSource = null;
+            comboBox_Localidad.DataSource = null;
+            comboBox_DeptoJudicial.DataSource = null;
+
+            comboBox_Fiscalia.DataSource = FiscaliaManager.ObtenerNombresFiscalias();
+        comboBox_AgenteFiscal.DataSource = FiscaliaManager.ObtenerAgentesFiscales();
+        comboBox_Localidad.DataSource = FiscaliaManager.ObtenerLocalidades();
+       comboBox_DeptoJudicial.DataSource = FiscaliaManager.ObtenerDeptosJudiciales();
+        }
+
     }
 }

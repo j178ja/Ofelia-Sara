@@ -149,7 +149,8 @@
     </Compile>
     <Compile Include="Base de Datos\DataBaseManagger.cs" />
     <Compile Include="Base de Datos\DataInserter.cs" />
-    <Compile Include="Base de Datos\JerarquiasManager.cs" />
+    <Compile Include="Base de Datos\Entidades\Fiscalia.cs" />
+    <Compile Include="Base de Datos\Entidades\JerarquiasManager.cs" />
     <Compile Include="Base de Datos\TableCreator.cs" />
     <Compile Include="Contacto.cs">
       <SubType>Form</SubType>

@@ -37,10 +37,20 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
             InicializarPictureBox();//para agregar estetica de picktureBox cuando carga formulario
-                                    
-            
+
+
+            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
+            comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
+            comboBox_Jerarquia.Enabled = false;
+            comboBox_Jerarquia.DataSource = null;
+        }
+        //-----------------------------------------------------------------
+        protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
+        {
+            comboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
         }
 
         //-----------BOTON LIMPIAR---------------
