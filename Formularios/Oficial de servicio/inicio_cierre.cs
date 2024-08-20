@@ -105,6 +105,7 @@ namespace Ofelia_Sara
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
+            InicializarComboBoxDEPENDENCIAS();
         }
 
         //-----------------------------------------------------------------------------
@@ -315,10 +316,7 @@ namespace Ofelia_Sara
             comboBox_Ipp1.SelectedIndex = 3;
             comboBox_Ipp2.SelectedIndex = 3;
             comboBox_Ipp4.SelectedIndex = 0;
-            
-            
-            comboBox_Dependencia.SelectedIndex = 0;
-           
+                      
         }
         //----------------------------------------------------------------------
 
@@ -620,7 +618,14 @@ namespace Ofelia_Sara
             comboBox_Instructor.DisplayMember = "DescripcionCompleta";
             comboBox_Instructor.SelectedIndex = -1;
         }
-
+        //------------------------------------------------------------------------
+        private void InicializarComboBoxDEPENDENCIAS()
+        {
+            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
+            comboBox_Dependencia.DataSource = dependencias;
+            comboBox_Dependencia.DisplayMember = "Dependencia";
+            comboBox_Dependencia.SelectedIndex = -1;
+        }
 
     }
 }

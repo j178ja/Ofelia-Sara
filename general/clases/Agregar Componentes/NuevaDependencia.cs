@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.general.clases.Apariencia_General;
+﻿using Ofelia_Sara.Base_de_Datos.Entidades;
+using Ofelia_Sara.general.clases.Apariencia_General;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,7 +70,21 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 ComboBoxManager.AddItemToComboBox(this, "comboBox_Dependencia", nuevoItem);
                 ItemAgregado?.Invoke(this, nuevoItem);
 
+
+                string dependencia = textBox_Dependencia.Text;
+                string domicilio = textBox_Domicilio.Text;
+
+                var nuevaDependencia = new DependenciasPoliciales
+                {
+                    Dependencia = dependencia,
+                    Domicilio = domicilio
+                };
+
+                DependenciaManager.AgregarDependencia(nuevaDependencia);
+
                 MessageBox.Show("Se ha cargado nueva Dependencia a lista en formularios", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario.Limpiar(this); //limpiar todos los controles
             }
             else
             {

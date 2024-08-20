@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Base de Datos\DataBaseManagger.cs" />
     <Compile Include="Base de Datos\DataInserter.cs" />
+    <Compile Include="Base de Datos\Entidades\Dependencia.cs" />
     <Compile Include="Base de Datos\Entidades\Fiscalia.cs" />
     <Compile Include="Base de Datos\Entidades\Instructor.cs" />
     <Compile Include="Base de Datos\Entidades\JerarquiasManager.cs" />
