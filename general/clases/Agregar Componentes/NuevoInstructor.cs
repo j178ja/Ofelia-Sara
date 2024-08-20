@@ -1,4 +1,6 @@
-﻿using Ofelia_Sara.general.clases.Apariencia_General;
+﻿using Ofelia_Sara.Base_de_Datos;
+using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,12 +27,42 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Guardar);
 
         }
+        //---PARA GENERAR LISTA EN COMBOBOX---------
+        private void LlenarComboBoxEscalafon()
+        {
+            comboBox_Escalafon.Items.Clear();
+            comboBox_Escalafon.Items.AddRange(JerarquiasManager.ObtenerEscalafones().ToArray());
+        }
+
+        private void comboBox_Escalafon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string escalafonSeleccionado = comboBox_Escalafon.SelectedItem.ToString();
+
+            var jerarquias = JerarquiasManager.ObtenerJerarquias(escalafonSeleccionado);
+
+            if (jerarquias.Count > 0)
+            {
+                comboBox_Jerarquia.Items.Clear();
+                comboBox_Jerarquia.Items.AddRange(jerarquias.ToArray());
+                comboBox_Jerarquia.Enabled = true; // Habilita el ComboBox de Jerarquías si estaba deshabilitado
+            }
+            else
+            {
+                comboBox_Jerarquia.Items.Clear();
+                comboBox_Jerarquia.Enabled = false; // Deshabilita el ComboBox de Jerarquías si no hay datos
+            }
+        }
+
+        //-------------------------------------------
 
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
             InicializarPictureBox();//para inicializar estilo pickturebox
+
+            LlenarComboBoxEscalafon();
+            comboBox_Jerarquia.Enabled = false; // Deshabilitar al principio hasta que se seleccione un escalafón
         }
         //---------------------BOTON LIMPIAR------------------------
         private void btn_Limpiar_Click(object sender, EventArgs e)
@@ -45,7 +77,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             if
-              (string.IsNullOrWhiteSpace(textBox_Jerarquia.Text) ||
+              (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
                string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
@@ -138,5 +170,32 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             }
         }
 
+        private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite dígitos y teclas de control
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Si el carácter es dígito, continúa con el procesamiento
+            if (char.IsDigit(e.KeyChar))
+            {
+                // Inserta el carácter en la posición actual
+                TextBox textBox = sender as TextBox;
+                int selectionStart = textBox.SelectionStart;
+                textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
+                e.Handled = true;
+
+                // Usar la clase separada para formatear el texto
+                string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+                // Actualizar el texto en el TextBox y restaurar la posición del cursor
+                textBox.Text = textoFormateado;
+                textBox.SelectionStart = textoFormateado.Length;
+
+
+            }
+        }
     }
 }

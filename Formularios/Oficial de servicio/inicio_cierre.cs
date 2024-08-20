@@ -16,13 +16,19 @@ using Ofelia_Sara.general.clases.Agregar_Componentes;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System.Web.UI.WebControls.WebParts;
 using Ofelia_Sara.Registro_de_personal;
+//using Ofelia_Sara.Base_de_Datos;
+using Mysqlx.Cursor;
 
 
 namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
     {
-       
+
+        // Listas para almacenar víctimas e imputados
+        private List<string> victimas = new List<string>();
+        private List<string> imputados = new List<string>();
+
         private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
         private int camposCompletos;
         private ToolTip toolTip;
@@ -95,9 +101,39 @@ namespace Ofelia_Sara
         }
 
         //-----------------------------------------------------------------------------
+        private void GuardarDatos()
+        {
+            // Obtener los datos del formulario
+            int numeroIpp = int.Parse(textBox_NumeroIpp.Text);
+            string ufid = comboBox_Ufid.Text;
+            string dr = comboBox_Dr.Text;
+            string localidad = comboBox_Localidad.Text;
+            string DeptoJudicial = comboBox_DeptoJudicial.Text;
+            string instructor = comboBox_Instructor.Text;
+            string secretario = comboBox_Secretario.Text;
+            string dependencia = comboBox_Dependencia.Text;
+            //string fecha = timePickerPersonalizado1.Value.ToString("yyyy-MM-dd");
 
-        //---------BOTON GUARDAR--------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+            // Obtener las listas de víctimas e imputados
+            List<string> victimas = new List<string>();
+            List<string> imputados = new List<string>();
+
+            //foreach (var item in lstVictimas.Items)
+            //{
+            //    victimas.Add(item.ToString());
+            //}
+
+            //foreach (var item in lstImputados.Items)
+            //{
+            //    imputados.Add(item.ToString());
+            //}
+
+            //// Llamar al método GuardarIPP
+            //dataInserter.GuardarIPP(numeroIpp, ufid, dr, localidad, DeptoJudicial, instructor, secretario, dependencia, fecha, victimas, imputados);
+
+        }
+//---------BOTON GUARDAR--------------
+private void btn_Guardar_Click(object sender, EventArgs e)
         {
 
             // Verificar si los campos están completados
@@ -111,6 +147,7 @@ namespace Ofelia_Sara
             }
             else
             {
+                GuardarDatos();
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
                 MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -242,6 +279,7 @@ namespace Ofelia_Sara
             
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
+                GuardarDatos();
                 //logica para guardar el archivo en base de datos
                 CargarImpresion();
 
@@ -384,6 +422,7 @@ namespace Ofelia_Sara
 
             if (!controlesCompletos)
             {
+                
                 // Muestra un mensaje si algún control en el panel está vacío
                 MessageBox.Show("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Sal de la función para evitar agregar un nuevo control
@@ -392,24 +431,42 @@ namespace Ofelia_Sara
             {
                 // Llamar al método en el UserControl para agregar el control
                 NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
-                ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
+                ReposicionarPanelesInferiores(); // Reposicionar los paneles inferiores
+
+                // Agregar la nueva víctima a la lista
+                string nuevaVictima = "Nombre de la nueva víctima"; // Aquí deberías obtener el nombre de la víctima del nuevo control agregado
+                victimas.Add(nuevaVictima);
+
+                // Actualizar la lista visual en el formulario, si corresponde
+                //lstVictimas.Items.Add(nuevaVictima);
             }
         }
 
         //-------------BOTON AGREGAR IMPUTADO------------------------------
         private void Btn_AgregarImputado_Click(object sender, EventArgs e)
         {
-            //if (ValidarUltimaPersona(panel_Imputado))
-            //{
-            //    var nuevoImputado = new NuevaPersonaControl("Imputado");
-            //    nuevoImputado.Location = new Point(0, ObtenerPosicionSiguiente(panel_Imputado));
-            //    panel_Imputado.Controls.Add(nuevoImputado);
-            //    ReposicionarPanelesInferiores(panel_Imputado);
-            //}
-            // Llamar al método en el UserControl para agregar el control
-            NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
-            ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
-           
+            // Primero, valida todos los controles existentes en el panel
+            bool controlesCompletos = ValidarControlesExistentes(panel_Imputado);
+
+            if (!controlesCompletos)
+            {
+                // Muestra un mensaje si algún control en el panel está vacío
+                MessageBox.Show("Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Sal de la función para evitar agregar un nuevo control
+            }
+            else
+            {
+                // Llamar al método en el UserControl para agregar el control
+                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
+                ReposicionarPanelesInferiores(); // Reposicionar los paneles inferiores
+
+                // Agregar el nuevo imputado a la lista
+                string nuevoImputado = "Nombre del nuevo imputado"; // Aquí deberías obtener el nombre del imputado del nuevo control agregado
+                imputados.Add(nuevoImputado);
+
+                // Actualizar la lista visual en el formulario, si corresponde
+                //lstImputados.Items.Add(nuevoImputado);
+            }
         }
 
 
