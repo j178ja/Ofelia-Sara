@@ -1,5 +1,6 @@
 ﻿using Ofelia_Sara.Base_de_Datos;
 using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,11 +72,37 @@ namespace Ofelia_Sara.Registro_de_personal
 
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
+            //if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //}
+           
+                // Solo permite dígitos y teclas de control
+                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                // Si el carácter es dígito, continúa con el procesamiento
+                if (char.IsDigit(e.KeyChar))
+                {
+                    // Inserta el carácter en la posición actual
+                    TextBox textBox = sender as TextBox;
+                    int selectionStart = textBox.SelectionStart;
+                    textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
+                    e.Handled = true;
+
+                    // Usar la clase separada para formatear el texto
+                    string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+                    // Actualizar el texto en el TextBox y restaurar la posición del cursor
+                    textBox.Text = textoFormateado;
+                    textBox.SelectionStart = textoFormateado.Length;
+
+
+                }
             }
-        }
+        
 
         private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {

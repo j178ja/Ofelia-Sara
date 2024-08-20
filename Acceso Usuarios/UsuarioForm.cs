@@ -26,7 +26,11 @@ namespace Ofelia_Sara.Formularios
         {
             InicializarEstiloBoton(btn_Registrarse);
             InicializarEstiloBoton(btn_Ingresar);
-         }
+
+            //sobre ojo
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña;
+            pictureBox_OjoContraseña.Enabled = false;
+        }
 
         private void btn_Registrarse_Click(object sender, EventArgs e)
         {
@@ -42,6 +46,35 @@ namespace Ofelia_Sara.Formularios
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
+        }
+
+        // Define una variable para llevar el control del estado de visibilidad
+        private bool esContraseñaVisible = false;
+
+        private void pictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox_Contraseña.PasswordChar = '\0'; // Muestra el texto real
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña; // Cambia la imagen al icono de "visible"
+        }
+
+        private void pictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox_Contraseña.PasswordChar = '*'; // Oculta el texto con asteriscos
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojoCerrado; // Cambia la imagen al icono de "oculto"
+        }
+
+        private void textBox_Contraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_Contraseña.Text))
+            {
+                // Desactiva la imagen si no hay texto
+                pictureBox_OjoContraseña.Enabled = false;
+            }
+            else
+            {
+                // Activa la imagen si hay texto
+                pictureBox_OjoContraseña.Enabled = true;
+            }
         }
     }
 }

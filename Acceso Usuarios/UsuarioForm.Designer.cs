@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.btn_Registrarse = new System.Windows.Forms.Button();
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.textBox_Contraseña = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.label_Usuario = new System.Windows.Forms.Label();
             this.label_Validacion = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -46,6 +48,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel2.Controls.Add(this.pictureBox_OjoContraseña);
             this.panel2.Controls.Add(this.btn_Registrarse);
             this.panel2.Controls.Add(this.btn_Ingresar);
             this.panel2.Controls.Add(this.textBox_Contraseña);
@@ -57,6 +60,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(537, 239);
             this.panel2.TabIndex = 3;
+            // 
+            // pictureBox_OjoContraseña
+            // 
+            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 119);
+            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
+            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
+            this.pictureBox_OjoContraseña.TabIndex = 28;
+            this.pictureBox_OjoContraseña.TabStop = false;
+            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
+            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseUp);
             // 
             // btn_Registrarse
             // 
@@ -94,6 +108,7 @@
             this.textBox_Contraseña.PasswordChar = '*';
             this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
             this.textBox_Contraseña.TabIndex = 4;
+            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.textBox_Contraseña_TextChanged);
             // 
             // textBox_Usuario
             // 
@@ -154,6 +169,7 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +185,6 @@
         private System.Windows.Forms.TextBox textBox_Usuario;
         private System.Windows.Forms.Label label_Contraseña;
         private System.Windows.Forms.Button btn_Registrarse;
+        private System.Windows.Forms.PictureBox pictureBox_OjoContraseña;
     }
 }
