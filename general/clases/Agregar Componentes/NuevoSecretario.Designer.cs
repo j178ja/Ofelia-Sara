@@ -122,7 +122,7 @@
             this.comboBox_Escalafon.Name = "comboBox_Escalafon";
             this.comboBox_Escalafon.Size = new System.Drawing.Size(326, 21);
             this.comboBox_Escalafon.TabIndex = 61;
-            this.comboBox_Escalafon.SelectedIndexChanged += new System.EventHandler(this.comboBox_Escalafon_SelectedIndexChanged);
+            
             // 
             // label_Escalafon
             // 

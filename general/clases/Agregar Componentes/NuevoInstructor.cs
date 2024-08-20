@@ -27,32 +27,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Guardar);
 
         }
-        //---PARA GENERAR LISTA EN COMBOBOX---------
-        private void LlenarComboBoxEscalafon()
-        {
-            comboBox_Escalafon.Items.Clear();
-            comboBox_Escalafon.Items.AddRange(JerarquiasManager.ObtenerEscalafones().ToArray());
-        }
-
-        private void comboBox_Escalafon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string escalafonSeleccionado = comboBox_Escalafon.SelectedItem.ToString();
-
-            var jerarquias = JerarquiasManager.ObtenerJerarquias(escalafonSeleccionado);
-
-            if (jerarquias.Count > 0)
-            {
-                comboBox_Jerarquia.Items.Clear();
-                comboBox_Jerarquia.Items.AddRange(jerarquias.ToArray());
-                comboBox_Jerarquia.Enabled = true; // Habilita el ComboBox de Jerarquías si estaba deshabilitado
-            }
-            else
-            {
-                comboBox_Jerarquia.Items.Clear();
-                comboBox_Jerarquia.Enabled = false; // Deshabilita el ComboBox de Jerarquías si no hay datos
-            }
-        }
-
+       
         //-------------------------------------------
 
         private void NuevoInstructor_Load(object sender, EventArgs e)
@@ -61,9 +36,20 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             ConfigurarTextBoxes(this);
             InicializarPictureBox();//para inicializar estilo pickturebox
 
-            LlenarComboBoxEscalafon();
-            comboBox_Jerarquia.Enabled = false; // Deshabilitar al principio hasta que se seleccione un escalafón
+            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
+            // Configurar el comportamiento de los ComboBox
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
+            comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
+            comboBox_Jerarquia.Enabled = false;
+            comboBox_Jerarquia.DataSource = null;
         }
+        //-----------------------------------------------------------------
+        protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
+        {
+            comboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
+        }
+
         //---------------------BOTON LIMPIAR------------------------
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {

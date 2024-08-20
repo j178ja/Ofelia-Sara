@@ -38,7 +38,6 @@
             this.label_Apellido = new System.Windows.Forms.Label();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.textBox_Jerarquia = new System.Windows.Forms.TextBox();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_Jerarquia = new System.Windows.Forms.Label();
             this.label_Registro = new System.Windows.Forms.Label();
@@ -47,6 +46,9 @@
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label_Subescalafon = new System.Windows.Forms.Label();
+            this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
+            this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +59,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel4.Controls.Add(this.comboBox_Jerarquia);
+            this.panel4.Controls.Add(this.comboBox_Escalafon);
+            this.panel4.Controls.Add(this.label_Subescalafon);
             this.panel4.Controls.Add(this.btn_Limpiar);
             this.panel4.Controls.Add(this.btn_Registrarse);
             this.panel4.Controls.Add(this.label_Legajo);
@@ -64,7 +69,6 @@
             this.panel4.Controls.Add(this.label_Apellido);
             this.panel4.Controls.Add(this.textBox_Apellido);
             this.panel4.Controls.Add(this.textBox_Nombre);
-            this.panel4.Controls.Add(this.textBox_Jerarquia);
             this.panel4.Controls.Add(this.label_Nombre);
             this.panel4.Controls.Add(this.label_Jerarquia);
             this.panel4.Controls.Add(this.label_Registro);
@@ -107,7 +111,7 @@
             // 
             this.label_Legajo.AutoSize = true;
             this.label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Legajo.Location = new System.Drawing.Point(90, 160);
+            this.label_Legajo.Location = new System.Drawing.Point(90, 187);
             this.label_Legajo.Name = "label_Legajo";
             this.label_Legajo.Size = new System.Drawing.Size(73, 16);
             this.label_Legajo.TabIndex = 21;
@@ -116,7 +120,7 @@
             // textBox_Legajo
             // 
             this.textBox_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Legajo.Location = new System.Drawing.Point(169, 157);
+            this.textBox_Legajo.Location = new System.Drawing.Point(169, 184);
             this.textBox_Legajo.Name = "textBox_Legajo";
             this.textBox_Legajo.Size = new System.Drawing.Size(232, 24);
             this.textBox_Legajo.TabIndex = 20;
@@ -126,7 +130,7 @@
             // 
             this.label_Apellido.AutoSize = true;
             this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(76, 130);
+            this.label_Apellido.Location = new System.Drawing.Point(76, 157);
             this.label_Apellido.Name = "label_Apellido";
             this.label_Apellido.Size = new System.Drawing.Size(87, 16);
             this.label_Apellido.TabIndex = 19;
@@ -135,7 +139,7 @@
             // textBox_Apellido
             // 
             this.textBox_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Apellido.Location = new System.Drawing.Point(169, 125);
+            this.textBox_Apellido.Location = new System.Drawing.Point(169, 152);
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 24);
             this.textBox_Apellido.TabIndex = 18;
@@ -144,26 +148,17 @@
             // textBox_Nombre
             // 
             this.textBox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Nombre.Location = new System.Drawing.Point(169, 92);
+            this.textBox_Nombre.Location = new System.Drawing.Point(169, 119);
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 24);
             this.textBox_Nombre.TabIndex = 17;
             this.textBox_Nombre.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
-            // textBox_Jerarquia
-            // 
-            this.textBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Jerarquia.Location = new System.Drawing.Point(169, 58);
-            this.textBox_Jerarquia.Name = "textBox_Jerarquia";
-            this.textBox_Jerarquia.Size = new System.Drawing.Size(232, 24);
-            this.textBox_Jerarquia.TabIndex = 16;
-            this.textBox_Jerarquia.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            // 
             // label_Nombre
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(83, 97);
+            this.label_Nombre.Location = new System.Drawing.Point(83, 124);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(80, 16);
             this.label_Nombre.TabIndex = 15;
@@ -173,7 +168,7 @@
             // 
             this.label_Jerarquia.AutoSize = true;
             this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Jerarquia.Location = new System.Drawing.Point(62, 63);
+            this.label_Jerarquia.Location = new System.Drawing.Point(62, 82);
             this.label_Jerarquia.Name = "label_Jerarquia";
             this.label_Jerarquia.Size = new System.Drawing.Size(101, 16);
             this.label_Jerarquia.TabIndex = 14;
@@ -229,6 +224,34 @@
             this.label_Usuario.TabIndex = 7;
             this.label_Usuario.Text = "USUARIO :";
             // 
+            // label_Subescalafon
+            // 
+            this.label_Subescalafon.AutoSize = true;
+            this.label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Subescalafon.Location = new System.Drawing.Point(28, 52);
+            this.label_Subescalafon.Name = "label_Subescalafon";
+            this.label_Subescalafon.Size = new System.Drawing.Size(135, 16);
+            this.label_Subescalafon.TabIndex = 24;
+            this.label_Subescalafon.Text = "SUBESCALAFON :";
+            // 
+            // comboBox_Escalafon
+            // 
+            this.comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Escalafon.FormattingEnabled = true;
+            this.comboBox_Escalafon.Location = new System.Drawing.Point(169, 49);
+            this.comboBox_Escalafon.Name = "comboBox_Escalafon";
+            this.comboBox_Escalafon.Size = new System.Drawing.Size(232, 24);
+            this.comboBox_Escalafon.TabIndex = 25;
+            // 
+            // comboBox_Jerarquia
+            // 
+            this.comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Jerarquia.FormattingEnabled = true;
+            this.comboBox_Jerarquia.Location = new System.Drawing.Point(169, 79);
+            this.comboBox_Jerarquia.Name = "comboBox_Jerarquia";
+            this.comboBox_Jerarquia.Size = new System.Drawing.Size(232, 24);
+            this.comboBox_Jerarquia.TabIndex = 26;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +283,6 @@
         private System.Windows.Forms.Label label_Usuario;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.TextBox textBox_Jerarquia;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.Label label_Jerarquia;
         private System.Windows.Forms.Label label_Registro;
@@ -270,5 +292,8 @@
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Registrarse;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox comboBox_Jerarquia;
+        private System.Windows.Forms.ComboBox comboBox_Escalafon;
+        private System.Windows.Forms.Label label_Subescalafon;
     }
 }

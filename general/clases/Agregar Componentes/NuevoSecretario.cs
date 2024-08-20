@@ -28,6 +28,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
+
+          
         }
 
         private void NuevoSecretario_Load(object sender, EventArgs e)
@@ -35,9 +37,10 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
             InicializarPictureBox();//para agregar estetica de picktureBox cuando carga formulario
-
-            LlenarComboBoxEscalafon();
-            comboBox_Jerarquia.Enabled = false; // Deshabilitar al principio hasta que se seleccione un escalafón
+                                    
+            
+            // Configurar el comportamiento de los ComboBox
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
         }
 
         //-----------BOTON LIMPIAR---------------
@@ -49,31 +52,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
         }
         //______________________________________________________________________________
-        //---PARA GENERAR LISTA EN COMBOBOX---------
-        private void LlenarComboBoxEscalafon()
-        {
-            comboBox_Escalafon.Items.Clear();
-            comboBox_Escalafon.Items.AddRange(JerarquiasManager.ObtenerEscalafones().ToArray());
-        }
-
-        private void comboBox_Escalafon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string escalafonSeleccionado = comboBox_Escalafon.SelectedItem.ToString();
-
-            var jerarquias = JerarquiasManager.ObtenerJerarquias(escalafonSeleccionado);
-
-            if (jerarquias.Count > 0)
-            {
-                comboBox_Jerarquia.Items.Clear();
-                comboBox_Jerarquia.Items.AddRange(jerarquias.ToArray());
-                comboBox_Jerarquia.Enabled = true; // Habilita el ComboBox de Jerarquías si estaba deshabilitado
-            }
-            else
-            {
-                comboBox_Jerarquia.Items.Clear();
-                comboBox_Jerarquia.Enabled = false; // Deshabilita el ComboBox de Jerarquías si no hay datos
-            }
-        }
+       
 //----------------------------------------------------------------------------------
         private void GuardarDatosSecretario()
         {

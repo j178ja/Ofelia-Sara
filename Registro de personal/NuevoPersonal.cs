@@ -19,6 +19,9 @@ namespace Ofelia_Sara.Registro_de_personal
             InitializeComponent();
             // Asigna el valor recibido al TextBox correspondiente en NuevoPersonal
             textBox_NumeroLegajo.Text = numeroLegajo;
+
+            // Configurar el comportamiento de los ComboBox
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
         }
 
 
