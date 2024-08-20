@@ -500,9 +500,6 @@
     <EmbeddedResource Include="Registro de personal\NuevoPersonal.resx">
       <DependentUpon>NuevoPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Base de Datos\Entidades\fiscalias.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
