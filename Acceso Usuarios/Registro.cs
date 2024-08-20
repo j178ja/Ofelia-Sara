@@ -18,7 +18,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public Registro()
         {
             InitializeComponent();
-        
+            // Configurar el comportamiento de los ComboBox
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
         }
 
         private void Registro_Load(object sender, EventArgs e)

@@ -4,13 +4,16 @@ using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System.IO;
+using Ofelia_Sara.Base_de_Datos;
+
 
 namespace Ofelia_Sara.general.clases
 
 
 {
-   // using Ofelia_Sara.Base_de_Datos;
+    // using Ofelia_Sara.Base_de_Datos;
     using Ofelia_Sara.general.clases.Apariencia_General;
+    using System.Collections.Generic;
     using System.Data.SQLite;
     using System.Drawing.Drawing2D;
     using System.Windows.Forms;
@@ -21,9 +24,9 @@ namespace Ofelia_Sara.general.clases
 
         private LinkLabel footerLinkLabel;
         private Panel mainPanel; // Panel que contiene los TextBox
-      
+
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
-        
+
 
         public BaseForm()
         {
@@ -37,8 +40,8 @@ namespace Ofelia_Sara.general.clases
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
                                                              //---ESTE COLOR PERTENECE AL ACTUAL DE MINISTERIO DE SEGURIDAD-----
             AparienciaFormularios.CambiarColorDeFondo(this, customColor);//llama a la clase que modifica el color de fondo
-            //-------------------------------------------------------------------------
-            
+                                                                         //-------------------------------------------------------------------------
+
             // Inicializa el panel principal
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
@@ -65,8 +68,31 @@ namespace Ofelia_Sara.general.clases
         //    var tableCreator = new TableCreator(dbManager);
         //    tableCreator.CreateTables();
         //}
+        //-------------------------------------------------------------------------------
+        //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
+        protected void ConfigurarComboBoxEscalafonJerarquia(ComboBox comboBox_Escalafon, ComboBox comboBox_Jerarquia)
+        {    // Configurar el evento SelectedIndexChanged
+            comboBox_Escalafon.SelectedIndexChanged += (sender, e) =>
+            {
+                if (comboBox_Escalafon.SelectedItem != null)
+                {
+                    string escalafon = comboBox_Escalafon.SelectedItem.ToString();
+                    comboBox_Jerarquia.Enabled = true;
+                    comboBox_Jerarquia.DataSource = JerarquiasManager.ObtenerJerarquias(escalafon);
+                }
+                else
+                {
+                    comboBox_Jerarquia.Enabled = false;
+                    comboBox_Jerarquia.DataSource = null;
+                }
+            };
 
-
+            // Configurar el ComboBox_Jerarquia inicialmente como desactivado
+            comboBox_Jerarquia.Enabled = false;
+            comboBox_Jerarquia.DataSource = null;
+         
+        }
+   
 
         //--------BOTON LIMPIAR FORMULARIO --------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)
