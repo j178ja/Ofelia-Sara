@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Base_de_Datos.Entidades;
 
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
@@ -49,7 +50,20 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             textBox_Fiscalia.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox_Fiscalia.Text);
             textBox_Localidad.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox_Localidad.Text);
+
+           
         }
+        //--------------------------------------------------------------------
+        private void LimpiarTextBox()
+        {
+            textBox_Fiscalia.Clear();
+            textBox_AgenteFiscal.Clear();
+            textBox_Localidad.Clear();
+            textBox_DeptoJudicial.Clear();
+        }
+
+
+        //--------------------------------------------------------------------
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // Convertir el texto del TextBox al Camel Case
@@ -104,7 +118,20 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             }
             else
             {
+                Fiscalia nuevaFiscalia = new Fiscalia
+                {
+                    NombreFiscalia = textBox_Fiscalia.Text,
+                    AgenteFiscal = textBox_AgenteFiscal.Text,
+                    Localidad = textBox_Localidad.Text,
+                    DeptoJudicial = textBox_DeptoJudicial.Text
+                };
+                // Agregar la nueva fiscalía a la lista usando el FiscaliaManager
+                FiscaliaManager.AgregarFiscalia(nuevaFiscalia);
+
                 MessageBox.Show("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar los campos después de guardar
+                LimpiarTextBox();
             }
         }
     }

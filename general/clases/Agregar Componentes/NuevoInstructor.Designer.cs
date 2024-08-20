@@ -121,13 +121,12 @@
             this.comboBox_Escalafon.Name = "comboBox_Escalafon";
             this.comboBox_Escalafon.Size = new System.Drawing.Size(326, 21);
             this.comboBox_Escalafon.TabIndex = 57;
-           
             // 
             // label_Escalafon
             // 
             this.label_Escalafon.AutoSize = true;
             this.label_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Escalafon.Location = new System.Drawing.Point(14, 71);
+            this.label_Escalafon.Location = new System.Drawing.Point(14, 73);
             this.label_Escalafon.Name = "label_Escalafon";
             this.label_Escalafon.Size = new System.Drawing.Size(135, 16);
             this.label_Escalafon.TabIndex = 56;
@@ -176,7 +175,7 @@
             // 
             this.label_Funcion.AutoSize = true;
             this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(68, 234);
+            this.label_Funcion.Location = new System.Drawing.Point(68, 233);
             this.label_Funcion.Name = "label_Funcion";
             this.label_Funcion.Size = new System.Drawing.Size(82, 16);
             this.label_Funcion.TabIndex = 35;
@@ -194,7 +193,7 @@
             // 
             this.label_Apellido.AutoSize = true;
             this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(62, 167);
+            this.label_Apellido.Location = new System.Drawing.Point(62, 166);
             this.label_Apellido.Name = "label_Apellido";
             this.label_Apellido.Size = new System.Drawing.Size(87, 16);
             this.label_Apellido.TabIndex = 33;
@@ -212,7 +211,7 @@
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(69, 140);
+            this.label_Nombre.Location = new System.Drawing.Point(69, 137);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(80, 16);
             this.label_Nombre.TabIndex = 31;

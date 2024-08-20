@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.general.clases;
+﻿using Ofelia_Sara.Base_de_Datos;
+using Ofelia_Sara.general.clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +20,6 @@ namespace Ofelia_Sara.Registro_de_personal
             InitializeComponent();
             // Asigna el valor recibido al TextBox correspondiente en NuevoPersonal
             textBox_NumeroLegajo.Text = numeroLegajo;
-
-            // Configurar el comportamiento de los ComboBox
-            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
         }
 
 
@@ -35,7 +33,24 @@ namespace Ofelia_Sara.Registro_de_personal
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Limpiar);
+
+            //para que se despliege la lista en los comboBox ESCALAFON -JERARQUIA
+            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
+            // Configurar el comportamiento de los ComboBox
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
+            comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
+            comboBox_Jerarquia.Enabled = false;
+            comboBox_Jerarquia.DataSource = null;
         }
+        //-----------------------------------------------------------------
+        protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
+        {
+            comboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
+        }
+        //--------------------------------------------------------------------------
+
+
 
         private void NuevoPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
