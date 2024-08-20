@@ -3,16 +3,22 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using System.IO;
 
 namespace Ofelia_Sara.general.clases
 
 
 {
+   // using Ofelia_Sara.Base_de_Datos;
     using Ofelia_Sara.general.clases.Apariencia_General;
+    using System.Data.SQLite;
     using System.Drawing.Drawing2D;
     using System.Windows.Forms;
     public class BaseForm : Form
     {
+        //protected DatabaseManager dbManager;
+        //protected DataInserter dataInserter;
+
         private LinkLabel footerLinkLabel;
         private Panel mainPanel; // Panel que contiene los TextBox
       
@@ -38,7 +44,27 @@ namespace Ofelia_Sara.general.clases
             this.Controls.Add(mainPanel);
             this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Load += BaseForm_Load;
+
+            //// Inicializar la base de datos
+            //InitializeDatabase();
+
+            //// Crear las tablas si no existen
+            //CrearTablas();
+
+            //// Inicializar el DataInserter
+            //dataInserter = new DataInserter(dbManager);
+
         }
+        //private void InitializeDatabase()
+        //{
+        //    string databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "base_de_datos.db");
+        //    dbManager = new DatabaseManager(databasePath);
+        //}
+        //private void CrearTablas()
+        //{
+        //    var tableCreator = new TableCreator(dbManager);
+        //    tableCreator.CreateTables();
+        //}
 
 
 
