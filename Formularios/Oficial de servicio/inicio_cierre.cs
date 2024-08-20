@@ -19,6 +19,7 @@ using Ofelia_Sara.Registro_de_personal;
 //using Ofelia_Sara.Base_de_Datos;
 using Mysqlx.Cursor;
 using Ofelia_Sara.Base_de_Datos.Entidades;
+using System.Text.Json;
 
 
 
@@ -99,7 +100,11 @@ namespace Ofelia_Sara
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
 
-            InicializarComboBoxFiscalia();
+
+           
+            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            InicializarComboBoxINSTRUCTOR();
         }
 
         //-----------------------------------------------------------------------------
@@ -149,7 +154,7 @@ namespace Ofelia_Sara
             }
             else
             {
-                GuardarDatos();
+                
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
                 MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -281,8 +286,7 @@ namespace Ofelia_Sara
 
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
-                GuardarDatos();
-                //logica para guardar el archivo en base de datos
+                
                 CargarImpresion();
 
                 var generador = new GeneradorDocumentos();
@@ -311,13 +315,10 @@ namespace Ofelia_Sara
             comboBox_Ipp1.SelectedIndex = 3;
             comboBox_Ipp2.SelectedIndex = 3;
             comboBox_Ipp4.SelectedIndex = 0;
-            comboBox_Fiscalia.SelectedIndex = 0;
-            comboBox_AgenteFiscal.SelectedIndex = 0;
-            comboBox_Instructor.SelectedIndex = 0;
-            comboBox_Secretario.SelectedIndex = 0;
+            
+            
             comboBox_Dependencia.SelectedIndex = 0;
-            comboBox_Localidad.SelectedIndex = 0;
-            comboBox_DeptoJudicial.SelectedIndex = 0;
+           
         }
         //----------------------------------------------------------------------
 
@@ -523,6 +524,7 @@ namespace Ofelia_Sara
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
+          
             // Crear y mostrar el formulario BuscarPersonal
             BuscarForm buscarForm = new BuscarForm();
 
@@ -530,18 +532,95 @@ namespace Ofelia_Sara
         }
         //------------------------------------------------------------------------------
         //-----para inicializar los COMBOBOX FISCALIA----------------
-       private void InicializarComboBoxFiscalia()
-            {
-            comboBox_Fiscalia.DataSource = null;
-            comboBox_AgenteFiscal.DataSource = null;
-            comboBox_Localidad.DataSource = null;
-            comboBox_DeptoJudicial.DataSource = null;
+        private void InicializarComboBoxFISCALIA()
+        {
+            // Desactivar temporalmente los ComboBoxes
+            comboBox_Fiscalia.Enabled = false;
+            comboBox_AgenteFiscal.Enabled = false;
+            comboBox_Localidad.Enabled = false;
+            comboBox_DeptoJudicial.Enabled = false;
 
-            comboBox_Fiscalia.DataSource = FiscaliaManager.ObtenerNombresFiscalias();
-        comboBox_AgenteFiscal.DataSource = FiscaliaManager.ObtenerAgentesFiscales();
-        comboBox_Localidad.DataSource = FiscaliaManager.ObtenerLocalidades();
-       comboBox_DeptoJudicial.DataSource = FiscaliaManager.ObtenerDeptosJudiciales();
+            // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
+            List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
+            List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
+            List<string> localidades = FiscaliaManager.ObtenerLocalidades().Distinct().ToList();
+            List<string> deptosJudiciales = FiscaliaManager.ObtenerDeptosJudiciales().Distinct().ToList();
+
+            // Asignar las listas a los ComboBoxes correspondientes
+            comboBox_Fiscalia.DataSource = nombresFiscalias;
+            comboBox_AgenteFiscal.DataSource = agentesFiscales;
+            comboBox_Localidad.DataSource = localidades;
+            comboBox_DeptoJudicial.DataSource = deptosJudiciales;
+
+            // Reactivar los ComboBoxes
+            comboBox_Fiscalia.Enabled = true;
+            comboBox_AgenteFiscal.Enabled = true;
+            comboBox_Localidad.Enabled = true;
+            comboBox_DeptoJudicial.Enabled = true;
         }
+
+        private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Desactivar los ComboBoxes de detalle mientras se actualizan
+            comboBox_AgenteFiscal.Enabled = false;
+            comboBox_Localidad.Enabled = false;
+            comboBox_DeptoJudicial.Enabled = false;
+
+            // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
+            if (comboBox_Fiscalia.SelectedItem != null)
+            {
+                string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
+                Fiscalia fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
+
+                if (fiscalia != null)
+                {
+                    // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
+                    comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
+                    comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
+                    comboBox_DeptoJudicial.DataSource = new List<string> { fiscalia.DeptoJudicial }.Distinct().ToList();
+                }
+                else
+                {
+                    // Si no se encuentra la fiscalía, limpiar los ComboBoxes
+                    comboBox_AgenteFiscal.DataSource = null;
+                    comboBox_Localidad.DataSource = null;
+                    comboBox_DeptoJudicial.DataSource = null;
+                }
+
+                // Reactivar los ComboBoxes de detalle
+                comboBox_AgenteFiscal.Enabled = true;
+                comboBox_Localidad.Enabled = true;
+                comboBox_DeptoJudicial.Enabled = true;
+            }
+            else
+            {
+                // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
+                comboBox_AgenteFiscal.DataSource = null;
+                comboBox_Localidad.DataSource = null;
+                comboBox_DeptoJudicial.DataSource = null;
+
+                comboBox_AgenteFiscal.Enabled = false;
+                comboBox_Localidad.Enabled = false;
+                comboBox_DeptoJudicial.Enabled = false;
+            }
+        }
+        //----------------------------------------------------------------
+        private void InicializarComboBoxSECRETARIO()
+        {
+            List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
+            comboBox_Secretario.DataSource = secretarios;
+            comboBox_Secretario.DisplayMember = "DescripcionCompleta";
+            comboBox_Secretario.SelectedIndex = -1;
+        }
+        //---------------------------------------------------------------------
+        private void InicializarComboBoxINSTRUCTOR()
+        {
+            List<Instructor> instructores = InstructorManager.ObtenerInstructores();
+            comboBox_Instructor.DataSource = instructores;
+            comboBox_Instructor.DisplayMember = "DescripcionCompleta";
+            comboBox_Instructor.SelectedIndex = -1;
+        }
+
 
     }
 }

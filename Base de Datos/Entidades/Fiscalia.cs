@@ -1,8 +1,10 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Ofelia_Sara.Base_de_Datos.Entidades
 {
@@ -16,39 +18,78 @@ namespace Ofelia_Sara.Base_de_Datos.Entidades
 
     public static class FiscaliaManager
     {
-        private static List<Fiscalia> listaFiscalias = new List<Fiscalia>();
+        // Ruta del archivo en el directorio de salida bin
+        private static readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fiscalias.json");
 
-        internal static void AgregarFiscalia(Fiscalia fiscalia)
+        // Ruta del archivo en el proyecto (para fines de desarrollo)
+        private static readonly string filePathEntidades = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Ofelia_Sara\Base_de_Datos\Entidades\fiscalias.json");
+
+        public static void GuardarFiscalias(List<Fiscalia> fiscalias)
         {
-            listaFiscalias.Add(fiscalia);
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(fiscalias, options);
+
+            // Guardar en la ruta del directorio de salida bin
+            File.WriteAllText(filePath, jsonString);
         }
 
-        public static  List<Fiscalia> ObtenerFiscalias()
+        public static List<Fiscalia> CargarFiscalias()
         {
-            return new List<Fiscalia>(listaFiscalias);
+            if (!File.Exists(filePath))
+            {
+                return new List<Fiscalia>();
+            }
+
+            string jsonString = File.ReadAllText(filePath);
+            return JsonSerializer.Deserialize<List<Fiscalia>>(jsonString);
+
+           
         }
 
+        public static void AgregarFiscalia(Fiscalia fiscalia)
+        {
+            var fiscalias = CargarFiscalias();
+            fiscalias.Add(fiscalia);
+            GuardarFiscalias(fiscalias);
+        }
 
+        public static List<Fiscalia> ObtenerFiscalias()
+        {
+            return CargarFiscalias();
+        }
 
-        // Métodos para obtener listas específicas de nombres, agentes, localidades, etc.
+        public static Fiscalia ObtenerFiscaliaPorNombre(string nombreFiscalia)
+        {
+            var fiscalias = CargarFiscalias();
+            return fiscalias.FirstOrDefault(f => f.NombreFiscalia == nombreFiscalia);
+        }
+
         public static List<string> ObtenerNombresFiscalias()
         {
-            return listaFiscalias.Select(f => f.NombreFiscalia).ToList();
+            var fiscalias = CargarFiscalias();
+            return fiscalias.Select(f => f.NombreFiscalia).Distinct().ToList();
         }
 
         public static List<string> ObtenerAgentesFiscales()
         {
-            return listaFiscalias.Select(f => f.AgenteFiscal).ToList();
+            var fiscalias = CargarFiscalias();
+            return fiscalias.Select(f => f.AgenteFiscal).Distinct().ToList();
         }
 
         public static List<string> ObtenerLocalidades()
         {
-            return listaFiscalias.Select(f => f.Localidad).ToList();
+            var fiscalias = CargarFiscalias();
+            return fiscalias.Select(f => f.Localidad).Distinct().ToList();
         }
 
         public static List<string> ObtenerDeptosJudiciales()
         {
-            return listaFiscalias.Select(f => f.DeptoJudicial).ToList();
+            var fiscalias = CargarFiscalias();
+            return fiscalias.Select(f => f.DeptoJudicial).Distinct().ToList();
         }
+
+       
     }
+
 }
+

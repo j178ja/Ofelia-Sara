@@ -244,6 +244,7 @@ namespace Ofelia_Sara
             this.comboBox_Fiscalia.Name = "comboBox_Fiscalia";
             this.comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
             this.comboBox_Fiscalia.TabIndex = 7;
+            this.comboBox_Fiscalia.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Fiscalia_SelectedIndexChanged);
             // 
             // comboBox_Instructor
             // 

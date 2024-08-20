@@ -150,6 +150,8 @@
             this.textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(192, 21);
             this.textBox_NumeroLegajo.TabIndex = 53;
+            this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroLegajo.TextChanged += new System.EventHandler(this.textBox_NumeroLegajo_TextChanged);
             this.textBox_NumeroLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroLegajo_KeyPress);
             // 
             // label_Legajo

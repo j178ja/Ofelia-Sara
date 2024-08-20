@@ -94,3 +94,10 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Data.SQLite.Li
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Data.SQLite.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Json.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.ValueTuple.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Json.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.ValueTuple.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Base de Datos\Entidades\fiscalias.json
