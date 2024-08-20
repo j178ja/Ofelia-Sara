@@ -76,5 +76,10 @@ namespace Ofelia_Sara.Registro_de_personal
                 e.Handled = true;
             }
         }
+
+        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

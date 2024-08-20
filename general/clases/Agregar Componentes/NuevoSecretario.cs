@@ -14,6 +14,7 @@ using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 //using Ofelia_Sara.Base_de_Datos;
 using System.IO;
 using Ofelia_Sara.Base_de_Datos;
+using Ofelia_Sara.Base_de_Datos.Entidades;
 
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
@@ -35,7 +36,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void NuevoSecretario_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
-            ConfigurarTextBoxes(this);
+            ConfigurarTextBoxes(this, "textBox_NumeroLegajo");// excluye el campo NUMERO LEGAJO
             InicializarPictureBox();//para agregar estetica de picktureBox cuando carga formulario
 
 
@@ -101,35 +102,59 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             }
             else
             {
-               // GuardarDatosSecretario();
+                // Crear un nuevo secretario con los datos del formulario
+                var nuevoSecretario = new Secretario
+                {
+                    NumeroLegajo = float.Parse(textBox_NumeroLegajo.Text),
+                    Escalafon = comboBox_Escalafon.Text,
+                    Jerarquia = comboBox_Jerarquia.Text,
+                    Nombre = textBox_Nombre.Text,
+                    Apellido = textBox_Apellido.Text,
+                    Dependencia = comboBox_Dependencia.Text,
+                    Funcion = textBox_Funcion.Text
+                    // FirmaDigitalizada está comentada por ahora
+                };
+
+                // Agregar el nuevo secretario
+                SecretarioManager.AgregarSecretario(nuevoSecretario);
+
+             
+                // GuardarDatosSecretario();
                 MessageBox.Show("Se ha cargado nuevo Secretario a lista de Secretarios en los formularios", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario.Limpiar(this); //limpiar todos los controles
             }
         }
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
-        private void ConfigurarTextBoxes(Control parent)
+        private void ConfigurarTextBoxes(Control parent, string textBoxExcluido)
         {
             foreach (Control control in parent.Controls)
             {
                 if (control is TextBox textBox)
                 {
-                    textBox.TextChanged += (s, e) =>
+                    // Verificar si el TextBox es el que se debe excluir
+                    if (textBox.Name != textBoxExcluido)
                     {
-                        TextBox tb = s as TextBox;
-                        if (tb != null)
+                        textBox.TextChanged += (s, e) =>
                         {
-                            int pos = tb.SelectionStart;
-                            tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
-                            tb.SelectionStart = pos;
-                        }
-                    };
+                            TextBox tb = s as TextBox;
+                            if (tb != null)
+                            {
+                                int pos = tb.SelectionStart;
+                                tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
+                                tb.SelectionStart = pos;
+                            }
+                        };
+                    }
                 }
                 else if (control.HasChildren)
                 {
-                    ConfigurarTextBoxes(control);
+                    ConfigurarTextBoxes(control, textBoxExcluido);
                 }
             }
         }
+
 
 
         //-------------MENSAJE DE AYUDA BOTON HELP---------
@@ -215,6 +240,11 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
 
             }
+        }
+        
+        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,14 +53,14 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
            
         }
-        //--------------------------------------------------------------------
-        private void LimpiarTextBox()
-        {
-            textBox_Fiscalia.Clear();
-            textBox_AgenteFiscal.Clear();
-            textBox_Localidad.Clear();
-            textBox_DeptoJudicial.Clear();
-        }
+        ////--------------------------------------------------------------------
+        //private void LimpiarTextBox()
+        //{
+        //    textBox_Fiscalia.Clear();
+        //    textBox_AgenteFiscal.Clear();
+        //    textBox_Localidad.Clear();
+        //    textBox_DeptoJudicial.Clear();
+        //}
 
 
         //--------------------------------------------------------------------
@@ -131,7 +131,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 MessageBox.Show("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Limpiar los campos después de guardar
-                LimpiarTextBox();
+                // LimpiarTextBox();
+                LimpiarFormulario.Limpiar(this);
             }
         }
     }

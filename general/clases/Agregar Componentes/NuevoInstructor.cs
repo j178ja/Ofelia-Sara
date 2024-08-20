@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.Base_de_Datos;
+using Ofelia_Sara.Base_de_Datos.Entidades;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using System;
@@ -33,7 +34,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
-            ConfigurarTextBoxes(this);
+            ConfigurarTextBoxes(this, "textBox_NumeroLegajo"); //EXCLUYE NUMERO LEGAJO
             InicializarPictureBox();//para inicializar estilo pickturebox
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
@@ -64,41 +65,63 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         {
             if
               (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
+              (string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text) ||
                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-               string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+               string.IsNullOrWhiteSpace(textBox_Apellido.Text)))
             {
-                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar los campos LEGAJO, JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                var nuevoInstructor = new Instructor
+                {
+                    NumeroLegajo = float.Parse(textBox_NumeroLegajo.Text),
+                    Escalafon = comboBox_Escalafon.Text,
+                    Jerarquia = comboBox_Jerarquia.Text,
+                    Nombre = textBox_Nombre.Text,
+                    Apellido = textBox_Apellido.Text,
+                    Dependencia = comboBox_Dependencia.Text,
+                    Funcion = textBox_Funcion.Text,
+                    // FirmaDigitalizada = ObtenerFirmaDigitalizada() // Implementar más adelante
+                };
+
+                InstructorManager.AgregarInstructor(nuevoInstructor);
+
                 MessageBox.Show("Se ha cargado nuevo Instructor a lista de Instructores en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario.Limpiar(this); //limpiar todos los controles
             }
         }
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
-        private void ConfigurarTextBoxes(Control parent)
+        private void ConfigurarTextBoxes(Control parent, string textBoxExcluido)
         {
             foreach (Control control in parent.Controls)
             {
                 if (control is TextBox textBox)
                 {
-                    textBox.TextChanged += (s, e) =>
+                    // Verificar si el TextBox es el que se debe excluir
+                    if (textBox.Name != textBoxExcluido)
                     {
-                        TextBox tb = s as TextBox;
-                        if (tb != null)
+                        textBox.TextChanged += (s, e) =>
                         {
-                            int pos = tb.SelectionStart;
-                            tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
-                            tb.SelectionStart = pos;
-                        }
-                    };
+                            TextBox tb = s as TextBox;
+                            if (tb != null)
+                            {
+                                int pos = tb.SelectionStart;
+                                tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
+                                tb.SelectionStart = pos;
+                            }
+                        };
+                    }
                 }
                 else if (control.HasChildren)
                 {
-                    ConfigurarTextBoxes(control);
+                    ConfigurarTextBoxes(control, textBoxExcluido);
                 }
             }
         }
+
 
         private void NuevoInstructor_HelpButtonClicked(object sender, CancelEventArgs e)
         {

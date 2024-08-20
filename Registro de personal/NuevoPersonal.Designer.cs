@@ -50,7 +50,6 @@
             this.label_ArmaMarca = new System.Windows.Forms.Label();
             this.textBox_Telefono2 = new System.Windows.Forms.TextBox();
             this.label_Telefono2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LocalidadPnal = new System.Windows.Forms.TextBox();
             this.label_LocalidadPnal = new System.Windows.Forms.Label();
@@ -98,6 +97,7 @@
             this.lbl_Legajo = new System.Windows.Forms.Label();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.comboBox_EstadoCivil);
             this.panel1.Controls.Add(this.textBox_PartidoPnal);
             this.panel1.Controls.Add(this.label_PartidoPnal);
             this.panel1.Controls.Add(this.textBox_PartidoDependencia);
@@ -127,7 +128,6 @@
             this.panel1.Controls.Add(this.label_ArmaMarca);
             this.panel1.Controls.Add(this.textBox_Telefono2);
             this.panel1.Controls.Add(this.label_Telefono2);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label_EstadoCivil);
             this.panel1.Controls.Add(this.textBox_LocalidadPnal);
             this.panel1.Controls.Add(this.label_LocalidadPnal);
@@ -351,13 +351,6 @@
             this.label_Telefono2.TabIndex = 127;
             this.label_Telefono2.Text = "TELEFONO 2 :";
             this.label_Telefono2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(137, 226);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 20);
-            this.textBox3.TabIndex = 126;
             // 
             // label_EstadoCivil
             // 
@@ -778,6 +771,7 @@
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 20);
             this.textBox_NumeroLegajo.TabIndex = 34;
             this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroLegajo.TextChanged += new System.EventHandler(this.textBox_NumeroLegajo_TextChanged);
             this.textBox_NumeroLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroLegajo_KeyPress);
             // 
             // lbl_Legajo
@@ -803,6 +797,24 @@
             this.lbl_Titulo.Size = new System.Drawing.Size(381, 24);
             this.lbl_Titulo.TabIndex = 32;
             this.lbl_Titulo.Text = "REGISTRAR NUEVO PERSONAL";
+            // 
+            // comboBox_EstadoCivil
+            // 
+            this.comboBox_EstadoCivil.AutoCompleteCustomSource.AddRange(new string[] {
+            "ARGENTINA",
+            "PARAGUAYA",
+            "BOLIVIANA"});
+            this.comboBox_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_EstadoCivil.FormattingEnabled = true;
+            this.comboBox_EstadoCivil.Items.AddRange(new object[] {
+            "SOLTERA/O",
+            "CASADA/O",
+            "DIVORCIADA/O",
+            "VIUDA/O"});
+            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(136, 225);
+            this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
+            this.comboBox_EstadoCivil.Size = new System.Drawing.Size(149, 21);
+            this.comboBox_EstadoCivil.TabIndex = 146;
             // 
             // NuevoPersonal
             // 
@@ -877,7 +889,6 @@
         private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.TextBox textBox_Telefono2;
         private System.Windows.Forms.Label label_Telefono2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label_EstadoCivil;
         private System.Windows.Forms.TextBox textBox_ArmaNumero;
         private System.Windows.Forms.Label label_ArmaNumero;
@@ -896,5 +907,6 @@
         private System.Windows.Forms.Label label_Partido;
         private System.Windows.Forms.TextBox textBox_PartidoPnal;
         private System.Windows.Forms.Label label_PartidoPnal;
+        private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
     }
 }

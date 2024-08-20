@@ -32,3 +32,5 @@ NO FUNCIONA ELIMINAR EL BOTON MAXIMIZAR, SOLO FUNCIONA DESHABILITAR (se puede so
 3) que el boton de imprimir  cambie recuadro a verde cuando este completo el formulario
 4) que si se apreta imprimir y no esta completo indique el campo que falta
 5) Que los botones agregar amplien el formulario agregando un nuevo campo justo debajo 
+
+hacer que se reflejen los archivos json de bin en los de la solucion del proyecto
