@@ -174,6 +174,9 @@
             this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(134, 63);
             this.pictureBox_FirmaDigitalizada.TabIndex = 51;
             this.pictureBox_FirmaDigitalizada.TabStop = false;
+            this.pictureBox_FirmaDigitalizada.Click += new System.EventHandler(this.PictureBox_Click);
+            this.pictureBox_FirmaDigitalizada.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_FirmaDigitalizada.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             this.pictureBox_FirmaDigitalizada.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_FirmaDigitalizada_Paint);
             // 
             // textBox_Funcion
