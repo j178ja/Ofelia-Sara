@@ -153,6 +153,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
+        //--------------------------------------------------------------------
+
         // Define una variable para llevar el control del estado de visibilidad
         private bool esContraseñaVisible = false;
 
