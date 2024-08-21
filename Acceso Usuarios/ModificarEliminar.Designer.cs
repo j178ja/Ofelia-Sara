@@ -65,7 +65,7 @@
             // 
             // panel_Superior
             // 
-            this.panel_Superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel_Superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel_Superior.Controls.Add(this.listBox_Seleccion);
             this.panel_Superior.Controls.Add(this.label_Seleccion);
             this.panel_Superior.Controls.Add(this.listBox_Datos);
@@ -116,7 +116,7 @@
             // panel_Botones
             // 
             this.panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_Botones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel_Botones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel_Botones.Controls.Add(this.btn_Guardar);
             this.panel_Botones.Controls.Add(this.btn_Cancelar);
             this.panel_Botones.Controls.Add(this.btn_Editar);
@@ -199,7 +199,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ModificarEliminar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMINISTRADOR DE ELEMENTOS";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Registro_HelpButtonClicked);
             this.Load += new System.EventHandler(this.ModificarEliminar_Load);
