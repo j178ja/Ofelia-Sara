@@ -118,17 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox_OjoContraseña.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAGgAAABoAaPmejwAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAAA90lEQVQ4T93RzUpCQRiH8eMyd2LapjaFtLBL6Br6gPYaBWb0cRVRdAXVtq14G5VCghgKuYzIq8jn
-        mXOC0fAG/MMP3jkz75xzZpLlTBnnaKObsW6ihIXJ4x4TPGAPVexgH4/4wR1WMJNtjOCiInLYxTX8gqvs
-        mXNPGKKCEJu/cRJGaWwspGXyjF9chlEa134hbNJBzSJKD0dYQx9u8I44dbxavGWDOG5gU2x+g2O8WGxh
-        jFMHWfzn+Q0u8BfXfmIzjMgGPuABrcID8599q2z2mXOuGWAdM/FqbuFVeRsH8Ap1CBudu8G/a4zjW87Q
-        ggcs6wacW64kyRQ+uDgR4888KAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btn_Limpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

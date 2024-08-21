@@ -522,7 +522,9 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="general\imagenes\ojoCerrado.png" />
+    <None Include="general\imagenes\ojoINICIO.png" />
     <Content Include="general\imagenes\ojo_Contraseña.png" />
+    <None Include="Resources\ojoINICIO.png" />
     <None Include="Resources\ojoAbierto.png" />
     <None Include="Resources\ojoCerrado.png" />
   </ItemGroup>

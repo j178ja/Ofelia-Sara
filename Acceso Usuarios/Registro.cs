@@ -20,8 +20,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public Registro()
         {
             InitializeComponent();
-            // Configurar el comportamiento de los ComboBox
-            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+         
         }
 
         private void Registro_Load(object sender, EventArgs e)
@@ -36,6 +35,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
+
+            //sobre ojo
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
+            pictureBox_OjoContraseña.Enabled = false;
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
@@ -133,9 +136,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            comboBox_Escalafon.SelectedIndex = -1;
+            //sobre ojo
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
+            pictureBox_OjoContraseña.Enabled = false;
+
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);//esto muestra una ventana con boton aceptar
         }
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -146,7 +153,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
+        // Define una variable para llevar el control del estado de visibilidad
+        private bool esContraseñaVisible = false;
 
+        private void pictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox_Contraseña.PasswordChar = '\0'; // Muestra el texto real
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña; // Cambia la imagen al icono de "visible"
+        }
+
+        private void pictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox_Contraseña.PasswordChar = '*'; // Oculta el texto con asteriscos
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojoCerrado; // Cambia la imagen al icono de "oculto"
+        }
+
+        private void textBox_Contraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_Contraseña.Text))
+            {
+                // Desactiva la imagen si no hay texto
+                pictureBox_OjoContraseña.Enabled = false;
+            }
+            else
+            {
+                // Activa la imagen si hay texto
+                pictureBox_OjoContraseña.Enabled = true;
+            }
+        }
     }
 
 }
