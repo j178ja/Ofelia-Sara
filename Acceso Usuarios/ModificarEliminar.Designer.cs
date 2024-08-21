@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarEliminar));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Superior = new System.Windows.Forms.Panel();
+            this.listBox_Seleccion = new System.Windows.Forms.ListBox();
+            this.label_Seleccion = new System.Windows.Forms.Label();
+            this.listBox_Datos = new System.Windows.Forms.ListBox();
             this.panel_Botones = new System.Windows.Forms.Panel();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
-            this.listBox_Datos = new System.Windows.Forms.ListBox();
-            this.listBox_Seleccion = new System.Windows.Forms.ListBox();
-            this.label_Seleccion = new System.Windows.Forms.Label();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel_Superior = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel_Botones.SuspendLayout();
             this.panel_Superior.SuspendLayout();
+            this.panel_Botones.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -63,10 +63,60 @@
             this.panel1.Size = new System.Drawing.Size(656, 243);
             this.panel1.TabIndex = 2;
             // 
+            // panel_Superior
+            // 
+            this.panel_Superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel_Superior.Controls.Add(this.listBox_Seleccion);
+            this.panel_Superior.Controls.Add(this.label_Seleccion);
+            this.panel_Superior.Controls.Add(this.listBox_Datos);
+            this.panel_Superior.Location = new System.Drawing.Point(3, 40);
+            this.panel_Superior.Name = "panel_Superior";
+            this.panel_Superior.Size = new System.Drawing.Size(653, 72);
+            this.panel_Superior.TabIndex = 35;
+            // 
+            // listBox_Seleccion
+            // 
+            this.listBox_Seleccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBox_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Seleccion.FormattingEnabled = true;
+            this.listBox_Seleccion.ItemHeight = 16;
+            this.listBox_Seleccion.Items.AddRange(new object[] {
+            "FISCALIA",
+            "INSTRUCTOR",
+            "SECRETARIO",
+            "DEDPENDENCIA",
+            "PERSONAL "});
+            this.listBox_Seleccion.Location = new System.Drawing.Point(310, 3);
+            this.listBox_Seleccion.Name = "listBox_Seleccion";
+            this.listBox_Seleccion.Size = new System.Drawing.Size(233, 20);
+            this.listBox_Seleccion.TabIndex = 29;
+            this.listBox_Seleccion.SelectedIndexChanged += new System.EventHandler(this.listBox_Seleccion_SelectedIndexChanged);
+            // 
+            // label_Seleccion
+            // 
+            this.label_Seleccion.AutoSize = true;
+            this.label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Seleccion.Location = new System.Drawing.Point(88, 5);
+            this.label_Seleccion.Name = "label_Seleccion";
+            this.label_Seleccion.Size = new System.Drawing.Size(216, 16);
+            this.label_Seleccion.TabIndex = 26;
+            this.label_Seleccion.Text = "SELECCION DE ELEMENTOS:";
+            // 
+            // listBox_Datos
+            // 
+            this.listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Datos.FormattingEnabled = true;
+            this.listBox_Datos.ItemHeight = 20;
+            this.listBox_Datos.Location = new System.Drawing.Point(140, 42);
+            this.listBox_Datos.Name = "listBox_Datos";
+            this.listBox_Datos.Size = new System.Drawing.Size(356, 24);
+            this.listBox_Datos.TabIndex = 30;
+            this.listBox_Datos.SelectedIndexChanged += new System.EventHandler(this.listBox_Datos_SelectedIndexChanged);
+            // 
             // panel_Botones
             // 
             this.panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_Botones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel_Botones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel_Botones.Controls.Add(this.btn_Guardar);
             this.panel_Botones.Controls.Add(this.btn_Cancelar);
             this.panel_Botones.Controls.Add(this.btn_Editar);
@@ -125,45 +175,6 @@
             this.toolTip1.SetToolTip(this.btn_Eliminar, "ELIMINAR ELEMENTO");
             this.btn_Eliminar.UseVisualStyleBackColor = false;
             // 
-            // listBox_Datos
-            // 
-            this.listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox_Datos.FormattingEnabled = true;
-            this.listBox_Datos.ItemHeight = 20;
-            this.listBox_Datos.Location = new System.Drawing.Point(140, 42);
-            this.listBox_Datos.Name = "listBox_Datos";
-            this.listBox_Datos.Size = new System.Drawing.Size(356, 24);
-            this.listBox_Datos.TabIndex = 30;
-            this.listBox_Datos.SelectedIndexChanged += new System.EventHandler(this.listBox_Datos_SelectedIndexChanged);
-            // 
-            // listBox_Seleccion
-            // 
-            this.listBox_Seleccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listBox_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox_Seleccion.FormattingEnabled = true;
-            this.listBox_Seleccion.ItemHeight = 16;
-            this.listBox_Seleccion.Items.AddRange(new object[] {
-            "FISCALIA",
-            "INSTRUCTOR",
-            "SECRETARIO",
-            "DEDPENDENCIA",
-            "PERSONAL "});
-            this.listBox_Seleccion.Location = new System.Drawing.Point(303, 3);
-            this.listBox_Seleccion.Name = "listBox_Seleccion";
-            this.listBox_Seleccion.Size = new System.Drawing.Size(233, 20);
-            this.listBox_Seleccion.TabIndex = 29;
-            this.listBox_Seleccion.SelectedIndexChanged += new System.EventHandler(this.listBox_Seleccion_SelectedIndexChanged);
-            // 
-            // label_Seleccion
-            // 
-            this.label_Seleccion.AutoSize = true;
-            this.label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Seleccion.Location = new System.Drawing.Point(81, 5);
-            this.label_Seleccion.Name = "label_Seleccion";
-            this.label_Seleccion.Size = new System.Drawing.Size(216, 16);
-            this.label_Seleccion.TabIndex = 26;
-            this.label_Seleccion.Text = "SELECCION DE ELEMENTOS:";
-            // 
             // label_Titulo
             // 
             this.label_Titulo.AutoSize = true;
@@ -176,16 +187,6 @@
             this.label_Titulo.Size = new System.Drawing.Size(360, 26);
             this.label_Titulo.TabIndex = 14;
             this.label_Titulo.Text = "ADMINISTRADOR DE ELEMENTOS";
-            // 
-            // panel_Superior
-            // 
-            this.panel_Superior.Controls.Add(this.listBox_Seleccion);
-            this.panel_Superior.Controls.Add(this.label_Seleccion);
-            this.panel_Superior.Controls.Add(this.listBox_Datos);
-            this.panel_Superior.Location = new System.Drawing.Point(3, 40);
-            this.panel_Superior.Name = "panel_Superior";
-            this.panel_Superior.Size = new System.Drawing.Size(653, 72);
-            this.panel_Superior.TabIndex = 35;
             // 
             // ModificarEliminar
             // 
@@ -205,9 +206,9 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel_Botones.ResumeLayout(false);
             this.panel_Superior.ResumeLayout(false);
             this.panel_Superior.PerformLayout();
+            this.panel_Botones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
