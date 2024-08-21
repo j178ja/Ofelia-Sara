@@ -65,11 +65,11 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         {
             if
               (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
-              (string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text) ||
+              
                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-               string.IsNullOrWhiteSpace(textBox_Apellido.Text)))
+               string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
-                MessageBox.Show("Debe completar los campos LEGAJO, JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar los campos  JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
