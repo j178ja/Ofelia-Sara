@@ -28,7 +28,7 @@ namespace Ofelia_Sara.Formularios
             InicializarEstiloBoton(btn_Ingresar);
 
             //sobre ojo
-            pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña;
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
             pictureBox_OjoContraseña.Enabled = false;
         }
 

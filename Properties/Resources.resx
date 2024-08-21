@@ -121,6 +121,9 @@
   <data name="ojoCerrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\general\imagenes\ojoCerrado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ojoINICIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\general\imagenes\ojoINICIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ojo_Contraseña" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\general\imagenes\ojo_Contraseña.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

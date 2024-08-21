@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
             this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
             this.label_Subescalafon = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(469, 422);
             this.panel4.TabIndex = 4;
+            // 
+            // pictureBox_OjoContraseña
+            // 
+            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(409, 277);
+            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
+            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
+            this.pictureBox_OjoContraseña.TabIndex = 27;
+            this.pictureBox_OjoContraseña.TabStop = false;
+            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
+            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseUp);
             // 
             // comboBox_Jerarquia
             // 
@@ -226,6 +237,7 @@
             this.textBox_Contraseña.PasswordChar = '*';
             this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
             this.textBox_Contraseña.TabIndex = 10;
+            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.textBox_Contraseña_TextChanged);
             // 
             // textBox_Usuario
             // 
@@ -254,16 +266,6 @@
             this.label_Usuario.Size = new System.Drawing.Size(83, 16);
             this.label_Usuario.TabIndex = 7;
             this.label_Usuario.Text = "USUARIO :";
-            // 
-            // pictureBox_OjoContraseña
-            // 
-            this.pictureBox_OjoContraseña.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_OjoContraseña.BackgroundImage")));
-            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(409, 272);
-            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
-            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 24);
-            this.pictureBox_OjoContraseña.TabIndex = 27;
-            this.pictureBox_OjoContraseña.TabStop = false;
             // 
             // Registro
             // 
