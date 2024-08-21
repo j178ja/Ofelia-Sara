@@ -34,7 +34,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
-            ConfigurarTextBoxes(this, "textBox_NumeroLegajo"); //EXCLUYE NUMERO LEGAJO
+            TextoEspecialCampos();
             InicializarPictureBox();//para inicializar estilo pickturebox
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
@@ -44,6 +44,12 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
+
+            //para recibir imagenes y cargarlas con click
+            pictureBox_FirmaDigitalizada.AllowDrop = true;
+            pictureBox_FirmaDigitalizada.DragEnter += PictureBox_DragEnter;
+            pictureBox_FirmaDigitalizada.DragDrop += PictureBox_DragDrop;
+            pictureBox_FirmaDigitalizada.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
@@ -58,6 +64,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            comboBox_Escalafon.SelectedIndex = -1;
         }
 
         //---------BOTON GUARDAR---------------------------------------
@@ -94,32 +101,32 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         }
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
-        private void ConfigurarTextBoxes(Control parent, string textBoxExcluido)
+        private void TextoEspecialCampos()
         {
-            foreach (Control control in parent.Controls)
-            {
-                if (control is TextBox textBox)
-                {
-                    // Verificar si el TextBox es el que se debe excluir
-                    if (textBox.Name != textBoxExcluido)
-                    {
-                        textBox.TextChanged += (s, e) =>
-                        {
-                            TextBox tb = s as TextBox;
-                            if (tb != null)
-                            {
-                                int pos = tb.SelectionStart;
-                                tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
-                                tb.SelectionStart = pos;
-                            }
-                        };
-                    }
-                }
-                else if (control.HasChildren)
-                {
-                    ConfigurarTextBoxes(control, textBoxExcluido);
-                }
-            }
+            // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
+            Dictionary<string, bool> textBoxExcepciones = new Dictionary<string, bool>
+    {
+        { "textBox_Nombre", false },
+        { "textBox_Apellido", false },
+        { "textBox_NumeroLegajo", true },
+        { "texBox_Funcion", false }
+    };
+
+            // Configurar ComboBox (acepta números, letras, y espacios, convierte a mayúsculas)
+            Dictionary<string, bool> comboBoxExcepciones = new Dictionary<string, bool>
+    {
+
+        { "comboBox_Dependencia", true },
+        { "comboBox_Escalafon", false } // Configuración según la opción seleccionada
+    };
+
+            // Aplicar la lógica a los controles del formulario
+            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
+
+            //  deshabilitar la edición del ComboBox_Escalafon
+            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
 
@@ -178,6 +185,68 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 }
             }
         }
+        //----------------------------------------------------
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+        private void PictureBox_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length > 0 && (files[0].EndsWith(".jpg") || files[0].EndsWith(".jpeg") || files[0].EndsWith(".png") || files[0].EndsWith(".bmp")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+        }
+        //------------------------------------------------------------
+        private void PictureBox_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                try
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    if (files.Length > 0)
+                    {
+                        // Cargar la imagen desde el archivo
+                        Image img = Image.FromFile(files[0]);
+
+                        // Establecer la imagen en el PictureBox
+                        pictureBox.Image = img;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                }
+            }
+        }
 
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -186,30 +255,23 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             {
                 e.Handled = true;
             }
-
-            // Si el carácter es dígito, continúa con el procesamiento
-            if (char.IsDigit(e.KeyChar))
-            {
-                // Inserta el carácter en la posición actual
-                TextBox textBox = sender as TextBox;
-                int selectionStart = textBox.SelectionStart;
-                textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
-                e.Handled = true;
-
-                // Usar la clase separada para formatear el texto
-                string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-                // Actualizar el texto en el TextBox y restaurar la posición del cursor
-                textBox.Text = textoFormateado;
-                textBox.SelectionStart = textoFormateado.Length;
-
-
-            }
         }
 
         private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
+            TextBox textBox = sender as TextBox;
 
+            // Guardar la posición actual del cursor
+            int selectionStart = textBox.SelectionStart;
+
+            // Formatear el número con puntos
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+            // Actualizar el texto en el TextBox y restaurar la posición del cursor
+            textBox.Text = textoFormateado;
+
+            // Ajustar la posición del cursor para que no salte al final
+            textBox.SelectionStart = selectionStart + (textoFormateado.Length - textBox.Text.Length);
         }
     }
 }
