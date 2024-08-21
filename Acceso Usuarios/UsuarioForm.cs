@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara;
+using Ofelia_Sara.Acceso_Usuarios;
 
 
 
@@ -75,6 +76,17 @@ namespace Ofelia_Sara.Formularios
                 // Activa la imagen si hay texto
                 pictureBox_OjoContraseña.Enabled = true;
             }
+        }
+
+        private void btn_Ingresar_Click(object sender, EventArgs e)
+        {
+            // Crea una instancia del formulario ModificarEliminar
+            ModificarEliminar formModificarEliminar = new ModificarEliminar();
+
+            // Muestra el formulario como una ventana modal
+            formModificarEliminar.ShowDialog();
+
+            this.Close();
         }
     }
 }
