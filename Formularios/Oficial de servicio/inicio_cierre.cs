@@ -82,18 +82,21 @@ namespace Ofelia_Sara
             //-------------------------------------------------------------------------------
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
-        {
-            { "textBox_NumeroIpp", true }  // Este TextBox solo acepta números.
-        };
+{
+    { "textBox_NumeroIpp", true },  // Este TextBox solo acepta números.
+      { "TextBox_Caratula", true }
+};
 
             var comboBoxExcepciones = new Dictionary<string, bool>
-        {
-            { "ComboBox_Ufid", true }  // Este ComboBox acepta letras, números y espacios.
-        };
+{
+    { "ComboBox_Ufid", true },             // Este ComboBox acepta letras, números y espacios.
+    { "comboBox_Localidad", true },        // Este ComboBox acepta letras, números y espacios, convirtiéndolos a mayúsculas.
+    { "comboBox_DeptoJudicial", false },   // Este ComboBox acepta letras y espacios, convirtiéndolos a mayúsculas, pero no acepta números.
+    // { "comboBox_AgenteFiscal", false }  // Este ComboBox será procesado por la clase CamelCase más adelante.
+};
 
-            // Aplica la configuración a todos los controles del formulario.
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones); //para guardar los items
-
+            // Aplica la configuración a todos los controles del formulario, excepto los que tienen lógica específica más adelante.
+            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
             //-----------------------------------------------------------------
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -106,6 +109,9 @@ namespace Ofelia_Sara
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
+        
+        
+        
         }
 
         //-----------------------------------------------------------------------------
@@ -262,6 +268,9 @@ namespace Ofelia_Sara
 
                         // Actualiza el texto del TextBox
                         textBox.Text = completedText;
+
+                        // Posiciona el cursor al final del texto
+                        textBox.SelectionStart = textBox.Text.Length;
                     }
                 }
 
@@ -269,6 +278,7 @@ namespace Ofelia_Sara
                 e.Handled = true;
             }
         }
+
         //--------------------------------------------------------------------------------------------
         //--------BOTON IMPRIMIR-------------------------------
 
@@ -622,5 +632,73 @@ namespace Ofelia_Sara
             comboBox_Dependencia.SelectedIndex = -1;
         }
 
+        private void comboBox_AgenteFiscal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza caracteres no válidos.
+            }
+            else
+            {
+                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
+            }
+        }
+
+        private void comboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza caracteres no válidos.
+            }
+            else
+            {
+                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
+            }
+        }
+
+        private void textBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza caracteres no válidos.
+            }
+            else
+            {
+                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
+            }
+        }
+
+        private void comboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
+        {
+            comboBox_AgenteFiscal.Text = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.Text);
+            comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.Text.Length;
+        }
+
+        private void comboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

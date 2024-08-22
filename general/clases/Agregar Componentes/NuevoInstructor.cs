@@ -61,10 +61,10 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
             comboBox_Escalafon.SelectedIndex = -1;
+                                    //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         //---------BOTON GUARDAR---------------------------------------
@@ -97,6 +97,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 MessageBox.Show("Se ha cargado nuevo Instructor a lista de Instructores en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LimpiarFormulario.Limpiar(this); //limpiar todos los controles
+                comboBox_Escalafon.SelectedIndex = -1;
             }
         }
         //----------------------------------------------------------------------------

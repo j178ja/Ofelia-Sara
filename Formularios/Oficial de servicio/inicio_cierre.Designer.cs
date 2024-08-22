@@ -215,6 +215,7 @@ namespace Ofelia_Sara
             this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
             this.textBox_Caratula.TabIndex = 4;
             this.textBox_Caratula.TextChanged += new System.EventHandler(this.textBox_Caratula_TextChanged);
+            this.textBox_Caratula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Caratula_KeyPress);
             // 
             // textBox_Victima
             // 
@@ -299,6 +300,8 @@ namespace Ofelia_Sara
             this.comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
             this.comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
             this.comboBox_AgenteFiscal.TabIndex = 8;
+            this.comboBox_AgenteFiscal.TextChanged += new System.EventHandler(this.comboBox_AgenteFiscal_TextChanged);
+            this.comboBox_AgenteFiscal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_AgenteFiscal_KeyPress);
             // 
             // comboBox_Ipp1
             // 
@@ -321,6 +324,7 @@ namespace Ofelia_Sara
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 0;
             this.comboBox_Ipp1.TextUpdate += new System.EventHandler(this.comboBox_Ipp1_TextUpdate);
+            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp1_KeyPress);
             // 
             // comboBox_Ipp2
             // 
@@ -341,6 +345,7 @@ namespace Ofelia_Sara
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 1;
             this.comboBox_Ipp2.TextUpdate += new System.EventHandler(this.comboBox_Ipp2_TextUpdate);
+            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp2_KeyPress);
             // 
             // lbl_00
             // 
@@ -363,6 +368,7 @@ namespace Ofelia_Sara
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 3;
             this.comboBox_Ipp4.TextUpdate += new System.EventHandler(this.comboBox_Ipp4_TextUpdate);
+            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp4_KeyPress);
             // 
             // btn_Buscar
             // 
@@ -603,6 +609,7 @@ namespace Ofelia_Sara
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Localidad.TabIndex = 9;
+            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
             // 
             // lbl_DeptoJudicial
             // 
