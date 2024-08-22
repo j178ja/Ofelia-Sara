@@ -19,6 +19,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
+          
+
             // Crear una instancia de TimePickerPersonalizado con tamaño especificado
             TimePickerPersonalizado timePicker = new TimePickerPersonalizado(263, 26);
 
@@ -36,19 +38,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Buscar);
 
-            // Define las excepciones para los TextBox y ComboBox.
-            var textBoxExcepciones = new Dictionary<string, bool>
+            InicializarComboBox();
+        }
+        private void InicializarComboBox()
         {
-            { "textBox_NumeroIpp", true }  // Este TextBox solo acepta números.
-        };
-
-            var comboBoxExcepciones = new Dictionary<string, bool>
-        {
-            { "ComboBox_Ufid", true }  // Este ComboBox acepta letras, números y espacios.
-        };
-
-            // Aplica la configuración a todos los controles del formulario.
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones); //para guardar los items
+            comboBox_Ipp1.SelectedIndex = 3;
+            comboBox_Ipp2.SelectedIndex = 3;
+            comboBox_Ipp4.SelectedIndex = 0;
 
         }
         // Método para posicionar el cursor en el textBox específico
@@ -75,7 +71,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
         //_____________________________________________________________________________________
         //-----------------------NUMERO IPP--------------------------------------------------
         private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
@@ -135,37 +131,213 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
+        // Verifica si el carácter presionado es un número o una tecla de control (como Backspace)
         private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Verifica si la tecla presionada es Enter
-            if (e.KeyChar == (char)Keys.Enter)
+            // Verifica si el carácter presionado es un número o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                // Obtiene el TextBox que disparó el evento
-                System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
-
-                if (textBox != null)
-                {
-                    // Obtiene el texto actual del TextBox
-                    string currentText = textBox.Text;
-
-                    // Verifica si el texto es numérico
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                        string completedText = currentText.PadLeft(6, '0');
-
-                        // Actualiza el texto del TextBox
-                        textBox.Text = completedText;
-                    }
-                }
-
-                // Marca el evento como manejado para evitar el comportamiento predeterminado
+                // Si no es un número ni una tecla de control, bloquea la entrada
                 e.Handled = true;
             }
         }
 
 
+        private void comboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void comboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void comboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Victima_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Imputado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Victima_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+            if (textBox != null)
+            {
+                // Convertir todo el texto a mayúsculas
+                textBox.Text = textBox.Text.ToUpper();
+                textBox.SelectionStart = textBox.Text.Length; // Coloca el cursor al final del texto
+            }
+        }
+
+        private void textBox_Imputado_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+            if (textBox != null)
+            {
+                // Convertir todo el texto a mayúsculas
+                textBox.Text = textBox.Text.ToUpper();
+                textBox.SelectionStart = textBox.Text.Length; // Coloca el cursor al final del texto
+            }
+        }
+
+        private void comboBox_Dependencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Instructor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Secretario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Secretario_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+
+            if (comboBox != null)
+            {
+                // Obtén el texto actual
+                string textoActual = comboBox.Text;
+
+                // Conviértelo a mayúsculas, ignorando caracteres especiales
+                StringBuilder textoFormateado = new StringBuilder();
+
+                foreach (char c in textoActual)
+                {
+                    if (char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c))
+                    {
+                        textoFormateado.Append(char.ToUpper(c));
+                    }
+                }
+
+                // Actualiza el texto en el ComboBox y coloca el cursor al final
+                comboBox.Text = textoFormateado.ToString();
+                comboBox.SelectionStart = textoFormateado.Length;
+            }
+        }
+
+        private void comboBox_Instructor_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+
+            if (comboBox != null)
+            {
+                // Obtén el texto actual
+                string textoActual = comboBox.Text;
+
+                // Conviértelo a mayúsculas, ignorando caracteres especiales
+                StringBuilder textoFormateado = new StringBuilder();
+
+                foreach (char c in textoActual)
+                {
+                    if (char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c))
+                    {
+                        textoFormateado.Append(char.ToUpper(c));
+                    }
+                }
+
+                // Actualiza el texto en el ComboBox y coloca el cursor al final
+                comboBox.Text = textoFormateado.ToString();
+                comboBox.SelectionStart = textoFormateado.Length;
+            }
+        }
+
+        private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+
+            if (comboBox != null)
+            {
+                // Obtén el texto actual
+                string textoActual = comboBox.Text;
+
+                // Conviértelo a mayúsculas, ignorando caracteres especiales
+                StringBuilder textoFormateado = new StringBuilder();
+
+                foreach (char c in textoActual)
+                {
+                    if (char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c))
+                    {
+                        textoFormateado.Append(char.ToUpper(c));
+                    }
+                }
+
+                // Actualiza el texto en el ComboBox y coloca el cursor al final
+                comboBox.Text = textoFormateado.ToString();
+                comboBox.SelectionStart = textoFormateado.Length;
+            }
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Caratula_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+
+            if (textBox != null)
+            {
+                // Construir el nuevo texto que contiene solo letras, números y espacios
+                StringBuilder nuevoTexto = new StringBuilder();
+
+                foreach (char c in textBox.Text)
+                {
+                    if (char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c))
+                    {
+                        nuevoTexto.Append(char.ToUpper(c));
+                    }
+                }
+
+                // Actualizar el texto del TextBox
+                textBox.Text = nuevoTexto.ToString();
+
+                // Coloca el cursor al final del texto
+                textBox.SelectionStart = textBox.Text.Length;
+            }
+        }
     }
 }
