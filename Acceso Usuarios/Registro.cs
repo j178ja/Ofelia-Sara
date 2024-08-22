@@ -39,6 +39,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //sobre ojo
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
             pictureBox_OjoContraseña.Enabled = false;
+
+            //  deshabilitar la edición del ComboBox_Escalafon
+            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)

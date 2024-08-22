@@ -151,6 +151,7 @@
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp4.TabIndex = 24;
+            this.comboBox_Ipp4.TextUpdate += new System.EventHandler(this.comboBox_Ipp4_TextUpdate);
             // 
             // comboBox_Ipp2
             // 
@@ -171,6 +172,7 @@
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp2.TabIndex = 23;
+            this.comboBox_Ipp2.TextUpdate += new System.EventHandler(this.comboBox_Ipp2_TextUpdate);
             // 
             // comboBox_Ipp1
             // 
@@ -191,6 +193,7 @@
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp1.TabIndex = 3;
+            this.comboBox_Ipp1.TextUpdate += new System.EventHandler(this.comboBox_Ipp1_TextUpdate);
             // 
             // label_Caratula
             // 
@@ -298,11 +301,14 @@
             // 
             // textBox_NumeroIpp
             // 
-            this.textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_NumeroIpp.Location = new System.Drawing.Point(268, 60);
             this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(128, 26);
             this.textBox_NumeroIpp.TabIndex = 0;
+            this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
+            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
             // 
             // textBox_Imputado
             // 
