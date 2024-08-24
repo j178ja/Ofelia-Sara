@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarForm));
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
@@ -54,42 +54,42 @@
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
             // 
             this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 2, 9, 16, 39, 777);
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel2.Controls.Add(this.timePickerPersonalizado1);
-            this.panel2.Controls.Add(this.comboBox_Secretario);
-            this.panel2.Controls.Add(this.comboBox_Instructor);
-            this.panel2.Controls.Add(this.comboBox_Dependencia);
-            this.panel2.Controls.Add(this.label_00);
-            this.panel2.Controls.Add(this.comboBox_Ipp4);
-            this.panel2.Controls.Add(this.comboBox_Ipp2);
-            this.panel2.Controls.Add(this.comboBox_Ipp1);
-            this.panel2.Controls.Add(this.label_Caratula);
-            this.panel2.Controls.Add(this.textBox_Caratula);
-            this.panel2.Controls.Add(this.btn_Buscar);
-            this.panel2.Controls.Add(this.btn_Limpiar);
-            this.panel2.Controls.Add(this.label_Fecha);
-            this.panel2.Controls.Add(this.label_Secretario);
-            this.panel2.Controls.Add(this.label_Instructor);
-            this.panel2.Controls.Add(this.label_Dependencia);
-            this.panel2.Controls.Add(this.label_Imputado);
-            this.panel2.Controls.Add(this.label_Victima);
-            this.panel2.Controls.Add(this.textBox_NumeroIpp);
-            this.panel2.Controls.Add(this.textBox_Imputado);
-            this.panel2.Controls.Add(this.textBox_Victima);
-            this.panel2.Controls.Add(this.label_Ipp);
-            this.panel2.Location = new System.Drawing.Point(33, 22);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(570, 560);
-            this.panel2.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.timePickerPersonalizado1);
+            this.panel1.Controls.Add(this.comboBox_Secretario);
+            this.panel1.Controls.Add(this.comboBox_Instructor);
+            this.panel1.Controls.Add(this.comboBox_Dependencia);
+            this.panel1.Controls.Add(this.label_00);
+            this.panel1.Controls.Add(this.comboBox_Ipp4);
+            this.panel1.Controls.Add(this.comboBox_Ipp2);
+            this.panel1.Controls.Add(this.comboBox_Ipp1);
+            this.panel1.Controls.Add(this.label_Caratula);
+            this.panel1.Controls.Add(this.textBox_Caratula);
+            this.panel1.Controls.Add(this.btn_Buscar);
+            this.panel1.Controls.Add(this.btn_Limpiar);
+            this.panel1.Controls.Add(this.label_Fecha);
+            this.panel1.Controls.Add(this.label_Secretario);
+            this.panel1.Controls.Add(this.label_Instructor);
+            this.panel1.Controls.Add(this.label_Dependencia);
+            this.panel1.Controls.Add(this.label_Imputado);
+            this.panel1.Controls.Add(this.label_Victima);
+            this.panel1.Controls.Add(this.textBox_NumeroIpp);
+            this.panel1.Controls.Add(this.textBox_Imputado);
+            this.panel1.Controls.Add(this.textBox_Victima);
+            this.panel1.Controls.Add(this.label_Ipp);
+            this.panel1.Location = new System.Drawing.Point(33, 22);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(570, 560);
+            this.panel1.TabIndex = 2;
             // 
             // timePickerPersonalizado1
             // 
@@ -358,7 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_Limpiar;
             this.ClientSize = new System.Drawing.Size(638, 628);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -367,9 +367,9 @@
             this.Text = "BUSCAR EN BASE DE DATOS";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarForm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Buscar_Load);
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,7 +377,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Ipp;
         private System.Windows.Forms.TextBox textBox_NumeroIpp;
         private System.Windows.Forms.TextBox textBox_Imputado;

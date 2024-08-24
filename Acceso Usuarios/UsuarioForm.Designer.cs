@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.btn_Registrarse = new System.Windows.Forms.Button();
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.textBox_Contraseña = new System.Windows.Forms.TextBox();
@@ -36,8 +37,7 @@
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.label_Validacion = new System.Windows.Forms.Label();
-            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,21 +45,32 @@
             // 
             this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 7, 2, 24, 29, 988);
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel2.Controls.Add(this.pictureBox_OjoContraseña);
-            this.panel2.Controls.Add(this.btn_Registrarse);
-            this.panel2.Controls.Add(this.btn_Ingresar);
-            this.panel2.Controls.Add(this.textBox_Contraseña);
-            this.panel2.Controls.Add(this.textBox_Usuario);
-            this.panel2.Controls.Add(this.label_Contraseña);
-            this.panel2.Controls.Add(this.label_Usuario);
-            this.panel2.Controls.Add(this.label_Validacion);
-            this.panel2.Location = new System.Drawing.Point(23, 23);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(537, 239);
-            this.panel2.TabIndex = 3;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.pictureBox_OjoContraseña);
+            this.panel1.Controls.Add(this.btn_Registrarse);
+            this.panel1.Controls.Add(this.btn_Ingresar);
+            this.panel1.Controls.Add(this.textBox_Contraseña);
+            this.panel1.Controls.Add(this.textBox_Usuario);
+            this.panel1.Controls.Add(this.label_Contraseña);
+            this.panel1.Controls.Add(this.label_Usuario);
+            this.panel1.Controls.Add(this.label_Validacion);
+            this.panel1.Location = new System.Drawing.Point(23, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(537, 239);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox_OjoContraseña
+            // 
+            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 119);
+            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
+            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
+            this.pictureBox_OjoContraseña.TabIndex = 28;
+            this.pictureBox_OjoContraseña.TabStop = false;
+            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
+            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseUp);
             // 
             // btn_Registrarse
             // 
@@ -141,23 +152,12 @@
             this.label_Validacion.TabIndex = 0;
             this.label_Validacion.Text = "VALIDACION DE USUARIOS";
             // 
-            // pictureBox_OjoContraseña
-            // 
-            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 119);
-            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
-            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox_OjoContraseña.TabIndex = 28;
-            this.pictureBox_OjoContraseña.TabStop = false;
-            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
-            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseUp);
-            // 
             // UsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 305);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -167,9 +167,9 @@
             this.Text = "VALIDACION DE PERMISOS";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.UsuarioForm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Usuario_Load);
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -178,7 +178,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Usuario;
         private System.Windows.Forms.Label label_Validacion;
         private System.Windows.Forms.Button btn_Ingresar;
