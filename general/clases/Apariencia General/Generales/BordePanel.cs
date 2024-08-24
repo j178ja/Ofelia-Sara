@@ -12,8 +12,12 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Generales
 
     public static class PanelExtensions
     {
-        public static void ApplyRoundedCorners(this Panel panel, int borderRadius = 10, int borderSize = 2, Color? borderColor = null)
+        // Método para aplicar bordes redondeados a un panel específico
+        public static void ApplyRoundedCorners(this Panel panel, Panel targetPanel, int borderRadius = 10, int borderSize = 2, Color? borderColor = null)
         {
+            if (panel != targetPanel)
+                return;
+
             panel.Paint += (sender, e) =>
             {
                 // Establecer el color del borde si no se proporciona

@@ -42,8 +42,17 @@ namespace Ofelia_Sara
         {
             InitializeComponent();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
+            textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
+            textBox_Victima.TextChanged += (s, e) => ActualizarEstado();
+            textBox_Imputado.TextChanged += (s, e) => ActualizarEstado();
+          
+            comboBox_AgenteFiscal.SelectedIndexChanged += (s, e) => ActualizarEstado();
+            comboBox_Instructor.SelectedIndexChanged += (s, e) => ActualizarEstado();
+            comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
+            comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
+
+            //panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: Color.FromArgb(0, 154, 174));
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -71,7 +80,7 @@ namespace Ofelia_Sara
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
 
-
+           
         }
 
 
@@ -108,15 +117,15 @@ namespace Ofelia_Sara
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
 
 
-           
+
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
-        
-        
-        
+
+            ActualizarEstado();//PARA LABEL Y CHECK CARGO
         }
+
 
         //-----------------------------------------------------------------------------
         private void GuardarDatos()
@@ -165,7 +174,7 @@ namespace Ofelia_Sara
             }
             else
             {
-                
+
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
                 MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -203,7 +212,9 @@ namespace Ofelia_Sara
 
                 // Mover el cursor al final del texto
                 textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
+                ActualizarEstado();
             }
+
         }
         //-------------------------------------------------------------
         //---------------COMBO BOX IPP 1      ------------------
@@ -301,7 +312,7 @@ namespace Ofelia_Sara
 
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
-                
+
                 CargarImpresion();
 
                 var generador = new GeneradorDocumentos();
@@ -330,7 +341,7 @@ namespace Ofelia_Sara
             comboBox_Ipp1.SelectedIndex = 3;
             comboBox_Ipp2.SelectedIndex = 3;
             comboBox_Ipp4.SelectedIndex = 0;
-                      
+
         }
         //----------------------------------------------------------------------
 
@@ -363,6 +374,7 @@ namespace Ofelia_Sara
         private void textBox_Caratula_TextChanged(object sender, EventArgs e)
         {
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//habilita el btn_AgregarCausa en caso de tener texto
+            ActualizarEstado();
         }
 
         //-------------------------------------------------------------------------------
@@ -382,7 +394,7 @@ namespace Ofelia_Sara
             if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
             {
                 btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
-
+                ActualizarEstado();
             }
             else
             {
@@ -400,6 +412,7 @@ namespace Ofelia_Sara
             if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text))
             {
                 btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
+                ActualizarEstado();
             }
             else
             {
@@ -536,7 +549,7 @@ namespace Ofelia_Sara
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-          
+
             // Crear y mostrar el formulario BuscarPersonal
             BuscarForm buscarForm = new BuscarForm();
 
@@ -546,7 +559,7 @@ namespace Ofelia_Sara
         //-----para inicializar los COMBOBOX FISCALIA----------------
         private void InicializarComboBoxFISCALIA()
         {
-            
+
             // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
             List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
             List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
@@ -559,7 +572,7 @@ namespace Ofelia_Sara
             comboBox_Localidad.DataSource = localidades;
             comboBox_DeptoJudicial.DataSource = deptosJudiciales;
 
-      
+
             comboBox_Fiscalia.SelectedIndex = -1;
             comboBox_AgenteFiscal.SelectedIndex = -1;
             comboBox_Localidad.SelectedIndex = -1;
@@ -585,6 +598,7 @@ namespace Ofelia_Sara
                     comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
                     comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
                     comboBox_DeptoJudicial.DataSource = new List<string> { fiscalia.DeptoJudicial }.Distinct().ToList();
+                    ActualizarEstado();
                 }
                 else
                 {
@@ -704,5 +718,43 @@ namespace Ofelia_Sara
                 e.Handled = true;
             }
         }
+
+        //--Para habilitar check y modificar label
+        private void ActualizarEstado()
+        {
+            // Verifica si cada campo no está vacío ni solo con espacios
+            bool esTextoValidoNumeroIPP = !string.IsNullOrWhiteSpace(textBox_NumeroIpp.Text);
+            bool esTextoValidoCaratula = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);
+            bool esTextoValidoVictima = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
+            bool esTextoValidoImputado = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
+            bool esTextoValidoUfid = !string.IsNullOrWhiteSpace(comboBox_Fiscalia.Text);
+            bool esTextoValidoInstructor = !string.IsNullOrWhiteSpace(comboBox_Instructor.Text);
+            bool esTextoValidoSecretario = !string.IsNullOrWhiteSpace(comboBox_Secretario.Text);
+            bool esTextoValidoDependencia = !string.IsNullOrWhiteSpace(comboBox_Dependencia.Text);
+         
+
+            // Todos los campos deben ser válidos para que esTextoValido sea verdadero
+            bool esTextoValido = esTextoValidoNumeroIPP && esTextoValidoCaratula && esTextoValidoVictima &&
+                                 esTextoValidoImputado && esTextoValidoUfid  &&
+                                 esTextoValidoInstructor && esTextoValidoSecretario && esTextoValidoDependencia ;
+
+
+            // Actualiza el color del label y el estado del checkbox según el estado de validación
+            if (esTextoValido)
+            {
+                label_Cargo.ForeColor = Color.Black;
+                label_Cargo.BackColor = Color.Transparent;
+                checkBox_Cargo.Enabled = true;
+                checkBox_Cargo.BackColor = Color.Transparent;
+            }
+            else
+            {
+                label_Cargo.ForeColor = Color.Tomato;
+                label_Cargo.BackColor = Color.FromArgb(211, 211, 211); // Gris claro
+                checkBox_Cargo.Enabled = false;
+                checkBox_Cargo.BackColor = Color.Tomato;
+            }
+        }
+
     }
 }

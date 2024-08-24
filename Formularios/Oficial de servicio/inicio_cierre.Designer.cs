@@ -70,10 +70,12 @@ namespace Ofelia_Sara
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
+            this.checkBox_Cargo = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Ipp = new System.Windows.Forms.Panel();
             this.panel_Caratula = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            this.label_Cargo = new System.Windows.Forms.Label();
             this.label_RatificacionPersonal = new System.Windows.Forms.Label();
             this.lbl_Localida = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
@@ -213,7 +215,7 @@ namespace Ofelia_Sara
             this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Caratula.TabIndex = 4;
+            this.textBox_Caratula.TabIndex = 0;
             this.textBox_Caratula.TextChanged += new System.EventHandler(this.textBox_Caratula_TextChanged);
             this.textBox_Caratula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Caratula_KeyPress);
             // 
@@ -222,7 +224,7 @@ namespace Ofelia_Sara
             this.textBox_Victima.Location = new System.Drawing.Point(126, 3);
             this.textBox_Victima.Name = "textBox_Victima";
             this.textBox_Victima.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Victima.TabIndex = 5;
+            this.textBox_Victima.TabIndex = 0;
             this.textBox_Victima.TextChanged += new System.EventHandler(this.textBox_Victima_TextChanged);
             // 
             // textBox_Imputado
@@ -230,7 +232,7 @@ namespace Ofelia_Sara
             this.textBox_Imputado.Location = new System.Drawing.Point(126, 3);
             this.textBox_Imputado.Name = "textBox_Imputado";
             this.textBox_Imputado.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Imputado.TabIndex = 6;
+            this.textBox_Imputado.TabIndex = 0;
             this.textBox_Imputado.TextChanged += new System.EventHandler(this.textBox_Imputado_TextChanged);
             // 
             // comboBox_Fiscalia
@@ -244,7 +246,7 @@ namespace Ofelia_Sara
             this.comboBox_Fiscalia.Location = new System.Drawing.Point(111, 2);
             this.comboBox_Fiscalia.Name = "comboBox_Fiscalia";
             this.comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
-            this.comboBox_Fiscalia.TabIndex = 7;
+            this.comboBox_Fiscalia.TabIndex = 0;
             this.comboBox_Fiscalia.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Fiscalia_SelectedIndexChanged);
             // 
             // comboBox_Instructor
@@ -258,7 +260,7 @@ namespace Ofelia_Sara
             this.comboBox_Instructor.Location = new System.Drawing.Point(111, 84);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Instructor.TabIndex = 11;
+            this.comboBox_Instructor.TabIndex = 4;
             // 
             // comboBox_Secretario
             // 
@@ -273,7 +275,7 @@ namespace Ofelia_Sara
             this.comboBox_Secretario.Location = new System.Drawing.Point(111, 112);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Secretario.TabIndex = 12;
+            this.comboBox_Secretario.TabIndex = 5;
             // 
             // comboBox_Dependencia
             // 
@@ -286,7 +288,7 @@ namespace Ofelia_Sara
             this.comboBox_Dependencia.Location = new System.Drawing.Point(111, 139);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Dependencia.TabIndex = 13;
+            this.comboBox_Dependencia.TabIndex = 6;
             // 
             // comboBox_AgenteFiscal
             // 
@@ -299,7 +301,7 @@ namespace Ofelia_Sara
             this.comboBox_AgenteFiscal.Location = new System.Drawing.Point(235, 2);
             this.comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
             this.comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
-            this.comboBox_AgenteFiscal.TabIndex = 8;
+            this.comboBox_AgenteFiscal.TabIndex = 1;
             this.comboBox_AgenteFiscal.TextChanged += new System.EventHandler(this.comboBox_AgenteFiscal_TextChanged);
             this.comboBox_AgenteFiscal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_AgenteFiscal_KeyPress);
             // 
@@ -391,7 +393,7 @@ namespace Ofelia_Sara
             this.btn_Guardar.Location = new System.Drawing.Point(113, 261);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 15;
+            this.btn_Guardar.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
@@ -404,7 +406,7 @@ namespace Ofelia_Sara
             this.btn_Limpiar.Location = new System.Drawing.Point(212, 261);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Limpiar.TabIndex = 17;
+            this.btn_Limpiar.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
@@ -417,7 +419,7 @@ namespace Ofelia_Sara
             this.btn_Imprimir.Location = new System.Drawing.Point(311, 253);
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
-            this.btn_Imprimir.TabIndex = 16;
+            this.btn_Imprimir.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
             this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
@@ -494,13 +496,23 @@ namespace Ofelia_Sara
             // checkBox_LegajoDetenido
             // 
             this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(201, 217);
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(192, 212);
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_LegajoDetenido.TabIndex = 39;
+            this.checkBox_LegajoDetenido.TabIndex = 8;
             this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere RATIFICACION TESTIMONIAL");
             this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
             this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.checkBox_LegajoDetenido_CheckedChanged);
+            // 
+            // checkBox_Cargo
+            // 
+            this.checkBox_Cargo.AutoSize = true;
+            this.checkBox_Cargo.Location = new System.Drawing.Point(377, 213);
+            this.checkBox_Cargo.Name = "checkBox_Cargo";
+            this.checkBox_Cargo.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Cargo.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.checkBox_Cargo, "Marcar si requiere RATIFICACION TESTIMONIAL");
+            this.checkBox_Cargo.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -550,6 +562,8 @@ namespace Ofelia_Sara
             // 
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
+            this.panel_ControlesInferiores.Controls.Add(this.checkBox_Cargo);
+            this.panel_ControlesInferiores.Controls.Add(this.label_Cargo);
             this.panel_ControlesInferiores.Controls.Add(this.checkBox_LegajoDetenido);
             this.panel_ControlesInferiores.Controls.Add(this.label_RatificacionPersonal);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
@@ -577,12 +591,22 @@ namespace Ofelia_Sara
             this.panel_ControlesInferiores.Size = new System.Drawing.Size(430, 351);
             this.panel_ControlesInferiores.TabIndex = 42;
             // 
+            // label_Cargo
+            // 
+            this.label_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Cargo.Location = new System.Drawing.Point(299, 208);
+            this.label_Cargo.Name = "label_Cargo";
+            this.label_Cargo.Size = new System.Drawing.Size(97, 23);
+            this.label_Cargo.TabIndex = 40;
+            this.label_Cargo.Text = "   Cargo   ";
+            this.label_Cargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label_RatificacionPersonal
             // 
             this.label_RatificacionPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RatificacionPersonal.Location = new System.Drawing.Point(9, 208);
+            this.label_RatificacionPersonal.Location = new System.Drawing.Point(9, 203);
             this.label_RatificacionPersonal.Name = "label_RatificacionPersonal";
-            this.label_RatificacionPersonal.Size = new System.Drawing.Size(236, 28);
+            this.label_RatificacionPersonal.Size = new System.Drawing.Size(207, 28);
             this.label_RatificacionPersonal.TabIndex = 38;
             this.label_RatificacionPersonal.Text = "Ratificación testimonial   ";
             this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -608,7 +632,7 @@ namespace Ofelia_Sara
             this.comboBox_Localidad.Location = new System.Drawing.Point(111, 29);
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Localidad.TabIndex = 9;
+            this.comboBox_Localidad.TabIndex = 2;
             this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
             // 
             // lbl_DeptoJudicial
@@ -630,7 +654,7 @@ namespace Ofelia_Sara
             this.comboBox_DeptoJudicial.Location = new System.Drawing.Point(111, 56);
             this.comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
             this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_DeptoJudicial.TabIndex = 10;
+            this.comboBox_DeptoJudicial.TabIndex = 3;
             // 
             // timePickerPersonalizado1
             // 
@@ -639,7 +663,7 @@ namespace Ofelia_Sara
             this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
             this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             this.timePickerPersonalizado1.Size = new System.Drawing.Size(286, 25);
-            this.timePickerPersonalizado1.TabIndex = 14;
+            this.timePickerPersonalizado1.TabIndex = 7;
             // 
             // panel_Imputado
             // 
@@ -764,5 +788,7 @@ namespace Ofelia_Sara
         private System.Windows.Forms.Panel panel_Ipp;
         private System.Windows.Forms.Label label_RatificacionPersonal;
         private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
+        private System.Windows.Forms.Label label_Cargo;
+        private System.Windows.Forms.CheckBox checkBox_Cargo;
     }
 }
