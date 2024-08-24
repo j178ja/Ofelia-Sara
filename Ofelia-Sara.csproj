@@ -290,6 +290,7 @@
     </Compile>
     <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\Generales\BordePanel.cs" />
+    <Compile Include="general\clases\Apariencia General\Generales\PosicionarFormularioDebajo.cs" />
     <Compile Include="general\clases\Apariencia General\Texto\CamelCase.cs" />
     <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>

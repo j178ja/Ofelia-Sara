@@ -38,7 +38,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Asocia el evento TextChanged del TextBox
             textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
 
-
+            //para redondear bordes panel
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
@@ -159,7 +161,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Actualiza el color del label y el estado del checkbox según el texto del TextBox
             label_AgregarSellos.ForeColor = esTextoValido ? Color.Black : Color.Tomato;
-            label_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.Gray;
+            label_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.LightGray;
             
             // Actualiza el color de fondo del CheckBox y su estado habilitado/deshabilitado
             checkBox_AgregarSellos.Enabled = esTextoValido;

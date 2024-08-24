@@ -27,6 +27,10 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
+
+            //para redondear bordes de panel
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
        
         //-------------------------------------------
