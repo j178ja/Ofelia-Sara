@@ -513,6 +513,7 @@ namespace Ofelia_Sara
             this.checkBox_Cargo.TabIndex = 9;
             this.toolTip1.SetToolTip(this.checkBox_Cargo, "Marcar si requiere RATIFICACION TESTIMONIAL");
             this.checkBox_Cargo.UseVisualStyleBackColor = true;
+            this.checkBox_Cargo.CheckedChanged += new System.EventHandler(this.checkBox_Cargo_CheckedChanged);
             // 
             // panel1
             // 

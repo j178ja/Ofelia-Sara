@@ -73,6 +73,10 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // timePickerPersonalizadoFecha
+            // 
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 24, 15, 32, 34, 273);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -132,7 +136,6 @@
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 5;
             this.label6.Text = "U.F.I.D.";
-            
             // 
             // label7
             // 
@@ -257,7 +260,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(267, 20);
             this.textBox4.TabIndex = 7;
-            
             // 
             // textBox5
             // 
@@ -493,6 +495,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel1);
             this.Name = "Cargo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CARGO ";
             this.Load += new System.EventHandler(this.Cargo_Load);
             this.Controls.SetChildIndex(this.panel1, 0);

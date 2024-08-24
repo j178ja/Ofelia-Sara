@@ -58,9 +58,7 @@ namespace Ofelia_Sara.general.clases
             this.Paint += new PaintEventHandler(BaseForm_Paint);
 
             this.Load += new System.EventHandler(this.BaseForm_Load);
-            this.SizeChanged += BaseForm_SizeChanged;
-            this.LocationChanged += BaseForm_LocationChanged;
-            this.FormClosed += BaseForm_FormClosed;
+         
         }
         //--------------------------------------------------------------------------------
 
@@ -163,34 +161,6 @@ namespace Ofelia_Sara.general.clases
 
     
         }
-
-
-
-        private void BaseForm_SizeChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void BaseForm_LocationChanged(object sender, EventArgs e)
-        {
-            
-
-          
-        }
-
-        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           
-           
-        }
-
-        //------METODO PARA VERIFICAR CAMPOS COMPLETOS Y CACTIVAR BOTON------------
-        private void Control_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
 
         //------------------------------------------------------------
         //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
@@ -325,6 +295,10 @@ namespace Ofelia_Sara.general.clases
 
            
         }
+
+    
+
+       
     }
 }
 

@@ -756,5 +756,20 @@ namespace Ofelia_Sara
             }
         }
 
+        private void checkBox_Cargo_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verificar si el CheckBox está marcado
+            if (checkBox_Cargo.Checked)
+            {
+                // Crear y mostrar el formulario CARGO
+                Cargo cargo = new Cargo();
+
+               
+
+            // Mostrar el nuevo formulario
+            cargo.ShowDialog();
+            }
+        
+        }
     }
 }
