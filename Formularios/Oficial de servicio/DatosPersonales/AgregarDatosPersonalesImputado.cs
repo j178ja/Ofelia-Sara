@@ -423,7 +423,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             checkBox_LegajoDetenido.Enabled = esTextoValido;
             checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
-
-      
+              
     }
 }
