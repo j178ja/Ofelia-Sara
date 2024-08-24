@@ -18,7 +18,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         {
             InitializeComponent();
 
-          
+            //para redondear bordes de panel
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void SellosDependencia_Load(object sender, EventArgs e)

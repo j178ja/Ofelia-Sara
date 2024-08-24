@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.general.clases.Apariencia_General;
+
 using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 
 namespace Ofelia_Sara
@@ -15,14 +16,16 @@ namespace Ofelia_Sara
        
         private ContextMenuStrip contextMenu;
         private AuxiliarConfiguracion auxiliarConfiguracion;
-
+        
+       
 
         public MenuPrincipal()
         {
             InitializeComponent();
-            auxiliarConfiguracion = new AuxiliarConfiguracion();
 
+            auxiliarConfiguracion = new AuxiliarConfiguracion(this);
             posicionarMenu();
+           
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
@@ -43,6 +46,12 @@ namespace Ofelia_Sara
 
             // Establecer la ubicación del formulario
             this.Location = new Point(formX, formY);
+        }
+        private void OpenFormBelowMenuPrincipal(Form formToOpen)
+        {
+            formToOpen.StartPosition = FormStartPosition.Manual;
+            formToOpen.Location = new Point(this.Location.X, this.Location.Y + this.Height);
+            formToOpen.Show();
         }
         //_________________________________________________________
 

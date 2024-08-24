@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\apariencia general\\generales\\posicionarformulariodebajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\generales\\posicionarformulariodebajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "menu_principal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs*",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAEwHwAAABTAAAA",
+              "DocumentIndex": 3,
+              "Title": "PosicionarFormularioDebajo.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Generales\\PosicionarFormularioDebajo.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Generales\\PosicionarFormularioDebajo.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Generales\\PosicionarFormularioDebajo.cs",
+              "RelativeToolTip": "general\\clases\\Apariencia General\\Generales\\PosicionarFormularioDebajo.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAhwBoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T18:43:49.366Z",
+              "WhenOpened": "2024-08-24T19:45:15.04Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "menu_principal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:15:17.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "menu_principal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
               "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs [Dise\u00F1o]*",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T18:43:47.371Z",
+              "WhenOpened": "2024-08-24T19:15:12.97Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Cargo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\cargo.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\cargo.cs [Dise\u00F1o]",
+              "Title": "AuxiliarConfiguracion.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "RelativeToolTip": "general\\clases\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T18:32:34.583Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "inicio_cierre.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ViewState": "AQIAAPYCAAAAAAAAAAA4wP4CAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T18:25:16.079Z",
+              "WhenOpened": "2024-08-24T19:14:16.892Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "inicio_cierre.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T18:25:09.409Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
