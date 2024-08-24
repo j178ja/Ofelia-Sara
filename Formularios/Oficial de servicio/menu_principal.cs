@@ -87,6 +87,9 @@ namespace Ofelia_Sara
             InicioCierre inicioCierreForm = new InicioCierre();
             // Mostrar el formulario
             inicioCierreForm.Show();
+
+            // Minimizar el formulario "Menu Principal"
+            this.WindowState = FormWindowState.Minimized;//cierra formulario actual
         }
 
         //------BOTON IPP-----------------
@@ -105,6 +108,9 @@ namespace Ofelia_Sara
             Contravenciones ContravencionesForm = new Contravenciones();
             // Mostrar el formulario
             ContravencionesForm.Show();
+
+            // Minimizar el formulario "Menu Principal"
+            this.WindowState = FormWindowState.Minimized;//cierra formulario actual
         }
 
         //----------------BOTON EXPEDIENTES-----------
@@ -114,6 +120,9 @@ namespace Ofelia_Sara
             Expedientes ExpedientesForm = new Expedientes();
             // Mostrar el formulario
             ExpedientesForm.Show();
+
+            // Minimizar el formulario "Menu Principal"
+            this.WindowState = FormWindowState.Minimized;//cierra formulario actual
         }
 
         //-----------BOTON LEGAJO DETENIDOS-----------
