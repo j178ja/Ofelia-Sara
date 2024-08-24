@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,9 @@ namespace Ofelia_Sara.Formularios
         public Contacto()
         {
             InitializeComponent();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void Contacto_Load(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Ofelia_Sara.general.clases;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using System.Windows.Controls;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -19,7 +20,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-          
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             // Crear una instancia de TimePickerPersonalizado con tamaño especificado
             TimePickerPersonalizado timePicker = new TimePickerPersonalizado(263, 26);

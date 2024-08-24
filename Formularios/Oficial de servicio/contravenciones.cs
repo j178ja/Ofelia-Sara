@@ -1,6 +1,8 @@
 ﻿using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Ofelia_Sara
 {
@@ -9,6 +11,9 @@ namespace Ofelia_Sara
         public Contravenciones()
         {
             InitializeComponent();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void Contravenciones_Load(object sender, EventArgs e)

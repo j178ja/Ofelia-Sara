@@ -20,6 +20,7 @@ using Ofelia_Sara.Registro_de_personal;
 using Mysqlx.Cursor;
 using Ofelia_Sara.Base_de_Datos.Entidades;
 using System.Text.Json;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 
 
 
@@ -40,6 +41,9 @@ namespace Ofelia_Sara
         public InicioCierre()
         {
             InitializeComponent();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);

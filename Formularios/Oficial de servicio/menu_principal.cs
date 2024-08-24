@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 
 namespace Ofelia_Sara
 {
@@ -21,7 +22,29 @@ namespace Ofelia_Sara
             InitializeComponent();
             auxiliarConfiguracion = new AuxiliarConfiguracion();
 
+            posicionarMenu();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
+        //_________________________________--________________________________
+
+        private void posicionarMenu()
+        {
+            // Obtener las dimensiones de la pantalla
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            // Calcular la posición en X (centrado)
+            int formX = (screenWidth - this.Width) / 2;
+
+            // Calcular la posición en Y (20% desde el borde superior)
+            int formY = (int)(screenHeight * 0.15);
+
+            // Establecer la ubicación del formulario
+            this.Location = new Point(formX, formY);
+        }
+        //_________________________________________________________
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {

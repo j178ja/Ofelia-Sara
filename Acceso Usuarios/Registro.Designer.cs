@@ -30,7 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label_TelValidacion2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label_TelValidacion = new System.Windows.Forms.Label();
             this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
             this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
@@ -50,10 +53,7 @@
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_TelValidacion = new System.Windows.Forms.Label();
-            this.label_TelValidacion2 = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,34 +61,63 @@
             // 
             this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 7, 2, 40, 58, 723);
             // 
-            // panel4
+            // panel1
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel4.Controls.Add(this.label_TelValidacion2);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label_TelValidacion);
-            this.panel4.Controls.Add(this.pictureBox_OjoContraseña);
-            this.panel4.Controls.Add(this.comboBox_Jerarquia);
-            this.panel4.Controls.Add(this.comboBox_Escalafon);
-            this.panel4.Controls.Add(this.label_Subescalafon);
-            this.panel4.Controls.Add(this.btn_Limpiar);
-            this.panel4.Controls.Add(this.btn_Registrarse);
-            this.panel4.Controls.Add(this.label_Legajo);
-            this.panel4.Controls.Add(this.textBox_Legajo);
-            this.panel4.Controls.Add(this.label_Apellido);
-            this.panel4.Controls.Add(this.textBox_Apellido);
-            this.panel4.Controls.Add(this.textBox_Nombre);
-            this.panel4.Controls.Add(this.label_Nombre);
-            this.panel4.Controls.Add(this.label_Jerarquia);
-            this.panel4.Controls.Add(this.label_Registro);
-            this.panel4.Controls.Add(this.textBox_Contraseña);
-            this.panel4.Controls.Add(this.textBox_Usuario);
-            this.panel4.Controls.Add(this.label_Contraseña);
-            this.panel4.Controls.Add(this.label_Usuario);
-            this.panel4.Location = new System.Drawing.Point(18, 25);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(469, 494);
-            this.panel4.TabIndex = 4;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.label_TelValidacion2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label_TelValidacion);
+            this.panel1.Controls.Add(this.pictureBox_OjoContraseña);
+            this.panel1.Controls.Add(this.comboBox_Jerarquia);
+            this.panel1.Controls.Add(this.comboBox_Escalafon);
+            this.panel1.Controls.Add(this.label_Subescalafon);
+            this.panel1.Controls.Add(this.btn_Limpiar);
+            this.panel1.Controls.Add(this.btn_Registrarse);
+            this.panel1.Controls.Add(this.label_Legajo);
+            this.panel1.Controls.Add(this.textBox_Legajo);
+            this.panel1.Controls.Add(this.label_Apellido);
+            this.panel1.Controls.Add(this.textBox_Apellido);
+            this.panel1.Controls.Add(this.textBox_Nombre);
+            this.panel1.Controls.Add(this.label_Nombre);
+            this.panel1.Controls.Add(this.label_Jerarquia);
+            this.panel1.Controls.Add(this.label_Registro);
+            this.panel1.Controls.Add(this.textBox_Contraseña);
+            this.panel1.Controls.Add(this.textBox_Usuario);
+            this.panel1.Controls.Add(this.label_Contraseña);
+            this.panel1.Controls.Add(this.label_Usuario);
+            this.panel1.Location = new System.Drawing.Point(18, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(469, 494);
+            this.panel1.TabIndex = 4;
+            // 
+            // label_TelValidacion2
+            // 
+            this.label_TelValidacion2.AutoSize = true;
+            this.label_TelValidacion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TelValidacion2.Location = new System.Drawing.Point(40, 337);
+            this.label_TelValidacion2.Name = "label_TelValidacion2";
+            this.label_TelValidacion2.Size = new System.Drawing.Size(126, 16);
+            this.label_TelValidacion2.TabIndex = 30;
+            this.label_TelValidacion2.Text = "RECUPERACION";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(171, 324);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(232, 24);
+            this.textBox1.TabIndex = 29;
+            // 
+            // label_TelValidacion
+            // 
+            this.label_TelValidacion.AutoSize = true;
+            this.label_TelValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TelValidacion.Location = new System.Drawing.Point(58, 320);
+            this.label_TelValidacion.Name = "label_TelValidacion";
+            this.label_TelValidacion.Size = new System.Drawing.Size(87, 16);
+            this.label_TelValidacion.TabIndex = 28;
+            this.label_TelValidacion.Text = "TELEFONO";
             // 
             // pictureBox_OjoContraseña
             // 
@@ -273,41 +302,12 @@
             this.label_Usuario.TabIndex = 7;
             this.label_Usuario.Text = "USUARIO :";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(171, 324);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(232, 24);
-            this.textBox1.TabIndex = 29;
-            // 
-            // label_TelValidacion
-            // 
-            this.label_TelValidacion.AutoSize = true;
-            this.label_TelValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TelValidacion.Location = new System.Drawing.Point(58, 320);
-            this.label_TelValidacion.Name = "label_TelValidacion";
-            this.label_TelValidacion.Size = new System.Drawing.Size(87, 16);
-            this.label_TelValidacion.TabIndex = 28;
-            this.label_TelValidacion.Text = "TELEFONO";
-            // 
-            // label_TelValidacion2
-            // 
-            this.label_TelValidacion2.AutoSize = true;
-            this.label_TelValidacion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TelValidacion2.Location = new System.Drawing.Point(40, 337);
-            this.label_TelValidacion2.Name = "label_TelValidacion2";
-            this.label_TelValidacion2.Size = new System.Drawing.Size(126, 16);
-            this.label_TelValidacion2.TabIndex = 30;
-            this.label_TelValidacion2.Text = "RECUPERACION";
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 558);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -317,9 +317,9 @@
             this.Text = "REGISTRAR NUEVO USUARIO";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Registro_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Registro_Load);
-            this.Controls.SetChildIndex(this.panel4, 0);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -327,7 +327,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox_Contraseña;
         private System.Windows.Forms.TextBox textBox_Usuario;
         private System.Windows.Forms.Label label_Contraseña;

@@ -11,6 +11,7 @@ using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara;
 using Ofelia_Sara.Acceso_Usuarios;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 
 
 
@@ -21,6 +22,9 @@ namespace Ofelia_Sara.Formularios
         public UsuarioForm()
         {
             InitializeComponent();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void Usuario_Load(object sender, EventArgs e)

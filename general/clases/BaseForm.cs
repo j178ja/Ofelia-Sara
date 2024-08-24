@@ -5,14 +5,19 @@ using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System.IO;
 using Ofelia_Sara.Base_de_Datos;
+// Alias para el ShadowForm de tu propia clase
+
+using GunaShadowForm = Guna.UI2.WinForms.Suite.ShadowForm;
 
 
 namespace Ofelia_Sara.general.clases
 
 
 {
+    using Guna.UI2.WinForms.Suite;
     // using Ofelia_Sara.Base_de_Datos;
     using Ofelia_Sara.general.clases.Apariencia_General;
+   
     using System.Collections.Generic;
     using System.Data.SQLite;
     using System.Drawing.Drawing2D;
@@ -26,7 +31,8 @@ namespace Ofelia_Sara.general.clases
         private Panel mainPanel; // Panel que contiene los TextBox
 
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
-
+      
+       
 
         public BaseForm()
         {
@@ -45,29 +51,57 @@ namespace Ofelia_Sara.general.clases
             // Inicializa el panel principal
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
+           
+           
+            //this.Load += BaseForm_Load;
+
+            this.Paint += new PaintEventHandler(BaseForm_Paint);
+
             this.Load += new System.EventHandler(this.BaseForm_Load);
-            this.Load += BaseForm_Load;
-
-            //// Inicializar la base de datos
-            //InitializeDatabase();
-
-            //// Crear las tablas si no existen
-            //CrearTablas();
-
-            //// Inicializar el DataInserter
-            //dataInserter = new DataInserter(dbManager);
-
+            this.SizeChanged += BaseForm_SizeChanged;
+            this.LocationChanged += BaseForm_LocationChanged;
+            this.FormClosed += BaseForm_FormClosed;
         }
-        //private void InitializeDatabase()
-        //{
-        //    string databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "base_de_datos.db");
-        //    dbManager = new DatabaseManager(databasePath);
-        //}
-        //private void CrearTablas()
-        //{
-        //    var tableCreator = new TableCreator(dbManager);
-        //    tableCreator.CreateTables();
-        //}
+        //--------------------------------------------------------------------------------
+
+        private void DibujarFondoDegradado(Graphics g, int width, int height)
+        {
+            // Definir el centro inferior del formulario
+            PointF centerBottom = new PointF(width / 2f, height);
+
+            // Definir el radio máximo para el degradado
+            float maxRadius = height; //  ajustar este valor para controlar la extensión del degradado
+
+            // Crear un rectángulo que envuelva el área del degradado
+            RectangleF gradientRectangle = new RectangleF(centerBottom.X - maxRadius, centerBottom.Y - maxRadius, maxRadius * 2, maxRadius * 2);
+
+            // Crear un PathGradientBrush con una región en forma de semicírculo
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                // Añadir un arco (semicírculo) a la ruta
+                path.AddArc(gradientRectangle, 0, 180);
+
+                using (PathGradientBrush brush = new PathGradientBrush(path))
+                {
+                    // Configurar los colores del degradado
+                    brush.CenterColor = Color.FromArgb(0, 154, 174); // Color en el centro
+                    brush.SurroundColors = new Color[] { Color.White }; // Color en los bordes
+
+                    // Rellenar el formulario con el degradado
+                    g.FillRectangle(brush, this.ClientRectangle);
+                }
+            }
+        }
+        private void BaseForm_Paint(object sender, PaintEventArgs e)
+        {
+            // Obtener las dimensiones del formulario
+            int width = this.ClientSize.Width;
+            int height = this.ClientSize.Height;
+
+            // Llamar al método que dibuja el fondo degradado
+            DibujarFondoDegradado(e.Graphics, width, height);
+        }
+
         //-------------------------------------------------------------------------------
         //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
         protected void ConfigurarComboBoxEscalafonJerarquia(ComboBox comboBox_Escalafon, ComboBox comboBox_Jerarquia)
@@ -110,25 +144,46 @@ namespace Ofelia_Sara.general.clases
             this.Controls.Add(this.footerLinkLabel);
         }
 
-        protected void InitializeComponent()
+        //protected void InitializeComponent()
+        //{
+        //    this.SuspendLayout();
+        //    // 
+        //    // BaseForm
+        //    // 
+        //    this.ClientSize = new System.Drawing.Size(284, 261);
+        //    this.Name = "BaseForm";
+        //    this.Load += new System.EventHandler(this.BaseForm_Load);
+        //    this.ResumeLayout(false);
+
+        //}
+        private void BaseForm_Load(object sender, EventArgs e)
         {
-            this.SuspendLayout();
-            // 
-            // BaseForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "BaseForm";
-            this.Load += new System.EventHandler(this.BaseForm_Load);
-            this.ResumeLayout(false);
+            // Suponiendo que 'timePickerPersonalizadoFecha' es el nombre del control en el BaseForm
+            timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
+
+    
+        }
+
+
+
+        private void BaseForm_SizeChanged(object sender, EventArgs e)
+        {
+            
 
         }
 
-        private void BaseForm_Load(object sender, EventArgs e)
+        private void BaseForm_LocationChanged(object sender, EventArgs e)
         {
-            // Suponiendo que 'timePickerPersonalizado1' es el nombre del control en el BaseForm
-            timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
-         }
-      
+            
+
+          
+        }
+
+        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+           
+        }
 
         //------METODO PARA VERIFICAR CAMPOS COMPLETOS Y CACTIVAR BOTON------------
         private void Control_TextChanged(object sender, EventArgs e)

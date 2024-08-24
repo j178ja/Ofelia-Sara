@@ -289,6 +289,7 @@
       <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
+    <Compile Include="general\clases\Apariencia General\Generales\BordePanel.cs" />
     <Compile Include="general\clases\Apariencia General\Texto\CamelCase.cs" />
     <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
@@ -329,9 +330,6 @@
     <Compile Include="general\clases\Botones\TooltipEnBtnDesactivado.cs" />
     <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="general\clases\Mensajes\MensajePersonalizado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="general\clases\Apariencia General\salto_de_input.cs" />

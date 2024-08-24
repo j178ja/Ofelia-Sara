@@ -1,6 +1,9 @@
 ﻿using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using System;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using System.Drawing;
 
 namespace Ofelia_Sara
 {
@@ -10,6 +13,9 @@ namespace Ofelia_Sara
         public Cargo()
         {
             InitializeComponent();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void Cargo_Load(object sender, EventArgs e)

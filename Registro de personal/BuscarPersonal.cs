@@ -1,5 +1,6 @@
 ﻿using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
+using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ namespace Ofelia_Sara.Registro_de_personal
         public BuscarPersonal()
         {
             InitializeComponent();
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
