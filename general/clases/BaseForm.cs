@@ -67,8 +67,8 @@ namespace Ofelia_Sara.general.clases
             // Definir el centro inferior del formulario
             PointF centerBottom = new PointF(width / 2f, height);
 
-            // Definir el radio máximo para el degradado
-            float maxRadius = height; //  ajustar este valor para controlar la extensión del degradado
+            // Aumentar el radio máximo para un degradado más pronunciado
+            float maxRadius = height * 1.5f; // Ajustar para controlar la extensión del degradado
 
             // Crear un rectángulo que envuelva el área del degradado
             RectangleF gradientRectangle = new RectangleF(centerBottom.X - maxRadius, centerBottom.Y - maxRadius, maxRadius * 2, maxRadius * 2);
@@ -81,15 +81,16 @@ namespace Ofelia_Sara.general.clases
 
                 using (PathGradientBrush brush = new PathGradientBrush(path))
                 {
-                    // Configurar los colores del degradado
-                    brush.CenterColor = Color.FromArgb(0, 154, 174); // Color en el centro
-                    brush.SurroundColors = new Color[] { Color.White }; // Color en los bordes
+                    // Configurar colores más intensos para el degradado
+                    brush.CenterColor = Color.FromArgb(0, 100, 114); // Color más oscuro en el centro
+                    brush.SurroundColors = new Color[] { Color.FromArgb(200, 255, 255) }; // Color más suave en los bordes
 
                     // Rellenar el formulario con el degradado
                     g.FillRectangle(brush, this.ClientRectangle);
                 }
             }
         }
+
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
             // Obtener las dimensiones del formulario
@@ -296,9 +297,23 @@ namespace Ofelia_Sara.general.clases
            
         }
 
-    
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // BaseForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "BaseForm";
+            this.Load += new System.EventHandler(this.BaseForm_Load_1);
+            this.ResumeLayout(false);
 
-       
+        }
+
+        private void BaseForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

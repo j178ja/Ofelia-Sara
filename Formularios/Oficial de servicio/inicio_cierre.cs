@@ -761,13 +761,25 @@ namespace Ofelia_Sara
             // Verificar si el CheckBox está marcado
             if (checkBox_Cargo.Checked)
             {
-                // Crear y mostrar el formulario CARGO
-                Cargo cargo = new Cargo();
+                string Ipp1 = comboBox_Ipp1.Text;
+                string Ipp2 = comboBox_Ipp2.Text;
+                string NumeroIpp = textBox_NumeroIpp.Text;
+                string Ipp4 = comboBox_Ipp4.Text;
+                string Caratula = textBox_Caratula.Text;
+                string Victima = textBox_Victima.Text;
+                string Imputado = textBox_Imputado.Text;
+                string Fiscalia = comboBox_Fiscalia.Text;
+                string AgenteFiscal = comboBox_AgenteFiscal.Text;
+                string Instructor = comboBox_Instructor.Text;
+                string Secretario = comboBox_Secretario.Text;
+                string Dependencia = comboBox_Dependencia.Text;
 
-               
+              // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
+        Cargo cargo = new Cargo (Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
+                                Fiscalia, AgenteFiscal, Instructor, Secretario, Dependencia);
 
-            // Mostrar el nuevo formulario
-            cargo.ShowDialog();
+                // Mostrar el nuevo formulario
+                cargo.ShowDialog();
             }
         
         }

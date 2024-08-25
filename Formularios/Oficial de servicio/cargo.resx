@@ -425,4 +425,26 @@
         sDdSmInZLP7F4H98s7P7N1IIWvTF1ldFAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_AgregarDatosImputado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAERSURBVDhPrdE/
+        KG5xGMDx408KVyg2A+oqFgxKNwODkmQ0GJS6WZjMKBOxidFm92dRlHBvd5DJwKLIIuVPymLzeQ69pbf7
+        HoNvfYan3vOe33l+yXdXxjSH7DHClypljSfW2eKF32T2iwfG0+m9Vc6pS6cCjXJNYzq9N8wtP9OpQG3E
+        DxeJT6hnnz/8ILMJ7jjjiht6yayISrqZIbbeTGat7BBviyX1E9c0SDHt1JJXDf84YZYDYnGXTBGbPmWI
+        vOKK7ulLpyQpJ47bxAALPLLBGPGyXPFQLKYjnT63wgWvxGl2iT/N1cUzmywTD8zTQAU9xBVOUkUsNlcc
+        c44jjvnLNi1E1SzRmU7/KbZa8iGjJHkDpzoyIWfqZ9oAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_AgregarDatosVictima.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAERSURBVDhPrdE/
+        KG5xGMDx408KVyg2A+oqFgxKNwODkmQ0GJS6WZjMKBOxidFm92dRlHBvd5DJwKLIIuVPymLzeQ69pbf7
+        HoNvfYan3vOe33l+yXdXxjSH7DHClypljSfW2eKF32T2iwfG0+m9Vc6pS6cCjXJNYzq9N8wtP9OpQG3E
+        DxeJT6hnnz/8ILMJ7jjjiht6yayISrqZIbbeTGat7BBviyX1E9c0SDHt1JJXDf84YZYDYnGXTBGbPmWI
+        vOKK7ulLpyQpJ47bxAALPLLBGPGyXPFQLKYjnT63wgWvxGl2iT/N1cUzmywTD8zTQAU9xBVOUkUsNlcc
+        c44jjvnLNi1E1SzRmU7/KbZa8iGjJHkDpzoyIWfqZ9oAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
