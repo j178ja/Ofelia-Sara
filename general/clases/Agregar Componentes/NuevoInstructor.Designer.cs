@@ -81,9 +81,9 @@
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.label_Dependencia);
             this.panel1.Controls.Add(this.label_NuevoInstructor);
-            this.panel1.Location = new System.Drawing.Point(23, 25);
+            this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 454);
+            this.panel1.Size = new System.Drawing.Size(522, 443);
             this.panel1.TabIndex = 2;
             // 
             // comboBox_Dependencia
@@ -294,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 520);
+            this.ClientSize = new System.Drawing.Size(569, 496);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
