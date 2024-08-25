@@ -43,6 +43,12 @@ namespace Ofelia_Sara
 
         private void Cargo_Load(object sender, EventArgs e)
         {
+            textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
+            textBox_NumeroIpp.MaxLength = 6;
+            comboBox_Ipp1.MaxLength = 2;
+            comboBox_Ipp2.MaxLength = 2;
+            comboBox_Ipp4.MaxLength = 2;
+
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -63,11 +69,58 @@ namespace Ofelia_Sara
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
             MessageBox.Show("Formulario eliminado.");
+            
+
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_NumeroCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
+
+        private void comboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
+
+        private void comboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
+
+        private void comboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
+
+        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
         }
     }
 }
