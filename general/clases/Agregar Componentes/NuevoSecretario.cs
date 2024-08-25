@@ -235,17 +235,29 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         {
             TextBox textBox = sender as TextBox;
 
-            // Guardar la posición actual del cursor
+            // Guardar la posición actual del cursor antes de actualizar el texto
             int selectionStart = textBox.SelectionStart;
+            int originalLength = textBox.Text.Length;
 
             // Formatear el número con puntos
             string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
 
-            // Actualizar el texto en el TextBox y restaurar la posición del cursor
+            // Actualizar el texto en el TextBox
             textBox.Text = textoFormateado;
 
-            // Ajustar la posición del cursor para que no salte al final
-            textBox.SelectionStart = selectionStart + (textoFormateado.Length - textBox.Text.Length);
+            // Calcular la nueva posición del cursor
+            int deltaLength = textoFormateado.Length - originalLength;
+            int newCursorPosition = selectionStart + deltaLength;
+
+            // Ajustar la posición del cursor solo si la nueva posición está dentro del rango
+            if (newCursorPosition >= 0 && newCursorPosition <= textoFormateado.Length)
+            {
+                textBox.SelectionStart = newCursorPosition;
+            }
+            else
+            {
+                textBox.SelectionStart = textoFormateado.Length; // Colocar al final si está fuera de rango
+            }
         }
 
         //---------------------------------------------------------------------

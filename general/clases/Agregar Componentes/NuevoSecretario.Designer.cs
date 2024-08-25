@@ -89,7 +89,7 @@
             // comboBox_Dependencia
             // 
             this.comboBox_Dependencia.FormattingEnabled = true;
-            this.comboBox_Dependencia.Location = new System.Drawing.Point(156, 224);
+            this.comboBox_Dependencia.Location = new System.Drawing.Point(154, 211);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(327, 21);
             this.comboBox_Dependencia.TabIndex = 64;
@@ -98,7 +98,7 @@
             // 
             this.label_Dependencia.AutoSize = true;
             this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dependencia.Location = new System.Drawing.Point(29, 225);
+            this.label_Dependencia.Location = new System.Drawing.Point(27, 212);
             this.label_Dependencia.Name = "label_Dependencia";
             this.label_Dependencia.Size = new System.Drawing.Size(123, 16);
             this.label_Dependencia.TabIndex = 63;
@@ -169,9 +169,9 @@
             this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
             this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(349, 288);
+            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(275, 275);
             this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
-            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(134, 63);
+            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(206, 81);
             this.pictureBox_FirmaDigitalizada.TabIndex = 51;
             this.pictureBox_FirmaDigitalizada.TabStop = false;
             this.pictureBox_FirmaDigitalizada.Click += new System.EventHandler(this.PictureBox_Click);
@@ -182,7 +182,7 @@
             // textBox_Funcion
             // 
             this.textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Funcion.Location = new System.Drawing.Point(157, 251);
+            this.textBox_Funcion.Location = new System.Drawing.Point(155, 238);
             this.textBox_Funcion.Name = "textBox_Funcion";
             this.textBox_Funcion.Size = new System.Drawing.Size(326, 21);
             this.textBox_Funcion.TabIndex = 3;
@@ -191,7 +191,7 @@
             // 
             this.label_Funcion.AutoSize = true;
             this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(70, 254);
+            this.label_Funcion.Location = new System.Drawing.Point(68, 241);
             this.label_Funcion.Name = "label_Funcion";
             this.label_Funcion.Size = new System.Drawing.Size(82, 16);
             this.label_Funcion.TabIndex = 49;
@@ -200,7 +200,7 @@
             // textBox_Apellido
             // 
             this.textBox_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Apellido.Location = new System.Drawing.Point(156, 178);
+            this.textBox_Apellido.Location = new System.Drawing.Point(155, 174);
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(326, 21);
             this.textBox_Apellido.TabIndex = 2;
@@ -209,7 +209,7 @@
             // 
             this.label_Apellido.AutoSize = true;
             this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(63, 181);
+            this.label_Apellido.Location = new System.Drawing.Point(62, 177);
             this.label_Apellido.Name = "label_Apellido";
             this.label_Apellido.Size = new System.Drawing.Size(87, 16);
             this.label_Apellido.TabIndex = 47;
@@ -218,7 +218,7 @@
             // textBox_Nombre
             // 
             this.textBox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Nombre.Location = new System.Drawing.Point(156, 149);
+            this.textBox_Nombre.Location = new System.Drawing.Point(155, 145);
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(326, 21);
             this.textBox_Nombre.TabIndex = 1;
@@ -227,7 +227,7 @@
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(70, 150);
+            this.label_Nombre.Location = new System.Drawing.Point(69, 146);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(80, 16);
             this.label_Nombre.TabIndex = 45;
@@ -237,7 +237,7 @@
             // 
             this.checkBox_AgregarFirma.AutoSize = true;
             this.checkBox_AgregarFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(320, 309);
+            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(254, 298);
             this.checkBox_AgregarFirma.Name = "checkBox_AgregarFirma";
             this.checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarFirma.TabIndex = 4;
@@ -247,10 +247,10 @@
             // label_AgregaFirma
             // 
             this.label_AgregaFirma.AutoSize = true;
-            this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregaFirma.Location = new System.Drawing.Point(50, 307);
+            this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AgregaFirma.Location = new System.Drawing.Point(27, 296);
             this.label_AgregaFirma.Name = "label_AgregaFirma";
-            this.label_AgregaFirma.Size = new System.Drawing.Size(237, 16);
+            this.label_AgregaFirma.Size = new System.Drawing.Size(212, 15);
             this.label_AgregaFirma.TabIndex = 43;
             this.label_AgregaFirma.Text = "AGREGAR FIRMA DIGITALIZADA";
             // 
