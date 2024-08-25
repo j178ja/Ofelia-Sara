@@ -158,9 +158,9 @@
             this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
             this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(351, 272);
+            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(275, 266);
             this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
-            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(131, 62);
+            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(206, 81);
             this.pictureBox_FirmaDigitalizada.TabIndex = 37;
             this.pictureBox_FirmaDigitalizada.TabStop = false;
             this.pictureBox_FirmaDigitalizada.Click += new System.EventHandler(this.PictureBox_Click);
@@ -226,7 +226,7 @@
             // 
             this.checkBox_AgregarFirma.AutoSize = true;
             this.checkBox_AgregarFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(319, 293);
+            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(245, 296);
             this.checkBox_AgregarFirma.Name = "checkBox_AgregarFirma";
             this.checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarFirma.TabIndex = 4;
@@ -236,10 +236,10 @@
             // label_AgregaFirma
             // 
             this.label_AgregaFirma.AutoSize = true;
-            this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregaFirma.Location = new System.Drawing.Point(49, 291);
+            this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AgregaFirma.Location = new System.Drawing.Point(14, 292);
             this.label_AgregaFirma.Name = "label_AgregaFirma";
-            this.label_AgregaFirma.Size = new System.Drawing.Size(237, 16);
+            this.label_AgregaFirma.Size = new System.Drawing.Size(212, 15);
             this.label_AgregaFirma.TabIndex = 29;
             this.label_AgregaFirma.Text = "AGREGAR FIRMA DIGITALIZADA";
             // 
