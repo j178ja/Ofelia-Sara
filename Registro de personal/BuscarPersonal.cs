@@ -20,8 +20,8 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             InitializeComponent();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            //Color customBorderColor = Color.FromArgb(0, 154, 174);
+            //panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
