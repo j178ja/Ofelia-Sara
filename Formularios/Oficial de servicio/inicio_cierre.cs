@@ -190,9 +190,14 @@ namespace Ofelia_Sara
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            ReposicionarPanelesInferiores();
-            // Forzar redibujado del formulario para reflejar los cambios
-            this.Refresh();
+            //ReposicionarPanelesInferiores(); //comentado hasta que se logre un reposicionamiento optimo
+            //// Forzar redibujado del formulario para reflejar los cambios
+            //this.Refresh();
+
+            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            InicializarComboBoxINSTRUCTOR();
+            InicializarComboBoxDEPENDENCIAS();
 
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -217,6 +222,7 @@ namespace Ofelia_Sara
 
         }
         //-------------------------------------------------------------
+      
         //---------------COMBO BOX IPP 1      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void comboBox_Ipp1_TextUpdate(object sender, EventArgs e)
@@ -370,6 +376,7 @@ namespace Ofelia_Sara
 
         }
         //------------------------------------------------------------------------------
+      
         //-----------------METODO HABILITA BTN AGREGAR CAUSA------------------------------
         private void textBox_Caratula_TextChanged(object sender, EventArgs e)
         {
@@ -542,6 +549,38 @@ namespace Ofelia_Sara
             {
                 // Crear y mostrar el formulario BuscarPersonal
                 BuscarPersonal buscarPersonalForm = new BuscarPersonal();
+
+                // Obtener el formulario original (inicioCierre)
+                Form originalForm = this;
+
+                // Obtener el tamaño de ambos formularios
+                int totalWidth = originalForm.Width + buscarPersonalForm.Width;
+                int height = Math.Max(originalForm.Height, buscarPersonalForm.Height);
+
+                // Calcular la posición para centrar ambos formularios en la pantalla
+                int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+                int startX = (screenWidth - totalWidth) / 2;
+                int startY = (screenHeight - height) / 2;
+
+                // Posicionar el formulario original a la izquierda
+                originalForm.Location = new Point(startX, startY);
+
+                // Posicionar el formulario Cargo a la derecha del formulario original
+                buscarPersonalForm.StartPosition = FormStartPosition.Manual;
+                buscarPersonalForm.Location = new Point(startX + originalForm.Width, startY);
+
+                // Suscribirse al evento FormClosed del formulario Cargo
+                buscarPersonalForm.FormClosed += (s, args) =>
+                {
+                    // Calcular la nueva posición para centrar el formulario original
+                    int centerX = (screenWidth - originalForm.Width) / 2;
+                    int centerY = (screenHeight - originalForm.Height) / 2;
+
+                    // Reposicionar el formulario original en el centro de la pantalla
+                    originalForm.Location = new Point(centerX, centerY);
+                };
 
                 buscarPersonalForm.ShowDialog();
             }
@@ -778,10 +817,72 @@ namespace Ofelia_Sara
         Cargo cargo = new Cargo (Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
                                 Fiscalia, AgenteFiscal, Instructor, Secretario, Dependencia);
 
+
+                // Obtener el formulario original (inicioCierre)
+                Form originalForm = this;
+
+                // Obtener el tamaño de ambos formularios
+                int totalWidth = originalForm.Width + cargo.Width;
+                int height = Math.Max(originalForm.Height, cargo.Height);
+
+                // Calcular la posición para centrar ambos formularios en la pantalla
+                int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+                int startX = (screenWidth - totalWidth) / 2;
+                int startY = (screenHeight - height) / 2;
+
+                // Posicionar el formulario original a la izquierda
+                originalForm.Location = new Point(startX, startY);
+
+                // Posicionar el formulario Cargo a la derecha del formulario original
+                cargo.StartPosition = FormStartPosition.Manual;
+                cargo.Location = new Point(startX + originalForm.Width, startY);
+
+                // Suscribirse al evento FormClosed del formulario Cargo
+                cargo.FormClosed += (s, args) =>
+                {
+                    // Calcular la nueva posición para centrar el formulario original
+                    int centerX = (screenWidth - originalForm.Width) / 2;
+                    int centerY = (screenHeight - originalForm.Height) / 2;
+
+                    // Reposicionar el formulario original en el centro de la pantalla
+                    originalForm.Location = new Point(centerX, centerY);
+                };
+
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
             }
         
+        }
+
+        //________________________________________________________________________________________
+        //---para que permita desbloquear check cargo tambien con texto
+
+        // Este método maneja la lógica común para desmarcar el CheckBox
+        private void DesmarcarCheckBoxConTexto()
+        {
+            if (checkBox_Cargo.Checked)
+            {
+                checkBox_Cargo.Checked = false;
+            }
+        }
+
+     
+
+        private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
+        {
+            DesmarcarCheckBoxConTexto();
+        }
+
+        private void comboBox_Secretario_TextChanged(object sender, EventArgs e)
+        {
+            DesmarcarCheckBoxConTexto();
+        }
+
+        private void comboBox_Instructor_TextChanged(object sender, EventArgs e)
+        {
+            DesmarcarCheckBoxConTexto();
         }
     }
 }

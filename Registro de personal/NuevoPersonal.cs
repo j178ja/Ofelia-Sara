@@ -47,6 +47,8 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
+
+            textBox_NumeroLegajo.MaxLength = 7;
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
