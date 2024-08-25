@@ -17,6 +17,29 @@ namespace Ofelia_Sara
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
+        //----------------------------------------------------------------------------------
+        //---sobrecargar para que reciba los datos desde form iniciocierre
+        public Cargo(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
+                 string victima, string imputado, string fiscalia, string agenteFiscal,
+                 string instructor, string secretario, string dependencia)
+        {
+            InitializeComponent();
+
+            // Asignar los valores a los controles específicos del formulario
+            comboBox_Ipp1.Text = ipp1;
+            comboBox_Ipp2.Text = ipp2;
+            textBox_NumeroIpp.Text = numeroIpp;
+            comboBox_Ipp4.Text = ipp4;
+            textBox_Caratula.Text = caratula;
+            textBox_Victima.Text = victima;
+            textBox_Imputado.Text = imputado;
+            comboBox_Fiscalia.Text = fiscalia;  // Asignación al control
+            comboBox_AgenteFiscal.Text = agenteFiscal;
+            comboBox_Instructor.Text = instructor;
+            comboBox_Secretario.Text = secretario;
+            comboBox_Dependencia.Text = dependencia;
+        }
+        //----------------------------------------------------------------------------------------
 
         private void Cargo_Load(object sender, EventArgs e)
         {
