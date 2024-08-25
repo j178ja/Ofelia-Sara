@@ -54,6 +54,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             pictureBox_FirmaDigitalizada.DragEnter += PictureBox_DragEnter;
             pictureBox_FirmaDigitalizada.DragDrop += PictureBox_DragDrop;
             pictureBox_FirmaDigitalizada.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            textBox_NumeroLegajo.MaxLength = 7; //limitando numero de legajo
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
