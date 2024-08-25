@@ -58,9 +58,9 @@
             this.panel1.Controls.Add(this.textBox_NumeroLegajo);
             this.panel1.Controls.Add(this.lbl_Legajo);
             this.panel1.Controls.Add(this.lbl_Titulo);
-            this.panel1.Location = new System.Drawing.Point(24, 29);
+            this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 224);
+            this.panel1.Size = new System.Drawing.Size(671, 176);
             this.panel1.TabIndex = 2;
             // 
             // panel_ControlesInferiores
@@ -68,9 +68,9 @@
             this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(77, 121);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(83, 98);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(458, 100);
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(458, 75);
             this.panel_ControlesInferiores.TabIndex = 39;
             // 
             // btn_Registrar
@@ -79,7 +79,7 @@
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Registrar.Location = new System.Drawing.Point(107, 19);
+            this.btn_Registrar.Location = new System.Drawing.Point(107, 5);
             this.btn_Registrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Registrar.Name = "btn_Registrar";
             this.btn_Registrar.Size = new System.Drawing.Size(116, 62);
@@ -94,7 +94,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(358, 14);
+            this.btn_Guardar.Location = new System.Drawing.Point(358, 0);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 37;
@@ -104,7 +104,7 @@
             // panel_PersonalSeleccionado
             // 
             this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.Transparent;
-            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(16, 95);
+            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(3, 75);
             this.panel_PersonalSeleccionado.Name = "panel_PersonalSeleccionado";
             this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(640, 24);
             this.panel_PersonalSeleccionado.TabIndex = 38;
@@ -139,10 +139,10 @@
             // lbl_Legajo
             // 
             this.lbl_Legajo.AutoSize = true;
-            this.lbl_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Legajo.Location = new System.Drawing.Point(175, 48);
+            this.lbl_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Legajo.Location = new System.Drawing.Point(161, 48);
             this.lbl_Legajo.Name = "lbl_Legajo";
-            this.lbl_Legajo.Size = new System.Drawing.Size(131, 15);
+            this.lbl_Legajo.Size = new System.Drawing.Size(142, 16);
             this.lbl_Legajo.TabIndex = 33;
             this.lbl_Legajo.Text = "LEGAJO POLICIAL :";
             // 
@@ -164,13 +164,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 299);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(714, 227);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(734, 338);
+            this.MinimumSize = new System.Drawing.Size(734, 270);
             this.Name = "BuscarPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUSCAR PERSONAL POLICIAL";
