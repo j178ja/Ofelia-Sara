@@ -261,6 +261,7 @@ namespace Ofelia_Sara
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Instructor.TabIndex = 4;
+            this.comboBox_Instructor.TextChanged += new System.EventHandler(this.comboBox_Instructor_TextChanged);
             // 
             // comboBox_Secretario
             // 
@@ -276,6 +277,7 @@ namespace Ofelia_Sara
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Secretario.TabIndex = 5;
+            this.comboBox_Secretario.TextChanged += new System.EventHandler(this.comboBox_Secretario_TextChanged);
             // 
             // comboBox_Dependencia
             // 
@@ -289,6 +291,7 @@ namespace Ofelia_Sara
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Dependencia.TabIndex = 6;
+            this.comboBox_Dependencia.TextChanged += new System.EventHandler(this.comboBox_Dependencia_TextChanged);
             // 
             // comboBox_AgenteFiscal
             // 

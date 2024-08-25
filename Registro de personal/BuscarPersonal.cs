@@ -34,6 +34,8 @@ namespace Ofelia_Sara.Registro_de_personal
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
+
+            textBox_NumeroLegajo.MaxLength = 7;
         }
 
         private void btn_Registrar_Click(object sender, EventArgs e)
