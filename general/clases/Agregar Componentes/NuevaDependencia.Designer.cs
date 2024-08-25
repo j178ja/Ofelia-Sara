@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.label_Domicilio);
             this.panel1.Controls.Add(this.label_Dependencia);
             this.panel1.Controls.Add(this.label_NuevaDep);
-            this.panel1.Location = new System.Drawing.Point(21, 24);
+            this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 281);
+            this.panel1.Size = new System.Drawing.Size(524, 255);
             this.panel1.TabIndex = 2;
             // 
             // checkBox_AgregarSellos
@@ -92,7 +92,7 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(144, 196);
+            this.btn_Limpiar.Location = new System.Drawing.Point(144, 169);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 4;
@@ -105,7 +105,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(395, 196);
+            this.btn_Guardar.Location = new System.Drawing.Point(395, 169);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 3;
@@ -167,14 +167,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 346);
+            this.ClientSize = new System.Drawing.Size(569, 307);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NuevaDependencia";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AGREGAR NUEVA DEPENDENCIA";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.NuevaDependencia_HelpButtonClicked);
             this.Load += new System.EventHandler(this.NuevaDependencia_Load);
