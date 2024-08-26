@@ -98,14 +98,13 @@ namespace Ofelia_Sara
             // Define las excepciones para los TextBox y ComboBox.
             var textBoxExcepciones = new Dictionary<string, bool>
 {
-    { "textBox_NumeroIpp", true },  // Este TextBox solo acepta números.
-      { "TextBox_Caratula", true }
-};
+    { "textBox_NumeroIpp", true },  // Este TextBox  acepta solo números 
+ };
 
             var comboBoxExcepciones = new Dictionary<string, bool>
 {
     { "ComboBox_Ufid", true },             // Este ComboBox acepta letras, números y espacios.
-    { "comboBox_Localidad", true },        // Este ComboBox acepta letras, números y espacios, convirtiéndolos a mayúsculas.
+     { "comboBox_Localidad", true },        // Este ComboBox acepta letras, números y espacios, convirtiéndolos a mayúsculas.
     { "comboBox_DeptoJudicial", false },   // Este ComboBox acepta letras y espacios, convirtiéndolos a mayúsculas, pero no acepta números.
     // { "comboBox_AgenteFiscal", false }  // Este ComboBox será procesado por la clase CamelCase más adelante.
 };
@@ -840,13 +839,18 @@ namespace Ofelia_Sara
 
         private void textBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permitir letras, números, espacios y caracteres de control
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true; // Rechaza caracteres no válidos.
             }
             else
             {
-                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
+                // Convierte letras a mayúsculas y mantiene números y espacios sin cambios
+                if (char.IsLetter(e.KeyChar))
+                {
+                    e.KeyChar = char.ToUpper(e.KeyChar);
+                }
             }
         }
 

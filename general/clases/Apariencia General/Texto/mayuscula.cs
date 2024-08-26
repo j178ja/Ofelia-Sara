@@ -54,6 +54,33 @@ public static class TextoEnMayuscula
                 }
             };
         }
+        //------para manejar facil textbox caratula
+        else if (textBox.Name == "textBox_Caratula")
+        {
+            // Configura para permitir letras, números y espacios.
+            textBox.KeyPress += (sender, e) =>
+            {
+                if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true; // Rechaza otros caracteres.
+                }
+            };
+
+            // Maneja el evento TextChanged para convertir a mayúsculas usando MayusculaSimple.
+            textBox.TextChanged += (sender, e) =>
+            {
+                // Guarda la posición del cursor.
+                int selectionStart = textBox.SelectionStart;
+
+                // Convierte el texto usando la clase MayusculaSimple.
+                string convertedText = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+
+                // Actualiza el texto del TextBox y posiciona el cursor al final.
+                textBox.Text = convertedText;
+                textBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final del texto.
+            };
+        }
+
         else
         {
             // Maneja el evento KeyPress para permitir solo letras y espacios.
@@ -70,10 +97,14 @@ public static class TextoEnMayuscula
                 int selectionStart = textBox.SelectionStart; // Guarda la posición del cursor.
                 string filteredText = FiltrarTexto(textBox.Text); // Filtra el texto.
                 textBox.Text = filteredText.ToUpper(); // Convierte el texto a mayúsculas.
-                textBox.SelectionStart = selectionStart; // Restaura la posición del cursor.
+                                                       // Establece la posición del cursor al final del texto.
+                textBox.SelectionStart = textBox.Text.Length;
             };
         }
     }
+
+
+
 
     // Método para configurar un ComboBox.
     public static void ConfigurarComboBox(ComboBox comboBox, Dictionary<string, bool> comboBoxExcepciones)
