@@ -371,9 +371,22 @@ namespace Ofelia_Sara
         //----BOTON AGREGAR DATOS VICTIMA-----------------------------
         private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
-            agregarDatosPersonalesVictima = new AgregarDatosPersonalesVictima();
+            if (agregarDatosPersonalesVictima == null || agregarDatosPersonalesVictima.IsDisposed)
+            {
+                agregarDatosPersonalesVictima = new AgregarDatosPersonalesVictima();
 
+                // Suscribirse al evento personalizado del formulario de destino
+                agregarDatosPersonalesVictima.VictimaTextChanged += UpdateVictimaTextBox;
+            }
+
+            // Establecer el texto inicial en el formulario de destino
             agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.Text;
+
+            // Suscribirse al evento TextChanged del TextBox en el formulario de origen
+            textBox_Victima.TextChanged += (s, ev) =>
+            {
+                agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.Text;
+            };
 
 
             // Obtener el formulario original (inicioCierre)
@@ -411,8 +424,16 @@ namespace Ofelia_Sara
             agregarDatosPersonalesVictima.Show();
 
         }
+
+        // Método para actualizar el TextBox en inicioCierre
+        private void UpdateVictimaTextBox(string text)
+        {
+            textBox_Victima.Text = text;
+        }
+
+
         //------------------------------------------------------------------------------
-      
+
         //-----------------METODO HABILITA BTN AGREGAR CAUSA------------------------------
         private void textBox_Caratula_TextChanged(object sender, EventArgs e)
         {
@@ -424,9 +445,7 @@ namespace Ofelia_Sara
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
         private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            //agregarDatosPersonalesImputado = new AgregarDatosPersonalesImputado();
-
-            //agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.Text;
+            
 
             if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
             {
@@ -501,7 +520,7 @@ namespace Ofelia_Sara
                 if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
                 {
                                         // Actualizar el TextBox en el formulario de destino
-                    agregarDatosPersonalesVictima.UpdateTextBox(textBox_Victima.Text);
+                    agregarDatosPersonalesVictima.UpdateVictimaTextBox(textBox_Victima.Text);
                 }
             }
             else
