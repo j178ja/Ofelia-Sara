@@ -25,6 +25,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             get { return textBox_Nombre.Text; }
             set { textBox_Nombre.Text = value; }
         }
+
+        // Definir el evento personalizado
+        public event Action<string> ImputadoTextChanged;
         //-------------------------------------------------------------------
         public  AgregarDatosPersonalesImputado()
         {
@@ -423,6 +426,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             checkBox_LegajoDetenido.Enabled = esTextoValido;
             checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
-              
+        // Método para actualizar el textBox2 en tiempo real
+        public void UpdateImputadoTextBox(string text)
+        {
+            textBox_Nombre.Text = text;
+        }
+
+
+        private void textBox_Nombre_TextChanged(object sender, EventArgs e)
+        {
+            if (ImputadoTextChanged != null)
+            {
+                ImputadoTextChanged(textBox_Nombre.Text);
+            }
+        }
+       
     }
 }

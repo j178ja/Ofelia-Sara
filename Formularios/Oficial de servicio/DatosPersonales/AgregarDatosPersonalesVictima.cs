@@ -423,6 +423,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(419, 20);
             this.textBox_Nombre.TabIndex = 0;
+            
             // 
             // label_Localidad
             // 
@@ -763,5 +764,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             buscarForm.ShowDialog();
         }
+        // Método para actualizar el textBox2 en tiempo real
+        public void UpdateTextBox(string text)
+        {
+            textBox_Nombre.Text = text;
+        }
+
+       
     }
 }
