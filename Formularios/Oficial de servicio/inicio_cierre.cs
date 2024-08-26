@@ -37,7 +37,8 @@ namespace Ofelia_Sara
         private int camposCompletos;
         private ToolTip toolTip;
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
-
+        private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
+        private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
         public InicioCierre()
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace Ofelia_Sara
 
             // Asocia el evento TextChanged al método de validación
             textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
+            textBox_Imputado.TextChanged += new EventHandler(textBox_Imputado_TextChanged);
 
             //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
@@ -369,10 +371,44 @@ namespace Ofelia_Sara
         //----BOTON AGREGAR DATOS VICTIMA-----------------------------
         private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
-            AgregarDatosPersonalesVictima agregarDatosPersonales = new AgregarDatosPersonalesVictima();
+            agregarDatosPersonalesVictima = new AgregarDatosPersonalesVictima();
 
-            agregarDatosPersonales.TextoNombre = textBox_Victima.Text; // Pasa el contenido del TextBox
-            agregarDatosPersonales.Show();
+            agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.Text;
+
+
+            // Obtener el formulario original (inicioCierre)
+            Form originalForm = this;
+
+            // Obtener el tamaño de ambos formularios
+            int totalWidth = originalForm.Width + agregarDatosPersonalesVictima.Width;
+            int height = Math.Max(originalForm.Height, agregarDatosPersonalesVictima.Height);
+
+            // Calcular la posición para centrar ambos formularios en la pantalla
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            int startX = (screenWidth - totalWidth) / 2;
+            int startY = (screenHeight - height) / 2;
+
+            // Posicionar el formulario agregarDatosPersonales a la izquierda del original
+            agregarDatosPersonalesVictima.StartPosition = FormStartPosition.Manual;
+            agregarDatosPersonalesVictima.Location = new Point(startX, startY);
+
+            // Posicionar el formulario original a la derecha del agregarDatosPersonales
+            originalForm.Location = new Point(startX + agregarDatosPersonalesVictima.Width, startY);
+
+            // Suscribirse al evento FormClosed del formulario Cargo
+            agregarDatosPersonalesVictima.FormClosed += (s, args) =>
+            {
+                // Calcular la nueva posición para centrar el formulario original
+                int centerX = (screenWidth - originalForm.Width) / 2;
+                int centerY = (screenHeight - originalForm.Height) / 2;
+
+                // Reposicionar el formulario original en el centro de la pantalla
+                originalForm.Location = new Point(centerX, centerY);
+            };
+
+            agregarDatosPersonalesVictima.Show();
 
         }
         //------------------------------------------------------------------------------
@@ -388,11 +424,71 @@ namespace Ofelia_Sara
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
         private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            AgregarDatosPersonalesImputado agregarDatosPersonales = new AgregarDatosPersonalesImputado();
+            //agregarDatosPersonalesImputado = new AgregarDatosPersonalesImputado();
 
-            agregarDatosPersonales.TextoNombre = textBox_Imputado.Text; // Pasa el contenido del TextBox
-            agregarDatosPersonales.Show();
+            //agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.Text;
+
+            if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
+            {
+                agregarDatosPersonalesImputado = new AgregarDatosPersonalesImputado();
+
+                // Suscribirse al evento personalizado del formulario de destino
+                agregarDatosPersonalesImputado.ImputadoTextChanged += UpdateImputadoTextBox;
+            }
+
+            // Establecer el texto inicial en el formulario de destino
+            agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.Text;
+
+            // Suscribirse al evento TextChanged del TextBox en el formulario de origen
+            textBox_Imputado.TextChanged += (s, ev) =>
+            {
+                agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.Text;
+            };
+
+            // Obtener el formulario original(inicioCierre)
+            Form originalForm = this;
+
+            // Obtener el tamaño de ambos formularios
+            int totalWidth = originalForm.Width + agregarDatosPersonalesImputado.Width;
+            int height = Math.Max(originalForm.Height, agregarDatosPersonalesImputado.Height);
+
+            // Calcular la posición para centrar ambos formularios en la pantalla
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            int startX = (screenWidth - totalWidth) / 2;
+            int startY = (screenHeight - height) / 2;
+
+            // Posicionar el formulario agregarDatosPersonales a la izquierda del original
+            agregarDatosPersonalesImputado.StartPosition = FormStartPosition.Manual;
+            agregarDatosPersonalesImputado.Location = new Point(startX, startY);
+
+            // Posicionar el formulario original a la derecha del agregarDatosPersonales
+            originalForm.Location = new Point(startX + agregarDatosPersonalesImputado.Width, startY);
+
+            // Suscribirse al evento FormClosed del formulario Cargo
+            agregarDatosPersonalesImputado.FormClosed += (s, args) =>
+            {
+                // Calcular la nueva posición para centrar el formulario original
+                int centerX = (screenWidth - originalForm.Width) / 2;
+                int centerY = (screenHeight - originalForm.Height) / 2;
+
+                // Reposicionar el formulario original en el centro de la pantalla
+                originalForm.Location = new Point(centerX, centerY);
+            };
+
+            agregarDatosPersonalesImputado.Show();
         }
+
+        // Método para actualizar el TextBox en inicioCierre
+        private void UpdateImputadoTextBox(string text)
+        {
+            textBox_Imputado.Text = text;
+        }
+
+
+
+
 
         //-------------------TEXTBOX VICTIMA------------------------------------------------------------
         private void textBox_Victima_TextChanged(object sender, EventArgs e)
@@ -402,6 +498,11 @@ namespace Ofelia_Sara
             {
                 btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
                 ActualizarEstado();
+                if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
+                {
+                                        // Actualizar el TextBox en el formulario de destino
+                    agregarDatosPersonalesVictima.UpdateTextBox(textBox_Victima.Text);
+                }
             }
             else
             {
@@ -420,6 +521,11 @@ namespace Ofelia_Sara
             {
                 btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
                 ActualizarEstado();
+                if (agregarDatosPersonalesImputado != null && !agregarDatosPersonalesImputado.IsDisposed)
+                {
+                    // Actualizar el TextBox en el formulario de destino
+                    agregarDatosPersonalesImputado.UpdateImputadoTextBox(textBox_Imputado.Text);
+                }
             }
             else
             {
@@ -567,7 +673,7 @@ namespace Ofelia_Sara
                 // Posicionar el formulario original a la izquierda
                 originalForm.Location = new Point(startX, startY);
 
-                // Posicionar el formulario Cargo a la derecha del formulario original
+                // Posicionar el formulario  a la derecha del formulario original
                 buscarPersonalForm.StartPosition = FormStartPosition.Manual;
                 buscarPersonalForm.Location = new Point(startX + originalForm.Width, startY);
 
