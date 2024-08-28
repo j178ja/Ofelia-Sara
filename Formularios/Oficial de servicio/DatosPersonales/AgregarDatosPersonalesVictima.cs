@@ -74,6 +74,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
+            this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.emailControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.EmailControl();
             this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
             this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
@@ -121,6 +123,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.comboBox_EstadoCivil);
+            this.panel1.Controls.Add(this.label_EstadoCivil);
             this.panel1.Controls.Add(this.emailControl1);
             this.panel1.Controls.Add(this.numeroTelefonicoControl1);
             this.panel1.Controls.Add(this.customDateTextBox1);
@@ -157,12 +161,36 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Location = new System.Drawing.Point(24, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 616);
+            this.panel1.Size = new System.Drawing.Size(562, 612);
             this.panel1.TabIndex = 2;
+            // 
+            // comboBox_EstadoCivil
+            // 
+            this.comboBox_EstadoCivil.FormattingEnabled = true;
+            this.comboBox_EstadoCivil.Items.AddRange(new object[] {
+            "SOLTERO/A",
+            "CASADO/A",
+            "VIUDO/A",
+            "CONCUBINO/A",
+            ""});
+            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(404, 188);
+            this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
+            this.comboBox_EstadoCivil.Size = new System.Drawing.Size(120, 21);
+            this.comboBox_EstadoCivil.TabIndex = 98;
+            // 
+            // label_EstadoCivil
+            // 
+            this.label_EstadoCivil.AutoSize = true;
+            this.label_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_EstadoCivil.Location = new System.Drawing.Point(313, 190);
+            this.label_EstadoCivil.Name = "label_EstadoCivil";
+            this.label_EstadoCivil.Size = new System.Drawing.Size(88, 15);
+            this.label_EstadoCivil.TabIndex = 97;
+            this.label_EstadoCivil.Text = "Estado civil :";
             // 
             // emailControl1
             // 
-            this.emailControl1.Location = new System.Drawing.Point(119, 435);
+            this.emailControl1.Location = new System.Drawing.Point(115, 453);
             this.emailControl1.Name = "emailControl1";
             this.emailControl1.Size = new System.Drawing.Size(329, 20);
             this.emailControl1.TabIndex = 93;
@@ -171,7 +199,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.numeroTelefonicoControl1.AutoSize = true;
             this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(119, 404);
+            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(115, 422);
             this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
             this.numeroTelefonicoControl1.Size = new System.Drawing.Size(233, 25);
             this.numeroTelefonicoControl1.TabIndex = 92;
@@ -188,7 +216,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_agrGeo2.AutoSize = true;
             this.label_agrGeo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_agrGeo2.Location = new System.Drawing.Point(75, 306);
+            this.label_agrGeo2.Location = new System.Drawing.Point(71, 324);
             this.label_agrGeo2.Name = "label_agrGeo2";
             this.label_agrGeo2.Size = new System.Drawing.Size(94, 15);
             this.label_agrGeo2.TabIndex = 84;
@@ -198,7 +226,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_agrGeo.AutoSize = true;
             this.label_agrGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_agrGeo.Location = new System.Drawing.Point(31, 287);
+            this.label_agrGeo.Location = new System.Drawing.Point(27, 305);
             this.label_agrGeo.Name = "label_agrGeo";
             this.label_agrGeo.Size = new System.Drawing.Size(195, 15);
             this.label_agrGeo.TabIndex = 83;
@@ -208,7 +236,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_AgregarDomicilio.AutoSize = true;
             this.label_AgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregarDomicilio.Location = new System.Drawing.Point(26, 355);
+            this.label_AgregarDomicilio.Location = new System.Drawing.Point(22, 373);
             this.label_AgregarDomicilio.Name = "label_AgregarDomicilio";
             this.label_AgregarDomicilio.Size = new System.Drawing.Size(200, 15);
             this.label_AgregarDomicilio.TabIndex = 82;
@@ -216,7 +244,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // textBox_LugarNacimiento
             // 
-            this.textBox_LugarNacimiento.Location = new System.Drawing.Point(325, 165);
+            this.textBox_LugarNacimiento.Location = new System.Drawing.Point(203, 211);
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(199, 20);
             this.textBox_LugarNacimiento.TabIndex = 4;
@@ -227,15 +255,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_LugarNacimiento.AutoSize = true;
             this.label_LugarNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LugarNacimiento.Location = new System.Drawing.Point(160, 166);
+            this.label_LugarNacimiento.Location = new System.Drawing.Point(29, 212);
             this.label_LugarNacimiento.Name = "label_LugarNacimiento";
-            this.label_LugarNacimiento.Size = new System.Drawing.Size(168, 15);
+            this.label_LugarNacimiento.Size = new System.Drawing.Size(172, 15);
             this.label_LugarNacimiento.TabIndex = 81;
-            this.label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO:";
+            this.label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO :";
             // 
             // textBox_Ocupacion
             // 
-            this.textBox_Ocupacion.Location = new System.Drawing.Point(125, 194);
+            this.textBox_Ocupacion.Location = new System.Drawing.Point(121, 185);
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(139, 20);
             this.textBox_Ocupacion.TabIndex = 5;
@@ -246,7 +274,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Ocupacion.AutoSize = true;
             this.label_Ocupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Ocupacion.Location = new System.Drawing.Point(33, 195);
+            this.label_Ocupacion.Location = new System.Drawing.Point(29, 186);
             this.label_Ocupacion.Name = "label_Ocupacion";
             this.label_Ocupacion.Size = new System.Drawing.Size(94, 15);
             this.label_Ocupacion.TabIndex = 79;
@@ -257,7 +285,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(68, 525);
+            this.btn_Buscar.Location = new System.Drawing.Point(68, 529);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 78;
@@ -268,7 +296,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // checkBox_Notificacion258
             // 
             this.checkBox_Notificacion258.AutoSize = true;
-            this.checkBox_Notificacion258.Location = new System.Drawing.Point(223, 480);
+            this.checkBox_Notificacion258.Location = new System.Drawing.Point(219, 498);
             this.checkBox_Notificacion258.Name = "checkBox_Notificacion258";
             this.checkBox_Notificacion258.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Notificacion258.TabIndex = 11;
@@ -279,7 +307,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Notificacion258.AutoSize = true;
             this.label_Notificacion258.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Notificacion258.Location = new System.Drawing.Point(28, 478);
+            this.label_Notificacion258.Location = new System.Drawing.Point(24, 496);
             this.label_Notificacion258.Name = "label_Notificacion258";
             this.label_Notificacion258.Size = new System.Drawing.Size(175, 15);
             this.label_Notificacion258.TabIndex = 76;
@@ -290,7 +318,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(238, 525);
+            this.btn_Limpiar.Location = new System.Drawing.Point(238, 529);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
@@ -303,7 +331,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(403, 525);
+            this.btn_Guardar.Location = new System.Drawing.Point(403, 529);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
@@ -325,7 +353,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             "CHILENA",
             "PERUANA",
             "URUGUAYA"});
-            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(393, 192);
+            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(393, 161);
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(131, 21);
             this.comboBox_Nacionalidad.TabIndex = 6;
@@ -336,7 +364,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Email.AutoSize = true;
             this.label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Email.Location = new System.Drawing.Point(28, 433);
+            this.label_Email.Location = new System.Drawing.Point(24, 451);
             this.label_Email.Name = "label_Email";
             this.label_Email.Size = new System.Drawing.Size(56, 15);
             this.label_Email.TabIndex = 73;
@@ -346,7 +374,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Telefono.AutoSize = true;
             this.label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono.Location = new System.Drawing.Point(28, 408);
+            this.label_Telefono.Location = new System.Drawing.Point(24, 426);
             this.label_Telefono.Name = "label_Telefono";
             this.label_Telefono.Size = new System.Drawing.Size(87, 15);
             this.label_Telefono.TabIndex = 71;
@@ -357,7 +385,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.pictureBox_Geoposicionamiento.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox_Geoposicionamiento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Geoposicionamiento.BackgroundImage")));
             this.pictureBox_Geoposicionamiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Geoposicionamiento.Location = new System.Drawing.Point(229, 275);
+            this.pictureBox_Geoposicionamiento.Location = new System.Drawing.Point(225, 293);
             this.pictureBox_Geoposicionamiento.Name = "pictureBox_Geoposicionamiento";
             this.pictureBox_Geoposicionamiento.Size = new System.Drawing.Size(295, 55);
             this.pictureBox_Geoposicionamiento.TabIndex = 70;
@@ -372,7 +400,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.pictureBox_Domicilio.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox_Domicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Domicilio.BackgroundImage")));
             this.pictureBox_Domicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Domicilio.Location = new System.Drawing.Point(229, 336);
+            this.pictureBox_Domicilio.Location = new System.Drawing.Point(225, 354);
             this.pictureBox_Domicilio.Name = "pictureBox_Domicilio";
             this.pictureBox_Domicilio.Size = new System.Drawing.Size(295, 55);
             this.pictureBox_Domicilio.TabIndex = 69;
@@ -386,7 +414,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Nacionalidad.AutoSize = true;
             this.label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nacionalidad.Location = new System.Drawing.Point(281, 194);
+            this.label_Nacionalidad.Location = new System.Drawing.Point(281, 163);
             this.label_Nacionalidad.Name = "label_Nacionalidad";
             this.label_Nacionalidad.Size = new System.Drawing.Size(114, 15);
             this.label_Nacionalidad.TabIndex = 66;
@@ -394,7 +422,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // textBox_Localidad
             // 
-            this.textBox_Localidad.Location = new System.Drawing.Point(125, 247);
+            this.textBox_Localidad.Location = new System.Drawing.Point(121, 265);
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
@@ -403,7 +431,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // textBox_Domicilio
             // 
-            this.textBox_Domicilio.Location = new System.Drawing.Point(125, 221);
+            this.textBox_Domicilio.Location = new System.Drawing.Point(121, 239);
             this.textBox_Domicilio.Name = "textBox_Domicilio";
             this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
             this.textBox_Domicilio.TabIndex = 7;
@@ -412,7 +440,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // textBox_Edad
             // 
-            this.textBox_Edad.Location = new System.Drawing.Point(90, 165);
+            this.textBox_Edad.Location = new System.Drawing.Point(92, 159);
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
@@ -442,7 +470,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Localidad.AutoSize = true;
             this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Localidad.Location = new System.Drawing.Point(33, 248);
+            this.label_Localidad.Location = new System.Drawing.Point(29, 266);
             this.label_Localidad.Name = "label_Localidad";
             this.label_Localidad.Size = new System.Drawing.Size(90, 15);
             this.label_Localidad.TabIndex = 65;
@@ -452,7 +480,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Domicilio.AutoSize = true;
             this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Domicilio.Location = new System.Drawing.Point(33, 222);
+            this.label_Domicilio.Location = new System.Drawing.Point(29, 240);
             this.label_Domicilio.Name = "label_Domicilio";
             this.label_Domicilio.Size = new System.Drawing.Size(86, 15);
             this.label_Domicilio.TabIndex = 62;
@@ -462,7 +490,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Edad.AutoSize = true;
             this.label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Edad.Location = new System.Drawing.Point(32, 167);
+            this.label_Edad.Location = new System.Drawing.Point(34, 161);
             this.label_Edad.Name = "label_Edad";
             this.label_Edad.Size = new System.Drawing.Size(52, 15);
             this.label_Edad.TabIndex = 61;
@@ -525,7 +553,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // AgregarDatosPersonalesVictima
             // 
-            this.ClientSize = new System.Drawing.Size(608, 681);
+            this.ClientSize = new System.Drawing.Size(608, 670);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -981,5 +1009,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true;
             }
         }
+
+       
     }
 }

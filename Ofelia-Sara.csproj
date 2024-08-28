@@ -200,6 +200,12 @@
     <Compile Include="Formularios\Oficial de servicio\Contravenciones.Designer.cs">
       <DependentUpon>Contravenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesConcubina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesConcubina.Designer.cs">
+      <DependentUpon>AgregarDatosPersonalesConcubina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Contravenciones.resx">
       <DependentUpon>Contravenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesConcubina.resx">
+      <DependentUpon>AgregarDatosPersonalesConcubina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.resx">
       <DependentUpon>AgregarDatosPersonalesVictima.cs</DependentUpon>
