@@ -40,7 +40,7 @@
             this.textBox_Email.Size = new System.Drawing.Size(230, 20);
             this.textBox_Email.TabIndex = 0;
             this.textBox_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-           // this.textBox_Email.TextChanged += new System.EventHandler(this.textBox_Email_TextChanged);
+            
             // 
             // label_arroba
             // 

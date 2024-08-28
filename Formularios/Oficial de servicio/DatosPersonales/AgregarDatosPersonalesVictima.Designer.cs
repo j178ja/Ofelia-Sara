@@ -37,9 +37,7 @@
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Dni;
         private System.Windows.Forms.Label label_Nombre;
-        private System.Windows.Forms.TextBox textBox_Email;
         private System.Windows.Forms.Label label_Email;
-        private System.Windows.Forms.TextBox textBox_Telefono;
         private System.Windows.Forms.Label label_Telefono;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.Button btn_Limpiar;
@@ -56,5 +54,7 @@
         private System.Windows.Forms.Label label_agrGeo2;
         private System.Windows.Forms.Label label_agrGeo;
         private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
+        private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
+        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
     }
 }

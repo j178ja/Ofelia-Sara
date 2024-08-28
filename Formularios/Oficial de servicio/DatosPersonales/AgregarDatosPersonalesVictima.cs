@@ -54,19 +54,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //-------------------------------------------------------------------------------
-            // Define las excepciones para los TextBox y ComboBox.
-            var textBoxExcepciones = new Dictionary<string, bool>
-        {
-            { "textBox_Dni", true },  // Este TextBox solo acepta números.
-            {"textBox_Edad", true },
-              {"textBox_DateDIA", true },
-            {"textBox_DateMES", true },
-            {"textBox_DateAÑO", true },
-            {"textBox_FechaNacimiento", true },
-            {"textBox_Telefono", true }
-            };
-             // Aplica la configuración a todos los controles del formulario.
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
+        //    // Define las excepciones para los TextBox y ComboBox.
+        //    var textBoxExcepciones = new Dictionary<string, bool>
+        //{
+        //    { "textBox_Dni", true },  // Este TextBox solo acepta números.
+        //    {"textBox_Edad", true },
+        //      {"textBox_DateDIA", true },
+        //    {"textBox_DateMES", true },
+        //    {"textBox_DateAÑO", true },
+        //    {"textBox_FechaNacimiento", true },
+        //    {"textBox_Telefono", true }
+        //    };
+        //     // Aplica la configuración a todos los controles del formulario.
+        //    TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
         }
 
         private void InitializeComponent()
@@ -74,6 +74,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.emailControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.EmailControl();
+            this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
             this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
@@ -88,9 +90,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
-            this.textBox_Email = new System.Windows.Forms.TextBox();
             this.label_Email = new System.Windows.Forms.Label();
-            this.textBox_Telefono = new System.Windows.Forms.TextBox();
             this.label_Telefono = new System.Windows.Forms.Label();
             this.pictureBox_Geoposicionamiento = new System.Windows.Forms.PictureBox();
             this.pictureBox_Domicilio = new System.Windows.Forms.PictureBox();
@@ -121,6 +121,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.emailControl1);
+            this.panel1.Controls.Add(this.numeroTelefonicoControl1);
             this.panel1.Controls.Add(this.customDateTextBox1);
             this.panel1.Controls.Add(this.label_agrGeo2);
             this.panel1.Controls.Add(this.label_agrGeo);
@@ -135,9 +137,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.comboBox_Nacionalidad);
-            this.panel1.Controls.Add(this.textBox_Email);
             this.panel1.Controls.Add(this.label_Email);
-            this.panel1.Controls.Add(this.textBox_Telefono);
             this.panel1.Controls.Add(this.label_Telefono);
             this.panel1.Controls.Add(this.pictureBox_Geoposicionamiento);
             this.panel1.Controls.Add(this.pictureBox_Domicilio);
@@ -157,8 +157,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Location = new System.Drawing.Point(24, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 639);
+            this.panel1.Size = new System.Drawing.Size(562, 616);
             this.panel1.TabIndex = 2;
+            // 
+            // emailControl1
+            // 
+            this.emailControl1.Location = new System.Drawing.Point(119, 435);
+            this.emailControl1.Name = "emailControl1";
+            this.emailControl1.Size = new System.Drawing.Size(329, 20);
+            this.emailControl1.TabIndex = 93;
+            // 
+            // numeroTelefonicoControl1
+            // 
+            this.numeroTelefonicoControl1.AutoSize = true;
+            this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(119, 404);
+            this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
+            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(233, 25);
+            this.numeroTelefonicoControl1.TabIndex = 92;
             // 
             // customDateTextBox1
             // 
@@ -221,6 +237,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(139, 20);
             this.textBox_Ocupacion.TabIndex = 5;
+            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.textBox_Ocupacion_TextChanged);
+            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Ocupacion_KeyPress);
             // 
             // label_Ocupacion
             // 
@@ -237,7 +255,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(74, 538);
+            this.btn_Buscar.Location = new System.Drawing.Point(68, 525);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 78;
@@ -248,7 +266,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // checkBox_Notificacion258
             // 
             this.checkBox_Notificacion258.AutoSize = true;
-            this.checkBox_Notificacion258.Location = new System.Drawing.Point(229, 493);
+            this.checkBox_Notificacion258.Location = new System.Drawing.Point(223, 480);
             this.checkBox_Notificacion258.Name = "checkBox_Notificacion258";
             this.checkBox_Notificacion258.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Notificacion258.TabIndex = 11;
@@ -259,7 +277,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.label_Notificacion258.AutoSize = true;
             this.label_Notificacion258.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Notificacion258.Location = new System.Drawing.Point(34, 491);
+            this.label_Notificacion258.Location = new System.Drawing.Point(28, 478);
             this.label_Notificacion258.Name = "label_Notificacion258";
             this.label_Notificacion258.Size = new System.Drawing.Size(175, 15);
             this.label_Notificacion258.TabIndex = 76;
@@ -270,7 +288,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(244, 538);
+            this.btn_Limpiar.Location = new System.Drawing.Point(238, 525);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
@@ -283,7 +301,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(409, 538);
+            this.btn_Guardar.Location = new System.Drawing.Point(403, 525);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
@@ -309,37 +327,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(131, 21);
             this.comboBox_Nacionalidad.TabIndex = 6;
+            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.comboBox_Nacionalidad_TextChanged);
             this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
-            // 
-            // textBox_Email
-            // 
-            this.textBox_Email.Location = new System.Drawing.Point(124, 446);
-            this.textBox_Email.Name = "textBox_Email";
-            this.textBox_Email.Size = new System.Drawing.Size(271, 20);
-            this.textBox_Email.TabIndex = 10;
             // 
             // label_Email
             // 
             this.label_Email.AutoSize = true;
             this.label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Email.Location = new System.Drawing.Point(34, 446);
+            this.label_Email.Location = new System.Drawing.Point(28, 433);
             this.label_Email.Name = "label_Email";
             this.label_Email.Size = new System.Drawing.Size(56, 15);
             this.label_Email.TabIndex = 73;
             this.label_Email.Text = "EMAIL :";
             // 
-            // textBox_Telefono
-            // 
-            this.textBox_Telefono.Location = new System.Drawing.Point(125, 420);
-            this.textBox_Telefono.Name = "textBox_Telefono";
-            this.textBox_Telefono.Size = new System.Drawing.Size(270, 20);
-            this.textBox_Telefono.TabIndex = 9;
-            // 
             // label_Telefono
             // 
             this.label_Telefono.AutoSize = true;
             this.label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono.Location = new System.Drawing.Point(34, 421);
+            this.label_Telefono.Location = new System.Drawing.Point(28, 408);
             this.label_Telefono.Name = "label_Telefono";
             this.label_Telefono.Size = new System.Drawing.Size(87, 15);
             this.label_Telefono.TabIndex = 71;
@@ -400,6 +405,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
+            this.textBox_Domicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Domicilio_KeyPress);
             // 
             // textBox_Edad
             // 
@@ -515,7 +521,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // AgregarDatosPersonalesVictima
             // 
-            this.ClientSize = new System.Drawing.Size(608, 702);
+            this.ClientSize = new System.Drawing.Size(608, 681);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -779,7 +785,100 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             {
                 VictimaTextChanged(textBox_Nombre.Text);
             }
+            // Obtiene el texto actual del TextBox
+    string input = textBox_Nombre.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Nombre.Text != upperText)
+            {
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Nombre.Text = upperText;
+
+                // Mueve el cursor al final del texto
+                textBox_Nombre.SelectionStart = upperText.Length;
+            }
         }
 
+
+
+        private void textBox_Ocupacion_TextChanged(object sender, EventArgs e)
+        {
+            // Obtiene el texto actual del TextBox
+            string input = textBox_Ocupacion.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Ocupacion.Text != upperText)
+            {
+                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
+                textBox_Ocupacion.TextChanged -= textBox_Ocupacion_TextChanged;
+
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Ocupacion.Text = upperText;
+
+                // Restaura la posición del cursor al final del texto
+                textBox_Ocupacion.SelectionStart = upperText.Length;
+
+                // Vuelve a asociar el evento TextChanged
+                textBox_Ocupacion.TextChanged += textBox_Ocupacion_TextChanged;
+            }
+        }
+
+
+        private void comboBox_Nacionalidad_TextChanged(object sender, EventArgs e)
+        {
+            // Obtiene el texto actual del TextBox
+            string input = comboBox_Nacionalidad.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (comboBox_Nacionalidad.Text != upperText)
+            {
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                comboBox_Nacionalidad.Text = upperText;
+
+                // Mueve el cursor al final del texto
+                comboBox_Nacionalidad.SelectionStart = upperText.Length;
+            }
+        }
+
+        private void textBox_Ocupacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir teclas de control como Backspace y Enter, así como teclas de navegación
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == ' ')
+            {
+                // Permitir el carácter
+                e.Handled = false;
+            }
+            else
+            {
+                // Anular el carácter si no es una letra
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Domicilio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir teclas de control como Backspace y Enter, así como espacios
+    if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else if (char.IsLetter(e.KeyChar)) // Permitir letras
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else
+            {
+                e.Handled = true; // Ignorar caracteres especiales
+            }
+        }
     }
 }
