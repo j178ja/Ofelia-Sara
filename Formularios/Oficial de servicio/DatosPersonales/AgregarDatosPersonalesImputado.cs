@@ -287,11 +287,55 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void textBox_Domicilio_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPictureDOM();
+
+            // Obtiene el texto actual del TextBox
+            string input = textBox_Domicilio.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Domicilio.Text != upperText)
+            {
+                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
+                textBox_Domicilio.TextChanged -= textBox_Domicilio_TextChanged;
+
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Domicilio.Text = upperText;
+
+                // Restaura la posición del cursor al final del texto
+                textBox_Domicilio.SelectionStart = upperText.Length;
+
+                // Vuelve a asociar el evento TextChanged
+                textBox_Domicilio.TextChanged += textBox_Domicilio_TextChanged;
+            }
         }
 
         private void textBox_Localidad_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPictureDOM();
+
+            // Obtiene el texto actual del TextBox
+            string input = textBox_Localidad.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Localidad.Text != upperText)
+            {
+                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
+                textBox_Localidad.TextChanged -= textBox_Localidad_TextChanged;
+
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Localidad.Text = upperText;
+
+                // Restaura la posición del cursor al final del texto
+                textBox_Localidad.SelectionStart = upperText.Length;
+
+                // Vuelve a asociar el evento TextChanged
+                textBox_Localidad.TextChanged += textBox_Localidad_TextChanged;
+            }
         }
         //------------limitar textBox_Edad a 2 digitos--------------------------
         private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
@@ -390,10 +434,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void comboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Verificar si la tecla presionada es una letra
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            // Permite letras y espacios
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
             {
-                e.Handled = true; // Ignorar la entrada si no es una letra
+                // Permite el carácter
+                e.Handled = false;
+            }
+            else
+            {
+                // Bloquea el carácter
+                e.Handled = true;
             }
         }
 
@@ -464,6 +514,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void textBox_Nombre_TextChanged(object sender, EventArgs e)
         {
+            // Asegura que el cursor esté al final del texto
+            textBox_Nombre.SelectionStart = textBox_Nombre.Text.Length;
+
             if (ImputadoTextChanged != null)
             {
                 ImputadoTextChanged(textBox_Nombre.Text);
@@ -474,6 +527,148 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private bool isUpdatingText = false; // Bandera para evitar recursión infinita
                                              //_________________________________________________________________________________
 
-        
+
+        private void textBox_Ocupacion_TextChanged(object sender, EventArgs e)
+        {
+            // Obtiene el texto actual del TextBox
+            string input = textBox_Ocupacion.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Ocupacion.Text != upperText)
+            {
+                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
+                textBox_Ocupacion.TextChanged -= textBox_Ocupacion_TextChanged;
+
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Ocupacion.Text = upperText;
+
+                // Restaura la posición del cursor al final del texto
+                textBox_Ocupacion.SelectionStart = upperText.Length;
+
+                // Vuelve a asociar el evento TextChanged
+                textBox_Ocupacion.TextChanged += textBox_Ocupacion_TextChanged;
+            }
+        }
+
+
+        private void comboBox_Nacionalidad_TextChanged(object sender, EventArgs e)
+        {
+            // Obtiene el texto actual del TextBox
+            string input = comboBox_Nacionalidad.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (comboBox_Nacionalidad.Text != upperText)
+            {
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                comboBox_Nacionalidad.Text = upperText;
+
+                // Mueve el cursor al final del texto
+                comboBox_Nacionalidad.SelectionStart = upperText.Length;
+            }
+        }
+
+        private void textBox_Ocupacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir teclas de control como Backspace y Enter, así como teclas de navegación
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == ' ')
+            {
+                // Permitir el carácter
+                e.Handled = false;
+            }
+            else
+            {
+                // Anular el carácter si no es una letra
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Domicilio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir teclas de control como Backspace y Enter, así como espacios
+            if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else if (char.IsLetter(e.KeyChar)) // Permitir letras
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else
+            {
+                e.Handled = true; // Ignorar caracteres especiales
+            }
+        }
+
+        private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir teclas de control como Backspace y Enter, así como espacios
+            if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else if (char.IsLetter(e.KeyChar)) // Permitir letras
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else
+            {
+                e.Handled = true; // Ignorar caracteres especiales
+            }
+        }
+
+        private void textBox_Apodo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite letras y espacios
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
+            {
+                // Permite el carácter
+                e.Handled = false;
+            }
+            else
+            {
+                // Bloquea el carácter
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Nacionalidad_TextChanged_1(object sender, EventArgs e)
+        {
+            // Convierte el texto a mayúsculas
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox != null)
+            {
+                // Guarda la posición del cursor
+                int cursorPosition = comboBox.SelectionStart;
+
+                // Convierte el texto a mayúsculas
+                comboBox.Text = comboBox.Text.ToUpper();
+
+                // Restaura la posición del cursor
+                comboBox.SelectionStart = cursorPosition;
+            }
+        }
+
+        private void textBox_Apodo_TextChanged(object sender, EventArgs e)
+        {
+            // Convierte el texto a mayúsculas
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                // Guarda la posición del cursor
+                int cursorPosition = textBox.SelectionStart;
+
+                // Convierte el texto a mayúsculas
+                textBox.Text = textBox.Text.ToUpper();
+
+                // Restaura la posición del cursor
+                textBox.SelectionStart = cursorPosition;
+            }
+        }
     }
 }

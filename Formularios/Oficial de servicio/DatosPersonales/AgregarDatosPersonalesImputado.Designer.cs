@@ -254,6 +254,7 @@
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(151, 21);
             this.comboBox_Nacionalidad.TabIndex = 77;
+            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.comboBox_Nacionalidad_TextChanged_1);
             this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
             // 
             // textBox_Ocupacion
@@ -262,6 +263,8 @@
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(181, 20);
             this.textBox_Ocupacion.TabIndex = 5;
+            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.textBox_Ocupacion_TextChanged);
+            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Ocupacion_KeyPress);
             // 
             // label_Ocupacion
             // 
@@ -279,6 +282,8 @@
             this.textBox_Apodo.Name = "textBox_Apodo";
             this.textBox_Apodo.Size = new System.Drawing.Size(150, 20);
             this.textBox_Apodo.TabIndex = 6;
+            this.textBox_Apodo.TextChanged += new System.EventHandler(this.textBox_Apodo_TextChanged);
+            this.textBox_Apodo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Apodo_KeyPress);
             // 
             // label_Apodo
             // 
@@ -514,6 +519,7 @@
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
             this.textBox_Localidad.TextChanged += new System.EventHandler(this.textBox_Localidad_TextChanged);
+            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Localidad_KeyPress);
             // 
             // textBox_Domicilio
             // 
@@ -522,6 +528,7 @@
             this.textBox_Domicilio.Size = new System.Drawing.Size(398, 20);
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
+            this.textBox_Domicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Domicilio_KeyPress);
             // 
             // textBox_Edad
             // 

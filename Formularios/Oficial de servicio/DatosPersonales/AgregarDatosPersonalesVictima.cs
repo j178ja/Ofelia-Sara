@@ -220,6 +220,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(199, 20);
             this.textBox_LugarNacimiento.TabIndex = 4;
+            this.textBox_LugarNacimiento.TextChanged += new System.EventHandler(this.textBox_LugarNacimiento_TextChanged);
+            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_LugarNacimiento_KeyPress);
             // 
             // label_LugarNacimiento
             // 
@@ -397,6 +399,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
             this.textBox_Localidad.TextChanged += new System.EventHandler(this.textBox_Localidad_TextChanged);
+            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Localidad_KeyPress);
             // 
             // textBox_Domicilio
             // 
@@ -418,11 +421,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // textBox_Dni
             // 
-            this.textBox_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Dni.Location = new System.Drawing.Point(73, 133);
             this.textBox_Dni.Name = "textBox_Dni";
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
+            this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
             this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Dni_KeyPress);
             // 
@@ -759,11 +763,55 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void textBox_Domicilio_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPicture();
+
+            // Obtiene el texto actual del TextBox
+            string input = textBox_Domicilio.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Domicilio.Text != upperText)
+            {
+                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
+                textBox_Domicilio.TextChanged -= textBox_Domicilio_TextChanged;
+
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Domicilio.Text = upperText;
+
+                // Restaura la posición del cursor al final del texto
+                textBox_Domicilio.SelectionStart = upperText.Length;
+
+                // Vuelve a asociar el evento TextChanged
+                textBox_Domicilio.TextChanged += textBox_Domicilio_TextChanged;
+            }
         }
 
         private void textBox_Localidad_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPicture();
+
+            // Obtiene el texto actual del TextBox
+            string input = textBox_Localidad.Text;
+
+            // Convierte el texto a mayúsculas
+            string upperText = input.ToUpper();
+
+            // Evita la modificación del texto si ya está en mayúsculas
+            if (textBox_Localidad.Text != upperText)
+            {
+                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
+                textBox_Localidad.TextChanged -= textBox_Localidad_TextChanged;
+
+                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
+                textBox_Localidad.Text = upperText;
+
+                // Restaura la posición del cursor al final del texto
+                textBox_Localidad.SelectionStart = upperText.Length;
+
+                // Vuelve a asociar el evento TextChanged
+                textBox_Localidad.TextChanged += textBox_Localidad_TextChanged;
+            }
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -781,6 +829,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void textBox_Nombre_TextChanged(object sender, EventArgs e)
         {
+            // Asegura que el cursor esté al final del texto
+            textBox_Nombre.SelectionStart = textBox_Nombre.Text.Length;
+
             if (VictimaTextChanged != null)
             {
                 VictimaTextChanged(textBox_Nombre.Text);
@@ -878,6 +929,55 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             else
             {
                 e.Handled = true; // Ignorar caracteres especiales
+            }
+        }
+
+        private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir teclas de control como Backspace y Enter, así como espacios
+    if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else if (char.IsLetter(e.KeyChar)) // Permitir letras
+            {
+                e.Handled = false; // Permitir la tecla
+            }
+            else
+            {
+                e.Handled = true; // Ignorar caracteres especiales
+            }
+        }
+
+        private void textBox_LugarNacimiento_TextChanged(object sender, EventArgs e)
+        {
+            // Convierte el texto a mayúsculas
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                // Guarda la posición del cursor
+                int cursorPosition = textBox.SelectionStart;
+
+                // Convierte el texto a mayúsculas
+                textBox.Text = textBox.Text.ToUpper();
+
+                // Restaura la posición del cursor
+                textBox.SelectionStart = cursorPosition;
+            }
+        }
+
+        private void textBox_LugarNacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite letras y espacios
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
+            {
+                // Permite el carácter
+                e.Handled = false;
+            }
+            else
+            {
+                // Bloquea el carácter
+                e.Handled = true;
             }
         }
     }
