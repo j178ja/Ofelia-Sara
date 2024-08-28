@@ -31,7 +31,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.btn_CambiarTema = new System.Windows.Forms.PictureBox();
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Expedientes = new System.Windows.Forms.Button();
             this.btn_Contravenciones = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.btn_BuscarTarea = new System.Windows.Forms.Button();
             this.comboBox_Buscar = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
+            this.btn_Leyes = new System.Windows.Forms.PictureBox();
             this.menu_Configurar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aGREGARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSTRUCTORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,25 +61,14 @@
             this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_CambiarTema)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).BeginInit();
             this.menu_Configurar.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
             // 
             this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 2, 17, 6, 33, 453);
-            // 
-            // btn_CambiarTema
-            // 
-            this.btn_CambiarTema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_CambiarTema.BackgroundImage")));
-            this.btn_CambiarTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_CambiarTema.Location = new System.Drawing.Point(486, 11);
-            this.btn_CambiarTema.Name = "btn_CambiarTema";
-            this.btn_CambiarTema.Size = new System.Drawing.Size(32, 32);
-            this.btn_CambiarTema.TabIndex = 1;
-            this.btn_CambiarTema.TabStop = false;
-            this.btn_CambiarTema.Click += new System.EventHandler(this.Btn_CambiarTema_Click);
             // 
             // btn_InicioCierre
             // 
@@ -130,7 +119,7 @@
             this.panel1.Controls.Add(this.btn_BuscarTarea);
             this.panel1.Controls.Add(this.comboBox_Buscar);
             this.panel1.Controls.Add(this.btn_Configurar);
-            this.panel1.Controls.Add(this.btn_CambiarTema);
+            this.panel1.Controls.Add(this.btn_Leyes);
             this.panel1.Controls.Add(this.btn_Contravenciones);
             this.panel1.Controls.Add(this.btn_InicioCierre);
             this.panel1.Controls.Add(this.btn_Expedientes);
@@ -175,6 +164,17 @@
             this.toolTip1.SetToolTip(this.btn_Configurar, "Configuración formularios");
             this.btn_Configurar.UseVisualStyleBackColor = false;
             this.btn_Configurar.Click += new System.EventHandler(this.btn_Configurar_Click);
+            // 
+            // btn_Leyes
+            // 
+            this.btn_Leyes.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
+            this.btn_Leyes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Leyes.Location = new System.Drawing.Point(486, 11);
+            this.btn_Leyes.Name = "btn_Leyes";
+            this.btn_Leyes.Size = new System.Drawing.Size(32, 32);
+            this.btn_Leyes.TabIndex = 1;
+            this.btn_Leyes.TabStop = false;
+            this.btn_Leyes.Click += new System.EventHandler(this.btn_Leyes_Click);
             // 
             // menu_Configurar
             // 
@@ -343,8 +343,8 @@
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_CambiarTema)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).EndInit();
             this.menu_Configurar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -352,7 +352,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox btn_CambiarTema;
+        private System.Windows.Forms.PictureBox btn_Leyes;
         private System.Windows.Forms.Button btn_InicioCierre;
         private System.Windows.Forms.Button btn_Expedientes;
         private System.Windows.Forms.Button btn_Contravenciones;

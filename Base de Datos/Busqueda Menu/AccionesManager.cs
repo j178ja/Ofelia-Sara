@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
+using System.Linq;
+using System.Text.Json.Serialization;
 
 public class AccionesManager
 {
@@ -9,21 +10,22 @@ public class AccionesManager
 
     public AccionesManager(string filePath)
     {
-        // Leer el archivo JSON y deserializarlo
+        LoadActions(filePath);
+    }
+
+    private void LoadActions(string filePath)
+    {
         if (File.Exists(filePath))
         {
-            string json = File.ReadAllText(filePath);
-            var accionesData = JsonSerializer.Deserialize<AccionesData>(json);
-            Acciones = accionesData?.acciones ?? new List<string>();
+            var json = File.ReadAllText(filePath);
+            Acciones = JsonConvert.DeserializeObject<List<string>>(json);
+            // Ordenar la lista de acciones
+            Acciones = Acciones.OrderBy(a => a).ToList();
         }
         else
         {
             Acciones = new List<string>();
         }
     }
-
-    private class AccionesData
-    {
-        public List<string> acciones { get; set; }
-    }
 }
+
