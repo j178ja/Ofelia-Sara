@@ -56,5 +56,7 @@
         private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
         private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
         private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
+        private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
+        private System.Windows.Forms.Label label_EstadoCivil;
     }
 }

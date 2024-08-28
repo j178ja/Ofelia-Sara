@@ -50,14 +50,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             this.textBox_Email = new System.Windows.Forms.TextBox();// Configuración del textBox_Email
 
+            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
             NumeroTelefonicoControl numeroTelefonico = new NumeroTelefonicoControl();
             this.Controls.Add(numeroTelefonico);
+            btn_AgregarConcubina.Enabled = false;
+            InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
 
-            
 
             //-----INICIALIZAR EVENTOS PICKTUREBOX-------------
             //-----Del domicilio------------------
@@ -409,8 +411,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+            comboBox_Nacionalidad.SelectedIndex = -1;  
+            comboBox_EstadoCivil.SelectedIndex = -1;  
+                                                                                       //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
           
         }
@@ -669,6 +672,66 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 // Restaura la posición del cursor
                 textBox.SelectionStart = cursorPosition;
             }
+        }
+
+      
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            // Convierte el texto a mayúsculas
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                // Guarda la posición del cursor
+                int cursorPosition = textBox.SelectionStart;
+
+                // Convierte el texto a mayúsculas
+                textBox.Text = textBox.Text.ToUpper();
+
+                // Restaura la posición del cursor
+                textBox.SelectionStart = cursorPosition;
+            }
+        }
+
+        private void textBox_LugarNacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite letras y espacios
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
+            {
+                // Permite el carácter
+                e.Handled = false;
+            }
+            else
+            {
+                // Bloquea el carácter
+                e.Handled = true;
+            }
+        }
+
+        
+
+        private void comboBox_EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Habilitar el botón cuando se seleccione un ítem en el ComboBox
+            if (comboBox_EstadoCivil.SelectedIndex >= 0)
+            {
+                btn_AgregarConcubina.Enabled = true;
+            }
+            else
+            {
+                btn_AgregarConcubina.Enabled = false;
+            }
+
+        }
+
+        private void btn_AgregarConcubina_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario AgregarDatosPersonalesConcubina
+            AgregarDatosPersonalesConcubina formConcubina = new AgregarDatosPersonalesConcubina();
+
+            // Mostrar el formulario
+            formConcubina.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
-    partial class AgregarDatosPersonalesImputado
+    partial class AgregarDatosPersonalesConcubina
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesImputado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesConcubina));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_AgregarConcubina = new System.Windows.Forms.Button();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
@@ -55,7 +54,7 @@
             this.label_Titulo = new System.Windows.Forms.Label();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.checkBox_NotArt60 = new System.Windows.Forms.CheckBox();
-            this.label_LegajoDetenido = new System.Windows.Forms.Label();
+            this.label_Imagenes = new System.Windows.Forms.Label();
             this.label_NotArt60 = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
@@ -81,7 +80,6 @@
             this.label_Dni = new System.Windows.Forms.Label();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
@@ -93,7 +91,7 @@
             // 
             // timePickerPersonalizadoFecha
             // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 24, 19, 20, 5, 970);
+            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 28, 1, 57, 21, 588);
             // 
             // panel1
             // 
@@ -122,7 +120,7 @@
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.checkBox_LegajoDetenido);
             this.panel1.Controls.Add(this.checkBox_NotArt60);
-            this.panel1.Controls.Add(this.label_LegajoDetenido);
+            this.panel1.Controls.Add(this.label_Imagenes);
             this.panel1.Controls.Add(this.label_NotArt60);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
@@ -151,7 +149,7 @@
             this.panel1.Location = new System.Drawing.Point(25, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 796);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
             // btn_AgregarConcubina
             // 
@@ -163,7 +161,6 @@
             this.btn_AgregarConcubina.TabIndex = 97;
             this.btn_AgregarConcubina.Text = ". . .";
             this.btn_AgregarConcubina.UseVisualStyleBackColor = true;
-            this.btn_AgregarConcubina.Click += new System.EventHandler(this.btn_AgregarConcubina_Click);
             // 
             // comboBox_EstadoCivil
             // 
@@ -178,7 +175,6 @@
             this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
             this.comboBox_EstadoCivil.Size = new System.Drawing.Size(120, 21);
             this.comboBox_EstadoCivil.TabIndex = 96;
-            this.comboBox_EstadoCivil.SelectedIndexChanged += new System.EventHandler(this.comboBox_EstadoCivil_SelectedIndexChanged);
             // 
             // label_EstadoCivil
             // 
@@ -196,8 +192,6 @@
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(150, 20);
             this.textBox_LugarNacimiento.TabIndex = 94;
-            this.textBox_LugarNacimiento.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_LugarNacimiento_KeyPress);
             // 
             // label_LugarNacimiento
             // 
@@ -233,7 +227,6 @@
             this.customDateTextBox1.Name = "customDateTextBox1";
             this.customDateTextBox1.Size = new System.Drawing.Size(149, 18);
             this.customDateTextBox1.TabIndex = 90;
-            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione la fecha");
             // 
             // label_agrGeo2
             // 
@@ -275,10 +268,6 @@
             this.pictureBox_Geoposicionamiento.Size = new System.Drawing.Size(295, 55);
             this.pictureBox_Geoposicionamiento.TabIndex = 86;
             this.pictureBox_Geoposicionamiento.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Geoposicionamiento, "Arrastrar imagen aqui");
-            this.pictureBox_Geoposicionamiento.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Geoposicionamiento.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_Geoposicionamiento.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox_Domicilio
             // 
@@ -290,10 +279,6 @@
             this.pictureBox_Domicilio.Size = new System.Drawing.Size(295, 55);
             this.pictureBox_Domicilio.TabIndex = 85;
             this.pictureBox_Domicilio.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Domicilio, "Arrastrar imagen aqui");
-            this.pictureBox_Domicilio.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Domicilio.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_Domicilio.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // label_Email
             // 
@@ -320,8 +305,6 @@
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(151, 21);
             this.comboBox_Nacionalidad.TabIndex = 77;
-            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.comboBox_Nacionalidad_TextChanged_1);
-            this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
             // 
             // textBox_Ocupacion
             // 
@@ -329,8 +312,6 @@
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(181, 20);
             this.textBox_Ocupacion.TabIndex = 5;
-            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.textBox_Ocupacion_TextChanged);
-            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Ocupacion_KeyPress);
             // 
             // label_Ocupacion
             // 
@@ -348,8 +329,6 @@
             this.textBox_Apodo.Name = "textBox_Apodo";
             this.textBox_Apodo.Size = new System.Drawing.Size(150, 20);
             this.textBox_Apodo.TabIndex = 6;
-            this.textBox_Apodo.TextChanged += new System.EventHandler(this.textBox_Apodo_TextChanged);
-            this.textBox_Apodo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Apodo_KeyPress);
             // 
             // label_Apodo
             // 
@@ -380,7 +359,6 @@
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 51;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // label_Titulo
@@ -389,12 +367,12 @@
             this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(175, 0);
+            this.label_Titulo.Location = new System.Drawing.Point(98, 0);
             this.label_Titulo.Name = "label_Titulo";
             this.label_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label_Titulo.Size = new System.Drawing.Size(220, 25);
+            this.label_Titulo.Size = new System.Drawing.Size(356, 25);
             this.label_Titulo.TabIndex = 50;
-            this.label_Titulo.Text = "DATOS IMPUTADO";
+            this.label_Titulo.Text = "DATOS PAREJA, CONCUBINA /O";
             // 
             // checkBox_LegajoDetenido
             // 
@@ -403,9 +381,7 @@
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere legajo");
             this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
-            this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.checkBox_LegajoDetenido_CheckedChanged);
             // 
             // checkBox_NotArt60
             // 
@@ -414,18 +390,17 @@
             this.checkBox_NotArt60.Name = "checkBox_NotArt60";
             this.checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
             this.checkBox_NotArt60.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.checkBox_NotArt60, "Marcar si requiere notificacion");
             this.checkBox_NotArt60.UseVisualStyleBackColor = true;
             // 
-            // label_LegajoDetenido
+            // label_Imagenes
             // 
-            this.label_LegajoDetenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoDetenido.Location = new System.Drawing.Point(317, 465);
-            this.label_LegajoDetenido.Name = "label_LegajoDetenido";
-            this.label_LegajoDetenido.Size = new System.Drawing.Size(188, 23);
-            this.label_LegajoDetenido.TabIndex = 31;
-            this.label_LegajoDetenido.Text = "Legajo de Detenido     ";
-            this.label_LegajoDetenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Imagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Imagenes.Location = new System.Drawing.Point(358, 465);
+            this.label_Imagenes.Name = "label_Imagenes";
+            this.label_Imagenes.Size = new System.Drawing.Size(147, 23);
+            this.label_Imagenes.TabIndex = 31;
+            this.label_Imagenes.Text = "Imagenes  ";
+            this.label_Imagenes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_NotArt60
             // 
@@ -446,9 +421,7 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -459,9 +432,7 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // label_CuerpoEntero
             // 
@@ -509,9 +480,6 @@
             this.pictureBox_CuerpoEntero.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_CuerpoEntero.TabIndex = 20;
             this.pictureBox_CuerpoEntero.TabStop = false;
-            this.pictureBox_CuerpoEntero.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_CuerpoEntero.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_CuerpoEntero.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox_PerfilIzquierdo
             // 
@@ -523,9 +491,6 @@
             this.pictureBox_PerfilIzquierdo.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_PerfilIzquierdo.TabIndex = 19;
             this.pictureBox_PerfilIzquierdo.TabStop = false;
-            this.pictureBox_PerfilIzquierdo.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_PerfilIzquierdo.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_PerfilIzquierdo.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox_PerfilDerecho
             // 
@@ -537,9 +502,6 @@
             this.pictureBox_PerfilDerecho.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_PerfilDerecho.TabIndex = 18;
             this.pictureBox_PerfilDerecho.TabStop = false;
-            this.pictureBox_PerfilDerecho.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_PerfilDerecho.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_PerfilDerecho.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // pictureBox_Frente
             // 
@@ -552,21 +514,18 @@
             this.pictureBox_Frente.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_Frente.TabIndex = 17;
             this.pictureBox_Frente.TabStop = false;
-            this.pictureBox_Frente.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Frente.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_Frente.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
             // label_ParaLegajoImputado
             // 
             this.label_ParaLegajoImputado.AutoSize = true;
             this.label_ParaLegajoImputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label_ParaLegajoImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ParaLegajoImputado.Location = new System.Drawing.Point(127, 503);
+            this.label_ParaLegajoImputado.Location = new System.Drawing.Point(102, 502);
             this.label_ParaLegajoImputado.Name = "label_ParaLegajoImputado";
             this.label_ParaLegajoImputado.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label_ParaLegajoImputado.Size = new System.Drawing.Size(319, 30);
+            this.label_ParaLegajoImputado.Size = new System.Drawing.Size(388, 30);
             this.label_ParaLegajoImputado.TabIndex = 16;
-            this.label_ParaLegajoImputado.Text = "PARA LEGAJO DE IMPUTADO";
+            this.label_ParaLegajoImputado.Text = "IMAGENES PUBLICAS CONCUBINA /O";
             // 
             // label_Nacionalidad
             // 
@@ -584,8 +543,6 @@
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
-            this.textBox_Localidad.TextChanged += new System.EventHandler(this.textBox_Localidad_TextChanged);
-            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Localidad_KeyPress);
             // 
             // textBox_Domicilio
             // 
@@ -593,8 +550,6 @@
             this.textBox_Domicilio.Name = "textBox_Domicilio";
             this.textBox_Domicilio.Size = new System.Drawing.Size(398, 20);
             this.textBox_Domicilio.TabIndex = 7;
-            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
-            this.textBox_Domicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Domicilio_KeyPress);
             // 
             // textBox_Edad
             // 
@@ -602,7 +557,6 @@
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
-            this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
             // 
             // textBox_Dni
             // 
@@ -611,7 +565,6 @@
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
             this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
             // 
             // textBox_Nombre
             // 
@@ -619,7 +572,6 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(399, 20);
             this.textBox_Nombre.TabIndex = 0;
-            this.textBox_Nombre.TextChanged += new System.EventHandler(this.textBox_Nombre_TextChanged);
             // 
             // label_Localidad
             // 
@@ -693,21 +645,16 @@
             this.label_CircunstanciasPersonales.TabIndex = 0;
             this.label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
             // 
-            // AgregarDatosPersonalesImputado
+            // AgregarDatosPersonalesConcubina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 862);
+            this.ClientSize = new System.Drawing.Size(614, 851);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(632, 786);
-            this.Name = "AgregarDatosPersonalesImputado";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CIRCUNSTANCIAS PERSONALES  IMPUTADO";
-            this.Load += new System.EventHandler(this.AgregarDatosPersonales_Load);
+            this.Name = "AgregarDatosPersonalesConcubina";
+            this.Text = "DATOS PAREJA, CONCUBINA /O";
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -725,14 +672,42 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_Domicilio;
-        private System.Windows.Forms.Label label_Edad;
-        private System.Windows.Forms.Label label_FechaNacimiento;
-        private System.Windows.Forms.Label label_Dni;
-        private System.Windows.Forms.Label label_Nombre;
-        private System.Windows.Forms.Label label_CircunstanciasPersonales;
-        private System.Windows.Forms.Label label_Localidad;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btn_AgregarConcubina;
+        private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
+        private System.Windows.Forms.Label label_EstadoCivil;
+        private System.Windows.Forms.TextBox textBox_LugarNacimiento;
+        private System.Windows.Forms.Label label_LugarNacimiento;
+        private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
+        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
+        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
+        private System.Windows.Forms.Label label_agrGeo2;
+        private System.Windows.Forms.Label label_agrGeo;
+        private System.Windows.Forms.Label label_AgregarDomicilio;
+        private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
+        private System.Windows.Forms.PictureBox pictureBox_Domicilio;
+        private System.Windows.Forms.Label label_Email;
+        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
+        private System.Windows.Forms.TextBox textBox_Ocupacion;
+        private System.Windows.Forms.Label label_Ocupacion;
+        private System.Windows.Forms.TextBox textBox_Apodo;
+        private System.Windows.Forms.Label label_Apodo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
+        private System.Windows.Forms.CheckBox checkBox_NotArt60;
+        private System.Windows.Forms.Label label_Imagenes;
+        private System.Windows.Forms.Label label_NotArt60;
+        private System.Windows.Forms.Button btn_Limpiar;
+        private System.Windows.Forms.Button btn_Guardar;
+        private System.Windows.Forms.Label label_CuerpoEntero;
+        private System.Windows.Forms.Label label_PerfilIzquierdo;
+        private System.Windows.Forms.Label label1_PerfilDerecho;
+        private System.Windows.Forms.Label label_Frente;
+        private System.Windows.Forms.PictureBox pictureBox_CuerpoEntero;
+        private System.Windows.Forms.PictureBox pictureBox_PerfilIzquierdo;
+        private System.Windows.Forms.PictureBox pictureBox_PerfilDerecho;
+        private System.Windows.Forms.PictureBox pictureBox_Frente;
         private System.Windows.Forms.Label label_ParaLegajoImputado;
         private System.Windows.Forms.Label label_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Localidad;
@@ -740,41 +715,12 @@
         private System.Windows.Forms.TextBox textBox_Edad;
         private System.Windows.Forms.TextBox textBox_Dni;
         private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.PictureBox pictureBox_CuerpoEntero;
-        private System.Windows.Forms.PictureBox pictureBox_PerfilIzquierdo;
-        private System.Windows.Forms.PictureBox pictureBox_PerfilDerecho;
-        private System.Windows.Forms.PictureBox pictureBox_Frente;
-        private System.Windows.Forms.Label label_CuerpoEntero;
-        private System.Windows.Forms.Label label_PerfilIzquierdo;
-        private System.Windows.Forms.Label label1_PerfilDerecho;
-        private System.Windows.Forms.Label label_Frente;
-        private System.Windows.Forms.Button btn_Guardar;
-        private System.Windows.Forms.Button btn_Limpiar;
-        private System.Windows.Forms.Label label_LegajoDetenido;
-        private System.Windows.Forms.Label label_NotArt60;
-        private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
-        private System.Windows.Forms.CheckBox checkBox_NotArt60;
-        private System.Windows.Forms.Label label_Titulo;
-        private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_Apodo;
-        private System.Windows.Forms.Label label_Apodo;
-        private System.Windows.Forms.TextBox textBox_Ocupacion;
-        private System.Windows.Forms.Label label_Ocupacion;
-        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
-        private System.Windows.Forms.Label label_Email;
-        private System.Windows.Forms.Label label_agrGeo2;
-        private System.Windows.Forms.Label label_agrGeo;
-        private System.Windows.Forms.Label label_AgregarDomicilio;
-        private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
-        private System.Windows.Forms.PictureBox pictureBox_Domicilio;
-        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
-        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
-        private System.Windows.Forms.Label label_LugarNacimiento;
-        private System.Windows.Forms.TextBox textBox_LugarNacimiento;
-        private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
-        private System.Windows.Forms.Label label_EstadoCivil;
-        private System.Windows.Forms.Button btn_AgregarConcubina;
+        private System.Windows.Forms.Label label_Localidad;
+        private System.Windows.Forms.Label label_Domicilio;
+        private System.Windows.Forms.Label label_Edad;
+        private System.Windows.Forms.Label label_FechaNacimiento;
+        private System.Windows.Forms.Label label_Dni;
+        private System.Windows.Forms.Label label_Nombre;
+        private System.Windows.Forms.Label label_CircunstanciasPersonales;
     }
 }
