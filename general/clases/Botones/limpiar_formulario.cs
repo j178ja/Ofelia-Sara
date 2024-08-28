@@ -52,6 +52,17 @@ namespace Ofelia_Sara.general.clases
                         customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
                         break;
 
+                    // Si el control es email 
+                    case EmailControl customEmailTextBox:
+                        customEmailTextBox.ClearEmailFields(); // Limpiar el control de email
+                        customEmailTextBox.RestorePlaceholders(); // Restaurar los placeholders
+                        break;
+
+                    // Si el control es NUMERO TELEFONO
+                    case NumeroTelefonicoControl numeroTelefonico:
+                        numeroTelefonico.ClearTelefonoFields(); // Limpiar el control de NumeroTelefonicoControl
+                        numeroTelefonico.RestorePlaceholders(); // Restaurar los placeholders
+                        break;
 
                     case Control nestedControl when nestedControl.HasChildren:
                         Limpiar(nestedControl);

@@ -124,6 +124,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             this.Controls.Add(this.textBox_Date);
             this.Name = "CustomDateTextBox";
             this.Size = new System.Drawing.Size(150, 22);
+            this.Load += new System.EventHandler(this.CustomDateTextBox_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

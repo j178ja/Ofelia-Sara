@@ -270,6 +270,12 @@
       <DependentUpon>DateNacimiento.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\EmailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\EmailControl.Designer.cs">
+      <DependentUpon>EmailControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\NuevaCaratulaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -287,6 +293,12 @@
     </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\PersonalSeleccionadoControl.Designer.cs">
       <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\NumeroTelefonicoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\NumeroTelefonicoControl.Designer.cs">
+      <DependentUpon>NumeroTelefonicoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\Generales\BordePanel.cs" />
@@ -451,11 +463,17 @@
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\EmailControl.resx">
+      <DependentUpon>EmailControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\NuevaCaratulaControl.resx">
       <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\NuevaPersonaControl.resx">
       <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\NumeroTelefonicoControl.resx">
+      <DependentUpon>NumeroTelefonicoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\PersonalSeleccionadoControl.resx">
       <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
