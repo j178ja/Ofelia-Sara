@@ -50,6 +50,7 @@
             // 
             // listView_Documentos
             // 
+            this.listView_Documentos.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.listView_Documentos.HideSelection = false;
             this.listView_Documentos.Location = new System.Drawing.Point(3, 49);
             this.listView_Documentos.Name = "listView_Documentos";
