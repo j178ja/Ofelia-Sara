@@ -29,7 +29,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             textBox_Email.Enter += TextBox_Email_Enter;
             textBox_Email.Leave += TextBox_Email_Leave;
             textBox_Email.TextChanged += TextBox_Email_TextChanged;
-            textBox_Email.MaxLength = 35; // Limita el TextBox a 35 caracteres
+            textBox_Email.MaxLength = 40; // Limita el TextBox a 35 caracteres
         }
 
         private void AjustarLongitudComboBox(ComboBox comboBox)
@@ -120,5 +120,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             textBox_Email.Clear();
             RestorePlaceholders();
         }
+
+      
     }
 }
