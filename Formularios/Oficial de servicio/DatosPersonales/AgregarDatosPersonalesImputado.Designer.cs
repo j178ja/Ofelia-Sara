@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesImputado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.emailControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.EmailControl();
+            this.numeroTelefonicoControl = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
             this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
             this.pictureBox_Geoposicionamiento = new System.Windows.Forms.PictureBox();
             this.pictureBox_Domicilio = new System.Windows.Forms.PictureBox();
-            this.textBox_Email = new System.Windows.Forms.TextBox();
             this.label_Email = new System.Windows.Forms.Label();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.textBox_Ocupacion = new System.Windows.Forms.TextBox();
             this.label_Ocupacion = new System.Windows.Forms.Label();
             this.textBox_Apodo = new System.Windows.Forms.TextBox();
             this.label_Apodo = new System.Windows.Forms.Label();
-            this.textBox_Telefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.label_Titulo = new System.Windows.Forms.Label();
@@ -93,20 +93,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.emailControl1);
+            this.panel1.Controls.Add(this.numeroTelefonicoControl);
             this.panel1.Controls.Add(this.customDateTextBox1);
             this.panel1.Controls.Add(this.label_agrGeo2);
             this.panel1.Controls.Add(this.label_agrGeo);
             this.panel1.Controls.Add(this.label_AgregarDomicilio);
             this.panel1.Controls.Add(this.pictureBox_Geoposicionamiento);
             this.panel1.Controls.Add(this.pictureBox_Domicilio);
-            this.panel1.Controls.Add(this.textBox_Email);
             this.panel1.Controls.Add(this.label_Email);
             this.panel1.Controls.Add(this.comboBox_Nacionalidad);
             this.panel1.Controls.Add(this.textBox_Ocupacion);
             this.panel1.Controls.Add(this.label_Ocupacion);
             this.panel1.Controls.Add(this.textBox_Apodo);
             this.panel1.Controls.Add(this.label_Apodo);
-            this.panel1.Controls.Add(this.textBox_Telefono);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Titulo);
@@ -140,8 +140,26 @@
             this.panel1.Controls.Add(this.label_CircunstanciasPersonales);
             this.panel1.Location = new System.Drawing.Point(25, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 780);
+            this.panel1.Size = new System.Drawing.Size(564, 769);
             this.panel1.TabIndex = 0;
+            // 
+            // emailControl1
+            // 
+            this.emailControl1.AutoSize = true;
+            this.emailControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.emailControl1.Location = new System.Drawing.Point(120, 409);
+            this.emailControl1.Name = "emailControl1";
+            this.emailControl1.Size = new System.Drawing.Size(332, 24);
+            this.emailControl1.TabIndex = 92;
+            // 
+            // numeroTelefonicoControl
+            // 
+            this.numeroTelefonicoControl.AutoSize = true;
+            this.numeroTelefonicoControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl.Location = new System.Drawing.Point(120, 382);
+            this.numeroTelefonicoControl.Name = "numeroTelefonicoControl";
+            this.numeroTelefonicoControl.Size = new System.Drawing.Size(233, 25);
+            this.numeroTelefonicoControl.TabIndex = 91;
             // 
             // customDateTextBox1
             // 
@@ -211,18 +229,11 @@
             this.pictureBox_Domicilio.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
             this.pictureBox_Domicilio.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
             // 
-            // textBox_Email
-            // 
-            this.textBox_Email.Location = new System.Drawing.Point(129, 404);
-            this.textBox_Email.Name = "textBox_Email";
-            this.textBox_Email.Size = new System.Drawing.Size(271, 20);
-            this.textBox_Email.TabIndex = 78;
-            // 
             // label_Email
             // 
             this.label_Email.AutoSize = true;
             this.label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Email.Location = new System.Drawing.Point(37, 405);
+            this.label_Email.Location = new System.Drawing.Point(27, 409);
             this.label_Email.Name = "label_Email";
             this.label_Email.Size = new System.Drawing.Size(56, 15);
             this.label_Email.TabIndex = 79;
@@ -279,18 +290,11 @@
             this.label_Apodo.TabIndex = 74;
             this.label_Apodo.Text = "APODO :";
             // 
-            // textBox_Telefono
-            // 
-            this.textBox_Telefono.Location = new System.Drawing.Point(128, 378);
-            this.textBox_Telefono.Name = "textBox_Telefono";
-            this.textBox_Telefono.Size = new System.Drawing.Size(271, 20);
-            this.textBox_Telefono.TabIndex = 9;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 379);
+            this.label1.Location = new System.Drawing.Point(27, 383);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 73;
@@ -301,7 +305,7 @@
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(73, 690);
+            this.btn_Buscar.Location = new System.Drawing.Point(73, 683);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 51;
@@ -324,7 +328,7 @@
             // checkBox_LegajoDetenido
             // 
             this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(488, 441);
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(478, 445);
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 11;
@@ -335,7 +339,7 @@
             // checkBox_NotArt60
             // 
             this.checkBox_NotArt60.AutoSize = true;
-            this.checkBox_NotArt60.Location = new System.Drawing.Point(258, 441);
+            this.checkBox_NotArt60.Location = new System.Drawing.Point(248, 445);
             this.checkBox_NotArt60.Name = "checkBox_NotArt60";
             this.checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
             this.checkBox_NotArt60.TabIndex = 10;
@@ -345,7 +349,7 @@
             // label_LegajoDetenido
             // 
             this.label_LegajoDetenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoDetenido.Location = new System.Drawing.Point(325, 436);
+            this.label_LegajoDetenido.Location = new System.Drawing.Point(315, 440);
             this.label_LegajoDetenido.Name = "label_LegajoDetenido";
             this.label_LegajoDetenido.Size = new System.Drawing.Size(188, 23);
             this.label_LegajoDetenido.TabIndex = 31;
@@ -356,7 +360,7 @@
             // 
             this.label_NotArt60.AutoSize = true;
             this.label_NotArt60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NotArt60.Location = new System.Drawing.Point(70, 439);
+            this.label_NotArt60.Location = new System.Drawing.Point(60, 443);
             this.label_NotArt60.Name = "label_NotArt60";
             this.label_NotArt60.Size = new System.Drawing.Size(182, 16);
             this.label_NotArt60.TabIndex = 30;
@@ -367,7 +371,7 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(248, 690);
+            this.btn_Limpiar.Location = new System.Drawing.Point(248, 683);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
@@ -380,7 +384,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(428, 690);
+            this.btn_Guardar.Location = new System.Drawing.Point(428, 683);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
@@ -391,7 +395,7 @@
             // label_CuerpoEntero
             // 
             this.label_CuerpoEntero.AutoSize = true;
-            this.label_CuerpoEntero.Location = new System.Drawing.Point(444, 655);
+            this.label_CuerpoEntero.Location = new System.Drawing.Point(447, 652);
             this.label_CuerpoEntero.Name = "label_CuerpoEntero";
             this.label_CuerpoEntero.Size = new System.Drawing.Size(100, 13);
             this.label_CuerpoEntero.TabIndex = 12;
@@ -400,7 +404,7 @@
             // label_PerfilIzquierdo
             // 
             this.label_PerfilIzquierdo.AutoSize = true;
-            this.label_PerfilIzquierdo.Location = new System.Drawing.Point(307, 655);
+            this.label_PerfilIzquierdo.Location = new System.Drawing.Point(310, 652);
             this.label_PerfilIzquierdo.Name = "label_PerfilIzquierdo";
             this.label_PerfilIzquierdo.Size = new System.Drawing.Size(107, 13);
             this.label_PerfilIzquierdo.TabIndex = 11;
@@ -409,7 +413,7 @@
             // label1_PerfilDerecho
             // 
             this.label1_PerfilDerecho.AutoSize = true;
-            this.label1_PerfilDerecho.Location = new System.Drawing.Point(170, 655);
+            this.label1_PerfilDerecho.Location = new System.Drawing.Point(171, 652);
             this.label1_PerfilDerecho.Name = "label1_PerfilDerecho";
             this.label1_PerfilDerecho.Size = new System.Drawing.Size(100, 13);
             this.label1_PerfilDerecho.TabIndex = 10;
@@ -418,7 +422,7 @@
             // label_Frente
             // 
             this.label_Frente.AutoSize = true;
-            this.label_Frente.Location = new System.Drawing.Point(49, 655);
+            this.label_Frente.Location = new System.Drawing.Point(52, 652);
             this.label_Frente.Name = "label_Frente";
             this.label_Frente.Size = new System.Drawing.Size(50, 13);
             this.label_Frente.TabIndex = 9;
@@ -620,7 +624,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 848);
+            this.ClientSize = new System.Drawing.Size(616, 832);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
@@ -679,14 +683,12 @@
         private System.Windows.Forms.CheckBox checkBox_NotArt60;
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.TextBox textBox_Telefono;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_Apodo;
         private System.Windows.Forms.Label label_Apodo;
         private System.Windows.Forms.TextBox textBox_Ocupacion;
         private System.Windows.Forms.Label label_Ocupacion;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
-        private System.Windows.Forms.TextBox textBox_Email;
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.Label label_agrGeo2;
         private System.Windows.Forms.Label label_agrGeo;
@@ -694,5 +696,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
         private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
+        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
+        private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
     }
 }

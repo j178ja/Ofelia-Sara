@@ -13,12 +13,17 @@ using Ofelia_Sara.general.clases.Apariencia_General;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 
+
+
+
+
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 {
-   
+
     public partial class AgregarDatosPersonalesImputado : BaseForm
     {
+        private System.Windows.Forms.TextBox textBox_Email;
         // Propiedad pública para establecer el texto del TextBox
         public string TextoNombre
         {
@@ -29,7 +34,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         // Definir el evento personalizado
         public event Action<string> ImputadoTextChanged;
         //-------------------------------------------------------------------
-        public  AgregarDatosPersonalesImputado()
+        public AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
 
@@ -42,12 +47,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Suscribirse al evento FormClosing
             this.FormClosing += AgregarDatosPersonales_FormClosing;
 
+
+            this.textBox_Email = new System.Windows.Forms.TextBox();// Configuración del textBox_Email
+
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
-           //-----INICIALIZAR EVENTOS PICKTUREBOX-------------
-           //-----Del domicilio------------------
+            NumeroTelefonicoControl numeroTelefonico = new NumeroTelefonicoControl();
+            this.Controls.Add(numeroTelefonico);
+
+            
+
+            //-----INICIALIZAR EVENTOS PICKTUREBOX-------------
+            //-----Del domicilio------------------
             pictureBox_Domicilio.AllowDrop = true;
             pictureBox_Geoposicionamiento.AllowDrop = true;
 
@@ -80,7 +93,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             pictureBox_CuerpoEntero.DragEnter += new DragEventHandler(pictureBox_DragEnter);
             pictureBox_CuerpoEntero.DragDrop += new DragEventHandler(pictureBox_DragDrop);
-             
+
             pictureBox_Frente.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_PerfilDerecho.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_PerfilIzquierdo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -115,19 +128,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_PerfilIzquierdo.Enabled = true;
             pictureBox_CuerpoEntero.Enabled = true;
             //-------------------------------------------------------------------------------
-            // Define las excepciones para los TextBox y ComboBox.
-            var textBoxExcepciones = new Dictionary<string, bool>
-        {
-            { "textBox_Dni", true },  // Este TextBox solo acepta números.
-            {"textBox_Edad", true },
-            {"textBox_DateDIA", true },
-            {"textBox_DateMES", true },
-            {"textBox_DateAÑO", true },
-            {"textBox_Telefono", true }
-            }; 
+        //    // Define las excepciones para los TextBox y ComboBox.
+        //    var textBoxExcepciones = new Dictionary<string, bool>
+        //{
+        //    { "textBox_Dni", true },  // Este TextBox solo acepta números.
+        //    {"textBox_Edad", true },
+        //    {"textBox_DateDIA", true },
+        //    {"textBox_DateMES", true },
+        //    {"textBox_DateAÑO", true },
+        //    {"textBox_Telefono", true },
+        //    {"textBox_Email", false }
+        //    };
 
-            // Aplica la configuración a todos los controles del formulario.
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
+        //    // Aplica la configuración a todos los controles del formulario.
+        //    TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
             //------------------------------------------------------------------------------------
 
             ActualizarEstado();
@@ -144,9 +158,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-            //-----------------------------------------------------------------------------------
-            //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
-            private void ActualizarControlesPictureDOM()
+        //-----------------------------------------------------------------------------------
+        //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
+        private void ActualizarControlesPictureDOM()
         {
             // Verifica si TextoDomicilio y localidad tienen texto
             bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Domicilio.Text) && !string.IsNullOrWhiteSpace(textBox_Localidad.Text);
@@ -354,6 +368,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
+        }
+        // Método para restablecer el placeholder
+        private void ClearTextBoxPlaceholder(TextBox textBox)
+        {
+            if (textBox != null)
+            {
+                textBox.Text = "";
+                // Asegurarse de que el placeholder se restablezca si es necesario
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = "Enter your email";
+                    textBox.ForeColor = Color.Gray;
+                }
+            }
         }
 
         //------------------------------------------------------------------------------------
@@ -440,6 +469,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 ImputadoTextChanged(textBox_Nombre.Text);
             }
         }
-       
+        //________________________________________________________________________________
+
+        private bool isUpdatingText = false; // Bandera para evitar recursión infinita
+                                             //_________________________________________________________________________________
+
+        
     }
 }

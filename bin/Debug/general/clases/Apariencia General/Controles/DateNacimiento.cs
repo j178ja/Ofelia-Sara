@@ -201,6 +201,11 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
                 isClosing = false;
             }
         }
+
+        private void CustomDateTextBox_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
