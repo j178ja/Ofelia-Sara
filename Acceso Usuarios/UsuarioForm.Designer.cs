@@ -56,17 +56,18 @@
             this.panel1.Controls.Add(this.label_Contraseña);
             this.panel1.Controls.Add(this.label_Usuario);
             this.panel1.Controls.Add(this.label_Validacion);
-            this.panel1.Location = new System.Drawing.Point(23, 23);
+            this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 239);
+            this.panel1.Size = new System.Drawing.Size(526, 179);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox_OjoContraseña
             // 
             this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 119);
+            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 81);
             this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
-            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
+            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 22);
+            this.pictureBox_OjoContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_OjoContraseña.TabIndex = 28;
             this.pictureBox_OjoContraseña.TabStop = false;
             this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
@@ -77,7 +78,7 @@
             this.btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Registrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrarse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Registrarse.Location = new System.Drawing.Point(189, 163);
+            this.btn_Registrarse.Location = new System.Drawing.Point(189, 129);
             this.btn_Registrarse.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Registrarse.Name = "btn_Registrarse";
             this.btn_Registrarse.Size = new System.Drawing.Size(116, 33);
@@ -93,7 +94,7 @@
             this.btn_Ingresar.FlatAppearance.BorderSize = 0;
             this.btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Ingresar.Location = new System.Drawing.Point(333, 163);
+            this.btn_Ingresar.Location = new System.Drawing.Point(333, 129);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(88, 33);
             this.btn_Ingresar.TabIndex = 5;
@@ -104,7 +105,7 @@
             // textBox_Contraseña
             // 
             this.textBox_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Contraseña.Location = new System.Drawing.Point(189, 114);
+            this.textBox_Contraseña.Location = new System.Drawing.Point(189, 80);
             this.textBox_Contraseña.Name = "textBox_Contraseña";
             this.textBox_Contraseña.PasswordChar = '*';
             this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
@@ -114,7 +115,7 @@
             // textBox_Usuario
             // 
             this.textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Usuario.Location = new System.Drawing.Point(189, 80);
+            this.textBox_Usuario.Location = new System.Drawing.Point(189, 46);
             this.textBox_Usuario.Name = "textBox_Usuario";
             this.textBox_Usuario.Size = new System.Drawing.Size(232, 24);
             this.textBox_Usuario.TabIndex = 3;
@@ -123,7 +124,7 @@
             // 
             this.label_Contraseña.AutoSize = true;
             this.label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Contraseña.Location = new System.Drawing.Point(53, 119);
+            this.label_Contraseña.Location = new System.Drawing.Point(53, 85);
             this.label_Contraseña.Name = "label_Contraseña";
             this.label_Contraseña.Size = new System.Drawing.Size(119, 16);
             this.label_Contraseña.TabIndex = 2;
@@ -133,7 +134,7 @@
             // 
             this.label_Usuario.AutoSize = true;
             this.label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Usuario.Location = new System.Drawing.Point(89, 85);
+            this.label_Usuario.Location = new System.Drawing.Point(89, 51);
             this.label_Usuario.Name = "label_Usuario";
             this.label_Usuario.Size = new System.Drawing.Size(83, 16);
             this.label_Usuario.TabIndex = 1;
@@ -156,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 305);
+            this.ClientSize = new System.Drawing.Size(569, 232);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;

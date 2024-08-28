@@ -11,6 +11,8 @@ using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using Ofelia_Sara.general.clases.Apariencia_General.Generales.Ofelia_Sara.general.clases.Botones;
 
 using System.Drawing;
+using Ofelia_Sara.Registro_de_personal;
+using Ofelia_Sara.Acceso_Usuarios;
 
 
 namespace Ofelia_Sara.general.clases.Botones
@@ -216,6 +218,14 @@ namespace Ofelia_Sara.general.clases.Botones
                 FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
                 buscarForm.Show();
                 buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Dependencia"]);
+            };
+
+            // ------PARA Btn REMOVER----------------------
+            item_Remover.Click += (sender, e) => {
+                UsuarioForm usuarioForm = new UsuarioForm();
+                FormPositioner.PosicionarDebajo(_menuPrincipal, usuarioForm);
+                usuarioForm.Show();
+                //removerForm.PosicionarCursorEnTextBox(removerForm.Controls["textBox_Dependencia"]);
             };
 
             // ---- Manejo del clic en SALIR

@@ -49,6 +49,11 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Jerarquia.DataSource = null;
 
             textBox_NumeroLegajo.MaxLength = 7;
+
+            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
+
+            numeroTelefonicoControl1.ControlWidth = 159;
+            numeroTelefonicoControl2.ControlWidth = 159;
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
@@ -72,6 +77,8 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedIndex = -1;
             // Muestra un mensaje de información
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -111,6 +118,11 @@ namespace Ofelia_Sara.Registro_de_personal
         
 
         private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numeroTelefonicoControl_Load(object sender, EventArgs e)
         {
 
         }
