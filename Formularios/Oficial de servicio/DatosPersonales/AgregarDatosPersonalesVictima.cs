@@ -581,6 +581,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBoton(btn_Buscar);
 
             ActualizarControlesPicture();
+
+            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
         }
 
 

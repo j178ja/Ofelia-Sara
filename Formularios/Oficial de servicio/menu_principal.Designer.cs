@@ -37,7 +37,7 @@
             this.btn_Contravenciones = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_BuscarTarea = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Buscar = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.menu_Configurar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aGREGARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,7 +128,7 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.btn_BuscarTarea);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBox_Buscar);
             this.panel1.Controls.Add(this.btn_Configurar);
             this.panel1.Controls.Add(this.btn_CambiarTema);
             this.panel1.Controls.Add(this.btn_Contravenciones);
@@ -152,14 +152,14 @@
             this.btn_BuscarTarea.TabIndex = 15;
             this.btn_BuscarTarea.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBox_Buscar
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(294, 28);
-            this.comboBox1.TabIndex = 14;
+            this.comboBox_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Buscar.FormattingEnabled = true;
+            this.comboBox_Buscar.Location = new System.Drawing.Point(147, 28);
+            this.comboBox_Buscar.Name = "comboBox_Buscar";
+            this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
+            this.comboBox_Buscar.TabIndex = 14;
             // 
             // btn_Configurar
             // 
@@ -380,7 +380,7 @@
         private System.Windows.Forms.ToolStripMenuItem fOLIADORToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_Buscar;
         private System.Windows.Forms.Button btn_BuscarTarea;
     }    
  }

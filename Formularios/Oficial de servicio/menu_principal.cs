@@ -6,8 +6,12 @@ using System.Windows.Forms;
 using Ofelia_Sara.general.clases.Botones;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using System.Linq;
+
 
 using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.ComponentModel;
 
 namespace Ofelia_Sara
 {
@@ -16,8 +20,8 @@ namespace Ofelia_Sara
        
         private ContextMenuStrip contextMenu;
         private AuxiliarConfiguracion auxiliarConfiguracion;
-        
-       
+        private AccionesManager accionesManager;//para el comboBox
+
 
         public MenuPrincipal()
         {
@@ -26,9 +30,12 @@ namespace Ofelia_Sara
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);
             posicionarMenu();
            
-
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            accionesManager = new AccionesManager("acciones.json");
+            ConfigureComboBox(comboBox_Buscar);
+            CargarAcciones(); 
         }
         //_________________________________--________________________________
 
@@ -63,10 +70,14 @@ namespace Ofelia_Sara
             //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
             IncrementarTamaño.Incrementar(btn_Configurar);
             IncrementarTamaño.Incrementar(btn_CambiarTema);
+
+            comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
+
         }
         //--------------------------------------------------------------------------------
-    
-        
+
+
 
         //------------BOTON CONFIGURAR--------------------------------------------------
         private void btn_Configurar_Click(object sender, EventArgs e)
@@ -185,7 +196,74 @@ namespace Ofelia_Sara
             // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
             MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
+        //------------- BOTON BUSCAR--------------------------
+        private BindingSource bindingSource;
+
+        private void ConfigureComboBox(System.Windows.Forms.ComboBox comboBox)
+        {
+            // Configurar el ComboBox para autocompletado
+            comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Habilita el autocompletado
+            comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            // Ajustar la altura de la lista desplegable para mostrar más ítems
+            comboBox.DropDownHeight = 100;
+
+            // Inicializar y configurar el BindingSource
+            bindingSource = new BindingSource();
+            bindingSource.DataSource = accionesManager.Acciones;
+
+            // Establecer el DataSource del ComboBox al BindingSource
+            comboBox.DataSource = bindingSource;
+
+            // Manejar el evento de texto modificado
+            comboBox.TextChanged += (sender, e) =>
+            {
+                // Filtrar la lista de acciones según el texto ingresado
+                string searchText = comboBox.Text.ToLower();
+                var filteredActions = accionesManager.Acciones
+                    .Where(a => a.ToLower().Contains(searchText))
+                    .ToList();
+
+                // Actualizar la fuente de datos del ComboBox
+                bindingSource.DataSource = filteredActions;
+
+                // Reabrir la lista desplegable para mostrar las coincidencias
+                if (comboBox.Items.Count > 0)
+                {
+                    comboBox.DroppedDown = true;
+                }
+            };
+        }
+
+        private void CargarAcciones()
+        {
+            try
+            {
+                string filePath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\acciones.json";
+                accionesManager = new AccionesManager(filePath);
+
+                // Elimina el DataSource si está asignado
+                comboBox_Buscar.DataSource = null;
+
+                // Poblar el ComboBox con las acciones
+                comboBox_Buscar.Items.AddRange(accionesManager.Acciones.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las acciones: " + ex.Message);
+            }
+        }
+
+
+        private void comboBox_Buscar_Validating(object sender, CancelEventArgs e)
+        {
+            if (!accionesManager.Acciones.Contains(comboBox_Buscar.Text))
+            {
+                MessageBox.Show("La tarea que quiere realizar no se encuentra disponible.");
+                e.Cancel = true; // Cancela la acción si la entrada no es válida
+            }
+        }
 
     }
 }
