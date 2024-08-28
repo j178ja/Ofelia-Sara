@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.Base_de_Datos.Entidades;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using System;
 using System.Collections.Generic;
@@ -137,21 +138,54 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
+        //_________________________________________________________________________
+        //---ABRIR FORMULARIO SELLOS DESDE CHECK-------------------------
+        private Point originalPosition;
 
         private void checkBox_AgregarSellos_CheckedChanged(object sender, EventArgs e)
         {
             // Verifica si el CheckBox está marcado
             if (checkBox_AgregarSellos.Checked)
             {
+                // Guarda la posición actual del formulario principal
+                originalPosition = this.Location;
+
                 // Crear una instancia del formulario SellosDependencia
                 SellosDependencia sellosDependenciaForm = new SellosDependencia();
 
-                sellosDependenciaForm.TextBoxText = textBox_Dependencia.Text;
+                // Guardar la posición original del formulario
+                originalPosition = this.Location;
 
+                // Obtener el tamaño de ambos formularios
+                int totalWidth = this.Width + sellosDependenciaForm.Width;
+                int height = Math.Max(this.Height, sellosDependenciaForm.Height);
+
+                // Calcular la posición para centrar ambos formularios en la pantalla
+                int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+                int startX = (screenWidth - totalWidth) / 2;
+                int startY = (screenHeight - height) / 2;
+
+                // Posicionar el formulario original a la izquierda
+                this.Location = new Point(startX, startY);
+
+                // Posicionar el formulario AgregarDatosPersonalesConcubina a la derecha del formulario original
+                sellosDependenciaForm.StartPosition = FormStartPosition.Manual;
+                sellosDependenciaForm.Location = new Point(startX + this.Width, startY);
+
+                // Mostrar el formulario AgregarDatosPersonalesConcubina
+                sellosDependenciaForm.FormClosed += sellosDependenciaForm_FormClosed;
                 // Mostrar el formulario como una ventana modal
-                sellosDependenciaForm.ShowDialog();
+                sellosDependenciaForm.Show();
             }
         }
+        private void sellosDependenciaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Restaurar la posición original del formulario
+            this.Location = originalPosition;
+        }
+
         //-------------------------------------------------------------------------
         //--Para habilitar check y modificar label
         private void ActualizarEstado()
