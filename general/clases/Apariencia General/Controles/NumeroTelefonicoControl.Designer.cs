@@ -37,10 +37,9 @@
             this.maskedTextBox_Telefono.Location = new System.Drawing.Point(0, 0);
             this.maskedTextBox_Telefono.Mask = "(99999)915-00000000";
             this.maskedTextBox_Telefono.Name = "maskedTextBox_Telefono";
-            this.maskedTextBox_Telefono.Size = new System.Drawing.Size(230, 22);
+            this.maskedTextBox_Telefono.Size = new System.Drawing.Size(159, 22);
             this.maskedTextBox_Telefono.TabIndex = 0;
             this.maskedTextBox_Telefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-
             // 
             // NumeroTelefonicoControl
             // 
@@ -50,7 +49,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.maskedTextBox_Telefono);
             this.Name = "NumeroTelefonicoControl";
-            this.Size = new System.Drawing.Size(233, 25);
+            this.Size = new System.Drawing.Size(162, 25);
+            this.Load += new System.EventHandler(this.NumeroTelefonicoControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

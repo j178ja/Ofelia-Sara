@@ -12,6 +12,18 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         {
             InitializeComponent();
             CustomNumeroTelefonicoControl_Load(this, EventArgs.Empty);
+            
+        }
+        // Propiedad para ajustar el ancho del control
+        // Propiedad para ajustar el ancho del control
+        public int ControlWidth
+        {
+            get { return this.Width; }
+            set
+            {
+                this.Width = value;
+               
+            }
         }
 
         private void CustomNumeroTelefonicoControl_Load(object sender, EventArgs e)
@@ -74,6 +86,11 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         {
             maskedTextBox_Telefono.Clear();
             RestorePlaceholders();
+        }
+
+        private void NumeroTelefonicoControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

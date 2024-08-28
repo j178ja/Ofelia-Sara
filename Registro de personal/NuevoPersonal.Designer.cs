@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numeroTelefonicoControl2 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
+            this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.textBox_PartidoPnal = new System.Windows.Forms.TextBox();
             this.label_PartidoPnal = new System.Windows.Forms.Label();
@@ -49,14 +51,12 @@
             this.label_ArmaModelo = new System.Windows.Forms.Label();
             this.textBox_ArmaMarca = new System.Windows.Forms.TextBox();
             this.label_ArmaMarca = new System.Windows.Forms.Label();
-            this.textBox_Telefono2 = new System.Windows.Forms.TextBox();
             this.label_Telefono2 = new System.Windows.Forms.Label();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LocalidadPnal = new System.Windows.Forms.TextBox();
             this.label_LocalidadPnal = new System.Windows.Forms.Label();
             this.textBox_DomicilioPnal = new System.Windows.Forms.TextBox();
             this.label_Domicilio = new System.Windows.Forms.Label();
-            this.textBox_Telefono1 = new System.Windows.Forms.TextBox();
             this.label_Telefono1 = new System.Windows.Forms.Label();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
             this.label_Meses = new System.Windows.Forms.Label();
@@ -108,6 +108,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.numeroTelefonicoControl2);
+            this.panel1.Controls.Add(this.numeroTelefonicoControl1);
             this.panel1.Controls.Add(this.comboBox_EstadoCivil);
             this.panel1.Controls.Add(this.textBox_PartidoPnal);
             this.panel1.Controls.Add(this.label_PartidoPnal);
@@ -126,14 +128,12 @@
             this.panel1.Controls.Add(this.label_ArmaModelo);
             this.panel1.Controls.Add(this.textBox_ArmaMarca);
             this.panel1.Controls.Add(this.label_ArmaMarca);
-            this.panel1.Controls.Add(this.textBox_Telefono2);
             this.panel1.Controls.Add(this.label_Telefono2);
             this.panel1.Controls.Add(this.label_EstadoCivil);
             this.panel1.Controls.Add(this.textBox_LocalidadPnal);
             this.panel1.Controls.Add(this.label_LocalidadPnal);
             this.panel1.Controls.Add(this.textBox_DomicilioPnal);
             this.panel1.Controls.Add(this.label_Domicilio);
-            this.panel1.Controls.Add(this.textBox_Telefono1);
             this.panel1.Controls.Add(this.label_Telefono1);
             this.panel1.Controls.Add(this.comboBox_Dependencia);
             this.panel1.Controls.Add(this.label_Meses);
@@ -178,6 +178,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 877);
             this.panel1.TabIndex = 3;
+            // 
+            // numeroTelefonicoControl2
+            // 
+            this.numeroTelefonicoControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl2.ControlWidth = 159;
+            this.numeroTelefonicoControl2.Location = new System.Drawing.Point(410, 230);
+            this.numeroTelefonicoControl2.Name = "numeroTelefonicoControl2";
+            this.numeroTelefonicoControl2.Size = new System.Drawing.Size(159, 25);
+            this.numeroTelefonicoControl2.TabIndex = 148;
+            // 
+            // numeroTelefonicoControl1
+            // 
+            this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl1.ControlWidth = 159;
+            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(126, 230);
+            this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
+            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(159, 25);
+            this.numeroTelefonicoControl1.TabIndex = 147;
             // 
             // comboBox_EstadoCivil
             // 
@@ -353,22 +371,15 @@
             this.label_ArmaMarca.Text = "ARMA MARCA     :";
             this.label_ArmaMarca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox_Telefono2
-            // 
-            this.textBox_Telefono2.Location = new System.Drawing.Point(421, 232);
-            this.textBox_Telefono2.Name = "textBox_Telefono2";
-            this.textBox_Telefono2.Size = new System.Drawing.Size(149, 20);
-            this.textBox_Telefono2.TabIndex = 128;
-            // 
             // label_Telefono2
             // 
             this.label_Telefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono2.Location = new System.Drawing.Point(312, 234);
+            this.label_Telefono2.Location = new System.Drawing.Point(299, 229);
             this.label_Telefono2.Name = "label_Telefono2";
-            this.label_Telefono2.Size = new System.Drawing.Size(109, 17);
+            this.label_Telefono2.Size = new System.Drawing.Size(106, 22);
             this.label_Telefono2.TabIndex = 127;
             this.label_Telefono2.Text = "TELEFONO 2 :";
-            this.label_Telefono2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Telefono2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_EstadoCivil
             // 
@@ -416,13 +427,6 @@
             this.label_Domicilio.TabIndex = 121;
             this.label_Domicilio.Text = "DOMICILIO :";
             this.label_Domicilio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // textBox_Telefono1
-            // 
-            this.textBox_Telefono1.Location = new System.Drawing.Point(126, 232);
-            this.textBox_Telefono1.Name = "textBox_Telefono1";
-            this.textBox_Telefono1.Size = new System.Drawing.Size(149, 20);
-            this.textBox_Telefono1.TabIndex = 120;
             // 
             // label_Telefono1
             // 
@@ -881,13 +885,11 @@
         private System.Windows.Forms.Label label_Meses;
         private System.Windows.Forms.TextBox textBox_AntiguedadMeses;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox textBox_Telefono1;
         private System.Windows.Forms.Label label_Telefono1;
         private System.Windows.Forms.TextBox textBox_LocalidadPnal;
         private System.Windows.Forms.Label label_LocalidadPnal;
         private System.Windows.Forms.TextBox textBox_DomicilioPnal;
         private System.Windows.Forms.Label label_Domicilio;
-        private System.Windows.Forms.TextBox textBox_Telefono2;
         private System.Windows.Forms.Label label_Telefono2;
         private System.Windows.Forms.Label label_EstadoCivil;
         private System.Windows.Forms.TextBox textBox_ArmaNumero;
@@ -908,5 +910,7 @@
         private System.Windows.Forms.TextBox textBox_PartidoPnal;
         private System.Windows.Forms.Label label_PartidoPnal;
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
+        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
+        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl2;
     }
 }
