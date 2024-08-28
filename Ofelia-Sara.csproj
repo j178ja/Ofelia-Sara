@@ -162,6 +162,7 @@
     <Compile Include="Acceso Usuarios\UsuarioForm.Designer.cs">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base de Datos\Busqueda Menu\AccionesManager.cs" />
     <Compile Include="Base de Datos\DataBaseManagger.cs" />
     <Compile Include="Base de Datos\DataInserter.cs" />
     <Compile Include="Base de Datos\Entidades\Dependencia.cs" />
