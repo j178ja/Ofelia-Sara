@@ -18,6 +18,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InitializeComponent();
         }
 
-      
+        private void AgregarDatosPersonalesConcubina_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
     }
 }
