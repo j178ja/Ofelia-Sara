@@ -1,5 +1,5 @@
-{
-    "acciones": [
+
+     [
         "Agregar Instructor",
         "Agregar Secretario",
         "Agregar Dependencia",
@@ -51,4 +51,4 @@
         "Nota camaras Monitoreo",
         "Nota camaras Particulares"
          ]
-}
+

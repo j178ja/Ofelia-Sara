@@ -35,7 +35,8 @@ namespace Ofelia_Sara
 
             accionesManager = new AccionesManager("acciones.json");
             ConfigureComboBox(comboBox_Buscar);
-            CargarAcciones(); 
+            CargarAcciones();//para comboBox_Buscar
+           
         }
         //_________________________________--________________________________
 
@@ -69,7 +70,7 @@ namespace Ofelia_Sara
 
             //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
             IncrementarTamaño.Incrementar(btn_Configurar);
-            IncrementarTamaño.Incrementar(btn_CambiarTema);
+            IncrementarTamaño.Incrementar(btn_Leyes);
 
             comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -190,12 +191,7 @@ namespace Ofelia_Sara
             InspeccionesForm.Show();
         }
 
-        //------------BOTON CAMBIAR TEMA------------
-        private void Btn_CambiarTema_Click(object sender, EventArgs e)
-        {
-            // Mostrar un mensaje de alerta PROVISORIO HASTA QUE SE DESARROLLE COMPLETO
-            MessageBox.Show("Este botón está en desarrollo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+       
 
         //------------- BOTON BUSCAR--------------------------
         private BindingSource bindingSource;
@@ -208,6 +204,9 @@ namespace Ofelia_Sara
 
             // Ajustar la altura de la lista desplegable para mostrar más ítems
             comboBox.DropDownHeight = 100;
+
+            // Cargar las acciones y ordenar
+            CargarAcciones();
 
             // Inicializar y configurar el BindingSource
             bindingSource = new BindingSource();
@@ -263,6 +262,27 @@ namespace Ofelia_Sara
                 MessageBox.Show("La tarea que quiere realizar no se encuentra disponible.");
                 e.Cancel = true; // Cancela la acción si la entrada no es válida
             }
+        }
+        //_________________________________________________________________________________
+        //----------------BTON LEYES------------------------------
+        private void btn_Leyes_Click(object sender, EventArgs e)
+        {
+            // Crear e inicializar el formulario para mostrar documentos
+            LeyesForm leyesForm = new LeyesForm();
+
+            // Obtener la ubicación y tamaño del formulario principal
+            Point menuPrincipalLocation = this.Location;
+            Size menuPrincipalSize = this.Size;
+
+            // Calcular la nueva ubicación para el formulario DocumentosForm
+            int x = menuPrincipalLocation.X; // Mantener la misma posición horizontal
+            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height; // Colocar justo debajo
+
+            // Ajustar la ubicación del formulario DocumentosForm
+            leyesForm.StartPosition = FormStartPosition.Manual;
+            leyesForm.Location = new Point(x, y);
+                       
+            leyesForm.Show();
         }
 
     }
