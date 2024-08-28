@@ -53,9 +53,7 @@
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
-            this.checkBox_NotArt60 = new System.Windows.Forms.CheckBox();
             this.label_Imagenes = new System.Windows.Forms.Label();
-            this.label_NotArt60 = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.label_CuerpoEntero = new System.Windows.Forms.Label();
@@ -95,7 +93,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
             this.panel1.Controls.Add(this.btn_AgregarConcubina);
             this.panel1.Controls.Add(this.comboBox_EstadoCivil);
             this.panel1.Controls.Add(this.label_EstadoCivil);
@@ -119,9 +117,7 @@
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.checkBox_LegajoDetenido);
-            this.panel1.Controls.Add(this.checkBox_NotArt60);
             this.panel1.Controls.Add(this.label_Imagenes);
-            this.panel1.Controls.Add(this.label_NotArt60);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.label_CuerpoEntero);
@@ -377,40 +373,21 @@
             // checkBox_LegajoDetenido
             // 
             this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(480, 470);
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(160, 470);
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 11;
             this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
             // 
-            // checkBox_NotArt60
-            // 
-            this.checkBox_NotArt60.AutoSize = true;
-            this.checkBox_NotArt60.Location = new System.Drawing.Point(250, 470);
-            this.checkBox_NotArt60.Name = "checkBox_NotArt60";
-            this.checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_NotArt60.TabIndex = 10;
-            this.checkBox_NotArt60.UseVisualStyleBackColor = true;
-            // 
             // label_Imagenes
             // 
             this.label_Imagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Imagenes.Location = new System.Drawing.Point(358, 465);
+            this.label_Imagenes.Location = new System.Drawing.Point(34, 465);
             this.label_Imagenes.Name = "label_Imagenes";
             this.label_Imagenes.Size = new System.Drawing.Size(147, 23);
             this.label_Imagenes.TabIndex = 31;
             this.label_Imagenes.Text = "Imagenes  ";
             this.label_Imagenes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_NotArt60
-            // 
-            this.label_NotArt60.AutoSize = true;
-            this.label_NotArt60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NotArt60.Location = new System.Drawing.Point(62, 468);
-            this.label_NotArt60.Name = "label_NotArt60";
-            this.label_NotArt60.Size = new System.Drawing.Size(182, 16);
-            this.label_NotArt60.TabIndex = 30;
-            this.label_NotArt60.Text = "Notificación Art. 60 C.P.P.";
             // 
             // btn_Limpiar
             // 
@@ -655,6 +632,7 @@
             this.MinimizeBox = false;
             this.Name = "AgregarDatosPersonalesConcubina";
             this.Text = "DATOS PAREJA, CONCUBINA /O";
+            this.Load += new System.EventHandler(this.AgregarDatosPersonalesConcubina_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -695,9 +673,7 @@
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
-        private System.Windows.Forms.CheckBox checkBox_NotArt60;
         private System.Windows.Forms.Label label_Imagenes;
-        private System.Windows.Forms.Label label_NotArt60;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Label label_CuerpoEntero;

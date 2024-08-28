@@ -717,6 +717,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             if (comboBox_EstadoCivil.SelectedIndex >= 0)
             {
                 btn_AgregarConcubina.Enabled = true;
+
+                
             }
             else
             {
@@ -724,14 +726,46 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
         }
-
+        //______________________________________________________________
+        // Variable para almacenar la posición original
+        private Point originalPosition;
         private void btn_AgregarConcubina_Click(object sender, EventArgs e)
         {
-            // Crear una nueva instancia del formulario AgregarDatosPersonalesConcubina
-            AgregarDatosPersonalesConcubina formConcubina = new AgregarDatosPersonalesConcubina();
 
-            // Mostrar el formulario
-            formConcubina.ShowDialog();
+            // Crear una instancia del formulario AgregarDatosPersonalesConcubina
+            Form agregarDatosPersonalesConcubina = new AgregarDatosPersonalesConcubina();
+
+            // Guardar la posición original del formulario
+            originalPosition = this.Location;
+
+            // Obtener el tamaño de ambos formularios
+            int totalWidth = this.Width + agregarDatosPersonalesConcubina.Width;
+            int height = Math.Max(this.Height, agregarDatosPersonalesConcubina.Height);
+
+            // Calcular la posición para centrar ambos formularios en la pantalla
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            int startX = (screenWidth - totalWidth) / 2;
+            int startY = (screenHeight - height) / 2;
+
+            // Posicionar el formulario original a la izquierda
+            this.Location = new Point(startX, startY);
+
+            // Posicionar el formulario AgregarDatosPersonalesConcubina a la derecha del formulario original
+            agregarDatosPersonalesConcubina.StartPosition = FormStartPosition.Manual;
+            agregarDatosPersonalesConcubina.Location = new Point(startX + this.Width, startY);
+
+            // Mostrar el formulario AgregarDatosPersonalesConcubina
+            agregarDatosPersonalesConcubina.FormClosed += AgregarDatosPersonalesConcubina_FormClosed;
+            agregarDatosPersonalesConcubina.Show();
+
+        }
+
+        private void AgregarDatosPersonalesConcubina_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Restaurar la posición original del formulario
+            this.Location = originalPosition;
         }
     }
 }
