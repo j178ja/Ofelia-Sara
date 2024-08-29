@@ -51,6 +51,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Email = new System.Windows.Forms.TextBox();// Configuración del textBox_Email
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
@@ -130,21 +133,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_PerfilIzquierdo.Enabled = true;
             pictureBox_CuerpoEntero.Enabled = true;
             //-------------------------------------------------------------------------------
-        //    // Define las excepciones para los TextBox y ComboBox.
-        //    var textBoxExcepciones = new Dictionary<string, bool>
-        //{
-        //    { "textBox_Dni", true },  // Este TextBox solo acepta números.
-        //    {"textBox_Edad", true },
-        //    {"textBox_DateDIA", true },
-        //    {"textBox_DateMES", true },
-        //    {"textBox_DateAÑO", true },
-        //    {"textBox_Telefono", true },
-        //    {"textBox_Email", false }
-        //    };
-
-        //    // Aplica la configuración a todos los controles del formulario.
-        //    TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
-            //------------------------------------------------------------------------------------
+       
 
             ActualizarEstado();
         }
@@ -591,22 +580,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_Domicilio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir teclas de control como Backspace y Enter, así como espacios
-            if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else if (char.IsLetter(e.KeyChar)) // Permitir letras
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else
-            {
-                e.Handled = true; // Ignorar caracteres especiales
-            }
-        }
 
         private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -674,25 +647,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-      
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-            // Convierte el texto a mayúsculas
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                // Guarda la posición del cursor
-                int cursorPosition = textBox.SelectionStart;
-
-                // Convierte el texto a mayúsculas
-                textBox.Text = textBox.Text.ToUpper();
-
-                // Restaura la posición del cursor
-                textBox.SelectionStart = cursorPosition;
-            }
-        }
 
         private void textBox_LugarNacimiento_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -718,7 +673,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             {
                 btn_AgregarConcubina.Enabled = true;
 
-                
             }
             else
             {

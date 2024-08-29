@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
             this.label_TelValidacion2 = new System.Windows.Forms.Label();
             this.label_TelValidacion = new System.Windows.Forms.Label();
             this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
@@ -52,7 +53,6 @@
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +89,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(527, 409);
             this.panel1.TabIndex = 4;
+            // 
+            // numeroTelefonicoControl1
+            // 
+            this.numeroTelefonicoControl1.AutoSize = true;
+            this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl1.ControlWidth = 162;
+            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(225, 274);
+            this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
+            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(162, 25);
+            this.numeroTelefonicoControl1.TabIndex = 31;
             // 
             // label_TelValidacion2
             // 
@@ -211,7 +221,6 @@
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 24);
             this.textBox_Apellido.TabIndex = 18;
-            this.textBox_Apellido.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // textBox_Nombre
             // 
@@ -220,7 +229,6 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 24);
             this.textBox_Nombre.TabIndex = 17;
-            this.textBox_Nombre.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // label_Nombre
             // 
@@ -292,16 +300,6 @@
             this.label_Usuario.Size = new System.Drawing.Size(83, 16);
             this.label_Usuario.TabIndex = 7;
             this.label_Usuario.Text = "USUARIO :";
-            // 
-            // numeroTelefonicoControl1
-            // 
-            this.numeroTelefonicoControl1.AutoSize = true;
-            this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.numeroTelefonicoControl1.ControlWidth = 162;
-            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(225, 274);
-            this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(162, 25);
-            this.numeroTelefonicoControl1.TabIndex = 31;
             // 
             // Registro
             // 

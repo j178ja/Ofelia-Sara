@@ -29,7 +29,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load);
 
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
+            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
         }
 
         private void AgregarDatosPersonalesVictima_Load(object sender, EventArgs e)
@@ -54,19 +57,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //-------------------------------------------------------------------------------
-        //    // Define las excepciones para los TextBox y ComboBox.
-        //    var textBoxExcepciones = new Dictionary<string, bool>
-        //{
-        //    { "textBox_Dni", true },  // Este TextBox solo acepta números.
-        //    {"textBox_Edad", true },
-        //      {"textBox_DateDIA", true },
-        //    {"textBox_DateMES", true },
-        //    {"textBox_DateAÑO", true },
-        //    {"textBox_FechaNacimiento", true },
-        //    {"textBox_Telefono", true }
-        //    };
-        //     // Aplica la configuración a todos los controles del formulario.
-        //    TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, null);
+
         }
 
         private void InitializeComponent()
@@ -436,7 +427,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
-            this.textBox_Domicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Domicilio_KeyPress);
+          
             // 
             // textBox_Edad
             // 
@@ -583,6 +574,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPicture();
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+          
         }
 
 
@@ -796,27 +788,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             ActualizarControlesPicture();
 
-            // Obtiene el texto actual del TextBox
-            string input = textBox_Domicilio.Text;
-
-            // Convierte el texto a mayúsculas
-            string upperText = input.ToUpper();
-
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Domicilio.Text != upperText)
-            {
-                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Domicilio.TextChanged -= textBox_Domicilio_TextChanged;
-
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Domicilio.Text = upperText;
-
-                // Restaura la posición del cursor al final del texto
-                textBox_Domicilio.SelectionStart = upperText.Length;
-
-                // Vuelve a asociar el evento TextChanged
-                textBox_Domicilio.TextChanged += textBox_Domicilio_TextChanged;
-            }
+            
         }
 
         private void textBox_Localidad_TextChanged(object sender, EventArgs e)
@@ -947,22 +919,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_Domicilio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir teclas de control como Backspace y Enter, así como espacios
-    if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else if (char.IsLetter(e.KeyChar)) // Permitir letras
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else
-            {
-                e.Handled = true; // Ignorar caracteres especiales
-            }
-        }
+       
 
         private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
