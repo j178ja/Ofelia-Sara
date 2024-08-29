@@ -178,7 +178,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 877);
             this.panel1.TabIndex = 3;
-
             // 
             // numeroTelefonicoControl2
             // 
@@ -688,6 +687,7 @@
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 85;
             this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Edad_KeyPress);
             // 
             // textBox_Dni
             // 
@@ -697,6 +697,7 @@
             this.textBox_Dni.Size = new System.Drawing.Size(176, 20);
             this.textBox_Dni.TabIndex = 83;
             this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Dni_KeyPress);
             // 
             // textBox_Nombre
             // 
