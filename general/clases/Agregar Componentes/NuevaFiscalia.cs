@@ -33,6 +33,13 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
+            this.Shown += Focus_Shown;//para que haga foco en un textBox
+        }
+        //-----------------------------------------------------------------------------
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_Fiscalia.Focus();
         }
 
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)

@@ -56,6 +56,13 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             pictureBox_FirmaDigitalizada.SizeMode = PictureBoxSizeMode.StretchImage;
 
             textBox_NumeroLegajo.MaxLength = 7; //limitando numero de legajo
+            this.Shown += Focus_Shown;//para que haga foco en un textBox
+        }
+        //-----------------------------------------------------------------------------
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_NumeroLegajo.Focus();
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)

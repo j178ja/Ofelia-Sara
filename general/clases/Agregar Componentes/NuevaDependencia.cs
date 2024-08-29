@@ -64,10 +64,15 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Suscribirse al evento DependenciaTextChanged
             sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependencia;
-
-
+            this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
         }
-
+        //-----------------------------------------------------------------------------
+        private void NuevaDependencia_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_Dependencia.Focus();
+        }
+        //___________________________________________________________________________
         private void NuevaDependencia_FormClosed(object sender, FormClosedEventArgs e)
         {
             
@@ -166,8 +171,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 // Crear una instancia del formulario SellosDependencia
                 SellosDependencia sellosDependenciaForm = new SellosDependencia();
 
-                //sellosDependenciaForm.ActualizarTextoDependencia(this.TextoDependencia);
-                //this.DependenciaTextChanged += sellosDependenciaForm.ActualizarTextoDependencia;
+                sellosDependenciaForm.ActualizarTextoDependencia(this.TextoDependencia);
+                this.DependenciaTextChanged += sellosDependenciaForm.ActualizarTextoDependencia;
                 sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependenciaDesdeSellosDependencia;
 
                 // Guardar la posición original del formulario

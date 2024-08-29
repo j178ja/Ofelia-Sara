@@ -56,8 +56,16 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Dispara el evento si hay suscriptores
             DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+
+            this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
         }
         //-----------------------------------------------------------------------------
+        private void NuevaDependencia_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_Dependencia.Focus();
+        }
+        //____________________________________________________________________
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
