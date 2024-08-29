@@ -106,8 +106,7 @@ namespace Ofelia_Sara
     { "ComboBox_Ufid", true },             // Este ComboBox acepta letras, números y espacios.
      { "comboBox_Localidad", true },        // Este ComboBox acepta letras, números y espacios, convirtiéndolos a mayúsculas.
     { "comboBox_DeptoJudicial", false },   // Este ComboBox acepta letras y espacios, convirtiéndolos a mayúsculas, pero no acepta números.
-    // { "comboBox_AgenteFiscal", false }  // Este ComboBox será procesado por la clase CamelCase más adelante.
-};
+    };
 
             // Aplica la configuración a todos los controles del formulario, excepto los que tienen lógica específica más adelante.
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
