@@ -58,6 +58,14 @@ namespace Ofelia_Sara
             InicializarEstiloBotonAgregar(btn_AgregarCausa);
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
+
+            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
+            MayusculaSola.AplicarAControl(textBox_Victima);
+            MayusculaSola.AplicarAControl(textBox_Imputado);
+            
+            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
+            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
         }
 
      
@@ -120,6 +128,51 @@ namespace Ofelia_Sara
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancelar la entrada si no es un número
+            }
+
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Obtiene el TextBox que disparó el evento
+                TextBox textBox = sender as TextBox;
+
+                if (textBox != null)
+                {
+                    // Obtiene el texto actual del TextBox
+                    string currentText = textBox.Text;
+
+                    // Verifica si el texto es numérico
+                    if (int.TryParse(currentText, out _))
+                    {
+                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                        string completedText = currentText.PadLeft(6, '0');
+
+                        // Actualiza el texto del TextBox
+                        textBox.Text = completedText;
+
+                        // Posiciona el cursor al final del texto
+                        textBox.SelectionStart = textBox.Text.Length;
+
+                        // Cancelar el manejo predeterminado de la tecla Enter
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+
+
+        private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
+        {
+            // Limitar a 6 caracteres
+            if (textBox_NumeroIpp.Text.Length > 6)
+            {
+                // Si el texto excede los 6 caracteres, cortar el exceso
+                textBox_NumeroIpp.Text = textBox_NumeroIpp.Text.Substring(0, 6);
+
+                // Mover el cursor al final del texto
+                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
+               
             }
         }
     }

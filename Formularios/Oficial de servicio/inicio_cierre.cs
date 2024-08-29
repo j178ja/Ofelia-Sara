@@ -65,8 +65,6 @@ namespace Ofelia_Sara
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
-
-
             this.Load += new System.EventHandler(this.InicioCierre_Load);
 
             // Asocia el evento TextChanged al método de validación
@@ -264,6 +262,12 @@ namespace Ofelia_Sara
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
         private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+
             // Verifica si la tecla presionada es Enter
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -286,13 +290,15 @@ namespace Ofelia_Sara
 
                         // Posiciona el cursor al final del texto
                         textBox.SelectionStart = textBox.Text.Length;
+
+                        // Cancelar el manejo predeterminado de la tecla Enter
+                        e.Handled = true;
                     }
                 }
-
-                // Marca el evento como manejado para evitar el comportamiento predeterminado
-                e.Handled = true;
             }
         }
+
+
 
         //--------------------------------------------------------------------------------------------
         //--------BOTON IMPRIMIR-------------------------------
