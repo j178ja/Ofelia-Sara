@@ -135,6 +135,20 @@ namespace Ofelia_Sara.Registro_de_personal
             ClaseNumeros.AplicarFormatoYLimite(textBox_AntiguedadMeses, 2);
         }
 
-        
+        private void textBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
+
+        private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
     }
 }
