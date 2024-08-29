@@ -36,8 +36,15 @@ namespace Ofelia_Sara.Registro_de_personal
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
 
             textBox_NumeroLegajo.MaxLength = 7;
+            this.Shown += Focus_Shown;//para que haga foco en un textBox
         }
-
+        //-----------------------------------------------------------------------------
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_NumeroLegajo.Focus();
+        }
+        //________________________________________________________________________________
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
             // Obtener el texto del TextBox_NumeroLegajo en BuscarPersonal

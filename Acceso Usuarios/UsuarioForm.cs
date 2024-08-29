@@ -35,6 +35,13 @@ namespace Ofelia_Sara.Formularios
             //sobre ojo
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
             pictureBox_OjoContraseña.Enabled = false;
+            this.Shown += Focus_Shown;//para que haga foco en un textBox
+        }
+        //-----------------------------------------------------------------------------
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_Usuarios.Focus();
         }
 
         private void btn_Registrarse_Click(object sender, EventArgs e)

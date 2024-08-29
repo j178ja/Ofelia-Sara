@@ -119,8 +119,9 @@ namespace Ofelia_Sara.general.clases.Botones
             subItem_Agregar_Dependencia.Click += (sender, e) => {
                 NuevaDependencia nuevaDependencia = new NuevaDependencia();
                 FormPositioner.PosicionarDebajo(_menuPrincipal, nuevaDependencia);
-                nuevaDependencia.ShowDialog();
+                nuevaDependencia.ShowDialog(); // Muestra el formulario
             };
+        
 
             //---------Para abrir formulario AGREGAR UFID-----
             subItem_Agregar_UFID.Click += (sender, e) => {

@@ -54,6 +54,13 @@ namespace Ofelia_Sara.Registro_de_personal
 
             numeroTelefonicoControl1.ControlWidth = 159;
             numeroTelefonicoControl2.ControlWidth = 159;
+            this.Shown += Focus_Shown;//para que haga foco en un textBox
+        }
+        //-----------------------------------------------------------------------------
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox_Dependencia
+            textBox_NumeroLegajo.Focus();
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
