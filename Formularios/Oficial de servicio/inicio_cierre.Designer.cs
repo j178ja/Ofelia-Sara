@@ -261,6 +261,7 @@ namespace Ofelia_Sara
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Instructor.TabIndex = 4;
+          
             this.comboBox_Instructor.TextChanged += new System.EventHandler(this.comboBox_Instructor_TextChanged);
             // 
             // comboBox_Secretario
@@ -637,6 +638,7 @@ namespace Ofelia_Sara
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Localidad.TabIndex = 2;
+            this.comboBox_Localidad.TextChanged += new System.EventHandler(this.comboBox_Localidad_TextChanged);
             this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
             // 
             // lbl_DeptoJudicial
@@ -659,7 +661,6 @@ namespace Ofelia_Sara
             this.comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
             this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(286, 21);
             this.comboBox_DeptoJudicial.TabIndex = 3;
-           
             this.comboBox_DeptoJudicial.TextChanged += new System.EventHandler(this.comboBox_DeptoJudicial_TextChanged);
             // 
             // timePickerPersonalizado1

@@ -933,7 +933,7 @@ namespace Ofelia_Sara
                 string AgenteFiscal = comboBox_AgenteFiscal.Text;
                 string Instructor = comboBox_Instructor.Text;
                 string Secretario = comboBox_Secretario.Text;
-                string Dependencia = comboBox_Dependencia.Text;
+                string Dependencia = comboBox_Dependencia.Text ;
 
               // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
         Cargo cargo = new Cargo (Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
@@ -994,16 +994,19 @@ namespace Ofelia_Sara
 
         private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
+            ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
 
         private void comboBox_Secretario_TextChanged(object sender, EventArgs e)
         {
+            ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
 
         private void comboBox_Instructor_TextChanged(object sender, EventArgs e)
         {
+            ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
 
@@ -1027,6 +1030,14 @@ namespace Ofelia_Sara
                 comboBox.SelectionStart = comboBox.Text.Length;
                 comboBox.SelectionLength = 0; // Opcional, para asegurarse de que no haya selección activa
             }
+            ActualizarEstado();
         }
+
+        private void comboBox_Localidad_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstado();
+        }
+
+       
     }
 }
