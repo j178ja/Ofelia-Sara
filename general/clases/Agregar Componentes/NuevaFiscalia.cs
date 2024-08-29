@@ -24,6 +24,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            MayusculaSola.AplicarAControl(textBox_Localidad);
+
         }
 
         private void Fiscalia_Load(object sender, EventArgs e)
@@ -58,8 +61,8 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             textBox_AgenteFiscal.TextChanged += TextBox_TextChanged;
             textBox_DeptoJudicial.TextChanged += TextBox_TextChanged;
 
-            textBox_Fiscalia.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox_Fiscalia.Text);
-            textBox_Localidad.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox_Localidad.Text);
+            MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
+            MayusculaYnumeros.AplicarAControl(textBox_Localidad);
 
            
         }
@@ -90,22 +93,13 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             TextBox textBox = sender as TextBox;
             if (textBox != null)
             {
-                textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+                MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
                 // Mover el cursor al final del texto después de la conversión
                 textBox.SelectionStart = textBox.Text.Length;
             }
         }
 
-        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
-                // Mover el cursor al final del texto después de la conversión
-                textBox.SelectionStart = textBox.Text.Length;
-            }
-        }
+        
 
         //---------------------BOTON LIMPIAR------------------------
         private void btn_Limpiar_Click(object sender, EventArgs e)

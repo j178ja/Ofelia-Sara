@@ -41,7 +41,7 @@ namespace Ofelia_Sara.Formularios
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
-            textBox_Usuarios.Focus();
+            textBox_Usuario.Focus();
         }
 
         private void btn_Registrarse_Click(object sender, EventArgs e)

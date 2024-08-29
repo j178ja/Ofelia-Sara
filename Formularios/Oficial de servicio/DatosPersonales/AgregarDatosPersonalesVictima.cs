@@ -591,6 +591,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1;              
+            comboBox_EstadoCivil.SelectedIndex = -1;              
                                                                                     //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
        

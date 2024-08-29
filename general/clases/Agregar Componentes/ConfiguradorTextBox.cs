@@ -31,7 +31,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                         if (tb != null)
                         {
                             int pos = tb.SelectionStart; // Guarda la posición del cursor
-                            tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text); // Convierte a mayúsculas
+                           // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text); // Convierte a mayúsculas
                             tb.SelectionStart = pos; // Restaura la posición del cursor
                         }
                     };

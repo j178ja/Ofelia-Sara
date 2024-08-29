@@ -104,7 +104,7 @@
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(295, 20);
             this.textBox_Localidad.TabIndex = 7;
-            this.textBox_Localidad.TextChanged += new System.EventHandler(this.TextBox_Localidad_TextChanged);
+            
             // 
             // textBox_AgenteFiscal
             // 
