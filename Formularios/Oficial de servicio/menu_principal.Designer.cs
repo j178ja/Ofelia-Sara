@@ -169,6 +169,7 @@
             // 
             this.btn_Leyes.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
             this.btn_Leyes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Leyes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Leyes.Location = new System.Drawing.Point(486, 11);
             this.btn_Leyes.Name = "btn_Leyes";
             this.btn_Leyes.Size = new System.Drawing.Size(32, 32);

@@ -53,6 +53,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
         {
+            MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
+            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
+
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
 
@@ -136,7 +139,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                         if (tb != null)
                         {
                             int pos = tb.SelectionStart;
-                            tb.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
+                           // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
                             tb.SelectionStart = pos;
                         }
                     };

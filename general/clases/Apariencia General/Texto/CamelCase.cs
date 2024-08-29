@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System;
+using System.Text;
+
 namespace Ofelia_Sara.general.clases.Apariencia_General
 {
     public static class ConvertirACamelCase
@@ -41,17 +44,10 @@ namespace Ofelia_Sara.general.clases.Apariencia_General
                     // Después de agregar una letra, la siguiente no debe ser mayúscula
                     proximaMayuscula = false;
                 }
-                // Si el carácter es un dígito, lo añade tal cual
-                else if (char.IsDigit(c))
-                {
-                    resultado.Append(c);
-                    // Si es un dígito, la próxima letra no debe ser mayúscula
-                    proximaMayuscula = false;
-                }
-                // Si el carácter es especial, se ignora
+                // Si el carácter es un dígito o especial, se ignora
                 else
                 {
-                    // No hace nada si es un carácter especial
+                    // No hace nada si es un carácter especial o dígito
                     continue;
                 }
             }

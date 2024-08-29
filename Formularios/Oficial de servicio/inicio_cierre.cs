@@ -82,7 +82,7 @@ namespace Ofelia_Sara
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
 
-           
+            comboBox_DeptoJudicial.TextChanged += comboBox_DeptoJudicial_TextChanged;
         }
 
 
@@ -95,21 +95,15 @@ namespace Ofelia_Sara
             TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
 
             //-------------------------------------------------------------------------------
-            // Define las excepciones para los TextBox y ComboBox.
-            var textBoxExcepciones = new Dictionary<string, bool>
-{
-    { "textBox_NumeroIpp", true },  // Este TextBox  acepta solo números 
- };
+            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
+            MayusculaSola.AplicarAControl(textBox_Victima);
+            MayusculaSola.AplicarAControl(textBox_Imputado);
+            MayusculaSola.AplicarAControl(comboBox_Localidad);
+            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
+            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-            var comboBoxExcepciones = new Dictionary<string, bool>
-{
-    { "ComboBox_Ufid", true },             // Este ComboBox acepta letras, números y espacios.
-     { "comboBox_Localidad", true },        // Este ComboBox acepta letras, números y espacios, convirtiéndolos a mayúsculas.
-    { "comboBox_DeptoJudicial", false },   // Este ComboBox acepta letras y espacios, convirtiéndolos a mayúsculas, pero no acepta números.
-    };
 
-            // Aplica la configuración a todos los controles del formulario, excepto los que tienen lógica específica más adelante.
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
             //-----------------------------------------------------------------
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -1011,6 +1005,28 @@ namespace Ofelia_Sara
         private void comboBox_Instructor_TextChanged(object sender, EventArgs e)
         {
             DesmarcarCheckBoxConTexto();
+        }
+
+       
+        private void comboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+
+            if (comboBox != null)
+            {
+                // Guarda la posición actual del cursor para evitar perderla
+                int cursorPosition = comboBox.SelectionStart;
+
+                // Convierte el texto a camelCase
+                string textoConvertido = ConvertirACamelCase.Convertir(comboBox.Text);
+
+                // Actualiza el texto del ComboBox
+                comboBox.Text = textoConvertido;
+
+                // Mueve el cursor al final del texto
+                comboBox.SelectionStart = comboBox.Text.Length;
+                comboBox.SelectionLength = 0; // Opcional, para asegurarse de que no haya selección activa
+            }
         }
     }
 }

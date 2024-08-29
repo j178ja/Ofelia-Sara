@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General;
 // Esta clase contiene métodos para convertir texto a mayúsculas y filtrar caracteres especiales y números.
 public static class TextoEnMayuscula
@@ -69,15 +70,17 @@ public static class TextoEnMayuscula
             // Maneja el evento TextChanged para convertir a mayúsculas usando MayusculaSimple.
             textBox.TextChanged += (sender, e) =>
             {
-                // Guarda la posición del cursor.
-                int selectionStart = textBox.SelectionStart;
+                //    // Guarda la posición del cursor.
+                //    int selectionStart = textBox.SelectionStart;
 
-                // Convierte el texto usando la clase MayusculaSimple.
-                string convertedText = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+                //    // Convierte el texto usando la clase MayusculaSimple.
+                //    string convertedText = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
 
-                // Actualiza el texto del TextBox y posiciona el cursor al final.
-                textBox.Text = convertedText;
-                textBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final del texto.
+                //    // Actualiza el texto del TextBox y posiciona el cursor al final.
+                //    textBox.Text = convertedText;
+                //    textBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final del texto.
+                MayusculaYnumeros.AplicarAControl(textBox);
+
             };
         }
 

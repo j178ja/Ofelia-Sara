@@ -77,22 +77,24 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         //--------------------------------------------------------------------------------
         private void textBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
-            // Convierte el texto a mayúsculas ignorando caracteres especiales
-            string textoConvertido = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox_Dependencia.Text);
+            //// Convierte el texto a mayúsculas ignorando caracteres especiales
+            //string textoConvertido = MayusculaYnumeros.(textBox_Dependencia.Text);
 
-            // Mantiene la posición del cursor
-            int selectionStart = textBox_Dependencia.SelectionStart;
-            int selectionLength = textBox_Dependencia.SelectionLength;
+            //// Mantiene la posición del cursor
+            //int selectionStart = textBox_Dependencia.SelectionStart;
+            //int selectionLength = textBox_Dependencia.SelectionLength;
 
-            // Actualiza el texto del TextBox
-            textBox_Dependencia.Text = textoConvertido;
+            //// Actualiza el texto del TextBox
+            //textBox_Dependencia.Text = textoConvertido;
 
-            // Restablece la posición del cursor
-            textBox_Dependencia.SelectionStart = selectionStart;
-            textBox_Dependencia.SelectionLength = selectionLength;
+            //// Restablece la posición del cursor
+            //textBox_Dependencia.SelectionStart = selectionStart;
+            //textBox_Dependencia.SelectionLength = selectionLength;
 
+
+            MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
             // Actualiza los controles
-            ActualizarControles();
+           ActualizarControles();
 
             //----para actualizar textbox entre formularios
                         // Asegura que el cursor esté al final del texto

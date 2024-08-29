@@ -178,23 +178,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 877);
             this.panel1.TabIndex = 3;
+
             // 
             // numeroTelefonicoControl2
             // 
+            this.numeroTelefonicoControl2.AutoSize = true;
             this.numeroTelefonicoControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.numeroTelefonicoControl2.ControlWidth = 159;
+            this.numeroTelefonicoControl2.ControlWidth = 162;
             this.numeroTelefonicoControl2.Location = new System.Drawing.Point(410, 230);
             this.numeroTelefonicoControl2.Name = "numeroTelefonicoControl2";
-            this.numeroTelefonicoControl2.Size = new System.Drawing.Size(159, 25);
+            this.numeroTelefonicoControl2.Size = new System.Drawing.Size(162, 25);
             this.numeroTelefonicoControl2.TabIndex = 148;
             // 
             // numeroTelefonicoControl1
             // 
+            this.numeroTelefonicoControl1.AutoSize = true;
             this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.numeroTelefonicoControl1.ControlWidth = 159;
+            this.numeroTelefonicoControl1.ControlWidth = 162;
             this.numeroTelefonicoControl1.Location = new System.Drawing.Point(126, 230);
             this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(159, 25);
+            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(162, 25);
             this.numeroTelefonicoControl1.TabIndex = 147;
             // 
             // comboBox_EstadoCivil
@@ -684,6 +687,7 @@
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 85;
+            this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Dni
             // 
@@ -692,6 +696,7 @@
             this.textBox_Dni.Name = "textBox_Dni";
             this.textBox_Dni.Size = new System.Drawing.Size(176, 20);
             this.textBox_Dni.TabIndex = 83;
+            this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Nombre
             // 
@@ -793,7 +798,6 @@
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 20);
             this.textBox_NumeroLegajo.TabIndex = 34;
             this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroLegajo.TextChanged += new System.EventHandler(this.textBox_NumeroLegajo_TextChanged);
             this.textBox_NumeroLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroLegajo_KeyPress);
             // 
             // lbl_Legajo

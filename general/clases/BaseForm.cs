@@ -17,10 +17,11 @@ namespace Ofelia_Sara.general.clases
     using Guna.UI2.WinForms.Suite;
     // using Ofelia_Sara.Base_de_Datos;
     using Ofelia_Sara.general.clases.Apariencia_General;
-   
+
     using System.Collections.Generic;
     using System.Data.SQLite;
     using System.Drawing.Drawing2D;
+    using System.Text;
     using System.Windows.Forms;
     public class BaseForm : Form
     {
@@ -31,8 +32,12 @@ namespace Ofelia_Sara.general.clases
         private Panel mainPanel; // Panel que contiene los TextBox
 
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
-      
-       
+
+        // Método OnLoad combinado
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+        }
 
         public BaseForm()
         {
@@ -51,14 +56,14 @@ namespace Ofelia_Sara.general.clases
             // Inicializa el panel principal
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
-           
-           
+
+
             //this.Load += BaseForm_Load;
 
             this.Paint += new PaintEventHandler(BaseForm_Paint);
 
             this.Load += new System.EventHandler(this.BaseForm_Load);
-         
+
         }
         //--------------------------------------------------------------------------------
 
@@ -123,9 +128,9 @@ namespace Ofelia_Sara.general.clases
             // Configurar el ComboBox_Jerarquia inicialmente como desactivado
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
-         
+
         }
-   
+
 
         //--------BOTON LIMPIAR FORMULARIO --------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)
@@ -137,7 +142,7 @@ namespace Ofelia_Sara.general.clases
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLinkLabel()
         {
-            
+
             // Llama al método estático de FooterHelper para obtener el footerLabel configurado
             this.footerLinkLabel = FooterHelper.CreateFooterLinkLabel(this);
             this.Controls.Add(this.footerLinkLabel);
@@ -160,7 +165,7 @@ namespace Ofelia_Sara.general.clases
             // Suponiendo que 'timePickerPersonalizadoFecha' es el nombre del control en el BaseForm
             timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
 
-    
+
         }
 
         //------------------------------------------------------------
@@ -289,13 +294,10 @@ namespace Ofelia_Sara.general.clases
 
         //--------------------------------------------------------------------------------------------------------
 
-        //--eventos para evitar conflictos-------------
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
 
-           
-        }
+
+
+
 
         private void InitializeComponent()
         {
@@ -314,6 +316,14 @@ namespace Ofelia_Sara.general.clases
         {
 
         }
+        //-------------------------------------------------------------------------------------
+        // PARA CONFIGURAR CONTROLES EN TODO EL PROYECTO
+
+
+
     }
+
 }
 
+
+   

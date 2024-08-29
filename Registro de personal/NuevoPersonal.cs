@@ -25,6 +25,8 @@ namespace Ofelia_Sara.Registro_de_personal
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            configurarTextoEnControles();//para formato de texto que ingresa
         }
 
 
@@ -48,13 +50,14 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
 
-            textBox_NumeroLegajo.MaxLength = 7;
+
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
 
             numeroTelefonicoControl1.ControlWidth = 159;
             numeroTelefonicoControl2.ControlWidth = 159;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
+
         }
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
@@ -92,46 +95,46 @@ namespace Ofelia_Sara.Registro_de_personal
 
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            //{
-            //    e.Handled = true;
-            //}
-           
                 // Solo permite dígitos y teclas de control
                 if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 {
                     e.Handled = true;
                 }
 
-                // Si el carácter es dígito, continúa con el procesamiento
-                if (char.IsDigit(e.KeyChar))
-                {
-                    // Inserta el carácter en la posición actual
-                    TextBox textBox = sender as TextBox;
-                    int selectionStart = textBox.SelectionStart;
-                    textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
-                    e.Handled = true;
-
-                    // Usar la clase separada para formatear el texto
-                    string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-                    // Actualizar el texto en el TextBox y restaurar la posición del cursor
-                    textBox.Text = textoFormateado;
-                    textBox.SelectionStart = textoFormateado.Length;
-
-
-                }
-            }
+                ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
+        }
         
-
-        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        private void configurarTextoEnControles()
         {
+            MayusculaSola.AplicarAControl(textBox_Nombre);
+            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
+            MayusculaSola.AplicarAControl(textBox_LocalidadPnal);
+            MayusculaSola.AplicarAControl(textBox_PartidoPnal);
+            MayusculaSola.AplicarAControl(textBox_Funcion);
+            MayusculaSola.AplicarAControl(textBox_LocalidadDependencia);
+            MayusculaSola.AplicarAControl(textBox_PartidoDependencia);
 
+            MayusculaSola.AplicarAControl(comboBox_Nacionalidad);
+
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+            
+            MayusculaYnumeros.AplicarAControl(textBox_DomicilioPnal);
+            MayusculaYnumeros.AplicarAControl(textBox_ArmaMarca);
+            MayusculaYnumeros.AplicarAControl(textBox_ArmaModelo);
+            MayusculaYnumeros.AplicarAControl(textBox_ArmaNumero);
+
+            MayusculaYnumeros.AplicarAControl(textBox_ChalecoMarca);
+            MayusculaYnumeros.AplicarAControl(textBox_ChalecoModelo);
+            MayusculaYnumeros.AplicarAControl(textBox_ChalecoNumero);
+            MayusculaYnumeros.AplicarAControl(textBox_DomicilioDependencia);
+
+
+            ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
+            ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
+            ClaseNumeros.AplicarFormatoYLimite(textBox_AntiguedadAños, 2);
+            ClaseNumeros.AplicarFormatoYLimite(textBox_AntiguedadMeses, 2);
         }
 
-        private void numeroTelefonicoControl_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

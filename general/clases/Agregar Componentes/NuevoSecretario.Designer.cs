@@ -145,7 +145,7 @@
             // 
             // textBox_NumeroLegajo
             // 
-            this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_NumeroLegajo.Location = new System.Drawing.Point(157, 53);
             this.textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(192, 21);

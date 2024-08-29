@@ -68,20 +68,9 @@ namespace Ofelia_Sara.Registro_de_personal
             // Si el carácter es dígito, continúa con el procesamiento
             if (char.IsDigit(e.KeyChar))
             {
-                // Inserta el carácter en la posición actual
-                TextBox textBox = sender as TextBox;
-                int selectionStart = textBox.SelectionStart;
-                textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
-                e.Handled = true;
+                // Aplicar formato y longitud máxima al textBox_NumeroLegajo
+                ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
 
-                // Usar la clase separada para formatear el texto
-                string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-                // Actualizar el texto en el TextBox y restaurar la posición del cursor
-                textBox.Text = textoFormateado;
-                textBox.SelectionStart = textoFormateado.Length;
-
-               
             }
         }
 

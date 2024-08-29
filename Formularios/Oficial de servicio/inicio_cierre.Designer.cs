@@ -659,6 +659,8 @@ namespace Ofelia_Sara
             this.comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
             this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(286, 21);
             this.comboBox_DeptoJudicial.TabIndex = 3;
+           
+            this.comboBox_DeptoJudicial.TextChanged += new System.EventHandler(this.comboBox_DeptoJudicial_TextChanged);
             // 
             // timePickerPersonalizado1
             // 

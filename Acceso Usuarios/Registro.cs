@@ -89,15 +89,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                // Convertir el texto a mayúsculas ignorando caracteres especiales
-                textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+            //TextBox textBox = sender as TextBox;
+            //if (textBox != null)
+            //{
+            //    // Convertir el texto a mayúsculas ignorando caracteres especiales
+            //    textBox.Text = MayusculaYnumeros.AplicarAControl(textBox textBox);
 
-                // Para mantener el cursor al final del texto
-                textBox.SelectionStart = textBox.Text.Length;
-            }
+            //    // Para mantener el cursor al final del texto
+            //    textBox.SelectionStart = textBox.Text.Length;
+            //}
         }
 
         private void btn_Registrarse_Click(object sender, EventArgs e)

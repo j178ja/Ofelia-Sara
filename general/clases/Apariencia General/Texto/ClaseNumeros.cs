@@ -11,7 +11,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Texto
     {
         public static string FormatearNumeroConPuntos(string texto)
         {
-            // Limitar el texto a 9 caracteres
+            // Limitar el texto a 10 caracteres (si quieres mantenerlo igual)
             if (texto.Length > 10)
             {
                 texto = texto.Substring(0, 10);
@@ -27,6 +27,32 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Texto
             }
 
             return texto;
+        }
+
+        public static void AplicarFormatoYLimite(TextBox textBox, int maxLength)
+        {
+            if (textBox == null)
+                throw new ArgumentNullException(nameof(textBox));
+
+            // Establecer la longitud máxima
+            textBox.MaxLength = maxLength;
+
+            // Manejar el evento TextChanged para aplicar formato
+            textBox.TextChanged += (sender, e) =>
+            {
+                // Obtener el texto del TextBox
+                string texto = textBox.Text;
+
+                // Aplicar formato
+                string textoFormateado = FormatearNumeroConPuntos(texto);
+
+                // Evitar un bucle infinito al actualizar el texto
+                if (textBox.Text != textoFormateado)
+                {
+                    textBox.Text = textoFormateado;
+                    textBox.SelectionStart = textBox.Text.Length; // Mover el cursor al final del texto
+                }
+            };
         }
     }
 }
