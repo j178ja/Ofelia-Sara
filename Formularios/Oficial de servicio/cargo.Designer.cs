@@ -342,6 +342,7 @@
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
             this.textBox_NumeroIpp.TabIndex = 5;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
             this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
             // 
             // comboBox_Ipp1
