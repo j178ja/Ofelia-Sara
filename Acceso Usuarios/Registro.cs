@@ -47,6 +47,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //  deshabilitar la edición del ComboBox_Escalafon
             comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            ClaseNumeros.AplicarFormatoYLimite(textBox_Legajo, 7);
+            MayusculaSola.AplicarAControl(textBox_Nombre);
+            MayusculaSola.AplicarAControl(textBox_Apellido);
         }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(ComboBox comboBox)
@@ -56,49 +60,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
        //--------------------------------------------------------------------------
 
 
-        private void textBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-                           // Solo permite dígitos y teclas de control
-                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-
-                // Si el carácter es dígito, continúa con el procesamiento
-                if (char.IsDigit(e.KeyChar))
-                {
-                    // Inserta el carácter en la posición actual
-                    TextBox textBox = sender as TextBox;
-                    int selectionStart = textBox.SelectionStart;
-                    textBox.Text = textBox.Text.Insert(selectionStart, e.KeyChar.ToString());
-                    e.Handled = true;
-
-                    // Usar la clase separada para formatear el texto
-                    string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-                    // Actualizar el texto en el TextBox y restaurar la posición del cursor
-                    textBox.Text = textoFormateado;
-                    textBox.SelectionStart = textoFormateado.Length;
-
-
-                }
-            }
-        
+  
 
       
 
-        private void textBox_TextChanged(object sender, EventArgs e)
-        {
-            //TextBox textBox = sender as TextBox;
-            //if (textBox != null)
-            //{
-            //    // Convertir el texto a mayúsculas ignorando caracteres especiales
-            //    textBox.Text = MayusculaYnumeros.AplicarAControl(textBox textBox);
-
-            //    // Para mantener el cursor al final del texto
-            //    textBox.SelectionStart = textBox.Text.Length;
-            //}
-        }
 
         private void btn_Registrarse_Click(object sender, EventArgs e)
         {
@@ -189,6 +154,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Activa la imagen si hay texto
                 pictureBox_OjoContraseña.Enabled = true;
+            }
+        }
+
+        private void textBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
             }
         }
     }

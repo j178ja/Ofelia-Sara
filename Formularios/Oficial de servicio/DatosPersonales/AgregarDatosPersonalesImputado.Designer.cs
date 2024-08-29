@@ -196,7 +196,7 @@
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(150, 20);
             this.textBox_LugarNacimiento.TabIndex = 94;
-            this.textBox_LugarNacimiento.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+           
             this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_LugarNacimiento_KeyPress);
             // 
             // label_LugarNacimiento
@@ -594,7 +594,7 @@
             this.textBox_Domicilio.Size = new System.Drawing.Size(398, 20);
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
-            this.textBox_Domicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Domicilio_KeyPress);
+          
             // 
             // textBox_Edad
             // 
