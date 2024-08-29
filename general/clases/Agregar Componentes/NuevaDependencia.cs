@@ -15,8 +15,13 @@ using System.Windows.Forms;
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
     public partial class NuevaDependencia : BaseForm
-    { 
-                       // Define un delegado para el evento ItemAgregado
+    {
+        private SellosDependencia sellosDependenciaForm;
+
+
+        public event Action<string> DependenciaTextChanged;//para  actualizar en tiempo real con form SellosDependencia
+
+        // Define un delegado para el evento ItemAgregado
         public delegate void ItemAgregadoEventHandler(object sender, string nuevoItem);
                            // Evento que se dispara cuando se agrega un nuevo ítem
         public event ItemAgregadoEventHandler ItemAgregado;
@@ -38,10 +43,12 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Asocia el evento TextChanged del TextBox
             textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
-
+          
             //para redondear bordes panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+       
+        
         }
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
@@ -52,7 +59,13 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             // Inicialización o asignación de ComboBoxFilePath
             ComboBoxFilePath = "ruta_del_archivo.txt"; // Ejemplo de asignación
 
-           
+            // Inicializar el formulario SellosDependencia
+            sellosDependenciaForm = new SellosDependencia();
+
+            // Suscribirse al evento DependenciaTextChanged
+            sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependencia;
+
+
         }
 
         private void NuevaDependencia_FormClosed(object sender, FormClosedEventArgs e)
@@ -153,6 +166,10 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 // Crear una instancia del formulario SellosDependencia
                 SellosDependencia sellosDependenciaForm = new SellosDependencia();
 
+                //sellosDependenciaForm.ActualizarTextoDependencia(this.TextoDependencia);
+                //this.DependenciaTextChanged += sellosDependenciaForm.ActualizarTextoDependencia;
+                sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependenciaDesdeSellosDependencia;
+
                 // Guardar la posición original del formulario
                 originalPosition = this.Location;
 
@@ -206,6 +223,37 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
         private void textBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();//habilita check y modifica label
+
+            //---para actualizar en tiempo real textbox DEPENDENCIA
+            // Asegura que el cursor esté al final del texto
+            textBox_Dependencia.SelectionStart = textBox_Dependencia.Text.Length;
+
+            // Dispara el evento si hay suscriptores
+            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+        }
+        //-----------------------------------------------------------------------------
+        //---para actualizar automaticamente entre form NuevaDependencia y SellosDependencia--
+
+        public string TextoDependencia
+        {
+            get { return textBox_Dependencia.Text; }
+            set { textBox_Dependencia.Text = value; }
+        }
+        public void ActualizarTextoDependencia(string texto)
+        {
+            // Solo actualiza el texto si es diferente para evitar un bucle infinito
+            if (textBox_Dependencia.Text != texto)
+            {
+                textBox_Dependencia.Text = texto;
+            }
+        }
+
+        public void ActualizarTextoDependenciaDesdeSellosDependencia(string nuevoTexto)
+        {
+            if (textBox_Dependencia.Text != nuevoTexto)
+            {
+                textBox_Dependencia.Text = nuevoTexto;
+            }
         }
     }
 }

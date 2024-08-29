@@ -7,13 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls.WebParts;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
     public partial class SellosDependencia : BaseForm
     {
-        public string TextoDependencia { get; set; }
+        public event Action<string> DependenciaTextChanged;
+
         public SellosDependencia()
         {
             InitializeComponent();
@@ -21,6 +23,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+
+            textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
         }
 
         private void SellosDependencia_Load(object sender, EventArgs e)
@@ -48,6 +53,9 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             pictureBox_SelloMedalla.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_SelloEscalera.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_SelloFoliador.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Dispara el evento si hay suscriptores
+            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
         }
         //-----------------------------------------------------------------------------
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -77,6 +85,14 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
 
             // Actualiza los controles
             ActualizarControles();
+
+            //----para actualizar textbox entre formularios
+                        // Asegura que el cursor esté al final del texto
+            textBox_Dependencia.SelectionStart = textBox_Dependencia.Text.Length;
+                        // Disparar el evento si hay suscriptores
+            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+
+         
         }
 
 
@@ -235,6 +251,30 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
                 }
             }
         }
+        //---------------------------------------------------------------------
+        //---para actualizar automaticamente entre form nuevaDependencia y sellosDependencia
 
+        public string TextoDependencia
+        {
+            get { return textBox_Dependencia.Text; }
+            set { textBox_Dependencia.Text = value; }
+        }
+
+        public void UpdateDependenciaTextBox(string text)
+        {
+            // Solo actualiza el texto si es diferente para evitar un bucle infinito
+            if (textBox_Dependencia.Text != text)
+            {
+                textBox_Dependencia.Text = text;
+            }
+        }
+        public void ActualizarTextoDependencia(string texto)
+        {
+            // Solo actualiza el texto si es diferente para evitar un bucle infinito
+        if (textBox_Dependencia.Text != texto)
+            {
+                textBox_Dependencia.Text = texto;
+            }
+        }
     }
 }
