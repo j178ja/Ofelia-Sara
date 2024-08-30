@@ -104,9 +104,9 @@
             // panel_PersonalSeleccionado
             // 
             this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.Transparent;
-            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(3, 75);
+            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(12, 75);
             this.panel_PersonalSeleccionado.Name = "panel_PersonalSeleccionado";
-            this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(640, 24);
+            this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(631, 24);
             this.panel_PersonalSeleccionado.TabIndex = 38;
             // 
             // btn_AgregarPersonal
