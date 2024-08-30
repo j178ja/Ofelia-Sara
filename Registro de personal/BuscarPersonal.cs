@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,16 @@ namespace Ofelia_Sara.Registro_de_personal
 {
     public partial class BuscarPersonal : BaseForm
     {
+        private int borderRadius = 15;
+        private int borderSize = 7;
+        private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
+        private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
+
         public BuscarPersonal()
         {
             InitializeComponent();
+            
 
-            //Color customBorderColor = Color.FromArgb(0, 154, 174);
-            //panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
@@ -37,13 +42,49 @@ namespace Ofelia_Sara.Registro_de_personal
 
             textBox_NumeroLegajo.MaxLength = 7;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
+
+            this.BackColor = Color.FromArgb(0, 154, 174); // Color de fondo del formulario
+
+            // Configurar el panel
+            panel1.BackColor = panelColor; // Color de fondo del panel
+            panel1.Paint += panel1_Paint;
         }
+        private void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
+        {
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(panel.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(panel.Width - borderRadius, panel.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, panel.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                path.CloseAllFigures();
+
+                using (Pen pen = new Pen(borderColor, borderSize))
+                {
+                    panel.CreateGraphics().DrawPath(pen, path);
+                }
+            }
+        }
+
+
+        //private void panel1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
+        //}
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
+        }
+
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
+        
+            // Configura el color de fondo
+         
         //________________________________________________________________________________
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
