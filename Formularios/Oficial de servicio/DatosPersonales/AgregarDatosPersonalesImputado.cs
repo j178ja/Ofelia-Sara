@@ -12,6 +12,7 @@ using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
 
 
 
@@ -133,9 +134,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_PerfilIzquierdo.Enabled = true;
             pictureBox_CuerpoEntero.Enabled = true;
             //-------------------------------------------------------------------------------
-       
 
+            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
             ActualizarEstado();
+
+            CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
+
+
         }
 
         //-------------------------------------------------------------------------------------
@@ -143,9 +148,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void AgregarDatosPersonales_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Llamar al método HandleFormClosing en la instancia de CustomDateTextBox
-            if (customDateTextBox1 != null)
+            if (dateTimePicker_FechaNacimiento != null)
             {
-                customDateTextBox1.HandleFormClosing();
+                dateTimePicker_FechaNacimiento.HandleFormClosing();
             }
         }
 
@@ -721,5 +726,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Restaurar la posición original del formulario
             this.Location = originalPosition;
         }
+        //--------------------------------------------------------------------
+       
+
     }
 }

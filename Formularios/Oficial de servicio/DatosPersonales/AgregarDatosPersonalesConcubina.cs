@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -23,7 +24,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void AgregarDatosPersonalesConcubina_Load(object sender, EventArgs e)
         {
-
+            CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
         }
 
         

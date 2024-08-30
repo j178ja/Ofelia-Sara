@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -69,7 +70,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.emailControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.EmailControl();
             this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
-            this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -118,7 +119,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1.Controls.Add(this.label_EstadoCivil);
             this.panel1.Controls.Add(this.emailControl1);
             this.panel1.Controls.Add(this.numeroTelefonicoControl1);
-            this.panel1.Controls.Add(this.customDateTextBox1);
+            this.panel1.Controls.Add(this.dateTimePicker_FechaNacimiento);
             this.panel1.Controls.Add(this.label_agrGeo2);
             this.panel1.Controls.Add(this.label_agrGeo);
             this.panel1.Controls.Add(this.label_AgregarDomicilio);
@@ -190,18 +191,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             this.numeroTelefonicoControl1.AutoSize = true;
             this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl1.ControlWidth = 162;
             this.numeroTelefonicoControl1.Location = new System.Drawing.Point(115, 422);
             this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(233, 25);
+            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(162, 25);
             this.numeroTelefonicoControl1.TabIndex = 92;
             // 
-            // customDateTextBox1
+            // dateTimePicker_FechaNacimiento
             // 
-            this.customDateTextBox1.Location = new System.Drawing.Point(403, 133);
-            this.customDateTextBox1.Name = "customDateTextBox1";
-            this.customDateTextBox1.Size = new System.Drawing.Size(149, 20);
-            this.customDateTextBox1.TabIndex = 91;
-            this.toolTip1.SetToolTip(this.customDateTextBox1, "Seleccione la fecha");
+            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(403, 133);
+            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
+            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 20);
+            this.dateTimePicker_FechaNacimiento.TabIndex = 91;
+            this.toolTip1.SetToolTip(this.dateTimePicker_FechaNacimiento, "Seleccione la fecha");
             // 
             // label_agrGeo2
             // 
@@ -427,7 +429,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
             this.textBox_Domicilio.TabIndex = 7;
             this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
-          
             // 
             // textBox_Edad
             // 
@@ -435,6 +436,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
+            this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
             this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Edad_KeyPress);
             // 
@@ -574,7 +576,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPicture();
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
-          
+
+            CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
         }
 
 

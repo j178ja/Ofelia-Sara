@@ -37,7 +37,7 @@
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
             this.emailControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.EmailControl();
             this.numeroTelefonicoControl = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
-            this.customDateTextBox1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -101,7 +101,7 @@
             this.panel1.Controls.Add(this.label_LugarNacimiento);
             this.panel1.Controls.Add(this.emailControl1);
             this.panel1.Controls.Add(this.numeroTelefonicoControl);
-            this.panel1.Controls.Add(this.customDateTextBox1);
+            this.panel1.Controls.Add(this.dateTimePicker_FechaNacimiento);
             this.panel1.Controls.Add(this.label_agrGeo2);
             this.panel1.Controls.Add(this.label_agrGeo);
             this.panel1.Controls.Add(this.label_AgregarDomicilio);
@@ -212,17 +212,18 @@
             // 
             this.numeroTelefonicoControl.AutoSize = true;
             this.numeroTelefonicoControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.numeroTelefonicoControl.ControlWidth = 162;
             this.numeroTelefonicoControl.Location = new System.Drawing.Point(122, 407);
             this.numeroTelefonicoControl.Name = "numeroTelefonicoControl";
-            this.numeroTelefonicoControl.Size = new System.Drawing.Size(233, 25);
+            this.numeroTelefonicoControl.Size = new System.Drawing.Size(162, 25);
             this.numeroTelefonicoControl.TabIndex = 91;
             // 
-            // customDateTextBox1
+            // dateTimePicker_FechaNacimiento
             // 
-            this.customDateTextBox1.Location = new System.Drawing.Point(403, 124);
-            this.customDateTextBox1.Name = "customDateTextBox1";
-            this.customDateTextBox1.Size = new System.Drawing.Size(149, 18);
-            this.customDateTextBox1.TabIndex = 90;
+            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(403, 124);
+            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
+            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 18);
+            this.dateTimePicker_FechaNacimiento.TabIndex = 90;
             // 
             // label_agrGeo2
             // 
@@ -534,6 +535,7 @@
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
+            this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Dni
             // 
@@ -657,7 +659,7 @@
         private System.Windows.Forms.Label label_LugarNacimiento;
         private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
         private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox1;
+        private general.clases.Apariencia_General.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.Label label_agrGeo2;
         private System.Windows.Forms.Label label_agrGeo;
         private System.Windows.Forms.Label label_AgregarDomicilio;

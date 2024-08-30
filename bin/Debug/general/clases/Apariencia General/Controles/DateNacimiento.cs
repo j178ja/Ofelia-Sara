@@ -7,18 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
 
 namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 {
     public partial class CustomDateTextBox : UserControl
     {
+
+
+
         private bool isClosing = false; // Declarar la variable a nivel de clase
         public CustomDateTextBox()
         {
-            InitializeComponent();
+            InitializeComponent();    
 
-            // Configurar textBox_DateDIA
-            textBox_DateDIA.MaxLength = 2; // Limitar a 2 caracteres
+        // Configurar textBox_DateDIA
+        textBox_DateDIA.MaxLength = 2; // Limitar a 2 caracteres
             textBox_DateDIA.KeyPress += TextBox_Date_KeyPress;
 
             // Configurar textBox_DateMES
@@ -66,14 +70,14 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         {
             // Verificar si el texto tiene  dígitos antes de proceder a la validación
             if (textBox_DateMES.Text.Length == 2 && int.TryParse(textBox_DateMES.Text, out int mes))
-                
+
             {
                 if (mes < 1 || mes > 12)
                 {
                     // Mostrar mensaje de error o ajustar el valor
                     MessageBox.Show("El mes debe estar entre 1 y 12.", "MES INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     textBox_DateMES.Clear(); // Método para limpiar el TextBox
-                   
+
                 }
             }
         }
@@ -97,16 +101,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
                 }
             }
 
-            //MODIFICAR ESTA LOGICA YA QUE SE LANZA EL MENSAJE CON CADA DIGITO
-            //HACER VALIDACION CUANDO CAMBIA DE CONTROL        
 
-
-            //else if (textBox_DateAÑO.Text.Length < 4)
-            //{
-            //    // Mensaje de error si no es un número válido y ya tiene 4 caracteres
-            //    MessageBox.Show("El año ingresado no es válido. Asegúrese de ingresar 4 Digitos de un año válido.", "Año Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    textBox_DateAÑO.Text = ""; // Opcional: limpiar el TextBox
-            //}
         }
 
 
@@ -182,8 +177,8 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             isClosing = true;
         }
 
-        
-         private void textBox_DateAÑO_Validating(object sender, CancelEventArgs e)
+
+        private void textBox_DateAÑO_Validating(object sender, CancelEventArgs e)
         {
             if (!isClosing)
             {
@@ -201,13 +196,10 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
                 isClosing = false;
             }
         }
+        //---------------------------------------------------------------------------
+        //--------CALCULAR ANTIGUEDAD----------------------------------------------
 
-        private void CustomDateTextBox_Load_1(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 
 }
-
-

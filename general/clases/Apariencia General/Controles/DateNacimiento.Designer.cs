@@ -124,7 +124,6 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             this.Controls.Add(this.textBox_Date);
             this.Name = "CustomDateTextBox";
             this.Size = new System.Drawing.Size(150, 22);
-            this.Load += new System.EventHandler(this.CustomDateTextBox_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,8 +132,9 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         private ToolTip toolTip1;
         private Label label_barra;
         private Label label1;
-        private TextBox textBox_DateDIA;
-        private TextBox textBox_DateMES;
-        private TextBox textBox_DateAÑO;
+        public TextBox textBox_DateDIA;
+        public TextBox textBox_DateMES;
+        public TextBox textBox_DateAÑO;
+
     }
 }

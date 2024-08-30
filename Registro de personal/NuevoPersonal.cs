@@ -1,5 +1,7 @@
 ﻿using Ofelia_Sara.Base_de_Datos;
 using Ofelia_Sara.general.clases;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using Ofelia_Sara.general.clases.Apariencia_General.Texto;
 using System;
@@ -27,16 +29,23 @@ namespace Ofelia_Sara.Registro_de_personal
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             configurarTextoEnControles();//para formato de texto que ingresa
+
+            this.Load += new System.EventHandler(this.NuevoPersonal_Load);
+
         }
 
 
         public NuevoPersonal()
         {
             InitializeComponent();
+        
+
         }
 
         private void NuevoPersonal_Load(object sender, EventArgs e)
+
         {
+
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Limpiar);
@@ -50,9 +59,11 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
 
+            CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
+                                                                                   
 
 
-            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
+        comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
 
             numeroTelefonicoControl1.ControlWidth = 159;
             numeroTelefonicoControl2.ControlWidth = 159;
