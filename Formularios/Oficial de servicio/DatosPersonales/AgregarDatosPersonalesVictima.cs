@@ -537,7 +537,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(166, 0);
+            this.label_Titulo.Location = new System.Drawing.Point(184, 0);
             this.label_Titulo.Name = "label_Titulo";
             this.label_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label_Titulo.Size = new System.Drawing.Size(194, 25);

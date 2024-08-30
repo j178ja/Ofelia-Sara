@@ -162,6 +162,7 @@
             this.btn_AgregarConcubina.Size = new System.Drawing.Size(20, 20);
             this.btn_AgregarConcubina.TabIndex = 97;
             this.btn_AgregarConcubina.Text = ". . .";
+            this.toolTip1.SetToolTip(this.btn_AgregarConcubina, "Seleccione para agregar nuevo familiar");
             this.btn_AgregarConcubina.UseVisualStyleBackColor = true;
             this.btn_AgregarConcubina.Click += new System.EventHandler(this.btn_AgregarConcubina_Click);
             // 

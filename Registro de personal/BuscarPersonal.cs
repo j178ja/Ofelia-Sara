@@ -49,6 +49,9 @@ namespace Ofelia_Sara.Registro_de_personal
             panel1.BackColor = panelColor; // Color de fondo del panel
             panel1.Paint += panel1_Paint;
         }
+
+        //---redibujar para solucionar problema de bordes redondeados
+
         private void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
         {
             using (GraphicsPath path = new GraphicsPath())
@@ -67,10 +70,7 @@ namespace Ofelia_Sara.Registro_de_personal
         }
 
 
-        //private void panel1_Paint(object sender, PaintEventArgs e)
-        //{
-        //    DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
-        //}
+      
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);

@@ -21,6 +21,7 @@ using Mysqlx.Cursor;
 using Ofelia_Sara.Base_de_Datos.Entidades;
 using System.Text.Json;
 using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+using System.Drawing.Drawing2D;
 
 
 
@@ -28,7 +29,7 @@ namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
     {
-
+        
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
@@ -53,8 +54,7 @@ namespace Ofelia_Sara
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
-            //panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: Color.FromArgb(0, 154, 174));
-
+            
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -116,8 +116,11 @@ namespace Ofelia_Sara
             InicializarComboBoxDEPENDENCIAS();
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO
-        }
 
+            
+        }
+        //----------------------------------------------------------------------------------
+ 
 
         //-----------------------------------------------------------------------------
         private void GuardarDatos()
