@@ -272,6 +272,8 @@
     <Compile Include="general\clases\Agregar Componentes\SellosDependencia.Designer.cs">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\Aplicadas con controles\CalcularAntiguedad.cs" />
+    <Compile Include="general\clases\Apariencia General\Controles\Aplicadas con controles\CalcularEdad.cs" />
     <Compile Include="general\clases\Apariencia General\Controles\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>

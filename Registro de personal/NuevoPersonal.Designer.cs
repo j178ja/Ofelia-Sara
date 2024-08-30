@@ -69,13 +69,13 @@
             this.label_DestinoLaboral = new System.Windows.Forms.Label();
             this.label_SituacionRevista = new System.Windows.Forms.Label();
             this.label_DatosPersonales = new System.Windows.Forms.Label();
-            this.customDateTextBox_Antiguedad = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
+            this.dateTimePicker_Antiguedad = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.label_Ingreso = new System.Windows.Forms.Label();
             this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
             this.label_Subescalafon = new System.Windows.Forms.Label();
             this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
             this.label_Jerarquia = new System.Windows.Forms.Label();
-            this.customDateTextBox_Nacimiento = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
@@ -146,13 +146,13 @@
             this.panel1.Controls.Add(this.label_DestinoLaboral);
             this.panel1.Controls.Add(this.label_SituacionRevista);
             this.panel1.Controls.Add(this.label_DatosPersonales);
-            this.panel1.Controls.Add(this.customDateTextBox_Antiguedad);
+            this.panel1.Controls.Add(this.dateTimePicker_Antiguedad);
             this.panel1.Controls.Add(this.label_Ingreso);
             this.panel1.Controls.Add(this.comboBox_Escalafon);
             this.panel1.Controls.Add(this.label_Subescalafon);
             this.panel1.Controls.Add(this.comboBox_Jerarquia);
             this.panel1.Controls.Add(this.label_Jerarquia);
-            this.panel1.Controls.Add(this.customDateTextBox_Nacimiento);
+            this.panel1.Controls.Add(this.dateTimePicker_FechaNacimiento);
             this.panel1.Controls.Add(this.textBox_LugarNacimiento);
             this.panel1.Controls.Add(this.label_LugarNacimiento);
             this.panel1.Controls.Add(this.label_Dependencia);
@@ -466,6 +466,7 @@
             this.textBox_AntiguedadMeses.Name = "textBox_AntiguedadMeses";
             this.textBox_AntiguedadMeses.Size = new System.Drawing.Size(30, 20);
             this.textBox_AntiguedadMeses.TabIndex = 116;
+            this.textBox_AntiguedadMeses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_Años
             // 
@@ -482,6 +483,7 @@
             this.textBox_AntiguedadAños.Name = "textBox_AntiguedadAños";
             this.textBox_AntiguedadAños.Size = new System.Drawing.Size(30, 20);
             this.textBox_AntiguedadAños.TabIndex = 114;
+            this.textBox_AntiguedadAños.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_Antiguedad
             // 
@@ -546,12 +548,12 @@
             this.label_DatosPersonales.TabIndex = 108;
             this.label_DatosPersonales.Text = "DATOS PERSONALES";
             // 
-            // customDateTextBox_Antiguedad
+            // dateTimePicker_Antiguedad
             // 
-            this.customDateTextBox_Antiguedad.Location = new System.Drawing.Point(171, 411);
-            this.customDateTextBox_Antiguedad.Name = "customDateTextBox_Antiguedad";
-            this.customDateTextBox_Antiguedad.Size = new System.Drawing.Size(149, 20);
-            this.customDateTextBox_Antiguedad.TabIndex = 107;
+            this.dateTimePicker_Antiguedad.Location = new System.Drawing.Point(171, 411);
+            this.dateTimePicker_Antiguedad.Name = "dateTimePicker_Antiguedad";
+            this.dateTimePicker_Antiguedad.Size = new System.Drawing.Size(149, 20);
+            this.dateTimePicker_Antiguedad.TabIndex = 107;
             // 
             // label_Ingreso
             // 
@@ -603,12 +605,12 @@
             this.label_Jerarquia.TabIndex = 102;
             this.label_Jerarquia.Text = "JERARQUIA :";
             // 
-            // customDateTextBox_Nacimiento
+            // dateTimePicker_FechaNacimiento
             // 
-            this.customDateTextBox_Nacimiento.Location = new System.Drawing.Point(449, 148);
-            this.customDateTextBox_Nacimiento.Name = "customDateTextBox_Nacimiento";
-            this.customDateTextBox_Nacimiento.Size = new System.Drawing.Size(149, 20);
-            this.customDateTextBox_Nacimiento.TabIndex = 100;
+            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(449, 148);
+            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
+            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 20);
+            this.dateTimePicker_FechaNacimiento.TabIndex = 100;
             // 
             // textBox_LugarNacimiento
             // 
@@ -871,12 +873,12 @@
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Dni;
         private System.Windows.Forms.Label label_Nombre;
-        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox_Nacimiento;
+        private general.clases.Apariencia_General.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.Label label_Jerarquia;
         private System.Windows.Forms.ComboBox comboBox_Escalafon;
         private System.Windows.Forms.Label label_Subescalafon;
         private System.Windows.Forms.ComboBox comboBox_Jerarquia;
-        private general.clases.Apariencia_General.Controles.CustomDateTextBox customDateTextBox_Antiguedad;
+        private general.clases.Apariencia_General.Controles.CustomDateTextBox dateTimePicker_Antiguedad;
         private System.Windows.Forms.Label label_Ingreso;
         private System.Windows.Forms.Label label_DatosPersonales;
         private System.Windows.Forms.Label label_SituacionRevista;
