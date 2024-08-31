@@ -2,25 +2,27 @@
         
         PROBLEMAS DE APLICACION
 
-                                  //solicionado         1)NO SE ESTA APLICANDO CONVERSION A MAYUSCULA
-                                 //solicionado          2) NO SE ESTA APLICANDO IGNORAR CARACTERES ESPECIALES
+                                 
+                                
 3)NO SE ESTA APLICANDO SALTO DE INPUT
-                                    //solicionado  4) NO SE ESTA APLICANDO MENU DESPLEGABLE EN Btn_Configuracion (problemas manejador de eventos)
-5) EL FONDO SE SUPERPONE AL CONTENIDO EJ Ipp.cs
-                                  //solicionado         6) NO SE ESTA APLICANDO LA LIMPIEZA DEL FORMULARI
+                                   
+
+                                  
 
 NO FUNCIONA PROGRESBAR (NO SE APLICA LOS CAMBIOS DE BACK Y DE FORE)
 
 NO FUNCIONA ELIMINAR EL BOTON MAXIMIZAR, SOLO FUNCIONA DESHABILITAR (se puede solucionar eliminando el 
   titulo o barra superior y crear boton ce minimizar y cierre)
 
-                                //solucionado           SE BORRA EL INDICE PREDEFINIDO EN EL DESIGNER
+                                
  STARPOSITION NO SE APLICA
  NO SE PUEDE EDITAR PROPIEDAD ANCHOR
 
-                                //solicionado                     NO SE APLICA ESTILOBOTONES.CS
+            PLACEHOLDER EN COMBOBOX_BUSCAR EN FORM MENUPRINCIPAL
+            AUTOCOMPLETAR EN TEXTBOX_CARATULA A APLICARSE EN BASEFORM
 
- NO SE ESTA APLICANDO LA CLASE CONVERSION DE TEXTO EN LOS CONTROLES NuevaPersonaControl
+
+
 
 
 
