@@ -29,7 +29,6 @@ namespace Ofelia_Sara
 {
     public partial class InicioCierre : BaseForm
     {
-        
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
@@ -44,8 +43,6 @@ namespace Ofelia_Sara
         {
             InitializeComponent();
 
-            
-
             textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
             textBox_Victima.TextChanged += (s, e) => ActualizarEstado();
@@ -56,7 +53,6 @@ namespace Ofelia_Sara
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
-            
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -103,14 +99,11 @@ namespace Ofelia_Sara
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-
             //-----------------------------------------------------------------
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
-
-
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
@@ -118,12 +111,8 @@ namespace Ofelia_Sara
             InicializarComboBoxDEPENDENCIAS();
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO
-
-            
         }
-        //----------------------------------------------------------------------------------
- 
-
+        
         //-----------------------------------------------------------------------------
         private void GuardarDatos()
         {
@@ -180,16 +169,11 @@ namespace Ofelia_Sara
         }
         //--------------------------------------------------------------
 
-
         //----BOTON LIMPIAR/ELIMINAR-----------------------
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-
-            //ReposicionarPanelesInferiores(); //comentado hasta que se logre un reposicionamiento optimo
-            //// Forzar redibujado del formulario para reflejar los cambios
-            //this.Refresh();
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
@@ -224,14 +208,10 @@ namespace Ofelia_Sara
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void comboBox_Ipp1_TextUpdate(object sender, EventArgs e)
         {
-            // Limitar a 2 caracteres
-            if (comboBox_Ipp1.Text.Length > 2)
+          if (comboBox_Ipp1.Text.Length > 2) // Limitar a 2 caracteres
             {
-                // Si el texto excede los 2 caracteres, cortar el exceso
-                comboBox_Ipp1.Text = comboBox_Ipp1.Text.Substring(0, 2);
-
-                // Mover el cursor al final del texto
-                comboBox_Ipp1.SelectionStart = comboBox_Ipp1.Text.Length;
+                comboBox_Ipp1.Text = comboBox_Ipp1.Text.Substring(0, 2);// Si el texto excede los 2 caracteres, cortar el exceso
+                comboBox_Ipp1.SelectionStart = comboBox_Ipp1.Text.Length; // Mover el cursor al final del texto
             }
         }
 
@@ -320,7 +300,6 @@ namespace Ofelia_Sara
         // Evento Click del botón Imprimir
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
-
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
 
@@ -337,10 +316,6 @@ namespace Ofelia_Sara
 
             }
         }
-
-        //--------------------------------------------------------------------------------
-
-
 
         //---------------------------------------------------------------------------------
         //--Para corregir el error de que los indices predeterminados no se cargan al inicio, sino tras ejecutar la logica de btm_limpiar
@@ -448,8 +423,7 @@ namespace Ofelia_Sara
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
         private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            
-
+  
             if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
             {
                 agregarDatosPersonalesImputado = new AgregarDatosPersonalesImputado();
@@ -508,10 +482,6 @@ namespace Ofelia_Sara
             textBox_Imputado.Text = text;
         }
 
-
-
-
-
         //-------------------TEXTBOX VICTIMA------------------------------------------------------------
         private void textBox_Victima_TextChanged(object sender, EventArgs e)
         {
@@ -563,18 +533,9 @@ namespace Ofelia_Sara
         //-------------------BOTON AGREGAR CAUSA---------------------
         private void Btn_AgregarCausa_Click(object sender, EventArgs e)
         {
-            //if (ValidarUltimaCaratula())
-            //{
-            //    var nuevaCaratula = new NuevaCaratulaControl();
-            //    nuevaCaratula.Location = new Point(10, ObtenerPosicionSiguiente(panel_Caratula));
-            //    panel_Caratula.Controls.Add(nuevaCaratula);
-            //    ReposicionarPanelesInferiores(panel_Caratula);
-            //}
             // Llamar al método en el UserControl para agregar el control
             NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
-            ReposicionarPanelesInferiores();// Reposicionar los paneles inferiores
-                                            // Reposicionar paneles después de eliminar un control
-
+           
         }
 
         //------------BOTON AGREGAR VICTIMA----------------------------
@@ -594,10 +555,9 @@ namespace Ofelia_Sara
             {
                 // Llamar al método en el UserControl para agregar el control
                 NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
-                ReposicionarPanelesInferiores(); // Reposicionar los paneles inferiores
-
+               
                 // Agregar la nueva víctima a la lista
-                string nuevaVictima = "Nombre de la nueva víctima"; // Aquí deberías obtener el nombre de la víctima del nuevo control agregado
+                string nuevaVictima = "Nombre de la nueva víctima"; 
                 victimas.Add(nuevaVictima);
 
                 // Actualizar la lista visual en el formulario, si corresponde
@@ -621,39 +581,12 @@ namespace Ofelia_Sara
             {
                 // Llamar al método en el UserControl para agregar el control
                 NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
-                ReposicionarPanelesInferiores(); // Reposicionar los paneles inferiores
-
+               
                 // Agregar el nuevo imputado a la lista
                 string nuevoImputado = "Nombre del nuevo imputado"; // Aquí deberías obtener el nombre del imputado del nuevo control agregado
                 imputados.Add(nuevoImputado);
-
-                // Actualizar la lista visual en el formulario, si corresponde
-                //lstImputados.Items.Add(nuevoImputado);
+  
             }
-        }
-
-
-
-        // Método para reposicionar los paneles inferiores cuando se agrega un nuevo control
-        public void ReposicionarPanelesInferiores()
-        {
-            // Ajustar la posición del panel de Victima respecto al panel de Caratula
-            panel_Victima.Location = new Point(panel_Victima.Location.X, panel_Caratula.Bottom + 2);
-
-            // Ajustar la posición del panel de Imputados respecto al panel de Víctimas
-            panel_Imputado.Location = new Point(panel_Imputado.Location.X, panel_Victima.Bottom + 2);
-
-            // Ajustar la posición del panel de controles inferiores respecto al panel de Imputados
-            panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Location.X, panel_Imputado.Bottom + 2);
-
-
-            Form formularioPrincipal = this.FindForm();
-            if (formularioPrincipal != null)
-            {
-                formularioPrincipal.Height = formularioPrincipal.Controls.OfType<Control>().Max(c => c.Bottom) + 2;
-                formularioPrincipal.Invalidate(); // Forzar redibujado del formulario
-            }
-
         }
 
         // ---METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL

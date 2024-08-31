@@ -84,7 +84,7 @@
             this.Controls.Add(this.label_Caratula);
             this.Name = "NuevaCaratulaControl";
             this.Size = new System.Drawing.Size(394, 26);
-            this.Load += new System.EventHandler(this.NuevaCaratulaControl_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

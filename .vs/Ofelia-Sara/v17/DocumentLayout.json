@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\apariencia general\\controles\\nuevacaratulacontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\controles\\nuevacaratulacontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\apariencia general\\controles\\nuevacaratulacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\controles\\nuevacaratulacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\general\\clases\\apariencia general\\controles\\nuevapersonacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:general\\clases\\apariencia general\\controles\\nuevapersonacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "menu_principal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs*",
-              "ViewState": "AQIAABkAAAAAAAAAAAAqwCoAAAAMAAAA",
+              "DocumentIndex": 0,
+              "Title": "NuevaCaratulaControl.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.Designer.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.Designer.cs",
+              "RelativeToolTip": "general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.Designer.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAIAwwFYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:42:01.39Z",
+              "WhenOpened": "2024-08-31T05:24:10.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "menu_principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\menu_principal.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\menu_principal.cs [Dise\u00F1o]*",
+              "DocumentIndex": 1,
+              "Title": "NuevaCaratulaControl.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.cs",
+              "RelativeToolTip": "general\\clases\\Apariencia General\\Controles\\NuevaCaratulaControl.cs",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAswBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T03:56:30.637Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-08-31T05:19:27.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NuevaPersonaControl.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
+              "RelativeDocumentMoniker": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
+              "RelativeToolTip": "general\\clases\\Apariencia General\\Controles\\NuevaPersonaControl.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAApwHEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:19:15.121Z",
+              "EditorCaption": ""
             }
           ]
         }
