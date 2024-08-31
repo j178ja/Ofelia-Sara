@@ -45,9 +45,13 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             // Reposicionar otros controles en el panel si es necesario
             foreach (Control control in panel.Controls)
             {
-                // Aquí puedes ajustar la posición de los controles restantes
-                // Por ejemplo, podrías mover los controles hacia arriba para llenar el espacio vacío
+                
             }
+        }
+
+        private void PersonalSeleccionadoControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

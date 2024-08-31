@@ -60,17 +60,18 @@
             this.panel1.Controls.Add(this.lbl_Titulo);
             this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 176);
+            this.panel1.Size = new System.Drawing.Size(671, 190);
             this.panel1.TabIndex = 2;
             // 
             // panel_ControlesInferiores
             // 
             this.panel_ControlesInferiores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(83, 98);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(83, 99);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(458, 75);
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(458, 88);
             this.panel_ControlesInferiores.TabIndex = 39;
             // 
             // btn_Registrar
@@ -79,7 +80,7 @@
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Registrar.Location = new System.Drawing.Point(107, 5);
+            this.btn_Registrar.Location = new System.Drawing.Point(117, 8);
             this.btn_Registrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Registrar.Name = "btn_Registrar";
             this.btn_Registrar.Size = new System.Drawing.Size(116, 62);
@@ -94,7 +95,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(358, 0);
+            this.btn_Guardar.Location = new System.Drawing.Point(368, 9);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 37;
@@ -104,9 +105,9 @@
             // panel_PersonalSeleccionado
             // 
             this.panel_PersonalSeleccionado.BackColor = System.Drawing.Color.Transparent;
-            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(12, 75);
+            this.panel_PersonalSeleccionado.Location = new System.Drawing.Point(5, 75);
             this.panel_PersonalSeleccionado.Name = "panel_PersonalSeleccionado";
-            this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(631, 24);
+            this.panel_PersonalSeleccionado.Size = new System.Drawing.Size(663, 24);
             this.panel_PersonalSeleccionado.TabIndex = 38;
             // 
             // btn_AgregarPersonal
@@ -164,8 +165,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(714, 227);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(714, 241);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;

@@ -22,6 +22,10 @@ namespace Ofelia_Sara.Registro_de_personal
         private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
         private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
 
+     
+
+
+
         public BuscarPersonal()
         {
             InitializeComponent();
@@ -37,7 +41,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
-            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            //---Inicializar para desactivar los btn AGREGAR PERSONAL RATIFICACION 
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
 
             textBox_NumeroLegajo.MaxLength = 7;
@@ -83,9 +87,10 @@ namespace Ofelia_Sara.Registro_de_personal
             textBox_NumeroLegajo.Focus();
         }
         
-            // Configura el color de fondo
-         
+       
         //________________________________________________________________________________
+        
+        //------- BOTON PARA REGISTRAR DATOS COMPLETOS DE NUEVO PERSONAL----------
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
             // Obtener el texto del TextBox_NumeroLegajo en BuscarPersonal
@@ -136,40 +141,87 @@ namespace Ofelia_Sara.Registro_de_personal
                 // Crear una nueva instancia del control PersonaSeleccionadaControl
                 PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
 
-                //posicionar el nuevo control
-                int nuevaPosicionY = ObtenerPosicionSiguienteControl(panel_PersonalSeleccionado);
-                nuevoControl.Location = new Point(0, nuevaPosicionY);
-
-                // Añadir el nuevo control al panel_PersonalSeleccionado
-                panel_PersonalSeleccionado.Controls.Add(nuevoControl);
-
-                // Ajustar la altura del panel si es necesario
-                AjustarAlturaPanel(panel_PersonalSeleccionado);
+                // Llamar al método para agregar el control al panel
+                AgregarControlAlPanel(nuevoControl, panel_PersonalSeleccionado);
 
                 // Limpiar el contenido del TextBox
                 textBox_NumeroLegajo.Text = string.Empty;
             }
         }
-        private int ObtenerPosicionSiguienteControl(Panel panel)
+        //---------------------------------------------------------------------------------------------------
+        private const int MaxControlesVisibles = 7;
+        private Color colorPar = Color.FromArgb(230, 230, 230); // Gris claro
+        private Color colorImpar = Color.FromArgb(200, 200, 200); // Gris medio
+        private const int MaxHeight = 750; // Altura máxima para el formulario
+
+        private void AgregarControlAlPanel(Control nuevoControl, Panel panel)
         {
-            if (panel.Controls.Count == 0)
+            // Configurar el control para que se ajuste al ancho del panel
+            nuevoControl.Width = panel.ClientSize.Width - 20; // Ajusta el ancho del control al ancho del panel menos un margen
+
+            // Si el panel tiene controles, colocar el nuevo control debajo del último control existente.
+            if (panel.Controls.Count > 0)
             {
-                return 0; // Si no hay controles, coloca el nuevo control en la posición inicial
+                Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
+                nuevoControl.Top = ultimoControl.Bottom; // Sin espacio adicional entre controles
+            }
+            else
+            {
+                nuevoControl.Top = 0; // Si no hay controles, el control se coloca en la parte superior.
             }
 
-            // Obtener la posición Y del último control en el panel
-            Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            return ultimoControl.Bottom + 20; // Espacio entre controles
+            // Determinar si el número de controles es par o impar
+            if (panel.Controls.Count % 2 == 0) // Número par
+            {
+                nuevoControl.BackColor = colorPar;
+            }
+            else // Número impar
+            {
+                nuevoControl.BackColor = colorImpar;
+            }
+
+            // Agregar el nuevo control al panel
+            panel.Controls.Add(nuevoControl);
+
+            // Ajustar el tamaño del panel para permitir el scroll vertical si es necesario
+            if (panel.Controls.Count > MaxControlesVisibles)
+            {
+                panel.AutoScroll = true; // Habilitar el scroll vertical
+                int visibleHeight = nuevoControl.Bottom;
+                panel.Height = visibleHeight > MaxHeight ? MaxHeight : visibleHeight;
+            }
+            else
+            {
+                panel.AutoScroll = false;
+                panel.Height = nuevoControl.Bottom + 1;
+            }
+
+            // Asegúrate de que el formulario y los paneles se ajusten adecuadamente
+            AjustarFormulario(panel);
         }
 
-        private void AjustarAlturaPanel(Panel panel)
+        private void AjustarFormulario(Panel panel)
         {
-            if (panel.Controls.Count == 0) return;
+            // Obtener la altura total del panel actual
+            int alturaPanel = panel.Bottom + panel1.Top + panel1.Margin.Bottom;
 
-            // Ajustar la altura del panel según el último control agregado
-            Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            panel.Height = ultimoControl.Bottom + 1; // Ajusta el espacio inferior según sea necesario
+            // Asegurarse de que el panel_ControlesInferiores esté al final del formulario
+            panel_ControlesInferiores.Top = panel.Bottom + 5; // Espacio entre el panel de controles y el final del panel
+            panel_ControlesInferiores.Width = panel.Width;
+            panel_ControlesInferiores.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            // Ajustar el tamaño del formulario para no exceder el tamaño máximo
+            if (panel.Height > MaxHeight)
+            {
+                this.Height = MaxHeight;
+            }
+            else
+            {
+                this.Height = panel.Bottom + panel_ControlesInferiores.Height + 40; // Espacio adicional para el panel de controles
+            }
         }
+
+
 
         private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
