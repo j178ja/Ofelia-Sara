@@ -49,7 +49,7 @@
             this.btn_ModificarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ModificarPersonal.FlatAppearance.BorderSize = 0;
             this.btn_ModificarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ModificarPersonal.Location = new System.Drawing.Point(589, 36);
+            this.btn_ModificarPersonal.Location = new System.Drawing.Point(647, 40);
             this.btn_ModificarPersonal.Name = "btn_ModificarPersonal";
             this.btn_ModificarPersonal.Size = new System.Drawing.Size(15, 23);
             this.btn_ModificarPersonal.TabIndex = 36;
@@ -62,7 +62,7 @@
             // 
             this.label_Legajo.AutoSize = true;
             this.label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Legajo.Location = new System.Drawing.Point(3, 0);
+            this.label_Legajo.Location = new System.Drawing.Point(18, 4);
             this.label_Legajo.Name = "label_Legajo";
             this.label_Legajo.Size = new System.Drawing.Size(67, 15);
             this.label_Legajo.TabIndex = 38;
@@ -72,7 +72,7 @@
             // 
             this.label_Jerarquia.AutoSize = true;
             this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Jerarquia.Location = new System.Drawing.Point(179, 2);
+            this.label_Jerarquia.Location = new System.Drawing.Point(194, 6);
             this.label_Jerarquia.Name = "label_Jerarquia";
             this.label_Jerarquia.Size = new System.Drawing.Size(185, 13);
             this.label_Jerarquia.TabIndex = 39;
@@ -82,7 +82,7 @@
             // 
             this.label_Dependencia.AutoSize = true;
             this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dependencia.Location = new System.Drawing.Point(61, 24);
+            this.label_Dependencia.Location = new System.Drawing.Point(76, 28);
             this.label_Dependencia.Name = "label_Dependencia";
             this.label_Dependencia.Size = new System.Drawing.Size(112, 15);
             this.label_Dependencia.TabIndex = 40;
@@ -92,7 +92,7 @@
             // 
             this.label_Funcion.AutoSize = true;
             this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(61, 46);
+            this.label_Funcion.Location = new System.Drawing.Point(76, 50);
             this.label_Funcion.Name = "label_Funcion";
             this.label_Funcion.Size = new System.Drawing.Size(76, 15);
             this.label_Funcion.TabIndex = 41;
@@ -102,7 +102,7 @@
             // 
             this.label_NombrePersonal.AutoSize = true;
             this.label_NombrePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NombrePersonal.Location = new System.Drawing.Point(384, 2);
+            this.label_NombrePersonal.Location = new System.Drawing.Point(399, 6);
             this.label_NombrePersonal.Name = "label_NombrePersonal";
             this.label_NombrePersonal.Size = new System.Drawing.Size(170, 13);
             this.label_NombrePersonal.TabIndex = 42;
@@ -116,7 +116,7 @@
             this.btn_EliminarControl.FlatAppearance.BorderSize = 0;
             this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarControl.Location = new System.Drawing.Point(589, 0);
+            this.btn_EliminarControl.Location = new System.Drawing.Point(647, 11);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
             this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
             this.btn_EliminarControl.TabIndex = 46;
@@ -129,7 +129,7 @@
             // 
             this.label_LegajoPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_LegajoPersonal.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label_LegajoPersonal.Location = new System.Drawing.Point(61, 0);
+            this.label_LegajoPersonal.Location = new System.Drawing.Point(76, 4);
             this.label_LegajoPersonal.Name = "label_LegajoPersonal";
             this.label_LegajoPersonal.Size = new System.Drawing.Size(103, 15);
             this.label_LegajoPersonal.TabIndex = 43;
@@ -137,7 +137,7 @@
             // label_NombreDependencia
             // 
             this.label_NombreDependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NombreDependencia.Location = new System.Drawing.Point(172, 24);
+            this.label_NombreDependencia.Location = new System.Drawing.Point(187, 28);
             this.label_NombreDependencia.Name = "label_NombreDependencia";
             this.label_NombreDependencia.Size = new System.Drawing.Size(382, 13);
             this.label_NombreDependencia.TabIndex = 44;
@@ -145,7 +145,7 @@
             // label_DescripcionFuncion
             // 
             this.label_DescripcionFuncion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DescripcionFuncion.Location = new System.Drawing.Point(143, 46);
+            this.label_DescripcionFuncion.Location = new System.Drawing.Point(158, 50);
             this.label_DescripcionFuncion.Name = "label_DescripcionFuncion";
             this.label_DescripcionFuncion.Size = new System.Drawing.Size(382, 13);
             this.label_DescripcionFuncion.TabIndex = 45;
@@ -155,7 +155,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.btn_EliminarControl);
             this.Controls.Add(this.label_DescripcionFuncion);
             this.Controls.Add(this.label_NombreDependencia);
@@ -167,7 +166,8 @@
             this.Controls.Add(this.label_Legajo);
             this.Controls.Add(this.btn_ModificarPersonal);
             this.Name = "PersonalSeleccionadoControl";
-            this.Size = new System.Drawing.Size(607, 62);
+            this.Size = new System.Drawing.Size(665, 73);
+            this.Load += new System.EventHandler(this.PersonalSeleccionadoControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
