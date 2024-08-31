@@ -165,7 +165,7 @@
     <Compile Include="Acceso Usuarios\UsuarioForm.Designer.cs">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base de Datos\Busqueda Menu\AccionesManager.cs" />
+    <Compile Include="general\clases\Barra Busqueda\AccionesManager.cs" />
     <Compile Include="Base de Datos\DataBaseManagger.cs" />
     <Compile Include="Base de Datos\DataInserter.cs" />
     <Compile Include="Base de Datos\Entidades\Dependencia.cs" />
@@ -179,12 +179,6 @@
     </Compile>
     <Compile Include="Contacto.Designer.cs">
       <DependentUpon>Contacto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\AccesoPrincipal.Designer.cs">
-      <DependentUpon>AccesoPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\BuscarForm.cs">
       <SubType>Form</SubType>
@@ -215,12 +209,6 @@
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.Designer.cs">
       <DependentUpon>AgregarDatosPersonalesVictima.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Denuncias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Denuncias.Designer.cs">
-      <DependentUpon>Denuncias.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\Expedientes.cs">
       <SubType>Form</SubType>
@@ -371,41 +359,11 @@
     <Compile Include="Formularios\Oficial de servicio\inicio_cierre.Designer.cs">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Inspecciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Inspecciones.Designer.cs">
-      <DependentUpon>Inspecciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Ipp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Ipp.Designer.cs">
-      <DependentUpon>Ipp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\legajo_automotor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\legajo_automotor.Designer.cs">
-      <DependentUpon>legajo_automotor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\legajo_detenidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\legajo_detenidos.Designer.cs">
-      <DependentUpon>legajo_detenidos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Oficial de servicio\menu_principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\menu_principal.Designer.cs">
       <DependentUpon>menu_principal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Nota.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Oficial de servicio\Nota.Designer.cs">
-      <DependentUpon>Nota.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -438,9 +396,6 @@
     <EmbeddedResource Include="Contacto.resx">
       <DependentUpon>Contacto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\AccesoPrincipal.resx">
-      <DependentUpon>AccesoPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\BuscarForm.resx">
       <DependentUpon>BuscarForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -455,9 +410,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.resx">
       <DependentUpon>AgregarDatosPersonalesVictima.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\Denuncias.resx">
-      <DependentUpon>Denuncias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
@@ -523,23 +475,8 @@
     <EmbeddedResource Include="Formularios\Oficial de servicio\inicio_cierre.resx">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\Inspecciones.resx">
-      <DependentUpon>Inspecciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\Ipp.resx">
-      <DependentUpon>Ipp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\legajo_automotor.resx">
-      <DependentUpon>legajo_automotor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\legajo_detenidos.resx">
-      <DependentUpon>legajo_detenidos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\menu_principal.resx">
       <DependentUpon>menu_principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\Nota.resx">
-      <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\escudoPolicial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
