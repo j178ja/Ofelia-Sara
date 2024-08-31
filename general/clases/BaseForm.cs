@@ -15,6 +15,7 @@ namespace Ofelia_Sara.general.clases
 
 {
     using Guna.UI2.WinForms.Suite;
+    using Newtonsoft.Json;
     // using Ofelia_Sara.Base_de_Datos;
     using Ofelia_Sara.general.clases.Apariencia_General;
 
@@ -27,6 +28,9 @@ namespace Ofelia_Sara.general.clases
     {
         //protected DatabaseManager dbManager;
         //protected DataInserter dataInserter;
+
+        // Define una lista para almacenar los elementos de autocompletado
+        private readonly AutocompletarManager autocompletarManager;
 
         private LinkLabel footerLinkLabel;
         private Panel mainPanel; // Panel que contiene los TextBox
@@ -57,13 +61,13 @@ namespace Ofelia_Sara.general.clases
             mainPanel = new Panel { Dock = DockStyle.Fill };
             this.Controls.Add(mainPanel);
 
-
             //this.Load += BaseForm_Load;
 
             this.Paint += new PaintEventHandler(BaseForm_Paint);
-
             this.Load += new System.EventHandler(this.BaseForm_Load);
 
+            autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
+            ConfigureTextBoxAutoComplete();
         }
         //--------------------------------------------------------------------------------
 
@@ -290,14 +294,7 @@ namespace Ofelia_Sara.general.clases
             // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
             boton.Invalidate();
         }
-
-
-        //--------------------------------------------------------------------------------------------------------
-
-
-
-
-
+                //--------------------------------------------------------------------------------------------------------
 
         private void InitializeComponent()
         {
@@ -307,22 +304,24 @@ namespace Ofelia_Sara.general.clases
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "BaseForm";
-            this.Load += new System.EventHandler(this.BaseForm_Load_1);
+           
             this.ResumeLayout(false);
 
         }
-
-        private void BaseForm_Load_1(object sender, EventArgs e)
+        private void ConfigureTextBoxAutoComplete()
         {
-
+           
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox && textBox.Name.StartsWith("textBox_Caratula"))
+                {
+                    autocompletarManager.ConfigureTextBoxAutoComplete(textBox);
+                }
+            }
         }
-        //-------------------------------------------------------------------------------------
-        // PARA CONFIGURAR CONTROLES EN TODO EL PROYECTO
-
 
 
     }
-
 }
 
 

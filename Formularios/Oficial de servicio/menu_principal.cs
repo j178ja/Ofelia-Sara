@@ -17,7 +17,7 @@ namespace Ofelia_Sara
 {
     public partial class MenuPrincipal : BaseForm
     {
-       
+
         private ContextMenuStrip contextMenu;
         private AuxiliarConfiguracion auxiliarConfiguracion;
         private AccionesManager accionesManager;//para el comboBox
@@ -29,14 +29,32 @@ namespace Ofelia_Sara
 
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);
             posicionarMenu();
-           
+
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             accionesManager = new AccionesManager("acciones.json");
             ConfigureComboBox(comboBox_Buscar);
             CargarAcciones();//para comboBox_Buscar
-           
+            ConfigurePlaceholderComboBox();
+
+            comboBox_Buscar.BringToFront(); // Asegúrate de que comboBoxBuscar está encima de comboBoxGNUA
+
+            
+        }
+        //---------------------------------------------
+        private void ConfigurePlaceholderComboBox()
+        {
+            var placeholderComboBox = new PlaceholderComboBox
+            {
+                PlaceholderText = "Buscar tipo actuacion",
+                PlaceholderColor = Color.Red,
+                Location = new Point(147, 28), // Ajusta la ubicación según tu diseño
+                Size = new Size(294, 28) // Ajusta el tamaño según tus necesidades
+            };
+
+            // Agregar al formulario
+            this.Controls.Add(placeholderComboBox);
         }
         //_________________________________--________________________________
 
@@ -92,14 +110,7 @@ namespace Ofelia_Sara
        
      
 
-        //------BOTON CARGO--------------------------------------------
-        private void Btn_Cargo_Click(object sender, EventArgs e)
-        {
-            // Crea una instancia del formulario a abrir
-            Cargo CargoForm = new Cargo();
-            // Mostrar el formulario
-            CargoForm.Show();
-        }
+    
 
         //-----BOTON INICIO-CIERRE------------
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
@@ -152,7 +163,8 @@ namespace Ofelia_Sara
             comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
             // Ajustar la altura de la lista desplegable para mostrar más ítems
-            comboBox.DropDownHeight = 100;
+            comboBox.DropDownHeight = 80;
+            comboBox.Font = new Font("Arial", 11, FontStyle.Regular); // Cambia a la fuente deseada
 
             // Cargar las acciones y ordenar
             CargarAcciones();
@@ -212,6 +224,8 @@ namespace Ofelia_Sara
                 e.Cancel = true; // Cancela la acción si la entrada no es válida
             }
         }
+
+       
         //_________________________________________________________________________________
         //----------------BTON LEYES------------------------------
         private void btn_Leyes_Click(object sender, EventArgs e)
@@ -233,6 +247,7 @@ namespace Ofelia_Sara
                        
             leyesForm.Show();
         }
+     
 
     }
 }

@@ -211,6 +211,16 @@ namespace Ofelia_Sara
             // 
             // textBox_Caratula
             // 
+            this.textBox_Caratula.AutoCompleteCustomSource.AddRange(new string[] {
+            "LESIONES CULPOSAS",
+            "LESIONES CULPOSAS DESISTIDAS",
+            "AMENAZAS",
+            "INFRACCION LEY 23737",
+            "HURTO",
+            "ROBO",
+            "HURTO MOTOVEHICULO"});
+            this.textBox_Caratula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox_Caratula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.textBox_Caratula.Location = new System.Drawing.Point(87, 2);
             this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
@@ -637,7 +647,7 @@ namespace Ofelia_Sara
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Localidad.TabIndex = 2;
-            this.comboBox_Localidad.TextChanged += new System.EventHandler(this.comboBox_Localidad_TextChanged);
+         
             this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
             // 
             // lbl_DeptoJudicial

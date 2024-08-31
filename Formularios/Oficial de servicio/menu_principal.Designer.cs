@@ -125,7 +125,7 @@
             this.panel1.Controls.Add(this.btn_Expedientes);
             this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(532, 134);
+            this.panel1.Size = new System.Drawing.Size(532, 137);
             this.panel1.TabIndex = 12;
             // 
             // btn_BuscarTarea
@@ -135,7 +135,7 @@
             this.btn_BuscarTarea.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_BuscarTarea.FlatAppearance.BorderSize = 0;
             this.btn_BuscarTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BuscarTarea.Location = new System.Drawing.Point(92, 19);
+            this.btn_BuscarTarea.Location = new System.Drawing.Point(94, 22);
             this.btn_BuscarTarea.Name = "btn_BuscarTarea";
             this.btn_BuscarTarea.Size = new System.Drawing.Size(49, 51);
             this.btn_BuscarTarea.TabIndex = 15;
@@ -143,12 +143,16 @@
             // 
             // comboBox_Buscar
             // 
+            this.comboBox_Buscar.BackColor = System.Drawing.Color.White;
+            this.comboBox_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Buscar.FormattingEnabled = true;
-            this.comboBox_Buscar.Location = new System.Drawing.Point(147, 28);
+            this.comboBox_Buscar.Location = new System.Drawing.Point(149, 33);
             this.comboBox_Buscar.Name = "comboBox_Buscar";
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.comboBox_Buscar, "Ingrese que tarea desea realizar");
             // 
             // btn_Configurar
             // 
@@ -332,7 +336,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(573, 178);
+            this.ClientSize = new System.Drawing.Size(573, 189);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
