@@ -44,6 +44,8 @@ namespace Ofelia_Sara
         {
             InitializeComponent();
 
+            
+
             textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
             textBox_Victima.TextChanged += (s, e) => ActualizarEstado();
@@ -1042,11 +1044,6 @@ namespace Ofelia_Sara
             ActualizarEstado();
         }
 
-        private void comboBox_Localidad_TextChanged(object sender, EventArgs e)
-        {
-            ActualizarEstado();
-        }
-
-       
+      
     }
 }
