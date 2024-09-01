@@ -22,24 +22,10 @@ namespace Ofelia_Sara.general.clases.Barra_Busqueda
                 tareas = new List<string>();
 
                 // Llenar la lista con algunas tareas predeterminadas (puedes agregar más o cargarlas desde otra fuente)
-                tareas.Add("Notificacion Art. 60 C.P.P.");
-                tareas.Add("Legajo AUTOMOVIL");
-                tareas.Add("Legajo MOTOVEHICULO");
-                tareas.Add("Legajo de Detenidos");
-                tareas.Add("Cargo de elementos");
-                tareas.Add("Cadena de custodia de elementos en Gral");
-                tareas.Add("Cargo de custodia 'Sangre'");
-                tareas.Add("Cargo de custodia telefonos celulares");
-                tareas.Add("Contravenciones");
-                tareas.Add("Notas");
-                tareas.Add("Nota stud. camaras");
-                tareas.Add("Notas stud colaboración GTO");
-                tareas.Add("Notas stud colaboración DDI");
-                tareas.Add("I.P.P Completa");
-                tareas.Add("Inicio, cierre y elevación");
-                tareas.Add("Decreto de inicio");
-                tareas.Add("Plana");
-                tareas.Add("Informe");
+             
+                /*----se eliminaron todas las taresa hay que vincular el listado
+                
+                de tareas al listado json ------*/
             }
 
             // Método para obtener todas las tareas
