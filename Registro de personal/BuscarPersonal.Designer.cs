@@ -66,7 +66,7 @@
             // panel_ControlesInferiores
             // 
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Location = new System.Drawing.Point(164, 99);
@@ -157,8 +157,8 @@
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_Titulo.Location = new System.Drawing.Point(227, 0);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.lbl_Titulo.Size = new System.Drawing.Size(228, 24);
+            this.lbl_Titulo.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.lbl_Titulo.Size = new System.Drawing.Size(248, 24);
             this.lbl_Titulo.TabIndex = 32;
             this.lbl_Titulo.Text = "BUSCAR PERSONAL";
             // 
@@ -176,7 +176,7 @@
             this.MinimumSize = new System.Drawing.Size(734, 270);
             this.Name = "BuscarPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BUSCAR PERSONAL POLICIAL";
+            this.Text = "RATIFICACION TESTIMONIAL PERSONAL POLICIAL";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarPersonal_HelpButtonClicked);
             this.Load += new System.EventHandler(this.BuscarPersonal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
