@@ -23,14 +23,14 @@ namespace Ofelia_Sara.Registro_de_personal
         private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
         private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
 
-     
+
 
 
 
         public BuscarPersonal()
         {
             InitializeComponent();
-            
+
 
         }
 
@@ -48,11 +48,11 @@ namespace Ofelia_Sara.Registro_de_personal
             textBox_NumeroLegajo.MaxLength = 7;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
-            this.BackColor = Color.FromArgb(0, 154, 174); // Color de fondo del formulario
+         //   this.BackColor = Color.FromArgb(0, 154, 174); // Color de fondo del formulario
 
             // Configurar el panel
-            panel1.BackColor = panelColor; // Color de fondo del panel
-            panel1.Paint += panel1_Paint;
+            //panel1.BackColor = panelColor; // Color de fondo del panel
+            //panel1.Paint += panel1_Paint;
         }
 
         //---redibujar para solucionar problema de bordes redondeados
@@ -75,7 +75,7 @@ namespace Ofelia_Sara.Registro_de_personal
         }
 
 
-      
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
@@ -87,10 +87,10 @@ namespace Ofelia_Sara.Registro_de_personal
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
-        
-       
+
+
         //________________________________________________________________________________
-        
+
         //------- BOTON PARA REGISTRAR DATOS COMPLETOS DE NUEVO PERSONAL----------
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
@@ -128,7 +128,7 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
         }
-        
+
         private void btn_AgregarPersonal_Click(object sender, EventArgs e)
         {
             // Validar que el texto no sea menor a 6 caracteres
@@ -149,23 +149,29 @@ namespace Ofelia_Sara.Registro_de_personal
                 textBox_NumeroLegajo.Text = string.Empty;
             }
         }
-        //---------------------------------------------------------------------------------------------------
-        private const int MaxControlesVisibles = 7;
+        //---------------------------------------------------------------------------------------------------------------------
+        private const int MaxControlesVisibles = 6;
         private Color colorPar = Color.FromArgb(230, 230, 230); // Gris claro
         private Color colorImpar = Color.FromArgb(200, 200, 200); // Gris medio
-        private const int MaxHeight = 515; // Altura máxima para el formulario
+        private const int MaxHeight = 555; // Altura máxima para el formulario
 
         private void AgregarControlAlPanel(Control nuevoControl, Panel panel)
         {
-            // Configurar el control para que se ajuste al ancho del panel
-            nuevoControl.Width = panel.ClientSize.Width; // Sin margen adicional
 
             // Colocar el nuevo control debajo del último control existente
             if (panel.Controls.Count > 0)
             {
                 Control ultimoControl = panel.Controls[panel.Controls.Count - 1];
                 nuevoControl.Top = ultimoControl.Bottom;
+
+
+                panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom;
+
+                // Ajustar la altura de panel1 para que contenga panel_PersonalSeleccionado y panel_ControlesInferiores
+                panel1.Height = panel_ControlesInferiores.Bottom + 12;
+                this.Height = panel1.Bottom + 150;
             }
+
             else
             {
                 nuevoControl.Top = 0;
@@ -180,15 +186,46 @@ namespace Ofelia_Sara.Registro_de_personal
             // Ajustar la altura de panel_PersonalSeleccionado para que contenga todos los controles
             panel_PersonalSeleccionado.Height = nuevoControl.Bottom;
 
-            // Asegurar que panel_ControlesInferiores esté anclado al final de panel_PersonalSeleccionado
-            panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom;
-            panel_ControlesInferiores.Width = panel_PersonalSeleccionado.Width;
+            // Verificar si se ha alcanzado el máximo de controles visibles
+            if (panel.Controls.Count > MaxControlesVisibles)
+            {
+                // Ajustar la altura del panel para mostrar solo los controles visibles
+                panel.Height = panel.Controls[MaxControlesVisibles - 1].Bottom;
+
+                panel.AutoScroll = true;  // Habilitar el scroll vertical si hay más de 7 controles
+
+                // Reajustar el tamaño de los controles para que se adapten al panel con scroll
+                foreach (Control control in panel.Controls)
+                {
+                    // Ajuste de tamaño cuando el scroll está activo
+                    control.Width = panel.ClientSize.Width;
+
+                    // Reposicionar el panel_ControlesInferiores justo debajo del panel_PersonalSeleccionado con una separación
+                    panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom + 10;
+
+                    // Ajustar la altura de panel1 para que contenga panel_PersonalSeleccionado y panel_ControlesInferiores
+                    panel1.Height = panel_ControlesInferiores.Bottom + 12;
+
+                    // Ajustar la altura del formulario para que contenga panel1 completo
+                    this.Height = panel1.Bottom + 75; // Espacio adicional para evitar que panel1 quede al borde exacto del formulario
+                }
+
+            }
+            else
+            {
+                // Ajustar la altura del panel para contener todos los controles si son MaxControlesVisibles o menos
+                panel.Height = nuevoControl.Bottom;
+
+                // Deshabilitar el scroll si no hay más de MaxControlesVisibles controles
+                panel.AutoScroll = false;
+            }
+
+            // Reposicionar el panel_ControlesInferiores justo debajo del panel_PersonalSeleccionado con una separación de 10 píxeles
+            panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom + 10;
 
             // Ajustar la altura de panel1 para que contenga panel_PersonalSeleccionado y panel_ControlesInferiores
-            panel1.Height = panel_ControlesInferiores.Bottom;
+            panel1.Height = panel_ControlesInferiores.Bottom + 12;
 
-            // Ajustar la altura del formulario para que contenga panel1 completo
-            this.Height = panel1.Bottom + 180; // Espacio adicional para evitar que panel1 quede al borde exacto del formulario
         }
 
 
