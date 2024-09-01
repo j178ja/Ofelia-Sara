@@ -73,7 +73,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             {
                 int posicionY = this.Location.Y;
                 panel.Controls.Remove(this);
-                ReposicionarControles(panel, posicionY);
+              //  ReposicionarControles(panel, posicionY);
 
                 if (tipoControl == "Victima") ContadorVictimas--;
                 else ContadorImputados--;
@@ -85,23 +85,11 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             Form formularioPrincipal = this.FindForm();
             if (formularioPrincipal is InicioCierre inicioCierre)
             {
-                inicioCierre.ReposicionarPanelesInferiores();
+               
             }
         }
 
-        private void ReposicionarControles(Panel panel, int posicionY)
-        {
-            foreach (Control ctrl in panel.Controls)
-            {
-                if (ctrl.Location.Y > posicionY)
-                {
-                    ctrl.Location = new Point(ctrl.Location.X, ctrl.Location.Y - this.Height - 2);
-                }
-            }
-        }
-
-     
-
+       
         private void NuevaPersonaControl_Load(object sender, EventArgs e)
         {
             
@@ -124,17 +112,6 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             btn_AgregarDatosPersona.Enabled = !string.IsNullOrWhiteSpace(textBox_Persona.Text);
 
 
-            //// Convertir el texto a mayúsculas usando el método ConvertirTexto
-            //string textoConvertido = ConvertirTexto(TextBox_Persona.Text);
-
-            //// Asignar el texto convertido al TextBox
-            //if (TextBox_Persona.Text != textoConvertido)
-            //{
-            //    TextBox_Persona.Text = textoConvertido;
-            //    // Mover el cursor al final del texto para que el usuario no pierda la posición
-            //    TextBox_Persona.SelectionStart = TextBox_Persona.Text.Length;
-
-            // }
         }
 
         private string ConvertirTexto(string texto)

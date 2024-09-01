@@ -17,21 +17,9 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         public NuevaCaratulaControl()
         {
             InitializeComponent();
-          
-            
-
-            // Configurar el texto del label aquí
-
-            // Suscribirse al evento Load para cualquier inicialización adicional
-            this.Load += NuevaCaratulaControl_Load;
+           
         }
 
-        private void NuevaCaratulaControl_Load(object sender, EventArgs e)
-        {
-
-            
-
-        }
         //--------------------------------------------------------------------------------
         public static class NuevaCaratulaControlHelper
         {
@@ -127,7 +115,7 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
             Form formularioPrincipal = this.FindForm();
             if (formularioPrincipal is InicioCierre inicioCierre)
             {
-                inicioCierre.ReposicionarPanelesInferiores();
+               // inicioCierre.ReposicionarPanelesInferiores();
             }
         }
 

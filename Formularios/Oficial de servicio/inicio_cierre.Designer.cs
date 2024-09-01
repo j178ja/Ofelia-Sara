@@ -211,6 +211,16 @@ namespace Ofelia_Sara
             // 
             // textBox_Caratula
             // 
+            this.textBox_Caratula.AutoCompleteCustomSource.AddRange(new string[] {
+            "LESIONES CULPOSAS",
+            "LESIONES CULPOSAS DESISTIDAS",
+            "AMENAZAS",
+            "INFRACCION LEY 23737",
+            "HURTO",
+            "ROBO",
+            "HURTO MOTOVEHICULO"});
+            this.textBox_Caratula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox_Caratula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.textBox_Caratula.Location = new System.Drawing.Point(87, 2);
             this.textBox_Caratula.Multiline = true;
             this.textBox_Caratula.Name = "textBox_Caratula";
@@ -533,7 +543,7 @@ namespace Ofelia_Sara
             this.panel1.Location = new System.Drawing.Point(20, 43);
             this.panel1.MinimumSize = new System.Drawing.Size(456, 482);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 514);
+            this.panel1.Size = new System.Drawing.Size(456, 510);
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
             // 
@@ -590,9 +600,9 @@ namespace Ofelia_Sara
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(23, 160);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(23, 158);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(430, 351);
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(415, 349);
             this.panel_ControlesInferiores.TabIndex = 42;
             // 
             // label_Cargo
@@ -637,7 +647,6 @@ namespace Ofelia_Sara
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Localidad.TabIndex = 2;
-            this.comboBox_Localidad.TextChanged += new System.EventHandler(this.comboBox_Localidad_TextChanged);
             this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
             // 
             // lbl_DeptoJudicial
