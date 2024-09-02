@@ -97,6 +97,7 @@ namespace Ofelia_Sara
             MayusculaSola.AplicarAControl(comboBox_Localidad);
             MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
+            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
             //-----------------------------------------------------------------
@@ -750,17 +751,7 @@ namespace Ofelia_Sara
             comboBox_Dependencia.SelectedIndex = -1;
         }
 
-        private void comboBox_AgenteFiscal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true; // Rechaza caracteres no válidos.
-            }
-            else
-            {
-                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
-            }
-        }
+       
 
         private void comboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -977,6 +968,6 @@ namespace Ofelia_Sara
             ActualizarEstado();
         }
 
-      
+    
     }
 }

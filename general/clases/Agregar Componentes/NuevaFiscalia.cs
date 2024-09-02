@@ -62,7 +62,7 @@ namespace Ofelia_Sara.general.clases.Agregar_Componentes
             textBox_DeptoJudicial.TextChanged += TextBox_TextChanged;
 
             MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
-            MayusculaYnumeros.AplicarAControl(textBox_Localidad);
+            MayusculaSola.AplicarAControl(textBox_Localidad);
 
            
         }

@@ -165,6 +165,18 @@
     <Compile Include="Acceso Usuarios\UsuarioForm.Designer.cs">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.Designer.cs">
+      <DependentUpon>AgegarFiscaliaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\AgregarFiscaliaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="general\clases\Apariencia General\Controles\AgregarFiscaliaControl.Designer.cs">
+      <DependentUpon>AgregarFiscaliaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Barra Busqueda\AccionesManager.cs" />
     <Compile Include="Base de Datos\DataBaseManagger.cs" />
     <Compile Include="Base de Datos\DataInserter.cs" />
@@ -438,6 +450,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Agregar Componentes\SellosDependencia.resx">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.resx">
+      <DependentUpon>AgegarFiscaliaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\AgregarFiscaliaControl.resx">
+      <DependentUpon>AgregarFiscaliaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>

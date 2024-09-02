@@ -315,8 +315,9 @@ namespace Ofelia_Sara
             this.comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
             this.comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
             this.comboBox_AgenteFiscal.TabIndex = 1;
+
             this.comboBox_AgenteFiscal.TextChanged += new System.EventHandler(this.comboBox_AgenteFiscal_TextChanged);
-            this.comboBox_AgenteFiscal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_AgenteFiscal_KeyPress);
+          
             // 
             // comboBox_Ipp1
             // 
