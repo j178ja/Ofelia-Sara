@@ -44,8 +44,8 @@
             this.groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
             this.radioButton_Word = new System.Windows.Forms.RadioButton();
             this.radioButton_Pdf = new System.Windows.Forms.RadioButton();
-            this.pictureBox_Word = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Pdf = new System.Windows.Forms.PictureBox();
+            this.pictureBox_AWord = new System.Windows.Forms.PictureBox();
+            this.pictureBox_APdf = new System.Windows.Forms.PictureBox();
             this.label_SelloEscalera = new System.Windows.Forms.Label();
             this.label_SelloMedalla = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -65,8 +65,8 @@
             this.panel1.SuspendLayout();
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
             this.groupBox_ConversorDocumentos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Word)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pdf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).BeginInit();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -196,8 +196,8 @@
             this.groupBox_ConversorDocumentos.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Word);
             this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Pdf);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_Word);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_Pdf);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_AWord);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_APdf);
             this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloEscalera);
             this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloMedalla);
             this.groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
@@ -221,31 +221,31 @@
             this.radioButton_Pdf.UseVisualStyleBackColor = true;
             this.radioButton_Pdf.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
-            // pictureBox_Word
+            // pictureBox_AWord
             // 
-            this.pictureBox_Word.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_Word.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
-            resources.ApplyResources(this.pictureBox_Word, "pictureBox_Word");
-            this.pictureBox_Word.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Word.Name = "pictureBox_Word";
-            this.pictureBox_Word.TabStop = false;
-            this.pictureBox_Word.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Word.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
-            this.pictureBox_Word.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
-            this.pictureBox_Word.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            this.pictureBox_AWord.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox_AWord.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
+            resources.ApplyResources(this.pictureBox_AWord, "pictureBox_AWord");
+            this.pictureBox_AWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_AWord.Name = "pictureBox_AWord";
+            this.pictureBox_AWord.TabStop = false;
+            this.pictureBox_AWord.Click += new System.EventHandler(this.PictureBox_AWord_Click);
+            this.pictureBox_AWord.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragDrop);
+            this.pictureBox_AWord.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragEnter);
+            this.pictureBox_AWord.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
-            // pictureBox_Pdf
+            // pictureBox_APdf
             // 
-            this.pictureBox_Pdf.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_Pdf.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
-            resources.ApplyResources(this.pictureBox_Pdf, "pictureBox_Pdf");
-            this.pictureBox_Pdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Pdf.Name = "pictureBox_Pdf";
-            this.pictureBox_Pdf.TabStop = false;
-            this.pictureBox_Pdf.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Pdf.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
-            this.pictureBox_Pdf.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
-            this.pictureBox_Pdf.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            this.pictureBox_APdf.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox_APdf.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
+            resources.ApplyResources(this.pictureBox_APdf, "pictureBox_APdf");
+            this.pictureBox_APdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_APdf.Name = "pictureBox_APdf";
+            this.pictureBox_APdf.TabStop = false;
+            this.pictureBox_APdf.Click += new System.EventHandler(this.PictureBox_APdf_Click);
+            this.pictureBox_APdf.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragDrop);
+            this.pictureBox_APdf.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragEnter);
+            this.pictureBox_APdf.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
             // label_SelloEscalera
             // 
@@ -365,8 +365,8 @@
             this.groupBox_SeleccionadorProcedencia.PerformLayout();
             this.groupBox_ConversorDocumentos.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Word)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pdf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,8 +396,8 @@
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.PictureBox pictureBox_Word;
-        private System.Windows.Forms.PictureBox pictureBox_Pdf;
+        private System.Windows.Forms.PictureBox pictureBox_AWord;
+        private System.Windows.Forms.PictureBox pictureBox_APdf;
         private System.Windows.Forms.Label label_SelloEscalera;
         private System.Windows.Forms.Label label_SelloMedalla;
         private System.Windows.Forms.Button btn_Convertir;

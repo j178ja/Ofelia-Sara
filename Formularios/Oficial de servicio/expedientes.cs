@@ -1,9 +1,17 @@
-﻿using Ofelia_Sara.general.clases;
+﻿using Microsoft.Office.Interop.Word;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using WordApp = Microsoft.Office.Interop.Word.Application;
+using WinFormsApp = System.Windows.Forms.Application;
+using DrawingPoint = System.Drawing.Point;
+using WordPoint = Microsoft.Office.Interop.Word.Point;
+
+
+
 
 namespace Ofelia_Sara
 {
@@ -29,14 +37,14 @@ namespace Ofelia_Sara
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-            pictureBox_Pdf.AllowDrop = true;
-            pictureBox_Word.AllowDrop = true;
+            pictureBox_APdf.AllowDrop = true;
+            pictureBox_AWord.AllowDrop = true;
         
-            pictureBox_Pdf.DragEnter += PictureBox_DragEnter;
-            pictureBox_Word.DragEnter += PictureBox_DragEnter;
+            pictureBox_APdf.DragEnter += PictureBox_APdf_DragEnter;
+            pictureBox_AWord.DragEnter += PictureBox_AWord_DragEnter;
           
-            pictureBox_Pdf.DragDrop += PictureBox_DragDrop;
-            pictureBox_Word.DragDrop += PictureBox_DragDrop;
+            pictureBox_APdf.DragDrop += PictureBox_APdf_DragDrop;
+            pictureBox_AWord.DragDrop += PictureBox_AWord_DragDrop;
 
             ActualizarControles();
 
@@ -45,35 +53,93 @@ namespace Ofelia_Sara
 
         }
         //Eventos para cargar imagenes en los pictureBox
-        private void PictureBox_Click(object sender, EventArgs e)
+
+        //----CARGAR ARCHIVO WORD PARA CONVERTIR A PDF----------------
+        private void PictureBox_APdf_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
             if (pictureBox != null && pictureBox.Enabled)
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    openFileDialog.Filter = "Archivos Word (*.doc;*.docx)|*.doc;*.docx";
+                    openFileDialog.Title = "Selecciona un archivo WORD";
+
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         try
                         {
-                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                            // Ruta del archivo Word
+                            string wordFilePath = openFileDialog.FileName;
+
+                            // Define la ruta para el archivo PDF
+                            string pdfFilePath = System.IO.Path.ChangeExtension(wordFilePath, ".pdf");
+
+                            // Crea una instancia de la aplicación Word
+                            WordApp wordApp = new WordApp();
+                            Document wordDoc = wordApp.Documents.Open(wordFilePath);
+
+                            // Guarda el documento en formato PDF
+                            wordDoc.SaveAs2(pdfFilePath, WdSaveFormat.wdFormatPDF);
+
+                            // Cierra el documento y la aplicación
+                            wordDoc.Close();
+                            wordApp.Quit();
+
+                            // Muestra un mensaje con la ruta del archivo PDF
+                            MessageBox.Show($"Archivo convertido a PDF: {pdfFilePath}");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                            MessageBox.Show("No se pudo convertir el archivo Word a PDF. " + ex.Message);
                         }
                     }
                 }
             }
         }
+
+
+        //---´PARA QUE CONVIERTA ARCHIVOS PDF A WORD-----
+        private void PictureBox_AWord_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    // Configura el filtro para archivos PDF
+                    openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
+                    openFileDialog.Title = "Selecciona un archivo PDF";
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            // Mostrar mensaje o realizar acción con el archivo PDF
+                            MessageBox.Show($"Archivo PDF seleccionado: {openFileDialog.FileName}");
+
+                            // Si deseas abrir el archivo PDF en la aplicación predeterminada del sistema
+                            System.Diagnostics.Process.Start(openFileDialog.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo abrir el archivo PDF. " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
         //----------------------------------------------------
-        private void PictureBox_DragEnter(object sender, DragEventArgs e)
+        private void PictureBox_AWord_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                if (files.Length > 0 && (files[0].EndsWith(".jpg") || files[0].EndsWith(".jpeg") || files[0].EndsWith(".png") || files[0].EndsWith(".bmp")))
+                if (files.Length > 0 && files[0].EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
                 {
                     e.Effect = DragDropEffects.Copy;
                 }
@@ -83,8 +149,25 @@ namespace Ofelia_Sara
                 }
             }
         }
-        //------------------------------------------------------------
-        private void PictureBox_DragDrop(object sender, DragEventArgs e)
+        private void PictureBox_APdf_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length > 0 &&
+                    (files[0].EndsWith(".doc", StringComparison.OrdinalIgnoreCase) ||
+                     files[0].EndsWith(".docx", StringComparison.OrdinalIgnoreCase)))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+        }
+
+        private void PictureBox_APdf_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
             if (pictureBox != null)
@@ -92,43 +175,73 @@ namespace Ofelia_Sara
                 try
                 {
                     string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                    if (files.Length > 0)
+                    if (files.Length > 0 &&
+                        (files[0].EndsWith(".doc", StringComparison.OrdinalIgnoreCase) ||
+                         files[0].EndsWith(".docx", StringComparison.OrdinalIgnoreCase)))
                     {
-                        // Cargar la imagen desde el archivo
-                        Image img = Image.FromFile(files[0]);
-
-                        // Establecer la imagen en el PictureBox
-                        pictureBox.Image = img;
+                        // Puedes realizar una acción específica con el archivo de Word, como abrirlo en Word
+                        System.Diagnostics.Process.Start(files[0]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El archivo arrastrado no es un documento de Word.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo cargar el documento: " + ex.Message);
+                    MessageBox.Show("No se pudo procesar el documento: " + ex.Message);
                 }
             }
         }
+
+        //_________________________________________________________________________________
+        private void PictureBox_AWord_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                try
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    if (files.Length > 0 && files[0].EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Puedes realizar una acción específica con el archivo PDF, como abrirlo en un visor de PDF
+                        System.Diagnostics.Process.Start(files[0]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El archivo arrastrado no es un PDF.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo procesar el documento: " + ex.Message);
+                }
+            }
+        }
+
 
         private void ActualizarControles()
         {
             // Si el RadioButton Pdf está marcado
             if (radioButton_Pdf.Checked)
             {
-                ActualizarPictureBox(pictureBox_Pdf, true);  // Habilita PictureBox Pdf
-                ActualizarPictureBox(pictureBox_Word, false); // Deshabilita PictureBox Word
+                ActualizarPictureBox(pictureBox_APdf, true);  // Habilita PictureBox Pdf
+                ActualizarPictureBox(pictureBox_AWord, false); // Deshabilita PictureBox Word
                 btn_Convertir.Enabled = true; // Habilita el botón
             }
             // Si el RadioButton Word está marcado
             else if (radioButton_Word.Checked)
             {
-                ActualizarPictureBox(pictureBox_Pdf, false);  // Deshabilita PictureBox Pdf
-                ActualizarPictureBox(pictureBox_Word, true);  // Habilita PictureBox Word
+                ActualizarPictureBox(pictureBox_APdf, false);  // Deshabilita PictureBox Pdf
+                ActualizarPictureBox(pictureBox_AWord, true);  // Habilita PictureBox Word
                 btn_Convertir.Enabled = true; // Habilita el botón
             }
             // Si ninguno de los dos RadioButton está marcado
             else
             {
-                ActualizarPictureBox(pictureBox_Pdf, false);  // Deshabilita ambos PictureBox
-                ActualizarPictureBox(pictureBox_Word, false);
+                ActualizarPictureBox(pictureBox_APdf, false);  // Deshabilita ambos PictureBox
+                ActualizarPictureBox(pictureBox_AWord, false);
                 btn_Convertir.Enabled = false; // Deshabilita el botón
             }
         }
@@ -178,7 +291,7 @@ namespace Ofelia_Sara
         protected void EstiloBotonConvertir(Button boton)
         {
             Size originalSize = boton.Size;
-            Point originalLocation = boton.Location;
+            System.Drawing.Point originalLocation = boton.Location;
 
             // Evento Paint: Dibuja un borde redondeado y aplica el color del texto solo si el botón está habilitado
             boton.Paint += (sender, e) =>
@@ -206,10 +319,10 @@ namespace Ofelia_Sara
                 using (GraphicsPath path = new GraphicsPath())
                 {
                     // Define el rectángulo con el radio especificado
-                    path.AddArc(new Rectangle(0, 0, bordeRadio, bordeRadio), 180, 90);
-                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, 0, bordeRadio, bordeRadio), 270, 90);
-                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 0, 90);
-                    path.AddArc(new Rectangle(0, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 90, 90);
+                    path.AddArc(new System.Drawing.Rectangle(0, 0, bordeRadio, bordeRadio), 180, 90);
+                    path.AddArc(new System.Drawing.Rectangle(boton.Width - bordeRadio - 1, 0, bordeRadio, bordeRadio), 270, 90);
+                    path.AddArc(new System.Drawing.Rectangle(boton.Width - bordeRadio - 1, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 0, 90);
+                    path.AddArc(new System.Drawing.Rectangle(0, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 90, 90);
                     path.CloseAllFigures();
 
                     // Dibuja el borde con el color especificado
@@ -229,14 +342,14 @@ namespace Ofelia_Sara
                     boton.ForeColor = Color.White; // Cambia el color del texto a blanco si no está presionado
                 }
 
-                int incremento = 5;
+                int incremento = 10;
                 int nuevoAncho = originalSize.Width + incremento;
                 int nuevoAlto = originalSize.Height + incremento;
                 int deltaX = (nuevoAncho - originalSize.Width) / 2;
                 int deltaY = (nuevoAlto - originalSize.Height) / 2;
 
                 boton.Size = new Size(nuevoAncho, nuevoAlto);
-                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
+                boton.Location = new System.Drawing.Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
 
                 boton.Invalidate(); // Redibuja el botón para aplicar el borde
             };
