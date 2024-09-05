@@ -73,6 +73,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
@@ -573,10 +576,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="general\imagenes\pdf.png" />
     <None Include="general\imagenes\subir_documentos.png" />
     <None Include="Resources\subir_archivo.bmp" />
     <None Include="general\imagenes\ICOes.png" />
     <None Include="general\imagenes\IconoEscudoPolicia.ico" />
+    <None Include="general\imagenes\borrar.png" />
+    <None Include="general\imagenes\borrar 24%281%29.png" />
+    <None Include="general\imagenes\doc.png" />
     <Content Include="general\imagenes\ojoCerrado.png" />
     <None Include="Resources\escudoPolicial.png" />
     <None Include="general\imagenes\ojoINICIO.png" />

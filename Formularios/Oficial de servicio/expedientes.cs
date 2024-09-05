@@ -11,6 +11,8 @@ using DrawingPoint = System.Drawing.Point;
 using WordPoint = Microsoft.Office.Interop.Word.Point;
 
 
+using Microsoft.Office.Interop.Word;
+
 
 
 namespace Ofelia_Sara
@@ -86,8 +88,12 @@ namespace Ofelia_Sara
                             wordDoc.Close();
                             wordApp.Quit();
 
-                            // Muestra un mensaje con la ruta del archivo PDF
-                            MessageBox.Show($"Archivo convertido a PDF: {pdfFilePath}");
+                            pictureBox.Image = Properties.Resources.doc;
+
+                            // Ajusta la imagen al tamaño del PictureBox manteniendo su proporción
+                            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox.BackColor = Color.LightGreen;
+
                         }
                         catch (Exception ex)
                         {
@@ -103,27 +109,36 @@ namespace Ofelia_Sara
         private void PictureBox_AWord_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
+
+            // Verifica que el PictureBox esté habilitado (si es necesario)
             if (pictureBox != null && pictureBox.Enabled)
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    // Configura el filtro para archivos PDF
-                    openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
-                    openFileDialog.Title = "Selecciona un archivo PDF";
+                    // Configurar el filtro para permitir solo PDF o Word (modificable según lo que desees)
+                    openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf|Archivos Word (*.doc;*.docx)|*.doc;*.docx";
+                    openFileDialog.Title = "Selecciona un archivo";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         try
                         {
-                            // Mostrar mensaje o realizar acción con el archivo PDF
-                            MessageBox.Show($"Archivo PDF seleccionado: {openFileDialog.FileName}");
+                            // Cambia la imagen del PictureBox para indicar que el archivo fue cargado
+                            pictureBox.Image = Properties.Resources.pdf;
 
-                            // Si deseas abrir el archivo PDF en la aplicación predeterminada del sistema
-                            System.Diagnostics.Process.Start(openFileDialog.FileName);
+                            // Ajusta la imagen al tamaño del PictureBox manteniendo su proporción
+                            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+                            // Opcional: Cambiar también el color de fondo del PictureBox
+                            pictureBox.BackColor = Color.LightGreen;
+
+                            // Manejar el archivo cargado según sea necesario
+                            string filePath = openFileDialog.FileName;
+                            // Puedes realizar más acciones con el archivo si es necesario
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo abrir el archivo PDF. " + ex.Message);
+                            MessageBox.Show("No se pudo cambiar la imagen del PictureBox: " + ex.Message);
                         }
                     }
                 }
@@ -285,6 +300,8 @@ namespace Ofelia_Sara
                 }
             }
         }
+
+        //---------------------------------------------------------------------------------------------
         // Método para estilizar el botón según si está habilitado o deshabilitado
         bool botonPresionado = false; // Variable para controlar el estado del botón
 
@@ -390,5 +407,11 @@ namespace Ofelia_Sara
             boton.Invalidate();
         }
 
+        private void btn_EliminarArchivo_Click(object sender, EventArgs e)
+        {
+            radioButton_Pdf.Checked = false; // Desmarcar el CheckBox
+            radioButton_Word.Checked = false; // Desmarcar el CheckBox
+
+        }
     }
 }
