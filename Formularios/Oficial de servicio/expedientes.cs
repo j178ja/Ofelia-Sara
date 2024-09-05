@@ -2,6 +2,7 @@
 using Ofelia_Sara.general.clases.Apariencia_General;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara
@@ -36,8 +37,11 @@ namespace Ofelia_Sara
           
             pictureBox_Pdf.DragDrop += PictureBox_DragDrop;
             pictureBox_Word.DragDrop += PictureBox_DragDrop;
-         
 
+            ActualizarControles();
+
+            // Estilo inicial del botón
+            EstiloBotonConvertir(btn_Convertir);
 
         }
         //Eventos para cargar imagenes en los pictureBox
@@ -104,41 +108,37 @@ namespace Ofelia_Sara
             }
         }
 
-        private void radioButton_Pdf_CheckedChanged(object sender, EventArgs e)
+        private void ActualizarControles()
         {
-            // Verifica si el RadioButton está marcado
+            // Si el RadioButton Pdf está marcado
             if (radioButton_Pdf.Checked)
             {
-                // Habilita el PictureBox si el RadioButton_Pdf está seleccionado
-                // Llama al método ActualizarPictureBox con el estado actual del RadioButton_Pdf
-                ActualizarPictureBox(pictureBox_Pdf, radioButton_Pdf.Checked);
-                btn_Convertir.Enabled = true;
+                ActualizarPictureBox(pictureBox_Pdf, true);  // Habilita PictureBox Pdf
+                ActualizarPictureBox(pictureBox_Word, false); // Deshabilita PictureBox Word
+                btn_Convertir.Enabled = true; // Habilita el botón
             }
+            // Si el RadioButton Word está marcado
+            else if (radioButton_Word.Checked)
+            {
+                ActualizarPictureBox(pictureBox_Pdf, false);  // Deshabilita PictureBox Pdf
+                ActualizarPictureBox(pictureBox_Word, true);  // Habilita PictureBox Word
+                btn_Convertir.Enabled = true; // Habilita el botón
+            }
+            // Si ninguno de los dos RadioButton está marcado
             else
             {
-                // Deshabilita el PictureBox si el RadioButton_Pdf no está seleccionado
-                pictureBox_Pdf.Enabled = false;
-                btn_Convertir.Enabled = false;
+                ActualizarPictureBox(pictureBox_Pdf, false);  // Deshabilita ambos PictureBox
+                ActualizarPictureBox(pictureBox_Word, false);
+                btn_Convertir.Enabled = false; // Deshabilita el botón
             }
         }
 
-        private void radioButton_Word_CheckedChanged(object sender, EventArgs e)
+        // Este método se llamará cuando cambie el estado de cualquiera de los RadioButtons
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            // Verifica si el RadioButton está marcado
-            if (radioButton_Word.Checked)
-            {
-                // Habilita el PictureBox si el RadioButton_Pdf está seleccionado
-                // Llama al método ActualizarPictureBox con el estado actual del RadioButton_Pdf
-                ActualizarPictureBox(pictureBox_Word, radioButton_Word.Checked);
-                btn_Convertir.Enabled = true;
-            }
-            else
-            {
-                // Deshabilita el PictureBox si el RadioButton_Pdf no está seleccionado
-                pictureBox_Word.Enabled = false;
-                btn_Convertir.Enabled = false;
-            }
+            ActualizarControles();
         }
+
 
         private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
         {
@@ -172,5 +172,110 @@ namespace Ofelia_Sara
                 }
             }
         }
+        // Método para estilizar el botón según si está habilitado o deshabilitado
+        bool botonPresionado = false; // Variable para controlar el estado del botón
+
+        protected void EstiloBotonConvertir(Button boton)
+        {
+            Size originalSize = boton.Size;
+            Point originalLocation = boton.Location;
+
+            // Evento Paint: Dibuja un borde redondeado y aplica el color del texto solo si el botón está habilitado
+            boton.Paint += (sender, e) =>
+            {
+                int bordeGrosor;
+                int bordeRadio;
+                Color bordeColor;
+                Color textoColor;
+
+                if (boton.Enabled)
+                {
+                    bordeGrosor = 3;
+                    bordeRadio = 12;
+                    bordeColor = Color.LightGreen;
+                    textoColor = botonPresionado ? Color.White : Color.Green; // Cambia el texto a blanco si está presionado
+                }
+                else
+                {
+                    bordeGrosor = 2;
+                    bordeRadio = 12;
+                    bordeColor = Color.Tomato;
+                    textoColor = Color.Red; // Color del texto cuando el botón está deshabilitado
+                }
+
+                using (GraphicsPath path = new GraphicsPath())
+                {
+                    // Define el rectángulo con el radio especificado
+                    path.AddArc(new Rectangle(0, 0, bordeRadio, bordeRadio), 180, 90);
+                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, 0, bordeRadio, bordeRadio), 270, 90);
+                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 0, 90);
+                    path.AddArc(new Rectangle(0, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 90, 90);
+                    path.CloseAllFigures();
+
+                    // Dibuja el borde con el color especificado
+                    e.Graphics.DrawPath(new Pen(bordeColor, bordeGrosor), path);
+                }
+
+                // Establece el color del texto
+                boton.ForeColor = textoColor;
+            };
+
+            // Evento MouseEnter: Cambia el tamaño desde el centro, fondo verde claro y texto blanco
+            boton.MouseEnter += (sender, e) =>
+            {
+                boton.BackColor = Color.LightGreen; // Cambia el fondo a verde claro
+                if (!botonPresionado)
+                {
+                    boton.ForeColor = Color.White; // Cambia el color del texto a blanco si no está presionado
+                }
+
+                int incremento = 5;
+                int nuevoAncho = originalSize.Width + incremento;
+                int nuevoAlto = originalSize.Height + incremento;
+                int deltaX = (nuevoAncho - originalSize.Width) / 2;
+                int deltaY = (nuevoAlto - originalSize.Height) / 2;
+
+                boton.Size = new Size(nuevoAncho, nuevoAlto);
+                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
+
+                boton.Invalidate(); // Redibuja el botón para aplicar el borde
+            };
+
+            // Evento MouseLeave: Restaura el tamaño, la posición y los colores originales
+            boton.MouseLeave += (sender, e) =>
+            {
+                boton.Size = originalSize;
+                boton.Location = originalLocation;
+                boton.BackColor = Color.White; // Fondo original blanco
+                if (!botonPresionado)
+                {
+                    boton.ForeColor = Color.Green; // Letra verde cuando no está en hover
+                }
+
+                boton.Invalidate(); // Redibuja el botón para aplicar el borde
+            };
+
+            // Evento MouseDown: Cambia el color cuando el botón se presiona
+            boton.MouseDown += (sender, e) =>
+            {
+                botonPresionado = true; // Indica que el botón está presionado
+                boton.BackColor = Color.Green; // Cambia el fondo a verde oscuro
+                boton.ForeColor = Color.White; // Cambia el texto a blanco
+                boton.Invalidate(); // Redibuja el botón
+            };
+
+            // Evento MouseUp: Restaura el color cuando se suelta el botón
+            boton.MouseUp += (sender, e) =>
+            {
+                botonPresionado = false; // Indica que el botón ya no está presionado
+                boton.BackColor = Color.LightGreen; // Cambia el fondo a verde claro
+                boton.ForeColor = Color.White; // Mantiene el texto blanco
+                boton.Invalidate(); // Redibuja el botón
+            };
+
+            // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
+            boton.Invalidate();
+        }
+
     }
 }
