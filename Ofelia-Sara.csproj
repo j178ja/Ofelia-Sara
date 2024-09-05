@@ -165,6 +165,12 @@
     <Compile Include="Acceso Usuarios\UsuarioForm.Designer.cs">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.Designer.cs">
+      <DependentUpon>ConversorDeDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -421,11 +427,20 @@
     <EmbeddedResource Include="Formularios\Oficial de servicio\Contravenciones.resx">
       <DependentUpon>Contravenciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\ConversorDeDocumentos.resx">
+      <DependentUpon>ConversorDeDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesConcubina.resx">
       <DependentUpon>AgregarDatosPersonalesConcubina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.resx">
       <DependentUpon>AgregarDatosPersonalesVictima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\expedientes.aa.resx">
+      <DependentUpon>Expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\expedientes.ko-KP.resx">
+      <DependentUpon>Expedientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
@@ -558,6 +573,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="general\imagenes\subir_documentos.png" />
+    <None Include="Resources\subir_archivo.bmp" />
     <None Include="general\imagenes\ICOes.png" />
     <None Include="general\imagenes\IconoEscudoPolicia.ico" />
     <Content Include="general\imagenes\ojoCerrado.png" />
