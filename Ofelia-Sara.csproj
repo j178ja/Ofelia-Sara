@@ -174,11 +174,11 @@
     <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.Designer.cs">
       <DependentUpon>ConversorDeDocumentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.cs">
+    <Compile Include="general\clases\Apariencia General\Controles\AgregarJuzgadoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.Designer.cs">
-      <DependentUpon>AgegarFiscaliaControl.cs</DependentUpon>
+    <Compile Include="general\clases\Apariencia General\Controles\AgregarJuzgadoControl.Designer.cs">
+      <DependentUpon>AgregarJuzgadoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\AgregarFiscaliaControl.cs">
       <SubType>UserControl</SubType>
@@ -469,8 +469,8 @@
     <EmbeddedResource Include="general\clases\Agregar Componentes\SellosDependencia.resx">
       <DependentUpon>SellosDependencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="general\clases\Apariencia General\Controles\AgegarFiscaliaControl.resx">
-      <DependentUpon>AgegarFiscaliaControl.cs</DependentUpon>
+    <EmbeddedResource Include="general\clases\Apariencia General\Controles\AgregarJuzgadoControl.resx">
+      <DependentUpon>AgregarJuzgadoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\AgregarFiscaliaControl.resx">
       <DependentUpon>AgregarFiscaliaControl.cs</DependentUpon>

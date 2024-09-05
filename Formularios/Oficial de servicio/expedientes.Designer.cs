@@ -30,10 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_EliminarArchivo = new System.Windows.Forms.Button();
+            this.panel_Control = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_Instructor = new System.Windows.Forms.Label();
+            this.lbl_Secretario = new System.Windows.Forms.Label();
+            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            this.lbl_Fecha = new System.Windows.Forms.Label();
+            this.lbl_Dependencia = new System.Windows.Forms.Label();
+            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
+            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
+            this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
             this.panel_Descargas = new System.Windows.Forms.Panel();
             this.btn_Convertir = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
@@ -43,31 +53,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
+            this.btn_EliminarArchivo = new System.Windows.Forms.Button();
             this.radioButton_Word = new System.Windows.Forms.RadioButton();
             this.radioButton_Pdf = new System.Windows.Forms.RadioButton();
             this.pictureBox_AWord = new System.Windows.Forms.PictureBox();
             this.pictureBox_APdf = new System.Windows.Forms.PictureBox();
             this.label_SelloEscalera = new System.Windows.Forms.Label();
             this.label_SelloMedalla = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.lbl_Caratula = new System.Windows.Forms.Label();
             this.textBox_Causante = new System.Windows.Forms.TextBox();
             this.lbl_Victima = new System.Windows.Forms.Label();
-            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
-            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
-            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
-            this.lbl_Dependencia = new System.Windows.Forms.Label();
-            this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
-            this.lbl_Secretario = new System.Windows.Forms.Label();
-            this.lbl_Instructor = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
             this.groupBox_ConversorDocumentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -77,65 +82,131 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel_Control);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.groupBox_SeleccionadorProcedencia);
-            this.panel1.Controls.Add(this.panel_Descargas);
-            this.panel1.Controls.Add(this.btn_Convertir);
-            this.panel1.Controls.Add(this.btn_Imprimir);
-            this.panel1.Controls.Add(this.btn_Limpiar);
-            this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.btn_Buscar);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.groupBox_ConversorDocumentos);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.textBox_Caratula);
             this.panel1.Controls.Add(this.lbl_Caratula);
             this.panel1.Controls.Add(this.textBox_Causante);
             this.panel1.Controls.Add(this.lbl_Victima);
-            this.panel1.Controls.Add(this.comboBox_Secretario);
-            this.panel1.Controls.Add(this.comboBox_Instructor);
-            this.panel1.Controls.Add(this.comboBox_Dependencia);
-            this.panel1.Controls.Add(this.lbl_Dependencia);
-            this.panel1.Controls.Add(this.lbl_Fecha);
-            this.panel1.Controls.Add(this.timePickerPersonalizado1);
-            this.panel1.Controls.Add(this.lbl_Secretario);
-            this.panel1.Controls.Add(this.lbl_Instructor);
             this.panel1.Controls.Add(this.label17);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // btn_EliminarArchivo
+            // panel_Control
             // 
-            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar_24_1_;
-            resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
-            this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
-            this.btn_EliminarArchivo.UseVisualStyleBackColor = true;
-            this.btn_EliminarArchivo.Click += new System.EventHandler(this.btn_EliminarArchivo_Click);
+            this.panel_Control.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            resources.ApplyResources(this.panel_Control, "panel_Control");
+            this.panel_Control.Name = "panel_Control";
+            // 
+            // panel3
+            // 
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.lbl_Instructor);
+            this.panel3.Controls.Add(this.lbl_Secretario);
+            this.panel3.Controls.Add(this.timePickerPersonalizado1);
+            this.panel3.Controls.Add(this.lbl_Fecha);
+            this.panel3.Controls.Add(this.lbl_Dependencia);
+            this.panel3.Controls.Add(this.comboBox_Dependencia);
+            this.panel3.Controls.Add(this.comboBox_Instructor);
+            this.panel3.Controls.Add(this.comboBox_Secretario);
+            this.panel3.Name = "panel3";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label15.Name = "label15";
+            // 
+            // lbl_Instructor
+            // 
+            resources.ApplyResources(this.lbl_Instructor, "lbl_Instructor");
+            this.lbl_Instructor.Name = "lbl_Instructor";
+            // 
+            // lbl_Secretario
+            // 
+            resources.ApplyResources(this.lbl_Secretario, "lbl_Secretario");
+            this.lbl_Secretario.Name = "lbl_Secretario";
+            // 
+            // timePickerPersonalizado1
+            // 
+            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            resources.ApplyResources(this.timePickerPersonalizado1, "timePickerPersonalizado1");
+            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
+            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+            // 
+            // lbl_Fecha
+            // 
+            resources.ApplyResources(this.lbl_Fecha, "lbl_Fecha");
+            this.lbl_Fecha.Name = "lbl_Fecha";
+            // 
+            // lbl_Dependencia
+            // 
+            resources.ApplyResources(this.lbl_Dependencia, "lbl_Dependencia");
+            this.lbl_Dependencia.Name = "lbl_Dependencia";
+            // 
+            // comboBox_Dependencia
+            // 
+            this.comboBox_Dependencia.FormattingEnabled = true;
+            this.comboBox_Dependencia.Items.AddRange(new object[] {
+            resources.GetString("comboBox_Dependencia.Items"),
+            resources.GetString("comboBox_Dependencia.Items1"),
+            resources.GetString("comboBox_Dependencia.Items2"),
+            resources.GetString("comboBox_Dependencia.Items3")});
+            resources.ApplyResources(this.comboBox_Dependencia, "comboBox_Dependencia");
+            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
+            // 
+            // comboBox_Instructor
+            // 
+            resources.ApplyResources(this.comboBox_Instructor, "comboBox_Instructor");
+            this.comboBox_Instructor.FormattingEnabled = true;
+            this.comboBox_Instructor.Items.AddRange(new object[] {
+            resources.GetString("comboBox_Instructor.Items"),
+            resources.GetString("comboBox_Instructor.Items1"),
+            resources.GetString("comboBox_Instructor.Items2")});
+            this.comboBox_Instructor.Name = "comboBox_Instructor";
+            // 
+            // comboBox_Secretario
+            // 
+            resources.ApplyResources(this.comboBox_Secretario, "comboBox_Secretario");
+            this.comboBox_Secretario.FormattingEnabled = true;
+            this.comboBox_Secretario.Items.AddRange(new object[] {
+            resources.GetString("comboBox_Secretario.Items"),
+            resources.GetString("comboBox_Secretario.Items1"),
+            resources.GetString("comboBox_Secretario.Items2"),
+            resources.GetString("comboBox_Secretario.Items3"),
+            resources.GetString("comboBox_Secretario.Items4")});
+            this.comboBox_Secretario.Name = "comboBox_Secretario";
             // 
             // groupBox_SeleccionadorProcedencia
             // 
-            this.groupBox_SeleccionadorProcedencia.Controls.Add(this.radioButton2);
-            this.groupBox_SeleccionadorProcedencia.Controls.Add(this.radioButton1);
+            this.groupBox_SeleccionadorProcedencia.Controls.Add(this.radioButton_Juzgado);
+            this.groupBox_SeleccionadorProcedencia.Controls.Add(this.radioButton_Fiscalia);
             this.groupBox_SeleccionadorProcedencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox_SeleccionadorProcedencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             resources.ApplyResources(this.groupBox_SeleccionadorProcedencia, "groupBox_SeleccionadorProcedencia");
             this.groupBox_SeleccionadorProcedencia.Name = "groupBox_SeleccionadorProcedencia";
             this.groupBox_SeleccionadorProcedencia.TabStop = false;
             // 
-            // radioButton2
+            // radioButton_Juzgado
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.radioButton_Juzgado, "radioButton_Juzgado");
+            this.radioButton_Juzgado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_Juzgado.Name = "radioButton_Juzgado";
+            this.radioButton_Juzgado.TabStop = true;
+            this.radioButton_Juzgado.UseVisualStyleBackColor = true;
+            this.radioButton_Juzgado.CheckedChanged += new System.EventHandler(this.radioButton_Juzgado_CheckedChanged);
             // 
-            // radioButton1
+            // radioButton_Fiscalia
             // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.radioButton_Fiscalia, "radioButton_Fiscalia");
+            this.radioButton_Fiscalia.Name = "radioButton_Fiscalia";
+            this.radioButton_Fiscalia.TabStop = true;
+            this.radioButton_Fiscalia.UseVisualStyleBackColor = true;
+            this.radioButton_Fiscalia.CheckedChanged += new System.EventHandler(this.radioButton_Fiscalia_CheckedChanged);
             // 
             // panel_Descargas
             // 
@@ -213,6 +284,14 @@
             this.groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
             this.groupBox_ConversorDocumentos.TabStop = false;
             // 
+            // btn_EliminarArchivo
+            // 
+            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar_24_1_;
+            resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
+            this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
+            this.btn_EliminarArchivo.UseVisualStyleBackColor = true;
+            this.btn_EliminarArchivo.Click += new System.EventHandler(this.btn_EliminarArchivo_Click);
+            // 
             // radioButton_Word
             // 
             resources.ApplyResources(this.radioButton_Word, "radioButton_Word");
@@ -267,12 +346,6 @@
             resources.ApplyResources(this.label_SelloMedalla, "label_SelloMedalla");
             this.label_SelloMedalla.Name = "label_SelloMedalla";
             // 
-            // label15
-            // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label15.Name = "label15";
-            // 
             // textBox_Caratula
             // 
             resources.ApplyResources(this.textBox_Caratula, "textBox_Caratula");
@@ -293,72 +366,25 @@
             resources.ApplyResources(this.lbl_Victima, "lbl_Victima");
             this.lbl_Victima.Name = "lbl_Victima";
             // 
-            // comboBox_Secretario
-            // 
-            resources.ApplyResources(this.comboBox_Secretario, "comboBox_Secretario");
-            this.comboBox_Secretario.FormattingEnabled = true;
-            this.comboBox_Secretario.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Secretario.Items"),
-            resources.GetString("comboBox_Secretario.Items1"),
-            resources.GetString("comboBox_Secretario.Items2"),
-            resources.GetString("comboBox_Secretario.Items3"),
-            resources.GetString("comboBox_Secretario.Items4")});
-            this.comboBox_Secretario.Name = "comboBox_Secretario";
-            // 
-            // comboBox_Instructor
-            // 
-            resources.ApplyResources(this.comboBox_Instructor, "comboBox_Instructor");
-            this.comboBox_Instructor.FormattingEnabled = true;
-            this.comboBox_Instructor.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Instructor.Items"),
-            resources.GetString("comboBox_Instructor.Items1"),
-            resources.GetString("comboBox_Instructor.Items2")});
-            this.comboBox_Instructor.Name = "comboBox_Instructor";
-            // 
-            // comboBox_Dependencia
-            // 
-            this.comboBox_Dependencia.FormattingEnabled = true;
-            this.comboBox_Dependencia.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Dependencia.Items"),
-            resources.GetString("comboBox_Dependencia.Items1"),
-            resources.GetString("comboBox_Dependencia.Items2"),
-            resources.GetString("comboBox_Dependencia.Items3")});
-            resources.ApplyResources(this.comboBox_Dependencia, "comboBox_Dependencia");
-            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
-            // 
-            // lbl_Dependencia
-            // 
-            resources.ApplyResources(this.lbl_Dependencia, "lbl_Dependencia");
-            this.lbl_Dependencia.Name = "lbl_Dependencia";
-            // 
-            // lbl_Fecha
-            // 
-            resources.ApplyResources(this.lbl_Fecha, "lbl_Fecha");
-            this.lbl_Fecha.Name = "lbl_Fecha";
-            // 
-            // timePickerPersonalizado1
-            // 
-            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            resources.ApplyResources(this.timePickerPersonalizado1, "timePickerPersonalizado1");
-            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
-            // 
-            // lbl_Secretario
-            // 
-            resources.ApplyResources(this.lbl_Secretario, "lbl_Secretario");
-            this.lbl_Secretario.Name = "lbl_Secretario";
-            // 
-            // lbl_Instructor
-            // 
-            resources.ApplyResources(this.lbl_Instructor, "lbl_Instructor");
-            this.lbl_Instructor.Name = "lbl_Instructor";
-            // 
             // label17
             // 
             resources.ApplyResources(this.label17, "label17");
             this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label17.Name = "label17";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_Convertir);
+            this.panel2.Controls.Add(this.groupBox_ConversorDocumentos);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.panel_Descargas);
+            this.panel2.Controls.Add(this.btn_Imprimir);
+            this.panel2.Controls.Add(this.btn_Limpiar);
+            this.panel2.Controls.Add(this.btn_Buscar);
+            this.panel2.Controls.Add(this.btn_Guardar);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
             // 
             // Expedientes
             // 
@@ -371,12 +397,16 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.groupBox_SeleccionadorProcedencia.ResumeLayout(false);
             this.groupBox_SeleccionadorProcedencia.PerformLayout();
             this.groupBox_ConversorDocumentos.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,10 +443,13 @@
         private System.Windows.Forms.Button btn_Convertir;
         private System.Windows.Forms.Panel panel_Descargas;
         private System.Windows.Forms.GroupBox groupBox_SeleccionadorProcedencia;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton_Juzgado;
+        private System.Windows.Forms.RadioButton radioButton_Fiscalia;
         private System.Windows.Forms.RadioButton radioButton_Pdf;
         private System.Windows.Forms.RadioButton radioButton_Word;
         private System.Windows.Forms.Button btn_EliminarArchivo;
+        private System.Windows.Forms.Panel panel_Control;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

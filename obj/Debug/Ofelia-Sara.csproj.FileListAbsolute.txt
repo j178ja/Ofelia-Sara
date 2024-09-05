@@ -107,7 +107,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Base de Datos\Leyes\D
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Base de Datos\Leyes\Decreto 8031 Codigo de Faltas.pdf
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Base de Datos\Leyes\Ley 13982.pdf
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Base de Datos\Leyes\Reglamento de tramite y correspondencia.pdf
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.AgegarFiscaliaControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.AgregarFiscaliaControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Oficial_de_servicio.ConversorDeDocumentos.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\aa\Ofelia-Sara.resources.dll
@@ -119,3 +118,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\ko-KP\Ofelia-Sara.res
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\PdfiumViewer.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\PdfiumViewer.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\nl\PdfiumViewer.resources.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.AgregarJuzgadoControl.resources
