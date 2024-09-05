@@ -518,7 +518,9 @@ namespace Ofelia_Sara
                 panel_Control.Width = juzgadoControl.Width;
                 panel_Control.Height = juzgadoControl.Height;
 
-                AjustarTamañoFormulario();
+                // Ajusta el formulario en función del nuevo control agregado
+                
+                AjustarTamañoFormulario(juzgadoControl.Height, eliminar: false);
               
             }
         }
@@ -529,8 +531,20 @@ namespace Ofelia_Sara
         // Método para limpiar el panel antes de agregar un nuevo control
         private void LimpiarPanelControl()
         {
-            // Elimina todos los controles en el panel
-            panel_Control.Controls.Clear();
+            if (panel_Control.Controls.Count > 0)
+            {
+                // Obtén el control actual que será removido
+                Control controlARemover = panel_Control.Controls[panel_Control.Controls.Count - 1];
+
+                // Obtén la altura del control a remover
+                int alturaControlRemovido = controlARemover.Height;
+
+                // Remueve el control del panel
+                panel_Control.Controls.Clear();
+
+                // Ajusta el tamaño del formulario como si se hubiera eliminado un control
+                AjustarTamañoFormulario(alturaControlRemovido, eliminar: true);
+            }
         }
 
         private void radioButton_Fiscalia_CheckedChanged(object sender, EventArgs e)
@@ -555,19 +569,33 @@ namespace Ofelia_Sara
                 panel_Control.Width = fiscaliaControl.Width;
                 panel_Control.Height = fiscaliaControl.Height;
 
-                AjustarTamañoFormulario();
                 
+                AjustarTamañoFormulario(fiscaliaControl.Height, eliminar: false);
+
             }
         }
 
-        private void AjustarTamañoFormulario()
+        private void AjustarTamañoFormulario(int alturaControlRemovido, bool eliminar = false)
         {
-            // Obtén la altura del último control agregado al panel_Control
+            // Calcula la altura del panel_Control
             int alturaNuevoControl = panel_Control.Controls.OfType<Control>().LastOrDefault()?.Height ?? 0;
 
             // Ajusta el tamaño del formulario en función del tamaño del panel_Control
             int panelControlBottom = panel_Control.Bottom;
-            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height); // Añade un margen opcional de 10 píxeles
+            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height);
+
+            if (eliminar)
+            {
+                // Si se eliminó un control, reduce el tamaño del formulario y panel1
+                formHeight -= alturaControlRemovido;
+                panel1.Height -= alturaControlRemovido;
+            }
+            else
+            {
+                // Si se agregó un control, incrementa el tamaño del formulario y panel1
+                formHeight += alturaNuevoControl;
+                panel1.Height += alturaNuevoControl;
+            }
 
             // Ajusta el tamaño del formulario
             this.ClientSize = new Size(this.ClientSize.Width, formHeight);
@@ -581,20 +609,52 @@ namespace Ofelia_Sara
             this.StartPosition = FormStartPosition.Manual; // Asegura que el formulario no use la posición predeterminada
             this.Location = new System.Drawing.Point(leftPosition, 0); // Centra horizontalmente y coloca en la parte superior
 
-            // Desplaza panel2 hacia abajo la distancia del alto del nuevo control
+            // Ajusta la posición de panel2
             if (panel2 != null)
             {
-                panel2.Top = panel_Control.Bottom + 10; // Mueve panel2 justo debajo de panel_Control con un margen de 10 píxeles
+                if (eliminar)
+                {
+                    // Si eliminamos un control, movemos panel2 hacia arriba
+                    panel2.Top -= alturaControlRemovido;
+                    panel2.Height -= alturaControlRemovido;
+                }
+                else
+                {
+                    // Si agregamos un control, movemos panel2 hacia abajo
+                    panel2.Top += alturaNuevoControl;
+                    panel2.Height += alturaNuevoControl;
+                }
             }
-
-            // Ajusta el tamaño de panel1 para que cubra tanto panel_Control como panel2
-            panel1.Height = panel2.Bottom + 10; // Ajusta el tamaño de panel1 para incluir panel2
-
-            // Ajusta la altura del formulario para que cubra el nuevo tamaño de panel1
-            this.ClientSize = new Size(this.ClientSize.Width, panel1.Bottom + 10);
         }
 
 
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            // Llama al método estático Limpiar de la clase LimpiarFormulario
+            LimpiarFormulario.Limpiar(this);
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Secretario.SelectedIndex = -1;
+            comboBox_Instructor.SelectedIndex = -1;
+
+            // Verifica si hay algún control en el panel
+            if (panel_Control.Controls.Count > 0)
+            {
+                // Remueve el último control agregado en panel_Control
+                Control controlARemover = panel_Control.Controls[panel_Control.Controls.Count - 1];
+
+                // Obtén la altura del control a remover
+                int alturaControlRemovido = controlARemover.Height;
+
+                // Remueve el control del panel
+                panel_Control.Controls.Remove(controlARemover);
+
+                // Reajusta el tamaño y la posición del formulario
+                AjustarTamañoFormulario(alturaControlRemovido, eliminar: true);
+            }
+
+            // Muestra un mensaje indicando que el formulario fue limpiado
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
     }
 }
