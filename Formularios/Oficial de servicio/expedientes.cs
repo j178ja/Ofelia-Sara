@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -12,6 +13,8 @@ using WordPoint = Microsoft.Office.Interop.Word.Point;
 
 
 using Microsoft.Office.Interop.Word;
+using System.Linq;
+
 
 
 
@@ -490,6 +493,109 @@ namespace Ofelia_Sara
                 pictureBox_AWord.Image = null;     // Eliminar la imagen del PictureBox
             }
         }
+        //------------------------------------------------------------------------------------
 
+        // Evento que se dispara cuando el RadioButton_Juzgado cambia su estado
+        private void radioButton_Juzgado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_Juzgado.Checked)
+            {
+                // Limpia el panel de cualquier control agregado previamente
+                LimpiarPanelControl();
+
+                // Crea una instancia de AgregarJuzgadoControl
+                AgregarJuzgadoControl juzgadoControl = new AgregarJuzgadoControl
+                {
+                    AutoSize = true,
+                    AutoSizeMode = AutoSizeMode.GrowAndShrink
+                };
+
+                // Agrega el control al panel
+                panel_Control.Controls.Add(juzgadoControl);
+
+                // Ajusta el tamaño del panel_Control al tamaño del UserControl
+                panel_Control.AutoScroll = true; // Habilita el scroll si es necesario
+                panel_Control.Width = juzgadoControl.Width;
+                panel_Control.Height = juzgadoControl.Height;
+
+                AjustarTamañoFormulario();
+              
+            }
         }
+        // Método para ajustar el tamaño del formulario
+       
+
+
+        // Método para limpiar el panel antes de agregar un nuevo control
+        private void LimpiarPanelControl()
+        {
+            // Elimina todos los controles en el panel
+            panel_Control.Controls.Clear();
+        }
+
+        private void radioButton_Fiscalia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_Fiscalia.Checked)
+            {
+                // Limpia el panel de cualquier control agregado previamente
+                LimpiarPanelControl();
+
+                // Crea una instancia de AgregarJuzgadoControl
+                AgregarFiscaliaControl fiscaliaControl = new AgregarFiscaliaControl
+                {
+                    AutoSize = true,
+                    AutoSizeMode = AutoSizeMode.GrowAndShrink
+                };
+
+                // Agrega el control al panel
+                panel_Control.Controls.Add(fiscaliaControl);
+
+                // Ajusta el tamaño del panel_Control al tamaño del UserControl
+                panel_Control.AutoScroll = true; // Habilita el scroll si es necesario
+                panel_Control.Width = fiscaliaControl.Width;
+                panel_Control.Height = fiscaliaControl.Height;
+
+                AjustarTamañoFormulario();
+                
+            }
+        }
+
+        private void AjustarTamañoFormulario()
+        {
+            // Obtén la altura del último control agregado al panel_Control
+            int alturaNuevoControl = panel_Control.Controls.OfType<Control>().LastOrDefault()?.Height ?? 0;
+
+            // Ajusta el tamaño del formulario en función del tamaño del panel_Control
+            int panelControlBottom = panel_Control.Bottom;
+            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height); // Añade un margen opcional de 10 píxeles
+
+            // Ajusta el tamaño del formulario
+            this.ClientSize = new Size(this.ClientSize.Width, formHeight);
+
+            // Calcula la posición horizontal para centrar el formulario en la pantalla
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int formWidth = this.ClientSize.Width;
+            int leftPosition = (screenWidth - formWidth) / 2;
+
+            // Ajusta la posición y el tamaño del formulario
+            this.StartPosition = FormStartPosition.Manual; // Asegura que el formulario no use la posición predeterminada
+            this.Location = new System.Drawing.Point(leftPosition, 0); // Centra horizontalmente y coloca en la parte superior
+
+            // Desplaza panel2 hacia abajo la distancia del alto del nuevo control
+            if (panel2 != null)
+            {
+                panel2.Top = panel_Control.Bottom + 10; // Mueve panel2 justo debajo de panel_Control con un margen de 10 píxeles
+            }
+
+            // Ajusta el tamaño de panel1 para que cubra tanto panel_Control como panel2
+            panel1.Height = panel2.Bottom + 10; // Ajusta el tamaño de panel1 para incluir panel2
+
+            // Ajusta la altura del formulario para que cubra el nuevo tamaño de panel1
+            this.ClientSize = new Size(this.ClientSize.Width, panel1.Bottom + 10);
+        }
+
+
+
+    }
 }
+

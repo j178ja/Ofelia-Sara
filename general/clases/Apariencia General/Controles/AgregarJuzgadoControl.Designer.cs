@@ -1,6 +1,6 @@
 ﻿namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
 {
-    partial class AgegarFiscaliaControl
+    partial class AgregarJuzgadoControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
