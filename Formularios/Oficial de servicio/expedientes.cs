@@ -656,6 +656,20 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btn_Convertir_Click(object sender, EventArgs e)
+        {
+            // Verifica si los PictureBox tienen imágenes cargadas
+            if (pictureBox_APdf.Image == null || pictureBox_AWord.Image == null )
+            {
+                // Muestra un mensaje de advertencia si algún PictureBox no tiene imagen
+                MessageBox.Show("Debe primero cargar el archivo que desea convertir.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+           
+                // ConvertirImagen();
+            }
+        }
     }
 }
 

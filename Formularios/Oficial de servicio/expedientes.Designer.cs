@@ -224,6 +224,7 @@
             resources.ApplyResources(this.btn_Convertir, "btn_Convertir");
             this.btn_Convertir.Name = "btn_Convertir";
             this.btn_Convertir.UseVisualStyleBackColor = false;
+            this.btn_Convertir.Click += new System.EventHandler(this.btn_Convertir_Click);
             // 
             // btn_Imprimir
             // 
