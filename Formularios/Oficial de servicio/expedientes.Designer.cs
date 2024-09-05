@@ -220,7 +220,7 @@
             this.radioButton_Word.Name = "radioButton_Word";
             this.radioButton_Word.TabStop = true;
             this.radioButton_Word.UseVisualStyleBackColor = true;
-            this.radioButton_Word.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.radioButton_Word.CheckedChanged += new System.EventHandler(this.radioButton_Word_CheckedChanged);
             // 
             // radioButton_Pdf
             // 
@@ -229,7 +229,7 @@
             this.radioButton_Pdf.Name = "radioButton_Pdf";
             this.radioButton_Pdf.TabStop = true;
             this.radioButton_Pdf.UseVisualStyleBackColor = true;
-            this.radioButton_Pdf.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.radioButton_Pdf.CheckedChanged += new System.EventHandler(this.radioButton_Pdf_CheckedChanged);
             // 
             // pictureBox_AWord
             // 

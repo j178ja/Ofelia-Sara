@@ -260,13 +260,77 @@ namespace Ofelia_Sara
                 btn_Convertir.Enabled = false; // Deshabilita el botón
             }
         }
+        //---------------------------------------------------------------------------------
 
-        // Este método se llamará cuando cambie el estado de cualquiera de los RadioButtons
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        private bool IsPictureBoxLoaded(PictureBox pictureBox)
         {
-            ActualizarControles();
+            // Verifica si el PictureBox tiene una imagen cargada
+            return pictureBox.Image != null;
         }
 
+        // Este método se llamará cuando cambie el estado de cualquiera de los RadioButtons
+        private void radioButton_Pdf_CheckedChanged(object sender, EventArgs e)
+        {
+
+            ActualizarControles();
+            if (radioButton_Pdf.Checked)
+            {
+                // Si hay un archivo cargado en el PictureBox del Word
+                if (IsPictureBoxLoaded(pictureBox_AWord))
+                {
+                    // Mostrar mensaje de advertencia y revertir la selección
+                 MessageBox.Show("Ya has cargado un archivo para convertir a WORD. No puedes cambiar sin eliminar el archivo.",
+                                    "Advertencia de Cambio",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    radioButton_Pdf.Checked = false;
+                    ActualizarPictureBox(pictureBox_APdf, false);  // Deshabilita PictureBox Pdf
+                    ActualizarPictureBox(pictureBox_AWord, true);  // Habilita PictureBox Word
+                    radioButton_Word.Checked = true;
+                    pictureBox_AWord.BackColor = Color.LightGreen;
+                    btn_Convertir.Enabled = true;
+                }
+                else
+                {
+                    // Habilitar el PictureBox para PDF     
+                    pictureBox_APdf.Enabled = true;
+                    pictureBox_AWord.Enabled = false;
+                }
+
+            }
+        }
+
+        private void radioButton_Word_CheckedChanged(object sender, EventArgs e)
+        {
+
+            ActualizarControles();
+            if (radioButton_Word.Checked)
+            {
+                // Si hay un archivo cargado en el PictureBox del pdf
+                if (IsPictureBoxLoaded(pictureBox_APdf))
+                {
+                    // Mostrar mensaje de advertencia y revertir la selección
+                    MessageBox.Show("Ya has cargado un archivo para convertir a PDF. No puedes cambiar sin eliminar el archivo.",
+                                       "Advertencia de Cambio",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Warning);
+                    radioButton_Word.Checked = false;
+                    ActualizarPictureBox(pictureBox_APdf, true);  // Deshabilita PictureBox Pdf
+                    ActualizarPictureBox(pictureBox_AWord, false);  // Habilita PictureBox Word
+                    radioButton_Pdf.Checked = true;
+                    pictureBox_APdf.BackColor = Color.LightGreen;
+                    btn_Convertir.Enabled = true;
+                }
+                else
+                {
+                    // Habilitar el PictureBox para PDF
+                    pictureBox_AWord.Enabled = true;
+                    pictureBox_APdf.Enabled = false;
+
+                }
+               
+            }
+        }
 
         private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
         {
@@ -412,6 +476,20 @@ namespace Ofelia_Sara
             radioButton_Pdf.Checked = false; // Desmarcar el CheckBox
             radioButton_Word.Checked = false; // Desmarcar el CheckBox
 
+            // Eliminar la imagen cargada en el PictureBox
+            if (pictureBox_APdf != null && pictureBox_APdf.Image != null)
+            {
+                pictureBox_APdf.Image.Dispose();  // Liberar los recursos de la imagen actual
+                pictureBox_APdf.Image = null;     // Eliminar la imagen del PictureBox
+            }
+
+            // Eliminar la imagen cargada en el PictureBox
+            if (pictureBox_AWord != null && pictureBox_AWord.Image != null)
+            {
+                pictureBox_AWord.Image.Dispose();  // Liberar los recursos de la imagen actual
+                pictureBox_AWord.Image = null;     // Eliminar la imagen del PictureBox
+            }
         }
-    }
+
+        }
 }
