@@ -41,6 +41,11 @@ namespace Ofelia_Sara.general.clases
                         checkBox.Checked = false;
                         break;
 
+                    // si es un radiobutom -->limpiar
+                    case RadioButton radioButton:
+                        radioButton.Checked = false;
+                        break;
+
                     // Si el control es un PictureBox, limpiar su imagen
                     case PictureBox pictureBox:
                         pictureBox.Image = null;

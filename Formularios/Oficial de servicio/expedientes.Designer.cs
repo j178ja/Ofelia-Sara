@@ -97,7 +97,6 @@
             // 
             // panel_Control
             // 
-            this.panel_Control.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.panel_Control, "panel_Control");
             this.panel_Control.Name = "panel_Control";
             // 
@@ -241,6 +240,7 @@
             resources.ApplyResources(this.btn_Limpiar, "btn_Limpiar");
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
