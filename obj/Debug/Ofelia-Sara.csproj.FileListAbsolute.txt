@@ -116,3 +116,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Expedient
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Expedientes.ko-KP.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\aa\Ofelia-Sara.resources.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\ko-KP\Ofelia-Sara.resources.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\PdfiumViewer.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\PdfiumViewer.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\nl\PdfiumViewer.resources.dll

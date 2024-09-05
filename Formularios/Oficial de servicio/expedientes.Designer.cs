@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_EliminarArchivo = new System.Windows.Forms.Button();
             this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -102,6 +103,14 @@
             this.panel1.Controls.Add(this.label17);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // btn_EliminarArchivo
+            // 
+            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar_24_1_;
+            resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
+            this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
+            this.btn_EliminarArchivo.UseVisualStyleBackColor = true;
+            this.btn_EliminarArchivo.Click += new System.EventHandler(this.btn_EliminarArchivo_Click);
             // 
             // groupBox_SeleccionadorProcedencia
             // 
@@ -194,6 +203,7 @@
             // 
             resources.ApplyResources(this.groupBox_ConversorDocumentos, "groupBox_ConversorDocumentos");
             this.groupBox_ConversorDocumentos.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox_ConversorDocumentos.Controls.Add(this.btn_EliminarArchivo);
             this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Word);
             this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Pdf);
             this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_AWord);
@@ -407,5 +417,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton_Pdf;
         private System.Windows.Forms.RadioButton radioButton_Word;
+        private System.Windows.Forms.Button btn_EliminarArchivo;
     }
 }
