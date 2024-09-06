@@ -281,7 +281,7 @@
             // 
             // btn_EliminarArchivo
             // 
-            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar_24_1_;
+            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar;
             resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
             this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
             this.btn_EliminarArchivo.UseVisualStyleBackColor = true;

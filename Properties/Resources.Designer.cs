@@ -63,9 +63,9 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap borrar_24_1_ {
+        internal static System.Drawing.Bitmap borrar {
             get {
-                object obj = ResourceManager.GetObject("borrar_24_1_", resourceCulture);
+                object obj = ResourceManager.GetObject("borrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

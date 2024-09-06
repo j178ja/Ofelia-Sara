@@ -77,9 +77,9 @@ namespace Ofelia_Sara
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    // Configurar el filtro para permitir solo archivos Word
-                    openFileDialog.Filter = "Archivos Word (*.docx)|*.docx";
-                    openFileDialog.Title = "Selecciona un archivo Word";
+                    // Configurar el filtro para permitir solo archivos PDF
+                    openFileDialog.Filter = "Archivos Word (*.pdf)|*.pdf";
+                    openFileDialog.Title = "Selecciona un archivo PDF";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -137,8 +137,8 @@ namespace Ofelia_Sara
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
                     // Configurar el filtro para permitir solo archivos PDF
-                    openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
-                    openFileDialog.Title = "Selecciona un archivo PDF";
+                    openFileDialog.Filter = "Archivos PDF (*.docx)|*.docx";
+                    openFileDialog.Title = "Selecciona un archivo WORD";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -735,21 +735,36 @@ namespace Ofelia_Sara
             // Crea un nuevo Panel para mostrar el archivo
             Panel panelArchivo = new Panel
             {
-                Width = groupBox_TextosConvertidos.Width - 20,
-                Height = 60,
+                Width = groupBox_TextosConvertidos.Width ,
+                Height = 25,
                 Padding = new Padding(5),
                 Margin = new Padding(5),
                 BackColor = ObtenerColorDeFondo(tipoArchivo, groupBox_TextosConvertidos.Controls.Count)
             };
+            // Agrega el ícono del Borrar
+            PictureBox iconoBorrar = new PictureBox
+            {
+                Width = 20,
+                Height = 20,
+                Image = Properties.Resources.borrar, // Asegúrate de que este recurso está disponible en tus recursos del proyecto
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Location = new System.Drawing.Point(5, 2) // Ubica el ícono en la esquina superior derecha
+            };
+            // Asocia el manejador de eventos al clic en el ícono de borrar
+            iconoBorrar.Click += IconoBorrar_Click;
+            // Asocia los manejadores de eventos al hover
+            iconoBorrar.MouseEnter += IconoBorrar_MouseEnter;
+            iconoBorrar.MouseLeave += IconoBorrar_MouseLeave;
+            panelArchivo.Controls.Add(iconoBorrar);
 
             // Agrega el icono del archivo
             PictureBox icono = new PictureBox
             {
                 Width = 50,
-                Height = 50,
+                Height = 20,
                 Image = tipoArchivo == "PDF" ? Properties.Resources.pdf : Properties.Resources.doc,
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Location = new System.Drawing.Point(5, 5)
+                Location = new System.Drawing.Point(35, 2)
             };
             panelArchivo.Controls.Add(icono);
 
@@ -757,7 +772,7 @@ namespace Ofelia_Sara
             LinkLabel linkArchivo = new LinkLabel
             {
                 Text = archivoConvertido,
-                Location = new System.Drawing.Point(60, 15),
+                Location = new System.Drawing.Point(90, 3),
                 AutoSize = true,
                 Tag = rutaArchivoOriginal // Guarda la ruta original en el Tag para referencia futura
             };
@@ -775,7 +790,7 @@ namespace Ofelia_Sara
             // Agrega un radiobutton para seleccionar el archivo
             RadioButton radioButton = new RadioButton
             {
-                Location = new System.Drawing.Point(panelArchivo.Width - 25, 20),
+                Location = new System.Drawing.Point(panelArchivo.Width - 25, 6),
                 AutoSize = true
             };
             panelArchivo.Controls.Add(radioButton);
@@ -801,8 +816,54 @@ namespace Ofelia_Sara
             }
         }
 
+        // Manejador de eventos para el clic en el ícono de borrar
+        private void IconoBorrar_Click(object sender, EventArgs e)
+        {
+            // Obtén el PictureBox que disparó el evento
+            PictureBox iconoBorrar = sender as PictureBox;
+
+            if (iconoBorrar != null)
+            {
+                // Obtén el panel que contiene el PictureBox
+                Panel panelContenedor = iconoBorrar.Parent as Panel;
+
+                if (panelContenedor != null)
+                {
+                    // Confirmar antes de eliminar el panel (opcional)
+                    var resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este archivo?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        // Elimina el panel del formulario o contenedor
+                        panelContenedor.Dispose(); // También podrías usar panelContenedor.Remove() si el panel está en un contenedor que permite esta operación
+                    }
+                }
+            }
+        }
 
 
+        // Manejador de eventos para el hover (cuando el cursor entra en el PictureBox)
+        private void IconoBorrar_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                pictureBox.Width += 3; // Aumenta el ancho en 10 píxeles
+                pictureBox.Height += 3; // Aumenta la altura en 10 píxeles
+                pictureBox.Cursor = Cursors.Hand;
+            }
+        }
+
+        // Manejador de eventos para el hover (cuando el cursor sale del PictureBox)
+        private void IconoBorrar_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                pictureBox.Width -= 3; // Reduce el ancho en 10 píxeles
+                pictureBox.Height -= 3; // Reduce la altura en 10 píxeles
+            }
+        }
     }
 }
 
