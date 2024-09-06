@@ -741,6 +741,11 @@ namespace Ofelia_Sara
                 Margin = new Padding(5),
                 BackColor = ObtenerColorDeFondo(tipoArchivo, groupBox_TextosConvertidos.Controls.Count)
             };
+            // Configurar la posición del panel
+            int panelCount = groupBox_TextosConvertidos.Controls.OfType<Panel>().Count(); // Cuenta los paneles existentes
+            int verticalOffset = panelCount * 25; // Calcula la posición vertical (altura del panel + espaciado)
+
+            panelArchivo.Location = new System.Drawing.Point(10, verticalOffset);
             // Agrega el ícono del Borrar
             PictureBox iconoBorrar = new PictureBox
             {
@@ -790,7 +795,7 @@ namespace Ofelia_Sara
             // Agrega un radiobutton para seleccionar el archivo
             RadioButton radioButton = new RadioButton
             {
-                Location = new System.Drawing.Point(panelArchivo.Width - 25, 6),
+                Location = new System.Drawing.Point(panelArchivo.Width - 45, 6),
                 AutoSize = true
             };
             panelArchivo.Controls.Add(radioButton);
@@ -804,11 +809,11 @@ namespace Ofelia_Sara
             // Determinar el color de fondo basado en el tipo de archivo y el índice
             if (tipoArchivo == "PDF")
             {
-                return index % 2 == 0 ? Color.LightCoral : Color.DarkRed;
+                return index % 2 == 0 ? Color.Salmon : Color.Tomato;
             }
             else if (tipoArchivo == "Word")
             {
-                return index % 2 == 0 ? Color.LightSkyBlue : Color.DarkBlue;
+                return index % 2 == 0 ? Color.LightSkyBlue : Color.PowderBlue;
             }
             else
             {
