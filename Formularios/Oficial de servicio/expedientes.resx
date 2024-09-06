@@ -124,6 +124,34 @@
     <value>Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupBox_TextosConvertidos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold, Italic</value>
+  </data>
+  <data name="groupBox_TextosConvertidos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 329</value>
+  </data>
+  <data name="groupBox_TextosConvertidos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>667, 112</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox_TextosConvertidos.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="groupBox_TextosConvertidos.Text" xml:space="preserve">
+    <value>Textos  Convertidos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.Name" xml:space="preserve">
+    <value>groupBox_TextosConvertidos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btn_Convertir.Font" type="System.Drawing.Font, System.Drawing">
     <value>Castellar, 9pt, style=Bold, Italic</value>
   </data>
@@ -137,7 +165,6 @@
   <data name="btn_Convertir.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 25</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_Convertir.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
@@ -154,7 +181,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;btn_Convertir.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="groupBox_ConversorDocumentos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -376,7 +403,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;groupBox_ConversorDocumentos.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,27 +439,6 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel_Descargas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 341</value>
-  </data>
-  <data name="panel_Descargas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>823, 10</value>
-  </data>
-  <data name="panel_Descargas.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="&gt;&gt;panel_Descargas.Name" xml:space="preserve">
-    <value>panel_Descargas</value>
-  </data>
-  <data name="&gt;&gt;panel_Descargas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_Descargas.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel_Descargas.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="btn_Imprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -558,7 +564,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_Imprimir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>604, 376</value>
+    <value>598, 447</value>
   </data>
   <data name="btn_Imprimir.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 93</value>
@@ -664,7 +670,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_Limpiar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 385</value>
+    <value>450, 456</value>
   </data>
   <data name="btn_Limpiar.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 67</value>
@@ -744,7 +750,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_Buscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 385</value>
+    <value>121, 456</value>
   </data>
   <data name="btn_Buscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 67</value>
@@ -818,7 +824,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_Guardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 385</value>
+    <value>284, 456</value>
   </data>
   <data name="btn_Guardar.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 67</value>
@@ -842,7 +848,7 @@
     <value>34, 225</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>829, 481</value>
+    <value>829, 552</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>91</value>
@@ -1478,7 +1484,7 @@
     <value>22, 20</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>886, 712</value>
+    <value>886, 791</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1502,7 +1508,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>931, 765</value>
+    <value>931, 847</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2588,7 +2594,7 @@
 </value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>EXPEDIENTES</value>

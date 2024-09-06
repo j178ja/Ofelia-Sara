@@ -119,3 +119,13 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\PdfiumViewer.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\PdfiumViewer.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\nl\PdfiumViewer.resources.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.Apariencia_General.Controles.AgregarJuzgadoControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.Pdf2Word.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\itextsharp.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Spire.Doc.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Spire.Pdf.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\itextsharp.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Spire.Doc.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Spire.Pdf.xml
