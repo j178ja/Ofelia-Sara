@@ -44,7 +44,6 @@
             this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
             this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
             this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
-            this.panel_Descargas = new System.Windows.Forms.Panel();
             this.btn_Convertir = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -66,6 +65,7 @@
             this.lbl_Victima = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox_TextosConvertidos = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
@@ -206,12 +206,6 @@
             this.radioButton_Fiscalia.TabStop = true;
             this.radioButton_Fiscalia.UseVisualStyleBackColor = true;
             this.radioButton_Fiscalia.CheckedChanged += new System.EventHandler(this.radioButton_Fiscalia_CheckedChanged);
-            // 
-            // panel_Descargas
-            // 
-            this.panel_Descargas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            resources.ApplyResources(this.panel_Descargas, "panel_Descargas");
-            this.panel_Descargas.Name = "panel_Descargas";
             // 
             // btn_Convertir
             // 
@@ -376,16 +370,22 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.groupBox_TextosConvertidos);
             this.panel2.Controls.Add(this.btn_Convertir);
             this.panel2.Controls.Add(this.groupBox_ConversorDocumentos);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.panel_Descargas);
             this.panel2.Controls.Add(this.btn_Imprimir);
             this.panel2.Controls.Add(this.btn_Limpiar);
             this.panel2.Controls.Add(this.btn_Buscar);
             this.panel2.Controls.Add(this.btn_Guardar);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
+            // 
+            // groupBox_TextosConvertidos
+            // 
+            resources.ApplyResources(this.groupBox_TextosConvertidos, "groupBox_TextosConvertidos");
+            this.groupBox_TextosConvertidos.Name = "groupBox_TextosConvertidos";
+            this.groupBox_TextosConvertidos.TabStop = false;
             // 
             // Expedientes
             // 
@@ -442,7 +442,6 @@
         private System.Windows.Forms.Label label_SelloEscalera;
         private System.Windows.Forms.Label label_SelloMedalla;
         private System.Windows.Forms.Button btn_Convertir;
-        private System.Windows.Forms.Panel panel_Descargas;
         private System.Windows.Forms.GroupBox groupBox_SeleccionadorProcedencia;
         private System.Windows.Forms.RadioButton radioButton_Juzgado;
         private System.Windows.Forms.RadioButton radioButton_Fiscalia;
@@ -452,5 +451,6 @@
         private System.Windows.Forms.Panel panel_Control;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBox_TextosConvertidos;
     }
 }

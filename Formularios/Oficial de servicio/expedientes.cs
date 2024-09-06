@@ -10,10 +10,12 @@ using WordApp = Microsoft.Office.Interop.Word.Application;
 using WinFormsApp = System.Windows.Forms.Application;
 using DrawingPoint = System.Drawing.Point;
 using WordPoint = Microsoft.Office.Interop.Word.Point;
-
-
+using Spire.Pdf;
+using System.IO;
+using Spire.Doc;
 using Microsoft.Office.Interop.Word;
 using System.Linq;
+using Spire.Doc.Documents;
 
 
 
@@ -22,6 +24,10 @@ namespace Ofelia_Sara
 {
     public partial class Expedientes : BaseForm
     {
+        private string rutaArchivoPdf;
+        private string rutaArchivoWord;
+
+
         public Expedientes()
         {
             InitializeComponent();
@@ -57,55 +63,8 @@ namespace Ofelia_Sara
             EstiloBotonConvertir(btn_Convertir);
 
         }
-        //Eventos para cargar imagenes en los pictureBox
 
-        //----CARGAR ARCHIVO WORD PARA CONVERTIR A PDF----------------
-        private void PictureBox_APdf_Click(object sender, EventArgs e)
-        {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null && pictureBox.Enabled)
-            {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
-                {
-                    openFileDialog.Filter = "Archivos Word (*.doc;*.docx)|*.doc;*.docx";
-                    openFileDialog.Title = "Selecciona un archivo WORD";
 
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        try
-                        {
-                            // Ruta del archivo Word
-                            string wordFilePath = openFileDialog.FileName;
-
-                            // Define la ruta para el archivo PDF
-                            string pdfFilePath = System.IO.Path.ChangeExtension(wordFilePath, ".pdf");
-
-                            // Crea una instancia de la aplicación Word
-                            WordApp wordApp = new WordApp();
-                            Document wordDoc = wordApp.Documents.Open(wordFilePath);
-
-                            // Guarda el documento en formato PDF
-                            wordDoc.SaveAs2(pdfFilePath, WdSaveFormat.wdFormatPDF);
-
-                            // Cierra el documento y la aplicación
-                            wordDoc.Close();
-                            wordApp.Quit();
-
-                            pictureBox.Image = Properties.Resources.doc;
-
-                            // Ajusta la imagen al tamaño del PictureBox manteniendo su proporción
-                            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                            pictureBox.BackColor = Color.LightGreen;
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se pudo convertir el archivo Word a PDF. " + ex.Message);
-                        }
-                    }
-                }
-            }
-        }
 
 
         //---´PARA QUE CONVIERTA ARCHIVOS PDF A WORD-----
@@ -113,31 +72,28 @@ namespace Ofelia_Sara
         {
             PictureBox pictureBox = sender as PictureBox;
 
-            // Verifica que el PictureBox esté habilitado (si es necesario)
+            // Verifica que el PictureBox esté habilitado
             if (pictureBox != null && pictureBox.Enabled)
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    // Configurar el filtro para permitir solo PDF o Word (modificable según lo que desees)
-                    openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf|Archivos Word (*.doc;*.docx)|*.doc;*.docx";
-                    openFileDialog.Title = "Selecciona un archivo";
+                    // Configurar el filtro para permitir solo archivos Word
+                    openFileDialog.Filter = "Archivos Word (*.docx)|*.docx";
+                    openFileDialog.Title = "Selecciona un archivo Word";
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         try
                         {
-                            // Cambia la imagen del PictureBox para indicar que el archivo fue cargado
-                            pictureBox.Image = Properties.Resources.pdf;
+                            // Guardar la ruta del archivo en la variable correspondiente
+                            rutaArchivoWord = openFileDialog.FileName;
 
-                            // Ajusta la imagen al tamaño del PictureBox manteniendo su proporción
+                            // Cambiar la imagen del PictureBox para indicar que el archivo fue cargado
+                            pictureBox.Image = Properties.Resources.pdf; // Asegúrate de tener la imagen pdf en los recursos
                             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
-                            // Opcional: Cambiar también el color de fondo del PictureBox
+                            // Opcional: Cambiar el color de fondo del PictureBox
                             pictureBox.BackColor = Color.LightGreen;
-
-                            // Manejar el archivo cargado según sea necesario
-                            string filePath = openFileDialog.FileName;
-                            // Puedes realizar más acciones con el archivo si es necesario
                         }
                         catch (Exception ex)
                         {
@@ -148,6 +104,64 @@ namespace Ofelia_Sara
             }
         }
 
+        private void CargarArchivoEnPictureBox(PictureBox pictureBox, ref string rutaArchivo, string filtro, Bitmap icono)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = filtro;
+                openFileDialog.Title = "Selecciona un archivo";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    rutaArchivo = openFileDialog.FileName; // Guarda la ruta del archivo
+
+                    // Cargar la imagen de recurso para indicar que el archivo fue cargado
+                    pictureBox.Image = icono;
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox.BackColor = Color.LightGreen; // Color de confirmación
+                }
+            }
+        }
+
+
+
+
+        //---´PARA QUE CONVIERTA ARCHIVOS PDF A WORD-----
+        private void PictureBox_APdf_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+
+            // Verifica que el PictureBox esté habilitado
+            if (pictureBox != null && pictureBox.Enabled)
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    // Configurar el filtro para permitir solo archivos PDF
+                    openFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
+                    openFileDialog.Title = "Selecciona un archivo PDF";
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            // Guardar la ruta del archivo en la variable correspondiente
+                            rutaArchivoPdf = openFileDialog.FileName;
+
+                            // Cambiar la imagen del PictureBox para indicar que el archivo fue cargado
+                            pictureBox.Image = Properties.Resources.doc; // Asegúrate de tener la imagen doc en los recursos
+                            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+                            // Opcional: Cambiar el color de fondo del PictureBox
+                            pictureBox.BackColor = Color.LightGreen;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("No se pudo cambiar la imagen del PictureBox: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
 
 
 
@@ -465,7 +479,7 @@ namespace Ofelia_Sara
             boton.MouseUp += (sender, e) =>
             {
                 botonPresionado = false; // Indica que el botón ya no está presionado
-                boton.BackColor = Color.LightGreen; // Cambia el fondo a verde claro
+              
                 boton.ForeColor = Color.White; // Mantiene el texto blanco
                 boton.Invalidate(); // Redibuja el botón
             };
@@ -473,6 +487,8 @@ namespace Ofelia_Sara
             // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
             boton.Invalidate();
         }
+        //____________________________________________________________________________________
+        //-----btn para eliminar archivo en pickturebox
 
         private void btn_EliminarArchivo_Click(object sender, EventArgs e)
         {
@@ -494,6 +510,24 @@ namespace Ofelia_Sara
             }
         }
         //------------------------------------------------------------------------------------
+        // Método para limpiar el panel antes de agregar un nuevo control
+        private void LimpiarPanelControl()
+        {
+            if (panel_Control.Controls.Count > 0)
+            {
+                // Obtén el control actual que será removido
+                Control controlARemover = panel_Control.Controls[panel_Control.Controls.Count - 1];
+
+                // Obtén la altura del control a remover
+                int alturaControlRemovido = controlARemover.Height;
+
+                // Remueve el control del panel
+                panel_Control.Controls.Clear();
+
+                // Ajusta el tamaño del formulario como si se hubiera eliminado un control
+                AjustarTamañoFormulario(alturaControlRemovido, eliminar: true);
+            }
+        }
 
         // Evento que se dispara cuando el RadioButton_Juzgado cambia su estado
         private void radioButton_Juzgado_CheckedChanged(object sender, EventArgs e)
@@ -524,28 +558,6 @@ namespace Ofelia_Sara
               
             }
         }
-        // Método para ajustar el tamaño del formulario
-       
-
-
-        // Método para limpiar el panel antes de agregar un nuevo control
-        private void LimpiarPanelControl()
-        {
-            if (panel_Control.Controls.Count > 0)
-            {
-                // Obtén el control actual que será removido
-                Control controlARemover = panel_Control.Controls[panel_Control.Controls.Count - 1];
-
-                // Obtén la altura del control a remover
-                int alturaControlRemovido = controlARemover.Height;
-
-                // Remueve el control del panel
-                panel_Control.Controls.Clear();
-
-                // Ajusta el tamaño del formulario como si se hubiera eliminado un control
-                AjustarTamañoFormulario(alturaControlRemovido, eliminar: true);
-            }
-        }
 
         private void radioButton_Fiscalia_CheckedChanged(object sender, EventArgs e)
         {
@@ -569,32 +581,32 @@ namespace Ofelia_Sara
                 panel_Control.Width = fiscaliaControl.Width;
                 panel_Control.Height = fiscaliaControl.Height;
 
-                
                 AjustarTamañoFormulario(fiscaliaControl.Height, eliminar: false);
 
             }
         }
-
+        //----------------------------------------------------------------------------------------------
+        //----AJUSTAR TAMAÑO Y ´POSICION DEL FORMULARIO DE ACUERDO AL CONTROL AGREGADO----
         private void AjustarTamañoFormulario(int alturaControlRemovido, bool eliminar = false)
         {
-            // Calcula la altura del panel_Control
+            // Calcula la altura del nuevo control agregado al panel_Control
             int alturaNuevoControl = panel_Control.Controls.OfType<Control>().LastOrDefault()?.Height ?? 0;
 
             // Ajusta el tamaño del formulario en función del tamaño del panel_Control
             int panelControlBottom = panel_Control.Bottom;
-            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height);
+            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height); // Añade un margen opcional de 10 píxeles
 
             if (eliminar)
             {
                 // Si se eliminó un control, reduce el tamaño del formulario y panel1
                 formHeight -= alturaControlRemovido;
-                panel1.Height -= alturaControlRemovido;
+                panel1.Height -= (alturaControlRemovido ); // Reducir la altura y restar 5 unidades a panel1
             }
             else
             {
                 // Si se agregó un control, incrementa el tamaño del formulario y panel1
                 formHeight += alturaNuevoControl;
-                panel1.Height += alturaNuevoControl;
+                panel1.Height += (alturaNuevoControl ); // Aumentar la altura y sumar 5 unidades a panel1
             }
 
             // Ajusta el tamaño del formulario
@@ -628,6 +640,7 @@ namespace Ofelia_Sara
         }
 
 
+
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             // Llama al método estático Limpiar de la clase LimpiarFormulario
@@ -635,6 +648,7 @@ namespace Ofelia_Sara
             comboBox_Dependencia.SelectedIndex = -1;
             comboBox_Secretario.SelectedIndex = -1;
             comboBox_Instructor.SelectedIndex = -1;
+         
 
             // Verifica si hay algún control en el panel
             if (panel_Control.Controls.Count > 0)
@@ -656,20 +670,140 @@ namespace Ofelia_Sara
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+        //--------------------------------------------------------------------------------------
+        //----CONVERSOR DE DOCUMENTOS-------------------
+
+        private void ConvertirWordAPdf(string rutaWord, string archivoConvertido)
+        {
+            try
+            {
+                // Crea una instancia del documento de Word
+                Spire.Doc.Document documento = new Spire.Doc.Document();
+
+                // Carga el archivo Word
+                documento.LoadFromFile(rutaWord);
+
+                // Guarda el documento en formato PDF
+                documento.SaveToFile(archivoConvertido, Spire.Doc.FileFormat.PDF);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al convertir el archivo de Word a PDF: " + ex.Message);
+            }
+        }
+
+        private void ConvertirPdfAWord(string rutaPdf, string archivoConvertido)
+        {
+            try
+            {
+                // Crea una instancia del documento de Word usando Spire.Doc
+                Spire.Doc.Document documento = new Spire.Doc.Document();
+
+                // Carga el archivo PDF
+                documento.LoadFromFile(rutaPdf, Spire.Doc.FileFormat.PDF);
+
+                // Guarda el documento en formato Word
+                documento.SaveToFile(archivoConvertido, Spire.Doc.FileFormat.Docx);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al convertir el archivo de PDF a Word: " + ex.Message);
+            }
+        }
+        //----------------BOTON CONVERTIR-----------------------------
+
         private void btn_Convertir_Click(object sender, EventArgs e)
         {
-            // Verifica si los PictureBox tienen imágenes cargadas
-            if (pictureBox_APdf.Image == null || pictureBox_AWord.Image == null )
+            if (!string.IsNullOrEmpty(rutaArchivoPdf))
             {
-                // Muestra un mensaje de advertencia si algún PictureBox no tiene imagen
-                MessageBox.Show("Debe primero cargar el archivo que desea convertir.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string archivoConvertido = "archivo_convertido.docx";
+                ConvertirPdfAWord(rutaArchivoPdf, archivoConvertido);
+                MostrarArchivoConvertidoEnPanel(rutaArchivoPdf, "PDF", archivoConvertido);
+            }
+
+            if (!string.IsNullOrEmpty(rutaArchivoWord))
+            {
+                string archivoConvertido = "archivo_convertido.pdf";
+                ConvertirWordAPdf(rutaArchivoWord, archivoConvertido);
+                MostrarArchivoConvertidoEnPanel(rutaArchivoWord, "Word", archivoConvertido);
+            }
+        }
+        //--------------------para mostrar el archivo en el panel-------------------------------
+        private void MostrarArchivoConvertidoEnPanel(string rutaArchivoOriginal, string tipoArchivo, string archivoConvertido)
+        {
+            // Crea un nuevo Panel para mostrar el archivo
+            Panel panelArchivo = new Panel
+            {
+                Width = groupBox_TextosConvertidos.Width - 20,
+                Height = 60,
+                Padding = new Padding(5),
+                Margin = new Padding(5),
+                BackColor = ObtenerColorDeFondo(tipoArchivo, groupBox_TextosConvertidos.Controls.Count)
+            };
+
+            // Agrega el icono del archivo
+            PictureBox icono = new PictureBox
+            {
+                Width = 50,
+                Height = 50,
+                Image = tipoArchivo == "PDF" ? Properties.Resources.pdf : Properties.Resources.doc,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Location = new System.Drawing.Point(5, 5)
+            };
+            panelArchivo.Controls.Add(icono);
+
+            // Agrega el nombre del archivo como un link
+            LinkLabel linkArchivo = new LinkLabel
+            {
+                Text = archivoConvertido,
+                Location = new System.Drawing.Point(60, 15),
+                AutoSize = true,
+                Tag = rutaArchivoOriginal // Guarda la ruta original en el Tag para referencia futura
+            };
+            linkArchivo.LinkClicked += (s, ev) =>
+            {
+                // Abre el archivo cuando se hace clic en el link
+                LinkLabel link = s as LinkLabel;
+                if (link != null && !string.IsNullOrEmpty(link.Tag as string))
+                {
+                    System.Diagnostics.Process.Start(link.Tag as string);
+                }
+            };
+            panelArchivo.Controls.Add(linkArchivo);
+
+            // Agrega un radiobutton para seleccionar el archivo
+            RadioButton radioButton = new RadioButton
+            {
+                Location = new System.Drawing.Point(panelArchivo.Width - 25, 20),
+                AutoSize = true
+            };
+            panelArchivo.Controls.Add(radioButton);
+
+            // Agrega el panel al groupBox
+            groupBox_TextosConvertidos.Controls.Add(panelArchivo);
+        }
+        //--------------------para alternar los colores dependiendo de si es word o pdf y si es par o impar--------
+        private Color ObtenerColorDeFondo(string tipoArchivo, int index)
+        {
+            // Determinar el color de fondo basado en el tipo de archivo y el índice
+            if (tipoArchivo == "PDF")
+            {
+                return index % 2 == 0 ? Color.LightCoral : Color.DarkRed;
+            }
+            else if (tipoArchivo == "Word")
+            {
+                return index % 2 == 0 ? Color.LightSkyBlue : Color.DarkBlue;
             }
             else
             {
-           
-                // ConvertirImagen();
+                return Color.LightGray; // Color predeterminado si el tipo de archivo no es reconocido
             }
         }
+
+
+
     }
 }
+
 
