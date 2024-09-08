@@ -62,6 +62,8 @@ namespace Ofelia_Sara
             // Estilo inicial del botón
             EstiloBotonConvertir(btn_Convertir);
 
+            // Inicialmente oculta el GroupBox
+            groupBox_TextosConvertidos.Visible = false;
         }
 
 
@@ -94,6 +96,8 @@ namespace Ofelia_Sara
 
                             // Opcional: Cambiar el color de fondo del PictureBox
                             pictureBox.BackColor = Color.LightGreen;
+
+                          
                         }
                         catch (Exception ex)
                         {
@@ -153,6 +157,8 @@ namespace Ofelia_Sara
 
                             // Opcional: Cambiar el color de fondo del PictureBox
                             pictureBox.BackColor = Color.LightGreen;
+
+                         
                         }
                         catch (Exception ex)
                         {
@@ -648,7 +654,7 @@ namespace Ofelia_Sara
             comboBox_Dependencia.SelectedIndex = -1;
             comboBox_Secretario.SelectedIndex = -1;
             comboBox_Instructor.SelectedIndex = -1;
-         
+            groupBox_TextosConvertidos.Visible = false;
 
             // Verifica si hay algún control en el panel
             if (panel_Control.Controls.Count > 0)
@@ -715,37 +721,47 @@ namespace Ofelia_Sara
 
         private void btn_Convertir_Click(object sender, EventArgs e)
         {
+            // Verifica si el groupBox está oculto y lo hace visible
+            if (!groupBox_TextosConvertidos.Visible)
+            {
+                groupBox_TextosConvertidos.Visible = true;
+            }
+
             if (!string.IsNullOrEmpty(rutaArchivoPdf))
             {
-                string archivoConvertido = "archivo_convertido.docx";
-                ConvertirPdfAWord(rutaArchivoPdf, archivoConvertido);
-                MostrarArchivoConvertidoEnPanel(rutaArchivoPdf, "PDF", archivoConvertido);
+              MostrarArchivoConvertidoEnPanel(rutaArchivoPdf, "PDF");
             }
 
             if (!string.IsNullOrEmpty(rutaArchivoWord))
             {
-                string archivoConvertido = "archivo_convertido.pdf";
-                ConvertirWordAPdf(rutaArchivoWord, archivoConvertido);
-                MostrarArchivoConvertidoEnPanel(rutaArchivoWord, "Word", archivoConvertido);
+               MostrarArchivoConvertidoEnPanel(rutaArchivoWord, "Word");
             }
+           
+            AjustarAlturaFormulario();
+
+            // Ajusta la posición del panel_ControlesInferiores
+            AjustarPosicionControlesInferiores();
         }
         //--------------------para mostrar el archivo en el panel-------------------------------
-        private void MostrarArchivoConvertidoEnPanel(string rutaArchivoOriginal, string tipoArchivo, string archivoConvertido)
+        private void MostrarArchivoConvertidoEnPanel(string rutaArchivo, string tipoArchivo)
         {
-            // Crea un nuevo Panel para mostrar el archivo
+
             Panel panelArchivo = new Panel
             {
-                Width = groupBox_TextosConvertidos.Width ,
-                Height = 25,
+                Width = groupBox_TextosConvertidos.Width - 20, // Ajusta el ancho para dar espacio al borde del GroupBox
+                Height = 25, // Ajusta la altura del panel
                 Padding = new Padding(5),
                 Margin = new Padding(5),
                 BackColor = ObtenerColorDeFondo(tipoArchivo, groupBox_TextosConvertidos.Controls.Count)
             };
+
             // Configurar la posición del panel
             int panelCount = groupBox_TextosConvertidos.Controls.OfType<Panel>().Count(); // Cuenta los paneles existentes
-            int verticalOffset = panelCount * 25; // Calcula la posición vertical (altura del panel + espaciado)
+            int verticalOffset = 20 + (panelCount * (panelArchivo.Height )); 
 
+            // Asigna la ubicación calculada
             panelArchivo.Location = new System.Drawing.Point(10, verticalOffset);
+
             // Agrega el ícono del Borrar
             PictureBox iconoBorrar = new PictureBox
             {
@@ -772,25 +788,91 @@ namespace Ofelia_Sara
                 Location = new System.Drawing.Point(35, 2)
             };
             panelArchivo.Controls.Add(icono);
-
-            // Agrega el nombre del archivo como un link
+            //-------------------------------------------------------------------
             LinkLabel linkArchivo = new LinkLabel
             {
-                Text = archivoConvertido,
-                Location = new System.Drawing.Point(90, 3),
-                AutoSize = true,
-                Tag = rutaArchivoOriginal // Guarda la ruta original en el Tag para referencia futura
+                Text = Path.GetFileName(rutaArchivo), // Muestra solo el nombre del archivo
+                Location = new System.Drawing.Point(90, 3), // Posición del link en el panel
+                AutoSize = false, // Desactivar el ajuste automático del tamaño
+                Width = 400, // Establece un ancho fijo para el LinkLabel
+                Height = 20, // Fija una altura adecuada para el LinkLabel
+                Tag = rutaArchivo // Guarda la ruta completa en el Tag
             };
+
+            // Evento para abrir el archivo cuando se hace clic en el link
             linkArchivo.LinkClicked += (s, ev) =>
             {
-                // Abre el archivo cuando se hace clic en el link
                 LinkLabel link = s as LinkLabel;
                 if (link != null && !string.IsNullOrEmpty(link.Tag as string))
                 {
-                    System.Diagnostics.Process.Start(link.Tag as string);
+                    try
+                    {
+                        // Abre el archivo con la aplicación predeterminada del sistema
+                        System.Diagnostics.Process.Start(link.Tag as string);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
+                    }
+                }
+                AjustarAlturaFormulario();
+
+                // Ajusta la posición del panel_ControlesInferiores
+                AjustarPosicionControlesInferiores();
+            };
+
+            // Mostrar el nombre completo en un Tooltip
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(linkArchivo, Path.GetFileName(rutaArchivo));
+
+            // Habilitar el desplazamiento (scroll) si el texto es más largo que el ancho del LinkLabel
+            linkArchivo.MouseWheel += (s, e) =>
+            {
+                LinkLabel link = s as LinkLabel;
+                if (link != null)
+                {
+                    // Desplazar el texto horizontalmente usando la rueda del mouse
+                    link.Left += (e.Delta > 0) ? 10 : -10; // Mueve el texto a la izquierda o derecha
                 }
             };
+
+            // Agrega el LinkLabel al panel
             panelArchivo.Controls.Add(linkArchivo);
+
+            // Agrega el nombre del archivo como un link
+            //LinkLabel linkArchivo = new LinkLabel
+            //{
+            //    Text = Path.GetFileName(rutaArchivo), // Muestra solo el nombre del archivo
+            //    Location = new System.Drawing.Point(90, 3), // Posición del link en el panel
+            //    AutoSize = true, // Ajusta el tamaño automáticamente según el texto
+            //    Tag = rutaArchivo // Guarda la ruta completa en el Tag
+            //};
+
+            //// Evento para abrir el archivo cuando se hace clic en el link
+            //linkArchivo.LinkClicked += (s, ev) =>
+            //{
+            //    LinkLabel link = s as LinkLabel;
+            //    if (link != null && !string.IsNullOrEmpty(link.Tag as string))
+            //    {
+            //        try
+            //        {
+            //            // Abre el archivo con la aplicación predeterminada del sistema
+            //            System.Diagnostics.Process.Start(link.Tag as string);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
+            //        }
+            //    }
+            //    AjustarAlturaFormulario();
+
+            //    // Ajusta la posición del panel_ControlesInferiores
+            //    AjustarPosicionControlesInferiores();
+            //};
+
+            //// Agrega el LinkLabel al panel
+            //panelArchivo.Controls.Add(linkArchivo);
+
 
             // Agrega un radiobutton para seleccionar el archivo
             RadioButton radioButton = new RadioButton
@@ -800,6 +882,8 @@ namespace Ofelia_Sara
             };
             panelArchivo.Controls.Add(radioButton);
 
+            int nuevoHeight = panelCount * 25 + 50; // Altura total = altura del panel * número de paneles + margen adicional
+            groupBox_TextosConvertidos.Height = nuevoHeight;
             // Agrega el panel al groupBox
             groupBox_TextosConvertidos.Controls.Add(panelArchivo);
         }
@@ -868,6 +952,27 @@ namespace Ofelia_Sara
                 pictureBox.Width -= 3; // Reduce el ancho en 10 píxeles
                 pictureBox.Height -= 3; // Reduce la altura en 10 píxeles
             }
+        }
+
+        //-----AJUSTAR POSICIONAMIENTO DE PANELES
+        private void AjustarPosicionControlesInferiores()
+        {
+            // Espacio adicional entre el GroupBox y el panel_ControlesInferiores
+            int espacioEntreControles = 5; // Ajusta este valor según sea necesario
+
+            // Calcula la nueva posición del panel_ControlesInferiores
+            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + espacioEntreControles;
+
+            // Ajusta la posición del panel_ControlesInferiores
+            panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
+        }
+
+        private void AjustarAlturaFormulario()
+        {
+            // Ajusta la altura del formulario para acomodar el GroupBox y el panel_ControlesInferiores
+            int espacioInferior = 30; // Espacio adicional en la parte inferior del formulario
+            int nuevaAltura = groupBox_TextosConvertidos.Bottom + panel_ControlesInferiores.Height + espacioInferior;
+            this.Height = nuevaAltura;
         }
     }
 }
