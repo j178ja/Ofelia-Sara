@@ -16,6 +16,7 @@ using Spire.Doc;
 using Microsoft.Office.Interop.Word;
 using System.Linq;
 using Spire.Doc.Documents;
+using System.Collections.Generic;
 
 
 
@@ -64,6 +65,8 @@ namespace Ofelia_Sara
 
             // Inicialmente oculta el GroupBox
             groupBox_TextosConvertidos.Visible = false;
+
+            AgregarRadioButtonALosPaneles();
         }
 
 
@@ -155,10 +158,9 @@ namespace Ofelia_Sara
                             pictureBox.Image = Properties.Resources.doc; // Asegúrate de tener la imagen doc en los recursos
                             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
-                            // Opcional: Cambiar el color de fondo del PictureBox
+                            // Cambiar el color de fondo del PictureBox
                             pictureBox.BackColor = Color.LightGreen;
 
-                         
                         }
                         catch (Exception ex)
                         {
@@ -718,30 +720,145 @@ namespace Ofelia_Sara
             }
         }
         //----------------BOTON CONVERTIR-----------------------------
+        // Variable global para mantener la referencia del RadioButton seleccionado
+        private RadioButton radioButtonSeleccionado = null;
+        // HashSet para almacenar los hashes de los archivos convertidos
+        HashSet<string> archivosConvertidos = new HashSet<string>();
 
         private void btn_Convertir_Click(object sender, EventArgs e)
         {
+            // Verifica si se ha cargado un archivo PDF o Word
+            if (string.IsNullOrEmpty(rutaArchivoPdf) && string.IsNullOrEmpty(rutaArchivoWord))
+            {
+                // Muestra un mensaje si no se ha seleccionado ningún archivo
+                MessageBox.Show("Para realizar la conversión primero debe seleccionar un archivo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir del método para evitar la conversión
+            }
+
+            // Verifica si la ruta del archivo PDF no es nula o vacía
+            if (!string.IsNullOrEmpty(rutaArchivoPdf))
+            {
+                // Obtener el hash del archivo PDF
+                string hashArchivoPdf = ObtenerHashArchivo(rutaArchivoPdf);
+
+                // Verificar si el archivo PDF ya ha sido convertido
+                if (archivosConvertidos.Contains(hashArchivoPdf))
+                {
+                    MessageBox.Show("Este archivo PDF ya ha sido convertido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Mostrar el archivo PDF convertido en el panel
+                MostrarArchivoConvertidoEnPanel(rutaArchivoPdf, "PDF");
+
+                // Añadir el hash al HashSet de archivos convertidos
+                archivosConvertidos.Add(hashArchivoPdf);
+            }
+
+            // Verifica si la ruta del archivo Word no es nula o vacía
+            if (!string.IsNullOrEmpty(rutaArchivoWord))
+            {
+                // Obtener el hash del archivo Word
+                string hashArchivoWord = ObtenerHashArchivo(rutaArchivoWord);
+
+                // Verificar si el archivo Word ya ha sido convertido
+                if (archivosConvertidos.Contains(hashArchivoWord))
+                {
+                    MessageBox.Show("Este archivo Word ya ha sido convertido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Mostrar el archivo Word convertido en el panel
+                MostrarArchivoConvertidoEnPanel(rutaArchivoWord, "Word");
+
+                // Añadir el hash al HashSet de archivos convertidos
+                archivosConvertidos.Add(hashArchivoWord);
+            }
+
             // Verifica si el groupBox está oculto y lo hace visible
             if (!groupBox_TextosConvertidos.Visible)
             {
                 groupBox_TextosConvertidos.Visible = true;
             }
 
-            if (!string.IsNullOrEmpty(rutaArchivoPdf))
-            {
-              MostrarArchivoConvertidoEnPanel(rutaArchivoPdf, "PDF");
-            }
-
-            if (!string.IsNullOrEmpty(rutaArchivoWord))
-            {
-               MostrarArchivoConvertidoEnPanel(rutaArchivoWord, "Word");
-            }
-           
+            // Ajustar altura del formulario y posición de controles inferiores
             AjustarAlturaFormulario();
-
-            // Ajusta la posición del panel_ControlesInferiores
             AjustarPosicionControlesInferiores();
+
+            // Limpia la referencia al RadioButton seleccionado al inicio
+            radioButtonSeleccionado = null;
+
+            // Agrega los RadioButton a los Paneles y asigna el manejador de eventos
+            AgregarRadioButtonALosPaneles();
         }
+
+
+        // Método para calcular el hash del archivo
+        private string ObtenerHashArchivo(string rutaArchivo)
+        {
+            if (string.IsNullOrEmpty(rutaArchivo))
+            {
+                throw new ArgumentNullException(nameof(rutaArchivo), "La ruta de acceso no puede ser nula o vacía.");
+            }
+
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                using (var stream = File.OpenRead(rutaArchivo))
+                {
+                    byte[] hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+        private void AgregarRadioButtonALosPaneles()
+        {
+            // Limpia los RadioButton existentes para evitar duplicados
+            foreach (Control control in groupBox_TextosConvertidos.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    foreach (Control c in panel.Controls.OfType<RadioButton>().ToList())
+                    {
+                        panel.Controls.Remove(c);
+                        c.Dispose(); // Liberar recursos
+                    }
+                }
+            }
+
+            foreach (Control control in groupBox_TextosConvertidos.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    // Crea un nuevo RadioButton
+                    RadioButton radioButton = new RadioButton
+                    {
+                        Location = new System.Drawing.Point(panel.Width - 45, 6),
+                        AutoSize = true
+                    };
+                    // Asigna el manejador de eventos CheckedChanged
+                    radioButton.CheckedChanged += RadioButton_Convertido_CheckedChanged;
+                    panel.Controls.Add(radioButton);
+                }
+            }
+        }
+
+        private void RadioButton_Convertido_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+
+            if (radioButton.Checked)
+            {
+                // Si hay un RadioButton seleccionado, desmárcalo
+                if (radioButtonSeleccionado != null && radioButtonSeleccionado != radioButton)
+                {
+                    radioButtonSeleccionado.Checked = false;
+                }
+                // Actualiza la referencia del RadioButton seleccionado
+                radioButtonSeleccionado = radioButton;
+            }
+        }
+
+
         //--------------------para mostrar el archivo en el panel-------------------------------
         private void MostrarArchivoConvertidoEnPanel(string rutaArchivo, string tipoArchivo)
         {
@@ -788,7 +905,7 @@ namespace Ofelia_Sara
                 Location = new System.Drawing.Point(35, 2)
             };
             panelArchivo.Controls.Add(icono);
-            //-------------------------------------------------------------------
+         
             LinkLabel linkArchivo = new LinkLabel
             {
                 Text = Path.GetFileName(rutaArchivo), // Muestra solo el nombre del archivo
@@ -839,40 +956,7 @@ namespace Ofelia_Sara
             // Agrega el LinkLabel al panel
             panelArchivo.Controls.Add(linkArchivo);
 
-            // Agrega el nombre del archivo como un link
-            //LinkLabel linkArchivo = new LinkLabel
-            //{
-            //    Text = Path.GetFileName(rutaArchivo), // Muestra solo el nombre del archivo
-            //    Location = new System.Drawing.Point(90, 3), // Posición del link en el panel
-            //    AutoSize = true, // Ajusta el tamaño automáticamente según el texto
-            //    Tag = rutaArchivo // Guarda la ruta completa en el Tag
-            //};
-
-            //// Evento para abrir el archivo cuando se hace clic en el link
-            //linkArchivo.LinkClicked += (s, ev) =>
-            //{
-            //    LinkLabel link = s as LinkLabel;
-            //    if (link != null && !string.IsNullOrEmpty(link.Tag as string))
-            //    {
-            //        try
-            //        {
-            //            // Abre el archivo con la aplicación predeterminada del sistema
-            //            System.Diagnostics.Process.Start(link.Tag as string);
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
-            //        }
-            //    }
-            //    AjustarAlturaFormulario();
-
-            //    // Ajusta la posición del panel_ControlesInferiores
-            //    AjustarPosicionControlesInferiores();
-            //};
-
-            //// Agrega el LinkLabel al panel
-            //panelArchivo.Controls.Add(linkArchivo);
-
+            
 
             // Agrega un radiobutton para seleccionar el archivo
             RadioButton radioButton = new RadioButton
