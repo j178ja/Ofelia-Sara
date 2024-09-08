@@ -30,6 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox_TextosConvertidos = new System.Windows.Forms.GroupBox();
+            this.btn_Convertir = new System.Windows.Forms.Button();
+            this.groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
+            this.btn_EliminarArchivo = new System.Windows.Forms.Button();
+            this.radioButton_Word = new System.Windows.Forms.RadioButton();
+            this.radioButton_Pdf = new System.Windows.Forms.RadioButton();
+            this.pictureBox_AWord = new System.Windows.Forms.PictureBox();
+            this.pictureBox_APdf = new System.Windows.Forms.PictureBox();
+            this.label_SelloEscalera = new System.Windows.Forms.Label();
+            this.label_SelloMedalla = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_Imprimir = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
             this.panel_Control = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -44,35 +60,21 @@
             this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
             this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
             this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
-            this.btn_Convertir = new System.Windows.Forms.Button();
-            this.btn_Imprimir = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
-            this.btn_EliminarArchivo = new System.Windows.Forms.Button();
-            this.radioButton_Word = new System.Windows.Forms.RadioButton();
-            this.radioButton_Pdf = new System.Windows.Forms.RadioButton();
-            this.pictureBox_AWord = new System.Windows.Forms.PictureBox();
-            this.pictureBox_APdf = new System.Windows.Forms.PictureBox();
-            this.label_SelloEscalera = new System.Windows.Forms.Label();
-            this.label_SelloMedalla = new System.Windows.Forms.Label();
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.lbl_Caratula = new System.Windows.Forms.Label();
             this.textBox_Causante = new System.Windows.Forms.TextBox();
             this.lbl_Victima = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox_TextosConvertidos = new System.Windows.Forms.GroupBox();
+            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.groupBox_SeleccionadorProcedencia.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox_ConversorDocumentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.groupBox_SeleccionadorProcedencia.SuspendLayout();
+            this.panel_ControlesInferiores.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -94,6 +96,150 @@
             this.panel1.Controls.Add(this.label17);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel_ControlesInferiores);
+            this.panel2.Controls.Add(this.groupBox_TextosConvertidos);
+            this.panel2.Controls.Add(this.btn_Convertir);
+            this.panel2.Controls.Add(this.groupBox_ConversorDocumentos);
+            this.panel2.Controls.Add(this.label2);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // groupBox_TextosConvertidos
+            // 
+            resources.ApplyResources(this.groupBox_TextosConvertidos, "groupBox_TextosConvertidos");
+            this.groupBox_TextosConvertidos.Name = "groupBox_TextosConvertidos";
+            this.groupBox_TextosConvertidos.TabStop = false;
+            // 
+            // btn_Convertir
+            // 
+            this.btn_Convertir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Convertir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Convertir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_Convertir.FlatAppearance.BorderSize = 2;
+            this.btn_Convertir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Convertir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            resources.ApplyResources(this.btn_Convertir, "btn_Convertir");
+            this.btn_Convertir.Name = "btn_Convertir";
+            this.btn_Convertir.UseVisualStyleBackColor = false;
+            this.btn_Convertir.Click += new System.EventHandler(this.btn_Convertir_Click);
+            // 
+            // groupBox_ConversorDocumentos
+            // 
+            resources.ApplyResources(this.groupBox_ConversorDocumentos, "groupBox_ConversorDocumentos");
+            this.groupBox_ConversorDocumentos.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox_ConversorDocumentos.Controls.Add(this.btn_EliminarArchivo);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Word);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Pdf);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_AWord);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_APdf);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloEscalera);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloMedalla);
+            this.groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
+            this.groupBox_ConversorDocumentos.TabStop = false;
+            // 
+            // btn_EliminarArchivo
+            // 
+            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar;
+            resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
+            this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
+            this.btn_EliminarArchivo.UseVisualStyleBackColor = true;
+            this.btn_EliminarArchivo.Click += new System.EventHandler(this.btn_EliminarArchivo_Click);
+            // 
+            // radioButton_Word
+            // 
+            resources.ApplyResources(this.radioButton_Word, "radioButton_Word");
+            this.radioButton_Word.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_Word.Name = "radioButton_Word";
+            this.radioButton_Word.TabStop = true;
+            this.radioButton_Word.UseVisualStyleBackColor = true;
+            this.radioButton_Word.CheckedChanged += new System.EventHandler(this.radioButton_Word_CheckedChanged);
+            // 
+            // radioButton_Pdf
+            // 
+            resources.ApplyResources(this.radioButton_Pdf, "radioButton_Pdf");
+            this.radioButton_Pdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_Pdf.Name = "radioButton_Pdf";
+            this.radioButton_Pdf.TabStop = true;
+            this.radioButton_Pdf.UseVisualStyleBackColor = true;
+            this.radioButton_Pdf.CheckedChanged += new System.EventHandler(this.radioButton_Pdf_CheckedChanged);
+            // 
+            // pictureBox_AWord
+            // 
+            this.pictureBox_AWord.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox_AWord.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
+            resources.ApplyResources(this.pictureBox_AWord, "pictureBox_AWord");
+            this.pictureBox_AWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_AWord.Name = "pictureBox_AWord";
+            this.pictureBox_AWord.TabStop = false;
+            this.pictureBox_AWord.Click += new System.EventHandler(this.PictureBox_AWord_Click);
+            this.pictureBox_AWord.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragDrop);
+            this.pictureBox_AWord.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragEnter);
+            this.pictureBox_AWord.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            // 
+            // pictureBox_APdf
+            // 
+            this.pictureBox_APdf.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox_APdf.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
+            resources.ApplyResources(this.pictureBox_APdf, "pictureBox_APdf");
+            this.pictureBox_APdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_APdf.Name = "pictureBox_APdf";
+            this.pictureBox_APdf.TabStop = false;
+            this.pictureBox_APdf.Click += new System.EventHandler(this.PictureBox_APdf_Click);
+            this.pictureBox_APdf.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragDrop);
+            this.pictureBox_APdf.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragEnter);
+            this.pictureBox_APdf.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            // 
+            // label_SelloEscalera
+            // 
+            resources.ApplyResources(this.label_SelloEscalera, "label_SelloEscalera");
+            this.label_SelloEscalera.Name = "label_SelloEscalera";
+            // 
+            // label_SelloMedalla
+            // 
+            resources.ApplyResources(this.label_SelloMedalla, "label_SelloMedalla");
+            this.label_SelloMedalla.Name = "label_SelloMedalla";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.Name = "label2";
+            // 
+            // btn_Imprimir
+            // 
+            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Imprimir, "btn_Imprimir");
+            this.btn_Imprimir.Name = "btn_Imprimir";
+            this.btn_Imprimir.UseVisualStyleBackColor = false;
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Limpiar, "btn_Limpiar");
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Buscar, "btn_Buscar");
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Guardar, "btn_Guardar");
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = false;
             // 
             // panel_Control
             // 
@@ -207,139 +353,11 @@
             this.radioButton_Fiscalia.UseVisualStyleBackColor = true;
             this.radioButton_Fiscalia.CheckedChanged += new System.EventHandler(this.radioButton_Fiscalia_CheckedChanged);
             // 
-            // btn_Convertir
-            // 
-            this.btn_Convertir.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Convertir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Convertir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_Convertir.FlatAppearance.BorderSize = 2;
-            this.btn_Convertir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Convertir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            resources.ApplyResources(this.btn_Convertir, "btn_Convertir");
-            this.btn_Convertir.Name = "btn_Convertir";
-            this.btn_Convertir.UseVisualStyleBackColor = false;
-            this.btn_Convertir.Click += new System.EventHandler(this.btn_Convertir_Click);
-            // 
-            // btn_Imprimir
-            // 
-            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Imprimir, "btn_Imprimir");
-            this.btn_Imprimir.Name = "btn_Imprimir";
-            this.btn_Imprimir.UseVisualStyleBackColor = false;
-            // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Limpiar, "btn_Limpiar");
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Guardar, "btn_Guardar");
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Buscar, "btn_Buscar");
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Name = "label2";
-            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label1.Name = "label1";
-            // 
-            // groupBox_ConversorDocumentos
-            // 
-            resources.ApplyResources(this.groupBox_ConversorDocumentos, "groupBox_ConversorDocumentos");
-            this.groupBox_ConversorDocumentos.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox_ConversorDocumentos.Controls.Add(this.btn_EliminarArchivo);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Word);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Pdf);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_AWord);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_APdf);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloEscalera);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloMedalla);
-            this.groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
-            this.groupBox_ConversorDocumentos.TabStop = false;
-            // 
-            // btn_EliminarArchivo
-            // 
-            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar;
-            resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
-            this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
-            this.btn_EliminarArchivo.UseVisualStyleBackColor = true;
-            this.btn_EliminarArchivo.Click += new System.EventHandler(this.btn_EliminarArchivo_Click);
-            // 
-            // radioButton_Word
-            // 
-            resources.ApplyResources(this.radioButton_Word, "radioButton_Word");
-            this.radioButton_Word.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Word.Name = "radioButton_Word";
-            this.radioButton_Word.TabStop = true;
-            this.radioButton_Word.UseVisualStyleBackColor = true;
-            this.radioButton_Word.CheckedChanged += new System.EventHandler(this.radioButton_Word_CheckedChanged);
-            // 
-            // radioButton_Pdf
-            // 
-            resources.ApplyResources(this.radioButton_Pdf, "radioButton_Pdf");
-            this.radioButton_Pdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Pdf.Name = "radioButton_Pdf";
-            this.radioButton_Pdf.TabStop = true;
-            this.radioButton_Pdf.UseVisualStyleBackColor = true;
-            this.radioButton_Pdf.CheckedChanged += new System.EventHandler(this.radioButton_Pdf_CheckedChanged);
-            // 
-            // pictureBox_AWord
-            // 
-            this.pictureBox_AWord.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_AWord.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
-            resources.ApplyResources(this.pictureBox_AWord, "pictureBox_AWord");
-            this.pictureBox_AWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_AWord.Name = "pictureBox_AWord";
-            this.pictureBox_AWord.TabStop = false;
-            this.pictureBox_AWord.Click += new System.EventHandler(this.PictureBox_AWord_Click);
-            this.pictureBox_AWord.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragDrop);
-            this.pictureBox_AWord.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragEnter);
-            this.pictureBox_AWord.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
-            // 
-            // pictureBox_APdf
-            // 
-            this.pictureBox_APdf.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_APdf.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
-            resources.ApplyResources(this.pictureBox_APdf, "pictureBox_APdf");
-            this.pictureBox_APdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_APdf.Name = "pictureBox_APdf";
-            this.pictureBox_APdf.TabStop = false;
-            this.pictureBox_APdf.Click += new System.EventHandler(this.PictureBox_APdf_Click);
-            this.pictureBox_APdf.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragDrop);
-            this.pictureBox_APdf.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragEnter);
-            this.pictureBox_APdf.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
-            // 
-            // label_SelloEscalera
-            // 
-            resources.ApplyResources(this.label_SelloEscalera, "label_SelloEscalera");
-            this.label_SelloEscalera.Name = "label_SelloEscalera";
-            // 
-            // label_SelloMedalla
-            // 
-            resources.ApplyResources(this.label_SelloMedalla, "label_SelloMedalla");
-            this.label_SelloMedalla.Name = "label_SelloMedalla";
             // 
             // textBox_Caratula
             // 
@@ -368,24 +386,14 @@
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label17.Name = "label17";
             // 
-            // panel2
+            // panel_ControlesInferiores
             // 
-            this.panel2.Controls.Add(this.groupBox_TextosConvertidos);
-            this.panel2.Controls.Add(this.btn_Convertir);
-            this.panel2.Controls.Add(this.groupBox_ConversorDocumentos);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btn_Imprimir);
-            this.panel2.Controls.Add(this.btn_Limpiar);
-            this.panel2.Controls.Add(this.btn_Buscar);
-            this.panel2.Controls.Add(this.btn_Guardar);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // groupBox_TextosConvertidos
-            // 
-            resources.ApplyResources(this.groupBox_TextosConvertidos, "groupBox_TextosConvertidos");
-            this.groupBox_TextosConvertidos.Name = "groupBox_TextosConvertidos";
-            this.groupBox_TextosConvertidos.TabStop = false;
+            resources.ApplyResources(this.panel_ControlesInferiores, "panel_ControlesInferiores");
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
+            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             // 
             // Expedientes
             // 
@@ -398,16 +406,17 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.groupBox_SeleccionadorProcedencia.ResumeLayout(false);
-            this.groupBox_SeleccionadorProcedencia.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox_ConversorDocumentos.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.groupBox_SeleccionadorProcedencia.ResumeLayout(false);
+            this.groupBox_SeleccionadorProcedencia.PerformLayout();
+            this.panel_ControlesInferiores.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +461,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox_TextosConvertidos;
+        private System.Windows.Forms.Panel panel_ControlesInferiores;
     }
 }
