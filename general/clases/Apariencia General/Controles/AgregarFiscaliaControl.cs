@@ -16,5 +16,10 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Controles
         {
             InitializeComponent();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

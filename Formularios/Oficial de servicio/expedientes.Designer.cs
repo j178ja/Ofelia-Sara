@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            this.btn_Imprimir = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
             this.groupBox_TextosConvertidos = new System.Windows.Forms.GroupBox();
             this.btn_Convertir = new System.Windows.Forms.Button();
             this.groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
@@ -42,10 +47,6 @@
             this.label_SelloEscalera = new System.Windows.Forms.Label();
             this.label_SelloMedalla = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_Imprimir = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
             this.panel_Control = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,15 +67,14 @@
             this.textBox_Causante = new System.Windows.Forms.TextBox();
             this.lbl_Victima = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel_ControlesInferiores.SuspendLayout();
             this.groupBox_ConversorDocumentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
-            this.panel_ControlesInferiores.SuspendLayout();
             this.SuspendLayout();
             // 
             // timePickerPersonalizadoFecha
@@ -99,13 +99,55 @@
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.panel_ControlesInferiores);
             this.panel2.Controls.Add(this.groupBox_TextosConvertidos);
             this.panel2.Controls.Add(this.btn_Convertir);
             this.panel2.Controls.Add(this.groupBox_ConversorDocumentos);
             this.panel2.Controls.Add(this.label2);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
+            // 
+            // panel_ControlesInferiores
+            // 
+            resources.ApplyResources(this.panel_ControlesInferiores, "panel_ControlesInferiores");
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
+            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
+            // 
+            // btn_Imprimir
+            // 
+            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Imprimir, "btn_Imprimir");
+            this.btn_Imprimir.Name = "btn_Imprimir";
+            this.btn_Imprimir.UseVisualStyleBackColor = false;
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Guardar, "btn_Guardar");
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Buscar, "btn_Buscar");
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btn_Limpiar, "btn_Limpiar");
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // groupBox_TextosConvertidos
             // 
@@ -207,39 +249,6 @@
             resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label2.Name = "label2";
-            // 
-            // btn_Imprimir
-            // 
-            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Imprimir, "btn_Imprimir");
-            this.btn_Imprimir.Name = "btn_Imprimir";
-            this.btn_Imprimir.UseVisualStyleBackColor = false;
-            // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Limpiar, "btn_Limpiar");
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Buscar, "btn_Buscar");
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Guardar, "btn_Guardar");
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.UseVisualStyleBackColor = false;
             // 
             // panel_Control
             // 
@@ -386,15 +395,6 @@
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label17.Name = "label17";
             // 
-            // panel_ControlesInferiores
-            // 
-            resources.ApplyResources(this.panel_ControlesInferiores, "panel_ControlesInferiores");
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            // 
             // Expedientes
             // 
             resources.ApplyResources(this, "$this");
@@ -408,6 +408,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel_ControlesInferiores.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).EndInit();
@@ -416,7 +417,6 @@
             this.panel3.PerformLayout();
             this.groupBox_SeleccionadorProcedencia.ResumeLayout(false);
             this.groupBox_SeleccionadorProcedencia.PerformLayout();
-            this.panel_ControlesInferiores.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,6 +35,14 @@ namespace Ofelia_Sara
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            panel_ControlesInferiores.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            groupBox_TextosConvertidos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            panel2.AutoSize = true;
+            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.AutoScroll = true;
+
         }
 
         private void Expedientes_Load(object sender, EventArgs e)
@@ -604,17 +612,18 @@ namespace Ofelia_Sara
             int panelControlBottom = panel_Control.Bottom;
             int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height); // Añade un margen opcional de 10 píxeles
 
+            // Ajustar la altura del formulario y panel1 según si se agrega o se elimina un control
             if (eliminar)
             {
                 // Si se eliminó un control, reduce el tamaño del formulario y panel1
                 formHeight -= alturaControlRemovido;
-                panel1.Height -= (alturaControlRemovido ); // Reducir la altura y restar 5 unidades a panel1
+                panel1.Height -= (alturaControlRemovido); // Reducir la altura y restar 5 unidades a panel1
             }
             else
             {
                 // Si se agregó un control, incrementa el tamaño del formulario y panel1
                 formHeight += alturaNuevoControl;
-                panel1.Height += (alturaNuevoControl ); // Aumentar la altura y sumar 5 unidades a panel1
+                panel1.Height += (alturaNuevoControl); // Aumentar la altura y sumar 5 unidades a panel1
             }
 
             // Ajusta el tamaño del formulario
@@ -629,23 +638,25 @@ namespace Ofelia_Sara
             this.StartPosition = FormStartPosition.Manual; // Asegura que el formulario no use la posición predeterminada
             this.Location = new System.Drawing.Point(leftPosition, 0); // Centra horizontalmente y coloca en la parte superior
 
-            // Ajusta la posición de panel2
+            // Ajusta la posición de panel2 con un espacio adicional
+            int espacioEntreControlYPanel2 = 5; // Espacio adicional en píxeles entre el control y panel2
             if (panel2 != null)
             {
                 if (eliminar)
                 {
                     // Si eliminamos un control, movemos panel2 hacia arriba
-                    panel2.Top -= alturaControlRemovido;
-                    panel2.Height -= alturaControlRemovido;
+                    panel2.Top -= (alturaControlRemovido + espacioEntreControlYPanel2);
+                    panel2.Height -= (alturaControlRemovido + espacioEntreControlYPanel2);
                 }
                 else
                 {
                     // Si agregamos un control, movemos panel2 hacia abajo
-                    panel2.Top += alturaNuevoControl;
-                    panel2.Height += alturaNuevoControl;
+                    panel2.Top += (alturaNuevoControl + espacioEntreControlYPanel2);
+                    panel2.Height += (alturaNuevoControl + espacioEntreControlYPanel2);
                 }
             }
         }
+
 
 
 
@@ -790,6 +801,10 @@ namespace Ofelia_Sara
 
             // Agrega los RadioButton a los Paneles y asigna el manejador de eventos
             AgregarRadioButtonALosPaneles();
+                         
+            this.Top = 0;// Posicionar el formulario en la parte superior de la pantalla
+
+            AjustarAlturaPanel2();
         }
 
 
@@ -1041,23 +1056,46 @@ namespace Ofelia_Sara
         //-----AJUSTAR POSICIONAMIENTO DE PANELES
         private void AjustarPosicionControlesInferiores()
         {
-            // Espacio adicional entre el GroupBox y el panel_ControlesInferiores
-            int espacioEntreControles = 5; // Ajusta este valor según sea necesario
+            //// Espacio adicional entre el GroupBox y el panel_ControlesInferiores
+            //int espacioEntreControles = 0; // Ajusta este valor a 0 o al valor deseado para reducir el espacio
 
-            // Calcula la nueva posición del panel_ControlesInferiores
-            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + espacioEntreControles;
+            //// Calcula la nueva posición del panel_ControlesInferiores
+            //int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + espacioEntreControles;
 
-            // Ajusta la posición del panel_ControlesInferiores
+            //// Ajusta la posición del panel_ControlesInferiores
+            //panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
+
+            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + 5; // Añadir un pequeño margen de separación
             panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
         }
 
-        private void AjustarAlturaFormulario()
+        private void AjustarAlturaPanel2()
         {
-            // Ajusta la altura del formulario para acomodar el GroupBox y el panel_ControlesInferiores
-            int espacioInferior = 30; // Espacio adicional en la parte inferior del formulario
-            int nuevaAltura = groupBox_TextosConvertidos.Bottom + panel_ControlesInferiores.Height + espacioInferior;
+            // Calcular la altura total de los controles dentro de panel2 (groupBox y panel inferior)
+            int alturaContenido = groupBox_TextosConvertidos.Bottom + panel_ControlesInferiores.Height;
+
+            // Añadir un margen opcional para ajustar la distancia
+            int nuevaAlturaPanel2 = Math.Max(alturaContenido + 10, panel2.MinimumSize.Height);
+
+            // Ajustar la altura del panel2
+            panel2.Height = nuevaAlturaPanel2;
+        }
+
+    
+
+    private void AjustarAlturaFormulario()
+        {
+            // Espacio adicional en la parte inferior del formulario para asegurar un margen
+            int espacioInferior = 30;
+
+            // Asegurarse de calcular desde el borde inferior de panel2 para incluir su nueva altura
+            int nuevaAltura = panel2.Bottom + espacioInferior;
+
+            // Ajustar la altura del formulario para reflejar el contenido completo
             this.Height = nuevaAltura;
         }
+
+
     }
 }
 
