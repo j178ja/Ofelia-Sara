@@ -1003,7 +1003,7 @@ namespace Ofelia_Sara
                 return Color.LightGray; // Color predeterminado si el tipo de archivo no es reconocido
             }
         }
-
+        //----------------------------------------------------------------------
         // Manejador de eventos para el clic en el ícono de borrar
         private void IconoBorrar_Click(object sender, EventArgs e)
         {
@@ -1017,18 +1017,67 @@ namespace Ofelia_Sara
 
                 if (panelContenedor != null)
                 {
-                    // Confirmar antes de eliminar el panel (opcional)
-                    var resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este archivo?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    // Confirmar antes de eliminar el panel
+                    var resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este archivo?",
+                                                     "Confirmar eliminación",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)
                     {
-                        // Elimina el panel del formulario o contenedor
-                        panelContenedor.Dispose(); // También podrías usar panelContenedor.Remove() si el panel está en un contenedor que permite esta operación
+                        // Obtener la altura del panel antes de eliminarlo
+                        int alturaPanelRemovido = panelContenedor.Height;
+
+                        // Eliminar el panel del contenedor
+                        groupBox_TextosConvertidos.Controls.Remove(panelContenedor);
+                        panelContenedor.Dispose();
+
+                        // Reposicionar los paneles restantes
+                        ReposicionarPanelesRestantes();
+
+                        // Ajustar el tamaño del groupBox y el formulario
+                        AjustarAlturaGroupBoxYFormulario(alturaPanelRemovido, eliminar: true);
                     }
                 }
             }
         }
 
+        private void ReposicionarPanelesRestantes()
+        {
+            int nuevaPosicionY = 20; // Margen superior para el primer panel
+            foreach (Control control in groupBox_TextosConvertidos.Controls)
+            {
+                if (control is Panel)
+                {
+                    // Ajustar la posición vertical del panel
+                    control.Location = new System.Drawing.Point(control.Location.X, nuevaPosicionY);
+
+                    // Incrementar la posición para el siguiente panel
+                    nuevaPosicionY += control.Height ; 
+                }
+            }
+        }
+
+        private void AjustarAlturaGroupBoxYFormulario(int alturaPanelRemovido, bool eliminar)
+        {
+            // Ajustar la altura del groupBox basado en los paneles que quedan
+            int nuevaAlturaGroupBox = groupBox_TextosConvertidos.Controls.Cast<Control>()
+                                    .Where(c => c is Panel)
+                                    .Sum(c => c.Height + 10); // 10 píxeles de margen entre paneles
+
+            // Ajustar la altura del groupBox
+            groupBox_TextosConvertidos.Height = nuevaAlturaGroupBox + 20; // Añadir margen inferior de 20
+
+            // Ajustar la posición del panel_ControlesInferiores
+            AjustarPosicionControlesInferiores();
+
+            // Ajustar la altura de panel2 (si es necesario)
+            AjustarAlturaPanel2();
+
+            // Ajustar la altura del formulario
+            AjustarAlturaFormulario();
+        }
+//----------------------------------------------------------------------------------------------------------
 
         // Manejador de eventos para el hover (cuando el cursor entra en el PictureBox)
         private void IconoBorrar_MouseEnter(object sender, EventArgs e)
