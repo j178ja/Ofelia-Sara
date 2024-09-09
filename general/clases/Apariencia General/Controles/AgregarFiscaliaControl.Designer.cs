@@ -58,6 +58,7 @@
             this.groupBox1.TabIndex = 89;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PROVENIENTE DE FISCALIA";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // comboBox_Localidad
             // 

@@ -73,32 +73,35 @@ namespace Ofelia_Sara.general.clases
 
         private void DibujarFondoDegradado(Graphics g, int width, int height)
         {
-            // Definir el centro inferior del formulario
-            PointF centerBottom = new PointF(width / 2f, height);
+            // Definir el centro del área de degradado
+            PointF center = new PointF(width / 2f, height / 2f);
 
-            // Aumentar el radio máximo para un degradado más pronunciado
-            float maxRadius = height * 1.5f; // Ajustar para controlar la extensión del degradado
+            // Ajustar el radio máximo del degradado para que se ajuste al tamaño del formulario
+            float maxRadius = Math.Max(width, height) * 0.75f; // Ajusta el valor según sea necesario
 
-            // Crear un rectángulo que envuelva el área del degradado
-            RectangleF gradientRectangle = new RectangleF(centerBottom.X - maxRadius, centerBottom.Y - maxRadius, maxRadius * 2, maxRadius * 2);
+            // Crear un rectángulo que envuelve el área del degradado
+            RectangleF gradientRectangle = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
 
-            // Crear un PathGradientBrush con una región en forma de semicírculo
+            // Crear una ruta de gráfico para el degradado
             using (GraphicsPath path = new GraphicsPath())
             {
-                // Añadir un arco (semicírculo) a la ruta
-                path.AddArc(gradientRectangle, 0, 180);
+                // Crear un elipse que rodea el área del degradado
+                path.AddEllipse(gradientRectangle);
 
+                // Crear un PathGradientBrush con la ruta
                 using (PathGradientBrush brush = new PathGradientBrush(path))
                 {
-                    // Configurar colores más intensos para el degradado
+                    // Configurar colores para el degradado
                     brush.CenterColor = Color.FromArgb(0, 100, 114); // Color más oscuro en el centro
                     brush.SurroundColors = new Color[] { Color.FromArgb(200, 255, 255) }; // Color más suave en los bordes
 
-                    // Rellenar el formulario con el degradado
+                    // Rellenar el área del formulario con el degradado
                     g.FillRectangle(brush, this.ClientRectangle);
                 }
             }
         }
+
+
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
