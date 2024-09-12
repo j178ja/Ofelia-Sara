@@ -708,7 +708,7 @@ namespace Ofelia_Sara
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al convertir el archivo de Word a PDF: " + ex.Message);
+                MessageBox.Show("Error al convertir el archivo de PDF a Word: " + ex.Message);
             }
         }
 
@@ -727,7 +727,7 @@ namespace Ofelia_Sara
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al convertir el archivo de PDF a Word: " + ex.Message);
+                MessageBox.Show("Error al convertir el archivo de Word a Pdf: " + ex.Message);
             }
         }
         //----------------BOTON CONVERTIR-----------------------------
@@ -736,6 +736,7 @@ namespace Ofelia_Sara
         // HashSet para almacenar los hashes de los archivos convertidos
         HashSet<string> archivosConvertidos = new HashSet<string>();
 
+        
         private void btn_Convertir_Click(object sender, EventArgs e)
         {
             // Verifica si se ha cargado un archivo PDF o Word
@@ -759,8 +760,12 @@ namespace Ofelia_Sara
                     return;
                 }
 
-                // Mostrar el archivo PDF convertido en el panel
-                MostrarArchivoConvertidoEnPanel(rutaArchivoPdf, "PDF");
+                // *** Convertir el archivo PDF a Word ***
+                string rutaArchivoWordConvertido = Path.ChangeExtension(rutaArchivoPdf, ".docx");
+                ConvertirPdfAWord(rutaArchivoPdf, rutaArchivoWordConvertido);
+
+                // Mostrar el archivo Word convertido en el panel
+                MostrarArchivoConvertidoEnPanel(rutaArchivoWordConvertido, "Word");
 
                 // Añadir el hash al HashSet de archivos convertidos
                 archivosConvertidos.Add(hashArchivoPdf);
@@ -779,8 +784,12 @@ namespace Ofelia_Sara
                     return;
                 }
 
-                // Mostrar el archivo Word convertido en el panel
-                MostrarArchivoConvertidoEnPanel(rutaArchivoWord, "Word");
+                // *** Convertir el archivo Word a PDF ***
+                string rutaArchivoPdfConvertido = Path.ChangeExtension(rutaArchivoWord, ".pdf");
+                ConvertirWordAPdf(rutaArchivoWord, rutaArchivoPdfConvertido);
+
+                // Mostrar el archivo PDF convertido en el panel
+                MostrarArchivoConvertidoEnPanel(rutaArchivoPdfConvertido, "PDF");
 
                 // Añadir el hash al HashSet de archivos convertidos
                 archivosConvertidos.Add(hashArchivoWord);
@@ -801,8 +810,8 @@ namespace Ofelia_Sara
 
             // Agrega los RadioButton a los Paneles y asigna el manejador de eventos
             AgregarRadioButtonALosPaneles();
-                         
-            this.Top = 0;// Posicionar el formulario en la parte superior de la pantalla
+
+            this.Top = 0; // Posicionar el formulario en la parte superior de la pantalla
 
             AjustarAlturaPanel2();
         }
@@ -1028,9 +1037,13 @@ namespace Ofelia_Sara
                         // Obtener la altura del panel antes de eliminarlo
                         int alturaPanelRemovido = panelContenedor.Height;
 
-                        // Eliminar el panel del contenedor
-                        groupBox_TextosConvertidos.Controls.Remove(panelContenedor);
-                        panelContenedor.Dispose();
+                        // Obtener el hash del archivo desde el Tag del panel
+                        string hashArchivo = panelContenedor.Tag as string;
+
+                    
+
+                        // Elimina el panel del formulario o contenedor
+                        panelContenedor.Dispose(); // Eliminar el panel
 
                         // Reposicionar los paneles restantes
                         ReposicionarPanelesRestantes();
@@ -1041,6 +1054,7 @@ namespace Ofelia_Sara
                 }
             }
         }
+
 
         private void ReposicionarPanelesRestantes()
         {

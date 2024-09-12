@@ -65,8 +65,6 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.fechaActuaciones = new System.Windows.Forms.DateTimePicker();
             this.datoFecha = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
@@ -405,8 +403,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.progressBar);
+            this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.fechaActuaciones);
             this.panel1.Controls.Add(this.datoFecha);
             this.panel1.Controls.Add(this.textBox_NombreInfractor);
@@ -443,24 +440,10 @@
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Location = new System.Drawing.Point(24, 65);
+            this.panel1.Location = new System.Drawing.Point(15, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 33);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(2, 564);
-            this.progressBar1.TabIndex = 51;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(685, 33);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(2, 564);
-            this.progressBar.TabIndex = 50;
             // 
             // fechaActuaciones
             // 
@@ -483,9 +466,10 @@
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label22.Location = new System.Drawing.Point(251, 53);
+            this.label22.Location = new System.Drawing.Point(208, 0);
             this.label22.Name = "label22";
             this.label22.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label22.Size = new System.Drawing.Size(242, 25);
@@ -497,15 +481,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(736, 735);
-            this.Controls.Add(this.label22);
+            this.ClientSize = new System.Drawing.Size(722, 675);
             this.Controls.Add(this.panel1);
             this.Name = "Contravenciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CONTRAVENCIONES";
+            this.Text = "                                                              ";
             this.Load += new System.EventHandler(this.Contravenciones_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.label22, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -554,7 +536,5 @@
         private System.Windows.Forms.DateTimePicker datoFecha;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DateTimePicker fechaActuaciones;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

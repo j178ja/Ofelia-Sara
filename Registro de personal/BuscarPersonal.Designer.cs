@@ -66,7 +66,6 @@
             // panel_ControlesInferiores
             // 
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Location = new System.Drawing.Point(164, 99);
