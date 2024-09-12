@@ -315,9 +315,7 @@ namespace Ofelia_Sara
             this.comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
             this.comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
             this.comboBox_AgenteFiscal.TabIndex = 1;
-
             this.comboBox_AgenteFiscal.TextChanged += new System.EventHandler(this.comboBox_AgenteFiscal_TextChanged);
-          
             // 
             // comboBox_Ipp1
             // 
@@ -713,12 +711,12 @@ namespace Ofelia_Sara
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Titulo.Location = new System.Drawing.Point(43, 29);
+            this.lbl_Titulo.Location = new System.Drawing.Point(123, 29);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.lbl_Titulo.Size = new System.Drawing.Size(411, 24);
+            this.lbl_Titulo.Size = new System.Drawing.Size(301, 24);
             this.lbl_Titulo.TabIndex = 31;
-            this.lbl_Titulo.Text = "CARATULA-INICIO-CIERRE-ELEVACION";
+            this.lbl_Titulo.Text = "ESTRUCTURA BASICA I.P.P.";
             // 
             // InicioCierre
             // 
@@ -733,7 +731,7 @@ namespace Ofelia_Sara
             this.MinimumSize = new System.Drawing.Size(516, 598);
             this.Name = "InicioCierre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "INICIO - CIERRE";
+            this.Text = "ACTUACIONES SUMARIALES PREVENCIONALES";
             this.Load += new System.EventHandler(this.InicioCierre_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
