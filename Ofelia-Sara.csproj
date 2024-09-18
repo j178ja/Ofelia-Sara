@@ -591,6 +591,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Resources\imagenes\ojoCerrado.png" />
+    <None Include="Resources\imagenes\subir_documentos.png" />
+    <None Include="Resources\imagenes\pdf.png" />
+    <None Include="Resources\imagenes\ojoINICIO.png" />
+    <Content Include="Resources\imagenes\ojo_Contraseña.png" />
+    <None Include="Resources\imagenes\IconoEscudoPolicia.ico" />
+    <None Include="Resources\imagenes\ICOes.png" />
+    <None Include="Resources\imagenes\doc.png" />
+    <None Include="Resources\imagenes\borrar.png" />
+    <None Include="Resources\imagenes\borrar 24%281%29.png" />
     <None Include="general\imagenes\pdf.png" />
     <None Include="general\imagenes\subir_documentos.png" />
     <None Include="Resources\subir_archivo.bmp" />

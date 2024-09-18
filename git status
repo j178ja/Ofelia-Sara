@@ -1,0 +1,1060 @@
+[33mcommit 8349235eda14270ef773a0b33fb965a53420dae8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mplantillas[m[33m, [m[1;31morigin/plantillas[m[33m)[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 12 20:20:32 2024 -0300
+
+    guardado prebio a prueba con base de datos registro de personal
+
+[33mcommit 9bcf3922cab378229fa6056121eef13b8c8980f6[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Sep 9 08:56:58 2024 -0300
+
+    reposicionamiento exitoso de groupBox
+
+[33mcommit 21d7618c63f3399da31c83d5c17dafe6d97be41b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Sep 9 08:47:14 2024 -0300
+
+    commit previo a cambio reposicionamiento groupBox_TextosConvertidos
+
+[33mcommit 18747d08f4c45941c5248b479cfdd58fd23b5cf4[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Sep 8 18:34:11 2024 -0300
+
+    se agrego mensaje de alerta y validacion para cuando no esta cargado un documento y validacion para solo poder seleccionar un radiobutom
+
+[33mcommit ba7317cdae5d1bcccd436a678c5fe1d940b8b173[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Sep 8 09:49:35 2024 -0300
+
+    se limito la zona visible de linklabel archivo convertido
+
+[33mcommit 773a0694e4aaf7b7146f41f04bbef83b820bb46e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Sep 6 16:13:09 2024 -0300
+
+    avance, se incorporaron iconos y mejoro el posicionamiento de cada panel en groupbox conversion
+
+[33mcommit 39bd877407d61dd6466c9483dc9236a0d5d491ef[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Sep 6 14:06:13 2024 -0300
+
+    se agregaron componentes a panel de archivo convertido
+
+[33mcommit 00b9b14c6d616478f45e012a4253722eab9b190b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Sep 6 13:09:31 2024 -0300
+
+    aprximacion agregar y convertir documentos
+
+[33mcommit b26f9de679df4b6730f3d27a512a4cdde13a3959[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 5 19:37:59 2024 -0300
+
+    se agrego validacion en btn_convertir
+
+[33mcommit dabb3da8f5d236f6d6faf073d066e9fc4762b10d[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 5 19:33:08 2024 -0300
+
+    se agrego reposicionamiento de paneles en expedientes
+
+[33mcommit 6d462c3d9f344733dde2fec8dec22a334c48de7c[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 5 19:00:28 2024 -0300
+
+    se agrego logica para agregado de control fiscalia y juzgado
+
+[33mcommit b01d7fae3749a2127055d3883c114e5a6e331eeb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 5 16:05:17 2024 -0300
+
+    avances en validaciones en caso de doble seleccion por usuario
+
+[33mcommit eed0e61e41352e8c6125838139b7f08c4fe5ef25[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 5 14:03:36 2024 -0300
+
+    carga de imagen en picture de conversor de documentos
+
+[33mcommit 0090c178788b07554c06da8b84d9fb6b61c8fc56[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Sep 5 01:00:19 2024 -0300
+
+    avance para la carga de archivos en los pictureBox
+
+[33mcommit 3c87668e554f3f59f5473ad659680031d54b5fcc[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Sep 4 23:33:43 2024 -0300
+
+    cambios esteticos btn_Convertir
+
+[33mcommit f2d44b46518bf6240c93d9a86d5e37d5c3b06910[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Sep 2 17:53:20 2024 -0300
+
+    se creo form conversordeDocumentos y se realizaron avances en form expedientes
+
+[33mcommit 341e1532244c933aa91cf982c7efe797ae9cea99[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Sep 1 12:23:39 2024 -0300
+
+    2da aprox a ratificacion
+
+[33mcommit 180405144334b2dcf52e36ad89a4f6b7a42e9d91[m
+Merge: e80cd03 5d7d943
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 31 22:01:43 2024 -0300
+
+    segundo intento form buscarPersonal
+
+[33mcommit e80cd03d213a6af9597159736036c94ecfaeac5a[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 31 12:31:47 2024 -0300
+
+    primer intento ajsutar formulario para AGREGAR RATIFICAFCION
+
+[33mcommit 5d7d943ba1ad7cba097fd93132931cf9a1680f61[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 31 09:24:48 2024 -0300
+
+    se eliminaron los reposicionamiento de paneles previo a un mejor intento
+
+[33mcommit 5b4fb84a78b0b39366fc77703090b10fc6424c91[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 31 01:58:20 2024 -0300
+
+    intento de placeholder en combobox y autocompletar en textbox
+
+[33mcommit 22b7303ed9b576d74e0c3ff1883c546afb4ded1f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 30 21:58:22 2024 -0300
+
+    cambios tras skaynet
+
+[33mcommit 563106ef185f689c3cdec6c3fd033003198b552d[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 30 13:44:36 2024 -0300
+
+    se afino form agregarConcubina
+
+[33mcommit d9f77db66a5c98cc9c290f1cdbb41c649ce30a73[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 30 10:44:55 2024 -0300
+
+    se encontro solucion a problema de borde redondeado en panel1, se aplico en form buscarPersonal
+
+[33mcommit bb8fe142caf406919718b7a302171eaeb7ad7d2f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 30 01:08:40 2024 -0300
+
+    se agrego calculo de edad, no se logro como se espera calculo de antiguedad
+
+[33mcommit a3c27b642a019c6992535b6095a16cd06802b7a5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 29 17:08:54 2024 -0300
+
+    solucion  a problema de textBox Domicilio en form agregar datos imputado y victima
+
+[33mcommit bf859d01fea95e750994241ef3ab52cb6fba9c49[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 29 15:34:15 2024 -0300
+
+    se soluciono problema en dni y edad form nuevoPersonal
+
+[33mcommit 9bce72dd562ccb0eec77cf7e28ee055f1c3209ea[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 29 15:27:27 2024 -0300
+
+    se soluciono problema en numeroIpp en cargo y form inicioCierre
+
+[33mcommit d38b66d65b65328a6e952ca551db89934c572f18[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 29 14:56:09 2024 -0300
+
+    solucion aplicada correctamente a problema nuevo de check cargo
+
+[33mcommit a1e061fe3752b8f3c571e6fbda0d71ef2264c486[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 29 14:41:20 2024 -0300
+
+    se reajustaron las clases (texto) y su aplicacion en distintos formularios
+
+[33mcommit 147ecf211a459ee85baa512068ebfeeb6ce963e2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 29 00:12:46 2024 -0300
+
+    se agrego focus ante la apertura de formularios
+
+[33mcommit e1ec81e856c27672c3db4b14f852edbb1012a076[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 23:41:05 2024 -0300
+
+    se agrego retroalimentacion en textBox dependencia de form nuevadependencia y form sellos dependencia
+
+[33mcommit db7088d0c84ebe9191a5f96a852cd0e444dce3f3[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 16:31:34 2024 -0300
+
+    posicionamiento de form nuevaDependencia junto a sellosDependencia
+
+[33mcommit bf2c23f6a08ddd09a61de37333ff8e447be2cf44[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 15:58:52 2024 -0300
+
+    se logro apertura de archivos pdf desde el exhividor de archivos en documentos utiles
+
+[33mcommit 3688ed953853f248108ac6b51b3a85c794a08c7c[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 15:36:46 2024 -0300
+
+    se agrego lista de archivos pdf en documentos utiles
+
+[33mcommit c6584ddc713f95de8188caabe2cc9a328029cd92[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 12:48:53 2024 -0300
+
+    se agrego lista desplegable y comprtamiento a btn_Buscar en formulario menuPrincipal
+
+[33mcommit 0f271a4da2300993f82c1c4159502d65d8309530[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 11:05:21 2024 -0300
+
+    se RE agrego enlace en btn_configuracion REMOVER a form VALIDACION DE USUARIOS
+
+[33mcommit ddce60eb06f27b6b192038cac5aa38ace0ae0660[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 02:54:21 2024 -0300
+
+    se ajusto el poscionamiento de apertura y cierre de form imputado y concubina
+
+[33mcommit f41a409c10c2c9952bc8923c59ccf1f5f574959b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 02:12:40 2024 -0300
+
+    se creo y agrego form agregar datos concubina
+
+[33mcommit 7392b7fe2738b16816f56f5f3754f10a87fb8d15[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 01:09:11 2024 -0300
+
+    se afino el reestablecimientode indices en limpiar formulario de form agregardatos imputado y victima
+
+[33mcommit a7b2b1dec30368117f6253bcd264244e9a66786f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 01:01:29 2024 -0300
+
+    se ajustaron textchanged y keypress en agregar datos victima y agregar datos imputado
+
+[33mcommit e561f84cdef08f2dc16f3dbf00a63081aa4f33a4[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 00:30:18 2024 -0300
+
+    se modifico la estructura de validacion de caracteres en form agregardatosvictima
+
+[33mcommit c03c1b3f9ff1402b860a76485463e615fc987fcb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 28 00:04:32 2024 -0300
+
+    se crearon controles para email y numero telefonico
+
+[33mcommit 78ecabfe27e4d4a75bc60f1f03c1a18742ea0e21[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 23:06:22 2024 -0300
+
+    se soluciono problema de texto en textbox Caratula
+
+[33mcommit 677231646af73f169ff8db0abdb971099465d2b5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 22:19:54 2024 -0300
+
+    se agrego logica de retroalimentacion entre form agregar datos victima y form inicioCierre
+
+[33mcommit 1fb917ef6dce0f976fe9178b53529db2c4cc658a[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 22:01:14 2024 -0300
+
+    se agrego logica de retroalimentacion de nombre en form agregar datosimputado a inicio cierre y viceversa
+
+[33mcommit f336b24f8a70be48472ef5e8ccc4dc657882a61e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 17:44:17 2024 -0300
+
+    reposicionamiento de formularios buscarpersonal, cargo
+
+[33mcommit 8dc5c411e7b095699ce5e6dce3925d2ec46469d5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 16:10:11 2024 -0300
+
+    se redujo la cantidad de caracteres para numero de legajo
+
+[33mcommit 539d516c35b8ee3688428d21c1e16aee73f29b88[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 16:05:49 2024 -0300
+
+    se mejoro la clase para itroducir numeros de legajo
+
+[33mcommit b38930099734a4969235a1b81f250b3d3e4d8dda[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 11:31:36 2024 -0300
+
+    reajuste de tamaño form sellos dependencia
+
+[33mcommit 5c2ad6ae58580ca20b850ab600a76273cc075d2f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 11:21:06 2024 -0300
+
+    se asignaron limitaciones a controles (pensado para el peor de los usuarios
+
+[33mcommit fd4fb1cbf6ade5e431a7b2e6170c8b065ec73c22[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 01:47:57 2024 -0300
+
+    se estructuro el formulario Cargo para que reciba los datos de form inicio cierre
+
+[33mcommit ffab2ce77413dca366b6bd7529060c5018709c88[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 25 01:09:14 2024 -0300
+
+    se reestructuro componentes de formulario CARGOS
+
+[33mcommit 823ba2a16fa5eb2412e798978f6f4d8cc7370e96[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 24 22:04:06 2024 -0300
+
+    redimensionamiento de formularios
+
+[33mcommit ccc551eb4d0deebefe5dbc649025ada6db9a70e6[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 24 20:08:29 2024 -0300
+
+    se agrego logica para que los formularios desde menustrip se habran debajo del menuPrincipal
+
+[33mcommit f599df624363c8e069bf3e99a9747b81400cf6b2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 24 15:47:57 2024 -0300
+
+    se agrego logica de minimizar menu principal cuando se hace click en uno de los botones
+
+[33mcommit 7aa19704f9e99eef2dabcf6dd33cec249de2cb5c[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 24 14:54:54 2024 -0300
+
+    se agrego check Cargo y actualizar estado para que se active cuando se completan los datos necesarios
+
+[33mcommit f0e1ff99d63adb5fd09a24a93a7ce76705ba3508[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 24 11:41:57 2024 -0300
+
+    se agrego borde redondeado a todos los formularios y se genero fondo gradiente para el tono verde oscuro
+
+[33mcommit 14c96a2a51376a96e64d700c77cd2a0e72b44cf8[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 22 00:57:29 2024 -0300
+
+    formulario buscarForm con todas las validaciones y demas
+
+[33mcommit b0f0e7a91a2ee2d3dcaa2e2c43c5635d84e9e51a[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 22:47:51 2024 -0300
+
+    se estructuro el formulario inicio-cierre a prueba de usuarios boludos con la mayor cantidad de validaciones y estrctura de comportamiento posible
+
+[33mcommit 748cdd132f55311761301016303ee4599837fbb9[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 18:48:36 2024 -0300
+
+    formulario NuevoInstructor con logica de controles lista y validadada para pasar a base de datos
+
+[33mcommit 156020d295ea94ba174165f45d9ed51356e60e9b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 18:37:22 2024 -0300
+
+    formulario NuevoSecretario con logica de controles lista y validadada para pasar a base de datos
+
+[33mcommit 354e221b6b47709e2ee40d53d9a2bfc1d05a9db6[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 16:49:58 2024 -0300
+
+    se realizo cambio de posicion de btn y validacion ingreso de datos legajo, en form NuevoInstructor y NuevoSecretario
+
+[33mcommit 98e05351690d1c21d14be3fa0a48e4c93ac65fec[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 16:47:00 2024 -0300
+
+    se creo estilo propio de botones para formulario ModificarEliminar
+
+[33mcommit 9133a73d4f6567c9db2edad96451f6a5c5dd309a[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 16:05:35 2024 -0300
+
+    se agrego logica de agregar panel para control de elementos en secretario /falta solucionar distancia entre paneles DETALLES Y BOTONES (sumado a cancelar)
+
+[33mcommit dbf707b571c20a671b5cbc40378e9b1558f91358[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 10:22:34 2024 -0300
+
+    se agrego logica de agregado de panel_Detalles y logica de btn_Cancelar y btn_Edtar
+
+[33mcommit db1c552c53052435cf629d7ad94b84279316fd9f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 21 07:24:34 2024 -0300
+
+    se trabaja sobre formulario ModificarEliminar
+
+[33mcommit 7cbdbe221ecf4f25a3c0b966750855fa705405c9[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 21:10:52 2024 -0300
+
+    se agrego logica de visualizacion de contraseña en form validacion usuario y registro de nuevo usuario
+
+[33mcommit dcb00e78cf1ea7c464a4022982330639da6a3269[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 19:14:49 2024 -0300
+
+    se agrego visualizacion de contraseña en form validacion de usuarios
+
+[33mcommit a91459869f11b315fd7272b25f8e5763fb73f8b9[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 17:42:57 2024 -0300
+
+    se paso  mayuscula lista de jerarquias
+
+[33mcommit 71e4ea8118c28f19171bf072573c6f52e8b3b30a[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 17:35:15 2024 -0300
+
+    se modifico form inicio-cierre para que inicialice vacio los combobox fiscalia
+
+[33mcommit c3f6d9714090bfce1f8b5fbffda46c0c03e34618[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 17:08:41 2024 -0300
+
+    se agrego archivo json y logica de completar comboBox para form NuevaDependencia
+
+[33mcommit fc8f97f1037e5d60d028b0b15ad8c295de6e3f95[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 16:50:01 2024 -0300
+
+    se agregaron clases para completar comboBox Instructor, secretario
+
+[33mcommit a781160a2dc41119a0fc8a56f541c8fe6b2279bb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 09:12:36 2024 -0300
+
+    se agrego logica para agregar elementos mediante form NuevaFiscalia y que se refleje en comboBox
+
+[33mcommit 0ebc32287a2679b5c472233d82ddb166c9c5a7cb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 20 00:36:59 2024 -0300
+
+    se centralizo la aplicacion de jerarquiasManager en baseform, al momento solo se hizo la llamada desde form NuevoInstructor
+
+[33mcommit baf22a82bca702247ea763ac7bbeafe5bdbd9f98[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Aug 19 22:22:31 2024 -0300
+
+    se agrego clase diccionario para completar combobox, aplicada en nuevoInstructor y nuevoSecretario
+
+[33mcommit a8cc8d2f1d1e92fc6a15296843b7b2520a4fb7fc[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 18 11:39:01 2024 -0300
+
+    comit previo a vinculacion con base de datos
+
+[33mcommit 5bfef1891251811e61190c5ae4a0581fd4aaf0f7[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 16 18:44:56 2024 -0300
+
+    se modifico form REGISTRAR NUEVO PERSONAL
+
+[33mcommit 8fc49e70dec6cf822c9fb7b8cdc8a34091edebdc[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 16 07:11:00 2024 -0300
+
+    se agrego bandera en formulario agregardatosImputado, se comento mensaje de alerta en textbox AÑO de control DateNacimietno ya que se debe mejorar la logica de comparacion
+
+[33mcommit d19e9f291446bffa277d8d91a3b623ac97ce4c71[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 14 03:11:12 2024 -0300
+
+    finalizado el proceso de validaciones y completar campos del UserControl DateNacimiento
+
+[33mcommit 184fe4029725c184c7f64c364e4b23af813239a5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 14 02:50:19 2024 -0300
+
+    mejoras en validacion useControl DateNacimient0o
+
+[33mcommit 9c9056c7132d5434a1843cd990bc73d3f220f01b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 14 02:26:57 2024 -0300
+
+    se modifico userControl DateNacimiento, se le agragaron validaciones de extencion de caracteres y parametros de fechas
+
+[33mcommit bb9556bfa80d56f4787447e448eef69bd6ad2e46[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 13 23:47:40 2024 -0300
+
+    se agrego formato y longitud de textBox_Dni, en formulario agregarDatosVictima e Imputado
+
+[33mcommit 9ebd972c9b3520cf00ffaa9c743a2a28f28a18cb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 13 22:39:05 2024 -0300
+
+     se quito link de footer contacto
+
+[33mcommit 9550d725a339a6cf16a394be81277a9c13c94fde[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 13 21:51:02 2024 -0300
+
+    se agrego validacion de cantidad de caracteres y limpieza de textbox_NumeroLegajo, a btn_AgregarPersonal, form BuscarPersonal
+
+[33mcommit 7d05e4459b78cd7e13513cbaaf0ad5285e95e400[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 13 21:15:18 2024 -0300
+
+    se agrego validacion te textbox y btn en formulario buscarPersonal
+
+[33mcommit c1dbefa5d006bc9c35ecd50d0e18c815a7efe2e5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 13 18:26:41 2024 -0300
+
+    se agregaron formularios BuscarPersonal y NuevoPersonal
+
+[33mcommit 0acd655835b2d55900fc464f58eb91258fa327a0[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 13 16:57:37 2024 -0300
+
+    se agrego comportamiento a btn_agregarPersona, de NuevaPersonaControl,persisten problemas de reposicionamiento de paneles, habilitacion de mausculas en controles y re enumeracion de label tras elimnar controles
+
+[33mcommit 50e090cf21f7d23e35eac0fc670a98aaa589f5df[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 11 19:34:14 2024 -0300
+
+    funciona el manejo de controles desde el formualrio, se guardan lso cambios ys e intentara encapsular toda la logica en el usercontrol
+
+[33mcommit 0ab5d408942a32071e4bdff606347f01360645a7[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 11 04:55:40 2024 -0300
+
+    limpieza de codigo que será reevaluado y abordado de manera diferente
+
+[33mcommit 10b70b9cc0b50bf2b0fc337b2015247e30e6c28b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 11 02:55:23 2024 -0300
+
+    PUNTO 0 PREVIO MODIFICACION IMPORTANTE
+
+[33mcommit 0f6fc1d8e79f3672ba46102b8e6f05c6bd8da494[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 11 02:19:02 2024 -0300
+
+    se agrego y mejoro control NuevaCaratula, se mejoro su posicioamiento
+
+[33mcommit cb9cf2dda6d7400b99e1771d5b39e41987d7f610[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 10 21:49:50 2024 -0300
+
+    se modifico la estetica de btn_agregarCausa, Victima, Imputado, quedo BIEN
+
+[33mcommit 0dda43e0fe50fb0c512bc03e2ba4a1adefcb9ca8[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 10 18:54:09 2024 -0300
+
+    comit previo a reestructurar btn_agragarCausa, Victima,Imputado
+
+[33mcommit 47fc994c312bebcb9cdfad44cf83100167e4b93b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 10 04:01:09 2024 -0300
+
+    se logro que los controles se posiciones uno debajo del otro y que empuje los paneles siguientes hacia abajo
+
+[33mcommit 1ec39ffc27056445888ffb9014f6056ac645f19b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Aug 10 02:35:04 2024 -0300
+
+    se agregaron paneles para agregar nuevos controles de victima e imputado, falta pulir superposicion
+
+[33mcommit 6e7ec8fbb8a52ca22aeffc77fb850c94b030e529[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 9 21:04:54 2024 -0300
+
+    se modifico estetica label_LegajoDetenido
+
+[33mcommit 3579df61373c4ab3c47329f38823d8800ffb55d8[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 9 19:41:02 2024 -0300
+
+    se creo userControl NuevaPersonaControl, para ser usado para agregar nueva victima e imputado
+
+[33mcommit 5913ada47c743697a59b111ae6008f88a0a473ac[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 9 09:13:10 2024 -0300
+
+    Punto de avance de proyecto
+
+[33mcommit 029a0fa79a7697b8035fb5e9d935bcb11e1b32ce[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 9 08:58:02 2024 -0300
+
+    merda
+
+[33mcommit 60e1caf7d337e8bbc130e8bae2d6487f1ee46617[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 9 08:52:37 2024 -0300
+
+    intento fusionar con master
+
+[33mcommit e6431164343935edf421e669a290d3523e1fca22[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 9 08:41:58 2024 -0300
+
+    PROYECTO ACTUALIZADO CON TOTALIDAD DE CAMBIOS
+
+[33mcommit 1c2c222587e0c19723df71506295ab25b7efd49f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 8 11:31:52 2024 -0300
+
+    Descripción de los cambios realizados
+
+[33mcommit 827d8e1b5fb257b0295a42f8efa61289765d6810[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 8 11:05:23 2024 -0300
+
+    Commit desde plantillas con cambios
+
+[33mcommit e2e649f2d780d22d91b2aa70fd89d623f28271aa[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 8 10:54:58 2024 -0300
+
+    conservando cambios
+
+[33mcommit f3c0aba42f33b82081829d7a80e872985f6389bc[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 8 10:44:17 2024 -0300
+
+    agragado de cache
+
+[33mcommit db7bf909e4ed68770bbfe1a41cc577a495c3114e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 8 01:15:36 2024 -0300
+
+    se crearon mensajes de confirmacion para calendarioForm
+
+[33mcommit 6ad96ae3c84ffbc3f1ac2aa73e9bff4a7ea33896[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 8 00:57:23 2024 -0300
+
+    se agrego un nuevo control para fecha de nacimiento, falta pulirlo
+
+[33mcommit 119d99cad58f8419651f4aba1aece267045f78a9[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 7 22:08:36 2024 -0300
+
+    se agrego validacion de habilitacion de check legajoDetenido, mediante  verificacion de texto en nombre y Dni
+
+[33mcommit dd3c07d1b0b379c4c5b3fc4600961a2275cde52d[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 7 21:42:12 2024 -0300
+
+    se logro crear habilitacion y deshabilitacion de picktureBox en formulario NUEVO IMPUTADO
+
+[33mcommit 47745ed0ea0bbe368d8491f9c1c783a69be748f9[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 7 19:01:12 2024 -0300
+
+    se agregaron cambios en formularios NUEVA VICTIMA Y NUEVO IMPUTADO
+
+[33mcommit a8a9a8ad03b3f878e8de4a204e22b2ee8eea4062[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Aug 7 16:02:35 2024 -0300
+
+    se agregaron enlaces a paginas externas desde formulario CONTACTO
+
+[33mcommit 4c8a8698c1af15bfb2cc43dbdfa91e55c87c9ecf[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 23:11:13 2024 -0300
+
+    se agregaron validacion y metodos para el formulario SELLOSDEPENDENCIA
+
+[33mcommit 264895d10af00f597e9e680a7690f79f981222d0[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 22:22:37 2024 -0300
+
+    se agrego logica de los textos en formulario NuevaFiscalia
+
+[33mcommit 1814e6bf0b62455c934d76dc7b99abd0cacfa7d4[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 21:02:40 2024 -0300
+
+    tratando de que no falte nada
+
+[33mcommit a6b478d31595a8cf4429eb7973e2a3dd8b4f6e4f[m[33m ([m[1;31morigin/retoques[m[33m)[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 20:47:25 2024 -0300
+
+    retoques actualizados de formularios agregar componentes
+
+[33mcommit faff9c1db205fa82650f443ac52c6b8880d5e1bb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 20:27:22 2024 -0300
+
+    se agrego logica de validacion para form sellosDependencia, desde form NuevaDependencia y desde menuStrip SELLOS
+
+[33mcommit db112c6d6f87c7ebc8d7e31f50dcd9850852bbed[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 18:52:53 2024 -0300
+
+    seagregaronhabilitaciones en formulario NUEVA DEPENDENCIA
+
+[33mcommit 4d0b5e4eee923fa6fe2abe5c135e4a378224127d[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 17:28:54 2024 -0300
+
+    se soluciono duplicacion de mensaje formulario eliminado en agregar instructor y secretario
+
+[33mcommit 76ee88caef3b00440857694df509eaf3aea4bfe8[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 17:19:54 2024 -0300
+
+    seagrego comportamiento estetico picktureBox en AGREGAR NUEVO INSTRUCTOR
+
+[33mcommit cdf1b7c0aa7e08649501553c3877c17c1027eca5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 17:04:28 2024 -0300
+
+    se modifico estetica y comportamiento de picktureBox en agregar nuevo secretario
+
+[33mcommit 09e03cdbf50c338d9c39eb6efbd555adf316bc9c[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 15:54:45 2024 -0300
+
+    se modifico clase mayusculaSimple para ser usada en formularios agregar secretario etc
+
+[33mcommit 02f067fef5715de7cbd0e1f1820a0e4dcec18b7e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 15:29:42 2024 -0300
+
+    se modifico dateTimerPikerPersonalizado, se lo agrego a formulario buscar
+
+[33mcommit 19d053da585d2faa2dc04a4e87c18226d16bcfd2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 14:49:55 2024 -0300
+
+    se agrego clase IncrementarTamsño y se le aplico a btn_Configurar y btn_CambiarTema
+
+[33mcommit 032532b9d5826b103b8aecf47380ca409f298626[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Aug 6 14:28:32 2024 -0300
+
+    eliminando repositorios locales duplicados
+
+[33mcommit 308bab29a9a6935cb2e4bd0e9119c9b67ff6f4fa[m
+Merge: e74cd6e e759398
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Aug 5 22:59:16 2024 -0300
+
+    agregar archivos conflcitivos
+
+[33mcommit e74cd6ea851f8c5345bf83c3213673fc84bc28ac[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Aug 5 22:52:09 2024 -0300
+
+    cambios desconocidos
+
+[33mcommit 49c0e3db11a2f32266bffcbf9d01de9781a57b0c[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Aug 5 22:39:46 2024 -0300
+
+    tratando de limpiar el proyecto
+
+[33mcommit 16032235647e3aebee342ca9ae4d37506ba1f1cd[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Aug 5 14:04:25 2024 -0300
+
+    restablecer el proyecto a un commit anterior no dio el resultado esperado, estoy tratando de csolucionar el problema de avances de proyecto perdidos
+
+[33mcommit 0c17de1315f496eb42bb5233b35aaf279a2586e5[m[33m ([m[1;31morigin/estilos[m[33m)[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Aug 4 05:25:27 2024 -0300
+
+    se agregaron form y conexiones para la vinculacion del menustrip
+
+[33mcommit 139231f5b1d16e9be5b65e88bd5ae16d7287ceff[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Aug 2 18:09:50 2024 -0300
+
+    se agrego vinvulacion entre menuStrip y buscarForm(textBox_Caratula)
+
+[33mcommit 5a7dfd0f5050a32ab5c79771d5d156ee29711288[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Aug 1 17:46:40 2024 -0300
+
+    se agregaron modificaciones para  incorporar nuevos items en combobox, falta vincularlo a archivo e integrarlo
+
+[33mcommit 587885e332a25b69d9924c6a92e1ea70cc4fcce2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jul 30 18:53:24 2024 -0300
+
+    se agregaron los formularios para agrgar secretario, dependencia e instructor, se validaron mayusculas, btnlimpiar, y btn guardar
+
+[33mcommit 0761fe7ec5aca672bb51a76c1f05c19751cf5547[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jul 30 16:53:37 2024 -0300
+
+    se completaron componentes de form agregar instructor, secretario y dependencia
+
+[33mcommit a1b806d376499e5f2c0d0765d8a91466bc54e4b2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jul 30 16:31:56 2024 -0300
+
+    se agrego menu a btn_configurar y se crearon formulario para incorporar nuevos elementos
+
+[33mcommit cb504b37df9c74138f679275f88392ad3f3fc08f[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jul 30 02:50:02 2024 -0300
+
+    se agragaron modificaciones formularios circunstancias personales
+
+[33mcommit d620c54680e16a2333f777cfc7125634ecdecc01[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 29 17:05:54 2024 -0300
+
+    sse corrigio clase mayuscula y manejo de exepciones
+
+[33mcommit f93c7513cbfc3c971e698e1d9db88bbd6e090ef8[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 28 17:54:55 2024 -0300
+
+    aplicacion correcta mediante clase para uso de tooltip en btn desactivado
+
+[33mcommit c1d268915133c817e45b2be8018aad6c831ed1fd[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 28 16:21:09 2024 -0300
+
+    modificaciones exitosas en tooltip en btn desabilitado
+
+[33mcommit 7af175a15df63f552fccb4c778c2b979466a9d70[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jul 27 19:50:55 2024 -0300
+
+    se agregaron nuevos formularios para incorporar datos completos de victima e imputado
+
+[33mcommit 7d6a5029627d4afd960a71f01422567d62ba2bdf[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Thu Jul 25 00:31:39 2024 -0300
+
+    se agregaron btn agregar victima e imputado, para agregar sus circunstancias personales, se agrego uno de los formularios y varias de sus propiedades
+
+[33mcommit 51505d772bc744dab7c3f8c2a00576f4871e0165[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 22 12:34:38 2024 -0300
+
+    despues de las cagadas con chatgpt, creo haber restablecido valores anteriores, sigue faltando que se aplique progressVerticalBar y validacion-activacion btn_Imprimir
+
+[33mcommit bac2b91832b3c70b13c594fb02cdecd305bdfc7d[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 21 20:41:33 2024 -0300
+
+    se arreglo que se actualice la fecha  en el dataTimePiker personalizado, todavia no se soluciona progressverticalbar y validacion de btn_imprimir
+
+[33mcommit c7676a271dc5b19a8813bed79a32f43ff603d6e8[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jul 16 18:26:53 2024 -0300
+
+    se modifico de DateTimePicker, creando un userControl especifico
+
+[33mcommit a5127669c794ab1e278e12d92f223b6a5bff4e0c[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 15 15:02:36 2024 -0300
+
+    se modifico el estilo de botones limpiar, guardar,buscar y agregar causa,victima e imputado
+
+[33mcommit 64304bb654b4c78f6213f06c60c44da7edb84311[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 14 18:45:06 2024 -0300
+
+    se modularizo un poco mas los componentes de form inicio cierre(a posteriori crear clase aparte)
+
+[33mcommit e7d042cd32c57f9725cc5704f8781ccbee0aafd4[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 14 11:53:39 2024 -0300
+
+    cambios en boton guardar, sobre formulario(no clase separada)
+
+[33mcommit 43d4c84b0c91b0689430237eb88e264f23463736[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jul 13 18:17:54 2024 -0300
+
+    modificaciones varias(mayoria no se aplica)
+
+[33mcommit 88c4b9ea537cceb072ff047db4481cda059e0ec2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jul 13 06:57:16 2024 -0300
+
+    puliendo
+
+[33mcommit 460de64924da499d3513138237b0eb329edebfcb[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Jul 10 15:41:18 2024 -0300
+
+    problemas con progresBarImprimir y con los indices predefinidos en inicio_cierre. designer
+
+[33mcommit 008ab7e4196d5da639abb05b7f75d40207c60fa0[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 8 15:28:13 2024 -0300
+
+    se limmitaron la cantidad de caracteres a 2 en comboBox_Ipp/ se valida que no se ingresen letras o caracteres especiales/FUNCIONA CORRECTAMENTE
+
+[33mcommit c72166b5a0042b13f29843b9a1d8b6465454080e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 8 14:24:57 2024 -0300
+
+    se soluciono valores de comboBox_NumeroIpp
+
+[33mcommit 2ddcb2ec589addb981bced863156b43aa3b27d1e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 8 01:05:49 2024 -0300
+
+    modificacion de clase de validacion de datos ingresadosen comboBox(todavia no funciona)
+
+[33mcommit a93d16617721a685d57e8cdc5cc5ef224749f045[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 8 01:01:49 2024 -0300
+
+    modificacion de validacion de ingreso de datos a los comboBox
+
+[33mcommit afe6ce2342c05b52278bf886b07bf69d405143c1[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 7 22:35:17 2024 -0300
+
+    resolviendo problema de visualizacion de comboBox predefinido
+
+[33mcommit ef895fbeeda0e0c33cdb47a93811dc21368eeb79[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 7 20:19:59 2024 -0300
+
+    se agregaron modificaciones (INCOMPLETAS) a ventana emergente de guardar/imprimir
+
+[33mcommit 340b000bceba3f4b26d8de7056053ffd75828b2d[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sun Jul 7 17:13:35 2024 -0300
+
+    agregando progressBar provisorio para btn_imprimir
+
+[33mcommit fd1ccd08aa08b6ffa5f115e570117ab87f398712[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jul 6 03:51:24 2024 -0300
+
+    gestion de errores- se mejoro limpiar formulario para que restablesca valores predeterminados
+
+[33mcommit c1c0941668bdcf3b97a7355c34dc73bfd227ab8a[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Jul 3 15:55:21 2024 -0300
+
+    se agregaron progresBar a otros formularios
+
+[33mcommit b7e79ffef978ad496b133d3112ace9e2bfdf8791[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Jul 3 08:12:00 2024 -0300
+
+    agregado de progressBar-no funciona
+
+[33mcommit dafc89988390d6bab9d5445c05f458929e08e4b2[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jul 2 14:23:06 2024 -0300
+
+    cambios superficiales
+
+[33mcommit 69f7636484c195f18d7644f8e7de92ad8a2a19e5[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jul 1 23:46:42 2024 -0300
+
+    se nodifico apariencia, se incorporo funciones, NO SE ESTAN APLICANDO (MAYUSCULA-INPUT-MENU DESPLEGABLE
+
+[33mcommit d691656a343aafacf71bf5c1890af16caf0861a1[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jun 29 19:50:08 2024 -0300
+
+    se cambio fondo, se agrego panel
+
+[33mcommit 3d5a1f9f5ced4281fae92f87412dc2d83c62a66e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Jun 26 16:29:22 2024 -0300
+
+    se agregaron botones a formulario inicio-cierre
+
+[33mcommit 2c7d79e82a246017cba0c8333fd56e91353f596e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Wed Jun 26 11:58:36 2024 -0300
+
+    se agregaron funciones salto de imput, mayuscula y filtro de caracteres, sin embargo no se estan aplicando correctamente
+
+[33mcommit b1baa154d0d8737d57c4ad0fc8d8fb6e7e6f56a8[m
+Merge: c05570c f40b114
+Author: Jorge Bonato <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jun 18 02:15:44 2024 -0300
+
+    Merge pull request #1 from j178ja/rama_errores
+    
+    Rama errores
+
+[33mcommit e7593984e3297b4093917bb14425897d6d5cd973[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jun 18 01:14:38 2024 -0300
+
+    Guardando cambios antes de cambiar de rama
+
+[33mcommit f40b114f74431449ba7128dd54bbb1fc742be709[m[33m ([m[1;31morigin/rama_errores[m[33m)[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Tue Jun 18 01:00:34 2024 -0300
+
+    agregando contenido a los formularios
+
+[33mcommit 768fe8b9c086a3562f8fb1595db47153e603a3a1[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jun 15 22:44:40 2024 -0300
+
+    errores solucionados, botones abren forularios correspondientes, btn config y cambio tema, muestran momentaneamente mensaje de alerta
+
+[33mcommit cad86fc71ba6eeff097aaaf3b32e08fdaee28c6b[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jun 15 22:16:46 2024 -0300
+
+    contiene enventos en los botones y multiples errrores surgidos
+
+[33mcommit f608daf428e954f6dfa688c5d5e40ffd5d7866dc[m[33m ([m[1;31morigin/aplicacion_clases[m[33m)[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Sat Jun 15 17:48:38 2024 -0300
+
+    se cometio errores en las clases, se elimino clase de asignacion de icono, se crean clases parciales individuales
+
+[33mcommit 5c903e5d8267bd88d9ade2b290b4d3712a273703[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Jun 14 10:31:01 2024 -0300
+
+    se aplico la clase general(icon) para incorporar en todos los formularios el icono escudo pol
+
+[33mcommit 990c460d38fff1458ea53682788496da0b1107fb[m[33m ([m[1;31morigin/rama_inicio[m[33m)[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jun 10 19:21:31 2024 -0300
+
+    incorporacion de nombre de clases generales a aplicar en todo el proyecto
+
+[33mcommit aba8ecb93eb0d42f67e5207aa3bbe771e2e0d74e[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jun 10 17:10:05 2024 -0300
+
+    incorporacion de carpeta de archivos generales
+
+[33mcommit f0f11209c2a9b27a328a0f6ef255e7a427a6ed65[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jun 10 15:20:06 2024 -0300
+
+    incorporacion de conjunto de archivos esenciales
+
+[33mcommit c05570c247c801d616b185706f0f1ef7f41d3ea6[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Mon Jun 10 14:52:37 2024 -0300
+
+    inicio

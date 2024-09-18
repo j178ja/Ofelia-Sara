@@ -36,3 +36,12 @@ NO FUNCIONA ELIMINAR EL BOTON MAXIMIZAR, SOLO FUNCIONA DESHABILITAR (se puede so
 5) Que los botones agregar amplien el formulario agregando un nuevo campo justo debajo 
 
 hacer que se reflejen los archivos json de bin en los de la solucion del proyecto
+
+--------------------------------------------------------------------------------------------
+
+se copiaron las clases a proyecto clases_Libreria
+se copiaron los archivos a proyecto baseDatos_Libreria
+se copiaron carpeta imagenesa recursos
+
+--->FALTARIA----> ASOCIAR LOS PROYECTOS Y ELIMINAR LA ESTRUCTURA ANTIGUA
+QUEDARIA DENTRO DE PROYECTO OFELIA-SARA....ACCESO USUARIOS ...FORMULARIOS...REGISTRO PERSONAL... RECURSOS
