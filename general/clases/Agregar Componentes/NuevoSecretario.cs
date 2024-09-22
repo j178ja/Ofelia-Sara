@@ -11,11 +11,13 @@ using System.Windows.Forms;
 //using SkiaSharp;//biblioteca para efecto visual
 using System.Drawing.Imaging;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Botones;
 //using Ofelia_Sara.Base_de_Datos;
 using System.IO;
 using Ofelia_Sara.Base_de_Datos;
 using Ofelia_Sara.Base_de_Datos.Entidades;
 using static System.Resources.ResXFileRef;
+using Ofelia_Sara.Formularios;
 
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes

@@ -11,7 +11,7 @@ using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara;
 using Ofelia_Sara.Acceso_Usuarios;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+
 
 
 

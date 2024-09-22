@@ -1,4 +1,4 @@
-﻿namespace Ofelia_Sara
+﻿namespace Ofelia_Sara.Formularios
 {
     partial class MenuPrincipal
     {

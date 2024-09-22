@@ -342,9 +342,6 @@
     <Compile Include="general\clases\Apariencia General\Controles\NumeroTelefonicoControl.Designer.cs">
       <DependentUpon>NumeroTelefonicoControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
-    <Compile Include="general\clases\Apariencia General\Generales\BordePanel.cs" />
-    <Compile Include="general\clases\Apariencia General\Generales\PosicionarFormularioDebajo.cs" />
     <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -355,39 +352,27 @@
     <Compile Include="general\clases\Barra Busqueda\PlaceholderComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="general\clases\Botones\IncrementarTamaño.cs" />
     <Compile Include="general\clases\Barra Busqueda\AsignacionDeTareas.cs" />
     <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\Generales\cabecera.cs" />
-    <Compile Include="general\clases\Botones\btn_Configuracion\AuxiliarConfiguracion.cs" />
-    <Compile Include="general\clases\Botones\cambio_de_tema.cs" />
-    <Compile Include="general\clases\Botones\btn_Configuracion\Configuracion.cs" />
     <Compile Include="general\clases\Barras personalizadas\CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\Generales\footer.cs" />
-    <Compile Include="general\clases\Botones\guardar_archivo.cs" />
-    <Compile Include="general\clases\Apariencia General\Generales\Iconos.cs" />
-    <Compile Include="general\clases\Botones\imprimir.cs" />
-    <Compile Include="general\clases\Botones\limpiar_formulario.cs" />
-    <Compile Include="general\clases\Botones\TooltipEnBtnDesactivado.cs" />
     <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\salto_de_input.cs" />
     <Compile Include="Formularios\Oficial de servicio\inicio_cierre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\inicio_cierre.Designer.cs">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Oficial de servicio\menu_principal.cs">
+    <Compile Include="Formularios\menu_principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Oficial de servicio\menu_principal.Designer.cs">
+    <Compile Include="Formularios\menu_principal.Designer.cs">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -512,7 +497,7 @@
     <EmbeddedResource Include="Formularios\Oficial de servicio\inicio_cierre.resx">
       <DependentUpon>inicio_cierre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Oficial de servicio\menu_principal.resx">
+    <EmbeddedResource Include="Formularios\menu_principal.resx">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\escudoPolicial.resx">

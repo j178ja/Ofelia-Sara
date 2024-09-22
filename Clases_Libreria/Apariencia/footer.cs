@@ -3,9 +3,9 @@
   ---------------DESARROLLADOR Y VERSION ---------------------------*/
 using System;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
+using Ofelia_Sara;
 
-namespace Ofelia_Sara.general.clases
+namespace Clases_Libreria.Apariencia
 {
     public static class FooterHelper
     {

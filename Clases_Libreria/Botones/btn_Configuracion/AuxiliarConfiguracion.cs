@@ -15,9 +15,9 @@ using Ofelia_Sara.Registro_de_personal;
 using Ofelia_Sara.Acceso_Usuarios;
 
 
-namespace Ofelia_Sara.general.clases.Botones
+namespace Clases_Libreria.Botones.btn_Configuracion
 {
-    internal class AuxiliarConfiguracion
+    public class AuxiliarConfiguracion
     {
         private readonly Form _menuPrincipal;
 

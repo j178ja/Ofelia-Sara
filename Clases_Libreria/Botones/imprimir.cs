@@ -8,7 +8,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.general.clases
+namespace Clases_Libreria.Botones
 {
     public static class ValidadorCamposImpresion
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ofelia_Sara.general.clases.Apariencia_General.Generales
+namespace Clases_Libreria.Apariencia
 {
     using System.Drawing;
     using System.Drawing.Drawing2D;

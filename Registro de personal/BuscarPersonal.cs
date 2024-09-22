@@ -1,6 +1,5 @@
 ﻿using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General.Controles;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using Clases_Libreria.Texto;
 using System;
 using System.Collections.Generic;
@@ -13,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.Registro_de_personal
 {

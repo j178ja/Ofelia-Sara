@@ -1,13 +1,13 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
-using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System;
 using System.Windows.Forms;
 using System.Drawing;
 
 
-namespace Ofelia_Sara.general.clases
+namespace Clases_Libreria.Botones
+
 {
     public static class LimpiarFormulario
     {

@@ -1,10 +1,13 @@
 ﻿using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+using Clases_Libreria.Reposicon_paneles;
+using Clases_Libreria.Botones;
+using Clases_Libreria.Texto;
 using System;
 using System.Windows.Forms;
 using System.Drawing;
+using Ofelia_Sara.Formularios;
 
-namespace Ofelia_Sara
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class Contravenciones : BaseForm
     {

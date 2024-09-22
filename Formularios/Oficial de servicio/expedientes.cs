@@ -18,11 +18,14 @@ using System.Linq;
 using Spire.Doc.Documents;
 using System.Collections.Generic;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Botones;
+using Clases_Libreria.Reposicon_paneles;
+using Ofelia_Sara.Formularios;
 
 
 
 
-namespace Ofelia_Sara
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class Expedientes : BaseForm
     {

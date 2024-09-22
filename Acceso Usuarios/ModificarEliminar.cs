@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Base_de_Datos.Entidades;
 using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.Acceso_Usuarios
 {

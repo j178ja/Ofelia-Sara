@@ -1,5 +1,4 @@
 ﻿using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.Formularios
 {

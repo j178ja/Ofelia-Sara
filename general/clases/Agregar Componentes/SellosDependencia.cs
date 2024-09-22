@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls.WebParts;
 using System.Windows.Forms;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Botones;
+using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
