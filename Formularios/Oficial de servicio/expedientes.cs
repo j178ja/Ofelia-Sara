@@ -17,6 +17,7 @@ using Microsoft.Office.Interop.Word;
 using System.Linq;
 using Spire.Doc.Documents;
 using System.Collections.Generic;
+using Clases_Libreria.Texto;
 
 
 

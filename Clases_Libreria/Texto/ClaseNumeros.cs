@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Clases_Libreria.Texto;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.general.clases.Apariencia_General.Texto
+
+namespace Clases_Libreria.Texto
 {
-    internal class ClaseNumeros
+    public class ClaseNumeros
     {
         public static string FormatearNumeroConPuntos(string texto)
         {

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Base_de_Datos.Entidades;
+using Clases_Libreria.Texto;
 
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes

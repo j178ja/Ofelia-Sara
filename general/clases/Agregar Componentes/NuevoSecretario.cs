@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //using SkiaSharp;//biblioteca para efecto visual
 using System.Drawing.Imaging;
-using Ofelia_Sara.general.clases.Apariencia_General.Texto;
+using Clases_Libreria.Texto;
 //using Ofelia_Sara.Base_de_Datos;
 using System.IO;
 using Ofelia_Sara.Base_de_Datos;

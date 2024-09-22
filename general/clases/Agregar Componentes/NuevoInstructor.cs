@@ -1,7 +1,7 @@
 ﻿using Ofelia_Sara.Base_de_Datos;
 using Ofelia_Sara.Base_de_Datos.Entidades;
 using Ofelia_Sara.general.clases.Apariencia_General;
-using Ofelia_Sara.general.clases.Apariencia_General.Texto;
+using Clases_Libreria.Texto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

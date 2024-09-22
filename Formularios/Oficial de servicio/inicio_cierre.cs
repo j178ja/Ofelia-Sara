@@ -22,6 +22,7 @@ using Ofelia_Sara.Base_de_Datos.Entidades;
 using System.Text.Json;
 using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using System.Drawing.Drawing2D;
+using Clases_Libreria.Texto;
 
 
 

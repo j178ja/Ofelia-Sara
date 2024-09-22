@@ -12,7 +12,7 @@ using Ofelia_Sara.general.clases;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using Ofelia_Sara.general.clases.Apariencia_General.Generales;
 using Ofelia_Sara.Base_de_Datos;
-using Ofelia_Sara.general.clases.Apariencia_General.Texto;
+using Clases_Libreria.Texto;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {

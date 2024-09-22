@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls.WebParts;
 using System.Windows.Forms;
+using Clases_Libreria.Texto;
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
