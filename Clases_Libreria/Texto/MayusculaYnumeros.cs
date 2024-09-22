@@ -5,9 +5,9 @@ using System;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.general.clases
+namespace Clases_Libreria.Texto
 {
-    internal class MayusculaYnumeros
+    public class MayusculaYnumeros
     {
         public static void AplicarAControl(Control control)
         {

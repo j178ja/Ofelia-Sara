@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing;
+using Clases_Libreria.Texto;
 
 namespace Ofelia_Sara
 {

@@ -5,9 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General;
+using Clases_Libreria.Texto;
 // Esta clase contiene métodos para convertir texto a mayúsculas y filtrar caracteres especiales y números.
 public static class TextoEnMayuscula
 {

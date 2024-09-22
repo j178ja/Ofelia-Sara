@@ -8,3 +8,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Clases_Libreria\bin\Debug\Micro
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Clases_Libreria\obj\Debug\Clases_L.F8E25232.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Clases_Libreria\obj\Debug\Clases_Libreria.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Clases_Libreria\obj\Debug\Clases_Libreria.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Clases_Libreria\obj\Debug\Clases_Libreria.csproj.ResolveComReference.cache

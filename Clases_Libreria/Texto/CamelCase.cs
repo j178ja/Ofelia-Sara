@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Clases_Libreria.Texto;
 
-using System;
-using System.Text;
 
-namespace Ofelia_Sara.general.clases.Apariencia_General
+namespace Clases_Libreria.Texto
 {
     public static class ConvertirACamelCase
     {

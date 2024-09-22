@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clases_Libreria.Texto;
 
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes

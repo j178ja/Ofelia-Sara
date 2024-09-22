@@ -345,21 +345,17 @@
     <Compile Include="general\clases\Apariencia General\Generales\apariencia_formularios.cs" />
     <Compile Include="general\clases\Apariencia General\Generales\BordePanel.cs" />
     <Compile Include="general\clases\Apariencia General\Generales\PosicionarFormularioDebajo.cs" />
-    <Compile Include="general\clases\Apariencia General\Texto\CamelCase.cs" />
     <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Controles\DataTimePickerPersonalizado.Designer.cs">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </Compile>
-    <Compile Include="general\clases\Apariencia General\Texto\ClaseNumeros.cs" />
-    <Compile Include="general\clases\Apariencia General\Texto\MayusculaSola.cs" />
     <Compile Include="general\clases\Barra Busqueda\Autocompletar.cs" />
     <Compile Include="general\clases\Barra Busqueda\PlaceholderComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="general\clases\Botones\IncrementarTamaño.cs" />
-    <Compile Include="general\clases\Apariencia General\Texto\MayusculaYnumeros.cs" />
     <Compile Include="general\clases\Barra Busqueda\AsignacionDeTareas.cs" />
     <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
@@ -376,7 +372,6 @@
     <Compile Include="general\clases\Apariencia General\Generales\Iconos.cs" />
     <Compile Include="general\clases\Botones\imprimir.cs" />
     <Compile Include="general\clases\Botones\limpiar_formulario.cs" />
-    <Compile Include="general\clases\Apariencia General\Texto\mayuscula.cs" />
     <Compile Include="general\clases\Botones\TooltipEnBtnDesactivado.cs" />
     <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
