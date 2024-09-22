@@ -210,10 +210,10 @@
     <Compile Include="Base de Datos\Entidades\JerarquiasManager.cs" />
     <Compile Include="Base de Datos\Entidades\Secretario.cs" />
     <Compile Include="Base de Datos\TableCreator.cs" />
-    <Compile Include="Contacto.cs">
+    <Compile Include="Formularios\Contacto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contacto.Designer.cs">
+    <Compile Include="Formularios\Contacto.Designer.cs">
       <DependentUpon>Contacto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\BuscarForm.cs">
@@ -361,17 +361,7 @@
     <Compile Include="general\clases\Botones\IncrementarTamaño.cs" />
     <Compile Include="general\clases\Apariencia General\Texto\MayusculaYnumeros.cs" />
     <Compile Include="general\clases\Barra Busqueda\AsignacionDeTareas.cs" />
-    <Compile Include="general\clases\Barras personalizadas\BarraVerticalProgreso.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="general\clases\Barras personalizadas\ControladorProgressVerticalBar.cs" />
-    <Compile Include="general\clases\Barras personalizadas\ProgressVerticalBarAlfa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="general\clases\Barras personalizadas\ProgressVerticalBarAlfa.Designer.cs">
-      <DependentUpon>ProgressVerticalBarAlfa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="general\clases\BaseForm.cs">
+    <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="general\clases\Apariencia General\Generales\cabecera.cs" />
@@ -433,7 +423,7 @@
     <EmbeddedResource Include="Acceso Usuarios\UsuarioForm.resx">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contacto.resx">
+    <EmbeddedResource Include="Formularios\Contacto.resx">
       <DependentUpon>Contacto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\BuscarForm.resx">
@@ -515,10 +505,7 @@
     <EmbeddedResource Include="general\clases\Apariencia General\Controles\PersonalSeleccionadoControl.resx">
       <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="general\clases\Barras personalizadas\ProgressVerticalBarAlfa.resx">
-      <DependentUpon>ProgressVerticalBarAlfa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="general\clases\BaseForm.resx">
+    <EmbeddedResource Include="Formularios\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="general\clases\Mensajes\MensajeCargarImprimir.resx">
@@ -586,10 +573,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Base de Datos\Personal\" />
-    <Folder Include="Base de Datos\Usuarios\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Resources\imagenes\ojoCerrado.png" />
     <None Include="Resources\imagenes\subir_documentos.png" />
@@ -619,6 +602,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BaseDatos_Libreria\BaseDatos_Libreria.csproj">
+      <Project>{2c5f032d-6d86-43e5-b9f7-46847f028f31}</Project>
+      <Name>BaseDatos_Libreria</Name>
+    </ProjectReference>
+    <ProjectReference Include="Clases_Libreria\Clases_Libreria.csproj">
+      <Project>{e38897e3-7b35-49cd-8922-42016bfbe38e}</Project>
+      <Name>Clases_Libreria</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
