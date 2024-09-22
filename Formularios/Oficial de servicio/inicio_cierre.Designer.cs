@@ -2,11 +2,11 @@
 using Ofelia_Sara.general.clases;
 using System.Drawing;
 
-namespace Ofelia_Sara
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     partial class InicioCierre
     {
-       
+
 
         /// <summary>
         /// Required designer variable.
@@ -787,7 +787,7 @@ namespace Ofelia_Sara
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Titulo;
-       
+
         private general.clases.Apariencia_General.TimePickerPersonalizado timePickerPersonalizado1;
         private System.Windows.Forms.Label lbl_DeptoJudicial;
         private System.Windows.Forms.ComboBox comboBox_DeptoJudicial;

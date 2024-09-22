@@ -10,7 +10,7 @@ using Ofelia_Sara.Base_de_Datos;
 using GunaShadowForm = Guna.UI2.WinForms.Suite.ShadowForm;
 
 
-namespace Ofelia_Sara.general.clases
+namespace Ofelia_Sara.Formularios
 
 
 {

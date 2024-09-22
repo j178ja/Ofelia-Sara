@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.general.clases.Apariencia_General
+namespace Clases_Libreria.Botones
 {
     public static class IncrementarTamaño
     {

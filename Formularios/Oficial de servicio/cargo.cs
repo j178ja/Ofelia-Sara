@@ -1,12 +1,15 @@
-﻿using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+﻿
 using System;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Apariencia;
+using Clases_Libreria.Botones;
 
-namespace Ofelia_Sara
+
+
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class Cargo : BaseForm
 
@@ -16,7 +19,8 @@ namespace Ofelia_Sara
             InitializeComponent();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
         }
         //----------------------------------------------------------------------------------
         //---sobrecargar para que reciba los datos desde form iniciocierre

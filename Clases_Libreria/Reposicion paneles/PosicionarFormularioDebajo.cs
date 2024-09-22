@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ofelia_Sara.general.clases.Apariencia_General.Generales
-{
+
     using System.Drawing;
     using System.Windows.Forms;
 
-    namespace Ofelia_Sara.general.clases.Botones
+    namespace Clases_Libreria.Reposicon_paneles
     {
-        internal static class FormPositioner
+        public static class FormPositioner
         {
             public static void PosicionarDebajo(Form formPrincipal, Form formHijo)
             {
@@ -24,4 +23,4 @@ namespace Ofelia_Sara.general.clases.Apariencia_General.Generales
             }
         }
     }
-}
+

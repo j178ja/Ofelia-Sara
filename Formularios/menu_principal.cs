@@ -3,17 +3,16 @@ using System;
 using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Forms;
-using Ofelia_Sara.general.clases.Botones;
+
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using System.Linq;
-
-
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+using Clases_Libreria.Botones.btn_Configuracion;
+using Clases_Libreria.Botones;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.ComponentModel;
 
-namespace Ofelia_Sara
+namespace Ofelia_Sara.Formularios
 {
     public partial class MenuPrincipal : BaseForm
     {

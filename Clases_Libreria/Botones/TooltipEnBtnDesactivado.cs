@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.general.clases.Botones
+namespace Clases_Libreria.Botones
 {
     public partial class TooltipEnBtnDesactivado
     {

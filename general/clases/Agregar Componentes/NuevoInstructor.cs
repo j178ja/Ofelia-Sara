@@ -2,6 +2,7 @@
 using Ofelia_Sara.Base_de_Datos.Entidades;
 using Ofelia_Sara.general.clases.Apariencia_General;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Botones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.general.clases.Agregar_Componentes
 {
