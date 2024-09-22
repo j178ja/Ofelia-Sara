@@ -75,6 +75,8 @@ namespace Ofelia_Sara
             groupBox_TextosConvertidos.Visible = false;
 
             AgregarRadioButtonALosPaneles();
+
+            timePickerPersonalizado1.SelectedDate = DateTime.Now;//actualizar fecha
         }
 
 

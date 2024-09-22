@@ -65,9 +65,9 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Titulo = new System.Windows.Forms.Label();
             this.fechaActuaciones = new System.Windows.Forms.DateTimePicker();
             this.datoFecha = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -403,7 +403,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.fechaActuaciones);
             this.panel1.Controls.Add(this.datoFecha);
             this.panel1.Controls.Add(this.textBox_NombreInfractor);
@@ -445,6 +445,19 @@
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
             // 
+            // label_Titulo
+            // 
+            this.label_Titulo.AutoSize = true;
+            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_Titulo.Location = new System.Drawing.Point(208, 0);
+            this.label_Titulo.Name = "label_Titulo";
+            this.label_Titulo.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            this.label_Titulo.Size = new System.Drawing.Size(282, 25);
+            this.label_Titulo.TabIndex = 49;
+            this.label_Titulo.Text = "CONTRAVENCIONES";
+            // 
             // fechaActuaciones
             // 
             this.fechaActuaciones.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -463,19 +476,6 @@
             this.datoFecha.Size = new System.Drawing.Size(279, 24);
             this.datoFecha.TabIndex = 48;
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label22.Location = new System.Drawing.Point(208, 0);
-            this.label22.Name = "label22";
-            this.label22.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label22.Size = new System.Drawing.Size(242, 25);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "CONTRAVENCIONES";
-            // 
             // Contravenciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,7 +485,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Contravenciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "                                                              ";
+            this.Text = "ACTUACIONES CONTRAVENCIONALES                               ";
             this.Load += new System.EventHandler(this.Contravenciones_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
@@ -532,7 +532,7 @@
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.DateTimePicker datoFecha;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DateTimePicker fechaActuaciones;
