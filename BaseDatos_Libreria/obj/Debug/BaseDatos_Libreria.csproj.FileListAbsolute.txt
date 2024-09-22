@@ -1,0 +1,10 @@
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\obj\Debug\BaseDatos_Libreria.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\obj\Debug\BaseDatos_Libreria.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\bin\Debug\BaseDatos_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\bin\Debug\BaseDatos_Libreria.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\obj\Debug\BaseDato.9D444988.Up2Date
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\obj\Debug\BaseDatos_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\BaseDatos_Libreria\obj\Debug\BaseDatos_Libreria.pdb
