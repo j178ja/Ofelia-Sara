@@ -1,26 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Ofelia-Sara||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\agregar componentes\\nuevadependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevadependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\clases_libreria\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|solutionrelative:clases_libreria\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7E1C2E1-E5D8-439A-9EF7-E40444CFADE0}|Interfaces_Libreria\\Interfaces_Libreria.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\interfaces_libreria\\interfaces\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7E1C2E1-E5D8-439A-9EF7-E40444CFADE0}|Interfaces_Libreria\\Interfaces_Libreria.csproj|solutionrelative:interfaces_libreria\\interfaces\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -28,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,55 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Ofelia-Sara",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj",
-              "RelativeDocumentMoniker": "Ofelia-Sara.csproj",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj",
-              "RelativeToolTip": "Ofelia-Sara.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-09-23T17:21:47.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NuevaDependencia.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaDependencia.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevaDependencia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaDependencia.cs",
-              "RelativeToolTip": "Agregar Componentes\\NuevaDependencia.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T17:11:13.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Interface.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Interfaces_Libreria\\Interfaces\\Interface.cs",
-              "RelativeDocumentMoniker": "Interfaces_Libreria\\Interfaces\\Interface.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Interfaces_Libreria\\Interfaces\\Interface.cs",
-              "RelativeToolTip": "Interfaces_Libreria\\Interfaces\\Interface.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T17:08:38.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuxiliarConfiguracion.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
-              "RelativeDocumentMoniker": "Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
-              "RelativeToolTip": "Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAIwB0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T16:53:19.4Z"
             }
           ]
         }

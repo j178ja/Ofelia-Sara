@@ -1,4 +1,4 @@
-﻿using Ofelia_Sara.general.clases.Apariencia_General;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Base_de_Datos.Entidades;
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using Ofelia_Sara.Formularios;
+using Clases_Libreria.Apariencia;
+using Interfaces_Libreria.Interfaces;
+using BaseDatos_Libreria.Entidades;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevaFiscalia: BaseForm
+    public partial class NuevaFiscalia: BaseForm, IFormulario
     {
         public NuevaFiscalia()
         {
@@ -25,7 +27,7 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             MayusculaSola.AplicarAControl(textBox_Localidad);
 
@@ -46,7 +48,11 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Fiscalia.Focus();
         }
-
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            //para interfaz formulario
+        }
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda

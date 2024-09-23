@@ -11,14 +11,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Apariencia;
 using Clases_Libreria.Botones;
 using Ofelia_Sara.Formularios;
-using 
-
+using BaseDatos_Libreria.Entidades;
+using Clases_Libreria.Agregar_Componentes;
+using Interfaces_Libreria.Interfaces;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevaDependencia : BaseForm
+    public partial class NuevaDependencia : BaseForm, IFormulario
     {
         private SellosDependencia sellosDependenciaForm;
 
@@ -50,7 +52,7 @@ namespace Ofelia_Sara.Agregar_Componentes
           
             //para redondear bordes panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
        
         
         }
@@ -74,6 +76,11 @@ namespace Ofelia_Sara.Agregar_Componentes
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
         }
         //-----------------------------------------------------------------------------
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            // para logica de interfaz IFormulario
+        }
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
