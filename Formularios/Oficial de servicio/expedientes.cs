@@ -1,7 +1,5 @@
 ﻿using Microsoft.Office.Interop.Word;
 using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General;
-using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -21,6 +19,7 @@ using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using Clases_Libreria.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
+using Controles_Libreria.Controles;
 
 
 

@@ -13,3 +13,13 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Co
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.Properties.Resources.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.csproj.GenerateResource.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Controles\DateNacimiento.resx
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Controles\DateNacimiento.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Controles\DateNacimiento.Designer.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Controles_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Controles_Libreria.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controle.2784DDD4.Up2Date
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.pdb

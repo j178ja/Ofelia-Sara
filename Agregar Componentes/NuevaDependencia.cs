@@ -1,6 +1,6 @@
-﻿using Ofelia_Sara.Base_de_Datos.Entidades;
+﻿
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Ofelia_Sara.general.clases.Apariencia_General;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using Ofelia_Sara.Formularios;
+using 
 
 
 namespace Ofelia_Sara.Agregar_Componentes

@@ -237,8 +237,18 @@ namespace Clases_Libreria.Botones.btn_Configuracion
                 Control control = form.Controls[controlName];
                 if (control != null)
                 {
-                    form.PosicionarCursorEnTextBox(control);
+                    PosicionarCursorEnTextBox(control); // Llama directamente
                 }
+            }
+        }
+
+
+        public void PosicionarCursorEnTextBox(Control control)
+        {
+            if (control is TextBox textBox)
+            {
+                textBox.Focus();
+                textBox.SelectAll(); // Selecciona todo el texto
             }
         }
     }

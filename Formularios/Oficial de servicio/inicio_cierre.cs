@@ -9,21 +9,19 @@ using System.Linq;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.Diagnostics.Eventing.Reader;
-using Ofelia_Sara.general.clases.Apariencia_General;
 using System.Diagnostics;
-using Ofelia_Sara.general.clases.Agregar_Componentes;
-using Ofelia_Sara.general.clases.Apariencia_General.Controles;
 using System.Web.UI.WebControls.WebParts;
 using Ofelia_Sara.Registro_de_personal;
 //using Ofelia_Sara.Base_de_Datos;
 using Mysqlx.Cursor;
-using Ofelia_Sara.Base_de_Datos.Entidades;
 using System.Text.Json;
 using System.Drawing.Drawing2D;
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using Clases_Libreria.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
+using Controles_Libreria.Controles;
+using BaseDatos_Libreria.Entidades;
 
 
 
