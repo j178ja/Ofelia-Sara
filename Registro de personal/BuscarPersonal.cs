@@ -1,5 +1,5 @@
 ﻿using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Controles;
+
 using Clases_Libreria.Texto;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
+using Controles_Libreria.Controles;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -22,9 +23,6 @@ namespace Ofelia_Sara.Registro_de_personal
         private int borderSize = 7;
         private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
         private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
-
-
-
 
 
         public BuscarPersonal()
@@ -135,12 +133,16 @@ namespace Ofelia_Sara.Registro_de_personal
             string textoFormateado = textBox_NumeroLegajo.Text;
             if (textoFormateado.Length < 6)
             {
-                MessageBox.Show("El número no correspone a un número de legajo valido, verifique que el número sea correcto.", "Número Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El número no corresponde a un número de legajo válido, verifique que el número sea correcto.",
+                                "Número Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                // Crear una nueva instancia del control PersonaSeleccionadaControl
+                // Crear una nueva instancia del control PersonalSeleccionadoControl
                 PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
+
+                // Suscribirse al evento que abrirá el formulario NuevoPersonal
+                nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
 
                 // Llamar al método para agregar el control al panel
                 AgregarControlAlPanel(nuevoControl, panel_PersonalSeleccionado);
@@ -149,6 +151,15 @@ namespace Ofelia_Sara.Registro_de_personal
                 textBox_NumeroLegajo.Text = string.Empty;
             }
         }
+
+        // Este método manejará el evento cuando el botón Modificar Personal sea clicado
+        private void PersonalSeleccionadoControl_ModificarPersonalClicked(object sender, EventArgs e)
+        {
+            // Abrir el formulario NuevoPersonal
+            NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
+            nuevoPersonalForm.ShowDialog();
+        }
+
         //---------------------------------------------------------------------------------------------------------------------
         private const int MaxControlesVisibles = 6;
         private Color colorPar = Color.FromArgb(230, 230, 230); // Gris claro

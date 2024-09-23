@@ -45,6 +45,8 @@
     <Reference Include="Microsoft.Analytics.Types" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agregar_Componentes\ConfiguradorTextBox.cs" />
+    <Compile Include="Agregar_Componentes\ManejoDeNuevosComponentes.cs" />
     <Compile Include="Apariencia\apariencia_formularios.cs" />
     <Compile Include="Apariencia\BordePanel.cs" />
     <Compile Include="Apariencia\footer.cs" />

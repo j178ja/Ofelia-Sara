@@ -1,18 +1,12 @@
-﻿using Ofelia_Sara.general.clases.Agregar_Componentes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
-using Ofelia_Sara.Formularios.Oficial_de_servicio;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales.Ofelia_Sara.general.clases.Botones;
-
 using System.Drawing;
-using Ofelia_Sara.Registro_de_personal;
-using Ofelia_Sara.Acceso_Usuarios;
+using Ofelia_Sara;
+
 
 
 namespace Clases_Libreria.Botones.btn_Configuracion

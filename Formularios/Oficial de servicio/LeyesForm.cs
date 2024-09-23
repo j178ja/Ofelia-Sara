@@ -61,7 +61,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void CargarDocumentosEnListView()
         {
-            string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Base de Datos\Leyes");
+            string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"BaseDatos\Leyes");
             string[] archivos = Directory.GetFiles(carpetaDocumentos, "*.pdf");
 
             foreach (string archivo in archivos)
@@ -89,7 +89,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 string fileName = fileNameWithoutExtension + ".pdf";
 
                 // Ruta completa del archivo
-                string filePath = Path.Combine(@"Base de Datos\Leyes", fileName);
+                string filePath = Path.Combine(@"BaseDatos\Leyes", fileName);
 
                 // Verifica si el archivo existe
                 if (File.Exists(filePath))
