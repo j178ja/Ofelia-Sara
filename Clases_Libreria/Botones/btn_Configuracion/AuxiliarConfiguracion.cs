@@ -10,6 +10,7 @@ using Clases_Libreria.Reposicon_paneles;
 
 
 
+
 namespace Clases_Libreria.Botones.btn_Configuracion
 {
     public class AuxiliarConfiguracion
@@ -226,7 +227,7 @@ namespace Clases_Libreria.Botones.btn_Configuracion
 
 
 
-        private void AbrirFormulario<T>(string controlName = null) where T : Form, new()
+        private void AbrirFormulario<T>(string controlName = null) where T : Form, IFormulario,new()
         {
             var form = new T();
             FormPositioner.PosicionarDebajo(_menuPrincipal, form);

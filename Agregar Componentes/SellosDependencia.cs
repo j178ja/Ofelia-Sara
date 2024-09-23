@@ -1,4 +1,4 @@
-﻿using Ofelia_Sara.general.clases.Apariencia_General;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +12,12 @@ using System.Windows.Forms;
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using Ofelia_Sara.Formularios;
+using Clases_Libreria.Apariencia;
+using Interfaces_Libreria.Interfaces;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class SellosDependencia : BaseForm
+    public partial class SellosDependencia : BaseForm, IFormulario
     {
         public event Action<string> DependenciaTextChanged;
 
@@ -25,10 +27,15 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
+        }
+
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            // Lógica de inicialización adicional si es necesario
         }
 
         private void SellosDependencia_Load(object sender, EventArgs e)

@@ -1,6 +1,4 @@
-﻿using Ofelia_Sara.Base_de_Datos;
-using Ofelia_Sara.Base_de_Datos.Entidades;
-using Ofelia_Sara.general.clases.Apariencia_General;
+﻿
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using System;
@@ -13,10 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
+using BaseDatos_Libreria.Entidades;
+using Interfaces_Libreria.Interfaces;
+using Clases_Libreria.Apariencia;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevoInstructor : BaseForm
+    public partial class NuevoInstructor : BaseForm, IFormulario
     {
         public NuevoInstructor()
         {
@@ -32,10 +33,15 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
-       
+
         //-------------------------------------------
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            // 
+        }
 
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {
