@@ -4,7 +4,7 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
-
+using Controles_Libreria.Controles;
 
 namespace Clases_Libreria.Botones
 

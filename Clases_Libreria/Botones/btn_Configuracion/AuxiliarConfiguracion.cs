@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using Ofelia_Sara;
+using Clases_Libreria.Reposicon_paneles;
 
 
 
@@ -31,17 +32,38 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
 
             // Crear ítems para el menú
-            ToolStripMenuItem item_Agregar = new ToolStripMenuItem("AGREGAR");
+            var item_Agregar = new ToolStripMenuItem("AGREGAR");
+            var item_Buscar = new ToolStripMenuItem("BUSCAR ...");
+            var item_Remover = new ToolStripMenuItem("REMOVER");
+            var item_Salir = new ToolStripMenuItem("SALIR");
 
+            // Agregar subítems al ítem "AGREGAR"
+            AgregarSubItemsAgregar(item_Agregar);
+
+            // Agregar subítems al ítem "BUSCAR"
+            AgregarSubItemsBuscar(item_Buscar);
+
+            // Añadir todos los ítems al ContextMenuStrip
+            menu_Configurar.Items.Add(item_Agregar);
+            menu_Configurar.Items.Add(item_Buscar);
+            menu_Configurar.Items.Add(item_Remover);
+            menu_Configurar.Items.Add(item_Salir);
+
+            // Manejo de eventos
+            item_Salir.Click += (sender, e) => ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).Close();
+            return menu_Configurar;
+        }
+        private void AgregarSubItemsAgregar(ToolStripMenuItem item_Agregar)
+        {
             // Crear y agregar subítems al ítem "AGREGAR"
-            ToolStripMenuItem subItem_Agregar_Secretario = new ToolStripMenuItem("SECRETARIO");
-            ToolStripMenuItem subItem_Agregar_Instructor = new ToolStripMenuItem("INSTRUCTOR");
-            ToolStripMenuItem subItem_Agregar_Dependencia = new ToolStripMenuItem("DEPENDENCIA");
-            ToolStripMenuItem subItem_Agregar_UFID = new ToolStripMenuItem("U.F.I.D.");
-            ToolStripMenuItem subItem_Agregar_AgenteFiscal = new ToolStripMenuItem("AGENTE FISCAL");
-            ToolStripMenuItem subItem_Agregar_Sellos = new ToolStripMenuItem("SELLOS");
+            var subItem_Agregar_Secretario = new ToolStripMenuItem("SECRETARIO", null, (s, e) => Agregar_Secretario());
+            var subItem_Agregar_Instructor = new ToolStripMenuItem("INSTRUCTOR", null, (s, e) => Agregar_Instructor());
+            var subItem_Agregar_Dependencia = new ToolStripMenuItem("DEPENDENCIA", null, (s, e) => Agregar_Dependencia());
+            var subItem_Agregar_UFID = new ToolStripMenuItem("U.F.I.D.", null, (s, e) => Agregar_UFID());
+            var subItem_Agregar_AgenteFiscal = new ToolStripMenuItem("AGENTE FISCAL", null, (s, e) => Agregar_AgenteFiscal());
+            var subItem_Agregar_Sellos = new ToolStripMenuItem("SELLOS", null, (s, e) => Agregar_Sellos());
 
-            // Añadir los subítems al ítem "AGREGAR"
+
             item_Agregar.DropDownItems.Add(subItem_Agregar_Secretario);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Instructor);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Dependencia);
@@ -49,29 +71,20 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             item_Agregar.DropDownItems.Add(subItem_Agregar_AgenteFiscal);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Sellos);
 
-            // Crear el nuevo subítem "SELLOS" y sus subítems
-            ToolStripMenuItem subItem_Sello_Medalla = new ToolStripMenuItem("SELLO MEDALLA");
-            ToolStripMenuItem subItem_Escalera = new ToolStripMenuItem("ESCALERA");
-            ToolStripMenuItem subItem_Foliador = new ToolStripMenuItem("FOLIADOR");
+        }
 
-            // Agregar los subítems a "SELLOS"
-            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Sello_Medalla);
-            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
-            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
+        private void AgregarSubItemsBuscar(ToolStripMenuItem item_Buscar)
+        {
+            // Crear y agregar subítems al ítem "BUSCAR"
+            var subItem_Buscar_Ipp = new ToolStripMenuItem("N° I.P.P.", null, (s, e) => Buscar_Ipp());
+            var subItem_Buscar_Caratula = new ToolStripMenuItem("CARATULA", null, (s, e) => Buscar_Caratula());
+            var subItem_Buscar_Victima = new ToolStripMenuItem("VICTIMA", null, (s, e) => Buscar_Victima());
+            var subItem_Buscar_Imputado = new ToolStripMenuItem("IMPUTADO", null, (s, e) => Buscar_Imputado());
+            var subItem_Buscar_Fecha = new ToolStripMenuItem("FECHA", null, (s, e) => Buscar_Fecha());
+            var subItem_Buscar_Secretario = new ToolStripMenuItem("SECRETARIO", null, (s, e) => Buscar_Secretario());
+            var subItem_Buscar_Instructor = new ToolStripMenuItem("INSTRUCTOR", null, (s, e) => Buscar_Instructor());
+            var subItem_Buscar_Dependencia = new ToolStripMenuItem("DEPENDENCIA", null, (s, e) => Buscar_Dependencia());
 
-            // Crear el ítem "BUSCAR" y sus subítems
-            ToolStripMenuItem item_Buscar = new ToolStripMenuItem("BUSCAR ...");
-
-            ToolStripMenuItem subItem_Buscar_Ipp = new ToolStripMenuItem("N° I.P.P.");
-            ToolStripMenuItem subItem_Buscar_Caratula = new ToolStripMenuItem("CARATULA");
-            ToolStripMenuItem subItem_Buscar_Victima = new ToolStripMenuItem("VICTIMA");
-            ToolStripMenuItem subItem_Buscar_Imputado = new ToolStripMenuItem("IMPUTADO");
-            ToolStripMenuItem subItem_Buscar_Fecha = new ToolStripMenuItem("FECHA");
-            ToolStripMenuItem subItem_Buscar_Secretario = new ToolStripMenuItem("SECRETARIO");
-            ToolStripMenuItem subItem_Buscar_Instructor = new ToolStripMenuItem("INSTRUCTOR");
-            ToolStripMenuItem subItem_Buscar_Dependencia = new ToolStripMenuItem("DEPENDENCIA");
-
-            // Añadir los subítems al ítem "BUSCAR"
             item_Buscar.DropDownItems.Add(subItem_Buscar_Ipp);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Caratula);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Victima);
@@ -81,155 +94,153 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             item_Buscar.DropDownItems.Add(subItem_Buscar_Instructor);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Dependencia);
 
-            // Crear el ítem "REMOVER"
-            ToolStripMenuItem item_Remover = new ToolStripMenuItem("REMOVER");
+        }
 
-            // Crear el ítem "SALIR"
-            ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
+        private void AgregarSubItemsSellos(ToolStripMenuItem subItem_Agregar_Sellos)
+        {
+            // Crear los subítems
+            var subItem_Sello_Medalla = new ToolStripMenuItem("SELLO MEDALLA", null, (s, e) => Sello_Medalla());
+            var subItem_Escalera = new ToolStripMenuItem("ESCALERA", null, (s, e) => Escalera());
+            var subItem_Foliador = new ToolStripMenuItem("FOLIADOR", null, (s, e) => Foliador());
 
-            // Añadir todos los ítems al ContextMenuStrip
-            menu_Configurar.Items.Add(item_Agregar);
-            menu_Configurar.Items.Add(item_Buscar);
-            menu_Configurar.Items.Add(item_Remover);
-            menu_Configurar.Items.Add(item_Salir);
+            // Agregar los subítems a "SELLOS"
+            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Sello_Medalla);
+            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
+            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
+        }
 
-            // ----MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU-----
 
-            //--------para abrir formulario agregar secretario
-            subItem_Agregar_Secretario.Click += (sender, e) => {
-                NuevoSecretario nuevoSecretarioForm = new NuevoSecretario(); // Crear una instancia del formulario NuevoSecretario
-                FormPositioner.PosicionarDebajo(_menuPrincipal, nuevoSecretarioForm);
-                nuevoSecretarioForm.ShowDialog();
-            };
 
-            //---------Para abrir formulario AGREGAR INSTRUCTOR-----
-            subItem_Agregar_Instructor.Click += (sender, e) => {
-                NuevoInstructor nuevoInstructor = new NuevoInstructor();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, nuevoInstructor);
-                nuevoInstructor.ShowDialog();
-            };
+        // Crear el ítem "REMOVER"
+        ToolStripMenuItem item_Remover = new ToolStripMenuItem("REMOVER");
 
-            //---------Para abrir formulario AGREGAR DEPENDENCIA-----
-            subItem_Agregar_Dependencia.Click += (sender, e) => {
-                NuevaDependencia nuevaDependencia = new NuevaDependencia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, nuevaDependencia);
-                nuevaDependencia.ShowDialog(); // Muestra el formulario
-            };
-        
+        // Crear el ítem "SALIR"
+        ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
 
-            //---------Para abrir formulario AGREGAR UFID-----
-            subItem_Agregar_UFID.Click += (sender, e) => {
-                NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, nuevaFiscalia);
-                nuevaFiscalia.ShowDialog();
-            };
 
-            // ------PARA ABRIR SELLOS--------------------
-            subItem_Agregar_Sellos.Click += (sender, e) => {
-                SellosDependencia sellosDependencia = new SellosDependencia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, sellosDependencia);
-                sellosDependencia.ShowDialog();
-            };
 
-            subItem_Sello_Medalla.Click += (sender, e) => {
-                SellosDependencia sellosDependencia = new SellosDependencia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, sellosDependencia);
-                sellosDependencia.ShowDialog();
-            };
+  // ----MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU-----
 
-            subItem_Escalera.Click += (sender, e) => {
-                SellosDependencia sellosDependencia = new SellosDependencia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, sellosDependencia);
-                sellosDependencia.ShowDialog();
-            };
 
-            subItem_Foliador.Click += (sender, e) => {
-                SellosDependencia sellosDependencia = new SellosDependencia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, sellosDependencia);
-                sellosDependencia.ShowDialog();
-            };
+        // Métodos para abrir formularios
+        //--------para abrir formulario agregar secretario
+        private void Agregar_Secretario()
+        {
+            AbrirFormulario<NuevoSecretario>();
+        }
 
-            //--------PARA AGREGAR FISCAL---------------------
-            subItem_Agregar_AgenteFiscal.Click += (sender, e) => {
-                NuevaFiscalia nuevaFiscalia = new NuevaFiscalia();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, nuevaFiscalia);
-                nuevaFiscalia.ShowDialog();
-            };
+        //---------Para abrir formulario AGREGAR INSTRUCTOR-----
+        private void Agregar_Instructor()
+        {
+            AbrirFormulario<NuevoInstructor>();
+        }
 
-            // ------PARA BUSCAR Y DERIVADOS----------------------
-            subItem_Buscar_Ipp.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                System.Windows.Forms.Control controlIpp = buscarForm.Controls["comboBox_Ipp1"];
-                buscarForm.PosicionarCursorEnTextBox(controlIpp);
-            };
+        //---------Para abrir formulario AGREGAR DEPENDENCIA-----
+        private void Agregar_Dependencia()
+        {
+            AbrirFormulario<NuevaDependencia>();
+        }
 
-            subItem_Buscar_Caratula.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                System.Windows.Forms.Control controlCaratula = buscarForm.Controls["textBox_Caratula"];
-                buscarForm.PosicionarCursorEnTextBox(controlCaratula);
-            };
 
-            subItem_Buscar_Victima.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Victima"]);
-            };
+        //---------Para abrir formulario AGREGAR UFID-----
+        private void Agregar_UFID()
+        {
+            AbrirFormulario<NuevaFiscalia>();
+        }
 
-            subItem_Buscar_Imputado.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Imputado"]);
-            };
+        // ------PARA ABRIR SELLOS--------------------
+        private void Agregar_Sellos()
+        {
+            AbrirFormulario<SellosDependencia>();
+        }
 
-            subItem_Buscar_Fecha.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Fecha"]);
-            };
+        private void Sello_Medalla()
+        {
+            AbrirFormulario<SellosDependencia>();
+        }
 
-            subItem_Buscar_Secretario.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Secretario"]);
-            };
+        private void Escalera()
+        {
+            AbrirFormulario<SellosDependencia>();
+        }
 
-            subItem_Buscar_Instructor.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Instructor"]);
-            };
+        private void Foliador()
+        {
+            AbrirFormulario<SellosDependencia>();
+        }
 
-            subItem_Buscar_Dependencia.Click += (sender, e) => {
-                BuscarForm buscarForm = new BuscarForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, buscarForm);
-                buscarForm.Show();
-                buscarForm.PosicionarCursorEnTextBox(buscarForm.Controls["textBox_Dependencia"]);
-            };
+        //--------PARA AGREGAR FISCAL---------------------
+        private void Agregar_AgenteFiscal()
+        {
+            AbrirFormulario<NuevaFiscalia>();
+        }
 
-            // ------PARA Btn REMOVER----------------------
-            item_Remover.Click += (sender, e) => {
-                UsuarioForm usuarioForm = new UsuarioForm();
-                FormPositioner.PosicionarDebajo(_menuPrincipal, usuarioForm);
-                usuarioForm.Show();
-                //removerForm.PosicionarCursorEnTextBox(removerForm.Controls["textBox_Dependencia"]);
-            };
+        // ------PARA BUSCAR Y DERIVADOS----------------------
+        private void Buscar_Ipp()
+        {
+            AbrirFormulario<BuscarForm>("comboBox_Ipp1");
+        }
 
-            // ---- Manejo del clic en SALIR
-            item_Salir.Click += (sender, e) => {
-                // Cerrar el menú de configuración
-                ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).Close();
-            };
+        private void Buscar_Caratula()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Caratula");
 
-            return menu_Configurar;
+        }
+
+        private void Buscar_Victima()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Victima");
+        }
+
+        private void Buscar_Imputado()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Imputado");
+        }
+
+        private void Buscar_Fecha()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Fecha");
+        }
+
+        private void Buscar_Secretario()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Secretario");
+        }
+
+        private void Buscar_Instructor()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Instructor");
+        }
+
+        private void Buscar_Dependencia()
+        {
+            AbrirFormulario<BuscarForm>("textBox_Dependencia");
+        }
+
+        // ------PARA Btn REMOVER----------------------
+        private void Remover()
+        {
+            AbrirFormulario<UsuarioForm>();
+        }
+        //--------------------------------------------------------------------------------
+
+
+
+        private void AbrirFormulario<T>(string controlName = null) where T : Form, new()
+        {
+            var form = new T();
+            FormPositioner.PosicionarDebajo(_menuPrincipal, form);
+            form.Show();
+
+            if (!string.IsNullOrEmpty(controlName))
+            {
+                Control control = form.Controls[controlName];
+                if (control != null)
+                {
+                    form.PosicionarCursorEnTextBox(control);
+                }
+            }
         }
     }
+
 }

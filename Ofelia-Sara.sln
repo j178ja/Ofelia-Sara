@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controles_Libreria", "Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDatos_Libreria", "..\BaseDatos_Libreria\BaseDatos_Libreria.csproj", "{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElementosComunes", "ElementosComunes\ElementosComunes.csproj", "{2312E536-98CA-4B21-BFD9-FB5FC0626B9C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +43,6 @@ Global
 		{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2312E536-98CA-4B21-BFD9-FB5FC0626B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2312E536-98CA-4B21-BFD9-FB5FC0626B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2312E536-98CA-4B21-BFD9-FB5FC0626B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2312E536-98CA-4B21-BFD9-FB5FC0626B9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

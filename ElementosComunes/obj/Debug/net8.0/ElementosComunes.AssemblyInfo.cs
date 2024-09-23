@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElementosComunes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4956472cefebf46f8515acd7c723f0430ad2690d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2a4fc635b1d66990e81ee8789c520b1bb3dcdb2")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElementosComunes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElementosComunes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

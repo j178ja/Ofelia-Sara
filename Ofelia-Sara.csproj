@@ -462,10 +462,6 @@
       <Project>{327929eb-b2d3-43b1-9de2-e312b3b71f33}</Project>
       <Name>Controles_Libreria</Name>
     </ProjectReference>
-    <ProjectReference Include="ElementosComunes\ElementosComunes.csproj">
-      <Project>{2312e536-98ca-4b21-bfd9-fb5fc0626b9c}</Project>
-      <Name>ElementosComunes</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
