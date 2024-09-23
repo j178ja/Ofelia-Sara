@@ -3,7 +3,7 @@
   ---------------DESARROLLADOR Y VERSION ---------------------------*/
 using System;
 using System.Windows.Forms;
-using Ofelia_Sara;
+
 
 namespace Clases_Libreria.Apariencia
 {

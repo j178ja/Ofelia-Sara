@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.general.clases
+namespace Clases_Libreria.Botones.btn_Configuracion
 {
     public class MenuConfigurar
     {
