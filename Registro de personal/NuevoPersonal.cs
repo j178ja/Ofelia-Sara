@@ -1,8 +1,6 @@
-﻿using Ofelia_Sara.Base_de_Datos;
+﻿using BaseDatos_Libreria;
 using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Controles;
-using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.general.clases.Apariencia_General.Generales;
+
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using System;
@@ -15,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
+using BaseDatos_Libreria.Entidades;
 
 namespace Ofelia_Sara.Registro_de_personal
 {

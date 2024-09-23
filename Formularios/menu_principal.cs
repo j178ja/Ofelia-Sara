@@ -3,9 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Forms;
-
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
-using Ofelia_Sara.general.clases.Apariencia_General;
 using System.Linq;
 using Clases_Libreria.Botones.btn_Configuracion;
 using Clases_Libreria.Botones;
