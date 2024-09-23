@@ -1,0 +1,12 @@
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\bin\Debug\net8.0\Interfaces_Libreria.deps.json
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\bin\Debug\net8.0\Interfaces_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\bin\Debug\net8.0\Interfaces_Libreria.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.AssemblyInfoInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.AssemblyInfo.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.sourcelink.json
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\refint\Interfaces_Libreria.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\Interfaces_Libreria.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Interfaces_Libreria\obj\Debug\net8.0\ref\Interfaces_Libreria.dll

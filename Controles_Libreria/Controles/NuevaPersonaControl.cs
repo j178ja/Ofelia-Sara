@@ -1,9 +1,9 @@
-﻿using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+﻿
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static Ofelia_Sara.general.clases.Apariencia_General.Controles.NuevaCaratulaControl;
+
 
 namespace Controles_Libreria.Controles
 {
@@ -81,12 +81,12 @@ namespace Controles_Libreria.Controles
                 // Redimensionar el panel después de eliminar el control
                 NuevaPersonaControlHelper.AjustarAlturaPanel(panel);
             }
-            // Llamar al método de reposicionamiento en el formulario principal
-            Form formularioPrincipal = this.FindForm();
-            if (formularioPrincipal is InicioCierre inicioCierre)
-            {
+            //// Llamar al método de reposicionamiento en el formulario principal
+            //Form formularioPrincipal = this.FindForm();
+            //if (formularioPrincipal is InicioCierre inicioCierre)
+            //{
                
-            }
+            //}   HAY QUE CREAR UN METODO EFICIENTE PARA REPOSICIONAR
         }
 
        
@@ -124,17 +124,48 @@ namespace Controles_Libreria.Controles
         //-------METODO PARA QUE ABRA FORMULARIO AGREGAR DATOS ------------------------------------
         private void btn_AgregarDatosPersona_Click(object sender, EventArgs e)
         {
-            // Dependiendo del tipo, abrir el formulario correspondiente
+            string nombreFormulario = string.Empty;
+
+            // Dependiendo del tipo, seleccionar el nombre del formulario a cargar
             if (TipoPersona == "Victima")
             {
-                AgregarDatosPersonalesVictima formVictima = new AgregarDatosPersonalesVictima();
-                formVictima.ShowDialog();
+                nombreFormulario = "NombreDelProyecto.OtroNamespace.AgregarDatosPersonalesVictima";
             }
             else if (TipoPersona == "Imputado")
             {
-                AgregarDatosPersonalesImputado formImputado = new AgregarDatosPersonalesImputado();
-                formImputado.ShowDialog();
+                nombreFormulario = "NombreDelProyecto.OtroNamespace.AgregarDatosPersonalesImputado";
+            }
+
+            if (!string.IsNullOrEmpty(nombreFormulario))
+            {
+                // Cargar el ensamblado dinámicamente
+                try
+                {
+                    // Suponiendo que el ensamblado está cargado o en la misma carpeta que tu ejecutable
+                    var assembly = System.Reflection.Assembly.LoadFrom("Ruta_Al_Proyecto_Otro.dll");
+
+                    // Obtener el tipo del formulario
+                    var formType = assembly.GetType(nombreFormulario);
+
+                    if (formType != null)
+                    {
+                        // Crear una instancia del formulario
+                        Form formulario = (Form)Activator.CreateInstance(formType);
+
+                        // Mostrar el formulario
+                        formulario.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo encontrar el formulario especificado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar el formulario: " + ex.Message);
+                }
             }
         }
+
     }
 }

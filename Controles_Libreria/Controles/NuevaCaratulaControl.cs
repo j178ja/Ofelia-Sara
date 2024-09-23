@@ -112,12 +112,12 @@ namespace Controles_Libreria.Controles
                 NuevaCaratulaControlHelper.AjustarAlturaPanel(panel);
             }
 
-            // Llamar al método de reposicionamiento en el formulario principal
-            Form formularioPrincipal = this.FindForm();
-            if (formularioPrincipal is InicioCierre inicioCierre)
-            {
-               // inicioCierre.ReposicionarPanelesInferiores();
-            }
+            //// Llamar al método de reposicionamiento en el formulario principal
+            //Form formularioPrincipal = this.FindForm();
+            //if (formularioPrincipal is InicioCierre inicioCierre)
+            //{
+            //   // inicioCierre.ReposicionarPanelesInferiores();
+            //} //  CREAR O BUSCAR METODO PARA REPOSICIONAMIENTO EFICIENTE
         }
 
 

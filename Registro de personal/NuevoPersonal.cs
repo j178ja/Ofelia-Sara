@@ -1,6 +1,6 @@
 ﻿using BaseDatos_Libreria;
 using Ofelia_Sara.general.clases;
-
+using Controles_Libreria.Controles.Aplicadas_con_controles;
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
 using System;

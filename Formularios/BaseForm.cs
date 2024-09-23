@@ -1,10 +1,13 @@
-﻿using Ofelia_Sara.general.clases.Apariencia_General;
+﻿
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System.IO;
-using Ofelia_Sara.Base_de_Datos;
+using BaseDatos_Libreria.Entidades;
+using Controles_Libreria.Controles;
+using Clases_Libreria.Apariencia;
+using Clases_Libreria.Botones;
 // Alias para el ShadowForm de tu propia clase
 
 using GunaShadowForm = Guna.UI2.WinForms.Suite.ShadowForm;
@@ -17,8 +20,6 @@ namespace Ofelia_Sara.Formularios
     using Guna.UI2.WinForms.Suite;
     using Newtonsoft.Json;
     // using Ofelia_Sara.Base_de_Datos;
-    using Ofelia_Sara.general.clases.Apariencia_General;
-
     using System.Collections.Generic;
     using System.Data.SQLite;
     using System.Drawing.Drawing2D;
@@ -49,7 +50,7 @@ namespace Ofelia_Sara.Formularios
             IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/general/imagenes/IconoEscudoPolicia.ico");
 
             InitializeFooterLinkLabel();
-            this.timePickerPersonalizadoFecha = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            this.timePickerPersonalizadoFecha = new Controles_Libreria.Controles.TimePickerPersonalizado();
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -327,6 +328,7 @@ namespace Ofelia_Sara.Formularios
         {
 
         }
+        
     }
 }
 
