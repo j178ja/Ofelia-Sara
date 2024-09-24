@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numeroTelefonicoControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
+            this.numeroTelefonicoControl1 = new Controles_Libreria.Controles.NumeroTelefonicoControl();
             this.label_TelValidacion2 = new System.Windows.Forms.Label();
             this.label_TelValidacion = new System.Windows.Forms.Label();
             this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
@@ -348,6 +348,6 @@
         private System.Windows.Forms.PictureBox pictureBox_OjoContraseña;
         private System.Windows.Forms.Label label_TelValidacion2;
         private System.Windows.Forms.Label label_TelValidacion;
-        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
+        private Controles_Libreria.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
     }
 }

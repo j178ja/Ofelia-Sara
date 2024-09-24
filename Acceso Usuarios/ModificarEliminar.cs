@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Base_de_Datos.Entidades;
+using BaseDatos_Libreria.Entidades;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Formularios;
 

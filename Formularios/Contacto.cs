@@ -10,10 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
+using Interfaces_Libreria.Interfaces;
 
 namespace Ofelia_Sara.Formularios
 {
-    public partial class Contacto : BaseForm
+    public partial class Contacto : BaseForm, IFormulario
     {
         public Contacto()
         {
@@ -21,6 +22,11 @@ namespace Ofelia_Sara.Formularios
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+        }
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            // para logica de interfaz IFormulario
         }
 
         private void Contacto_Load(object sender, EventArgs e)

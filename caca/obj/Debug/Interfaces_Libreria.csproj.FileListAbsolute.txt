@@ -1,0 +1,10 @@
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\bin\Debug\caca.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\bin\Debug\caca.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\obj\Debug\Interfaces_Libreria.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\obj\Debug\Interfaces_Libreria.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\obj\Debug\Interfac.5254F149.Up2Date
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\obj\Debug\caca.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\caca\obj\Debug\caca.pdb

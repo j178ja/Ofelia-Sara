@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            this.timePickerPersonalizado1 = new Controles_Libreria.Controles.TimePickerPersonalizado();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -400,6 +400,6 @@
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private general.clases.Apariencia_General.TimePickerPersonalizado timePickerPersonalizado1;
+        private Controles_Libreria.Controles.TimePickerPersonalizado timePickerPersonalizado1;
     }
 }

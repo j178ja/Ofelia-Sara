@@ -3,6 +3,8 @@
   ---------------DESARROLLADOR Y VERSION ---------------------------*/
 using System;
 using System.Windows.Forms;
+using Interfaces_Libreria.Interfaces;
+
 
 
 namespace Clases_Libreria.Apariencia
@@ -12,10 +14,10 @@ namespace Clases_Libreria.Apariencia
         public static LinkLabel CreateFooterLinkLabel(Form form)
         {
             // Verificar si el formulario es una instancia de Contacto
-            if (form is Contacto)
+            /*if (form is Contacto)
             {
                 return null; // No agregar el LinkLabel si es el formulario Contacto
-            }
+            }*/
 
             LinkLabel footerLinkLabel = new LinkLabel();
             footerLinkLabel.AutoSize = true;
@@ -30,8 +32,8 @@ namespace Clases_Libreria.Apariencia
             footerLinkLabel.LinkClicked += (sender, e) =>
             {
                 // Abrir el formulario deseado al hacer clic en el link
-                Form contacto = new Contacto();
-               contacto.Show();
+               /* Form contacto = new Contacto();
+               contacto.Show();*/
             };
 
             // Ajustar la posición para que siempre esté cerca del borde inferior
@@ -43,5 +45,6 @@ namespace Clases_Libreria.Apariencia
 
             return footerLinkLabel;
         }
+       
     }
 }
