@@ -11,9 +11,6 @@ using Interfaces_Libreria.Interfaces;
 
 
 
-
-
-
 namespace Clases_Libreria.Botones.btn_Configuracion
 {
     public class AuxiliarConfiguracion
@@ -40,6 +37,7 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             var item_Buscar = new ToolStripMenuItem("BUSCAR ...");
             var item_Remover = new ToolStripMenuItem("REMOVER");
             var item_Salir = new ToolStripMenuItem("SALIR");
+            var SubItem_Agregar_Sellos = new ToolStripMenuItem("SELLOS");
 
             // Agregar subítems al ítem "AGREGAR"
             AgregarSubItemsAgregar(item_Agregar);
@@ -47,16 +45,25 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             // Agregar subítems al ítem "BUSCAR"
             AgregarSubItemsBuscar(item_Buscar);
 
+            // Agregar subítems al ítem "SELLOS"
+            AgregarSubItemsSellos(SubItem_Agregar_Sellos);
+
+            // Añadir el ítem "SELLOS" al ítem "AGREGAR"
+            item_Agregar.DropDownItems.Add(SubItem_Agregar_Sellos);
+
             // Añadir todos los ítems al ContextMenuStrip
             menu_Configurar.Items.Add(item_Agregar);
             menu_Configurar.Items.Add(item_Buscar);
             menu_Configurar.Items.Add(item_Remover);
             menu_Configurar.Items.Add(item_Salir);
+    
 
             // Manejo de eventos
             item_Salir.Click += (sender, e) => ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).Close();
             return menu_Configurar;
         }
+
+
         private void AgregarSubItemsAgregar(ToolStripMenuItem item_Agregar)
         {
             // Crear y agregar subítems al ítem "AGREGAR"
@@ -65,15 +72,14 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             var subItem_Agregar_Dependencia = new ToolStripMenuItem("DEPENDENCIA", null, (s, e) => Agregar_Dependencia());
             var subItem_Agregar_UFID = new ToolStripMenuItem("U.F.I.D.", null, (s, e) => Agregar_UFID());
             var subItem_Agregar_AgenteFiscal = new ToolStripMenuItem("AGENTE FISCAL", null, (s, e) => Agregar_AgenteFiscal());
-            var subItem_Agregar_Sellos = new ToolStripMenuItem("SELLOS", null, (s, e) => Agregar_Sellos());
-
+         
 
             item_Agregar.DropDownItems.Add(subItem_Agregar_Secretario);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Instructor);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Dependencia);
             item_Agregar.DropDownItems.Add(subItem_Agregar_UFID);
             item_Agregar.DropDownItems.Add(subItem_Agregar_AgenteFiscal);
-            item_Agregar.DropDownItems.Add(subItem_Agregar_Sellos);
+          
 
         }
 
@@ -100,7 +106,7 @@ namespace Clases_Libreria.Botones.btn_Configuracion
 
         }
 
-        private void AgregarSubItemsSellos(ToolStripMenuItem subItem_Agregar_Sellos)
+        private void AgregarSubItemsSellos(ToolStripMenuItem SubItem_Agregar_Sellos)
         {
             // Crear los subítems
             var subItem_Sello_Medalla = new ToolStripMenuItem("SELLO MEDALLA", null, (s, e) => Sello_Medalla());
@@ -108,9 +114,9 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             var subItem_Foliador = new ToolStripMenuItem("FOLIADOR", null, (s, e) => Foliador());
 
             // Agregar los subítems a "SELLOS"
-            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Sello_Medalla);
-            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
-            subItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
+            SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Sello_Medalla);
+            SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
+            SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
         }
 
 

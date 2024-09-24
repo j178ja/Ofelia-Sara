@@ -37,3 +37,4 @@ hacer que se reflejen los archivos json de bin en los de la solucion del proyect
 --------------------------------------------------------------------------------------------
 
 MODIFICAR LA RUTA DE ACCESO  RELATIVA PARA MOSTRAR LEYES(SE COLOCO RUTA ABSOLUTA TRAS SEPARAR EL PROYECTO EN CAPAS)
+
