@@ -9,10 +9,7 @@
 
                                   
 
-NO FUNCIONA PROGRESBAR (NO SE APLICA LOS CAMBIOS DE BACK Y DE FORE)
 
-NO FUNCIONA ELIMINAR EL BOTON MAXIMIZAR, SOLO FUNCIONA DESHABILITAR (se puede solucionar eliminando el 
-  titulo o barra superior y crear boton ce minimizar y cierre)
 
                                 
  STARPOSITION NO SE APLICA
@@ -29,7 +26,7 @@ NO FUNCIONA ELIMINAR EL BOTON MAXIMIZAR, SOLO FUNCIONA DESHABILITAR (se puede so
 
          FALTA HACER
 
-                                  //solucionado             1) que la fecha no tenga el dia
+                                
 2 ) que el menu desplegable permita incorporar elementos a los combo box
 3) que el boton de imprimir  cambie recuadro a verde cuando este completo el formulario
 4) que si se apreta imprimir y no esta completo indique el campo que falta
@@ -39,9 +36,4 @@ hacer que se reflejen los archivos json de bin en los de la solucion del proyect
 
 --------------------------------------------------------------------------------------------
 
-se copiaron las clases a proyecto clases_Libreria
-se copiaron los archivos a proyecto baseDatos_Libreria
-se copiaron carpeta imagenesa recursos
-
---->FALTARIA----> ASOCIAR LOS PROYECTOS Y ELIMINAR LA ESTRUCTURA ANTIGUA
-QUEDARIA DENTRO DE PROYECTO OFELIA-SARA....ACCESO USUARIOS ...FORMULARIOS...REGISTRO PERSONAL... RECURSOS
+MODIFICAR LA RUTA DE ACCESO  RELATIVA PARA MOSTRAR LEYES(SE COLOCO RUTA ABSOLUTA TRAS SEPARAR EL PROYECTO EN CAPAS)
