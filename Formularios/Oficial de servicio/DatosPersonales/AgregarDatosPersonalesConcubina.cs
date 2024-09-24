@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General.Controles.Aplicadas_con_controles;
+using Controles_Libreria.Controles.Aplicadas_con_controles;
 using Clases_Libreria.Texto;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales

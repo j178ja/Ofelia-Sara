@@ -12,10 +12,11 @@ using System.Windows.Controls;
 using Clases_Libreria.Apariencia;
 using Clases_Libreria.Botones;
 using Controles_Libreria.Controles;
+using Interfaces_Libreria.Interfaces;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
-    public partial class BuscarForm : BaseForm
+    public partial class BuscarForm : BaseForm ,IFormulario
     {
         public BuscarForm()
         {
@@ -33,7 +34,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Agregar el UserControl al formulario
             this.Controls.Add(timePicker);
         }
-
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            //para interfaz formulario
+        }
         private void Buscar_Load(object sender, EventArgs e)
         {
 

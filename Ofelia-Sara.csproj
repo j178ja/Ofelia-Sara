@@ -470,6 +470,10 @@
       <Project>{60eb6c4a-8efb-4cd8-a959-315342c6c9ff}</Project>
       <Name>BaseDatos_Libreria</Name>
     </ProjectReference>
+    <ProjectReference Include="caca\Interfaces_Libreria.csproj">
+      <Project>{70d3038a-0de7-47b2-8511-e511756e758b}</Project>
+      <Name>Interfaces_Libreria</Name>
+    </ProjectReference>
     <ProjectReference Include="Clases_Libreria\Clases_Libreria.csproj">
       <Project>{e38897e3-7b35-49cd-8922-42016bfbe38e}</Project>
       <Name>Clases_Libreria</Name>

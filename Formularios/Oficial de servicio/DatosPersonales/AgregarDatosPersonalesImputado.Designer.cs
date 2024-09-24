@@ -36,9 +36,9 @@
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.emailControl1 = new Ofelia_Sara.general.clases.Apariencia_General.Controles.EmailControl();
-            this.numeroTelefonicoControl = new Ofelia_Sara.general.clases.Apariencia_General.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.general.clases.Apariencia_General.Controles.CustomDateTextBox();
+            this.emailControl1 = new Controles_Libreria.Controles.EmailControl();
+            this.numeroTelefonicoControl = new Controles_Libreria.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -769,9 +769,9 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
-        private general.clases.Apariencia_General.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
-        private general.clases.Apariencia_General.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private general.clases.Apariencia_General.Controles.EmailControl emailControl1;
+        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
+        private Controles_Libreria.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
+        private Controles_Libreria.Controles.EmailControl emailControl1;
         private System.Windows.Forms.Label label_LugarNacimiento;
         private System.Windows.Forms.TextBox textBox_LugarNacimiento;
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;

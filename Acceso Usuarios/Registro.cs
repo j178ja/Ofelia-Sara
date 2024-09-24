@@ -9,9 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General;
-using Ofelia_Sara.Base_de_Datos;
+using Clases_Libreria.Apariencia;
+using BaseDatos_Libreria.Entidades;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Botones;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {

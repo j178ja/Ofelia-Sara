@@ -81,7 +81,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
             this.lbl_DeptoJudicial = new System.Windows.Forms.Label();
             this.comboBox_DeptoJudicial = new System.Windows.Forms.ComboBox();
-            this.timePickerPersonalizado1 = new Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado();
+            this.timePickerPersonalizado1 = new Controles_Libreria.Controles.TimePickerPersonalizado();
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
@@ -788,7 +788,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Titulo;
 
-        private general.clases.Apariencia_General.TimePickerPersonalizado timePickerPersonalizado1;
+        private Controles_Libreria.Controles.TimePickerPersonalizado timePickerPersonalizado1;
         private System.Windows.Forms.Label lbl_DeptoJudicial;
         private System.Windows.Forms.ComboBox comboBox_DeptoJudicial;
         private System.Windows.Forms.Label lbl_Localida;

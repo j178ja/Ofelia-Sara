@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using System.Drawing;
 using Ofelia_Sara;
 using Clases_Libreria.Reposicon_paneles;
+using Interfaces_Libreria.Interfaces;
+
+
 
 
 
@@ -127,101 +130,101 @@ namespace Clases_Libreria.Botones.btn_Configuracion
         //--------para abrir formulario agregar secretario
         private void Agregar_Secretario()
         {
-            AbrirFormulario<NuevoSecretario>();
+            //AbrirFormulario<NuevoSecretario>();
         }
 
         //---------Para abrir formulario AGREGAR INSTRUCTOR-----
         private void Agregar_Instructor()
         {
-            AbrirFormulario<NuevoInstructor>();
+            //AbrirFormulario<NuevoInstructor>();
         }
 
         //---------Para abrir formulario AGREGAR DEPENDENCIA-----
         private void Agregar_Dependencia()
         {
-            AbrirFormulario<NuevaDependencia>();
+            //AbrirFormulario<NuevaDependencia>();
         }
 
 
         //---------Para abrir formulario AGREGAR UFID-----
         private void Agregar_UFID()
         {
-            AbrirFormulario<NuevaFiscalia>();
+            //AbrirFormulario<NuevaFiscalia>();
         }
 
         // ------PARA ABRIR SELLOS--------------------
         private void Agregar_Sellos()
         {
-            AbrirFormulario<SellosDependencia>();
+            //AbrirFormulario<SellosDependencia>();
         }
 
         private void Sello_Medalla()
         {
-            AbrirFormulario<SellosDependencia>();
+            //AbrirFormulario<SellosDependencia>();
         }
 
         private void Escalera()
         {
-            AbrirFormulario<SellosDependencia>();
+           // AbrirFormulario<SellosDependencia>();
         }
 
         private void Foliador()
         {
-            AbrirFormulario<SellosDependencia>();
+            //AbrirFormulario<SellosDependencia>();
         }
 
         //--------PARA AGREGAR FISCAL---------------------
         private void Agregar_AgenteFiscal()
         {
-            AbrirFormulario<NuevaFiscalia>();
+           // AbrirFormulario<NuevaFiscalia>();
         }
 
         // ------PARA BUSCAR Y DERIVADOS----------------------
         private void Buscar_Ipp()
         {
-            AbrirFormulario<BuscarForm>("comboBox_Ipp1");
+           // AbrirFormulario<BuscarForm>("comboBox_Ipp1");
         }
 
         private void Buscar_Caratula()
         {
-            AbrirFormulario<BuscarForm>("textBox_Caratula");
+            //AbrirFormulario<BuscarForm>("textBox_Caratula");
 
         }
 
         private void Buscar_Victima()
         {
-            AbrirFormulario<BuscarForm>("textBox_Victima");
+            //AbrirFormulario<BuscarForm>("textBox_Victima");
         }
 
         private void Buscar_Imputado()
         {
-            AbrirFormulario<BuscarForm>("textBox_Imputado");
+            //AbrirFormulario<BuscarForm>("textBox_Imputado");
         }
 
         private void Buscar_Fecha()
         {
-            AbrirFormulario<BuscarForm>("textBox_Fecha");
+            //AbrirFormulario<BuscarForm>("textBox_Fecha");
         }
 
         private void Buscar_Secretario()
         {
-            AbrirFormulario<BuscarForm>("textBox_Secretario");
+            //AbrirFormulario<BuscarForm>("textBox_Secretario");
         }
 
         private void Buscar_Instructor()
         {
-            AbrirFormulario<BuscarForm>("textBox_Instructor");
+            //AbrirFormulario<BuscarForm>("textBox_Instructor");
         }
 
         private void Buscar_Dependencia()
         {
-            AbrirFormulario<BuscarForm>("textBox_Dependencia");
+            //AbrirFormulario<BuscarForm>("textBox_Dependencia");
         }
 
         // ------PARA Btn REMOVER----------------------
         private void Remover()
         {
-            AbrirFormulario<UsuarioForm>();
+            //AbrirFormulario<UsuarioForm>();
         }
         //--------------------------------------------------------------------------------
 
