@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
+using Ofelia_Sara.Formularios;
+using Clases_Libreria.Apariencia;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -20,7 +21,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InitializeComponent();
          
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             this.listView_Documentos.DoubleClick += new System.EventHandler(this.listView_Documentos_DoubleClick);
 
@@ -61,7 +62,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void CargarDocumentosEnListView()
         {
-            string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"BaseDatos\Leyes");
+            string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Leyes");
             string[] archivos = Directory.GetFiles(carpetaDocumentos, "*.pdf");
 
             foreach (string archivo in archivos)
@@ -89,7 +90,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 string fileName = fileNameWithoutExtension + ".pdf";
 
                 // Ruta completa del archivo
-                string filePath = Path.Combine(@"BaseDatos\Leyes", fileName);
+                string filePath = Path.Combine(@"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Leyes", fileName);
 
                 // Verifica si el archivo existe
                 if (File.Exists(filePath))

@@ -308,7 +308,7 @@ namespace Ofelia_Sara.Formularios
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "BaseForm";
-            this.Load += new System.EventHandler(this.BaseForm_Load_1);
+          
             this.ResumeLayout(false);
 
         }
@@ -324,10 +324,6 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-        private void BaseForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
         
     }
 }
