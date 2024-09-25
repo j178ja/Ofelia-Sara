@@ -79,7 +79,6 @@ namespace Clases_Libreria.Botones.btn_Configuracion
             item_Agregar.DropDownItems.Add(subItem_Agregar_Dependencia);
             item_Agregar.DropDownItems.Add(subItem_Agregar_UFID);
             item_Agregar.DropDownItems.Add(subItem_Agregar_AgenteFiscal);
-          
 
         }
 
@@ -148,7 +147,7 @@ namespace Clases_Libreria.Botones.btn_Configuracion
         //---------Para abrir formulario AGREGAR DEPENDENCIA-----
         private void Agregar_Dependencia()
         {
-            //AbrirFormulario<NuevaDependencia>();
+           // AbrirFormulario<NuevaDependencia>();
         }
 
 
@@ -161,7 +160,7 @@ namespace Clases_Libreria.Botones.btn_Configuracion
         // ------PARA ABRIR SELLOS--------------------
         private void Agregar_Sellos()
         {
-            //AbrirFormulario<SellosDependencia>();
+           // AbrirFormulario<SellosDependencia>();
         }
 
         private void Sello_Medalla()
@@ -238,7 +237,11 @@ namespace Clases_Libreria.Botones.btn_Configuracion
 
         private void AbrirFormulario<T>(string controlName = null) where T : Form, IFormulario,new()
         {
-            var form = new T();
+            // Crear una nueva instancia del formulario
+            T form = new T();
+            // Inicializar el formulario llamando al método de la interfaz
+            form.Inicializar();
+
             FormPositioner.PosicionarDebajo(_menuPrincipal, form);
             form.Show();
 

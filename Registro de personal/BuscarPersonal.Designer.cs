@@ -175,7 +175,7 @@
             this.MinimumSize = new System.Drawing.Size(734, 270);
             this.Name = "BuscarPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " SELECCIONAR PERSONAL POLICIAL";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarPersonal_HelpButtonClicked);
             this.Load += new System.EventHandler(this.BuscarPersonal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
