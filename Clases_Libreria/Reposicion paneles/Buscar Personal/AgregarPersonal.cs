@@ -107,10 +107,35 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
 
 
         // Ajusta la altura del panel principal y del formulario
-        private void AjustarAlturaPanelPrincipal(Panel panel1, Panel panel_ControlesInferiores, Form formulario)
+        public void AjustarAlturaPanelPrincipal(Panel panel1, Panel panel_ControlesInferiores, Form formulario)
         {
             panel1.Height = panel_ControlesInferiores.Bottom + PaddingInferior;
             formulario.Height = panel1.Bottom + (panel1.AutoScroll ? AlturaFormularioConScroll : AlturaExtraFormulario);
         }
+
+        public void ReposicionarControles(Panel panel, Control controlEliminado)
+        {
+            // Altura del control que fue eliminado
+            int alturaEliminado = controlEliminado.Height;
+            bool encontrado = false; // Variable para saber si se encontró el control eliminado
+
+            // Recorremos los controles en el panel
+            foreach (Control control in panel.Controls)
+            {
+                // Comprobar si hemos encontrado el control eliminado
+                if (encontrado)
+                {
+                    // Reposicionar el control, ajustando su posición hacia arriba
+                    control.Top -= alturaEliminado;
+                }
+
+                // Si el control actual es el que fue eliminado, marcamos que se ha encontrado
+                if (control == controlEliminado)
+                {
+                    encontrado = true; // Marcamos que el control ha sido encontrado
+                }
+            }
+        }
+
     }
 }

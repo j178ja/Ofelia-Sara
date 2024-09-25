@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\clases_libreria\\reposicion paneles\\buscar personal\\agregarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\clases_libreria\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|solutionrelative:clases_libreria\\botones\\btn_configuracion\\auxiliarconfiguracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{327929EB-B2D3-43B1-9DE2-E312B3B71F33}|Controles_Libreria\\Controles_Libreria.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles_libreria\\controles\\personalseleccionadocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{327929EB-B2D3-43B1-9DE2-E312B3B71F33}|Controles_Libreria\\Controles_Libreria.csproj|solutionrelative:controles_libreria\\controles\\personalseleccionadocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\clases_libreria\\reposicion paneles\\buscar personal\\agregarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases_Libreria.csproj|solutionrelative:clases_libreria\\reposicion paneles\\buscar personal\\agregarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\registro de personal\\buscarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:registro de personal\\buscarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\registro de personal\\nuevopersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:registro de personal\\nuevopersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +43,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AgregarPersonal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs",
-              "RelativeDocumentMoniker": "Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs*",
-              "RelativeToolTip": "Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs*",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAwwDQAAABAAAAA",
+              "Title": "AuxiliarConfiguracion.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "RelativeDocumentMoniker": "Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "RelativeToolTip": "Clases_Libreria\\Botones\\btn_Configuracion\\AuxiliarConfiguracion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T11:11:19.887Z",
+              "WhenOpened": "2024-09-25T19:20:21.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BuscarPersonal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\BuscarPersonal.cs",
-              "RelativeDocumentMoniker": "Registro de personal\\BuscarPersonal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\BuscarPersonal.cs",
-              "RelativeToolTip": "Registro de personal\\BuscarPersonal.cs",
-              "ViewState": "AQIAAIkAAAAAAAAAAAAwwKMAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "AgregarPersonal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs",
+              "RelativeDocumentMoniker": "Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs",
+              "RelativeToolTip": "Clases_Libreria\\Reposicion paneles\\Buscar Personal\\AgregarPersonal.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAmwG0AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T10:47:24.348Z"
+              "WhenOpened": "2024-09-25T13:46:01.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NuevoPersonal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\NuevoPersonal.cs",
+              "RelativeDocumentMoniker": "Registro de personal\\NuevoPersonal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\NuevoPersonal.cs",
+              "RelativeToolTip": "Registro de personal\\NuevoPersonal.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwBEAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T12:28:01.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PersonalSeleccionadoControl.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles_Libreria\\Controles\\PersonalSeleccionadoControl.cs",
+              "RelativeDocumentMoniker": "Controles_Libreria\\Controles\\PersonalSeleccionadoControl.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles_Libreria\\Controles\\PersonalSeleccionadoControl.cs*",
+              "RelativeToolTip": "Controles_Libreria\\Controles\\PersonalSeleccionadoControl.cs*",
+              "ViewState": "AQIAACUAAAAAAAAAAAAowDIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T12:20:32.234Z",
+              "EditorCaption": ""
             }
           ]
         }

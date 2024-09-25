@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Interfaces_Libreria.Interfaces;
 
 
 
@@ -27,6 +27,16 @@ namespace Controles_Libreria.Controles
         private void btn_ModificarPersonal_Click(object sender, EventArgs e)
         {
             ModificarPersonalClicked?.Invoke(this, EventArgs.Empty);
+
+            if (this.Parent is IFormulario formulario)
+            {
+                // llamar para inicializar datos
+               // formulario.InicializarDatos();
+            }
+            // Crear y mostrar la instancia de RegistrarPersonal
+
+            //NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
+            //nuevoPersonalForm.ShowDialog(); // Mostrar como cuadro de diálogo
         }
 
         private void btn_EliminarControl_Click(object sender, EventArgs e)
@@ -36,22 +46,13 @@ namespace Controles_Libreria.Controles
 
             if (panel != null)
             {
-                // Remover este UserControl del panel
+                // Eliminar el control del panel
                 panel.Controls.Remove(this);
 
-                // Recalcular la altura del panel si es necesario, o reposicionar otros controles
-                ReposicionarControles(panel);
             }
         }
 
-        private void ReposicionarControles(Panel panel)
-        {
-            // Reposicionar otros controles en el panel si es necesario
-            foreach (Control control in panel.Controls)
-            {
-                
-            }
-        }
+
 
         private void PersonalSeleccionadoControl_Load(object sender, EventArgs e)
         {

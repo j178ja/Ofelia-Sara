@@ -183,5 +183,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\caca\Interfaces_Libreria.csproj">
+      <Project>{70d3038a-0de7-47b2-8511-e511756e758b}</Project>
+      <Name>Interfaces_Libreria</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

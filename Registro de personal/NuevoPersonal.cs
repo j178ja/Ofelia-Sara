@@ -14,10 +14,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
 using BaseDatos_Libreria.Entidades;
+using Interfaces_Libreria.Interfaces;
+using Controles_Libreria.Controles;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
-    public partial class NuevoPersonal : BaseForm
+    public partial class NuevoPersonal : BaseForm ,IFormulario
     {
 
         public NuevoPersonal(string numeroLegajo)
@@ -32,15 +34,19 @@ namespace Ofelia_Sara.Registro_de_personal
             configurarTextoEnControles();//para formato de texto que ingresa
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
-
         }
 
 
         public NuevoPersonal()
         {
             InitializeComponent();
-        
+        }
 
+
+        // Implementación del método de la interfaz IFormulario
+        public void Inicializar()
+        {
+            // para logica de interfaz IFormulario
         }
 
         private void NuevoPersonal_Load(object sender, EventArgs e)

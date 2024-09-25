@@ -23,3 +23,5 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\Ne
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controle.2784DDD4.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\obj\Debug\Controles_Libreria.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\caca.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Controles_Libreria\bin\Debug\caca.pdb
