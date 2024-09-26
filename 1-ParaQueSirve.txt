@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------------------------
+-------------------------------OFELIA-SARA-----------------------------------------------------
+
+OFELIA-SARA es una aplicacion de escritorio pensada para ser portable, permitiendo instalarse 
+en diferentes terminales sin mucha dificultad.
+
+Pensado para ser usado por personal escribiente de una dependencia policial
+
+*Automatizando tareas repetitivas, en la confeccion de actos administrativos comunes y recurrentes
+
+*Pretende disminuir el tiempo de demora del escribiente, en completar datos repetitivos en distintos
+documentos Word de una misma actuacion.
+
+*Disminuye la posibilidad de error, ya que le brinda al usuario una estructura con los datos colocados
+en el lugar y la forma en que por reglamento, uso y costumbre se estila.
+
+*Le otorga al usuario listado de opciones precargados, lo que agiliza el completado de formulario
+
+*Le permite al usuario agregar nuevos elementos a las listas de opciones
+
+*Le permite al usuario realizar convercion de texto sin necesidad de recurrir a aplicaciones externas o web
+
+*Posee almacenamiento interno de archivos que se han cargado previamente, lo que permite tener un 
+relevamientod de datos de imputados e infractores sin violar leyes de inteligencia y derechos constitucionales
+
+---------version 2--------
+
+*le permitira al usuario realizar practicas de mecanografiado con texto preestablecido o cargando archivos
+
+* se le permitira al usuario completar documentos mediante relato por voz
+
+-------version 3----------
+
+*Se incorporara la posibilidad de emplear IA entrenada especificamente para describir imagenes, empleando
+ lenguaje tecnico policial. Esto agilizaria el trabajo descriptivo en inspecion ocular, visu etc.

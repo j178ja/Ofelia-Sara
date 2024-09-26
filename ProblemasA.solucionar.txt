@@ -3,39 +3,23 @@
         PROBLEMAS DE APLICACION
 
                                  
-                                
-3)NO SE ESTA APLICANDO SALTO DE INPUT
+ NO SE ESTA APLICANDO SALTO DE INPUT
                                    
-
-                                  
-
-
-
-                                
- STARPOSITION NO SE APLICA
- NO SE PUEDE EDITAR PROPIEDAD ANCHOR
-
-            PLACEHOLDER EN COMBOBOX_BUSCAR EN FORM MENUPRINCIPAL
-            AUTOCOMPLETAR EN TEXTBOX_CARATULA A APLICARSE EN BASEFORM
-
-
-
-
-
-
-
-         FALTA HACER
-
-                                
-2 ) que el menu desplegable permita incorporar elementos a los combo box
-3) que el boton de imprimir  cambie recuadro a verde cuando este completo el formulario
-4) que si se apreta imprimir y no esta completo indique el campo que falta
-5) Que los botones agregar amplien el formulario agregando un nuevo campo justo debajo 
-
-hacer que se reflejen los archivos json de bin en los de la solucion del proyecto
-
---------------------------------------------------------------------------------------------
+ PLACEHOLDER EN COMBOBOX_BUSCAR EN FORM MENUPRINCIPAL
+           
+ AUTOCOMPLETAR EN TEXTBOX_CARATULA A APLICARSE EN BASEFORM
 
 MODIFICAR LA RUTA DE ACCESO  RELATIVA PARA MOSTRAR LEYES(SE COLOCO RUTA ABSOLUTA TRAS SEPARAR EL PROYECTO EN CAPAS)
 
 SOLUCIONAR LA APERTURA DE FORMULARIOS DESDE BTN_CONFIGURAR (LO IDEAL ES QUE TODAS LAS CLASES QUEDEN EN CLASES_LIBREIA)
+
+EL FONDO DEGRADADO GENERA DESPUES DE UN TIEMPO UNA EXEPCION NO CONTROLADA
+
+
+--------------------------------------------------------------------------------------------
+         FALTA HACER
+         
+2 ) que el menu desplegable permita incorporar elementos a los combo box
+3) que el boton de imprimir  cambie recuadro a verde cuando este completo el formulario
+4) que si se apreta imprimir y no esta completo indique el campo que falta
+--------------------------------------------------------------------------------------------
