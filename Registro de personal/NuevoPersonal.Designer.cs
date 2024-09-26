@@ -194,7 +194,7 @@
             this.numeroTelefonicoControl1.AutoSize = true;
             this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.numeroTelefonicoControl1.ControlWidth = 162;
-            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(126, 230);
+            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(132, 230);
             this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
             this.numeroTelefonicoControl1.Size = new System.Drawing.Size(162, 25);
             this.numeroTelefonicoControl1.TabIndex = 147;
@@ -212,7 +212,7 @@
             "CASADA/O",
             "DIVORCIADA/O",
             "VIUDA/O"});
-            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(136, 205);
+            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(140, 204);
             this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
             this.comboBox_EstadoCivil.Size = new System.Drawing.Size(149, 21);
             this.comboBox_EstadoCivil.TabIndex = 146;
@@ -387,7 +387,7 @@
             // 
             this.label_EstadoCivil.AutoSize = true;
             this.label_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_EstadoCivil.Location = new System.Drawing.Point(31, 207);
+            this.label_EstadoCivil.Location = new System.Drawing.Point(35, 206);
             this.label_EstadoCivil.Name = "label_EstadoCivil";
             this.label_EstadoCivil.Size = new System.Drawing.Size(106, 15);
             this.label_EstadoCivil.TabIndex = 125;
@@ -396,16 +396,16 @@
             // 
             // textBox_LocalidadPnal
             // 
-            this.textBox_LocalidadPnal.Location = new System.Drawing.Point(126, 284);
+            this.textBox_LocalidadPnal.Location = new System.Drawing.Point(132, 284);
             this.textBox_LocalidadPnal.Name = "textBox_LocalidadPnal";
-            this.textBox_LocalidadPnal.Size = new System.Drawing.Size(174, 20);
+            this.textBox_LocalidadPnal.Size = new System.Drawing.Size(161, 20);
             this.textBox_LocalidadPnal.TabIndex = 124;
             // 
             // label_LocalidadPnal
             // 
             this.label_LocalidadPnal.AutoSize = true;
             this.label_LocalidadPnal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LocalidadPnal.Location = new System.Drawing.Point(29, 285);
+            this.label_LocalidadPnal.Location = new System.Drawing.Point(35, 285);
             this.label_LocalidadPnal.Name = "label_LocalidadPnal";
             this.label_LocalidadPnal.Size = new System.Drawing.Size(90, 15);
             this.label_LocalidadPnal.TabIndex = 123;
@@ -414,16 +414,16 @@
             // 
             // textBox_DomicilioPnal
             // 
-            this.textBox_DomicilioPnal.Location = new System.Drawing.Point(126, 258);
+            this.textBox_DomicilioPnal.Location = new System.Drawing.Point(132, 258);
             this.textBox_DomicilioPnal.Name = "textBox_DomicilioPnal";
-            this.textBox_DomicilioPnal.Size = new System.Drawing.Size(444, 20);
+            this.textBox_DomicilioPnal.Size = new System.Drawing.Size(438, 20);
             this.textBox_DomicilioPnal.TabIndex = 122;
             // 
             // label_Domicilio
             // 
             this.label_Domicilio.AutoSize = true;
             this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Domicilio.Location = new System.Drawing.Point(29, 259);
+            this.label_Domicilio.Location = new System.Drawing.Point(35, 259);
             this.label_Domicilio.Name = "label_Domicilio";
             this.label_Domicilio.Size = new System.Drawing.Size(86, 15);
             this.label_Domicilio.TabIndex = 121;
@@ -434,7 +434,7 @@
             // 
             this.label_Telefono1.AutoSize = true;
             this.label_Telefono1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono1.Location = new System.Drawing.Point(29, 233);
+            this.label_Telefono1.Location = new System.Drawing.Point(34, 233);
             this.label_Telefono1.Name = "label_Telefono1";
             this.label_Telefono1.Size = new System.Drawing.Size(99, 15);
             this.label_Telefono1.TabIndex = 119;

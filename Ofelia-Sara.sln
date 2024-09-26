@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDatos_Libreria", "..\Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces_Libreria", "caca\Interfaces_Libreria.csproj", "{70D3038A-0DE7-47B2-8511-E511756E758B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentacion", "Documentacion", "{C96CF4BB-54BF-4D0D-A3A8-2A664C37DA64}"
+	ProjectSection(SolutionItems) = preProject
+		1-ParaQueSirve.txt = 1-ParaQueSirve.txt
+		2-Estructura de funcionamiento.txt = 2-Estructura de funcionamiento.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +61,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9C901A91-EE43-4CFA-8D48-73881610CDDF} = {F85F4946-EF92-4542-9436-4EE64DF159AB}
+		{C96CF4BB-54BF-4D0D-A3A8-2A664C37DA64} = {F85F4946-EF92-4542-9436-4EE64DF159AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FEE3EF2D-1521-4468-A6E8-B6082F41B957}

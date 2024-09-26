@@ -67,10 +67,10 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Jerarquia.DataSource = null;
 
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
-                                                                                   
 
+            InicializarComboBoxDEPENDENCIAS();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
 
-        comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
+            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
 
             numeroTelefonicoControl1.ControlWidth = 159;
             numeroTelefonicoControl2.ControlWidth = 159;
@@ -167,6 +167,15 @@ namespace Ofelia_Sara.Registro_de_personal
             {
                 e.Handled = true; // Cancelar la entrada si no es un número
             }
+        }
+
+
+        private void InicializarComboBoxDEPENDENCIAS()
+        {
+            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
+            comboBox_Dependencia.DataSource = dependencias;
+            comboBox_Dependencia.DisplayMember = "Dependencia";
+            comboBox_Dependencia.SelectedIndex = -1;
         }
     }
 }
