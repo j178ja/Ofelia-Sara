@@ -31,10 +31,10 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
             ReposicionarPanelInferior(panel, panel_PersonalSeleccionado, panel_ControlesInferiores);
             AjustarAlturaPanelPrincipal(panel1, panel_ControlesInferiores, formulario);
 
-
             // Ajustar el ancho de los controles según el estado del scroll
             AjustarAnchoControles(panel);
         }
+
 
         // Posiciona el nuevo control dentro del panel
         private void PosicionarControl(Control nuevoControl, Panel panel)
@@ -68,6 +68,7 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
                 }
             }
         }
+
 
         // Asigna el color de fondo dependiendo de si el índice es par o impar
         private void AsignarColorFondo(Control control, int indice)

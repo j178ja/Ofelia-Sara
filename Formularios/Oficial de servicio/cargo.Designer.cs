@@ -622,6 +622,7 @@
             this.Name = "Cargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CARGO ";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Cargo_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Cargo_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);

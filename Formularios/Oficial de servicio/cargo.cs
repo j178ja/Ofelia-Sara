@@ -7,6 +7,7 @@ using Clases_Libreria.Texto;
 using Clases_Libreria.Apariencia;
 using Clases_Libreria.Botones;
 using Ofelia_Sara.Formularios;
+using System.ComponentModel;
 
 
 
@@ -180,6 +181,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
                
             }
+        }
+
+        private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            // Mostrar un mensaje de ayuda
+            MessageBox.Show("Complete los campos y una descripcion de la muestra, para poder generar el cargo", "OFELIA-SARA   Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
         }
     }
 }

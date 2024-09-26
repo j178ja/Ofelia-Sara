@@ -13,6 +13,8 @@ using Interfaces_Libreria.Interfaces;
 
 
 
+
+
 namespace Controles_Libreria.Controles
 {
     public partial class PersonalSeleccionadoControl : UserControl
@@ -35,8 +37,8 @@ namespace Controles_Libreria.Controles
             }
             // Crear y mostrar la instancia de RegistrarPersonal
 
-            //NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
-            //nuevoPersonalForm.ShowDialog(); // Mostrar como cuadro de diálogo
+           /* NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
+            nuevoPersonalForm.ShowDialog(); // Mostrar como cuadro de diálogo*/
         }
 
         private void btn_EliminarControl_Click(object sender, EventArgs e)

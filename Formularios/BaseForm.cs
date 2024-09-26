@@ -10,14 +10,13 @@ using Clases_Libreria.Apariencia;
 using Clases_Libreria.Botones;
 // Alias para el ShadowForm de tu propia clase
 
-using GunaShadowForm = Guna.UI2.WinForms.Suite.ShadowForm;
+
 
 
 namespace Ofelia_Sara.Formularios
 
+{ 
 
-{
-    using Guna.UI2.WinForms.Suite;
     using Newtonsoft.Json;
     // using Ofelia_Sara.Base_de_Datos;
     using System.Collections.Generic;

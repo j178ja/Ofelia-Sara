@@ -59,7 +59,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles_Libreria.dl
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Google.Protobuf.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Guna.UI2.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\itextsharp.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\K4os.Compression.LZ4.Streams.dll

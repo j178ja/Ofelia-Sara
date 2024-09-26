@@ -20,6 +20,7 @@ using Clases_Libreria.Botones;
 using Clases_Libreria.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
 using Controles_Libreria.Controles;
+using System.ComponentModel;
 
 
 
@@ -1163,6 +1164,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.Height = nuevaAltura;
         }
 
+
+        private void Expedientes_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            // Mostrar un mensaje de ayuda
+            MessageBox.Show("Complete los datos requeridos para generar el documento EXPEDIENTE.", "OFELIA-SARA  Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
+        }
 
     }
 }
