@@ -9,6 +9,7 @@ using Clases_Libreria.Botones.btn_Configuracion;
 using Clases_Libreria.Botones;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.ComponentModel;
+using Controles_Libreria.Barra_Busqueda;
 
 namespace Ofelia_Sara.Formularios
 {
@@ -37,7 +38,7 @@ namespace Ofelia_Sara.Formularios
 
             comboBox_Buscar.BringToFront(); // Asegúrate de que comboBoxBuscar está encima de comboBoxGNUA
 
-            
+
         }
         //---------------------------------------------
         private void ConfigurePlaceholderComboBox()
@@ -104,10 +105,10 @@ namespace Ofelia_Sara.Formularios
         }
 
 
-       
-     
 
-    
+
+
+
 
         //-----BOTON INICIO-CIERRE------------
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace Ofelia_Sara.Formularios
             this.WindowState = FormWindowState.Minimized;//cierra formulario actual
         }
 
-     
+
 
         //-------------BOTON CONTRAVENCIONES------------
         private void Btn_Contravenciones_Click(object sender, EventArgs e)
@@ -147,8 +148,8 @@ namespace Ofelia_Sara.Formularios
             this.WindowState = FormWindowState.Minimized;//cierra formulario actual
         }
 
-    
-     
+
+
 
         //------------- BOTON BUSCAR--------------------------
         private BindingSource bindingSource;
@@ -222,7 +223,7 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-       
+
         //_________________________________________________________________________________
         //----------------BTON LEYES------------------------------
         private void btn_Leyes_Click(object sender, EventArgs e)
@@ -241,10 +242,44 @@ namespace Ofelia_Sara.Formularios
             // Ajustar la ubicación del formulario DocumentosForm
             leyesForm.StartPosition = FormStartPosition.Manual;
             leyesForm.Location = new Point(x, y);
-                       
+
             leyesForm.Show();
         }
-     
 
+        private void btn_BuscarTarea_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado un formulario
+            if (comboBox_Buscar.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, selecciona un formulario antes de continuar.", "OFELIA-SARA   Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Obtener el nombre del formulario seleccionado desde el comboBox
+            string nombreFormularioSeleccionado = comboBox_Buscar.SelectedItem as string;
+
+            // Verifica que se haya seleccionado un formulario
+            if (!string.IsNullOrEmpty(nombreFormularioSeleccionado))
+            {
+                // Busca el formulario correspondiente en la lista de acciones
+                var formularioSeleccionado = accionesManager.Acciones.Find(accion => accion == nombreFormularioSeleccionado);
+
+                if (formularioSeleccionado != null)
+                {
+                    var abrirFormulario = new AbrirFormularios_BarraBusqueda();
+                    abrirFormulario.AbrirFormulario(formularioSeleccionado);
+                }
+                else
+                {
+                    MessageBox.Show("El formulario seleccionado no está disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un formulario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+        }
     }
 }

@@ -140,6 +140,7 @@
             this.btn_BuscarTarea.Size = new System.Drawing.Size(49, 51);
             this.btn_BuscarTarea.TabIndex = 15;
             this.btn_BuscarTarea.UseVisualStyleBackColor = true;
+            this.btn_BuscarTarea.Click += new System.EventHandler(this.btn_BuscarTarea_Click);
             // 
             // comboBox_Buscar
             // 
@@ -153,6 +154,7 @@
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
             this.toolTip1.SetToolTip(this.comboBox_Buscar, "Ingrese que tarea desea realizar");
+
             // 
             // btn_Configurar
             // 

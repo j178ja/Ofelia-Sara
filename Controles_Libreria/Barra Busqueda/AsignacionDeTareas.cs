@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ofelia_Sara.general.clases.Barra_Busqueda
+namespace Controles_Libreria.Barra_Busqueda
 {
     using System;
     using System.Collections.Generic;
 
-    namespace Ofelia_Sara
-    {
         public class TareasManager
         {
             // Lista interna de tareas
@@ -50,4 +48,3 @@ namespace Ofelia_Sara.general.clases.Barra_Busqueda
             }
         }
     }
-}

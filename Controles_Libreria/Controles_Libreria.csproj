@@ -53,6 +53,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barra Busqueda\AbrirFormulario.cs" />
     <Compile Include="Barra Busqueda\AccionesManager.cs" />
     <Compile Include="Barra Busqueda\AsignacionDeTareas.cs" />
     <Compile Include="Barra Busqueda\Autocompletar.cs" />

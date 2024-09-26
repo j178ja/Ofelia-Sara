@@ -1,0 +1,32 @@
+[
+  {
+    "NombreFiscalia": "4",
+    "AgenteFiscal": "Calder\u00F3n Pablo",
+    "Localidad": "PINAMAR",
+    "DeptoJudicial": "Dolores"
+  },
+  {
+    "NombreFiscalia": "6",
+    "AgenteFiscal": "Zamboni Veronica",
+    "Localidad": "VILLA GESELL",
+    "DeptoJudicial": "Dolores"
+  },
+  {
+    "NombreFiscalia": "5",
+    "AgenteFiscal": "Gomez",
+    "Localidad": "PINAMAR",
+    "DeptoJudicial": "Dolores"
+  },
+  {
+    "NombreFiscalia": "FRPJ N 2",
+    "AgenteFiscal": "Andriulo Juana",
+    "Localidad": "PINAMAR",
+    "DeptoJudicial": "Dolores"
+  },
+  {
+    "NombreFiscalia": "XX",
+    "AgenteFiscal": "Pirulo Mengele",
+    "Localidad": "SANTA TEERESITA",
+    "DeptoJudicial": "La Costa"
+  }
+]
