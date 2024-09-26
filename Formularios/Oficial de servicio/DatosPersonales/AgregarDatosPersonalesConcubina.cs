@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Ofelia_Sara.general.clases;
 using Controles_Libreria.Controles.Aplicadas_con_controles;
 using Clases_Libreria.Texto;
+using Clases_Libreria.Botones;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -115,6 +116,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true; // Cancelar la entrada si no es un número
             }
         }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedIndex = -1;
+           
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
         //--------------------------------------------------------------------
 
     }

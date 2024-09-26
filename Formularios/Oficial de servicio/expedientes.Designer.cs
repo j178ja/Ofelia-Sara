@@ -401,7 +401,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.Controls.Add(this.panel1);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Expedientes";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Expedientes_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Expedientes_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);

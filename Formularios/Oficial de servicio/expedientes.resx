@@ -121,7 +121,7 @@
     <value>timePickerPersonalizadoFecha</value>
   </data>
   <data name="&gt;&gt;timePickerPersonalizadoFecha.Type" xml:space="preserve">
-    <value>Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Controles_Libreria.Controles.TimePickerPersonalizado, Controles_Libreria, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel2.AutoSize" type="System.Boolean, mscorlib">
@@ -1031,7 +1031,7 @@
     <value>timePickerPersonalizado1</value>
   </data>
   <data name="&gt;&gt;timePickerPersonalizado1.Type" xml:space="preserve">
-    <value>Ofelia_Sara.general.clases.Apariencia_General.TimePickerPersonalizado, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Controles_Libreria.Controles.TimePickerPersonalizado, Controles_Libreria, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;timePickerPersonalizado1.Parent" xml:space="preserve">
     <value>panel3</value>
@@ -2633,6 +2633,6 @@
     <value>Expedientes</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Ofelia_Sara.general.clases.BaseForm, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ofelia_Sara.Formularios.BaseForm, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

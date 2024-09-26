@@ -139,6 +139,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Controles\Reposicion paneles\Buscar Personal\AgregarPersonal.cs" />
+    <Compile Include="Controles\Reposicion paneles\PosicionarFormularioDebajo.cs" />
     <EmbeddedResource Include="Barras personalizadas\CustomProgressBar.resx">
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +190,10 @@
       <Project>{70d3038a-0de7-47b2-8511-e511756e758b}</Project>
       <Name>Interfaces_Libreria</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controles\Reposicion paneles\Expedientes\" />
+    <Folder Include="Controles\Reposicion paneles\Inicio-Cierre\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

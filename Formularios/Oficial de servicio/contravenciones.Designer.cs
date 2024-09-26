@@ -43,31 +43,31 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox_ArtInfraccion = new System.Windows.Forms.TextBox();
-            this.textBox_NombreInfractor = new System.Windows.Forms.TextBox();
-            this.textBox_ApellidoInfractor = new System.Windows.Forms.TextBox();
-            this.textBox_DniInfractor = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox_Nombre = new System.Windows.Forms.TextBox();
+            this.textBox_Apellido = new System.Windows.Forms.TextBox();
+            this.textBox_Dni = new System.Windows.Forms.TextBox();
+            this.textBox_Edad = new System.Windows.Forms.TextBox();
+            this.textBox_Localidad = new System.Windows.Forms.TextBox();
+            this.textBox_Domicilio = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
+            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
+            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
             this.btn_AgregarArtContravencion = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.timePicker_FechaActual = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
             this.label_Titulo = new System.Windows.Forms.Label();
-            this.fechaActuaciones = new System.Windows.Forms.DateTimePicker();
-            this.datoFecha = new System.Windows.Forms.DateTimePicker();
+            this.FechaAudiencia = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -207,61 +207,52 @@
             this.textBox_ArtInfraccion.Size = new System.Drawing.Size(65, 20);
             this.textBox_ArtInfraccion.TabIndex = 1;
             // 
-            // textBox_NombreInfractor
+            // textBox_Nombre
             // 
-            this.textBox_NombreInfractor.Location = new System.Drawing.Point(125, 205);
-            this.textBox_NombreInfractor.Name = "textBox_NombreInfractor";
-            this.textBox_NombreInfractor.Size = new System.Drawing.Size(241, 20);
-            this.textBox_NombreInfractor.TabIndex = 5;
+            this.textBox_Nombre.Location = new System.Drawing.Point(125, 205);
+            this.textBox_Nombre.Name = "textBox_Nombre";
+            this.textBox_Nombre.Size = new System.Drawing.Size(241, 20);
+            this.textBox_Nombre.TabIndex = 5;
             // 
-            // textBox_ApellidoInfractor
+            // textBox_Apellido
             // 
-            this.textBox_ApellidoInfractor.Location = new System.Drawing.Point(125, 230);
-            this.textBox_ApellidoInfractor.Name = "textBox_ApellidoInfractor";
-            this.textBox_ApellidoInfractor.Size = new System.Drawing.Size(241, 20);
-            this.textBox_ApellidoInfractor.TabIndex = 6;
+            this.textBox_Apellido.Location = new System.Drawing.Point(125, 230);
+            this.textBox_Apellido.Name = "textBox_Apellido";
+            this.textBox_Apellido.Size = new System.Drawing.Size(241, 20);
+            this.textBox_Apellido.TabIndex = 6;
             // 
-            // textBox_DniInfractor
+            // textBox_Dni
             // 
-            this.textBox_DniInfractor.Location = new System.Drawing.Point(125, 256);
-            this.textBox_DniInfractor.Name = "textBox_DniInfractor";
-            this.textBox_DniInfractor.Size = new System.Drawing.Size(241, 20);
-            this.textBox_DniInfractor.TabIndex = 7;
+            this.textBox_Dni.Location = new System.Drawing.Point(125, 256);
+            this.textBox_Dni.Name = "textBox_Dni";
+            this.textBox_Dni.Size = new System.Drawing.Size(241, 20);
+            this.textBox_Dni.TabIndex = 7;
+            this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
+            this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Dni_KeyPress);
             // 
-            // textBox5
+            // textBox_Edad
             // 
-            this.textBox5.Location = new System.Drawing.Point(484, 258);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(77, 20);
-            this.textBox5.TabIndex = 8;
+            this.textBox_Edad.Location = new System.Drawing.Point(484, 258);
+            this.textBox_Edad.Name = "textBox_Edad";
+            this.textBox_Edad.Size = new System.Drawing.Size(77, 20);
+            this.textBox_Edad.TabIndex = 8;
+            this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
+            this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Edad_KeyPress);
             // 
-            // textBox6
+            // textBox_Localidad
             // 
-            this.textBox6.Location = new System.Drawing.Point(484, 285);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(163, 20);
-            this.textBox6.TabIndex = 10;
+            this.textBox_Localidad.Location = new System.Drawing.Point(484, 315);
+            this.textBox_Localidad.Name = "textBox_Localidad";
+            this.textBox_Localidad.Size = new System.Drawing.Size(163, 20);
+            this.textBox_Localidad.TabIndex = 12;
+            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Localidad_KeyPress);
             // 
-            // textBox7
+            // textBox_Domicilio
             // 
-            this.textBox7.Location = new System.Drawing.Point(484, 315);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(163, 20);
-            this.textBox7.TabIndex = 12;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(125, 308);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(241, 20);
-            this.textBox8.TabIndex = 11;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(201, 281);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(165, 20);
-            this.textBox9.TabIndex = 9;
+            this.textBox_Domicilio.Location = new System.Drawing.Point(125, 308);
+            this.textBox_Domicilio.Name = "textBox_Domicilio";
+            this.textBox_Domicilio.Size = new System.Drawing.Size(241, 20);
+            this.textBox_Domicilio.TabIndex = 11;
             // 
             // label15
             // 
@@ -315,29 +306,29 @@
             this.label19.TabIndex = 34;
             this.label19.Text = "FECHA";
             // 
-            // comboBox1
+            // comboBox_Secretario
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 394);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(296, 21);
-            this.comboBox1.TabIndex = 13;
+            this.comboBox_Secretario.FormattingEnabled = true;
+            this.comboBox_Secretario.Location = new System.Drawing.Point(153, 394);
+            this.comboBox_Secretario.Name = "comboBox_Secretario";
+            this.comboBox_Secretario.Size = new System.Drawing.Size(296, 21);
+            this.comboBox_Secretario.TabIndex = 13;
             // 
-            // comboBox5
+            // comboBox_Instructor
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(153, 421);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(296, 21);
-            this.comboBox5.TabIndex = 14;
+            this.comboBox_Instructor.FormattingEnabled = true;
+            this.comboBox_Instructor.Location = new System.Drawing.Point(153, 421);
+            this.comboBox_Instructor.Name = "comboBox_Instructor";
+            this.comboBox_Instructor.Size = new System.Drawing.Size(296, 21);
+            this.comboBox_Instructor.TabIndex = 14;
             // 
-            // comboBox6
+            // comboBox_Dependencia
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(153, 448);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(296, 21);
-            this.comboBox6.TabIndex = 15;
+            this.comboBox_Dependencia.FormattingEnabled = true;
+            this.comboBox_Dependencia.Location = new System.Drawing.Point(153, 448);
+            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
+            this.comboBox_Dependencia.Size = new System.Drawing.Size(296, 21);
+            this.comboBox_Dependencia.TabIndex = 15;
             // 
             // btn_AgregarArtContravencion
             // 
@@ -403,10 +394,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.comboBox_Nacionalidad);
+            this.panel1.Controls.Add(this.timePicker_FechaActual);
+            this.panel1.Controls.Add(this.dateTimePicker_FechaNacimiento);
             this.panel1.Controls.Add(this.label_Titulo);
-            this.panel1.Controls.Add(this.fechaActuaciones);
-            this.panel1.Controls.Add(this.datoFecha);
-            this.panel1.Controls.Add(this.textBox_NombreInfractor);
+            this.panel1.Controls.Add(this.FechaAudiencia);
+            this.panel1.Controls.Add(this.textBox_Nombre);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Limpiar);
@@ -422,28 +415,59 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.comboBox6);
+            this.panel1.Controls.Add(this.comboBox_Dependencia);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.comboBox5);
+            this.panel1.Controls.Add(this.comboBox_Instructor);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBox_Secretario);
             this.panel1.Controls.Add(this.textBox_ArtInfraccion);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox_ApellidoInfractor);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox_DniInfractor);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox_Apellido);
+            this.panel1.Controls.Add(this.textBox_Domicilio);
+            this.panel1.Controls.Add(this.textBox_Dni);
+            this.panel1.Controls.Add(this.textBox_Localidad);
+            this.panel1.Controls.Add(this.textBox_Edad);
             this.panel1.Location = new System.Drawing.Point(15, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
+            // 
+            // comboBox_Nacionalidad
+            // 
+            this.comboBox_Nacionalidad.FormattingEnabled = true;
+            this.comboBox_Nacionalidad.Items.AddRange(new object[] {
+            "ARGENTINA",
+            "PARAGUAYA",
+            "BOLIVIANA",
+            "CHILENA",
+            "URUGUAYA",
+            "PERUANA",
+            "BRASILERA"});
+            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(484, 287);
+            this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
+            this.comboBox_Nacionalidad.Size = new System.Drawing.Size(163, 21);
+            this.comboBox_Nacionalidad.TabIndex = 93;
+            // 
+            // timePicker_FechaActual
+            // 
+            this.timePicker_FechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePicker_FechaActual.Location = new System.Drawing.Point(153, 476);
+            this.timePicker_FechaActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timePicker_FechaActual.Name = "timePicker_FechaActual";
+            this.timePicker_FechaActual.SelectedDate = new System.DateTime(2024, 9, 25, 22, 49, 58, 572);
+            this.timePicker_FechaActual.Size = new System.Drawing.Size(295, 29);
+            this.timePicker_FechaActual.TabIndex = 92;
+            // 
+            // dateTimePicker_FechaNacimiento
+            // 
+            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(195, 282);
+            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
+            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 21);
+            this.dateTimePicker_FechaNacimiento.TabIndex = 91;
             // 
             // label_Titulo
             // 
@@ -458,23 +482,14 @@
             this.label_Titulo.TabIndex = 49;
             this.label_Titulo.Text = "CONTRAVENCIONES";
             // 
-            // fechaActuaciones
+            // FechaAudiencia
             // 
-            this.fechaActuaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fechaActuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaActuaciones.Location = new System.Drawing.Point(153, 476);
-            this.fechaActuaciones.Name = "fechaActuaciones";
-            this.fechaActuaciones.Size = new System.Drawing.Size(297, 24);
-            this.fechaActuaciones.TabIndex = 49;
-            // 
-            // datoFecha
-            // 
-            this.datoFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.datoFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datoFecha.Location = new System.Drawing.Point(209, 105);
-            this.datoFecha.Name = "datoFecha";
-            this.datoFecha.Size = new System.Drawing.Size(279, 24);
-            this.datoFecha.TabIndex = 48;
+            this.FechaAudiencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FechaAudiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaAudiencia.Location = new System.Drawing.Point(209, 105);
+            this.FechaAudiencia.Name = "FechaAudiencia";
+            this.FechaAudiencia.Size = new System.Drawing.Size(279, 24);
+            this.FechaAudiencia.TabIndex = 48;
             // 
             // Contravenciones
             // 
@@ -483,9 +498,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(722, 675);
             this.Controls.Add(this.panel1);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Contravenciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACTUACIONES CONTRAVENCIONALES                               ";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Contravenciones_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Contravenciones_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
@@ -510,22 +529,20 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_ArtInfraccion;
-        private System.Windows.Forms.TextBox textBox_NombreInfractor;
-        private System.Windows.Forms.TextBox textBox_ApellidoInfractor;
-        private System.Windows.Forms.TextBox textBox_DniInfractor;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox_Nombre;
+        private System.Windows.Forms.TextBox textBox_Apellido;
+        private System.Windows.Forms.TextBox textBox_Dni;
+        private System.Windows.Forms.TextBox textBox_Edad;
+        private System.Windows.Forms.TextBox textBox_Localidad;
+        private System.Windows.Forms.TextBox textBox_Domicilio;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox_Secretario;
+        private System.Windows.Forms.ComboBox comboBox_Instructor;
+        private System.Windows.Forms.ComboBox comboBox_Dependencia;
         private System.Windows.Forms.Button btn_AgregarArtContravencion;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Guardar;
@@ -533,8 +550,10 @@
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Titulo;
-        private System.Windows.Forms.DateTimePicker datoFecha;
+        private System.Windows.Forms.DateTimePicker FechaAudiencia;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DateTimePicker fechaActuaciones;
+        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
+        private Controles_Libreria.Controles.TimePickerPersonalizado timePicker_FechaActual;
+        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
     }
 }
