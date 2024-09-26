@@ -14,8 +14,8 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
         private const int MaxControlesVisibles = 6;
         private readonly Color colorPar = Color.FromArgb(230, 230, 230); // Gris claro
         private readonly Color colorImpar = Color.FromArgb(200, 200, 200); // Gris medio
-        private const int EspacioEntrePaneles = 10;
-        private const int AlturaExtraFormulario = 150;
+        private const int EspacioEntrePaneles = 0;//se solciono mediante anchor top
+        private const int AlturaExtraFormulario = 85;
         private const int AlturaFormularioConScroll = 75;
         private const int PaddingInferior = 12;
 
@@ -85,9 +85,7 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
         // Reposiciona el panel inferior y ajusta el scroll si es necesario
         private void ReposicionarPanelInferior(Panel panel, Panel panel_PersonalSeleccionado, Panel panel_ControlesInferiores)
         {
-           
-
-            // Ajustar la altura y el scroll del panel basado en la cantidad de controles
+             // Ajustar la altura y el scroll del panel basado en la cantidad de controles
             if (panel.Controls.Count > MaxControlesVisibles)
             {
                 panel.Height = panel.Controls[MaxControlesVisibles - 1].Bottom;
@@ -102,8 +100,10 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
             // Asegurarse de que solo se habilite el scroll vertical
             panel.VerticalScroll.Visible = panel.AutoScroll; // Muestra el scroll vertical solo si está habilitado
 
+          
             // Reposicionar el panel inferior
-            panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom + EspacioEntrePaneles;
+            panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom + EspacioEntrePaneles+10;
+           
         }
 
 
@@ -114,6 +114,7 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
             formulario.Height = panel1.Bottom + (panel1.AutoScroll ? AlturaFormularioConScroll : AlturaExtraFormulario);
         }
 
+        //----------------------------------------------------------------------------------
         public void ReposicionarControles(Panel panel, Control controlEliminado)
         {
             // Altura del control que fue eliminado
@@ -137,6 +138,6 @@ namespace Clases_Libreria.Reposicion_paneles.Buscar_Personal
                 }
             }
         }
-
+        //---------------------------------------------------------------------------------------
     }
 }

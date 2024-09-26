@@ -50,7 +50,9 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.panel_ControlesInferiores);
             this.panel1.Controls.Add(this.panel_PersonalSeleccionado);
@@ -65,7 +67,8 @@
             // 
             // panel_ControlesInferiores
             // 
-            this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
             this.panel_ControlesInferiores.Controls.Add(this.btn_Registrar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Location = new System.Drawing.Point(164, 99);
