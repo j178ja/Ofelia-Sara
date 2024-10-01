@@ -290,8 +290,7 @@
     <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="general\clases\GenerarDocumentos\GenerarDocumentos.cs" />
-    <Compile Include="general\clases\Mensajes\MensajeCargarImprimir.cs">
+    <Compile Include="Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\inicio_cierre.cs">
@@ -312,6 +311,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>escudoPolicial.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Registro de personal\BuscarPersonal.cs">
       <SubType>Form</SubType>
@@ -388,7 +392,7 @@
     <EmbeddedResource Include="Formularios\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="general\clases\Mensajes\MensajeCargarImprimir.resx">
+    <EmbeddedResource Include="Mensajes\MensajeCargarImprimir.resx">
       <DependentUpon>MensajeCargarImprimir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\inicio_cierre.resx">
@@ -400,17 +404,13 @@
     <EmbeddedResource Include="Properties\escudoPolicial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>escudoPolicial.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Registro de personal\BuscarPersonal.resx">
       <DependentUpon>BuscarPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,18 +443,16 @@
     <None Include="Resources\imagenes\doc.png" />
     <None Include="Resources\imagenes\borrar.png" />
     <None Include="Resources\imagenes\borrar 24%281%29.png" />
-    <None Include="general\imagenes\pdf.png" />
-    <None Include="general\imagenes\subir_documentos.png" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\subir_documentos.png" />
     <None Include="Resources\subir_archivo.bmp" />
-    <None Include="general\imagenes\ICOes.png" />
-    <None Include="general\imagenes\IconoEscudoPolicia.ico" />
-    <None Include="general\imagenes\borrar.png" />
-    <None Include="general\imagenes\borrar 24%281%29.png" />
-    <None Include="general\imagenes\doc.png" />
-    <Content Include="general\imagenes\ojoCerrado.png" />
+    <None Include="Resources\ICOes.png" />
+    <None Include="Resources\IconoEscudoPolicia.ico" />
+    <None Include="Resources\borrar.png" />
+    <None Include="Resources\borrar 24%281%29.png" />
+    <None Include="Resources\doc.png" />
     <None Include="Resources\escudoPolicial.png" />
-    <None Include="general\imagenes\ojoINICIO.png" />
-    <Content Include="general\imagenes\ojo_Contraseña.png" />
+    <Content Include="Resources\ojo_Contraseña.png" />
     <None Include="Resources\ojoINICIO.png" />
     <None Include="Resources\ojoAbierto.png" />
     <None Include="Resources\ojoCerrado.png" />
@@ -463,21 +461,21 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseDatos_Libreria\BaseDatos_Libreria.csproj">
+    <ProjectReference Include="..\BaseDatos_Libreria\BaseDatos.csproj">
       <Project>{60eb6c4a-8efb-4cd8-a959-315342c6c9ff}</Project>
-      <Name>BaseDatos_Libreria</Name>
+      <Name>BaseDatos</Name>
     </ProjectReference>
     <ProjectReference Include="caca\Interfaces_Libreria.csproj">
       <Project>{70d3038a-0de7-47b2-8511-e511756e758b}</Project>
       <Name>Interfaces_Libreria</Name>
     </ProjectReference>
-    <ProjectReference Include="Clases_Libreria\Clases_Libreria.csproj">
+    <ProjectReference Include="Clases_Libreria\Clases.csproj">
       <Project>{e38897e3-7b35-49cd-8922-42016bfbe38e}</Project>
-      <Name>Clases_Libreria</Name>
+      <Name>Clases</Name>
     </ProjectReference>
-    <ProjectReference Include="Controles_Libreria\Controles_Libreria.csproj">
+    <ProjectReference Include="Controles_Libreria\Controles.csproj">
       <Project>{327929eb-b2d3-43b1-9de2-e312b3b71f33}</Project>
-      <Name>Controles_Libreria</Name>
+      <Name>Controles</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

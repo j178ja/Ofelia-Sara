@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_ConversorDocumentos = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.label_SelloMedalla = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_Control = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_DatosInstruccion = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.lbl_Instructor = new System.Windows.Forms.Label();
             this.lbl_Secretario = new System.Windows.Forms.Label();
@@ -68,12 +68,12 @@
             this.lbl_Victima = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel_ConversorDocumentos.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
             this.groupBox_ConversorDocumentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel_DatosInstruccion.SuspendLayout();
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,10 +83,11 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel_ConversorDocumentos);
             this.panel1.Controls.Add(this.panel_Control);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel_DatosInstruccion);
             this.panel1.Controls.Add(this.groupBox_SeleccionadorProcedencia);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox_Caratula);
@@ -94,22 +95,23 @@
             this.panel1.Controls.Add(this.textBox_Causante);
             this.panel1.Controls.Add(this.lbl_Victima);
             this.panel1.Controls.Add(this.label17);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // panel2
+            // panel_ConversorDocumentos
             // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.panel_ControlesInferiores);
-            this.panel2.Controls.Add(this.groupBox_TextosConvertidos);
-            this.panel2.Controls.Add(this.btn_Convertir);
-            this.panel2.Controls.Add(this.groupBox_ConversorDocumentos);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Name = "panel2";
+            resources.ApplyResources(this.panel_ConversorDocumentos, "panel_ConversorDocumentos");
+            this.panel_ConversorDocumentos.BackColor = System.Drawing.Color.Transparent;
+            this.panel_ConversorDocumentos.Controls.Add(this.panel_ControlesInferiores);
+            this.panel_ConversorDocumentos.Controls.Add(this.groupBox_TextosConvertidos);
+            this.panel_ConversorDocumentos.Controls.Add(this.btn_Convertir);
+            this.panel_ConversorDocumentos.Controls.Add(this.groupBox_ConversorDocumentos);
+            this.panel_ConversorDocumentos.Controls.Add(this.label2);
+            this.panel_ConversorDocumentos.Name = "panel_ConversorDocumentos";
             // 
             // panel_ControlesInferiores
             // 
             resources.ApplyResources(this.panel_ControlesInferiores, "panel_ControlesInferiores");
+            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
             this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
@@ -255,19 +257,19 @@
             resources.ApplyResources(this.panel_Control, "panel_Control");
             this.panel_Control.Name = "panel_Control";
             // 
-            // panel3
+            // panel_DatosInstruccion
             // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.lbl_Instructor);
-            this.panel3.Controls.Add(this.lbl_Secretario);
-            this.panel3.Controls.Add(this.timePickerPersonalizado1);
-            this.panel3.Controls.Add(this.lbl_Fecha);
-            this.panel3.Controls.Add(this.lbl_Dependencia);
-            this.panel3.Controls.Add(this.comboBox_Dependencia);
-            this.panel3.Controls.Add(this.comboBox_Instructor);
-            this.panel3.Controls.Add(this.comboBox_Secretario);
-            this.panel3.Name = "panel3";
+            resources.ApplyResources(this.panel_DatosInstruccion, "panel_DatosInstruccion");
+            this.panel_DatosInstruccion.Controls.Add(this.label15);
+            this.panel_DatosInstruccion.Controls.Add(this.lbl_Instructor);
+            this.panel_DatosInstruccion.Controls.Add(this.lbl_Secretario);
+            this.panel_DatosInstruccion.Controls.Add(this.timePickerPersonalizado1);
+            this.panel_DatosInstruccion.Controls.Add(this.lbl_Fecha);
+            this.panel_DatosInstruccion.Controls.Add(this.lbl_Dependencia);
+            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Dependencia);
+            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Instructor);
+            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Secretario);
+            this.panel_DatosInstruccion.Name = "panel_DatosInstruccion";
             // 
             // label15
             // 
@@ -410,15 +412,15 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel_ConversorDocumentos.ResumeLayout(false);
+            this.panel_ConversorDocumentos.PerformLayout();
             this.panel_ControlesInferiores.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.ResumeLayout(false);
             this.groupBox_ConversorDocumentos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_DatosInstruccion.ResumeLayout(false);
+            this.panel_DatosInstruccion.PerformLayout();
             this.groupBox_SeleccionadorProcedencia.ResumeLayout(false);
             this.groupBox_SeleccionadorProcedencia.PerformLayout();
             this.ResumeLayout(false);
@@ -462,8 +464,8 @@
         private System.Windows.Forms.RadioButton radioButton_Word;
         private System.Windows.Forms.Button btn_EliminarArchivo;
         private System.Windows.Forms.Panel panel_Control;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_DatosInstruccion;
+        private System.Windows.Forms.Panel panel_ConversorDocumentos;
         private System.Windows.Forms.GroupBox groupBox_TextosConvertidos;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
     }

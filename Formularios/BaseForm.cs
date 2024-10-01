@@ -46,7 +46,7 @@ namespace Ofelia_Sara.Formularios
         public BaseForm()
         {
             //---buscar alternativa para que obtenga el archivo desde almacenamiento interno----
-            IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/general/imagenes/IconoEscudoPolicia.ico");
+            IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/Resources/imagenes/IconoEscudoPolicia.ico");
 
             InitializeFooterLinkLabel();
             this.timePickerPersonalizadoFecha = new Controles_Libreria.Controles.TimePickerPersonalizado();

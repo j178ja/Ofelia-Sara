@@ -90,9 +90,9 @@
             this.btn_Expedientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expedientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expedientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Expedientes.Location = new System.Drawing.Point(350, 88);
+            this.btn_Expedientes.Location = new System.Drawing.Point(350, 86);
             this.btn_Expedientes.Name = "btn_Expedientes";
-            this.btn_Expedientes.Size = new System.Drawing.Size(118, 30);
+            this.btn_Expedientes.Size = new System.Drawing.Size(118, 34);
             this.btn_Expedientes.TabIndex = 6;
             this.btn_Expedientes.Text = "EXPEDIENTES";
             this.btn_Expedientes.UseVisualStyleBackColor = false;
@@ -154,7 +154,6 @@
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
             this.toolTip1.SetToolTip(this.comboBox_Buscar, "Ingrese que tarea desea realizar");
-
             // 
             // btn_Configurar
             // 

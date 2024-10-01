@@ -1,6 +1,6 @@
 ﻿
 using Clases_Libreria.Texto;
-using Clases_Libreria.Reposicion_paneles.Buscar_Personal;
+using Controles_Libreria.Controles.Reposicionar_paneles.Buscar_Personal;
 using Clases_Libreria.Apariencia;
 using System;
 using System.Collections.Generic;
