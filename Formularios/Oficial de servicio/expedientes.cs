@@ -17,6 +17,7 @@ using Spire.Doc.Documents;
 using System.Collections.Generic;
 using Clases_Libreria.Texto;
 using Clases_Libreria.Botones;
+using Clases.GenerarDocumentos;
 using Clases_Libreria.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
 using Controles_Libreria.Controles;
@@ -38,8 +39,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            //Color customBorderColor = Color.FromArgb(0, 154, 174);
+            // panel1.ApplyRoundedCorners( panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             panel_ControlesInferiores.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             groupBox_TextosConvertidos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -64,10 +65,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             pictureBox_APdf.AllowDrop = true;
             pictureBox_AWord.AllowDrop = true;
-        
+
             pictureBox_APdf.DragEnter += PictureBox_APdf_DragEnter;
             pictureBox_AWord.DragEnter += PictureBox_AWord_DragEnter;
-          
+
             pictureBox_APdf.DragDrop += PictureBox_APdf_DragDrop;
             pictureBox_AWord.DragDrop += PictureBox_AWord_DragDrop;
 
@@ -81,7 +82,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             AgregarRadioButtonALosPaneles();
 
-            timePickerPersonalizado1.SelectedDate = DateTime.Now;//actualizar fecha
+            Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
         }
 
 
@@ -115,7 +116,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                             // Opcional: Cambiar el color de fondo del PictureBox
                             pictureBox.BackColor = Color.LightGreen;
 
-                          
+
                         }
                         catch (Exception ex)
                         {
@@ -319,10 +320,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 if (IsPictureBoxLoaded(pictureBox_AWord))
                 {
                     // Mostrar mensaje de advertencia y revertir la selección
-                 MessageBox.Show("Ya has cargado un archivo para convertir a WORD. No puedes cambiar sin eliminar el archivo.",
-                                    "Advertencia de Cambio",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                    MessageBox.Show("Ya has cargado un archivo para convertir a WORD. No puedes cambiar sin eliminar el archivo.",
+                                       "Advertencia de Cambio",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Warning);
                     radioButton_Pdf.Checked = false;
                     ActualizarPictureBox(pictureBox_APdf, false);  // Deshabilita PictureBox Pdf
                     ActualizarPictureBox(pictureBox_AWord, true);  // Habilita PictureBox Word
@@ -367,7 +368,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     pictureBox_APdf.Enabled = false;
 
                 }
-               
+
             }
         }
 
@@ -501,7 +502,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             boton.MouseUp += (sender, e) =>
             {
                 botonPresionado = false; // Indica que el botón ya no está presionado
-              
+
                 boton.ForeColor = Color.White; // Mantiene el texto blanco
                 boton.Invalidate(); // Redibuja el botón
             };
@@ -574,9 +575,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_Control.Height = juzgadoControl.Height;
 
                 // Ajusta el formulario en función del nuevo control agregado
-                
+
                 AjustarTamañoFormulario(juzgadoControl.Height, eliminar: false);
-              
+
             }
         }
 
@@ -606,7 +607,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //----------------------------------------------------------------------------------------------
-     
+
 
 
 
@@ -687,7 +688,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // HashSet para almacenar los hashes de los archivos convertidos
         HashSet<string> archivosConvertidos = new HashSet<string>();
 
-        
+
         private void btn_Convertir_Click(object sender, EventArgs e)
         {
             // Verifica si se ha cargado un archivo PDF o Word
@@ -752,7 +753,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 groupBox_TextosConvertidos.Visible = true;
             }
 
-        
+
             // Limpia la referencia al RadioButton seleccionado al inicio
             radioButtonSeleccionado = null;
 
@@ -762,7 +763,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.Top = 0; // Posicionar el formulario en la parte superior de la pantalla
 
             // Ajustar altura del formulario y posición de controles inferiores
-          
+
             AjustarPosicionControlesInferiores();
             AjustarAlturaPaneles();
         }
@@ -849,7 +850,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Configurar la posición del panel
             int panelCount = groupBox_TextosConvertidos.Controls.OfType<Panel>().Count(); // Cuenta los paneles existentes
-            int verticalOffset = 20 + (panelCount * (panelArchivo.Height )); 
+            int verticalOffset = 20 + (panelCount * (panelArchivo.Height));
 
             // Asigna la ubicación calculada
             panelArchivo.Location = new System.Drawing.Point(10, verticalOffset);
@@ -880,7 +881,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 Location = new System.Drawing.Point(35, 2)
             };
             panelArchivo.Controls.Add(icono);
-         
+
             LinkLabel linkArchivo = new LinkLabel
             {
                 Text = Path.GetFileName(rutaArchivo), // Muestra solo el nombre del archivo
@@ -907,7 +908,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
                     }
                 }
-             
+
             };
 
             // Mostrar el nombre completo en un Tooltip
@@ -928,7 +929,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Agrega el LinkLabel al panel
             panelArchivo.Controls.Add(linkArchivo);
 
-            
+
 
             // Agrega un radiobutton para seleccionar el archivo
             RadioButton radioButton = new RadioButton
@@ -988,13 +989,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         // Obtener el hash del archivo desde el Tag del panel
                         string hashArchivo = panelContenedor.Tag as string;
 
-                    
+
 
                         // Elimina el panel del formulario o contenedor
                         panelContenedor.Dispose(); // Eliminar el panel
 
                         // Reposicionar los paneles restantes
-                     ReposicionarPanelesRestantes();
+                        ReposicionarPanelesRestantes();
 
                         // Ajustar el tamaño del groupBox y el formulario
                         AjustarAlturaGroupBoxYFormulario(alturaPanelRemovido, eliminar: true);
@@ -1015,7 +1016,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     control.Location = new System.Drawing.Point(control.Location.X, nuevaPosicionY);
 
                     // Incrementar la posición para el siguiente panel
-                    nuevaPosicionY += control.Height ; 
+                    nuevaPosicionY += control.Height;
                 }
             }
         }
@@ -1035,7 +1036,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             AjustarAlturaPaneles();
         }
-//----------------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------------
 
         // Manejador de eventos para el hover (cuando el cursor entra en el PictureBox)
         private void IconoBorrar_MouseEnter(object sender, EventArgs e)
@@ -1118,13 +1119,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //permite que se visualice completo textos convertidos
         private void AjustarPosicionControlesInferiores()
         {
-            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom +5; // Añadir un pequeño margen de separación
+            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + 5; // Añadir un pequeño margen de separación
             panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
         }
 
         private void AjustarAlturaPaneles()
         {
-            
+
 
             //// Ajustar la altura del panel_ConversorDocumentos basado en el groupBox y panel_ControlesInferiores
             //panel_ConversorDocumentos.Height = groupBox_TextosConvertidos.Bottom  + panel_ControlesInferiores.Height+5;
@@ -1150,7 +1151,107 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
+        private void textBox_Causante_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Victima_Click(object sender, EventArgs e)
+        {
+
+        }
+        //------------------------------------------------------------------------------------------------
+        //   METODO PARA OBTENER DATOS DEL FORMULARIO
+
+        public Dictionary<string, string> ObtenerDatosFormulario()
+        {
+            var datos = new Dictionary<string, string>();
+
+            // Añadimos los valores de los controles al diccionario
+            datos.Add("Nombre", textBox_Caratula.Text);  // "Nombre" es el marcador en Word
+            datos.Add("Apellido", textBox_Causante.Text);
+            datos.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  // Ajusté los nombres de las claves para ser únicos
+            datos.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
+            datos.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
+            datos.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+
+            return datos;
+        }
+        //------------------------------------------------------------------------------------
+        private bool ValidarDatosFormulario()
+        {
+            // Verificar si los campos están completos
+            if (string.IsNullOrWhiteSpace(textBox_Causante.Text) ||
+                comboBox_Instructor.SelectedItem == null ||
+                comboBox_Secretario.SelectedItem == null ||
+                comboBox_Dependencia.SelectedItem == null ||
+                Fecha_Instruccion.SelectedDate == null)
+
+            {
+                MessageBox.Show("Por favor, complete todos los campos requeridos.");
+                return false; // Indica que la validación falló
+            }
+            return true; // Indica que la validación fue exitosa
+        }
+
+
+        //------------------------------------------------------------------------------------
+        // Método para manejar el evento de impresión
+        private void btn_Imprimir_Click(object sender, EventArgs e)
+        {
+            // Llamar al método de validación
+            if (!ValidarDatosFormulario())
+            {
+                return; // Detener el proceso si la validación falla
+            }
+
+            // Usar FolderBrowserDialog para obtener la ruta donde el usuario quiere guardar los documentos
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "Seleccione la carpeta donde desea guardar los documentos generados";
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Ruta donde el usuario quiere guardar los documentos
+                    string rutaCarpetaSalida = folderBrowserDialog.SelectedPath;
+
+                    // Obtener el texto de textBox_Causante y formar el nombre de la carpeta
+                    string nombreCarpeta = $"Exp {textBox_Causante.Text}";
+                    string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida, nombreCarpeta);
+
+                    // Crear la carpeta si no existe
+                    if (!Directory.Exists(rutaSubcarpeta))
+                    {
+                        Directory.CreateDirectory(rutaSubcarpeta);
+                    }
+
+                    // Usar una ruta absoluta a la plantilla de Word
+                    string rutaPlantilla = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\EXPEDIENTES\DECRETO RECEPCION.docx";
+
+                    // Obtener los datos del formulario
+                    var datosFormulario = ObtenerDatosFormulario();
+
+                    // Crear una instancia del generador de documentos
+                    GeneradorDocumentos generador = new GeneradorDocumentos();
+
+                    // Definir el nombre del archivo de salida igual al de la plantilla
+                    string nombreArchivoSalida = Path.GetFileNameWithoutExtension(rutaPlantilla) + ".docx"; // Ejemplo: "DECRETO RECEPCION.docx"
+                    string rutaArchivoSalida = Path.Combine(rutaSubcarpeta, nombreArchivoSalida);
+
+                    // Llamar al método para generar el documento
+                    generador.GenerarDocumento(rutaPlantilla, rutaArchivoSalida, datosFormulario);
+
+                    MessageBox.Show("El documento ha sido generado correctamente.");
+
+                    // Abrir la ubicación de la carpeta generada
+                    System.Diagnostics.Process.Start("explorer.exe", rutaSubcarpeta);
+                }
+            }
+        }
+
     }
 }
+  
+
 
 

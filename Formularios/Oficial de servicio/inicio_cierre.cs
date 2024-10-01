@@ -1,5 +1,5 @@
 ﻿using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.GenerarDocumentos;
+using Clases.GenerarDocumentos;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System;

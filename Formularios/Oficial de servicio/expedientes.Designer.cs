@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
+            this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
+            this.lbl_00 = new System.Windows.Forms.Label();
+            this.comboBox_Ipp4 = new System.Windows.Forms.ComboBox();
+            this.label_Ipp = new System.Windows.Forms.Label();
             this.panel_ConversorDocumentos = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
             this.btn_Imprimir = new System.Windows.Forms.Button();
@@ -52,7 +58,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lbl_Instructor = new System.Windows.Forms.Label();
             this.lbl_Secretario = new System.Windows.Forms.Label();
-            this.timePickerPersonalizado1 = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.lbl_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -85,6 +91,12 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.textBox_NumeroIpp);
+            this.panel1.Controls.Add(this.comboBox_Ipp1);
+            this.panel1.Controls.Add(this.comboBox_Ipp2);
+            this.panel1.Controls.Add(this.lbl_00);
+            this.panel1.Controls.Add(this.comboBox_Ipp4);
+            this.panel1.Controls.Add(this.label_Ipp);
             this.panel1.Controls.Add(this.panel_ConversorDocumentos);
             this.panel1.Controls.Add(this.panel_Control);
             this.panel1.Controls.Add(this.panel_DatosInstruccion);
@@ -96,6 +108,65 @@
             this.panel1.Controls.Add(this.lbl_Victima);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Name = "panel1";
+            // 
+            // textBox_NumeroIpp
+            // 
+            resources.ApplyResources(this.textBox_NumeroIpp, "textBox_NumeroIpp");
+            this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
+            // 
+            // comboBox_Ipp1
+            // 
+            this.comboBox_Ipp1.FormattingEnabled = true;
+            this.comboBox_Ipp1.Items.AddRange(new object[] {
+            resources.GetString("comboBox_Ipp1.Items"),
+            resources.GetString("comboBox_Ipp1.Items1"),
+            resources.GetString("comboBox_Ipp1.Items2"),
+            resources.GetString("comboBox_Ipp1.Items3"),
+            resources.GetString("comboBox_Ipp1.Items4"),
+            resources.GetString("comboBox_Ipp1.Items5"),
+            resources.GetString("comboBox_Ipp1.Items6"),
+            resources.GetString("comboBox_Ipp1.Items7"),
+            resources.GetString("comboBox_Ipp1.Items8"),
+            resources.GetString("comboBox_Ipp1.Items9")});
+            resources.ApplyResources(this.comboBox_Ipp1, "comboBox_Ipp1");
+            this.comboBox_Ipp1.Name = "comboBox_Ipp1";
+            // 
+            // comboBox_Ipp2
+            // 
+            this.comboBox_Ipp2.FormattingEnabled = true;
+            this.comboBox_Ipp2.Items.AddRange(new object[] {
+            resources.GetString("comboBox_Ipp2.Items"),
+            resources.GetString("comboBox_Ipp2.Items1"),
+            resources.GetString("comboBox_Ipp2.Items2"),
+            resources.GetString("comboBox_Ipp2.Items3"),
+            resources.GetString("comboBox_Ipp2.Items4"),
+            resources.GetString("comboBox_Ipp2.Items5"),
+            resources.GetString("comboBox_Ipp2.Items6"),
+            resources.GetString("comboBox_Ipp2.Items7"),
+            resources.GetString("comboBox_Ipp2.Items8"),
+            resources.GetString("comboBox_Ipp2.Items9")});
+            resources.ApplyResources(this.comboBox_Ipp2, "comboBox_Ipp2");
+            this.comboBox_Ipp2.Name = "comboBox_Ipp2";
+            // 
+            // lbl_00
+            // 
+            resources.ApplyResources(this.lbl_00, "lbl_00");
+            this.lbl_00.Name = "lbl_00";
+            // 
+            // comboBox_Ipp4
+            // 
+            this.comboBox_Ipp4.FormattingEnabled = true;
+            this.comboBox_Ipp4.Items.AddRange(new object[] {
+            resources.GetString("comboBox_Ipp4.Items"),
+            resources.GetString("comboBox_Ipp4.Items1"),
+            resources.GetString("comboBox_Ipp4.Items2")});
+            resources.ApplyResources(this.comboBox_Ipp4, "comboBox_Ipp4");
+            this.comboBox_Ipp4.Name = "comboBox_Ipp4";
+            // 
+            // label_Ipp
+            // 
+            resources.ApplyResources(this.label_Ipp, "label_Ipp");
+            this.label_Ipp.Name = "label_Ipp";
             // 
             // panel_ConversorDocumentos
             // 
@@ -125,6 +196,7 @@
             resources.ApplyResources(this.btn_Imprimir, "btn_Imprimir");
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.UseVisualStyleBackColor = false;
+            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
             // btn_Guardar
             // 
@@ -263,7 +335,7 @@
             this.panel_DatosInstruccion.Controls.Add(this.label15);
             this.panel_DatosInstruccion.Controls.Add(this.lbl_Instructor);
             this.panel_DatosInstruccion.Controls.Add(this.lbl_Secretario);
-            this.panel_DatosInstruccion.Controls.Add(this.timePickerPersonalizado1);
+            this.panel_DatosInstruccion.Controls.Add(this.Fecha_Instruccion);
             this.panel_DatosInstruccion.Controls.Add(this.lbl_Fecha);
             this.panel_DatosInstruccion.Controls.Add(this.lbl_Dependencia);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Dependencia);
@@ -287,12 +359,12 @@
             resources.ApplyResources(this.lbl_Secretario, "lbl_Secretario");
             this.lbl_Secretario.Name = "lbl_Secretario";
             // 
-            // timePickerPersonalizado1
+            // Fecha_Instruccion
             // 
-            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            resources.ApplyResources(this.timePickerPersonalizado1, "timePickerPersonalizado1");
-            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+            this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            resources.ApplyResources(this.Fecha_Instruccion, "Fecha_Instruccion");
+            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
+            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             // 
             // lbl_Fecha
             // 
@@ -384,11 +456,13 @@
             // 
             resources.ApplyResources(this.textBox_Causante, "textBox_Causante");
             this.textBox_Causante.Name = "textBox_Causante";
+            this.textBox_Causante.TextChanged += new System.EventHandler(this.textBox_Causante_TextChanged);
             // 
             // lbl_Victima
             // 
             resources.ApplyResources(this.lbl_Victima, "lbl_Victima");
             this.lbl_Victima.Name = "lbl_Victima";
+            this.lbl_Victima.Click += new System.EventHandler(this.lbl_Victima_Click);
             // 
             // label17
             // 
@@ -437,7 +511,7 @@
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
         private System.Windows.Forms.Label lbl_Dependencia;
         private System.Windows.Forms.Label lbl_Fecha;
-        private Controles_Libreria.Controles.TimePickerPersonalizado timePickerPersonalizado1;
+        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label lbl_Secretario;
         private System.Windows.Forms.Label lbl_Instructor;
         private System.Windows.Forms.TextBox textBox_Caratula;
@@ -468,5 +542,11 @@
         private System.Windows.Forms.Panel panel_ConversorDocumentos;
         private System.Windows.Forms.GroupBox groupBox_TextosConvertidos;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
+        private System.Windows.Forms.Label label_Ipp;
+        private System.Windows.Forms.TextBox textBox_NumeroIpp;
+        private System.Windows.Forms.ComboBox comboBox_Ipp1;
+        private System.Windows.Forms.ComboBox comboBox_Ipp2;
+        private System.Windows.Forms.Label lbl_00;
+        private System.Windows.Forms.ComboBox comboBox_Ipp4;
     }
 }
