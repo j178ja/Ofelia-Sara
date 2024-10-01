@@ -121,10 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="iconoEscudo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="imagen_Impresora.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAGo5JREFUeF7NWwlcTukXtqRdRXbGVrKGSiJLi1ZKWqWkUMoSyVJJsib7ki1UGGMZ
+        vwAADr8BOAVTJAAAGo5JREFUeF7NWwlcTukXtqRdRXbGVrKGSiJLi1ZKWqWkUMoSyVJJsib7ki1UGGMZ
         YzQMBtm3yTCMfRtrtiQiqq+6z/+c9+tLyMyY/5hx/M7v26573+c5+3tvFcqRiqSVSCt/ZuXrfHGiRmpI
         ak/q+Anai9SZtPdf1J6kbUhVSb8oMWjfvv1PKckpOUlJSX9Z165d+3L9+vW5f1U3bNiQ6+ruup2u11x+
         2S9HmqupqR18mpmJzymSJGH16tVZdD32BA6HL0aqkc5ISUmRStb62eTu3btSpUqVIuh6muLKX4gokTo5

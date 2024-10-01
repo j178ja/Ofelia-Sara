@@ -83,7 +83,7 @@ namespace Ofelia_Sara.Formularios
             RectangleF gradientRectangle = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
 
             // Crear una ruta de gráfico para el degradado
-            using (GraphicsPath path = new GraphicsPath())
+          /*  using (GraphicsPath path = new GraphicsPath())
             {
                 // Crear un elipse que rodea el área del degradado
                 path.AddEllipse(gradientRectangle);
@@ -98,7 +98,7 @@ namespace Ofelia_Sara.Formularios
                     // Rellenar el área del formulario con el degradado
                     g.FillRectangle(brush, this.ClientRectangle);
                 }
-            }
+            }*/
         }
 
 

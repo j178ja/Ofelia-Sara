@@ -979,70 +979,70 @@
   <data name="&gt;&gt;pictureBox_APdf.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="label_SelloEscalera.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_ConvertirAWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label_SelloEscalera.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_ConvertirAWord.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="label_SelloEscalera.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_ConvertirAWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label_SelloEscalera.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_ConvertirAWord.Location" type="System.Drawing.Point, System.Drawing">
     <value>239, 15</value>
   </data>
-  <data name="label_SelloEscalera.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_ConvertirAWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 16</value>
   </data>
-  <data name="label_SelloEscalera.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_ConvertirAWord.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
-  <data name="label_SelloEscalera.Text" xml:space="preserve">
+  <data name="label_ConvertirAWord.Text" xml:space="preserve">
     <value>COVERTIR a WORD</value>
   </data>
-  <data name="&gt;&gt;label_SelloEscalera.Name" xml:space="preserve">
-    <value>label_SelloEscalera</value>
+  <data name="&gt;&gt;label_ConvertirAWord.Name" xml:space="preserve">
+    <value>label_ConvertirAWord</value>
   </data>
-  <data name="&gt;&gt;label_SelloEscalera.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_ConvertirAWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label_SelloEscalera.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_ConvertirAWord.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
   </data>
-  <data name="&gt;&gt;label_SelloEscalera.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_ConvertirAWord.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="label_SelloMedalla.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_ConvertirAPdf.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label_SelloMedalla.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_ConvertirAPdf.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="label_SelloMedalla.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_ConvertirAPdf.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label_SelloMedalla.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_ConvertirAPdf.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 13</value>
   </data>
-  <data name="label_SelloMedalla.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_ConvertirAPdf.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 16</value>
   </data>
-  <data name="label_SelloMedalla.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_ConvertirAPdf.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
-  <data name="label_SelloMedalla.Text" xml:space="preserve">
+  <data name="label_ConvertirAPdf.Text" xml:space="preserve">
     <value>CONVERTIR  a PDF</value>
   </data>
-  <data name="&gt;&gt;label_SelloMedalla.Name" xml:space="preserve">
-    <value>label_SelloMedalla</value>
+  <data name="&gt;&gt;label_ConvertirAPdf.Name" xml:space="preserve">
+    <value>label_ConvertirAPdf</value>
   </data>
-  <data name="&gt;&gt;label_SelloMedalla.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_ConvertirAPdf.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label_SelloMedalla.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_ConvertirAPdf.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
   </data>
-  <data name="&gt;&gt;label_SelloMedalla.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_ConvertirAPdf.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="groupBox_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
@@ -1066,40 +1066,40 @@
   <data name="&gt;&gt;groupBox_ConversorDocumentos.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_ConversorDocumentos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_ConversorDocumentos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold, Underline</value>
   </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_ConversorDocumentos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
     <value>251, 5</value>
   </data>
-  <data name="label2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="label_ConversorDocumentos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 5, 30, 5</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_ConversorDocumentos.Size" type="System.Drawing.Size, System.Drawing">
     <value>327, 28</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_ConversorDocumentos.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="label_ConversorDocumentos.Text" xml:space="preserve">
     <value>CONVERSOR DE DOCUMENTOS</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;label_ConversorDocumentos.Name" xml:space="preserve">
+    <value>label_ConversorDocumentos</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_ConversorDocumentos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_ConversorDocumentos.Parent" xml:space="preserve">
     <value>panel_ConversorDocumentos</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_ConversorDocumentos.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="panel_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
@@ -1147,106 +1147,106 @@
   <data name="panel_DatosInstruccion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_DatosInstruccion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_DatosInstruccion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold, Underline</value>
   </data>
-  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_DatosInstruccion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_DatosInstruccion.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
-  <data name="label15.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="label_DatosInstruccion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 5, 30, 5</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_DatosInstruccion.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 28</value>
   </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_DatosInstruccion.TabIndex" type="System.Int32, mscorlib">
     <value>79</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
+  <data name="label_DatosInstruccion.Text" xml:space="preserve">
     <value>DATOS DE LA INSTRUCCION</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
+  <data name="&gt;&gt;label_DatosInstruccion.Name" xml:space="preserve">
+    <value>label_DatosInstruccion</value>
   </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_DatosInstruccion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_DatosInstruccion.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
   </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_DatosInstruccion.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lbl_Instructor.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Instructor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Instructor.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Instructor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbl_Instructor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Instructor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbl_Instructor.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Instructor.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 44</value>
   </data>
-  <data name="lbl_Instructor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Instructor.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 15</value>
   </data>
-  <data name="lbl_Instructor.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Instructor.TabIndex" type="System.Int32, mscorlib">
     <value>67</value>
   </data>
-  <data name="lbl_Instructor.Text" xml:space="preserve">
+  <data name="label_Instructor.Text" xml:space="preserve">
     <value>INSTRUCTOR</value>
   </data>
-  <data name="&gt;&gt;lbl_Instructor.Name" xml:space="preserve">
-    <value>lbl_Instructor</value>
+  <data name="&gt;&gt;label_Instructor.Name" xml:space="preserve">
+    <value>label_Instructor</value>
   </data>
-  <data name="&gt;&gt;lbl_Instructor.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Instructor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Instructor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Instructor.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
   </data>
-  <data name="&gt;&gt;lbl_Instructor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Instructor.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lbl_Secretario.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Secretario.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Secretario.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Secretario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbl_Secretario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Secretario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbl_Secretario.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Secretario.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 73</value>
   </data>
-  <data name="lbl_Secretario.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Secretario.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 15</value>
   </data>
-  <data name="lbl_Secretario.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Secretario.TabIndex" type="System.Int32, mscorlib">
     <value>68</value>
   </data>
-  <data name="lbl_Secretario.Text" xml:space="preserve">
+  <data name="label_Secretario.Text" xml:space="preserve">
     <value>SECRETARIO</value>
   </data>
-  <data name="&gt;&gt;lbl_Secretario.Name" xml:space="preserve">
-    <value>lbl_Secretario</value>
+  <data name="&gt;&gt;label_Secretario.Name" xml:space="preserve">
+    <value>label_Secretario</value>
   </data>
-  <data name="&gt;&gt;lbl_Secretario.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Secretario.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Secretario.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Secretario.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
   </data>
-  <data name="&gt;&gt;lbl_Secretario.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Secretario.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="Fecha_Instruccion.Location" type="System.Drawing.Point, System.Drawing">
@@ -1270,70 +1270,70 @@
   <data name="&gt;&gt;Fecha_Instruccion.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lbl_Fecha.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Fecha.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Fecha.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Fecha.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbl_Fecha.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Fecha.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbl_Fecha.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Fecha.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 126</value>
   </data>
-  <data name="lbl_Fecha.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Fecha.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 15</value>
   </data>
-  <data name="lbl_Fecha.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Fecha.TabIndex" type="System.Int32, mscorlib">
     <value>69</value>
   </data>
-  <data name="lbl_Fecha.Text" xml:space="preserve">
+  <data name="label_Fecha.Text" xml:space="preserve">
     <value>FECHA</value>
   </data>
-  <data name="&gt;&gt;lbl_Fecha.Name" xml:space="preserve">
-    <value>lbl_Fecha</value>
+  <data name="&gt;&gt;label_Fecha.Name" xml:space="preserve">
+    <value>label_Fecha</value>
   </data>
-  <data name="&gt;&gt;lbl_Fecha.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Fecha.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Fecha.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Fecha.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
   </data>
-  <data name="&gt;&gt;lbl_Fecha.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Fecha.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lbl_Dependencia.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Dependencia.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Dependencia.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Dependencia.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbl_Dependencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Dependencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbl_Dependencia.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Dependencia.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 100</value>
   </data>
-  <data name="lbl_Dependencia.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Dependencia.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 15</value>
   </data>
-  <data name="lbl_Dependencia.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Dependencia.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
-  <data name="lbl_Dependencia.Text" xml:space="preserve">
+  <data name="label_Dependencia.Text" xml:space="preserve">
     <value>DEPENDENCIA</value>
   </data>
-  <data name="&gt;&gt;lbl_Dependencia.Name" xml:space="preserve">
-    <value>lbl_Dependencia</value>
+  <data name="&gt;&gt;label_Dependencia.Name" xml:space="preserve">
+    <value>label_Dependencia</value>
   </data>
-  <data name="&gt;&gt;lbl_Dependencia.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Dependencia.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Dependencia.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Dependencia.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
   </data>
-  <data name="&gt;&gt;lbl_Dependencia.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Dependencia.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="comboBox_Dependencia.Items" xml:space="preserve">
@@ -1555,40 +1555,40 @@
   <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_DatosActuacion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_DatosActuacion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold, Underline</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_DatosActuacion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_DatosActuacion.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 39</value>
   </data>
-  <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="label_DatosActuacion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 5, 30, 5</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_DatosActuacion.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 28</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_DatosActuacion.TabIndex" type="System.Int32, mscorlib">
     <value>81</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="label_DatosActuacion.Text" xml:space="preserve">
     <value>DATOS DE LA ACTUACIÓN</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;label_DatosActuacion.Name" xml:space="preserve">
+    <value>label_DatosActuacion</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_DatosActuacion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_DatosActuacion.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_DatosActuacion.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="textBox_Caratula.Location" type="System.Drawing.Point, System.Drawing">
@@ -1615,37 +1615,37 @@
   <data name="&gt;&gt;textBox_Caratula.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="lbl_Caratula.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Caratula.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Caratula.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Caratula.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbl_Caratula.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Caratula.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbl_Caratula.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Caratula.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 86</value>
   </data>
-  <data name="lbl_Caratula.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Caratula.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 15</value>
   </data>
-  <data name="lbl_Caratula.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Caratula.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lbl_Caratula.Text" xml:space="preserve">
+  <data name="label_Caratula.Text" xml:space="preserve">
     <value>CARATULA</value>
   </data>
-  <data name="&gt;&gt;lbl_Caratula.Name" xml:space="preserve">
-    <value>lbl_Caratula</value>
+  <data name="&gt;&gt;label_Caratula.Name" xml:space="preserve">
+    <value>label_Caratula</value>
   </data>
-  <data name="&gt;&gt;lbl_Caratula.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Caratula.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Caratula.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Caratula.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;lbl_Caratula.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Caratula.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
   <data name="textBox_Causante.Location" type="System.Drawing.Point, System.Drawing">
@@ -1669,73 +1669,73 @@
   <data name="&gt;&gt;textBox_Causante.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="lbl_Victima.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Victima.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Victima.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Victima.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold</value>
   </data>
-  <data name="lbl_Victima.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Victima.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbl_Victima.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Victima.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 139</value>
   </data>
-  <data name="lbl_Victima.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Victima.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 15</value>
   </data>
-  <data name="lbl_Victima.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Victima.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lbl_Victima.Text" xml:space="preserve">
+  <data name="label_Victima.Text" xml:space="preserve">
     <value>CAUSANTE</value>
   </data>
-  <data name="&gt;&gt;lbl_Victima.Name" xml:space="preserve">
-    <value>lbl_Victima</value>
+  <data name="&gt;&gt;label_Victima.Name" xml:space="preserve">
+    <value>label_Victima</value>
   </data>
-  <data name="&gt;&gt;lbl_Victima.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Victima.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_Victima.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Victima.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;lbl_Victima.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Victima.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_Titulo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_Titulo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
-  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_Titulo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label_Titulo.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 0</value>
   </data>
-  <data name="label17.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="label_Titulo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>20, 0, 20, 0</value>
   </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_Titulo.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 24</value>
   </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_Titulo.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <data name="label17.Text" xml:space="preserve">
+  <data name="label_Titulo.Text" xml:space="preserve">
     <value>EXPEDIENTES</value>
   </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
+  <data name="&gt;&gt;label_Titulo.Name" xml:space="preserve">
+    <value>label_Titulo</value>
   </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_Titulo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_Titulo.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_Titulo.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">

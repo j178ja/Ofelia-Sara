@@ -50,29 +50,29 @@
             this.radioButton_Pdf = new System.Windows.Forms.RadioButton();
             this.pictureBox_AWord = new System.Windows.Forms.PictureBox();
             this.pictureBox_APdf = new System.Windows.Forms.PictureBox();
-            this.label_SelloEscalera = new System.Windows.Forms.Label();
-            this.label_SelloMedalla = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_ConvertirAWord = new System.Windows.Forms.Label();
+            this.label_ConvertirAPdf = new System.Windows.Forms.Label();
+            this.label_ConversorDocumentos = new System.Windows.Forms.Label();
             this.panel_Control = new System.Windows.Forms.Panel();
             this.panel_DatosInstruccion = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lbl_Instructor = new System.Windows.Forms.Label();
-            this.lbl_Secretario = new System.Windows.Forms.Label();
+            this.label_DatosInstruccion = new System.Windows.Forms.Label();
+            this.label_Instructor = new System.Windows.Forms.Label();
+            this.label_Secretario = new System.Windows.Forms.Label();
             this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
-            this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.lbl_Dependencia = new System.Windows.Forms.Label();
+            this.label_Fecha = new System.Windows.Forms.Label();
+            this.label_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
             this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
             this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_DatosActuacion = new System.Windows.Forms.Label();
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
-            this.lbl_Caratula = new System.Windows.Forms.Label();
+            this.label_Caratula = new System.Windows.Forms.Label();
             this.textBox_Causante = new System.Windows.Forms.TextBox();
-            this.lbl_Victima = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label_Victima = new System.Windows.Forms.Label();
+            this.label_Titulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_ConversorDocumentos.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
@@ -101,12 +101,12 @@
             this.panel1.Controls.Add(this.panel_Control);
             this.panel1.Controls.Add(this.panel_DatosInstruccion);
             this.panel1.Controls.Add(this.groupBox_SeleccionadorProcedencia);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_DatosActuacion);
             this.panel1.Controls.Add(this.textBox_Caratula);
-            this.panel1.Controls.Add(this.lbl_Caratula);
+            this.panel1.Controls.Add(this.label_Caratula);
             this.panel1.Controls.Add(this.textBox_Causante);
-            this.panel1.Controls.Add(this.lbl_Victima);
-            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label_Victima);
+            this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Name = "panel1";
             // 
             // textBox_NumeroIpp
@@ -176,7 +176,7 @@
             this.panel_ConversorDocumentos.Controls.Add(this.groupBox_TextosConvertidos);
             this.panel_ConversorDocumentos.Controls.Add(this.btn_Convertir);
             this.panel_ConversorDocumentos.Controls.Add(this.groupBox_ConversorDocumentos);
-            this.panel_ConversorDocumentos.Controls.Add(this.label2);
+            this.panel_ConversorDocumentos.Controls.Add(this.label_ConversorDocumentos);
             this.panel_ConversorDocumentos.Name = "panel_ConversorDocumentos";
             // 
             // panel_ControlesInferiores
@@ -251,8 +251,8 @@
             this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Pdf);
             this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_AWord);
             this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_APdf);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloEscalera);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.label_SelloMedalla);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.label_ConvertirAWord);
+            this.groupBox_ConversorDocumentos.Controls.Add(this.label_ConvertirAPdf);
             this.groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
             this.groupBox_ConversorDocumentos.TabStop = false;
             // 
@@ -308,21 +308,21 @@
             this.pictureBox_APdf.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragEnter);
             this.pictureBox_APdf.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
             // 
-            // label_SelloEscalera
+            // label_ConvertirAWord
             // 
-            resources.ApplyResources(this.label_SelloEscalera, "label_SelloEscalera");
-            this.label_SelloEscalera.Name = "label_SelloEscalera";
+            resources.ApplyResources(this.label_ConvertirAWord, "label_ConvertirAWord");
+            this.label_ConvertirAWord.Name = "label_ConvertirAWord";
             // 
-            // label_SelloMedalla
+            // label_ConvertirAPdf
             // 
-            resources.ApplyResources(this.label_SelloMedalla, "label_SelloMedalla");
-            this.label_SelloMedalla.Name = "label_SelloMedalla";
+            resources.ApplyResources(this.label_ConvertirAPdf, "label_ConvertirAPdf");
+            this.label_ConvertirAPdf.Name = "label_ConvertirAPdf";
             // 
-            // label2
+            // label_ConversorDocumentos
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.label_ConversorDocumentos, "label_ConversorDocumentos");
+            this.label_ConversorDocumentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_ConversorDocumentos.Name = "label_ConversorDocumentos";
             // 
             // panel_Control
             // 
@@ -332,32 +332,32 @@
             // panel_DatosInstruccion
             // 
             resources.ApplyResources(this.panel_DatosInstruccion, "panel_DatosInstruccion");
-            this.panel_DatosInstruccion.Controls.Add(this.label15);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Instructor);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Secretario);
+            this.panel_DatosInstruccion.Controls.Add(this.label_DatosInstruccion);
+            this.panel_DatosInstruccion.Controls.Add(this.label_Instructor);
+            this.panel_DatosInstruccion.Controls.Add(this.label_Secretario);
             this.panel_DatosInstruccion.Controls.Add(this.Fecha_Instruccion);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Fecha);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Dependencia);
+            this.panel_DatosInstruccion.Controls.Add(this.label_Fecha);
+            this.panel_DatosInstruccion.Controls.Add(this.label_Dependencia);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Dependencia);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Instructor);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Secretario);
             this.panel_DatosInstruccion.Name = "panel_DatosInstruccion";
             // 
-            // label15
+            // label_DatosInstruccion
             // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label15.Name = "label15";
+            resources.ApplyResources(this.label_DatosInstruccion, "label_DatosInstruccion");
+            this.label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DatosInstruccion.Name = "label_DatosInstruccion";
             // 
-            // lbl_Instructor
+            // label_Instructor
             // 
-            resources.ApplyResources(this.lbl_Instructor, "lbl_Instructor");
-            this.lbl_Instructor.Name = "lbl_Instructor";
+            resources.ApplyResources(this.label_Instructor, "label_Instructor");
+            this.label_Instructor.Name = "label_Instructor";
             // 
-            // lbl_Secretario
+            // label_Secretario
             // 
-            resources.ApplyResources(this.lbl_Secretario, "lbl_Secretario");
-            this.lbl_Secretario.Name = "lbl_Secretario";
+            resources.ApplyResources(this.label_Secretario, "label_Secretario");
+            this.label_Secretario.Name = "label_Secretario";
             // 
             // Fecha_Instruccion
             // 
@@ -366,15 +366,15 @@
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             // 
-            // lbl_Fecha
+            // label_Fecha
             // 
-            resources.ApplyResources(this.lbl_Fecha, "lbl_Fecha");
-            this.lbl_Fecha.Name = "lbl_Fecha";
+            resources.ApplyResources(this.label_Fecha, "label_Fecha");
+            this.label_Fecha.Name = "label_Fecha";
             // 
-            // lbl_Dependencia
+            // label_Dependencia
             // 
-            resources.ApplyResources(this.lbl_Dependencia, "lbl_Dependencia");
-            this.lbl_Dependencia.Name = "lbl_Dependencia";
+            resources.ApplyResources(this.label_Dependencia, "label_Dependencia");
+            this.label_Dependencia.Name = "label_Dependencia";
             // 
             // comboBox_Dependencia
             // 
@@ -436,40 +436,38 @@
             this.radioButton_Fiscalia.UseVisualStyleBackColor = true;
             this.radioButton_Fiscalia.CheckedChanged += new System.EventHandler(this.radioButton_Fiscalia_CheckedChanged);
             // 
-            // label1
+            // label_DatosActuacion
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.label_DatosActuacion, "label_DatosActuacion");
+            this.label_DatosActuacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DatosActuacion.Name = "label_DatosActuacion";
             // 
             // textBox_Caratula
             // 
             resources.ApplyResources(this.textBox_Caratula, "textBox_Caratula");
             this.textBox_Caratula.Name = "textBox_Caratula";
             // 
-            // lbl_Caratula
+            // label_Caratula
             // 
-            resources.ApplyResources(this.lbl_Caratula, "lbl_Caratula");
-            this.lbl_Caratula.Name = "lbl_Caratula";
+            resources.ApplyResources(this.label_Caratula, "label_Caratula");
+            this.label_Caratula.Name = "label_Caratula";
             // 
             // textBox_Causante
             // 
             resources.ApplyResources(this.textBox_Causante, "textBox_Causante");
             this.textBox_Causante.Name = "textBox_Causante";
-            this.textBox_Causante.TextChanged += new System.EventHandler(this.textBox_Causante_TextChanged);
             // 
-            // lbl_Victima
+            // label_Victima
             // 
-            resources.ApplyResources(this.lbl_Victima, "lbl_Victima");
-            this.lbl_Victima.Name = "lbl_Victima";
-            this.lbl_Victima.Click += new System.EventHandler(this.lbl_Victima_Click);
+            resources.ApplyResources(this.label_Victima, "label_Victima");
+            this.label_Victima.Name = "label_Victima";
             // 
-            // label17
+            // label_Titulo
             // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Name = "label17";
+            resources.ApplyResources(this.label_Titulo, "label_Titulo");
+            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_Titulo.Name = "label_Titulo";
             // 
             // Expedientes
             // 
@@ -505,31 +503,31 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private System.Windows.Forms.Label lbl_Dependencia;
-        private System.Windows.Forms.Label lbl_Fecha;
+        private System.Windows.Forms.Label label_Dependencia;
+        private System.Windows.Forms.Label label_Fecha;
         private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
-        private System.Windows.Forms.Label lbl_Secretario;
-        private System.Windows.Forms.Label lbl_Instructor;
+        private System.Windows.Forms.Label label_Secretario;
+        private System.Windows.Forms.Label label_Instructor;
         private System.Windows.Forms.TextBox textBox_Caratula;
-        private System.Windows.Forms.Label lbl_Caratula;
+        private System.Windows.Forms.Label label_Caratula;
         private System.Windows.Forms.TextBox textBox_Causante;
-        private System.Windows.Forms.Label lbl_Victima;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label_Victima;
+        private System.Windows.Forms.Label label_DatosInstruccion;
         private System.Windows.Forms.GroupBox groupBox_ConversorDocumentos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_DatosActuacion;
+        private System.Windows.Forms.Label label_ConversorDocumentos;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.PictureBox pictureBox_AWord;
         private System.Windows.Forms.PictureBox pictureBox_APdf;
-        private System.Windows.Forms.Label label_SelloEscalera;
-        private System.Windows.Forms.Label label_SelloMedalla;
+        private System.Windows.Forms.Label label_ConvertirAWord;
+        private System.Windows.Forms.Label label_ConvertirAPdf;
         private System.Windows.Forms.Button btn_Convertir;
         private System.Windows.Forms.GroupBox groupBox_SeleccionadorProcedencia;
         private System.Windows.Forms.RadioButton radioButton_Juzgado;

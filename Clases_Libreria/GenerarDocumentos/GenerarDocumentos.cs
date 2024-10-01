@@ -9,67 +9,99 @@ using System.Windows.Forms;//(usandolo se elimina error de que no reconosca mens
 using Word = Microsoft.Office.Interop.Word;
 
 
-    namespace Clases.GenerarDocumentos
+namespace Clases.GenerarDocumentos
+{
+    public class GeneradorDocumentos
     {
-        public class GeneradorDocumentos
+        public void GenerarDocumento(string rutaPlantilla, string rutaArchivoSalida, Dictionary<string, string> datosFormulario)
         {
-            public void GenerarDocumento(string rutaPlantilla, string rutaArchivoSalida, Dictionary<string, string> datosFormulario)
+            Word.Application wordApp = null;
+            Word.Document wordDoc = null;
+
+            try
             {
-                Word.Application wordApp = null;
-                Word.Document wordDoc = null;
+                // Inicializa la aplicación de Word
+                wordApp = new Word.Application();
+                wordDoc = wordApp.Documents.Open(rutaPlantilla);
 
-                try
+                // Lógica para procesar y generar el documento usando datosFormulario...
+                // Ejemplo: Reemplazar marcadores en el documento
+
+                foreach (var item in datosFormulario)
                 {
-                    // Iniciar la aplicación de Word
-                    wordApp = new Word.Application();
-                    wordApp.Visible = false; // No mostrar la interfaz de Word
-
-                    // Abrir el documento de plantilla
-                    wordDoc = wordApp.Documents.Open(rutaPlantilla);
-
-                    // Reemplazar los valores en los marcadores de la plantilla
-                    foreach (var dato in datosFormulario)
-                    {
-                        if (wordDoc.Bookmarks.Exists(dato.Key))
-                        {
-                            // Seleccionar el marcador
-                            Word.Bookmark bookmark = wordDoc.Bookmarks[dato.Key];
-
-                            // Reemplazar el texto del marcador
-                            bookmark.Range.Text = dato.Value;
-
-                            // Reestablecer el marcador en la nueva ubicación (si es necesario)
-                            wordDoc.Bookmarks.Add(dato.Key, bookmark.Range);
-                        }
-                        else
-                        {
-                            MessageBox.Show($"El marcador '{dato.Key}' no existe en el documento.");
-                        }
-                    }
-
-                    // Guardar el documento modificado
-                    wordDoc.SaveAs2(rutaArchivoSalida);
-                    MessageBox.Show("Documento generado correctamente.");
+                    // Suponiendo que los marcadores están en el documento
+                    Word.Range range = wordDoc.Bookmarks[item.Key].Range;
+                    range.Text = item.Value;
                 }
-                catch (Exception ex)
+
+                // Guarda el documento en la ruta de salida
+                wordDoc.SaveAs2(rutaArchivoSalida);
+            }
+            catch (System.Runtime.InteropServices.COMException comEx)
+            {
+                MessageBox.Show("Error al comunicarse con Word: " + comEx.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el documento: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar y liberar recursos
+                if (wordDoc != null)
                 {
-                    MessageBox.Show("Error al generar el documento: " + ex.Message);
-                }
-                finally
-                {
-                    // Cerrar y liberar recursos
-                    if (wordDoc != null)
+                    try
                     {
                         wordDoc.Close(false); // No guardar cambios en el documento original
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cerrar el documento: " + ex.Message);
+                    }
+                    finally
+                    {
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(wordDoc);
                     }
+                }
 
-                    if (wordApp != null)
+                if (wordApp != null)
+                {
+                    try
                     {
                         wordApp.Quit();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cerrar la aplicación de Word: " + ex.Message);
+                    }
+                    finally
+                    {
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(wordApp);
                     }
                 }
+
+                // Fuerza la recolección de basura para liberar recursos COM
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
+        public void GenerarYGuardarDocumento(string rutaPlantilla, string rutaSubcarpeta, string nombrePlantilla, Dictionary<string, string> datosFormulario)
+        {
+            // Verificar que la plantilla exista
+            if (File.Exists(rutaPlantilla))
+            {
+                // Definir el nombre del archivo de salida igual al de la plantilla
+                string nombreArchivoSalida = nombrePlantilla + ".docx";
+                string rutaArchivoSalida = Path.Combine(rutaSubcarpeta, nombreArchivoSalida);
+
+                // Llamar al método para generar el documento
+                GenerarDocumento(rutaPlantilla, rutaArchivoSalida, datosFormulario);
+            }
+            else
+            {
+                MessageBox.Show($"La plantilla {nombrePlantilla} no se encuentra en la ruta especificada.");
             }
         }
     }
+}
