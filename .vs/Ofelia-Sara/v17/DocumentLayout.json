@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\expedientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\expedientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\mensajes\\mensajegenerardocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:mensajes\\mensajegenerardocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\formularios\\oficial de servicio\\expedientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\expedientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\mensajes\\mensajecargarimprimir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:mensajes\\mensajecargarimprimir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\clases_libreria\\generardocumentos\\generardocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38897E3-7B35-49CD-8922-42016BFBE38E}|Clases_Libreria\\Clases.csproj|solutionrelative:clases_libreria\\generardocumentos\\generardocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\mensajes\\mensajegenerardocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:mensajes\\mensajegenerardocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\mensajes\\mensajegenerardocumentos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:mensajes\\mensajegenerardocumentos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +42,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GenerarDocumentos.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\GenerarDocumentos\\GenerarDocumentos.cs",
-              "RelativeDocumentMoniker": "Clases_Libreria\\GenerarDocumentos\\GenerarDocumentos.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases_Libreria\\GenerarDocumentos\\GenerarDocumentos.cs",
-              "RelativeToolTip": "Clases_Libreria\\GenerarDocumentos\\GenerarDocumentos.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAuwEQAAAAYAAAA",
+              "DocumentIndex": 3,
+              "Title": "MensajeGenerarDocumentos.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeGenerarDocumentos.Designer.cs",
+              "RelativeDocumentMoniker": "Mensajes\\MensajeGenerarDocumentos.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeGenerarDocumentos.Designer.cs",
+              "RelativeToolTip": "Mensajes\\MensajeGenerarDocumentos.Designer.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T18:22:47.87Z",
+              "WhenOpened": "2024-10-01T23:03:17.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MensajeGenerarDocumentos.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeGenerarDocumentos.cs",
+              "RelativeDocumentMoniker": "Mensajes\\MensajeGenerarDocumentos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeGenerarDocumentos.cs",
+              "RelativeToolTip": "Mensajes\\MensajeGenerarDocumentos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T23:00:33.776Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Expedientes.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\expedientes.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\expedientes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\expedientes.cs*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\expedientes.cs*",
-              "ViewState": "AQIAALMEAAAAAAAAAAAQwOIEAAAAAAAA",
+              "Title": "MensajeGenerarDocumentos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeGenerarDocumentos.cs",
+              "RelativeDocumentMoniker": "Mensajes\\MensajeGenerarDocumentos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeGenerarDocumentos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Mensajes\\MensajeGenerarDocumentos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T15:43:18.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T23:00:25.087Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Expedientes.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\expedientes.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\expedientes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\expedientes.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\expedientes.cs [Dise\u00F1o]*",
+              "Title": "MensajeCargarImprimir.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeCargarImprimir.cs",
+              "RelativeDocumentMoniker": "Mensajes\\MensajeCargarImprimir.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Mensajes\\MensajeCargarImprimir.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Mensajes\\MensajeCargarImprimir.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T12:22:56.115Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-01T22:33:49.345Z"
             }
           ]
         }

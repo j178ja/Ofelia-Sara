@@ -1151,31 +1151,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
-        private void textBox_Causante_TextChanged(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void lbl_Victima_Click(object sender, EventArgs e)
-        {
-
-        }
+   
         //------------------------------------------------------------------------------------------------
         //   METODO PARA OBTENER DATOS DEL FORMULARIO
 
         public Dictionary<string, string> ObtenerDatosFormulario()
         {
-            var datos = new Dictionary<string, string>();
+            var datosFormulario = new Dictionary<string, string>();
 
             // Añadimos los valores de los controles al diccionario
-            datos.Add("Nombre", textBox_Caratula.Text);  // "Nombre" es el marcador en Word
-            datos.Add("Apellido", textBox_Causante.Text);
-            datos.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  // Ajusté los nombres de las claves para ser únicos
-            datos.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
-            datos.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-            datos.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+            datosFormulario.Add("Nombre", textBox_Caratula.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("Apellido", textBox_Causante.Text);
+            datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  // Ajusté los nombres de las claves para ser únicos
+            datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
+            datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
+            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
-            return datos;
+            return datosFormulario;
         }
         //------------------------------------------------------------------------------------
         private bool ValidarDatosFormulario()
@@ -1225,29 +1219,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         Directory.CreateDirectory(rutaSubcarpeta);
                     }
 
-                    // Usar una ruta absoluta a la plantilla de Word
-                    string rutaPlantilla = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\EXPEDIENTES\DECRETO RECEPCION.docx";
+                    // rutas de las plantillas-->DEBEN REEMPLASARSE A RUTAS RELATIVAS
+                    string rutaPlantillaRecepcion = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\EXPEDIENTES\DECRETO RECEPCION EXPEDIENTE.docx";
+                    string rutaPlantillaCierre = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\EXPEDIENTES\DECRETO CIERRE EXPEDIENTE.docx";
+                    string rutaPlantillaNotificacion = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\EXPEDIENTES\NOTIFICACION EXPEDIENTE.docx";
 
                     // Obtener los datos del formulario
                     var datosFormulario = ObtenerDatosFormulario();
 
-                    // Crear una instancia del generador de documentos
+                    // Generar cada documento con su respectiva plantilla y guardarlo en la carpeta
                     GeneradorDocumentos generador = new GeneradorDocumentos();
-
-                    // Definir el nombre del archivo de salida igual al de la plantilla
-                    string nombreArchivoSalida = Path.GetFileNameWithoutExtension(rutaPlantilla) + ".docx"; // Ejemplo: "DECRETO RECEPCION.docx"
-                    string rutaArchivoSalida = Path.Combine(rutaSubcarpeta, nombreArchivoSalida);
-
-                    // Llamar al método para generar el documento
-                    generador.GenerarDocumento(rutaPlantilla, rutaArchivoSalida, datosFormulario);
-
-                    MessageBox.Show("El documento ha sido generado correctamente.");
+                    generador.GenerarYGuardarDocumento(rutaPlantillaRecepcion, rutaSubcarpeta, "DECRETO RECEPCION EXPEDIENTE", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaCierre, rutaSubcarpeta, "DECRETO CIERRE EXPEDIENTE", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaNotificacion, rutaSubcarpeta, "NOTIFICACION EXPEDIENTE", datosFormulario);
+                  
+                    // Mostrar mensaje de éxito
+                    MessageBox.Show("Los documentos han sido generados correctamente.");
 
                     // Abrir la ubicación de la carpeta generada
                     System.Diagnostics.Process.Start("explorer.exe", rutaSubcarpeta);
                 }
             }
         }
+
+    
 
     }
 }
