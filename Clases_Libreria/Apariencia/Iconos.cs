@@ -6,6 +6,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace Clases_Libreria.Apariencia
 {
     public static class IconoEscudo

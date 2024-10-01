@@ -59,23 +59,17 @@ namespace Ofelia_Sara.Properties {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal class RecursosEscudoPolicial
-        {
-            internal static System.Drawing.Bitmap escudoPolicial
-            {
-                get
-                {
-                    object obj = ResourceManager.GetObject("escudoPolicial", resourceCulture);
-                    return ((System.Drawing.Bitmap)(obj));
-                }
+        internal static System.Drawing.Bitmap ImagenescudoPolicial {
+            get {
+                object obj = ResourceManager.GetObject("escudoPolicial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
-
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>

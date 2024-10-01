@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces_Libreria.Interfaces;
-
+using Controles_Libreria.Controles.Reposicionar_paneles.Buscar_Personal;
 
 
 
@@ -43,15 +43,23 @@ namespace Controles_Libreria.Controles
 
         private void btn_EliminarControl_Click(object sender, EventArgs e)
         {
-            // Obtén el panel o contenedor que contiene este UserControl
-            Panel panel = this.Parent as Panel;
+            Control controlEliminado = this;
+            // Obtener el panel y el formulario principal donde están los controles
+            Panel panel_PersonalSeleccionado = this.Parent as Panel; // Asumiendo que este control está dentro de este panel
+            Panel panel1 = panel_PersonalSeleccionado.Parent as Panel; // El panel contenedor del panel_PersonalSeleccionado
+            Form formulario = panel1.FindForm(); // El formulario principal
 
-            if (panel != null)
+            // Verificar si las referencias son válidas antes de llamar al método
+            if (panel_PersonalSeleccionado != null && panel1 != null && formulario != null)
             {
-                // Eliminar el control del panel
-                panel.Controls.Remove(this);
-
+                // Instanciar la clase AgregarPersonal
+                AgregarPersonal agregarPersonal = new AgregarPersonal();
+                // Llamar al método para reposicionar los controles y ajustar tamaños
+                agregarPersonal.ReposicionarControles(panel_PersonalSeleccionado, controlEliminado, panel1, formulario);
             }
+
+            // Eliminar este control del panel
+            panel_PersonalSeleccionado.Controls.Remove(controlEliminado);
         }
 
 

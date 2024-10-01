@@ -21,6 +21,7 @@ using Clases_Libreria.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
 using Controles_Libreria.Controles;
 using System.ComponentModel;
+using Controles_Libreria.Controles.Reposicionar_paneles.Expedientes;
 
 
 
@@ -43,9 +44,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             groupBox_TextosConvertidos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
-            panel2.AutoSize = true;
-            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel2.AutoScroll = true;
+            panel_ConversorDocumentos.AutoSize = true;
+            panel_ConversorDocumentos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel_ConversorDocumentos.AutoScroll = true;
 
         }
 
@@ -341,7 +342,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void radioButton_Word_CheckedChanged(object sender, EventArgs e)
         {
-
             ActualizarControles();
             if (radioButton_Word.Checked)
             {
@@ -570,7 +570,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_Control.Controls.Add(juzgadoControl);
 
                 // Ajusta el tamaño del panel_Control al tamaño del UserControl
-                panel_Control.AutoScroll = true; // Habilita el scroll si es necesario
                 panel_Control.Width = juzgadoControl.Width;
                 panel_Control.Height = juzgadoControl.Height;
 
@@ -599,7 +598,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_Control.Controls.Add(fiscaliaControl);
 
                 // Ajusta el tamaño del panel_Control al tamaño del UserControl
-                panel_Control.AutoScroll = true; // Habilita el scroll si es necesario
                 panel_Control.Width = fiscaliaControl.Width;
                 panel_Control.Height = fiscaliaControl.Height;
 
@@ -608,60 +606,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //----------------------------------------------------------------------------------------------
-        //----AJUSTAR TAMAÑO Y ´POSICION DEL FORMULARIO DE ACUERDO AL CONTROL AGREGADO----
-        private void AjustarTamañoFormulario(int alturaControlRemovido, bool eliminar = false)
-        {
-            // Calcula la altura del nuevo control agregado al panel_Control
-            int alturaNuevoControl = panel_Control.Controls.OfType<Control>().LastOrDefault()?.Height ?? 0;
-
-            // Ajusta el tamaño del formulario en función del tamaño del panel_Control
-            int panelControlBottom = panel_Control.Bottom;
-            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height); // Añade un margen opcional de 10 píxeles
-
-            // Ajustar la altura del formulario y panel1 según si se agrega o se elimina un control
-            if (eliminar)
-            {
-                // Si se eliminó un control, reduce el tamaño del formulario y panel1
-                formHeight -= alturaControlRemovido;
-                panel1.Height -= (alturaControlRemovido); // Reducir la altura y restar 5 unidades a panel1
-            }
-            else
-            {
-                // Si se agregó un control, incrementa el tamaño del formulario y panel1
-                formHeight += alturaNuevoControl;
-                panel1.Height += (alturaNuevoControl); // Aumentar la altura y sumar 5 unidades a panel1
-            }
-
-            // Ajusta el tamaño del formulario
-            this.ClientSize = new Size(this.ClientSize.Width, formHeight);
-
-            // Calcula la posición horizontal para centrar el formulario en la pantalla
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int formWidth = this.ClientSize.Width;
-            int leftPosition = (screenWidth - formWidth) / 2;
-
-            // Ajusta la posición y el tamaño del formulario
-            this.StartPosition = FormStartPosition.Manual; // Asegura que el formulario no use la posición predeterminada
-            this.Location = new System.Drawing.Point(leftPosition, 0); // Centra horizontalmente y coloca en la parte superior
-
-            // Ajusta la posición de panel2 con un espacio adicional
-            int espacioEntreControlYPanel2 = 5; // Espacio adicional en píxeles entre el control y panel2
-            if (panel2 != null)
-            {
-                if (eliminar)
-                {
-                    // Si eliminamos un control, movemos panel2 hacia arriba
-                    panel2.Top -= (alturaControlRemovido + espacioEntreControlYPanel2);
-                    panel2.Height -= (alturaControlRemovido + espacioEntreControlYPanel2);
-                }
-                else
-                {
-                    // Si agregamos un control, movemos panel2 hacia abajo
-                    panel2.Top += (alturaNuevoControl + espacioEntreControlYPanel2);
-                    panel2.Height += (alturaNuevoControl + espacioEntreControlYPanel2);
-                }
-            }
-        }
+     
 
 
 
@@ -807,10 +752,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 groupBox_TextosConvertidos.Visible = true;
             }
 
-            // Ajustar altura del formulario y posición de controles inferiores
-            AjustarAlturaFormulario();
-            AjustarPosicionControlesInferiores();
-
+        
             // Limpia la referencia al RadioButton seleccionado al inicio
             radioButtonSeleccionado = null;
 
@@ -819,7 +761,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             this.Top = 0; // Posicionar el formulario en la parte superior de la pantalla
 
-            AjustarAlturaPanel2();
+            // Ajustar altura del formulario y posición de controles inferiores
+          
+            AjustarPosicionControlesInferiores();
+            AjustarAlturaPaneles();
         }
 
 
@@ -962,10 +907,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
                     }
                 }
-                AjustarAlturaFormulario();
-
-                // Ajusta la posición del panel_ControlesInferiores
-                AjustarPosicionControlesInferiores();
+             
             };
 
             // Mostrar el nombre completo en un Tooltip
@@ -1052,7 +994,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         panelContenedor.Dispose(); // Eliminar el panel
 
                         // Reposicionar los paneles restantes
-                        ReposicionarPanelesRestantes();
+                     ReposicionarPanelesRestantes();
 
                         // Ajustar el tamaño del groupBox y el formulario
                         AjustarAlturaGroupBoxYFormulario(alturaPanelRemovido, eliminar: true);
@@ -1091,11 +1033,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Ajustar la posición del panel_ControlesInferiores
             AjustarPosicionControlesInferiores();
 
-            // Ajustar la altura de panel2 (si es necesario)
-            AjustarAlturaPanel2();
-
-            // Ajustar la altura del formulario
-            AjustarAlturaFormulario();
+            AjustarAlturaPaneles();
         }
 //----------------------------------------------------------------------------------------------------------
 
@@ -1121,48 +1059,86 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 pictureBox.Height -= 3; // Reduce la altura en 10 píxeles
             }
         }
+        //----------------------------------------------------------------------------------
+        public void AjustarTamañoFormulario(int alturaControlRemovido, bool eliminar = false)
+        {
+            // Calcula la altura del nuevo control agregado al panel_Control
+            int alturaNuevoControl = panel_Control.Controls.OfType<Control>().LastOrDefault()?.Height ?? 0;
+
+            // Ajusta el tamaño del formulario en función del tamaño del panel_Control
+            int panelControlBottom = panel_Control.Bottom;
+            int formHeight = Math.Max(panelControlBottom + 10, this.ClientSize.Height); // Añade un margen opcional de 10 píxeles
+
+            // Ajustar la altura del formulario y panel1 según si se agrega o se elimina un control
+            if (eliminar)
+            {
+                // Si se eliminó un control, reduce el tamaño del formulario y panel1
+                formHeight -= alturaControlRemovido;
+                panel1.Height -= (alturaControlRemovido); // Reducir la altura y restar 5 unidades a panel1
+            }
+            else
+            {
+                // Si se agregó un control, incrementa el tamaño del formulario y panel1
+                formHeight += alturaNuevoControl;
+                panel1.Height += (alturaNuevoControl); // Aumentar la altura y sumar 5 unidades a panel1
+            }
+
+            // Ajusta el tamaño del formulario
+            this.ClientSize = new Size(this.ClientSize.Width, formHeight);
+
+            // Calcula la posición horizontal para centrar el formulario en la pantalla
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int formWidth = this.ClientSize.Width;
+            int leftPosition = (screenWidth - formWidth) / 2;
+
+            // Ajusta la posición y el tamaño del formulario
+            this.StartPosition = FormStartPosition.Manual; // Asegura que el formulario no use la posición predeterminada
+            this.Location = new System.Drawing.Point(leftPosition, 0); // Centra horizontalmente y coloca en la parte superior
+
+            // Ajusta la posición de panel2 con un espacio adicional
+            int espacioEntreControlYPanel2 = 5; // Espacio adicional en píxeles entre el control y panel2
+            if (panel_ConversorDocumentos != null)
+            {
+                if (eliminar)
+                {
+                    // Si eliminamos un control, movemos panel2 hacia arriba
+                    panel_ConversorDocumentos.Top -= (alturaControlRemovido + espacioEntreControlYPanel2);
+                    panel_ConversorDocumentos.Height -= (alturaControlRemovido + espacioEntreControlYPanel2);
+                }
+                else
+                {
+                    // Si agregamos un control, movemos panel2 hacia abajo
+                    panel_ConversorDocumentos.Top += (alturaNuevoControl + espacioEntreControlYPanel2);
+                    panel_ConversorDocumentos.Height += (alturaNuevoControl + espacioEntreControlYPanel2);
+                }
+            }
+        }
 
         //-----AJUSTAR POSICIONAMIENTO DE PANELES
+        //permite que se visualice completo textos convertidos
         private void AjustarPosicionControlesInferiores()
         {
-            //// Espacio adicional entre el GroupBox y el panel_ControlesInferiores
-            //int espacioEntreControles = 0; // Ajusta este valor a 0 o al valor deseado para reducir el espacio
-
-            //// Calcula la nueva posición del panel_ControlesInferiores
-            //int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + espacioEntreControles;
-
-            //// Ajusta la posición del panel_ControlesInferiores
-            //panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
-
-            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom + 5; // Añadir un pequeño margen de separación
+            int nuevaPosicionY = groupBox_TextosConvertidos.Bottom +5; // Añadir un pequeño margen de separación
             panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, nuevaPosicionY);
         }
 
-        private void AjustarAlturaPanel2()
+        private void AjustarAlturaPaneles()
         {
-            // Calcular la altura total de los controles dentro de panel2 (groupBox y panel inferior)
-            int alturaContenido = groupBox_TextosConvertidos.Bottom + panel_ControlesInferiores.Height;
+            
 
-            // Añadir un margen opcional para ajustar la distancia
-            int nuevaAlturaPanel2 = Math.Max(alturaContenido + 10, panel2.MinimumSize.Height);
+            //// Ajustar la altura del panel_ConversorDocumentos basado en el groupBox y panel_ControlesInferiores
+            //panel_ConversorDocumentos.Height = groupBox_TextosConvertidos.Bottom  + panel_ControlesInferiores.Height+5;
 
-            // Ajustar la altura del panel2
-            panel2.Height = nuevaAlturaPanel2;
+            //// Reposicionar panel_ControlesInferiores debajo del groupBox_TextosConvertidos
+            //panel_ControlesInferiores.Top = groupBox_TextosConvertidos.Bottom + 5;
+
+            //// Ajustar la altura de panel1 para contener a panel_ConversorDocumentos
+            //panel1.Height = panel_ConversorDocumentos.Bottom + 5;
+
+            //// Ajustar la altura del formulario para contener a panel1
+            //this.Height = panel1.Bottom + 5;
         }
 
-    
-
-    private void AjustarAlturaFormulario()
-        {
-            // Espacio adicional en la parte inferior del formulario para asegurar un margen
-            int espacioInferior = 30;
-
-            // Asegurarse de calcular desde el borde inferior de panel2 para incluir su nueva altura
-            int nuevaAltura = panel2.Bottom + espacioInferior;
-
-            // Ajustar la altura del formulario para reflejar el contenido completo
-            this.Height = nuevaAltura;
-        }
 
 
         private void Expedientes_HelpButtonClicked(object sender, CancelEventArgs e)
