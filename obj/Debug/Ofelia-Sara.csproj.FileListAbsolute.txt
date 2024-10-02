@@ -131,3 +131,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\dependencias.jso
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\fiscalias.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\instructor.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\secretarios.json
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Mensajes.MensajeGenerarDocumentos.resources

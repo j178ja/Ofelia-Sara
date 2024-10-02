@@ -64,8 +64,8 @@
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
-            this.timePicker_FechaActual = new Controles_Libreria.Controles.TimePickerPersonalizado();
-            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.Fecha_Nacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.FechaAudiencia = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -395,8 +395,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.comboBox_Nacionalidad);
-            this.panel1.Controls.Add(this.timePicker_FechaActual);
-            this.panel1.Controls.Add(this.dateTimePicker_FechaNacimiento);
+            this.panel1.Controls.Add(this.Fecha_Instruccion);
+            this.panel1.Controls.Add(this.Fecha_Nacimiento);
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.FechaAudiencia);
             this.panel1.Controls.Add(this.textBox_Nombre);
@@ -452,22 +452,22 @@
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(163, 21);
             this.comboBox_Nacionalidad.TabIndex = 93;
             // 
-            // timePicker_FechaActual
+            // Fecha_Instruccion
             // 
-            this.timePicker_FechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timePicker_FechaActual.Location = new System.Drawing.Point(153, 476);
-            this.timePicker_FechaActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.timePicker_FechaActual.Name = "timePicker_FechaActual";
-            this.timePicker_FechaActual.SelectedDate = new System.DateTime(2024, 9, 25, 22, 49, 58, 572);
-            this.timePicker_FechaActual.Size = new System.Drawing.Size(295, 29);
-            this.timePicker_FechaActual.TabIndex = 92;
+            this.Fecha_Instruccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
+            this.Fecha_Instruccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
+            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 9, 25, 22, 49, 58, 572);
+            this.Fecha_Instruccion.Size = new System.Drawing.Size(295, 29);
+            this.Fecha_Instruccion.TabIndex = 92;
             // 
-            // dateTimePicker_FechaNacimiento
+            // Fecha_Nacimiento
             // 
-            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(195, 282);
-            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
-            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 21);
-            this.dateTimePicker_FechaNacimiento.TabIndex = 91;
+            this.Fecha_Nacimiento.Location = new System.Drawing.Point(195, 282);
+            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
+            this.Fecha_Nacimiento.Size = new System.Drawing.Size(149, 21);
+            this.Fecha_Nacimiento.TabIndex = 91;
             // 
             // label_Titulo
             // 
@@ -552,8 +552,8 @@
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.DateTimePicker FechaAudiencia;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
-        private Controles_Libreria.Controles.TimePickerPersonalizado timePicker_FechaActual;
+        private Controles_Libreria.Controles.CustomDateTextBox Fecha_Nacimiento;
+        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
     }
 }

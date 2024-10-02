@@ -17,5 +17,10 @@ namespace Ofelia_Sara.Mensajes
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,7 +41,40 @@ namespace Controles_Libreria.Controles
             SetPlaceholder(textBox_DateMES, "mm");
             SetPlaceholder(textBox_DateAÑO, "aaaa");
         }
+        //-----------------------------------------------------------------------
+        // Método para verificar si el texto ingresado es una fecha válida
+        public bool HasValue()
+        {
+            DateTime fecha;
+            return DateTime.TryParse(this.Text, out fecha);
+        }
+        //----OBTENER DATOS DE FECHA NACIMIENTO----------------------
+        public DateTime? ObtenerFecha()
+        {
+            // Verifica que los campos de día, mes y año estén completos y sean válidos.
+            if (int.TryParse(textBox_DateDIA.Text, out int dia) &&
+                int.TryParse(textBox_DateMES.Text, out int mes) &&
+                int.TryParse(textBox_DateAÑO.Text, out int año))
+            {
+                try
+                {
+                    // Intenta crear un DateTime con los valores proporcionados.
+                    return new DateTime(año, mes, dia);
+                }
+                catch
+                {
+                    // Si la combinación de valores no es válida, devuelve null.
+                    MessageBox.Show("La fecha ingresada no es válida.", "FECHA INVALIDA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null;
+                }
+            }
+            // Si algún campo no es válido, devuelve null.
+            return null;
+        }
 
+
+
+        //----------------------------------------------------------------------
 
 
         // Manejar el evento KeyPress para permitir solo números
