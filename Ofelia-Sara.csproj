@@ -442,6 +442,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Resources\iconoEscribiendo.png" />
     <Content Include="Resources\imagenes\ojoCerrado.png" />
     <None Include="Resources\imagenes\subir_documentos.png" />
     <None Include="Resources\imagenes\pdf.png" />

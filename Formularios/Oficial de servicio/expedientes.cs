@@ -1229,12 +1229,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                     // Generar cada documento con su respectiva plantilla y guardarlo en la carpeta
                     GeneradorDocumentos generador = new GeneradorDocumentos();
-                    generador.GenerarYGuardarDocumento(rutaPlantillaRecepcion, rutaSubcarpeta, "DECRETO RECEPCION EXPEDIENTE", datosFormulario);
-                    generador.GenerarYGuardarDocumento(rutaPlantillaCierre, rutaSubcarpeta, "DECRETO CIERRE EXPEDIENTE", datosFormulario);
-                    generador.GenerarYGuardarDocumento(rutaPlantillaNotificacion, rutaSubcarpeta, "NOTIFICACION EXPEDIENTE", datosFormulario);
-                  
+                    generador.GenerarYGuardarDocumento(rutaPlantillaRecepcion, rutaSubcarpeta, "DECRETO RECEPCION", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaCierre, rutaSubcarpeta, "DECRETO CIERRE", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaNotificacion, rutaSubcarpeta, "NOTIFICACION", datosFormulario);
+
                     // Mostrar mensaje de éxito
-                    MessageBox.Show("Los documentos han sido generados correctamente.");
+                    // MessageBox.Show("Los documentos han sido generados correctamente.");
+
+                    MensajeCargarImprimir mensajeCargarImprimir = new MensajeCargarImprimir();
+                    mensajeCargarImprimir.ShowDialog();
 
                     // Abrir la ubicación de la carpeta generada
                     System.Diagnostics.Process.Start("explorer.exe", rutaSubcarpeta);
