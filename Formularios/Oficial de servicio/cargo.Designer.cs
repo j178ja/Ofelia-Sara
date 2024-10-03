@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cargo));
             this.label_Cargo = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_DescripcionMuestra = new System.Windows.Forms.TextBox();
             this.textBox_NumeroCargo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox_Año = new System.Windows.Forms.ComboBox();
@@ -44,7 +44,7 @@
             this.lbl_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_AgenteFiscal = new System.Windows.Forms.ComboBox();
             this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.timePickerPersonalizado1 = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
             this.lbl_Secretario = new System.Windows.Forms.Label();
             this.lbl_Instructor = new System.Windows.Forms.Label();
             this.lbl_Ufid = new System.Windows.Forms.Label();
@@ -107,13 +107,13 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "DESCRIPCION DE LA MUESTRA";
             // 
-            // textBox1
+            // textBox_DescripcionMuestra
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 361);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(393, 122);
-            this.textBox1.TabIndex = 16;
+            this.textBox_DescripcionMuestra.Location = new System.Drawing.Point(40, 361);
+            this.textBox_DescripcionMuestra.Multiline = true;
+            this.textBox_DescripcionMuestra.Name = "textBox_DescripcionMuestra";
+            this.textBox_DescripcionMuestra.Size = new System.Drawing.Size(393, 122);
+            this.textBox_DescripcionMuestra.TabIndex = 16;
             // 
             // textBox_NumeroCargo
             // 
@@ -158,7 +158,7 @@
             this.panel1.Controls.Add(this.lbl_Dependencia);
             this.panel1.Controls.Add(this.comboBox_AgenteFiscal);
             this.panel1.Controls.Add(this.lbl_Fecha);
-            this.panel1.Controls.Add(this.timePickerPersonalizado1);
+            this.panel1.Controls.Add(this.Fecha_Instruccion);
             this.panel1.Controls.Add(this.lbl_Secretario);
             this.panel1.Controls.Add(this.lbl_Instructor);
             this.panel1.Controls.Add(this.lbl_Ufid);
@@ -174,7 +174,7 @@
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Cargo);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBox_DescripcionMuestra);
             this.panel1.Controls.Add(this.textBox_NumeroCargo);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.comboBox_Año);
@@ -271,14 +271,14 @@
             this.lbl_Fecha.TabIndex = 61;
             this.lbl_Fecha.Text = "FECHA";
             // 
-            // timePickerPersonalizado1
+            // Fecha_Instruccion
             // 
-            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.timePickerPersonalizado1.Location = new System.Drawing.Point(129, 290);
-            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
-            this.timePickerPersonalizado1.Size = new System.Drawing.Size(286, 25);
-            this.timePickerPersonalizado1.TabIndex = 15;
+            this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.Fecha_Instruccion.Location = new System.Drawing.Point(129, 290);
+            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
+            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+            this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 25);
+            this.Fecha_Instruccion.TabIndex = 15;
             // 
             // lbl_Secretario
             // 
@@ -571,6 +571,7 @@
             this.btn_Imprimir.TabIndex = 18;
             this.toolTip1.SetToolTip(this.btn_Imprimir, "IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
+            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
             // btn_Limpiar
             // 
@@ -644,7 +645,7 @@
 
         private System.Windows.Forms.Label label_Cargo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_DescripcionMuestra;
         private System.Windows.Forms.TextBox textBox_NumeroCargo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox_Año;
@@ -680,7 +681,7 @@
         private System.Windows.Forms.Label lbl_Dependencia;
         private System.Windows.Forms.ComboBox comboBox_AgenteFiscal;
         private System.Windows.Forms.Label lbl_Fecha;
-        private Controles_Libreria.Controles.TimePickerPersonalizado timePickerPersonalizado1;
+        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label lbl_Secretario;
         private System.Windows.Forms.Label lbl_Instructor;
         private System.Windows.Forms.Label lbl_Ufid;
