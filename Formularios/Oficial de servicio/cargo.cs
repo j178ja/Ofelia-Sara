@@ -15,6 +15,8 @@ using Clases.GenerarDocumentos;
 using System.IO;
 using Controles_Libreria.Controles;
 using System.Collections.Generic;
+using BaseDatos_Libreria.Entidades;
+using System.Linq;
 
 
 
@@ -34,7 +36,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //----------------------------------------------------------------------------------
         //---sobrecargar para que reciba los datos desde form iniciocierre
         public Cargo(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
-                 string victima, string imputado, string fiscalia, string agenteFiscal,
+                 string victima, string imputado, string fiscalia, string agenteFiscal,string localidad,
                  string instructor, string secretario, string dependencia)
         {
             InitializeComponent();
@@ -49,6 +51,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Imputado.Text = imputado;
             comboBox_Fiscalia.Text = fiscalia;  // Asignación al control
             comboBox_AgenteFiscal.Text = agenteFiscal;
+            comboBox_Localidad.Text = localidad;
             comboBox_Instructor.Text = instructor;
             comboBox_Secretario.Text = secretario;
             comboBox_Dependencia.Text = dependencia;
@@ -76,21 +79,124 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
             MayusculaSola.AplicarAControl(textBox_Imputado);
+            MayusculaSola.AplicarAControl(comboBox_Localidad);
 
             MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+
+            Fecha_Instruccion.SelectedDate = DateTime.Now;
+        }
+
+        //-----------------------------------------------------------------------
+        private void InicializarComboBoxFISCALIA()
+        {
+
+            // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
+            List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
+            List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
+            List<string> localidades = FiscaliaManager.ObtenerLocalidades().Distinct().ToList();
+
+            // Asignar las listas a los ComboBoxes correspondientes
+            comboBox_Fiscalia.DataSource = nombresFiscalias;
+            comboBox_AgenteFiscal.DataSource = agentesFiscales;
+            comboBox_Localidad.DataSource = localidades;
+
+            comboBox_Fiscalia.SelectedIndex = -1;
+            comboBox_AgenteFiscal.SelectedIndex = -1;
+            comboBox_Localidad.SelectedIndex = -1;
+        }
+
+        private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Desactivar los ComboBoxes de detalle mientras se actualizan
+            comboBox_AgenteFiscal.Enabled = false;
+            comboBox_Localidad.Enabled = false;
+          
+            // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
+            if (comboBox_Fiscalia.SelectedItem != null)
+            {
+                string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
+                Fiscalia fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
+
+                if (fiscalia != null)
+                {
+                    // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
+                    comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
+                    comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
+         
+                }
+                else
+                {
+                    // Si no se encuentra la fiscalía, limpiar los ComboBoxes
+                    comboBox_AgenteFiscal.DataSource = null;
+                    comboBox_Localidad.DataSource = null;
+                   
+                }
+
+                // Reactivar los ComboBoxes de detalle
+                comboBox_AgenteFiscal.Enabled = true;
+                comboBox_Localidad.Enabled = true;
+                            }
+            else
+            {
+                // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
+                comboBox_AgenteFiscal.DataSource = null;
+                comboBox_Localidad.DataSource = null;
+           
+                comboBox_AgenteFiscal.Enabled = false;
+                comboBox_Localidad.Enabled = false;
+               
+            }
+        }
+        //----------------------------------------------------------------
+        private void InicializarComboBoxSECRETARIO()
+        {
+            List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
+            comboBox_Secretario.DataSource = secretarios;
+            comboBox_Secretario.DisplayMember = "DescripcionCompleta";
+            comboBox_Secretario.SelectedIndex = -1;
+        }
+        //---------------------------------------------------------------------
+        private void InicializarComboBoxINSTRUCTOR()
+        {
+            List<Instructor> instructores = InstructorManager.ObtenerInstructores();
+            comboBox_Instructor.DataSource = instructores;
+            comboBox_Instructor.DisplayMember = "DescripcionCompleta";
+            comboBox_Instructor.SelectedIndex = -1;
+        }
+        //------------------------------------------------------------------------
+        private void InicializarComboBoxDEPENDENCIAS()
+        {
+            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
+            comboBox_Dependencia.DataSource = dependencias;
+            comboBox_Dependencia.DisplayMember = "Dependencia";
+            comboBox_Dependencia.SelectedIndex = -1;
         }
 
 
-
-
+        private void comboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza caracteres no válidos.
+            }
+            else
+            {
+                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
+            }
+        }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-            MessageBox.Show("Formulario eliminado.");
+
+            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            InicializarComboBoxINSTRUCTOR();
+            InicializarComboBoxDEPENDENCIAS();
+
+            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
 
         }
@@ -203,8 +309,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool ValidarDatosFormulario()
         {
             //Verificar si los campos están completados
-            if (string.IsNullOrWhiteSpace(textBox_NumeroCargo.Text) ||
-                string.IsNullOrWhiteSpace(textBox_NumeroIpp.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox_NumeroIpp.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Victima.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Imputado.Text))
@@ -215,6 +320,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 MessageBox.Show("Debe completar la totalidad de campos para generar el documento ", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false; // Indica que la validación falló
             }
+            //validacion especial numero cargo
+            if (string.IsNullOrWhiteSpace(textBox_NumeroCargo.Text))
+            {
+                MessageBox.Show("Debe ingresar el numero de CARGO", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_NumeroCargo.Focus();
+                return false; // Detener el proceso si no hay texto válido
+            }
+
+
             // validad Descripcion de la muestra
             if (string.IsNullOrWhiteSpace(textBox_DescripcionMuestra.Text))
             {
@@ -279,11 +393,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             
 
             // Añadimos los valores de los controles al diccionario
-            datosFormulario.Add("Nombre", textBox_NumeroCargo.Text);  // "Nombre" es el marcador en Word
-            datosFormulario.Add("Nombre", textBox_NumeroIpp.Text);  // "Nombre" es el marcador en Word
-            datosFormulario.Add("Nombre", textBox_Caratula.Text);  // "Nombre" es el marcador en Word
-            datosFormulario.Add("Nombre", textBox_Victima.Text);  // "Nombre" es el marcador en Word
-            datosFormulario.Add("Nombre", textBox_Imputado.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("NumeroCargo", textBox_NumeroCargo.Text);  
+            datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);  
+            datosFormulario.Add("Caratula", textBox_Caratula.Text);  
+            datosFormulario.Add("Victima", textBox_Victima.Text); 
+            datosFormulario.Add("Imputado", textBox_Imputado.Text); 
          
      
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
@@ -328,6 +442,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     string rutaPlantillaCargo = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CARGO JUDICIAL.docx";
                     string rutaPlantillaCadenaCustodia = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CADENA DE CUSTODIA.docx";
                     string rutaPlantillaFaja = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\FAJA DE SECUESTRO.doc";
+                    string rutaPlantillaVisu = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\VISU.docx";
 
                     // Obtener los datos del formulario
                     var datosFormulario = ObtenerDatosFormulario();
@@ -337,6 +452,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     generador.GenerarYGuardarDocumento(rutaPlantillaCargo, rutaSubcarpeta, "CARGO", datosFormulario);
                     generador.GenerarYGuardarDocumento(rutaPlantillaCadenaCustodia, rutaSubcarpeta, "CADENA DE CUSTODIA", datosFormulario);
                     generador.GenerarYGuardarDocumento(rutaPlantillaFaja, rutaSubcarpeta, "FAJA SECUESTRO", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaVisu, rutaSubcarpeta, "VISU", datosFormulario);
 
                     // Mostrar mensaje de éxito
                     // MessageBox.Show("Los documentos han sido generados correctamente.");

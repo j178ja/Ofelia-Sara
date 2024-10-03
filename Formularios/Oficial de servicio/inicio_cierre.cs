@@ -338,11 +338,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             var datosFormulario = new Dictionary<string, string>
     {
         { "caratula", textBox_Caratula.Text },
-        { "victima", textBox_Caratula.Text },
-        { "imputado", textBox_Caratula.Text },
-        { "instructor", textBox_Caratula.Text },
-        { "secretario", textBox_Caratula.Text },
-        { "DeptoJudicial", textBox_Caratula.Text },
+        { "victima", textBox_Victima.Text },
+        { "imputado", textBox_Imputado.Text },
+        { "instructor", comboBox_Instructor.Text },
+        { "secretario", comboBox_Secretario.Text },
+        { "DeptoJudicial", comboBox_DeptoJudicial.Text },
          };
             return datosFormulario;
         }
@@ -866,13 +866,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 string Imputado = textBox_Imputado.Text;
                 string Fiscalia = comboBox_Fiscalia.Text;
                 string AgenteFiscal = comboBox_AgenteFiscal.Text;
+                string Localidad = comboBox_Localidad.Text;
                 string Instructor = comboBox_Instructor.Text;
                 string Secretario = comboBox_Secretario.Text;
                 string Dependencia = comboBox_Dependencia.Text ;
 
               // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
         Cargo cargo = new Cargo (Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
-                                Fiscalia, AgenteFiscal, Instructor, Secretario, Dependencia);
+                                Fiscalia, AgenteFiscal,Localidad, Instructor, Secretario, Dependencia);
 
 
                 // Obtener el formulario original (inicioCierre)

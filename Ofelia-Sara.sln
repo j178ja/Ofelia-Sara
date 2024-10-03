@@ -51,16 +51,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EXPEDIENTES", "EXPEDIENTES"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPP", "IPP", "{9DF11F35-1CAA-4E33-AC29-95723A526C4C}"
 	ProjectSection(SolutionItems) = preProject
-		Documentos\IPP\CARATULA.docx = Documentos\IPP\CARATULA.docx
 		Documentos\IPP\CADENA DE CUSTODIA.docx = Documentos\IPP\CADENA DE CUSTODIA.docx
+		Documentos\IPP\CARATULA.docx = Documentos\IPP\CARATULA.docx
 		Documentos\IPP\CARGO JUDICIAL.docx = Documentos\IPP\CARGO JUDICIAL.docx
 		Documentos\IPP\CROQUIS ILUSTRATIVO.docx = Documentos\IPP\CROQUIS ILUSTRATIVO.docx
 		Documentos\IPP\DECRETO CIERRE.docx = Documentos\IPP\DECRETO CIERRE.docx
 		Documentos\IPP\DECRETO INICIO.docx = Documentos\IPP\DECRETO INICIO.docx
 		Documentos\IPP\DENUNCIA PENAL.docx = Documentos\IPP\DENUNCIA PENAL.docx
 		Documentos\IPP\EXAMEN DE VISU.docx = Documentos\IPP\EXAMEN DE VISU.docx
-		Documentos\IPP\INFORME.docx = Documentos\IPP\INFORME.docx
 		..\ipps\PINAMAR\PINAMAR 2020\FAJA DE SECUESTRO.doc = ..\ipps\PINAMAR\PINAMAR 2020\FAJA DE SECUESTRO.doc
+		Documentos\IPP\INFORME.docx = Documentos\IPP\INFORME.docx
 		Documentos\IPP\INSPECCION OCULAR.docx = Documentos\IPP\INSPECCION OCULAR.docx
 		Documentos\IPP\NOTA ELEVACION.docx = Documentos\IPP\NOTA ELEVACION.docx
 		Documentos\IPP\NOTIFICACION 247 DEFENSORIA.docx = Documentos\IPP\NOTIFICACION 247 DEFENSORIA.docx
@@ -71,6 +71,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPP", "IPP", "{9DF11F35-1CA
 		Documentos\IPP\SOLICITAR PLANA.docx = Documentos\IPP\SOLICITAR PLANA.docx
 		Documentos\IPP\SOLICITUD CAMARAS MONITOREO.docx = Documentos\IPP\SOLICITUD CAMARAS MONITOREO.docx
 		Documentos\IPP\SOLICITUD CARACTERISACION LESIONES.docx = Documentos\IPP\SOLICITUD CARACTERISACION LESIONES.docx
+		..\ipps\VISU.docx = ..\ipps\VISU.docx
 	EndProjectSection
 EndProject
 Global
