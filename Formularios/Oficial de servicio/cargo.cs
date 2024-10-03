@@ -8,6 +8,13 @@ using Clases_Libreria.Apariencia;
 using Clases_Libreria.Botones;
 using Ofelia_Sara.Formularios;
 using System.ComponentModel;
+using Ofelia_Sara.general.clases;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Windows.Controls;
+using Clases.GenerarDocumentos;
+using System.IO;
+using Controles_Libreria.Controles;
+using System.Collections.Generic;
 
 
 
@@ -69,22 +76,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
             MayusculaSola.AplicarAControl(textBox_Imputado);
-            
+
             MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
         }
 
-     
 
-      
+
+
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
             MessageBox.Show("Formulario eliminado.");
-            
+
 
         }
 
@@ -141,7 +148,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (e.KeyChar == (char)Keys.Enter)
             {
                 // Obtiene el TextBox que disparó el evento
-                TextBox textBox = sender as TextBox;
+                System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
 
                 if (textBox != null)
                 {
@@ -179,7 +186,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                 // Mover el cursor al final del texto
                 textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
-               
+
             }
         }
 
@@ -190,6 +197,157 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
+        }
+        //--------------------------------------------------------------------------------------
+        //---Validar datos previo impresion 
+        private bool ValidarDatosFormulario()
+        {
+            //Verificar si los campos están completados
+            if (string.IsNullOrWhiteSpace(textBox_NumeroCargo.Text) ||
+                string.IsNullOrWhiteSpace(textBox_NumeroIpp.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Victima.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Imputado.Text))
+
+            {
+                // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
+                // crea ventana con icono de advertencia y titulo de advertencia
+                MessageBox.Show("Debe completar la totalidad de campos para generar el documento ", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false; // Indica que la validación falló
+            }
+            // validad Descripcion de la muestra
+            if (string.IsNullOrWhiteSpace(textBox_DescripcionMuestra.Text))
+            {
+                MessageBox.Show("Describa la muestra del cargo", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_DescripcionMuestra.Focus();
+                return false; // Detener el proceso si no hay texto válido
+            }
+
+
+            // Validar ComboBox FISCALIA
+            if (comboBox_Fiscalia.Items.Count == 0 ||
+                string.IsNullOrWhiteSpace(comboBox_Fiscalia.Text))
+            {
+                MessageBox.Show("Por favor, seleccione o ingrese una nacionalidad.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox_Fiscalia.Focus();
+                return false; // Detener el proceso si no hay selección válida
+            }
+
+            // Validar ComboBox Instructor
+            if (comboBox_Instructor.Items.Count == 0 ||
+                string.IsNullOrWhiteSpace(comboBox_Instructor.Text))
+            {
+                MessageBox.Show("Por favor, seleccione o ingrese un instructor.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox_Instructor.Focus();
+                return false; // Detener el proceso si no hay selección válida
+            }
+
+            // Validar ComboBox Secretario
+            if (comboBox_Secretario.Items.Count == 0 ||
+                string.IsNullOrWhiteSpace(comboBox_Secretario.Text))
+            {
+                MessageBox.Show("Por favor, seleccione o ingrese un Secretario.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox_Secretario.Focus();
+                return false; // Detener el proceso si no hay selección válida
+            }
+
+            // Validar ComboBox Dependencia
+            if (comboBox_Dependencia.Items.Count == 0 ||
+                string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+            {
+                MessageBox.Show("Por favor, seleccione o ingrese una Dependencia.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox_Dependencia.Focus();
+                return false; // Detener el proceso si no hay selección válida
+            }
+            return true; // Indica que la validación fue exitosa
+        }
+
+        //------------------------------------------------------------------------------------------------
+        //   METODO PARA OBTENER DATOS DEL FORMULARIO
+
+        public Dictionary<string, string> ObtenerDatosFormulario()
+        {
+            var datosFormulario = new Dictionary<string, string>();
+
+            // Verificar si los datos del formulario son válidos
+            if (datosFormulario == null)
+            {
+                // Detener la generación de documentos si hay algún error
+                return null;
+            }
+
+            
+
+            // Añadimos los valores de los controles al diccionario
+            datosFormulario.Add("Nombre", textBox_NumeroCargo.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("Nombre", textBox_NumeroIpp.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("Nombre", textBox_Caratula.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("Nombre", textBox_Victima.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("Nombre", textBox_Imputado.Text);  // "Nombre" es el marcador en Word
+         
+     
+            datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
+            datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
+            datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
+            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+
+        
+
+            return datosFormulario;
+        }
+        //------------------------------------------------------------------------------------
+        private void btn_Imprimir_Click(object sender, EventArgs e)
+        {
+            // Llamar al método de validación
+            if (!ValidarDatosFormulario())
+            {
+                return; // Detener el proceso si la validación falla
+            }
+
+            // Usar FolderBrowserDialog para obtener la ruta donde el usuario quiere guardar los documentos
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "Seleccione la carpeta donde desea guardar los documentos generados";
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Ruta donde el usuario quiere guardar los documentos
+                    string rutaCarpetaSalida = folderBrowserDialog.SelectedPath;
+
+                    // Obtener el texto de textBox_Apellido y formar el nombre de la carpeta
+                    string nombreCarpeta = $"Cargo {textBox_NumeroCargo.Text}";
+                    string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida, nombreCarpeta);
+
+                    // Crear la carpeta si no existe
+                    if (!Directory.Exists(rutaSubcarpeta))
+                    {
+                        Directory.CreateDirectory(rutaSubcarpeta);
+                    }
+
+                    // rutas de las plantillas-->DEBEN REEMPLASARSE A RUTAS RELATIVAS
+                    string rutaPlantillaCargo = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CARGO JUDICIAL.docx";
+                    string rutaPlantillaCadenaCustodia = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CADENA DE CUSTODIA.docx";
+                    string rutaPlantillaFaja = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\FAJA DE SECUESTRO.doc";
+
+                    // Obtener los datos del formulario
+                    var datosFormulario = ObtenerDatosFormulario();
+
+                    // Generar cada documento con su respectiva plantilla y guardarlo en la carpeta
+                    GeneradorDocumentos generador = new GeneradorDocumentos();
+                    generador.GenerarYGuardarDocumento(rutaPlantillaCargo, rutaSubcarpeta, "CARGO", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaCadenaCustodia, rutaSubcarpeta, "CADENA DE CUSTODIA", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaFaja, rutaSubcarpeta, "FAJA SECUESTRO", datosFormulario);
+
+                    // Mostrar mensaje de éxito
+                    // MessageBox.Show("Los documentos han sido generados correctamente.");
+
+                    MensajeCargarImprimir mensajeCargarImprimir = new MensajeCargarImprimir();
+                    mensajeCargarImprimir.ShowDialog();
+
+                    // Abrir la ubicación de la carpeta generada
+                    System.Diagnostics.Process.Start("explorer.exe", rutaSubcarpeta);
+                }
+            }
         }
     }
 }
