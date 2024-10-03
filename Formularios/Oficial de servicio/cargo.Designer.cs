@@ -37,6 +37,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox_Año = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Localidad = new System.Windows.Forms.Label();
+            this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -100,7 +102,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(86, 325);
+            this.label12.Location = new System.Drawing.Point(86, 353);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
             this.label12.Size = new System.Drawing.Size(283, 25);
@@ -109,7 +111,7 @@
             // 
             // textBox_DescripcionMuestra
             // 
-            this.textBox_DescripcionMuestra.Location = new System.Drawing.Point(40, 361);
+            this.textBox_DescripcionMuestra.Location = new System.Drawing.Point(40, 389);
             this.textBox_DescripcionMuestra.Multiline = true;
             this.textBox_DescripcionMuestra.Name = "textBox_DescripcionMuestra";
             this.textBox_DescripcionMuestra.Size = new System.Drawing.Size(393, 122);
@@ -151,6 +153,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.label_Localidad);
+            this.panel1.Controls.Add(this.comboBox_Localidad);
             this.panel1.Controls.Add(this.comboBox_Secretario);
             this.panel1.Controls.Add(this.comboBox_Instructor);
             this.panel1.Controls.Add(this.comboBox_Dependencia);
@@ -180,8 +184,32 @@
             this.panel1.Controls.Add(this.comboBox_Año);
             this.panel1.Location = new System.Drawing.Point(15, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 616);
+            this.panel1.Size = new System.Drawing.Size(470, 634);
             this.panel1.TabIndex = 33;
+            // 
+            // label_Localidad
+            // 
+            this.label_Localidad.AutoSize = true;
+            this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Localidad.Location = new System.Drawing.Point(52, 210);
+            this.label_Localidad.Name = "label_Localidad";
+            this.label_Localidad.Size = new System.Drawing.Size(70, 15);
+            this.label_Localidad.TabIndex = 64;
+            this.label_Localidad.Text = "Localidad";
+            // 
+            // comboBox_Localidad
+            // 
+            this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Localidad.FormattingEnabled = true;
+            this.comboBox_Localidad.Items.AddRange(new object[] {
+            "PINAMAR",
+            "VILLA GESELL",
+            "GRAL. MADARIAGA"});
+            this.comboBox_Localidad.Location = new System.Drawing.Point(129, 209);
+            this.comboBox_Localidad.Name = "comboBox_Localidad";
+            this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
+            this.comboBox_Localidad.TabIndex = 63;
+            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
             // 
             // comboBox_Secretario
             // 
@@ -193,7 +221,7 @@
             "Oficial Subinspector Martin Ali Bonato",
             "Sargento Nerea Sandoval",
             "Sargento Eleana Dirocco"});
-            this.comboBox_Secretario.Location = new System.Drawing.Point(129, 236);
+            this.comboBox_Secretario.Location = new System.Drawing.Point(129, 264);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Secretario.TabIndex = 13;
@@ -206,7 +234,7 @@
             "Comisario Miguel Moreno",
             "subcomisario Melisa Perea Peña",
             "Comisario Arias"});
-            this.comboBox_Instructor.Location = new System.Drawing.Point(129, 208);
+            this.comboBox_Instructor.Location = new System.Drawing.Point(129, 236);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Instructor.TabIndex = 12;
@@ -219,7 +247,7 @@
             "EPC II OSTENDE",
             "EPC III VALERIA DEL MAR",
             "EPC IV CARILÓ"});
-            this.comboBox_Dependencia.Location = new System.Drawing.Point(129, 263);
+            this.comboBox_Dependencia.Location = new System.Drawing.Point(129, 291);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Dependencia.TabIndex = 14;
@@ -242,7 +270,7 @@
             // 
             this.lbl_Dependencia.AutoSize = true;
             this.lbl_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dependencia.Location = new System.Drawing.Point(20, 264);
+            this.lbl_Dependencia.Location = new System.Drawing.Point(20, 292);
             this.lbl_Dependencia.Name = "lbl_Dependencia";
             this.lbl_Dependencia.Size = new System.Drawing.Size(104, 15);
             this.lbl_Dependencia.TabIndex = 62;
@@ -265,7 +293,7 @@
             // 
             this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Fecha.Location = new System.Drawing.Point(71, 290);
+            this.lbl_Fecha.Location = new System.Drawing.Point(71, 318);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(51, 15);
             this.lbl_Fecha.TabIndex = 61;
@@ -274,7 +302,7 @@
             // Fecha_Instruccion
             // 
             this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.Fecha_Instruccion.Location = new System.Drawing.Point(129, 290);
+            this.Fecha_Instruccion.Location = new System.Drawing.Point(129, 318);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 25);
@@ -284,7 +312,7 @@
             // 
             this.lbl_Secretario.AutoSize = true;
             this.lbl_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Secretario.Location = new System.Drawing.Point(31, 237);
+            this.lbl_Secretario.Location = new System.Drawing.Point(31, 265);
             this.lbl_Secretario.Name = "lbl_Secretario";
             this.lbl_Secretario.Size = new System.Drawing.Size(93, 15);
             this.lbl_Secretario.TabIndex = 60;
@@ -294,7 +322,7 @@
             // 
             this.lbl_Instructor.AutoSize = true;
             this.lbl_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Instructor.Location = new System.Drawing.Point(27, 208);
+            this.lbl_Instructor.Location = new System.Drawing.Point(27, 236);
             this.lbl_Instructor.Name = "lbl_Instructor";
             this.lbl_Instructor.Size = new System.Drawing.Size(95, 15);
             this.lbl_Instructor.TabIndex = 59;
@@ -565,7 +593,7 @@
             this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
-            this.btn_Imprimir.Location = new System.Drawing.Point(327, 503);
+            this.btn_Imprimir.Location = new System.Drawing.Point(327, 531);
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(106, 92);
             this.btn_Imprimir.TabIndex = 18;
@@ -578,7 +606,7 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(228, 516);
+            this.btn_Limpiar.Location = new System.Drawing.Point(228, 544);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 19;
@@ -591,7 +619,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(131, 516);
+            this.btn_Guardar.Location = new System.Drawing.Point(131, 544);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 17;
@@ -604,7 +632,7 @@
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(40, 516);
+            this.btn_Buscar.Location = new System.Drawing.Point(40, 544);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 22;
@@ -615,7 +643,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 677);
+            this.ClientSize = new System.Drawing.Size(506, 692);
             this.Controls.Add(this.panel1);
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -687,5 +715,7 @@
         private System.Windows.Forms.Label lbl_Ufid;
         private System.Windows.Forms.Label lbl_Dr;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label_Localidad;
+        private System.Windows.Forms.ComboBox comboBox_Localidad;
     }
 }
