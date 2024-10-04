@@ -109,10 +109,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 27, 17, 8, 5, 929);
-            // 
+            
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));

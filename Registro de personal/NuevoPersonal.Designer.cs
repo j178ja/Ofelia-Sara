@@ -101,10 +101,7 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 13, 17, 23, 3, 884);
-            // 
+           
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));

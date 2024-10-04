@@ -26,13 +26,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1.ApplyRoundedCorners(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             // Crear una instancia de TimePickerPersonalizado con tamaño especificado
-            TimePickerPersonalizado timePicker = new TimePickerPersonalizado(263, 26);
+            TimePickerPersonalizado fecha_Instruccion = new TimePickerPersonalizado(263, 26);
 
             // Establecer la ubicación del UserControl
-            timePicker.Location = new Point(150, 50);
+            fecha_Instruccion.Location = new Point(150, 50);
 
             // Agregar el UserControl al formulario
-            this.Controls.Add(timePicker);
+            this.Controls.Add(fecha_Instruccion);
         }
         // Implementación del método de la interfaz IFormulario
         public void Inicializar()

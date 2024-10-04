@@ -44,10 +44,7 @@
             this.panel_ControlesInferiores.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 13, 17, 10, 52, 236);
-            // 
+         
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;

@@ -210,7 +210,7 @@
             this.panel2.Controls.Add(this.btn_Cerrar);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(577, 34);
+            this.panel2.Size = new System.Drawing.Size(572, 34);
             this.panel2.TabIndex = 17;
             // 
             // btn_Mecanografia
@@ -451,7 +451,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(575, 237);
+            this.ClientSize = new System.Drawing.Size(572, 237);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

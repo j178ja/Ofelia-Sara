@@ -271,8 +271,8 @@ namespace Ofelia_Sara.Formularios
             Size menuPrincipalSize = this.Size;
 
             // Calcular la nueva ubicación para el formulario DocumentosForm
-            int x = menuPrincipalLocation.X; // Mantener la misma posición horizontal
-            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height; // Colocar justo debajo
+            int x = menuPrincipalLocation.X-6; // Mantener la misma posición horizontal
+            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height +10; // Colocar justo debajo
 
             // Ajustar la ubicación del formulario DocumentosForm
             leyesForm.StartPosition = FormStartPosition.Manual;
@@ -431,8 +431,8 @@ namespace Ofelia_Sara.Formularios
             Size menuPrincipalSize = this.Size;
 
             // Calcular la nueva ubicación para el formulario DocumentosForm
-            int x = menuPrincipalLocation.X; // Mantener la misma posición horizontal
-            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height; // Colocar justo debajo
+            int x = menuPrincipalLocation.X-6; // Mantener la misma posición horizontal
+            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height +10; // Colocar justo debajo
             
             // Ajustar la ubicación del formulario DocumentosForm
             videoInstructivo.StartPosition = FormStartPosition.Manual;
