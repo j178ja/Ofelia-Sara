@@ -83,10 +83,7 @@
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 9, 1, 14, 35, 30, 649);
-            // 
+          
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");

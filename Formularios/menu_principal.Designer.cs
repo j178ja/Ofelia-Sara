@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.PictureBox iconoEscudo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Expedientes = new System.Windows.Forms.Button();
@@ -39,6 +40,12 @@
             this.comboBox_Buscar = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Leyes = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Mecanografia = new System.Windows.Forms.Button();
+            this.btn_Minimizar = new System.Windows.Forms.Button();
+            this.label_MenuPrincipal = new System.Windows.Forms.Label();
+            this.label_OfeliaSara = new System.Windows.Forms.Label();
+            this.btn_Cerrar = new System.Windows.Forms.Button();
             this.menu_Configurar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aGREGARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSTRUCTORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,14 +68,23 @@
             this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            iconoEscudo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).BeginInit();
+            this.panel2.SuspendLayout();
             this.menu_Configurar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
+            // iconoEscudo
             // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 2, 17, 6, 33, 453);
+            iconoEscudo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
+            iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            iconoEscudo.Location = new System.Drawing.Point(1, 3);
+            iconoEscudo.Name = "iconoEscudo";
+            iconoEscudo.Size = new System.Drawing.Size(30, 28);
+            iconoEscudo.TabIndex = 18;
+            iconoEscudo.TabStop = false;
             // 
             // btn_InicioCierre
             // 
@@ -123,9 +139,9 @@
             this.panel1.Controls.Add(this.btn_Contravenciones);
             this.panel1.Controls.Add(this.btn_InicioCierre);
             this.panel1.Controls.Add(this.btn_Expedientes);
-            this.panel1.Location = new System.Drawing.Point(20, 15);
+            this.panel1.Location = new System.Drawing.Point(20, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(532, 137);
+            this.panel1.Size = new System.Drawing.Size(532, 147);
             this.panel1.TabIndex = 12;
             // 
             // btn_BuscarTarea
@@ -154,6 +170,7 @@
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
             this.toolTip1.SetToolTip(this.comboBox_Buscar, "Ingrese que tarea desea realizar");
+            this.comboBox_Buscar.MouseHover += new System.EventHandler(this.comboBox_Buscar_MouseHover);
             // 
             // btn_Configurar
             // 
@@ -181,6 +198,103 @@
             this.btn_Leyes.TabIndex = 1;
             this.btn_Leyes.TabStop = false;
             this.btn_Leyes.Click += new System.EventHandler(this.btn_Leyes_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel2.Controls.Add(this.btn_Mecanografia);
+            this.panel2.Controls.Add(this.btn_Minimizar);
+            this.panel2.Controls.Add(this.label_MenuPrincipal);
+            this.panel2.Controls.Add(iconoEscudo);
+            this.panel2.Controls.Add(this.label_OfeliaSara);
+            this.panel2.Controls.Add(this.btn_Cerrar);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(577, 34);
+            this.panel2.TabIndex = 17;
+            // 
+            // btn_Mecanografia
+            // 
+            this.btn_Mecanografia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Mecanografia.BackgroundImage")));
+            this.btn_Mecanografia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Mecanografia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Mecanografia.FlatAppearance.BorderSize = 0;
+            this.btn_Mecanografia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Mecanografia.Location = new System.Drawing.Point(440, 1);
+            this.btn_Mecanografia.Name = "btn_Mecanografia";
+            this.btn_Mecanografia.Size = new System.Drawing.Size(42, 32);
+            this.btn_Mecanografia.TabIndex = 21;
+            this.btn_Mecanografia.UseVisualStyleBackColor = true;
+            this.btn_Mecanografia.Click += new System.EventHandler(this.btn_Mecanografia_Click);
+            this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Mecanografia_MouseDown);
+            this.btn_Mecanografia.MouseLeave += new System.EventHandler(this.btn_Mecanografia_MouseLeave);
+            this.btn_Mecanografia.MouseHover += new System.EventHandler(this.btn_Mecanografia_MouseHover);
+            this.btn_Mecanografia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Mecanografia_MouseUp);
+            // 
+            // btn_Minimizar
+            // 
+            this.btn_Minimizar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Minimizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_Minimizar.FlatAppearance.BorderSize = 2;
+            this.btn_Minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Minimizar.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Minimizar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Minimizar.Location = new System.Drawing.Point(517, 5);
+            this.btn_Minimizar.Name = "btn_Minimizar";
+            this.btn_Minimizar.Size = new System.Drawing.Size(25, 25);
+            this.btn_Minimizar.TabIndex = 20;
+            this.btn_Minimizar.Text = "-";
+            this.btn_Minimizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.btn_Minimizar, "Minimizar");
+            this.btn_Minimizar.UseVisualStyleBackColor = false;
+            this.btn_Minimizar.Click += new System.EventHandler(this.btn_Minimizar_Click);
+            this.btn_Minimizar.MouseLeave += new System.EventHandler(this.btn_Minimizar_MouseLeave);
+            this.btn_Minimizar.MouseHover += new System.EventHandler(this.btn_Minimizar_MouseHover);
+            // 
+            // label_MenuPrincipal
+            // 
+            this.label_MenuPrincipal.AutoSize = true;
+            this.label_MenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MenuPrincipal.Location = new System.Drawing.Point(37, 9);
+            this.label_MenuPrincipal.Name = "label_MenuPrincipal";
+            this.label_MenuPrincipal.Size = new System.Drawing.Size(105, 18);
+            this.label_MenuPrincipal.TabIndex = 19;
+            this.label_MenuPrincipal.Text = "Menu Principal";
+            // 
+            // label_OfeliaSara
+            // 
+            this.label_OfeliaSara.AutoSize = true;
+            this.label_OfeliaSara.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_OfeliaSara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_OfeliaSara.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
+            this.label_OfeliaSara.Location = new System.Drawing.Point(230, 5);
+            this.label_OfeliaSara.Name = "label_OfeliaSara";
+            this.label_OfeliaSara.Size = new System.Drawing.Size(109, 26);
+            this.label_OfeliaSara.TabIndex = 16;
+            this.label_OfeliaSara.Text = "Ofelia - Sara";
+            this.toolTip1.SetToolTip(this.label_OfeliaSara, "Instructivo de la aplicación");
+            this.label_OfeliaSara.Click += new System.EventHandler(this.label_OfeliaSara_Click);
+            // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_Cerrar.FlatAppearance.BorderSize = 2;
+            this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Cerrar.Location = new System.Drawing.Point(544, 5);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(25, 25);
+            this.btn_Cerrar.TabIndex = 17;
+            this.btn_Cerrar.Text = "X";
+            this.toolTip1.SetToolTip(this.btn_Cerrar, "Cerrar");
+            this.btn_Cerrar.UseVisualStyleBackColor = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
+            this.btn_Cerrar.MouseLeave += new System.EventHandler(this.btn_Cerrar_MouseLeave);
+            this.btn_Cerrar.MouseHover += new System.EventHandler(this.btn_Cerrar_MouseHover);
             // 
             // menu_Configurar
             // 
@@ -337,9 +451,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(573, 189);
+            this.ClientSize = new System.Drawing.Size(575, 237);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(605, 647);
@@ -349,8 +464,12 @@
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.menu_Configurar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -388,6 +507,12 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox_Buscar;
         private System.Windows.Forms.Button btn_BuscarTarea;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_Cerrar;
+        private System.Windows.Forms.Label label_OfeliaSara;
+        private System.Windows.Forms.Label label_MenuPrincipal;
+        private System.Windows.Forms.Button btn_Minimizar;
+        private System.Windows.Forms.Button btn_Mecanografia;
     }    
  }
 

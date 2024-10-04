@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timePickerPersonalizado1 = new Controles_Libreria.Controles.TimePickerPersonalizado();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();

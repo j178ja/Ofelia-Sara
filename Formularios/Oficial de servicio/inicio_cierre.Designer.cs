@@ -93,10 +93,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Victima.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 24, 18, 43, 35, 659);
-            // 
+           
             // lbl_Dr
             // 
             this.lbl_Dr.AutoSize = true;

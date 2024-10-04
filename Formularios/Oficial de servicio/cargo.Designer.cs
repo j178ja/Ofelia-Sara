@@ -83,10 +83,7 @@
             this.panel_Victima.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 24, 15, 32, 34, 273);
-            // 
+            
             // label_Cargo
             // 
             this.label_Cargo.AutoSize = true;

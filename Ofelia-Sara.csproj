@@ -58,6 +58,9 @@
     <Reference Include="Aspose.Words.Pdf2Word, Version=24.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>packages\Aspose.Words.24.8.0\lib\net462\Aspose.Words.Pdf2Word.dll</HintPath>
     </Reference>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -69,6 +72,10 @@
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
@@ -290,6 +297,12 @@
     <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\VideoInstructivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VideoInstructivo.Designer.cs">
+      <DependentUpon>VideoInstructivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VideoInstructivo.resx">
+      <DependentUpon>VideoInstructivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensajes\MensajeCargarImprimir.resx">
       <DependentUpon>MensajeCargarImprimir.cs</DependentUpon>

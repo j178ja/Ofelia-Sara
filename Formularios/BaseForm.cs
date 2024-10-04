@@ -49,7 +49,7 @@ namespace Ofelia_Sara.Formularios
             IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/Resources/imagenes/IconoEscudoPolicia.ico");
 
             InitializeFooterLinkLabel();
-            this.timePickerPersonalizadoFecha = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            //this.timePickerPersonalizadoFecha = new Controles_Libreria.Controles.TimePickerPersonalizado();
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -58,13 +58,14 @@ namespace Ofelia_Sara.Formularios
                                                                          //-------------------------------------------------------------------------
 
             // Inicializa el panel principal
-            mainPanel = new Panel { Dock = DockStyle.Fill };
-            this.Controls.Add(mainPanel);
+            //mainPanel = new Panel { Dock = DockStyle.Fill };
+            /*mainPanel = new Panel { Dock = DockStyle.None };
+            this.Controls.Add(mainPanel);*/
 
             //this.Load += BaseForm_Load;
 
             this.Paint += new PaintEventHandler(BaseForm_Paint);
-            this.Load += new System.EventHandler(this.BaseForm_Load);
+            //this.Load += new System.EventHandler(this.BaseForm_Load);
 
             autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
             ConfigureTextBoxAutoComplete();
@@ -139,12 +140,6 @@ namespace Ofelia_Sara.Formularios
         }
 
 
-        //--------BOTON LIMPIAR FORMULARIO --------------------
-        private void Btn_Limpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-        }
-
 
         //-----METODO PARA MOSTRAR FOOTER-----------------------
         private void InitializeFooterLinkLabel()
@@ -167,13 +162,13 @@ namespace Ofelia_Sara.Formularios
         //    this.ResumeLayout(false);
 
         //}
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-            // Suponiendo que 'timePickerPersonalizadoFecha' es el nombre del control en el BaseForm
-            timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
+        //private void BaseForm_Load(object sender, EventArgs e)
+        //{
+        //    // Suponiendo que 'timePickerPersonalizadoFecha' es el nombre del control en el BaseForm
+        //    timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
 
 
-        }
+        //}
 
         //------------------------------------------------------------
         //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------

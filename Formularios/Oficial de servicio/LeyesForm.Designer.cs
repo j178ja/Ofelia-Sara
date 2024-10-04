@@ -34,9 +34,7 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 28, 14, 12, 11, 891);
+            
             // 
             // panel1
             // 

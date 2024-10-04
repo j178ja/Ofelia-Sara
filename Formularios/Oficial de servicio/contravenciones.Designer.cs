@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contravenciones));
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_DatosInfraccion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_ArtInfraccion = new System.Windows.Forms.Label();
+            this.label_FechaAudiencia = new System.Windows.Forms.Label();
+            this.label_Nombre = new System.Windows.Forms.Label();
+            this.label_Apellido = new System.Windows.Forms.Label();
+            this.label_Dni = new System.Windows.Forms.Label();
+            this.label_FechaNacimiento = new System.Windows.Forms.Label();
+            this.label_Domicilio = new System.Windows.Forms.Label();
+            this.label_Localidad = new System.Windows.Forms.Label();
+            this.label_Nacionalidad = new System.Windows.Forms.Label();
+            this.label_Edad = new System.Windows.Forms.Label();
             this.textBox_ArtInfraccion = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
@@ -49,11 +49,11 @@
             this.textBox_Edad = new System.Windows.Forms.TextBox();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
             this.textBox_Domicilio = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label_DatosInstruccion = new System.Windows.Forms.Label();
+            this.label_Secretario = new System.Windows.Forms.Label();
+            this.label_Instructor = new System.Windows.Forms.Label();
+            this.label_Dependencia = new System.Windows.Forms.Label();
+            this.label_Fecha = new System.Windows.Forms.Label();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -72,21 +72,17 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
+            // label_DatosInfraccion
             // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 7, 29, 22, 8, 20, 556);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(116, 33);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label1.Size = new System.Drawing.Size(282, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DATOS DE LA INFRACCION";
+            this.label_DatosInfraccion.AutoSize = true;
+            this.label_DatosInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DatosInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DatosInfraccion.Location = new System.Drawing.Point(116, 33);
+            this.label_DatosInfraccion.Name = "label_DatosInfraccion";
+            this.label_DatosInfraccion.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
+            this.label_DatosInfraccion.Size = new System.Drawing.Size(282, 28);
+            this.label_DatosInfraccion.TabIndex = 0;
+            this.label_DatosInfraccion.Text = "DATOS DE LA INFRACCION";
             // 
             // label2
             // 
@@ -100,105 +96,105 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "DATOS DEL INFRACTOR";
             // 
-            // label3
+            // label_ArtInfraccion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ART.";
+            this.label_ArtInfraccion.AutoSize = true;
+            this.label_ArtInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ArtInfraccion.Location = new System.Drawing.Point(43, 78);
+            this.label_ArtInfraccion.Name = "label_ArtInfraccion";
+            this.label_ArtInfraccion.Size = new System.Drawing.Size(37, 15);
+            this.label_ArtInfraccion.TabIndex = 2;
+            this.label_ArtInfraccion.Text = "ART.";
             // 
-            // label4
+            // label_FechaAudiencia
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "FECHA DE AUDIENCIA:";
+            this.label_FechaAudiencia.AutoSize = true;
+            this.label_FechaAudiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FechaAudiencia.Location = new System.Drawing.Point(43, 110);
+            this.label_FechaAudiencia.Name = "label_FechaAudiencia";
+            this.label_FechaAudiencia.Size = new System.Drawing.Size(154, 15);
+            this.label_FechaAudiencia.TabIndex = 3;
+            this.label_FechaAudiencia.Text = "FECHA DE AUDIENCIA:";
             // 
-            // label5
+            // label_Nombre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 206);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "NOMBRE";
+            this.label_Nombre.AutoSize = true;
+            this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Nombre.Location = new System.Drawing.Point(41, 206);
+            this.label_Nombre.Name = "label_Nombre";
+            this.label_Nombre.Size = new System.Drawing.Size(67, 15);
+            this.label_Nombre.TabIndex = 4;
+            this.label_Nombre.Text = "NOMBRE";
             // 
-            // label6
+            // label_Apellido
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 231);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "APELLIDO";
+            this.label_Apellido.AutoSize = true;
+            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Apellido.Location = new System.Drawing.Point(41, 231);
+            this.label_Apellido.Name = "label_Apellido";
+            this.label_Apellido.Size = new System.Drawing.Size(73, 15);
+            this.label_Apellido.TabIndex = 5;
+            this.label_Apellido.Text = "APELLIDO";
             // 
-            // label7
+            // label_Dni
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(41, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "D.N.I.";
+            this.label_Dni.AutoSize = true;
+            this.label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Dni.Location = new System.Drawing.Point(41, 259);
+            this.label_Dni.Name = "label_Dni";
+            this.label_Dni.Size = new System.Drawing.Size(43, 15);
+            this.label_Dni.TabIndex = 6;
+            this.label_Dni.Text = "D.N.I.";
             // 
-            // label8
+            // label_FechaNacimiento
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(41, 285);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "FECHA NACIMIENTO";
+            this.label_FechaNacimiento.AutoSize = true;
+            this.label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FechaNacimiento.Location = new System.Drawing.Point(41, 285);
+            this.label_FechaNacimiento.Name = "label_FechaNacimiento";
+            this.label_FechaNacimiento.Size = new System.Drawing.Size(139, 15);
+            this.label_FechaNacimiento.TabIndex = 7;
+            this.label_FechaNacimiento.Text = "FECHA NACIMIENTO";
             // 
-            // label10
+            // label_Domicilio
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(41, 309);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 15);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "DOMICILIO";
+            this.label_Domicilio.AutoSize = true;
+            this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Domicilio.Location = new System.Drawing.Point(41, 309);
+            this.label_Domicilio.Name = "label_Domicilio";
+            this.label_Domicilio.Size = new System.Drawing.Size(78, 15);
+            this.label_Domicilio.TabIndex = 9;
+            this.label_Domicilio.Text = "DOMICILIO";
             // 
-            // label11
+            // label_Localidad
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(396, 315);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 15);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "LOCALIDAD";
+            this.label_Localidad.AutoSize = true;
+            this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Localidad.Location = new System.Drawing.Point(396, 315);
+            this.label_Localidad.Name = "label_Localidad";
+            this.label_Localidad.Size = new System.Drawing.Size(82, 15);
+            this.label_Localidad.TabIndex = 10;
+            this.label_Localidad.Text = "LOCALIDAD";
             // 
-            // label12
+            // label_Nacionalidad
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(372, 288);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 15);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "NACIONALIDAD";
+            this.label_Nacionalidad.AutoSize = true;
+            this.label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Nacionalidad.Location = new System.Drawing.Point(372, 288);
+            this.label_Nacionalidad.Name = "label_Nacionalidad";
+            this.label_Nacionalidad.Size = new System.Drawing.Size(106, 15);
+            this.label_Nacionalidad.TabIndex = 11;
+            this.label_Nacionalidad.Text = "NACIONALIDAD";
             // 
-            // label9
+            // label_Edad
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(434, 259);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 15);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "EDAD";
+            this.label_Edad.AutoSize = true;
+            this.label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Edad.Location = new System.Drawing.Point(434, 259);
+            this.label_Edad.Name = "label_Edad";
+            this.label_Edad.Size = new System.Drawing.Size(44, 15);
+            this.label_Edad.TabIndex = 12;
+            this.label_Edad.Text = "EDAD";
             // 
             // textBox_ArtInfraccion
             // 
@@ -254,57 +250,57 @@
             this.textBox_Domicilio.Size = new System.Drawing.Size(241, 20);
             this.textBox_Domicilio.TabIndex = 11;
             // 
-            // label15
+            // label_DatosInstruccion
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(116, 352);
-            this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label15.Size = new System.Drawing.Size(295, 28);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "DATOS DE LA INSTRUCCION";
+            this.label_DatosInstruccion.AutoSize = true;
+            this.label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DatosInstruccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DatosInstruccion.Location = new System.Drawing.Point(116, 352);
+            this.label_DatosInstruccion.Name = "label_DatosInstruccion";
+            this.label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
+            this.label_DatosInstruccion.Size = new System.Drawing.Size(295, 28);
+            this.label_DatosInstruccion.TabIndex = 30;
+            this.label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCION";
             // 
-            // label16
+            // label_Secretario
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(43, 397);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 15);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "SECRETARIO";
+            this.label_Secretario.AutoSize = true;
+            this.label_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Secretario.Location = new System.Drawing.Point(43, 397);
+            this.label_Secretario.Name = "label_Secretario";
+            this.label_Secretario.Size = new System.Drawing.Size(93, 15);
+            this.label_Secretario.TabIndex = 31;
+            this.label_Secretario.Text = "SECRETARIO";
             // 
-            // label17
+            // label_Instructor
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(43, 424);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 15);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "INSTRUCTOR";
+            this.label_Instructor.AutoSize = true;
+            this.label_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Instructor.Location = new System.Drawing.Point(43, 424);
+            this.label_Instructor.Name = "label_Instructor";
+            this.label_Instructor.Size = new System.Drawing.Size(95, 15);
+            this.label_Instructor.TabIndex = 32;
+            this.label_Instructor.Text = "INSTRUCTOR";
             // 
-            // label18
+            // label_Dependencia
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(43, 451);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(104, 15);
-            this.label18.TabIndex = 33;
-            this.label18.Text = "DEPENDENCIA";
+            this.label_Dependencia.AutoSize = true;
+            this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Dependencia.Location = new System.Drawing.Point(43, 451);
+            this.label_Dependencia.Name = "label_Dependencia";
+            this.label_Dependencia.Size = new System.Drawing.Size(104, 15);
+            this.label_Dependencia.TabIndex = 33;
+            this.label_Dependencia.Text = "DEPENDENCIA";
             // 
-            // label19
+            // label_Fecha
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(43, 478);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 15);
-            this.label19.TabIndex = 34;
-            this.label19.Text = "FECHA";
+            this.label_Fecha.AutoSize = true;
+            this.label_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Fecha.Location = new System.Drawing.Point(43, 478);
+            this.label_Fecha.Name = "label_Fecha";
+            this.label_Fecha.Size = new System.Drawing.Size(51, 15);
+            this.label_Fecha.TabIndex = 34;
+            this.label_Fecha.Text = "FECHA";
             // 
             // comboBox_Secretario
             // 
@@ -401,31 +397,31 @@
             this.panel1.Controls.Add(this.FechaAudiencia);
             this.panel1.Controls.Add(this.textBox_Nombre);
             this.panel1.Controls.Add(this.btn_Imprimir);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_DatosInfraccion);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label_ArtInfraccion);
             this.panel1.Controls.Add(this.btn_Buscar);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label_FechaAudiencia);
             this.panel1.Controls.Add(this.btn_AgregarArtContravencion);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label_Nombre);
+            this.panel1.Controls.Add(this.label_Apellido);
+            this.panel1.Controls.Add(this.label_Dni);
+            this.panel1.Controls.Add(this.label_FechaNacimiento);
+            this.panel1.Controls.Add(this.label_Domicilio);
+            this.panel1.Controls.Add(this.label_Localidad);
             this.panel1.Controls.Add(this.comboBox_Dependencia);
-            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label_Nacionalidad);
             this.panel1.Controls.Add(this.comboBox_Instructor);
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label_Edad);
             this.panel1.Controls.Add(this.comboBox_Secretario);
             this.panel1.Controls.Add(this.textBox_ArtInfraccion);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label_Fecha);
+            this.panel1.Controls.Add(this.label_Dependencia);
+            this.panel1.Controls.Add(this.label_Instructor);
+            this.panel1.Controls.Add(this.label_Secretario);
+            this.panel1.Controls.Add(this.label_DatosInstruccion);
             this.panel1.Controls.Add(this.textBox_Apellido);
             this.panel1.Controls.Add(this.textBox_Domicilio);
             this.panel1.Controls.Add(this.textBox_Dni);
@@ -516,18 +512,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_DatosInfraccion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_ArtInfraccion;
+        private System.Windows.Forms.Label label_FechaAudiencia;
+        private System.Windows.Forms.Label label_Nombre;
+        private System.Windows.Forms.Label label_Apellido;
+        private System.Windows.Forms.Label label_Dni;
+        private System.Windows.Forms.Label label_FechaNacimiento;
+        private System.Windows.Forms.Label label_Domicilio;
+        private System.Windows.Forms.Label label_Localidad;
+        private System.Windows.Forms.Label label_Nacionalidad;
+        private System.Windows.Forms.Label label_Edad;
         private System.Windows.Forms.TextBox textBox_ArtInfraccion;
         private System.Windows.Forms.TextBox textBox_Nombre;
         private System.Windows.Forms.TextBox textBox_Apellido;
@@ -535,11 +531,11 @@
         private System.Windows.Forms.TextBox textBox_Edad;
         private System.Windows.Forms.TextBox textBox_Localidad;
         private System.Windows.Forms.TextBox textBox_Domicilio;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label_DatosInstruccion;
+        private System.Windows.Forms.Label label_Secretario;
+        private System.Windows.Forms.Label label_Instructor;
+        private System.Windows.Forms.Label label_Dependencia;
+        private System.Windows.Forms.Label label_Fecha;
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
