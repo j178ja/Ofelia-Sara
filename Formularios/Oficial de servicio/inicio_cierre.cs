@@ -33,8 +33,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
 
-        private int totalCampos;////declaracion de variables que se emplean para progressVerticalBar
-        private int camposCompletos;
         private ToolTip toolTip;
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;

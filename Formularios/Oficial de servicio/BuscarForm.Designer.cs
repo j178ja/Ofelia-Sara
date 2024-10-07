@@ -53,17 +53,14 @@
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Fecha_Actuacion = new Controles_Libreria.Controles.TimePickerPersonalizado();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 2, 9, 16, 39, 777);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.timePickerPersonalizado1);
+            this.panel1.Controls.Add(this.Fecha_Actuacion);
             this.panel1.Controls.Add(this.comboBox_Secretario);
             this.panel1.Controls.Add(this.comboBox_Instructor);
             this.panel1.Controls.Add(this.comboBox_Dependencia);
@@ -89,17 +86,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(536, 396);
             this.panel1.TabIndex = 2;
-            // 
-            // timePickerPersonalizado1
-            // 
-            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.timePickerPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timePickerPersonalizado1.Location = new System.Drawing.Point(142, 264);
-            this.timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 8, 6, 15, 6, 13, 359);
-            this.timePickerPersonalizado1.Size = new System.Drawing.Size(364, 30);
-            this.timePickerPersonalizado1.TabIndex = 29;
             // 
             // comboBox_Secretario
             // 
@@ -350,6 +336,14 @@
             this.label_Ipp.TabIndex = 0;
             this.label_Ipp.Text = "I.P.P.";
             // 
+            // Fecha_Actuacion
+            // 
+            this.Fecha_Actuacion.Location = new System.Drawing.Point(141, 267);
+            this.Fecha_Actuacion.Name = "Fecha_Actuacion";
+            this.Fecha_Actuacion.SelectedDate = new System.DateTime(2024, 10, 5, 20, 38, 40, 690);
+            this.Fecha_Actuacion.Size = new System.Drawing.Size(364, 27);
+            this.Fecha_Actuacion.TabIndex = 29;
+            // 
             // BuscarForm
             // 
             this.AcceptButton = this.btn_Buscar;
@@ -400,5 +394,6 @@
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
         private Controles_Libreria.Controles.TimePickerPersonalizado timePickerPersonalizado1;
+        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Actuacion;
     }
 }

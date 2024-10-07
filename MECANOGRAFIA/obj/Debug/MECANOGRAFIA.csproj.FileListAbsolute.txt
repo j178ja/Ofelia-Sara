@@ -1,0 +1,10 @@
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\MECANOGRAFIA.exe.config
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\MECANOGRAFIA.exe
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\MECANOGRAFIA.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.Mecanografia.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.Properties.Resources.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.GenerateResource.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.exe
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.pdb

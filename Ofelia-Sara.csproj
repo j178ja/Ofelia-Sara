@@ -459,6 +459,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Resources\iconoEscribiendo.png" />
+    <None Include="Resources\IconoEscudoPolicia.ico" />
     <Content Include="Resources\imagenes\ojoCerrado.png" />
     <None Include="Resources\imagenes\subir_documentos.png" />
     <None Include="Resources\imagenes\pdf.png" />
@@ -473,7 +474,6 @@
     <None Include="Resources\subir_documentos.png" />
     <None Include="Resources\subir_archivo.bmp" />
     <None Include="Resources\ICOes.png" />
-    <None Include="Resources\IconoEscudoPolicia.ico" />
     <None Include="Resources\borrar.png" />
     <None Include="Resources\borrar 24%281%29.png" />
     <None Include="Resources\doc.png" />
@@ -502,6 +502,10 @@
     <ProjectReference Include="Controles_Libreria\Controles.csproj">
       <Project>{327929eb-b2d3-43b1-9de2-e312b3b71f33}</Project>
       <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="MECANOGRAFIA\MECANOGRAFIA.csproj">
+      <Project>{f518907f-dccb-4960-807b-54f7bfbdba1c}</Project>
+      <Name>MECANOGRAFIA</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

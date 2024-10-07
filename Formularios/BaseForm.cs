@@ -49,7 +49,7 @@ namespace Ofelia_Sara.Formularios
             IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/Resources/imagenes/IconoEscudoPolicia.ico");
 
             InitializeFooterLinkLabel();
-            //this.timePickerPersonalizadoFecha = new Controles_Libreria.Controles.TimePickerPersonalizado();
+           
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -150,26 +150,7 @@ namespace Ofelia_Sara.Formularios
             this.Controls.Add(this.footerLinkLabel);
         }
 
-        //protected void InitializeComponent()
-        //{
-        //    this.SuspendLayout();
-        //    // 
-        //    // BaseForm
-        //    // 
-        //    this.ClientSize = new System.Drawing.Size(284, 261);
-        //    this.Name = "BaseForm";
-        //    this.Load += new System.EventHandler(this.BaseForm_Load);
-        //    this.ResumeLayout(false);
-
-        //}
-        //private void BaseForm_Load(object sender, EventArgs e)
-        //{
-        //    // Suponiendo que 'timePickerPersonalizadoFecha' es el nombre del control en el BaseForm
-        //    timePickerPersonalizadoFecha.SelectedDate = DateTime.Now;
-
-
-        //}
-
+ 
         //------------------------------------------------------------
         //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
         //-------BUSCAR----GUARDAR----LIMPIAR---------

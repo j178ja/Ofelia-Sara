@@ -40,7 +40,7 @@
             this.comboBox_Buscar = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Leyes = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_MenuSuperior = new System.Windows.Forms.Panel();
             this.btn_Mecanografia = new System.Windows.Forms.Button();
             this.btn_Minimizar = new System.Windows.Forms.Button();
             this.label_MenuPrincipal = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panel_MenuSuperior.SuspendLayout();
             this.menu_Configurar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,7 +156,7 @@
             this.btn_BuscarTarea.Size = new System.Drawing.Size(49, 51);
             this.btn_BuscarTarea.TabIndex = 15;
             this.btn_BuscarTarea.UseVisualStyleBackColor = true;
-            this.btn_BuscarTarea.Click += new System.EventHandler(this.btn_BuscarTarea_Click);
+            this.btn_BuscarTarea.Click += new System.EventHandler(this.Btn_BuscarTarea_Click);
             // 
             // comboBox_Buscar
             // 
@@ -170,7 +170,7 @@
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
             this.toolTip1.SetToolTip(this.comboBox_Buscar, "Ingrese que tarea desea realizar");
-            this.comboBox_Buscar.MouseHover += new System.EventHandler(this.comboBox_Buscar_MouseHover);
+            this.comboBox_Buscar.MouseHover += new System.EventHandler(this.ComboBox_Buscar_MouseHover);
             // 
             // btn_Configurar
             // 
@@ -185,7 +185,7 @@
             this.btn_Configurar.TabIndex = 13;
             this.toolTip1.SetToolTip(this.btn_Configurar, "Configuración formularios");
             this.btn_Configurar.UseVisualStyleBackColor = false;
-            this.btn_Configurar.Click += new System.EventHandler(this.btn_Configurar_Click);
+            this.btn_Configurar.Click += new System.EventHandler(this.Btn_Configurar_Click);
             // 
             // btn_Leyes
             // 
@@ -197,21 +197,21 @@
             this.btn_Leyes.Size = new System.Drawing.Size(32, 32);
             this.btn_Leyes.TabIndex = 1;
             this.btn_Leyes.TabStop = false;
-            this.btn_Leyes.Click += new System.EventHandler(this.btn_Leyes_Click);
+            this.btn_Leyes.Click += new System.EventHandler(this.Btn_Leyes_Click);
             // 
-            // panel2
+            // panel_MenuSuperior
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel2.Controls.Add(this.btn_Mecanografia);
-            this.panel2.Controls.Add(this.btn_Minimizar);
-            this.panel2.Controls.Add(this.label_MenuPrincipal);
-            this.panel2.Controls.Add(iconoEscudo);
-            this.panel2.Controls.Add(this.label_OfeliaSara);
-            this.panel2.Controls.Add(this.btn_Cerrar);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(572, 34);
-            this.panel2.TabIndex = 17;
+            this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel_MenuSuperior.Controls.Add(this.btn_Mecanografia);
+            this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
+            this.panel_MenuSuperior.Controls.Add(this.label_MenuPrincipal);
+            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
+            this.panel_MenuSuperior.Controls.Add(this.label_OfeliaSara);
+            this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
+            this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);
+            this.panel_MenuSuperior.Name = "panel_MenuSuperior";
+            this.panel_MenuSuperior.Size = new System.Drawing.Size(572, 34);
+            this.panel_MenuSuperior.TabIndex = 17;
             // 
             // btn_Mecanografia
             // 
@@ -225,11 +225,11 @@
             this.btn_Mecanografia.Size = new System.Drawing.Size(42, 32);
             this.btn_Mecanografia.TabIndex = 21;
             this.btn_Mecanografia.UseVisualStyleBackColor = true;
-            this.btn_Mecanografia.Click += new System.EventHandler(this.btn_Mecanografia_Click);
-            this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Mecanografia_MouseDown);
-            this.btn_Mecanografia.MouseLeave += new System.EventHandler(this.btn_Mecanografia_MouseLeave);
-            this.btn_Mecanografia.MouseHover += new System.EventHandler(this.btn_Mecanografia_MouseHover);
-            this.btn_Mecanografia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Mecanografia_MouseUp);
+            this.btn_Mecanografia.Click += new System.EventHandler(this.Btn_Mecanografia_Click);
+            this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_Mecanografia_MouseDown);
+            this.btn_Mecanografia.MouseLeave += new System.EventHandler(this.Btn_Mecanografia_MouseLeave);
+            this.btn_Mecanografia.MouseHover += new System.EventHandler(this.Btn_Mecanografia_MouseHover);
+            this.btn_Mecanografia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_Mecanografia_MouseUp);
             // 
             // btn_Minimizar
             // 
@@ -248,9 +248,9 @@
             this.btn_Minimizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip1.SetToolTip(this.btn_Minimizar, "Minimizar");
             this.btn_Minimizar.UseVisualStyleBackColor = false;
-            this.btn_Minimizar.Click += new System.EventHandler(this.btn_Minimizar_Click);
-            this.btn_Minimizar.MouseLeave += new System.EventHandler(this.btn_Minimizar_MouseLeave);
-            this.btn_Minimizar.MouseHover += new System.EventHandler(this.btn_Minimizar_MouseHover);
+            this.btn_Minimizar.Click += new System.EventHandler(this.Btn_Minimizar_Click);
+            this.btn_Minimizar.MouseLeave += new System.EventHandler(this.Btn_Minimizar_MouseLeave);
+            this.btn_Minimizar.MouseHover += new System.EventHandler(this.Btn_Minimizar_MouseHover);
             // 
             // label_MenuPrincipal
             // 
@@ -274,7 +274,7 @@
             this.label_OfeliaSara.TabIndex = 16;
             this.label_OfeliaSara.Text = "Ofelia - Sara";
             this.toolTip1.SetToolTip(this.label_OfeliaSara, "Instructivo de la aplicación");
-            this.label_OfeliaSara.Click += new System.EventHandler(this.label_OfeliaSara_Click);
+            this.label_OfeliaSara.Click += new System.EventHandler(this.Label_OfeliaSara_Click);
             // 
             // btn_Cerrar
             // 
@@ -292,9 +292,9 @@
             this.btn_Cerrar.Text = "X";
             this.toolTip1.SetToolTip(this.btn_Cerrar, "Cerrar");
             this.btn_Cerrar.UseVisualStyleBackColor = false;
-            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
-            this.btn_Cerrar.MouseLeave += new System.EventHandler(this.btn_Cerrar_MouseLeave);
-            this.btn_Cerrar.MouseHover += new System.EventHandler(this.btn_Cerrar_MouseHover);
+            this.btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
+            this.btn_Cerrar.MouseLeave += new System.EventHandler(this.Btn_Cerrar_MouseLeave);
+            this.btn_Cerrar.MouseHover += new System.EventHandler(this.Btn_Cerrar_MouseHover);
             // 
             // menu_Configurar
             // 
@@ -452,7 +452,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(572, 237);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel_MenuSuperior);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -464,12 +464,12 @@
             this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel_MenuSuperior, 0);
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel_MenuSuperior.ResumeLayout(false);
+            this.panel_MenuSuperior.PerformLayout();
             this.menu_Configurar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -507,7 +507,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox_Buscar;
         private System.Windows.Forms.Button btn_BuscarTarea;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_MenuSuperior;
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Label label_OfeliaSara;
         private System.Windows.Forms.Label label_MenuPrincipal;

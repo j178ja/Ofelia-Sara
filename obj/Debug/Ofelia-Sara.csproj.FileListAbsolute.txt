@@ -134,3 +134,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\secretarios.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Mensajes.MensajeGenerarDocumentos.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.VideoInstructivo.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.exe
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.exe.config

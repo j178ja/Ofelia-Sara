@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.ComponentModel;
 using Controles_Libreria.Barra_Busqueda;
 using System.Drawing.Drawing2D;
+using MECANOGRAFIA;
 
 namespace Ofelia_Sara.Formularios
 {
@@ -33,7 +34,7 @@ namespace Ofelia_Sara.Formularios
             InitializeComponent();
 
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);
-            posicionarMenu();
+            PosicionarMenu();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
@@ -58,7 +59,7 @@ namespace Ofelia_Sara.Formularios
        
         //_________________________________--________________________________
 
-        private void posicionarMenu()
+        private void PosicionarMenu()
         {
             // Obtener las dimensiones de la pantalla
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -105,7 +106,7 @@ namespace Ofelia_Sara.Formularios
 
 
         //------------BOTON CONFIGURAR--------------------------------------------------
-        private void btn_Configurar_Click(object sender, EventArgs e)
+        private void Btn_Configurar_Click(object sender, EventArgs e)
         {
             // Mostrar el ContextMenuStrip en la posición del botón
             Point botonPosicion = btn_Configurar.PointToScreen(Point.Empty);
@@ -218,7 +219,7 @@ namespace Ofelia_Sara.Formularios
         }
 
 
-        private void comboBox_Buscar_Validating(object sender, CancelEventArgs e)
+        private void ComboBox_Buscar_Validating(object sender, CancelEventArgs e)
         {
             if (!accionesManager.Acciones.Contains(comboBox_Buscar.Text))
             {
@@ -248,7 +249,7 @@ namespace Ofelia_Sara.Formularios
         //}
 
 
-        private void comboBox_Buscar_MouseHover(object sender, EventArgs e)
+        private void ComboBox_Buscar_MouseHover(object sender, EventArgs e)
         {
           MostrarPlaceholder();
         }
@@ -261,7 +262,7 @@ namespace Ofelia_Sara.Formularios
 
             //_________________________________________________________________________________
             //----------------BTON LEYES------------------------------
-            private void btn_Leyes_Click(object sender, EventArgs e)
+            private void Btn_Leyes_Click(object sender, EventArgs e)
         {
             // Crear e inicializar el formulario para mostrar documentos
             LeyesForm leyesForm = new LeyesForm();
@@ -281,7 +282,7 @@ namespace Ofelia_Sara.Formularios
             leyesForm.Show();
         }
 
-        private void btn_BuscarTarea_Click(object sender, EventArgs e)
+        private void Btn_BuscarTarea_Click(object sender, EventArgs e)
         {
             // Verificar si se ha seleccionado un formulario
             if (comboBox_Buscar.SelectedItem == null)
@@ -319,7 +320,7 @@ namespace Ofelia_Sara.Formularios
         //-------------------------------------------------------------------------------------
         //eventos para la barra menu
 
-        private void btn_Cerrar_Click(object sender, EventArgs e)
+        private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
             btn_Cerrar.ForeColor = SystemColors.Control;
@@ -333,14 +334,14 @@ namespace Ofelia_Sara.Formularios
             Application.Exit();   
         }
 
-        private void btn_Cerrar_MouseHover(object sender, EventArgs e)
+        private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.Lavender;
             btn_Cerrar.FlatAppearance.BorderSize = 1;
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
         }
 
-        private void btn_Cerrar_MouseLeave(object sender, EventArgs e)
+        private void Btn_Cerrar_MouseLeave(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = SystemColors.ButtonFace;
             btn_Cerrar.ForeColor = SystemColors.ControlDarkDark;
@@ -353,7 +354,7 @@ namespace Ofelia_Sara.Formularios
             timerMinimizarForm.Stop();
             this.WindowState = FormWindowState.Minimized;
         }
-        private void btn_Minimizar_Click(object sender, EventArgs e)
+        private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
             btn_Minimizar.BackColor = SystemColors.ActiveCaption;
             btn_Minimizar.ForeColor = SystemColors.Control;
@@ -363,13 +364,13 @@ namespace Ofelia_Sara.Formularios
             
         }
 
-        private void btn_Minimizar_MouseHover(object sender, EventArgs e)
+        private void Btn_Minimizar_MouseHover(object sender, EventArgs e)
         {
             btn_Minimizar.BackColor = Color.Lavender;
             btn_Minimizar.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
         }
 
-        private void btn_Minimizar_MouseLeave(object sender, EventArgs e)
+        private void Btn_Minimizar_MouseLeave(object sender, EventArgs e)
         {
             btn_Minimizar.BackColor = SystemColors.ButtonFace;
             btn_Minimizar.ForeColor = SystemColors.ControlDarkDark;
@@ -378,12 +379,32 @@ namespace Ofelia_Sara.Formularios
         }
         //--------------------------------------------------------------------------------
         //eventos para abrir aplicacion mecanografia
-        private void btn_Mecanografia_Click(object sender, EventArgs e)
+        private void Btn_Mecanografia_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente se agregara aplicacion para que puedas practicar tus actuaciones sumariales");
+           
+            // Crear e inicializar el formulario para mostrar documentos
+            Mecanografia mecanografia = new Mecanografia();
+
+            // Obtener la ubicación y tamaño del formulario principal
+            Point menuPrincipalLocation = this.Location;
+            Size menuPrincipalSize = this.Size;
+
+            // Obtener el tamaño del formulario Mecanografia
+            Size mecanografiaSize = mecanografia.Size;
+
+            // Calcular la nueva ubicación para el formulario 
+
+            int x = menuPrincipalLocation.X + (menuPrincipalSize.Width - mecanografiaSize.Width) / 2; // Centramos en el eje X
+            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10;
+
+            // Ajustar la ubicación del formulario 
+            mecanografia.StartPosition = FormStartPosition.Manual;
+            mecanografia.Location = new Point(x, y);
+
+            mecanografia.Show();
         }
 
-        private void btn_Mecanografia_MouseDown(object sender, MouseEventArgs e)
+        private void Btn_Mecanografia_MouseDown(object sender, MouseEventArgs e)
         {
             int reducedWidth = (int)(originalSizeMecanografia.Width * 0.85);
             int reducedHeight = (int)(originalSizeMecanografia.Height * 0.85);
@@ -397,7 +418,7 @@ namespace Ofelia_Sara.Formularios
           btn_Mecanografia.Location =new Point(originalLocationMecanografia.X + offsetX, originalLocationMecanografia.Y + offsetY);
         }
 
-        private void btn_Mecanografia_MouseUp(object sender, MouseEventArgs e)
+        private void Btn_Mecanografia_MouseUp(object sender, MouseEventArgs e)
         {
             // Restaurar el tamaño y la ubicación original
            
@@ -405,20 +426,20 @@ namespace Ofelia_Sara.Formularios
             btn_Mecanografia.Location = originalLocationMecanografia;
         }
 
-        private void btn_Mecanografia_MouseHover(object sender, EventArgs e)
+        private void Btn_Mecanografia_MouseHover(object sender, EventArgs e)
         {
             btn_Mecanografia.FlatAppearance.BorderSize = 1;
             btn_Mecanografia.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
         }
 
-        private void btn_Mecanografia_MouseLeave(object sender, EventArgs e)
+        private void Btn_Mecanografia_MouseLeave(object sender, EventArgs e)
         {
             btn_Mecanografia.FlatAppearance.BorderSize = 0;
             btn_Mecanografia.Size = originalSizeMecanografia;
 
         }
 
-        private void label_OfeliaSara_Click(object sender, EventArgs e)
+        private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
             label_OfeliaSara.ForeColor=Color.Coral;
             label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);//para subrayar
