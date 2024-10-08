@@ -96,7 +96,7 @@
             this.btn_InicioCierre.Name = "btn_InicioCierre";
             this.btn_InicioCierre.Size = new System.Drawing.Size(126, 34);
             this.btn_InicioCierre.TabIndex = 2;
-            this.btn_InicioCierre.Text = "INICIO-CIERRE";
+            this.btn_InicioCierre.Text = "I.P.P.";
             this.btn_InicioCierre.UseVisualStyleBackColor = false;
             this.btn_InicioCierre.Click += new System.EventHandler(this.Btn_InicioCierre_Click);
             // 

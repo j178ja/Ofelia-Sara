@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,7 +85,15 @@
     <Folder Include="TEXTOS\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\doc.png" />
+    <None Include="doc.png" />
     <Content Include="Para que sirve.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clases_Libreria\Clases.csproj">
+      <Project>{e38897e3-7b35-49cd-8922-42016bfbe38e}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
