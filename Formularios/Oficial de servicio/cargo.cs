@@ -3,9 +3,9 @@ using System;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing;
-using Clases_Libreria.Texto;
-using Clases_Libreria.Apariencia;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Clases.Apariencia;
+using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using System.ComponentModel;
 using Ofelia_Sara.general.clases;
@@ -13,9 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Windows.Controls;
 using Clases.GenerarDocumentos;
 using System.IO;
-using Controles_Libreria.Controles;
+using Controles.Controles;
 using System.Collections.Generic;
-using BaseDatos_Libreria.Entidades;
+using BaseDatos.Entidades;
 using System.Linq;
 
 

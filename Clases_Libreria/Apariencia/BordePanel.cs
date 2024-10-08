@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clases_Libreria.Apariencia
+namespace Clases.Apariencia
 {
     using System.Drawing;
     using System.Drawing.Drawing2D;

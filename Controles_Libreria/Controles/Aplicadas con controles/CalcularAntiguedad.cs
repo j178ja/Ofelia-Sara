@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controles_Libreria.Controles.Aplicadas_con_controles
+namespace Controles.Controles.Aplicadas_con_controles
 {
     public class CalcularAntiguedad
     {

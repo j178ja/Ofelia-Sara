@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Clases_Libreria.Apariencia;
-using Clases_Libreria.Botones;
-using Clases_Libreria.Texto;
-using Controles_Libreria.Controles;
-using Controles_Libreria.Controles.Aplicadas_con_controles;
+using Clases.Apariencia;
+using Clases.Botones;
+using Clases.Texto;
+using Controles.Controles;
+using Controles.Controles.Aplicadas_con_controles;
 
 
 

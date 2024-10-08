@@ -7,7 +7,7 @@ using Interfaces_Libreria.Interfaces;
 
 
 
-namespace Clases_Libreria.Apariencia
+namespace Clases.Apariencia
 {
     public static class FooterHelper
     {

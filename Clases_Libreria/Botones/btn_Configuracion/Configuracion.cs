@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Clases_Libreria.Botones.btn_Configuracion
+namespace Clases.Botones.btn_Configuracion
 {
     public class MenuConfigurar
     {

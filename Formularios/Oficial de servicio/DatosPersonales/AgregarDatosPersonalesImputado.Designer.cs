@@ -36,9 +36,9 @@
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.emailControl1 = new Controles_Libreria.Controles.EmailControl();
-            this.numeroTelefonicoControl = new Controles_Libreria.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.emailControl1 = new Controles.Controles.EmailControl();
+            this.numeroTelefonicoControl = new Controles.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -766,9 +766,9 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
-        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
-        private Controles_Libreria.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private Controles_Libreria.Controles.EmailControl emailControl1;
+        private Controles.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
+        private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
+        private Controles.Controles.EmailControl emailControl1;
         private System.Windows.Forms.Label label_LugarNacimiento;
         private System.Windows.Forms.TextBox textBox_LugarNacimiento;
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;

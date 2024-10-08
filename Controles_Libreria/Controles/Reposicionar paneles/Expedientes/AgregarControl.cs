@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Controles_Libreria.Controles.Reposicionar_paneles.Expedientes
+namespace Controles.Controles.Reposicionar_paneles.Expedientes
 {
     public class AgregarControl
     {

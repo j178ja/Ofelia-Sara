@@ -1,7 +1,7 @@
 ﻿
-using Clases_Libreria.Texto;
-using Controles_Libreria.Controles.Reposicionar_paneles.Buscar_Personal;
-using Clases_Libreria.Apariencia;
+using Clases.Texto;
+using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+using Clases.Apariencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
-using Controles_Libreria.Controles;
+using Controles.Controles;
 
 namespace Ofelia_Sara.Registro_de_personal
 {

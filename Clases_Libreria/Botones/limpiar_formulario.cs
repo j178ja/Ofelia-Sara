@@ -4,9 +4,10 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
-using Controles_Libreria.Controles;
+using Controles.Controles;
 
-namespace Clases_Libreria.Botones
+
+namespace Clases.Botones
 
 {
     public static class LimpiarFormulario

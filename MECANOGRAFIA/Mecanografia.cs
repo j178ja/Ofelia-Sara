@@ -11,6 +11,8 @@ using MECANOGRAFIA.Clases;
 
 namespace MECANOGRAFIA
 {
+    
+
     public partial class Mecanografia : Form
     {
         public Mecanografia()
@@ -23,6 +25,19 @@ namespace MECANOGRAFIA
             Texto_Tipear.Visible = false;
             btn_Iniciar.Visible = false;
             btn_Detener.Visible = false;
+
+            //para redondear dedos
+            RedondearPanel.AplicarBordesRedondeados(panel_PulgarDerecho, 20,10);
+            RedondearPanel.AplicarBordesRedondeados(panel_IndiceDerecho, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_MayorDerecho, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_AnularDerecho, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_MeniqueDerecho, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_PulgarIzquierdo, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_IndiceIzquierdo, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_MayorIzquierdo, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_AnularIzquierdo, 20, 10);
+            RedondearPanel.AplicarBordesRedondeados(panel_MeniqueIzquierdo, 20, 10);
+
         }
 
         private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
@@ -229,5 +244,9 @@ namespace MECANOGRAFIA
             }
          }
 
+        private void panel_Manos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

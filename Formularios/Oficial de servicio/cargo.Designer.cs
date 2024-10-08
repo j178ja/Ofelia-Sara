@@ -46,7 +46,7 @@
             this.lbl_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_AgenteFiscal = new System.Windows.Forms.ComboBox();
             this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Controles.Controles.TimePickerPersonalizado();
             this.lbl_Secretario = new System.Windows.Forms.Label();
             this.lbl_Instructor = new System.Windows.Forms.Label();
             this.lbl_Ufid = new System.Windows.Forms.Label();
@@ -706,7 +706,7 @@
         private System.Windows.Forms.Label lbl_Dependencia;
         private System.Windows.Forms.ComboBox comboBox_AgenteFiscal;
         private System.Windows.Forms.Label lbl_Fecha;
-        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
+        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label lbl_Secretario;
         private System.Windows.Forms.Label lbl_Instructor;
         private System.Windows.Forms.Label lbl_Ufid;

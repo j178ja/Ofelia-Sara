@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Controles_Libreria.Controles
+namespace Controles.Controles
 {
     partial class CustomDateTextBox
     {

@@ -10,12 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Clases_Libreria.Texto;
-using Clases_Libreria.Apariencia;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Clases.Apariencia;
+using Clases.Botones;
 using Ofelia_Sara.Formularios;
-using BaseDatos_Libreria.Entidades;
-using Clases_Libreria.Agregar_Componentes;
+using BaseDatos.Entidades;
+using Clases.Agregar_Componentes;
 using Interfaces_Libreria.Interfaces;
 
 namespace Ofelia_Sara.Agregar_Componentes

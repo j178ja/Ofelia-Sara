@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numeroTelefonicoControl2 = new Controles_Libreria.Controles.NumeroTelefonicoControl();
-            this.numeroTelefonicoControl1 = new Controles_Libreria.Controles.NumeroTelefonicoControl();
+            this.numeroTelefonicoControl2 = new Controles.Controles.NumeroTelefonicoControl();
+            this.numeroTelefonicoControl1 = new Controles.Controles.NumeroTelefonicoControl();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.textBox_PartidoPnal = new System.Windows.Forms.TextBox();
             this.label_PartidoPnal = new System.Windows.Forms.Label();
@@ -69,13 +69,13 @@
             this.label_DestinoLaboral = new System.Windows.Forms.Label();
             this.label_SituacionRevista = new System.Windows.Forms.Label();
             this.label_DatosPersonales = new System.Windows.Forms.Label();
-            this.dateTimePicker_Antiguedad = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.dateTimePicker_Antiguedad = new Controles.Controles.CustomDateTextBox();
             this.label_Ingreso = new System.Windows.Forms.Label();
             this.comboBox_Escalafon = new System.Windows.Forms.ComboBox();
             this.label_Subescalafon = new System.Windows.Forms.Label();
             this.comboBox_Jerarquia = new System.Windows.Forms.ComboBox();
             this.label_Jerarquia = new System.Windows.Forms.Label();
-            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDateTextBox();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
@@ -870,12 +870,12 @@
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Dni;
         private System.Windows.Forms.Label label_Nombre;
-        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
+        private Controles.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.Label label_Jerarquia;
         private System.Windows.Forms.ComboBox comboBox_Escalafon;
         private System.Windows.Forms.Label label_Subescalafon;
         private System.Windows.Forms.ComboBox comboBox_Jerarquia;
-        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_Antiguedad;
+        private Controles.Controles.CustomDateTextBox dateTimePicker_Antiguedad;
         private System.Windows.Forms.Label label_Ingreso;
         private System.Windows.Forms.Label label_DatosPersonales;
         private System.Windows.Forms.Label label_SituacionRevista;
@@ -914,7 +914,7 @@
         private System.Windows.Forms.TextBox textBox_PartidoPnal;
         private System.Windows.Forms.Label label_PartidoPnal;
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
-        private Controles_Libreria.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
-        private Controles_Libreria.Controles.NumeroTelefonicoControl numeroTelefonicoControl2;
+        private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
+        private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl2;
     }
 }

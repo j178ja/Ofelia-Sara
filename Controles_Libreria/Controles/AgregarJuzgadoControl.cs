@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Controles_Libreria.Controles
+namespace Controles.Controles
 {
     public partial class AgregarJuzgadoControl : UserControl
     {

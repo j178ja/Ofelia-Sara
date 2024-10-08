@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controles_Libreria.Barra_Busqueda
+namespace Controles.Barra_Busqueda
 {
     using System;
     using System.Collections.Generic;

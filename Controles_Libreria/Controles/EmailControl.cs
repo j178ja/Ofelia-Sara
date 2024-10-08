@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
-namespace Controles_Libreria.Controles
+namespace Controles.Controles
 {
     public partial class EmailControl : UserControl
     {

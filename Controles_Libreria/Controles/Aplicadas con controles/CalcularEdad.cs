@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Controles_Libreria.Controles.Aplicadas_con_controles
+namespace Controles.Controles.Aplicadas_con_controles
 {
     public static class CalcularEdad
     {

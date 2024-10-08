@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //using SkiaSharp;//biblioteca para efecto visual
 using System.Drawing.Imaging;
-using Clases_Libreria.Texto;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Clases.Botones;
 //using Ofelia_Sara.Base_de_Datos;
 using System.IO;
-using BaseDatos_Libreria.Entidades;
+using BaseDatos.Entidades;
 using Interfaces_Libreria.Interfaces;
-using Clases_Libreria.Apariencia;
+using Clases.Apariencia;
 using static System.Resources.ResXFileRef;
 using Ofelia_Sara.Formularios;
 

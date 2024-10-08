@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Clases_Libreria.Texto;
-using Controles_Libreria.Controles.Aplicadas_con_controles;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Controles.Controles.Aplicadas_con_controles;
+using Clases.Botones;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -69,9 +69,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
-            this.emailControl1 = new Controles_Libreria.Controles.EmailControl();
-            this.numeroTelefonicoControl1 = new Controles_Libreria.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.emailControl1 = new Controles.Controles.EmailControl();
+            this.numeroTelefonicoControl1 = new Controles.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDateTextBox();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();

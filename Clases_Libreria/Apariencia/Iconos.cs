@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace Clases_Libreria.Apariencia
+namespace Clases.Apariencia
 {
     public static class IconoEscudo
     {

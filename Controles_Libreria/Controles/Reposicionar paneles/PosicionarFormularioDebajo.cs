@@ -8,7 +8,7 @@ using System.Threading.Tasks;
     using System.Drawing;
     using System.Windows.Forms;
 
-    namespace Clases_Libreria.Reposicon_paneles
+    namespace Clases.Reposicon_paneles
     {
         public static class FormPositioner
         {

@@ -38,9 +38,9 @@
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.emailControl1 = new Controles_Libreria.Controles.EmailControl();
-            this.numeroTelefonicoControl = new Controles_Libreria.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.emailControl1 = new Controles.Controles.EmailControl();
+            this.numeroTelefonicoControl = new Controles.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDateTextBox();
             this.label_Email = new System.Windows.Forms.Label();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.textBox_Ocupacion = new System.Windows.Forms.TextBox();
@@ -488,9 +488,9 @@
         private System.Windows.Forms.Label label_EstadoCivil;
         private System.Windows.Forms.TextBox textBox_LugarNacimiento;
         private System.Windows.Forms.Label label_LugarNacimiento;
-        private Controles_Libreria.Controles.EmailControl emailControl1;
-        private Controles_Libreria.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private Controles_Libreria.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
+        private Controles.Controles.EmailControl emailControl1;
+        private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
+        private Controles.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Ocupacion;

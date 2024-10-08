@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clases_Libreria.Botones
+namespace Clases.Botones
 {
     public static class IncrementarTamaño
     {

@@ -51,11 +51,8 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\aa\Ofelia-Sara.resour
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\ko-KP\Ofelia-Sara.resources.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.Pdf2Word.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos_Libreria.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\caca.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases_Libreria.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles_Libreria.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Google.Protobuf.dll
@@ -86,10 +83,7 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Threading.Task
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.ValueTuple.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\ZstdSharp.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Microsoft.mshtml.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos_Libreria.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\caca.pdb
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases_Libreria.pdb
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles_Libreria.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.xml
@@ -137,3 +131,9 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formulari
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.exe.config
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles.pdb

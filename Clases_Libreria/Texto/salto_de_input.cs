@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Clases_Libreria.Texto
+namespace Clases.Texto
 {
     public class SaltoDeImput
     {

@@ -5,13 +5,14 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System.Linq;
-using Clases_Libreria.Botones.btn_Configuracion;
-using Clases_Libreria.Botones;
+using Clases.Botones.btn_Configuracion;
+using Clases.Botones;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.ComponentModel;
-using Controles_Libreria.Barra_Busqueda;
+using Controles.Barra_Busqueda;
 using System.Drawing.Drawing2D;
 using MECANOGRAFIA;
+
 
 namespace Ofelia_Sara.Formularios
 {
@@ -381,7 +382,12 @@ namespace Ofelia_Sara.Formularios
         //eventos para abrir aplicacion mecanografia
         private void Btn_Mecanografia_Click(object sender, EventArgs e)
         {
-           
+            // Desplazar el formulario menuPrincipal un 10% hacia abajo desde el borde superior de la pantalla
+            int newY = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.05); // 5% de la altura de la pantalla
+
+            // Cambiar la ubicación del formulario menuPrincipal
+            this.Location = new Point(this.Location.X, newY);
+
             // Crear e inicializar el formulario para mostrar documentos
             Mecanografia mecanografia = new Mecanografia();
 
@@ -403,6 +409,7 @@ namespace Ofelia_Sara.Formularios
 
             mecanografia.Show();
         }
+
 
         private void Btn_Mecanografia_MouseDown(object sender, MouseEventArgs e)
         {
@@ -444,8 +451,16 @@ namespace Ofelia_Sara.Formularios
             label_OfeliaSara.ForeColor=Color.Coral;
             label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);//para subrayar
 
-            // Crear e inicializar el formulario para mostrar el video
-            VideoInstructivo videoInstructivo = new VideoInstructivo();
+        
+                // Crear e inicializar el formulario para mostrar el video
+                VideoInstructivo videoInstructivo = new VideoInstructivo();
+
+            // Suscribirse al evento FormClosed para restaurar el Label
+            videoInstructivo.FormClosed += (s, args) =>
+            {
+                label_OfeliaSara.ForeColor = SystemColors.ControlText;
+                label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Eliminar subrayado
+            };
 
             // Obtener la ubicación y tamaño del formulario principal
             Point menuPrincipalLocation = this.Location;

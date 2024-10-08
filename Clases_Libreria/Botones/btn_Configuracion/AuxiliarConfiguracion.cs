@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using Ofelia_Sara;
-using Clases_Libreria.Reposicon_paneles;
+using Clases.Reposicon_paneles;
 using Interfaces_Libreria.Interfaces;
 
 
 
-namespace Clases_Libreria.Botones.btn_Configuracion
+namespace Clases.Botones.btn_Configuracion
 {
     public class AuxiliarConfiguracion
     {

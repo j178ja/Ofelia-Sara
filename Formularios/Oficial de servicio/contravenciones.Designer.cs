@@ -64,8 +64,8 @@
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
-            this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
-            this.Fecha_Nacimiento = new Controles_Libreria.Controles.CustomDateTextBox();
+            this.Fecha_Instruccion = new Controles.Controles.TimePickerPersonalizado();
+            this.Fecha_Nacimiento = new Controles.Controles.CustomDateTextBox();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.FechaAudiencia = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -548,8 +548,8 @@
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.DateTimePicker FechaAudiencia;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Controles_Libreria.Controles.CustomDateTextBox Fecha_Nacimiento;
-        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
+        private Controles.Controles.CustomDateTextBox Fecha_Nacimiento;
+        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
     }
 }

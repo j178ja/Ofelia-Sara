@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Clases_Libreria.Texto;
+using Clases.Texto;
 // Esta clase contiene métodos para convertir texto a mayúsculas y filtrar caracteres especiales y números.
 public static class TextoEnMayuscula
 {

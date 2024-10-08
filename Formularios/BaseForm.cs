@@ -4,10 +4,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System.IO;
-using BaseDatos_Libreria.Entidades;
-using Controles_Libreria.Controles;
-using Clases_Libreria.Apariencia;
-using Clases_Libreria.Botones;
+using BaseDatos.Entidades;
+using Controles.Controles;
+using Clases.Apariencia;
+using Clases.Botones;
 // Alias para el ShadowForm de tu propia clase
 
 

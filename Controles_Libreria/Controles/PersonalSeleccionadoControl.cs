@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces_Libreria.Interfaces;
-using Controles_Libreria.Controles.Reposicionar_paneles.Buscar_Personal;
+using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
 
 
 
 
 
-namespace Controles_Libreria.Controles
+namespace Controles.Controles
 {
     public partial class PersonalSeleccionadoControl : UserControl
     {

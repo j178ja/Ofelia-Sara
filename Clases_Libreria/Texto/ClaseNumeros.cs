@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Clases_Libreria.Texto;
+using Clases.Texto;
 using System.Windows.Forms;
 
 
-namespace Clases_Libreria.Texto
+namespace Clases.Texto
 {
     public class ClaseNumeros
     {

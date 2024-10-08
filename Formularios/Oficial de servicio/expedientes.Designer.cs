@@ -58,7 +58,7 @@
             this.label_DatosInstruccion = new System.Windows.Forms.Label();
             this.label_Instructor = new System.Windows.Forms.Label();
             this.label_Secretario = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Controles.Controles.TimePickerPersonalizado();
             this.label_Fecha = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -506,7 +506,7 @@
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
         private System.Windows.Forms.Label label_Dependencia;
         private System.Windows.Forms.Label label_Fecha;
-        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Instruccion;
+        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label label_Secretario;
         private System.Windows.Forms.Label label_Instructor;
         private System.Windows.Forms.TextBox textBox_Caratula;

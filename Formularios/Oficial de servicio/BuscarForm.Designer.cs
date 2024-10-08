@@ -53,7 +53,7 @@
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Fecha_Actuacion = new Controles_Libreria.Controles.TimePickerPersonalizado();
+            this.Fecha_Actuacion = new Controles.Controles.TimePickerPersonalizado();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -393,7 +393,7 @@
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private Controles_Libreria.Controles.TimePickerPersonalizado timePickerPersonalizado1;
-        private Controles_Libreria.Controles.TimePickerPersonalizado Fecha_Actuacion;
+        private Controles.Controles.TimePickerPersonalizado timePickerPersonalizado1;
+        private Controles.Controles.TimePickerPersonalizado Fecha_Actuacion;
     }
 }

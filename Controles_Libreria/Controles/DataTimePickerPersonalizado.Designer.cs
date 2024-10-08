@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Controles_Libreria.Controles
+namespace Controles.Controles
 {
     partial class TimePickerPersonalizado
     {

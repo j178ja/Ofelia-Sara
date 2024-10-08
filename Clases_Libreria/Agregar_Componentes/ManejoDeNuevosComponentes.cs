@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 
-namespace Clases_Libreria.Agregar_Componentes
+namespace Clases.Agregar_Componentes
 {
     public static class ComboBoxManager
     {

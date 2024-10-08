@@ -12,16 +12,16 @@ using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics;
 using System.Web.UI.WebControls.WebParts;
 using Ofelia_Sara.Registro_de_personal;
-//using Ofelia_Sara.Base_de_Datos;
+
 using Mysqlx.Cursor;
 using System.Text.Json;
 using System.Drawing.Drawing2D;
-using Clases_Libreria.Texto;
-using Clases_Libreria.Botones;
-using Clases_Libreria.Reposicon_paneles;
+using Clases.Texto;
+using Clases.Botones;
+using Clases.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
-using Controles_Libreria.Controles;
-using BaseDatos_Libreria.Entidades;
+using Controles.Controles;
+using BaseDatos.Entidades;
 
 
 

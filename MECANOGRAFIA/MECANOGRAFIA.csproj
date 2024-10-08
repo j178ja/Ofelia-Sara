@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Borde.cs" />
+    <Compile Include="Clases\Dedos.cs" />
     <Compile Include="Mecanografia.cs">
       <SubType>Form</SubType>
     </Compile>

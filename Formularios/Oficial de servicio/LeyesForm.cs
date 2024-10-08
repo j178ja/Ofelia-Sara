@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
-using Clases_Libreria.Apariencia;
+using Clases.Apariencia;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {

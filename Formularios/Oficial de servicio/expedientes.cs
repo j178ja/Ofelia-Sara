@@ -15,14 +15,14 @@ using Microsoft.Office.Interop.Word;
 using System.Linq;
 using Spire.Doc.Documents;
 using System.Collections.Generic;
-using Clases_Libreria.Texto;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Clases.Botones;
 using Clases.GenerarDocumentos;
-using Clases_Libreria.Reposicon_paneles;
+using Clases.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
-using Controles_Libreria.Controles;
+using Controles.Controles;
 using System.ComponentModel;
-using Controles_Libreria.Controles.Reposicionar_paneles.Expedientes;
+using Controles.Controles.Reposicionar_paneles.Expedientes;
 
 
 

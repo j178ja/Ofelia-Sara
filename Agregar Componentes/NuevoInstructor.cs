@@ -1,6 +1,6 @@
 ﻿
-using Clases_Libreria.Texto;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Clases.Botones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
-using BaseDatos_Libreria.Entidades;
+using BaseDatos.Entidades;
 using Interfaces_Libreria.Interfaces;
-using Clases_Libreria.Apariencia;
+using Clases.Apariencia;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {

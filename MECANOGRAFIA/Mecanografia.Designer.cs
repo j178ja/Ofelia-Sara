@@ -104,6 +104,7 @@
             this.rUEDADEAUXILIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hURTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOBOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eSTAFAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dECLARACIONESTESTIMONIALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTANDARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tESTIGOACTUACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,12 +114,22 @@
             this.panel_Especificaciones = new System.Windows.Forms.Panel();
             this.pictureBox_SelectArchivo = new System.Windows.Forms.PictureBox();
             this.panel_Manos = new System.Windows.Forms.Panel();
-            this.eSTAFAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_MeniqueIzquierdo = new System.Windows.Forms.Panel();
+            this.panel_AnularIzquierdo = new System.Windows.Forms.Panel();
+            this.panel_MayorIzquierdo = new System.Windows.Forms.Panel();
+            this.panel_IndiceIzquierdo = new System.Windows.Forms.Panel();
+            this.panel_MeniqueDerecho = new System.Windows.Forms.Panel();
+            this.panel_AnularDerecho = new System.Windows.Forms.Panel();
+            this.panel_MayorDerecho = new System.Windows.Forms.Panel();
+            this.panel_IndiceDerecho = new System.Windows.Forms.Panel();
+            this.panel_PulgarDerecho = new System.Windows.Forms.Panel();
+            this.panel_PulgarIzquierdo = new System.Windows.Forms.Panel();
             this.panel_Teclado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu_ElegirArchivos.SuspendLayout();
             this.panel_Especificaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelectArchivo)).BeginInit();
+            this.panel_Manos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Teclado
@@ -188,13 +199,13 @@
             this.panel_Teclado.Enabled = false;
             this.panel_Teclado.Location = new System.Drawing.Point(21, 242);
             this.panel_Teclado.Name = "panel_Teclado";
-            this.panel_Teclado.Size = new System.Drawing.Size(721, 170);
+            this.panel_Teclado.Size = new System.Drawing.Size(714, 170);
             this.panel_Teclado.TabIndex = 0;
             // 
             // btn_Enter
             // 
             this.btn_Enter.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Enter.Location = new System.Drawing.Point(642, 42);
+            this.btn_Enter.Location = new System.Drawing.Point(614, 41);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(27, 52);
             this.btn_Enter.TabIndex = 61;
@@ -203,7 +214,7 @@
             // 
             // btn_ControlDerecho
             // 
-            this.btn_ControlDerecho.Location = new System.Drawing.Point(612, 129);
+            this.btn_ControlDerecho.Location = new System.Drawing.Point(584, 128);
             this.btn_ControlDerecho.Name = "btn_ControlDerecho";
             this.btn_ControlDerecho.Size = new System.Drawing.Size(57, 23);
             this.btn_ControlDerecho.TabIndex = 60;
@@ -212,7 +223,7 @@
             // 
             // button60
             // 
-            this.button60.Location = new System.Drawing.Point(572, 129);
+            this.button60.Location = new System.Drawing.Point(544, 128);
             this.button60.Name = "button60";
             this.button60.Size = new System.Drawing.Size(34, 23);
             this.button60.TabIndex = 59;
@@ -221,7 +232,7 @@
             // 
             // btn_Fn
             // 
-            this.btn_Fn.Location = new System.Drawing.Point(534, 129);
+            this.btn_Fn.Location = new System.Drawing.Point(506, 128);
             this.btn_Fn.Name = "btn_Fn";
             this.btn_Fn.Size = new System.Drawing.Size(34, 23);
             this.btn_Fn.TabIndex = 58;
@@ -230,7 +241,7 @@
             // 
             // btn_AltGr
             // 
-            this.btn_AltGr.Location = new System.Drawing.Point(483, 129);
+            this.btn_AltGr.Location = new System.Drawing.Point(455, 128);
             this.btn_AltGr.Name = "btn_AltGr";
             this.btn_AltGr.Size = new System.Drawing.Size(45, 23);
             this.btn_AltGr.TabIndex = 57;
@@ -239,7 +250,7 @@
             // 
             // button57
             // 
-            this.button57.Location = new System.Drawing.Point(163, 129);
+            this.button57.Location = new System.Drawing.Point(135, 128);
             this.button57.Name = "button57";
             this.button57.Size = new System.Drawing.Size(41, 23);
             this.button57.TabIndex = 56;
@@ -248,7 +259,7 @@
             // 
             // button56
             // 
-            this.button56.Location = new System.Drawing.Point(208, 129);
+            this.button56.Location = new System.Drawing.Point(180, 128);
             this.button56.Name = "button56";
             this.button56.Size = new System.Drawing.Size(57, 23);
             this.button56.TabIndex = 55;
@@ -257,7 +268,7 @@
             // 
             // btn_ControlIzquierdo
             // 
-            this.btn_ControlIzquierdo.Location = new System.Drawing.Point(100, 129);
+            this.btn_ControlIzquierdo.Location = new System.Drawing.Point(72, 128);
             this.btn_ControlIzquierdo.Name = "btn_ControlIzquierdo";
             this.btn_ControlIzquierdo.Size = new System.Drawing.Size(57, 23);
             this.btn_ControlIzquierdo.TabIndex = 54;
@@ -266,7 +277,7 @@
             // 
             // btn_ShiftIzquierdo
             // 
-            this.btn_ShiftIzquierdo.Location = new System.Drawing.Point(100, 100);
+            this.btn_ShiftIzquierdo.Location = new System.Drawing.Point(72, 99);
             this.btn_ShiftIzquierdo.Name = "btn_ShiftIzquierdo";
             this.btn_ShiftIzquierdo.Size = new System.Drawing.Size(34, 23);
             this.btn_ShiftIzquierdo.TabIndex = 53;
@@ -276,7 +287,7 @@
             // btn_ShiftDerecho
             // 
             this.btn_ShiftDerecho.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ShiftDerecho.Location = new System.Drawing.Point(580, 100);
+            this.btn_ShiftDerecho.Location = new System.Drawing.Point(552, 99);
             this.btn_ShiftDerecho.Name = "btn_ShiftDerecho";
             this.btn_ShiftDerecho.Size = new System.Drawing.Size(89, 23);
             this.btn_ShiftDerecho.TabIndex = 52;
@@ -285,7 +296,7 @@
             // 
             // button51
             // 
-            this.button51.Location = new System.Drawing.Point(603, 71);
+            this.button51.Location = new System.Drawing.Point(575, 70);
             this.button51.Name = "button51";
             this.button51.Size = new System.Drawing.Size(34, 23);
             this.button51.TabIndex = 51;
@@ -294,7 +305,7 @@
             // 
             // button52
             // 
-            this.button52.Location = new System.Drawing.Point(563, 71);
+            this.button52.Location = new System.Drawing.Point(535, 70);
             this.button52.Name = "button52";
             this.button52.Size = new System.Drawing.Size(34, 23);
             this.button52.TabIndex = 50;
@@ -303,7 +314,7 @@
             // 
             // button49
             // 
-            this.button49.Location = new System.Drawing.Point(591, 42);
+            this.button49.Location = new System.Drawing.Point(563, 41);
             this.button49.Name = "button49";
             this.button49.Size = new System.Drawing.Size(34, 23);
             this.button49.TabIndex = 49;
@@ -312,7 +323,7 @@
             // 
             // button50
             // 
-            this.button50.Location = new System.Drawing.Point(551, 42);
+            this.button50.Location = new System.Drawing.Point(523, 41);
             this.button50.Name = "button50";
             this.button50.Size = new System.Drawing.Size(34, 23);
             this.button50.TabIndex = 48;
@@ -321,7 +332,7 @@
             // 
             // btn_Borrar
             // 
-            this.btn_Borrar.Location = new System.Drawing.Point(617, 13);
+            this.btn_Borrar.Location = new System.Drawing.Point(589, 12);
             this.btn_Borrar.Name = "btn_Borrar";
             this.btn_Borrar.Size = new System.Drawing.Size(52, 23);
             this.btn_Borrar.TabIndex = 47;
@@ -330,7 +341,7 @@
             // 
             // button46
             // 
-            this.button46.Location = new System.Drawing.Point(577, 13);
+            this.button46.Location = new System.Drawing.Point(549, 12);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(34, 23);
             this.button46.TabIndex = 46;
@@ -339,7 +350,7 @@
             // 
             // button47
             // 
-            this.button47.Location = new System.Drawing.Point(537, 13);
+            this.button47.Location = new System.Drawing.Point(509, 12);
             this.button47.Name = "button47";
             this.button47.Size = new System.Drawing.Size(34, 23);
             this.button47.TabIndex = 45;
@@ -348,7 +359,7 @@
             // 
             // button45
             // 
-            this.button45.Location = new System.Drawing.Point(100, 13);
+            this.button45.Location = new System.Drawing.Point(72, 12);
             this.button45.Name = "button45";
             this.button45.Size = new System.Drawing.Size(34, 23);
             this.button45.TabIndex = 44;
@@ -358,7 +369,7 @@
             // btn_Tabulacion
             // 
             this.btn_Tabulacion.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tabulacion.Location = new System.Drawing.Point(100, 42);
+            this.btn_Tabulacion.Location = new System.Drawing.Point(72, 41);
             this.btn_Tabulacion.Name = "btn_Tabulacion";
             this.btn_Tabulacion.Size = new System.Drawing.Size(45, 23);
             this.btn_Tabulacion.TabIndex = 43;
@@ -368,7 +379,7 @@
             // btn_Mayuscula
             // 
             this.btn_Mayuscula.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Mayuscula.Location = new System.Drawing.Point(100, 71);
+            this.btn_Mayuscula.Location = new System.Drawing.Point(72, 70);
             this.btn_Mayuscula.Name = "btn_Mayuscula";
             this.btn_Mayuscula.Size = new System.Drawing.Size(57, 23);
             this.btn_Mayuscula.TabIndex = 42;
@@ -377,7 +388,7 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(138, 100);
+            this.button42.Location = new System.Drawing.Point(110, 99);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(34, 23);
             this.button42.TabIndex = 41;
@@ -386,7 +397,7 @@
             // 
             // btn_Espacio
             // 
-            this.btn_Espacio.Location = new System.Drawing.Point(271, 129);
+            this.btn_Espacio.Location = new System.Drawing.Point(243, 128);
             this.btn_Espacio.Name = "btn_Espacio";
             this.btn_Espacio.Size = new System.Drawing.Size(206, 23);
             this.btn_Espacio.TabIndex = 40;
@@ -395,7 +406,7 @@
             // 
             // button31
             // 
-            this.button31.Location = new System.Drawing.Point(538, 100);
+            this.button31.Location = new System.Drawing.Point(510, 99);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(34, 23);
             this.button31.TabIndex = 39;
@@ -404,7 +415,7 @@
             // 
             // button32
             // 
-            this.button32.Location = new System.Drawing.Point(498, 100);
+            this.button32.Location = new System.Drawing.Point(470, 99);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(34, 23);
             this.button32.TabIndex = 38;
@@ -413,7 +424,7 @@
             // 
             // button33
             // 
-            this.button33.Location = new System.Drawing.Point(458, 100);
+            this.button33.Location = new System.Drawing.Point(430, 99);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(34, 23);
             this.button33.TabIndex = 37;
@@ -422,7 +433,7 @@
             // 
             // btn_M
             // 
-            this.btn_M.Location = new System.Drawing.Point(418, 100);
+            this.btn_M.Location = new System.Drawing.Point(390, 99);
             this.btn_M.Name = "btn_M";
             this.btn_M.Size = new System.Drawing.Size(34, 23);
             this.btn_M.TabIndex = 36;
@@ -431,7 +442,7 @@
             // 
             // btn_N
             // 
-            this.btn_N.Location = new System.Drawing.Point(378, 100);
+            this.btn_N.Location = new System.Drawing.Point(350, 99);
             this.btn_N.Name = "btn_N";
             this.btn_N.Size = new System.Drawing.Size(34, 23);
             this.btn_N.TabIndex = 35;
@@ -440,7 +451,7 @@
             // 
             // btn_B
             // 
-            this.btn_B.Location = new System.Drawing.Point(338, 100);
+            this.btn_B.Location = new System.Drawing.Point(310, 99);
             this.btn_B.Name = "btn_B";
             this.btn_B.Size = new System.Drawing.Size(34, 23);
             this.btn_B.TabIndex = 34;
@@ -449,7 +460,7 @@
             // 
             // btn_V
             // 
-            this.btn_V.Location = new System.Drawing.Point(298, 100);
+            this.btn_V.Location = new System.Drawing.Point(270, 99);
             this.btn_V.Name = "btn_V";
             this.btn_V.Size = new System.Drawing.Size(34, 23);
             this.btn_V.TabIndex = 33;
@@ -458,7 +469,7 @@
             // 
             // btn_C
             // 
-            this.btn_C.Location = new System.Drawing.Point(258, 100);
+            this.btn_C.Location = new System.Drawing.Point(230, 99);
             this.btn_C.Name = "btn_C";
             this.btn_C.Size = new System.Drawing.Size(34, 23);
             this.btn_C.TabIndex = 32;
@@ -467,7 +478,7 @@
             // 
             // btn_X
             // 
-            this.btn_X.Location = new System.Drawing.Point(218, 100);
+            this.btn_X.Location = new System.Drawing.Point(190, 99);
             this.btn_X.Name = "btn_X";
             this.btn_X.Size = new System.Drawing.Size(34, 23);
             this.btn_X.TabIndex = 31;
@@ -476,7 +487,7 @@
             // 
             // btn_Z
             // 
-            this.btn_Z.Location = new System.Drawing.Point(178, 100);
+            this.btn_Z.Location = new System.Drawing.Point(150, 99);
             this.btn_Z.Name = "btn_Z";
             this.btn_Z.Size = new System.Drawing.Size(34, 23);
             this.btn_Z.TabIndex = 30;
@@ -485,7 +496,7 @@
             // 
             // btn_Ñ
             // 
-            this.btn_Ñ.Location = new System.Drawing.Point(523, 71);
+            this.btn_Ñ.Location = new System.Drawing.Point(495, 70);
             this.btn_Ñ.Name = "btn_Ñ";
             this.btn_Ñ.Size = new System.Drawing.Size(34, 23);
             this.btn_Ñ.TabIndex = 29;
@@ -494,7 +505,7 @@
             // 
             // btn_L
             // 
-            this.btn_L.Location = new System.Drawing.Point(483, 71);
+            this.btn_L.Location = new System.Drawing.Point(455, 70);
             this.btn_L.Name = "btn_L";
             this.btn_L.Size = new System.Drawing.Size(34, 23);
             this.btn_L.TabIndex = 28;
@@ -503,7 +514,7 @@
             // 
             // btn_K
             // 
-            this.btn_K.Location = new System.Drawing.Point(443, 71);
+            this.btn_K.Location = new System.Drawing.Point(415, 70);
             this.btn_K.Name = "btn_K";
             this.btn_K.Size = new System.Drawing.Size(34, 23);
             this.btn_K.TabIndex = 27;
@@ -512,7 +523,7 @@
             // 
             // btn_J
             // 
-            this.btn_J.Location = new System.Drawing.Point(403, 71);
+            this.btn_J.Location = new System.Drawing.Point(375, 70);
             this.btn_J.Name = "btn_J";
             this.btn_J.Size = new System.Drawing.Size(34, 23);
             this.btn_J.TabIndex = 26;
@@ -521,7 +532,7 @@
             // 
             // btn_H
             // 
-            this.btn_H.Location = new System.Drawing.Point(363, 71);
+            this.btn_H.Location = new System.Drawing.Point(335, 70);
             this.btn_H.Name = "btn_H";
             this.btn_H.Size = new System.Drawing.Size(34, 23);
             this.btn_H.TabIndex = 25;
@@ -530,7 +541,7 @@
             // 
             // btn_G
             // 
-            this.btn_G.Location = new System.Drawing.Point(323, 71);
+            this.btn_G.Location = new System.Drawing.Point(295, 70);
             this.btn_G.Name = "btn_G";
             this.btn_G.Size = new System.Drawing.Size(34, 23);
             this.btn_G.TabIndex = 24;
@@ -539,7 +550,7 @@
             // 
             // btn_F
             // 
-            this.btn_F.Location = new System.Drawing.Point(283, 71);
+            this.btn_F.Location = new System.Drawing.Point(255, 70);
             this.btn_F.Name = "btn_F";
             this.btn_F.Size = new System.Drawing.Size(34, 23);
             this.btn_F.TabIndex = 23;
@@ -548,7 +559,7 @@
             // 
             // btn_D
             // 
-            this.btn_D.Location = new System.Drawing.Point(243, 71);
+            this.btn_D.Location = new System.Drawing.Point(215, 70);
             this.btn_D.Name = "btn_D";
             this.btn_D.Size = new System.Drawing.Size(34, 23);
             this.btn_D.TabIndex = 22;
@@ -557,7 +568,7 @@
             // 
             // btn_S
             // 
-            this.btn_S.Location = new System.Drawing.Point(203, 71);
+            this.btn_S.Location = new System.Drawing.Point(175, 70);
             this.btn_S.Name = "btn_S";
             this.btn_S.Size = new System.Drawing.Size(34, 23);
             this.btn_S.TabIndex = 21;
@@ -566,7 +577,7 @@
             // 
             // btn_A
             // 
-            this.btn_A.Location = new System.Drawing.Point(163, 71);
+            this.btn_A.Location = new System.Drawing.Point(135, 70);
             this.btn_A.Name = "btn_A";
             this.btn_A.Size = new System.Drawing.Size(34, 23);
             this.btn_A.TabIndex = 20;
@@ -575,7 +586,7 @@
             // 
             // btn_P
             // 
-            this.btn_P.Location = new System.Drawing.Point(511, 42);
+            this.btn_P.Location = new System.Drawing.Point(483, 41);
             this.btn_P.Name = "btn_P";
             this.btn_P.Size = new System.Drawing.Size(34, 23);
             this.btn_P.TabIndex = 19;
@@ -584,7 +595,7 @@
             // 
             // btn_O
             // 
-            this.btn_O.Location = new System.Drawing.Point(471, 42);
+            this.btn_O.Location = new System.Drawing.Point(443, 41);
             this.btn_O.Name = "btn_O";
             this.btn_O.Size = new System.Drawing.Size(34, 23);
             this.btn_O.TabIndex = 18;
@@ -593,7 +604,7 @@
             // 
             // btn_I
             // 
-            this.btn_I.Location = new System.Drawing.Point(431, 42);
+            this.btn_I.Location = new System.Drawing.Point(403, 41);
             this.btn_I.Name = "btn_I";
             this.btn_I.Size = new System.Drawing.Size(34, 23);
             this.btn_I.TabIndex = 17;
@@ -602,7 +613,7 @@
             // 
             // btn_U
             // 
-            this.btn_U.Location = new System.Drawing.Point(391, 42);
+            this.btn_U.Location = new System.Drawing.Point(363, 41);
             this.btn_U.Name = "btn_U";
             this.btn_U.Size = new System.Drawing.Size(34, 23);
             this.btn_U.TabIndex = 16;
@@ -611,7 +622,7 @@
             // 
             // btn_Y
             // 
-            this.btn_Y.Location = new System.Drawing.Point(351, 42);
+            this.btn_Y.Location = new System.Drawing.Point(323, 41);
             this.btn_Y.Name = "btn_Y";
             this.btn_Y.Size = new System.Drawing.Size(34, 23);
             this.btn_Y.TabIndex = 15;
@@ -620,7 +631,7 @@
             // 
             // btn_T
             // 
-            this.btn_T.Location = new System.Drawing.Point(311, 42);
+            this.btn_T.Location = new System.Drawing.Point(283, 41);
             this.btn_T.Name = "btn_T";
             this.btn_T.Size = new System.Drawing.Size(34, 23);
             this.btn_T.TabIndex = 14;
@@ -629,7 +640,7 @@
             // 
             // btn_R
             // 
-            this.btn_R.Location = new System.Drawing.Point(271, 42);
+            this.btn_R.Location = new System.Drawing.Point(243, 41);
             this.btn_R.Name = "btn_R";
             this.btn_R.Size = new System.Drawing.Size(34, 23);
             this.btn_R.TabIndex = 13;
@@ -638,7 +649,7 @@
             // 
             // btn_E
             // 
-            this.btn_E.Location = new System.Drawing.Point(231, 42);
+            this.btn_E.Location = new System.Drawing.Point(203, 41);
             this.btn_E.Name = "btn_E";
             this.btn_E.Size = new System.Drawing.Size(34, 23);
             this.btn_E.TabIndex = 12;
@@ -647,7 +658,7 @@
             // 
             // btn_W
             // 
-            this.btn_W.Location = new System.Drawing.Point(191, 42);
+            this.btn_W.Location = new System.Drawing.Point(163, 41);
             this.btn_W.Name = "btn_W";
             this.btn_W.Size = new System.Drawing.Size(34, 23);
             this.btn_W.TabIndex = 11;
@@ -656,7 +667,7 @@
             // 
             // btn_Q
             // 
-            this.btn_Q.Location = new System.Drawing.Point(151, 42);
+            this.btn_Q.Location = new System.Drawing.Point(123, 41);
             this.btn_Q.Name = "btn_Q";
             this.btn_Q.Size = new System.Drawing.Size(34, 23);
             this.btn_Q.TabIndex = 10;
@@ -665,7 +676,7 @@
             // 
             // btn_0
             // 
-            this.btn_0.Location = new System.Drawing.Point(498, 13);
+            this.btn_0.Location = new System.Drawing.Point(470, 12);
             this.btn_0.Name = "btn_0";
             this.btn_0.Size = new System.Drawing.Size(34, 23);
             this.btn_0.TabIndex = 9;
@@ -674,7 +685,7 @@
             // 
             // btn_9
             // 
-            this.btn_9.Location = new System.Drawing.Point(458, 13);
+            this.btn_9.Location = new System.Drawing.Point(430, 12);
             this.btn_9.Name = "btn_9";
             this.btn_9.Size = new System.Drawing.Size(34, 23);
             this.btn_9.TabIndex = 8;
@@ -683,7 +694,7 @@
             // 
             // btn_8
             // 
-            this.btn_8.Location = new System.Drawing.Point(418, 13);
+            this.btn_8.Location = new System.Drawing.Point(390, 12);
             this.btn_8.Name = "btn_8";
             this.btn_8.Size = new System.Drawing.Size(34, 23);
             this.btn_8.TabIndex = 7;
@@ -692,7 +703,7 @@
             // 
             // btn_7
             // 
-            this.btn_7.Location = new System.Drawing.Point(378, 13);
+            this.btn_7.Location = new System.Drawing.Point(350, 12);
             this.btn_7.Name = "btn_7";
             this.btn_7.Size = new System.Drawing.Size(34, 23);
             this.btn_7.TabIndex = 6;
@@ -701,7 +712,7 @@
             // 
             // btn_6
             // 
-            this.btn_6.Location = new System.Drawing.Point(338, 13);
+            this.btn_6.Location = new System.Drawing.Point(310, 12);
             this.btn_6.Name = "btn_6";
             this.btn_6.Size = new System.Drawing.Size(34, 23);
             this.btn_6.TabIndex = 5;
@@ -710,7 +721,7 @@
             // 
             // btn_5
             // 
-            this.btn_5.Location = new System.Drawing.Point(298, 13);
+            this.btn_5.Location = new System.Drawing.Point(270, 12);
             this.btn_5.Name = "btn_5";
             this.btn_5.Size = new System.Drawing.Size(34, 23);
             this.btn_5.TabIndex = 4;
@@ -719,7 +730,7 @@
             // 
             // btn_4
             // 
-            this.btn_4.Location = new System.Drawing.Point(258, 13);
+            this.btn_4.Location = new System.Drawing.Point(230, 12);
             this.btn_4.Name = "btn_4";
             this.btn_4.Size = new System.Drawing.Size(34, 23);
             this.btn_4.TabIndex = 3;
@@ -728,7 +739,7 @@
             // 
             // btn_3
             // 
-            this.btn_3.Location = new System.Drawing.Point(218, 13);
+            this.btn_3.Location = new System.Drawing.Point(190, 12);
             this.btn_3.Name = "btn_3";
             this.btn_3.Size = new System.Drawing.Size(34, 23);
             this.btn_3.TabIndex = 2;
@@ -737,7 +748,7 @@
             // 
             // btn_2
             // 
-            this.btn_2.Location = new System.Drawing.Point(178, 13);
+            this.btn_2.Location = new System.Drawing.Point(150, 12);
             this.btn_2.Name = "btn_2";
             this.btn_2.Size = new System.Drawing.Size(34, 23);
             this.btn_2.TabIndex = 1;
@@ -746,7 +757,7 @@
             // 
             // btn_1
             // 
-            this.btn_1.Location = new System.Drawing.Point(138, 13);
+            this.btn_1.Location = new System.Drawing.Point(110, 12);
             this.btn_1.Name = "btn_1";
             this.btn_1.Size = new System.Drawing.Size(34, 23);
             this.btn_1.TabIndex = 0;
@@ -758,7 +769,7 @@
             this.Texto_Tipear.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Texto_Tipear.Location = new System.Drawing.Point(21, 193);
             this.Texto_Tipear.Name = "Texto_Tipear";
-            this.Texto_Tipear.Size = new System.Drawing.Size(721, 42);
+            this.Texto_Tipear.Size = new System.Drawing.Size(714, 42);
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
             // 
@@ -766,7 +777,7 @@
             // 
             this.btn_Iniciar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Iniciar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Iniciar.Location = new System.Drawing.Point(443, 157);
+            this.btn_Iniciar.Location = new System.Drawing.Point(431, 157);
             this.btn_Iniciar.Name = "btn_Iniciar";
             this.btn_Iniciar.Size = new System.Drawing.Size(90, 30);
             this.btn_Iniciar.TabIndex = 1;
@@ -778,7 +789,7 @@
             // 
             this.btn_Detener.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Detener.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Detener.Location = new System.Drawing.Point(203, 157);
+            this.btn_Detener.Location = new System.Drawing.Point(251, 157);
             this.btn_Detener.Name = "btn_Detener";
             this.btn_Detener.Size = new System.Drawing.Size(90, 30);
             this.btn_Detener.TabIndex = 2;
@@ -812,7 +823,7 @@
             this.panel1.Controls.Add(this.panel_Teclado);
             this.panel1.Location = new System.Drawing.Point(23, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(754, 559);
+            this.panel1.Size = new System.Drawing.Size(756, 559);
             this.panel1.TabIndex = 0;
             // 
             // Btn_Elegir
@@ -870,6 +881,12 @@
             this.rOBOToolStripMenuItem.Text = "ROBO";
             this.rOBOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
             // 
+            // eSTAFAToolStripMenuItem
+            // 
+            this.eSTAFAToolStripMenuItem.Name = "eSTAFAToolStripMenuItem";
+            this.eSTAFAToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.eSTAFAToolStripMenuItem.Text = "ESTAFA";
+            // 
             // dECLARACIONESTESTIMONIALESToolStripMenuItem
             // 
             this.dECLARACIONESTESTIMONIALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -922,7 +939,7 @@
             this.panel_Especificaciones.Controls.Add(this.pictureBox_SelectArchivo);
             this.panel_Especificaciones.Location = new System.Drawing.Point(21, 34);
             this.panel_Especificaciones.Name = "panel_Especificaciones";
-            this.panel_Especificaciones.Size = new System.Drawing.Size(721, 120);
+            this.panel_Especificaciones.Size = new System.Drawing.Size(714, 120);
             this.panel_Especificaciones.TabIndex = 47;
             // 
             // pictureBox_SelectArchivo
@@ -941,16 +958,101 @@
             // 
             // panel_Manos
             // 
+            this.panel_Manos.Controls.Add(this.panel_MeniqueIzquierdo);
+            this.panel_Manos.Controls.Add(this.panel_AnularIzquierdo);
+            this.panel_Manos.Controls.Add(this.panel_MayorIzquierdo);
+            this.panel_Manos.Controls.Add(this.panel_IndiceIzquierdo);
+            this.panel_Manos.Controls.Add(this.panel_MeniqueDerecho);
+            this.panel_Manos.Controls.Add(this.panel_AnularDerecho);
+            this.panel_Manos.Controls.Add(this.panel_MayorDerecho);
+            this.panel_Manos.Controls.Add(this.panel_IndiceDerecho);
+            this.panel_Manos.Controls.Add(this.panel_PulgarDerecho);
+            this.panel_Manos.Controls.Add(this.panel_PulgarIzquierdo);
             this.panel_Manos.Location = new System.Drawing.Point(21, 412);
             this.panel_Manos.Name = "panel_Manos";
-            this.panel_Manos.Size = new System.Drawing.Size(721, 141);
+            this.panel_Manos.Size = new System.Drawing.Size(714, 141);
             this.panel_Manos.TabIndex = 46;
+            this.panel_Manos.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Manos_Paint);
             // 
-            // eSTAFAToolStripMenuItem
+            // panel_MeniqueIzquierdo
             // 
-            this.eSTAFAToolStripMenuItem.Name = "eSTAFAToolStripMenuItem";
-            this.eSTAFAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eSTAFAToolStripMenuItem.Text = "ESTAFA";
+            this.panel_MeniqueIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_MeniqueIzquierdo.Location = new System.Drawing.Point(123, 57);
+            this.panel_MeniqueIzquierdo.Name = "panel_MeniqueIzquierdo";
+            this.panel_MeniqueIzquierdo.Size = new System.Drawing.Size(27, 51);
+            this.panel_MeniqueIzquierdo.TabIndex = 11;
+            // 
+            // panel_AnularIzquierdo
+            // 
+            this.panel_AnularIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_AnularIzquierdo.Location = new System.Drawing.Point(155, 26);
+            this.panel_AnularIzquierdo.Name = "panel_AnularIzquierdo";
+            this.panel_AnularIzquierdo.Size = new System.Drawing.Size(27, 51);
+            this.panel_AnularIzquierdo.TabIndex = 11;
+            // 
+            // panel_MayorIzquierdo
+            // 
+            this.panel_MayorIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_MayorIzquierdo.Location = new System.Drawing.Point(188, 13);
+            this.panel_MayorIzquierdo.Name = "panel_MayorIzquierdo";
+            this.panel_MayorIzquierdo.Size = new System.Drawing.Size(27, 51);
+            this.panel_MayorIzquierdo.TabIndex = 11;
+            // 
+            // panel_IndiceIzquierdo
+            // 
+            this.panel_IndiceIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_IndiceIzquierdo.Location = new System.Drawing.Point(221, 38);
+            this.panel_IndiceIzquierdo.Name = "panel_IndiceIzquierdo";
+            this.panel_IndiceIzquierdo.Size = new System.Drawing.Size(27, 51);
+            this.panel_IndiceIzquierdo.TabIndex = 11;
+            // 
+            // panel_MeniqueDerecho
+            // 
+            this.panel_MeniqueDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_MeniqueDerecho.Location = new System.Drawing.Point(584, 57);
+            this.panel_MeniqueDerecho.Name = "panel_MeniqueDerecho";
+            this.panel_MeniqueDerecho.Size = new System.Drawing.Size(27, 51);
+            this.panel_MeniqueDerecho.TabIndex = 11;
+            // 
+            // panel_AnularDerecho
+            // 
+            this.panel_AnularDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_AnularDerecho.Location = new System.Drawing.Point(554, 26);
+            this.panel_AnularDerecho.Name = "panel_AnularDerecho";
+            this.panel_AnularDerecho.Size = new System.Drawing.Size(27, 51);
+            this.panel_AnularDerecho.TabIndex = 11;
+            // 
+            // panel_MayorDerecho
+            // 
+            this.panel_MayorDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_MayorDerecho.Location = new System.Drawing.Point(521, 13);
+            this.panel_MayorDerecho.Name = "panel_MayorDerecho";
+            this.panel_MayorDerecho.Size = new System.Drawing.Size(27, 51);
+            this.panel_MayorDerecho.TabIndex = 11;
+            // 
+            // panel_IndiceDerecho
+            // 
+            this.panel_IndiceDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_IndiceDerecho.Location = new System.Drawing.Point(490, 38);
+            this.panel_IndiceDerecho.Name = "panel_IndiceDerecho";
+            this.panel_IndiceDerecho.Size = new System.Drawing.Size(27, 51);
+            this.panel_IndiceDerecho.TabIndex = 11;
+            // 
+            // panel_PulgarDerecho
+            // 
+            this.panel_PulgarDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_PulgarDerecho.Location = new System.Drawing.Point(441, 77);
+            this.panel_PulgarDerecho.Name = "panel_PulgarDerecho";
+            this.panel_PulgarDerecho.Size = new System.Drawing.Size(27, 51);
+            this.panel_PulgarDerecho.TabIndex = 11;
+            // 
+            // panel_PulgarIzquierdo
+            // 
+            this.panel_PulgarIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_PulgarIzquierdo.Location = new System.Drawing.Point(265, 77);
+            this.panel_PulgarIzquierdo.Name = "panel_PulgarIzquierdo";
+            this.panel_PulgarIzquierdo.Size = new System.Drawing.Size(27, 51);
+            this.panel_PulgarIzquierdo.TabIndex = 10;
             // 
             // Mecanografia
             // 
@@ -967,6 +1069,7 @@
             this.menu_ElegirArchivos.ResumeLayout(false);
             this.panel_Especificaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelectArchivo)).EndInit();
+            this.panel_Manos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1056,6 +1159,17 @@
         private System.Windows.Forms.ToolStripMenuItem cONTRAVENCIONALToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aPREHENDIDOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eSTAFAToolStripMenuItem;
+    
+        private System.Windows.Forms.Panel panel_MeniqueIzquierdo;
+        private System.Windows.Forms.Panel panel_AnularIzquierdo;
+        private System.Windows.Forms.Panel panel_MayorIzquierdo;
+        private System.Windows.Forms.Panel panel_IndiceIzquierdo;
+        private System.Windows.Forms.Panel panel_MeniqueDerecho;
+        private System.Windows.Forms.Panel panel_AnularDerecho;
+        private System.Windows.Forms.Panel panel_MayorDerecho;
+        private System.Windows.Forms.Panel panel_IndiceDerecho;
+        private System.Windows.Forms.Panel panel_PulgarDerecho;
+        private System.Windows.Forms.Panel panel_PulgarIzquierdo;
     }
 }
 

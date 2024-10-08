@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 
-namespace Controles_Libreria.Controles
+namespace Controles.Controles
 {
     public partial class NuevaCaratulaControl : UserControl
     {

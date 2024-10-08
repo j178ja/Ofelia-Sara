@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
 
-namespace Controles_Libreria.Controles.Reposicionar_paneles.Buscar_Personal
+namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
 {
 
     public class AgregarPersonal

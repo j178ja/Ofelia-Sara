@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Clases_Libreria.Texto;
-using Clases_Libreria.Botones;
+using Clases.Texto;
+using Clases.Botones;
 using Ofelia_Sara.Formularios;
-using Clases_Libreria.Apariencia;
+using Clases.Apariencia;
 using Interfaces_Libreria.Interfaces;
-using BaseDatos_Libreria.Entidades;
+using BaseDatos.Entidades;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Clases_Libreria.Agregar_Componentes
+namespace Clases.Agregar_Componentes
 {
     public static class ConfiguradorTextBox
     {
