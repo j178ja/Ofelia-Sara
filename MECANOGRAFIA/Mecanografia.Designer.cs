@@ -101,18 +101,19 @@
             this.Btn_Elegir = new System.Windows.Forms.Button();
             this.menu_ElegirArchivos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dENUNCIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dECLARACIONESTESTIMONIALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aCTASDEPROCEDIMIENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_Especificaciones = new System.Windows.Forms.Panel();
-            this.pictureBox_SelectArchivo = new System.Windows.Forms.PictureBox();
-            this.panel_Manos = new System.Windows.Forms.Panel();
             this.rUEDADEAUXILIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hURTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOBOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dECLARACIONESTESTIMONIALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTANDARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tESTIGOACTUACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aCTASDEPROCEDIMIENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTRAVENCIONALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aPREHENDIDOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_Especificaciones = new System.Windows.Forms.Panel();
+            this.pictureBox_SelectArchivo = new System.Windows.Forms.PictureBox();
+            this.panel_Manos = new System.Windows.Forms.Panel();
+            this.eSTAFAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Teclado.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu_ElegirArchivos.SuspendLayout();
@@ -185,9 +186,9 @@
             this.panel_Teclado.Controls.Add(this.btn_2);
             this.panel_Teclado.Controls.Add(this.btn_1);
             this.panel_Teclado.Enabled = false;
-            this.panel_Teclado.Location = new System.Drawing.Point(0, 242);
+            this.panel_Teclado.Location = new System.Drawing.Point(21, 242);
             this.panel_Teclado.Name = "panel_Teclado";
-            this.panel_Teclado.Size = new System.Drawing.Size(749, 170);
+            this.panel_Teclado.Size = new System.Drawing.Size(721, 170);
             this.panel_Teclado.TabIndex = 0;
             // 
             // btn_Enter
@@ -755,9 +756,9 @@
             // Texto_Tipear
             // 
             this.Texto_Tipear.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Texto_Tipear.Location = new System.Drawing.Point(10, 193);
+            this.Texto_Tipear.Location = new System.Drawing.Point(21, 193);
             this.Texto_Tipear.Name = "Texto_Tipear";
-            this.Texto_Tipear.Size = new System.Drawing.Size(732, 42);
+            this.Texto_Tipear.Size = new System.Drawing.Size(721, 42);
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
             // 
@@ -792,7 +793,7 @@
             this.btn_AgregarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_AgregarArchivo.Location = new System.Drawing.Point(380, 0);
             this.btn_AgregarArchivo.Name = "btn_AgregarArchivo";
-            this.btn_AgregarArchivo.Size = new System.Drawing.Size(366, 26);
+            this.btn_AgregarArchivo.Size = new System.Drawing.Size(362, 26);
             this.btn_AgregarArchivo.TabIndex = 4;
             this.btn_AgregarArchivo.Text = "AGREGAR ARCHIVO ";
             this.btn_AgregarArchivo.UseVisualStyleBackColor = false;
@@ -809,7 +810,7 @@
             this.panel1.Controls.Add(this.btn_AgregarArchivo);
             this.panel1.Controls.Add(this.Texto_Tipear);
             this.panel1.Controls.Add(this.panel_Teclado);
-            this.panel1.Location = new System.Drawing.Point(23, 29);
+            this.panel1.Location = new System.Drawing.Point(23, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(754, 559);
             this.panel1.TabIndex = 0;
@@ -820,9 +821,9 @@
             this.Btn_Elegir.ContextMenuStrip = this.menu_ElegirArchivos;
             this.Btn_Elegir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Elegir.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Btn_Elegir.Location = new System.Drawing.Point(8, 0);
+            this.Btn_Elegir.Location = new System.Drawing.Point(12, 0);
             this.Btn_Elegir.Name = "Btn_Elegir";
-            this.Btn_Elegir.Size = new System.Drawing.Size(366, 26);
+            this.Btn_Elegir.Size = new System.Drawing.Size(362, 26);
             this.Btn_Elegir.TabIndex = 5;
             this.Btn_Elegir.Text = "TEXTOS ESTANDARIZADOS";
             this.Btn_Elegir.UseVisualStyleBackColor = false;
@@ -842,10 +843,32 @@
             this.dENUNCIASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rUEDADEAUXILIOToolStripMenuItem,
             this.hURTOToolStripMenuItem,
-            this.rOBOToolStripMenuItem});
+            this.rOBOToolStripMenuItem,
+            this.eSTAFAToolStripMenuItem});
             this.dENUNCIASToolStripMenuItem.Name = "dENUNCIASToolStripMenuItem";
             this.dENUNCIASToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.dENUNCIASToolStripMenuItem.Text = "DENUNCIAS";
+            // 
+            // rUEDADEAUXILIOToolStripMenuItem
+            // 
+            this.rUEDADEAUXILIOToolStripMenuItem.Name = "rUEDADEAUXILIOToolStripMenuItem";
+            this.rUEDADEAUXILIOToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.rUEDADEAUXILIOToolStripMenuItem.Text = "RUEDA DE AUXILIO";
+            this.rUEDADEAUXILIOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            // 
+            // hURTOToolStripMenuItem
+            // 
+            this.hURTOToolStripMenuItem.Name = "hURTOToolStripMenuItem";
+            this.hURTOToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.hURTOToolStripMenuItem.Text = "HURTO";
+            this.hURTOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            // 
+            // rOBOToolStripMenuItem
+            // 
+            this.rOBOToolStripMenuItem.Name = "rOBOToolStripMenuItem";
+            this.rOBOToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.rOBOToolStripMenuItem.Text = "ROBO";
+            this.rOBOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
             // 
             // dECLARACIONESTESTIMONIALESToolStripMenuItem
             // 
@@ -856,6 +879,20 @@
             this.dECLARACIONESTESTIMONIALESToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.dECLARACIONESTESTIMONIALESToolStripMenuItem.Text = "DECLARACIONES TESTIMONIALES";
             // 
+            // eSTANDARToolStripMenuItem
+            // 
+            this.eSTANDARToolStripMenuItem.Name = "eSTANDARToolStripMenuItem";
+            this.eSTANDARToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.eSTANDARToolStripMenuItem.Text = "ESTANDAR";
+            this.eSTANDARToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            // 
+            // tESTIGOACTUACIONToolStripMenuItem
+            // 
+            this.tESTIGOACTUACIONToolStripMenuItem.Name = "tESTIGOACTUACIONToolStripMenuItem";
+            this.tESTIGOACTUACIONToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.tESTIGOACTUACIONToolStripMenuItem.Text = "TESTIGO ACTUACION";
+            this.tESTIGOACTUACIONToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            // 
             // aCTASDEPROCEDIMIENTOToolStripMenuItem
             // 
             this.aCTASDEPROCEDIMIENTOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -865,13 +902,27 @@
             this.aCTASDEPROCEDIMIENTOToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.aCTASDEPROCEDIMIENTOToolStripMenuItem.Text = "ACTAS DE PROCEDIMIENTO";
             // 
+            // cONTRAVENCIONALToolStripMenuItem
+            // 
+            this.cONTRAVENCIONALToolStripMenuItem.Name = "cONTRAVENCIONALToolStripMenuItem";
+            this.cONTRAVENCIONALToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cONTRAVENCIONALToolStripMenuItem.Text = "CONTRAVENCIONAL";
+            this.cONTRAVENCIONALToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            // 
+            // aPREHENDIDOToolStripMenuItem
+            // 
+            this.aPREHENDIDOToolStripMenuItem.Name = "aPREHENDIDOToolStripMenuItem";
+            this.aPREHENDIDOToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.aPREHENDIDOToolStripMenuItem.Text = "APREHENDIDO";
+            this.aPREHENDIDOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            // 
             // panel_Especificaciones
             // 
             this.panel_Especificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel_Especificaciones.Controls.Add(this.pictureBox_SelectArchivo);
-            this.panel_Especificaciones.Location = new System.Drawing.Point(4, 34);
+            this.panel_Especificaciones.Location = new System.Drawing.Point(21, 34);
             this.panel_Especificaciones.Name = "panel_Especificaciones";
-            this.panel_Especificaciones.Size = new System.Drawing.Size(747, 120);
+            this.panel_Especificaciones.Size = new System.Drawing.Size(721, 120);
             this.panel_Especificaciones.TabIndex = 47;
             // 
             // pictureBox_SelectArchivo
@@ -890,59 +941,16 @@
             // 
             // panel_Manos
             // 
-            this.panel_Manos.Location = new System.Drawing.Point(3, 412);
+            this.panel_Manos.Location = new System.Drawing.Point(21, 412);
             this.panel_Manos.Name = "panel_Manos";
-            this.panel_Manos.Size = new System.Drawing.Size(751, 141);
+            this.panel_Manos.Size = new System.Drawing.Size(721, 141);
             this.panel_Manos.TabIndex = 46;
             // 
-            // rUEDADEAUXILIOToolStripMenuItem
+            // eSTAFAToolStripMenuItem
             // 
-            this.rUEDADEAUXILIOToolStripMenuItem.Name = "rUEDADEAUXILIOToolStripMenuItem";
-            this.rUEDADEAUXILIOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rUEDADEAUXILIOToolStripMenuItem.Text = "RUEDA DE AUXILIO";
-            this.rUEDADEAUXILIOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
-            // 
-            // hURTOToolStripMenuItem
-            // 
-            this.hURTOToolStripMenuItem.Name = "hURTOToolStripMenuItem";
-            this.hURTOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hURTOToolStripMenuItem.Text = "HURTO";
-            this.hURTOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
-            // 
-            // rOBOToolStripMenuItem
-            // 
-            this.rOBOToolStripMenuItem.Name = "rOBOToolStripMenuItem";
-            this.rOBOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rOBOToolStripMenuItem.Text = "ROBO";
-            this.rOBOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
-            // 
-            // eSTANDARToolStripMenuItem
-            // 
-            this.eSTANDARToolStripMenuItem.Name = "eSTANDARToolStripMenuItem";
-            this.eSTANDARToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.eSTANDARToolStripMenuItem.Text = "ESTANDAR";
-            this.eSTANDARToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
-            // 
-            // tESTIGOACTUACIONToolStripMenuItem
-            // 
-            this.tESTIGOACTUACIONToolStripMenuItem.Name = "tESTIGOACTUACIONToolStripMenuItem";
-            this.tESTIGOACTUACIONToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.tESTIGOACTUACIONToolStripMenuItem.Text = "TESTIGO ACTUACION";
-            this.tESTIGOACTUACIONToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
-            // 
-            // cONTRAVENCIONALToolStripMenuItem
-            // 
-            this.cONTRAVENCIONALToolStripMenuItem.Name = "cONTRAVENCIONALToolStripMenuItem";
-            this.cONTRAVENCIONALToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.cONTRAVENCIONALToolStripMenuItem.Text = "CONTRAVENCIONAL";
-            this.cONTRAVENCIONALToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
-            // 
-            // aPREHENDIDOToolStripMenuItem
-            // 
-            this.aPREHENDIDOToolStripMenuItem.Name = "aPREHENDIDOToolStripMenuItem";
-            this.aPREHENDIDOToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.aPREHENDIDOToolStripMenuItem.Text = "APREHENDIDO";
-            this.aPREHENDIDOToolStripMenuItem.Click += new System.EventHandler(this.AsignacionDocumentos_Click);
+            this.eSTAFAToolStripMenuItem.Name = "eSTAFAToolStripMenuItem";
+            this.eSTAFAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eSTAFAToolStripMenuItem.Text = "ESTAFA";
             // 
             // Mecanografia
             // 
@@ -1047,6 +1055,7 @@
         private System.Windows.Forms.ToolStripMenuItem tESTIGOACTUACIONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cONTRAVENCIONALToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aPREHENDIDOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eSTAFAToolStripMenuItem;
     }
 }
 

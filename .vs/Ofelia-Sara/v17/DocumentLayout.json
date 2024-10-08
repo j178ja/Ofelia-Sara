@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\mecanografia\\mecanografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|solutionrelative:mecanografia\\mecanografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\mecanografia\\mecanografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|solutionrelative:mecanografia\\mecanografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\mecanografia\\clases\\borde.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|solutionrelative:mecanografia\\clases\\borde.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,15 +38,40 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Borde.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Clases\\Borde.cs",
+              "RelativeDocumentMoniker": "MECANOGRAFIA\\Clases\\Borde.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Clases\\Borde.cs",
+              "RelativeToolTip": "MECANOGRAFIA\\Clases\\Borde.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T11:55:18.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Mecanografia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs",
+              "RelativeDocumentMoniker": "MECANOGRAFIA\\Mecanografia.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "MECANOGRAFIA\\Mecanografia.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T10:27:29.931Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Mecanografia.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs",
               "RelativeDocumentMoniker": "MECANOGRAFIA\\Mecanografia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs",
-              "RelativeToolTip": "MECANOGRAFIA\\Mecanografia.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAVAAAA",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs*",
+              "RelativeToolTip": "MECANOGRAFIA\\Mecanografia.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T03:07:20.504Z",
+              "WhenOpened": "2024-10-08T10:25:52.074Z",
               "EditorCaption": ""
             }
           ]

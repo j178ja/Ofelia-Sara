@@ -8,3 +8,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGR
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Controles\DateNacimiento.resx
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Controles\DateNacimiento.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Controles\DateNacimiento.Designer.cs

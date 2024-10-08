@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Borde.cs" />
     <Compile Include="Mecanografia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,11 +81,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Clases\" />
-    <Folder Include="TEXTOS\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="TEXTOS\denuncia.txt" />
     <None Include="Resources\doc.png" />
     <None Include="doc.png" />
     <Content Include="Para que sirve.txt" />

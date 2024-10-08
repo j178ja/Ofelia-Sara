@@ -13,7 +13,7 @@ namespace Clases_Libreria.Apariencia
     public static class PanelExtensions
     {
         // Método para aplicar bordes redondeados a un panel específico
-        public static void ApplyRoundedCorners(this Panel panel, Panel targetPanel, int borderRadius = 10, int borderSize = 2, Color? borderColor = null)
+        public static void ApplyRoundedCorners(this Panel panel, Panel targetPanel, int borderRadius = 10, int borderSize = 8, Color? borderColor = null)
         {
             if (panel != targetPanel)
                 return;

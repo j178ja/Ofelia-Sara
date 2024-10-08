@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Clases_Libreria.Apariencia;
+using MECANOGRAFIA.Clases;
 
 namespace MECANOGRAFIA
 {
@@ -17,7 +17,7 @@ namespace MECANOGRAFIA
         {
             InitializeComponent();
            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 25, borderSize: 15, borderColor: customBorderColor);
             panel_Especificaciones.Visible = false;
             panel_Manos.Visible = false;
             Texto_Tipear.Visible = false;
@@ -27,18 +27,14 @@ namespace MECANOGRAFIA
 
         private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
         {
-            if (panel_Especificaciones.Controls.Count > 0)
-            {
-                panel_Especificaciones.Controls.Clear();
-            }
+           
                 panel_Especificaciones.Visible = true;
                 pictureBox_SelectArchivo.Visible = true;
-                btn_Iniciar.Visible = true;
                 btn_Detener.Visible = true;
-            
+                btn_Iniciar.Visible = true;
+     
         }
-
-
+       
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             // Establecer el color del borde (LightGreen) y el grosor del borde (3 píxeles)
