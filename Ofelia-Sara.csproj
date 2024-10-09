@@ -428,8 +428,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\escudoPolicial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>escudoPolicial.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>escudoPolicial.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -460,13 +460,17 @@
     <Content Include=".gitignore" />
     <Content Include="Resources\iconoEscribiendo.png" />
     <None Include="Resources\IconoEscudoPolicia.ico" />
+    <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Resources\imagenes\ojoCerrado.png" />
     <None Include="Resources\imagenes\subir_documentos.png" />
     <None Include="Resources\imagenes\pdf.png" />
     <None Include="Resources\imagenes\ojoINICIO.png" />
     <Content Include="Resources\imagenes\ojo_Contraseña.png" />
-    <None Include="Resources\imagenes\IconoEscudoPolicia.ico" />
-    <None Include="Resources\imagenes\ICOes.png" />
+    <None Include="Resources\imagenes\ICOes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\imagenes\doc.png" />
     <None Include="Resources\imagenes\borrar.png" />
     <None Include="Resources\imagenes\borrar 24%281%29.png" />
@@ -477,7 +481,6 @@
     <None Include="Resources\borrar.png" />
     <None Include="Resources\borrar 24%281%29.png" />
     <None Include="Resources\doc.png" />
-    <None Include="Resources\escudoPolicial.png" />
     <Content Include="Resources\ojo_Contraseña.png" />
     <None Include="Resources\ojoINICIO.png" />
     <None Include="Resources\ojoAbierto.png" />

@@ -137,3 +137,9 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\ICOes.png
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoEscudoPolicia.ico

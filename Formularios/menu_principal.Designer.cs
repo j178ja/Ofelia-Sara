@@ -212,6 +212,7 @@
             this.panel_MenuSuperior.Name = "panel_MenuSuperior";
             this.panel_MenuSuperior.Size = new System.Drawing.Size(572, 34);
             this.panel_MenuSuperior.TabIndex = 17;
+            this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
             // 
             // btn_Mecanografia
             // 

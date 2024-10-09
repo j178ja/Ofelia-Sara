@@ -12,12 +12,25 @@ using System.ComponentModel;
 using Controles.Barra_Busqueda;
 using System.Drawing.Drawing2D;
 using MECANOGRAFIA;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Runtime.InteropServices; // Para la importación de funciones nativas
 
 
 namespace Ofelia_Sara.Formularios
 {
     public partial class MenuPrincipal : BaseForm
     {
+        //funcion nativa para ARRASTRAR EL FORMULARIO
+        // Importar las funciones de la API de Windows
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern void ReleaseCapture();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern void SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+        //-----------------------------------------------------
 
         private ContextMenuStrip contextMenu;
         private AuxiliarConfiguracion auxiliarConfiguracion;
@@ -476,6 +489,19 @@ namespace Ofelia_Sara.Formularios
 
             videoInstructivo.Show();
         }
+
+
+        //para poder arrastrar el formulario
+        private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+
 
     }
 }

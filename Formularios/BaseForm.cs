@@ -45,9 +45,9 @@ namespace Ofelia_Sara.Formularios
 
         public BaseForm()
         {
-            //---buscar alternativa para que obtenga el archivo desde almacenamiento interno----
-            IconoEscudo.SetFormIcon(this, "C:/Users/Usuario/OneDrive/Escritorio/Ofelia-Sara/Resources/imagenes/IconoEscudoPolicia.ico");
-
+            this.ShowInTaskbar = true;
+            IconoEscudo.SetFormIcon(this, "Resources/imagenes/IconoEscudoPolicia.ico");// llama a ruta relatica de icono escudoPolicia
+          
             InitializeFooterLinkLabel();
            
             //------------------CAMBIAR FONDO----------------------------------------------------

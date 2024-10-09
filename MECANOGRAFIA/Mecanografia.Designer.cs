@@ -196,7 +196,6 @@
             this.panel_Teclado.Controls.Add(this.btn_3);
             this.panel_Teclado.Controls.Add(this.btn_2);
             this.panel_Teclado.Controls.Add(this.btn_1);
-            this.panel_Teclado.Enabled = false;
             this.panel_Teclado.Location = new System.Drawing.Point(21, 242);
             this.panel_Teclado.Name = "panel_Teclado";
             this.panel_Teclado.Size = new System.Drawing.Size(714, 170);
@@ -766,12 +765,16 @@
             // 
             // Texto_Tipear
             // 
+            this.Texto_Tipear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Texto_Tipear.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Texto_Tipear.Location = new System.Drawing.Point(21, 193);
+            this.Texto_Tipear.Multiline = false;
             this.Texto_Tipear.Name = "Texto_Tipear";
             this.Texto_Tipear.Size = new System.Drawing.Size(714, 42);
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
+            this.Texto_Tipear.Click += new System.EventHandler(this.Texto_Tipear_Click);
+            this.Texto_Tipear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Texto_Tipear_KeyPress);
             // 
             // btn_Iniciar
             // 
@@ -1041,7 +1044,7 @@
             // panel_PulgarDerecho
             // 
             this.panel_PulgarDerecho.BackColor = System.Drawing.Color.White;
-            this.panel_PulgarDerecho.Location = new System.Drawing.Point(441, 77);
+            this.panel_PulgarDerecho.Location = new System.Drawing.Point(450, 77);
             this.panel_PulgarDerecho.Name = "panel_PulgarDerecho";
             this.panel_PulgarDerecho.Size = new System.Drawing.Size(27, 51);
             this.panel_PulgarDerecho.TabIndex = 11;
@@ -1049,7 +1052,7 @@
             // panel_PulgarIzquierdo
             // 
             this.panel_PulgarIzquierdo.BackColor = System.Drawing.Color.White;
-            this.panel_PulgarIzquierdo.Location = new System.Drawing.Point(265, 77);
+            this.panel_PulgarIzquierdo.Location = new System.Drawing.Point(262, 77);
             this.panel_PulgarIzquierdo.Name = "panel_PulgarIzquierdo";
             this.panel_PulgarIzquierdo.Size = new System.Drawing.Size(27, 51);
             this.panel_PulgarIzquierdo.TabIndex = 10;
@@ -1058,12 +1061,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(800, 617);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mecanografia";
             this.Text = "PRACTICAS MECANOGRAFIADO  DE ACTUACIONES SUMARIALES";
+            this.Load += new System.EventHandler(this.Mecanografia_Load);
             this.panel_Teclado.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.menu_ElegirArchivos.ResumeLayout(false);

@@ -11,3 +11,8 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGR
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Controles\DateNacimiento.resx
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Controles\DateNacimiento.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Controles\DateNacimiento.Designer.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGR.92E38B0A.Up2Date

@@ -6,7 +6,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace Clases.Apariencia
 {
     public static class IconoEscudo
@@ -14,8 +13,8 @@ namespace Clases.Apariencia
         // Método para establecer el icono en la barra de título del formulario
         public static void SetFormIcon(Form form, string iconFilePath)
         {
-            form.Icon = new Icon(iconFilePath); // Carga el icono desde el archivo especificado
+            // Carga el icono desde el archivo especificado
+            form.Icon = new Icon(iconFilePath);
         }
-
     }
 }
