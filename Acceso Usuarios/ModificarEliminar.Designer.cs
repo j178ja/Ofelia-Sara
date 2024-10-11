@@ -47,10 +47,6 @@
             this.panel_Botones.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 20, 21, 31, 35, 18);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -58,9 +54,9 @@
             this.panel1.Controls.Add(this.panel_Superior);
             this.panel1.Controls.Add(this.panel_Botones);
             this.panel1.Controls.Add(this.label_Titulo);
-            this.panel1.Location = new System.Drawing.Point(25, 25);
+            this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 243);
+            this.panel1.Size = new System.Drawing.Size(545, 214);
             this.panel1.TabIndex = 2;
             // 
             // panel_Superior
@@ -69,9 +65,9 @@
             this.panel_Superior.Controls.Add(this.listBox_Seleccion);
             this.panel_Superior.Controls.Add(this.label_Seleccion);
             this.panel_Superior.Controls.Add(this.listBox_Datos);
-            this.panel_Superior.Location = new System.Drawing.Point(3, 40);
+            this.panel_Superior.Location = new System.Drawing.Point(12, 37);
             this.panel_Superior.Name = "panel_Superior";
-            this.panel_Superior.Size = new System.Drawing.Size(653, 72);
+            this.panel_Superior.Size = new System.Drawing.Size(514, 72);
             this.panel_Superior.TabIndex = 35;
             // 
             // listBox_Seleccion
@@ -86,7 +82,7 @@
             "SECRETARIO",
             "DEDPENDENCIA",
             "PERSONAL "});
-            this.listBox_Seleccion.Location = new System.Drawing.Point(310, 3);
+            this.listBox_Seleccion.Location = new System.Drawing.Point(225, 10);
             this.listBox_Seleccion.Name = "listBox_Seleccion";
             this.listBox_Seleccion.Size = new System.Drawing.Size(233, 20);
             this.listBox_Seleccion.TabIndex = 29;
@@ -96,7 +92,7 @@
             // 
             this.label_Seleccion.AutoSize = true;
             this.label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Seleccion.Location = new System.Drawing.Point(88, 5);
+            this.label_Seleccion.Location = new System.Drawing.Point(3, 12);
             this.label_Seleccion.Name = "label_Seleccion";
             this.label_Seleccion.Size = new System.Drawing.Size(216, 16);
             this.label_Seleccion.TabIndex = 26;
@@ -107,7 +103,7 @@
             this.listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_Datos.FormattingEnabled = true;
             this.listBox_Datos.ItemHeight = 20;
-            this.listBox_Datos.Location = new System.Drawing.Point(140, 42);
+            this.listBox_Datos.Location = new System.Drawing.Point(83, 45);
             this.listBox_Datos.Name = "listBox_Datos";
             this.listBox_Datos.Size = new System.Drawing.Size(356, 24);
             this.listBox_Datos.TabIndex = 30;
@@ -121,9 +117,9 @@
             this.panel_Botones.Controls.Add(this.btn_Cancelar);
             this.panel_Botones.Controls.Add(this.btn_Editar);
             this.panel_Botones.Controls.Add(this.btn_Eliminar);
-            this.panel_Botones.Location = new System.Drawing.Point(29, 129);
+            this.panel_Botones.Location = new System.Drawing.Point(12, 115);
             this.panel_Botones.Name = "panel_Botones";
-            this.panel_Botones.Size = new System.Drawing.Size(595, 91);
+            this.panel_Botones.Size = new System.Drawing.Size(514, 91);
             this.panel_Botones.TabIndex = 34;
             // 
             // btn_Guardar
@@ -131,7 +127,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(477, 16);
+            this.btn_Guardar.Location = new System.Drawing.Point(382, 13);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 31;
@@ -142,7 +138,7 @@
             // 
             this.btn_Cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancelar.BackgroundImage")));
             this.btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Cancelar.Location = new System.Drawing.Point(29, 15);
+            this.btn_Cancelar.Location = new System.Drawing.Point(61, 12);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(69, 68);
             this.btn_Cancelar.TabIndex = 15;
@@ -155,7 +151,7 @@
             this.btn_Editar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Editar.BackgroundImage")));
             this.btn_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Editar.Location = new System.Drawing.Point(325, 16);
+            this.btn_Editar.Location = new System.Drawing.Point(275, 13);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(75, 66);
             this.btn_Editar.TabIndex = 17;
@@ -168,7 +164,7 @@
             this.btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.Image")));
-            this.btn_Eliminar.Location = new System.Drawing.Point(171, 16);
+            this.btn_Eliminar.Location = new System.Drawing.Point(163, 12);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(75, 67);
             this.btn_Eliminar.TabIndex = 32;
@@ -181,7 +177,7 @@
             this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(138, 0);
+            this.label_Titulo.Location = new System.Drawing.Point(91, 0);
             this.label_Titulo.Name = "label_Titulo";
             this.label_Titulo.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.label_Titulo.Size = new System.Drawing.Size(360, 26);
@@ -193,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(706, 315);
+            this.ClientSize = new System.Drawing.Size(573, 252);
             this.Controls.Add(this.panel1);
             this.HelpButton = true;
             this.MaximizeBox = false;

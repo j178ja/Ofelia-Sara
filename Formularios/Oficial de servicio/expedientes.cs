@@ -11,7 +11,6 @@ using WordPoint = Microsoft.Office.Interop.Word.Point;
 using Spire.Pdf;
 using System.IO;
 using Spire.Doc;
-using Microsoft.Office.Interop.Word;
 using System.Linq;
 using Spire.Doc.Documents;
 using System.Collections.Generic;

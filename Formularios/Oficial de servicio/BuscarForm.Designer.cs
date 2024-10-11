@@ -95,8 +95,8 @@
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(363, 26);
             this.comboBox_Secretario.TabIndex = 28;
-            this.comboBox_Secretario.TextChanged += new System.EventHandler(this.comboBox_Secretario_TextChanged);
-            this.comboBox_Secretario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Secretario_KeyPress);
+            this.comboBox_Secretario.TextChanged += new System.EventHandler(this.ComboBox_Secretario_TextChanged);
+            this.comboBox_Secretario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Secretario_KeyPress);
             // 
             // comboBox_Instructor
             // 
@@ -106,8 +106,8 @@
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(363, 26);
             this.comboBox_Instructor.TabIndex = 27;
-            this.comboBox_Instructor.TextChanged += new System.EventHandler(this.comboBox_Instructor_TextChanged);
-            this.comboBox_Instructor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Instructor_KeyPress);
+            this.comboBox_Instructor.TextChanged += new System.EventHandler(this.ComboBox_Instructor_TextChanged);
+            this.comboBox_Instructor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Instructor_KeyPress);
             // 
             // comboBox_Dependencia
             // 
@@ -117,8 +117,8 @@
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(363, 26);
             this.comboBox_Dependencia.TabIndex = 26;
-            this.comboBox_Dependencia.TextChanged += new System.EventHandler(this.comboBox_Dependencia_TextChanged);
-            this.comboBox_Dependencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Dependencia_KeyPress);
+            this.comboBox_Dependencia.TextChanged += new System.EventHandler(this.ComboBox_Dependencia_TextChanged);
+            this.comboBox_Dependencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Dependencia_KeyPress);
             // 
             // label_00
             // 
@@ -142,8 +142,8 @@
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp4.TabIndex = 24;
-            this.comboBox_Ipp4.TextUpdate += new System.EventHandler(this.comboBox_Ipp4_TextUpdate);
-            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp4_KeyPress);
+            this.comboBox_Ipp4.TextUpdate += new System.EventHandler(this.ComboBox_Ipp4_TextUpdate);
+            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp4_KeyPress);
             // 
             // comboBox_Ipp2
             // 
@@ -164,8 +164,8 @@
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp2.TabIndex = 23;
-            this.comboBox_Ipp2.TextUpdate += new System.EventHandler(this.comboBox_Ipp2_TextUpdate);
-            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp2_KeyPress);
+            this.comboBox_Ipp2.TextUpdate += new System.EventHandler(this.ComboBox_Ipp2_TextUpdate);
+            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp2_KeyPress);
             // 
             // comboBox_Ipp1
             // 
@@ -186,8 +186,8 @@
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp1.TabIndex = 3;
-            this.comboBox_Ipp1.TextUpdate += new System.EventHandler(this.comboBox_Ipp1_TextUpdate);
-            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp1_KeyPress);
+            this.comboBox_Ipp1.TextUpdate += new System.EventHandler(this.ComboBox_Ipp1_TextUpdate);
+            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp1_KeyPress);
             // 
             // label_Caratula
             // 
@@ -206,7 +206,7 @@
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(363, 26);
             this.textBox_Caratula.TabIndex = 1;
-            this.textBox_Caratula.TextChanged += new System.EventHandler(this.textBox_Caratula_TextChanged);
+            this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
             // 
             // btn_Buscar
             // 
@@ -219,7 +219,7 @@
             this.btn_Buscar.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivo");
             this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            this.btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // btn_Limpiar
             // 
@@ -233,7 +233,7 @@
             this.btn_Limpiar.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Eliminar busqueda");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // label_Fecha
             // 
@@ -303,8 +303,8 @@
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(128, 26);
             this.textBox_NumeroIpp.TabIndex = 0;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
-            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.TextBox_NumeroIpp_TextChanged);
+            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroIpp_KeyPress);
             // 
             // textBox_Imputado
             // 
@@ -313,8 +313,8 @@
             this.textBox_Imputado.Name = "textBox_Imputado";
             this.textBox_Imputado.Size = new System.Drawing.Size(363, 26);
             this.textBox_Imputado.TabIndex = 3;
-            this.textBox_Imputado.TextChanged += new System.EventHandler(this.textBox_Imputado_TextChanged);
-            this.textBox_Imputado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Imputado_KeyPress);
+            this.textBox_Imputado.TextChanged += new System.EventHandler(this.TextBox_Imputado_TextChanged);
+            this.textBox_Imputado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Imputado_KeyPress);
             // 
             // textBox_Victima
             // 
@@ -323,8 +323,8 @@
             this.textBox_Victima.Name = "textBox_Victima";
             this.textBox_Victima.Size = new System.Drawing.Size(363, 26);
             this.textBox_Victima.TabIndex = 2;
-            this.textBox_Victima.TextChanged += new System.EventHandler(this.textBox_Victima_TextChanged);
-            this.textBox_Victima.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Victima_KeyPress);
+            this.textBox_Victima.TextChanged += new System.EventHandler(this.TextBox_Victima_TextChanged);
+            this.textBox_Victima.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Victima_KeyPress);
             // 
             // label_Ipp
             // 
@@ -393,7 +393,7 @@
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private Controles.Controles.TimePickerPersonalizado timePickerPersonalizado1;
+       
         private Controles.Controles.TimePickerPersonalizado Fecha_Actuacion;
     }
 }

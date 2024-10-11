@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos.Entidades;
-using Ofelia_Sara.general.clases;
+
+using Clases.Apariencia;
 using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.Acceso_Usuarios
@@ -32,8 +33,10 @@ namespace Ofelia_Sara.Acceso_Usuarios
             InicializarEstiloBotonPropio(btn_Guardar);
             InicializarEstiloBotonPropio(btn_Editar);
 
+
+            //para redondear bordes panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 12, borderSize: 7, borderColor: customBorderColor);
         }
 
         private void ModificarEliminar_Load(object sender, EventArgs e)

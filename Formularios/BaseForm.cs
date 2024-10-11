@@ -33,8 +33,7 @@ namespace Ofelia_Sara.Formularios
         private readonly AutocompletarManager autocompletarManager;
 
         private LinkLabel footerLinkLabel;
-        private Panel mainPanel; // Panel que contiene los TextBox
-
+        
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
         // Método OnLoad combinado
@@ -45,9 +44,9 @@ namespace Ofelia_Sara.Formularios
 
         public BaseForm()
         {
-            this.ShowInTaskbar = true;
-            IconoEscudo.SetFormIcon(this, "Resources/imagenes/IconoEscudoPolicia.ico");// llama a ruta relatica de icono escudoPolicia
-          
+            IconoEscudo.SetFormIcon(this, @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\IconoEscudoPolicia.ico");
+
+
             InitializeFooterLinkLabel();
            
             //------------------CAMBIAR FONDO----------------------------------------------------
@@ -57,12 +56,7 @@ namespace Ofelia_Sara.Formularios
             AparienciaFormularios.CambiarColorDeFondo(this, customColor);//llama a la clase que modifica el color de fondo
                                                                          //-------------------------------------------------------------------------
 
-            // Inicializa el panel principal
-            //mainPanel = new Panel { Dock = DockStyle.Fill };
-            /*mainPanel = new Panel { Dock = DockStyle.None };
-            this.Controls.Add(mainPanel);*/
-
-            //this.Load += BaseForm_Load;
+            
 
             this.Paint += new PaintEventHandler(BaseForm_Paint);
             //this.Load += new System.EventHandler(this.BaseForm_Load);
@@ -82,24 +76,6 @@ namespace Ofelia_Sara.Formularios
 
             // Crear un rectángulo que envuelve el área del degradado
             RectangleF gradientRectangle = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
-
-            // Crear una ruta de gráfico para el degradado
-          /*  using (GraphicsPath path = new GraphicsPath())
-            {
-                // Crear un elipse que rodea el área del degradado
-                path.AddEllipse(gradientRectangle);
-
-                // Crear un PathGradientBrush con la ruta
-                using (PathGradientBrush brush = new PathGradientBrush(path))
-                {
-                    // Configurar colores para el degradado
-                    brush.CenterColor = Color.FromArgb(0, 100, 114); // Color más oscuro en el centro
-                    brush.SurroundColors = new Color[] { Color.FromArgb(200, 255, 255) }; // Color más suave en los bordes
-
-                    // Rellenar el área del formulario con el degradado
-                    g.FillRectangle(brush, this.ClientRectangle);
-                }
-            }*/
         }
 
 

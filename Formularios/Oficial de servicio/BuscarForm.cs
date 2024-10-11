@@ -35,10 +35,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.Controls.Add(fecha_Instruccion);
         }
         // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            //para interfaz formulario
-        }
+        
         private void Buscar_Load(object sender, EventArgs e)
         {
 
@@ -55,14 +52,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.SelectedIndex = 0;
 
         }
-        // Método para posicionar el cursor en el textBox específico
-        public void PosicionarCursorEnTextBox(System.Windows.Forms.Control control)
-        {
-            if (control != null)
-            {
-                control.Focus();
-            }
-        }
+     
 
         private void BuscarForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
@@ -73,7 +63,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
@@ -82,7 +72,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //_____________________________________________________________________________________
         //-----------------------NUMERO IPP--------------------------------------------------
-        private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
+        private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {// Limitar a 6 caracteres
             if (textBox_NumeroIpp.Text.Length > 6)
             {
@@ -96,7 +86,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //-------------------------------------------------------------
         //---------------COMBO BOX IPP 1      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void comboBox_Ipp1_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Ipp1_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
             if (comboBox_Ipp1.Text.Length > 2)
@@ -111,7 +101,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //---------------COMBO BOX IPP 2      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void comboBox_Ipp2_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Ipp2_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
             if (comboBox_Ipp2.Text.Length > 2)
@@ -126,7 +116,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //---------------COMBO BOX IPP 4      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void comboBox_Ipp4_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Ipp4_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
             if (comboBox_Ipp4.Text.Length > 2)
@@ -140,7 +130,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
         // Verifica si el carácter presionado es un número o una tecla de control (como Backspace)
-        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verifica si el carácter presionado es un número o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -151,7 +141,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        private void comboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo acepta dígitos
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -160,7 +150,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo acepta dígitos
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -169,7 +159,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo acepta dígitos
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -178,7 +168,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Victima_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Victima_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -186,7 +176,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Imputado_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Imputado_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -194,7 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Victima_TextChanged(object sender, EventArgs e)
+        private void TextBox_Victima_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
             if (textBox != null)
@@ -205,7 +195,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Imputado_TextChanged(object sender, EventArgs e)
+        private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
             if (textBox != null)
@@ -216,7 +206,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Dependencia_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Dependencia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -224,7 +214,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Instructor_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Instructor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -232,7 +222,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Secretario_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Secretario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -240,7 +230,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Secretario_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Secretario_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
 
@@ -266,7 +256,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Instructor_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Instructor_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
 
@@ -292,7 +282,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
 
@@ -318,12 +308,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void btn_Buscar_Click(object sender, EventArgs e)
+        private void Btn_Buscar_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox_Caratula_TextChanged(object sender, EventArgs e)
+        private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
 

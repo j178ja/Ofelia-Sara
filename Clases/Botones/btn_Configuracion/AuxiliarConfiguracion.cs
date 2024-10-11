@@ -9,11 +9,13 @@ using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Clases.Reposicon_paneles;
 using Ofelia_Sara.Agregar_Componentes;
+using Ofelia_Sara.Acceso_Usuarios;
 
 
 
 namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 {
+
     public class AuxiliarConfiguracion
     {
         private readonly Form _menuPrincipal;
@@ -30,6 +32,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         public ContextMenuStrip CrearMenuConfigurar()
         {
+            
             // Crear un nuevo ContextMenuStrip
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
 
@@ -37,6 +40,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             var item_Agregar = new ToolStripMenuItem("AGREGAR");
             var item_Buscar = new ToolStripMenuItem("BUSCAR ...");
             var item_Remover = new ToolStripMenuItem("REMOVER");
+            item_Remover.Click += new EventHandler(Item_Remover_Click);
             var item_Salir = new ToolStripMenuItem("SALIR");
             var SubItem_Agregar_Sellos = new ToolStripMenuItem("SELLOS");
 
@@ -118,11 +122,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
         }
-
-
-
-        // Crear el ítem "REMOVER"
-        ToolStripMenuItem item_Remover = new ToolStripMenuItem("REMOVER");
+    
 
         // Crear el ítem "SALIR"
         ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
@@ -228,17 +228,24 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
         }
 
         // ------PARA Btn REMOVER----------------------
-        private void Remover()
+        private void Item_Remover_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<UsuarioForm>();
+            AbrirFormulario<ModificarEliminar>();
         }
+
 
         //--------------------------------------------------------------------------------
         // Método para abrir formularios sin pasar parámetros (básico)
         private void AbrirFormulario<T>(string controlName = null) where T : Form, new()
         {
-            // Crear una nueva instancia del formulario
-            T form = new T();
+            // Verificar si el formulario ya está abierto
+            Form form = Application.OpenForms.OfType<T>().FirstOrDefault();
+
+            if (form == null)
+            {
+                // Si el formulario no está abierto, crear una nueva instancia
+                form = new T();
+             
 
             // Posicionar el nuevo formulario justo debajo del formulario principal
             FormPositioner.PosicionarDebajo(_menuPrincipal, form);
@@ -247,6 +254,12 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             form.Top = _menuPrincipal.Top + _menuPrincipal.Height + 10;  // 10 píxeles hacia abajo
 
             form.Show();
+            }
+            else
+            {
+                // Si el formulario ya está abierto, lo traemos al frente
+                form.BringToFront();
+            }
 
             if (!string.IsNullOrEmpty(controlName))
             {

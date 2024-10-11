@@ -161,7 +161,7 @@
             this.btn_AgregarConcubina.Text = ". . .";
             this.toolTip1.SetToolTip(this.btn_AgregarConcubina, "Seleccione para agregar nuevo familiar");
             this.btn_AgregarConcubina.UseVisualStyleBackColor = true;
-            this.btn_AgregarConcubina.Click += new System.EventHandler(this.btn_AgregarConcubina_Click);
+            this.btn_AgregarConcubina.Click += new System.EventHandler(this.Btn_AgregarConcubina_Click);
             // 
             // comboBox_EstadoCivil
             // 
@@ -176,7 +176,7 @@
             this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
             this.comboBox_EstadoCivil.Size = new System.Drawing.Size(120, 21);
             this.comboBox_EstadoCivil.TabIndex = 96;
-            this.comboBox_EstadoCivil.SelectedIndexChanged += new System.EventHandler(this.comboBox_EstadoCivil_SelectedIndexChanged);
+            this.comboBox_EstadoCivil.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EstadoCivil_SelectedIndexChanged);
             // 
             // label_EstadoCivil
             // 
@@ -194,7 +194,7 @@
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(150, 20);
             this.textBox_LugarNacimiento.TabIndex = 94;
-            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_LugarNacimiento_KeyPress);
+            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_LugarNacimiento_KeyPress);
             // 
             // label_LugarNacimiento
             // 
@@ -275,8 +275,8 @@
             this.pictureBox_Geoposicionamiento.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox_Geoposicionamiento, "Arrastrar imagen aqui");
             this.pictureBox_Geoposicionamiento.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Geoposicionamiento.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_Geoposicionamiento.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
+            this.pictureBox_Geoposicionamiento.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_Geoposicionamiento.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // pictureBox_Domicilio
             // 
@@ -290,8 +290,8 @@
             this.pictureBox_Domicilio.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox_Domicilio, "Arrastrar imagen aqui");
             this.pictureBox_Domicilio.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Domicilio.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_Domicilio.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
+            this.pictureBox_Domicilio.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_Domicilio.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // label_Email
             // 
@@ -318,8 +318,8 @@
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(151, 21);
             this.comboBox_Nacionalidad.TabIndex = 77;
-            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.comboBox_Nacionalidad_TextChanged_1);
-            this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
+            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.ComboBox_Nacionalidad_TextChanged_1);
+            this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Nacionalidad_KeyPress);
             // 
             // textBox_Ocupacion
             // 
@@ -327,8 +327,8 @@
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(181, 20);
             this.textBox_Ocupacion.TabIndex = 5;
-            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.textBox_Ocupacion_TextChanged);
-            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Ocupacion_KeyPress);
+            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.TextBox_Ocupacion_TextChanged);
+            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Ocupacion_KeyPress);
             // 
             // label_Ocupacion
             // 
@@ -346,8 +346,8 @@
             this.textBox_Apodo.Name = "textBox_Apodo";
             this.textBox_Apodo.Size = new System.Drawing.Size(150, 20);
             this.textBox_Apodo.TabIndex = 6;
-            this.textBox_Apodo.TextChanged += new System.EventHandler(this.textBox_Apodo_TextChanged);
-            this.textBox_Apodo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Apodo_KeyPress);
+            this.textBox_Apodo.TextChanged += new System.EventHandler(this.TextBox_Apodo_TextChanged);
+            this.textBox_Apodo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Apodo_KeyPress);
             // 
             // label_Apodo
             // 
@@ -403,7 +403,7 @@
             this.checkBox_LegajoDetenido.TabIndex = 11;
             this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere legajo");
             this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
-            this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.checkBox_LegajoDetenido_CheckedChanged);
+            this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoDetenido_CheckedChanged);
             // 
             // checkBox_NotArt60
             // 
@@ -446,7 +446,7 @@
             this.btn_Limpiar.TabIndex = 13;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -459,7 +459,7 @@
             this.btn_Guardar.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // label_CuerpoEntero
             // 
@@ -508,8 +508,8 @@
             this.pictureBox_CuerpoEntero.TabIndex = 20;
             this.pictureBox_CuerpoEntero.TabStop = false;
             this.pictureBox_CuerpoEntero.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_CuerpoEntero.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_CuerpoEntero.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
+            this.pictureBox_CuerpoEntero.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_CuerpoEntero.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // pictureBox_PerfilIzquierdo
             // 
@@ -522,8 +522,8 @@
             this.pictureBox_PerfilIzquierdo.TabIndex = 19;
             this.pictureBox_PerfilIzquierdo.TabStop = false;
             this.pictureBox_PerfilIzquierdo.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_PerfilIzquierdo.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_PerfilIzquierdo.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
+            this.pictureBox_PerfilIzquierdo.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_PerfilIzquierdo.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // pictureBox_PerfilDerecho
             // 
@@ -536,8 +536,8 @@
             this.pictureBox_PerfilDerecho.TabIndex = 18;
             this.pictureBox_PerfilDerecho.TabStop = false;
             this.pictureBox_PerfilDerecho.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_PerfilDerecho.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_PerfilDerecho.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
+            this.pictureBox_PerfilDerecho.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_PerfilDerecho.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // pictureBox_Frente
             // 
@@ -551,8 +551,8 @@
             this.pictureBox_Frente.TabIndex = 17;
             this.pictureBox_Frente.TabStop = false;
             this.pictureBox_Frente.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Frente.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragDrop);
-            this.pictureBox_Frente.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox_DragEnter);
+            this.pictureBox_Frente.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
+            this.pictureBox_Frente.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
             // 
             // label_ParaLegajoImputado
             // 
@@ -582,8 +582,8 @@
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
-            this.textBox_Localidad.TextChanged += new System.EventHandler(this.textBox_Localidad_TextChanged);
-            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Localidad_KeyPress);
+            this.textBox_Localidad.TextChanged += new System.EventHandler(this.TextBox_Localidad_TextChanged);
+            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Localidad_KeyPress);
             // 
             // textBox_Domicilio
             // 
@@ -591,7 +591,7 @@
             this.textBox_Domicilio.Name = "textBox_Domicilio";
             this.textBox_Domicilio.Size = new System.Drawing.Size(398, 20);
             this.textBox_Domicilio.TabIndex = 7;
-            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
+            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.TextBox_Domicilio_TextChanged);
             // 
             // textBox_Edad
             // 
@@ -600,7 +600,7 @@
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
             this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
+            this.textBox_Edad.TextChanged += new System.EventHandler(this.TextBox_Edad_TextChanged);
             // 
             // textBox_Dni
             // 
@@ -609,7 +609,7 @@
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
             this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
+            this.textBox_Dni.TextChanged += new System.EventHandler(this.TextBox_Dni_TextChanged);
             // 
             // textBox_Nombre
             // 
@@ -617,7 +617,7 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(399, 20);
             this.textBox_Nombre.TabIndex = 0;
-            this.textBox_Nombre.TextChanged += new System.EventHandler(this.textBox_Nombre_TextChanged);
+            this.textBox_Nombre.TextChanged += new System.EventHandler(this.TextBox_Nombre_TextChanged);
             // 
             // label_Localidad
             // 

@@ -14,7 +14,6 @@ using System.Web.UI.WebControls.WebParts;
 using Ofelia_Sara.Registro_de_personal;
 
 using Mysqlx.Cursor;
-using System.Text.Json;
 using System.Drawing.Drawing2D;
 using Clases.Texto;
 using Clases.Botones;
@@ -33,7 +32,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
 
-        private ToolTip toolTip;
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
         private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
@@ -64,8 +62,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.Load += new System.EventHandler(this.InicioCierre_Load);
 
             // Asocia el evento TextChanged al método de validación
-            textBox_Victima.TextChanged += new EventHandler(textBox_Victima_TextChanged);
-            textBox_Imputado.TextChanged += new EventHandler(textBox_Imputado_TextChanged);
+            textBox_Victima.TextChanged += new EventHandler(TextBox_Victima_TextChanged);
+            textBox_Imputado.TextChanged += new EventHandler(TextBox_Imputado_TextChanged);
 
             //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
@@ -76,7 +74,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarDatosImputado.Enabled = false;
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
 
-            comboBox_DeptoJudicial.TextChanged += comboBox_DeptoJudicial_TextChanged;
+            comboBox_DeptoJudicial.TextChanged += ComboBox_DeptoJudicial_TextChanged;
         }
 
 
@@ -170,7 +168,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //----BOTON LIMPIAR/ELIMINAR-----------------------
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
@@ -187,7 +185,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //--------EVENTO PARA QUE SEA SOLO NUMERO ---------------------
         //--------EL TEXTBOX DE NUMERO DE IPP---------------------
         //--------------METODO PARA LIMITAR LOS CARACTERES A 6--------------
-        private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
+        private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {
             // Limitar a 6 caracteres
             if (textBox_NumeroIpp.Text.Length > 6)
@@ -205,7 +203,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
       
         //---------------COMBO BOX IPP 1      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void comboBox_Ipp1_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Ipp1_TextUpdate(object sender, EventArgs e)
         {
           if (comboBox_Ipp1.Text.Length > 2) // Limitar a 2 caracteres
             {
@@ -216,7 +214,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //---------------COMBO BOX IPP 2      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void comboBox_Ipp2_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Ipp2_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
             if (comboBox_Ipp2.Text.Length > 2)
@@ -231,7 +229,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //---------------COMBO BOX IPP 4      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void comboBox_Ipp4_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Ipp4_TextUpdate(object sender, EventArgs e)
         {
             // Limitar a 2 caracteres
             if (comboBox_Ipp4.Text.Length > 2)
@@ -244,7 +242,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
-        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -297,7 +295,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         // Evento Click del botón Imprimir
-        private void btn_Imprimir_Click(object sender, EventArgs e)
+        private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
@@ -346,7 +344,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         //----BOTON AGREGAR DATOS VICTIMA-----------------------------
-        private void btn_AgregarDatosVictima_Click(object sender, EventArgs e)
+        private void Btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
             if (agregarDatosPersonalesVictima == null || agregarDatosPersonalesVictima.IsDisposed)
             {
@@ -412,7 +410,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //------------------------------------------------------------------------------
 
         //-----------------METODO HABILITA BTN AGREGAR CAUSA------------------------------
-        private void textBox_Caratula_TextChanged(object sender, EventArgs e)
+        private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//habilita el btn_AgregarCausa en caso de tener texto
             ActualizarEstado();
@@ -420,7 +418,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //-------------------------------------------------------------------------------
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
-        private void btn_AgregarDatosImputado_Click(object sender, EventArgs e)
+        private void Btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
   
             if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
@@ -482,7 +480,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         //-------------------TEXTBOX VICTIMA------------------------------------------------------------
-        private void textBox_Victima_TextChanged(object sender, EventArgs e)
+        private void TextBox_Victima_TextChanged(object sender, EventArgs e)
         {
             // Habilita o deshabilita el botón según si el TextBox tiene texto
             if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
@@ -505,7 +503,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         //-------------------TEXTBOX IMPUTADO------------------------------------------------------------
-        private void textBox_Imputado_TextChanged(object sender, EventArgs e)
+        private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
             // Habilita o deshabilita el botón según si el TextBox tiene texto
             if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text))
@@ -602,7 +600,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true; // Todos los controles están completos
         }
 
-        private void checkBox_LegajoDetenido_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_LegajoDetenido_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
             if (checkBox_LegajoDetenido.Checked)
@@ -646,7 +644,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void btn_Buscar_Click(object sender, EventArgs e)
+        private void Btn_Buscar_Click(object sender, EventArgs e)
         {
 
             // Crear y mostrar el formulario BuscarPersonal
@@ -751,7 +749,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
        
 
-        private void comboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
@@ -763,7 +761,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir letras, números, espacios y caracteres de control
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
@@ -780,13 +778,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
+        private void ComboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
         {
             comboBox_AgenteFiscal.Text = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.Text);
             comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.Text.Length;
         }
 
-        private void comboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo acepta dígitos
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -795,7 +793,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo acepta dígitos
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -804,7 +802,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo acepta dígitos
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -850,7 +848,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void checkBox_Cargo_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
             if (checkBox_Cargo.Checked)
@@ -926,26 +924,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
      
 
-        private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
 
-        private void comboBox_Secretario_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Secretario_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
 
-        private void comboBox_Instructor_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Instructor_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
 
        
-        private void comboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
+        private void ComboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
 

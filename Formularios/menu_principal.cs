@@ -32,7 +32,7 @@ namespace Ofelia_Sara.Formularios
         private const int HTCAPTION = 0x2;
         //-----------------------------------------------------
 
-        private ContextMenuStrip contextMenu;
+        //private ContextMenuStrip contextMenu;
         private AuxiliarConfiguracion auxiliarConfiguracion;
         private AccionesManager accionesManager;//para el comboBox
         Timer timerCerrarForm = new Timer();

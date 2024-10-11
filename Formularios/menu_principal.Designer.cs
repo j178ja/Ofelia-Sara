@@ -6,7 +6,7 @@
         /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button Btn_Configuracion;
+     //   private System.Windows.Forms.Button Btn_Configuracion;
 
         /// <summary>
         /// Limpiar los recursos que se estén usando.

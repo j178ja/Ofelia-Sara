@@ -1,6 +1,4 @@
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.AssemblyReference.cache
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.SuggestedBindingRedirects.cache
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.exe.config
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Acceso_Usuarios.ModificarEliminar.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Oficial_de_servicio.Registro.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.UsuarioForm.resources
@@ -106,7 +104,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Memory.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Json.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.ValueTuple.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\nl\PdfiumViewer.resources.dll
@@ -148,3 +145,5 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.P
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.resx
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.Designer.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Json.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.dll.config
