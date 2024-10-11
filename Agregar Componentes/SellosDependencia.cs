@@ -13,11 +13,11 @@ using Clases.Texto;
 using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using Clases.Apariencia;
-using Interfaces_Libreria.Interfaces;
+
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class SellosDependencia : BaseForm, IFormulario
+    public partial class SellosDependencia : BaseForm
     {
         public event Action<string> DependenciaTextChanged;
 
@@ -32,11 +32,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
         }
 
-        // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            // Lógica de inicialización adicional si es necesario
-        }
+   
 
         private void SellosDependencia_Load(object sender, EventArgs e)
         {

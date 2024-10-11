@@ -10,46 +10,47 @@ using System.Windows.Forms;
 
 namespace MECANOGRAFIA.Clases
 {
-     
-        public static class Borde
+
+    public static class Borde
+    {
+        // Método para aplicar bordes redondeados a un panel específico
+        public static void ApplyRoundedCorners(this Panel panel, Panel targetPanel, int borderRadius = 15, int borderSize = 2, Color? borderColor = null)
         {
-            // Método para aplicar bordes redondeados a un panel específico
-            public static void ApplyRoundedCorners(this Panel panel, Panel targetPanel, int borderRadius = 15, int borderSize = 2, Color? borderColor = null)
+            if (panel != targetPanel)
+                return;
+
+            panel.Paint += (sender, e) =>
             {
-                if (panel != targetPanel)
-                    return;
+                // Establecer el color del borde si no se proporciona
+                Color effectiveBorderColor = borderColor ?? Color.Black;
 
-                panel.Paint += (sender, e) =>
+                // Crear un GraphicsPath para el borde redondeado
+                using (GraphicsPath path = new GraphicsPath())
                 {
-                    // Establecer el color del borde si no se proporciona
-                    Color effectiveBorderColor = borderColor ?? Color.Black;
+                    path.AddArc(new Rectangle(0, 0, borderRadius, borderRadius), 180, 90);
+                    path.AddArc(new Rectangle(panel.Width - borderRadius, 0, borderRadius, borderRadius), 270, 90);
+                    path.AddArc(new Rectangle(panel.Width - borderRadius, panel.Height - borderRadius, borderRadius, borderRadius), 0, 90);
+                    path.AddArc(new Rectangle(0, panel.Height - borderRadius, borderRadius, borderRadius), 90, 90);
+                    path.CloseAllFigures();
 
-                    // Crear un GraphicsPath para el borde redondeado
-                    using (GraphicsPath path = new GraphicsPath())
+                    // Rellenar el fondo del panel
+                    using (Brush brush = new SolidBrush(panel.BackColor))
                     {
-                        path.AddArc(new Rectangle(0, 0, borderRadius, borderRadius), 180, 90);
-                        path.AddArc(new Rectangle(panel.Width - borderRadius, 0, borderRadius, borderRadius), 270, 90);
-                        path.AddArc(new Rectangle(panel.Width - borderRadius, panel.Height - borderRadius, borderRadius, borderRadius), 0, 90);
-                        path.AddArc(new Rectangle(0, panel.Height - borderRadius, borderRadius, borderRadius), 90, 90);
-                        path.CloseAllFigures();
-
-                        // Rellenar el fondo del panel
-                        using (Brush brush = new SolidBrush(panel.BackColor))
-                        {
-                            e.Graphics.FillPath(brush, path);
-                        }
-
-                        // Dibujar el borde
-                        using (Pen pen = new Pen(effectiveBorderColor, borderSize))
-                        {
-                            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                            e.Graphics.DrawPath(pen, path);
-                        }
+                        e.Graphics.FillPath(brush, path);
                     }
-                };
 
-                // Redibujar el panel cuando cambie de tamaño
-                panel.Resize += (sender, e) => { panel.Invalidate(); };
-            }
+                    // Dibujar el borde
+                    using (Pen pen = new Pen(effectiveBorderColor, borderSize))
+                    {
+                        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        e.Graphics.DrawPath(pen, path);
+                    }
+                }
+            };
+
+            // Redibujar el panel cuando cambie de tamaño
+            panel.Resize += (sender, e) => { panel.Invalidate(); };
         }
     }
+}
+    

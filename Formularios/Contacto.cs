@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
-using Interfaces_Libreria.Interfaces;
+
 
 namespace Ofelia_Sara.Formularios
 {
-    public partial class Contacto : BaseForm, IFormulario
+    public partial class Contacto : BaseForm
     {
         public Contacto()
         {

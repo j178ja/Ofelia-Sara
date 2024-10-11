@@ -204,6 +204,102 @@
     <Compile Include="Acceso Usuarios\UsuarioForm.Designer.cs">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Agregar_Componentes\ConfiguradorTextBox.cs" />
+    <Compile Include="Clases\Agregar_Componentes\ManejoDeNuevosComponentes.cs" />
+    <Compile Include="Clases\Apariencia\apariencia_formularios.cs" />
+    <Compile Include="Clases\Apariencia\BordePanel.cs" />
+    <Compile Include="Clases\Apariencia\footer.cs" />
+    <Compile Include="Clases\Apariencia\Iconos.cs" />
+    <Compile Include="Clases\Botones\btn_Configuracion\AuxiliarConfiguracion.cs" />
+    <Compile Include="Clases\Botones\btn_Configuracion\Configuracion.cs" />
+    <Compile Include="Clases\Botones\imprimir.cs" />
+    <Compile Include="Clases\Botones\IncrementarTamaño.cs" />
+    <Compile Include="Clases\Botones\limpiar_formulario.cs" />
+    <Compile Include="Clases\Botones\TooltipEnBtnDesactivado.cs" />
+    <Compile Include="Clases\GenerarDocumentos\GenerarDocumentos.cs" />
+    <Compile Include="Clases\Texto\CamelCase.cs" />
+    <Compile Include="Clases\Texto\ClaseNumeros.cs" />
+    <Compile Include="Clases\Texto\mayuscula.cs" />
+    <Compile Include="Clases\Texto\MayusculaSola.cs" />
+    <Compile Include="Clases\Texto\MayusculaYnumeros.cs" />
+    <Compile Include="Clases\Texto\salto_de_input.cs" />
+    <Compile Include="Controles\Barra Busqueda\AbrirFormulario.cs" />
+    <Compile Include="Controles\Barra Busqueda\AccionesManager.cs" />
+    <Compile Include="Controles\Barra Busqueda\AsignacionDeTareas.cs" />
+    <Compile Include="Controles\Barra Busqueda\Autocompletar.cs" />
+    <Compile Include="Controles\Barra Busqueda\PlaceholderComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\Barras personalizadas\CustomProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\AgregarFiscaliaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\AgregarFiscaliaControl.Designer.cs">
+      <DependentUpon>AgregarFiscaliaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\AgregarJuzgadoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\AgregarJuzgadoControl.Designer.cs">
+      <DependentUpon>AgregarJuzgadoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\Aplicadas con controles\CalcularAntiguedad.cs" />
+    <Compile Include="Controles\Controles\Aplicadas con controles\CalcularEdad.cs" />
+    <Compile Include="Controles\Controles\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\DataTimePickerPersonalizado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\DataTimePickerPersonalizado.Designer.cs">
+      <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\DateNacimiento.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Controles\Controles\DateNacimiento.Designer.cs">
+      <DependentUpon>DateNacimiento.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Controles\Controles\EmailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\EmailControl.Designer.cs">
+      <DependentUpon>EmailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\NuevaCaratulaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\NuevaCaratulaControl.Designer.cs">
+      <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\NuevaPersonaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\NuevaPersonaControl.Designer.cs">
+      <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\NumeroTelefonicoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\NumeroTelefonicoControl.Designer.cs">
+      <DependentUpon>NumeroTelefonicoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\PersonalSeleccionadoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\PersonalSeleccionadoControl.Designer.cs">
+      <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\Reposicionar paneles\Buscar Personal\AgregarPersonal.cs" />
+    <Compile Include="Controles\Controles\Reposicionar paneles\Expedientes\AgregarControl.cs" />
+    <Compile Include="Controles\Controles\Reposicionar paneles\PosicionarFormularioDebajo.cs" />
     <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +453,40 @@
     <EmbeddedResource Include="Acceso Usuarios\UsuarioForm.resx">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Barras personalizadas\CustomProgressBar.resx">
+      <DependentUpon>CustomProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\AgregarFiscaliaControl.resx">
+      <DependentUpon>AgregarFiscaliaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\AgregarJuzgadoControl.resx">
+      <DependentUpon>AgregarJuzgadoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\DataTimePickerPersonalizado.resx">
+      <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\DateNacimiento.resx">
+      <DependentUpon>DateNacimiento.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\EmailControl.resx">
+      <DependentUpon>EmailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\NuevaCaratulaControl.resx">
+      <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\NuevaPersonaControl.resx">
+      <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\NumeroTelefonicoControl.resx">
+      <DependentUpon>NumeroTelefonicoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\PersonalSeleccionadoControl.resx">
+      <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Contacto.resx">
       <DependentUpon>Contacto.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,6 +589,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Resources\iconoEscribiendo.png" />
+    <Content Include="Resources\teclado.png" />
     <None Include="Resources\IconoEscudoPolicia.ico" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -494,18 +625,6 @@
       <Project>{60eb6c4a-8efb-4cd8-a959-315342c6c9ff}</Project>
       <Name>BaseDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="caca\Interfaces_Libreria.csproj">
-      <Project>{70d3038a-0de7-47b2-8511-e511756e758b}</Project>
-      <Name>Interfaces_Libreria</Name>
-    </ProjectReference>
-    <ProjectReference Include="Clases_Libreria\Clases.csproj">
-      <Project>{e38897e3-7b35-49cd-8922-42016bfbe38e}</Project>
-      <Name>Clases</Name>
-    </ProjectReference>
-    <ProjectReference Include="Controles_Libreria\Controles.csproj">
-      <Project>{327929eb-b2d3-43b1-9de2-e312b3b71f33}</Project>
-      <Name>Controles</Name>
-    </ProjectReference>
     <ProjectReference Include="MECANOGRAFIA\MECANOGRAFIA.csproj">
       <Project>{f518907f-dccb-4960-807b-54f7bfbdba1c}</Project>
       <Name>MECANOGRAFIA</Name>
@@ -522,6 +641,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controles\Controles\Reposicionar paneles\Inicio-Cierre\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />

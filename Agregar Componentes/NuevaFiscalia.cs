@@ -12,12 +12,12 @@ using Clases.Texto;
 using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using Clases.Apariencia;
-using Interfaces_Libreria.Interfaces;
+
 using BaseDatos.Entidades;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevaFiscalia: BaseForm, IFormulario
+    public partial class NuevaFiscalia: BaseForm
     {
         public NuevaFiscalia()
         {
@@ -48,11 +48,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Fiscalia.Focus();
         }
-        // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            //para interfaz formulario
-        }
+        
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda

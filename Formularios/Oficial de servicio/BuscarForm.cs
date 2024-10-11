@@ -12,11 +12,11 @@ using System.Windows.Controls;
 using Clases.Apariencia;
 using Clases.Botones;
 using Controles.Controles;
-using Interfaces_Libreria.Interfaces;
+
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
-    public partial class BuscarForm : BaseForm ,IFormulario
+    public partial class BuscarForm : BaseForm 
     {
         public BuscarForm()
         {

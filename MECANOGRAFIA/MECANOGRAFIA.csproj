@@ -54,9 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Borde.cs" />
+    <Compile Include="Clases\ColorKeypress.cs" />
     <Compile Include="Clases\Contadora.cs" />
     <Compile Include="Clases\Dedos.cs" />
-    <Compile Include="Clases\Mecano.cs" />
+    <Compile Include="Clases\ManejadorTecladoTexto.cs" />
     <Compile Include="Mecanografia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,16 +95,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\teclado.png" />
     <Content Include="TEXTOS\denuncia.txt" />
     <None Include="Resources\doc.png" />
     <None Include="doc.png" />
     <Content Include="Para que sirve.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Clases_Libreria\Clases.csproj">
-      <Project>{e38897e3-7b35-49cd-8922-42016bfbe38e}</Project>
-      <Name>Clases</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

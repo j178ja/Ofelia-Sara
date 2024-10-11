@@ -41,9 +41,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Leyes\Decreto 1050.pd
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Leyes\Decreto 8031 Codigo de Faltas.pdf
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Leyes\Ley 13982.pdf
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Leyes\Reglamento de tramite y correspondencia.pdf
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\DateNacimiento.resx
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\DateNacimiento.cs
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\DateNacimiento.Designer.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Ofelia-Sara.exe.config
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Ofelia-Sara.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Ofelia-Sara.pdb
@@ -52,7 +49,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\ko-KP\Ofelia-Sara.res
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.Pdf2Word.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\caca.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Google.Protobuf.dll
@@ -83,7 +79,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Threading.Task
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.ValueTuple.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\ZstdSharp.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Microsoft.mshtml.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\caca.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Aspose.Words.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\EntityFramework.xml
@@ -132,14 +127,24 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\MECANOGRAFIA.exe.config
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.pdb
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Clases.pdb
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.Framework.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.Framework.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\ICOes.png
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoEscudoPolicia.ico
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.CustomProgressBar.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.AgregarFiscaliaControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.AgregarJuzgadoControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.CALENDARIO.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.TimePickerPersonalizado.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.CustomDateTextBox.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.EmailControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.NuevaCaratulaControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.NuevaPersonaControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.NumeroTelefonicoControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.PersonalSeleccionadoControl.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.resx
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.Designer.cs

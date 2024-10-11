@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
-using Interfaces_Libreria.Interfaces;
+
 using Controles.Controles;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
-    public partial class NuevoPersonal : BaseForm ,IFormulario
+    public partial class NuevoPersonal : BaseForm
     {
 
         public NuevoPersonal(string numeroLegajo)

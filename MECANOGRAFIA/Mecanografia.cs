@@ -13,19 +13,28 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using DocumentFormat.OpenXml.ExtendedProperties;
+using System.Drawing.Drawing2D;
+
 
 namespace MECANOGRAFIA
 {
 
-    
+
     public partial class Mecanografia : Form
     {
-        private Mecano _mecano;
+       
+        private ManejadorTecladoTexto manejadorTeclado;
         public Mecanografia()
         {
             InitializeComponent();
-           System.Drawing.Color customBorderColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            System.Drawing.Color customBorderColor = System.Drawing.Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 25, borderSize: 15, borderColor: customBorderColor);
+
+            System.Drawing.Color BorderColorTeclado = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel_TecladoBase.ApplyRoundedCorners(panel_TecladoBase, borderRadius: 25, borderSize: 10, borderColor: BorderColorTeclado);
+
+
+
             panel_Especificaciones.Visible = false;
             panel_Manos.Visible = false;
             Texto_Tipear.Visible = false;
@@ -33,7 +42,7 @@ namespace MECANOGRAFIA
             btn_Detener.Visible = false;
 
             //para redondear dedos
-            RedondearPanel.AplicarBordesRedondeados(panel_PulgarDerecho, 20,10);
+            RedondearPanel.AplicarBordesRedondeados(panel_PulgarDerecho, 20, 10);
             RedondearPanel.AplicarBordesRedondeados(panel_IndiceDerecho, 20, 10);
             RedondearPanel.AplicarBordesRedondeados(panel_MayorDerecho, 20, 10);
             RedondearPanel.AplicarBordesRedondeados(panel_AnularDerecho, 20, 10);
@@ -46,35 +55,75 @@ namespace MECANOGRAFIA
 
             Texto_Tipear.Enter += Texto_Tipear_Enter;
 
-            // Obtener todos los botones que forman parte del teclado
-            Button[] tecladoButtons = { btn_A, btn_B, btn_C, btn_D, btn_E, btn_F, btn_G, btn_H, btn_I, btn_J,
-                btn_K, btn_L,btn_M,btn_N,btn_Ñ,btn_O,btn_P,btn_Q,btn_R,btn_S,btn_T,btn_U,btn_V,btn_W,btn_X,
-                btn_Y,btn_Z,btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8,btn_9,btn_0 }; // Agrega todos tus botones aquí
+            // Crear un diccionario que relacione caracteres con paneles
+            Dictionary<char, Panel> teclaPanelMap = new Dictionary<char, Panel>
+    {
+        { 'q', panel_MeniqueIzquierdo },
+        { 'a', panel_MeniqueIzquierdo },
+        { 'z', panel_MeniqueIzquierdo },
+        
+        { 'w', panel_AnularIzquierdo },
+        { 's', panel_AnularIzquierdo },
+        { 'x', panel_AnularIzquierdo },
 
-            foreach (var button in tecladoButtons)
-            {
-                button.Enabled = false; // Deshabilita cada botón
-            }
+         { 'e', panel_MayorIzquierdo },
+        { 'd', panel_MayorIzquierdo },
+        { 'c', panel_MayorIzquierdo },
 
-            _mecano = new Mecano(Texto_Tipear, tecladoButtons); // Inicializa Mecano
-  
+        { 'r', panel_IndiceIzquierdo },
+        { 'f', panel_IndiceIzquierdo },
+        { 'v', panel_IndiceIzquierdo },
+        { 't', panel_IndiceIzquierdo },
+        { 'g', panel_IndiceIzquierdo },
+        { 'b', panel_IndiceIzquierdo },
+
+
+        { 'y', panel_IndiceDerecho },
+        { 'h', panel_IndiceDerecho },
+        { 'n', panel_IndiceDerecho },
+        { 'u', panel_IndiceDerecho },
+        { 'j', panel_IndiceDerecho },
+        { 'm', panel_IndiceDerecho },
+
+        { 'i', panel_MayorDerecho },
+        { 'k', panel_MayorDerecho },
+        { ',', panel_MayorDerecho },
+
+        { 'o', panel_AnularDerecho },
+        { 'l', panel_AnularDerecho },
+        { '.', panel_AnularDerecho },
+
+
+        { 'p', panel_MeniqueDerecho },
+        { 'ñ', panel_MeniqueDerecho },
+        { '-', panel_MeniqueDerecho },
+
+    };
+
+            // Inicializar la clase ManejadorTecladoTexto con el mapeo
+            manejadorTeclado = new ManejadorTecladoTexto(Texto_Tipear, labelTeclaPresionada, teclaPanelMap);
+
+            // Asignar el evento KeyPress al RichTextBox o al formulario.
+            this.KeyPress += new KeyPressEventHandler(Mecanografia_KeyPress);
+
         }
 
         private void Mecanografia_Load(object sender, EventArgs e)
         {
-            _mecano.StartTypingTest(); // Comienza la prueba de escritura
 
         }
+
+
         private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
         {
-           
-                panel_Especificaciones.Visible = true;
-                pictureBox_SelectArchivo.Visible = true;
-                btn_Detener.Visible = true;
-                btn_Iniciar.Visible = true;
-     
+
+            panel_Especificaciones.Visible = true;
+            pictureBox_SelectArchivo.Visible = true;
+            btn_Detener.Visible = true;
+            btn_Iniciar.Visible = true;
+
         }
-       
+
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             // Establecer el color del borde (LightGreen) y el grosor del borde (3 píxeles)
@@ -89,7 +138,7 @@ namespace MECANOGRAFIA
                 {
                 }
                 // Alinear el borde dentro del control
-                e.Graphics.DrawRectangle(pen,new Rectangle(0, 0, pictureBox.Width, pictureBox.Height ));
+                e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, pictureBox.Width, pictureBox.Height));
             }
         }
 
@@ -177,7 +226,7 @@ namespace MECANOGRAFIA
 
                                 // Mostrar el contenido en el RichTextBox
                                 Texto_Tipear.Text = contenido; // Asegúrate de que el nombre del RichTextBox sea correcto
-                               
+
                             }
                         }
                         catch (Exception ex)
@@ -202,18 +251,55 @@ namespace MECANOGRAFIA
             this.ActiveControl = null; // Establecer el control activo en null
         }
 
+
+        private int currentIndex = 0; // Índice que rastrea el carácter actual
+
         private void Texto_Tipear_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Evitar cualquier entrada de teclado
-            e.Handled = true;
+            // Obtener el carácter actual que está resaltado (en azul)
+            char currentChar = Texto_Tipear.Text[currentIndex];
+            char pressedKey = e.KeyChar; // Obtener la tecla que el usuario ha presionado
+
+            if (pressedKey == currentChar)
+            {
+                // Si la tecla es correcta, marcarla en verde y avanzar al siguiente carácter
+                Texto_Tipear.Select(currentIndex, 1);
+                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold);
+                Texto_Tipear.SelectionColor = System.Drawing.Color.Green;
+
+                // Avanzar al siguiente carácter
+                currentIndex++;
+
+                // Resaltar el siguiente carácter en azul
+                if (currentIndex < Texto_Tipear.Text.Length)
+                {
+                    Texto_Tipear.Select(currentIndex, 1);
+                    Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold);
+                    Texto_Tipear.SelectionColor = System.Drawing.Color.Blue;
+                }
+            }
+            else
+            {
+                // Si la tecla es incorrecta, mostrar el carácter actual en rojo brevemente
+                Texto_Tipear.Select(currentIndex, 1);
+                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold);
+                Texto_Tipear.SelectionColor = System.Drawing.Color.Red;
+
+                // Opción: Podrías mostrar un Label indicando el error
+                labelTeclaPresionada.Text = $"Tecla incorrecta: {pressedKey}";
+            }
         }
+
+
         //----------------------------------------------------------------
 
         private void Btn_Iniciar_Click(object sender, EventArgs e)
         {
 
             panel_Manos.Visible = true;
-            Texto_Tipear.Visible =true;
+            Texto_Tipear.Visible = true;
+            // Inicializar el texto resaltando el primer carácter
+            manejadorTeclado.InicializarTexto();
         }
 
         private void Btn_Detener_Click(object sender, EventArgs e)
@@ -293,16 +379,12 @@ namespace MECANOGRAFIA
                 // Agregar el Label de valor al Panel
                 panel_Especificaciones.Controls.Add(labelValor);
             }
-         }
-        //-----------------------------------------------------------------------
-     
-
-
-        private void panel_Manos_Paint(object sender, PaintEventArgs e)
-        {
-
         }
-
-      
+        //-----------------------------------------------------------------------
+        private void Mecanografia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Pasar la tecla presionada al manejador para procesarla.
+            manejadorTeclado.ProcesarEntrada(e.KeyChar);
+        }
     }
 }

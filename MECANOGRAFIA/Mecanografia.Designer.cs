@@ -31,73 +31,84 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mecanografia));
             this.panel_Teclado = new System.Windows.Forms.Panel();
-            this.btn_Enter = new System.Windows.Forms.Button();
-            this.btn_ControlDerecho = new System.Windows.Forms.Button();
-            this.button60 = new System.Windows.Forms.Button();
-            this.btn_Fn = new System.Windows.Forms.Button();
-            this.btn_AltGr = new System.Windows.Forms.Button();
-            this.button57 = new System.Windows.Forms.Button();
-            this.button56 = new System.Windows.Forms.Button();
-            this.btn_ControlIzquierdo = new System.Windows.Forms.Button();
-            this.btn_ShiftIzquierdo = new System.Windows.Forms.Button();
-            this.btn_ShiftDerecho = new System.Windows.Forms.Button();
-            this.button51 = new System.Windows.Forms.Button();
-            this.button52 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
-            this.btn_Borrar = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
-            this.btn_Tabulacion = new System.Windows.Forms.Button();
-            this.btn_Mayuscula = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
-            this.btn_Espacio = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.btn_M = new System.Windows.Forms.Button();
-            this.btn_N = new System.Windows.Forms.Button();
-            this.btn_B = new System.Windows.Forms.Button();
-            this.btn_V = new System.Windows.Forms.Button();
-            this.btn_C = new System.Windows.Forms.Button();
-            this.btn_X = new System.Windows.Forms.Button();
-            this.btn_Z = new System.Windows.Forms.Button();
-            this.btn_Ñ = new System.Windows.Forms.Button();
-            this.btn_L = new System.Windows.Forms.Button();
-            this.btn_K = new System.Windows.Forms.Button();
-            this.btn_J = new System.Windows.Forms.Button();
-            this.btn_H = new System.Windows.Forms.Button();
-            this.btn_G = new System.Windows.Forms.Button();
-            this.btn_F = new System.Windows.Forms.Button();
-            this.btn_D = new System.Windows.Forms.Button();
-            this.btn_S = new System.Windows.Forms.Button();
-            this.btn_A = new System.Windows.Forms.Button();
-            this.btn_P = new System.Windows.Forms.Button();
-            this.btn_O = new System.Windows.Forms.Button();
-            this.btn_I = new System.Windows.Forms.Button();
-            this.btn_U = new System.Windows.Forms.Button();
-            this.btn_Y = new System.Windows.Forms.Button();
-            this.btn_T = new System.Windows.Forms.Button();
-            this.btn_R = new System.Windows.Forms.Button();
-            this.btn_E = new System.Windows.Forms.Button();
-            this.btn_W = new System.Windows.Forms.Button();
-            this.btn_Q = new System.Windows.Forms.Button();
-            this.btn_0 = new System.Windows.Forms.Button();
-            this.btn_9 = new System.Windows.Forms.Button();
-            this.btn_8 = new System.Windows.Forms.Button();
-            this.btn_7 = new System.Windows.Forms.Button();
-            this.btn_6 = new System.Windows.Forms.Button();
-            this.btn_5 = new System.Windows.Forms.Button();
-            this.btn_4 = new System.Windows.Forms.Button();
-            this.btn_3 = new System.Windows.Forms.Button();
-            this.btn_2 = new System.Windows.Forms.Button();
-            this.btn_1 = new System.Windows.Forms.Button();
+            this.panel_TecladoBase = new System.Windows.Forms.Panel();
+            this.p_Enter2 = new System.Windows.Forms.Panel();
+            this.p_Enter1 = new System.Windows.Forms.Panel();
+            this.panel56 = new System.Windows.Forms.Panel();
+            this.p_Alt = new System.Windows.Forms.Panel();
+            this.p_Mayuscula = new System.Windows.Forms.Panel();
+            this.p_Windows = new System.Windows.Forms.Panel();
+            this.p_L = new System.Windows.Forms.Panel();
+            this.p_ControlIzquierdo = new System.Windows.Forms.Panel();
+            this.panel59 = new System.Windows.Forms.Panel();
+            this.p_Espacio = new System.Windows.Forms.Panel();
+            this.p_K = new System.Windows.Forms.Panel();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.p_Ñ = new System.Windows.Forms.Panel();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.p_AltGr = new System.Windows.Forms.Panel();
+            this.p_J = new System.Windows.Forms.Panel();
+            this.p_ShiftDerecho = new System.Windows.Forms.Panel();
+            this.p_H = new System.Windows.Forms.Panel();
+            this.panel65 = new System.Windows.Forms.Panel();
+            this.p_ControlDerecho = new System.Windows.Forms.Panel();
+            this.p_G = new System.Windows.Forms.Panel();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.p_F = new System.Windows.Forms.Panel();
+            this.panel50 = new System.Windows.Forms.Panel();
+            this.p_D = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.p_S = new System.Windows.Forms.Panel();
+            this.p_A = new System.Windows.Forms.Panel();
+            this.p_M = new System.Windows.Forms.Panel();
+            this.p_Tab = new System.Windows.Forms.Panel();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.p_O = new System.Windows.Forms.Panel();
+            this.p_N = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.p_B = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.p_V = new System.Windows.Forms.Panel();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.p_C = new System.Windows.Forms.Panel();
+            this.p_I = new System.Windows.Forms.Panel();
+            this.p_X = new System.Windows.Forms.Panel();
+            this.p_P = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.p_Z = new System.Windows.Forms.Panel();
+            this.p_9 = new System.Windows.Forms.Panel();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.p_U = new System.Windows.Forms.Panel();
+            this.p_ShiftIzquierdo = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.p_Y = new System.Windows.Forms.Panel();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.p_8 = new System.Windows.Forms.Panel();
+            this.p_T = new System.Windows.Forms.Panel();
+            this.p_0 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.p_R = new System.Windows.Forms.Panel();
+            this.p_7 = new System.Windows.Forms.Panel();
+            this.p_E = new System.Windows.Forms.Panel();
+            this.p_6 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.p_W = new System.Windows.Forms.Panel();
+            this.p_5 = new System.Windows.Forms.Panel();
+            this.p_Q = new System.Windows.Forms.Panel();
+            this.p_4 = new System.Windows.Forms.Panel();
+            this.p_3 = new System.Windows.Forms.Panel();
+            this.p_2 = new System.Windows.Forms.Panel();
+            this.p_1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Texto_Tipear = new System.Windows.Forms.RichTextBox();
             this.btn_Iniciar = new System.Windows.Forms.Button();
             this.btn_Detener = new System.Windows.Forms.Button();
             this.btn_AgregarArchivo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelTeclaPresionada = new System.Windows.Forms.Label();
             this.Btn_Elegir = new System.Windows.Forms.Button();
             this.menu_ElegirArchivos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dENUNCIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,6 +136,15 @@
             this.panel_PulgarDerecho = new System.Windows.Forms.Panel();
             this.panel_PulgarIzquierdo = new System.Windows.Forms.Panel();
             this.panel_Teclado.SuspendLayout();
+            this.panel_TecladoBase.SuspendLayout();
+            this.p_Ñ.SuspendLayout();
+            this.p_H.SuspendLayout();
+            this.panel37.SuspendLayout();
+            this.p_V.SuspendLayout();
+            this.p_P.SuspendLayout();
+            this.p_Y.SuspendLayout();
+            this.p_0.SuspendLayout();
+            this.p_6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu_ElegirArchivos.SuspendLayout();
             this.panel_Especificaciones.SuspendLayout();
@@ -134,643 +154,662 @@
             // 
             // panel_Teclado
             // 
-            this.panel_Teclado.Controls.Add(this.btn_Enter);
-            this.panel_Teclado.Controls.Add(this.btn_ControlDerecho);
-            this.panel_Teclado.Controls.Add(this.button60);
-            this.panel_Teclado.Controls.Add(this.btn_Fn);
-            this.panel_Teclado.Controls.Add(this.btn_AltGr);
-            this.panel_Teclado.Controls.Add(this.button57);
-            this.panel_Teclado.Controls.Add(this.button56);
-            this.panel_Teclado.Controls.Add(this.btn_ControlIzquierdo);
-            this.panel_Teclado.Controls.Add(this.btn_ShiftIzquierdo);
-            this.panel_Teclado.Controls.Add(this.btn_ShiftDerecho);
-            this.panel_Teclado.Controls.Add(this.button51);
-            this.panel_Teclado.Controls.Add(this.button52);
-            this.panel_Teclado.Controls.Add(this.button49);
-            this.panel_Teclado.Controls.Add(this.button50);
-            this.panel_Teclado.Controls.Add(this.btn_Borrar);
-            this.panel_Teclado.Controls.Add(this.button46);
-            this.panel_Teclado.Controls.Add(this.button47);
-            this.panel_Teclado.Controls.Add(this.button45);
-            this.panel_Teclado.Controls.Add(this.btn_Tabulacion);
-            this.panel_Teclado.Controls.Add(this.btn_Mayuscula);
-            this.panel_Teclado.Controls.Add(this.button42);
-            this.panel_Teclado.Controls.Add(this.btn_Espacio);
-            this.panel_Teclado.Controls.Add(this.button31);
-            this.panel_Teclado.Controls.Add(this.button32);
-            this.panel_Teclado.Controls.Add(this.button33);
-            this.panel_Teclado.Controls.Add(this.btn_M);
-            this.panel_Teclado.Controls.Add(this.btn_N);
-            this.panel_Teclado.Controls.Add(this.btn_B);
-            this.panel_Teclado.Controls.Add(this.btn_V);
-            this.panel_Teclado.Controls.Add(this.btn_C);
-            this.panel_Teclado.Controls.Add(this.btn_X);
-            this.panel_Teclado.Controls.Add(this.btn_Z);
-            this.panel_Teclado.Controls.Add(this.btn_Ñ);
-            this.panel_Teclado.Controls.Add(this.btn_L);
-            this.panel_Teclado.Controls.Add(this.btn_K);
-            this.panel_Teclado.Controls.Add(this.btn_J);
-            this.panel_Teclado.Controls.Add(this.btn_H);
-            this.panel_Teclado.Controls.Add(this.btn_G);
-            this.panel_Teclado.Controls.Add(this.btn_F);
-            this.panel_Teclado.Controls.Add(this.btn_D);
-            this.panel_Teclado.Controls.Add(this.btn_S);
-            this.panel_Teclado.Controls.Add(this.btn_A);
-            this.panel_Teclado.Controls.Add(this.btn_P);
-            this.panel_Teclado.Controls.Add(this.btn_O);
-            this.panel_Teclado.Controls.Add(this.btn_I);
-            this.panel_Teclado.Controls.Add(this.btn_U);
-            this.panel_Teclado.Controls.Add(this.btn_Y);
-            this.panel_Teclado.Controls.Add(this.btn_T);
-            this.panel_Teclado.Controls.Add(this.btn_R);
-            this.panel_Teclado.Controls.Add(this.btn_E);
-            this.panel_Teclado.Controls.Add(this.btn_W);
-            this.panel_Teclado.Controls.Add(this.btn_Q);
-            this.panel_Teclado.Controls.Add(this.btn_0);
-            this.panel_Teclado.Controls.Add(this.btn_9);
-            this.panel_Teclado.Controls.Add(this.btn_8);
-            this.panel_Teclado.Controls.Add(this.btn_7);
-            this.panel_Teclado.Controls.Add(this.btn_6);
-            this.panel_Teclado.Controls.Add(this.btn_5);
-            this.panel_Teclado.Controls.Add(this.btn_4);
-            this.panel_Teclado.Controls.Add(this.btn_3);
-            this.panel_Teclado.Controls.Add(this.btn_2);
-            this.panel_Teclado.Controls.Add(this.btn_1);
+            this.panel_Teclado.Controls.Add(this.panel_TecladoBase);
             this.panel_Teclado.Location = new System.Drawing.Point(21, 242);
             this.panel_Teclado.Name = "panel_Teclado";
             this.panel_Teclado.Size = new System.Drawing.Size(714, 170);
             this.panel_Teclado.TabIndex = 0;
             // 
-            // btn_Enter
-            // 
-            this.btn_Enter.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Enter.Location = new System.Drawing.Point(614, 41);
-            this.btn_Enter.Name = "btn_Enter";
-            this.btn_Enter.Size = new System.Drawing.Size(27, 52);
-            this.btn_Enter.TabIndex = 61;
-            this.btn_Enter.Text = "Enter";
-            this.btn_Enter.UseVisualStyleBackColor = true;
-            // 
-            // btn_ControlDerecho
-            // 
-            this.btn_ControlDerecho.Location = new System.Drawing.Point(584, 128);
-            this.btn_ControlDerecho.Name = "btn_ControlDerecho";
-            this.btn_ControlDerecho.Size = new System.Drawing.Size(57, 23);
-            this.btn_ControlDerecho.TabIndex = 60;
-            this.btn_ControlDerecho.Text = "CTRL";
-            this.btn_ControlDerecho.UseVisualStyleBackColor = true;
-            // 
-            // button60
-            // 
-            this.button60.Location = new System.Drawing.Point(544, 128);
-            this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(34, 23);
-            this.button60.TabIndex = 59;
-            this.button60.Text = "[]";
-            this.button60.UseVisualStyleBackColor = true;
-            // 
-            // btn_Fn
-            // 
-            this.btn_Fn.Location = new System.Drawing.Point(506, 128);
-            this.btn_Fn.Name = "btn_Fn";
-            this.btn_Fn.Size = new System.Drawing.Size(34, 23);
-            this.btn_Fn.TabIndex = 58;
-            this.btn_Fn.Text = "FN";
-            this.btn_Fn.UseVisualStyleBackColor = true;
-            // 
-            // btn_AltGr
-            // 
-            this.btn_AltGr.Location = new System.Drawing.Point(455, 128);
-            this.btn_AltGr.Name = "btn_AltGr";
-            this.btn_AltGr.Size = new System.Drawing.Size(45, 23);
-            this.btn_AltGr.TabIndex = 57;
-            this.btn_AltGr.Text = "ALTGR";
-            this.btn_AltGr.UseVisualStyleBackColor = true;
-            // 
-            // button57
-            // 
-            this.button57.Location = new System.Drawing.Point(135, 128);
-            this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(41, 23);
-            this.button57.TabIndex = 56;
-            this.button57.Text = "Win";
-            this.button57.UseVisualStyleBackColor = true;
-            // 
-            // button56
-            // 
-            this.button56.Location = new System.Drawing.Point(180, 128);
-            this.button56.Name = "button56";
-            this.button56.Size = new System.Drawing.Size(57, 23);
-            this.button56.TabIndex = 55;
-            this.button56.Text = "ALT";
-            this.button56.UseVisualStyleBackColor = true;
-            // 
-            // btn_ControlIzquierdo
-            // 
-            this.btn_ControlIzquierdo.Location = new System.Drawing.Point(72, 128);
-            this.btn_ControlIzquierdo.Name = "btn_ControlIzquierdo";
-            this.btn_ControlIzquierdo.Size = new System.Drawing.Size(57, 23);
-            this.btn_ControlIzquierdo.TabIndex = 54;
-            this.btn_ControlIzquierdo.Text = "CTRL";
-            this.btn_ControlIzquierdo.UseVisualStyleBackColor = true;
-            // 
-            // btn_ShiftIzquierdo
-            // 
-            this.btn_ShiftIzquierdo.Location = new System.Drawing.Point(72, 99);
-            this.btn_ShiftIzquierdo.Name = "btn_ShiftIzquierdo";
-            this.btn_ShiftIzquierdo.Size = new System.Drawing.Size(34, 23);
-            this.btn_ShiftIzquierdo.TabIndex = 53;
-            this.btn_ShiftIzquierdo.Text = "Shift";
-            this.btn_ShiftIzquierdo.UseVisualStyleBackColor = true;
-            // 
-            // btn_ShiftDerecho
-            // 
-            this.btn_ShiftDerecho.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ShiftDerecho.Location = new System.Drawing.Point(552, 99);
-            this.btn_ShiftDerecho.Name = "btn_ShiftDerecho";
-            this.btn_ShiftDerecho.Size = new System.Drawing.Size(89, 23);
-            this.btn_ShiftDerecho.TabIndex = 52;
-            this.btn_ShiftDerecho.Text = "Shift";
-            this.btn_ShiftDerecho.UseVisualStyleBackColor = true;
-            // 
-            // button51
-            // 
-            this.button51.Location = new System.Drawing.Point(575, 70);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(34, 23);
-            this.button51.TabIndex = 51;
-            this.button51.Text = "}";
-            this.button51.UseVisualStyleBackColor = true;
-            // 
-            // button52
-            // 
-            this.button52.Location = new System.Drawing.Point(535, 70);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(34, 23);
-            this.button52.TabIndex = 50;
-            this.button52.Text = "{";
-            this.button52.UseVisualStyleBackColor = true;
-            // 
-            // button49
-            // 
-            this.button49.Location = new System.Drawing.Point(563, 41);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(34, 23);
-            this.button49.TabIndex = 49;
-            this.button49.Text = "+*~";
-            this.button49.UseVisualStyleBackColor = true;
-            // 
-            // button50
-            // 
-            this.button50.Location = new System.Drawing.Point(523, 41);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(34, 23);
-            this.button50.TabIndex = 48;
-            this.button50.Text = "´ ¨";
-            this.button50.UseVisualStyleBackColor = true;
-            // 
-            // btn_Borrar
-            // 
-            this.btn_Borrar.Location = new System.Drawing.Point(589, 12);
-            this.btn_Borrar.Name = "btn_Borrar";
-            this.btn_Borrar.Size = new System.Drawing.Size(52, 23);
-            this.btn_Borrar.TabIndex = 47;
-            this.btn_Borrar.Text = "<----";
-            this.btn_Borrar.UseVisualStyleBackColor = true;
-            // 
-            // button46
-            // 
-            this.button46.Location = new System.Drawing.Point(549, 12);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(34, 23);
-            this.button46.TabIndex = 46;
-            this.button46.Text = "¿";
-            this.button46.UseVisualStyleBackColor = true;
-            // 
-            // button47
-            // 
-            this.button47.Location = new System.Drawing.Point(509, 12);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(34, 23);
-            this.button47.TabIndex = 45;
-            this.button47.Text = "?";
-            this.button47.UseVisualStyleBackColor = true;
-            // 
-            // button45
-            // 
-            this.button45.Location = new System.Drawing.Point(72, 12);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(34, 23);
-            this.button45.TabIndex = 44;
-            this.button45.Text = "|°";
-            this.button45.UseVisualStyleBackColor = true;
-            // 
-            // btn_Tabulacion
-            // 
-            this.btn_Tabulacion.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tabulacion.Location = new System.Drawing.Point(72, 41);
-            this.btn_Tabulacion.Name = "btn_Tabulacion";
-            this.btn_Tabulacion.Size = new System.Drawing.Size(45, 23);
-            this.btn_Tabulacion.TabIndex = 43;
-            this.btn_Tabulacion.Text = "Tab.";
-            this.btn_Tabulacion.UseVisualStyleBackColor = true;
-            // 
-            // btn_Mayuscula
-            // 
-            this.btn_Mayuscula.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Mayuscula.Location = new System.Drawing.Point(72, 70);
-            this.btn_Mayuscula.Name = "btn_Mayuscula";
-            this.btn_Mayuscula.Size = new System.Drawing.Size(57, 23);
-            this.btn_Mayuscula.TabIndex = 42;
-            this.btn_Mayuscula.Text = "Bloq. Mayus";
-            this.btn_Mayuscula.UseVisualStyleBackColor = true;
-            // 
-            // button42
-            // 
-            this.button42.Location = new System.Drawing.Point(110, 99);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(34, 23);
-            this.button42.TabIndex = 41;
-            this.button42.Text = "<>";
-            this.button42.UseVisualStyleBackColor = true;
-            // 
-            // btn_Espacio
-            // 
-            this.btn_Espacio.Location = new System.Drawing.Point(243, 128);
-            this.btn_Espacio.Name = "btn_Espacio";
-            this.btn_Espacio.Size = new System.Drawing.Size(206, 23);
-            this.btn_Espacio.TabIndex = 40;
-            this.btn_Espacio.Text = "--------------------";
-            this.btn_Espacio.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(510, 99);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(34, 23);
-            this.button31.TabIndex = 39;
-            this.button31.Text = "-";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(470, 99);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(34, 23);
-            this.button32.TabIndex = 38;
-            this.button32.Text = ":";
-            this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(430, 99);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(34, 23);
-            this.button33.TabIndex = 37;
-            this.button33.Text = ";";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // btn_M
-            // 
-            this.btn_M.Location = new System.Drawing.Point(390, 99);
-            this.btn_M.Name = "btn_M";
-            this.btn_M.Size = new System.Drawing.Size(34, 23);
-            this.btn_M.TabIndex = 36;
-            this.btn_M.Text = "M";
-            this.btn_M.UseVisualStyleBackColor = true;
-            // 
-            // btn_N
-            // 
-            this.btn_N.Location = new System.Drawing.Point(350, 99);
-            this.btn_N.Name = "btn_N";
-            this.btn_N.Size = new System.Drawing.Size(34, 23);
-            this.btn_N.TabIndex = 35;
-            this.btn_N.Text = "N";
-            this.btn_N.UseVisualStyleBackColor = true;
-            // 
-            // btn_B
-            // 
-            this.btn_B.Location = new System.Drawing.Point(310, 99);
-            this.btn_B.Name = "btn_B";
-            this.btn_B.Size = new System.Drawing.Size(34, 23);
-            this.btn_B.TabIndex = 34;
-            this.btn_B.Text = "B";
-            this.btn_B.UseVisualStyleBackColor = true;
-            // 
-            // btn_V
-            // 
-            this.btn_V.Location = new System.Drawing.Point(270, 99);
-            this.btn_V.Name = "btn_V";
-            this.btn_V.Size = new System.Drawing.Size(34, 23);
-            this.btn_V.TabIndex = 33;
-            this.btn_V.Text = "V";
-            this.btn_V.UseVisualStyleBackColor = true;
-            // 
-            // btn_C
-            // 
-            this.btn_C.Location = new System.Drawing.Point(230, 99);
-            this.btn_C.Name = "btn_C";
-            this.btn_C.Size = new System.Drawing.Size(34, 23);
-            this.btn_C.TabIndex = 32;
-            this.btn_C.Text = "C";
-            this.btn_C.UseVisualStyleBackColor = true;
-            // 
-            // btn_X
-            // 
-            this.btn_X.Location = new System.Drawing.Point(190, 99);
-            this.btn_X.Name = "btn_X";
-            this.btn_X.Size = new System.Drawing.Size(34, 23);
-            this.btn_X.TabIndex = 31;
-            this.btn_X.Text = "X";
-            this.btn_X.UseVisualStyleBackColor = true;
-            // 
-            // btn_Z
-            // 
-            this.btn_Z.Location = new System.Drawing.Point(150, 99);
-            this.btn_Z.Name = "btn_Z";
-            this.btn_Z.Size = new System.Drawing.Size(34, 23);
-            this.btn_Z.TabIndex = 30;
-            this.btn_Z.Text = "Z";
-            this.btn_Z.UseVisualStyleBackColor = true;
-            // 
-            // btn_Ñ
-            // 
-            this.btn_Ñ.Location = new System.Drawing.Point(495, 70);
-            this.btn_Ñ.Name = "btn_Ñ";
-            this.btn_Ñ.Size = new System.Drawing.Size(34, 23);
-            this.btn_Ñ.TabIndex = 29;
-            this.btn_Ñ.Text = "Ñ";
-            this.btn_Ñ.UseVisualStyleBackColor = true;
-            // 
-            // btn_L
-            // 
-            this.btn_L.Location = new System.Drawing.Point(455, 70);
-            this.btn_L.Name = "btn_L";
-            this.btn_L.Size = new System.Drawing.Size(34, 23);
-            this.btn_L.TabIndex = 28;
-            this.btn_L.Text = "L";
-            this.btn_L.UseVisualStyleBackColor = true;
-            // 
-            // btn_K
-            // 
-            this.btn_K.Location = new System.Drawing.Point(415, 70);
-            this.btn_K.Name = "btn_K";
-            this.btn_K.Size = new System.Drawing.Size(34, 23);
-            this.btn_K.TabIndex = 27;
-            this.btn_K.Text = "K";
-            this.btn_K.UseVisualStyleBackColor = true;
-            // 
-            // btn_J
-            // 
-            this.btn_J.Location = new System.Drawing.Point(375, 70);
-            this.btn_J.Name = "btn_J";
-            this.btn_J.Size = new System.Drawing.Size(34, 23);
-            this.btn_J.TabIndex = 26;
-            this.btn_J.Text = "J";
-            this.btn_J.UseVisualStyleBackColor = true;
-            // 
-            // btn_H
-            // 
-            this.btn_H.Location = new System.Drawing.Point(335, 70);
-            this.btn_H.Name = "btn_H";
-            this.btn_H.Size = new System.Drawing.Size(34, 23);
-            this.btn_H.TabIndex = 25;
-            this.btn_H.Text = "H";
-            this.btn_H.UseVisualStyleBackColor = true;
-            // 
-            // btn_G
-            // 
-            this.btn_G.Location = new System.Drawing.Point(295, 70);
-            this.btn_G.Name = "btn_G";
-            this.btn_G.Size = new System.Drawing.Size(34, 23);
-            this.btn_G.TabIndex = 24;
-            this.btn_G.Text = "G";
-            this.btn_G.UseVisualStyleBackColor = true;
-            // 
-            // btn_F
-            // 
-            this.btn_F.Location = new System.Drawing.Point(255, 70);
-            this.btn_F.Name = "btn_F";
-            this.btn_F.Size = new System.Drawing.Size(34, 23);
-            this.btn_F.TabIndex = 23;
-            this.btn_F.Text = "F";
-            this.btn_F.UseVisualStyleBackColor = true;
-            // 
-            // btn_D
-            // 
-            this.btn_D.Location = new System.Drawing.Point(215, 70);
-            this.btn_D.Name = "btn_D";
-            this.btn_D.Size = new System.Drawing.Size(34, 23);
-            this.btn_D.TabIndex = 22;
-            this.btn_D.Text = "D";
-            this.btn_D.UseVisualStyleBackColor = true;
-            // 
-            // btn_S
-            // 
-            this.btn_S.Location = new System.Drawing.Point(175, 70);
-            this.btn_S.Name = "btn_S";
-            this.btn_S.Size = new System.Drawing.Size(34, 23);
-            this.btn_S.TabIndex = 21;
-            this.btn_S.Text = "S";
-            this.btn_S.UseVisualStyleBackColor = true;
-            // 
-            // btn_A
-            // 
-            this.btn_A.Location = new System.Drawing.Point(135, 70);
-            this.btn_A.Name = "btn_A";
-            this.btn_A.Size = new System.Drawing.Size(34, 23);
-            this.btn_A.TabIndex = 20;
-            this.btn_A.Text = "A";
-            this.btn_A.UseVisualStyleBackColor = true;
-            // 
-            // btn_P
-            // 
-            this.btn_P.Location = new System.Drawing.Point(483, 41);
-            this.btn_P.Name = "btn_P";
-            this.btn_P.Size = new System.Drawing.Size(34, 23);
-            this.btn_P.TabIndex = 19;
-            this.btn_P.Text = "P";
-            this.btn_P.UseVisualStyleBackColor = true;
-            // 
-            // btn_O
-            // 
-            this.btn_O.Location = new System.Drawing.Point(443, 41);
-            this.btn_O.Name = "btn_O";
-            this.btn_O.Size = new System.Drawing.Size(34, 23);
-            this.btn_O.TabIndex = 18;
-            this.btn_O.Text = "O";
-            this.btn_O.UseVisualStyleBackColor = true;
-            // 
-            // btn_I
-            // 
-            this.btn_I.Location = new System.Drawing.Point(403, 41);
-            this.btn_I.Name = "btn_I";
-            this.btn_I.Size = new System.Drawing.Size(34, 23);
-            this.btn_I.TabIndex = 17;
-            this.btn_I.Text = "I";
-            this.btn_I.UseVisualStyleBackColor = true;
-            // 
-            // btn_U
-            // 
-            this.btn_U.Location = new System.Drawing.Point(363, 41);
-            this.btn_U.Name = "btn_U";
-            this.btn_U.Size = new System.Drawing.Size(34, 23);
-            this.btn_U.TabIndex = 16;
-            this.btn_U.Text = "U";
-            this.btn_U.UseVisualStyleBackColor = true;
-            // 
-            // btn_Y
-            // 
-            this.btn_Y.Location = new System.Drawing.Point(323, 41);
-            this.btn_Y.Name = "btn_Y";
-            this.btn_Y.Size = new System.Drawing.Size(34, 23);
-            this.btn_Y.TabIndex = 15;
-            this.btn_Y.Text = "Y";
-            this.btn_Y.UseVisualStyleBackColor = true;
-            // 
-            // btn_T
-            // 
-            this.btn_T.Location = new System.Drawing.Point(283, 41);
-            this.btn_T.Name = "btn_T";
-            this.btn_T.Size = new System.Drawing.Size(34, 23);
-            this.btn_T.TabIndex = 14;
-            this.btn_T.Text = "T";
-            this.btn_T.UseVisualStyleBackColor = true;
-            // 
-            // btn_R
-            // 
-            this.btn_R.Location = new System.Drawing.Point(243, 41);
-            this.btn_R.Name = "btn_R";
-            this.btn_R.Size = new System.Drawing.Size(34, 23);
-            this.btn_R.TabIndex = 13;
-            this.btn_R.Text = "R";
-            this.btn_R.UseVisualStyleBackColor = true;
-            // 
-            // btn_E
-            // 
-            this.btn_E.Location = new System.Drawing.Point(203, 41);
-            this.btn_E.Name = "btn_E";
-            this.btn_E.Size = new System.Drawing.Size(34, 23);
-            this.btn_E.TabIndex = 12;
-            this.btn_E.Text = "E";
-            this.btn_E.UseVisualStyleBackColor = true;
-            // 
-            // btn_W
-            // 
-            this.btn_W.Location = new System.Drawing.Point(163, 41);
-            this.btn_W.Name = "btn_W";
-            this.btn_W.Size = new System.Drawing.Size(34, 23);
-            this.btn_W.TabIndex = 11;
-            this.btn_W.Text = "W";
-            this.btn_W.UseVisualStyleBackColor = true;
-            // 
-            // btn_Q
-            // 
-            this.btn_Q.Location = new System.Drawing.Point(123, 41);
-            this.btn_Q.Name = "btn_Q";
-            this.btn_Q.Size = new System.Drawing.Size(34, 23);
-            this.btn_Q.TabIndex = 10;
-            this.btn_Q.Text = "Q";
-            this.btn_Q.UseVisualStyleBackColor = true;
-            // 
-            // btn_0
-            // 
-            this.btn_0.Location = new System.Drawing.Point(470, 12);
-            this.btn_0.Name = "btn_0";
-            this.btn_0.Size = new System.Drawing.Size(34, 23);
-            this.btn_0.TabIndex = 9;
-            this.btn_0.Text = "0";
-            this.btn_0.UseVisualStyleBackColor = true;
-            // 
-            // btn_9
-            // 
-            this.btn_9.Location = new System.Drawing.Point(430, 12);
-            this.btn_9.Name = "btn_9";
-            this.btn_9.Size = new System.Drawing.Size(34, 23);
-            this.btn_9.TabIndex = 8;
-            this.btn_9.Text = "9";
-            this.btn_9.UseVisualStyleBackColor = true;
-            // 
-            // btn_8
-            // 
-            this.btn_8.Location = new System.Drawing.Point(390, 12);
-            this.btn_8.Name = "btn_8";
-            this.btn_8.Size = new System.Drawing.Size(34, 23);
-            this.btn_8.TabIndex = 7;
-            this.btn_8.Text = "8";
-            this.btn_8.UseVisualStyleBackColor = true;
-            // 
-            // btn_7
-            // 
-            this.btn_7.Location = new System.Drawing.Point(350, 12);
-            this.btn_7.Name = "btn_7";
-            this.btn_7.Size = new System.Drawing.Size(34, 23);
-            this.btn_7.TabIndex = 6;
-            this.btn_7.Text = "7";
-            this.btn_7.UseVisualStyleBackColor = true;
-            // 
-            // btn_6
-            // 
-            this.btn_6.Location = new System.Drawing.Point(310, 12);
-            this.btn_6.Name = "btn_6";
-            this.btn_6.Size = new System.Drawing.Size(34, 23);
-            this.btn_6.TabIndex = 5;
-            this.btn_6.Text = "6";
-            this.btn_6.UseVisualStyleBackColor = true;
-            // 
-            // btn_5
-            // 
-            this.btn_5.Location = new System.Drawing.Point(270, 12);
-            this.btn_5.Name = "btn_5";
-            this.btn_5.Size = new System.Drawing.Size(34, 23);
-            this.btn_5.TabIndex = 4;
-            this.btn_5.Text = "5";
-            this.btn_5.UseVisualStyleBackColor = true;
-            // 
-            // btn_4
-            // 
-            this.btn_4.Location = new System.Drawing.Point(230, 12);
-            this.btn_4.Name = "btn_4";
-            this.btn_4.Size = new System.Drawing.Size(34, 23);
-            this.btn_4.TabIndex = 3;
-            this.btn_4.Text = "4";
-            this.btn_4.UseVisualStyleBackColor = true;
-            // 
-            // btn_3
-            // 
-            this.btn_3.Location = new System.Drawing.Point(190, 12);
-            this.btn_3.Name = "btn_3";
-            this.btn_3.Size = new System.Drawing.Size(34, 23);
-            this.btn_3.TabIndex = 2;
-            this.btn_3.Text = "3";
-            this.btn_3.UseVisualStyleBackColor = true;
-            // 
-            // btn_2
-            // 
-            this.btn_2.Location = new System.Drawing.Point(150, 12);
-            this.btn_2.Name = "btn_2";
-            this.btn_2.Size = new System.Drawing.Size(34, 23);
-            this.btn_2.TabIndex = 1;
-            this.btn_2.Text = "2";
-            this.btn_2.UseVisualStyleBackColor = true;
-            // 
-            // btn_1
-            // 
-            this.btn_1.Location = new System.Drawing.Point(110, 12);
-            this.btn_1.Name = "btn_1";
-            this.btn_1.Size = new System.Drawing.Size(34, 23);
-            this.btn_1.TabIndex = 0;
-            this.btn_1.Text = "1";
-            this.btn_1.UseVisualStyleBackColor = true;
+            // panel_TecladoBase
+            // 
+            this.panel_TecladoBase.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel_TecladoBase.Controls.Add(this.p_Enter2);
+            this.panel_TecladoBase.Controls.Add(this.p_Enter1);
+            this.panel_TecladoBase.Controls.Add(this.panel56);
+            this.panel_TecladoBase.Controls.Add(this.p_Alt);
+            this.panel_TecladoBase.Controls.Add(this.p_Mayuscula);
+            this.panel_TecladoBase.Controls.Add(this.p_Windows);
+            this.panel_TecladoBase.Controls.Add(this.p_L);
+            this.panel_TecladoBase.Controls.Add(this.p_ControlIzquierdo);
+            this.panel_TecladoBase.Controls.Add(this.panel59);
+            this.panel_TecladoBase.Controls.Add(this.p_Espacio);
+            this.panel_TecladoBase.Controls.Add(this.p_K);
+            this.panel_TecladoBase.Controls.Add(this.panel51);
+            this.panel_TecladoBase.Controls.Add(this.p_Ñ);
+            this.panel_TecladoBase.Controls.Add(this.p_AltGr);
+            this.panel_TecladoBase.Controls.Add(this.p_J);
+            this.panel_TecladoBase.Controls.Add(this.p_ShiftDerecho);
+            this.panel_TecladoBase.Controls.Add(this.p_H);
+            this.panel_TecladoBase.Controls.Add(this.p_ControlDerecho);
+            this.panel_TecladoBase.Controls.Add(this.p_G);
+            this.panel_TecladoBase.Controls.Add(this.panel33);
+            this.panel_TecladoBase.Controls.Add(this.p_F);
+            this.panel_TecladoBase.Controls.Add(this.panel50);
+            this.panel_TecladoBase.Controls.Add(this.p_D);
+            this.panel_TecladoBase.Controls.Add(this.panel19);
+            this.panel_TecladoBase.Controls.Add(this.p_S);
+            this.panel_TecladoBase.Controls.Add(this.p_A);
+            this.panel_TecladoBase.Controls.Add(this.p_M);
+            this.panel_TecladoBase.Controls.Add(this.p_Tab);
+            this.panel_TecladoBase.Controls.Add(this.panel35);
+            this.panel_TecladoBase.Controls.Add(this.p_O);
+            this.panel_TecladoBase.Controls.Add(this.p_N);
+            this.panel_TecladoBase.Controls.Add(this.panel37);
+            this.panel_TecladoBase.Controls.Add(this.panel13);
+            this.panel_TecladoBase.Controls.Add(this.p_B);
+            this.panel_TecladoBase.Controls.Add(this.panel21);
+            this.panel_TecladoBase.Controls.Add(this.p_V);
+            this.panel_TecladoBase.Controls.Add(this.panel14);
+            this.panel_TecladoBase.Controls.Add(this.p_C);
+            this.panel_TecladoBase.Controls.Add(this.p_I);
+            this.panel_TecladoBase.Controls.Add(this.p_X);
+            this.panel_TecladoBase.Controls.Add(this.p_P);
+            this.panel_TecladoBase.Controls.Add(this.p_Z);
+            this.panel_TecladoBase.Controls.Add(this.p_9);
+            this.panel_TecladoBase.Controls.Add(this.panel45);
+            this.panel_TecladoBase.Controls.Add(this.p_U);
+            this.panel_TecladoBase.Controls.Add(this.p_ShiftIzquierdo);
+            this.panel_TecladoBase.Controls.Add(this.panel15);
+            this.panel_TecladoBase.Controls.Add(this.p_Y);
+            this.panel_TecladoBase.Controls.Add(this.p_8);
+            this.panel_TecladoBase.Controls.Add(this.p_T);
+            this.panel_TecladoBase.Controls.Add(this.p_0);
+            this.panel_TecladoBase.Controls.Add(this.p_R);
+            this.panel_TecladoBase.Controls.Add(this.p_7);
+            this.panel_TecladoBase.Controls.Add(this.p_E);
+            this.panel_TecladoBase.Controls.Add(this.p_6);
+            this.panel_TecladoBase.Controls.Add(this.p_W);
+            this.panel_TecladoBase.Controls.Add(this.p_5);
+            this.panel_TecladoBase.Controls.Add(this.p_Q);
+            this.panel_TecladoBase.Controls.Add(this.p_4);
+            this.panel_TecladoBase.Controls.Add(this.p_3);
+            this.panel_TecladoBase.Controls.Add(this.p_2);
+            this.panel_TecladoBase.Controls.Add(this.p_1);
+            this.panel_TecladoBase.Controls.Add(this.panel2);
+            this.panel_TecladoBase.Location = new System.Drawing.Point(74, 3);
+            this.panel_TecladoBase.Name = "panel_TecladoBase";
+            this.panel_TecladoBase.Size = new System.Drawing.Size(596, 164);
+            this.panel_TecladoBase.TabIndex = 62;
+            // 
+            // p_Enter2
+            // 
+            this.p_Enter2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Enter2.Location = new System.Drawing.Point(559, 63);
+            this.p_Enter2.Name = "p_Enter2";
+            this.p_Enter2.Size = new System.Drawing.Size(24, 31);
+            this.p_Enter2.TabIndex = 72;
+            // 
+            // p_Enter1
+            // 
+            this.p_Enter1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Enter1.Location = new System.Drawing.Point(550, 41);
+            this.p_Enter1.Name = "p_Enter1";
+            this.p_Enter1.Size = new System.Drawing.Size(33, 23);
+            this.p_Enter1.TabIndex = 67;
+            // 
+            // panel56
+            // 
+            this.panel56.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel56.Location = new System.Drawing.Point(519, 70);
+            this.panel56.Name = "panel56";
+            this.panel56.Size = new System.Drawing.Size(34, 23);
+            this.panel56.TabIndex = 94;
+            // 
+            // p_Alt
+            // 
+            this.p_Alt.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Alt.Location = new System.Drawing.Point(111, 128);
+            this.p_Alt.Name = "p_Alt";
+            this.p_Alt.Size = new System.Drawing.Size(44, 23);
+            this.p_Alt.TabIndex = 71;
+            // 
+            // p_Mayuscula
+            // 
+            this.p_Mayuscula.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Mayuscula.Location = new System.Drawing.Point(11, 70);
+            this.p_Mayuscula.Name = "p_Mayuscula";
+            this.p_Mayuscula.Size = new System.Drawing.Size(62, 23);
+            this.p_Mayuscula.TabIndex = 82;
+            // 
+            // p_Windows
+            // 
+            this.p_Windows.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Windows.Location = new System.Drawing.Point(69, 128);
+            this.p_Windows.Name = "p_Windows";
+            this.p_Windows.Size = new System.Drawing.Size(34, 23);
+            this.p_Windows.TabIndex = 64;
+            // 
+            // p_L
+            // 
+            this.p_L.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_L.Location = new System.Drawing.Point(399, 70);
+            this.p_L.Name = "p_L";
+            this.p_L.Size = new System.Drawing.Size(34, 23);
+            this.p_L.TabIndex = 83;
+            // 
+            // p_ControlIzquierdo
+            // 
+            this.p_ControlIzquierdo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_ControlIzquierdo.Location = new System.Drawing.Point(11, 128);
+            this.p_ControlIzquierdo.Name = "p_ControlIzquierdo";
+            this.p_ControlIzquierdo.Size = new System.Drawing.Size(52, 23);
+            this.p_ControlIzquierdo.TabIndex = 72;
+            // 
+            // panel59
+            // 
+            this.panel59.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel59.Location = new System.Drawing.Point(478, 70);
+            this.panel59.Name = "panel59";
+            this.panel59.Size = new System.Drawing.Size(34, 23);
+            this.panel59.TabIndex = 93;
+            // 
+            // p_Espacio
+            // 
+            this.p_Espacio.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Espacio.Location = new System.Drawing.Point(162, 128);
+            this.p_Espacio.Name = "p_Espacio";
+            this.p_Espacio.Size = new System.Drawing.Size(223, 23);
+            this.p_Espacio.TabIndex = 83;
+            // 
+            // p_K
+            // 
+            this.p_K.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_K.Location = new System.Drawing.Point(359, 70);
+            this.p_K.Name = "p_K";
+            this.p_K.Size = new System.Drawing.Size(34, 23);
+            this.p_K.TabIndex = 91;
+            // 
+            // panel51
+            // 
+            this.panel51.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel51.Location = new System.Drawing.Point(493, 128);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(34, 23);
+            this.panel51.TabIndex = 63;
+            // 
+            // p_Ñ
+            // 
+            this.p_Ñ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Ñ.Controls.Add(this.panel62);
+            this.p_Ñ.Location = new System.Drawing.Point(439, 70);
+            this.p_Ñ.Name = "p_Ñ";
+            this.p_Ñ.Size = new System.Drawing.Size(34, 23);
+            this.p_Ñ.TabIndex = 92;
+            // 
+            // panel62
+            // 
+            this.panel62.Location = new System.Drawing.Point(40, 0);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(34, 23);
+            this.panel62.TabIndex = 63;
+            // 
+            // p_AltGr
+            // 
+            this.p_AltGr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_AltGr.Location = new System.Drawing.Point(391, 128);
+            this.p_AltGr.Name = "p_AltGr";
+            this.p_AltGr.Size = new System.Drawing.Size(45, 23);
+            this.p_AltGr.TabIndex = 69;
+            // 
+            // p_J
+            // 
+            this.p_J.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_J.Location = new System.Drawing.Point(319, 70);
+            this.p_J.Name = "p_J";
+            this.p_J.Size = new System.Drawing.Size(34, 23);
+            this.p_J.TabIndex = 90;
+            // 
+            // p_ShiftDerecho
+            // 
+            this.p_ShiftDerecho.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_ShiftDerecho.Location = new System.Drawing.Point(493, 99);
+            this.p_ShiftDerecho.Name = "p_ShiftDerecho";
+            this.p_ShiftDerecho.Size = new System.Drawing.Size(90, 23);
+            this.p_ShiftDerecho.TabIndex = 82;
+            // 
+            // p_H
+            // 
+            this.p_H.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_H.Controls.Add(this.panel65);
+            this.p_H.Location = new System.Drawing.Point(279, 70);
+            this.p_H.Name = "p_H";
+            this.p_H.Size = new System.Drawing.Size(34, 23);
+            this.p_H.TabIndex = 84;
+            // 
+            // panel65
+            // 
+            this.panel65.Location = new System.Drawing.Point(40, 0);
+            this.panel65.Name = "panel65";
+            this.panel65.Size = new System.Drawing.Size(34, 23);
+            this.panel65.TabIndex = 63;
+            // 
+            // p_ControlDerecho
+            // 
+            this.p_ControlDerecho.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_ControlDerecho.Location = new System.Drawing.Point(532, 128);
+            this.p_ControlDerecho.Name = "p_ControlDerecho";
+            this.p_ControlDerecho.Size = new System.Drawing.Size(51, 23);
+            this.p_ControlDerecho.TabIndex = 71;
+            // 
+            // p_G
+            // 
+            this.p_G.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_G.Location = new System.Drawing.Point(239, 70);
+            this.p_G.Name = "p_G";
+            this.p_G.Size = new System.Drawing.Size(34, 23);
+            this.p_G.TabIndex = 85;
+            // 
+            // panel33
+            // 
+            this.panel33.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel33.Location = new System.Drawing.Point(451, 99);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(34, 23);
+            this.panel33.TabIndex = 81;
+            // 
+            // p_F
+            // 
+            this.p_F.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_F.Location = new System.Drawing.Point(199, 70);
+            this.p_F.Name = "p_F";
+            this.p_F.Size = new System.Drawing.Size(34, 23);
+            this.p_F.TabIndex = 86;
+            // 
+            // panel50
+            // 
+            this.panel50.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel50.Location = new System.Drawing.Point(442, 128);
+            this.panel50.Name = "panel50";
+            this.panel50.Size = new System.Drawing.Size(44, 23);
+            this.panel50.TabIndex = 70;
+            // 
+            // p_D
+            // 
+            this.p_D.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_D.Location = new System.Drawing.Point(159, 70);
+            this.p_D.Name = "p_D";
+            this.p_D.Size = new System.Drawing.Size(34, 23);
+            this.p_D.TabIndex = 87;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel19.Location = new System.Drawing.Point(510, 41);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(34, 23);
+            this.panel19.TabIndex = 81;
+            // 
+            // p_S
+            // 
+            this.p_S.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_S.Location = new System.Drawing.Point(119, 70);
+            this.p_S.Name = "p_S";
+            this.p_S.Size = new System.Drawing.Size(34, 23);
+            this.p_S.TabIndex = 88;
+            // 
+            // p_A
+            // 
+            this.p_A.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_A.Location = new System.Drawing.Point(79, 70);
+            this.p_A.Name = "p_A";
+            this.p_A.Size = new System.Drawing.Size(34, 23);
+            this.p_A.TabIndex = 89;
+            // 
+            // p_M
+            // 
+            this.p_M.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_M.Location = new System.Drawing.Point(331, 99);
+            this.p_M.Name = "p_M";
+            this.p_M.Size = new System.Drawing.Size(34, 23);
+            this.p_M.TabIndex = 70;
+            // 
+            // p_Tab
+            // 
+            this.p_Tab.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Tab.Location = new System.Drawing.Point(11, 41);
+            this.p_Tab.Name = "p_Tab";
+            this.p_Tab.Size = new System.Drawing.Size(52, 23);
+            this.p_Tab.TabIndex = 67;
+            // 
+            // panel35
+            // 
+            this.panel35.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel35.Location = new System.Drawing.Point(410, 99);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(34, 23);
+            this.panel35.TabIndex = 80;
+            // 
+            // p_O
+            // 
+            this.p_O.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_O.Location = new System.Drawing.Point(390, 41);
+            this.p_O.Name = "p_O";
+            this.p_O.Size = new System.Drawing.Size(34, 23);
+            this.p_O.TabIndex = 70;
+            // 
+            // p_N
+            // 
+            this.p_N.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_N.Location = new System.Drawing.Point(291, 99);
+            this.p_N.Name = "p_N";
+            this.p_N.Size = new System.Drawing.Size(34, 23);
+            this.p_N.TabIndex = 78;
+            // 
+            // panel37
+            // 
+            this.panel37.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel37.Controls.Add(this.panel38);
+            this.panel37.Location = new System.Drawing.Point(371, 99);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(34, 23);
+            this.panel37.TabIndex = 79;
+            // 
+            // panel38
+            // 
+            this.panel38.Location = new System.Drawing.Point(40, 0);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(34, 23);
+            this.panel38.TabIndex = 63;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel13.Location = new System.Drawing.Point(531, 12);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(52, 23);
+            this.panel13.TabIndex = 66;
+            // 
+            // p_B
+            // 
+            this.p_B.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_B.Location = new System.Drawing.Point(250, 99);
+            this.p_B.Name = "p_B";
+            this.p_B.Size = new System.Drawing.Size(34, 23);
+            this.p_B.TabIndex = 77;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel21.Location = new System.Drawing.Point(469, 41);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(34, 23);
+            this.panel21.TabIndex = 80;
+            // 
+            // p_V
+            // 
+            this.p_V.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_V.Controls.Add(this.panel41);
+            this.p_V.Location = new System.Drawing.Point(211, 99);
+            this.p_V.Name = "p_V";
+            this.p_V.Size = new System.Drawing.Size(34, 23);
+            this.p_V.TabIndex = 71;
+            // 
+            // panel41
+            // 
+            this.panel41.Location = new System.Drawing.Point(40, 0);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(34, 23);
+            this.panel41.TabIndex = 63;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel14.Location = new System.Drawing.Point(491, 12);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(34, 23);
+            this.panel14.TabIndex = 69;
+            // 
+            // p_C
+            // 
+            this.p_C.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_C.Location = new System.Drawing.Point(171, 99);
+            this.p_C.Name = "p_C";
+            this.p_C.Size = new System.Drawing.Size(34, 23);
+            this.p_C.TabIndex = 72;
+            // 
+            // p_I
+            // 
+            this.p_I.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_I.Location = new System.Drawing.Point(350, 41);
+            this.p_I.Name = "p_I";
+            this.p_I.Size = new System.Drawing.Size(34, 23);
+            this.p_I.TabIndex = 78;
+            // 
+            // p_X
+            // 
+            this.p_X.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_X.Location = new System.Drawing.Point(131, 99);
+            this.p_X.Name = "p_X";
+            this.p_X.Size = new System.Drawing.Size(34, 23);
+            this.p_X.TabIndex = 73;
+            // 
+            // p_P
+            // 
+            this.p_P.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_P.Controls.Add(this.panel24);
+            this.p_P.Location = new System.Drawing.Point(430, 41);
+            this.p_P.Name = "p_P";
+            this.p_P.Size = new System.Drawing.Size(34, 23);
+            this.p_P.TabIndex = 79;
+            // 
+            // panel24
+            // 
+            this.panel24.Location = new System.Drawing.Point(40, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(34, 23);
+            this.panel24.TabIndex = 63;
+            // 
+            // p_Z
+            // 
+            this.p_Z.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Z.Location = new System.Drawing.Point(91, 99);
+            this.p_Z.Name = "p_Z";
+            this.p_Z.Size = new System.Drawing.Size(34, 23);
+            this.p_Z.TabIndex = 74;
+            // 
+            // p_9
+            // 
+            this.p_9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_9.Location = new System.Drawing.Point(371, 12);
+            this.p_9.Name = "p_9";
+            this.p_9.Size = new System.Drawing.Size(34, 23);
+            this.p_9.TabIndex = 63;
+            // 
+            // panel45
+            // 
+            this.panel45.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel45.Location = new System.Drawing.Point(51, 99);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(34, 23);
+            this.panel45.TabIndex = 75;
+            // 
+            // p_U
+            // 
+            this.p_U.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_U.Location = new System.Drawing.Point(310, 41);
+            this.p_U.Name = "p_U";
+            this.p_U.Size = new System.Drawing.Size(34, 23);
+            this.p_U.TabIndex = 77;
+            // 
+            // p_ShiftIzquierdo
+            // 
+            this.p_ShiftIzquierdo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_ShiftIzquierdo.Location = new System.Drawing.Point(11, 99);
+            this.p_ShiftIzquierdo.Name = "p_ShiftIzquierdo";
+            this.p_ShiftIzquierdo.Size = new System.Drawing.Size(34, 23);
+            this.p_ShiftIzquierdo.TabIndex = 76;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel15.Location = new System.Drawing.Point(450, 12);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(34, 23);
+            this.panel15.TabIndex = 68;
+            // 
+            // p_Y
+            // 
+            this.p_Y.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Y.Controls.Add(this.panel27);
+            this.p_Y.Location = new System.Drawing.Point(270, 41);
+            this.p_Y.Name = "p_Y";
+            this.p_Y.Size = new System.Drawing.Size(34, 23);
+            this.p_Y.TabIndex = 71;
+            // 
+            // panel27
+            // 
+            this.panel27.Location = new System.Drawing.Point(40, 0);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(34, 23);
+            this.panel27.TabIndex = 63;
+            // 
+            // p_8
+            // 
+            this.p_8.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_8.Location = new System.Drawing.Point(331, 12);
+            this.p_8.Name = "p_8";
+            this.p_8.Size = new System.Drawing.Size(34, 23);
+            this.p_8.TabIndex = 65;
+            // 
+            // p_T
+            // 
+            this.p_T.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_T.Location = new System.Drawing.Point(230, 41);
+            this.p_T.Name = "p_T";
+            this.p_T.Size = new System.Drawing.Size(34, 23);
+            this.p_T.TabIndex = 72;
+            // 
+            // p_0
+            // 
+            this.p_0.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_0.Controls.Add(this.panel17);
+            this.p_0.Location = new System.Drawing.Point(411, 12);
+            this.p_0.Name = "p_0";
+            this.p_0.Size = new System.Drawing.Size(34, 23);
+            this.p_0.TabIndex = 67;
+            // 
+            // panel17
+            // 
+            this.panel17.Location = new System.Drawing.Point(40, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(34, 23);
+            this.panel17.TabIndex = 63;
+            // 
+            // p_R
+            // 
+            this.p_R.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_R.Location = new System.Drawing.Point(190, 41);
+            this.p_R.Name = "p_R";
+            this.p_R.Size = new System.Drawing.Size(34, 23);
+            this.p_R.TabIndex = 73;
+            // 
+            // p_7
+            // 
+            this.p_7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_7.Location = new System.Drawing.Point(291, 12);
+            this.p_7.Name = "p_7";
+            this.p_7.Size = new System.Drawing.Size(34, 23);
+            this.p_7.TabIndex = 64;
+            // 
+            // p_E
+            // 
+            this.p_E.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_E.Location = new System.Drawing.Point(150, 41);
+            this.p_E.Name = "p_E";
+            this.p_E.Size = new System.Drawing.Size(34, 23);
+            this.p_E.TabIndex = 74;
+            // 
+            // p_6
+            // 
+            this.p_6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_6.Controls.Add(this.panel9);
+            this.p_6.Location = new System.Drawing.Point(251, 12);
+            this.p_6.Name = "p_6";
+            this.p_6.Size = new System.Drawing.Size(34, 23);
+            this.p_6.TabIndex = 63;
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(40, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(34, 23);
+            this.panel9.TabIndex = 63;
+            // 
+            // p_W
+            // 
+            this.p_W.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_W.Location = new System.Drawing.Point(110, 41);
+            this.p_W.Name = "p_W";
+            this.p_W.Size = new System.Drawing.Size(34, 23);
+            this.p_W.TabIndex = 75;
+            // 
+            // p_5
+            // 
+            this.p_5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_5.Location = new System.Drawing.Point(211, 12);
+            this.p_5.Name = "p_5";
+            this.p_5.Size = new System.Drawing.Size(34, 23);
+            this.p_5.TabIndex = 63;
+            // 
+            // p_Q
+            // 
+            this.p_Q.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Q.Location = new System.Drawing.Point(70, 41);
+            this.p_Q.Name = "p_Q";
+            this.p_Q.Size = new System.Drawing.Size(34, 23);
+            this.p_Q.TabIndex = 76;
+            // 
+            // p_4
+            // 
+            this.p_4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_4.Location = new System.Drawing.Point(171, 12);
+            this.p_4.Name = "p_4";
+            this.p_4.Size = new System.Drawing.Size(34, 23);
+            this.p_4.TabIndex = 63;
+            // 
+            // p_3
+            // 
+            this.p_3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_3.Location = new System.Drawing.Point(131, 12);
+            this.p_3.Name = "p_3";
+            this.p_3.Size = new System.Drawing.Size(34, 23);
+            this.p_3.TabIndex = 63;
+            // 
+            // p_2
+            // 
+            this.p_2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_2.Location = new System.Drawing.Point(91, 12);
+            this.p_2.Name = "p_2";
+            this.p_2.Size = new System.Drawing.Size(34, 23);
+            this.p_2.TabIndex = 63;
+            // 
+            // p_1
+            // 
+            this.p_1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_1.Location = new System.Drawing.Point(51, 12);
+            this.p_1.Name = "p_1";
+            this.p_1.Size = new System.Drawing.Size(34, 23);
+            this.p_1.TabIndex = 63;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(11, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(34, 23);
+            this.panel2.TabIndex = 62;
             // 
             // Texto_Tipear
             // 
+            this.Texto_Tipear.BackColor = System.Drawing.SystemColors.Control;
             this.Texto_Tipear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Texto_Tipear.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Texto_Tipear.HideSelection = false;
             this.Texto_Tipear.Location = new System.Drawing.Point(21, 193);
             this.Texto_Tipear.Multiline = false;
             this.Texto_Tipear.Name = "Texto_Tipear";
-            this.Texto_Tipear.Size = new System.Drawing.Size(714, 42);
+            this.Texto_Tipear.Size = new System.Drawing.Size(714, 33);
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
             this.Texto_Tipear.Click += new System.EventHandler(this.Texto_Tipear_Click);
@@ -816,6 +855,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.labelTeclaPresionada);
             this.panel1.Controls.Add(this.Btn_Elegir);
             this.panel1.Controls.Add(this.panel_Especificaciones);
             this.panel1.Controls.Add(this.btn_Iniciar);
@@ -828,6 +868,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(756, 559);
             this.panel1.TabIndex = 0;
+            // 
+            // labelTeclaPresionada
+            // 
+            this.labelTeclaPresionada.AutoSize = true;
+            this.labelTeclaPresionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTeclaPresionada.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelTeclaPresionada.Location = new System.Drawing.Point(362, 229);
+            this.labelTeclaPresionada.Name = "labelTeclaPresionada";
+            this.labelTeclaPresionada.Size = new System.Drawing.Size(0, 13);
+            this.labelTeclaPresionada.TabIndex = 48;
             // 
             // Btn_Elegir
             // 
@@ -975,11 +1025,10 @@
             this.panel_Manos.Name = "panel_Manos";
             this.panel_Manos.Size = new System.Drawing.Size(714, 141);
             this.panel_Manos.TabIndex = 46;
-            this.panel_Manos.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Manos_Paint);
             // 
             // panel_MeniqueIzquierdo
             // 
-            this.panel_MeniqueIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_MeniqueIzquierdo.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_MeniqueIzquierdo.Location = new System.Drawing.Point(123, 57);
             this.panel_MeniqueIzquierdo.Name = "panel_MeniqueIzquierdo";
             this.panel_MeniqueIzquierdo.Size = new System.Drawing.Size(27, 51);
@@ -987,7 +1036,7 @@
             // 
             // panel_AnularIzquierdo
             // 
-            this.panel_AnularIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_AnularIzquierdo.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_AnularIzquierdo.Location = new System.Drawing.Point(155, 26);
             this.panel_AnularIzquierdo.Name = "panel_AnularIzquierdo";
             this.panel_AnularIzquierdo.Size = new System.Drawing.Size(27, 51);
@@ -995,7 +1044,7 @@
             // 
             // panel_MayorIzquierdo
             // 
-            this.panel_MayorIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_MayorIzquierdo.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_MayorIzquierdo.Location = new System.Drawing.Point(188, 13);
             this.panel_MayorIzquierdo.Name = "panel_MayorIzquierdo";
             this.panel_MayorIzquierdo.Size = new System.Drawing.Size(27, 51);
@@ -1003,7 +1052,7 @@
             // 
             // panel_IndiceIzquierdo
             // 
-            this.panel_IndiceIzquierdo.BackColor = System.Drawing.Color.White;
+            this.panel_IndiceIzquierdo.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_IndiceIzquierdo.Location = new System.Drawing.Point(221, 38);
             this.panel_IndiceIzquierdo.Name = "panel_IndiceIzquierdo";
             this.panel_IndiceIzquierdo.Size = new System.Drawing.Size(27, 51);
@@ -1011,7 +1060,7 @@
             // 
             // panel_MeniqueDerecho
             // 
-            this.panel_MeniqueDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_MeniqueDerecho.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_MeniqueDerecho.Location = new System.Drawing.Point(584, 57);
             this.panel_MeniqueDerecho.Name = "panel_MeniqueDerecho";
             this.panel_MeniqueDerecho.Size = new System.Drawing.Size(27, 51);
@@ -1019,7 +1068,7 @@
             // 
             // panel_AnularDerecho
             // 
-            this.panel_AnularDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_AnularDerecho.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_AnularDerecho.Location = new System.Drawing.Point(554, 26);
             this.panel_AnularDerecho.Name = "panel_AnularDerecho";
             this.panel_AnularDerecho.Size = new System.Drawing.Size(27, 51);
@@ -1027,7 +1076,7 @@
             // 
             // panel_MayorDerecho
             // 
-            this.panel_MayorDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_MayorDerecho.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_MayorDerecho.Location = new System.Drawing.Point(521, 13);
             this.panel_MayorDerecho.Name = "panel_MayorDerecho";
             this.panel_MayorDerecho.Size = new System.Drawing.Size(27, 51);
@@ -1035,7 +1084,7 @@
             // 
             // panel_IndiceDerecho
             // 
-            this.panel_IndiceDerecho.BackColor = System.Drawing.Color.White;
+            this.panel_IndiceDerecho.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel_IndiceDerecho.Location = new System.Drawing.Point(490, 38);
             this.panel_IndiceDerecho.Name = "panel_IndiceDerecho";
             this.panel_IndiceDerecho.Size = new System.Drawing.Size(27, 51);
@@ -1043,16 +1092,16 @@
             // 
             // panel_PulgarDerecho
             // 
-            this.panel_PulgarDerecho.BackColor = System.Drawing.Color.White;
-            this.panel_PulgarDerecho.Location = new System.Drawing.Point(450, 77);
+            this.panel_PulgarDerecho.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel_PulgarDerecho.Location = new System.Drawing.Point(445, 77);
             this.panel_PulgarDerecho.Name = "panel_PulgarDerecho";
             this.panel_PulgarDerecho.Size = new System.Drawing.Size(27, 51);
             this.panel_PulgarDerecho.TabIndex = 11;
             // 
             // panel_PulgarIzquierdo
             // 
-            this.panel_PulgarIzquierdo.BackColor = System.Drawing.Color.White;
-            this.panel_PulgarIzquierdo.Location = new System.Drawing.Point(262, 77);
+            this.panel_PulgarIzquierdo.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel_PulgarIzquierdo.Location = new System.Drawing.Point(264, 77);
             this.panel_PulgarIzquierdo.Name = "panel_PulgarIzquierdo";
             this.panel_PulgarIzquierdo.Size = new System.Drawing.Size(27, 51);
             this.panel_PulgarIzquierdo.TabIndex = 10;
@@ -1070,7 +1119,17 @@
             this.Text = "PRACTICAS MECANOGRAFIADO  DE ACTUACIONES SUMARIALES";
             this.Load += new System.EventHandler(this.Mecanografia_Load);
             this.panel_Teclado.ResumeLayout(false);
+            this.panel_TecladoBase.ResumeLayout(false);
+            this.p_Ñ.ResumeLayout(false);
+            this.p_H.ResumeLayout(false);
+            this.panel37.ResumeLayout(false);
+            this.p_V.ResumeLayout(false);
+            this.p_P.ResumeLayout(false);
+            this.p_Y.ResumeLayout(false);
+            this.p_0.ResumeLayout(false);
+            this.p_6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.menu_ElegirArchivos.ResumeLayout(false);
             this.panel_Especificaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelectArchivo)).EndInit();
@@ -1081,68 +1140,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel_Teclado;
-        private System.Windows.Forms.Button btn_Enter;
-        private System.Windows.Forms.Button btn_ControlDerecho;
-        private System.Windows.Forms.Button button60;
-        private System.Windows.Forms.Button btn_Fn;
-        private System.Windows.Forms.Button btn_AltGr;
-        private System.Windows.Forms.Button button57;
-        private System.Windows.Forms.Button button56;
-        private System.Windows.Forms.Button btn_ControlIzquierdo;
-        private System.Windows.Forms.Button btn_ShiftIzquierdo;
-        private System.Windows.Forms.Button btn_ShiftDerecho;
-        private System.Windows.Forms.Button button51;
-        private System.Windows.Forms.Button button52;
-        private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Button btn_Borrar;
-        private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.Button button47;
-        private System.Windows.Forms.Button button45;
-        private System.Windows.Forms.Button btn_Tabulacion;
-        private System.Windows.Forms.Button btn_Mayuscula;
-        private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button btn_Espacio;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button btn_M;
-        private System.Windows.Forms.Button btn_N;
-        private System.Windows.Forms.Button btn_B;
-        private System.Windows.Forms.Button btn_V;
-        private System.Windows.Forms.Button btn_C;
-        private System.Windows.Forms.Button btn_X;
-        private System.Windows.Forms.Button btn_Z;
-        private System.Windows.Forms.Button btn_Ñ;
-        private System.Windows.Forms.Button btn_L;
-        private System.Windows.Forms.Button btn_K;
-        private System.Windows.Forms.Button btn_J;
-        private System.Windows.Forms.Button btn_H;
-        private System.Windows.Forms.Button btn_G;
-        private System.Windows.Forms.Button btn_F;
-        private System.Windows.Forms.Button btn_D;
-        private System.Windows.Forms.Button btn_S;
-        private System.Windows.Forms.Button btn_A;
-        private System.Windows.Forms.Button btn_P;
-        private System.Windows.Forms.Button btn_O;
-        private System.Windows.Forms.Button btn_I;
-        private System.Windows.Forms.Button btn_U;
-        private System.Windows.Forms.Button btn_Y;
-        private System.Windows.Forms.Button btn_T;
-        private System.Windows.Forms.Button btn_R;
-        private System.Windows.Forms.Button btn_E;
-        private System.Windows.Forms.Button btn_W;
-        private System.Windows.Forms.Button btn_Q;
-        private System.Windows.Forms.Button btn_0;
-        private System.Windows.Forms.Button btn_9;
-        private System.Windows.Forms.Button btn_8;
-        private System.Windows.Forms.Button btn_7;
-        private System.Windows.Forms.Button btn_6;
-        private System.Windows.Forms.Button btn_5;
-        private System.Windows.Forms.Button btn_4;
-        private System.Windows.Forms.Button btn_3;
-        private System.Windows.Forms.Button btn_2;
-        private System.Windows.Forms.Button btn_1;
         private System.Windows.Forms.RichTextBox Texto_Tipear;
         private System.Windows.Forms.Button btn_Iniciar;
         private System.Windows.Forms.Button btn_Detener;
@@ -1175,6 +1172,79 @@
         private System.Windows.Forms.Panel panel_IndiceDerecho;
         private System.Windows.Forms.Panel panel_PulgarDerecho;
         private System.Windows.Forms.Panel panel_PulgarIzquierdo;
+        private System.Windows.Forms.Panel panel_TecladoBase;
+        private System.Windows.Forms.Panel p_9;
+        private System.Windows.Forms.Panel p_8;
+        private System.Windows.Forms.Panel p_7;
+        private System.Windows.Forms.Panel p_6;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel p_5;
+        private System.Windows.Forms.Panel p_4;
+        private System.Windows.Forms.Panel p_3;
+        private System.Windows.Forms.Panel p_2;
+        private System.Windows.Forms.Panel p_1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel p_AltGr;
+        private System.Windows.Forms.Panel p_ShiftDerecho;
+        private System.Windows.Forms.Panel p_ControlDerecho;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.Panel panel50;
+        private System.Windows.Forms.Panel panel51;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel p_M;
+        private System.Windows.Forms.Panel p_Tab;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Panel p_O;
+        private System.Windows.Forms.Panel p_N;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel p_B;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel p_V;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel p_C;
+        private System.Windows.Forms.Panel p_I;
+        private System.Windows.Forms.Panel p_X;
+        private System.Windows.Forms.Panel p_P;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel p_Z;
+        private System.Windows.Forms.Panel panel45;
+        private System.Windows.Forms.Panel p_U;
+        private System.Windows.Forms.Panel p_ShiftIzquierdo;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel p_Y;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Panel p_T;
+        private System.Windows.Forms.Panel p_0;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel p_R;
+        private System.Windows.Forms.Panel p_E;
+        private System.Windows.Forms.Panel p_W;
+        private System.Windows.Forms.Panel p_Q;
+        private System.Windows.Forms.Panel p_Enter1;
+        private System.Windows.Forms.Panel panel56;
+        private System.Windows.Forms.Panel p_Alt;
+        private System.Windows.Forms.Panel p_Mayuscula;
+        private System.Windows.Forms.Panel p_Windows;
+        private System.Windows.Forms.Panel p_L;
+        private System.Windows.Forms.Panel p_ControlIzquierdo;
+        private System.Windows.Forms.Panel panel59;
+        private System.Windows.Forms.Panel p_Espacio;
+        private System.Windows.Forms.Panel p_K;
+        private System.Windows.Forms.Panel p_Ñ;
+        private System.Windows.Forms.Panel panel62;
+        private System.Windows.Forms.Panel p_J;
+        private System.Windows.Forms.Panel p_H;
+        private System.Windows.Forms.Panel panel65;
+        private System.Windows.Forms.Panel p_G;
+        private System.Windows.Forms.Panel p_F;
+        private System.Windows.Forms.Panel p_D;
+        private System.Windows.Forms.Panel p_S;
+        private System.Windows.Forms.Panel p_A;
+        private System.Windows.Forms.Panel p_Enter2;
+        private System.Windows.Forms.Label labelTeclaPresionada;
     }
 }
 

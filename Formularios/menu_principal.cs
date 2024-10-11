@@ -14,7 +14,7 @@ using System.Drawing.Drawing2D;
 using MECANOGRAFIA;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
-
+using Ofelia_Sara.Clases.Botones.btn_Configuracion;
 
 namespace Ofelia_Sara.Formularios
 {

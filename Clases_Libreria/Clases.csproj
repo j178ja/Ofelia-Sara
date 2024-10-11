@@ -99,10 +99,6 @@
       <Project>{70d3038a-0de7-47b2-8511-e511756e758b}</Project>
       <Name>Interfaces_Libreria</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Controles_Libreria\Controles.csproj">
-      <Project>{327929eb-b2d3-43b1-9de2-e312b3b71f33}</Project>
-      <Name>Controles</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

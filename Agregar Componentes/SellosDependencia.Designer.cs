@@ -47,10 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelloMedalla)).BeginInit();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 4, 4, 28, 37, 91);
-            // 
+       
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));

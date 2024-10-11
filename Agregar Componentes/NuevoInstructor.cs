@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
-using Interfaces_Libreria.Interfaces;
+
 using Clases.Apariencia;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevoInstructor : BaseForm, IFormulario
+    public partial class NuevoInstructor : BaseForm
     {
         public NuevoInstructor()
         {
@@ -37,11 +37,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         }
 
         //-------------------------------------------
-        // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            // 
-        }
+    
 
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {

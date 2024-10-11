@@ -15,7 +15,7 @@ using Clases.Botones;
 //using Ofelia_Sara.Base_de_Datos;
 using System.IO;
 using BaseDatos.Entidades;
-using Interfaces_Libreria.Interfaces;
+
 using Clases.Apariencia;
 using static System.Resources.ResXFileRef;
 using Ofelia_Sara.Formularios;
@@ -23,7 +23,7 @@ using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevoSecretario : BaseForm, IFormulario
+    public partial class NuevoSecretario : BaseForm
     {
         public NuevoSecretario()
         {

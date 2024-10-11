@@ -113,7 +113,8 @@ namespace Ofelia_Sara.Formularios
             // Llamar al método que dibuja el fondo degradado
             DibujarFondoDegradado(e.Graphics, width, height);
         }
-
+        //----------------------------------------------
+        
         //-------------------------------------------------------------------------------
         //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
         protected void ConfigurarComboBoxEscalafonJerarquia(ComboBox comboBox_Escalafon, ComboBox comboBox_Jerarquia)

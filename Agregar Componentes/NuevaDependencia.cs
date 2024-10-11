@@ -16,11 +16,11 @@ using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
 using Clases.Agregar_Componentes;
-using Interfaces_Libreria.Interfaces;
+
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevaDependencia : BaseForm, IFormulario
+    public partial class NuevaDependencia : BaseForm
     {
         private SellosDependencia sellosDependenciaForm;
 
@@ -76,11 +76,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
         }
         //-----------------------------------------------------------------------------
-        // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            // para logica de interfaz IFormulario
-        }
+       
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
