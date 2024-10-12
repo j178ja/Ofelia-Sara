@@ -34,70 +34,107 @@
             this.panel_TecladoBase = new System.Windows.Forms.Panel();
             this.p_Enter2 = new System.Windows.Forms.Panel();
             this.p_Enter1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel56 = new System.Windows.Forms.Panel();
             this.p_Alt = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
             this.p_Mayuscula = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
             this.p_Windows = new System.Windows.Forms.Panel();
             this.p_L = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.p_ControlIzquierdo = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
             this.panel59 = new System.Windows.Forms.Panel();
             this.p_Espacio = new System.Windows.Forms.Panel();
             this.p_K = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel51 = new System.Windows.Forms.Panel();
             this.p_Ñ = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel62 = new System.Windows.Forms.Panel();
             this.p_AltGr = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
             this.p_J = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.p_ShiftDerecho = new System.Windows.Forms.Panel();
             this.p_H = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel65 = new System.Windows.Forms.Panel();
             this.p_ControlDerecho = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
             this.p_G = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel33 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.p_F = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
             this.p_D = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.p_S = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.p_A = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.p_M = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.p_Tab = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.p_O = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
             this.p_N = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.p_B = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.p_V = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel41 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.p_C = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.p_I = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
             this.p_X = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.p_P = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.p_Z = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.p_9 = new System.Windows.Forms.Panel();
             this.panel45 = new System.Windows.Forms.Panel();
             this.p_U = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
             this.p_ShiftIzquierdo = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.p_Y = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
             this.p_8 = new System.Windows.Forms.Panel();
             this.p_T = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
             this.p_0 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.p_R = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.p_7 = new System.Windows.Forms.Panel();
             this.p_E = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
             this.p_6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.p_W = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
             this.p_5 = new System.Windows.Forms.Panel();
             this.p_Q = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.p_4 = new System.Windows.Forms.Panel();
             this.p_3 = new System.Windows.Forms.Panel();
             this.p_2 = new System.Windows.Forms.Panel();
@@ -137,14 +174,45 @@
             this.panel_PulgarIzquierdo = new System.Windows.Forms.Panel();
             this.panel_Teclado.SuspendLayout();
             this.panel_TecladoBase.SuspendLayout();
+            this.p_Enter1.SuspendLayout();
+            this.p_Alt.SuspendLayout();
+            this.p_Mayuscula.SuspendLayout();
+            this.p_L.SuspendLayout();
+            this.p_ControlIzquierdo.SuspendLayout();
+            this.p_K.SuspendLayout();
             this.p_Ñ.SuspendLayout();
+            this.p_AltGr.SuspendLayout();
+            this.p_J.SuspendLayout();
             this.p_H.SuspendLayout();
+            this.p_ControlDerecho.SuspendLayout();
+            this.p_G.SuspendLayout();
+            this.panel33.SuspendLayout();
+            this.p_F.SuspendLayout();
+            this.panel50.SuspendLayout();
+            this.p_D.SuspendLayout();
+            this.p_S.SuspendLayout();
+            this.p_A.SuspendLayout();
+            this.p_M.SuspendLayout();
+            this.panel35.SuspendLayout();
+            this.p_O.SuspendLayout();
+            this.p_N.SuspendLayout();
             this.panel37.SuspendLayout();
+            this.p_B.SuspendLayout();
             this.p_V.SuspendLayout();
+            this.p_C.SuspendLayout();
+            this.p_I.SuspendLayout();
+            this.p_X.SuspendLayout();
             this.p_P.SuspendLayout();
+            this.p_Z.SuspendLayout();
+            this.p_U.SuspendLayout();
             this.p_Y.SuspendLayout();
+            this.p_T.SuspendLayout();
             this.p_0.SuspendLayout();
+            this.p_R.SuspendLayout();
+            this.p_E.SuspendLayout();
             this.p_6.SuspendLayout();
+            this.p_W.SuspendLayout();
+            this.p_Q.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu_ElegirArchivos.SuspendLayout();
             this.panel_Especificaciones.SuspendLayout();
@@ -233,7 +301,7 @@
             // 
             // p_Enter2
             // 
-            this.p_Enter2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Enter2.BackColor = System.Drawing.Color.LightGray;
             this.p_Enter2.Location = new System.Drawing.Point(559, 63);
             this.p_Enter2.Name = "p_Enter2";
             this.p_Enter2.Size = new System.Drawing.Size(24, 31);
@@ -241,15 +309,28 @@
             // 
             // p_Enter1
             // 
-            this.p_Enter1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Enter1.BackColor = System.Drawing.Color.LightGray;
+            this.p_Enter1.Controls.Add(this.label14);
             this.p_Enter1.Location = new System.Drawing.Point(550, 41);
             this.p_Enter1.Name = "p_Enter1";
             this.p_Enter1.Size = new System.Drawing.Size(33, 23);
             this.p_Enter1.TabIndex = 67;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Uighur", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(2, 4);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 18);
+            this.label14.TabIndex = 70;
+            this.label14.Text = "INTR";
+            // 
             // panel56
             // 
-            this.panel56.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel56.Location = new System.Drawing.Point(519, 70);
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(34, 23);
@@ -258,18 +339,44 @@
             // p_Alt
             // 
             this.p_Alt.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Alt.Controls.Add(this.label34);
             this.p_Alt.Location = new System.Drawing.Point(111, 128);
             this.p_Alt.Name = "p_Alt";
             this.p_Alt.Size = new System.Drawing.Size(44, 23);
             this.p_Alt.TabIndex = 71;
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label34.Location = new System.Drawing.Point(8, 4);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(27, 14);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "ALT";
+            // 
             // p_Mayuscula
             // 
-            this.p_Mayuscula.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_Mayuscula.BackColor = System.Drawing.Color.LightGray;
+            this.p_Mayuscula.Controls.Add(this.label35);
             this.p_Mayuscula.Location = new System.Drawing.Point(11, 70);
             this.p_Mayuscula.Name = "p_Mayuscula";
             this.p_Mayuscula.Size = new System.Drawing.Size(62, 23);
             this.p_Mayuscula.TabIndex = 82;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label35.Location = new System.Drawing.Point(8, 4);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(47, 14);
+            this.label35.TabIndex = 14;
+            this.label35.Text = "MAYUS";
             // 
             // p_Windows
             // 
@@ -282,22 +389,48 @@
             // p_L
             // 
             this.p_L.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_L.Controls.Add(this.label17);
             this.p_L.Location = new System.Drawing.Point(399, 70);
             this.p_L.Name = "p_L";
             this.p_L.Size = new System.Drawing.Size(34, 23);
             this.p_L.TabIndex = 83;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label17.Location = new System.Drawing.Point(9, 4);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(13, 14);
+            this.label17.TabIndex = 73;
+            this.label17.Text = "L";
+            // 
             // p_ControlIzquierdo
             // 
             this.p_ControlIzquierdo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_ControlIzquierdo.Controls.Add(this.label33);
             this.p_ControlIzquierdo.Location = new System.Drawing.Point(11, 128);
             this.p_ControlIzquierdo.Name = "p_ControlIzquierdo";
             this.p_ControlIzquierdo.Size = new System.Drawing.Size(52, 23);
             this.p_ControlIzquierdo.TabIndex = 72;
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label33.Location = new System.Drawing.Point(10, 4);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(33, 14);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "CTRL";
+            // 
             // panel59
             // 
-            this.panel59.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel59.Location = new System.Drawing.Point(478, 70);
             this.panel59.Name = "panel59";
             this.panel59.Size = new System.Drawing.Size(34, 23);
@@ -314,10 +447,23 @@
             // p_K
             // 
             this.p_K.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_K.Controls.Add(this.label18);
             this.p_K.Location = new System.Drawing.Point(359, 70);
             this.p_K.Name = "p_K";
             this.p_K.Size = new System.Drawing.Size(34, 23);
             this.p_K.TabIndex = 91;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label18.Location = new System.Drawing.Point(9, 4);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(14, 14);
+            this.label18.TabIndex = 74;
+            this.label18.Text = "K";
             // 
             // panel51
             // 
@@ -330,11 +476,24 @@
             // p_Ñ
             // 
             this.p_Ñ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Ñ.Controls.Add(this.label16);
             this.p_Ñ.Controls.Add(this.panel62);
             this.p_Ñ.Location = new System.Drawing.Point(439, 70);
             this.p_Ñ.Name = "p_Ñ";
             this.p_Ñ.Size = new System.Drawing.Size(34, 23);
             this.p_Ñ.TabIndex = 92;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label16.Location = new System.Drawing.Point(9, 4);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(16, 14);
+            this.label16.TabIndex = 72;
+            this.label16.Text = "Ñ";
             // 
             // panel62
             // 
@@ -346,18 +505,44 @@
             // p_AltGr
             // 
             this.p_AltGr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_AltGr.Controls.Add(this.label36);
             this.p_AltGr.Location = new System.Drawing.Point(391, 128);
             this.p_AltGr.Name = "p_AltGr";
             this.p_AltGr.Size = new System.Drawing.Size(45, 23);
             this.p_AltGr.TabIndex = 69;
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label36.Location = new System.Drawing.Point(0, 4);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(42, 14);
+            this.label36.TabIndex = 15;
+            this.label36.Text = "ALTGR";
+            // 
             // p_J
             // 
             this.p_J.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_J.Controls.Add(this.label19);
             this.p_J.Location = new System.Drawing.Point(319, 70);
             this.p_J.Name = "p_J";
             this.p_J.Size = new System.Drawing.Size(34, 23);
             this.p_J.TabIndex = 90;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label19.Location = new System.Drawing.Point(9, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(12, 14);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "J";
             // 
             // p_ShiftDerecho
             // 
@@ -370,11 +555,24 @@
             // p_H
             // 
             this.p_H.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_H.Controls.Add(this.label20);
             this.p_H.Controls.Add(this.panel65);
             this.p_H.Location = new System.Drawing.Point(279, 70);
             this.p_H.Name = "p_H";
             this.p_H.Size = new System.Drawing.Size(34, 23);
             this.p_H.TabIndex = 84;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label20.Location = new System.Drawing.Point(9, 4);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 14);
+            this.label20.TabIndex = 76;
+            this.label20.Text = "H";
             // 
             // panel65
             // 
@@ -386,54 +584,132 @@
             // p_ControlDerecho
             // 
             this.p_ControlDerecho.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.p_ControlDerecho.Controls.Add(this.label38);
             this.p_ControlDerecho.Location = new System.Drawing.Point(532, 128);
             this.p_ControlDerecho.Name = "p_ControlDerecho";
             this.p_ControlDerecho.Size = new System.Drawing.Size(51, 23);
             this.p_ControlDerecho.TabIndex = 71;
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label38.Location = new System.Drawing.Point(5, 3);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(41, 14);
+            this.label38.TabIndex = 17;
+            this.label38.Text = "CTROL";
+            // 
             // p_G
             // 
             this.p_G.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_G.Controls.Add(this.label21);
             this.p_G.Location = new System.Drawing.Point(239, 70);
             this.p_G.Name = "p_G";
             this.p_G.Size = new System.Drawing.Size(34, 23);
             this.p_G.TabIndex = 85;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label21.Location = new System.Drawing.Point(9, 4);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 14);
+            this.label21.TabIndex = 77;
+            this.label21.Text = "G";
+            // 
             // panel33
             // 
-            this.panel33.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel33.Controls.Add(this.label13);
             this.panel33.Location = new System.Drawing.Point(451, 99);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(34, 23);
             this.panel33.TabIndex = 81;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(9, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(15, 14);
+            this.label13.TabIndex = 69;
+            this.label13.Text = "A";
+            // 
             // p_F
             // 
             this.p_F.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_F.Controls.Add(this.label22);
             this.p_F.Location = new System.Drawing.Point(199, 70);
             this.p_F.Name = "p_F";
             this.p_F.Size = new System.Drawing.Size(34, 23);
             this.p_F.TabIndex = 86;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(9, 4);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 14);
+            this.label22.TabIndex = 78;
+            this.label22.Text = "F";
+            // 
             // panel50
             // 
             this.panel50.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel50.Controls.Add(this.label37);
             this.panel50.Location = new System.Drawing.Point(442, 128);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(44, 23);
             this.panel50.TabIndex = 70;
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label37.Location = new System.Drawing.Point(10, 4);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(22, 14);
+            this.label37.TabIndex = 16;
+            this.label37.Text = "FN";
+            // 
             // p_D
             // 
             this.p_D.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_D.Controls.Add(this.label23);
             this.p_D.Location = new System.Drawing.Point(159, 70);
             this.p_D.Name = "p_D";
             this.p_D.Size = new System.Drawing.Size(34, 23);
             this.p_D.TabIndex = 87;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label23.Location = new System.Drawing.Point(9, 4);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(15, 14);
+            this.label23.TabIndex = 79;
+            this.label23.Text = "D";
+            // 
             // panel19
             // 
-            this.panel19.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel19.Location = new System.Drawing.Point(510, 41);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(34, 23);
@@ -442,26 +718,65 @@
             // p_S
             // 
             this.p_S.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_S.Controls.Add(this.label24);
             this.p_S.Location = new System.Drawing.Point(119, 70);
             this.p_S.Name = "p_S";
             this.p_S.Size = new System.Drawing.Size(34, 23);
             this.p_S.TabIndex = 88;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label24.Location = new System.Drawing.Point(9, 4);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(13, 14);
+            this.label24.TabIndex = 80;
+            this.label24.Text = "S";
+            // 
             // p_A
             // 
             this.p_A.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_A.Controls.Add(this.label3);
             this.p_A.Location = new System.Drawing.Point(79, 70);
             this.p_A.Name = "p_A";
             this.p_A.Size = new System.Drawing.Size(34, 23);
             this.p_A.TabIndex = 89;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(9, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 14);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "A";
+            // 
             // p_M
             // 
             this.p_M.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_M.Controls.Add(this.label10);
             this.p_M.Location = new System.Drawing.Point(331, 99);
             this.p_M.Name = "p_M";
             this.p_M.Size = new System.Drawing.Size(34, 23);
             this.p_M.TabIndex = 70;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(9, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 14);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "M";
             // 
             // p_Tab
             // 
@@ -473,36 +788,88 @@
             // 
             // panel35
             // 
-            this.panel35.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel35.Controls.Add(this.label12);
             this.panel35.Location = new System.Drawing.Point(410, 99);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(34, 23);
             this.panel35.TabIndex = 80;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(9, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(15, 14);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "A";
+            // 
             // p_O
             // 
             this.p_O.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_O.Controls.Add(this.label32);
             this.p_O.Location = new System.Drawing.Point(390, 41);
             this.p_O.Name = "p_O";
             this.p_O.Size = new System.Drawing.Size(34, 23);
             this.p_O.TabIndex = 70;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label32.Location = new System.Drawing.Point(9, 4);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(15, 14);
+            this.label32.TabIndex = 88;
+            this.label32.Text = "O";
+            // 
             // p_N
             // 
             this.p_N.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_N.Controls.Add(this.label9);
             this.p_N.Location = new System.Drawing.Point(291, 99);
             this.p_N.Name = "p_N";
             this.p_N.Size = new System.Drawing.Size(34, 23);
             this.p_N.TabIndex = 78;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(9, 4);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 14);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "N";
+            // 
             // panel37
             // 
-            this.panel37.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel37.Controls.Add(this.label11);
             this.panel37.Controls.Add(this.panel38);
             this.panel37.Location = new System.Drawing.Point(371, 99);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(34, 23);
             this.panel37.TabIndex = 79;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(9, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(15, 14);
+            this.label11.TabIndex = 67;
+            this.label11.Text = "A";
             // 
             // panel38
             // 
@@ -522,14 +889,27 @@
             // p_B
             // 
             this.p_B.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_B.Controls.Add(this.label8);
             this.p_B.Location = new System.Drawing.Point(250, 99);
             this.p_B.Name = "p_B";
             this.p_B.Size = new System.Drawing.Size(34, 23);
             this.p_B.TabIndex = 77;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(9, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 14);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "B";
+            // 
             // panel21
             // 
-            this.panel21.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel21.Location = new System.Drawing.Point(469, 41);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(34, 23);
@@ -538,11 +918,24 @@
             // p_V
             // 
             this.p_V.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_V.Controls.Add(this.label7);
             this.p_V.Controls.Add(this.panel41);
             this.p_V.Location = new System.Drawing.Point(211, 99);
             this.p_V.Name = "p_V";
             this.p_V.Size = new System.Drawing.Size(34, 23);
             this.p_V.TabIndex = 71;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(9, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 14);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "V";
             // 
             // panel41
             // 
@@ -553,7 +946,7 @@
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel14.Location = new System.Drawing.Point(491, 12);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(34, 23);
@@ -562,35 +955,87 @@
             // p_C
             // 
             this.p_C.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_C.Controls.Add(this.label6);
             this.p_C.Location = new System.Drawing.Point(171, 99);
             this.p_C.Name = "p_C";
             this.p_C.Size = new System.Drawing.Size(34, 23);
             this.p_C.TabIndex = 72;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(9, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 14);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "C";
+            // 
             // p_I
             // 
             this.p_I.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_I.Controls.Add(this.label31);
             this.p_I.Location = new System.Drawing.Point(350, 41);
             this.p_I.Name = "p_I";
             this.p_I.Size = new System.Drawing.Size(34, 23);
             this.p_I.TabIndex = 78;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label31.Location = new System.Drawing.Point(9, 4);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(10, 14);
+            this.label31.TabIndex = 87;
+            this.label31.Text = "I";
+            // 
             // p_X
             // 
             this.p_X.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_X.Controls.Add(this.label5);
             this.p_X.Location = new System.Drawing.Point(131, 99);
             this.p_X.Name = "p_X";
             this.p_X.Size = new System.Drawing.Size(34, 23);
             this.p_X.TabIndex = 73;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(9, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(14, 14);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "X";
+            // 
             // p_P
             // 
             this.p_P.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_P.Controls.Add(this.label15);
             this.p_P.Controls.Add(this.panel24);
             this.p_P.Location = new System.Drawing.Point(430, 41);
             this.p_P.Name = "p_P";
             this.p_P.Size = new System.Drawing.Size(34, 23);
             this.p_P.TabIndex = 79;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label15.Location = new System.Drawing.Point(9, 4);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(14, 14);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "P";
             // 
             // panel24
             // 
@@ -602,14 +1047,27 @@
             // p_Z
             // 
             this.p_Z.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Z.Controls.Add(this.label4);
             this.p_Z.Location = new System.Drawing.Point(91, 99);
             this.p_Z.Name = "p_Z";
             this.p_Z.Size = new System.Drawing.Size(34, 23);
             this.p_Z.TabIndex = 74;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(9, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 14);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Z";
+            // 
             // p_9
             // 
-            this.p_9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_9.Location = new System.Drawing.Point(371, 12);
             this.p_9.Name = "p_9";
             this.p_9.Size = new System.Drawing.Size(34, 23);
@@ -626,10 +1084,23 @@
             // p_U
             // 
             this.p_U.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_U.Controls.Add(this.label30);
             this.p_U.Location = new System.Drawing.Point(310, 41);
             this.p_U.Name = "p_U";
             this.p_U.Size = new System.Drawing.Size(34, 23);
             this.p_U.TabIndex = 77;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label30.Location = new System.Drawing.Point(9, 4);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(15, 14);
+            this.label30.TabIndex = 86;
+            this.label30.Text = "U";
             // 
             // p_ShiftIzquierdo
             // 
@@ -641,7 +1112,7 @@
             // 
             // panel15
             // 
-            this.panel15.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel15.Location = new System.Drawing.Point(450, 12);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(34, 23);
@@ -650,11 +1121,24 @@
             // p_Y
             // 
             this.p_Y.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Y.Controls.Add(this.label29);
             this.p_Y.Controls.Add(this.panel27);
             this.p_Y.Location = new System.Drawing.Point(270, 41);
             this.p_Y.Name = "p_Y";
             this.p_Y.Size = new System.Drawing.Size(34, 23);
             this.p_Y.TabIndex = 71;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label29.Location = new System.Drawing.Point(9, 4);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(14, 14);
+            this.label29.TabIndex = 85;
+            this.label29.Text = "Y";
             // 
             // panel27
             // 
@@ -665,7 +1149,7 @@
             // 
             // p_8
             // 
-            this.p_8.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_8.Location = new System.Drawing.Point(331, 12);
             this.p_8.Name = "p_8";
             this.p_8.Size = new System.Drawing.Size(34, 23);
@@ -674,14 +1158,27 @@
             // p_T
             // 
             this.p_T.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_T.Controls.Add(this.label28);
             this.p_T.Location = new System.Drawing.Point(230, 41);
             this.p_T.Name = "p_T";
             this.p_T.Size = new System.Drawing.Size(34, 23);
             this.p_T.TabIndex = 72;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label28.Location = new System.Drawing.Point(9, 4);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(13, 14);
+            this.label28.TabIndex = 84;
+            this.label28.Text = "T";
+            // 
             // p_0
             // 
-            this.p_0.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_0.Controls.Add(this.panel17);
             this.p_0.Location = new System.Drawing.Point(411, 12);
             this.p_0.Name = "p_0";
@@ -698,14 +1195,27 @@
             // p_R
             // 
             this.p_R.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_R.Controls.Add(this.label27);
             this.p_R.Location = new System.Drawing.Point(190, 41);
             this.p_R.Name = "p_R";
             this.p_R.Size = new System.Drawing.Size(34, 23);
             this.p_R.TabIndex = 73;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label27.Location = new System.Drawing.Point(9, 4);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(14, 14);
+            this.label27.TabIndex = 83;
+            this.label27.Text = "R";
+            // 
             // p_7
             // 
-            this.p_7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_7.Location = new System.Drawing.Point(291, 12);
             this.p_7.Name = "p_7";
             this.p_7.Size = new System.Drawing.Size(34, 23);
@@ -714,14 +1224,27 @@
             // p_E
             // 
             this.p_E.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_E.Controls.Add(this.label26);
             this.p_E.Location = new System.Drawing.Point(150, 41);
             this.p_E.Name = "p_E";
             this.p_E.Size = new System.Drawing.Size(34, 23);
             this.p_E.TabIndex = 74;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label26.Location = new System.Drawing.Point(9, 4);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(13, 14);
+            this.label26.TabIndex = 82;
+            this.label26.Text = "E";
+            // 
             // p_6
             // 
-            this.p_6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_6.Controls.Add(this.panel9);
             this.p_6.Location = new System.Drawing.Point(251, 12);
             this.p_6.Name = "p_6";
@@ -738,14 +1261,27 @@
             // p_W
             // 
             this.p_W.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_W.Controls.Add(this.label25);
             this.p_W.Location = new System.Drawing.Point(110, 41);
             this.p_W.Name = "p_W";
             this.p_W.Size = new System.Drawing.Size(34, 23);
             this.p_W.TabIndex = 75;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label25.Location = new System.Drawing.Point(9, 4);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(18, 14);
+            this.label25.TabIndex = 81;
+            this.label25.Text = "W";
+            // 
             // p_5
             // 
-            this.p_5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_5.Location = new System.Drawing.Point(211, 12);
             this.p_5.Name = "p_5";
             this.p_5.Size = new System.Drawing.Size(34, 23);
@@ -754,14 +1290,27 @@
             // p_Q
             // 
             this.p_Q.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_Q.Controls.Add(this.label1);
             this.p_Q.Location = new System.Drawing.Point(70, 41);
             this.p_Q.Name = "p_Q";
             this.p_Q.Size = new System.Drawing.Size(34, 23);
             this.p_Q.TabIndex = 76;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Q @";
+            // 
             // p_4
             // 
-            this.p_4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_4.Location = new System.Drawing.Point(171, 12);
             this.p_4.Name = "p_4";
             this.p_4.Size = new System.Drawing.Size(34, 23);
@@ -769,7 +1318,7 @@
             // 
             // p_3
             // 
-            this.p_3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_3.Location = new System.Drawing.Point(131, 12);
             this.p_3.Name = "p_3";
             this.p_3.Size = new System.Drawing.Size(34, 23);
@@ -777,7 +1326,7 @@
             // 
             // p_2
             // 
-            this.p_2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_2.Location = new System.Drawing.Point(91, 12);
             this.p_2.Name = "p_2";
             this.p_2.Size = new System.Drawing.Size(34, 23);
@@ -785,7 +1334,7 @@
             // 
             // p_1
             // 
-            this.p_1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.p_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.p_1.Location = new System.Drawing.Point(51, 12);
             this.p_1.Name = "p_1";
             this.p_1.Size = new System.Drawing.Size(34, 23);
@@ -830,6 +1379,7 @@
             // btn_Detener
             // 
             this.btn_Detener.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Detener.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Detener.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Detener.Location = new System.Drawing.Point(251, 157);
             this.btn_Detener.Name = "btn_Detener";
@@ -1023,7 +1573,7 @@
             this.panel_Manos.Controls.Add(this.panel_PulgarIzquierdo);
             this.panel_Manos.Location = new System.Drawing.Point(21, 412);
             this.panel_Manos.Name = "panel_Manos";
-            this.panel_Manos.Size = new System.Drawing.Size(714, 141);
+            this.panel_Manos.Size = new System.Drawing.Size(714, 140);
             this.panel_Manos.TabIndex = 46;
             // 
             // panel_MeniqueIzquierdo
@@ -1108,11 +1658,13 @@
             // 
             // Mecanografia
             // 
+            this.AcceptButton = this.btn_Iniciar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(800, 617);
+            this.CancelButton = this.btn_Detener;
+            this.ClientSize = new System.Drawing.Size(800, 602);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mecanografia";
@@ -1120,14 +1672,82 @@
             this.Load += new System.EventHandler(this.Mecanografia_Load);
             this.panel_Teclado.ResumeLayout(false);
             this.panel_TecladoBase.ResumeLayout(false);
+            this.p_Enter1.ResumeLayout(false);
+            this.p_Enter1.PerformLayout();
+            this.p_Alt.ResumeLayout(false);
+            this.p_Alt.PerformLayout();
+            this.p_Mayuscula.ResumeLayout(false);
+            this.p_Mayuscula.PerformLayout();
+            this.p_L.ResumeLayout(false);
+            this.p_L.PerformLayout();
+            this.p_ControlIzquierdo.ResumeLayout(false);
+            this.p_ControlIzquierdo.PerformLayout();
+            this.p_K.ResumeLayout(false);
+            this.p_K.PerformLayout();
             this.p_Ñ.ResumeLayout(false);
+            this.p_Ñ.PerformLayout();
+            this.p_AltGr.ResumeLayout(false);
+            this.p_AltGr.PerformLayout();
+            this.p_J.ResumeLayout(false);
+            this.p_J.PerformLayout();
             this.p_H.ResumeLayout(false);
+            this.p_H.PerformLayout();
+            this.p_ControlDerecho.ResumeLayout(false);
+            this.p_ControlDerecho.PerformLayout();
+            this.p_G.ResumeLayout(false);
+            this.p_G.PerformLayout();
+            this.panel33.ResumeLayout(false);
+            this.panel33.PerformLayout();
+            this.p_F.ResumeLayout(false);
+            this.p_F.PerformLayout();
+            this.panel50.ResumeLayout(false);
+            this.panel50.PerformLayout();
+            this.p_D.ResumeLayout(false);
+            this.p_D.PerformLayout();
+            this.p_S.ResumeLayout(false);
+            this.p_S.PerformLayout();
+            this.p_A.ResumeLayout(false);
+            this.p_A.PerformLayout();
+            this.p_M.ResumeLayout(false);
+            this.p_M.PerformLayout();
+            this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
+            this.p_O.ResumeLayout(false);
+            this.p_O.PerformLayout();
+            this.p_N.ResumeLayout(false);
+            this.p_N.PerformLayout();
             this.panel37.ResumeLayout(false);
+            this.panel37.PerformLayout();
+            this.p_B.ResumeLayout(false);
+            this.p_B.PerformLayout();
             this.p_V.ResumeLayout(false);
+            this.p_V.PerformLayout();
+            this.p_C.ResumeLayout(false);
+            this.p_C.PerformLayout();
+            this.p_I.ResumeLayout(false);
+            this.p_I.PerformLayout();
+            this.p_X.ResumeLayout(false);
+            this.p_X.PerformLayout();
             this.p_P.ResumeLayout(false);
+            this.p_P.PerformLayout();
+            this.p_Z.ResumeLayout(false);
+            this.p_Z.PerformLayout();
+            this.p_U.ResumeLayout(false);
+            this.p_U.PerformLayout();
             this.p_Y.ResumeLayout(false);
+            this.p_Y.PerformLayout();
+            this.p_T.ResumeLayout(false);
+            this.p_T.PerformLayout();
             this.p_0.ResumeLayout(false);
+            this.p_R.ResumeLayout(false);
+            this.p_R.PerformLayout();
+            this.p_E.ResumeLayout(false);
+            this.p_E.PerformLayout();
             this.p_6.ResumeLayout(false);
+            this.p_W.ResumeLayout(false);
+            this.p_W.PerformLayout();
+            this.p_Q.ResumeLayout(false);
+            this.p_Q.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menu_ElegirArchivos.ResumeLayout(false);
@@ -1245,6 +1865,43 @@
         private System.Windows.Forms.Panel p_A;
         private System.Windows.Forms.Panel p_Enter2;
         private System.Windows.Forms.Label labelTeclaPresionada;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }
 

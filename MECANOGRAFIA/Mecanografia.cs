@@ -24,6 +24,7 @@ namespace MECANOGRAFIA
     {
        
         private ManejadorTecladoTexto manejadorTeclado;
+       
         public Mecanografia()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace MECANOGRAFIA
             System.Drawing.Color BorderColorTeclado = System.Drawing.Color.FromArgb(178, 213, 230);
             panel_TecladoBase.ApplyRoundedCorners(panel_TecladoBase, borderRadius: 25, borderSize: 10, borderColor: BorderColorTeclado);
 
-
+            this.Load += AjustarTamañoForm;//para ajustar el tamaño del formulario
 
             panel_Especificaciones.Visible = false;
             panel_Manos.Visible = false;
@@ -54,6 +55,7 @@ namespace MECANOGRAFIA
             RedondearPanel.AplicarBordesRedondeados(panel_MeniqueIzquierdo, 20, 10);
 
             Texto_Tipear.Enter += Texto_Tipear_Enter;
+
 
             // Crear un diccionario que relacione caracteres con paneles
             Dictionary<char, Panel> teclaPanelMap = new Dictionary<char, Panel>
@@ -121,6 +123,11 @@ namespace MECANOGRAFIA
             pictureBox_SelectArchivo.Visible = true;
             btn_Detener.Visible = true;
             btn_Iniciar.Visible = true;
+            panel_Teclado.Location = new Point(21, 193);
+            // Ajustar la altura de panel1
+            panel1.Height = 380;
+            this.Height = panel1.Height+80;
+       
 
         }
 
@@ -298,6 +305,9 @@ namespace MECANOGRAFIA
 
             panel_Manos.Visible = true;
             Texto_Tipear.Visible = true;
+            panel_Teclado.Location=new Point(21,242);
+            panel1.Height =559;
+            this.Height =641;
             // Inicializar el texto resaltando el primer carácter
             manejadorTeclado.InicializarTexto();
         }
@@ -386,5 +396,19 @@ namespace MECANOGRAFIA
             // Pasar la tecla presionada al manejador para procesarla.
             manejadorTeclado.ProcesarEntrada(e.KeyChar);
         }
+
+        //----------------------------------------------------------------------
+        //ajustar tamaño y posicion principal de elementos en el formulario
+        private void AjustarTamañoForm(object sender, EventArgs e)
+        {
+            // Posicionar el panel_Teclado en la ubicación deseada
+            panel_Teclado.Location = new Point(21, 34);
+            panel1.Height = panel_Teclado.Height+60;
+
+            // Ajustar la altura del formulario para que sea más alto que panel1
+            this.Height = panel1.Height + 80; // Establece la altura del formulario
+        }
+
+
     }
 }

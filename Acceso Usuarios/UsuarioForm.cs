@@ -19,12 +19,14 @@ namespace Ofelia_Sara.Formularios
 {
     public partial class UsuarioForm : BaseForm
     {
+       
         public UsuarioForm()
         {
             InitializeComponent();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+       
         }
 
         private void Usuario_Load(object sender, EventArgs e)
@@ -44,12 +46,27 @@ namespace Ofelia_Sara.Formularios
             textBox_Usuario.Focus();
         }
 
-        private void btn_Registrarse_Click(object sender, EventArgs e)
+        private void Btn_Registrarse_Click(object sender, EventArgs e)
         {
-            Registro registroForm = new Registro();// Crear una instancia del formulario de registro
+            // Crear una instancia del formulario de registro
+            Registro registroForm = new Registro();
 
-            registroForm.ShowDialog();// Mostrar el formulario de registro como un diálogo modal
+            // Obtener la ubicación de UsuarioForm (este es 'this' ya que el código está dentro de UsuarioForm)
+            Form usuarioForm = this;
+
+            // Ajustar la posición del formulario de registro para que esté justo encima de UsuarioForm
+            int posicionX = usuarioForm.Location.X + (usuarioForm.Width - registroForm.Width) / 2; // Centrar en X
+            int posicionY = usuarioForm.Location.Y + (usuarioForm.Height - registroForm.Height) / 2+112; // no es la mejor forma pero se posiciona debajo de menu_Principal
+
+
+            // Establecer la posición manualmente
+            registroForm.StartPosition = FormStartPosition.Manual;
+            registroForm.Location = new Point(posicionX, posicionY);
+
+            // Mostrar el formulario de registro como un diálogo modal
+            registroForm.ShowDialog();
         }
+
 
         private void UsuarioForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
@@ -63,19 +80,19 @@ namespace Ofelia_Sara.Formularios
         // Define una variable para llevar el control del estado de visibilidad
         private bool esContraseñaVisible = false;
 
-        private void pictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
+        private void PictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '\0'; // Muestra el texto real
             pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña; // Cambia la imagen al icono de "visible"
         }
 
-        private void pictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
+        private void PictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '*'; // Oculta el texto con asteriscos
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoCerrado; // Cambia la imagen al icono de "oculto"
         }
 
-        private void textBox_Contraseña_TextChanged(object sender, EventArgs e)
+        private void TextBox_Contraseña_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_Contraseña.Text))
             {
@@ -89,7 +106,7 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-        private void btn_Ingresar_Click(object sender, EventArgs e)
+        private void Btn_Ingresar_Click(object sender, EventArgs e)
         {
             // Crea una instancia del formulario ModificarEliminar
             ModificarEliminar formModificarEliminar = new ModificarEliminar();

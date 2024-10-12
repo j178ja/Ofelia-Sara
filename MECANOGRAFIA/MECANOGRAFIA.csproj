@@ -58,6 +58,7 @@
     <Compile Include="Clases\Contadora.cs" />
     <Compile Include="Clases\Dedos.cs" />
     <Compile Include="Clases\ManejadorTecladoTexto.cs" />
+    <Compile Include="Clases\PanelManager.cs" />
     <Compile Include="Mecanografia.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -3,7 +3,7 @@
   ---------------DESARROLLADOR Y VERSION ---------------------------*/
 using System;
 using System.Windows.Forms;
-
+using Ofelia_Sara.Formularios;
 
 
 
@@ -14,10 +14,10 @@ namespace Clases.Apariencia
         public static LinkLabel CreateFooterLinkLabel(Form form)
         {
             // Verificar si el formulario es una instancia de Contacto
-            /*if (form is Contacto)
+            if (form is Contacto)
             {
                 return null; // No agregar el LinkLabel si es el formulario Contacto
-            }*/
+            }
 
             LinkLabel footerLinkLabel = new LinkLabel();
             footerLinkLabel.AutoSize = true;
@@ -32,8 +32,8 @@ namespace Clases.Apariencia
             footerLinkLabel.LinkClicked += (sender, e) =>
             {
                 // Abrir el formulario deseado al hacer clic en el link
-               /* Form contacto = new Contacto();
-               contacto.Show();*/
+               Form contacto = new Contacto();
+               contacto.Show();
             };
 
             // Ajustar la posición para que siempre esté cerca del borde inferior

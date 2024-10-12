@@ -50,10 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Wpp)).BeginInit();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 2, 8, 28, 2, 217);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -69,7 +65,7 @@
             this.panel1.Controls.Add(this.label_NombreContacto);
             this.panel1.Location = new System.Drawing.Point(26, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 670);
+            this.panel1.Size = new System.Drawing.Size(745, 462);
             this.panel1.TabIndex = 2;
             // 
             // label_Capacitaciones
@@ -140,7 +136,7 @@
             this.pictureBox_Correo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Correo.BackgroundImage")));
             this.pictureBox_Correo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_Correo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Correo.Location = new System.Drawing.Point(32, 582);
+            this.pictureBox_Correo.Location = new System.Drawing.Point(34, 378);
             this.pictureBox_Correo.Name = "pictureBox_Correo";
             this.pictureBox_Correo.Size = new System.Drawing.Size(54, 48);
             this.pictureBox_Correo.TabIndex = 4;
@@ -153,7 +149,7 @@
             this.pictureBox_Wpp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Wpp.BackgroundImage")));
             this.pictureBox_Wpp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_Wpp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Wpp.Location = new System.Drawing.Point(505, 582);
+            this.pictureBox_Wpp.Location = new System.Drawing.Point(507, 378);
             this.pictureBox_Wpp.Name = "pictureBox_Wpp";
             this.pictureBox_Wpp.Size = new System.Drawing.Size(54, 48);
             this.pictureBox_Wpp.TabIndex = 3;
@@ -166,7 +162,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(580, 593);
+            this.linkLabel2.Location = new System.Drawing.Point(582, 389);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(131, 20);
             this.linkLabel2.TabIndex = 2;
@@ -179,7 +175,7 @@
             this.linkLabel_Correo.AutoSize = true;
             this.linkLabel_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_Correo.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel_Correo.Location = new System.Drawing.Point(104, 593);
+            this.linkLabel_Correo.Location = new System.Drawing.Point(106, 389);
             this.linkLabel_Correo.Name = "linkLabel_Correo";
             this.linkLabel_Correo.Size = new System.Drawing.Size(316, 20);
             this.linkLabel_Correo.TabIndex = 1;
@@ -204,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 736);
+            this.ClientSize = new System.Drawing.Size(800, 531);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

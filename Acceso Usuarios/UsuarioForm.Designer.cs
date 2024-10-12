@@ -41,10 +41,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
             // 
-            // timePickerPersonalizadoFecha
-            // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 7, 2, 24, 29, 988);
-            // 
+         
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -70,8 +67,8 @@
             this.pictureBox_OjoContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_OjoContraseña.TabIndex = 28;
             this.pictureBox_OjoContraseña.TabStop = false;
-            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
-            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseUp);
+            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_OjoContraseña_MouseDown);
+            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_OjoContraseña_MouseUp);
             // 
             // btn_Registrarse
             // 
@@ -85,7 +82,7 @@
             this.btn_Registrarse.TabIndex = 6;
             this.btn_Registrarse.Text = "REGISTRARSE";
             this.btn_Registrarse.UseVisualStyleBackColor = false;
-            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
+            this.btn_Registrarse.Click += new System.EventHandler(this.Btn_Registrarse_Click);
             // 
             // btn_Ingresar
             // 
@@ -100,7 +97,7 @@
             this.btn_Ingresar.TabIndex = 5;
             this.btn_Ingresar.Text = "INGRESAR";
             this.btn_Ingresar.UseVisualStyleBackColor = false;
-            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
+            this.btn_Ingresar.Click += new System.EventHandler(this.Btn_Ingresar_Click);
             // 
             // textBox_Contraseña
             // 
@@ -110,7 +107,7 @@
             this.textBox_Contraseña.PasswordChar = '*';
             this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
             this.textBox_Contraseña.TabIndex = 4;
-            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.textBox_Contraseña_TextChanged);
+            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.TextBox_Contraseña_TextChanged);
             // 
             // textBox_Usuario
             // 
