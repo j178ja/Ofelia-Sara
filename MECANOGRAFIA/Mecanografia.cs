@@ -23,9 +23,11 @@ namespace MECANOGRAFIA
     public partial class Mecanografia : Form
     {
         private Label alertaLabel; // Variable para el Label de alerta
-              
+
         // Diccionario para mapear letras a paneles
-        private Dictionary<char, Panel> letraPanelMap;
+        // Diccionario para mapear letras a paneles
+        private Dictionary<char, PanelesResaltados> letraPanelMap;
+
 
         public Mecanografia()
         {
@@ -58,72 +60,71 @@ namespace MECANOGRAFIA
 
             this.KeyPreview = true; // Permitir que el formulario capture las teclas antes que los controles
 
-            // Mapear paneles a letras
-            Dictionary<char, Panel> letraPanelMap = new Dictionary<char, Panel>
+            // Mapa de letras a paneles de manos y teclado virtual
+            letraPanelMap = new Dictionary<char, PanelesResaltados>
 {
-    { '1', panel_MeniqueIzquierdo },
-    { '!', panel_MeniqueIzquierdo },
-    { 'A', panel_MeniqueIzquierdo },
-    { 'Q', panel_MeniqueIzquierdo },
-    { 'Z', panel_MeniqueIzquierdo },
+    { '1', new PanelesResaltados (panel_MeniqueIzquierdo,panel_Tecla1) },
+    { '!', new PanelesResaltados (panel_MeniqueIzquierdo,panel_Tecla1) },
+    { 'A', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaA) },
+    { 'Q', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaQ) },
+    { 'Z', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaZ) },
+          
+    { '2', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2) },
+    { '"', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2) },
+    { 'S', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaS) },
+    { 'W', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaW) },
+    { 'X', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaX) },
+      
+    { '3', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3) },
+    { '#', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3) },
+    { 'E', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaE) },
+    { 'D', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaD) },
+    { 'C', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaC) },
+           
+    { '4', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4) },
+    { '5', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5) },
+    { '$', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4) },
+    { '%', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5) },
+    { 'R', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaR) },
+    { 'F', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaF) },
+    { 'V', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaV) },
+    { 'T', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaT) },
+    { 'G', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaG) },
+    { 'B', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaB) },
+          
+    { ' ', new PanelesResaltados (panel_PulgarIzquierdo,panel_TeclaEspacio) },
+   
+    { '7', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7) },
+    { '6', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6) },
+    { '/', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7) },
+    { '&', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6) },
+    { 'Y', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaY) },
+    { 'H', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaH) },
+    { 'N', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaN) },
+    { 'U', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaU) },
+    { 'J', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaJ) },
+    { 'M', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaM) },
+     
+    { '8', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8) },
+    { '(', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8) },
+    { 'I', new PanelesResaltados (panel_MayorDerecho, panel_TeclaI) },
+    { 'K', new PanelesResaltados (panel_MayorDerecho, panel_TeclaK) },
+    { ';', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa) },
+    { ',', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa) },
+          
+    { '9', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 )},
+    { ')', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 )},
+    { 'O', new PanelesResaltados (panel_AnularDerecho,panel_TeclaO )},
+    { 'L', new PanelesResaltados (panel_AnularDerecho,panel_TeclaL )},
+    { ':', new PanelesResaltados (panel_AnularDerecho,panel_TeclaPunto )},
+    { '.', new PanelesResaltados (panel_AnularDerecho,panel_TeclaPunto )},
 
-    { '2', panel_AnularIzquierdo },
-    { '"', panel_AnularIzquierdo },
-    { 'S', panel_AnularIzquierdo },
-    { 'W', panel_AnularIzquierdo },
-    { 'X', panel_AnularIzquierdo },
-
-    { '3', panel_MayorIzquierdo },
-    { '#', panel_MayorIzquierdo },
-    { 'E', panel_MayorIzquierdo },
-    { 'D', panel_MayorIzquierdo },
-    { 'C', panel_MayorIzquierdo },
-
-
-    { '4', panel_IndiceIzquierdo },
-    { '5', panel_IndiceIzquierdo },
-    { '$', panel_IndiceIzquierdo },
-    { '%', panel_IndiceIzquierdo },
-    { 'R', panel_IndiceIzquierdo },
-    { 'F', panel_IndiceIzquierdo },
-    { 'V', panel_IndiceIzquierdo },
-    { 'T', panel_IndiceIzquierdo },
-    { 'G', panel_IndiceIzquierdo },
-    { 'B', panel_IndiceIzquierdo },
-
-    { ' ', panel_PulgarIzquierdo },
-
-    { '7', panel_IndiceDerecho },
-    { '6', panel_IndiceDerecho },
-    { '/', panel_IndiceDerecho },
-    { '&', panel_IndiceDerecho },
-    { 'Y', panel_IndiceDerecho },
-    { 'H', panel_IndiceDerecho },
-    { 'N', panel_IndiceDerecho },
-    { 'U', panel_IndiceDerecho },
-    { 'J', panel_IndiceDerecho },
-    { 'M', panel_IndiceDerecho },
-
-    { '8', panel_MayorDerecho },
-    { '(', panel_MayorDerecho },
-    { 'I', panel_MayorDerecho },
-    { 'K', panel_MayorDerecho },
-    { ';', panel_MayorDerecho },
-    { ',', panel_MayorDerecho },
-
-    { '9', panel_AnularDerecho },
-    { ')', panel_AnularDerecho },
-    { 'O', panel_AnularDerecho },
-    { 'L', panel_AnularDerecho },
-    { ':', panel_AnularDerecho },
-    { '.', panel_AnularDerecho },
-
-    { '0', panel_AnularDerecho },
-    { '=', panel_AnularDerecho },
-    { 'P', panel_AnularDerecho },
-    { 'Ñ', panel_AnularDerecho },
-    { '-', panel_AnularDerecho },
-    { '_', panel_AnularDerecho },
+    { '0', new PanelesResaltados (panel_AnularDerecho,panel_Tecla0 )},
+    { '=', new PanelesResaltados (panel_AnularDerecho,panel_Tecla0 )},
+    { 'P', new PanelesResaltados (panel_AnularDerecho,panel_TeclaP )},
+    { 'Ñ', new PanelesResaltados (panel_AnularDerecho,panel_TeclaÑ )},
+    { '-', new PanelesResaltados (panel_AnularDerecho,panel_TeclaGuion )},
+    { '_', new PanelesResaltados (panel_AnularDerecho,panel_TeclaGuion )},
 
 };
         }
@@ -487,41 +488,74 @@ namespace MECANOGRAFIA
             panel_Especificaciones.Controls.Add(alertaLabel); // Añadir al panel
         }
         //---------------------------------------------------------------------
-
-        // Variable para almacenar el último panel resaltado
-        private Panel panelResaltadoAnterior = null;
+        // Variables para almacenar los últimos paneles resaltados
+        private Panel panelResaltadoAnteriorMano = null;
+        private Panel panelResaltadoAnteriorTeclado = null;
 
         private void ResaltarPanelPorLetra(char letra)
         {
-            // Restablecer el color del panel anterior a su color original, si existe
-            if (panelResaltadoAnterior != null)
+            // Restablecer el color del panel anterior de la mano, si existe
+            if (panelResaltadoAnteriorMano != null)
             {
-                panelResaltadoAnterior.BackColor = SystemColors.Control; // Color original del panel
+                panelResaltadoAnteriorMano.BackColor = System.Drawing.Color.AntiqueWhite; // Color original del panel de la mano
+            }
+
+            // Restablecer el color del panel anterior del teclado, si existe
+            if (panelResaltadoAnteriorTeclado != null)
+            {
+                panelResaltadoAnteriorTeclado.BackColor = System.Drawing.Color.AntiqueWhite; // Color original del panel del teclado
+            }
+
+            // Verificar si el diccionario está bien configurado
+            if (letraPanelMap == null)
+            {
+                Console.WriteLine("El diccionario letraPanelMap no ha sido inicializado.");
+                return;
             }
 
             // Verificar si la letra está en el diccionario
-            if (letraPanelMap.TryGetValue(letra, out Panel panelResaltado))
+            if (letraPanelMap.TryGetValue(letra, out PanelesResaltados paneles)) // Asegúrate de que 'paneles' sea de tipo PanelesResaltados
             {
-                // Cambiar el color del panel correspondiente a rojo
-                panelResaltado.BackColor = System.Drawing.Color.Red; // Color resaltado
-                                                      // Almacenar el panel resaltado actual
-                panelResaltadoAnterior = panelResaltado;
-            }
-        }
-        private void texto_Tipear_SelectionChanged(object sender, EventArgs e)
-        {
-            // Verificar si hay texto seleccionado
-            if (Texto_Tipear.SelectionLength > 0)
-            {
-                // Obtener el carácter en la posición del cursor
-                int cursorPosition = Texto_Tipear.SelectionStart;
-                if (cursorPosition > 0 && cursorPosition <= Texto_Tipear.Text.Length)
-                {
-                    char letraActual = Texto_Tipear.Text[cursorPosition - 1]; // Obtiene el carácter anterior al cursor
-                    ResaltarPanelPorLetra(letraActual);
-                }
+                // Cambiar el color del panel de la mano correspondiente
+                paneles.PanelMano.BackColor = SystemColors.Highlight; // Color resaltado para la mano
+                panelResaltadoAnteriorMano = paneles.PanelMano;
+
+                // Cambiar el color del panel del teclado correspondiente
+                paneles.PanelTeclado.BackColor = SystemColors.Highlight; // Color resaltado para el teclado
+                panelResaltadoAnteriorTeclado = paneles.PanelTeclado;
             }
         }
 
+
+        // Clase para almacenar los paneles de la mano y del teclado
+        class PanelesResaltados
+        {
+            public Panel PanelMano { get; set; }
+            public Panel PanelTeclado { get; set; }
+
+            public PanelesResaltados(Panel panelMano, Panel panelTeclado)
+            {
+                PanelMano = panelMano;
+                PanelTeclado = panelTeclado;
+            }
+        }
+
+
+
+
+
+
+        // Evento que maneja el cambio de selección en el RichTextBox
+        private void Texto_Tipear_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay una selección y obtener el carácter seleccionado
+            if (Texto_Tipear.SelectionLength == 0 && Texto_Tipear.SelectionStart < Texto_Tipear.Text.Length)
+            {
+                char letraActual = Texto_Tipear.Text[Texto_Tipear.SelectionStart];
+
+                // Resaltar el panel correspondiente a la letra actual
+                ResaltarPanelPorLetra(letraActual);
+            }
+        }
     }
 }

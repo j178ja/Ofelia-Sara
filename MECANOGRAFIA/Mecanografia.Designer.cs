@@ -41,104 +41,104 @@
             this.p_Mayuscula = new System.Windows.Forms.Panel();
             this.label_Mayus = new System.Windows.Forms.Label();
             this.p_Windows = new System.Windows.Forms.Panel();
-            this.p_L = new System.Windows.Forms.Panel();
+            this.panel_TeclaL = new System.Windows.Forms.Panel();
             this.label_L = new System.Windows.Forms.Label();
             this.p_ControlIzquierdo = new System.Windows.Forms.Panel();
             this.label_Ctrl = new System.Windows.Forms.Label();
             this.panel59 = new System.Windows.Forms.Panel();
-            this.p_Espacio = new System.Windows.Forms.Panel();
-            this.p_K = new System.Windows.Forms.Panel();
+            this.panel_TeclaEspacio = new System.Windows.Forms.Panel();
+            this.panel_TeclaK = new System.Windows.Forms.Panel();
             this.label_K = new System.Windows.Forms.Label();
             this.panel51 = new System.Windows.Forms.Panel();
-            this.p_Ñ = new System.Windows.Forms.Panel();
+            this.panel_TeclaÑ = new System.Windows.Forms.Panel();
             this.label_Ñ = new System.Windows.Forms.Label();
             this.panel62 = new System.Windows.Forms.Panel();
             this.p_AltGr = new System.Windows.Forms.Panel();
             this.label_Altgr = new System.Windows.Forms.Label();
-            this.p_J = new System.Windows.Forms.Panel();
+            this.panel_TeclaJ = new System.Windows.Forms.Panel();
             this.label_J = new System.Windows.Forms.Label();
             this.p_ShiftDerecho = new System.Windows.Forms.Panel();
-            this.p_H = new System.Windows.Forms.Panel();
+            this.panel_TeclaH = new System.Windows.Forms.Panel();
             this.label_H = new System.Windows.Forms.Label();
             this.panel65 = new System.Windows.Forms.Panel();
             this.p_ControlDerecho = new System.Windows.Forms.Panel();
             this.label_CtrolDerecha = new System.Windows.Forms.Label();
-            this.p_G = new System.Windows.Forms.Panel();
+            this.panel_TeclaG = new System.Windows.Forms.Panel();
             this.label_G = new System.Windows.Forms.Label();
-            this.panel33 = new System.Windows.Forms.Panel();
+            this.panel_TeclaGuion = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.p_F = new System.Windows.Forms.Panel();
+            this.panel_TeclaF = new System.Windows.Forms.Panel();
             this.label_F = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
             this.label_Fn = new System.Windows.Forms.Label();
-            this.p_D = new System.Windows.Forms.Panel();
+            this.panel_TeclaD = new System.Windows.Forms.Panel();
             this.label_D = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.p_S = new System.Windows.Forms.Panel();
+            this.panel_TeclaS = new System.Windows.Forms.Panel();
             this.label_S = new System.Windows.Forms.Label();
-            this.p_A = new System.Windows.Forms.Panel();
+            this.panel_TeclaA = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.p_M = new System.Windows.Forms.Panel();
+            this.panel_TeclaM = new System.Windows.Forms.Panel();
             this.label_M = new System.Windows.Forms.Label();
             this.p_Tab = new System.Windows.Forms.Panel();
-            this.panel35 = new System.Windows.Forms.Panel();
+            this.panel_TeclaPunto = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.p_O = new System.Windows.Forms.Panel();
+            this.panel_TeclaO = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
-            this.p_N = new System.Windows.Forms.Panel();
+            this.panel_TeclaN = new System.Windows.Forms.Panel();
             this.label_N = new System.Windows.Forms.Label();
-            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel_TeclaComa = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.p_B = new System.Windows.Forms.Panel();
+            this.panel_TeclaB = new System.Windows.Forms.Panel();
             this.label_B = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.p_V = new System.Windows.Forms.Panel();
+            this.panel_TeclaV = new System.Windows.Forms.Panel();
             this.label_V = new System.Windows.Forms.Label();
             this.panel41 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.p_C = new System.Windows.Forms.Panel();
+            this.panel_TeclaC = new System.Windows.Forms.Panel();
             this.label_C = new System.Windows.Forms.Label();
-            this.p_I = new System.Windows.Forms.Panel();
+            this.panel_TeclaI = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
-            this.p_X = new System.Windows.Forms.Panel();
+            this.panel_TeclaX = new System.Windows.Forms.Panel();
             this.label_X = new System.Windows.Forms.Label();
-            this.p_P = new System.Windows.Forms.Panel();
+            this.panel_TeclaP = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.p_Z = new System.Windows.Forms.Panel();
+            this.panel_TeclaZ = new System.Windows.Forms.Panel();
             this.label_Z = new System.Windows.Forms.Label();
-            this.p_9 = new System.Windows.Forms.Panel();
+            this.panel_Tecla9 = new System.Windows.Forms.Panel();
             this.panel45 = new System.Windows.Forms.Panel();
-            this.p_U = new System.Windows.Forms.Panel();
+            this.panel_TeclaU = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.p_ShiftIzquierdo = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.p_Y = new System.Windows.Forms.Panel();
+            this.panel_TeclaY = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.p_8 = new System.Windows.Forms.Panel();
-            this.p_T = new System.Windows.Forms.Panel();
+            this.panel_Tecla8 = new System.Windows.Forms.Panel();
+            this.panel_TeclaT = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
-            this.p_0 = new System.Windows.Forms.Panel();
+            this.panel_Tecla0 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.p_R = new System.Windows.Forms.Panel();
+            this.panel_TeclaR = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
-            this.p_7 = new System.Windows.Forms.Panel();
-            this.p_E = new System.Windows.Forms.Panel();
+            this.panel_Tecla7 = new System.Windows.Forms.Panel();
+            this.panel_TeclaE = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.p_6 = new System.Windows.Forms.Panel();
+            this.panel_Tecla6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.p_W = new System.Windows.Forms.Panel();
+            this.panel_TeclaW = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.p_5 = new System.Windows.Forms.Panel();
-            this.p_Q = new System.Windows.Forms.Panel();
+            this.panel_Tecla5 = new System.Windows.Forms.Panel();
+            this.panel_TeclaQ = new System.Windows.Forms.Panel();
             this.label_A = new System.Windows.Forms.Label();
-            this.p_4 = new System.Windows.Forms.Panel();
-            this.p_3 = new System.Windows.Forms.Panel();
-            this.p_2 = new System.Windows.Forms.Panel();
-            this.p_1 = new System.Windows.Forms.Panel();
+            this.panel_Tecla4 = new System.Windows.Forms.Panel();
+            this.panel_Tecla3 = new System.Windows.Forms.Panel();
+            this.panel_Tecla2 = new System.Windows.Forms.Panel();
+            this.panel_Tecla1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Texto_Tipear = new System.Windows.Forms.RichTextBox();
             this.btn_Iniciar = new System.Windows.Forms.Button();
@@ -176,42 +176,42 @@
             this.p_Enter1.SuspendLayout();
             this.p_Alt.SuspendLayout();
             this.p_Mayuscula.SuspendLayout();
-            this.p_L.SuspendLayout();
+            this.panel_TeclaL.SuspendLayout();
             this.p_ControlIzquierdo.SuspendLayout();
-            this.p_K.SuspendLayout();
-            this.p_Ñ.SuspendLayout();
+            this.panel_TeclaK.SuspendLayout();
+            this.panel_TeclaÑ.SuspendLayout();
             this.p_AltGr.SuspendLayout();
-            this.p_J.SuspendLayout();
-            this.p_H.SuspendLayout();
+            this.panel_TeclaJ.SuspendLayout();
+            this.panel_TeclaH.SuspendLayout();
             this.p_ControlDerecho.SuspendLayout();
-            this.p_G.SuspendLayout();
-            this.panel33.SuspendLayout();
-            this.p_F.SuspendLayout();
+            this.panel_TeclaG.SuspendLayout();
+            this.panel_TeclaGuion.SuspendLayout();
+            this.panel_TeclaF.SuspendLayout();
             this.panel50.SuspendLayout();
-            this.p_D.SuspendLayout();
-            this.p_S.SuspendLayout();
-            this.p_A.SuspendLayout();
-            this.p_M.SuspendLayout();
-            this.panel35.SuspendLayout();
-            this.p_O.SuspendLayout();
-            this.p_N.SuspendLayout();
-            this.panel37.SuspendLayout();
-            this.p_B.SuspendLayout();
-            this.p_V.SuspendLayout();
-            this.p_C.SuspendLayout();
-            this.p_I.SuspendLayout();
-            this.p_X.SuspendLayout();
-            this.p_P.SuspendLayout();
-            this.p_Z.SuspendLayout();
-            this.p_U.SuspendLayout();
-            this.p_Y.SuspendLayout();
-            this.p_T.SuspendLayout();
-            this.p_0.SuspendLayout();
-            this.p_R.SuspendLayout();
-            this.p_E.SuspendLayout();
-            this.p_6.SuspendLayout();
-            this.p_W.SuspendLayout();
-            this.p_Q.SuspendLayout();
+            this.panel_TeclaD.SuspendLayout();
+            this.panel_TeclaS.SuspendLayout();
+            this.panel_TeclaA.SuspendLayout();
+            this.panel_TeclaM.SuspendLayout();
+            this.panel_TeclaPunto.SuspendLayout();
+            this.panel_TeclaO.SuspendLayout();
+            this.panel_TeclaN.SuspendLayout();
+            this.panel_TeclaComa.SuspendLayout();
+            this.panel_TeclaB.SuspendLayout();
+            this.panel_TeclaV.SuspendLayout();
+            this.panel_TeclaC.SuspendLayout();
+            this.panel_TeclaI.SuspendLayout();
+            this.panel_TeclaX.SuspendLayout();
+            this.panel_TeclaP.SuspendLayout();
+            this.panel_TeclaZ.SuspendLayout();
+            this.panel_TeclaU.SuspendLayout();
+            this.panel_TeclaY.SuspendLayout();
+            this.panel_TeclaT.SuspendLayout();
+            this.panel_Tecla0.SuspendLayout();
+            this.panel_TeclaR.SuspendLayout();
+            this.panel_TeclaE.SuspendLayout();
+            this.panel_Tecla6.SuspendLayout();
+            this.panel_TeclaW.SuspendLayout();
+            this.panel_TeclaQ.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu_ElegirArchivos.SuspendLayout();
             this.panel_Especificaciones.SuspendLayout();
@@ -236,62 +236,62 @@
             this.panel_TecladoBase.Controls.Add(this.p_Alt);
             this.panel_TecladoBase.Controls.Add(this.p_Mayuscula);
             this.panel_TecladoBase.Controls.Add(this.p_Windows);
-            this.panel_TecladoBase.Controls.Add(this.p_L);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaL);
             this.panel_TecladoBase.Controls.Add(this.p_ControlIzquierdo);
             this.panel_TecladoBase.Controls.Add(this.panel59);
-            this.panel_TecladoBase.Controls.Add(this.p_Espacio);
-            this.panel_TecladoBase.Controls.Add(this.p_K);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaEspacio);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaK);
             this.panel_TecladoBase.Controls.Add(this.panel51);
-            this.panel_TecladoBase.Controls.Add(this.p_Ñ);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaÑ);
             this.panel_TecladoBase.Controls.Add(this.p_AltGr);
-            this.panel_TecladoBase.Controls.Add(this.p_J);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaJ);
             this.panel_TecladoBase.Controls.Add(this.p_ShiftDerecho);
-            this.panel_TecladoBase.Controls.Add(this.p_H);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaH);
             this.panel_TecladoBase.Controls.Add(this.p_ControlDerecho);
-            this.panel_TecladoBase.Controls.Add(this.p_G);
-            this.panel_TecladoBase.Controls.Add(this.panel33);
-            this.panel_TecladoBase.Controls.Add(this.p_F);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaG);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaGuion);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaF);
             this.panel_TecladoBase.Controls.Add(this.panel50);
-            this.panel_TecladoBase.Controls.Add(this.p_D);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaD);
             this.panel_TecladoBase.Controls.Add(this.panel19);
-            this.panel_TecladoBase.Controls.Add(this.p_S);
-            this.panel_TecladoBase.Controls.Add(this.p_A);
-            this.panel_TecladoBase.Controls.Add(this.p_M);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaS);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaA);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaM);
             this.panel_TecladoBase.Controls.Add(this.p_Tab);
-            this.panel_TecladoBase.Controls.Add(this.panel35);
-            this.panel_TecladoBase.Controls.Add(this.p_O);
-            this.panel_TecladoBase.Controls.Add(this.p_N);
-            this.panel_TecladoBase.Controls.Add(this.panel37);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaPunto);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaO);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaN);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaComa);
             this.panel_TecladoBase.Controls.Add(this.panel13);
-            this.panel_TecladoBase.Controls.Add(this.p_B);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaB);
             this.panel_TecladoBase.Controls.Add(this.panel21);
-            this.panel_TecladoBase.Controls.Add(this.p_V);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaV);
             this.panel_TecladoBase.Controls.Add(this.panel14);
-            this.panel_TecladoBase.Controls.Add(this.p_C);
-            this.panel_TecladoBase.Controls.Add(this.p_I);
-            this.panel_TecladoBase.Controls.Add(this.p_X);
-            this.panel_TecladoBase.Controls.Add(this.p_P);
-            this.panel_TecladoBase.Controls.Add(this.p_Z);
-            this.panel_TecladoBase.Controls.Add(this.p_9);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaC);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaI);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaX);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaP);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaZ);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla9);
             this.panel_TecladoBase.Controls.Add(this.panel45);
-            this.panel_TecladoBase.Controls.Add(this.p_U);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaU);
             this.panel_TecladoBase.Controls.Add(this.p_ShiftIzquierdo);
             this.panel_TecladoBase.Controls.Add(this.panel15);
-            this.panel_TecladoBase.Controls.Add(this.p_Y);
-            this.panel_TecladoBase.Controls.Add(this.p_8);
-            this.panel_TecladoBase.Controls.Add(this.p_T);
-            this.panel_TecladoBase.Controls.Add(this.p_0);
-            this.panel_TecladoBase.Controls.Add(this.p_R);
-            this.panel_TecladoBase.Controls.Add(this.p_7);
-            this.panel_TecladoBase.Controls.Add(this.p_E);
-            this.panel_TecladoBase.Controls.Add(this.p_6);
-            this.panel_TecladoBase.Controls.Add(this.p_W);
-            this.panel_TecladoBase.Controls.Add(this.p_5);
-            this.panel_TecladoBase.Controls.Add(this.p_Q);
-            this.panel_TecladoBase.Controls.Add(this.p_4);
-            this.panel_TecladoBase.Controls.Add(this.p_3);
-            this.panel_TecladoBase.Controls.Add(this.p_2);
-            this.panel_TecladoBase.Controls.Add(this.p_1);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaY);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla8);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaT);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla0);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaR);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla7);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaE);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla6);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaW);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla5);
+            this.panel_TecladoBase.Controls.Add(this.panel_TeclaQ);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla4);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla3);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla2);
+            this.panel_TecladoBase.Controls.Add(this.panel_Tecla1);
             this.panel_TecladoBase.Controls.Add(this.panel2);
             this.panel_TecladoBase.Location = new System.Drawing.Point(74, 3);
             this.panel_TecladoBase.Name = "panel_TecladoBase";
@@ -385,14 +385,14 @@
             this.p_Windows.Size = new System.Drawing.Size(34, 23);
             this.p_Windows.TabIndex = 64;
             // 
-            // p_L
+            // panel_TeclaL
             // 
-            this.p_L.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_L.Controls.Add(this.label_L);
-            this.p_L.Location = new System.Drawing.Point(399, 70);
-            this.p_L.Name = "p_L";
-            this.p_L.Size = new System.Drawing.Size(34, 23);
-            this.p_L.TabIndex = 83;
+            this.panel_TeclaL.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaL.Controls.Add(this.label_L);
+            this.panel_TeclaL.Location = new System.Drawing.Point(399, 70);
+            this.panel_TeclaL.Name = "panel_TeclaL";
+            this.panel_TeclaL.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaL.TabIndex = 83;
             // 
             // label_L
             // 
@@ -435,22 +435,22 @@
             this.panel59.Size = new System.Drawing.Size(34, 23);
             this.panel59.TabIndex = 93;
             // 
-            // p_Espacio
+            // panel_TeclaEspacio
             // 
-            this.p_Espacio.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Espacio.Location = new System.Drawing.Point(162, 128);
-            this.p_Espacio.Name = "p_Espacio";
-            this.p_Espacio.Size = new System.Drawing.Size(223, 23);
-            this.p_Espacio.TabIndex = 83;
+            this.panel_TeclaEspacio.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaEspacio.Location = new System.Drawing.Point(162, 128);
+            this.panel_TeclaEspacio.Name = "panel_TeclaEspacio";
+            this.panel_TeclaEspacio.Size = new System.Drawing.Size(223, 23);
+            this.panel_TeclaEspacio.TabIndex = 83;
             // 
-            // p_K
+            // panel_TeclaK
             // 
-            this.p_K.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_K.Controls.Add(this.label_K);
-            this.p_K.Location = new System.Drawing.Point(359, 70);
-            this.p_K.Name = "p_K";
-            this.p_K.Size = new System.Drawing.Size(34, 23);
-            this.p_K.TabIndex = 91;
+            this.panel_TeclaK.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaK.Controls.Add(this.label_K);
+            this.panel_TeclaK.Location = new System.Drawing.Point(359, 70);
+            this.panel_TeclaK.Name = "panel_TeclaK";
+            this.panel_TeclaK.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaK.TabIndex = 91;
             // 
             // label_K
             // 
@@ -472,15 +472,15 @@
             this.panel51.Size = new System.Drawing.Size(34, 23);
             this.panel51.TabIndex = 63;
             // 
-            // p_Ñ
+            // panel_TeclaÑ
             // 
-            this.p_Ñ.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Ñ.Controls.Add(this.label_Ñ);
-            this.p_Ñ.Controls.Add(this.panel62);
-            this.p_Ñ.Location = new System.Drawing.Point(439, 70);
-            this.p_Ñ.Name = "p_Ñ";
-            this.p_Ñ.Size = new System.Drawing.Size(34, 23);
-            this.p_Ñ.TabIndex = 92;
+            this.panel_TeclaÑ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaÑ.Controls.Add(this.label_Ñ);
+            this.panel_TeclaÑ.Controls.Add(this.panel62);
+            this.panel_TeclaÑ.Location = new System.Drawing.Point(439, 70);
+            this.panel_TeclaÑ.Name = "panel_TeclaÑ";
+            this.panel_TeclaÑ.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaÑ.TabIndex = 92;
             // 
             // label_Ñ
             // 
@@ -522,14 +522,14 @@
             this.label_Altgr.TabIndex = 15;
             this.label_Altgr.Text = "ALTGR";
             // 
-            // p_J
+            // panel_TeclaJ
             // 
-            this.p_J.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_J.Controls.Add(this.label_J);
-            this.p_J.Location = new System.Drawing.Point(319, 70);
-            this.p_J.Name = "p_J";
-            this.p_J.Size = new System.Drawing.Size(34, 23);
-            this.p_J.TabIndex = 90;
+            this.panel_TeclaJ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaJ.Controls.Add(this.label_J);
+            this.panel_TeclaJ.Location = new System.Drawing.Point(319, 70);
+            this.panel_TeclaJ.Name = "panel_TeclaJ";
+            this.panel_TeclaJ.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaJ.TabIndex = 90;
             // 
             // label_J
             // 
@@ -551,15 +551,15 @@
             this.p_ShiftDerecho.Size = new System.Drawing.Size(90, 23);
             this.p_ShiftDerecho.TabIndex = 82;
             // 
-            // p_H
+            // panel_TeclaH
             // 
-            this.p_H.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_H.Controls.Add(this.label_H);
-            this.p_H.Controls.Add(this.panel65);
-            this.p_H.Location = new System.Drawing.Point(279, 70);
-            this.p_H.Name = "p_H";
-            this.p_H.Size = new System.Drawing.Size(34, 23);
-            this.p_H.TabIndex = 84;
+            this.panel_TeclaH.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaH.Controls.Add(this.label_H);
+            this.panel_TeclaH.Controls.Add(this.panel65);
+            this.panel_TeclaH.Location = new System.Drawing.Point(279, 70);
+            this.panel_TeclaH.Name = "panel_TeclaH";
+            this.panel_TeclaH.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaH.TabIndex = 84;
             // 
             // label_H
             // 
@@ -601,14 +601,14 @@
             this.label_CtrolDerecha.TabIndex = 17;
             this.label_CtrolDerecha.Text = "CTROL";
             // 
-            // p_G
+            // panel_TeclaG
             // 
-            this.p_G.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_G.Controls.Add(this.label_G);
-            this.p_G.Location = new System.Drawing.Point(239, 70);
-            this.p_G.Name = "p_G";
-            this.p_G.Size = new System.Drawing.Size(34, 23);
-            this.p_G.TabIndex = 85;
+            this.panel_TeclaG.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaG.Controls.Add(this.label_G);
+            this.panel_TeclaG.Location = new System.Drawing.Point(239, 70);
+            this.panel_TeclaG.Name = "panel_TeclaG";
+            this.panel_TeclaG.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaG.TabIndex = 85;
             // 
             // label_G
             // 
@@ -622,14 +622,14 @@
             this.label_G.TabIndex = 77;
             this.label_G.Text = "G";
             // 
-            // panel33
+            // panel_TeclaGuion
             // 
-            this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel33.Controls.Add(this.label13);
-            this.panel33.Location = new System.Drawing.Point(451, 99);
-            this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(34, 23);
-            this.panel33.TabIndex = 81;
+            this.panel_TeclaGuion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_TeclaGuion.Controls.Add(this.label13);
+            this.panel_TeclaGuion.Location = new System.Drawing.Point(451, 99);
+            this.panel_TeclaGuion.Name = "panel_TeclaGuion";
+            this.panel_TeclaGuion.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaGuion.TabIndex = 81;
             // 
             // label13
             // 
@@ -643,14 +643,14 @@
             this.label13.TabIndex = 69;
             this.label13.Text = "A";
             // 
-            // p_F
+            // panel_TeclaF
             // 
-            this.p_F.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_F.Controls.Add(this.label_F);
-            this.p_F.Location = new System.Drawing.Point(199, 70);
-            this.p_F.Name = "p_F";
-            this.p_F.Size = new System.Drawing.Size(34, 23);
-            this.p_F.TabIndex = 86;
+            this.panel_TeclaF.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaF.Controls.Add(this.label_F);
+            this.panel_TeclaF.Location = new System.Drawing.Point(199, 70);
+            this.panel_TeclaF.Name = "panel_TeclaF";
+            this.panel_TeclaF.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaF.TabIndex = 86;
             // 
             // label_F
             // 
@@ -685,14 +685,14 @@
             this.label_Fn.TabIndex = 16;
             this.label_Fn.Text = "FN";
             // 
-            // p_D
+            // panel_TeclaD
             // 
-            this.p_D.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_D.Controls.Add(this.label_D);
-            this.p_D.Location = new System.Drawing.Point(159, 70);
-            this.p_D.Name = "p_D";
-            this.p_D.Size = new System.Drawing.Size(34, 23);
-            this.p_D.TabIndex = 87;
+            this.panel_TeclaD.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaD.Controls.Add(this.label_D);
+            this.panel_TeclaD.Location = new System.Drawing.Point(159, 70);
+            this.panel_TeclaD.Name = "panel_TeclaD";
+            this.panel_TeclaD.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaD.TabIndex = 87;
             // 
             // label_D
             // 
@@ -714,14 +714,14 @@
             this.panel19.Size = new System.Drawing.Size(34, 23);
             this.panel19.TabIndex = 81;
             // 
-            // p_S
+            // panel_TeclaS
             // 
-            this.p_S.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_S.Controls.Add(this.label_S);
-            this.p_S.Location = new System.Drawing.Point(119, 70);
-            this.p_S.Name = "p_S";
-            this.p_S.Size = new System.Drawing.Size(34, 23);
-            this.p_S.TabIndex = 88;
+            this.panel_TeclaS.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaS.Controls.Add(this.label_S);
+            this.panel_TeclaS.Location = new System.Drawing.Point(119, 70);
+            this.panel_TeclaS.Name = "panel_TeclaS";
+            this.panel_TeclaS.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaS.TabIndex = 88;
             // 
             // label_S
             // 
@@ -735,14 +735,14 @@
             this.label_S.TabIndex = 80;
             this.label_S.Text = "S";
             // 
-            // p_A
+            // panel_TeclaA
             // 
-            this.p_A.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_A.Controls.Add(this.label3);
-            this.p_A.Location = new System.Drawing.Point(79, 70);
-            this.p_A.Name = "p_A";
-            this.p_A.Size = new System.Drawing.Size(34, 23);
-            this.p_A.TabIndex = 89;
+            this.panel_TeclaA.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaA.Controls.Add(this.label3);
+            this.panel_TeclaA.Location = new System.Drawing.Point(79, 70);
+            this.panel_TeclaA.Name = "panel_TeclaA";
+            this.panel_TeclaA.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaA.TabIndex = 89;
             // 
             // label3
             // 
@@ -756,14 +756,14 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "A";
             // 
-            // p_M
+            // panel_TeclaM
             // 
-            this.p_M.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_M.Controls.Add(this.label_M);
-            this.p_M.Location = new System.Drawing.Point(331, 99);
-            this.p_M.Name = "p_M";
-            this.p_M.Size = new System.Drawing.Size(34, 23);
-            this.p_M.TabIndex = 70;
+            this.panel_TeclaM.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaM.Controls.Add(this.label_M);
+            this.panel_TeclaM.Location = new System.Drawing.Point(331, 99);
+            this.panel_TeclaM.Name = "panel_TeclaM";
+            this.panel_TeclaM.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaM.TabIndex = 70;
             // 
             // label_M
             // 
@@ -785,14 +785,14 @@
             this.p_Tab.Size = new System.Drawing.Size(52, 23);
             this.p_Tab.TabIndex = 67;
             // 
-            // panel35
+            // panel_TeclaPunto
             // 
-            this.panel35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel35.Controls.Add(this.label12);
-            this.panel35.Location = new System.Drawing.Point(410, 99);
-            this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(34, 23);
-            this.panel35.TabIndex = 80;
+            this.panel_TeclaPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_TeclaPunto.Controls.Add(this.label12);
+            this.panel_TeclaPunto.Location = new System.Drawing.Point(410, 99);
+            this.panel_TeclaPunto.Name = "panel_TeclaPunto";
+            this.panel_TeclaPunto.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaPunto.TabIndex = 80;
             // 
             // label12
             // 
@@ -806,14 +806,14 @@
             this.label12.TabIndex = 68;
             this.label12.Text = "A";
             // 
-            // p_O
+            // panel_TeclaO
             // 
-            this.p_O.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_O.Controls.Add(this.label32);
-            this.p_O.Location = new System.Drawing.Point(390, 41);
-            this.p_O.Name = "p_O";
-            this.p_O.Size = new System.Drawing.Size(34, 23);
-            this.p_O.TabIndex = 70;
+            this.panel_TeclaO.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaO.Controls.Add(this.label32);
+            this.panel_TeclaO.Location = new System.Drawing.Point(390, 41);
+            this.panel_TeclaO.Name = "panel_TeclaO";
+            this.panel_TeclaO.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaO.TabIndex = 70;
             // 
             // label32
             // 
@@ -827,14 +827,14 @@
             this.label32.TabIndex = 88;
             this.label32.Text = "O";
             // 
-            // p_N
+            // panel_TeclaN
             // 
-            this.p_N.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_N.Controls.Add(this.label_N);
-            this.p_N.Location = new System.Drawing.Point(291, 99);
-            this.p_N.Name = "p_N";
-            this.p_N.Size = new System.Drawing.Size(34, 23);
-            this.p_N.TabIndex = 78;
+            this.panel_TeclaN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaN.Controls.Add(this.label_N);
+            this.panel_TeclaN.Location = new System.Drawing.Point(291, 99);
+            this.panel_TeclaN.Name = "panel_TeclaN";
+            this.panel_TeclaN.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaN.TabIndex = 78;
             // 
             // label_N
             // 
@@ -848,15 +848,15 @@
             this.label_N.TabIndex = 65;
             this.label_N.Text = "N";
             // 
-            // panel37
+            // panel_TeclaComa
             // 
-            this.panel37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel37.Controls.Add(this.label11);
-            this.panel37.Controls.Add(this.panel38);
-            this.panel37.Location = new System.Drawing.Point(371, 99);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(34, 23);
-            this.panel37.TabIndex = 79;
+            this.panel_TeclaComa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_TeclaComa.Controls.Add(this.label11);
+            this.panel_TeclaComa.Controls.Add(this.panel38);
+            this.panel_TeclaComa.Location = new System.Drawing.Point(371, 99);
+            this.panel_TeclaComa.Name = "panel_TeclaComa";
+            this.panel_TeclaComa.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaComa.TabIndex = 79;
             // 
             // label11
             // 
@@ -885,14 +885,14 @@
             this.panel13.Size = new System.Drawing.Size(52, 23);
             this.panel13.TabIndex = 66;
             // 
-            // p_B
+            // panel_TeclaB
             // 
-            this.p_B.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_B.Controls.Add(this.label_B);
-            this.p_B.Location = new System.Drawing.Point(250, 99);
-            this.p_B.Name = "p_B";
-            this.p_B.Size = new System.Drawing.Size(34, 23);
-            this.p_B.TabIndex = 77;
+            this.panel_TeclaB.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaB.Controls.Add(this.label_B);
+            this.panel_TeclaB.Location = new System.Drawing.Point(250, 99);
+            this.panel_TeclaB.Name = "panel_TeclaB";
+            this.panel_TeclaB.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaB.TabIndex = 77;
             // 
             // label_B
             // 
@@ -914,15 +914,15 @@
             this.panel21.Size = new System.Drawing.Size(34, 23);
             this.panel21.TabIndex = 80;
             // 
-            // p_V
+            // panel_TeclaV
             // 
-            this.p_V.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_V.Controls.Add(this.label_V);
-            this.p_V.Controls.Add(this.panel41);
-            this.p_V.Location = new System.Drawing.Point(211, 99);
-            this.p_V.Name = "p_V";
-            this.p_V.Size = new System.Drawing.Size(34, 23);
-            this.p_V.TabIndex = 71;
+            this.panel_TeclaV.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaV.Controls.Add(this.label_V);
+            this.panel_TeclaV.Controls.Add(this.panel41);
+            this.panel_TeclaV.Location = new System.Drawing.Point(211, 99);
+            this.panel_TeclaV.Name = "panel_TeclaV";
+            this.panel_TeclaV.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaV.TabIndex = 71;
             // 
             // label_V
             // 
@@ -951,14 +951,14 @@
             this.panel14.Size = new System.Drawing.Size(34, 23);
             this.panel14.TabIndex = 69;
             // 
-            // p_C
+            // panel_TeclaC
             // 
-            this.p_C.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_C.Controls.Add(this.label_C);
-            this.p_C.Location = new System.Drawing.Point(171, 99);
-            this.p_C.Name = "p_C";
-            this.p_C.Size = new System.Drawing.Size(34, 23);
-            this.p_C.TabIndex = 72;
+            this.panel_TeclaC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaC.Controls.Add(this.label_C);
+            this.panel_TeclaC.Location = new System.Drawing.Point(171, 99);
+            this.panel_TeclaC.Name = "panel_TeclaC";
+            this.panel_TeclaC.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaC.TabIndex = 72;
             // 
             // label_C
             // 
@@ -972,14 +972,14 @@
             this.label_C.TabIndex = 13;
             this.label_C.Text = "C";
             // 
-            // p_I
+            // panel_TeclaI
             // 
-            this.p_I.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_I.Controls.Add(this.label31);
-            this.p_I.Location = new System.Drawing.Point(350, 41);
-            this.p_I.Name = "p_I";
-            this.p_I.Size = new System.Drawing.Size(34, 23);
-            this.p_I.TabIndex = 78;
+            this.panel_TeclaI.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaI.Controls.Add(this.label31);
+            this.panel_TeclaI.Location = new System.Drawing.Point(350, 41);
+            this.panel_TeclaI.Name = "panel_TeclaI";
+            this.panel_TeclaI.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaI.TabIndex = 78;
             // 
             // label31
             // 
@@ -993,14 +993,14 @@
             this.label31.TabIndex = 87;
             this.label31.Text = "I";
             // 
-            // p_X
+            // panel_TeclaX
             // 
-            this.p_X.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_X.Controls.Add(this.label_X);
-            this.p_X.Location = new System.Drawing.Point(131, 99);
-            this.p_X.Name = "p_X";
-            this.p_X.Size = new System.Drawing.Size(34, 23);
-            this.p_X.TabIndex = 73;
+            this.panel_TeclaX.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaX.Controls.Add(this.label_X);
+            this.panel_TeclaX.Location = new System.Drawing.Point(131, 99);
+            this.panel_TeclaX.Name = "panel_TeclaX";
+            this.panel_TeclaX.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaX.TabIndex = 73;
             // 
             // label_X
             // 
@@ -1014,15 +1014,15 @@
             this.label_X.TabIndex = 12;
             this.label_X.Text = "X";
             // 
-            // p_P
+            // panel_TeclaP
             // 
-            this.p_P.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_P.Controls.Add(this.label15);
-            this.p_P.Controls.Add(this.panel24);
-            this.p_P.Location = new System.Drawing.Point(430, 41);
-            this.p_P.Name = "p_P";
-            this.p_P.Size = new System.Drawing.Size(34, 23);
-            this.p_P.TabIndex = 79;
+            this.panel_TeclaP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaP.Controls.Add(this.label15);
+            this.panel_TeclaP.Controls.Add(this.panel24);
+            this.panel_TeclaP.Location = new System.Drawing.Point(430, 41);
+            this.panel_TeclaP.Name = "panel_TeclaP";
+            this.panel_TeclaP.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaP.TabIndex = 79;
             // 
             // label15
             // 
@@ -1043,14 +1043,14 @@
             this.panel24.Size = new System.Drawing.Size(34, 23);
             this.panel24.TabIndex = 63;
             // 
-            // p_Z
+            // panel_TeclaZ
             // 
-            this.p_Z.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Z.Controls.Add(this.label_Z);
-            this.p_Z.Location = new System.Drawing.Point(91, 99);
-            this.p_Z.Name = "p_Z";
-            this.p_Z.Size = new System.Drawing.Size(34, 23);
-            this.p_Z.TabIndex = 74;
+            this.panel_TeclaZ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaZ.Controls.Add(this.label_Z);
+            this.panel_TeclaZ.Location = new System.Drawing.Point(91, 99);
+            this.panel_TeclaZ.Name = "panel_TeclaZ";
+            this.panel_TeclaZ.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaZ.TabIndex = 74;
             // 
             // label_Z
             // 
@@ -1064,13 +1064,13 @@
             this.label_Z.TabIndex = 13;
             this.label_Z.Text = "Z";
             // 
-            // p_9
+            // panel_Tecla9
             // 
-            this.p_9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_9.Location = new System.Drawing.Point(371, 12);
-            this.p_9.Name = "p_9";
-            this.p_9.Size = new System.Drawing.Size(34, 23);
-            this.p_9.TabIndex = 63;
+            this.panel_Tecla9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla9.Location = new System.Drawing.Point(371, 12);
+            this.panel_Tecla9.Name = "panel_Tecla9";
+            this.panel_Tecla9.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla9.TabIndex = 63;
             // 
             // panel45
             // 
@@ -1080,14 +1080,14 @@
             this.panel45.Size = new System.Drawing.Size(34, 23);
             this.panel45.TabIndex = 75;
             // 
-            // p_U
+            // panel_TeclaU
             // 
-            this.p_U.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_U.Controls.Add(this.label30);
-            this.p_U.Location = new System.Drawing.Point(310, 41);
-            this.p_U.Name = "p_U";
-            this.p_U.Size = new System.Drawing.Size(34, 23);
-            this.p_U.TabIndex = 77;
+            this.panel_TeclaU.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaU.Controls.Add(this.label30);
+            this.panel_TeclaU.Location = new System.Drawing.Point(310, 41);
+            this.panel_TeclaU.Name = "panel_TeclaU";
+            this.panel_TeclaU.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaU.TabIndex = 77;
             // 
             // label30
             // 
@@ -1117,15 +1117,15 @@
             this.panel15.Size = new System.Drawing.Size(34, 23);
             this.panel15.TabIndex = 68;
             // 
-            // p_Y
+            // panel_TeclaY
             // 
-            this.p_Y.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Y.Controls.Add(this.label29);
-            this.p_Y.Controls.Add(this.panel27);
-            this.p_Y.Location = new System.Drawing.Point(270, 41);
-            this.p_Y.Name = "p_Y";
-            this.p_Y.Size = new System.Drawing.Size(34, 23);
-            this.p_Y.TabIndex = 71;
+            this.panel_TeclaY.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaY.Controls.Add(this.label29);
+            this.panel_TeclaY.Controls.Add(this.panel27);
+            this.panel_TeclaY.Location = new System.Drawing.Point(270, 41);
+            this.panel_TeclaY.Name = "panel_TeclaY";
+            this.panel_TeclaY.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaY.TabIndex = 71;
             // 
             // label29
             // 
@@ -1146,22 +1146,22 @@
             this.panel27.Size = new System.Drawing.Size(34, 23);
             this.panel27.TabIndex = 63;
             // 
-            // p_8
+            // panel_Tecla8
             // 
-            this.p_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_8.Location = new System.Drawing.Point(331, 12);
-            this.p_8.Name = "p_8";
-            this.p_8.Size = new System.Drawing.Size(34, 23);
-            this.p_8.TabIndex = 65;
+            this.panel_Tecla8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla8.Location = new System.Drawing.Point(331, 12);
+            this.panel_Tecla8.Name = "panel_Tecla8";
+            this.panel_Tecla8.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla8.TabIndex = 65;
             // 
-            // p_T
+            // panel_TeclaT
             // 
-            this.p_T.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_T.Controls.Add(this.label28);
-            this.p_T.Location = new System.Drawing.Point(230, 41);
-            this.p_T.Name = "p_T";
-            this.p_T.Size = new System.Drawing.Size(34, 23);
-            this.p_T.TabIndex = 72;
+            this.panel_TeclaT.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaT.Controls.Add(this.label28);
+            this.panel_TeclaT.Location = new System.Drawing.Point(230, 41);
+            this.panel_TeclaT.Name = "panel_TeclaT";
+            this.panel_TeclaT.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaT.TabIndex = 72;
             // 
             // label28
             // 
@@ -1175,14 +1175,14 @@
             this.label28.TabIndex = 84;
             this.label28.Text = "T";
             // 
-            // p_0
+            // panel_Tecla0
             // 
-            this.p_0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_0.Controls.Add(this.panel17);
-            this.p_0.Location = new System.Drawing.Point(411, 12);
-            this.p_0.Name = "p_0";
-            this.p_0.Size = new System.Drawing.Size(34, 23);
-            this.p_0.TabIndex = 67;
+            this.panel_Tecla0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla0.Controls.Add(this.panel17);
+            this.panel_Tecla0.Location = new System.Drawing.Point(411, 12);
+            this.panel_Tecla0.Name = "panel_Tecla0";
+            this.panel_Tecla0.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla0.TabIndex = 67;
             // 
             // panel17
             // 
@@ -1191,14 +1191,14 @@
             this.panel17.Size = new System.Drawing.Size(34, 23);
             this.panel17.TabIndex = 63;
             // 
-            // p_R
+            // panel_TeclaR
             // 
-            this.p_R.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_R.Controls.Add(this.label27);
-            this.p_R.Location = new System.Drawing.Point(190, 41);
-            this.p_R.Name = "p_R";
-            this.p_R.Size = new System.Drawing.Size(34, 23);
-            this.p_R.TabIndex = 73;
+            this.panel_TeclaR.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaR.Controls.Add(this.label27);
+            this.panel_TeclaR.Location = new System.Drawing.Point(190, 41);
+            this.panel_TeclaR.Name = "panel_TeclaR";
+            this.panel_TeclaR.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaR.TabIndex = 73;
             // 
             // label27
             // 
@@ -1212,22 +1212,22 @@
             this.label27.TabIndex = 83;
             this.label27.Text = "R";
             // 
-            // p_7
+            // panel_Tecla7
             // 
-            this.p_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_7.Location = new System.Drawing.Point(291, 12);
-            this.p_7.Name = "p_7";
-            this.p_7.Size = new System.Drawing.Size(34, 23);
-            this.p_7.TabIndex = 64;
+            this.panel_Tecla7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla7.Location = new System.Drawing.Point(291, 12);
+            this.panel_Tecla7.Name = "panel_Tecla7";
+            this.panel_Tecla7.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla7.TabIndex = 64;
             // 
-            // p_E
+            // panel_TeclaE
             // 
-            this.p_E.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_E.Controls.Add(this.label26);
-            this.p_E.Location = new System.Drawing.Point(150, 41);
-            this.p_E.Name = "p_E";
-            this.p_E.Size = new System.Drawing.Size(34, 23);
-            this.p_E.TabIndex = 74;
+            this.panel_TeclaE.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaE.Controls.Add(this.label26);
+            this.panel_TeclaE.Location = new System.Drawing.Point(150, 41);
+            this.panel_TeclaE.Name = "panel_TeclaE";
+            this.panel_TeclaE.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaE.TabIndex = 74;
             // 
             // label26
             // 
@@ -1241,14 +1241,14 @@
             this.label26.TabIndex = 82;
             this.label26.Text = "E";
             // 
-            // p_6
+            // panel_Tecla6
             // 
-            this.p_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_6.Controls.Add(this.panel9);
-            this.p_6.Location = new System.Drawing.Point(251, 12);
-            this.p_6.Name = "p_6";
-            this.p_6.Size = new System.Drawing.Size(34, 23);
-            this.p_6.TabIndex = 63;
+            this.panel_Tecla6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla6.Controls.Add(this.panel9);
+            this.panel_Tecla6.Location = new System.Drawing.Point(251, 12);
+            this.panel_Tecla6.Name = "panel_Tecla6";
+            this.panel_Tecla6.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla6.TabIndex = 63;
             // 
             // panel9
             // 
@@ -1257,14 +1257,14 @@
             this.panel9.Size = new System.Drawing.Size(34, 23);
             this.panel9.TabIndex = 63;
             // 
-            // p_W
+            // panel_TeclaW
             // 
-            this.p_W.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_W.Controls.Add(this.label25);
-            this.p_W.Location = new System.Drawing.Point(110, 41);
-            this.p_W.Name = "p_W";
-            this.p_W.Size = new System.Drawing.Size(34, 23);
-            this.p_W.TabIndex = 75;
+            this.panel_TeclaW.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaW.Controls.Add(this.label25);
+            this.panel_TeclaW.Location = new System.Drawing.Point(110, 41);
+            this.panel_TeclaW.Name = "panel_TeclaW";
+            this.panel_TeclaW.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaW.TabIndex = 75;
             // 
             // label25
             // 
@@ -1278,22 +1278,22 @@
             this.label25.TabIndex = 81;
             this.label25.Text = "W";
             // 
-            // p_5
+            // panel_Tecla5
             // 
-            this.p_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_5.Location = new System.Drawing.Point(211, 12);
-            this.p_5.Name = "p_5";
-            this.p_5.Size = new System.Drawing.Size(34, 23);
-            this.p_5.TabIndex = 63;
+            this.panel_Tecla5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla5.Location = new System.Drawing.Point(211, 12);
+            this.panel_Tecla5.Name = "panel_Tecla5";
+            this.panel_Tecla5.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla5.TabIndex = 63;
             // 
-            // p_Q
+            // panel_TeclaQ
             // 
-            this.p_Q.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Q.Controls.Add(this.label_A);
-            this.p_Q.Location = new System.Drawing.Point(70, 41);
-            this.p_Q.Name = "p_Q";
-            this.p_Q.Size = new System.Drawing.Size(34, 23);
-            this.p_Q.TabIndex = 76;
+            this.panel_TeclaQ.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaQ.Controls.Add(this.label_A);
+            this.panel_TeclaQ.Location = new System.Drawing.Point(70, 41);
+            this.panel_TeclaQ.Name = "panel_TeclaQ";
+            this.panel_TeclaQ.Size = new System.Drawing.Size(34, 23);
+            this.panel_TeclaQ.TabIndex = 76;
             // 
             // label_A
             // 
@@ -1307,37 +1307,37 @@
             this.label_A.TabIndex = 0;
             this.label_A.Text = "Q @";
             // 
-            // p_4
+            // panel_Tecla4
             // 
-            this.p_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_4.Location = new System.Drawing.Point(171, 12);
-            this.p_4.Name = "p_4";
-            this.p_4.Size = new System.Drawing.Size(34, 23);
-            this.p_4.TabIndex = 63;
+            this.panel_Tecla4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla4.Location = new System.Drawing.Point(171, 12);
+            this.panel_Tecla4.Name = "panel_Tecla4";
+            this.panel_Tecla4.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla4.TabIndex = 63;
             // 
-            // p_3
+            // panel_Tecla3
             // 
-            this.p_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_3.Location = new System.Drawing.Point(131, 12);
-            this.p_3.Name = "p_3";
-            this.p_3.Size = new System.Drawing.Size(34, 23);
-            this.p_3.TabIndex = 63;
+            this.panel_Tecla3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla3.Location = new System.Drawing.Point(131, 12);
+            this.panel_Tecla3.Name = "panel_Tecla3";
+            this.panel_Tecla3.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla3.TabIndex = 63;
             // 
-            // p_2
+            // panel_Tecla2
             // 
-            this.p_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_2.Location = new System.Drawing.Point(91, 12);
-            this.p_2.Name = "p_2";
-            this.p_2.Size = new System.Drawing.Size(34, 23);
-            this.p_2.TabIndex = 63;
+            this.panel_Tecla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla2.Location = new System.Drawing.Point(91, 12);
+            this.panel_Tecla2.Name = "panel_Tecla2";
+            this.panel_Tecla2.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla2.TabIndex = 63;
             // 
-            // p_1
+            // panel_Tecla1
             // 
-            this.p_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.p_1.Location = new System.Drawing.Point(51, 12);
-            this.p_1.Name = "p_1";
-            this.p_1.Size = new System.Drawing.Size(34, 23);
-            this.p_1.TabIndex = 63;
+            this.panel_Tecla1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla1.Location = new System.Drawing.Point(51, 12);
+            this.panel_Tecla1.Name = "panel_Tecla1";
+            this.panel_Tecla1.Size = new System.Drawing.Size(34, 23);
+            this.panel_Tecla1.TabIndex = 63;
             // 
             // panel2
             // 
@@ -1350,7 +1350,7 @@
             // 
             // Texto_Tipear
             // 
-            this.Texto_Tipear.BackColor = System.Drawing.SystemColors.Control;
+            this.Texto_Tipear.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Texto_Tipear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Texto_Tipear.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Texto_Tipear.HideSelection = false;
@@ -1360,7 +1360,7 @@
             this.Texto_Tipear.Size = new System.Drawing.Size(714, 33);
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
-            this.Texto_Tipear.SelectionChanged += new System.EventHandler(this.texto_Tipear_SelectionChanged);
+            this.Texto_Tipear.SelectionChanged += new System.EventHandler(this.Texto_Tipear_SelectionChanged);
             this.Texto_Tipear.Click += new System.EventHandler(this.Texto_Tipear_Click);
             this.Texto_Tipear.Enter += new System.EventHandler(this.Texto_Tipear_Enter);
             // 
@@ -1668,76 +1668,76 @@
             this.p_Alt.PerformLayout();
             this.p_Mayuscula.ResumeLayout(false);
             this.p_Mayuscula.PerformLayout();
-            this.p_L.ResumeLayout(false);
-            this.p_L.PerformLayout();
+            this.panel_TeclaL.ResumeLayout(false);
+            this.panel_TeclaL.PerformLayout();
             this.p_ControlIzquierdo.ResumeLayout(false);
             this.p_ControlIzquierdo.PerformLayout();
-            this.p_K.ResumeLayout(false);
-            this.p_K.PerformLayout();
-            this.p_Ñ.ResumeLayout(false);
-            this.p_Ñ.PerformLayout();
+            this.panel_TeclaK.ResumeLayout(false);
+            this.panel_TeclaK.PerformLayout();
+            this.panel_TeclaÑ.ResumeLayout(false);
+            this.panel_TeclaÑ.PerformLayout();
             this.p_AltGr.ResumeLayout(false);
             this.p_AltGr.PerformLayout();
-            this.p_J.ResumeLayout(false);
-            this.p_J.PerformLayout();
-            this.p_H.ResumeLayout(false);
-            this.p_H.PerformLayout();
+            this.panel_TeclaJ.ResumeLayout(false);
+            this.panel_TeclaJ.PerformLayout();
+            this.panel_TeclaH.ResumeLayout(false);
+            this.panel_TeclaH.PerformLayout();
             this.p_ControlDerecho.ResumeLayout(false);
             this.p_ControlDerecho.PerformLayout();
-            this.p_G.ResumeLayout(false);
-            this.p_G.PerformLayout();
-            this.panel33.ResumeLayout(false);
-            this.panel33.PerformLayout();
-            this.p_F.ResumeLayout(false);
-            this.p_F.PerformLayout();
+            this.panel_TeclaG.ResumeLayout(false);
+            this.panel_TeclaG.PerformLayout();
+            this.panel_TeclaGuion.ResumeLayout(false);
+            this.panel_TeclaGuion.PerformLayout();
+            this.panel_TeclaF.ResumeLayout(false);
+            this.panel_TeclaF.PerformLayout();
             this.panel50.ResumeLayout(false);
             this.panel50.PerformLayout();
-            this.p_D.ResumeLayout(false);
-            this.p_D.PerformLayout();
-            this.p_S.ResumeLayout(false);
-            this.p_S.PerformLayout();
-            this.p_A.ResumeLayout(false);
-            this.p_A.PerformLayout();
-            this.p_M.ResumeLayout(false);
-            this.p_M.PerformLayout();
-            this.panel35.ResumeLayout(false);
-            this.panel35.PerformLayout();
-            this.p_O.ResumeLayout(false);
-            this.p_O.PerformLayout();
-            this.p_N.ResumeLayout(false);
-            this.p_N.PerformLayout();
-            this.panel37.ResumeLayout(false);
-            this.panel37.PerformLayout();
-            this.p_B.ResumeLayout(false);
-            this.p_B.PerformLayout();
-            this.p_V.ResumeLayout(false);
-            this.p_V.PerformLayout();
-            this.p_C.ResumeLayout(false);
-            this.p_C.PerformLayout();
-            this.p_I.ResumeLayout(false);
-            this.p_I.PerformLayout();
-            this.p_X.ResumeLayout(false);
-            this.p_X.PerformLayout();
-            this.p_P.ResumeLayout(false);
-            this.p_P.PerformLayout();
-            this.p_Z.ResumeLayout(false);
-            this.p_Z.PerformLayout();
-            this.p_U.ResumeLayout(false);
-            this.p_U.PerformLayout();
-            this.p_Y.ResumeLayout(false);
-            this.p_Y.PerformLayout();
-            this.p_T.ResumeLayout(false);
-            this.p_T.PerformLayout();
-            this.p_0.ResumeLayout(false);
-            this.p_R.ResumeLayout(false);
-            this.p_R.PerformLayout();
-            this.p_E.ResumeLayout(false);
-            this.p_E.PerformLayout();
-            this.p_6.ResumeLayout(false);
-            this.p_W.ResumeLayout(false);
-            this.p_W.PerformLayout();
-            this.p_Q.ResumeLayout(false);
-            this.p_Q.PerformLayout();
+            this.panel_TeclaD.ResumeLayout(false);
+            this.panel_TeclaD.PerformLayout();
+            this.panel_TeclaS.ResumeLayout(false);
+            this.panel_TeclaS.PerformLayout();
+            this.panel_TeclaA.ResumeLayout(false);
+            this.panel_TeclaA.PerformLayout();
+            this.panel_TeclaM.ResumeLayout(false);
+            this.panel_TeclaM.PerformLayout();
+            this.panel_TeclaPunto.ResumeLayout(false);
+            this.panel_TeclaPunto.PerformLayout();
+            this.panel_TeclaO.ResumeLayout(false);
+            this.panel_TeclaO.PerformLayout();
+            this.panel_TeclaN.ResumeLayout(false);
+            this.panel_TeclaN.PerformLayout();
+            this.panel_TeclaComa.ResumeLayout(false);
+            this.panel_TeclaComa.PerformLayout();
+            this.panel_TeclaB.ResumeLayout(false);
+            this.panel_TeclaB.PerformLayout();
+            this.panel_TeclaV.ResumeLayout(false);
+            this.panel_TeclaV.PerformLayout();
+            this.panel_TeclaC.ResumeLayout(false);
+            this.panel_TeclaC.PerformLayout();
+            this.panel_TeclaI.ResumeLayout(false);
+            this.panel_TeclaI.PerformLayout();
+            this.panel_TeclaX.ResumeLayout(false);
+            this.panel_TeclaX.PerformLayout();
+            this.panel_TeclaP.ResumeLayout(false);
+            this.panel_TeclaP.PerformLayout();
+            this.panel_TeclaZ.ResumeLayout(false);
+            this.panel_TeclaZ.PerformLayout();
+            this.panel_TeclaU.ResumeLayout(false);
+            this.panel_TeclaU.PerformLayout();
+            this.panel_TeclaY.ResumeLayout(false);
+            this.panel_TeclaY.PerformLayout();
+            this.panel_TeclaT.ResumeLayout(false);
+            this.panel_TeclaT.PerformLayout();
+            this.panel_Tecla0.ResumeLayout(false);
+            this.panel_TeclaR.ResumeLayout(false);
+            this.panel_TeclaR.PerformLayout();
+            this.panel_TeclaE.ResumeLayout(false);
+            this.panel_TeclaE.PerformLayout();
+            this.panel_Tecla6.ResumeLayout(false);
+            this.panel_TeclaW.ResumeLayout(false);
+            this.panel_TeclaW.PerformLayout();
+            this.panel_TeclaQ.ResumeLayout(false);
+            this.panel_TeclaQ.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.menu_ElegirArchivos.ResumeLayout(false);
             this.panel_Especificaciones.ResumeLayout(false);
@@ -1782,76 +1782,76 @@
         private System.Windows.Forms.Panel panel_PulgarDerecho;
         private System.Windows.Forms.Panel panel_PulgarIzquierdo;
         private System.Windows.Forms.Panel panel_TecladoBase;
-        private System.Windows.Forms.Panel p_9;
-        private System.Windows.Forms.Panel p_8;
-        private System.Windows.Forms.Panel p_7;
-        private System.Windows.Forms.Panel p_6;
+        private System.Windows.Forms.Panel panel_Tecla9;
+        private System.Windows.Forms.Panel panel_Tecla8;
+        private System.Windows.Forms.Panel panel_Tecla7;
+        private System.Windows.Forms.Panel panel_Tecla6;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel p_5;
-        private System.Windows.Forms.Panel p_4;
-        private System.Windows.Forms.Panel p_3;
-        private System.Windows.Forms.Panel p_2;
-        private System.Windows.Forms.Panel p_1;
+        private System.Windows.Forms.Panel panel_Tecla5;
+        private System.Windows.Forms.Panel panel_Tecla4;
+        private System.Windows.Forms.Panel panel_Tecla3;
+        private System.Windows.Forms.Panel panel_Tecla2;
+        private System.Windows.Forms.Panel panel_Tecla1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel p_AltGr;
         private System.Windows.Forms.Panel p_ShiftDerecho;
         private System.Windows.Forms.Panel p_ControlDerecho;
-        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.Panel panel_TeclaGuion;
         private System.Windows.Forms.Panel panel50;
         private System.Windows.Forms.Panel panel51;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel p_M;
+        private System.Windows.Forms.Panel panel_TeclaM;
         private System.Windows.Forms.Panel p_Tab;
-        private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.Panel p_O;
-        private System.Windows.Forms.Panel p_N;
-        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel panel_TeclaPunto;
+        private System.Windows.Forms.Panel panel_TeclaO;
+        private System.Windows.Forms.Panel panel_TeclaN;
+        private System.Windows.Forms.Panel panel_TeclaComa;
         private System.Windows.Forms.Panel panel38;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel p_B;
+        private System.Windows.Forms.Panel panel_TeclaB;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel p_V;
+        private System.Windows.Forms.Panel panel_TeclaV;
         private System.Windows.Forms.Panel panel41;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel p_C;
-        private System.Windows.Forms.Panel p_I;
-        private System.Windows.Forms.Panel p_X;
-        private System.Windows.Forms.Panel p_P;
+        private System.Windows.Forms.Panel panel_TeclaC;
+        private System.Windows.Forms.Panel panel_TeclaI;
+        private System.Windows.Forms.Panel panel_TeclaX;
+        private System.Windows.Forms.Panel panel_TeclaP;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Panel p_Z;
+        private System.Windows.Forms.Panel panel_TeclaZ;
         private System.Windows.Forms.Panel panel45;
-        private System.Windows.Forms.Panel p_U;
+        private System.Windows.Forms.Panel panel_TeclaU;
         private System.Windows.Forms.Panel p_ShiftIzquierdo;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel p_Y;
+        private System.Windows.Forms.Panel panel_TeclaY;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel p_T;
-        private System.Windows.Forms.Panel p_0;
+        private System.Windows.Forms.Panel panel_TeclaT;
+        private System.Windows.Forms.Panel panel_Tecla0;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel p_R;
-        private System.Windows.Forms.Panel p_E;
-        private System.Windows.Forms.Panel p_W;
-        private System.Windows.Forms.Panel p_Q;
+        private System.Windows.Forms.Panel panel_TeclaR;
+        private System.Windows.Forms.Panel panel_TeclaE;
+        private System.Windows.Forms.Panel panel_TeclaW;
+        private System.Windows.Forms.Panel panel_TeclaQ;
         private System.Windows.Forms.Panel p_Enter1;
         private System.Windows.Forms.Panel panel56;
         private System.Windows.Forms.Panel p_Alt;
         private System.Windows.Forms.Panel p_Mayuscula;
         private System.Windows.Forms.Panel p_Windows;
-        private System.Windows.Forms.Panel p_L;
+        private System.Windows.Forms.Panel panel_TeclaL;
         private System.Windows.Forms.Panel p_ControlIzquierdo;
         private System.Windows.Forms.Panel panel59;
-        private System.Windows.Forms.Panel p_Espacio;
-        private System.Windows.Forms.Panel p_K;
-        private System.Windows.Forms.Panel p_Ñ;
+        private System.Windows.Forms.Panel panel_TeclaEspacio;
+        private System.Windows.Forms.Panel panel_TeclaK;
+        private System.Windows.Forms.Panel panel_TeclaÑ;
         private System.Windows.Forms.Panel panel62;
-        private System.Windows.Forms.Panel p_J;
-        private System.Windows.Forms.Panel p_H;
+        private System.Windows.Forms.Panel panel_TeclaJ;
+        private System.Windows.Forms.Panel panel_TeclaH;
         private System.Windows.Forms.Panel panel65;
-        private System.Windows.Forms.Panel p_G;
-        private System.Windows.Forms.Panel p_F;
-        private System.Windows.Forms.Panel p_D;
-        private System.Windows.Forms.Panel p_S;
-        private System.Windows.Forms.Panel p_A;
+        private System.Windows.Forms.Panel panel_TeclaG;
+        private System.Windows.Forms.Panel panel_TeclaF;
+        private System.Windows.Forms.Panel panel_TeclaD;
+        private System.Windows.Forms.Panel panel_TeclaS;
+        private System.Windows.Forms.Panel panel_TeclaA;
         private System.Windows.Forms.Panel p_Enter2;
         private System.Windows.Forms.Label labelTeclaPresionada;
         private System.Windows.Forms.Label label_A;
