@@ -25,9 +25,9 @@ namespace MECANOGRAFIA
         private Label alertaLabel; // Variable para el Label de alerta
 
         // Diccionario para mapear letras a paneles
-        // Diccionario para mapear letras a paneles
         private Dictionary<char, PanelesResaltados> letraPanelMap;
-
+        // Variable para almacenar el último panel resaltado
+        private PanelesResaltados panelResaltadoAnterior = null;
 
         public Mecanografia()
         {
@@ -63,68 +63,68 @@ namespace MECANOGRAFIA
             // Mapa de letras a paneles de manos y teclado virtual
             letraPanelMap = new Dictionary<char, PanelesResaltados>
 {
-    { '1', new PanelesResaltados (panel_MeniqueIzquierdo,panel_Tecla1) },
-    { '!', new PanelesResaltados (panel_MeniqueIzquierdo,panel_Tecla1) },
-    { 'A', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaA) },
-    { 'Q', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaQ) },
-    { 'Z', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaZ) },
+    { '1', new PanelesResaltados (panel_MeniqueIzquierdo,panel_Tecla1 ,label_Tecla1 ) },
+    { '!', new PanelesResaltados (panel_MeniqueIzquierdo,panel_Tecla1 ,label_Tecla1 ) },
+    { 'A', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaA ,label_TeclaA ) },
+    { 'Q', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaQ ,label_TeclaQ ) },
+    { 'Z', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaZ ,label_TeclaZ ) },
           
-    { '2', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2) },
-    { '"', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2) },
-    { 'S', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaS) },
-    { 'W', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaW) },
-    { 'X', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaX) },
+    { '2', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2 ,label_Tecla2  ) },
+    { '"', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2 ,label_Tecla2  ) },
+    { 'S', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaS ,label_TeclaS  ) },
+    { 'W', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaW ,label_TeclaW  ) },
+    { 'X', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaX ,label_TeclaX  ) },
       
-    { '3', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3) },
-    { '#', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3) },
-    { 'E', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaE) },
-    { 'D', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaD) },
-    { 'C', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaC) },
+    { '3', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3 ,label_Tecla3   ) },
+    { '#', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3 ,label_Tecla3   ) },
+    { 'E', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaE ,label_TeclaE   ) },
+    { 'D', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaD ,label_TeclaD   ) },
+    { 'C', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaC ,label_TeclaC   ) },
            
-    { '4', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4) },
-    { '5', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5) },
-    { '$', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4) },
-    { '%', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5) },
-    { 'R', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaR) },
-    { 'F', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaF) },
-    { 'V', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaV) },
-    { 'T', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaT) },
-    { 'G', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaG) },
-    { 'B', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaB) },
+    { '4', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4 ,label_Tecla4  ) },
+    { '5', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5 ,label_Tecla5  ) },
+    { '$', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4 ,label_Tecla4  ) },
+    { '%', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5 ,label_Tecla5  ) },
+    { 'R', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaR ,label_TeclaR  ) },
+    { 'F', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaF ,label_TeclaF  ) },
+    { 'V', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaV ,label_TeclaV  ) },
+    { 'T', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaT ,label_TeclaT  ) },
+    { 'G', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaG ,label_TeclaG  ) },
+    { 'B', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaB ,label_TeclaB  ) },
           
-    { ' ', new PanelesResaltados (panel_PulgarIzquierdo,panel_TeclaEspacio) },
+    { ' ', new PanelesResaltados (panel_PulgarIzquierdo,panel_TeclaEspacio,label_TeclaEspacio) },
    
-    { '7', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7) },
-    { '6', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6) },
-    { '/', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7) },
-    { '&', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6) },
-    { 'Y', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaY) },
-    { 'H', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaH) },
-    { 'N', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaN) },
-    { 'U', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaU) },
-    { 'J', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaJ) },
-    { 'M', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaM) },
+    { '7', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7,label_Tecla7 ) },
+    { '6', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6,label_Tecla6 ) },
+    { '/', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7,label_Tecla7 ) },
+    { '&', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6,label_Tecla6 ) },
+    { 'Y', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaY,label_TeclaY ) },
+    { 'H', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaH,label_TeclaH ) },
+    { 'N', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaN,label_TeclaN ) },
+    { 'U', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaU,label_TeclaU ) },
+    { 'J', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaJ,label_TeclaJ ) },
+    { 'M', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaM,label_TeclaM ) },
      
-    { '8', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8) },
-    { '(', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8) },
-    { 'I', new PanelesResaltados (panel_MayorDerecho, panel_TeclaI) },
-    { 'K', new PanelesResaltados (panel_MayorDerecho, panel_TeclaK) },
-    { ';', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa) },
-    { ',', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa) },
+    { '8', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8, label_Tecla8) },
+    { '(', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8, label_Tecla8) },
+    { 'I', new PanelesResaltados (panel_MayorDerecho, panel_TeclaI, label_TeclaI) },
+    { 'K', new PanelesResaltados (panel_MayorDerecho, panel_TeclaK, label_TeclaK) },
+    { ';', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa,label_TeclaComa) },
+    { ',', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa,label_TeclaComa) },
           
-    { '9', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 )},
-    { ')', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 )},
-    { 'O', new PanelesResaltados (panel_AnularDerecho,panel_TeclaO )},
-    { 'L', new PanelesResaltados (panel_AnularDerecho,panel_TeclaL )},
-    { ':', new PanelesResaltados (panel_AnularDerecho,panel_TeclaPunto )},
-    { '.', new PanelesResaltados (panel_AnularDerecho,panel_TeclaPunto )},
+    { '9', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 ,label_Tecla9 )},
+    { ')', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 ,label_Tecla9)},
+    { 'O', new PanelesResaltados (panel_AnularDerecho,panel_TeclaO ,label_TeclaO )},
+    { 'L', new PanelesResaltados (panel_AnularDerecho,panel_TeclaL ,label_TeclaL )},
+    { ':', new PanelesResaltados (panel_AnularDerecho,panel_TeclaPunto,label_TeclaPunto )},
+    { '.', new PanelesResaltados (panel_AnularDerecho,panel_TeclaPunto,label_TeclaPunto )},
 
-    { '0', new PanelesResaltados (panel_AnularDerecho,panel_Tecla0 )},
-    { '=', new PanelesResaltados (panel_AnularDerecho,panel_Tecla0 )},
-    { 'P', new PanelesResaltados (panel_AnularDerecho,panel_TeclaP )},
-    { 'Ñ', new PanelesResaltados (panel_AnularDerecho,panel_TeclaÑ )},
-    { '-', new PanelesResaltados (panel_AnularDerecho,panel_TeclaGuion )},
-    { '_', new PanelesResaltados (panel_AnularDerecho,panel_TeclaGuion )},
+    { '0', new PanelesResaltados (panel_AnularDerecho,panel_Tecla0,label_Tecla0)},
+    { '=', new PanelesResaltados (panel_AnularDerecho,panel_Tecla0,label_Tecla0 )},
+    { 'P', new PanelesResaltados (panel_AnularDerecho,panel_TeclaP,label_TeclaP )},
+    { 'Ñ', new PanelesResaltados (panel_AnularDerecho,panel_TeclaÑ,label_TeclaÑ )},
+    { '-', new PanelesResaltados (panel_AnularDerecho,panel_TeclaGuion ,label_TeclaGuion)},
+    { '_', new PanelesResaltados (panel_AnularDerecho,panel_TeclaGuion ,label_TeclaGuion)},
 
 };
         }
@@ -306,7 +306,7 @@ namespace MECANOGRAFIA
 
                                 // Mostrar el contenido en el RichTextBox
                                 Texto_Tipear.Text = contenido;
-                                CargarTextoYColorear();
+                               
 
                                 // *** ASIGNAR EL NOMBRE DEL ARCHIVO SELECCIONADO ***
                                 archivoSeleccionado = openFileDialog.FileName;
@@ -356,7 +356,7 @@ namespace MECANOGRAFIA
             panel_Teclado.Location = new Point(21, 242);
             panel1.Height = 559;
             this.Height = 641;
-
+            CargarTextoYColorear();//para que se muestre el panel de la letra correspondiente en color
             btn_Detener.Enabled = true;
         }
 
@@ -492,18 +492,18 @@ namespace MECANOGRAFIA
         private Panel panelResaltadoAnteriorMano = null;
         private Panel panelResaltadoAnteriorTeclado = null;
 
+
+
+        // Variable para almacenar el último panel resaltado
         private void ResaltarPanelPorLetra(char letra)
         {
-            // Restablecer el color del panel anterior de la mano, si existe
-            if (panelResaltadoAnteriorMano != null)
+            // Restablecer el color del panel anterior y el color del Label, si existe
+            if (panelResaltadoAnterior != null)
             {
-                panelResaltadoAnteriorMano.BackColor = System.Drawing.Color.AntiqueWhite; // Color original del panel de la mano
-            }
-
-            // Restablecer el color del panel anterior del teclado, si existe
-            if (panelResaltadoAnteriorTeclado != null)
-            {
-                panelResaltadoAnteriorTeclado.BackColor = System.Drawing.Color.AntiqueWhite; // Color original del panel del teclado
+                // Cambiar el color del panel anterior a su color original
+                panelResaltadoAnterior.PanelTecla.BackColor = SystemColors.ButtonFace; // Color original del panel
+                panelResaltadoAnterior.LabelTecla.ForeColor = SystemColors.ControlDarkDark; // Color original del Label
+                panelResaltadoAnterior.PanelMano.BackColor = System.Drawing.Color.AntiqueWhite;
             }
 
             // Verificar si el diccionario está bien configurado
@@ -514,29 +514,34 @@ namespace MECANOGRAFIA
             }
 
             // Verificar si la letra está en el diccionario
-            if (letraPanelMap.TryGetValue(letra, out PanelesResaltados paneles)) // Asegúrate de que 'paneles' sea de tipo PanelesResaltados
+            if (letraPanelMap.TryGetValue(letra, out PanelesResaltados panelesResaltados))
             {
-                // Cambiar el color del panel de la mano correspondiente
-                paneles.PanelMano.BackColor = SystemColors.Highlight; // Color resaltado para la mano
-                panelResaltadoAnteriorMano = paneles.PanelMano;
-
-                // Cambiar el color del panel del teclado correspondiente
-                paneles.PanelTeclado.BackColor = SystemColors.Highlight; // Color resaltado para el teclado
-                panelResaltadoAnteriorTeclado = paneles.PanelTeclado;
+                // Cambiar el color del panel correspondiente a rojo
+                panelesResaltados.PanelTecla.BackColor = SystemColors.Highlight; // Color resaltado
+                panelesResaltados.LabelTecla.ForeColor = System.Drawing.Color.White; // Cambiar el color del texto a blanco
+                                                                                     // Cambiar el color del panel correspondiente a la mano a resaltado
+                panelesResaltados.PanelMano.BackColor = SystemColors.Highlight;
+                // Almacenar el panel resaltado actual
+                panelResaltadoAnterior = panelesResaltados;
             }
         }
 
 
-        // Clase para almacenar los paneles de la mano y del teclado
-        class PanelesResaltados
-        {
-            public Panel PanelMano { get; set; }
-            public Panel PanelTeclado { get; set; }
 
-            public PanelesResaltados(Panel panelMano, Panel panelTeclado)
+
+        // Clase para almacenar los paneles de la mano y del teclado
+        public class PanelesResaltados
+        {
+            public Panel PanelMano { get; }
+            public Panel PanelTecla { get; }
+            public Label LabelTecla { get; }
+
+            // Constructor que acepta un Panel de mano, un Panel de tecla y un Label
+            public PanelesResaltados(Panel panelMano, Panel panelTecla, Label labelTecla)
             {
                 PanelMano = panelMano;
-                PanelTeclado = panelTeclado;
+                PanelTecla = panelTecla;
+                LabelTecla = labelTecla;
             }
         }
 

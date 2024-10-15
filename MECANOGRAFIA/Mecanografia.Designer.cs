@@ -42,99 +42,99 @@
             this.label_Mayus = new System.Windows.Forms.Label();
             this.p_Windows = new System.Windows.Forms.Panel();
             this.panel_TeclaL = new System.Windows.Forms.Panel();
-            this.label_L = new System.Windows.Forms.Label();
+            this.label_TeclaL = new System.Windows.Forms.Label();
             this.p_ControlIzquierdo = new System.Windows.Forms.Panel();
             this.label_Ctrl = new System.Windows.Forms.Label();
             this.panel59 = new System.Windows.Forms.Panel();
             this.panel_TeclaEspacio = new System.Windows.Forms.Panel();
             this.panel_TeclaK = new System.Windows.Forms.Panel();
-            this.label_K = new System.Windows.Forms.Label();
+            this.label_TeclaK = new System.Windows.Forms.Label();
             this.panel51 = new System.Windows.Forms.Panel();
             this.panel_TeclaÑ = new System.Windows.Forms.Panel();
-            this.label_Ñ = new System.Windows.Forms.Label();
+            this.label_TeclaÑ = new System.Windows.Forms.Label();
             this.panel62 = new System.Windows.Forms.Panel();
             this.p_AltGr = new System.Windows.Forms.Panel();
             this.label_Altgr = new System.Windows.Forms.Label();
             this.panel_TeclaJ = new System.Windows.Forms.Panel();
-            this.label_J = new System.Windows.Forms.Label();
+            this.label_TeclaJ = new System.Windows.Forms.Label();
             this.p_ShiftDerecho = new System.Windows.Forms.Panel();
             this.panel_TeclaH = new System.Windows.Forms.Panel();
-            this.label_H = new System.Windows.Forms.Label();
+            this.label_TeclaH = new System.Windows.Forms.Label();
             this.panel65 = new System.Windows.Forms.Panel();
             this.p_ControlDerecho = new System.Windows.Forms.Panel();
             this.label_CtrolDerecha = new System.Windows.Forms.Label();
             this.panel_TeclaG = new System.Windows.Forms.Panel();
-            this.label_G = new System.Windows.Forms.Label();
+            this.label_TeclaG = new System.Windows.Forms.Label();
             this.panel_TeclaGuion = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label_TeclaGuion = new System.Windows.Forms.Label();
             this.panel_TeclaF = new System.Windows.Forms.Panel();
-            this.label_F = new System.Windows.Forms.Label();
+            this.label_TeclaF = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
             this.label_Fn = new System.Windows.Forms.Label();
             this.panel_TeclaD = new System.Windows.Forms.Panel();
-            this.label_D = new System.Windows.Forms.Label();
+            this.label_TeclaD = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel_TeclaS = new System.Windows.Forms.Panel();
-            this.label_S = new System.Windows.Forms.Label();
+            this.label_TeclaS = new System.Windows.Forms.Label();
             this.panel_TeclaA = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_TeclaA = new System.Windows.Forms.Label();
             this.panel_TeclaM = new System.Windows.Forms.Panel();
-            this.label_M = new System.Windows.Forms.Label();
+            this.label_TeclaM = new System.Windows.Forms.Label();
             this.p_Tab = new System.Windows.Forms.Panel();
             this.panel_TeclaPunto = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_TeclaPunto = new System.Windows.Forms.Label();
             this.panel_TeclaO = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
+            this.label_TeclaO = new System.Windows.Forms.Label();
             this.panel_TeclaN = new System.Windows.Forms.Panel();
-            this.label_N = new System.Windows.Forms.Label();
+            this.label_TeclaN = new System.Windows.Forms.Label();
             this.panel_TeclaComa = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_TeclaComa = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel_TeclaB = new System.Windows.Forms.Panel();
-            this.label_B = new System.Windows.Forms.Label();
+            this.label_TeclaB = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel_TeclaV = new System.Windows.Forms.Panel();
-            this.label_V = new System.Windows.Forms.Label();
+            this.label_TeclaV = new System.Windows.Forms.Label();
             this.panel41 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel_TeclaC = new System.Windows.Forms.Panel();
-            this.label_C = new System.Windows.Forms.Label();
+            this.label_TeclaC = new System.Windows.Forms.Label();
             this.panel_TeclaI = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
+            this.label_TeclaI = new System.Windows.Forms.Label();
             this.panel_TeclaX = new System.Windows.Forms.Panel();
-            this.label_X = new System.Windows.Forms.Label();
+            this.label_TeclaX = new System.Windows.Forms.Label();
             this.panel_TeclaP = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label_TeclaP = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel_TeclaZ = new System.Windows.Forms.Panel();
-            this.label_Z = new System.Windows.Forms.Label();
+            this.label_TeclaZ = new System.Windows.Forms.Label();
             this.panel_Tecla9 = new System.Windows.Forms.Panel();
             this.panel45 = new System.Windows.Forms.Panel();
             this.panel_TeclaU = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
+            this.label_TeclaU = new System.Windows.Forms.Label();
             this.p_ShiftIzquierdo = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel_TeclaY = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
+            this.label_TeclaY = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel_Tecla8 = new System.Windows.Forms.Panel();
             this.panel_TeclaT = new System.Windows.Forms.Panel();
-            this.label28 = new System.Windows.Forms.Label();
+            this.label_TeclaT = new System.Windows.Forms.Label();
             this.panel_Tecla0 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel_TeclaR = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
+            this.label_TeclaR = new System.Windows.Forms.Label();
             this.panel_Tecla7 = new System.Windows.Forms.Panel();
             this.panel_TeclaE = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
+            this.label_TeclaE = new System.Windows.Forms.Label();
             this.panel_Tecla6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel_TeclaW = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
+            this.label_TeclaW = new System.Windows.Forms.Label();
             this.panel_Tecla5 = new System.Windows.Forms.Panel();
             this.panel_TeclaQ = new System.Windows.Forms.Panel();
-            this.label_A = new System.Windows.Forms.Label();
+            this.label_TeclaQ = new System.Windows.Forms.Label();
             this.panel_Tecla4 = new System.Windows.Forms.Panel();
             this.panel_Tecla3 = new System.Windows.Forms.Panel();
             this.panel_Tecla2 = new System.Windows.Forms.Panel();
@@ -171,6 +171,17 @@
             this.panel_IndiceDerecho = new System.Windows.Forms.Panel();
             this.panel_PulgarDerecho = new System.Windows.Forms.Panel();
             this.panel_PulgarIzquierdo = new System.Windows.Forms.Panel();
+            this.label_Tecla1 = new System.Windows.Forms.Label();
+            this.label_Tecla2 = new System.Windows.Forms.Label();
+            this.label_Tecla3 = new System.Windows.Forms.Label();
+            this.label_Tecla4 = new System.Windows.Forms.Label();
+            this.label_Tecla5 = new System.Windows.Forms.Label();
+            this.label_Tecla6 = new System.Windows.Forms.Label();
+            this.label_Tecla7 = new System.Windows.Forms.Label();
+            this.label_Tecla8 = new System.Windows.Forms.Label();
+            this.label_Tecla9 = new System.Windows.Forms.Label();
+            this.label_Tecla0 = new System.Windows.Forms.Label();
+            this.label_TeclaEspacio = new System.Windows.Forms.Label();
             this.panel_Teclado.SuspendLayout();
             this.panel_TecladoBase.SuspendLayout();
             this.p_Enter1.SuspendLayout();
@@ -178,6 +189,7 @@
             this.p_Mayuscula.SuspendLayout();
             this.panel_TeclaL.SuspendLayout();
             this.p_ControlIzquierdo.SuspendLayout();
+            this.panel_TeclaEspacio.SuspendLayout();
             this.panel_TeclaK.SuspendLayout();
             this.panel_TeclaÑ.SuspendLayout();
             this.p_AltGr.SuspendLayout();
@@ -203,15 +215,23 @@
             this.panel_TeclaX.SuspendLayout();
             this.panel_TeclaP.SuspendLayout();
             this.panel_TeclaZ.SuspendLayout();
+            this.panel_Tecla9.SuspendLayout();
             this.panel_TeclaU.SuspendLayout();
             this.panel_TeclaY.SuspendLayout();
+            this.panel_Tecla8.SuspendLayout();
             this.panel_TeclaT.SuspendLayout();
             this.panel_Tecla0.SuspendLayout();
             this.panel_TeclaR.SuspendLayout();
+            this.panel_Tecla7.SuspendLayout();
             this.panel_TeclaE.SuspendLayout();
             this.panel_Tecla6.SuspendLayout();
             this.panel_TeclaW.SuspendLayout();
+            this.panel_Tecla5.SuspendLayout();
             this.panel_TeclaQ.SuspendLayout();
+            this.panel_Tecla4.SuspendLayout();
+            this.panel_Tecla3.SuspendLayout();
+            this.panel_Tecla2.SuspendLayout();
+            this.panel_Tecla1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu_ElegirArchivos.SuspendLayout();
             this.panel_Especificaciones.SuspendLayout();
@@ -388,23 +408,23 @@
             // panel_TeclaL
             // 
             this.panel_TeclaL.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaL.Controls.Add(this.label_L);
+            this.panel_TeclaL.Controls.Add(this.label_TeclaL);
             this.panel_TeclaL.Location = new System.Drawing.Point(399, 70);
             this.panel_TeclaL.Name = "panel_TeclaL";
             this.panel_TeclaL.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaL.TabIndex = 83;
             // 
-            // label_L
+            // label_TeclaL
             // 
-            this.label_L.AutoSize = true;
-            this.label_L.BackColor = System.Drawing.Color.Transparent;
-            this.label_L.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_L.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_L.Location = new System.Drawing.Point(9, 4);
-            this.label_L.Name = "label_L";
-            this.label_L.Size = new System.Drawing.Size(13, 14);
-            this.label_L.TabIndex = 73;
-            this.label_L.Text = "L";
+            this.label_TeclaL.AutoSize = true;
+            this.label_TeclaL.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaL.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaL.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaL.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaL.Name = "label_TeclaL";
+            this.label_TeclaL.Size = new System.Drawing.Size(13, 14);
+            this.label_TeclaL.TabIndex = 73;
+            this.label_TeclaL.Text = "L";
             // 
             // p_ControlIzquierdo
             // 
@@ -438,6 +458,7 @@
             // panel_TeclaEspacio
             // 
             this.panel_TeclaEspacio.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel_TeclaEspacio.Controls.Add(this.label_TeclaEspacio);
             this.panel_TeclaEspacio.Location = new System.Drawing.Point(162, 128);
             this.panel_TeclaEspacio.Name = "panel_TeclaEspacio";
             this.panel_TeclaEspacio.Size = new System.Drawing.Size(223, 23);
@@ -446,23 +467,23 @@
             // panel_TeclaK
             // 
             this.panel_TeclaK.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaK.Controls.Add(this.label_K);
+            this.panel_TeclaK.Controls.Add(this.label_TeclaK);
             this.panel_TeclaK.Location = new System.Drawing.Point(359, 70);
             this.panel_TeclaK.Name = "panel_TeclaK";
             this.panel_TeclaK.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaK.TabIndex = 91;
             // 
-            // label_K
+            // label_TeclaK
             // 
-            this.label_K.AutoSize = true;
-            this.label_K.BackColor = System.Drawing.Color.Transparent;
-            this.label_K.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_K.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_K.Location = new System.Drawing.Point(9, 4);
-            this.label_K.Name = "label_K";
-            this.label_K.Size = new System.Drawing.Size(14, 14);
-            this.label_K.TabIndex = 74;
-            this.label_K.Text = "K";
+            this.label_TeclaK.AutoSize = true;
+            this.label_TeclaK.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaK.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaK.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaK.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaK.Name = "label_TeclaK";
+            this.label_TeclaK.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaK.TabIndex = 74;
+            this.label_TeclaK.Text = "K";
             // 
             // panel51
             // 
@@ -475,24 +496,24 @@
             // panel_TeclaÑ
             // 
             this.panel_TeclaÑ.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaÑ.Controls.Add(this.label_Ñ);
+            this.panel_TeclaÑ.Controls.Add(this.label_TeclaÑ);
             this.panel_TeclaÑ.Controls.Add(this.panel62);
             this.panel_TeclaÑ.Location = new System.Drawing.Point(439, 70);
             this.panel_TeclaÑ.Name = "panel_TeclaÑ";
             this.panel_TeclaÑ.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaÑ.TabIndex = 92;
             // 
-            // label_Ñ
+            // label_TeclaÑ
             // 
-            this.label_Ñ.AutoSize = true;
-            this.label_Ñ.BackColor = System.Drawing.Color.Transparent;
-            this.label_Ñ.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Ñ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_Ñ.Location = new System.Drawing.Point(9, 4);
-            this.label_Ñ.Name = "label_Ñ";
-            this.label_Ñ.Size = new System.Drawing.Size(16, 14);
-            this.label_Ñ.TabIndex = 72;
-            this.label_Ñ.Text = "Ñ";
+            this.label_TeclaÑ.AutoSize = true;
+            this.label_TeclaÑ.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaÑ.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaÑ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaÑ.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaÑ.Name = "label_TeclaÑ";
+            this.label_TeclaÑ.Size = new System.Drawing.Size(16, 14);
+            this.label_TeclaÑ.TabIndex = 72;
+            this.label_TeclaÑ.Text = "Ñ";
             // 
             // panel62
             // 
@@ -525,23 +546,23 @@
             // panel_TeclaJ
             // 
             this.panel_TeclaJ.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaJ.Controls.Add(this.label_J);
+            this.panel_TeclaJ.Controls.Add(this.label_TeclaJ);
             this.panel_TeclaJ.Location = new System.Drawing.Point(319, 70);
             this.panel_TeclaJ.Name = "panel_TeclaJ";
             this.panel_TeclaJ.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaJ.TabIndex = 90;
             // 
-            // label_J
+            // label_TeclaJ
             // 
-            this.label_J.AutoSize = true;
-            this.label_J.BackColor = System.Drawing.Color.Transparent;
-            this.label_J.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_J.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_J.Location = new System.Drawing.Point(9, 4);
-            this.label_J.Name = "label_J";
-            this.label_J.Size = new System.Drawing.Size(12, 14);
-            this.label_J.TabIndex = 75;
-            this.label_J.Text = "J";
+            this.label_TeclaJ.AutoSize = true;
+            this.label_TeclaJ.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaJ.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaJ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaJ.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaJ.Name = "label_TeclaJ";
+            this.label_TeclaJ.Size = new System.Drawing.Size(12, 14);
+            this.label_TeclaJ.TabIndex = 75;
+            this.label_TeclaJ.Text = "J";
             // 
             // p_ShiftDerecho
             // 
@@ -554,24 +575,24 @@
             // panel_TeclaH
             // 
             this.panel_TeclaH.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaH.Controls.Add(this.label_H);
+            this.panel_TeclaH.Controls.Add(this.label_TeclaH);
             this.panel_TeclaH.Controls.Add(this.panel65);
             this.panel_TeclaH.Location = new System.Drawing.Point(279, 70);
             this.panel_TeclaH.Name = "panel_TeclaH";
             this.panel_TeclaH.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaH.TabIndex = 84;
             // 
-            // label_H
+            // label_TeclaH
             // 
-            this.label_H.AutoSize = true;
-            this.label_H.BackColor = System.Drawing.Color.Transparent;
-            this.label_H.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_H.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_H.Location = new System.Drawing.Point(9, 4);
-            this.label_H.Name = "label_H";
-            this.label_H.Size = new System.Drawing.Size(15, 14);
-            this.label_H.TabIndex = 76;
-            this.label_H.Text = "H";
+            this.label_TeclaH.AutoSize = true;
+            this.label_TeclaH.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaH.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaH.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaH.Name = "label_TeclaH";
+            this.label_TeclaH.Size = new System.Drawing.Size(15, 14);
+            this.label_TeclaH.TabIndex = 76;
+            this.label_TeclaH.Text = "H";
             // 
             // panel65
             // 
@@ -604,65 +625,65 @@
             // panel_TeclaG
             // 
             this.panel_TeclaG.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaG.Controls.Add(this.label_G);
+            this.panel_TeclaG.Controls.Add(this.label_TeclaG);
             this.panel_TeclaG.Location = new System.Drawing.Point(239, 70);
             this.panel_TeclaG.Name = "panel_TeclaG";
             this.panel_TeclaG.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaG.TabIndex = 85;
             // 
-            // label_G
+            // label_TeclaG
             // 
-            this.label_G.AutoSize = true;
-            this.label_G.BackColor = System.Drawing.Color.Transparent;
-            this.label_G.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_G.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_G.Location = new System.Drawing.Point(9, 4);
-            this.label_G.Name = "label_G";
-            this.label_G.Size = new System.Drawing.Size(15, 14);
-            this.label_G.TabIndex = 77;
-            this.label_G.Text = "G";
+            this.label_TeclaG.AutoSize = true;
+            this.label_TeclaG.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaG.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaG.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaG.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaG.Name = "label_TeclaG";
+            this.label_TeclaG.Size = new System.Drawing.Size(15, 14);
+            this.label_TeclaG.TabIndex = 77;
+            this.label_TeclaG.Text = "G";
             // 
             // panel_TeclaGuion
             // 
             this.panel_TeclaGuion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_TeclaGuion.Controls.Add(this.label13);
+            this.panel_TeclaGuion.Controls.Add(this.label_TeclaGuion);
             this.panel_TeclaGuion.Location = new System.Drawing.Point(451, 99);
             this.panel_TeclaGuion.Name = "panel_TeclaGuion";
             this.panel_TeclaGuion.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaGuion.TabIndex = 81;
             // 
-            // label13
+            // label_TeclaGuion
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(9, 4);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 14);
-            this.label13.TabIndex = 69;
-            this.label13.Text = "A";
+            this.label_TeclaGuion.AutoSize = true;
+            this.label_TeclaGuion.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaGuion.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaGuion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaGuion.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaGuion.Name = "label_TeclaGuion";
+            this.label_TeclaGuion.Size = new System.Drawing.Size(11, 14);
+            this.label_TeclaGuion.TabIndex = 69;
+            this.label_TeclaGuion.Text = "-";
             // 
             // panel_TeclaF
             // 
             this.panel_TeclaF.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaF.Controls.Add(this.label_F);
+            this.panel_TeclaF.Controls.Add(this.label_TeclaF);
             this.panel_TeclaF.Location = new System.Drawing.Point(199, 70);
             this.panel_TeclaF.Name = "panel_TeclaF";
             this.panel_TeclaF.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaF.TabIndex = 86;
             // 
-            // label_F
+            // label_TeclaF
             // 
-            this.label_F.AutoSize = true;
-            this.label_F.BackColor = System.Drawing.Color.Transparent;
-            this.label_F.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_F.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_F.Location = new System.Drawing.Point(9, 4);
-            this.label_F.Name = "label_F";
-            this.label_F.Size = new System.Drawing.Size(13, 14);
-            this.label_F.TabIndex = 78;
-            this.label_F.Text = "F";
+            this.label_TeclaF.AutoSize = true;
+            this.label_TeclaF.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaF.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaF.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaF.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaF.Name = "label_TeclaF";
+            this.label_TeclaF.Size = new System.Drawing.Size(13, 14);
+            this.label_TeclaF.TabIndex = 78;
+            this.label_TeclaF.Text = "F";
             // 
             // panel50
             // 
@@ -688,23 +709,23 @@
             // panel_TeclaD
             // 
             this.panel_TeclaD.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaD.Controls.Add(this.label_D);
+            this.panel_TeclaD.Controls.Add(this.label_TeclaD);
             this.panel_TeclaD.Location = new System.Drawing.Point(159, 70);
             this.panel_TeclaD.Name = "panel_TeclaD";
             this.panel_TeclaD.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaD.TabIndex = 87;
             // 
-            // label_D
+            // label_TeclaD
             // 
-            this.label_D.AutoSize = true;
-            this.label_D.BackColor = System.Drawing.Color.Transparent;
-            this.label_D.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_D.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_D.Location = new System.Drawing.Point(9, 4);
-            this.label_D.Name = "label_D";
-            this.label_D.Size = new System.Drawing.Size(15, 14);
-            this.label_D.TabIndex = 79;
-            this.label_D.Text = "D";
+            this.label_TeclaD.AutoSize = true;
+            this.label_TeclaD.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaD.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaD.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaD.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaD.Name = "label_TeclaD";
+            this.label_TeclaD.Size = new System.Drawing.Size(15, 14);
+            this.label_TeclaD.TabIndex = 79;
+            this.label_TeclaD.Text = "D";
             // 
             // panel19
             // 
@@ -717,65 +738,65 @@
             // panel_TeclaS
             // 
             this.panel_TeclaS.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaS.Controls.Add(this.label_S);
+            this.panel_TeclaS.Controls.Add(this.label_TeclaS);
             this.panel_TeclaS.Location = new System.Drawing.Point(119, 70);
             this.panel_TeclaS.Name = "panel_TeclaS";
             this.panel_TeclaS.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaS.TabIndex = 88;
             // 
-            // label_S
+            // label_TeclaS
             // 
-            this.label_S.AutoSize = true;
-            this.label_S.BackColor = System.Drawing.Color.Transparent;
-            this.label_S.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_S.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_S.Location = new System.Drawing.Point(9, 4);
-            this.label_S.Name = "label_S";
-            this.label_S.Size = new System.Drawing.Size(13, 14);
-            this.label_S.TabIndex = 80;
-            this.label_S.Text = "S";
+            this.label_TeclaS.AutoSize = true;
+            this.label_TeclaS.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaS.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaS.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaS.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaS.Name = "label_TeclaS";
+            this.label_TeclaS.Size = new System.Drawing.Size(13, 14);
+            this.label_TeclaS.TabIndex = 80;
+            this.label_TeclaS.Text = "S";
             // 
             // panel_TeclaA
             // 
             this.panel_TeclaA.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaA.Controls.Add(this.label3);
+            this.panel_TeclaA.Controls.Add(this.label_TeclaA);
             this.panel_TeclaA.Location = new System.Drawing.Point(79, 70);
             this.panel_TeclaA.Name = "panel_TeclaA";
             this.panel_TeclaA.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaA.TabIndex = 89;
             // 
-            // label3
+            // label_TeclaA
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(9, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 14);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "A";
+            this.label_TeclaA.AutoSize = true;
+            this.label_TeclaA.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaA.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaA.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaA.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaA.Name = "label_TeclaA";
+            this.label_TeclaA.Size = new System.Drawing.Size(15, 14);
+            this.label_TeclaA.TabIndex = 12;
+            this.label_TeclaA.Text = "A";
             // 
             // panel_TeclaM
             // 
             this.panel_TeclaM.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaM.Controls.Add(this.label_M);
+            this.panel_TeclaM.Controls.Add(this.label_TeclaM);
             this.panel_TeclaM.Location = new System.Drawing.Point(331, 99);
             this.panel_TeclaM.Name = "panel_TeclaM";
             this.panel_TeclaM.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaM.TabIndex = 70;
             // 
-            // label_M
+            // label_TeclaM
             // 
-            this.label_M.AutoSize = true;
-            this.label_M.BackColor = System.Drawing.Color.Transparent;
-            this.label_M.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_M.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_M.Location = new System.Drawing.Point(9, 4);
-            this.label_M.Name = "label_M";
-            this.label_M.Size = new System.Drawing.Size(18, 14);
-            this.label_M.TabIndex = 66;
-            this.label_M.Text = "M";
+            this.label_TeclaM.AutoSize = true;
+            this.label_TeclaM.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaM.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaM.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaM.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaM.Name = "label_TeclaM";
+            this.label_TeclaM.Size = new System.Drawing.Size(18, 14);
+            this.label_TeclaM.TabIndex = 66;
+            this.label_TeclaM.Text = "M";
             // 
             // p_Tab
             // 
@@ -788,87 +809,87 @@
             // panel_TeclaPunto
             // 
             this.panel_TeclaPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_TeclaPunto.Controls.Add(this.label12);
+            this.panel_TeclaPunto.Controls.Add(this.label_TeclaPunto);
             this.panel_TeclaPunto.Location = new System.Drawing.Point(410, 99);
             this.panel_TeclaPunto.Name = "panel_TeclaPunto";
             this.panel_TeclaPunto.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaPunto.TabIndex = 80;
             // 
-            // label12
+            // label_TeclaPunto
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(9, 4);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(15, 14);
-            this.label12.TabIndex = 68;
-            this.label12.Text = "A";
+            this.label_TeclaPunto.AutoSize = true;
+            this.label_TeclaPunto.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaPunto.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaPunto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaPunto.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaPunto.Name = "label_TeclaPunto";
+            this.label_TeclaPunto.Size = new System.Drawing.Size(10, 14);
+            this.label_TeclaPunto.TabIndex = 68;
+            this.label_TeclaPunto.Text = ".";
             // 
             // panel_TeclaO
             // 
             this.panel_TeclaO.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaO.Controls.Add(this.label32);
+            this.panel_TeclaO.Controls.Add(this.label_TeclaO);
             this.panel_TeclaO.Location = new System.Drawing.Point(390, 41);
             this.panel_TeclaO.Name = "panel_TeclaO";
             this.panel_TeclaO.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaO.TabIndex = 70;
             // 
-            // label32
+            // label_TeclaO
             // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label32.Location = new System.Drawing.Point(9, 4);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(15, 14);
-            this.label32.TabIndex = 88;
-            this.label32.Text = "O";
+            this.label_TeclaO.AutoSize = true;
+            this.label_TeclaO.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaO.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaO.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaO.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaO.Name = "label_TeclaO";
+            this.label_TeclaO.Size = new System.Drawing.Size(15, 14);
+            this.label_TeclaO.TabIndex = 88;
+            this.label_TeclaO.Text = "O";
             // 
             // panel_TeclaN
             // 
             this.panel_TeclaN.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaN.Controls.Add(this.label_N);
+            this.panel_TeclaN.Controls.Add(this.label_TeclaN);
             this.panel_TeclaN.Location = new System.Drawing.Point(291, 99);
             this.panel_TeclaN.Name = "panel_TeclaN";
             this.panel_TeclaN.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaN.TabIndex = 78;
             // 
-            // label_N
+            // label_TeclaN
             // 
-            this.label_N.AutoSize = true;
-            this.label_N.BackColor = System.Drawing.Color.Transparent;
-            this.label_N.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_N.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_N.Location = new System.Drawing.Point(9, 4);
-            this.label_N.Name = "label_N";
-            this.label_N.Size = new System.Drawing.Size(16, 14);
-            this.label_N.TabIndex = 65;
-            this.label_N.Text = "N";
+            this.label_TeclaN.AutoSize = true;
+            this.label_TeclaN.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaN.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaN.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaN.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaN.Name = "label_TeclaN";
+            this.label_TeclaN.Size = new System.Drawing.Size(16, 14);
+            this.label_TeclaN.TabIndex = 65;
+            this.label_TeclaN.Text = "N";
             // 
             // panel_TeclaComa
             // 
             this.panel_TeclaComa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_TeclaComa.Controls.Add(this.label11);
+            this.panel_TeclaComa.Controls.Add(this.label_TeclaComa);
             this.panel_TeclaComa.Controls.Add(this.panel38);
             this.panel_TeclaComa.Location = new System.Drawing.Point(371, 99);
             this.panel_TeclaComa.Name = "panel_TeclaComa";
             this.panel_TeclaComa.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaComa.TabIndex = 79;
             // 
-            // label11
+            // label_TeclaComa
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(9, 4);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 14);
-            this.label11.TabIndex = 67;
-            this.label11.Text = "A";
+            this.label_TeclaComa.AutoSize = true;
+            this.label_TeclaComa.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaComa.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaComa.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaComa.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaComa.Name = "label_TeclaComa";
+            this.label_TeclaComa.Size = new System.Drawing.Size(10, 14);
+            this.label_TeclaComa.TabIndex = 67;
+            this.label_TeclaComa.Text = ",";
             // 
             // panel38
             // 
@@ -888,23 +909,23 @@
             // panel_TeclaB
             // 
             this.panel_TeclaB.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaB.Controls.Add(this.label_B);
+            this.panel_TeclaB.Controls.Add(this.label_TeclaB);
             this.panel_TeclaB.Location = new System.Drawing.Point(250, 99);
             this.panel_TeclaB.Name = "panel_TeclaB";
             this.panel_TeclaB.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaB.TabIndex = 77;
             // 
-            // label_B
+            // label_TeclaB
             // 
-            this.label_B.AutoSize = true;
-            this.label_B.BackColor = System.Drawing.Color.Transparent;
-            this.label_B.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_B.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_B.Location = new System.Drawing.Point(9, 4);
-            this.label_B.Name = "label_B";
-            this.label_B.Size = new System.Drawing.Size(14, 14);
-            this.label_B.TabIndex = 64;
-            this.label_B.Text = "B";
+            this.label_TeclaB.AutoSize = true;
+            this.label_TeclaB.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaB.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaB.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaB.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaB.Name = "label_TeclaB";
+            this.label_TeclaB.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaB.TabIndex = 64;
+            this.label_TeclaB.Text = "B";
             // 
             // panel21
             // 
@@ -917,24 +938,24 @@
             // panel_TeclaV
             // 
             this.panel_TeclaV.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaV.Controls.Add(this.label_V);
+            this.panel_TeclaV.Controls.Add(this.label_TeclaV);
             this.panel_TeclaV.Controls.Add(this.panel41);
             this.panel_TeclaV.Location = new System.Drawing.Point(211, 99);
             this.panel_TeclaV.Name = "panel_TeclaV";
             this.panel_TeclaV.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaV.TabIndex = 71;
             // 
-            // label_V
+            // label_TeclaV
             // 
-            this.label_V.AutoSize = true;
-            this.label_V.BackColor = System.Drawing.Color.Transparent;
-            this.label_V.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_V.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_V.Location = new System.Drawing.Point(9, 4);
-            this.label_V.Name = "label_V";
-            this.label_V.Size = new System.Drawing.Size(14, 14);
-            this.label_V.TabIndex = 14;
-            this.label_V.Text = "V";
+            this.label_TeclaV.AutoSize = true;
+            this.label_TeclaV.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaV.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaV.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaV.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaV.Name = "label_TeclaV";
+            this.label_TeclaV.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaV.TabIndex = 14;
+            this.label_TeclaV.Text = "V";
             // 
             // panel41
             // 
@@ -954,87 +975,87 @@
             // panel_TeclaC
             // 
             this.panel_TeclaC.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaC.Controls.Add(this.label_C);
+            this.panel_TeclaC.Controls.Add(this.label_TeclaC);
             this.panel_TeclaC.Location = new System.Drawing.Point(171, 99);
             this.panel_TeclaC.Name = "panel_TeclaC";
             this.panel_TeclaC.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaC.TabIndex = 72;
             // 
-            // label_C
+            // label_TeclaC
             // 
-            this.label_C.AutoSize = true;
-            this.label_C.BackColor = System.Drawing.Color.Transparent;
-            this.label_C.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_C.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_C.Location = new System.Drawing.Point(9, 4);
-            this.label_C.Name = "label_C";
-            this.label_C.Size = new System.Drawing.Size(14, 14);
-            this.label_C.TabIndex = 13;
-            this.label_C.Text = "C";
+            this.label_TeclaC.AutoSize = true;
+            this.label_TeclaC.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaC.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaC.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaC.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaC.Name = "label_TeclaC";
+            this.label_TeclaC.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaC.TabIndex = 13;
+            this.label_TeclaC.Text = "C";
             // 
             // panel_TeclaI
             // 
             this.panel_TeclaI.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaI.Controls.Add(this.label31);
+            this.panel_TeclaI.Controls.Add(this.label_TeclaI);
             this.panel_TeclaI.Location = new System.Drawing.Point(350, 41);
             this.panel_TeclaI.Name = "panel_TeclaI";
             this.panel_TeclaI.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaI.TabIndex = 78;
             // 
-            // label31
+            // label_TeclaI
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label31.Location = new System.Drawing.Point(9, 4);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(10, 14);
-            this.label31.TabIndex = 87;
-            this.label31.Text = "I";
+            this.label_TeclaI.AutoSize = true;
+            this.label_TeclaI.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaI.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaI.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaI.Location = new System.Drawing.Point(12, 4);
+            this.label_TeclaI.Name = "label_TeclaI";
+            this.label_TeclaI.Size = new System.Drawing.Size(10, 14);
+            this.label_TeclaI.TabIndex = 87;
+            this.label_TeclaI.Text = "I";
             // 
             // panel_TeclaX
             // 
             this.panel_TeclaX.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaX.Controls.Add(this.label_X);
+            this.panel_TeclaX.Controls.Add(this.label_TeclaX);
             this.panel_TeclaX.Location = new System.Drawing.Point(131, 99);
             this.panel_TeclaX.Name = "panel_TeclaX";
             this.panel_TeclaX.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaX.TabIndex = 73;
             // 
-            // label_X
+            // label_TeclaX
             // 
-            this.label_X.AutoSize = true;
-            this.label_X.BackColor = System.Drawing.Color.Transparent;
-            this.label_X.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_X.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_X.Location = new System.Drawing.Point(9, 4);
-            this.label_X.Name = "label_X";
-            this.label_X.Size = new System.Drawing.Size(14, 14);
-            this.label_X.TabIndex = 12;
-            this.label_X.Text = "X";
+            this.label_TeclaX.AutoSize = true;
+            this.label_TeclaX.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaX.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaX.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaX.Name = "label_TeclaX";
+            this.label_TeclaX.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaX.TabIndex = 12;
+            this.label_TeclaX.Text = "X";
             // 
             // panel_TeclaP
             // 
             this.panel_TeclaP.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaP.Controls.Add(this.label15);
+            this.panel_TeclaP.Controls.Add(this.label_TeclaP);
             this.panel_TeclaP.Controls.Add(this.panel24);
             this.panel_TeclaP.Location = new System.Drawing.Point(430, 41);
             this.panel_TeclaP.Name = "panel_TeclaP";
             this.panel_TeclaP.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaP.TabIndex = 79;
             // 
-            // label15
+            // label_TeclaP
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(9, 4);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 14);
-            this.label15.TabIndex = 71;
-            this.label15.Text = "P";
+            this.label_TeclaP.AutoSize = true;
+            this.label_TeclaP.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaP.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaP.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaP.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaP.Name = "label_TeclaP";
+            this.label_TeclaP.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaP.TabIndex = 71;
+            this.label_TeclaP.Text = "P";
             // 
             // panel24
             // 
@@ -1046,27 +1067,28 @@
             // panel_TeclaZ
             // 
             this.panel_TeclaZ.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaZ.Controls.Add(this.label_Z);
+            this.panel_TeclaZ.Controls.Add(this.label_TeclaZ);
             this.panel_TeclaZ.Location = new System.Drawing.Point(91, 99);
             this.panel_TeclaZ.Name = "panel_TeclaZ";
             this.panel_TeclaZ.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaZ.TabIndex = 74;
             // 
-            // label_Z
+            // label_TeclaZ
             // 
-            this.label_Z.AutoSize = true;
-            this.label_Z.BackColor = System.Drawing.Color.Transparent;
-            this.label_Z.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Z.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_Z.Location = new System.Drawing.Point(9, 4);
-            this.label_Z.Name = "label_Z";
-            this.label_Z.Size = new System.Drawing.Size(14, 14);
-            this.label_Z.TabIndex = 13;
-            this.label_Z.Text = "Z";
+            this.label_TeclaZ.AutoSize = true;
+            this.label_TeclaZ.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaZ.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaZ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaZ.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaZ.Name = "label_TeclaZ";
+            this.label_TeclaZ.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaZ.TabIndex = 13;
+            this.label_TeclaZ.Text = "Z";
             // 
             // panel_Tecla9
             // 
             this.panel_Tecla9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla9.Controls.Add(this.label_Tecla9);
             this.panel_Tecla9.Location = new System.Drawing.Point(371, 12);
             this.panel_Tecla9.Name = "panel_Tecla9";
             this.panel_Tecla9.Size = new System.Drawing.Size(34, 23);
@@ -1083,23 +1105,23 @@
             // panel_TeclaU
             // 
             this.panel_TeclaU.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaU.Controls.Add(this.label30);
+            this.panel_TeclaU.Controls.Add(this.label_TeclaU);
             this.panel_TeclaU.Location = new System.Drawing.Point(310, 41);
             this.panel_TeclaU.Name = "panel_TeclaU";
             this.panel_TeclaU.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaU.TabIndex = 77;
             // 
-            // label30
+            // label_TeclaU
             // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label30.Location = new System.Drawing.Point(9, 4);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(15, 14);
-            this.label30.TabIndex = 86;
-            this.label30.Text = "U";
+            this.label_TeclaU.AutoSize = true;
+            this.label_TeclaU.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaU.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaU.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaU.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaU.Name = "label_TeclaU";
+            this.label_TeclaU.Size = new System.Drawing.Size(15, 14);
+            this.label_TeclaU.TabIndex = 86;
+            this.label_TeclaU.Text = "U";
             // 
             // p_ShiftIzquierdo
             // 
@@ -1120,24 +1142,24 @@
             // panel_TeclaY
             // 
             this.panel_TeclaY.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaY.Controls.Add(this.label29);
+            this.panel_TeclaY.Controls.Add(this.label_TeclaY);
             this.panel_TeclaY.Controls.Add(this.panel27);
             this.panel_TeclaY.Location = new System.Drawing.Point(270, 41);
             this.panel_TeclaY.Name = "panel_TeclaY";
             this.panel_TeclaY.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaY.TabIndex = 71;
             // 
-            // label29
+            // label_TeclaY
             // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label29.Location = new System.Drawing.Point(9, 4);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(14, 14);
-            this.label29.TabIndex = 85;
-            this.label29.Text = "Y";
+            this.label_TeclaY.AutoSize = true;
+            this.label_TeclaY.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaY.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaY.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaY.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaY.Name = "label_TeclaY";
+            this.label_TeclaY.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaY.TabIndex = 85;
+            this.label_TeclaY.Text = "Y";
             // 
             // panel27
             // 
@@ -1149,6 +1171,7 @@
             // panel_Tecla8
             // 
             this.panel_Tecla8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla8.Controls.Add(this.label_Tecla8);
             this.panel_Tecla8.Location = new System.Drawing.Point(331, 12);
             this.panel_Tecla8.Name = "panel_Tecla8";
             this.panel_Tecla8.Size = new System.Drawing.Size(34, 23);
@@ -1157,27 +1180,28 @@
             // panel_TeclaT
             // 
             this.panel_TeclaT.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaT.Controls.Add(this.label28);
+            this.panel_TeclaT.Controls.Add(this.label_TeclaT);
             this.panel_TeclaT.Location = new System.Drawing.Point(230, 41);
             this.panel_TeclaT.Name = "panel_TeclaT";
             this.panel_TeclaT.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaT.TabIndex = 72;
             // 
-            // label28
+            // label_TeclaT
             // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label28.Location = new System.Drawing.Point(9, 4);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(13, 14);
-            this.label28.TabIndex = 84;
-            this.label28.Text = "T";
+            this.label_TeclaT.AutoSize = true;
+            this.label_TeclaT.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaT.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaT.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaT.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaT.Name = "label_TeclaT";
+            this.label_TeclaT.Size = new System.Drawing.Size(13, 14);
+            this.label_TeclaT.TabIndex = 84;
+            this.label_TeclaT.Text = "T";
             // 
             // panel_Tecla0
             // 
             this.panel_Tecla0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla0.Controls.Add(this.label_Tecla0);
             this.panel_Tecla0.Controls.Add(this.panel17);
             this.panel_Tecla0.Location = new System.Drawing.Point(411, 12);
             this.panel_Tecla0.Name = "panel_Tecla0";
@@ -1194,27 +1218,28 @@
             // panel_TeclaR
             // 
             this.panel_TeclaR.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaR.Controls.Add(this.label27);
+            this.panel_TeclaR.Controls.Add(this.label_TeclaR);
             this.panel_TeclaR.Location = new System.Drawing.Point(190, 41);
             this.panel_TeclaR.Name = "panel_TeclaR";
             this.panel_TeclaR.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaR.TabIndex = 73;
             // 
-            // label27
+            // label_TeclaR
             // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label27.Location = new System.Drawing.Point(9, 4);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(14, 14);
-            this.label27.TabIndex = 83;
-            this.label27.Text = "R";
+            this.label_TeclaR.AutoSize = true;
+            this.label_TeclaR.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaR.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaR.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaR.Name = "label_TeclaR";
+            this.label_TeclaR.Size = new System.Drawing.Size(14, 14);
+            this.label_TeclaR.TabIndex = 83;
+            this.label_TeclaR.Text = "R";
             // 
             // panel_Tecla7
             // 
             this.panel_Tecla7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla7.Controls.Add(this.label_Tecla7);
             this.panel_Tecla7.Location = new System.Drawing.Point(291, 12);
             this.panel_Tecla7.Name = "panel_Tecla7";
             this.panel_Tecla7.Size = new System.Drawing.Size(34, 23);
@@ -1223,27 +1248,28 @@
             // panel_TeclaE
             // 
             this.panel_TeclaE.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaE.Controls.Add(this.label26);
+            this.panel_TeclaE.Controls.Add(this.label_TeclaE);
             this.panel_TeclaE.Location = new System.Drawing.Point(150, 41);
             this.panel_TeclaE.Name = "panel_TeclaE";
             this.panel_TeclaE.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaE.TabIndex = 74;
             // 
-            // label26
+            // label_TeclaE
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label26.Location = new System.Drawing.Point(9, 4);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(13, 14);
-            this.label26.TabIndex = 82;
-            this.label26.Text = "E";
+            this.label_TeclaE.AutoSize = true;
+            this.label_TeclaE.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaE.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaE.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaE.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaE.Name = "label_TeclaE";
+            this.label_TeclaE.Size = new System.Drawing.Size(13, 14);
+            this.label_TeclaE.TabIndex = 82;
+            this.label_TeclaE.Text = "E";
             // 
             // panel_Tecla6
             // 
             this.panel_Tecla6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla6.Controls.Add(this.label_Tecla6);
             this.panel_Tecla6.Controls.Add(this.panel9);
             this.panel_Tecla6.Location = new System.Drawing.Point(251, 12);
             this.panel_Tecla6.Name = "panel_Tecla6";
@@ -1260,27 +1286,28 @@
             // panel_TeclaW
             // 
             this.panel_TeclaW.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaW.Controls.Add(this.label25);
+            this.panel_TeclaW.Controls.Add(this.label_TeclaW);
             this.panel_TeclaW.Location = new System.Drawing.Point(110, 41);
             this.panel_TeclaW.Name = "panel_TeclaW";
             this.panel_TeclaW.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaW.TabIndex = 75;
             // 
-            // label25
+            // label_TeclaW
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label25.Location = new System.Drawing.Point(9, 4);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(18, 14);
-            this.label25.TabIndex = 81;
-            this.label25.Text = "W";
+            this.label_TeclaW.AutoSize = true;
+            this.label_TeclaW.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaW.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaW.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaW.Location = new System.Drawing.Point(9, 4);
+            this.label_TeclaW.Name = "label_TeclaW";
+            this.label_TeclaW.Size = new System.Drawing.Size(18, 14);
+            this.label_TeclaW.TabIndex = 81;
+            this.label_TeclaW.Text = "W";
             // 
             // panel_Tecla5
             // 
             this.panel_Tecla5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla5.Controls.Add(this.label_Tecla5);
             this.panel_Tecla5.Location = new System.Drawing.Point(211, 12);
             this.panel_Tecla5.Name = "panel_Tecla5";
             this.panel_Tecla5.Size = new System.Drawing.Size(34, 23);
@@ -1289,27 +1316,28 @@
             // panel_TeclaQ
             // 
             this.panel_TeclaQ.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel_TeclaQ.Controls.Add(this.label_A);
+            this.panel_TeclaQ.Controls.Add(this.label_TeclaQ);
             this.panel_TeclaQ.Location = new System.Drawing.Point(70, 41);
             this.panel_TeclaQ.Name = "panel_TeclaQ";
             this.panel_TeclaQ.Size = new System.Drawing.Size(34, 23);
             this.panel_TeclaQ.TabIndex = 76;
             // 
-            // label_A
+            // label_TeclaQ
             // 
-            this.label_A.AutoSize = true;
-            this.label_A.BackColor = System.Drawing.Color.Transparent;
-            this.label_A.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_A.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_A.Location = new System.Drawing.Point(3, 3);
-            this.label_A.Name = "label_A";
-            this.label_A.Size = new System.Drawing.Size(29, 14);
-            this.label_A.TabIndex = 0;
-            this.label_A.Text = "Q @";
+            this.label_TeclaQ.AutoSize = true;
+            this.label_TeclaQ.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaQ.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaQ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaQ.Location = new System.Drawing.Point(3, 3);
+            this.label_TeclaQ.Name = "label_TeclaQ";
+            this.label_TeclaQ.Size = new System.Drawing.Size(29, 14);
+            this.label_TeclaQ.TabIndex = 0;
+            this.label_TeclaQ.Text = "Q @";
             // 
             // panel_Tecla4
             // 
             this.panel_Tecla4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla4.Controls.Add(this.label_Tecla4);
             this.panel_Tecla4.Location = new System.Drawing.Point(171, 12);
             this.panel_Tecla4.Name = "panel_Tecla4";
             this.panel_Tecla4.Size = new System.Drawing.Size(34, 23);
@@ -1318,6 +1346,7 @@
             // panel_Tecla3
             // 
             this.panel_Tecla3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla3.Controls.Add(this.label_Tecla3);
             this.panel_Tecla3.Location = new System.Drawing.Point(131, 12);
             this.panel_Tecla3.Name = "panel_Tecla3";
             this.panel_Tecla3.Size = new System.Drawing.Size(34, 23);
@@ -1326,6 +1355,7 @@
             // panel_Tecla2
             // 
             this.panel_Tecla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla2.Controls.Add(this.label_Tecla2);
             this.panel_Tecla2.Location = new System.Drawing.Point(91, 12);
             this.panel_Tecla2.Name = "panel_Tecla2";
             this.panel_Tecla2.Size = new System.Drawing.Size(34, 23);
@@ -1334,6 +1364,7 @@
             // panel_Tecla1
             // 
             this.panel_Tecla1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_Tecla1.Controls.Add(this.label_Tecla1);
             this.panel_Tecla1.Location = new System.Drawing.Point(51, 12);
             this.panel_Tecla1.Name = "panel_Tecla1";
             this.panel_Tecla1.Size = new System.Drawing.Size(34, 23);
@@ -1645,6 +1676,138 @@
             this.panel_PulgarIzquierdo.Size = new System.Drawing.Size(27, 51);
             this.panel_PulgarIzquierdo.TabIndex = 10;
             // 
+            // label_Tecla1
+            // 
+            this.label_Tecla1.AutoSize = true;
+            this.label_Tecla1.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla1.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla1.Name = "label_Tecla1";
+            this.label_Tecla1.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla1.TabIndex = 82;
+            this.label_Tecla1.Text = "1";
+            // 
+            // label_Tecla2
+            // 
+            this.label_Tecla2.AutoSize = true;
+            this.label_Tecla2.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla2.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla2.Name = "label_Tecla2";
+            this.label_Tecla2.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla2.TabIndex = 83;
+            this.label_Tecla2.Text = "2";
+            // 
+            // label_Tecla3
+            // 
+            this.label_Tecla3.AutoSize = true;
+            this.label_Tecla3.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla3.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla3.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla3.Name = "label_Tecla3";
+            this.label_Tecla3.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla3.TabIndex = 84;
+            this.label_Tecla3.Text = "3";
+            // 
+            // label_Tecla4
+            // 
+            this.label_Tecla4.AutoSize = true;
+            this.label_Tecla4.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla4.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla4.Name = "label_Tecla4";
+            this.label_Tecla4.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla4.TabIndex = 84;
+            this.label_Tecla4.Text = "4";
+            // 
+            // label_Tecla5
+            // 
+            this.label_Tecla5.AutoSize = true;
+            this.label_Tecla5.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla5.Location = new System.Drawing.Point(9, 3);
+            this.label_Tecla5.Name = "label_Tecla5";
+            this.label_Tecla5.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla5.TabIndex = 85;
+            this.label_Tecla5.Text = "5";
+            // 
+            // label_Tecla6
+            // 
+            this.label_Tecla6.AutoSize = true;
+            this.label_Tecla6.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla6.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla6.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla6.Name = "label_Tecla6";
+            this.label_Tecla6.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla6.TabIndex = 95;
+            this.label_Tecla6.Text = "6";
+            // 
+            // label_Tecla7
+            // 
+            this.label_Tecla7.AutoSize = true;
+            this.label_Tecla7.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla7.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla7.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla7.Name = "label_Tecla7";
+            this.label_Tecla7.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla7.TabIndex = 96;
+            this.label_Tecla7.Text = "7";
+            // 
+            // label_Tecla8
+            // 
+            this.label_Tecla8.AutoSize = true;
+            this.label_Tecla8.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla8.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla8.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla8.Name = "label_Tecla8";
+            this.label_Tecla8.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla8.TabIndex = 97;
+            this.label_Tecla8.Text = "8";
+            // 
+            // label_Tecla9
+            // 
+            this.label_Tecla9.AutoSize = true;
+            this.label_Tecla9.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla9.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla9.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla9.Name = "label_Tecla9";
+            this.label_Tecla9.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla9.TabIndex = 98;
+            this.label_Tecla9.Text = "9";
+            // 
+            // label_Tecla0
+            // 
+            this.label_Tecla0.AutoSize = true;
+            this.label_Tecla0.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tecla0.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tecla0.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Tecla0.Location = new System.Drawing.Point(12, 3);
+            this.label_Tecla0.Name = "label_Tecla0";
+            this.label_Tecla0.Size = new System.Drawing.Size(13, 14);
+            this.label_Tecla0.TabIndex = 99;
+            this.label_Tecla0.Text = "0";
+            // 
+            // label_TeclaEspacio
+            // 
+            this.label_TeclaEspacio.AutoSize = true;
+            this.label_TeclaEspacio.BackColor = System.Drawing.Color.Transparent;
+            this.label_TeclaEspacio.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TeclaEspacio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_TeclaEspacio.Location = new System.Drawing.Point(88, 4);
+            this.label_TeclaEspacio.Name = "label_TeclaEspacio";
+            this.label_TeclaEspacio.Size = new System.Drawing.Size(43, 14);
+            this.label_TeclaEspacio.TabIndex = 66;
+            this.label_TeclaEspacio.Text = "---------";
+            // 
             // Mecanografia
             // 
             this.AcceptButton = this.btn_Iniciar;
@@ -1672,6 +1835,8 @@
             this.panel_TeclaL.PerformLayout();
             this.p_ControlIzquierdo.ResumeLayout(false);
             this.p_ControlIzquierdo.PerformLayout();
+            this.panel_TeclaEspacio.ResumeLayout(false);
+            this.panel_TeclaEspacio.PerformLayout();
             this.panel_TeclaK.ResumeLayout(false);
             this.panel_TeclaK.PerformLayout();
             this.panel_TeclaÑ.ResumeLayout(false);
@@ -1722,22 +1887,40 @@
             this.panel_TeclaP.PerformLayout();
             this.panel_TeclaZ.ResumeLayout(false);
             this.panel_TeclaZ.PerformLayout();
+            this.panel_Tecla9.ResumeLayout(false);
+            this.panel_Tecla9.PerformLayout();
             this.panel_TeclaU.ResumeLayout(false);
             this.panel_TeclaU.PerformLayout();
             this.panel_TeclaY.ResumeLayout(false);
             this.panel_TeclaY.PerformLayout();
+            this.panel_Tecla8.ResumeLayout(false);
+            this.panel_Tecla8.PerformLayout();
             this.panel_TeclaT.ResumeLayout(false);
             this.panel_TeclaT.PerformLayout();
             this.panel_Tecla0.ResumeLayout(false);
+            this.panel_Tecla0.PerformLayout();
             this.panel_TeclaR.ResumeLayout(false);
             this.panel_TeclaR.PerformLayout();
+            this.panel_Tecla7.ResumeLayout(false);
+            this.panel_Tecla7.PerformLayout();
             this.panel_TeclaE.ResumeLayout(false);
             this.panel_TeclaE.PerformLayout();
             this.panel_Tecla6.ResumeLayout(false);
+            this.panel_Tecla6.PerformLayout();
             this.panel_TeclaW.ResumeLayout(false);
             this.panel_TeclaW.PerformLayout();
+            this.panel_Tecla5.ResumeLayout(false);
+            this.panel_Tecla5.PerformLayout();
             this.panel_TeclaQ.ResumeLayout(false);
             this.panel_TeclaQ.PerformLayout();
+            this.panel_Tecla4.ResumeLayout(false);
+            this.panel_Tecla4.PerformLayout();
+            this.panel_Tecla3.ResumeLayout(false);
+            this.panel_Tecla3.PerformLayout();
+            this.panel_Tecla2.ResumeLayout(false);
+            this.panel_Tecla2.PerformLayout();
+            this.panel_Tecla1.ResumeLayout(false);
+            this.panel_Tecla1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.menu_ElegirArchivos.ResumeLayout(false);
             this.panel_Especificaciones.ResumeLayout(false);
@@ -1854,43 +2037,54 @@
         private System.Windows.Forms.Panel panel_TeclaA;
         private System.Windows.Forms.Panel p_Enter2;
         private System.Windows.Forms.Label labelTeclaPresionada;
-        private System.Windows.Forms.Label label_A;
+        private System.Windows.Forms.Label label_TeclaQ;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label_L;
-        private System.Windows.Forms.Label label_K;
-        private System.Windows.Forms.Label label_Ñ;
-        private System.Windows.Forms.Label label_J;
-        private System.Windows.Forms.Label label_H;
-        private System.Windows.Forms.Label label_G;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label_F;
-        private System.Windows.Forms.Label label_D;
-        private System.Windows.Forms.Label label_S;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label_M;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label_N;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label_B;
-        private System.Windows.Forms.Label label_V;
-        private System.Windows.Forms.Label label_C;
-        private System.Windows.Forms.Label label_X;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label_Z;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label_TeclaL;
+        private System.Windows.Forms.Label label_TeclaK;
+        private System.Windows.Forms.Label label_TeclaÑ;
+        private System.Windows.Forms.Label label_TeclaJ;
+        private System.Windows.Forms.Label label_TeclaH;
+        private System.Windows.Forms.Label label_TeclaG;
+        private System.Windows.Forms.Label label_TeclaGuion;
+        private System.Windows.Forms.Label label_TeclaF;
+        private System.Windows.Forms.Label label_TeclaD;
+        private System.Windows.Forms.Label label_TeclaS;
+        private System.Windows.Forms.Label label_TeclaA;
+        private System.Windows.Forms.Label label_TeclaM;
+        private System.Windows.Forms.Label label_TeclaPunto;
+        private System.Windows.Forms.Label label_TeclaN;
+        private System.Windows.Forms.Label label_TeclaComa;
+        private System.Windows.Forms.Label label_TeclaB;
+        private System.Windows.Forms.Label label_TeclaV;
+        private System.Windows.Forms.Label label_TeclaC;
+        private System.Windows.Forms.Label label_TeclaX;
+        private System.Windows.Forms.Label label_TeclaP;
+        private System.Windows.Forms.Label label_TeclaZ;
+        private System.Windows.Forms.Label label_TeclaW;
         private System.Windows.Forms.Label label_Alt;
         private System.Windows.Forms.Label label_Mayus;
         private System.Windows.Forms.Label label_Ctrl;
         private System.Windows.Forms.Label label_Altgr;
         private System.Windows.Forms.Label label_CtrolDerecha;
         private System.Windows.Forms.Label label_Fn;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label_TeclaO;
+        private System.Windows.Forms.Label label_TeclaI;
+        private System.Windows.Forms.Label label_TeclaU;
+        private System.Windows.Forms.Label label_TeclaY;
+        private System.Windows.Forms.Label label_TeclaT;
+        private System.Windows.Forms.Label label_TeclaR;
+        private System.Windows.Forms.Label label_TeclaE;
+        private System.Windows.Forms.Label label_Tecla5;
+        private System.Windows.Forms.Label label_Tecla3;
+        private System.Windows.Forms.Label label_Tecla9;
+        private System.Windows.Forms.Label label_Tecla8;
+        private System.Windows.Forms.Label label_Tecla0;
+        private System.Windows.Forms.Label label_Tecla7;
+        private System.Windows.Forms.Label label_Tecla6;
+        private System.Windows.Forms.Label label_Tecla4;
+        private System.Windows.Forms.Label label_Tecla2;
+        private System.Windows.Forms.Label label_Tecla1;
+        private System.Windows.Forms.Label label_TeclaEspacio;
     }
 }
 
