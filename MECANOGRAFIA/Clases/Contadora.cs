@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+/*ESTA CLASE CUENTA LAS PALABRAS Y LOS CARACTERES DE UN ARCHIVO SELECCIONADO*/
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

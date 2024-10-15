@@ -19,12 +19,9 @@ using System.Drawing.Drawing2D;
 namespace MECANOGRAFIA
 {
 
-
     public partial class Mecanografia : Form
     {
-       
-        private ManejadorTecladoTexto manejadorTeclado;
-       
+
         public Mecanografia()
         {
             InitializeComponent();
@@ -54,66 +51,45 @@ namespace MECANOGRAFIA
             RedondearPanel.AplicarBordesRedondeados(panel_AnularIzquierdo, 20, 10);
             RedondearPanel.AplicarBordesRedondeados(panel_MeniqueIzquierdo, 20, 10);
 
-            Texto_Tipear.Enter += Texto_Tipear_Enter;
+            this.KeyPreview = true; // Permitir que el formulario capture las teclas antes que los controles
+         }
 
-
-            // Crear un diccionario que relacione caracteres con paneles
-            Dictionary<char, Panel> teclaPanelMap = new Dictionary<char, Panel>
-    {
-        { 'q', panel_MeniqueIzquierdo },
-        { 'a', panel_MeniqueIzquierdo },
-        { 'z', panel_MeniqueIzquierdo },
-        
-        { 'w', panel_AnularIzquierdo },
-        { 's', panel_AnularIzquierdo },
-        { 'x', panel_AnularIzquierdo },
-
-         { 'e', panel_MayorIzquierdo },
-        { 'd', panel_MayorIzquierdo },
-        { 'c', panel_MayorIzquierdo },
-
-        { 'r', panel_IndiceIzquierdo },
-        { 'f', panel_IndiceIzquierdo },
-        { 'v', panel_IndiceIzquierdo },
-        { 't', panel_IndiceIzquierdo },
-        { 'g', panel_IndiceIzquierdo },
-        { 'b', panel_IndiceIzquierdo },
-
-
-        { 'y', panel_IndiceDerecho },
-        { 'h', panel_IndiceDerecho },
-        { 'n', panel_IndiceDerecho },
-        { 'u', panel_IndiceDerecho },
-        { 'j', panel_IndiceDerecho },
-        { 'm', panel_IndiceDerecho },
-
-        { 'i', panel_MayorDerecho },
-        { 'k', panel_MayorDerecho },
-        { ',', panel_MayorDerecho },
-
-        { 'o', panel_AnularDerecho },
-        { 'l', panel_AnularDerecho },
-        { '.', panel_AnularDerecho },
-
-
-        { 'p', panel_MeniqueDerecho },
-        { 'ñ', panel_MeniqueDerecho },
-        { '-', panel_MeniqueDerecho },
-
-    };
-
-            // Inicializar la clase ManejadorTecladoTexto con el mapeo
-            manejadorTeclado = new ManejadorTecladoTexto(Texto_Tipear, labelTeclaPresionada, teclaPanelMap);
-
-            // Asignar el evento KeyPress al RichTextBox o al formulario.
-            this.KeyPress += new KeyPressEventHandler(Mecanografia_KeyPress);
-
-        }
 
         private void Mecanografia_Load(object sender, EventArgs e)
         {
-
+           Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
+            CargarTextoYColorear();
         }
+
+        private int currentPosition = 0; // Para llevar seguimiento de la posición actual
+        private void Mecanografia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Obtenemos la letra actual
+            char currentChar = Texto_Tipear.Text[currentPosition];
+
+            // Verificamos si la tecla presionada coincide con la letra resaltada
+            if (e.KeyChar == currentChar)
+            {
+                // Restauramos la letra anterior (negro y sin negrita)
+               Texto_Tipear.Select(currentPosition, 1);
+               Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
+               Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
+
+                // Avanzamos al siguiente carácter
+                currentPosition++;
+
+                // Si todavía hay más caracteres, coloreamos el siguiente en azul y negrita
+                if (currentPosition < Texto_Tipear.Text.Length)
+                {
+                    Texto_Tipear.Select(currentPosition, 1);
+                    Texto_Tipear.SelectionColor = System.Drawing.Color.Blue; // Azul
+                    Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold); // Negrita
+                }
+
+                Texto_Tipear.DeselectAll(); // Quitamos la selección visible
+            }
+        }
+
 
 
         private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
@@ -123,12 +99,12 @@ namespace MECANOGRAFIA
             pictureBox_SelectArchivo.Visible = true;
             btn_Detener.Visible = true;
             btn_Iniciar.Visible = true;
+            btn_Iniciar.Enabled = false; // Deshabilitar inicialmente
+            btn_Detener.Enabled = false;
             panel_Teclado.Location = new Point(21, 193);
             // Ajustar la altura de panel1
             panel1.Height = 380;
             this.Height = panel1.Height+80;
-       
-
         }
 
         private void PictureBox_Paint(object sender, PaintEventArgs e)
@@ -150,7 +126,7 @@ namespace MECANOGRAFIA
         }
 
 
-
+        private string archivoSeleccionado;
         private void PictureBox_SelectArchivo_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -232,8 +208,14 @@ namespace MECANOGRAFIA
                                 string contenido = doc.MainDocumentPart.Document.Body.InnerText;
 
                                 // Mostrar el contenido en el RichTextBox
-                                Texto_Tipear.Text = contenido; // Asegúrate de que el nombre del RichTextBox sea correcto
+                                Texto_Tipear.Text = contenido;
+                                CargarTextoYColorear();
 
+                                // *** ASIGNAR EL NOMBRE DEL ARCHIVO SELECCIONADO ***
+                                archivoSeleccionado = openFileDialog.FileName;
+
+                                // Llamar a la validación de botones
+                                ValidarSeleccionArchivo();
                             }
                         }
                         catch (Exception ex)
@@ -244,12 +226,20 @@ namespace MECANOGRAFIA
                 }
             }
         }
+        //para que se active btn iniciar solo despues de cargar archivo
+        private void ValidarSeleccionArchivo()
+        {
+            // Habilitar el botón btn_Iniciar si hay un archivo seleccionado
+            btn_Iniciar.Enabled = !string.IsNullOrEmpty(archivoSeleccionado);
+        }
+    
         //----------------------------------------------------------------
+
         //para que no puedad editar el rich sin que se atenue
         private void Texto_Tipear_Click(object sender, EventArgs e)
         {
             // Evitar que el usuario haga clic en el RichTextBox
-            Texto_Tipear.Select(0, 0); // Desmarca cualquier texto
+           Texto_Tipear.Select(0, 0); // Desmarca cualquier texto
         }
 
         private void Texto_Tipear_Enter(object sender, EventArgs e)
@@ -258,66 +248,29 @@ namespace MECANOGRAFIA
             this.ActiveControl = null; // Establecer el control activo en null
         }
 
-
-        private int currentIndex = 0; // Índice que rastrea el carácter actual
-
-        private void Texto_Tipear_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Obtener el carácter actual que está resaltado (en azul)
-            char currentChar = Texto_Tipear.Text[currentIndex];
-            char pressedKey = e.KeyChar; // Obtener la tecla que el usuario ha presionado
-
-            if (pressedKey == currentChar)
-            {
-                // Si la tecla es correcta, marcarla en verde y avanzar al siguiente carácter
-                Texto_Tipear.Select(currentIndex, 1);
-                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold);
-                Texto_Tipear.SelectionColor = System.Drawing.Color.Green;
-
-                // Avanzar al siguiente carácter
-                currentIndex++;
-
-                // Resaltar el siguiente carácter en azul
-                if (currentIndex < Texto_Tipear.Text.Length)
-                {
-                    Texto_Tipear.Select(currentIndex, 1);
-                    Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold);
-                    Texto_Tipear.SelectionColor = System.Drawing.Color.Blue;
-                }
-            }
-            else
-            {
-                // Si la tecla es incorrecta, mostrar el carácter actual en rojo brevemente
-                Texto_Tipear.Select(currentIndex, 1);
-                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold);
-                Texto_Tipear.SelectionColor = System.Drawing.Color.Red;
-
-                // Opción: Podrías mostrar un Label indicando el error
-                labelTeclaPresionada.Text = $"Tecla incorrecta: {pressedKey}";
-            }
-        }
-
-
+        
         //----------------------------------------------------------------
 
+     
         private void Btn_Iniciar_Click(object sender, EventArgs e)
         {
-
             panel_Manos.Visible = true;
             Texto_Tipear.Visible = true;
-            panel_Teclado.Location=new Point(21,242);
-            panel1.Height =559;
-            this.Height =641;
-            // Inicializar el texto resaltando el primer carácter
-            manejadorTeclado.InicializarTexto();
+            panel_Teclado.Location = new Point(21, 242);
+            panel1.Height = 559;
+            this.Height = 641;
+
+            btn_Detener.Enabled = true;
         }
 
+        //-------------------------------------------------------------------
         private void Btn_Detener_Click(object sender, EventArgs e)
         {
-            panel_Manos.Visible = false;
-            Texto_Tipear.Visible = false;
+           
         }
 
+
+        //-------------------------------------------------------------------------------------
         private void Btn_Elegir_Click(object sender, EventArgs e)
         {
             // Mostrar el menú en la ubicación del botón
@@ -390,12 +343,7 @@ namespace MECANOGRAFIA
                 panel_Especificaciones.Controls.Add(labelValor);
             }
         }
-        //-----------------------------------------------------------------------
-        private void Mecanografia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Pasar la tecla presionada al manejador para procesarla.
-            manejadorTeclado.ProcesarEntrada(e.KeyChar);
-        }
+    
 
         //----------------------------------------------------------------------
         //ajustar tamaño y posicion principal de elementos en el formulario
@@ -409,6 +357,20 @@ namespace MECANOGRAFIA
             this.Height = panel1.Height + 80; // Establece la altura del formulario
         }
 
+     
+
+
+        private void CargarTextoYColorear()
+        {
+            // Cargamos el texto en el RichTextBox
+            //Texto_Tipear.Text = "Texto de ejemplo para tipear...";
+          
+           // Texto_Tipear la primera letra en azul y negrita
+            Texto_Tipear.Select(0, 1); // Seleccionamos la primera letra
+            Texto_Tipear.SelectionColor = System.Drawing.Color.Blue; // La coloreamos en azul
+            Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold); // Negrita
+            Texto_Tipear.DeselectAll(); // Quitamos la selección
+        }
 
     }
 }

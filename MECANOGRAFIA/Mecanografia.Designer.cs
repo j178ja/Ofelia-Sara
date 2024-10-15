@@ -37,78 +37,78 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel56 = new System.Windows.Forms.Panel();
             this.p_Alt = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
+            this.label_Alt = new System.Windows.Forms.Label();
             this.p_Mayuscula = new System.Windows.Forms.Panel();
-            this.label35 = new System.Windows.Forms.Label();
+            this.label_Mayus = new System.Windows.Forms.Label();
             this.p_Windows = new System.Windows.Forms.Panel();
             this.p_L = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label_L = new System.Windows.Forms.Label();
             this.p_ControlIzquierdo = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
+            this.label_Ctrl = new System.Windows.Forms.Label();
             this.panel59 = new System.Windows.Forms.Panel();
             this.p_Espacio = new System.Windows.Forms.Panel();
             this.p_K = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label_K = new System.Windows.Forms.Label();
             this.panel51 = new System.Windows.Forms.Panel();
             this.p_Ñ = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.label_Ñ = new System.Windows.Forms.Label();
             this.panel62 = new System.Windows.Forms.Panel();
             this.p_AltGr = new System.Windows.Forms.Panel();
-            this.label36 = new System.Windows.Forms.Label();
+            this.label_Altgr = new System.Windows.Forms.Label();
             this.p_J = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label_J = new System.Windows.Forms.Label();
             this.p_ShiftDerecho = new System.Windows.Forms.Panel();
             this.p_H = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label_H = new System.Windows.Forms.Label();
             this.panel65 = new System.Windows.Forms.Panel();
             this.p_ControlDerecho = new System.Windows.Forms.Panel();
-            this.label38 = new System.Windows.Forms.Label();
+            this.label_CtrolDerecha = new System.Windows.Forms.Label();
             this.p_G = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
+            this.label_G = new System.Windows.Forms.Label();
             this.panel33 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.p_F = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
+            this.label_F = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
-            this.label37 = new System.Windows.Forms.Label();
+            this.label_Fn = new System.Windows.Forms.Label();
             this.p_D = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
+            this.label_D = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.p_S = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
+            this.label_S = new System.Windows.Forms.Label();
             this.p_A = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.p_M = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_M = new System.Windows.Forms.Label();
             this.p_Tab = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.p_O = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.p_N = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_N = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.p_B = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_B = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.p_V = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_V = new System.Windows.Forms.Label();
             this.panel41 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.p_C = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_C = new System.Windows.Forms.Label();
             this.p_I = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.p_X = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_X = new System.Windows.Forms.Label();
             this.p_P = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.p_Z = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_Z = new System.Windows.Forms.Label();
             this.p_9 = new System.Windows.Forms.Panel();
             this.panel45 = new System.Windows.Forms.Panel();
             this.p_U = new System.Windows.Forms.Panel();
@@ -134,7 +134,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.p_5 = new System.Windows.Forms.Panel();
             this.p_Q = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_A = new System.Windows.Forms.Label();
             this.p_4 = new System.Windows.Forms.Panel();
             this.p_3 = new System.Windows.Forms.Panel();
             this.p_2 = new System.Windows.Forms.Panel();
@@ -339,44 +339,44 @@
             // p_Alt
             // 
             this.p_Alt.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.p_Alt.Controls.Add(this.label34);
+            this.p_Alt.Controls.Add(this.label_Alt);
             this.p_Alt.Location = new System.Drawing.Point(111, 128);
             this.p_Alt.Name = "p_Alt";
             this.p_Alt.Size = new System.Drawing.Size(44, 23);
             this.p_Alt.TabIndex = 71;
             // 
-            // label34
+            // label_Alt
             // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.Transparent;
-            this.label34.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label34.Location = new System.Drawing.Point(8, 4);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(27, 14);
-            this.label34.TabIndex = 13;
-            this.label34.Text = "ALT";
+            this.label_Alt.AutoSize = true;
+            this.label_Alt.BackColor = System.Drawing.Color.Transparent;
+            this.label_Alt.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Alt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Alt.Location = new System.Drawing.Point(8, 4);
+            this.label_Alt.Name = "label_Alt";
+            this.label_Alt.Size = new System.Drawing.Size(27, 14);
+            this.label_Alt.TabIndex = 13;
+            this.label_Alt.Text = "ALT";
             // 
             // p_Mayuscula
             // 
             this.p_Mayuscula.BackColor = System.Drawing.Color.LightGray;
-            this.p_Mayuscula.Controls.Add(this.label35);
+            this.p_Mayuscula.Controls.Add(this.label_Mayus);
             this.p_Mayuscula.Location = new System.Drawing.Point(11, 70);
             this.p_Mayuscula.Name = "p_Mayuscula";
             this.p_Mayuscula.Size = new System.Drawing.Size(62, 23);
             this.p_Mayuscula.TabIndex = 82;
             // 
-            // label35
+            // label_Mayus
             // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label35.Location = new System.Drawing.Point(8, 4);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(47, 14);
-            this.label35.TabIndex = 14;
-            this.label35.Text = "MAYUS";
+            this.label_Mayus.AutoSize = true;
+            this.label_Mayus.BackColor = System.Drawing.Color.Transparent;
+            this.label_Mayus.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Mayus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Mayus.Location = new System.Drawing.Point(8, 4);
+            this.label_Mayus.Name = "label_Mayus";
+            this.label_Mayus.Size = new System.Drawing.Size(47, 14);
+            this.label_Mayus.TabIndex = 14;
+            this.label_Mayus.Text = "MAYUS";
             // 
             // p_Windows
             // 
@@ -389,44 +389,44 @@
             // p_L
             // 
             this.p_L.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_L.Controls.Add(this.label17);
+            this.p_L.Controls.Add(this.label_L);
             this.p_L.Location = new System.Drawing.Point(399, 70);
             this.p_L.Name = "p_L";
             this.p_L.Size = new System.Drawing.Size(34, 23);
             this.p_L.TabIndex = 83;
             // 
-            // label17
+            // label_L
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(9, 4);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(13, 14);
-            this.label17.TabIndex = 73;
-            this.label17.Text = "L";
+            this.label_L.AutoSize = true;
+            this.label_L.BackColor = System.Drawing.Color.Transparent;
+            this.label_L.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_L.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_L.Location = new System.Drawing.Point(9, 4);
+            this.label_L.Name = "label_L";
+            this.label_L.Size = new System.Drawing.Size(13, 14);
+            this.label_L.TabIndex = 73;
+            this.label_L.Text = "L";
             // 
             // p_ControlIzquierdo
             // 
             this.p_ControlIzquierdo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.p_ControlIzquierdo.Controls.Add(this.label33);
+            this.p_ControlIzquierdo.Controls.Add(this.label_Ctrl);
             this.p_ControlIzquierdo.Location = new System.Drawing.Point(11, 128);
             this.p_ControlIzquierdo.Name = "p_ControlIzquierdo";
             this.p_ControlIzquierdo.Size = new System.Drawing.Size(52, 23);
             this.p_ControlIzquierdo.TabIndex = 72;
             // 
-            // label33
+            // label_Ctrl
             // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label33.Location = new System.Drawing.Point(10, 4);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(33, 14);
-            this.label33.TabIndex = 12;
-            this.label33.Text = "CTRL";
+            this.label_Ctrl.AutoSize = true;
+            this.label_Ctrl.BackColor = System.Drawing.Color.Transparent;
+            this.label_Ctrl.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Ctrl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Ctrl.Location = new System.Drawing.Point(10, 4);
+            this.label_Ctrl.Name = "label_Ctrl";
+            this.label_Ctrl.Size = new System.Drawing.Size(33, 14);
+            this.label_Ctrl.TabIndex = 12;
+            this.label_Ctrl.Text = "CTRL";
             // 
             // panel59
             // 
@@ -447,23 +447,23 @@
             // p_K
             // 
             this.p_K.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_K.Controls.Add(this.label18);
+            this.p_K.Controls.Add(this.label_K);
             this.p_K.Location = new System.Drawing.Point(359, 70);
             this.p_K.Name = "p_K";
             this.p_K.Size = new System.Drawing.Size(34, 23);
             this.p_K.TabIndex = 91;
             // 
-            // label18
+            // label_K
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(9, 4);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(14, 14);
-            this.label18.TabIndex = 74;
-            this.label18.Text = "K";
+            this.label_K.AutoSize = true;
+            this.label_K.BackColor = System.Drawing.Color.Transparent;
+            this.label_K.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_K.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_K.Location = new System.Drawing.Point(9, 4);
+            this.label_K.Name = "label_K";
+            this.label_K.Size = new System.Drawing.Size(14, 14);
+            this.label_K.TabIndex = 74;
+            this.label_K.Text = "K";
             // 
             // panel51
             // 
@@ -476,24 +476,24 @@
             // p_Ñ
             // 
             this.p_Ñ.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Ñ.Controls.Add(this.label16);
+            this.p_Ñ.Controls.Add(this.label_Ñ);
             this.p_Ñ.Controls.Add(this.panel62);
             this.p_Ñ.Location = new System.Drawing.Point(439, 70);
             this.p_Ñ.Name = "p_Ñ";
             this.p_Ñ.Size = new System.Drawing.Size(34, 23);
             this.p_Ñ.TabIndex = 92;
             // 
-            // label16
+            // label_Ñ
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(9, 4);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(16, 14);
-            this.label16.TabIndex = 72;
-            this.label16.Text = "Ñ";
+            this.label_Ñ.AutoSize = true;
+            this.label_Ñ.BackColor = System.Drawing.Color.Transparent;
+            this.label_Ñ.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Ñ.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Ñ.Location = new System.Drawing.Point(9, 4);
+            this.label_Ñ.Name = "label_Ñ";
+            this.label_Ñ.Size = new System.Drawing.Size(16, 14);
+            this.label_Ñ.TabIndex = 72;
+            this.label_Ñ.Text = "Ñ";
             // 
             // panel62
             // 
@@ -505,44 +505,44 @@
             // p_AltGr
             // 
             this.p_AltGr.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.p_AltGr.Controls.Add(this.label36);
+            this.p_AltGr.Controls.Add(this.label_Altgr);
             this.p_AltGr.Location = new System.Drawing.Point(391, 128);
             this.p_AltGr.Name = "p_AltGr";
             this.p_AltGr.Size = new System.Drawing.Size(45, 23);
             this.p_AltGr.TabIndex = 69;
             // 
-            // label36
+            // label_Altgr
             // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label36.Location = new System.Drawing.Point(0, 4);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(42, 14);
-            this.label36.TabIndex = 15;
-            this.label36.Text = "ALTGR";
+            this.label_Altgr.AutoSize = true;
+            this.label_Altgr.BackColor = System.Drawing.Color.Transparent;
+            this.label_Altgr.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Altgr.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Altgr.Location = new System.Drawing.Point(0, 4);
+            this.label_Altgr.Name = "label_Altgr";
+            this.label_Altgr.Size = new System.Drawing.Size(42, 14);
+            this.label_Altgr.TabIndex = 15;
+            this.label_Altgr.Text = "ALTGR";
             // 
             // p_J
             // 
             this.p_J.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_J.Controls.Add(this.label19);
+            this.p_J.Controls.Add(this.label_J);
             this.p_J.Location = new System.Drawing.Point(319, 70);
             this.p_J.Name = "p_J";
             this.p_J.Size = new System.Drawing.Size(34, 23);
             this.p_J.TabIndex = 90;
             // 
-            // label19
+            // label_J
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(9, 4);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(12, 14);
-            this.label19.TabIndex = 75;
-            this.label19.Text = "J";
+            this.label_J.AutoSize = true;
+            this.label_J.BackColor = System.Drawing.Color.Transparent;
+            this.label_J.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_J.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_J.Location = new System.Drawing.Point(9, 4);
+            this.label_J.Name = "label_J";
+            this.label_J.Size = new System.Drawing.Size(12, 14);
+            this.label_J.TabIndex = 75;
+            this.label_J.Text = "J";
             // 
             // p_ShiftDerecho
             // 
@@ -555,24 +555,24 @@
             // p_H
             // 
             this.p_H.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_H.Controls.Add(this.label20);
+            this.p_H.Controls.Add(this.label_H);
             this.p_H.Controls.Add(this.panel65);
             this.p_H.Location = new System.Drawing.Point(279, 70);
             this.p_H.Name = "p_H";
             this.p_H.Size = new System.Drawing.Size(34, 23);
             this.p_H.TabIndex = 84;
             // 
-            // label20
+            // label_H
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label20.Location = new System.Drawing.Point(9, 4);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 14);
-            this.label20.TabIndex = 76;
-            this.label20.Text = "H";
+            this.label_H.AutoSize = true;
+            this.label_H.BackColor = System.Drawing.Color.Transparent;
+            this.label_H.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_H.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_H.Location = new System.Drawing.Point(9, 4);
+            this.label_H.Name = "label_H";
+            this.label_H.Size = new System.Drawing.Size(15, 14);
+            this.label_H.TabIndex = 76;
+            this.label_H.Text = "H";
             // 
             // panel65
             // 
@@ -584,44 +584,44 @@
             // p_ControlDerecho
             // 
             this.p_ControlDerecho.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.p_ControlDerecho.Controls.Add(this.label38);
+            this.p_ControlDerecho.Controls.Add(this.label_CtrolDerecha);
             this.p_ControlDerecho.Location = new System.Drawing.Point(532, 128);
             this.p_ControlDerecho.Name = "p_ControlDerecho";
             this.p_ControlDerecho.Size = new System.Drawing.Size(51, 23);
             this.p_ControlDerecho.TabIndex = 71;
             // 
-            // label38
+            // label_CtrolDerecha
             // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label38.Location = new System.Drawing.Point(5, 3);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(41, 14);
-            this.label38.TabIndex = 17;
-            this.label38.Text = "CTROL";
+            this.label_CtrolDerecha.AutoSize = true;
+            this.label_CtrolDerecha.BackColor = System.Drawing.Color.Transparent;
+            this.label_CtrolDerecha.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CtrolDerecha.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_CtrolDerecha.Location = new System.Drawing.Point(5, 3);
+            this.label_CtrolDerecha.Name = "label_CtrolDerecha";
+            this.label_CtrolDerecha.Size = new System.Drawing.Size(41, 14);
+            this.label_CtrolDerecha.TabIndex = 17;
+            this.label_CtrolDerecha.Text = "CTROL";
             // 
             // p_G
             // 
             this.p_G.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_G.Controls.Add(this.label21);
+            this.p_G.Controls.Add(this.label_G);
             this.p_G.Location = new System.Drawing.Point(239, 70);
             this.p_G.Name = "p_G";
             this.p_G.Size = new System.Drawing.Size(34, 23);
             this.p_G.TabIndex = 85;
             // 
-            // label21
+            // label_G
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(9, 4);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(15, 14);
-            this.label21.TabIndex = 77;
-            this.label21.Text = "G";
+            this.label_G.AutoSize = true;
+            this.label_G.BackColor = System.Drawing.Color.Transparent;
+            this.label_G.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_G.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_G.Location = new System.Drawing.Point(9, 4);
+            this.label_G.Name = "label_G";
+            this.label_G.Size = new System.Drawing.Size(15, 14);
+            this.label_G.TabIndex = 77;
+            this.label_G.Text = "G";
             // 
             // panel33
             // 
@@ -647,65 +647,65 @@
             // p_F
             // 
             this.p_F.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_F.Controls.Add(this.label22);
+            this.p_F.Controls.Add(this.label_F);
             this.p_F.Location = new System.Drawing.Point(199, 70);
             this.p_F.Name = "p_F";
             this.p_F.Size = new System.Drawing.Size(34, 23);
             this.p_F.TabIndex = 86;
             // 
-            // label22
+            // label_F
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(9, 4);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(13, 14);
-            this.label22.TabIndex = 78;
-            this.label22.Text = "F";
+            this.label_F.AutoSize = true;
+            this.label_F.BackColor = System.Drawing.Color.Transparent;
+            this.label_F.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_F.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_F.Location = new System.Drawing.Point(9, 4);
+            this.label_F.Name = "label_F";
+            this.label_F.Size = new System.Drawing.Size(13, 14);
+            this.label_F.TabIndex = 78;
+            this.label_F.Text = "F";
             // 
             // panel50
             // 
             this.panel50.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel50.Controls.Add(this.label37);
+            this.panel50.Controls.Add(this.label_Fn);
             this.panel50.Location = new System.Drawing.Point(442, 128);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(44, 23);
             this.panel50.TabIndex = 70;
             // 
-            // label37
+            // label_Fn
             // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label37.Location = new System.Drawing.Point(10, 4);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(22, 14);
-            this.label37.TabIndex = 16;
-            this.label37.Text = "FN";
+            this.label_Fn.AutoSize = true;
+            this.label_Fn.BackColor = System.Drawing.Color.Transparent;
+            this.label_Fn.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Fn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Fn.Location = new System.Drawing.Point(10, 4);
+            this.label_Fn.Name = "label_Fn";
+            this.label_Fn.Size = new System.Drawing.Size(22, 14);
+            this.label_Fn.TabIndex = 16;
+            this.label_Fn.Text = "FN";
             // 
             // p_D
             // 
             this.p_D.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_D.Controls.Add(this.label23);
+            this.p_D.Controls.Add(this.label_D);
             this.p_D.Location = new System.Drawing.Point(159, 70);
             this.p_D.Name = "p_D";
             this.p_D.Size = new System.Drawing.Size(34, 23);
             this.p_D.TabIndex = 87;
             // 
-            // label23
+            // label_D
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(9, 4);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(15, 14);
-            this.label23.TabIndex = 79;
-            this.label23.Text = "D";
+            this.label_D.AutoSize = true;
+            this.label_D.BackColor = System.Drawing.Color.Transparent;
+            this.label_D.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_D.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_D.Location = new System.Drawing.Point(9, 4);
+            this.label_D.Name = "label_D";
+            this.label_D.Size = new System.Drawing.Size(15, 14);
+            this.label_D.TabIndex = 79;
+            this.label_D.Text = "D";
             // 
             // panel19
             // 
@@ -718,23 +718,23 @@
             // p_S
             // 
             this.p_S.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_S.Controls.Add(this.label24);
+            this.p_S.Controls.Add(this.label_S);
             this.p_S.Location = new System.Drawing.Point(119, 70);
             this.p_S.Name = "p_S";
             this.p_S.Size = new System.Drawing.Size(34, 23);
             this.p_S.TabIndex = 88;
             // 
-            // label24
+            // label_S
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label24.Location = new System.Drawing.Point(9, 4);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(13, 14);
-            this.label24.TabIndex = 80;
-            this.label24.Text = "S";
+            this.label_S.AutoSize = true;
+            this.label_S.BackColor = System.Drawing.Color.Transparent;
+            this.label_S.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_S.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_S.Location = new System.Drawing.Point(9, 4);
+            this.label_S.Name = "label_S";
+            this.label_S.Size = new System.Drawing.Size(13, 14);
+            this.label_S.TabIndex = 80;
+            this.label_S.Text = "S";
             // 
             // p_A
             // 
@@ -760,23 +760,23 @@
             // p_M
             // 
             this.p_M.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_M.Controls.Add(this.label10);
+            this.p_M.Controls.Add(this.label_M);
             this.p_M.Location = new System.Drawing.Point(331, 99);
             this.p_M.Name = "p_M";
             this.p_M.Size = new System.Drawing.Size(34, 23);
             this.p_M.TabIndex = 70;
             // 
-            // label10
+            // label_M
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(9, 4);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 14);
-            this.label10.TabIndex = 66;
-            this.label10.Text = "M";
+            this.label_M.AutoSize = true;
+            this.label_M.BackColor = System.Drawing.Color.Transparent;
+            this.label_M.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_M.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_M.Location = new System.Drawing.Point(9, 4);
+            this.label_M.Name = "label_M";
+            this.label_M.Size = new System.Drawing.Size(18, 14);
+            this.label_M.TabIndex = 66;
+            this.label_M.Text = "M";
             // 
             // p_Tab
             // 
@@ -831,23 +831,23 @@
             // p_N
             // 
             this.p_N.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_N.Controls.Add(this.label9);
+            this.p_N.Controls.Add(this.label_N);
             this.p_N.Location = new System.Drawing.Point(291, 99);
             this.p_N.Name = "p_N";
             this.p_N.Size = new System.Drawing.Size(34, 23);
             this.p_N.TabIndex = 78;
             // 
-            // label9
+            // label_N
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(9, 4);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 14);
-            this.label9.TabIndex = 65;
-            this.label9.Text = "N";
+            this.label_N.AutoSize = true;
+            this.label_N.BackColor = System.Drawing.Color.Transparent;
+            this.label_N.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_N.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_N.Location = new System.Drawing.Point(9, 4);
+            this.label_N.Name = "label_N";
+            this.label_N.Size = new System.Drawing.Size(16, 14);
+            this.label_N.TabIndex = 65;
+            this.label_N.Text = "N";
             // 
             // panel37
             // 
@@ -889,23 +889,23 @@
             // p_B
             // 
             this.p_B.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_B.Controls.Add(this.label8);
+            this.p_B.Controls.Add(this.label_B);
             this.p_B.Location = new System.Drawing.Point(250, 99);
             this.p_B.Name = "p_B";
             this.p_B.Size = new System.Drawing.Size(34, 23);
             this.p_B.TabIndex = 77;
             // 
-            // label8
+            // label_B
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(9, 4);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 14);
-            this.label8.TabIndex = 64;
-            this.label8.Text = "B";
+            this.label_B.AutoSize = true;
+            this.label_B.BackColor = System.Drawing.Color.Transparent;
+            this.label_B.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_B.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_B.Location = new System.Drawing.Point(9, 4);
+            this.label_B.Name = "label_B";
+            this.label_B.Size = new System.Drawing.Size(14, 14);
+            this.label_B.TabIndex = 64;
+            this.label_B.Text = "B";
             // 
             // panel21
             // 
@@ -918,24 +918,24 @@
             // p_V
             // 
             this.p_V.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_V.Controls.Add(this.label7);
+            this.p_V.Controls.Add(this.label_V);
             this.p_V.Controls.Add(this.panel41);
             this.p_V.Location = new System.Drawing.Point(211, 99);
             this.p_V.Name = "p_V";
             this.p_V.Size = new System.Drawing.Size(34, 23);
             this.p_V.TabIndex = 71;
             // 
-            // label7
+            // label_V
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(9, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 14);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "V";
+            this.label_V.AutoSize = true;
+            this.label_V.BackColor = System.Drawing.Color.Transparent;
+            this.label_V.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_V.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_V.Location = new System.Drawing.Point(9, 4);
+            this.label_V.Name = "label_V";
+            this.label_V.Size = new System.Drawing.Size(14, 14);
+            this.label_V.TabIndex = 14;
+            this.label_V.Text = "V";
             // 
             // panel41
             // 
@@ -955,23 +955,23 @@
             // p_C
             // 
             this.p_C.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_C.Controls.Add(this.label6);
+            this.p_C.Controls.Add(this.label_C);
             this.p_C.Location = new System.Drawing.Point(171, 99);
             this.p_C.Name = "p_C";
             this.p_C.Size = new System.Drawing.Size(34, 23);
             this.p_C.TabIndex = 72;
             // 
-            // label6
+            // label_C
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(9, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 14);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "C";
+            this.label_C.AutoSize = true;
+            this.label_C.BackColor = System.Drawing.Color.Transparent;
+            this.label_C.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_C.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_C.Location = new System.Drawing.Point(9, 4);
+            this.label_C.Name = "label_C";
+            this.label_C.Size = new System.Drawing.Size(14, 14);
+            this.label_C.TabIndex = 13;
+            this.label_C.Text = "C";
             // 
             // p_I
             // 
@@ -997,23 +997,23 @@
             // p_X
             // 
             this.p_X.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_X.Controls.Add(this.label5);
+            this.p_X.Controls.Add(this.label_X);
             this.p_X.Location = new System.Drawing.Point(131, 99);
             this.p_X.Name = "p_X";
             this.p_X.Size = new System.Drawing.Size(34, 23);
             this.p_X.TabIndex = 73;
             // 
-            // label5
+            // label_X
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(9, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 14);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "X";
+            this.label_X.AutoSize = true;
+            this.label_X.BackColor = System.Drawing.Color.Transparent;
+            this.label_X.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_X.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_X.Location = new System.Drawing.Point(9, 4);
+            this.label_X.Name = "label_X";
+            this.label_X.Size = new System.Drawing.Size(14, 14);
+            this.label_X.TabIndex = 12;
+            this.label_X.Text = "X";
             // 
             // p_P
             // 
@@ -1047,23 +1047,23 @@
             // p_Z
             // 
             this.p_Z.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Z.Controls.Add(this.label4);
+            this.p_Z.Controls.Add(this.label_Z);
             this.p_Z.Location = new System.Drawing.Point(91, 99);
             this.p_Z.Name = "p_Z";
             this.p_Z.Size = new System.Drawing.Size(34, 23);
             this.p_Z.TabIndex = 74;
             // 
-            // label4
+            // label_Z
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(9, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 14);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Z";
+            this.label_Z.AutoSize = true;
+            this.label_Z.BackColor = System.Drawing.Color.Transparent;
+            this.label_Z.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Z.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_Z.Location = new System.Drawing.Point(9, 4);
+            this.label_Z.Name = "label_Z";
+            this.label_Z.Size = new System.Drawing.Size(14, 14);
+            this.label_Z.TabIndex = 13;
+            this.label_Z.Text = "Z";
             // 
             // p_9
             // 
@@ -1290,23 +1290,23 @@
             // p_Q
             // 
             this.p_Q.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.p_Q.Controls.Add(this.label1);
+            this.p_Q.Controls.Add(this.label_A);
             this.p_Q.Location = new System.Drawing.Point(70, 41);
             this.p_Q.Name = "p_Q";
             this.p_Q.Size = new System.Drawing.Size(34, 23);
             this.p_Q.TabIndex = 76;
             // 
-            // label1
+            // label_A
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Q @";
+            this.label_A.AutoSize = true;
+            this.label_A.BackColor = System.Drawing.Color.Transparent;
+            this.label_A.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_A.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_A.Location = new System.Drawing.Point(3, 3);
+            this.label_A.Name = "label_A";
+            this.label_A.Size = new System.Drawing.Size(29, 14);
+            this.label_A.TabIndex = 0;
+            this.label_A.Text = "Q @";
             // 
             // p_4
             // 
@@ -1362,13 +1362,13 @@
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
             this.Texto_Tipear.Click += new System.EventHandler(this.Texto_Tipear_Click);
-            this.Texto_Tipear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Texto_Tipear_KeyPress);
+            this.Texto_Tipear.Enter += new System.EventHandler(this.Texto_Tipear_Enter);
             // 
             // btn_Iniciar
             // 
             this.btn_Iniciar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Iniciar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Iniciar.Location = new System.Drawing.Point(431, 157);
+            this.btn_Iniciar.Location = new System.Drawing.Point(432, 157);
             this.btn_Iniciar.Name = "btn_Iniciar";
             this.btn_Iniciar.Size = new System.Drawing.Size(90, 30);
             this.btn_Iniciar.TabIndex = 1;
@@ -1408,8 +1408,8 @@
             this.panel1.Controls.Add(this.labelTeclaPresionada);
             this.panel1.Controls.Add(this.Btn_Elegir);
             this.panel1.Controls.Add(this.panel_Especificaciones);
-            this.panel1.Controls.Add(this.btn_Iniciar);
             this.panel1.Controls.Add(this.btn_Detener);
+            this.panel1.Controls.Add(this.btn_Iniciar);
             this.panel1.Controls.Add(this.panel_Manos);
             this.panel1.Controls.Add(this.btn_AgregarArchivo);
             this.panel1.Controls.Add(this.Texto_Tipear);
@@ -1670,6 +1670,7 @@
             this.Name = "Mecanografia";
             this.Text = "PRACTICAS MECANOGRAFIADO  DE ACTUACIONES SUMARIALES";
             this.Load += new System.EventHandler(this.Mecanografia_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mecanografia_KeyPress);
             this.panel_Teclado.ResumeLayout(false);
             this.panel_TecladoBase.ResumeLayout(false);
             this.p_Enter1.ResumeLayout(false);
@@ -1865,36 +1866,36 @@
         private System.Windows.Forms.Panel p_A;
         private System.Windows.Forms.Panel p_Enter2;
         private System.Windows.Forms.Label labelTeclaPresionada;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_A;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label_L;
+        private System.Windows.Forms.Label label_K;
+        private System.Windows.Forms.Label label_Ñ;
+        private System.Windows.Forms.Label label_J;
+        private System.Windows.Forms.Label label_H;
+        private System.Windows.Forms.Label label_G;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label_F;
+        private System.Windows.Forms.Label label_D;
+        private System.Windows.Forms.Label label_S;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_M;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_N;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_B;
+        private System.Windows.Forms.Label label_V;
+        private System.Windows.Forms.Label label_C;
+        private System.Windows.Forms.Label label_X;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_Z;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label_Alt;
+        private System.Windows.Forms.Label label_Mayus;
+        private System.Windows.Forms.Label label_Ctrl;
+        private System.Windows.Forms.Label label_Altgr;
+        private System.Windows.Forms.Label label_CtrolDerecha;
+        private System.Windows.Forms.Label label_Fn;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;

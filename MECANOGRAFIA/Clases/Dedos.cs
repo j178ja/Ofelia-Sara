@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿/*ESTA CLASE LE DA FORMATO REDONDEADO A LOS PANELES DE LOS DEDOS*/
+
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 

@@ -9,10 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\mecanografia\\mecanografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|solutionrelative:mecanografia\\mecanografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\mecanografia\\clases\\panelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F518907F-DCCB-4960-807B-54F7BFBDBA1C}|MECANOGRAFIA\\MECANOGRAFIA.csproj|solutionrelative:mecanografia\\clases\\panelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,16 +34,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PanelManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Clases\\PanelManager.cs",
-              "RelativeDocumentMoniker": "MECANOGRAFIA\\Clases\\PanelManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Clases\\PanelManager.cs",
-              "RelativeToolTip": "MECANOGRAFIA\\Clases\\PanelManager.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC4AAAABAAAA",
+              "DocumentIndex": 1,
+              "Title": "Mecanografia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs",
+              "RelativeDocumentMoniker": "MECANOGRAFIA\\Mecanografia.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "MECANOGRAFIA\\Mecanografia.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T01:22:08.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T00:03:00.516Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -57,22 +52,10 @@
               "RelativeDocumentMoniker": "MECANOGRAFIA\\Mecanografia.cs",
               "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs*",
               "RelativeToolTip": "MECANOGRAFIA\\Mecanografia.cs*",
-              "ViewState": "AQIAACQBAAAAAAAAAAAQwDQBAAAdAAAA",
+              "ViewState": "AQIAAE0BAAAAAAAAAAAjwG0BAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T00:59:45.294Z",
+              "WhenOpened": "2024-10-14T23:44:51.485Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Mecanografia.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs",
-              "RelativeDocumentMoniker": "MECANOGRAFIA\\Mecanografia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\MECANOGRAFIA\\Mecanografia.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "MECANOGRAFIA\\Mecanografia.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T00:27:57.568Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
