@@ -145,7 +145,7 @@
             this.btn_Detener = new System.Windows.Forms.Button();
             this.btn_AgregarArchivo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelTeclaPresionada = new System.Windows.Forms.Label();
+  
             this.Btn_Elegir = new System.Windows.Forms.Button();
             this.menu_ElegirArchivos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dENUNCIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1405,7 +1405,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.labelTeclaPresionada);
+            
             this.panel1.Controls.Add(this.Btn_Elegir);
             this.panel1.Controls.Add(this.panel_Especificaciones);
             this.panel1.Controls.Add(this.btn_Detener);
@@ -1418,16 +1418,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(756, 559);
             this.panel1.TabIndex = 0;
-            // 
-            // labelTeclaPresionada
-            // 
-            this.labelTeclaPresionada.AutoSize = true;
-            this.labelTeclaPresionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTeclaPresionada.ForeColor = System.Drawing.Color.IndianRed;
-            this.labelTeclaPresionada.Location = new System.Drawing.Point(362, 229);
-            this.labelTeclaPresionada.Name = "labelTeclaPresionada";
-            this.labelTeclaPresionada.Size = new System.Drawing.Size(0, 13);
-            this.labelTeclaPresionada.TabIndex = 48;
+            
             // 
             // Btn_Elegir
             // 

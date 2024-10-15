@@ -21,7 +21,7 @@ namespace MECANOGRAFIA
 
     public partial class Mecanografia : Form
     {
-
+        private Label alertaLabel; // Variable para el Label de alerta
         public Mecanografia()
         {
             InitializeComponent();
@@ -58,7 +58,8 @@ namespace MECANOGRAFIA
         private void Mecanografia_Load(object sender, EventArgs e)
         {
            Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
-            CargarTextoYColorear();
+            CargarTextoYColorear();// remarca la letra que se debe presionar
+            CrearLabelAlerta();//Label que marca error al presionar tecla
         }
 
         private int currentPosition = 0; // Para llevar seguimiento de la posición actual
@@ -70,11 +71,13 @@ namespace MECANOGRAFIA
             // Verificamos si la tecla presionada coincide con la letra resaltada
             if (e.KeyChar == currentChar)
             {
+                // Ocultamos el mensaje de alerta si la tecla es correcta
+                alertaLabel.Visible = false;
                 // Restauramos la letra anterior (negro y sin negrita)
-               Texto_Tipear.Select(currentPosition, 1);
+                Texto_Tipear.Select(currentPosition, 1);
                Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
-
+             
                 // Avanzamos al siguiente carácter
                 currentPosition++;
 
@@ -88,11 +91,17 @@ namespace MECANOGRAFIA
 
                 Texto_Tipear.DeselectAll(); // Quitamos la selección visible
             }
+            else
+            {
+                // Mostrar el mensaje de alerta si la tecla es incorrecta
+                alertaLabel.Text = $"Ud ha presionado: {e.KeyChar}";
+                alertaLabel.Visible = true;
+            }
         }
 
-
-
-        private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
+       
+       
+           private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
         {
 
             panel_Especificaciones.Visible = true;
@@ -362,14 +371,24 @@ namespace MECANOGRAFIA
 
         private void CargarTextoYColorear()
         {
-            // Cargamos el texto en el RichTextBox
-            //Texto_Tipear.Text = "Texto de ejemplo para tipear...";
-          
-           // Texto_Tipear la primera letra en azul y negrita
+             // Texto_Tipear la primera letra en azul y negrita
             Texto_Tipear.Select(0, 1); // Seleccionamos la primera letra
             Texto_Tipear.SelectionColor = System.Drawing.Color.Blue; // La coloreamos en azul
             Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold); // Negrita
             Texto_Tipear.DeselectAll(); // Quitamos la selección
+        }
+
+       
+        private void CrearLabelAlerta()
+        {
+            // Inicializamos el Label de alerta
+            alertaLabel = new Label();
+            alertaLabel.ForeColor = System.Drawing.Color.Red; // Color rojo para el texto
+            alertaLabel.Font = new System.Drawing.Font( "Arial", 14);
+            alertaLabel.Location = new Point(265, 95); // Posición dentro del panel
+            alertaLabel.AutoSize = true; // Ajusta el tamaño automáticamente
+            alertaLabel.Visible = false; // Inicialmente invisible
+            panel_Especificaciones.Controls.Add(alertaLabel); // Añadir al panel
         }
 
     }
