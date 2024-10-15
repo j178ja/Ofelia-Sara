@@ -145,7 +145,6 @@
             this.btn_Detener = new System.Windows.Forms.Button();
             this.btn_AgregarArchivo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-  
             this.Btn_Elegir = new System.Windows.Forms.Button();
             this.menu_ElegirArchivos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dENUNCIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1361,6 +1360,7 @@
             this.Texto_Tipear.Size = new System.Drawing.Size(714, 33);
             this.Texto_Tipear.TabIndex = 1;
             this.Texto_Tipear.Text = "";
+            this.Texto_Tipear.SelectionChanged += new System.EventHandler(this.texto_Tipear_SelectionChanged);
             this.Texto_Tipear.Click += new System.EventHandler(this.Texto_Tipear_Click);
             this.Texto_Tipear.Enter += new System.EventHandler(this.Texto_Tipear_Enter);
             // 
@@ -1405,7 +1405,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            
             this.panel1.Controls.Add(this.Btn_Elegir);
             this.panel1.Controls.Add(this.panel_Especificaciones);
             this.panel1.Controls.Add(this.btn_Detener);
@@ -1418,7 +1417,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(756, 559);
             this.panel1.TabIndex = 0;
-            
             // 
             // Btn_Elegir
             // 
@@ -1741,7 +1739,6 @@
             this.p_Q.ResumeLayout(false);
             this.p_Q.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.menu_ElegirArchivos.ResumeLayout(false);
             this.panel_Especificaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SelectArchivo)).EndInit();

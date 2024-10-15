@@ -19,9 +19,14 @@ using System.Drawing.Drawing2D;
 namespace MECANOGRAFIA
 {
 
+
     public partial class Mecanografia : Form
     {
         private Label alertaLabel; // Variable para el Label de alerta
+              
+        // Diccionario para mapear letras a paneles
+        private Dictionary<char, Panel> letraPanelMap;
+
         public Mecanografia()
         {
             InitializeComponent();
@@ -52,32 +57,105 @@ namespace MECANOGRAFIA
             RedondearPanel.AplicarBordesRedondeados(panel_MeniqueIzquierdo, 20, 10);
 
             this.KeyPreview = true; // Permitir que el formulario capture las teclas antes que los controles
-         }
+
+            // Mapear paneles a letras
+            Dictionary<char, Panel> letraPanelMap = new Dictionary<char, Panel>
+{
+    { '1', panel_MeniqueIzquierdo },
+    { '!', panel_MeniqueIzquierdo },
+    { 'A', panel_MeniqueIzquierdo },
+    { 'Q', panel_MeniqueIzquierdo },
+    { 'Z', panel_MeniqueIzquierdo },
+
+    { '2', panel_AnularIzquierdo },
+    { '"', panel_AnularIzquierdo },
+    { 'S', panel_AnularIzquierdo },
+    { 'W', panel_AnularIzquierdo },
+    { 'X', panel_AnularIzquierdo },
+
+    { '3', panel_MayorIzquierdo },
+    { '#', panel_MayorIzquierdo },
+    { 'E', panel_MayorIzquierdo },
+    { 'D', panel_MayorIzquierdo },
+    { 'C', panel_MayorIzquierdo },
+
+
+    { '4', panel_IndiceIzquierdo },
+    { '5', panel_IndiceIzquierdo },
+    { '$', panel_IndiceIzquierdo },
+    { '%', panel_IndiceIzquierdo },
+    { 'R', panel_IndiceIzquierdo },
+    { 'F', panel_IndiceIzquierdo },
+    { 'V', panel_IndiceIzquierdo },
+    { 'T', panel_IndiceIzquierdo },
+    { 'G', panel_IndiceIzquierdo },
+    { 'B', panel_IndiceIzquierdo },
+
+    { ' ', panel_PulgarIzquierdo },
+
+    { '7', panel_IndiceDerecho },
+    { '6', panel_IndiceDerecho },
+    { '/', panel_IndiceDerecho },
+    { '&', panel_IndiceDerecho },
+    { 'Y', panel_IndiceDerecho },
+    { 'H', panel_IndiceDerecho },
+    { 'N', panel_IndiceDerecho },
+    { 'U', panel_IndiceDerecho },
+    { 'J', panel_IndiceDerecho },
+    { 'M', panel_IndiceDerecho },
+
+    { '8', panel_MayorDerecho },
+    { '(', panel_MayorDerecho },
+    { 'I', panel_MayorDerecho },
+    { 'K', panel_MayorDerecho },
+    { ';', panel_MayorDerecho },
+    { ',', panel_MayorDerecho },
+
+    { '9', panel_AnularDerecho },
+    { ')', panel_AnularDerecho },
+    { 'O', panel_AnularDerecho },
+    { 'L', panel_AnularDerecho },
+    { ':', panel_AnularDerecho },
+    { '.', panel_AnularDerecho },
+
+    { '0', panel_AnularDerecho },
+    { '=', panel_AnularDerecho },
+    { 'P', panel_AnularDerecho },
+    { 'Ñ', panel_AnularDerecho },
+    { '-', panel_AnularDerecho },
+    { '_', panel_AnularDerecho },
+
+};
+        }
 
 
         private void Mecanografia_Load(object sender, EventArgs e)
         {
-           Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
+            Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
             CargarTextoYColorear();// remarca la letra que se debe presionar
             CrearLabelAlerta();//Label que marca error al presionar tecla
         }
 
         private int currentPosition = 0; // Para llevar seguimiento de la posición actual
+        private bool mecanografiaActiva = true;
+
         private void Mecanografia_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Obtenemos la letra actual
-            char currentChar = Texto_Tipear.Text[currentPosition];
+            char letraActual = Texto_Tipear.Text[currentPosition];
 
             // Verificamos si la tecla presionada coincide con la letra resaltada
-            if (e.KeyChar == currentChar)
+            if (e.KeyChar == letraActual)
             {
                 // Ocultamos el mensaje de alerta si la tecla es correcta
                 alertaLabel.Visible = false;
+                // Resaltar el panel del dedo correspondiente
+                ResaltarPanelPorLetra(letraActual);
                 // Restauramos la letra anterior (negro y sin negrita)
                 Texto_Tipear.Select(currentPosition, 1);
-               Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
-               Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
-             
+                Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
+                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
+
                 // Avanzamos al siguiente carácter
                 currentPosition++;
 
@@ -93,15 +171,24 @@ namespace MECANOGRAFIA
             }
             else
             {
-                // Mostrar el mensaje de alerta si la tecla es incorrecta
-                alertaLabel.Text = $"Ud ha presionado: {e.KeyChar}";
-                alertaLabel.Visible = true;
+                if (mecanografiaActiva == false)
+                {
+                    alertaLabel.Visible = false;
+                    return;
+                }
+                else
+                {
+                    // Mostrar el mensaje de alerta si la tecla es incorrecta
+                    alertaLabel.Text = $"Ud ha presionado: {e.KeyChar}";
+                    alertaLabel.Visible = true;
+                }
             }
         }
+      
 
-       
-       
-           private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
+
+
+        private void Btn_AgregarArchivo_Click(object sender, EventArgs e)
         {
 
             panel_Especificaciones.Visible = true;
@@ -113,7 +200,7 @@ namespace MECANOGRAFIA
             panel_Teclado.Location = new Point(21, 193);
             // Ajustar la altura de panel1
             panel1.Height = 380;
-            this.Height = panel1.Height+80;
+            this.Height = panel1.Height + 80;
         }
 
         private void PictureBox_Paint(object sender, PaintEventArgs e)
@@ -241,14 +328,14 @@ namespace MECANOGRAFIA
             // Habilitar el botón btn_Iniciar si hay un archivo seleccionado
             btn_Iniciar.Enabled = !string.IsNullOrEmpty(archivoSeleccionado);
         }
-    
+
         //----------------------------------------------------------------
 
         //para que no puedad editar el rich sin que se atenue
         private void Texto_Tipear_Click(object sender, EventArgs e)
         {
             // Evitar que el usuario haga clic en el RichTextBox
-           Texto_Tipear.Select(0, 0); // Desmarca cualquier texto
+            Texto_Tipear.Select(0, 0); // Desmarca cualquier texto
         }
 
         private void Texto_Tipear_Enter(object sender, EventArgs e)
@@ -257,10 +344,10 @@ namespace MECANOGRAFIA
             this.ActiveControl = null; // Establecer el control activo en null
         }
 
-        
+
         //----------------------------------------------------------------
 
-     
+
         private void Btn_Iniciar_Click(object sender, EventArgs e)
         {
             panel_Manos.Visible = true;
@@ -276,6 +363,15 @@ namespace MECANOGRAFIA
         private void Btn_Detener_Click(object sender, EventArgs e)
         {
            
+            mecanografiaActiva = false; // Desactivar la mecanografía
+            alertaLabel.Visible = false;
+            panel_Manos.Visible = false;
+            Texto_Tipear.Visible = false;
+            panel_Teclado.Location = new Point(21, 193);
+            
+            // Ajustar la altura de panel1
+            panel1.Height = 380;
+            this.Height = panel1.Height + 80;
         }
 
 
@@ -352,7 +448,7 @@ namespace MECANOGRAFIA
                 panel_Especificaciones.Controls.Add(labelValor);
             }
         }
-    
+
 
         //----------------------------------------------------------------------
         //ajustar tamaño y posicion principal de elementos en el formulario
@@ -360,35 +456,71 @@ namespace MECANOGRAFIA
         {
             // Posicionar el panel_Teclado en la ubicación deseada
             panel_Teclado.Location = new Point(21, 34);
-            panel1.Height = panel_Teclado.Height+60;
+            panel1.Height = panel_Teclado.Height + 60;
 
             // Ajustar la altura del formulario para que sea más alto que panel1
             this.Height = panel1.Height + 80; // Establece la altura del formulario
         }
 
-     
+
 
 
         private void CargarTextoYColorear()
         {
-             // Texto_Tipear la primera letra en azul y negrita
+            // Texto_Tipear la primera letra en azul y negrita
             Texto_Tipear.Select(0, 1); // Seleccionamos la primera letra
             Texto_Tipear.SelectionColor = System.Drawing.Color.Blue; // La coloreamos en azul
             Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold); // Negrita
             Texto_Tipear.DeselectAll(); // Quitamos la selección
         }
 
-       
+
         private void CrearLabelAlerta()
         {
             // Inicializamos el Label de alerta
             alertaLabel = new Label();
             alertaLabel.ForeColor = System.Drawing.Color.Red; // Color rojo para el texto
-            alertaLabel.Font = new System.Drawing.Font( "Arial", 14);
+            alertaLabel.Font = new System.Drawing.Font("Arial", 14);
             alertaLabel.Location = new Point(265, 95); // Posición dentro del panel
             alertaLabel.AutoSize = true; // Ajusta el tamaño automáticamente
             alertaLabel.Visible = false; // Inicialmente invisible
             panel_Especificaciones.Controls.Add(alertaLabel); // Añadir al panel
+        }
+        //---------------------------------------------------------------------
+
+        // Variable para almacenar el último panel resaltado
+        private Panel panelResaltadoAnterior = null;
+
+        private void ResaltarPanelPorLetra(char letra)
+        {
+            // Restablecer el color del panel anterior a su color original, si existe
+            if (panelResaltadoAnterior != null)
+            {
+                panelResaltadoAnterior.BackColor = SystemColors.Control; // Color original del panel
+            }
+
+            // Verificar si la letra está en el diccionario
+            if (letraPanelMap.TryGetValue(letra, out Panel panelResaltado))
+            {
+                // Cambiar el color del panel correspondiente a rojo
+                panelResaltado.BackColor = System.Drawing.Color.Red; // Color resaltado
+                                                      // Almacenar el panel resaltado actual
+                panelResaltadoAnterior = panelResaltado;
+            }
+        }
+        private void texto_Tipear_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay texto seleccionado
+            if (Texto_Tipear.SelectionLength > 0)
+            {
+                // Obtener el carácter en la posición del cursor
+                int cursorPosition = Texto_Tipear.SelectionStart;
+                if (cursorPosition > 0 && cursorPosition <= Texto_Tipear.Text.Length)
+                {
+                    char letraActual = Texto_Tipear.Text[cursorPosition - 1]; // Obtiene el carácter anterior al cursor
+                    ResaltarPanelPorLetra(letraActual);
+                }
+            }
         }
 
     }
