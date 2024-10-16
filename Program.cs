@@ -15,7 +15,8 @@ namespace Ofelia_Sara
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal());
+            //Application.Run(new MenuPrincipal());
+            Application.Run(new ModificarEliminar());
          
         }
     }

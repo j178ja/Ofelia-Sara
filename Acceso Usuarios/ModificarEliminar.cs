@@ -23,7 +23,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private Label label_Domicilio;
         private Panel panel_Detalles;
         private Panel panel_DetallesFiscalia;
-
+       
         public ModificarEliminar()
         {
             InitializeComponent();
@@ -68,26 +68,23 @@ namespace Ofelia_Sara.Acceso_Usuarios
             e.Cancel = true; // Cancelar el evento para que no se cierre el formulario
         }
 
-        private void listBox_Seleccion_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBox_Seleccion_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             ClearModificationControls();
 
-            // Habilitar botones si se ha seleccionado un ítem
+            // Verificar si hay un ítem seleccionado
             if (listBox_Seleccion.SelectedIndex != -1)
             {
                 btn_Editar.Enabled = true;
                 btn_Cancelar.Enabled = true;
 
-
-                listBox_Datos.Enabled = true; // Habilita el comboBox
-                listBox_Datos.BackColor = Color.White;
-            }
-
-            if (listBox_Seleccion.SelectedIndex != -1)
-            {
+                // Habilitar y actualizar el listBox_Datos
                 listBox_Datos.Enabled = true; // Habilita el listBox
+                listBox_Datos.BackColor = Color.White;
                 UpdateListBoxStyle(); // Actualiza el estilo del listBox
 
+                // Cargar datos según la selección
                 switch (listBox_Seleccion.SelectedItem.ToString())
                 {
                     case "Fiscalía":
@@ -104,15 +101,27 @@ namespace Ofelia_Sara.Acceso_Usuarios
                         break;
                 }
             }
+            else
+            {
+                // Deshabilitar botones si no hay selección
+                btn_Editar.Enabled = false;
+                btn_Cancelar.Enabled = false;
+                listBox_Datos.Enabled = false; // Deshabilita el listBox si no hay selección
+                listBox_Datos.BackColor = SystemColors.Control; // Restaura el color de fondo
+            }
+
+         
         }
-        private void listBox_Datos_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void ListBox_Datos_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Habilitar botones si se ha seleccionado un ítem
             if (listBox_Datos.SelectedIndex != -1)
             {
                 btn_Eliminar.Enabled = true;
-                btn_Guardar.Enabled = true;
+                btn_Guardar.Enabled = false;// lo mantiene desactivado
             }
+           
         }
 
         private void CargarDatosFiscalia()
@@ -547,6 +556,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 {
                     bordeGrosor = 3;
                     bordeRadio = 4;
+                   
                     bordeColor = Color.LightGreen; // Color del borde cuando el botón está habilitado
                 }
                 else
@@ -609,52 +619,62 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
         //-------------------------------------------------------------------------------------------
         //----------------BOTON EDITAR------------------------------------------
-        private void btn_Editar_Click(object sender, EventArgs e)
+
+        private void Btn_Editar_Click(object sender, EventArgs e)
         {
-            // Limpia los controles anteriores
-            ClearModificationControls();
-
-            // Verifica si hay un ítem seleccionado
-            if (listBox_Seleccion.SelectedItem != null)
+            // Verificar si no hay ningún elemento seleccionado en el ListBox
+            if (listBox_Datos.SelectedIndex == -1)
             {
-                // Obtiene el ítem seleccionado como una cadena
-                string selectedItem = listBox_Seleccion.SelectedItem.ToString();
+                // Muestra un mensaje de advertencia
+                MessageBox.Show("Debe seleccionar un elemento de la lista para EDITAR.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Limpia los controles anteriores
+                ClearModificationControls();
 
-                // Habilita y actualiza el panel dependiendo del ítem seleccionado
-                listBox_Datos.Enabled = true; // Habilita el listBox_Datos
-                listBox_Datos.BackColor = Color.White;
-                switch (selectedItem)// Dependiendo del ítem seleccionado, crea el panel de detalles correspondiente
+                // Verifica si hay un ítem seleccionado
+                if (listBox_Seleccion.SelectedItem != null)
                 {
-                    case "Dependencia":
-                        CrearPanelDetallesDependencia();
-                        break;
+                    // Obtiene el ítem seleccionado como una cadena
+                    string selectedItem = listBox_Seleccion.SelectedItem.ToString();
 
-                    case "Secretario":
-                        // Crear  panel de detalles
-                        CrearPanelDetallesSecretario();
-                        break;
 
-                    case "Instructor":
-                        // Crear  panel de detalles
-                        CrearPanelDetallesInstructor();
-                        break;
+                    btn_Guardar.Enabled = true;//sehabilita seleccion
+                    switch (selectedItem)// Dependiendo del ítem seleccionado, crea el panel de detalles correspondiente
+                    {
+                        case "Dependencia":
+                            CrearPanelDetallesDependencia();
+                            break;
 
-                    case "Fiscalía":
-                        // Crear  panel de detalles
-                        CrearPanelDetallesFiscalia();
-                        break;
+                        case "Secretario":
+                            // Crear  panel de detalles
+                            CrearPanelDetallesSecretario();
+                            break;
 
-                    // Puedes añadir más casos según los ítems disponibles en listBox_Seleccion
-                    default:
-                        MessageBox.Show("El elemento seleccionado no tiene un panel de edición asociado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case "Instructor":
+                            // Crear  panel de detalles
+                            CrearPanelDetallesInstructor();
+                            break;
+
+                        case "Fiscalía":
+                            // Crear  panel de detalles
+                            CrearPanelDetallesFiscalia();
+                            break;
+
+                        // Puedes añadir más casos según los ítems disponibles en listBox_Seleccion
+                        default:
+                            MessageBox.Show("El elemento seleccionado no tiene un panel de edición asociado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                    }
                 }
             }
         }
+
         //__________________________________________________________________________________
         //-------------BOTON CANCELAR---------------------------
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
+        private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             // Ocultar y eliminar panel_Detalles si está visible
             if (panel_Detalles != null && panel_Detalles.Visible)
@@ -665,19 +685,18 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 panel_Detalles = null; // Asegura que el panel ya no esté referenciado
             }
 
-
             // Restablecer el estado de los controles principales
             listBox_Datos.DataSource = null;
             listBox_Datos.Items.Clear(); // Limpiar elementos si es necesario
             listBox_Datos.Enabled = false; // Desactivar si estaba habilitado
             listBox_Datos.BackColor = Color.LightGray;
 
-            // Reubicar y hacer visible el panel_Botones
-            panel_Botones.Location = new Point(29, 129);
-            panel_Botones.Visible = true;
-
             // Ajustar la altura del formulario para eliminar el panel de detalles
-            this.Height = 354; // Ajusta según necesites, para restaurar la altura original
+            this.Height = 291; // restaurar la altura original
+            panel1.Height = 209;
+
+            // Reubicar  panel_Botones
+            panel_Botones.Location = new Point(10, 112);
 
             // Restablecer la selección en listBox_Seleccion si es necesario
             listBox_Seleccion.SelectedIndex = -1;
@@ -688,11 +707,9 @@ namespace Ofelia_Sara.Acceso_Usuarios
             btn_Guardar.Enabled = false;
             btn_Eliminar.Enabled = false;
         }
+
         private void AjustarFormulario()
         {
-            // Define un margen entre panel_Detalles y panel_Botones
-           // int margenEntrePaneles = -20;
-
             // Ajusta la posición de panel_Detalles inmediatamente después de panel_Superior
             panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom);
 
@@ -705,6 +722,30 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
             // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
             this.Height = panel1.Bottom + 75;
+        }
+        private void Btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            // Verificar si no hay ningún elemento seleccionado en el ListBox
+            if (listBox_Datos.SelectedIndex == -1)
+            {
+                // Muestra un mensaje de advertencia
+                MessageBox.Show("Debe seleccionar un elemento de la lista para ELIMINAR.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Obtener la fuente de datos
+                var dataSource = listBox_Datos.DataSource as IList<string>; // Asegúrate de que el tipo sea adecuado
+
+                if (dataSource != null)
+                {
+                    // Eliminar el elemento seleccionado de la fuente de datos
+                    dataSource.Remove(listBox_Datos.SelectedItem.ToString());
+                    listBox_Datos.DataSource = null; // Desvincular temporalmente la fuente de datos
+                    listBox_Datos.DataSource = dataSource; // Volver a vincular la fuente de datos actualizada
+
+                    MessageBox.Show("El elemento ha sido eliminado.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
 

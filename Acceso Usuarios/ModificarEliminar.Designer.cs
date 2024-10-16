@@ -86,7 +86,7 @@
             this.listBox_Seleccion.Name = "listBox_Seleccion";
             this.listBox_Seleccion.Size = new System.Drawing.Size(198, 20);
             this.listBox_Seleccion.TabIndex = 29;
-            this.listBox_Seleccion.SelectedIndexChanged += new System.EventHandler(this.listBox_Seleccion_SelectedIndexChanged);
+            this.listBox_Seleccion.SelectedIndexChanged += new System.EventHandler(this.ListBox_Seleccion_SelectedIndexChanged);
             // 
             // label_Seleccion
             // 
@@ -107,7 +107,7 @@
             this.listBox_Datos.Name = "listBox_Datos";
             this.listBox_Datos.Size = new System.Drawing.Size(397, 24);
             this.listBox_Datos.TabIndex = 30;
-            this.listBox_Datos.SelectedIndexChanged += new System.EventHandler(this.listBox_Datos_SelectedIndexChanged);
+            this.listBox_Datos.SelectedIndexChanged += new System.EventHandler(this.ListBox_Datos_SelectedIndexChanged);
             // 
             // panel_Botones
             // 
@@ -136,28 +136,29 @@
             // 
             // btn_Cancelar
             // 
+            this.btn_Cancelar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancelar.BackgroundImage")));
-            this.btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Cancelar.Location = new System.Drawing.Point(61, 12);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(69, 68);
             this.btn_Cancelar.TabIndex = 15;
             this.toolTip1.SetToolTip(this.btn_Cancelar, "CANCELAR");
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            this.btn_Cancelar.UseVisualStyleBackColor = false;
+            this.btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
             // btn_Editar
             // 
-            this.btn_Editar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Editar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Editar.BackgroundImage")));
-            this.btn_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Editar.Location = new System.Drawing.Point(275, 13);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(75, 66);
             this.btn_Editar.TabIndex = 17;
             this.toolTip1.SetToolTip(this.btn_Editar, "EDITAR");
             this.btn_Editar.UseVisualStyleBackColor = false;
-            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
+            this.btn_Editar.Click += new System.EventHandler(this.Btn_Editar_Click);
             // 
             // btn_Eliminar
             // 
@@ -170,6 +171,7 @@
             this.btn_Eliminar.TabIndex = 32;
             this.toolTip1.SetToolTip(this.btn_Eliminar, "ELIMINAR ELEMENTO");
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
             // 
             // label_Titulo
             // 
