@@ -14,6 +14,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using DocumentFormat.OpenXml.ExtendedProperties;
 using System.Drawing.Drawing2D;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 
 namespace MECANOGRAFIA
@@ -23,12 +24,14 @@ namespace MECANOGRAFIA
     public partial class Mecanografia : Form
     {
         private Label alertaLabel; // Variable para el Label de alerta
-
+        private Label label_Tiempo; // Label para mostrar el tiempo transcurrido
         // Diccionario para mapear letras a paneles
         private Dictionary<char, PanelesResaltados> letraPanelMap;
         // Variable para almacenar el último panel resaltado
         private PanelesResaltados panelResaltadoAnterior = null;
 
+        private Timer timer;
+        private int secondsElapsed = 0; // Para llevar la cuenta de los segundos transcurridos
         public Mecanografia()
         {
             InitializeComponent();
@@ -59,6 +62,12 @@ namespace MECANOGRAFIA
             RedondearPanel.AplicarBordesRedondeados(panel_MeniqueIzquierdo, 20, 10);
 
             this.KeyPreview = true; // Permitir que el formulario capture las teclas antes que los controles
+            CrearLabelAlerta();
+            CrearLabelTimer();
+            // Inicializar el Timer
+            timer = new Timer();
+            timer.Interval =1000; // 1 segundo
+            timer.Tick += Timer_Tick; // Evento Tick del Timer
 
             // Mapa de letras a paneles de manos y teclado virtual
             letraPanelMap = new Dictionary<char, PanelesResaltados>
@@ -134,11 +143,11 @@ namespace MECANOGRAFIA
         {
             Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
             CargarTextoYColorear();// remarca la letra que se debe presionar
-            CrearLabelAlerta();//Label que marca error al presionar tecla
+        
         }
-
         private int currentPosition = 0; // Para llevar seguimiento de la posición actual
         private bool mecanografiaActiva = true;
+        private int indiceCaracterResaltadoAnterior = -1; // Para llevar el seguimiento del último carácter resaltado
 
         private void Mecanografia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -150,12 +159,17 @@ namespace MECANOGRAFIA
             {
                 // Ocultamos el mensaje de alerta si la tecla es correcta
                 alertaLabel.Visible = false;
-                // Resaltar el panel del dedo correspondiente
+
+                // Resaltamos el panel del dedo correspondiente
                 ResaltarPanelPorLetra(letraActual);
-                // Restauramos la letra anterior (negro y sin negrita)
-                Texto_Tipear.Select(currentPosition, 1);
-                Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
-                Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
+
+                // Restauramos la letra anterior (negro y sin negrita) si ya se resaltó un carácter anterior
+                if (indiceCaracterResaltadoAnterior != -1)
+                {
+                    Texto_Tipear.Select(indiceCaracterResaltadoAnterior, 1);
+                    Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
+                    Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
+                }
 
                 // Avanzamos al siguiente carácter
                 currentPosition++;
@@ -166,13 +180,26 @@ namespace MECANOGRAFIA
                     Texto_Tipear.Select(currentPosition, 1);
                     Texto_Tipear.SelectionColor = System.Drawing.Color.Blue; // Azul
                     Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Bold); // Negrita
+
+                    // Actualizamos el índice del último carácter resaltado
+                    indiceCaracterResaltadoAnterior = currentPosition;
+                }
+                else
+                {
+                    // Si llegamos al final del texto, restauramos el último carácter
+                    if (indiceCaracterResaltadoAnterior != -1)
+                    {
+                        Texto_Tipear.Select(indiceCaracterResaltadoAnterior, 1);
+                        Texto_Tipear.SelectionColor = System.Drawing.Color.Black; // Volvemos a color negro
+                        Texto_Tipear.SelectionFont = new System.Drawing.Font(Texto_Tipear.Font, FontStyle.Regular); // Estilo normal
+                    }
                 }
 
                 Texto_Tipear.DeselectAll(); // Quitamos la selección visible
             }
             else
             {
-                if (mecanografiaActiva == false)
+                if (!mecanografiaActiva)
                 {
                     alertaLabel.Visible = false;
                     return;
@@ -184,8 +211,11 @@ namespace MECANOGRAFIA
                     alertaLabel.Visible = true;
                 }
             }
+
+            timer.Stop();
         }
-      
+
+
 
 
 
@@ -351,30 +381,70 @@ namespace MECANOGRAFIA
 
         private void Btn_Iniciar_Click(object sender, EventArgs e)
         {
+            mecanografiaActiva = true;
             panel_Manos.Visible = true;
             Texto_Tipear.Visible = true;
             panel_Teclado.Location = new Point(21, 242);
             panel1.Height = 559;
             this.Height = 641;
-            CargarTextoYColorear();//para que se muestre el panel de la letra correspondiente en color
+            CargarTextoYColorear(); // Mostrar el panel de la letra correspondiente en color
             btn_Detener.Enabled = true;
+     
+
+            label_Tiempo.Visible = false; // Asegúrate de que el label sea invisible al iniciar
+            timer.Start(); // Iniciar el Timer
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            secondsElapsed++; // Incrementar el contador de segundos
+                                // Actualizar el Label con el tiempo transcurrido
+            label_Tiempo.Text = TimeSpan.FromSeconds(secondsElapsed).ToString(@"hh\:mm\:ss");
+        }
+
+        private void CrearLabelTimer()
+        {
+            // Inicializamos el Label de tiempo
+            label_Tiempo = new Label();
+            label_Tiempo.ForeColor = SystemColors.Highlight; // Color para el texto
+            label_Tiempo.Font = new System.Drawing.Font("Arial", 18);
+            label_Tiempo.Location = new Point(315, 95); // Posición dentro del panel
+            label_Tiempo.AutoSize = true; // Ajusta el tamaño automáticamente
+            label_Tiempo.Visible = true; // Hacerlo visible inicialmente
+            panel_Especificaciones.Controls.Add(label_Tiempo); // Añadir al panel
+        }
+        
 
         //-------------------------------------------------------------------
         private void Btn_Detener_Click(object sender, EventArgs e)
         {
-           
+            timer.Stop();
+            label_Tiempo.Visible=true;
             mecanografiaActiva = false; // Desactivar la mecanografía
             alertaLabel.Visible = false;
             panel_Manos.Visible = false;
             Texto_Tipear.Visible = false;
             panel_Teclado.Location = new Point(21, 193);
-            
+            RestablecerColores();//PARA QUE NO SE NOTE CAMBIO EN EL TECLADO
             // Ajustar la altura de panel1
             panel1.Height = 380;
             this.Height = panel1.Height + 80;
         }
 
+        private void RestablecerColores()
+        {
+            // Recorre el diccionario y restablece el color de los paneles y labels
+            foreach (var entry in letraPanelMap)
+            {
+                PanelesResaltados panelesResaltados = entry.Value;
+
+                // Restablecer el color del panel de la tecla
+                panelesResaltados.PanelTecla.BackColor = SystemColors.ButtonFace; // Color original
+                panelesResaltados.LabelTecla.ForeColor = SystemColors.ControlDarkDark; // Color original del texto
+
+          
+            }
+        }
 
         //-------------------------------------------------------------------------------------
         private void Btn_Elegir_Click(object sender, EventArgs e)

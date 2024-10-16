@@ -72,6 +72,7 @@
     <Compile Include="Clases\ColorManager.cs" />
     <Compile Include="Clases\Contadora.cs" />
     <Compile Include="Clases\Dedos.cs" />
+    <Compile Include="Clases\Texto_TipearPersonalizado.cs" />
     <Compile Include="Mecanografia.cs">
       <SubType>Form</SubType>
     </Compile>

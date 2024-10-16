@@ -147,3 +147,7 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\D
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.Designer.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\System.Text.Json.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\BaseDatos.dll.config
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Interop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.ResolveComReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Interop.WMPLib.dll

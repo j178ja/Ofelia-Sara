@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoInstructivo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.instructivo = new AxWMPLib.AxWindowsMediaPlayer();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.instructivo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.AutoSize = true;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.instructivo);
             this.panel1.Location = new System.Drawing.Point(22, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(530, 298);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // instructivo
+            // 
+            this.instructivo.Enabled = true;
+            this.instructivo.Location = new System.Drawing.Point(43, 19);
+            this.instructivo.Name = "instructivo";
+            this.instructivo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("instructivo.OcxState")));
+            this.instructivo.Size = new System.Drawing.Size(444, 255);
+            this.instructivo.TabIndex = 0;
             // 
             // VideoInstructivo
             // 
@@ -52,6 +67,8 @@
             this.Text = "INSTRUCTIVO DIGITAL";
             this.Load += new System.EventHandler(this.VideoInstructivo_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.instructivo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,5 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private AxWMPLib.AxWindowsMediaPlayer instructivo;
     }
 }
