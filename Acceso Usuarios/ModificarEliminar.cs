@@ -22,7 +22,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private Label label_Dependencia;
         private Label label_Domicilio;
         private Panel panel_Detalles;
-        //private Panel panel_DetallesFiscalia;
+        private Panel panel_DetallesFiscalia;
 
         public ModificarEliminar()
         {
@@ -230,12 +230,12 @@ namespace Ofelia_Sara.Acceso_Usuarios
             {
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Location = new Point(3, 137) // Ajusta la ubicación dentro de panel1
+                Location = new Point(10, 137) // Ajusta la ubicación dentro de panel1
             };
 
             // Inicializa los TextBox para mostrar los detalles
-            textBox_Dependencia = new TextBox { ReadOnly = true, Width = 326, Height = 21 };
-            textBox_Domicilio = new TextBox { ReadOnly = true, Width = 326, Height = 21 };
+            textBox_Dependencia = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
+            textBox_Domicilio = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
 
 
             // Inicializa los Label para los nombres de los campos con un tamaño de letra más grande
@@ -260,26 +260,27 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel_Detalles.Controls.Add(textBox_Domicilio);
 
             // Organiza la posición de los controles dentro del panel
-            label_Dependencia.Location = new Point(40, 1);
-            textBox_Dependencia.Location = new Point(180, 0);
+            label_Dependencia.Location = new Point(20, 10);
+            textBox_Dependencia.Location = new Point(160, 9);
 
-            label_Domicilio.Location = new Point(40, 35);
-            textBox_Domicilio.Location = new Point(180, 36);
+            label_Domicilio.Location = new Point(54, 35);
+            textBox_Domicilio.Location = new Point(160, 36);
 
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-            // Define un margen superior (la distancia entre el panel superior y panel_Detalles)
-            int topMargin = 10;
+            // Ajusta la posición de panel_Detalles inmediatamente después de panel_Superior
+            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom);
 
-            // Ajusta la posición de panel_Detalles teniendo en cuenta el margen superior
-            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom + topMargin);
+            // Ajusta la posición de panel_Botones justo debajo de panel_Detalles con el margen definido
+            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom - 25);
 
-            // Mueve el panel_Botones hacia abajo para evitar superposición
-            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom + 10);
 
-            // Ajusta la altura del formulario para acomodar los paneles
-            this.Height = panel_Botones.Bottom + 100;
+            // Ajusta la altura de panel1 para que contenga ambos paneles con un margen de 10 px debajo de panel_Botones
+            panel1.Height = panel_Botones.Bottom + 40;
+
+            // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
+            this.Height = panel1.Bottom + 75;
         }
 
         private void ActualizarDetallesDependencia(DependenciasPoliciales dependencia)
@@ -308,7 +309,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             {
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Location = new Point(3, 137)
+                Location = new Point(10, 137)
             };
 
             // Inicializa los controles para mostrar los detalles
@@ -334,32 +335,33 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel_Detalles.Controls.Add(textBox_DeptoJudicial);
 
             // Organiza la posición de los controles dentro del panel
-            label_NombreFiscalia.Location = new Point(152, 10);
-            textBox_NombreFiscalia.Location = new Point(245, 10);
+            label_NombreFiscalia.Location = new Point(72, 10);
+            textBox_NombreFiscalia.Location = new Point(165, 10);
 
-            label_AgenteFiscal.Location = new Point(195, 40);
-            textBox_AgenteFiscal.Location = new Point(245, 40);
+            label_AgenteFiscal.Location = new Point(115, 40);
+            textBox_AgenteFiscal.Location = new Point(165, 40);
 
-            label_Localidad.Location = new Point(148, 69);
-            textBox_Localidad.Location = new Point(245, 70);
+            label_Localidad.Location = new Point(68, 69);
+            textBox_Localidad.Location = new Point(165, 70);
 
-            label_DeptoJudicial.Location = new Point(110, 99);
-            textBox_DeptoJudicial.Location = new Point(245, 100);
+            label_DeptoJudicial.Location = new Point(30, 99);
+            textBox_DeptoJudicial.Location = new Point(165, 100);
 
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-            // Define un margen superior (la distancia entre el panel superior y panel_Detalles)
-            int topMargin = 10;
+            // Ajusta la posición de panel_Detalles inmediatamente después de panel_Superior
+            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom);
 
-            // Ajusta la posición de panel_Detalles teniendo en cuenta el margen superior
-            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom + topMargin);
+            // Ajusta la posición de panel_Botones justo debajo de panel_Detalles con el margen definido
+            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom - 60);
 
-            // Mueve el panel_Botones hacia abajo para evitar superposición
-            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom + 1);
 
-            // Ajusta la altura del formulario para acomodar los paneles
-            this.Height = panel_Botones.Bottom + 220;
+            // Ajusta la altura de panel1 para que contenga ambos paneles con un margen de 10 px debajo de panel_Botones
+            panel1.Height = panel_Botones.Bottom + 85;
+
+            // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
+            this.Height = panel1.Bottom + 75;
         }
         //------------------------------------------------------------------------
         //-----------PANEL MODIFICAR SECRETARIO--------------------------------------
@@ -377,7 +379,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             {
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Location = new Point(3, 137),
+                Location = new Point(7, 137),
                 
             };
 
@@ -416,52 +418,33 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel_Detalles.Controls.Add(textBox_Funcion);
 
             // Organiza la posición de los controles dentro del panel
-            label_Legajo.Location = new Point(156, 9);
-            textBox_Legajo.Location = new Point(245, 10);
+            label_Legajo.Location = new Point(79, 9);
+            textBox_Legajo.Location = new Point(168, 10);
 
-            label_Escalafon.Location = new Point(121, 40);
-            comboBox_Escalafon.Location = new Point(245, 40);
+            label_Escalafon.Location = new Point(44, 40);
+            comboBox_Escalafon.Location = new Point(168, 40);
 
-            label_Jerarquia.Location = new Point(128, 70);
-            comboBox_Jerarquia.Location = new Point(245, 70);
+            label_Jerarquia.Location = new Point(51, 70);
+            comboBox_Jerarquia.Location = new Point(168, 70);
 
-            label_Nombre.Location = new Point(150, 100);
-            textBox_Nombre.Location = new Point(245, 100);
+            label_Nombre.Location = new Point(73, 100);
+            textBox_Nombre.Location = new Point(168, 100);
 
-            label_Apellido.Location = new Point(140, 130);
-            textBox_Apellido.Location = new Point(245, 130);
+            label_Apellido.Location = new Point(63, 130);
+            textBox_Apellido.Location = new Point(168, 130);
 
-            label_Dependencia.Location = new Point(104, 160);
-            comboBox_Dependencia.Location = new Point(245, 160);
+            label_Dependencia.Location = new Point(27, 160);
+            comboBox_Dependencia.Location = new Point(168, 160);
 
-            label_Funcion.Location = new Point(148, 190);
-            textBox_Funcion.Location = new Point(245, 190);
+            label_Funcion.Location = new Point(71, 190);
+            textBox_Funcion.Location = new Point(168, 190);
 
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-            //// Define un margen superior (la distancia entre el panel superior y panel_Detalles)
-            int topMargin = 0;
+            AjustarFormulario();
 
-            //// Ajusta la posición de panel_Detalles teniendo en cuenta el margen superior
-            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom + topMargin);
-            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom + topMargin);
 
-            //// Define el margen exacto entre panel_Detalles y panel_Botones
-            int margenEntrePaneles = 10; // Cambia a 10 para una separación exacta
-
-            //// Mueve el panel_Botones hacia abajo para evitar superposición
-            panel_Botones.Location = new Point(30, panel_Detalles.Bottom + margenEntrePaneles);
-
-            //// Ajusta la altura del formulario para que panel_Botones esté alineado con el final de panel1
-            this.Height = panel_Botones.Bottom + 10; // Ajuste final para acomodar los paneles
-
-            //// También puedes ajustar el tamaño del formulario para asegurar que los paneles sean visibles
-            this.Height = Math.Max(this.Height, panel_Botones.Bottom + 300);
-
-            // Desplaza el formulario hacia arriba en la pantalla
-            int desplazamientoVertical = 250; // Cantidad de píxeles para desplazar el formulario hacia arriba
-            this.Top -= desplazamientoVertical; // Ajusta la posición del formulario hacia arriba
         }
         //------------------------------------------------------------------------
         //-----------PANEL MODIFICAR INSTRUCTOR--------------------------------------
@@ -479,7 +462,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             {
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Location = new Point(3, 137),
+                Location = new Point(7, 137),
                
             };
 
@@ -517,55 +500,33 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel_Detalles.Controls.Add(label_Funcion);
             panel_Detalles.Controls.Add(textBox_Funcion);
 
-            // Organiza la posición de los controles dentro del panel
-            label_Legajo.Location = new Point(156, 9);
-            textBox_Legajo.Location = new Point(245, 10);
+            label_Legajo.Location = new Point(79, 9);
+            textBox_Legajo.Location = new Point(168, 10);
 
-            label_Escalafon.Location = new Point(121, 40);
-            comboBox_Escalafon.Location = new Point(245, 40);
+            label_Escalafon.Location = new Point(44, 40);
+            comboBox_Escalafon.Location = new Point(168, 40);
 
-            label_Jerarquia.Location = new Point(128, 70);
-            comboBox_Jerarquia.Location = new Point(245, 70);
+            label_Jerarquia.Location = new Point(51, 70);
+            comboBox_Jerarquia.Location = new Point(168, 70);
 
-            label_Nombre.Location = new Point(150, 100);
-            textBox_Nombre.Location = new Point(245, 100);
+            label_Nombre.Location = new Point(73, 100);
+            textBox_Nombre.Location = new Point(168, 100);
 
-            label_Apellido.Location = new Point(140, 130);
-            textBox_Apellido.Location = new Point(245, 130);
+            label_Apellido.Location = new Point(63, 130);
+            textBox_Apellido.Location = new Point(168, 130);
 
-            label_Dependencia.Location = new Point(104, 160);
-            comboBox_Dependencia.Location = new Point(245, 160);
+            label_Dependencia.Location = new Point(27, 160);
+            comboBox_Dependencia.Location = new Point(168, 160);
 
-            label_Funcion.Location = new Point(148, 190);
-            textBox_Funcion.Location = new Point(245, 190);
+            label_Funcion.Location = new Point(71, 190);
+            textBox_Funcion.Location = new Point(168, 190);
 
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-            //// Define un margen superior (la distancia entre el panel superior y panel_Detalles)
-            int topMargin = 0;
+            AjustarFormulario();
 
-            //// Ajusta la posición de panel_Detalles teniendo en cuenta el margen superior
-            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom + topMargin);
-            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom + topMargin);
 
-            //// Define el margen exacto entre panel_Detalles y panel_Botones
-            int margenEntrePaneles = 10; // Cambia a 10 para una separación exacta
-
-            //// Mueve el panel_Botones hacia abajo para evitar superposición
-            panel_Botones.Location = new Point(30, panel_Detalles.Bottom + margenEntrePaneles);
-
-            //// Ajusta la altura del formulario para que panel_Botones esté alineado con el final de panel1
-            this.Height = panel_Botones.Bottom + 10; // Ajuste final para acomodar los paneles
-
-            //// También puedes ajustar el tamaño del formulario para asegurar que los paneles sean visibles
-            this.Height = Math.Max(this.Height, panel_Botones.Bottom + 300);
-
-            // Desplaza el formulario hacia arriba en la pantalla
-            int desplazamientoVertical = 250; // Cantidad de píxeles para desplazar el formulario hacia arriba
-            this.Top -= desplazamientoVertical; // Ajusta la posición del formulario hacia arriba
-            //int desplazamientoLateral = 50; 
-            //this.Left += desplazamientoLateral;
         }
         //_________________________________________________________________________________
         //-----ESTETICA DE BOTONES---------------------------------------------------
@@ -727,5 +688,25 @@ namespace Ofelia_Sara.Acceso_Usuarios
             btn_Guardar.Enabled = false;
             btn_Eliminar.Enabled = false;
         }
+        private void AjustarFormulario()
+        {
+            // Define un margen entre panel_Detalles y panel_Botones
+           // int margenEntrePaneles = -20;
+
+            // Ajusta la posición de panel_Detalles inmediatamente después de panel_Superior
+            panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom);
+
+            // Ajusta la posición de panel_Botones justo debajo de panel_Detalles con el margen definido
+            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom -100);
+
+           
+            // Ajusta la altura de panel1 para que contenga ambos paneles con un margen de 10 px debajo de panel_Botones
+            panel1.Height = panel_Botones.Bottom +110;
+
+            // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
+            this.Height = panel1.Bottom + 75;
+        }
+
+
     }
 }

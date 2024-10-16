@@ -49,14 +49,14 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.panel_Superior);
             this.panel1.Controls.Add(this.panel_Botones);
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 214);
+            this.panel1.Size = new System.Drawing.Size(541, 209);
             this.panel1.TabIndex = 2;
             // 
             // panel_Superior
@@ -82,9 +82,9 @@
             "SECRETARIO",
             "DEDPENDENCIA",
             "PERSONAL "});
-            this.listBox_Seleccion.Location = new System.Drawing.Point(225, 10);
+            this.listBox_Seleccion.Location = new System.Drawing.Point(260, 10);
             this.listBox_Seleccion.Name = "listBox_Seleccion";
-            this.listBox_Seleccion.Size = new System.Drawing.Size(233, 20);
+            this.listBox_Seleccion.Size = new System.Drawing.Size(198, 20);
             this.listBox_Seleccion.TabIndex = 29;
             this.listBox_Seleccion.SelectedIndexChanged += new System.EventHandler(this.listBox_Seleccion_SelectedIndexChanged);
             // 
@@ -92,7 +92,7 @@
             // 
             this.label_Seleccion.AutoSize = true;
             this.label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Seleccion.Location = new System.Drawing.Point(3, 12);
+            this.label_Seleccion.Location = new System.Drawing.Point(38, 14);
             this.label_Seleccion.Name = "label_Seleccion";
             this.label_Seleccion.Size = new System.Drawing.Size(216, 16);
             this.label_Seleccion.TabIndex = 26;
@@ -103,9 +103,9 @@
             this.listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_Datos.FormattingEnabled = true;
             this.listBox_Datos.ItemHeight = 20;
-            this.listBox_Datos.Location = new System.Drawing.Point(83, 45);
+            this.listBox_Datos.Location = new System.Drawing.Point(61, 45);
             this.listBox_Datos.Name = "listBox_Datos";
-            this.listBox_Datos.Size = new System.Drawing.Size(356, 24);
+            this.listBox_Datos.Size = new System.Drawing.Size(397, 24);
             this.listBox_Datos.TabIndex = 30;
             this.listBox_Datos.SelectedIndexChanged += new System.EventHandler(this.listBox_Datos_SelectedIndexChanged);
             // 
@@ -117,7 +117,7 @@
             this.panel_Botones.Controls.Add(this.btn_Cancelar);
             this.panel_Botones.Controls.Add(this.btn_Editar);
             this.panel_Botones.Controls.Add(this.btn_Eliminar);
-            this.panel_Botones.Location = new System.Drawing.Point(12, 115);
+            this.panel_Botones.Location = new System.Drawing.Point(10, 112);
             this.panel_Botones.Name = "panel_Botones";
             this.panel_Botones.Size = new System.Drawing.Size(514, 91);
             this.panel_Botones.TabIndex = 34;
@@ -194,6 +194,7 @@
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(589, 291);
             this.Name = "ModificarEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMINISTRADOR DE ELEMENTOS";

@@ -13,6 +13,7 @@ using Clases.Apariencia;
 using BaseDatos.Entidades;
 using Clases.Texto;
 using Clases.Botones;
+using MySqlX.XDevAPI.Common;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -60,13 +61,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
        //--------------------------------------------------------------------------
 
-
-  
-
-      
-
-
-        private void btn_Registrarse_Click(object sender, EventArgs e)
+        private void Btn_Registrarse_Click(object sender, EventArgs e)
         {
             // Verificar si los campos están completados
             if (!ValidarTextBoxes(this))
@@ -79,7 +74,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
-                MessageBox.Show("Se ha registrado un nuevo Usuario.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Se ha registrado un nuevo Usuario.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
+                // Si el usuario presiona "OK", cerrar el formulario actual
+                if (result == DialogResult.OK)
+                {
+                    this.Close(); // Cierra el formulario actual
+                }
             }
         }
         private bool ValidarTextBoxes(Control parent)
@@ -107,7 +108,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //----BOTON LIMPIAR/ELIMINAR-----------------------
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
@@ -132,19 +133,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // Define una variable para llevar el control del estado de visibilidad
         private bool esContraseñaVisible = false;
 
-        private void pictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
+        private void PictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '\0'; // Muestra el texto real
             pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña; // Cambia la imagen al icono de "visible"
         }
 
-        private void pictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
+        private void PictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '*'; // Oculta el texto con asteriscos
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoCerrado; // Cambia la imagen al icono de "oculto"
         }
 
-        private void textBox_Contraseña_TextChanged(object sender, EventArgs e)
+        private void TextBox_Contraseña_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_Contraseña.Text))
             {
@@ -158,7 +159,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {

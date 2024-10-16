@@ -125,8 +125,8 @@
             this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
             this.pictureBox_OjoContraseña.TabIndex = 27;
             this.pictureBox_OjoContraseña.TabStop = false;
-            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseDown);
-            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_OjoContraseña_MouseUp);
+            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_OjoContraseña_MouseDown);
+            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_OjoContraseña_MouseUp);
             // 
             // comboBox_Jerarquia
             // 
@@ -167,7 +167,7 @@
             this.btn_Limpiar.TabIndex = 23;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Registrarse
             // 
@@ -180,7 +180,7 @@
             this.btn_Registrarse.TabIndex = 22;
             this.toolTip1.SetToolTip(this.btn_Registrarse, "REGISTRARSE");
             this.btn_Registrarse.UseVisualStyleBackColor = false;
-            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
+            this.btn_Registrarse.Click += new System.EventHandler(this.Btn_Registrarse_Click);
             // 
             // label_Legajo
             // 
@@ -199,7 +199,7 @@
             this.textBox_Legajo.Name = "textBox_Legajo";
             this.textBox_Legajo.Size = new System.Drawing.Size(232, 24);
             this.textBox_Legajo.TabIndex = 20;
-            this.textBox_Legajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Legajo_KeyPress);
+            this.textBox_Legajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Legajo_KeyPress);
             // 
             // label_Apellido
             // 
@@ -268,7 +268,7 @@
             this.textBox_Contraseña.PasswordChar = '*';
             this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
             this.textBox_Contraseña.TabIndex = 10;
-            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.textBox_Contraseña_TextChanged);
+            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.TextBox_Contraseña_TextChanged);
             // 
             // textBox_Usuario
             // 

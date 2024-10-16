@@ -55,12 +55,12 @@ namespace Ofelia_Sara.Formularios
         {
             // Margen opcional
             int margen = 10;
-            int buttonHeight = 30; // Altura del botón en la parte inferior
+            int bottomMargin = 30; // Margen inferior deseado
 
-            // Ajustar el tamaño del panel manteniendo proporciones
+            // Ajustar el tamaño del panel manteniendo el margen inferior
             panel1.Width = this.ClientSize.Width - margen * 2;
-            panel1.Height = this.ClientSize.Height - buttonHeight - margen * 2; // Restar la altura del botón y el margen
-            panel1.Location = new Point(margen, margen); // Centrar el panel con margen
+            panel1.Height = this.ClientSize.Height - bottomMargin - margen; // Restar el margen inferior y superior
+            panel1.Location = new Point(margen, margen); // Centrar el panel con margen superior y lateral
 
             // Calcular proporciones del AxWindowsMediaPlayer
             float mediaPlayerProporcionAncho = 444f / 530f; // Proporción de ancho del MediaPlayer

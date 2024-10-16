@@ -225,6 +225,7 @@
             this.btn_Mecanografia.Name = "btn_Mecanografia";
             this.btn_Mecanografia.Size = new System.Drawing.Size(42, 32);
             this.btn_Mecanografia.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.btn_Mecanografia, "MECANOGRAFIA");
             this.btn_Mecanografia.UseVisualStyleBackColor = true;
             this.btn_Mecanografia.Click += new System.EventHandler(this.Btn_Mecanografia_Click);
             this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_Mecanografia_MouseDown);

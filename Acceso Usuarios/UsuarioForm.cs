@@ -108,13 +108,33 @@ namespace Ofelia_Sara.Formularios
 
         private void Btn_Ingresar_Click(object sender, EventArgs e)
         {
-            // Crea una instancia del formulario ModificarEliminar
-            ModificarEliminar formModificarEliminar = new ModificarEliminar();
+            // Asumiendo que tienes acceso al formulario principal (MenuPrincipal)
+            Form menuPrincipal = Application.OpenForms["MenuPrincipal"]; // O usa una referencia directa si la tienes
+            if (menuPrincipal != null)
+            {
+                // Obtener la ubicación y tamaño del formulario principal
+                Point menuPrincipalLocation = menuPrincipal.Location;
+                Size menuPrincipalSize = menuPrincipal.Size;
 
-            // Muestra el formulario como una ventana modal
-            formModificarEliminar.ShowDialog();
+                // Cierra el formulario actual (UsuarioForm)
+                this.Close();
 
-            this.Close();
+                // Crear una instancia del formulario ModificarEliminar
+                ModificarEliminar formModificarEliminar = new ModificarEliminar();
+
+                // Calcular la nueva ubicación para el formulario ModificarEliminar
+                int x = menuPrincipalLocation.X-6; // Mantener la misma posición horizontal
+                int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+
+                // Ajustar la ubicación del formulario ModificarEliminar
+                formModificarEliminar.StartPosition = FormStartPosition.Manual;
+                formModificarEliminar.Location = new Point(x, y);
+
+                // Mostrar el formulario como una ventana modal
+                formModificarEliminar.Show();
+            }
+            
         }
+
     }
 }
