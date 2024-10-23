@@ -151,3 +151,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Interop.WMPLib.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.ResolveComReference.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Interop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\sugerencias_Caratula.json

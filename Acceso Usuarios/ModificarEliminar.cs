@@ -631,7 +631,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             else
             {
                 // Limpia los controles anteriores
-                ClearModificationControls();
+              //  ClearModificationControls();
 
                 // Verifica si hay un ítem seleccionado
                 if (listBox_Seleccion.SelectedItem != null)

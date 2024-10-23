@@ -12,7 +12,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics;
 using System.Web.UI.WebControls.WebParts;
 using Ofelia_Sara.Registro_de_personal;
-
+using System.IO;
 using Mysqlx.Cursor;
 using System.Drawing.Drawing2D;
 using Clases.Texto;
@@ -21,7 +21,8 @@ using Clases.Reposicon_paneles;
 using Ofelia_Sara.Formularios;
 using Controles.Controles;
 using BaseDatos.Entidades;
-
+using Ofelia_Sara.Clases.Texto;
+using Newtonsoft.Json;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -31,6 +32,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
+
+        //Lista para autocompletar caratula
+        private List<string> sugerencias;
 
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
@@ -75,6 +79,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarDatosImputado.BackColor = Color.Tomato;
 
             comboBox_DeptoJudicial.TextChanged += ComboBox_DeptoJudicial_TextChanged;
+
+            // Ruta completa del archivo JSON
+            string rutaJson = @"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Json\sugerencias_Caratula.json";
+
+            // Cargar sugerencias desde el archivo JSON
+            sugerencias= AutocompletarCaratula.LeerSugerenciasDesdeJson(rutaJson);
+
+            // Configurar el TextBox para utilizar autocompletar
+            ConfigurarAutocompletar(textBox_Caratula, sugerencias);
         }
 
 
@@ -108,7 +121,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBoxDEPENDENCIAS();
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO
-        }
+
+          }
         
         //-----------------------------------------------------------------------------
         private void GuardarDatos()
@@ -142,8 +156,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //dataInserter.GuardarIPP(numeroIpp, ufid, dr, localidad, DeptoJudicial, instructor, secretario, dependencia, fecha, victimas, imputados);
 
         }
+
+
+        //------Autocompletar CARATULA------
+        private void ConfigurarAutocompletar(TextBox textBox, List<string> sugerencias)
+        {
+            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+            autoCompleteCollection.AddRange(sugerencias.ToArray());
+
+            textBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBox.AutoCompleteCustomSource = autoCompleteCollection;
+        }
+
+
         //---------BOTON GUARDAR--------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
 
             // Verificar si los campos están completados
@@ -965,6 +993,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ActualizarEstado();
         }
 
-    
+      
     }
 }
