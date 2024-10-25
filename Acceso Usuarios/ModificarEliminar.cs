@@ -15,6 +15,8 @@ using BaseDatos.Adm_BD.Modelos;
 
 using Clases.Apariencia;
 using Ofelia_Sara.Formularios;
+using Clases.Texto;
+using Clases.Botones;
 
 namespace Ofelia_Sara.Acceso_Usuarios
 {
@@ -128,7 +130,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 btn_Eliminar.Enabled = true;
                 btn_Guardar.Enabled = false;// lo mantiene desactivado
             }
-           
+          
         }
 
         private void CargarDatosFiscalia()
@@ -202,6 +204,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     listBox_Datos.DataSource = comisarias;
                     listBox_Datos.DisplayMember = "NombreYLocalidad";  //trae nombre y localidad con metodo de comisaria.cs
                     listBox_Datos.SelectedIndex = -1; // Inicializa con ningún elemento seleccionado
+
+                
                 }
                 catch (Exception ex)
                 {
@@ -257,7 +261,14 @@ namespace Ofelia_Sara.Acceso_Usuarios
             textBox_Domicilio = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
             textBox_Localidad = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
             textBox_Partido = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
+            MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
+            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
+            MayusculaYnumeros.AplicarAControl(textBox_Localidad);
 
+            // Suscribirse al evento TextChanged para aplicar CamelCase
+            textBox_Partido.TextChanged += TextBox_Partido_TextChanged;
+
+           
 
             // Inicializa los Label para los nombres de los campos con un tamaño de letra más grande
             label_Dependencia = new Label
@@ -335,11 +346,20 @@ namespace Ofelia_Sara.Acceso_Usuarios
             textBox_Domicilio.Text = dependencia.Domicilio;
         }
 
-       
+        // Método para manejar el evento TextChanged
+        private void TextBox_Partido_TextChanged(object sender, EventArgs e)
+        {
+            // Convertir el texto a CamelCase
+            string textoConvertido = ConvertirACamelCase.Convertir(textBox_Partido.Text);
+            textBox_Partido.TextChanged -= TextBox_Partido_TextChanged; // Desuscribirse para evitar un bucle
+            textBox_Partido.Text = textoConvertido; // Asigna el texto convertido
+            textBox_Partido.SelectionStart = textBox_Partido.Text.Length; // Mantiene el cursor al final
+            textBox_Partido.TextChanged += TextBox_Partido_TextChanged; // Volver a suscribirse
+        }
 
         //------------------------------------------------------------------------
         //-----------PANEL MODIFICAR FISCALIA--------------------------------------
-       
+
         private void CrearPanelDetallesFiscalia()
         {
             // Verifica si el panel ya existe, para no duplicarlo
@@ -666,9 +686,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             else
             {
-                // Limpia los controles anteriores
-               // ClearModificationControls();
-
+               
                 // Verifica si hay un ítem seleccionado
                 if (listBox_Seleccion.SelectedItem != null)
                 {
@@ -681,6 +699,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     {
                         case "Dependencia":
                             CrearPanelDetallesDependencia();
+                            CargarDatosSeleccionados();
                             break;
 
                         case "Secretario":
@@ -706,11 +725,34 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 }
             }
         }
+        //-----para cargar los datos al editar---
+        private void CargarDatosSeleccionados()
+        {
+            if (listBox_Datos.SelectedItem is Comisaria selectedComisaria)
+            {
+                textBox_Dependencia.Text = selectedComisaria.Nombre;
+                textBox_Domicilio.Text = selectedComisaria.Direccion;
+                textBox_Localidad.Text = selectedComisaria.Localidad;
+                textBox_Partido.Text = selectedComisaria.Partido;
+
+
+                // Habilitar los TextBox para edición
+                textBox_Dependencia.ReadOnly = false;
+                textBox_Domicilio.ReadOnly = false;
+                textBox_Localidad.ReadOnly = false;
+                textBox_Partido.ReadOnly = false;
+            }
+        }
 
         //__________________________________________________________________________________
         //-------------BOTON CANCELAR---------------------------
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
+        {
+         FinalizarEdicion();
+        }
+         
+        private void FinalizarEdicion()
         {
             // Ocultar y eliminar panel_Detalles si está visible
             if (panel_Detalles != null && panel_Detalles.Visible)
@@ -732,7 +774,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel1.Height = 209;
 
             // Reubicar  panel_Botones
-            panel_Botones.Location = new Point(10, 112);
+            panel_Botones.Location = new Point(12, 112);
 
             // Restablecer la selección en listBox_Seleccion si es necesario
             listBox_Seleccion.SelectedIndex = -1;
@@ -769,21 +811,133 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             else
             {
-                // Obtener la fuente de datos
-                var dataSource = listBox_Datos.DataSource as IList<string>; // Asegúrate de que el tipo sea adecuado
+                // Obtener la fuente de datos y el elemento seleccionado
+                var dataSource = listBox_Datos.DataSource as IList<Comisaria>; // Asegúrate de que el tipo sea adecuado
+                Comisaria selectedComisaria = listBox_Datos.SelectedItem as Comisaria; // Cambia el tipo según tu clase Comisaria
 
-                if (dataSource != null)
+                if (dataSource != null && selectedComisaria != null)
                 {
+                    // Eliminar el elemento de la base de datos
+                    var dbManager = new ComisariasManager(); // Asegúrate de que la conexión se esté manejando correctamente
+                    dbManager.DeleteComisaria(selectedComisaria.Id); // Asegúrate de que 'Id' sea la propiedad que identifica a la comisaría
+
                     // Eliminar el elemento seleccionado de la fuente de datos
-                    dataSource.Remove(listBox_Datos.SelectedItem.ToString());
-                    listBox_Datos.DataSource = null; // Desvincular temporalmente la fuente de datos
-                    listBox_Datos.DataSource = dataSource; // Volver a vincular la fuente de datos actualizada
+                    dataSource.Remove(selectedComisaria);
+                    ClearModificationControls(); // Limpia el ListBox
+
+                    // Método para recargar los datos del ListBox
+                    CargarDatosEnListBox(); // Llama a este método para recargar los datos
 
                     MessageBox.Show("El elemento ha sido eliminado.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
+        // Método para cargar los datos en el ListBox
+        private void CargarDatosEnListBox()
+        {
+            var dbManager = new ComisariasManager(); // Inicializa tu dbManager
+            var comisarias = dbManager.GetComisarias(); // Asegúrate de que este método devuelva la lista de comisarías
 
+            // Limpia la fuente de datos
+            listBox_Datos.DataSource = null; // Desvincular temporalmente la fuente de datos
+            listBox_Datos.DataSource = comisarias; // Vuelve a vincular la fuente de datos actualizada
+
+            // Si deseas limpiar el formulario, puedes llamar aquí
+            LimpiarFormulario.Limpiar(this); // Limpia el contenido de los TextBox
+        }
+
+
+        private void Btn_Guardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verifica qué tipo de dependencia se está editando
+                if (listBox_Datos.SelectedItem is Comisaria)
+                {
+                    // Lógica para guardar cambios de Comisaria
+                    GuardarCambiosDependencia();
+                    FinalizarEdicion();
+                }
+                else if (listBox_Datos.SelectedItem is Instructor)
+                {
+                    // Lógica para guardar cambios de Instructor
+                    GuardarCambiosInstructor();
+                    FinalizarEdicion();
+                }
+                else if (listBox_Datos.SelectedItem is Secretario)
+                {
+                    // Lógica para guardar cambios de Secretario
+                    GuardarCambiosSecretario();
+                    FinalizarEdicion();
+                }
+                else if (listBox_Datos.SelectedItem is Fiscalia)
+                {
+                    // Lógica para guardar cambios de Fiscalía
+                    GuardarCambiosFiscalia();
+                    FinalizarEdicion();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado una dependencia válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GuardarCambiosDependencia()
+        {
+            // Verifica que un elemento esté seleccionado y que sea del tipo correcto
+            if (listBox_Datos.SelectedItem is Comisaria selectedComisaria)
+            {
+                // Realiza las asignaciones de datos desde los TextBox
+                selectedComisaria.Nombre = textBox_Dependencia.Text.Trim();
+                selectedComisaria.Direccion = textBox_Domicilio.Text.Trim();
+                selectedComisaria.Localidad = textBox_Localidad.Text.Trim();
+                selectedComisaria.Partido = textBox_Partido.Text.Trim();
+
+                // Validaciones básicas antes de guardar
+                if (string.IsNullOrWhiteSpace(selectedComisaria.Nombre) ||
+                    string.IsNullOrWhiteSpace(selectedComisaria.Localidad))
+                {
+                    MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Sale del método si hay campos vacíos
+                }
+
+                try
+                {
+                    // Llama a tu manager para guardar en la base de datos
+                    ComisariasManager comisariasManager = new ComisariasManager();
+                    comisariasManager.UpdateComisaria(selectedComisaria.Id, selectedComisaria.Nombre, selectedComisaria.Direccion, selectedComisaria.Localidad, selectedComisaria.Partido);
+
+                    MessageBox.Show("Los cambios han sido guardados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de errores durante la actualización
+                    MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado una comisaría válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void GuardarCambiosInstructor()
+        {
+
+        }
+        private void GuardarCambiosSecretario()
+        {
+
+        }
+        private void GuardarCambiosFiscalia()
+        {
+
+        }
     }
 }

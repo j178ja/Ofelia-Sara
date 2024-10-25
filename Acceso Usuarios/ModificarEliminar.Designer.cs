@@ -117,7 +117,7 @@
             this.panel_Botones.Controls.Add(this.btn_Cancelar);
             this.panel_Botones.Controls.Add(this.btn_Editar);
             this.panel_Botones.Controls.Add(this.btn_Eliminar);
-            this.panel_Botones.Location = new System.Drawing.Point(10, 112);
+            this.panel_Botones.Location = new System.Drawing.Point(12, 112);
             this.panel_Botones.Name = "panel_Botones";
             this.panel_Botones.Size = new System.Drawing.Size(514, 91);
             this.panel_Botones.TabIndex = 34;
@@ -133,6 +133,7 @@
             this.btn_Guardar.TabIndex = 31;
             this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR CAMBIOS");
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // btn_Cancelar
             // 
