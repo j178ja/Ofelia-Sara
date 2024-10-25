@@ -18,6 +18,8 @@ using System.Text;
 using System.Data;
 using System.Data.Common;
 using BaseDatos.Adm_BD.Manager;
+using System.ComponentModel;
+using BaseDatos.Adm_BD.Modelos;
 
 
 
@@ -68,11 +70,11 @@ namespace Ofelia_Sara.Formularios
             InitializeComponent();
 
             // Verificamos si está en tiempo de ejecución
-            if (!this.DesignMode)
+            // Evitar que se ejecute el código en modo diseño
+            // Evitar ejecución en tiempo de diseño
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
             {
-                // Inicializamos la conexión a la base de datos solo en tiempo de ejecución
-                dbConnection = new DatabaseConnection();
-               
+                return; // Salir si estamos en modo diseño
             }
 
             autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
@@ -296,17 +298,24 @@ namespace Ofelia_Sara.Formularios
         //--------
         public void CargarDatosDependencia(ComboBox comboBox, ComisariasManager dbManager)
         {
-            // Obtener los datos desde la base de datos
-            DataTable dt = dbManager.GetComisarias();
-
-            // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
-            comboBox.Items.Clear();
-
-            // Recorrer las filas del DataTable y agregar los datos al ComboBox
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                string item = $"{row["nombre"]}   {row["localidad"]}";
-                comboBox.Items.Add(item);
+                // Obtener los datos desde la base de datos
+                List<Comisaria> comisarias = dbManager.GetComisarias();
+
+                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
+                comboBox.Items.Clear();
+
+                // Recorrer la lista de comisarías y agregar los datos al ComboBox
+                foreach (Comisaria comisaria in comisarias)
+                {
+                    string item = $"{comisaria.Nombre}   {comisaria.Localidad}"; // Utiliza las propiedades de la clase Comisaria
+                    comboBox.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos de Dependencias: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

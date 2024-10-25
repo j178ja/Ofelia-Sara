@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos.Entidades;
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
+
 
 using Clases.Apariencia;
 using Ofelia_Sara.Formularios;
@@ -19,8 +22,12 @@ namespace Ofelia_Sara.Acceso_Usuarios
     {
         private TextBox textBox_Dependencia;
         private TextBox textBox_Domicilio;
+        private TextBox textBox_Localidad;
+        private TextBox textBox_Partido;
         private Label label_Dependencia;
         private Label label_Domicilio;
+        private Label label_Localidad;
+        private Label label_Partido;
         private Panel panel_Detalles;
         private Panel panel_DetallesFiscalia;
        
@@ -183,25 +190,28 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
         private void CargarDatosDependencia()
         {
-            try
-            {
-                // Elimina el DataSource para evitar conflictos
-                listBox_Datos.DataSource = null;
-                listBox_Datos.Items.Clear(); // Limpia los elementos actuales
+           try
+                {
+                    // Elimina el DataSource para evitar conflictos
+                    listBox_Datos.DataSource = null;
+                    listBox_Datos.Items.Clear(); // Limpia los elementos actuales
 
-                List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
-                listBox_Datos.DataSource = dependencias;
-                listBox_Datos.DisplayMember = "Dependencia";
-                listBox_Datos.SelectedIndex = -1; // Inicializar con ningún elemento seleccionado
+                    ComisariasManager comisariasManager = new ComisariasManager();
+                    List<Comisaria> comisarias = comisariasManager.GetComisarias();
+
+                    listBox_Datos.DataSource = comisarias;
+                    listBox_Datos.DisplayMember = "NombreYLocalidad";  // Asume que tienes una propiedad 'Nombre' en la clase Comisaria
+                    listBox_Datos.SelectedIndex = -1; // Inicializa con ningún elemento seleccionado
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos de Comisaría: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar datos de Dependencia: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
-        private void ClearModificationControls()
+
+            private void ClearModificationControls()
         {
             // Elimina la fuente de datos para evitar conflictos
             listBox_Datos.DataSource = null;
@@ -245,6 +255,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
             // Inicializa los TextBox para mostrar los detalles
             textBox_Dependencia = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
             textBox_Domicilio = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
+            textBox_Localidad = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
+            textBox_Partido = new TextBox { ReadOnly = true, Width = 300, Height = 21 };
 
 
             // Inicializa los Label para los nombres de los campos con un tamaño de letra más grande
@@ -262,11 +274,29 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 Font = new Font("Arial", 12, FontStyle.Bold) // Cambia "Arial" y 12 según lo necesites
             };
 
+            label_Localidad = new Label
+            {
+                Text = "LOCALIDAD :",
+                AutoSize = true,
+                Font = new Font("Arial", 12, FontStyle.Bold) // Cambia "Arial" y 12 según lo necesites
+            };
+
+            label_Partido = new Label
+            {
+                Text = "PARTIDO :",
+                AutoSize = true,
+                Font = new Font("Arial", 12, FontStyle.Bold) // Cambia "Arial" y 12 según lo necesites
+            };
+
             // Añade los controles al panel
             panel_Detalles.Controls.Add(label_Dependencia);
             panel_Detalles.Controls.Add(textBox_Dependencia);
             panel_Detalles.Controls.Add(label_Domicilio);
             panel_Detalles.Controls.Add(textBox_Domicilio);
+            panel_Detalles.Controls.Add(label_Localidad);
+            panel_Detalles.Controls.Add(textBox_Localidad);
+            panel_Detalles.Controls.Add(label_Partido);
+            panel_Detalles.Controls.Add(textBox_Partido);
 
             // Organiza la posición de los controles dentro del panel
             label_Dependencia.Location = new Point(20, 10);
@@ -275,6 +305,12 @@ namespace Ofelia_Sara.Acceso_Usuarios
             label_Domicilio.Location = new Point(54, 35);
             textBox_Domicilio.Location = new Point(160, 36);
 
+            label_Localidad.Location = new Point(44, 62);
+            textBox_Localidad.Location = new Point(160, 63);
+
+            label_Partido.Location = new Point(66, 89);
+            textBox_Partido.Location = new Point(160, 90);
+
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
@@ -282,11 +318,11 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom);
 
             // Ajusta la posición de panel_Botones justo debajo de panel_Detalles con el margen definido
-            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom - 25);
+            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom - 45);
 
 
             // Ajusta la altura de panel1 para que contenga ambos paneles con un margen de 10 px debajo de panel_Botones
-            panel1.Height = panel_Botones.Bottom + 40;
+            panel1.Height = panel_Botones.Bottom + 70;
 
             // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
             this.Height = panel1.Bottom + 75;
@@ -631,7 +667,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             else
             {
                 // Limpia los controles anteriores
-              //  ClearModificationControls();
+                ClearModificationControls();
 
                 // Verifica si hay un ítem seleccionado
                 if (listBox_Seleccion.SelectedItem != null)
