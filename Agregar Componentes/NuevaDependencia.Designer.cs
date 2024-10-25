@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaDependencia));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_Partido = new System.Windows.Forms.TextBox();
+            this.textBox_Localidad = new System.Windows.Forms.TextBox();
+            this.label_Partido = new System.Windows.Forms.Label();
+            this.label_Localidad = new System.Windows.Forms.Label();
             this.checkBox_AgregarSellos = new System.Windows.Forms.CheckBox();
             this.label_AgregarSellos = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -45,10 +49,13 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-       
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.textBox_Partido);
+            this.panel1.Controls.Add(this.textBox_Localidad);
+            this.panel1.Controls.Add(this.label_Partido);
+            this.panel1.Controls.Add(this.label_Localidad);
             this.panel1.Controls.Add(this.checkBox_AgregarSellos);
             this.panel1.Controls.Add(this.label_AgregarSellos);
             this.panel1.Controls.Add(this.btn_Limpiar);
@@ -60,24 +67,61 @@
             this.panel1.Controls.Add(this.label_NuevaDep);
             this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(524, 255);
+            this.panel1.Size = new System.Drawing.Size(524, 320);
             this.panel1.TabIndex = 2;
+            // 
+            // textBox_Partido
+            // 
+            this.textBox_Partido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.textBox_Partido.Location = new System.Drawing.Point(144, 157);
+            this.textBox_Partido.Name = "textBox_Partido";
+            this.textBox_Partido.Size = new System.Drawing.Size(326, 21);
+            this.textBox_Partido.TabIndex = 24;
+            this.textBox_Partido.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            // 
+            // textBox_Localidad
+            // 
+            this.textBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.textBox_Localidad.Location = new System.Drawing.Point(144, 127);
+            this.textBox_Localidad.Name = "textBox_Localidad";
+            this.textBox_Localidad.Size = new System.Drawing.Size(326, 21);
+            this.textBox_Localidad.TabIndex = 23;
+            // 
+            // label_Partido
+            // 
+            this.label_Partido.AutoSize = true;
+            this.label_Partido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Partido.Location = new System.Drawing.Point(56, 157);
+            this.label_Partido.Name = "label_Partido";
+            this.label_Partido.Size = new System.Drawing.Size(82, 16);
+            this.label_Partido.TabIndex = 22;
+            this.label_Partido.Text = "PARTIDO :";
+            // 
+            // label_Localidad
+            // 
+            this.label_Localidad.AutoSize = true;
+            this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Localidad.Location = new System.Drawing.Point(40, 127);
+            this.label_Localidad.Name = "label_Localidad";
+            this.label_Localidad.Size = new System.Drawing.Size(98, 16);
+            this.label_Localidad.TabIndex = 21;
+            this.label_Localidad.Text = "LOCALIDAD :";
             // 
             // checkBox_AgregarSellos
             // 
             this.checkBox_AgregarSellos.AutoSize = true;
             this.checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_AgregarSellos.Location = new System.Drawing.Point(186, 135);
+            this.checkBox_AgregarSellos.Location = new System.Drawing.Point(186, 205);
             this.checkBox_AgregarSellos.Name = "checkBox_AgregarSellos";
             this.checkBox_AgregarSellos.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AgregarSellos.TabIndex = 2;
             this.checkBox_AgregarSellos.UseVisualStyleBackColor = true;
-            this.checkBox_AgregarSellos.CheckedChanged += new System.EventHandler(this.checkBox_AgregarSellos_CheckedChanged);
+            this.checkBox_AgregarSellos.CheckedChanged += new System.EventHandler(this.CheckBox_AgregarSellos_CheckedChanged);
             // 
             // label_AgregarSellos
             // 
             this.label_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregarSellos.Location = new System.Drawing.Point(12, 130);
+            this.label_AgregarSellos.Location = new System.Drawing.Point(12, 200);
             this.label_AgregarSellos.Name = "label_AgregarSellos";
             this.label_AgregarSellos.Size = new System.Drawing.Size(207, 25);
             this.label_AgregarSellos.TabIndex = 20;
@@ -89,26 +133,26 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(144, 169);
+            this.btn_Limpiar.Location = new System.Drawing.Point(144, 239);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(395, 169);
+            this.btn_Guardar.Location = new System.Drawing.Point(395, 239);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar y cargar Dependencia");
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // textBox_Domicilio
             // 
@@ -125,13 +169,13 @@
             this.textBox_Dependencia.Name = "textBox_Dependencia";
             this.textBox_Dependencia.Size = new System.Drawing.Size(326, 21);
             this.textBox_Dependencia.TabIndex = 0;
-            this.textBox_Dependencia.TextChanged += new System.EventHandler(this.textBox_Dependencia_TextChanged);
+            this.textBox_Dependencia.TextChanged += new System.EventHandler(this.TextBox_Dependencia_TextChanged);
             // 
             // label_Domicilio
             // 
             this.label_Domicilio.AutoSize = true;
             this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Domicilio.Location = new System.Drawing.Point(15, 97);
+            this.label_Domicilio.Location = new System.Drawing.Point(48, 97);
             this.label_Domicilio.Name = "label_Domicilio";
             this.label_Domicilio.Size = new System.Drawing.Size(90, 16);
             this.label_Domicilio.TabIndex = 2;
@@ -164,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 307);
+            this.ClientSize = new System.Drawing.Size(569, 376);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
@@ -198,5 +242,9 @@
         private System.Windows.Forms.CheckBox checkBox_AgregarSellos;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.HelpProvider help_NuevaDependencia;
+        private System.Windows.Forms.TextBox textBox_Partido;
+        private System.Windows.Forms.TextBox textBox_Localidad;
+        private System.Windows.Forms.Label label_Partido;
+        private System.Windows.Forms.Label label_Localidad;
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\bin\Debug\BASE DE DATOS.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\bin\Debug\BASE DE DATOS.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\obj\Debug\BASE DE DATOS.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\obj\Debug\BASE DE DATOS.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\obj\Debug\BASE DE .781E7534.Up2Date
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\obj\Debug\BASE DE DATOS.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\SOLUCION\BASE DE DATOS\obj\Debug\BASE DE DATOS.pdb

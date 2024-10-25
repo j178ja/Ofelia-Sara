@@ -16,6 +16,7 @@ using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
 using Clases.Agregar_Componentes;
+using BaseDatos.Adm_BD.Manager;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -24,6 +25,7 @@ namespace Ofelia_Sara.Agregar_Componentes
     {
         private SellosDependencia sellosDependenciaForm;
 
+        private ComisariasManager dbManager; 
 
         public event Action<string> DependenciaTextChanged;//para  actualizar en tiempo real con form SellosDependencia
 
@@ -48,25 +50,25 @@ namespace Ofelia_Sara.Agregar_Componentes
             ActualizarEstado();
 
             // Asocia el evento TextChanged del TextBox
-            textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
+            textBox_Dependencia.TextChanged += TextBox_Dependencia_TextChanged;
           
             //para redondear bordes panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-       
-        
+
+            dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
         }
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
         {
             MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
+            MayusculaSola.AplicarAControl(textBox_Localidad);
+            
 
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
 
-            // Inicialización o asignación de ComboBoxFilePath
-            ComboBoxFilePath = "ruta_del_archivo.txt"; // Ejemplo de asignación
 
             // Inicializar el formulario SellosDependencia
             sellosDependenciaForm = new SellosDependencia();
@@ -89,43 +91,60 @@ namespace Ofelia_Sara.Agregar_Componentes
         }
 
         //------------------------------------------------------------------------------
-
-
-        //------------BOTON GUARDAR----------------------------------------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            string nuevoItem = textBox_Dependencia.Text;
-
-            if (!string.IsNullOrEmpty(nuevoItem))
+            // Convertir el texto del TextBox al Camel Case
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
             {
-                ComboBoxManager.AddItemToComboBox(this, "comboBox_Dependencia", nuevoItem);
-                ItemAgregado?.Invoke(this, nuevoItem);
-
-
-                string dependencia = textBox_Dependencia.Text;
-                string domicilio = textBox_Domicilio.Text;
-
-                var nuevaDependencia = new DependenciasPoliciales
-                {
-                    Dependencia = dependencia,
-                    Domicilio = domicilio
-                };
-
-                DependenciaManager.AgregarDependencia(nuevaDependencia);
-
-                MessageBox.Show("Se ha cargado nueva Dependencia a lista en formularios", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LimpiarFormulario.Limpiar(this); //limpiar todos los controles
-            }
-            else
-            {
-                MessageBox.Show("Por favor ingrese el nombre completo de la nueva Dependencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox.Text = ConvertirACamelCase.Convertir(textBox.Text);
+                // Mover el cursor al final del texto para evitar que el cursor se mueva al inicio
+                textBox.SelectionStart = textBox.Text.Length;
             }
         }
 
+        //------------BOTON GUARDAR----------------------------------------------------
+        private void Btn_Guardar_Click(object sender, EventArgs e)
+        {
+            // Obtener datos desde los TextBox
+            string dependencia = textBox_Dependencia.Text;
+            string domicilio = textBox_Domicilio.Text;
+            string localidad = textBox_Localidad.Text;
+            string partido = textBox_Partido.Text;
+
+            if (!string.IsNullOrEmpty(dependencia)&& !string.IsNullOrEmpty(localidad))
+            {
+                
+
+                // Llamada a la base de datos para insertar los datos en la tabla 'Comisarias'
+                try
+                {
+                    dbManager.InsertComisaria(dependencia, domicilio, localidad, partido); // Utiliza el método de inserción
+                   
+                    MessageBox.Show("Se ha guardado la nueva Dependencia en la base de datos.", "Confirmación Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpiar el formulario
+                    LimpiarFormulario.Limpiar(this);
+                
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al guardar en la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                // Limpiar el formulario
+                LimpiarFormulario.Limpiar(this);
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese el nombre y localidad  de la nueva Dependencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
         //------------------------------------------------------------------------------
         //------------BOTON LIMPIAR/ELIMINAR ----------------------------------------------------
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
@@ -170,7 +189,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         //---ABRIR FORMULARIO SELLOS DESDE CHECK-------------------------
         private Point originalPosition;
 
-        private void checkBox_AgregarSellos_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_AgregarSellos_CheckedChanged(object sender, EventArgs e)
         {
             // Verifica si el CheckBox está marcado
             if (checkBox_AgregarSellos.Checked)
@@ -207,12 +226,12 @@ namespace Ofelia_Sara.Agregar_Componentes
                 sellosDependenciaForm.Location = new Point(startX + this.Width, startY);
 
                 // Mostrar el formulario AgregarDatosPersonalesConcubina
-                sellosDependenciaForm.FormClosed += sellosDependenciaForm_FormClosed;
+                sellosDependenciaForm.FormClosed += SellosDependenciaForm_FormClosed;
                 // Mostrar el formulario como una ventana modal
                 sellosDependenciaForm.Show();
             }
         }
-        private void sellosDependenciaForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void SellosDependenciaForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Restaurar la posición original del formulario
             this.Location = originalPosition;
@@ -235,7 +254,7 @@ namespace Ofelia_Sara.Agregar_Componentes
 
         }
 
-        private void textBox_Dependencia_TextChanged(object sender, EventArgs e)
+        private void TextBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();//habilita check y modifica label
 

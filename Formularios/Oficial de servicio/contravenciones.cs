@@ -12,12 +12,19 @@ using BaseDatos.Entidades;
 using System.Collections.Generic;
 using Clases.GenerarDocumentos;
 using System.IO;
+using BaseDatos;
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
+
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
+  
+
     public partial class Contravenciones : BaseForm
     {
+        
         public Contravenciones()
         {
             InitializeComponent();
@@ -25,6 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
+          
         }
 
         private void Contravenciones_Load(object sender, EventArgs e)
@@ -46,10 +54,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
-            InicializarComboBoxDEPENDENCIAS();
-        }
+            // InicializarComboBoxDEPENDENCIAS();
 
+
+            //cargar desde base de datos
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+        }
       
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -57,8 +69,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
-            InicializarComboBoxDEPENDENCIAS();
-            comboBox_Nacionalidad.SelectedIndex = -1;
+          //  InicializarComboBoxDEPENDENCIAS();
+            comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
+            comboBox_Dependencia.SelectedIndex = -1;
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }

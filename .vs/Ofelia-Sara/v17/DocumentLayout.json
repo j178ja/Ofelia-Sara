@@ -3,27 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F85F4946-EF92-4542-9436-4EE64DF159AB}|Elementos de la soluci\u00F3n{F85F4946-EF92-4542-9436-4EE64DF159AB}|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\ProblemasA.solucionar.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{F85F4946-EF92-4542-9436-4EE64DF159AB}|Elementos de la soluci\u00F3n{F85F4946-EF92-4542-9436-4EE64DF159AB}|solutionrelative:ProblemasA.solucionar.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\clases\\texto\\autompletarcaratula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:clases\\texto\\autompletarcaratula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\acceso usuarios\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:acceso usuarios\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\json\\sugerencias_caratula.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,79 +31,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProblemasA.solucionar.txt",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\ProblemasA.solucionar.txt",
-              "RelativeDocumentMoniker": "ProblemasA.solucionar.txt",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\ProblemasA.solucionar.txt",
-              "RelativeToolTip": "ProblemasA.solucionar.txt",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-10-23T12:47:15.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Registro.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\Registro.cs",
-              "RelativeDocumentMoniker": "Acceso Usuarios\\Registro.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\Registro.cs",
-              "RelativeToolTip": "Acceso Usuarios\\Registro.cs",
-              "ViewState": "AQIAAHcAAAAAAAAAAIAwwIUAAAAVAAAA",
+              "Title": "BaseForm.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs",
+              "RelativeDocumentMoniker": "Formularios\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs*",
+              "RelativeToolTip": "Formularios\\BaseForm.cs*",
+              "ViewState": "AQIAAB8BAAAAAAAAAAAWwDMBAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T12:42:16.303Z",
+              "WhenOpened": "2024-10-25T02:17:42.221Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "sugerencias_Caratula.json",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Json\\sugerencias_Caratula.json",
-              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Json\\sugerencias_Caratula.json",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Json\\sugerencias_Caratula.json",
-              "RelativeToolTip": "..\\BaseDatos_Libreria\\Json\\sugerencias_Caratula.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-23T11:12:15.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AutompletarCaratula.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases\\Texto\\AutompletarCaratula.cs",
-              "RelativeDocumentMoniker": "Clases\\Texto\\AutompletarCaratula.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases\\Texto\\AutompletarCaratula.cs",
-              "RelativeToolTip": "Clases\\Texto\\AutompletarCaratula.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAowB8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T11:11:08.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "inicio_cierre.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAgwKEAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T15:44:47.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "inicio_cierre.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T15:17:52.412Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

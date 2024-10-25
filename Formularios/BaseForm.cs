@@ -9,25 +9,29 @@ using Controles.Controles;
 using Clases.Apariencia;
 using Clases.Botones;
 // Alias para el ShadowForm de tu propia clase
+using Newtonsoft.Json;
+// using Ofelia_Sara.Base_de_Datos;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Drawing.Drawing2D;
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using BaseDatos.Adm_BD.Manager;
 
 
 
 
 namespace Ofelia_Sara.Formularios
 
-{ 
+{
 
-    using Newtonsoft.Json;
-    // using Ofelia_Sara.Base_de_Datos;
-    using System.Collections.Generic;
-    using System.Data.SQLite;
-    using System.Drawing.Drawing2D;
-    using System.Text;
-    using System.Windows.Forms;
+    
     public class BaseForm : Form
     {
-        //protected DatabaseManager dbManager;
-        //protected DataInserter dataInserter;
+        private DatabaseConnection dbConnection;
+
+        protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias
 
         // Define una lista para almacenar los elementos de autocompletado
         private readonly AutocompletarManager autocompletarManager;
@@ -56,13 +60,25 @@ namespace Ofelia_Sara.Formularios
             AparienciaFormularios.CambiarColorDeFondo(this, customColor);//llama a la clase que modifica el color de fondo
                                                                          //-------------------------------------------------------------------------
 
-            
-
             this.Paint += new PaintEventHandler(BaseForm_Paint);
             //this.Load += new System.EventHandler(this.BaseForm_Load);
+            //---------------------------------------------
+            //--para cargar los distintos comboBox desde la base de datos
+            // Solo ejecutar si NO es tiempo de diseño
+            InitializeComponent();
+
+            // Verificamos si está en tiempo de ejecución
+            if (!this.DesignMode)
+            {
+                // Inicializamos la conexión a la base de datos solo en tiempo de ejecución
+                dbConnection = new DatabaseConnection();
+               
+            }
 
             autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
             ConfigureTextBoxAutoComplete();
+
+           
         }
         //--------------------------------------------------------------------------------
 
@@ -276,7 +292,37 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-        
+
+        //--------
+        public void CargarDatosDependencia(ComboBox comboBox, ComisariasManager dbManager)
+        {
+            // Obtener los datos desde la base de datos
+            DataTable dt = dbManager.GetComisarias();
+
+            // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
+            comboBox.Items.Clear();
+
+            // Recorrer las filas del DataTable y agregar los datos al ComboBox
+            foreach (DataRow row in dt.Rows)
+            {
+                string item = $"{row["nombre"]}   {row["localidad"]}";
+                comboBox.Items.Add(item);
+            }
+        }
+
+
+
+
+
+
+
+
+        // Método virtual para ser sobreescrito en los formularios hijos
+        protected virtual ComboBox ObtenerComboBoxDependencia()
+        {
+            return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
+        }
+
     }
 }
 

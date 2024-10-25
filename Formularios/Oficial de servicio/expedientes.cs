@@ -48,6 +48,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ConversorDocumentos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel_ConversorDocumentos.AutoScroll = true;
 
+            //cargar desde base de datos
+            //CargarDatosDependencia();
         }
 
         private void Expedientes_Load(object sender, EventArgs e)
@@ -82,6 +84,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             AgregarRadioButtonALosPaneles();
 
             Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
+
+          
         }
 
 
