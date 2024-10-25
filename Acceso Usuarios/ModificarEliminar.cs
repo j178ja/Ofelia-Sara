@@ -200,7 +200,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     List<Comisaria> comisarias = comisariasManager.GetComisarias();
 
                     listBox_Datos.DataSource = comisarias;
-                    listBox_Datos.DisplayMember = "NombreYLocalidad";  // Asume que tienes una propiedad 'Nombre' en la clase Comisaria
+                    listBox_Datos.DisplayMember = "NombreYLocalidad";  //trae nombre y localidad con metodo de comisaria.cs
                     listBox_Datos.SelectedIndex = -1; // Inicializa con ningún elemento seleccionado
                 }
                 catch (Exception ex)
@@ -667,7 +667,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             else
             {
                 // Limpia los controles anteriores
-                ClearModificationControls();
+               // ClearModificationControls();
 
                 // Verifica si hay un ítem seleccionado
                 if (listBox_Seleccion.SelectedItem != null)
