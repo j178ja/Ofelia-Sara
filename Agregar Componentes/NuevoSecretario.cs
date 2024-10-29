@@ -19,6 +19,8 @@ using BaseDatos.Entidades;
 using Clases.Apariencia;
 using static System.Resources.ResXFileRef;
 using Ofelia_Sara.Formularios;
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -65,6 +67,9 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             textBox_NumeroLegajo.MaxLength = 7;//limitando numero de legajo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
+
+            //cargar desde base de datos
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
         }
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
@@ -88,67 +93,40 @@ namespace Ofelia_Sara.Agregar_Componentes
         //______________________________________________________________________________
        
 //----------------------------------------------------------------------------------
-        private void GuardarDatosSecretario()
-        {
-            // Obtener los datos del formulario
-            string jerarquia = comboBox_Jerarquia.Text;
-            string nombre = textBox_Nombre.Text;
-            string apellido = textBox_Apellido.Text;
-            double legajo = Convert.ToDouble(textBox_NumeroLegajo.Text);
-            string funcion = textBox_Funcion.Text;
-
-            // Convertir la imagen en el PictureBox a un array de bytes
-            byte[] firmaDigitalizada = null;
-            if (pictureBox_FirmaDigitalizada.Image != null)
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    pictureBox_FirmaDigitalizada.Image.Save(ms, pictureBox_FirmaDigitalizada.Image.RawFormat);
-                    firmaDigitalizada = ms.ToArray();
-                }
-            }
-
-            // Llamar al método GuardarSecretario para la tabla Secretario
-            //dataInserter.GuardarSecretario(jerarquia, nombre, apellido, legajo, funcion, firmaDigitalizada);
-        }
-
+      
 
         //-------------BOTON GUARDAR--------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            if
-                (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
+            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
                  string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
                  string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
-                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                // Crear un nuevo secretario con los datos del formulario
                 var nuevoSecretario = new Secretario
                 {
-                    NumeroLegajo = float.Parse(textBox_NumeroLegajo.Text),
-                    Escalafon = comboBox_Escalafon.Text,
+                    Legajo = float.Parse(textBox_NumeroLegajo.Text),
+                    Subescalafon = comboBox_Escalafon.Text,
                     Jerarquia = comboBox_Jerarquia.Text,
                     Nombre = textBox_Nombre.Text,
                     Apellido = textBox_Apellido.Text,
                     Dependencia = comboBox_Dependencia.Text,
                     Funcion = textBox_Funcion.Text
-                    // FirmaDigitalizada está comentada por ahora
                 };
 
-                // Agregar el nuevo secretario
-                SecretarioManager.AgregarSecretario(nuevoSecretario);
+                SecretariosManager manager = new SecretariosManager();
+                manager.InsertSecretario(nuevoSecretario.Legajo, nuevoSecretario.Subescalafon, nuevoSecretario.Jerarquia, nuevoSecretario.Nombre, nuevoSecretario.Apellido, nuevoSecretario.Dependencia, nuevoSecretario.Funcion);
 
-             
-                // GuardarDatosSecretario();
-                MessageBox.Show("Se ha cargado nuevo Secretario a lista de Secretarios en los formularios", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LimpiarFormulario.Limpiar(this); //limpiar todos los controles
+                MessageBox.Show("Se ha guardado un nuevo secretario.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarFormulario.Limpiar(this);
                 comboBox_Escalafon.SelectedIndex = -1;
+                comboBox_Dependencia.SelectedIndex = -1;
             }
         }
+        
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
         private void TextoEspecialCampos()

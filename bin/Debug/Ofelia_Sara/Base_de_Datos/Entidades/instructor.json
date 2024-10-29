@@ -8,5 +8,15 @@
     "Dependencia": "EPC I PINAMAR",
     "Funcion": "JEFE EPC I PINAMAR",
     "DescripcionCompleta": "Comisario MIGUEL ANGEL MORENO"
+  },
+  {
+    "NumeroLegajo": 300002,
+    "Escalafon": "COMANDO",
+    "Jerarquia": "SUBCOMISARIO",
+    "Nombre": "PEPE",
+    "Apellido": "MUJICA",
+    "Dependencia": "COMISARIA 14TA   SIERRA DE LOS PADRES",
+    "Funcion": "CADETE",
+    "DescripcionCompleta": "SUBCOMISARIO PEPE MUJICA"
   }
 ]

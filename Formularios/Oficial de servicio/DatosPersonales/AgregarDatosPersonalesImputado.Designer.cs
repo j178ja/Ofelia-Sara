@@ -50,7 +50,7 @@
             this.label_Ocupacion = new System.Windows.Forms.Label();
             this.textBox_Apodo = new System.Windows.Forms.TextBox();
             this.label_Apodo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Telefono = new System.Windows.Forms.Label();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
@@ -91,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Frente)).BeginInit();
             this.SuspendLayout();
             // 
-            
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -114,7 +113,7 @@
             this.panel1.Controls.Add(this.label_Ocupacion);
             this.panel1.Controls.Add(this.textBox_Apodo);
             this.panel1.Controls.Add(this.label_Apodo);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_Telefono);
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.checkBox_LegajoDetenido);
@@ -359,15 +358,15 @@
             this.label_Apodo.TabIndex = 74;
             this.label_Apodo.Text = "APODO :";
             // 
-            // label1
+            // label_Telefono
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 408);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 15);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "TELEFONO :";
+            this.label_Telefono.AutoSize = true;
+            this.label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Telefono.Location = new System.Drawing.Point(29, 408);
+            this.label_Telefono.Name = "label_Telefono";
+            this.label_Telefono.Size = new System.Drawing.Size(87, 15);
+            this.label_Telefono.TabIndex = 73;
+            this.label_Telefono.Text = "TELEFONO :";
             // 
             // btn_Buscar
             // 
@@ -754,7 +753,7 @@
         private System.Windows.Forms.CheckBox checkBox_NotArt60;
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Telefono;
         private System.Windows.Forms.TextBox textBox_Apodo;
         private System.Windows.Forms.Label label_Apodo;
         private System.Windows.Forms.TextBox textBox_Ocupacion;

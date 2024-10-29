@@ -52,13 +52,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaSola.AplicarAControl(textBox_Apellido);
             MayusculaSola.AplicarAControl(comboBox_Nacionalidad);
 
-            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxINSTRUCTOR();
+           // InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            //InicializarComboBoxINSTRUCTOR();
             // InicializarComboBoxDEPENDENCIAS();
 
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
         }
       
 
@@ -67,8 +69,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxINSTRUCTOR();
+          //  InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            //InicializarComboBoxINSTRUCTOR();
           //  InicializarComboBoxDEPENDENCIAS();
             comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
             comboBox_Dependencia.SelectedIndex = -1;
@@ -357,21 +359,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        private void InicializarComboBoxSECRETARIO()
-        {
-            List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
-            comboBox_Secretario.DataSource = secretarios;
-            comboBox_Secretario.DisplayMember = "DescripcionCompleta";
-            comboBox_Secretario.SelectedIndex = -1;
-        }
+        //private void InicializarComboBoxSECRETARIO()
+        //{
+        //    List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
+        //    comboBox_Secretario.DataSource = secretarios;
+        //    comboBox_Secretario.DisplayMember = "DescripcionCompleta";
+        //    comboBox_Secretario.SelectedIndex = -1;
+        //}
         //---------------------------------------------------------------------
-        private void InicializarComboBoxINSTRUCTOR()
-        {
-            List<Instructor> instructores = InstructorManager.ObtenerInstructores();
-            comboBox_Instructor.DataSource = instructores;
-            comboBox_Instructor.DisplayMember = "DescripcionCompleta";
-            comboBox_Instructor.SelectedIndex = -1;
-        }
+        //private void InicializarComboBoxINSTRUCTOR()
+        //{
+        //    List<Instructor> instructores = InstructorManager.ObtenerInstructores();
+        //    comboBox_Instructor.DataSource = instructores;
+        //    comboBox_Instructor.DisplayMember = "DescripcionCompleta";
+        //    comboBox_Instructor.SelectedIndex = -1;
+        //}
         //------------------------------------------------------------------------
         private void InicializarComboBoxDEPENDENCIAS()
         {

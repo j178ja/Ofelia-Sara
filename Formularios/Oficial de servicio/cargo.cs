@@ -152,7 +152,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //----------------------------------------------------------------
         private void InicializarComboBoxSECRETARIO()
         {
-            List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
+            List<SecretarioJson> secretarios = SecretarioManager.ObtenerSecretarios();
             comboBox_Secretario.DataSource = secretarios;
             comboBox_Secretario.DisplayMember = "DescripcionCompleta";
             comboBox_Secretario.SelectedIndex = -1;
@@ -160,7 +160,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //---------------------------------------------------------------------
         private void InicializarComboBoxINSTRUCTOR()
         {
-            List<Instructor> instructores = InstructorManager.ObtenerInstructores();
+            List<InstructorJson> instructores = InstructorManager.ObtenerInstructores();
             comboBox_Instructor.DataSource = instructores;
             comboBox_Instructor.DisplayMember = "DescripcionCompleta";
             comboBox_Instructor.SelectedIndex = -1;

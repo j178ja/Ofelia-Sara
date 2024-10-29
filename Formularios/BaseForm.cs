@@ -33,10 +33,12 @@ namespace Ofelia_Sara.Formularios
     {
         private DatabaseConnection dbConnection;
 
-        protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias
 
-        // Define una lista para almacenar los elementos de autocompletado
-        private readonly AutocompletarManager autocompletarManager;
+        protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias// Para cargar comisarías
+        protected InstructoresManager instructoresManager = new InstructoresManager();    // Para cargar instructores
+        protected SecretariosManager secretariosManager = new SecretariosManager();    // Para cargar instructores
+
+        private readonly AutocompletarManager autocompletarManager; // Define una lista para almacenar los elementos de autocompletado
 
         private LinkLabel footerLinkLabel;
         
@@ -80,7 +82,7 @@ namespace Ofelia_Sara.Formularios
             autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
             ConfigureTextBoxAutoComplete();
 
-           
+            instructoresManager = new InstructoresManager();
         }
         //--------------------------------------------------------------------------------
 
@@ -319,8 +321,57 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
+        //---
+      
+
+        public void CargarDatosInstructor(ComboBox comboBox, InstructoresManager dbManager)
+        {
+            try
+            {
+                // Obtener los datos desde la base de datos
+                List<Instructor> instructores = dbManager.GetInstructors(); // Asegúrate de usar el método correcto
+
+                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
+                comboBox.Items.Clear();
+
+                // Recorrer la lista de instructores y agregar los datos al ComboBox
+                foreach (Instructor instructor in instructores)
+                {
+                    // Utiliza las propiedades de la clase Instructor
+                    string item = $"{instructor.Jerarquia} {instructor.Nombre} {instructor.Apellido}";
+                    comboBox.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos de Instructores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
+        public void CargarDatosSecretario(ComboBox comboBox, SecretariosManager dbManager)
+        {
+            try
+            {
+                // Obtener los datos desde la base de datos
+                List<Secretario> secretarios = dbManager.GetSecretarios();
+
+                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
+                comboBox.Items.Clear();
+
+                // Recorrer la lista de secretarios y agregar los datos al ComboBox
+                foreach (Secretario secretario in secretarios)
+                {
+                    // Utiliza las propiedades de la clase Secretario
+                    string item = $"{secretario.Jerarquia} {secretario.Nombre} {secretario.Apellido}";
+                    comboBox.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos de Secretarios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 

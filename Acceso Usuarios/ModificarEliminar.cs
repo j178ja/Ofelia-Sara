@@ -20,9 +20,11 @@ using Clases.Botones;
 
 namespace Ofelia_Sara.Acceso_Usuarios
 {
+    //private SecretariosManager secretariosManager;
     public partial class ModificarEliminar : BaseForm
     {
         private TextBox textBox_Dependencia;
+        private ComboBox comboBox_Dependencia;
         private TextBox textBox_Domicilio;
         private TextBox textBox_Localidad;
         private TextBox textBox_Partido;
@@ -32,7 +34,15 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private Label label_Partido;
         private Panel panel_Detalles;
         private Panel panel_DetallesFiscalia;
-       
+
+        private ComboBox comboBox_Escalafon;
+        private ComboBox comboBox_Jerarquia;
+        private TextBox textBox_NumeroLegajo;
+        private TextBox textBox_Nombre;
+        private TextBox textBox_Apellido;
+        private ComboBox comboBox_Instructor;
+        private TextBox textBox_Funcion;
+
         public ModificarEliminar()
         {
             InitializeComponent();
@@ -69,6 +79,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
             listBox_Seleccion.Items.Add("Dependencia");
 
             listBox_Seleccion.SelectedIndex = -1;
+
+            secretariosManager = new SecretariosManager();
         }
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -156,39 +168,61 @@ namespace Ofelia_Sara.Acceso_Usuarios
         {
             try
             {
-                // Elimina el DataSource para evitar conflictos
                 listBox_Datos.DataSource = null;
-                listBox_Datos.Items.Clear(); // Limpia los elementos actuales
+                List<Instructor> instructores = instructoresManager.GetInstructors();
 
-                List<Instructor> instructores = InstructorManager.ObtenerInstructores();
+                if (instructores.Count == 0)
+                {
+                    MessageBox.Show("No hay instructores disponibles para cargar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 listBox_Datos.DataSource = instructores;
-                listBox_Datos.DisplayMember = "DescripcionCompleta";
-                listBox_Datos.SelectedIndex = -1; // Inicializar con ningún elemento seleccionado
+                listBox_Datos.DisplayMember = "JerarquiaYNombre";
+                listBox_Datos.ValueMember = "Id";
+
+                if (listBox_Datos.Items.Count > 0)
+                {
+                    listBox_Datos.SelectedIndex = 0; // Selecciona el primer elemento
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Instructor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar datos de Instructores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void CargarDatosSecretario()
         {
             try
             {
-                // Elimina el DataSource para evitar conflictos
-                listBox_Datos.DataSource = null;
-                listBox_Datos.Items.Clear(); // Limpia los elementos actuales
+                listBox_Datos.DataSource = null; // Elimina el DataSource para evitar conflictos
+                List<Secretario> secretarios = secretariosManager.GetSecretarios(); // Usar la instancia
 
-                List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
-                listBox_Datos.DataSource = secretarios;
-                listBox_Datos.DisplayMember = "DescripcionCompleta";
-                listBox_Datos.SelectedIndex = -1; // Inicializar con ningún elemento seleccionado
+                if (secretarios.Count == 0)
+                {
+                    MessageBox.Show("No hay secretarios disponibles para cargar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                listBox_Datos.DataSource = secretarios; // Asigna la lista de secretarios al ListBox
+                listBox_Datos.DisplayMember = "JerarquiaYNombre"; // Muestra jerarquía y nombre
+                listBox_Datos.ValueMember = "Id"; // Utiliza el ID como valor
+
+                if (listBox_Datos.Items.Count > 0)
+                {
+                    listBox_Datos.SelectedIndex = 0; // Selecciona el primer elemento
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Secretario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar datos de Secretarios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void CargarDatosDependencia()
         {
@@ -705,16 +739,19 @@ namespace Ofelia_Sara.Acceso_Usuarios
                         case "Secretario":
                             // Crear  panel de detalles
                             CrearPanelDetallesSecretario();
+                            CargarDatosSeleccionados();
                             break;
 
                         case "Instructor":
                             // Crear  panel de detalles
                             CrearPanelDetallesInstructor();
+                            CargarDatosSeleccionados();
                             break;
 
                         case "Fiscalía":
                             // Crear  panel de detalles
                             CrearPanelDetallesFiscalia();
+                            CargarDatosSeleccionados();
                             break;
 
                         // Puedes añadir más casos según los ítems disponibles en listBox_Seleccion
@@ -742,6 +779,40 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 textBox_Localidad.ReadOnly = false;
                 textBox_Partido.ReadOnly = false;
             }
+            // Verifica si hay un elemento seleccionado en el ListBox
+            if (listBox_Datos.SelectedItem is Instructor selectedInstructor)
+            {
+                try
+                {
+                    // Asigna los valores del Instructor seleccionado a los TextBox y ComboBox correspondientes
+                    textBox_NumeroLegajo.Text = selectedInstructor.Legajo.ToString();
+                    comboBox_Escalafon.Text = selectedInstructor.Subescalafon;
+                    comboBox_Jerarquia.Text = selectedInstructor.Jerarquia;
+                    textBox_Nombre.Text = selectedInstructor.Nombre;
+                    textBox_Apellido.Text = selectedInstructor.Apellido;
+                    comboBox_Dependencia.Text = selectedInstructor.Dependencia;
+                    textBox_Funcion.Text = selectedInstructor.Funcion;
+
+                    // Habilitar los controles para edición
+                    textBox_NumeroLegajo.ReadOnly = false;
+                    comboBox_Escalafon.Enabled = true;
+                    comboBox_Jerarquia.Enabled = true;
+                    textBox_Nombre.ReadOnly = false;
+                    textBox_Apellido.ReadOnly = false;
+                    comboBox_Dependencia.Enabled = true;
+                    textBox_Funcion.ReadOnly = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los datos del instructor seleccionado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado un instructor válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }  
+
+             
         }
 
         //__________________________________________________________________________________
@@ -801,37 +872,80 @@ namespace Ofelia_Sara.Acceso_Usuarios
             // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
             this.Height = panel1.Bottom + 75;
         }
+        //---------------------------------------------------------------------------------------
         private void Btn_Eliminar_Click(object sender, EventArgs e)
         {
             // Verificar si no hay ningún elemento seleccionado en el ListBox
             if (listBox_Datos.SelectedIndex == -1)
             {
-                // Muestra un mensaje de advertencia
                 MessageBox.Show("Debe seleccionar un elemento de la lista para ELIMINAR.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            // Obtener el elemento seleccionado
+            var selectedItem = listBox_Datos.SelectedItem;
+
+            if (selectedItem == null)
+            {
+                MessageBox.Show("El elemento seleccionado no es válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Verificar el tipo de objeto y eliminarlo de la base de datos
+            if (selectedItem is Comisaria selectedComisaria)
+            {
+                var dbManager = new ComisariasManager();
+                dbManager.DeleteComisaria(selectedComisaria.Id);
+                EliminarElementoDeLista(selectedComisaria);
+            }
+            else if (selectedItem is Instructor selectedInstructor)
+            {
+                var instructorManager = new InstructoresManager();
+                instructorManager.DeleteInstructor(selectedInstructor.Id);
+                EliminarElementoDeLista(selectedInstructor);
+            }
+            //else if (selectedItem is Secretario selectedSecretario)
+            //{
+            //    var secretarioManager = new SecretariosManager();
+            //    secretarioManager.DeleteSecretario(selectedSecretario.Id);
+            //    EliminarElementoDeLista(selectedSecretario);
+            //}
+            //else if (selectedItem is Fiscalia selectedFiscalia)
+            //{
+            //    var fiscaliaManager = new FiscaliasManager();
+            //    fiscaliaManager.DeleteFiscalia(selectedFiscalia.Id);
+            //    EliminarElementoDeLista(selectedFiscalia);
+            //}
             else
             {
-                // Obtener la fuente de datos y el elemento seleccionado
-                var dataSource = listBox_Datos.DataSource as IList<Comisaria>; // Asegúrate de que el tipo sea adecuado
-                Comisaria selectedComisaria = listBox_Datos.SelectedItem as Comisaria; // Cambia el tipo según tu clase Comisaria
-
-                if (dataSource != null && selectedComisaria != null)
-                {
-                    // Eliminar el elemento de la base de datos
-                    var dbManager = new ComisariasManager(); // Asegúrate de que la conexión se esté manejando correctamente
-                    dbManager.DeleteComisaria(selectedComisaria.Id); // Asegúrate de que 'Id' sea la propiedad que identifica a la comisaría
-
-                    // Eliminar el elemento seleccionado de la fuente de datos
-                    dataSource.Remove(selectedComisaria);
-                    ClearModificationControls(); // Limpia el ListBox
-
-                    // Método para recargar los datos del ListBox
-                    CargarDatosEnListBox(); // Llama a este método para recargar los datos
-
-                    MessageBox.Show("El elemento ha sido eliminado.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("Tipo de elemento no soportado para eliminación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Limpiar el ListBox y recargar datos
+            
+            CargarDatosEnListBox();
+            ClearModificationControls();
+            // Deshabilitar botones
+            btn_Editar.Enabled = false;
+            btn_Cancelar.Enabled = false;
+            btn_Guardar.Enabled = false;
+            btn_Eliminar.Enabled = false;
+            listBox_Datos.Enabled = false;
+            listBox_Datos.BackColor = Color.LightGray;
+            MessageBox.Show("El elemento ha sido eliminado.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // Método auxiliar para eliminar el elemento seleccionado de la fuente de datos
+        private void EliminarElementoDeLista<T>(T item)
+        {
+            var dataSource = listBox_Datos.DataSource as IList<T>;
+            dataSource?.Remove(item);
+        }
+
+        
+        //---------------------------------------------------------------------------------------
+
 
         // Método para cargar los datos en el ListBox
         private void CargarDatosEnListBox()
@@ -877,10 +991,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     GuardarCambiosFiscalia();
                     FinalizarEdicion();
                 }
-                else
-                {
-                    MessageBox.Show("No se ha seleccionado una dependencia válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -888,6 +999,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
         }
 
+        //------------------------------------------------------------------------
         private void GuardarCambiosDependencia()
         {
             // Verifica que un elemento esté seleccionado y que sea del tipo correcto
@@ -927,10 +1039,68 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
         }
 
+        //-----------------------------------------------------------------------------------------
         private void GuardarCambiosInstructor()
         {
+            // Validar campos
+            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+            {
+                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir del método si hay campos vacíos
+            }
 
+            // Suponiendo que el ID del instructor que se desea editar está almacenado en un campo o variable
+            int instructorId = ObtenerIdDelInstructorSeleccionado(); // Método para obtener el ID del instructor seleccionado
+
+            // Crear el objeto Instructor con los datos editados
+            var instructorEditado = new Instructor
+            {
+                Legajo = float.Parse(textBox_NumeroLegajo.Text),
+                Subescalafon = comboBox_Escalafon.Text,
+                Jerarquia = comboBox_Jerarquia.Text,
+                Nombre = textBox_Nombre.Text,
+                Apellido = textBox_Apellido.Text,
+                Dependencia = comboBox_Dependencia.Text,
+                Funcion = textBox_Funcion.Text
+            };
+
+            // Crear instancia del manager y llamar al método de actualización
+            InstructoresManager manager = new InstructoresManager();
+            manager.UpdateInstructor(instructorId, instructorEditado.Legajo, instructorEditado.Subescalafon, instructorEditado.Jerarquia, instructorEditado.Nombre, instructorEditado.Apellido, instructorEditado.Dependencia, instructorEditado.Funcion);
+
+            // Mostrar mensaje de confirmación
+            MessageBox.Show("Los datos del instructor han sido actualizados.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Limpiar los campos del formulario (opcional)
+            LimpiarFormulario.Limpiar(this);
+            comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedIndex = -1;
+
+            // Recargar los datos del ComboBox de instructores
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
         }
+
+        private int ObtenerIdDelInstructorSeleccionado()
+        {
+            // Asumiendo que tienes un ComboBox llamado comboBox_Instructor
+            // que contiene objetos Instructor o una representación adecuada.
+
+            if (comboBox_Instructor.SelectedItem != null)
+            {
+                // Obtener el instructor seleccionado
+                Instructor instructorSeleccionado = (Instructor)comboBox_Instructor.SelectedItem;
+
+                // Retornar el ID del instructor
+                return instructorSeleccionado.Id; // Asegúrate de que la clase Instructor tenga una propiedad Id
+            }
+
+            // Retorna un valor por defecto o lanza una excepción si no hay selección
+            throw new InvalidOperationException("No se ha seleccionado ningún instructor.");
+        }
+
+        //----------------------------------------------------------------------------------------------
         private void GuardarCambiosSecretario()
         {
 

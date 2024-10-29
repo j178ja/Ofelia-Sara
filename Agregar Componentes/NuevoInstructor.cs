@@ -14,6 +14,8 @@ using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
 
 using Clases.Apariencia;
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
@@ -61,6 +63,9 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             textBox_NumeroLegajo.MaxLength = 7; //limitando numero de legajo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
+
+            //cargar desde base de datos
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
         }
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
@@ -79,44 +84,47 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedIndex = -1;
                                     //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
 
         //---------BOTON GUARDAR---------------------------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            if
-              (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
-              
-               string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-               string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
-                MessageBox.Show("Debe completar los campos  JERARQUIA, NOMBRE y APELLIDO.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 var nuevoInstructor = new Instructor
                 {
-                    NumeroLegajo = float.Parse(textBox_NumeroLegajo.Text),
-                    Escalafon = comboBox_Escalafon.Text,
+                    Legajo = float.Parse(textBox_NumeroLegajo.Text),
+                    Subescalafon = comboBox_Escalafon.Text,
                     Jerarquia = comboBox_Jerarquia.Text,
                     Nombre = textBox_Nombre.Text,
                     Apellido = textBox_Apellido.Text,
                     Dependencia = comboBox_Dependencia.Text,
-                    Funcion = textBox_Funcion.Text,
-                    // FirmaDigitalizada = ObtenerFirmaDigitalizada() // Implementar más adelante
+                    Funcion = textBox_Funcion.Text
                 };
 
-                InstructorManager.AgregarInstructor(nuevoInstructor);
+                InstructoresManager manager = new InstructoresManager();
+                manager.InsertInstructor(nuevoInstructor.Legajo, nuevoInstructor.Subescalafon, nuevoInstructor.Jerarquia, nuevoInstructor.Nombre, nuevoInstructor.Apellido, nuevoInstructor.Dependencia, nuevoInstructor.Funcion);
 
-                MessageBox.Show("Se ha cargado nuevo Instructor a lista de Instructores en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LimpiarFormulario.Limpiar(this); //limpiar todos los controles
+                MessageBox.Show("Se ha guardado un nuevo instructor.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarFormulario.Limpiar(this);
                 comboBox_Escalafon.SelectedIndex = -1;
+                comboBox_Dependencia.SelectedIndex = -1;
             }
         }
+
+       
+
+
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
         private void TextoEspecialCampos()
