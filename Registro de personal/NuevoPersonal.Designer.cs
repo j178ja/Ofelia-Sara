@@ -101,7 +101,6 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-           
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -237,6 +236,7 @@
             this.textBox_PartidoDependencia.Name = "textBox_PartidoDependencia";
             this.textBox_PartidoDependencia.Size = new System.Drawing.Size(402, 20);
             this.textBox_PartidoDependencia.TabIndex = 142;
+            this.textBox_PartidoDependencia.Enter += new System.EventHandler(this.textBox_DatosDependencia_Enter);
             // 
             // label_Partido
             // 
@@ -446,6 +446,8 @@
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(402, 21);
             this.comboBox_Dependencia.TabIndex = 118;
+            this.comboBox_Dependencia.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Dependencia_SelectedIndexChanged);
+            this.comboBox_Dependencia.TextChanged += new System.EventHandler(this.ComboBox_Dependencia_TextChanged);
             // 
             // label_Meses
             // 
@@ -671,6 +673,7 @@
             this.textBox_LocalidadDependencia.Name = "textBox_LocalidadDependencia";
             this.textBox_LocalidadDependencia.Size = new System.Drawing.Size(402, 20);
             this.textBox_LocalidadDependencia.TabIndex = 90;
+            this.textBox_LocalidadDependencia.Enter += new System.EventHandler(this.textBox_DatosDependencia_Enter);
             // 
             // textBox_DomicilioDependencia
             // 
@@ -678,6 +681,7 @@
             this.textBox_DomicilioDependencia.Name = "textBox_DomicilioDependencia";
             this.textBox_DomicilioDependencia.Size = new System.Drawing.Size(402, 20);
             this.textBox_DomicilioDependencia.TabIndex = 89;
+            this.textBox_DomicilioDependencia.Enter += new System.EventHandler(this.textBox_DatosDependencia_Enter);
             // 
             // textBox_Edad
             // 

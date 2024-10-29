@@ -116,9 +116,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxINSTRUCTOR();
-            InicializarComboBoxDEPENDENCIAS();
+
+            //cargar desde base de datos
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO
 

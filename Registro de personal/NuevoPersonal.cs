@@ -16,6 +16,8 @@ using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
 
 using Controles.Controles;
+using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -34,6 +36,8 @@ namespace Ofelia_Sara.Registro_de_personal
             configurarTextoEnControles();//para formato de texto que ingresa
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
+
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);//para cargar desde base de datos
         }
 
 
@@ -68,7 +72,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
 
-            InicializarComboBoxDEPENDENCIAS();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+           
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
 
@@ -168,14 +172,96 @@ namespace Ofelia_Sara.Registro_de_personal
                 e.Handled = true; // Cancelar la entrada si no es un número
             }
         }
-
-
-        private void InicializarComboBoxDEPENDENCIAS()
+        private void ComboBox_Dependencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
-            comboBox_Dependencia.DataSource = dependencias;
-            comboBox_Dependencia.DisplayMember = "Dependencia";
-            comboBox_Dependencia.SelectedIndex = -1;
+            // Lógica para cargar datos
+            CargarDatosDependencia();
         }
+
+        private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
+        {
+            // Verifica si el texto del ComboBox está vacío
+            if (string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+            {
+                LimpiarTextBoxes(); // Limpia los TextBox si no hay texto
+            }
+        }
+
+        private void CargarDatosDependencia()
+        {
+
+            if (comboBox_Dependencia.SelectedItem != null)
+            {
+                // Obtiene el valor seleccionado y extrae el nombre de la dependencia
+                string seleccion = comboBox_Dependencia.SelectedItem.ToString();
+                string dependenciaSeleccionada = seleccion.Split(' ')[0].Trim(); // Obtiene solo el nombre y elimina espacios
+
+                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+
+                try
+                {
+                    using (var conexion = new MySqlConnection(connectionString))
+                    {
+                        conexion.Open();
+                        string consulta = "SELECT Direccion, Localidad, Partido FROM Comisarias WHERE Nombre = @nombreDependencia";
+
+                        using (var comando = new MySqlCommand(consulta, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@nombreDependencia", dependenciaSeleccionada);
+
+                            using (var lector = comando.ExecuteReader())
+                            {
+                                if (lector.Read())
+                                {
+                                    textBox_DomicilioDependencia.Text = lector["Direccion"].ToString();
+                                    textBox_LocalidadDependencia.Text = lector["Localidad"].ToString();
+                                    textBox_PartidoDependencia.Text = lector["Partido"].ToString();
+
+                                    // Establecer los TextBox como no editables
+                                    textBox_DomicilioDependencia.ReadOnly = true;
+                                    textBox_LocalidadDependencia.ReadOnly = true;
+                                    textBox_PartidoDependencia.ReadOnly = true;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontraron datos para la dependencia seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos de la dependencia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Limpia los TextBox si no hay selección válida y los habilita para edición
+                LimpiarTextBoxes();
+            }
+        }
+
+        private void LimpiarTextBoxes()
+        {
+            textBox_DomicilioDependencia.Clear();
+            textBox_LocalidadDependencia.Clear();
+            textBox_PartidoDependencia.Clear();
+
+            // También puedes habilitar los TextBox si es necesario
+            textBox_DomicilioDependencia.ReadOnly = false;
+            textBox_LocalidadDependencia.ReadOnly = false;
+            textBox_PartidoDependencia.ReadOnly = false;
+        }
+
+        private void textBox_DatosDependencia_Enter(object sender, EventArgs e)
+        {
+            if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
+            {
+                MessageBox.Show("Para modificar este elemento debe hacerlo desde el boton Configuracion, en el menu principal.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
+            }
+        }
+
     }
 }

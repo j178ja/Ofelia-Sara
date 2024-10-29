@@ -34,8 +34,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Agregar el UserControl al formulario
             this.Controls.Add(fecha_Instruccion);
         }
-        // Implementación del método de la interfaz IFormulario
-        
+       
         private void Buscar_Load(object sender, EventArgs e)
         {
 
@@ -44,6 +43,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBoton(btn_Buscar);
 
             InicializarComboBox();
+
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
         }
         private void InicializarComboBox()
         {

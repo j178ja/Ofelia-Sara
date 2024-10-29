@@ -55,6 +55,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.Text = instructor;
             comboBox_Secretario.Text = secretario;
             comboBox_Dependencia.Text = dependencia;
+
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
         }
         //----------------------------------------------------------------------------------------
 

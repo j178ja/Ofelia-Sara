@@ -49,7 +49,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ConversorDocumentos.AutoScroll = true;
 
             //cargar desde base de datos
-            //CargarDatosDependencia();
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
         }
 
         private void Expedientes_Load(object sender, EventArgs e)
