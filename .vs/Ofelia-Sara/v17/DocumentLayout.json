@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\entidades json\\jerarquiasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\formularios\\oficial de servicio\\contravenciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\contravenciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\adm bd\\manager\\secretariosmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevoinstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\agregar componentes\\nuevafiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevafiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,39 +46,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NuevoSecretario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevoSecretario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeToolTip": "Agregar Componentes\\NuevoSecretario.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAowD4AAAA6AAAA",
+              "Title": "JerarquiasManager.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Entidades json\\JerarquiasManager.cs",
+              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Entidades json\\JerarquiasManager.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Entidades json\\JerarquiasManager.cs*",
+              "RelativeToolTip": "..\\BaseDatos_Libreria\\Entidades json\\JerarquiasManager.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABFAQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T13:12:27.922Z",
+              "WhenOpened": "2024-10-29T11:48:51.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Contravenciones.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\contravenciones.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\contravenciones.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\contravenciones.cs",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\contravenciones.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAADIAAAA6AAAA",
+              "Title": "BaseForm.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs",
+              "RelativeDocumentMoniker": "Formularios\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs",
+              "RelativeToolTip": "Formularios\\BaseForm.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T12:35:58.102Z"
+              "WhenOpened": "2024-10-29T11:46:36.422Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SecretariosManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
-              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
-              "RelativeToolTip": "..\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAowDoAAAAGAAAA",
+              "DocumentIndex": 4,
+              "Title": "NuevaFiscalia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaFiscalia.cs",
+              "RelativeDocumentMoniker": "Agregar Componentes\\NuevaFiscalia.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaFiscalia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Agregar Componentes\\NuevaFiscalia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T12:25:36.12Z"
+              "WhenOpened": "2024-10-29T11:03:39.402Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -86,23 +87,24 @@
               "Title": "ModificarEliminar.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs",
               "RelativeDocumentMoniker": "Acceso Usuarios\\ModificarEliminar.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs",
-              "RelativeToolTip": "Acceso Usuarios\\ModificarEliminar.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAewBYAAAAGAAAA",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs*",
+              "RelativeToolTip": "Acceso Usuarios\\ModificarEliminar.cs*",
+              "ViewState": "AQIAACADAAAAAAAAAAAAADADAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T12:23:27.564Z"
+              "WhenOpened": "2024-10-29T10:10:26.988Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NuevoInstructor.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevoInstructor.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoInstructor.cs",
-              "RelativeToolTip": "Agregar Componentes\\NuevoInstructor.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwEIAAAALAAAA",
+              "DocumentIndex": 3,
+              "Title": "ModificarEliminar.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs",
+              "RelativeDocumentMoniker": "Acceso Usuarios\\ModificarEliminar.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Acceso Usuarios\\ModificarEliminar.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T12:15:41.081Z"
+              "WhenOpened": "2024-10-29T10:10:13.997Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

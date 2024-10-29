@@ -42,6 +42,9 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private TextBox textBox_Apellido;
         private ComboBox comboBox_Instructor;
         private TextBox textBox_Funcion;
+   
+
+
 
         public ModificarEliminar()
         {
@@ -564,6 +567,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 Location = new Point(7, 137),
                
             };
+            //LimpiarControlesInstructor();
 
             // Inicializa los controles para mostrar los detalles
             TextBox textBox_Legajo = new TextBox { ReadOnly = true, Width = 295, Height = 20 };
@@ -767,24 +771,18 @@ namespace Ofelia_Sara.Acceso_Usuarios
         {
             if (listBox_Datos.SelectedItem is Comisaria selectedComisaria)
             {
+              //  Carga datos de Comisaría
                 textBox_Dependencia.Text = selectedComisaria.Nombre;
                 textBox_Domicilio.Text = selectedComisaria.Direccion;
                 textBox_Localidad.Text = selectedComisaria.Localidad;
                 textBox_Partido.Text = selectedComisaria.Partido;
 
-
-                // Habilitar los TextBox para edición
-                textBox_Dependencia.ReadOnly = false;
-                textBox_Domicilio.ReadOnly = false;
-                textBox_Localidad.ReadOnly = false;
-                textBox_Partido.ReadOnly = false;
             }
-            // Verifica si hay un elemento seleccionado en el ListBox
-            if (listBox_Datos.SelectedItem is Instructor selectedInstructor)
+            else if (listBox_Datos.SelectedItem is Instructor selectedInstructor)
             {
                 try
                 {
-                    // Asigna los valores del Instructor seleccionado a los TextBox y ComboBox correspondientes
+                   // Carga datos de Instructor
                     textBox_NumeroLegajo.Text = selectedInstructor.Legajo.ToString();
                     comboBox_Escalafon.Text = selectedInstructor.Subescalafon;
                     comboBox_Jerarquia.Text = selectedInstructor.Jerarquia;
@@ -793,27 +791,38 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     comboBox_Dependencia.Text = selectedInstructor.Dependencia;
                     textBox_Funcion.Text = selectedInstructor.Funcion;
 
-                    // Habilitar los controles para edición
-                    textBox_NumeroLegajo.ReadOnly = false;
-                    comboBox_Escalafon.Enabled = true;
-                    comboBox_Jerarquia.Enabled = true;
-                    textBox_Nombre.ReadOnly = false;
-                    textBox_Apellido.ReadOnly = false;
-                    comboBox_Dependencia.Enabled = true;
-                    textBox_Funcion.ReadOnly = false;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error al cargar los datos del instructor seleccionado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            else if (listBox_Datos.SelectedItem is Secretario selectedSecretario)
             {
-                MessageBox.Show("No se ha seleccionado un instructor válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }  
-
+                // Carga datos de Secretario
+                textBox_NumeroLegajo.Text = selectedSecretario.Legajo.ToString();
+                comboBox_Escalafon.Text = selectedSecretario.Subescalafon;
+                comboBox_Jerarquia.Text = selectedSecretario.Jerarquia;
+                textBox_Nombre.Text = selectedSecretario.Nombre;
+                textBox_Apellido.Text = selectedSecretario.Apellido;
+                comboBox_Dependencia.Text = selectedSecretario.Dependencia;
+                textBox_Funcion.Text = selectedSecretario.Funcion;
+            }
+            else if (listBox_Datos.SelectedItem is Fiscalia selectedFiscalia)
+            {
+                // Carga datos de Fiscalía
+                //textBox_NombreFiscalia.Text = selectedFiscalia.Ufid;
+                //textBox_AgenteFiscal.Text = selectedFiscalia.AgenteFiscal;
+                //textBox_Localidad.Text = selectedFiscalia.Localidad;
+                //textBox_DeptoJudicial.Text = selectedFiscalia.DeptoJudicial;
              
+
+            }
         }
+
+
+
+
 
         //__________________________________________________________________________________
         //-------------BOTON CANCELAR---------------------------
@@ -924,7 +933,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
             // Limpiar el ListBox y recargar datos
             
-            CargarDatosEnListBox();
+            //CargarDatosEnListBox();
             ClearModificationControls();
             // Deshabilitar botones
             btn_Editar.Enabled = false;
@@ -947,19 +956,19 @@ namespace Ofelia_Sara.Acceso_Usuarios
         //---------------------------------------------------------------------------------------
 
 
-        // Método para cargar los datos en el ListBox
-        private void CargarDatosEnListBox()
-        {
-            var dbManager = new ComisariasManager(); // Inicializa tu dbManager
-            var comisarias = dbManager.GetComisarias(); // Asegúrate de que este método devuelva la lista de comisarías
+        //// Método para cargar los datos en el ListBox
+        //private void CargarDatosEnListBox()
+        //{
+        //    var dbManager = new ComisariasManager(); // Inicializa tu dbManager
+        //    var comisarias = dbManager.GetComisarias(); // Asegúrate de que este método devuelva la lista de comisarías
 
-            // Limpia la fuente de datos
-            listBox_Datos.DataSource = null; // Desvincular temporalmente la fuente de datos
-            listBox_Datos.DataSource = comisarias; // Vuelve a vincular la fuente de datos actualizada
+        //    // Limpia la fuente de datos
+        //    listBox_Datos.DataSource = null; // Desvincular temporalmente la fuente de datos
+        //    listBox_Datos.DataSource = comisarias; // Vuelve a vincular la fuente de datos actualizada
 
-            // Si deseas limpiar el formulario, puedes llamar aquí
-            LimpiarFormulario.Limpiar(this); // Limpia el contenido de los TextBox
-        }
+        //    // Si deseas limpiar el formulario, puedes llamar aquí
+        //    LimpiarFormulario.Limpiar(this); // Limpia el contenido de los TextBox
+        //}
 
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
