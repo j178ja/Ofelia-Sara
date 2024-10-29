@@ -28,6 +28,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         private ComisariasManager dbManager; 
 
         public event Action<string> DependenciaTextChanged;//para  actualizar en tiempo real con form SellosDependencia
+        public event Action<string> LocalidadTextChanged;//para  actualizar en tiempo real con form SellosDependencia
 
         // Define un delegado para el evento ItemAgregado
         public delegate void ItemAgregadoEventHandler(object sender, string nuevoItem);
@@ -75,6 +76,7 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             // Suscribirse al evento DependenciaTextChanged
             sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependencia;
+            sellosDependenciaForm.LocalidadTextChanged += ActualizarTextoLocalidad;
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
         }
         //-----------------------------------------------------------------------------
@@ -201,8 +203,12 @@ namespace Ofelia_Sara.Agregar_Componentes
                 SellosDependencia sellosDependenciaForm = new SellosDependencia();
 
                 sellosDependenciaForm.ActualizarTextoDependencia(this.TextoDependencia);
+                sellosDependenciaForm.ActualizarTextoLocalidad(this.TextoLocalidad);
+                // NO SE EMPLEARA POR EL MOMENTO REFLEJAR DESDE SELLOS 
                 this.DependenciaTextChanged += sellosDependenciaForm.ActualizarTextoDependencia;
+                this.LocalidadTextChanged += sellosDependenciaForm.ActualizarTextoLocalidad;
                 sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependenciaDesdeSellosDependencia;
+                sellosDependenciaForm.LocalidadTextChanged += ActualizarTextoLocalidadDesdeSellosDependencia;
 
                 // Guardar la posición original del formulario
                 originalPosition = this.Location;
@@ -228,7 +234,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 // Mostrar el formulario AgregarDatosPersonalesConcubina
                 sellosDependenciaForm.FormClosed += SellosDependenciaForm_FormClosed;
                 // Mostrar el formulario como una ventana modal
-                sellosDependenciaForm.Show();
+                sellosDependenciaForm.ShowDialog();
             }
         }
         private void SellosDependenciaForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -241,18 +247,26 @@ namespace Ofelia_Sara.Agregar_Componentes
         //--Para habilitar check y modificar label
         private void ActualizarEstado()
         {
-            // Verifica si textBox_Dependencia no está vacío ni solo con espacios
-            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text);
+            // Verifica si textBox_Dependencia y textBox_Localidad no están vacíos ni contienen solo espacios
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text) &&
+                                 !string.IsNullOrWhiteSpace(textBox_Localidad.Text);
 
-            // Actualiza el color del label y el estado del checkbox según el texto del TextBox
+            // Actualiza el color del label y el estado del CheckBox según el texto de los TextBox
             label_AgregarSellos.ForeColor = esTextoValido ? Color.Black : Color.Tomato;
             label_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.LightGray;
-            
+
             // Actualiza el color de fondo del CheckBox y su estado habilitado/deshabilitado
             checkBox_AgregarSellos.Enabled = esTextoValido;
-            checkBox_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
 
+            // Si alguno de los TextBox está vacío, limpia el CheckBox
+            if (!esTextoValido)
+            {
+                checkBox_AgregarSellos.Checked = false;
+            }
+
+            checkBox_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
+
 
         private void TextBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
@@ -263,16 +277,36 @@ namespace Ofelia_Sara.Agregar_Componentes
             textBox_Dependencia.SelectionStart = textBox_Dependencia.Text.Length;
 
             // Dispara el evento si hay suscriptores
-            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+           DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+        }
+
+
+        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstado();//habilita check y modifica label
+
+            //---para actualizar en tiempo real textbox DEPENDENCIA
+            // Asegura que el cursor esté al final del texto
+            textBox_Localidad.SelectionStart = textBox_Localidad.Text.Length;
+
+            // Dispara el evento si hay suscriptores
+            LocalidadTextChanged?.Invoke(textBox_Localidad.Text);
         }
         //-----------------------------------------------------------------------------
         //---para actualizar automaticamente entre form NuevaDependencia y SellosDependencia--
-
+   
         public string TextoDependencia
         {
             get { return textBox_Dependencia.Text; }
             set { textBox_Dependencia.Text = value; }
         }
+        public string TextoLocalidad
+        {
+            get { return textBox_Localidad.Text; }
+            set { textBox_Localidad.Text = value; }
+        }
+
+
         public void ActualizarTextoDependencia(string texto)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
@@ -281,12 +315,27 @@ namespace Ofelia_Sara.Agregar_Componentes
                 textBox_Dependencia.Text = texto;
             }
         }
+        public void ActualizarTextoLocalidad(string texto)
+        {
+            // Solo actualiza el texto si es diferente para evitar un bucle infinito
+            if (textBox_Localidad.Text != texto)
+            {
+                textBox_Localidad.Text = texto;
+            }
+        }
 
         public void ActualizarTextoDependenciaDesdeSellosDependencia(string nuevoTexto)
         {
             if (textBox_Dependencia.Text != nuevoTexto)
             {
                 textBox_Dependencia.Text = nuevoTexto;
+            }
+        }
+        public void ActualizarTextoLocalidadDesdeSellosDependencia(string nuevoTexto)
+        {
+            if (textBox_Localidad.Text != nuevoTexto)
+            {
+                textBox_Localidad.Text = nuevoTexto;
             }
         }
     }

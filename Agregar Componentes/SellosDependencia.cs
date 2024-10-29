@@ -13,6 +13,7 @@ using Clases.Texto;
 using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using Clases.Apariencia;
+using Microsoft.Office.Interop.Word;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -20,6 +21,7 @@ namespace Ofelia_Sara.Agregar_Componentes
     public partial class SellosDependencia : BaseForm
     {
         public event Action<string> DependenciaTextChanged;
+        public event Action<string> LocalidadTextChanged;
 
         public SellosDependencia()
         {
@@ -29,7 +31,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            textBox_Dependencia.TextChanged += textBox_Dependencia_TextChanged;
+            textBox_Localidad.Enabled = false;// inicializar en false
         }
 
    
@@ -39,6 +41,9 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
+
+            MayusculaSola.AplicarAControl(textBox_Localidad);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
             ActualizarControles();//Inicializa  el estado de los controles pictureBox
 
@@ -61,15 +66,18 @@ namespace Ofelia_Sara.Agregar_Componentes
             pictureBox_SelloFoliador.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // Dispara el evento si hay suscriptores
-            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+            DependenciaTextChanged?.Invoke(comboBox_Dependencia.Text);
 
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
+
+            //cargar desde base de datos
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
         }
         //-----------------------------------------------------------------------------
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
-            textBox_Dependencia.Focus();
+            comboBox_Dependencia.Focus();
         }
         //____________________________________________________________________
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -81,43 +89,50 @@ namespace Ofelia_Sara.Agregar_Componentes
             e.Cancel = true;
         }
         //--------------------------------------------------------------------------------
-        private void textBox_Dependencia_TextChanged(object sender, EventArgs e)
+        private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
-            //// Convierte el texto a mayúsculas ignorando caracteres especiales
-            //string textoConvertido = MayusculaYnumeros.(textBox_Dependencia.Text);
 
-            //// Mantiene la posición del cursor
-            //int selectionStart = textBox_Dependencia.SelectionStart;
-            //int selectionLength = textBox_Dependencia.SelectionLength;
-
-            //// Actualiza el texto del TextBox
-            //textBox_Dependencia.Text = textoConvertido;
-
-            //// Restablece la posición del cursor
-            //textBox_Dependencia.SelectionStart = selectionStart;
-            //textBox_Dependencia.SelectionLength = selectionLength;
-
-
-            MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
             // Actualiza los controles
            ActualizarControles();
 
             //----para actualizar textbox entre formularios
                         // Asegura que el cursor esté al final del texto
-            textBox_Dependencia.SelectionStart = textBox_Dependencia.Text.Length;
+            comboBox_Dependencia.SelectionStart = comboBox_Dependencia.Text.Length;
                         // Disparar el evento si hay suscriptores
-            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+           DependenciaTextChanged?.Invoke(comboBox_Dependencia.Text);
 
-         
+            // Si el texto cambia (cuando el usuario escribe), permite la edición nuevamente
+
+            if (comboBox_Dependencia.SelectedIndex == -1) // -1 indica que no hay un elemento seleccionado de la lista
+            {
+                comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDown;
+            }
+                // Habilitar el TextBox_Localidad si se escribe en el ComboBox
+                if (!string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+            {
+                textBox_Localidad.Enabled = true;
+            }
         }
+        private void textBox_Localidad_TextChanged(object sender, EventArgs e)
+        {
 
+            // Actualiza los controles
+            ActualizarControles();
+
+            //----para actualizar textbox entre formularios
+            // Asegura que el cursor esté al final del texto
+            textBox_Localidad.SelectionStart = textBox_Localidad.Text.Length;
+            // Disparar el evento si hay suscriptores
+            LocalidadTextChanged?.Invoke(textBox_Localidad.Text);
+
+        }
 
         //-------------------------------------------------------------------------------
         //---------------------BOTON LIMPIAR------------------------
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             
+            comboBox_Dependencia.SelectedIndex = -1;
             MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //-------------------------------------------------------------------------------
@@ -125,7 +140,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             // Verifica que se haya ingresado texto en el textBox_Dependencia
-            if (string.IsNullOrWhiteSpace(textBox_Dependencia.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
             {
                 MessageBox.Show("Debe ingresar a qué dependencia corresponden los sellos.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -151,19 +166,11 @@ namespace Ofelia_Sara.Agregar_Componentes
         //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
 
 
-        //---Propiedad para que traiga el nombre de la dependencia desde el otro formulario
-        public string TextBoxText
-        {
-            get { return textBox_Dependencia.Text; }
-            set { textBox_Dependencia.Text = value; }
-        }
-
-        //-----------------------------------------------------------------------------------
 
         private void ActualizarControles()
         {
             // Verifica si TextoDependencia tiene texto
-            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text);
+            bool esTextoValido = !string.IsNullOrWhiteSpace(comboBox_Dependencia.Text);
 
             // Actualiza el estado de los PictureBox
             ActualizarPictureBox(pictureBox_SelloMedalla, esTextoValido);
@@ -272,24 +279,54 @@ namespace Ofelia_Sara.Agregar_Componentes
 
         public string TextoDependencia
         {
-            get { return textBox_Dependencia.Text; }
-            set { textBox_Dependencia.Text = value; }
+            get { return comboBox_Dependencia.Text; }
+            set { comboBox_Dependencia.Text = value; }
+        }
+        public string TextoLocalidad
+        {
+            get { return textBox_Localidad.Text; }
+            set { textBox_Localidad.Text = value; }
         }
 
         public void UpdateDependenciaTextBox(string text)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
-            if (textBox_Dependencia.Text != text)
+            if (comboBox_Dependencia.Text != text)
             {
-                textBox_Dependencia.Text = text;
+                comboBox_Dependencia.Text = text;
             }
         }
         public void ActualizarTextoDependencia(string texto)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
-        if (textBox_Dependencia.Text != texto)
+        if (comboBox_Dependencia.Text != texto)
             {
-                textBox_Dependencia.Text = texto;
+               comboBox_Dependencia.Text = texto;
+            }
+        }
+
+        public void ActualizarTextoLocalidad(string texto)
+        {
+            // Solo actualiza el texto si es diferente para evitar un bucle infinito
+            if (textBox_Localidad.Text != texto)
+            {
+                textBox_Localidad.Text = texto;
+            }
+        }
+
+        //habilita localidad en caso de que no se seleccione un item, para ser usado cuando se llama al form individualmente
+        private void comboBox_Dependencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Si el usuario selecciona un elemento de la lista, deshabilitar la edición
+            if (comboBox_Dependencia.SelectedIndex >= 0)
+            {
+                comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+                // Deshabilitar el TextBox si se selecciona un ítem del ComboBox
+                if (comboBox_Dependencia.SelectedIndex != -1) // Asegurarse de que hay un ítem seleccionado
+            {
+                textBox_Localidad.Enabled = false;
+                textBox_Localidad.Clear();
             }
         }
     }

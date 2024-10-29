@@ -278,7 +278,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
                 textBox.SelectAll(); // Selecciona todo el texto
             }
         }
-
+        //-----------------------------------------------------------------------
     }
 
 }

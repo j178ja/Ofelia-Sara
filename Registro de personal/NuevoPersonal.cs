@@ -258,7 +258,7 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
             {
-                MessageBox.Show("Para modificar este elemento debe hacerlo desde el boton Configuracion, en el menu principal.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
             }
         }

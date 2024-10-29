@@ -86,6 +86,7 @@
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(326, 21);
             this.textBox_Localidad.TabIndex = 23;
+            this.textBox_Localidad.TextChanged += new System.EventHandler(this.TextBox_Localidad_TextChanged);
             // 
             // label_Partido
             // 
