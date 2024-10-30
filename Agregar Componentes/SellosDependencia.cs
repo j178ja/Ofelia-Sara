@@ -89,7 +89,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             e.Cancel = true;
         }
         //--------------------------------------------------------------------------------
-        private void comboBox_Dependencia_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
 
             // Actualiza los controles
@@ -113,7 +113,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 textBox_Localidad.Enabled = true;
             }
         }
-        private void textBox_Localidad_TextChanged(object sender, EventArgs e)
+        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
         {
 
             // Actualiza los controles
@@ -129,7 +129,7 @@ namespace Ofelia_Sara.Agregar_Componentes
 
         //-------------------------------------------------------------------------------
         //---------------------BOTON LIMPIAR------------------------
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Dependencia.SelectedIndex = -1;
@@ -315,19 +315,21 @@ namespace Ofelia_Sara.Agregar_Componentes
         }
 
         //habilita localidad en caso de que no se seleccione un item, para ser usado cuando se llama al form individualmente
-        private void comboBox_Dependencia_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_Dependencia_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Si el usuario selecciona un elemento de la lista, deshabilitar la edición
             if (comboBox_Dependencia.SelectedIndex >= 0)
             {
                 comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDownList;
             }
-                // Deshabilitar el TextBox si se selecciona un ítem del ComboBox
-                if (comboBox_Dependencia.SelectedIndex != -1) // Asegurarse de que hay un ítem seleccionado
+            // Deshabilitar el TextBox si se selecciona un ítem del ComboBox
+            if (comboBox_Dependencia.SelectedIndex != -1) // Asegurarse de que hay un ítem seleccionado
             {
                 textBox_Localidad.Enabled = false;
                 textBox_Localidad.Clear();
             }
         }
+
+
     }
 }

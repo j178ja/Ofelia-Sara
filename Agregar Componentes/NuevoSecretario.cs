@@ -106,9 +106,16 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
             else
             {
+                // Convertir el valor de textBox_NumeroLegajo a float, y asignar un valor por defecto si está vacío
+                float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text)
+                               ? 100000 // valor por defecto
+                               : float.Parse(textBox_NumeroLegajo.Text);
+
+
+
                 var nuevoSecretario = new Secretario
                 {
-                    Legajo = float.Parse(textBox_NumeroLegajo.Text),
+                    Legajo = legajo,
                     Subescalafon = comboBox_Escalafon.Text,
                     Jerarquia = comboBox_Jerarquia.Text,
                     Nombre = textBox_Nombre.Text,

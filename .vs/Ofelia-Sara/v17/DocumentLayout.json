@@ -3,12 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\sellosdependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\adm bd\\manager\\secretariosmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,27 +41,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SellosDependencia.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\SellosDependencia.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\SellosDependencia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\SellosDependencia.cs*",
-              "RelativeToolTip": "Agregar Componentes\\SellosDependencia.cs*",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAgwGwAAAANAAAA",
+              "DocumentIndex": 1,
+              "Title": "SecretariosManager.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
+              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
+              "RelativeToolTip": "..\\BaseDatos_Libreria\\Adm BD\\Manager\\SecretariosManager.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAowHkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T14:11:48.557Z",
+              "WhenOpened": "2024-10-30T00:10:44.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SellosDependencia.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\SellosDependencia.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\SellosDependencia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\SellosDependencia.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Agregar Componentes\\SellosDependencia.cs [Dise\u00F1o]*",
+              "DocumentIndex": 0,
+              "Title": "NuevoSecretario.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
+              "RelativeDocumentMoniker": "Agregar Componentes\\NuevoSecretario.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
+              "RelativeToolTip": "Agregar Componentes\\NuevoSecretario.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAmwG4AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T14:09:28.847Z",
+              "WhenOpened": "2024-10-29T23:46:41.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseForm.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs",
+              "RelativeDocumentMoniker": "Formularios\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs",
+              "RelativeToolTip": "Formularios\\BaseForm.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAAHIBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T23:39:59.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NuevoSecretario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
+              "RelativeDocumentMoniker": "Agregar Componentes\\NuevoSecretario.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Agregar Componentes\\NuevoSecretario.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T23:08:02.49Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

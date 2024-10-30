@@ -96,8 +96,8 @@
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(355, 26);
             this.comboBox_Dependencia.TabIndex = 43;
-            this.comboBox_Dependencia.SelectedIndexChanged += new System.EventHandler(this.comboBox_Dependencia_SelectedIndexChanged);
-            this.comboBox_Dependencia.TextChanged += new System.EventHandler(this.comboBox_Dependencia_TextChanged);
+            this.comboBox_Dependencia.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Dependencia_SelectedIndexChanged);
+            this.comboBox_Dependencia.TextChanged += new System.EventHandler(this.ComboBox_Dependencia_TextChanged);
             // 
             // label_Dependencia
             // 
@@ -194,7 +194,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 5;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
