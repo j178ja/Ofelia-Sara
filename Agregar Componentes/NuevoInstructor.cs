@@ -101,9 +101,14 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
             else
             {
+                // Convertir el valor de textBox_NumeroLegajo a float, y asignar un valor por defecto si está vacío
+                float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text)
+                               ? 100000 // valor por defecto
+                               : float.Parse(textBox_NumeroLegajo.Text);
+
                 var nuevoInstructor = new Instructor
                 {
-                    Legajo = float.Parse(textBox_NumeroLegajo.Text),
+                    Legajo = legajo,
                     Subescalafon = comboBox_Escalafon.Text,
                     Jerarquia = comboBox_Jerarquia.Text,
                     Nombre = textBox_Nombre.Text,
@@ -111,6 +116,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                     Dependencia = comboBox_Dependencia.Text,
                     Funcion = textBox_Funcion.Text
                 };
+
 
                 InstructoresManager manager = new InstructoresManager();
                 manager.InsertInstructor(nuevoInstructor.Legajo, nuevoInstructor.Subescalafon, nuevoInstructor.Jerarquia, nuevoInstructor.Nombre, nuevoInstructor.Apellido, nuevoInstructor.Dependencia, nuevoInstructor.Funcion);
@@ -122,7 +128,6 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
         }
 
-       
 
 
         //----------------------------------------------------------------------------

@@ -14,6 +14,10 @@ using Ofelia_Sara.Formularios;
 using Clases.Apariencia;
 
 using BaseDatos.Entidades;
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
+using BaseDatos.Adm_BD;
+using System.Data.Common;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
@@ -126,15 +130,19 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
             else
             {
-                Fiscalia nuevaFiscalia = new Fiscalia
+
+                // Crear una instancia de Fiscalia con los datos del formulario
+                var nuevaFiscalia = new Fiscalia
                 {
-                    NombreFiscalia = textBox_Fiscalia.Text,
+                    Ufid = textBox_Fiscalia.Text,
                     AgenteFiscal = textBox_AgenteFiscal.Text,
                     Localidad = textBox_Localidad.Text,
                     DeptoJudicial = textBox_DeptoJudicial.Text
                 };
-                // Agregar la nueva fiscalía a la lista usando el FiscaliaManager
-                FiscaliaManager.AgregarFiscalia(nuevaFiscalia);
+
+                // Instanciar FiscaliasManager y llamar a InsertFiscalia para guardar los datos
+                FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
+                fiscaliaManager.InsertFiscalia(nuevaFiscalia);
 
                 MessageBox.Show("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

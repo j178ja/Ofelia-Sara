@@ -717,7 +717,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Fiscalia.SelectedItem != null)
             {
                 string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
-                Fiscalia fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
+                Fiscaliajson fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
 
                 if (fiscalia != null)
                 {

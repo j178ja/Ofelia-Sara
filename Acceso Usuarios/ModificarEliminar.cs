@@ -810,12 +810,12 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             else if (listBox_Datos.SelectedItem is Fiscalia selectedFiscalia)
             {
-                // Carga datos de Fiscalía
-                //textBox_NombreFiscalia.Text = selectedFiscalia.Ufid;
+                //// Carga datos de Fiscalía
+                //textBox_Fiscalia.Text = selectedFiscalia.Ufid;
                 //textBox_AgenteFiscal.Text = selectedFiscalia.AgenteFiscal;
                 //textBox_Localidad.Text = selectedFiscalia.Localidad;
                 //textBox_DeptoJudicial.Text = selectedFiscalia.DeptoJudicial;
-             
+
 
             }
         }
