@@ -20,6 +20,7 @@ using System.Data.Common;
 using BaseDatos.Adm_BD.Manager;
 using System.ComponentModel;
 using BaseDatos.Adm_BD.Modelos;
+using BaseDatos.Adm_BD;
 
 
 
@@ -34,9 +35,11 @@ namespace Ofelia_Sara.Formularios
         private DatabaseConnection dbConnection;
 
 
+        
         protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias// Para cargar comisarías
         protected InstructoresManager instructoresManager = new InstructoresManager();    // Para cargar instructores
         protected SecretariosManager secretariosManager = new SecretariosManager();    // Para cargar instructores
+        //protected FiscaliasManager fiscaliasManager = new FiscaliasManager();    // Para cargar fiscalias
 
         private readonly AutocompletarManager autocompletarManager; // Define una lista para almacenar los elementos de autocompletado
 
@@ -52,8 +55,11 @@ namespace Ofelia_Sara.Formularios
 
         public BaseForm()
         {
-            IconoEscudo.SetFormIcon(this, @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\IconoEscudoPolicia.ico");
+            // Ruta relativa a la carpeta de recursos del proyecto
+            string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "imagenes", "IconoEscudoPolicia.ico");
 
+            // Llama a SetFormIcon usando la ruta relativa
+            IconoEscudo.SetFormIcon(this, iconPath);
 
             InitializeFooterLinkLabel();
            
@@ -374,6 +380,28 @@ namespace Ofelia_Sara.Formularios
         }
 
 
+        public void CargarDatosFiscalia(ComboBox comboBox, FiscaliasManager dbManager)
+        {
+            try
+            {
+                // Obtener los datos desde la base de datos
+                List<Fiscalia> fiscalias = dbManager.GetFiscalias();
+
+                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
+                comboBox.Items.Clear();
+
+                // Recorrer la lista de fiscalías y agregar los datos al ComboBox
+                foreach (Fiscalia fiscalia in fiscalias)
+                {
+                    string item = $"{fiscalia.Ufid} - {fiscalia.AgenteFiscal} - {fiscalia.Localidad}"; // Puedes personalizar el formato
+                    comboBox.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos de Fiscalías: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 

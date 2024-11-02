@@ -39,7 +39,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             // Crear ítems para el menú
             var item_Agregar = new ToolStripMenuItem("AGREGAR");
             var item_Buscar = new ToolStripMenuItem("BUSCAR ...");
-            var item_Remover = new ToolStripMenuItem("REMOVER");
+            var item_Remover = new ToolStripMenuItem("EDITAR/REMOVER");
             item_Remover.Click += new EventHandler(Item_Remover_Click);
             var item_Salir = new ToolStripMenuItem("SALIR");
             var SubItem_Agregar_Sellos = new ToolStripMenuItem("SELLOS");

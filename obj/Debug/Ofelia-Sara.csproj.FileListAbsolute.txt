@@ -114,7 +114,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\acciones.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\dependencias.json
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\fiscalias.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\instructor.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\secretarios.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Mensajes.MensajeGenerarDocumentos.resources
@@ -130,7 +129,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXm
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\DocumentFormat.OpenXml.Framework.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\ICOes.png
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoEscudoPolicia.ico
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.general.clases.CustomProgressBar.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.AgregarFiscaliaControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Controles.Controles.AgregarJuzgadoControl.resources
@@ -152,3 +150,7 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.csproj.ResolveComReference.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Interop.WMPLib.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\sugerencias_Caratula.json
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\fiscaliasjson.json
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Mensajes.MensajeGral.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoEscudoPolicia.ico
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoAplicacion.ico

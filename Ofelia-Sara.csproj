@@ -51,6 +51,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\imagenes\IconoAplicacion.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ofelia_Sara.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Words, Version=24.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>packages\Aspose.Words.24.8.0\lib\net462\Aspose.Words.dll</HintPath>
@@ -397,6 +403,12 @@
     <Compile Include="Formularios\VideoInstructivo.Designer.cs">
       <DependentUpon>VideoInstructivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensajes\MensajeGral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\MensajeGral.Designer.cs">
+      <DependentUpon>MensajeGral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +566,9 @@
     <EmbeddedResource Include="Mensajes\MensajeGenerarDocumentos.resx">
       <DependentUpon>MensajeGenerarDocumentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes\MensajeGral.resx">
+      <DependentUpon>MensajeGral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\escudoPolicial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -586,10 +601,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="Resources\iconoEscribiendo.png" />
-    <Content Include="Resources\teclado.png" />
+    <Content Include="Resources\imagenes\IconoAplicacion.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\imagenes\iconoEscribiendo.png" />
+    <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
-    <None Include="Resources\IconoEscudoPolicia.ico" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -604,17 +621,8 @@
     <None Include="Resources\imagenes\doc.png" />
     <None Include="Resources\imagenes\borrar.png" />
     <None Include="Resources\imagenes\borrar 24%281%29.png" />
-    <None Include="Resources\pdf.png" />
-    <None Include="Resources\subir_documentos.png" />
-    <None Include="Resources\subir_archivo.bmp" />
-    <None Include="Resources\ICOes.png" />
-    <None Include="Resources\borrar.png" />
-    <None Include="Resources\borrar 24%281%29.png" />
-    <None Include="Resources\doc.png" />
-    <Content Include="Resources\ojo_Contraseña.png" />
-    <None Include="Resources\ojoINICIO.png" />
-    <None Include="Resources\ojoAbierto.png" />
-    <None Include="Resources\ojoCerrado.png" />
+    <None Include="Resources\imagenes\subir_archivo.bmp" />
+    <None Include="Resources\imagenes\ojoAbierto.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

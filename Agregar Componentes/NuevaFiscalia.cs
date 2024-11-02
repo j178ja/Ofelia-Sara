@@ -141,8 +141,8 @@ namespace Ofelia_Sara.Agregar_Componentes
                 };
 
                 // Instanciar FiscaliasManager y llamar a InsertFiscalia para guardar los datos
-                FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
-                fiscaliaManager.InsertFiscalia(nuevaFiscalia);
+               // FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
+               // fiscaliaManager.InsertFiscalia(nuevaFiscalia);
 
                 MessageBox.Show("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

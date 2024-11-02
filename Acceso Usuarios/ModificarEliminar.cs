@@ -156,8 +156,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 listBox_Datos.DataSource = null;
                 listBox_Datos.Items.Clear(); // Limpia los elementos actuales
 
-                List<Fiscalia> fiscalias = FiscaliaManager.ObtenerFiscalias();
-                listBox_Datos.DataSource = fiscalias;
+              //  List<Fiscalia> fiscalias = FiscaliaManager.ObtenerFiscalias();
+              //  listBox_Datos.DataSource = fiscalias;
                 listBox_Datos.DisplayMember = "NombreFiscalia"; // Lo que se mostrará en el listBox
                 listBox_Datos.SelectedIndex = -1; // Inicializar con ningún elemento seleccionado
             }
@@ -830,6 +830,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
          FinalizarEdicion();
+            listBox_Seleccion.SelectedIndex=0; // hace que siempre vuelva a Fiscalias
         }
          
         private void FinalizarEdicion()

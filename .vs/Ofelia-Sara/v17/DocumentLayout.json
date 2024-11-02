@@ -3,33 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\bin\\Debug\\Ofelia-Sara.exe.Config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\Ofelia-Sara.exe.Config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Ofelia-Sara||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\nuevafiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevafiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\adm bd\\manager\\fiscaliasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevosecretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\agregar componentes\\nuevafiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:agregar componentes\\nuevafiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\adm bd\\modelos\\fiscalia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60EB6C4A-8EFB-4CD8-A959-315342C6C9FF}|..\\BaseDatos_Libreria\\BaseDatos.csproj|c:\\users\\usuario\\onedrive\\escritorio\\basedatos_libreria\\adm bd\\modelos\\secretario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,98 +37,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NuevoSecretario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevoSecretario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeToolTip": "Agregar Componentes\\NuevoSecretario.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAAIAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:36:31.815Z",
+              "Title": "Ofelia-Sara.exe.Config",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\bin\\Debug\\Ofelia-Sara.exe.Config",
+              "RelativeDocumentMoniker": "bin\\Debug\\Ofelia-Sara.exe.Config",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\bin\\Debug\\Ofelia-Sara.exe.Config",
+              "RelativeToolTip": "bin\\Debug\\Ofelia-Sara.exe.Config",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-01T21:05:14.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NuevoSecretario.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevoSecretario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevoSecretario.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Agregar Componentes\\NuevoSecretario.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:36:29.92Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ModificarEliminar.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs",
-              "RelativeDocumentMoniker": "Acceso Usuarios\\ModificarEliminar.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Acceso Usuarios\\ModificarEliminar.cs",
-              "RelativeToolTip": "Acceso Usuarios\\ModificarEliminar.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAlwJ4AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:32:51.516Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NuevaFiscalia.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaFiscalia.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevaFiscalia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaFiscalia.cs",
-              "RelativeToolTip": "Agregar Componentes\\NuevaFiscalia.cs",
-              "ViewState": "AQIAAH8AAAAAAAAAAAD4v48AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:32:20.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FiscaliasManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Manager\\FiscaliasManager.cs",
-              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Adm BD\\Manager\\FiscaliasManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Manager\\FiscaliasManager.cs",
-              "RelativeToolTip": "..\\BaseDatos_Libreria\\Adm BD\\Manager\\FiscaliasManager.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAIwC4AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:19:45.454Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Secretario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Modelos\\Secretario.cs",
-              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Adm BD\\Modelos\\Secretario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Modelos\\Secretario.cs",
-              "RelativeToolTip": "..\\BaseDatos_Libreria\\Adm BD\\Modelos\\Secretario.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:17:24.223Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NuevaFiscalia.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaFiscalia.cs",
-              "RelativeDocumentMoniker": "Agregar Componentes\\NuevaFiscalia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Agregar Componentes\\NuevaFiscalia.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Agregar Componentes\\NuevaFiscalia.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:17:01.189Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Fiscalia.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Modelos\\Fiscalia.cs",
-              "RelativeDocumentMoniker": "..\\BaseDatos_Libreria\\Adm BD\\Modelos\\Fiscalia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\BaseDatos_Libreria\\Adm BD\\Modelos\\Fiscalia.cs",
-              "RelativeToolTip": "..\\BaseDatos_Libreria\\Adm BD\\Modelos\\Fiscalia.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:16:53.058Z"
+              "Title": "Ofelia-Sara",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj",
+              "RelativeDocumentMoniker": "Ofelia-Sara.csproj",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj",
+              "RelativeToolTip": "Ofelia-Sara.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-01T19:32:08.68Z",
+              "EditorCaption": ""
             }
           ]
         }
