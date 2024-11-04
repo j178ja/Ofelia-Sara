@@ -403,11 +403,12 @@
     <Compile Include="Formularios\VideoInstructivo.Designer.cs">
       <DependentUpon>VideoInstructivo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensajes\MensajeGral.cs">
+    <Compile Include="Mensajes\FormUtils.cs" />
+    <Compile Include="Mensajes\MensajeGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mensajes\MensajeGral.Designer.cs">
-      <DependentUpon>MensajeGral.cs</DependentUpon>
+    <Compile Include="Mensajes\MensajeGeneral.Designer.cs">
+      <DependentUpon>MensajeGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="Mensajes\MensajeCargarImprimir.cs">
       <SubType>Form</SubType>
@@ -566,8 +567,8 @@
     <EmbeddedResource Include="Mensajes\MensajeGenerarDocumentos.resx">
       <DependentUpon>MensajeGenerarDocumentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mensajes\MensajeGral.resx">
-      <DependentUpon>MensajeGral.cs</DependentUpon>
+    <EmbeddedResource Include="Mensajes\MensajeGeneral.resx">
+      <DependentUpon>MensajeGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\escudoPolicial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -601,10 +602,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Resources\imagenes\IconoAdvertencia.png" />
     <Content Include="Resources\imagenes\IconoAplicacion.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\imagenes\IconoError.png" />
     <Content Include="Resources\imagenes\iconoEscribiendo.png" />
+    <Content Include="Resources\imagenes\IconoExito.png" />
+    <Content Include="Resources\imagenes\IconoInformacion.png" />
     <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">

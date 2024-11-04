@@ -55,11 +55,7 @@ namespace Ofelia_Sara.Formularios
 
         public BaseForm()
         {
-            // Ruta relativa a la carpeta de recursos del proyecto
-            string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "imagenes", "IconoEscudoPolicia.ico");
-
-            // Llama a SetFormIcon usando la ruta relativa
-            IconoEscudo.SetFormIcon(this, iconPath);
+            CargarIconoFormulario();
 
             InitializeFooterLinkLabel();
            
@@ -116,7 +112,34 @@ namespace Ofelia_Sara.Formularios
             DibujarFondoDegradado(e.Graphics, width, height);
         }
         //----------------------------------------------
-        
+        // Método para cargar el ícono según el modo (diseñador o ejecución)
+        private void CargarIconoFormulario()
+        {
+            string iconPath;
+
+            if (this.DesignMode)
+            {
+                // Ruta de ícono para el diseñador de Visual Studio
+                iconPath = Path.Combine(@"C:\Ruta\Absoluta\A\Tu\Proyecto\Resources\imagenes", "IconoEscudoPolicia.ico");
+            }
+            else
+            {
+                // Ruta relativa para el tiempo de ejecución
+                iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "imagenes", "IconoEscudoPolicia.ico");
+            }
+
+            // Llama a SetFormIcon solo si el archivo existe
+            if (File.Exists(iconPath))
+            {
+                IconoEscudo.SetFormIcon(this, iconPath);
+            }
+            else
+            {
+                // Opcional: log o advertencia si el ícono no se encuentra
+                Console.WriteLine("No se pudo encontrar el ícono en la ruta especificada.");
+            }
+        }
+
         //-------------------------------------------------------------------------------
         //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
         protected void ConfigurarComboBoxEscalafonJerarquia(ComboBox comboBox_Escalafon, ComboBox comboBox_Jerarquia)

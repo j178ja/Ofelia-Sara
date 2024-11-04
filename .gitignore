@@ -1,1 +1,7 @@
 .vs/
+# Ignorar archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+q

@@ -14,6 +14,7 @@ using BaseDatos.Entidades;
 using Clases.Texto;
 using Clases.Botones;
 using MySqlX.XDevAPI.Common;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -68,7 +69,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MessageBox.Show("Debe completar la totalidad de campos", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar la totalidad de campos.",MensajeGeneral.TipoMensaje.Advertencia);
+                // MessageBox.Show("Debe completar la totalidad de campos", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
