@@ -154,3 +154,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Json\fiscaliasjson.js
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Mensajes.MensajeGral.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoEscudoPolicia.ico
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Resources\imagenes\IconoAplicacion.ico
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Adm BD\Manager\FiscaliasManager.cs

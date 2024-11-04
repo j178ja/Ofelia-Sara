@@ -32,6 +32,7 @@ SE VISUALIZA USUARIO Y CONTRASEÑ EN APP CONFIG, SE USO CLASE ENCRIP PERO NO HA M
 
 COMBO BOX SUBESCALAFON Y JERARQUIA TIENE PROBLEMAS A MOSTRAS ESCALAFON PROFESIONAL Y 911
 
+prueba posterior
 --------------------------------------------------------------------------------------------
          FALTA HACER
          
