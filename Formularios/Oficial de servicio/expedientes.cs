@@ -326,10 +326,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 if (IsPictureBoxLoaded(pictureBox_AWord))
                 {
                     // Mostrar mensaje de advertencia y revertir la selección
-                    MessageBox.Show("Ya has cargado un archivo para convertir a WORD. No puedes cambiar sin eliminar el archivo.",
-                                       "Advertencia de Cambio",
-                                       MessageBoxButtons.OK,
-                                       MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("Ya has cargado un archivo para convertir a WORD. No puedes cambiar sin eliminar el archivo.",
+                                       
+                                       MensajeGeneral.TipoMensaje.Advertencia);
                     radioButton_Pdf.Checked = false;
                     ActualizarPictureBox(pictureBox_APdf, false);  // Deshabilita PictureBox Pdf
                     ActualizarPictureBox(pictureBox_AWord, true);  // Habilita PictureBox Word
@@ -356,10 +355,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 if (IsPictureBoxLoaded(pictureBox_APdf))
                 {
                     // Mostrar mensaje de advertencia y revertir la selección
-                    MessageBox.Show("Ya has cargado un archivo para convertir a PDF. No puedes cambiar sin eliminar el archivo.",
-                                       "Advertencia de Cambio",
-                                       MessageBoxButtons.OK,
-                                       MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("Ya has cargado un archivo para convertir a PDF. No puedes cambiar sin eliminar el archivo.",
+                                       MensajeGeneral.TipoMensaje.Advertencia);
                     radioButton_Word.Checked = false;
                     ActualizarPictureBox(pictureBox_APdf, true);  // Deshabilita PictureBox Pdf
                     ActualizarPictureBox(pictureBox_AWord, false);  // Habilita PictureBox Word
@@ -644,7 +641,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Muestra un mensaje indicando que el formulario fue limpiado
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
 
@@ -701,7 +698,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (string.IsNullOrEmpty(rutaArchivoPdf) && string.IsNullOrEmpty(rutaArchivoWord))
             {
                 // Muestra un mensaje si no se ha seleccionado ningún archivo
-                MessageBox.Show("Para realizar la conversión primero debe seleccionar un archivo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Para realizar la conversión primero debe seleccionar un archivo.", MensajeGeneral.TipoMensaje.Advertencia);
                 return; // Salir del método para evitar la conversión
             }
 
@@ -714,7 +711,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Verificar si el archivo PDF ya ha sido convertido
                 if (archivosConvertidos.Contains(hashArchivoPdf))
                 {
-                    MessageBox.Show("Este archivo PDF ya ha sido convertido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("Este archivo PDF ya ha sido convertido.", MensajeGeneral.TipoMensaje.Advertencia);
                     return;
                 }
 
@@ -738,7 +735,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Verificar si el archivo Word ya ha sido convertido
                 if (archivosConvertidos.Contains(hashArchivoWord))
                 {
-                    MessageBox.Show("Este archivo Word ya ha sido convertido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("Este archivo Word ya ha sido convertido.", MensajeGeneral.TipoMensaje.Advertencia);
                     return;
                 }
 
@@ -1151,7 +1148,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Expedientes_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Complete los datos requeridos para generar el documento EXPEDIENTE.", "OFELIA-SARA  Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Complete los datos requeridos para generar el documento EXPEDIENTE.", MensajeGeneral.TipoMensaje.Advertencia);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
