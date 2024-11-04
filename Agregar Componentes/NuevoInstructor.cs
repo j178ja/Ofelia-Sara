@@ -16,6 +16,7 @@ using BaseDatos.Entidades;
 using Clases.Apariencia;
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
@@ -85,9 +86,8 @@ namespace Ofelia_Sara.Agregar_Componentes
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
             comboBox_Dependencia.SelectedIndex = -1;
-                                    //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Informacion);
+                 
         }
 
         //---------BOTON GUARDAR---------------------------------------
@@ -97,7 +97,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
-                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               MensajeGeneral.Mostrar("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
@@ -121,7 +121,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 InstructoresManager manager = new InstructoresManager();
                 manager.InsertInstructor(nuevoInstructor.Legajo, nuevoInstructor.Subescalafon, nuevoInstructor.Jerarquia, nuevoInstructor.Nombre, nuevoInstructor.Apellido, nuevoInstructor.Dependencia, nuevoInstructor.Funcion);
 
-                MessageBox.Show("Se ha guardado un nuevo instructor.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Se ha guardado un nuevo instructor.",MensajeGeneral.TipoMensaje.Exito);
                 LimpiarFormulario.Limpiar(this);
                 comboBox_Escalafon.SelectedIndex = -1;
                 comboBox_Dependencia.SelectedIndex = -1;
@@ -164,7 +164,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         private void NuevoInstructor_HelpButtonClicked(object sender, CancelEventArgs e)
         {
                 // Mostrar un mensaje de ayuda
-                MessageBox.Show("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor" , "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -233,7 +233,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                          MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -274,7 +274,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }

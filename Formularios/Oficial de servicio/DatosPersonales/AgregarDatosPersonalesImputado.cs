@@ -14,6 +14,7 @@ using Clases.Botones;
 using Clases.Texto;
 using Controles.Controles;
 using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -219,7 +220,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -266,7 +267,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                        MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
             }
@@ -355,7 +356,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
             {
                 // Mostrar un mensaje de error y limpiar el TextBox
-                MessageBox.Show("El valor no puede ser 0 o 00", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar("El valor no puede ser 0 o 00", MensajeGeneral.TipoMensaje.Error);
                 textBox_Edad.Clear();
             }
         }
@@ -398,7 +399,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
         private void Btn_Limpiar_Click(object sender, EventArgs e)

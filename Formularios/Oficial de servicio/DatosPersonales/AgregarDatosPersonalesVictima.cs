@@ -12,6 +12,7 @@ using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Clases.Texto;
 using Controles.Controles.Aplicadas_con_controles;
 using Clases.Botones;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -585,15 +586,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1;              
             comboBox_EstadoCivil.SelectedIndex = -1;              
-                                                                                    //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                                                    
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
        
         }
 
         //---------BOTON GUARDAR----------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
         //-------CONTROL DE CARACTERES EN NACIONALIDAD-----------------------
@@ -629,7 +630,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
             {
                 // Mostrar un mensaje de error y limpiar el TextBox
-                MessageBox.Show("El valor no puede ser 0 o 00", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar("El valor no puede ser 0 o 00", MensajeGeneral.TipoMensaje.Error);
                 textBox_Edad.Clear();
             }
         }
@@ -736,7 +737,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -778,7 +779,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }

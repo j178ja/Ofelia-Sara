@@ -18,6 +18,7 @@ using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Adm_BD;
 using System.Data.Common;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
@@ -56,8 +57,8 @@ namespace Ofelia_Sara.Agregar_Componentes
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable en los formularios", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable en los formularios", MensajeGeneral.TipoMensaje.Informacion);
+            
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
@@ -115,7 +116,8 @@ namespace Ofelia_Sara.Agregar_Componentes
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Informacion);
         }
         //---------BOTON GUARDAR---------------------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
@@ -144,7 +146,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                // FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
                // fiscaliaManager.InsertFiscalia(nuevaFiscalia);
 
-                MessageBox.Show("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", MensajeGeneral.TipoMensaje.Informacion);
 
                 // Limpiar los campos después de guardar
                 // LimpiarTextBox();

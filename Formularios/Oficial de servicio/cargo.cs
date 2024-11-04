@@ -17,6 +17,7 @@ using Controles.Controles;
 using System.Collections.Generic;
 using BaseDatos.Entidades;
 using System.Linq;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -200,7 +201,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
 
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito); ;
 
 
         }
@@ -303,7 +304,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Complete los campos y una descripcion de la muestra, para poder generar el cargo", "OFELIA-SARA   Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Complete los campos y una descripcion de la muestra, para poder generar el cargo", MensajeGeneral.TipoMensaje.Advertencia);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -321,13 +322,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MessageBox.Show("Debe completar la totalidad de campos para generar el documento ", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar la totalidad de campos para generar el documento ", MensajeGeneral.TipoMensaje.Advertencia);
                 return false; // Indica que la validación falló
             }
             //validacion especial numero cargo
             if (string.IsNullOrWhiteSpace(textBox_NumeroCargo.Text))
             {
-                MessageBox.Show("Debe ingresar el numero de CARGO", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe ingresar el numero de CARGO", MensajeGeneral.TipoMensaje.Advertencia);
                 textBox_NumeroCargo.Focus();
                 return false; // Detener el proceso si no hay texto válido
             }
@@ -336,7 +337,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // validad Descripcion de la muestra
             if (string.IsNullOrWhiteSpace(textBox_DescripcionMuestra.Text))
             {
-                MessageBox.Show("Describa la muestra del cargo", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Describa la muestra del cargo", MensajeGeneral.TipoMensaje.Advertencia);
                 textBox_DescripcionMuestra.Focus();
                 return false; // Detener el proceso si no hay texto válido
             }
@@ -346,7 +347,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Fiscalia.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Fiscalia.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese una nacionalidad.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese una nacionalidad.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Fiscalia.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -355,7 +356,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Instructor.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Instructor.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese un instructor.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese un instructor.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Instructor.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -364,7 +365,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Secretario.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Secretario.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese un Secretario.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese un Secretario.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Secretario.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -373,7 +374,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Dependencia.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese una Dependencia.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese una Dependencia.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Dependencia.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }

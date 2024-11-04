@@ -22,6 +22,7 @@ using Ofelia_Sara.Formularios;
 using Controles.Controles;
 using System.ComponentModel;
 using Controles.Controles.Reposicionar_paneles.Expedientes;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -125,7 +126,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cambiar la imagen del PictureBox: " + ex.Message);
+                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -185,7 +186,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cambiar la imagen del PictureBox: " + ex.Message);
+                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -245,12 +246,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else
                     {
-                        MessageBox.Show("El archivo arrastrado no es un documento de Word.");
+                        MensajeGeneral.Mostrar("El archivo arrastrado no es un documento de Word.",MensajeGeneral.TipoMensaje.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo procesar el documento: " + ex.Message);
+                    MensajeGeneral.Mostrar("No se pudo procesar el documento: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
@@ -271,12 +272,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else
                     {
-                        MessageBox.Show("El archivo arrastrado no es un PDF.");
+                        MensajeGeneral.Mostrar("El archivo arrastrado no es un PDF.", MensajeGeneral.TipoMensaje.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo procesar el documento: " + ex.Message);
+                    MensajeGeneral.Mostrar("No se pudo procesar el documento: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
@@ -665,7 +666,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al convertir el archivo de PDF a Word: " + ex.Message);
+                MensajeGeneral.Mostrar("Error al convertir el archivo de PDF a Word: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -684,7 +685,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al convertir el archivo de Word a Pdf: " + ex.Message);
+                MensajeGeneral.Mostrar("Error al convertir el archivo de Word a Pdf: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
             }
         }
         //----------------BOTON CONVERTIR-----------------------------
@@ -910,7 +911,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("No se pudo abrir el archivo: " + ex.Message);
+                        MensajeGeneral.Mostrar("No se pudo abrir el archivo: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
 
@@ -1187,7 +1188,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 Fecha_Instruccion.SelectedDate == null)
 
             {
-                MessageBox.Show("Por favor, complete todos los campos requeridos.");
+                MensajeGeneral.Mostrar("Por favor, complete todos los campos requeridos.", MensajeGeneral.TipoMensaje.Advertencia);
                 return false; // Indica que la validación falló
             }
             return true; // Indica que la validación fue exitosa

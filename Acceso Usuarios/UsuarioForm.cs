@@ -11,6 +11,7 @@ using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara;
 using Ofelia_Sara.Acceso_Usuarios;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -70,8 +71,8 @@ namespace Ofelia_Sara.Formularios
 
         private void UsuarioForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MessageBox.Show("Ingrese en los campos correspondientes, Usuario y contraseña." + "En caso de no estar registrado, presione boton REGISTRARSE", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            MensajeGeneral.Mostrar("Ingrese en los campos correspondientes, Usuario y contraseña." + "En caso de no estar registrado, presione boton REGISTRARSE",MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

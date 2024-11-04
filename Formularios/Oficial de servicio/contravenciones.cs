@@ -15,6 +15,7 @@ using System.IO;
 using BaseDatos;
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -74,7 +75,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
           //  InicializarComboBoxDEPENDENCIAS();
             comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
             comboBox_Dependencia.SelectedIndex = -1;
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
 
         }
 
@@ -89,13 +90,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MessageBox.Show("Debe completar los campos Art, Nombre, Apellido y DNI ", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar los campos Art, Nombre, Apellido y DNI ", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
-                MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
             }
         }
         //--------------------------------------------------------------------------------------------
@@ -137,7 +138,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                MessageBox.Show("Por favor, ingrese una fecha de nacimiento válida.", "Fecha Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, ingrese una fecha de nacimiento válida.", MensajeGeneral.TipoMensaje.Advertencia);
                 // Hacer que el control CustomDateTextBox reciba el foco
                 customDateTextBox.Focus();
 
@@ -157,14 +158,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MessageBox.Show("Debe completar los campos Art, Nombre, Apellido y DNI ", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar los campos Art, Nombre, Apellido y DNI ", MensajeGeneral.TipoMensaje.Advertencia);
                 return false; // Indica que la validación falló
             }
 
             // Validar fecha de nacimiento
             if (!Fecha_Nacimiento.HasValue()) // Usando el método HasValue() de CustomDateTextBox
             {
-                MessageBox.Show("Por favor, ingrese una fecha de nacimiento válida.", "Fecha Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, ingrese una fecha de nacimiento válida.", MensajeGeneral.TipoMensaje.Advertencia);
                 Fecha_Nacimiento.Focus();
                 return false; // Detener el proceso si la fecha no es válida
             }
@@ -174,7 +175,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Convertir la fecha ingresada a un objeto DateTime
             if (!DateTime.TryParse(Fecha_Nacimiento.Text, out fechaNacimiento))
             {
-                MessageBox.Show("La fecha de nacimiento no es válida. Por favor, intente nuevamente.", "Fecha Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("La fecha de nacimiento no es válida. Por favor, intente nuevamente.", MensajeGeneral.TipoMensaje.Error);
                 Fecha_Nacimiento.Focus();
                 return false; // Detener el proceso si la fecha no se puede convertir
             }
@@ -183,7 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Nacionalidad.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Nacionalidad.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese una nacionalidad.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese una nacionalidad.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Nacionalidad.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -192,7 +193,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Instructor.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Instructor.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese un instructor.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese un instructor.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Instructor.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -201,7 +202,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Secretario.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Secretario.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese un Secretario.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese un Secretario.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Secretario.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -210,7 +211,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (comboBox_Dependencia.Items.Count == 0 ||
                 string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
             {
-                MessageBox.Show("Por favor, seleccione o ingrese una Dependencia.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, seleccione o ingrese una Dependencia.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Dependencia.Focus();
                 return false; // Detener el proceso si no hay selección válida
             }
@@ -299,7 +300,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
             {
                 // Mostrar un mensaje de error y limpiar el TextBox
-                MessageBox.Show("El valor no puede ser 0 o 00", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar("El valor no puede ser 0 o 00", MensajeGeneral.TipoMensaje.Error);
                 textBox_Edad.Clear();
             }
         }
@@ -352,7 +353,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Contravenciones_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Complete la totalidad de campos requeridos para generar el documento.", "OFELIA- SARA   Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Complete la totalidad de campos requeridos para generar el documento.", MensajeGeneral.TipoMensaje.Advertencia);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

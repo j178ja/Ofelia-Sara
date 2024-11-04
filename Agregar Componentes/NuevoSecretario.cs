@@ -21,6 +21,7 @@ using static System.Resources.ResXFileRef;
 using Ofelia_Sara.Formularios;
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
+using Ofelia_Sara.Mensajes;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -88,7 +89,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Exito);
         }
         //______________________________________________________________________________
        
@@ -102,7 +103,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                  string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
                  string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
-                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
@@ -127,7 +128,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 SecretariosManager manager = new SecretariosManager();
                 manager.InsertSecretario(nuevoSecretario.Legajo, nuevoSecretario.Subescalafon, nuevoSecretario.Jerarquia, nuevoSecretario.Nombre, nuevoSecretario.Apellido, nuevoSecretario.Dependencia, nuevoSecretario.Funcion);
 
-                MessageBox.Show("Se ha guardado un nuevo secretario.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Se ha guardado un nuevo secretario.", MensajeGeneral.TipoMensaje.Exito);
                 LimpiarFormulario.Limpiar(this);
                 comboBox_Escalafon.SelectedIndex = -1;
                 comboBox_Dependencia.SelectedIndex = -1;
@@ -170,7 +171,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         private void NuevoSecretario_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -321,7 +322,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }

@@ -23,6 +23,7 @@ using Controles.Controles;
 using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.Texto;
 using Newtonsoft.Json;
+using Ofelia_Sara.Mensajes;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -183,14 +184,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MessageBox.Show("Debe completar los campos Caratula, Imputado y Victima.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar los campos Caratula, Imputado y Victima.", MensajeGeneral.TipoMensaje.Advertencia );
             }
             else
             {
 
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
-                MessageBox.Show("Formulario guardado.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
             }
 
         }
@@ -207,7 +208,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
 
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
         }
         //-------------------------------------------------------------------------------
 
@@ -575,7 +576,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
 
                 // Muestra un mensaje si algún control en el panel está vacío
-                MessageBox.Show("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", MensajeGeneral.TipoMensaje.Advertencia);
                 return; // Sal de la función para evitar agregar un nuevo control
             }
             else
@@ -601,7 +602,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (!controlesCompletos)
             {
                 // Muestra un mensaje si algún control en el panel está vacío
-                MessageBox.Show("Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.", MensajeGeneral.TipoMensaje.Advertencia);
                 return; // Sal de la función para evitar agregar un nuevo control
             }
             else

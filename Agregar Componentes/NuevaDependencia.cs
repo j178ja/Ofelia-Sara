@@ -17,6 +17,7 @@ using Ofelia_Sara.Formularios;
 using BaseDatos.Entidades;
 using Clases.Agregar_Componentes;
 using BaseDatos.Adm_BD.Manager;
+using Ofelia_Sara.Mensajes;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -122,16 +123,16 @@ namespace Ofelia_Sara.Agregar_Componentes
                 try
                 {
                     dbManager.InsertComisaria(dependencia, domicilio, localidad, partido); // Utiliza el método de inserción
-                   
-                    MessageBox.Show("Se ha guardado la nueva Dependencia en la base de datos.", "Confirmación Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    MensajeGeneral.Mostrar("Se ha guardado la nueva Dependencia en la base de datos.", MensajeGeneral.TipoMensaje.Exito);
+                    
                     // Limpiar el formulario
                     LimpiarFormulario.Limpiar(this);
                 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al guardar en la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar($"Error al guardar en la base de datos: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
                 }
 
                 // Limpiar el formulario
@@ -139,7 +140,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
             else
             {
-                MessageBox.Show("Por favor ingrese el nombre y localidad  de la nueva Dependencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor ingrese el nombre y localidad  de la nueva Dependencia.",MensajeGeneral.TipoMensaje.Advertencia); 
             }
         }
 
@@ -151,7 +152,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
             // Muestra un mensaje de información
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Informacion);
         }
 
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
@@ -182,9 +183,8 @@ namespace Ofelia_Sara.Agregar_Componentes
         private void NuevaDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Debe ingresar el nombre de la dependencia tal y como se usa en actuaciones."+"El domicilio será empleado en plantilla de Inspeccion Ocular", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Cancelar el evento para que no se cierre el formulario
+            MensajeGeneral.Mostrar("Debe ingresar el nombre de la dependencia tal y como se usa en actuaciones." + "El domicilio será empleado en plantilla de Inspeccion Ocular", MensajeGeneral.TipoMensaje.Informacion);
+           // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
         //_________________________________________________________________________

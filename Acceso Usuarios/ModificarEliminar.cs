@@ -17,6 +17,7 @@ using Clases.Apariencia;
 using Ofelia_Sara.Formularios;
 using Clases.Texto;
 using Clases.Botones;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Acceso_Usuarios
 {
@@ -88,7 +89,9 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("Seleccione qué tipo de elemento desea modificar y posteriormente seleccione cuál elemento desea modificar o eliminar.", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Seleccione qué tipo de elemento desea modificar y posteriormente seleccione cuál elemento desea modificar o eliminar."
+                , MensajeGeneral.TipoMensaje.Informacion);
+           
             e.Cancel = true; // Cancelar el evento para que no se cierre el formulario
         }
 
@@ -163,7 +166,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Fiscalía: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Fiscalía: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -176,7 +179,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
                 if (instructores.Count == 0)
                 {
-                    MessageBox.Show("No hay instructores disponibles para cargar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MensajeGeneral.Mostrar("No hay instructores disponibles para cargar.", MensajeGeneral.TipoMensaje.Informacion);
                     return;
                 }
 
@@ -191,7 +194,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Instructores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Instructores: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -207,7 +210,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
                 if (secretarios.Count == 0)
                 {
-                    MessageBox.Show("No hay secretarios disponibles para cargar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MensajeGeneral.Mostrar("No hay secretarios disponibles para cargar.", MensajeGeneral.TipoMensaje.Informacion);
                     return;
                 }
 
@@ -222,7 +225,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Secretarios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Secretarios: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -246,7 +249,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al cargar datos de Comisaría: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar($"Error al cargar datos de Comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
                 }
             }
 
@@ -719,8 +722,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             // Verificar si no hay ningún elemento seleccionado en el ListBox
             if (listBox_Datos.SelectedIndex == -1)
             {
-                // Muestra un mensaje de advertencia
-                MessageBox.Show("Debe seleccionar un elemento de la lista para EDITAR.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe seleccionar un elemento de la lista para EDITAR.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
@@ -760,7 +762,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
                         // Puedes añadir más casos según los ítems disponibles en listBox_Seleccion
                         default:
-                            MessageBox.Show("El elemento seleccionado no tiene un panel de edición asociado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MensajeGeneral.Mostrar("El elemento seleccionado no tiene un panel de edición asociado.", MensajeGeneral.TipoMensaje.Informacion);
                             break;
                     }
                 }
@@ -794,7 +796,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al cargar los datos del instructor seleccionado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar($"Error al cargar los datos del instructor seleccionado: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
                 }
             }
             else if (listBox_Datos.SelectedItem is Secretario selectedSecretario)
@@ -888,7 +890,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             // Verificar si no hay ningún elemento seleccionado en el ListBox
             if (listBox_Datos.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un elemento de la lista para ELIMINAR.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe seleccionar un elemento de la lista para ELIMINAR.", MensajeGeneral.TipoMensaje.Advertencia);
                 return;
             }
 
@@ -897,7 +899,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
             if (selectedItem == null)
             {
-                MessageBox.Show("El elemento seleccionado no es válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("El elemento seleccionado no es válido.", MensajeGeneral.TipoMensaje.Advertencia);
                 return;
             }
 
@@ -928,7 +930,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             //}
             else
             {
-                MessageBox.Show("Tipo de elemento no soportado para eliminación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar("Tipo de elemento no soportado para eliminación.",MensajeGeneral.TipoMensaje.Error);
                 return;
             }
 
@@ -943,7 +945,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             btn_Eliminar.Enabled = false;
             listBox_Datos.Enabled = false;
             listBox_Datos.BackColor = Color.LightGray;
-            MessageBox.Show("El elemento ha sido eliminado.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("El elemento ha sido eliminado.",MensajeGeneral.TipoMensaje.Exito);
         }
 
         // Método auxiliar para eliminar el elemento seleccionado de la fuente de datos
@@ -1005,7 +1007,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al guardar los cambios: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -1025,7 +1027,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 if (string.IsNullOrWhiteSpace(selectedComisaria.Nombre) ||
                     string.IsNullOrWhiteSpace(selectedComisaria.Localidad))
                 {
-                    MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("Por favor, complete todos los campos obligatorios.", MensajeGeneral.TipoMensaje.Advertencia);
                     return; // Sale del método si hay campos vacíos
                 }
 
@@ -1035,17 +1037,17 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     ComisariasManager comisariasManager = new ComisariasManager();
                     comisariasManager.UpdateComisaria(selectedComisaria.Id, selectedComisaria.Nombre, selectedComisaria.Direccion, selectedComisaria.Localidad, selectedComisaria.Partido);
 
-                    MessageBox.Show("Los cambios han sido guardados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MensajeGeneral.Mostrar("Los cambios han sido guardados exitosamente.", MensajeGeneral.TipoMensaje.Advertencia);
                 }
                 catch (Exception ex)
                 {
                     // Manejo de errores durante la actualización
-                    MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar($"Error al guardar los cambios: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
                 }
             }
             else
             {
-                MessageBox.Show("No se ha seleccionado una comisaría válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("No se ha seleccionado una comisaría válida.", MensajeGeneral.TipoMensaje.Advertencia);
             }
         }
 
@@ -1057,7 +1059,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Apellido.Text))
             {
-                MessageBox.Show("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", "Advertencia Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", MensajeGeneral.TipoMensaje.Advertencia);
                 return; // Salir del método si hay campos vacíos
             }
 
@@ -1081,7 +1083,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             manager.UpdateInstructor(instructorId, instructorEditado.Legajo, instructorEditado.Subescalafon, instructorEditado.Jerarquia, instructorEditado.Nombre, instructorEditado.Apellido, instructorEditado.Dependencia, instructorEditado.Funcion);
 
             // Mostrar mensaje de confirmación
-            MessageBox.Show("Los datos del instructor han sido actualizados.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Los datos del instructor han sido actualizados.", MensajeGeneral.TipoMensaje.Advertencia);
 
             // Limpiar los campos del formulario (opcional)
             LimpiarFormulario.Limpiar(this);

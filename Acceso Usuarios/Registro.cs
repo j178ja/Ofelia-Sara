@@ -68,9 +68,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (!ValidarTextBoxes(this))
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
-                // crea ventana con icono de advertencia y titulo de advertencia
                 MensajeGeneral.Mostrar("Debe completar la totalidad de campos.",MensajeGeneral.TipoMensaje.Advertencia);
-                // MessageBox.Show("Debe completar la totalidad de campos", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -119,13 +117,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
             pictureBox_OjoContraseña.Enabled = false;
 
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);//esto muestra una ventana con boton aceptar
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Advertencia);//esto muestra una ventana con boton aceptar
         }
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Vomplete la totalidad de los campos para poder registrar un nuevo Usuario.", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Vomplete la totalidad de los campos para poder registrar un nuevo Usuario.", MensajeGeneral.TipoMensaje.Advertencia);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

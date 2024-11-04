@@ -14,6 +14,7 @@ using Clases.Botones;
 using Ofelia_Sara.Formularios;
 using Clases.Apariencia;
 using Microsoft.Office.Interop.Word;
+using Ofelia_Sara.Mensajes;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -83,7 +84,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Los sellos que agrege serán usados para completar las distintas planillas de las actuaciones", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Los sellos que agrege serán usados para completar las distintas planillas de las actuaciones", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -133,7 +134,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Dependencia.SelectedIndex = -1;
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Exito);
         }
         //-------------------------------------------------------------------------------
         //---------------------BOTON GUARDAR------------------------
@@ -142,7 +143,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Verifica que se haya ingresado texto en el textBox_Dependencia
             if (string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
             {
-                MessageBox.Show("Debe ingresar a qué dependencia corresponden los sellos.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Debe ingresar a qué dependencia corresponden los sellos.", MensajeGeneral.TipoMensaje.Advertencia);
                 return;
             }
 
@@ -153,12 +154,12 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             if (!tieneImagen)
             {
-                MessageBox.Show("Debe agregar al menos una imagen a los campos de sello.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe agregar al menos una imagen a los campos de sello.", MensajeGeneral.TipoMensaje.Advertencia);
                 return;
             }
 
             // Si se ingresó el texto y se cargaron imágenes, muestra un mensaje de éxito
-            MessageBox.Show("Se ha cargado exitosamente los sellos de la dependencia.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Se ha cargado exitosamente los sellos de la dependencia.", MensajeGeneral.TipoMensaje.Exito);
         }
 
 
@@ -228,7 +229,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -270,7 +271,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
