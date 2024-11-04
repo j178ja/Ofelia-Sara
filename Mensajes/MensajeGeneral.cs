@@ -33,6 +33,16 @@ namespace Ofelia_Sara.Mensajes
             Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
            FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
            FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
+
+            // Ajustar altura del Label según el contenido
+            AjustarAlturaContenedores();
+            PosicionarBotonCerrar();
+
+            // Centrar el label inicialmente
+            CenterLabelInPanel();
+
+            // Asignar el evento Resize de panel1
+            panel1.Resize += panel1_Resize;
         }
         public enum TipoMensaje
         {
@@ -77,5 +87,53 @@ namespace Ofelia_Sara.Mensajes
         {
             this.Close();
         }
+
+
+
+        private void AjustarAlturaContenedores()
+        {
+            // Deshabilita el AutoSize del Label para controlar su tamaño manualmente
+            label_Texto.AutoSize = false;
+
+            // Fija el ancho del Label y permite que se ajuste verticalmente al texto
+            int anchoFijoLabel = label_Texto.Width;
+            label_Texto.MaximumSize = new Size(anchoFijoLabel, 0); // Máximo ancho, altura flexible
+            label_Texto.AutoSize = true; // Ahora el label se expandirá solo hacia abajo
+
+            // Obtener el nuevo alto del Label después de ajustarse al texto
+            int nuevoAltoLabel = label_Texto.Height;
+
+            // Ajustar altura de panel1 para que abarque el label y un margen vertical adicional
+            int paddingVertical = 20; // Margen extra dentro del panel
+            panel1.Height = label_Texto.Top + nuevoAltoLabel + paddingVertical;
+
+            // Ajustar altura del formulario MensajeGeneral
+            int margenFormulario = 20; // Espacio adicional para el margen inferior del formulario
+            this.Height = panel1.Top + panel1.Height + margenFormulario;
+        }
+
+        private void PosicionarBotonCerrar()
+        {
+            // Posiciona btn_Cerrar a 4 píxeles del borde inferior del formulario
+            int margenInferior = 4;
+            btn_Cerrar.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            // Centra el label en el panel
+            CenterLabelInPanel();
+        }
+
+        private void CenterLabelInPanel()
+        {
+            // Calcula la posición X e Y para centrar el label
+            int x = (panel1.Width - label_Texto.Width) / 2;
+            int y = 65;
+
+            // Asigna la nueva posición al label
+            label_Texto.Location = new Point(x,y);
+        }
+
     }
 }

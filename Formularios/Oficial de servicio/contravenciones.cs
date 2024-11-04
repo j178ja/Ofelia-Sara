@@ -353,7 +353,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Contravenciones_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Complete la totalidad de campos requeridos para generar el documento.", MensajeGeneral.TipoMensaje.Advertencia);
+            MensajeGeneral.Mostrar("Complete la totalidad de campos requeridos para generar el documento.", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -376,12 +376,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //    comboBox_Instructor.SelectedIndex = -1;
         //}
         //------------------------------------------------------------------------
-        private void InicializarComboBoxDEPENDENCIAS()
-        {
-            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
-            comboBox_Dependencia.DataSource = dependencias;
-            comboBox_Dependencia.DisplayMember = "Dependencia";
-            comboBox_Dependencia.SelectedIndex = -1;
-        }
+        //private void InicializarComboBoxDEPENDENCIAS()
+        //{
+        //    List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
+        //    comboBox_Dependencia.DataSource = dependencias;
+        //    comboBox_Dependencia.DisplayMember = "Dependencia";
+        //    comboBox_Dependencia.SelectedIndex = -1;
+        //}
     }
 }

@@ -1148,7 +1148,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Expedientes_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Complete los datos requeridos para generar el documento EXPEDIENTE.", MensajeGeneral.TipoMensaje.Advertencia);
+            MensajeGeneral.Mostrar("Complete los datos requeridos para generar el documento EXPEDIENTE.", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
