@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private TextBox textBox_Apellido;
         private ComboBox comboBox_Instructor;
         private TextBox textBox_Funcion;
-   
+
 
 
 
@@ -91,13 +91,13 @@ namespace Ofelia_Sara.Acceso_Usuarios
         {
             MensajeGeneral.Mostrar("Seleccione qué tipo de elemento desea modificar y posteriormente seleccione cuál elemento desea modificar o eliminar."
                 , MensajeGeneral.TipoMensaje.Informacion);
-           
+
             e.Cancel = true; // Cancelar el evento para que no se cierre el formulario
         }
 
         private void ListBox_Seleccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             ClearModificationControls();
 
             // Verificar si hay un ítem seleccionado
@@ -137,7 +137,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 listBox_Datos.BackColor = SystemColors.Control; // Restaura el color de fondo
             }
 
-         
+
         }
 
         private void ListBox_Datos_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,7 +148,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 btn_Eliminar.Enabled = true;
                 btn_Guardar.Enabled = false;// lo mantiene desactivado
             }
-          
+
         }
 
         private void CargarDatosFiscalia()
@@ -159,8 +159,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 listBox_Datos.DataSource = null;
                 listBox_Datos.Items.Clear(); // Limpia los elementos actuales
 
-              //  List<Fiscalia> fiscalias = FiscaliaManager.ObtenerFiscalias();
-              //  listBox_Datos.DataSource = fiscalias;
+                //  List<Fiscalia> fiscalias = FiscaliaManager.ObtenerFiscalias();
+                //  listBox_Datos.DataSource = fiscalias;
                 listBox_Datos.DisplayMember = "NombreFiscalia"; // Lo que se mostrará en el listBox
                 listBox_Datos.SelectedIndex = -1; // Inicializar con ningún elemento seleccionado
             }
@@ -225,37 +225,37 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"Error al cargar datos de Secretarios: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Secretarios: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
 
         private void CargarDatosDependencia()
         {
-           try
-                {
-                    // Elimina el DataSource para evitar conflictos
-                    listBox_Datos.DataSource = null;
-                    listBox_Datos.Items.Clear(); // Limpia los elementos actuales
+            try
+            {
+                // Elimina el DataSource para evitar conflictos
+                listBox_Datos.DataSource = null;
+                listBox_Datos.Items.Clear(); // Limpia los elementos actuales
 
-                    ComisariasManager comisariasManager = new ComisariasManager();
-                    List<Comisaria> comisarias = comisariasManager.GetComisarias();
+                ComisariasManager comisariasManager = new ComisariasManager();
+                List<Comisaria> comisarias = comisariasManager.GetComisarias();
 
-                    listBox_Datos.DataSource = comisarias;
-                    listBox_Datos.DisplayMember = "NombreYLocalidad";  //trae nombre y localidad con metodo de comisaria.cs
-                    listBox_Datos.SelectedIndex = -1; // Inicializa con ningún elemento seleccionado
+                listBox_Datos.DataSource = comisarias;
+                listBox_Datos.DisplayMember = "NombreYLocalidad";  //trae nombre y localidad con metodo de comisaria.cs
+                listBox_Datos.SelectedIndex = -1; // Inicializa con ningún elemento seleccionado
 
-                
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al cargar datos de Comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
+
             }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al cargar datos de Comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+        }
 
 
 
-            private void ClearModificationControls()
+        private void ClearModificationControls()
         {
             // Elimina la fuente de datos para evitar conflictos
             listBox_Datos.DataSource = null;
@@ -308,7 +308,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             // Suscribirse al evento TextChanged para aplicar CamelCase
             textBox_Partido.TextChanged += TextBox_Partido_TextChanged;
 
-           
+
 
             // Inicializa los Label para los nombres de los campos con un tamaño de letra más grande
             label_Dependencia = new Label
@@ -485,7 +485,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
                 Location = new Point(7, 137),
-                
+
             };
 
             // Inicializa los controles para mostrar los detalles
@@ -568,7 +568,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
                 Location = new Point(7, 137),
-               
+
             };
             //LimpiarControlesInstructor();
 
@@ -653,7 +653,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 {
                     bordeGrosor = 3;
                     bordeRadio = 4;
-                   
+
                     bordeColor = Color.LightGreen; // Color del borde cuando el botón está habilitado
                 }
                 else
@@ -723,10 +723,11 @@ namespace Ofelia_Sara.Acceso_Usuarios
             if (listBox_Datos.SelectedIndex == -1)
             {
                 MensajeGeneral.Mostrar("Debe seleccionar un elemento de la lista para EDITAR.", MensajeGeneral.TipoMensaje.Advertencia);
+                return; // Salir si no hay selección
             }
             else
             {
-               
+
                 // Verifica si hay un ítem seleccionado
                 if (listBox_Seleccion.SelectedItem != null)
                 {
@@ -769,37 +770,58 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
         }
         //-----para cargar los datos al editar---
+
         private void CargarDatosSeleccionados()
+
         {
             if (listBox_Datos.SelectedItem is Comisaria selectedComisaria)
             {
-              //  Carga datos de Comisaría
-                textBox_Dependencia.Text = selectedComisaria.Nombre;
-                textBox_Domicilio.Text = selectedComisaria.Direccion;
-                textBox_Localidad.Text = selectedComisaria.Localidad;
-                textBox_Partido.Text = selectedComisaria.Partido;
-
+                CargarDatosComisaria(selectedComisaria);
             }
             else if (listBox_Datos.SelectedItem is Instructor selectedInstructor)
             {
-                try
-                {
-                   // Carga datos de Instructor
-                    textBox_NumeroLegajo.Text = selectedInstructor.Legajo.ToString();
-                    comboBox_Escalafon.Text = selectedInstructor.Subescalafon;
-                    comboBox_Jerarquia.Text = selectedInstructor.Jerarquia;
-                    textBox_Nombre.Text = selectedInstructor.Nombre;
-                    textBox_Apellido.Text = selectedInstructor.Apellido;
-                    comboBox_Dependencia.Text = selectedInstructor.Dependencia;
-                    textBox_Funcion.Text = selectedInstructor.Funcion;
-
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al cargar los datos del instructor seleccionado: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
+                CargarDatosInstructor(selectedInstructor);
             }
             else if (listBox_Datos.SelectedItem is Secretario selectedSecretario)
+            {
+                CargarDatosSecretario(selectedSecretario);
+            }
+        }
+
+
+        private void CargarDatosComisaria(Comisaria selectedComisaria)
+        {
+            //  Carga datos de Comisaría
+            textBox_Dependencia.Text = selectedComisaria.Nombre;
+            textBox_Domicilio.Text = selectedComisaria.Direccion;
+            textBox_Localidad.Text = selectedComisaria.Localidad;
+            textBox_Partido.Text = selectedComisaria.Partido;
+        }
+
+        private void CargarDatosInstructor(Instructor selectedInstructor)
+        {
+            try
+            {
+                // Carga datos de Instructor
+                textBox_NumeroLegajo.Text = selectedInstructor.Legajo.ToString();
+                comboBox_Escalafon.Text = selectedInstructor.Subescalafon;
+                comboBox_Jerarquia.Text = selectedInstructor.Jerarquia;
+                textBox_Nombre.Text = selectedInstructor.Nombre;
+                textBox_Apellido.Text = selectedInstructor.Apellido;
+                comboBox_Dependencia.Text = selectedInstructor.Dependencia;
+                textBox_Funcion.Text = selectedInstructor.Funcion;
+
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al cargar los datos del instructor seleccionado: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+        }
+
+
+        private void CargarDatosSecretario(Secretario selectedSecretario)
+        {
+            try
             {
                 // Carga datos de Secretario
                 textBox_NumeroLegajo.Text = selectedSecretario.Legajo.ToString();
@@ -810,21 +832,13 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 comboBox_Dependencia.Text = selectedSecretario.Dependencia;
                 textBox_Funcion.Text = selectedSecretario.Funcion;
             }
-            else if (listBox_Datos.SelectedItem is Fiscalia selectedFiscalia)
+            catch (Exception ex)
             {
-                //// Carga datos de Fiscalía
-                //textBox_Fiscalia.Text = selectedFiscalia.Ufid;
-                //textBox_AgenteFiscal.Text = selectedFiscalia.AgenteFiscal;
-                //textBox_Localidad.Text = selectedFiscalia.Localidad;
-                //textBox_DeptoJudicial.Text = selectedFiscalia.DeptoJudicial;
-
-
+                MensajeGeneral.Mostrar($"Error al cargar los datos del secretario seleccionado" +
+                    $" : {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
-
-
-
-
+        
 
         //__________________________________________________________________________________
         //-------------BOTON CANCELAR---------------------------
@@ -1037,7 +1051,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     ComisariasManager comisariasManager = new ComisariasManager();
                     comisariasManager.UpdateComisaria(selectedComisaria.Id, selectedComisaria.Nombre, selectedComisaria.Direccion, selectedComisaria.Localidad, selectedComisaria.Partido);
 
-                    MensajeGeneral.Mostrar("Los cambios han sido guardados exitosamente.", MensajeGeneral.TipoMensaje.Advertencia);
+                    MensajeGeneral.Mostrar("Los cambios han sido guardados exitosamente.", MensajeGeneral.TipoMensaje.Exito);
                 }
                 catch (Exception ex)
                 {
@@ -1083,7 +1097,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             manager.UpdateInstructor(instructorId, instructorEditado.Legajo, instructorEditado.Subescalafon, instructorEditado.Jerarquia, instructorEditado.Nombre, instructorEditado.Apellido, instructorEditado.Dependencia, instructorEditado.Funcion);
 
             // Mostrar mensaje de confirmación
-            MensajeGeneral.Mostrar("Los datos del instructor han sido actualizados.", MensajeGeneral.TipoMensaje.Advertencia);
+            MensajeGeneral.Mostrar("Los datos del instructor han sido actualizados.", MensajeGeneral.TipoMensaje.Exito);
 
             // Limpiar los campos del formulario (opcional)
             LimpiarFormulario.Limpiar(this);
