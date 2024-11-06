@@ -641,7 +641,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Muestra un mensaje indicando que el formulario fue limpiado
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
 

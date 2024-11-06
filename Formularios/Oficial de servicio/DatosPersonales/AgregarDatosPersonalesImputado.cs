@@ -408,7 +408,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             comboBox_Nacionalidad.SelectedIndex = -1;  
             comboBox_EstadoCivil.SelectedIndex = -1;  
                                                                                        //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
           
         }
         // Método para restablecer el placeholder

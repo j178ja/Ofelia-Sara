@@ -587,7 +587,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             comboBox_Nacionalidad.SelectedIndex = -1;              
             comboBox_EstadoCivil.SelectedIndex = -1;              
                                                                                     
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
        
         }
 

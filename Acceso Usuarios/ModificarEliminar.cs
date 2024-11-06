@@ -734,8 +734,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     // Obtiene el ítem seleccionado como una cadena
                     string selectedItem = listBox_Seleccion.SelectedItem.ToString();
 
-
                     btn_Guardar.Enabled = true;//sehabilita seleccion
+                
                     switch (selectedItem)// Dependiendo del ítem seleccionado, crea el panel de detalles correspondiente
                     {
                         case "Dependencia":
@@ -793,9 +793,13 @@ namespace Ofelia_Sara.Acceso_Usuarios
         {
             //  Carga datos de Comisaría
             textBox_Dependencia.Text = selectedComisaria.Nombre;
+            textBox_Dependencia.ReadOnly = false;
             textBox_Domicilio.Text = selectedComisaria.Direccion;
+            textBox_Domicilio.ReadOnly = false;
             textBox_Localidad.Text = selectedComisaria.Localidad;
+            textBox_Localidad.ReadOnly = false;
             textBox_Partido.Text = selectedComisaria.Partido;
+            textBox_Partido.ReadOnly = false;
         }
 
         private void CargarDatosInstructor(Instructor selectedInstructor)
@@ -804,12 +808,16 @@ namespace Ofelia_Sara.Acceso_Usuarios
             {
                 // Carga datos de Instructor
                 textBox_NumeroLegajo.Text = selectedInstructor.Legajo.ToString();
+                textBox_NumeroLegajo.ReadOnly = false;
                 comboBox_Escalafon.Text = selectedInstructor.Subescalafon;
                 comboBox_Jerarquia.Text = selectedInstructor.Jerarquia;
                 textBox_Nombre.Text = selectedInstructor.Nombre;
+                textBox_Nombre.ReadOnly = false;
                 textBox_Apellido.Text = selectedInstructor.Apellido;
+                textBox_Apellido.ReadOnly = false;
                 comboBox_Dependencia.Text = selectedInstructor.Dependencia;
                 textBox_Funcion.Text = selectedInstructor.Funcion;
+                textBox_Funcion.ReadOnly = false;
 
             }
             catch (Exception ex)
@@ -825,12 +833,17 @@ namespace Ofelia_Sara.Acceso_Usuarios
             {
                 // Carga datos de Secretario
                 textBox_NumeroLegajo.Text = selectedSecretario.Legajo.ToString();
+                textBox_NumeroLegajo.ReadOnly = false;
                 comboBox_Escalafon.Text = selectedSecretario.Subescalafon;
                 comboBox_Jerarquia.Text = selectedSecretario.Jerarquia;
                 textBox_Nombre.Text = selectedSecretario.Nombre;
+                textBox_Nombre.ReadOnly = false;
                 textBox_Apellido.Text = selectedSecretario.Apellido;
+                textBox_Apellido.ReadOnly = false;
                 comboBox_Dependencia.Text = selectedSecretario.Dependencia;
                 textBox_Funcion.Text = selectedSecretario.Funcion;
+                textBox_Funcion.ReadOnly = false;
+
             }
             catch (Exception ex)
             {
@@ -838,7 +851,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     $" : {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
-        
+        //--------------------------------------------------------
+       
 
         //__________________________________________________________________________________
         //-------------BOTON CANCELAR---------------------------
@@ -846,7 +860,8 @@ namespace Ofelia_Sara.Acceso_Usuarios
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
          FinalizarEdicion();
-            listBox_Seleccion.SelectedIndex=0; // hace que siempre vuelva a Fiscalias
+            
+            listBox_Seleccion.SelectedIndex=-1; // hace que se deshabiliten los botones y se ponga gris listbox_Seleccion
         }
          
         private void FinalizarEdicion()
@@ -930,12 +945,12 @@ namespace Ofelia_Sara.Acceso_Usuarios
                 instructorManager.DeleteInstructor(selectedInstructor.Id);
                 EliminarElementoDeLista(selectedInstructor);
             }
-            //else if (selectedItem is Secretario selectedSecretario)
-            //{
-            //    var secretarioManager = new SecretariosManager();
-            //    secretarioManager.DeleteSecretario(selectedSecretario.Id);
-            //    EliminarElementoDeLista(selectedSecretario);
-            //}
+            else if (selectedItem is Secretario selectedSecretario)
+            {
+                var secretarioManager = new SecretariosManager();
+                secretarioManager.DeleteSecretario(selectedSecretario.Id);
+                EliminarElementoDeLista(selectedSecretario);
+            }
             //else if (selectedItem is Fiscalia selectedFiscalia)
             //{
             //    var fiscaliaManager = new FiscaliasManager();
@@ -971,21 +986,6 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
         
         //---------------------------------------------------------------------------------------
-
-
-        //// Método para cargar los datos en el ListBox
-        //private void CargarDatosEnListBox()
-        //{
-        //    var dbManager = new ComisariasManager(); // Inicializa tu dbManager
-        //    var comisarias = dbManager.GetComisarias(); // Asegúrate de que este método devuelva la lista de comisarías
-
-        //    // Limpia la fuente de datos
-        //    listBox_Datos.DataSource = null; // Desvincular temporalmente la fuente de datos
-        //    listBox_Datos.DataSource = comisarias; // Vuelve a vincular la fuente de datos actualizada
-
-        //    // Si deseas limpiar el formulario, puedes llamar aquí
-        //    LimpiarFormulario.Limpiar(this); // Limpia el contenido de los TextBox
-        //}
 
 
         private void Btn_Guardar_Click(object sender, EventArgs e)

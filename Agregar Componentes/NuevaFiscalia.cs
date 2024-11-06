@@ -117,7 +117,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
            
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Informacion);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //---------BOTON GUARDAR---------------------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ using BaseDatos.Entidades;
 using Controles.Controles;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -112,7 +113,7 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Nacionalidad.SelectedIndex = -1;
             comboBox_EstadoCivil.SelectedIndex = -1;
             // Muestra un mensaje de información
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)

@@ -15,6 +15,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
 using Controles.Controles;
+using MySql.Data.MySqlClient;
+using Ofelia_Sara.Mensajes;
+using BaseDatos.Adm_BD.Manager;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -133,32 +136,52 @@ namespace Ofelia_Sara.Registro_de_personal
             string textoFormateado = textBox_NumeroLegajo.Text;
             if (textoFormateado.Length < 6)
             {
-                MessageBox.Show("El número no corresponde a un número de legajo válido, verifique que el número sea correcto.",
-                                "Número Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("El número no corresponde a un número de legajo válido, verifique que el número sea correcto.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
-                // Crear una nueva instancia del control PersonalSeleccionadoControl
-                PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
+                try
+                {
+                    // Crear una conexión a la base de datos
+                    PersonalManager personalManager = new PersonalManager();
 
-                // Suscribirse al evento que abrirá el formulario NuevoPersonal
-                nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
+                    if (!personalManager.ExisteLegajo(textoFormateado))
+                    {
 
-                // Instanciar la clase AgregarPersonal
-                AgregarPersonal agregarPersonal = new AgregarPersonal();
+                        MensajeGeneral.Mostrar("El número de legajo ingresado no corresponde a un efectivo policial registrado", MensajeGeneral.TipoMensaje.Advertencia);
+                        
+                    }
+                    else
+                    {
+                        // Crear una nueva instancia del control PersonalSeleccionadoControl
+                        PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
 
-                // Llamar al método para agregar el control al panel
-                agregarPersonal.AgregarControlAlPanel(
-                    nuevoControl,                 // El control nuevo a agregar
-                    panel_PersonalSeleccionado,   // Panel donde se agregará el control
-                    panel_PersonalSeleccionado,   // Panel que se debe ajustar (mismo panel, en este caso)
-                    panel_ControlesInferiores,    // Panel inferior a reposicionar
-                    panel1,                       // Panel principal
-                    this                          // El formulario actual
-                );
+                        // Suscribirse al evento que abrirá el formulario NuevoPersonal
+                        nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
 
-                // Limpiar el contenido del TextBox
-                textBox_NumeroLegajo.Text = string.Empty;
+                        // Instanciar la clase AgregarPersonal
+                        AgregarPersonal agregarPersonal = new AgregarPersonal();
+
+                        // Llamar al método para agregar el control al panel
+                        agregarPersonal.AgregarControlAlPanel(
+                            nuevoControl,                 // El control nuevo a agregar
+                            panel_PersonalSeleccionado,   // Panel donde se agregará el control
+                            panel_PersonalSeleccionado,   // Panel que se debe ajustar (mismo panel, en este caso)
+                            panel_ControlesInferiores,    // Panel inferior a reposicionar
+                            panel1,                       // Panel principal
+                            this                          // El formulario actual
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MensajeGeneral.Mostrar("Error al conectar con la base de datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
+                }
+                finally
+                {
+                    // Limpiar el contenido del TextBox independientemente del resultado
+                    textBox_NumeroLegajo.Text = string.Empty;
+                }
             }
         }
 

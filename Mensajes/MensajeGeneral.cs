@@ -49,7 +49,8 @@ namespace Ofelia_Sara.Mensajes
             Informacion,
             Advertencia,
             Error,
-            Exito
+            Exito,
+            Cancelacion
         }
 
         private void ConfigurarIcono(TipoMensaje tipoMensaje)
@@ -67,6 +68,9 @@ namespace Ofelia_Sara.Mensajes
                     break;
                 case TipoMensaje.Exito:
                     pictureBox_Icono.Image = Properties.Resources.IconoExito;
+                    break;
+                case TipoMensaje.Cancelacion:
+                    pictureBox_Icono.Image = Properties.Resources.IconoCancelacion;
                     break;
                 default:
                     pictureBox_Icono.Image = null;

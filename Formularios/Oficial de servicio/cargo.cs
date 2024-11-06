@@ -201,7 +201,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
 
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito); ;
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); ;
 
 
         }

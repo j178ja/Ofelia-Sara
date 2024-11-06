@@ -152,7 +152,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
             // Muestra un mensaje de información
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Informacion);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------

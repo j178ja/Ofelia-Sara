@@ -75,7 +75,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
           //  InicializarComboBoxDEPENDENCIAS();
             comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
             comboBox_Dependencia.SelectedIndex = -1;
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Exito);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
 
         }
 

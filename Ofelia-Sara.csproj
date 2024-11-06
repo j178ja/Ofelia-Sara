@@ -606,6 +606,7 @@
     <Content Include="Resources\imagenes\IconoAplicacion.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\imagenes\IconoCancelacion.png" />
     <Content Include="Resources\imagenes\IconoError.png" />
     <Content Include="Resources\imagenes\iconoEscribiendo.png" />
     <Content Include="Resources\imagenes\IconoExito.png" />
