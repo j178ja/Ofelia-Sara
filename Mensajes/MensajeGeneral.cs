@@ -43,6 +43,9 @@ namespace Ofelia_Sara.Mensajes
 
             // Asignar el evento Resize de panel1
             panel1.Resize += panel1_Resize;
+
+            btn_No.Visible = false;
+            btn_Si.Visible = false;
         }
         public enum TipoMensaje
         {
@@ -121,6 +124,8 @@ namespace Ofelia_Sara.Mensajes
             // Posiciona btn_Cerrar a 4 píxeles del borde inferior del formulario
             int margenInferior = 4;
             btn_Cerrar.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
+            btn_Si.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
+            btn_No.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
         }
 
         private void panel1_Resize(object sender, EventArgs e)
@@ -137,6 +142,28 @@ namespace Ofelia_Sara.Mensajes
 
             // Asigna la nueva posición al label
             label_Texto.Location = new Point(x,y);
+        }
+
+        // Dentro de MensajeGeneral
+
+        private void Btn_Si_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void Btn_No_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+            this.Close();
+        }
+
+        // En MensajeGeneral
+        public void MostrarBotonesConfirmacion(bool mostrar)
+        {
+            btn_Si.Visible = mostrar;
+            btn_No.Visible = mostrar;
+            btn_Cerrar.Visible = false;
         }
 
     }

@@ -34,6 +34,8 @@
             this.pictureBox_Icono = new System.Windows.Forms.PictureBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pictureBox_EscudoPolicial = new System.Windows.Forms.PictureBox();
+            this.btn_Si = new System.Windows.Forms.Button();
+            this.btn_No = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Icono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EscudoPolicial)).BeginInit();
@@ -104,12 +106,42 @@
             this.pictureBox_EscudoPolicial.TabIndex = 5;
             this.pictureBox_EscudoPolicial.TabStop = false;
             // 
+            // btn_Si
+            // 
+            this.btn_Si.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_Si.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Si.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Si.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Si.Location = new System.Drawing.Point(75, 139);
+            this.btn_Si.Name = "btn_Si";
+            this.btn_Si.Size = new System.Drawing.Size(90, 30);
+            this.btn_Si.TabIndex = 6;
+            this.btn_Si.Text = "SI";
+            this.btn_Si.UseVisualStyleBackColor = false;
+            this.btn_Si.Click += new System.EventHandler(this.Btn_Si_Click);
+            // 
+            // btn_No
+            // 
+            this.btn_No.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_No.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_No.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_No.Location = new System.Drawing.Point(248, 139);
+            this.btn_No.Name = "btn_No";
+            this.btn_No.Size = new System.Drawing.Size(90, 30);
+            this.btn_No.TabIndex = 7;
+            this.btn_No.Text = "NO";
+            this.btn_No.UseVisualStyleBackColor = false;
+            this.btn_No.Click += new System.EventHandler(this.Btn_No_Click);
+            // 
             // MensajeGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(409, 173);
+            this.Controls.Add(this.btn_No);
+            this.Controls.Add(this.btn_Si);
             this.Controls.Add(this.pictureBox_EscudoPolicial);
             this.Controls.Add(this.label_OfeliaSara);
             this.Controls.Add(this.btn_Cerrar);
@@ -134,5 +166,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Icono;
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.PictureBox pictureBox_EscudoPolicial;
+        private System.Windows.Forms.Button btn_No;
+        private System.Windows.Forms.Button btn_Si;
     }
 }

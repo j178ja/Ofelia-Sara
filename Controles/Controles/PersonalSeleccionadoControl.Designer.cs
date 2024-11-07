@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btn_ModificarPersonal = new System.Windows.Forms.Button();
             this.label_Legajo = new System.Windows.Forms.Label();
             this.label_Dependencias = new System.Windows.Forms.Label();
             this.label_Funciones = new System.Windows.Forms.Label();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_ModificarPersonal = new System.Windows.Forms.Button();
             this.btn_EliminarControl = new System.Windows.Forms.Button();
             this.label_NumeroLegajo = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
@@ -44,22 +44,6 @@
             this.richTextBox_JerarquiaEscalafon = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_ModificarPersonal
-            // 
-            this.btn_ModificarPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ModificarPersonal.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ModificarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ModificarPersonal.FlatAppearance.BorderSize = 0;
-            this.btn_ModificarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ModificarPersonal.Location = new System.Drawing.Point(677, 40);
-            this.btn_ModificarPersonal.Name = "btn_ModificarPersonal";
-            this.btn_ModificarPersonal.Size = new System.Drawing.Size(15, 23);
-            this.btn_ModificarPersonal.TabIndex = 36;
-            this.btn_ModificarPersonal.Text = "M";
-            this.toolTip1.SetToolTip(this.btn_ModificarPersonal, "MODIFICAR Personal");
-            this.btn_ModificarPersonal.UseVisualStyleBackColor = false;
-            this.btn_ModificarPersonal.Click += new System.EventHandler(this.btn_ModificarPersonal_Click);
             // 
             // label_Legajo
             // 
@@ -103,22 +87,41 @@
             this.label_Nombre.Text = "Juan de los palotes ";
             this.label_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btn_ModificarPersonal
+            // 
+            this.btn_ModificarPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ModificarPersonal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_ModificarPersonal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ModificarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ModificarPersonal.FlatAppearance.BorderSize = 0;
+            this.btn_ModificarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ModificarPersonal.Image = global::Ofelia_Sara.Properties.Resources.editar;
+            this.btn_ModificarPersonal.Location = new System.Drawing.Point(670, 40);
+            this.btn_ModificarPersonal.Name = "btn_ModificarPersonal";
+            this.btn_ModificarPersonal.Size = new System.Drawing.Size(22, 25);
+            this.btn_ModificarPersonal.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.btn_ModificarPersonal, "MODIFICAR Personal");
+            this.btn_ModificarPersonal.UseVisualStyleBackColor = false;
+            this.btn_ModificarPersonal.Click += new System.EventHandler(this.btn_ModificarPersonal_Click);
+            // 
             // btn_EliminarControl
             // 
             this.btn_EliminarControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_EliminarControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_EliminarControl.BackColor = System.Drawing.Color.Transparent;
+            this.btn_EliminarControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EliminarControl.FlatAppearance.BorderSize = 0;
-            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarControl.Location = new System.Drawing.Point(677, 11);
+            this.btn_EliminarControl.Image = global::Ofelia_Sara.Properties.Resources.eliminarUsuario;
+            this.btn_EliminarControl.Location = new System.Drawing.Point(668, 4);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
-            this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
-            this.btn_EliminarControl.TabIndex = 46;
-            this.btn_EliminarControl.Text = "-";
-            this.toolTip1.SetToolTip(this.btn_EliminarControl, "ELIMINAR Personal seleccionado");
+            this.btn_EliminarControl.Size = new System.Drawing.Size(22, 25);
+            this.btn_EliminarControl.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btn_EliminarControl, "ELIMINAR Personal");
             this.btn_EliminarControl.UseVisualStyleBackColor = false;
-            this.btn_EliminarControl.Click += new System.EventHandler(this.btn_EliminarControl_Click);
+            this.btn_EliminarControl.Click += new System.EventHandler(this.Btn_EliminarControl_Click);
             // 
             // label_NumeroLegajo
             // 
@@ -126,7 +129,7 @@
             this.label_NumeroLegajo.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label_NumeroLegajo.Location = new System.Drawing.Point(83, 4);
             this.label_NumeroLegajo.Name = "label_NumeroLegajo";
-            this.label_NumeroLegajo.Size = new System.Drawing.Size(100, 15);
+            this.label_NumeroLegajo.Size = new System.Drawing.Size(89, 15);
             this.label_NumeroLegajo.TabIndex = 43;
             this.label_NumeroLegajo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -155,11 +158,11 @@
             // label_Apellido
             // 
             this.label_Apellido.AutoSize = true;
-            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
             this.label_Apellido.Location = new System.Drawing.Point(145, 0);
             this.label_Apellido.Name = "label_Apellido";
-            this.label_Apellido.Size = new System.Drawing.Size(65, 15);
+            this.label_Apellido.Size = new System.Drawing.Size(68, 16);
             this.label_Apellido.TabIndex = 48;
             this.label_Apellido.Text = "Jimenez ";
             this.label_Apellido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,7 +174,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label_Apellido);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(401, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(244, 43);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(237, 43);
             this.flowLayoutPanel1.TabIndex = 49;
             // 
             // richTextBox_JerarquiaEscalafon
@@ -180,9 +183,9 @@
             this.richTextBox_JerarquiaEscalafon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_JerarquiaEscalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.richTextBox_JerarquiaEscalafon.ForeColor = System.Drawing.Color.SkyBlue;
-            this.richTextBox_JerarquiaEscalafon.Location = new System.Drawing.Point(189, 6);
+            this.richTextBox_JerarquiaEscalafon.Location = new System.Drawing.Point(183, 6);
             this.richTextBox_JerarquiaEscalafon.Name = "richTextBox_JerarquiaEscalafon";
-            this.richTextBox_JerarquiaEscalafon.Size = new System.Drawing.Size(201, 22);
+            this.richTextBox_JerarquiaEscalafon.Size = new System.Drawing.Size(215, 22);
             this.richTextBox_JerarquiaEscalafon.TabIndex = 50;
             this.richTextBox_JerarquiaEscalafon.Text = "";
             // 
@@ -191,10 +194,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.btn_EliminarControl);
             this.Controls.Add(this.richTextBox_JerarquiaEscalafon);
             this.Controls.Add(this.label_Dependencia);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.btn_EliminarControl);
             this.Controls.Add(this.label_Funcion);
             this.Controls.Add(this.label_NumeroLegajo);
             this.Controls.Add(this.label_Funciones);
@@ -222,9 +225,9 @@
         private System.Windows.Forms.Label label_NumeroLegajo;
         private System.Windows.Forms.Label label_Dependencia;
         private System.Windows.Forms.Label label_Funcion;
-        private System.Windows.Forms.Button btn_EliminarControl;
         private System.Windows.Forms.Label label_Apellido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.RichTextBox richTextBox_JerarquiaEscalafon;
+        private System.Windows.Forms.Button btn_EliminarControl;
     }
 }

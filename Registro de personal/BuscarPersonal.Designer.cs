@@ -99,6 +99,7 @@
             this.btn_Guardar.TabIndex = 37;
             this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR personal seleccionado");
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // panel_PersonalSeleccionado
             // 

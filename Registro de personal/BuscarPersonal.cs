@@ -28,10 +28,11 @@ namespace Ofelia_Sara.Registro_de_personal
         private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
         private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
 
-
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public BuscarPersonal()
         {
             InitializeComponent();
+            this.FormClosing += BuscarPersonal_FormClosing;
 
         }
 
@@ -183,6 +184,7 @@ namespace Ofelia_Sara.Registro_de_personal
                 {
                     // Limpiar el contenido del TextBox independientemente del resultado
                     textBox_NumeroLegajo.Text = string.Empty;
+                    textBox_NumeroLegajo.Focus();
                 }
             }
         }
@@ -210,6 +212,32 @@ namespace Ofelia_Sara.Registro_de_personal
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            datosGuardados = true; // Marcar que los datos fueron guardados
+        }
+
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las retificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia)) 
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
+
+
     }
- }
+}
 

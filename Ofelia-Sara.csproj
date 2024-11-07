@@ -602,6 +602,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Resources\imagenes\editar.png" />
+    <Content Include="Resources\imagenes\eliminarUsuario.png" />
     <Content Include="Resources\imagenes\IconoAdvertencia.png" />
     <Content Include="Resources\imagenes\IconoAplicacion.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -611,6 +613,7 @@
     <Content Include="Resources\imagenes\iconoEscribiendo.png" />
     <Content Include="Resources\imagenes\IconoExito.png" />
     <Content Include="Resources\imagenes\IconoInformacion.png" />
+    <Content Include="Resources\imagenes\quitar-usuario16.png" />
     <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
