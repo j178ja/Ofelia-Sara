@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\registro de personal\\buscarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:registro de personal\\buscarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\controles\\personalseleccionadocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\controles\\personalseleccionadocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\registro de personal\\buscarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:registro de personal\\buscarpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\controles\\personalseleccionadocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\controles\\personalseleccionadocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,27 +34,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BuscarPersonal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\BuscarPersonal.cs",
-              "RelativeDocumentMoniker": "Registro de personal\\BuscarPersonal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\BuscarPersonal.cs*",
-              "RelativeToolTip": "Registro de personal\\BuscarPersonal.cs*",
-              "ViewState": "AQIAAIkAAAAAAAAAAAAuwJYAAACpAAAA",
+              "DocumentIndex": 1,
+              "Title": "PersonalSeleccionadoControl.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\PersonalSeleccionadoControl.cs",
+              "RelativeDocumentMoniker": "Controles\\Controles\\PersonalSeleccionadoControl.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\PersonalSeleccionadoControl.cs*",
+              "RelativeToolTip": "Controles\\Controles\\PersonalSeleccionadoControl.cs*",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAMwCsAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T22:12:08.398Z",
+              "WhenOpened": "2024-11-06T22:48:16.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BuscarPersonal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\BuscarPersonal.cs",
-              "RelativeDocumentMoniker": "Registro de personal\\BuscarPersonal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Registro de personal\\BuscarPersonal.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Registro de personal\\BuscarPersonal.cs [Dise\u00F1o]*",
+              "DocumentIndex": 0,
+              "Title": "PersonalSeleccionadoControl.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\PersonalSeleccionadoControl.cs",
+              "RelativeDocumentMoniker": "Controles\\Controles\\PersonalSeleccionadoControl.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\PersonalSeleccionadoControl.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Controles\\Controles\\PersonalSeleccionadoControl.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T22:12:00.023Z",
+              "WhenOpened": "2024-11-06T22:48:05.921Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

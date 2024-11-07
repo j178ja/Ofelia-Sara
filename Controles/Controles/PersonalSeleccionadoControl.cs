@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BaseDatos.Adm_BD.Manager;
 using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -17,28 +18,52 @@ using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
 
 namespace Controles.Controles
 {
+    
     public partial class PersonalSeleccionadoControl : UserControl
     {
         // Evento que será lanzado cuando se clickee el botón para modificar el personal
         public event EventHandler ModificarPersonalClicked;
+
+        private PersonalManager _personalManager;
         public PersonalSeleccionadoControl()
         {
             InitializeComponent();
+            _personalManager = new PersonalManager();
+         
         }
+
+        public void ActualizarDatosPorLegajo(string numeroLegajo)
+        {
+            var personal = _personalManager.ObtenerPersonalDTOPorLegajo(numeroLegajo);
+
+            if (personal != null)
+            {
+                // Asignar los valores obtenidos a los labels correspondientes
+                label_NumeroLegajo.Text = personal.Legajo.ToString();
+                label_Funcion.Text = personal.Funcion;
+                label_Dependencia.Text = personal.Dependencia+" "+personal.LocalidadDependencia; 
+                label_Nombre.Text = personal.Nombres;
+                label_Apellido.Text = personal.Apellido;
+
+
+                
+                //label_Jerarquia.Text = personal.Jerarquia;
+            }
+            else
+            {
+                // llegada a esta instancia no deberia no aparecer el legajo peeero por si surge el error
+                MensajeGeneral.Mostrar("No se encontró el personal con el número de legajo ingresado.",MensajeGeneral.TipoMensaje.Error);
+            }
+        }
+      
+
+        //------------------------------------------------------------------------------------------
 
         private void btn_ModificarPersonal_Click(object sender, EventArgs e)
         {
             ModificarPersonalClicked?.Invoke(this, EventArgs.Empty);
 
-           
-            
-                // llamar para inicializar datos
-               // formulario.InicializarDatos();
-            
-            // Crear y mostrar la instancia de RegistrarPersonal
-
-           /* NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
-            nuevoPersonalForm.ShowDialog(); // Mostrar como cuadro de diálogo*/
+        
         }
 
         private void btn_EliminarControl_Click(object sender, EventArgs e)

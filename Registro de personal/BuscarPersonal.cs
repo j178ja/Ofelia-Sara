@@ -142,14 +142,13 @@ namespace Ofelia_Sara.Registro_de_personal
             {
                 try
                 {
-                    // Crear una conexión a la base de datos
+                    // Crear una instancia de PersonalManager para interactuar con la base de datos
                     PersonalManager personalManager = new PersonalManager();
 
+                    // Verificar si el número de legajo existe en la base de datos
                     if (!personalManager.ExisteLegajo(textoFormateado))
                     {
-
                         MensajeGeneral.Mostrar("El número de legajo ingresado no corresponde a un efectivo policial registrado", MensajeGeneral.TipoMensaje.Advertencia);
-                        
                     }
                     else
                     {
@@ -158,6 +157,9 @@ namespace Ofelia_Sara.Registro_de_personal
 
                         // Suscribirse al evento que abrirá el formulario NuevoPersonal
                         nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
+
+                        // Actualizar datos en el nuevo control usando el número de legajo
+                        nuevoControl.ActualizarDatosPorLegajo(textoFormateado);
 
                         // Instanciar la clase AgregarPersonal
                         AgregarPersonal agregarPersonal = new AgregarPersonal();
@@ -203,7 +205,7 @@ namespace Ofelia_Sara.Registro_de_personal
         private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Ingrese un número de legajo policial válido para caragar nueva ratificacion testimonial", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Ingrese un número de legajo policial válido para caragar nueva ratificacion testimonial", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

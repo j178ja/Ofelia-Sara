@@ -44,7 +44,6 @@
             this.panel_ControlesInferiores.SuspendLayout();
             this.SuspendLayout();
             // 
-         
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -84,7 +83,7 @@
             this.btn_Registrar.Name = "btn_Registrar";
             this.btn_Registrar.Size = new System.Drawing.Size(116, 62);
             this.btn_Registrar.TabIndex = 36;
-            this.btn_Registrar.Text = "REGISTRAR NUEVO PERSONAL";
+            this.btn_Registrar.Text = "REGISTRAR  EDITAR PERSONAL";
             this.toolTip1.SetToolTip(this.btn_Registrar, "Registrar un nuevo personal");
             this.btn_Registrar.UseVisualStyleBackColor = false;
             this.btn_Registrar.Click += new System.EventHandler(this.btn_Registrar_Click);
