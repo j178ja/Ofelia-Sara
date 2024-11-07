@@ -35,6 +35,7 @@ namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
 
             // Ajustar el ancho de los controles según el estado del scroll
             AjustarAnchoControles(panel);
+
         }
 
 
@@ -75,8 +76,25 @@ namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
         // Asigna el color de fondo dependiendo de si el índice es par o impar
         private void AsignarColorFondo(Control control, int indice)
         {
-            control.BackColor = indice % 2 == 0 ? colorPar : colorImpar;
+            Color colorFondo = indice % 2 == 0 ? colorPar : colorImpar;
+            control.BackColor = colorFondo;
+
+            // Si el control contiene un RichTextBox, también ajustamos su color de fondo
+            foreach (Control subControl in control.Controls)
+            {
+                if (subControl is RichTextBox richTextBox)
+                {
+                    richTextBox.BackColor = colorFondo;
+                }
+            }
+
         }
+        private void AsignarColorFondoRichText(RichTextBox richTextBox, int indice)
+        {
+            // Llama al método existente de asignación de color
+            AsignarColorFondo(richTextBox, indice);
+        }
+
 
         // Ajusta la altura del panel que contiene los controles
         private void AjustarAlturaPanelPersonal(Panel panel_PersonalSeleccionado, Control ultimoControl)

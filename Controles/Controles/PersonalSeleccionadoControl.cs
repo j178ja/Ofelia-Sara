@@ -45,9 +45,33 @@ namespace Controles.Controles
                 label_Nombre.Text = personal.Nombres;
                 label_Apellido.Text = personal.Apellido;
 
+                // Combinar Jerarquía y Escalafón en el formato solicitado
+                string jerarquiaEscalafon = $"{personal.Jerarquia} ({personal.Escalafon})";
 
-                
-                //label_Jerarquia.Text = personal.Jerarquia;
+                // Limpiar el RichTextBox antes de asignar texto
+                richTextBox_JerarquiaEscalafon.Clear();
+
+                // Mostrar en el RichTextBox el texto combinado
+                richTextBox_JerarquiaEscalafon.Text = $"{personal.Jerarquia} ";
+
+                // Encontrar la posición del Escalafón en el texto
+                int posicionEscalafon = richTextBox_JerarquiaEscalafon.Text.Length;
+                richTextBox_JerarquiaEscalafon.AppendText($"({personal.Escalafon})");
+
+                // Cambiar el color de Jerarquía a RGB(0, 56, 97) y estilo de fuente
+                richTextBox_JerarquiaEscalafon.Select(0, personal.Jerarquia.Length); // Seleccionar "Jerarquía"
+                richTextBox_JerarquiaEscalafon.SelectionColor = Color.FromArgb(0, 56, 97); // Color Jerarquía
+                richTextBox_JerarquiaEscalafon.SelectionFont = new Font("Microsoft Sans Serif", 9, FontStyle.Bold); // Fuente Jerarquía
+
+                // Cambiar el color de Escalafón a RGB(0, 154, 174) y estilo de fuente
+                richTextBox_JerarquiaEscalafon.Select(posicionEscalafon, personal.Escalafon.Length + 2); // Seleccionar "(Escalafón)"
+                richTextBox_JerarquiaEscalafon.SelectionColor = Color.FromArgb(0, 154, 174); // Color Escalafón
+                richTextBox_JerarquiaEscalafon.SelectionFont = new Font("Microsoft Sans Serif", 9, FontStyle.Bold); // Fuente Escalafón
+
+                // Para que el color y la fuente se apliquen, desmarcamos la selección
+                richTextBox_JerarquiaEscalafon.SelectionLength = 0;
+
+           
             }
             else
             {

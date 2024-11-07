@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.btn_ModificarPersonal = new System.Windows.Forms.Button();
             this.label_Legajo = new System.Windows.Forms.Label();
-            this.label_Jerarquia = new System.Windows.Forms.Label();
             this.label_Dependencias = new System.Windows.Forms.Label();
             this.label_Funciones = new System.Windows.Forms.Label();
             this.label_Nombre = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.label_Funcion = new System.Windows.Forms.Label();
             this.label_Apellido = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.richTextBox_JerarquiaEscalafon = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,16 +70,6 @@
             this.label_Legajo.Size = new System.Drawing.Size(67, 15);
             this.label_Legajo.TabIndex = 38;
             this.label_Legajo.Text = "LEGAJO :";
-            // 
-            // label_Jerarquia
-            // 
-            this.label_Jerarquia.AutoSize = true;
-            this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Jerarquia.Location = new System.Drawing.Point(194, 6);
-            this.label_Jerarquia.Name = "label_Jerarquia";
-            this.label_Jerarquia.Size = new System.Drawing.Size(185, 13);
-            this.label_Jerarquia.TabIndex = 39;
-            this.label_Jerarquia.Text = "Oficial Subayudante (Comando)";
             // 
             // label_Dependencias
             // 
@@ -181,14 +171,27 @@
             this.flowLayoutPanel1.Controls.Add(this.label_Apellido);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(401, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(218, 43);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(244, 43);
             this.flowLayoutPanel1.TabIndex = 49;
+            // 
+            // richTextBox_JerarquiaEscalafon
+            // 
+            this.richTextBox_JerarquiaEscalafon.BackColor = System.Drawing.Color.White;
+            this.richTextBox_JerarquiaEscalafon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox_JerarquiaEscalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.richTextBox_JerarquiaEscalafon.ForeColor = System.Drawing.Color.SkyBlue;
+            this.richTextBox_JerarquiaEscalafon.Location = new System.Drawing.Point(189, 6);
+            this.richTextBox_JerarquiaEscalafon.Name = "richTextBox_JerarquiaEscalafon";
+            this.richTextBox_JerarquiaEscalafon.Size = new System.Drawing.Size(201, 22);
+            this.richTextBox_JerarquiaEscalafon.TabIndex = 50;
+            this.richTextBox_JerarquiaEscalafon.Text = "";
             // 
             // PersonalSeleccionadoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.richTextBox_JerarquiaEscalafon);
             this.Controls.Add(this.label_Dependencia);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btn_EliminarControl);
@@ -196,11 +199,10 @@
             this.Controls.Add(this.label_NumeroLegajo);
             this.Controls.Add(this.label_Funciones);
             this.Controls.Add(this.label_Dependencias);
-            this.Controls.Add(this.label_Jerarquia);
             this.Controls.Add(this.label_Legajo);
             this.Controls.Add(this.btn_ModificarPersonal);
             this.Name = "PersonalSeleccionadoControl";
-            this.Size = new System.Drawing.Size(695, 73);
+            this.Size = new System.Drawing.Size(695, 74);
             this.Load += new System.EventHandler(this.PersonalSeleccionadoControl_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -213,7 +215,6 @@
 
         private System.Windows.Forms.Button btn_ModificarPersonal;
         private System.Windows.Forms.Label label_Legajo;
-        private System.Windows.Forms.Label label_Jerarquia;
         private System.Windows.Forms.Label label_Dependencias;
         private System.Windows.Forms.Label label_Funciones;
         private System.Windows.Forms.Label label_Nombre;
@@ -224,5 +225,6 @@
         private System.Windows.Forms.Button btn_EliminarControl;
         private System.Windows.Forms.Label label_Apellido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RichTextBox richTextBox_JerarquiaEscalafon;
     }
 }
