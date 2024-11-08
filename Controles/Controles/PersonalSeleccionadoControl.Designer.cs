@@ -174,7 +174,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label_Apellido);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(401, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(237, 43);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 43);
             this.flowLayoutPanel1.TabIndex = 49;
             // 
             // richTextBox_JerarquiaEscalafon
@@ -183,9 +183,9 @@
             this.richTextBox_JerarquiaEscalafon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_JerarquiaEscalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.richTextBox_JerarquiaEscalafon.ForeColor = System.Drawing.Color.SkyBlue;
-            this.richTextBox_JerarquiaEscalafon.Location = new System.Drawing.Point(183, 6);
+            this.richTextBox_JerarquiaEscalafon.Location = new System.Drawing.Point(192, 6);
             this.richTextBox_JerarquiaEscalafon.Name = "richTextBox_JerarquiaEscalafon";
-            this.richTextBox_JerarquiaEscalafon.Size = new System.Drawing.Size(215, 22);
+            this.richTextBox_JerarquiaEscalafon.Size = new System.Drawing.Size(210, 22);
             this.richTextBox_JerarquiaEscalafon.TabIndex = 50;
             this.richTextBox_JerarquiaEscalafon.Text = "";
             // 

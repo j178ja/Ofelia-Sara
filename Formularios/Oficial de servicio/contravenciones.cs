@@ -25,7 +25,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
     public partial class Contravenciones : BaseForm
     {
-        
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public Contravenciones()
         {
             InitializeComponent();
@@ -38,6 +38,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Contravenciones_Load(object sender, EventArgs e)
         {
+            this.FormClosing += BuscarPersonal_FormClosing;
             Fecha_Instruccion.SelectedDate = DateTime.Now;
             //// Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -94,12 +95,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                // Si todos los campos están completos, mostrar el mensaje de confirmación
-                //Crea ventana con icono especial de confirmacion y titulo confirmacion
+                datosGuardados = true; // Marcar que los datos fueron guardados
                 MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
             }
         }
         //--------------------------------------------------------------------------------------------
+    
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
         //------------------------------------------------------------------------------------------------
         //   METODO PARA OBTENER DATOS DEL FORMULARIO
 

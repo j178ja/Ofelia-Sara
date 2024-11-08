@@ -26,6 +26,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     public partial class Cargo : BaseForm
 
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public Cargo()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Cargo_Load(object sender, EventArgs e)
         {
+            this.FormClosing += BuscarPersonal_FormClosing;
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
             textBox_NumeroIpp.MaxLength = 6;
             comboBox_Ipp1.MaxLength = 2;
@@ -208,7 +210,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            datosGuardados = true; // Marcar que los datos fueron guardados
+        }
 
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
         }
 
         private void textBox_NumeroCargo_KeyPress(object sender, KeyPressEventArgs e)

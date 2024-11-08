@@ -21,6 +21,7 @@ using System.Configuration;
 using Ofelia_Sara.Mensajes;
 using BaseDatos.Adm_BD.Manager;
 using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+using BaseDatos.Adm_BD.Modelos;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -324,15 +325,31 @@ namespace Ofelia_Sara.Registro_de_personal
                     }
                     else
                     {
-                       
+                        // Obtener el DTO del personal por legajo
+                        PersonalDTO personalDTO = personalManager.ObtenerPersonalDTOPorLegajo(textoFormateado);
+
+                        // Verificar si se obtuvo el DTO correctamente
+                        if (personalDTO != null)
+                        {
+                            // Asignar los valores del DTO a los controles del formulario
+                            textBox_DomicilioPnal.Text = personalDTO.Domicilio;
+                            comboBox_Nacionalidad.SelectedItem = personalDTO.Nacionalidad; // Asignar el valor al ComboBox
+                            comboBox_Escalafon.SelectedItem = personalDTO.Escalafon;       // Asignar el valor al ComboBox
+                            comboBox_Jerarquia.SelectedItem = personalDTO.Jerarquia;       // Asignar el valor al ComboBox
+                            textBox_Funcion.Text = personalDTO.Funcion;                     // Asignar el valor al TextBox
+                        }
+                        else
+                        {
+                            MensajeGeneral.Mostrar("No se encontraron datos para el número de legajo proporcionado.", MensajeGeneral.TipoMensaje.Advertencia);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
                     MensajeGeneral.Mostrar("Error al conectar con la base de datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
-               
             }
         }
+
     }
 }
