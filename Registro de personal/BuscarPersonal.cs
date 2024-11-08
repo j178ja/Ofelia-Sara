@@ -44,7 +44,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
-            //---Inicializar para desactivar los btn AGREGAR PERSONAL RATIFICACION 
+            //---Inicializar para desactivar los btn AGREGAR PERSONAL 
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
 
             textBox_NumeroLegajo.MaxLength = 7;
@@ -223,7 +223,7 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las retificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia)) 
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia)) 
                 {
                     // Hacer visibles los botones
                     mensaje.MostrarBotonesConfirmacion(true);

@@ -19,12 +19,14 @@ using Controles.Controles;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using Ofelia_Sara.Mensajes;
+using BaseDatos.Adm_BD.Manager;
+using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
     public partial class NuevoPersonal : BaseForm
     {
-
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public NuevoPersonal(string numeroLegajo)
         {
             InitializeComponent();
@@ -45,6 +47,7 @@ namespace Ofelia_Sara.Registro_de_personal
         public NuevoPersonal()
         {
             InitializeComponent();
+            this.FormClosing += NuevoPersonal_FormClosing;
         }
 
 
@@ -55,12 +58,16 @@ namespace Ofelia_Sara.Registro_de_personal
         }
 
         private void NuevoPersonal_Load(object sender, EventArgs e)
-
         {
-
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Limpiar);
+
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBotonAgregar(btn_AgregarPersonal);
+            //---Inicializar para desactivar los btn AGREGAR PERSONAL RATIFICACION 
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
+
 
             //para que se despliege la lista en los comboBox ESCALAFON -JERARQUIA
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
@@ -111,6 +118,8 @@ namespace Ofelia_Sara.Registro_de_personal
             LimpiarFormulario.Limpiar(this);
             comboBox_Nacionalidad.SelectedIndex = -1;
             comboBox_EstadoCivil.SelectedIndex = -1;
+            comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Jerarquia.SelectedIndex = -1;
             // Muestra un mensaje de información
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
@@ -224,7 +233,7 @@ namespace Ofelia_Sara.Registro_de_personal
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se encontraron datos para la dependencia seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MensajeGeneral.Mostrar("No se encontraron datos para la dependencia seleccionada.", MensajeGeneral.TipoMensaje.Advertencia);
                                 }
                             }
                         }
@@ -232,7 +241,7 @@ namespace Ofelia_Sara.Registro_de_personal
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar los datos de la dependencia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar("Error al cargar los datos de la dependencia: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
             else
@@ -258,10 +267,72 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
             {
-                MessageBox.Show("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.",MensajeGeneral.TipoMensaje.Informacion);
                 comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
             }
         }
 
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            datosGuardados = true; // Marcar que los datos fueron guardados
+        }
+
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void NuevoPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
+
+        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
+        }
+
+        private void btn_AgregarPersonal_Click(object sender, EventArgs e)
+        {
+            // Validar que el texto no sea menor a 6 caracteres
+            string textoFormateado = textBox_NumeroLegajo.Text;
+            if (textoFormateado.Length < 6)
+            {
+                MensajeGeneral.Mostrar("El número no corresponde a un número de legajo válido, verifique que el número sea correcto.", MensajeGeneral.TipoMensaje.Advertencia);
+            }
+            else
+            {
+                try
+                {
+                    // Crear una instancia de PersonalManager para interactuar con la base de datos
+                    PersonalManager personalManager = new PersonalManager();
+
+                    // Verificar si el número de legajo existe en la base de datos
+                    if (!personalManager.ExisteLegajo(textoFormateado))
+                    {
+                        MensajeGeneral.Mostrar("El número de legajo ingresado no corresponde a un efectivo policial registrado", MensajeGeneral.TipoMensaje.Advertencia);
+                        textBox_NumeroLegajo.Focus();
+                    }
+                    else
+                    {
+                       
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MensajeGeneral.Mostrar("Error al conectar con la base de datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
+                }
+               
+            }
+        }
     }
 }

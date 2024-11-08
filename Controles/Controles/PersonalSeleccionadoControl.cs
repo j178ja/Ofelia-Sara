@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos.Adm_BD.Manager;
 using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Mensajes;
+using Controles.Controles;
+using Ofelia_Sara.Registro_de_personal;
 
 
 
@@ -85,10 +88,30 @@ namespace Controles.Controles
 
         private void btn_ModificarPersonal_Click(object sender, EventArgs e)
         {
-            ModificarPersonalClicked?.Invoke(this, EventArgs.Empty);
+            // Mostrar el formulario de usuario para la validación previa
+            using (UsuarioForm usuarioForm = new UsuarioForm())
+            {
+                DialogResult result = usuarioForm.ShowDialog();
 
+                // Verificar el resultado de la validación
+                if (result == DialogResult.OK)
+                {
+                    string numeroLegajo = label_NumeroLegajo.Text;
 
+                    // Crear una instancia del formulario NuevoPersonal, pasando el número de legajo si es necesario
+                    NuevoPersonal formularioEdicion = new NuevoPersonal(numeroLegajo); // Asegúrate de que el constructor acepte un string
+
+                    // Mostrar el formulario de edición
+                    formularioEdicion.ShowDialog();
+                }
+                else
+                {
+                    // Si la validación falla, mostrar un mensaje de advertencia
+                    MensajeGeneral.Mostrar("Validación fallida. No se puede editar el personal.", MensajeGeneral.TipoMensaje.Advertencia);
+                }
+            }
         }
+
 
         private void Btn_EliminarControl_Click(object sender, EventArgs e)
         {

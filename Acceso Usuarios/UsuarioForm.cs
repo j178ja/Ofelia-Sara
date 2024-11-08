@@ -109,8 +109,19 @@ namespace Ofelia_Sara.Formularios
 
         private void Btn_Ingresar_Click(object sender, EventArgs e)
         {
+            // Realizar validación de usuario (ejemplo)
+            if (ValidarUsuario())
+            {
+                // Si la validación es exitosa, cerrar con OK
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MensajeGeneral.Mostrar("Credenciales incorrectas. Intente de nuevo.", MensajeGeneral.TipoMensaje.Error);
+            }
             // Asumiendo que tienes acceso al formulario principal (MenuPrincipal)
-            Form menuPrincipal = Application.OpenForms["MenuPrincipal"]; // O usa una referencia directa si la tienes
+            Form menuPrincipal = Application.OpenForms["MenuPrincipal"];
             if (menuPrincipal != null)
             {
                 // Obtener la ubicación y tamaño del formulario principal
@@ -135,6 +146,13 @@ namespace Ofelia_Sara.Formularios
                 formModificarEliminar.Show();
             }
             
+        }
+
+        // Método de ejemplo para la validación
+        private bool ValidarUsuario()
+        {
+            // Lógica de validación (e.g., comparación de contraseñas, etc.)
+            return true; // Retornar true si la validación es correcta
         }
 
     }

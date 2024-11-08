@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_AgregarPersonal = new System.Windows.Forms.Button();
             this.numeroTelefonicoControl2 = new Controles.Controles.NumeroTelefonicoControl();
             this.numeroTelefonicoControl1 = new Controles.Controles.NumeroTelefonicoControl();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
@@ -104,6 +105,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_AgregarPersonal);
             this.panel1.Controls.Add(this.numeroTelefonicoControl2);
             this.panel1.Controls.Add(this.numeroTelefonicoControl1);
             this.panel1.Controls.Add(this.comboBox_EstadoCivil);
@@ -174,6 +176,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 877);
             this.panel1.TabIndex = 3;
+            // 
+            // btn_AgregarPersonal
+            // 
+            this.btn_AgregarPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AgregarPersonal.BackColor = System.Drawing.Color.White;
+            this.btn_AgregarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarPersonal.FlatAppearance.BorderSize = 3;
+            this.btn_AgregarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AgregarPersonal.Location = new System.Drawing.Point(460, 41);
+            this.btn_AgregarPersonal.Name = "btn_AgregarPersonal";
+            this.btn_AgregarPersonal.Size = new System.Drawing.Size(15, 23);
+            this.btn_AgregarPersonal.TabIndex = 149;
+            this.btn_AgregarPersonal.Text = "+";
+            this.toolTip1.SetToolTip(this.btn_AgregarPersonal, "Buscar por legajo policial");
+            this.btn_AgregarPersonal.UseVisualStyleBackColor = false;
+            this.btn_AgregarPersonal.Click += new System.EventHandler(this.btn_AgregarPersonal_Click);
             // 
             // numeroTelefonicoControl2
             // 
@@ -793,6 +811,7 @@
             this.btn_Guardar.TabIndex = 37;
             this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR nuevo efectivo policial");
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // textBox_NumeroLegajo
             // 
@@ -802,6 +821,7 @@
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 20);
             this.textBox_NumeroLegajo.TabIndex = 34;
             this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroLegajo.TextChanged += new System.EventHandler(this.textBox_NumeroLegajo_TextChanged);
             this.textBox_NumeroLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroLegajo_KeyPress);
             // 
             // lbl_Legajo
@@ -920,5 +940,6 @@
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl2;
+        private System.Windows.Forms.Button btn_AgregarPersonal;
     }
 }
