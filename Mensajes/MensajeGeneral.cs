@@ -164,6 +164,8 @@ namespace Ofelia_Sara.Mensajes
             btn_Si.Visible = mostrar;
             btn_No.Visible = mostrar;
             btn_Cerrar.Visible = false;
+            btn_No.Focus();
+            btn_No.BackColor= Color.FromArgb(255, 70, 70); 
         }
 
     }

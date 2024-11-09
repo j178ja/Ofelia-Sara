@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using BaseDatos.Adm_BD.Modelos;
+using BaseDatos.Mensaje;
 
 namespace BaseDatos.Adm_BD
 {
@@ -63,7 +64,7 @@ namespace BaseDatos.Adm_BD
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al insertar la fiscalía: " + ex.Message);
+                MensajeGeneral.Mostrar("Error al insertar la fiscalía: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
             }
             finally
             {

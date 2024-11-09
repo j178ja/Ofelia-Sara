@@ -155,3 +155,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\ko-KP\Ofelia-Sara.res
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-S.9C75B350.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Mensaje\Resources\imagenes\IconoAplicacion.ico
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Mensaje\Resources\imagenes\IconoEscudoPolicia.ico
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Mensaje\Resources\imagenes\ICOes.png
