@@ -1,10 +1,9 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
+using Controles.Controles;
 using System;
 using System.Windows.Forms;
-using System.Drawing;
-using Controles.Controles;
 
 
 namespace Clases.Botones
@@ -14,7 +13,7 @@ namespace Clases.Botones
     {
 
         // Método estático para limpiar todos los controles dentro del formulario
-   // Itera a través de todos los controles dentro del control proporcionado (form o panel)
+        // Itera a través de todos los controles dentro del control proporcionado (form o panel)
 
         public static void Limpiar(Control control)
         {
@@ -110,6 +109,6 @@ namespace Clases.Botones
             }
         }
 
-      
+
     }
 }

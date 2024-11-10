@@ -4,7 +4,6 @@
          2) ABRIR DOCUMENTO WORD PARA REVISION
          3) "A FUTURO: AGREGAR FUNCION QUE HABRA DIRECTO A IMPRESION
         ---------------------------------------*/
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 

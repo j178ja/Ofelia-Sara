@@ -1,27 +1,19 @@
 ﻿
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
+//using Ofelia_Sara.Base_de_Datos;
+using BaseDatos.Entidades;
+using Clases.Apariencia;
+using Clases.Botones;
+//using SkiaSharp;//biblioteca para efecto visual
+using Clases.Texto;
+using Ofelia_Sara.Formularios;
+using Ofelia_Sara.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-//using SkiaSharp;//biblioteca para efecto visual
-using System.Drawing.Imaging;
-using Clases.Texto;
-using Clases.Botones;
-//using Ofelia_Sara.Base_de_Datos;
-using System.IO;
-using BaseDatos.Entidades;
-
-using Clases.Apariencia;
-using static System.Resources.ResXFileRef;
-using Ofelia_Sara.Formularios;
-using BaseDatos.Adm_BD.Manager;
-using BaseDatos.Adm_BD.Modelos;
-using Ofelia_Sara.Mensajes;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -89,12 +81,12 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
-            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //______________________________________________________________________________
-       
-//----------------------------------------------------------------------------------
-      
+
+        //----------------------------------------------------------------------------------
+
 
         //-------------BOTON GUARDAR--------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
@@ -134,13 +126,13 @@ namespace Ofelia_Sara.Agregar_Componentes
                 comboBox_Dependencia.SelectedIndex = -1;
             }
         }
-        
+
         //----------------------------------------------------------------------------
         //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
         private void TextoEspecialCampos()
         {
-           // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
-    Dictionary<string, bool> textBoxExcepciones = new Dictionary<string, bool>
+            // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
+            Dictionary<string, bool> textBoxExcepciones = new Dictionary<string, bool>
     {
         { "textBox_Nombre", false },
         { "textBox_Apellido", false },
@@ -151,7 +143,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Configurar ComboBox (acepta números, letras, y espacios, convierte a mayúsculas)
             Dictionary<string, bool> comboBoxExcepciones = new Dictionary<string, bool>
     {
-       
+
         { "comboBox_Dependencia", true },
         { "comboBox_Escalafon", false } // Configuración según la opción seleccionada
     };
@@ -322,7 +314,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 }
                 catch (Exception ex)
                 {
-                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }

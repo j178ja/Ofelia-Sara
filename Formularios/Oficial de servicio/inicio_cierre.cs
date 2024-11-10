@@ -1,29 +1,18 @@
-﻿using Ofelia_Sara.general.clases;
+﻿using BaseDatos.Entidades;
+using Clases.Botones;
 using Clases.GenerarDocumentos;
+using Clases.Texto;
+using Controles.Controles;
+using Ofelia_Sara.Clases.Texto;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.general.clases;
+using Ofelia_Sara.Mensajes;
+using Ofelia_Sara.Registro_de_personal;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Word = Microsoft.Office.Interop.Word;
-using System.Diagnostics.Eventing.Reader;
-using System.Diagnostics;
-using System.Web.UI.WebControls.WebParts;
-using Ofelia_Sara.Registro_de_personal;
-using System.IO;
-using Mysqlx.Cursor;
-using System.Drawing.Drawing2D;
-using Clases.Texto;
-using Clases.Botones;
-using Clases.Reposicon_paneles;
-using Ofelia_Sara.Formularios;
-using Controles.Controles;
-using BaseDatos.Entidades;
-using Ofelia_Sara.Clases.Texto;
-using Newtonsoft.Json;
-using Ofelia_Sara.Mensajes;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -48,7 +37,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
             textBox_Victima.TextChanged += (s, e) => ActualizarEstado();
             textBox_Imputado.TextChanged += (s, e) => ActualizarEstado();
-          
+
             comboBox_AgenteFiscal.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Instructor.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
@@ -85,7 +74,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             string rutaJson = @"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Json\sugerencias_Caratula.json";
 
             // Cargar sugerencias desde el archivo JSON
-            sugerencias= AutocompletarCaratula.LeerSugerenciasDesdeJson(rutaJson);
+            sugerencias = AutocompletarCaratula.LeerSugerenciasDesdeJson(rutaJson);
 
             // Configurar el TextBox para utilizar autocompletar
             ConfigurarAutocompletar(textBox_Caratula, sugerencias);
@@ -125,8 +114,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO
 
-          }
-        
+        }
+
         //-----------------------------------------------------------------------------
         private void GuardarDatos()
         {
@@ -184,7 +173,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MensajeGeneral.Mostrar("Debe completar los campos Caratula, Imputado y Victima.", MensajeGeneral.TipoMensaje.Advertencia );
+                MensajeGeneral.Mostrar("Debe completar los campos Caratula, Imputado y Victima.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
@@ -231,12 +220,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
         //-------------------------------------------------------------
-      
+
         //---------------COMBO BOX IPP 1      ------------------
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void ComboBox_Ipp1_TextUpdate(object sender, EventArgs e)
         {
-          if (comboBox_Ipp1.Text.Length > 2) // Limitar a 2 caracteres
+            if (comboBox_Ipp1.Text.Length > 2) // Limitar a 2 caracteres
             {
                 comboBox_Ipp1.Text = comboBox_Ipp1.Text.Substring(0, 2);// Si el texto excede los 2 caracteres, cortar el exceso
                 comboBox_Ipp1.SelectionStart = comboBox_Ipp1.Text.Length; // Mover el cursor al final del texto
@@ -451,7 +440,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //--------Evento para abrir FORMULARIO AGREGAR DATOS IMPUTADO-----------------------
         private void Btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-  
+
             if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
             {
                 agregarDatosPersonalesImputado = new AgregarDatosPersonalesImputado();
@@ -520,7 +509,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 ActualizarEstado();
                 if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
                 {
-                                        // Actualizar el TextBox en el formulario de destino
+                    // Actualizar el TextBox en el formulario de destino
                     agregarDatosPersonalesVictima.UpdateVictimaTextBox(textBox_Victima.Text);
                 }
             }
@@ -563,7 +552,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             // Llamar al método en el UserControl para agregar el control
             NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
-           
+
         }
 
         //------------BOTON AGREGAR VICTIMA----------------------------
@@ -583,9 +572,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Llamar al método en el UserControl para agregar el control
                 NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
-               
+
                 // Agregar la nueva víctima a la lista
-                string nuevaVictima = "Nombre de la nueva víctima"; 
+                string nuevaVictima = "Nombre de la nueva víctima";
                 victimas.Add(nuevaVictima);
 
                 // Actualizar la lista visual en el formulario, si corresponde
@@ -609,11 +598,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Llamar al método en el UserControl para agregar el control
                 NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
-               
+
                 // Agregar el nuevo imputado a la lista
                 string nuevoImputado = "Nombre del nuevo imputado"; // Aquí deberías obtener el nombre del imputado del nuevo control agregado
                 imputados.Add(nuevoImputado);
-  
+
             }
         }
 
@@ -778,7 +767,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.SelectedIndex = -1;
         }
 
-       
+
 
         private void ComboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -854,12 +843,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             bool esTextoValidoInstructor = !string.IsNullOrWhiteSpace(comboBox_Instructor.Text);
             bool esTextoValidoSecretario = !string.IsNullOrWhiteSpace(comboBox_Secretario.Text);
             bool esTextoValidoDependencia = !string.IsNullOrWhiteSpace(comboBox_Dependencia.Text);
-         
+
 
             // Todos los campos deben ser válidos para que esTextoValido sea verdadero
             bool esTextoValido = esTextoValidoNumeroIPP && esTextoValidoCaratula && esTextoValidoVictima &&
-                                 esTextoValidoImputado && esTextoValidoUfid  &&
-                                 esTextoValidoInstructor && esTextoValidoSecretario && esTextoValidoDependencia ;
+                                 esTextoValidoImputado && esTextoValidoUfid &&
+                                 esTextoValidoInstructor && esTextoValidoSecretario && esTextoValidoDependencia;
 
 
             // Actualiza el color del label y el estado del checkbox según el estado de validación
@@ -896,11 +885,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 string Localidad = comboBox_Localidad.Text;
                 string Instructor = comboBox_Instructor.Text;
                 string Secretario = comboBox_Secretario.Text;
-                string Dependencia = comboBox_Dependencia.Text ;
+                string Dependencia = comboBox_Dependencia.Text;
 
-              // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
-        Cargo cargo = new Cargo (Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
-                                Fiscalia, AgenteFiscal,Localidad, Instructor, Secretario, Dependencia);
+                // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
+                Cargo cargo = new Cargo(Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
+                                        Fiscalia, AgenteFiscal, Localidad, Instructor, Secretario, Dependencia);
 
 
                 // Obtener el formulario original (inicioCierre)
@@ -938,7 +927,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
             }
-        
+
         }
 
         //________________________________________________________________________________________
@@ -953,7 +942,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-     
+
 
         private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
@@ -973,7 +962,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             DesmarcarCheckBoxConTexto();
         }
 
-       
+
         private void ComboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
@@ -996,6 +985,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ActualizarEstado();
         }
 
-      
+
     }
 }

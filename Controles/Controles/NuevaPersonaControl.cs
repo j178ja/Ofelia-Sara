@@ -73,7 +73,7 @@ namespace Controles.Controles
             {
                 int posicionY = this.Location.Y;
                 panel.Controls.Remove(this);
-              //  ReposicionarControles(panel, posicionY);
+                //  ReposicionarControles(panel, posicionY);
 
                 if (tipoControl == "Victima") ContadorVictimas--;
                 else ContadorImputados--;
@@ -85,14 +85,14 @@ namespace Controles.Controles
             //Form formularioPrincipal = this.FindForm();
             //if (formularioPrincipal is InicioCierre inicioCierre)
             //{
-               
+
             //}   HAY QUE CREAR UN METODO EFICIENTE PARA REPOSICIONAR
         }
 
-       
+
         private void NuevaPersonaControl_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox_Persona_TextChanged(object sender, EventArgs e)

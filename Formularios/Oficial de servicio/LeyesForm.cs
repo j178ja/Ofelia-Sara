@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Clases.Apariencia;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
-using Clases.Apariencia;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -19,9 +12,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public LeyesForm()
         {
             InitializeComponent();
-         
+
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             this.listView_Documentos.DoubleClick += new System.EventHandler(this.listView_Documentos_DoubleClick);
 

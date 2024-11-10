@@ -1,18 +1,11 @@
-﻿using System;
-using Ofelia_Sara.general.clases;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+﻿using Clases.Botones;
 using Clases.Texto;
 using Controles.Controles.Aplicadas_con_controles;
-using Clases.Botones;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -110,7 +103,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
             this.SuspendLayout();
             // 
-            
+
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -584,11 +577,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            comboBox_Nacionalidad.SelectedIndex = -1;              
-            comboBox_EstadoCivil.SelectedIndex = -1;              
-                                                                                    
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedIndex = -1;
+
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
-       
+
         }
 
         //---------BOTON GUARDAR----------------------------
@@ -737,7 +730,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                         }
                         catch (Exception ex)
                         {
-                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -779,7 +772,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
                 catch (Exception ex)
                 {
-                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
@@ -790,7 +783,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             ActualizarControlesPicture();
 
-            
+
         }
 
         private void textBox_Localidad_TextChanged(object sender, EventArgs e)
@@ -843,7 +836,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 VictimaTextChanged(textBox_Nombre.Text);
             }
             // Obtiene el texto actual del TextBox
-    string input = textBox_Nombre.Text;
+            string input = textBox_Nombre.Text;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
@@ -921,12 +914,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-       
+
 
         private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir teclas de control como Backspace y Enter, así como espacios
-    if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
+            if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
             {
                 e.Handled = false; // Permitir la tecla
             }
@@ -972,6 +965,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-       
+
     }
 }

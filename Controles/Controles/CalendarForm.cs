@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Controles.Controles
@@ -41,7 +35,7 @@ namespace Controles.Controles
         private void CALENDARIO_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Haga click sobre año, luego mes, y finalice con el dia" , "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Haga click sobre año, luego mes, y finalice con el dia", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

@@ -1,20 +1,10 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using MECANOGRAFIA.Clases;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MECANOGRAFIA.Clases;
-using DocumentFormat.OpenXml.Packaging; 
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentFormat.OpenXml.ExtendedProperties;
-using System.Drawing.Drawing2D;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 
 namespace MECANOGRAFIA
@@ -66,7 +56,7 @@ namespace MECANOGRAFIA
             CrearLabelTimer();
             // Inicializar el Timer
             timer = new Timer();
-            timer.Interval =1000; // 1 segundo
+            timer.Interval = 1000; // 1 segundo
             timer.Tick += Timer_Tick; // Evento Tick del Timer
 
             // Mapa de letras a paneles de manos y teclado virtual
@@ -77,19 +67,19 @@ namespace MECANOGRAFIA
     { 'A', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaA ,label_TeclaA ) },
     { 'Q', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaQ ,label_TeclaQ ) },
     { 'Z', new PanelesResaltados (panel_MeniqueIzquierdo,panel_TeclaZ ,label_TeclaZ ) },
-          
+
     { '2', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2 ,label_Tecla2  ) },
     { '"', new PanelesResaltados (panel_AnularIzquierdo,panel_Tecla2 ,label_Tecla2  ) },
     { 'S', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaS ,label_TeclaS  ) },
     { 'W', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaW ,label_TeclaW  ) },
     { 'X', new PanelesResaltados (panel_AnularIzquierdo,panel_TeclaX ,label_TeclaX  ) },
-      
+
     { '3', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3 ,label_Tecla3   ) },
     { '#', new PanelesResaltados (panel_MayorIzquierdo,panel_Tecla3 ,label_Tecla3   ) },
     { 'E', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaE ,label_TeclaE   ) },
     { 'D', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaD ,label_TeclaD   ) },
     { 'C', new PanelesResaltados (panel_MayorIzquierdo,panel_TeclaC ,label_TeclaC   ) },
-           
+
     { '4', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4 ,label_Tecla4  ) },
     { '5', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla5 ,label_Tecla5  ) },
     { '$', new PanelesResaltados (panel_IndiceIzquierdo,panel_Tecla4 ,label_Tecla4  ) },
@@ -100,9 +90,9 @@ namespace MECANOGRAFIA
     { 'T', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaT ,label_TeclaT  ) },
     { 'G', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaG ,label_TeclaG  ) },
     { 'B', new PanelesResaltados (panel_IndiceIzquierdo,panel_TeclaB ,label_TeclaB  ) },
-          
+
     { ' ', new PanelesResaltados (panel_PulgarIzquierdo,panel_TeclaEspacio,label_TeclaEspacio) },
-   
+
     { '7', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7,label_Tecla7 ) },
     { '6', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla6,label_Tecla6 ) },
     { '/', new PanelesResaltados (panel_IndiceDerecho, panel_Tecla7,label_Tecla7 ) },
@@ -113,14 +103,14 @@ namespace MECANOGRAFIA
     { 'U', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaU,label_TeclaU ) },
     { 'J', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaJ,label_TeclaJ ) },
     { 'M', new PanelesResaltados (panel_IndiceDerecho, panel_TeclaM,label_TeclaM ) },
-     
+
     { '8', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8, label_Tecla8) },
     { '(', new PanelesResaltados (panel_MayorDerecho, panel_Tecla8, label_Tecla8) },
     { 'I', new PanelesResaltados (panel_MayorDerecho, panel_TeclaI, label_TeclaI) },
     { 'K', new PanelesResaltados (panel_MayorDerecho, panel_TeclaK, label_TeclaK) },
     { ';', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa,label_TeclaComa) },
     { ',', new PanelesResaltados (panel_MayorDerecho, panel_TeclaComa,label_TeclaComa) },
-          
+
     { '9', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 ,label_Tecla9 )},
     { ')', new PanelesResaltados (panel_AnularDerecho,panel_Tecla9 ,label_Tecla9)},
     { 'O', new PanelesResaltados (panel_AnularDerecho,panel_TeclaO ,label_TeclaO )},
@@ -143,7 +133,7 @@ namespace MECANOGRAFIA
         {
             Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
             CargarTextoYColorear();// remarca la letra que se debe presionar
-        
+
         }
         private int currentPosition = 0; // Para llevar seguimiento de la posición actual
         private bool mecanografiaActiva = true;
@@ -336,7 +326,7 @@ namespace MECANOGRAFIA
 
                                 // Mostrar el contenido en el RichTextBox
                                 Texto_Tipear.Text = contenido;
-                               
+
 
                                 // *** ASIGNAR EL NOMBRE DEL ARCHIVO SELECCIONADO ***
                                 archivoSeleccionado = openFileDialog.FileName;
@@ -389,7 +379,7 @@ namespace MECANOGRAFIA
             this.Height = 641;
             CargarTextoYColorear(); // Mostrar el panel de la letra correspondiente en color
             btn_Detener.Enabled = true;
-     
+
 
             label_Tiempo.Visible = false; // Asegúrate de que el label sea invisible al iniciar
             timer.Start(); // Iniciar el Timer
@@ -398,7 +388,7 @@ namespace MECANOGRAFIA
         private void Timer_Tick(object sender, EventArgs e)
         {
             secondsElapsed++; // Incrementar el contador de segundos
-                                // Actualizar el Label con el tiempo transcurrido
+                              // Actualizar el Label con el tiempo transcurrido
             label_Tiempo.Text = TimeSpan.FromSeconds(secondsElapsed).ToString(@"hh\:mm\:ss");
         }
 
@@ -413,13 +403,13 @@ namespace MECANOGRAFIA
             label_Tiempo.Visible = true; // Hacerlo visible inicialmente
             panel_Especificaciones.Controls.Add(label_Tiempo); // Añadir al panel
         }
-        
+
 
         //-------------------------------------------------------------------
         private void Btn_Detener_Click(object sender, EventArgs e)
         {
             timer.Stop();
-            label_Tiempo.Visible=true;
+            label_Tiempo.Visible = true;
             mecanografiaActiva = false; // Desactivar la mecanografía
             alertaLabel.Visible = false;
             panel_Manos.Visible = false;
@@ -442,7 +432,7 @@ namespace MECANOGRAFIA
                 panelesResaltados.PanelTecla.BackColor = SystemColors.ButtonFace; // Color original
                 panelesResaltados.LabelTecla.ForeColor = SystemColors.ControlDarkDark; // Color original del texto
 
-          
+
             }
         }
 

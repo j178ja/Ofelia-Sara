@@ -1,26 +1,19 @@
 ﻿
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using System.IO;
+using BaseDatos.Adm_BD;
+using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
-using Controles.Controles;
 using Clases.Apariencia;
-using Clases.Botones;
+using Controles.Controles;
+using System;
 // Alias para el ShadowForm de tu propia clase
-using Newtonsoft.Json;
 // using Ofelia_Sara.Base_de_Datos;
 using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Drawing.Drawing2D;
-using System.Text;
-using System.Data;
-using System.Data.Common;
-using BaseDatos.Adm_BD.Manager;
 using System.ComponentModel;
-using BaseDatos.Adm_BD.Modelos;
-using BaseDatos.Adm_BD;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Windows.Forms;
 
 
 
@@ -29,13 +22,13 @@ namespace Ofelia_Sara.Formularios
 
 {
 
-    
+
     public class BaseForm : Form
     {
         private DatabaseConnection dbConnection;
 
 
-        
+
         protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias// Para cargar comisarías
         protected InstructoresManager instructoresManager = new InstructoresManager();    // Para cargar instructores
         protected SecretariosManager secretariosManager = new SecretariosManager();    // Para cargar instructores
@@ -44,7 +37,7 @@ namespace Ofelia_Sara.Formularios
         private readonly AutocompletarManager autocompletarManager; // Define una lista para almacenar los elementos de autocompletado
 
         private LinkLabel footerLinkLabel;
-        
+
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
         // Método OnLoad combinado
@@ -58,7 +51,7 @@ namespace Ofelia_Sara.Formularios
             CargarIconoFormulario();
 
             InitializeFooterLinkLabel();
-           
+
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -176,7 +169,7 @@ namespace Ofelia_Sara.Formularios
             this.Controls.Add(this.footerLinkLabel);
         }
 
- 
+
         //------------------------------------------------------------
         //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
         //-------BUSCAR----GUARDAR----LIMPIAR---------
@@ -299,7 +292,7 @@ namespace Ofelia_Sara.Formularios
             // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
             boton.Invalidate();
         }
-                //--------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------
 
         private void InitializeComponent()
         {
@@ -309,13 +302,13 @@ namespace Ofelia_Sara.Formularios
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "BaseForm";
-          
+
             this.ResumeLayout(false);
 
         }
         private void ConfigureTextBoxAutoComplete()
         {
-           
+
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox textBox && textBox.Name.StartsWith("textBox_Caratula"))
@@ -351,7 +344,7 @@ namespace Ofelia_Sara.Formularios
         }
 
         //---
-      
+
 
         public void CargarDatosInstructor(ComboBox comboBox, InstructoresManager dbManager)
         {
@@ -438,4 +431,4 @@ namespace Ofelia_Sara.Formularios
 }
 
 
-   
+

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -18,7 +17,7 @@ namespace Controles.Controles
         public NuevaCaratulaControl()
         {
             InitializeComponent();
-           
+
         }
 
         //--------------------------------------------------------------------------------
@@ -53,7 +52,7 @@ namespace Controles.Controles
                 panel.Height = nuevaAltura;
             }
         }
-//----------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------
         private string ConvertToRoman(int number)
         {
             // Convertir número a romano (simplificado para este caso)
@@ -77,7 +76,7 @@ namespace Controles.Controles
             if (number == 18) return "XVIII";
             if (number == 19) return "XIX";
             if (number == 20) return "XX";
-            else 
+            else
             {
                 MessageBox.Show("El número de caratula se encuentra fuera del rango.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 

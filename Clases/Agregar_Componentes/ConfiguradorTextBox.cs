@@ -2,11 +2,6 @@
  EL COMBOBOX AL QUE SE QUIERE AGREGRAR UN NUEVO ITEM*/
 
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -31,7 +26,7 @@ namespace Clases.Agregar_Componentes
                         if (tb != null)
                         {
                             int pos = tb.SelectionStart; // Guarda la posición del cursor
-                           // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text); // Convierte a mayúsculas
+                                                         // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text); // Convierte a mayúsculas
                             tb.SelectionStart = pos; // Restaura la posición del cursor
                         }
                     };

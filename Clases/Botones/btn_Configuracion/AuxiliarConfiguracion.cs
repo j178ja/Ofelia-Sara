@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing;
+﻿using Clases.Reposicon_paneles;
+using Ofelia_Sara.Agregar_Componentes;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
-using Clases.Reposicon_paneles;
-using Ofelia_Sara.Agregar_Componentes;
-using Ofelia_Sara.Acceso_Usuarios;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 
 
@@ -32,7 +27,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         public ContextMenuStrip CrearMenuConfigurar()
         {
-            
+
             // Crear un nuevo ContextMenuStrip
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
 
@@ -61,7 +56,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             menu_Configurar.Items.Add(item_Buscar);
             menu_Configurar.Items.Add(item_Remover);
             menu_Configurar.Items.Add(item_Salir);
-    
+
 
             // Manejo de eventos
             item_Salir.Click += (sender, e) => ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).Close();
@@ -77,7 +72,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             var subItem_Agregar_Dependencia = new ToolStripMenuItem("DEPENDENCIA", null, (s, e) => Agregar_Dependencia());
             var subItem_Agregar_UFID = new ToolStripMenuItem("U.F.I.D.", null, (s, e) => Agregar_UFID());
             var subItem_Agregar_AgenteFiscal = new ToolStripMenuItem("AGENTE FISCAL", null, (s, e) => Agregar_AgenteFiscal());
-         
+
 
             item_Agregar.DropDownItems.Add(subItem_Agregar_Secretario);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Instructor);
@@ -122,14 +117,14 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
         }
-    
+
 
         // Crear el ítem "SALIR"
         ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
 
 
 
-  // ----MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU-----
+        // ----MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU-----
 
 
         // Métodos para abrir formularios
@@ -199,7 +194,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         private void Buscar_Victima()
         {
-            AbrirFormulario<BuscarForm>( "textBox_Victima");
+            AbrirFormulario<BuscarForm>("textBox_Victima");
         }
 
         private void Buscar_Imputado()
@@ -229,7 +224,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         // ------PARA Btn REMOVER----------------------
         private void Item_Remover_Click(object sender, EventArgs e)
-        { 
+        {
             AbrirFormulario<UsuarioForm>();
         }
 
@@ -245,15 +240,15 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             {
                 // Si el formulario no está abierto, crear una nueva instancia
                 form = new T();
-             
 
-            // Posicionar el nuevo formulario justo debajo del formulario principal
-            FormPositioner.PosicionarDebajo(_menuPrincipal, form);
-            // Ajustar la posición para la separación deseada
-            form.Left = _menuPrincipal.Left - 6;  // 6 píxeles a la izquierda
-            form.Top = _menuPrincipal.Top + _menuPrincipal.Height + 10;  // 10 píxeles hacia abajo
 
-            form.Show();
+                // Posicionar el nuevo formulario justo debajo del formulario principal
+                FormPositioner.PosicionarDebajo(_menuPrincipal, form);
+                // Ajustar la posición para la separación deseada
+                form.Left = _menuPrincipal.Left - 6;  // 6 píxeles a la izquierda
+                form.Top = _menuPrincipal.Top + _menuPrincipal.Height + 10;  // 10 píxeles hacia abajo
+
+                form.Show();
             }
             else
             {

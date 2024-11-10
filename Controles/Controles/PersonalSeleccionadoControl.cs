@@ -1,19 +1,12 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using BaseDatos.Adm_BD.Manager;
 using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Mensajes;
-using Controles.Controles;
 using Ofelia_Sara.Registro_de_personal;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 

@@ -1,23 +1,18 @@
 ﻿
-using System;
-using System.Windows.Forms;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using Clases.Texto;
+using BaseDatos.Entidades;
 using Clases.Apariencia;
 using Clases.Botones;
-using Ofelia_Sara.Formularios;
-using System.ComponentModel;
-using Ofelia_Sara.general.clases;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using System.Windows.Controls;
 using Clases.GenerarDocumentos;
-using System.IO;
-using Controles.Controles;
-using System.Collections.Generic;
-using BaseDatos.Entidades;
-using System.Linq;
+using Clases.Texto;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 
 
@@ -38,7 +33,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //----------------------------------------------------------------------------------
         //---sobrecargar para que reciba los datos desde form iniciocierre
         public Cargo(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
-                 string victima, string imputado, string fiscalia, string agenteFiscal,string localidad,
+                 string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
                  string instructor, string secretario, string dependencia)
         {
             InitializeComponent();
@@ -119,7 +114,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Desactivar los ComboBoxes de detalle mientras se actualizan
             comboBox_AgenteFiscal.Enabled = false;
             comboBox_Localidad.Enabled = false;
-          
+
             // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
             if (comboBox_Fiscalia.SelectedItem != null)
             {
@@ -131,29 +126,29 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
                     comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
                     comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
-         
+
                 }
                 else
                 {
                     // Si no se encuentra la fiscalía, limpiar los ComboBoxes
                     comboBox_AgenteFiscal.DataSource = null;
                     comboBox_Localidad.DataSource = null;
-                   
+
                 }
 
                 // Reactivar los ComboBoxes de detalle
                 comboBox_AgenteFiscal.Enabled = true;
                 comboBox_Localidad.Enabled = true;
-                            }
+            }
             else
             {
                 // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
                 comboBox_AgenteFiscal.DataSource = null;
                 comboBox_Localidad.DataSource = null;
-           
+
                 comboBox_AgenteFiscal.Enabled = false;
                 comboBox_Localidad.Enabled = false;
-               
+
             }
         }
         //----------------------------------------------------------------
@@ -416,22 +411,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 return null;
             }
 
-            
+
 
             // Añadimos los valores de los controles al diccionario
-            datosFormulario.Add("NumeroCargo", textBox_NumeroCargo.Text);  
-            datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);  
-            datosFormulario.Add("Caratula", textBox_Caratula.Text);  
-            datosFormulario.Add("Victima", textBox_Victima.Text); 
-            datosFormulario.Add("Imputado", textBox_Imputado.Text); 
-         
-     
+            datosFormulario.Add("NumeroCargo", textBox_NumeroCargo.Text);
+            datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);
+            datosFormulario.Add("Caratula", textBox_Caratula.Text);
+            datosFormulario.Add("Victima", textBox_Victima.Text);
+            datosFormulario.Add("Imputado", textBox_Imputado.Text);
+
+
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
             datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
-        
+
 
             return datosFormulario;
         }

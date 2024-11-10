@@ -1,23 +1,13 @@
-﻿
-using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Clases.Texto;
+﻿using BaseDatos.Adm_BD.Manager;
 using Clases.Apariencia;
 using Clases.Botones;
+using Clases.Texto;
 using Ofelia_Sara.Formularios;
-using BaseDatos.Entidades;
-using Clases.Agregar_Componentes;
-using BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -26,14 +16,14 @@ namespace Ofelia_Sara.Agregar_Componentes
     {
         private SellosDependencia sellosDependenciaForm;
 
-        private ComisariasManager dbManager; 
+        private ComisariasManager dbManager;
 
         public event Action<string> DependenciaTextChanged;//para  actualizar en tiempo real con form SellosDependencia
         public event Action<string> LocalidadTextChanged;//para  actualizar en tiempo real con form SellosDependencia
 
         // Define un delegado para el evento ItemAgregado
         public delegate void ItemAgregadoEventHandler(object sender, string nuevoItem);
-                           // Evento que se dispara cuando se agrega un nuevo ítem
+        // Evento que se dispara cuando se agrega un nuevo ítem
         public event ItemAgregadoEventHandler ItemAgregado;
 
         // Definición de ComboBoxFilePath como propiedad
@@ -41,9 +31,9 @@ namespace Ofelia_Sara.Agregar_Componentes
         public NuevaDependencia()
         {
             InitializeComponent();
-                            // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
+            // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
             this.Load += new EventHandler(NuevaDependencia_Load);
-                           // Aplica el estilo de botón de BaseForm
+            // Aplica el estilo de botón de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
             this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
@@ -53,10 +43,10 @@ namespace Ofelia_Sara.Agregar_Componentes
 
             // Asocia el evento TextChanged del TextBox
             textBox_Dependencia.TextChanged += TextBox_Dependencia_TextChanged;
-          
+
             //para redondear bordes panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
         }
@@ -66,7 +56,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
             MayusculaSola.AplicarAControl(textBox_Localidad);
-            
+
 
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
@@ -81,7 +71,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
         }
         //-----------------------------------------------------------------------------
-       
+
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
@@ -90,7 +80,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         //___________________________________________________________________________
         private void NuevaDependencia_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         //------------------------------------------------------------------------------
@@ -115,9 +105,9 @@ namespace Ofelia_Sara.Agregar_Componentes
             string localidad = textBox_Localidad.Text;
             string partido = textBox_Partido.Text;
 
-            if (!string.IsNullOrEmpty(dependencia)&& !string.IsNullOrEmpty(localidad))
+            if (!string.IsNullOrEmpty(dependencia) && !string.IsNullOrEmpty(localidad))
             {
-                
+
 
                 // Llamada a la base de datos para insertar los datos en la tabla 'Comisarias'
                 try
@@ -125,14 +115,14 @@ namespace Ofelia_Sara.Agregar_Componentes
                     dbManager.InsertComisaria(dependencia, domicilio, localidad, partido); // Utiliza el método de inserción
 
                     MensajeGeneral.Mostrar("Se ha guardado la nueva Dependencia en la base de datos.", MensajeGeneral.TipoMensaje.Exito);
-                    
+
                     // Limpiar el formulario
                     LimpiarFormulario.Limpiar(this);
-                
+
                 }
                 catch (Exception ex)
                 {
-                    MensajeGeneral.Mostrar($"Error al guardar en la base de datos: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                    MensajeGeneral.Mostrar($"Error al guardar en la base de datos: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
                 }
 
                 // Limpiar el formulario
@@ -140,7 +130,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
             else
             {
-                MensajeGeneral.Mostrar("Por favor ingrese el nombre y localidad  de la nueva Dependencia.",MensajeGeneral.TipoMensaje.Advertencia); 
+                MensajeGeneral.Mostrar("Por favor ingrese el nombre y localidad  de la nueva Dependencia.", MensajeGeneral.TipoMensaje.Advertencia);
             }
         }
 
@@ -168,7 +158,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                         if (tb != null)
                         {
                             int pos = tb.SelectionStart;
-                           // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
+                            // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
                             tb.SelectionStart = pos;
                         }
                     };
@@ -184,7 +174,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
             // Mostrar un mensaje de ayuda
             MensajeGeneral.Mostrar("Debe ingresar el nombre de la dependencia tal y como se usa en actuaciones." + "El domicilio será empleado en plantilla de Inspeccion Ocular", MensajeGeneral.TipoMensaje.Informacion);
-           // Cancelar el evento para que no se cierre el formulario
+            // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
         //_________________________________________________________________________
@@ -277,7 +267,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             textBox_Dependencia.SelectionStart = textBox_Dependencia.Text.Length;
 
             // Dispara el evento si hay suscriptores
-           DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
         }
 
 
@@ -294,7 +284,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         }
         //-----------------------------------------------------------------------------
         //---para actualizar automaticamente entre form NuevaDependencia y SellosDependencia--
-   
+
         public string TextoDependencia
         {
             get { return textBox_Dependencia.Text; }

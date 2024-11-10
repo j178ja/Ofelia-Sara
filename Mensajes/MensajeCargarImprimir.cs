@@ -3,7 +3,6 @@
 ----------crear una nueva instancia tras  hacer click en boton imprimir-----*/
 //------------------------------------------------------------------------------------------------------------------------------
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -209,7 +208,7 @@ namespace Ofelia_Sara.general.clases
 
         }
 
-     
+
     }
 
     public static class PanelExtensions

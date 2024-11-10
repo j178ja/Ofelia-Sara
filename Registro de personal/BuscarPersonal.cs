@@ -1,23 +1,15 @@
 ﻿
+using BaseDatos.Adm_BD.Manager;
 using Clases.Texto;
+using Controles.Controles;
 using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
-using Clases.Apariencia;
+using Ofelia_Sara.Formularios;
+using Ofelia_Sara.Mensajes;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
-using Controles.Controles;
-using MySql.Data.MySqlClient;
-using Ofelia_Sara.Mensajes;
-using BaseDatos.Adm_BD.Manager;
 
 namespace Ofelia_Sara.Registro_de_personal
 {

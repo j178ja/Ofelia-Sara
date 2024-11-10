@@ -6,15 +6,8 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Mensajes
 {
@@ -31,8 +24,8 @@ namespace Ofelia_Sara.Mensajes
             //Color bordeForm = System.Drawing.Color.DarkGray;
             Color bordeForm = Color.Black;
             Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
-           FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
-           FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
+            FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
+            FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
 
             // Ajustar altura del Label según el contenido
             AjustarAlturaContenedores();
@@ -141,7 +134,7 @@ namespace Ofelia_Sara.Mensajes
             int y = 65;
 
             // Asigna la nueva posición al label
-            label_Texto.Location = new Point(x,y);
+            label_Texto.Location = new Point(x, y);
         }
 
         // Dentro de MensajeGeneral
@@ -165,7 +158,7 @@ namespace Ofelia_Sara.Mensajes
             btn_No.Visible = mostrar;
             btn_Cerrar.Visible = false;
             btn_No.Focus();
-            btn_No.BackColor= Color.FromArgb(255, 70, 70); 
+            btn_No.BackColor = Color.FromArgb(255, 70, 70);
         }
 
     }

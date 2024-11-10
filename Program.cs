@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Ofelia_Sara.Formularios;
+using System;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
-using Ofelia_Sara.Acceso_Usuarios;
-using BaseDatos;
 
 namespace Ofelia_Sara
 {
@@ -20,8 +18,8 @@ namespace Ofelia_Sara
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MenuPrincipal());
-           
-         
+
+
         }
     }
 }

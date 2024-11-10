@@ -1,15 +1,7 @@
 ﻿using Ofelia_Sara.general.clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
 
 
 namespace Ofelia_Sara.Formularios
@@ -59,7 +51,7 @@ namespace Ofelia_Sara.Formularios
         {
             // Define el número de teléfono en formato internacional (sin + ni espacios)
             string phoneNumber = "+542236971880"; // Reemplaza con el número deseado
-                                               // Define el mensaje (opcional)
+                                                  // Define el mensaje (opcional)
             string message = "Hola, ¿cómo estás?";
 
             // Construye la URL de WhatsApp
@@ -79,7 +71,7 @@ namespace Ofelia_Sara.Formularios
         private void pictureBox_Linkedin_Click(object sender, EventArgs e)
         {
             // Define la URL del perfil de LinkedIn
-    string linkedinProfileUrl = "https://www.linkedin.com/in/jorge-bonato-ba2521271/"; 
+            string linkedinProfileUrl = "https://www.linkedin.com/in/jorge-bonato-ba2521271/";
 
             // Abre la URL en el navegador predeterminado
             try
@@ -96,7 +88,7 @@ namespace Ofelia_Sara.Formularios
         private void pictureBox_Github_Click(object sender, EventArgs e)
         {
             // Define la URL del perfil de Github
-            string GithubUrl = "https://github.com/j178ja"; 
+            string GithubUrl = "https://github.com/j178ja";
 
             // Abre la URL en el navegador predeterminado
             try
@@ -109,7 +101,7 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-      
+
         private void txt_Curriculum()
         {
 

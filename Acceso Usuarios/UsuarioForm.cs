@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
+﻿using Ofelia_Sara.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
-using Ofelia_Sara;
-using Ofelia_Sara.Acceso_Usuarios;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 
@@ -20,14 +14,14 @@ namespace Ofelia_Sara.Formularios
 {
     public partial class UsuarioForm : BaseForm
     {
-       
+
         public UsuarioForm()
         {
             InitializeComponent();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-       
+
         }
 
         private void Usuario_Load(object sender, EventArgs e)
@@ -57,7 +51,7 @@ namespace Ofelia_Sara.Formularios
 
             // Ajustar la posición del formulario de registro para que esté justo encima de UsuarioForm
             int posicionX = usuarioForm.Location.X + (usuarioForm.Width - registroForm.Width) / 2; // Centrar en X
-            int posicionY = usuarioForm.Location.Y + (usuarioForm.Height - registroForm.Height) / 2+112; // no es la mejor forma pero se posiciona debajo de menu_Principal
+            int posicionY = usuarioForm.Location.Y + (usuarioForm.Height - registroForm.Height) / 2 + 112; // no es la mejor forma pero se posiciona debajo de menu_Principal
 
 
             // Establecer la posición manualmente
@@ -71,8 +65,8 @@ namespace Ofelia_Sara.Formularios
 
         private void UsuarioForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            
-            MensajeGeneral.Mostrar("Ingrese en los campos correspondientes, Usuario y contraseña." + "En caso de no estar registrado, presione boton REGISTRARSE",MensajeGeneral.TipoMensaje.Informacion);
+
+            MensajeGeneral.Mostrar("Ingrese en los campos correspondientes, Usuario y contraseña." + "En caso de no estar registrado, presione boton REGISTRARSE", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -135,7 +129,7 @@ namespace Ofelia_Sara.Formularios
                 ModificarEliminar formModificarEliminar = new ModificarEliminar();
 
                 // Calcular la nueva ubicación para el formulario ModificarEliminar
-                int x = menuPrincipalLocation.X-6; // Mantener la misma posición horizontal
+                int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
                 int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
 
                 // Ajustar la ubicación del formulario ModificarEliminar
@@ -145,7 +139,7 @@ namespace Ofelia_Sara.Formularios
                 // Mostrar el formulario como una ventana modal
                 formModificarEliminar.Show();
             }
-            
+
         }
 
         // Método de ejemplo para la validación

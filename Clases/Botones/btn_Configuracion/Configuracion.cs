@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Clases.Botones.btn_Configuracion
 {
@@ -86,9 +84,9 @@ namespace Clases.Botones.btn_Configuracion
             // Asociar el ContextMenuStrip al botón
             boton.ContextMenuStrip = menu_Configurar;
 
-   
+
         }
 
-  
+
     }
 }

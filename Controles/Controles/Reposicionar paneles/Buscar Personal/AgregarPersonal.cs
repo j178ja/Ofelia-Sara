@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Windows;
 
 namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
 {
@@ -105,7 +98,7 @@ namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
         // Reposiciona el panel inferior y ajusta el scroll si es necesario
         private void ReposicionarPanelInferior(Panel panel, Panel panel_PersonalSeleccionado, Panel panel_ControlesInferiores)
         {
-             // Ajustar la altura y el scroll del panel basado en la cantidad de controles
+            // Ajustar la altura y el scroll del panel basado en la cantidad de controles
             if (panel.Controls.Count > MaxControlesVisibles)
             {
                 panel.Height = panel.Controls[MaxControlesVisibles - 1].Bottom;
@@ -120,10 +113,10 @@ namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
             // Asegurarse de que solo se habilite el scroll vertical
             panel.VerticalScroll.Visible = panel.AutoScroll; // Muestra el scroll vertical solo si está habilitado
 
-          
+
             // Reposicionar el panel inferior
-            panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom + EspacioEntrePaneles+10;
-           
+            panel_ControlesInferiores.Top = panel_PersonalSeleccionado.Bottom + EspacioEntrePaneles + 10;
+
         }
 
 
@@ -169,7 +162,7 @@ namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
 
             // Ajustar el tamaño del formulario para que se adapte al nuevo tamaño de panel1
             formulario.Height = panel1.Bottom + 85; // Asegúrate de que 85 sea el margen correcto
-       
+
         }
 
 

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
-using Controles.Controles.Aplicadas_con_controles;
+﻿using Clases.Botones;
 using Clases.Texto;
-using Clases.Botones;
+using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -123,7 +117,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1;
             comboBox_EstadoCivil.SelectedIndex = -1;
-           
+
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
 
         }

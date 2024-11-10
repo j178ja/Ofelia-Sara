@@ -1,27 +1,18 @@
-﻿using BaseDatos;
-using Ofelia_Sara.general.clases;
-using Controles.Controles.Aplicadas_con_controles;
-using Clases.Texto;
-using Clases.Botones;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
-using BaseDatos.Entidades;
-
-using Controles.Controles;
-using MySql.Data.MySqlClient;
-using System.Configuration;
-using Ofelia_Sara.Mensajes;
-using BaseDatos.Adm_BD.Manager;
-using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+﻿using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
+using BaseDatos.Entidades;
+using Clases.Botones;
+using Clases.Texto;
+using Controles.Controles.Aplicadas_con_controles;
+using MySql.Data.MySqlClient;
+using Ofelia_Sara.Formularios;
+using Ofelia_Sara.general.clases;
+using Ofelia_Sara.Mensajes;
+using System;
+using System.ComponentModel;
+using System.Configuration;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -81,7 +72,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
 
-           
+
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
 
@@ -107,7 +98,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
         private void NuevoPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MensajeGeneral.Mostrar("Debe completar la totalidad de los campos requeridos." + "Todos ellos serán empleados para completar plantilla de Ratificación policial",MensajeGeneral.TipoMensaje.Informacion);
+            MensajeGeneral.Mostrar("Debe completar la totalidad de los campos requeridos." + "Todos ellos serán empleados para completar plantilla de Ratificación policial", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -127,15 +118,15 @@ namespace Ofelia_Sara.Registro_de_personal
 
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
-                // Solo permite dígitos y teclas de control
-                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
+            // Solo permite dígitos y teclas de control
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
 
-                ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
+            ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
         }
-        
+
         private void configurarTextoEnControles()
         {
             MayusculaSola.AplicarAControl(textBox_Nombre);
@@ -149,7 +140,7 @@ namespace Ofelia_Sara.Registro_de_personal
             MayusculaSola.AplicarAControl(comboBox_Nacionalidad);
 
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
-            
+
             MayusculaYnumeros.AplicarAControl(textBox_DomicilioPnal);
             MayusculaYnumeros.AplicarAControl(textBox_ArmaMarca);
             MayusculaYnumeros.AplicarAControl(textBox_ArmaModelo);
@@ -268,7 +259,7 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
             {
-                MensajeGeneral.Mostrar("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.",MensajeGeneral.TipoMensaje.Informacion);
+                MensajeGeneral.Mostrar("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.", MensajeGeneral.TipoMensaje.Informacion);
                 comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
             }
         }

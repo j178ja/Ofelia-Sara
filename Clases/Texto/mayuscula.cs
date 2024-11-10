@@ -1,11 +1,11 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE EL TEXTO INTRODUCIDO SE COLOQUE AUTOMATICAMENTE EN
   ---------------MAYUSCULAS---------------------------------------*/
+using Clases.Texto;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Clases.Texto;
 // Esta clase contiene métodos para convertir texto a mayúsculas y filtrar caracteres especiales y números.
 public static class TextoEnMayuscula
 {

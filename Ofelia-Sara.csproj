@@ -643,6 +643,10 @@
       <Project>{60eb6c4a-8efb-4cd8-a959-315342c6c9ff}</Project>
       <Name>BaseDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="DICTADO\DICTADO.csproj">
+      <Project>{6dbc9ac4-5deb-40a1-800e-d16a3ed42d61}</Project>
+      <Name>DICTADO</Name>
+    </ProjectReference>
     <ProjectReference Include="MECANOGRAFIA\MECANOGRAFIA.csproj">
       <Project>{f518907f-dccb-4960-807b-54f7bfbdba1c}</Project>
       <Name>MECANOGRAFIA</Name>

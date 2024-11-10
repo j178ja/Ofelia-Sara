@@ -12,7 +12,7 @@ namespace Controles.Controles
         {
             InitializeComponent();
             CustomNumeroTelefonicoControl_Load(this, EventArgs.Empty);
-            
+
         }
         // Propiedad para ajustar el ancho del control
         // Propiedad para ajustar el ancho del control
@@ -22,7 +22,7 @@ namespace Controles.Controles
             set
             {
                 this.Width = value;
-               
+
             }
         }
 

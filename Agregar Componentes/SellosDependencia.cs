@@ -1,20 +1,13 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls.WebParts;
-using System.Windows.Forms;
-using Clases.Texto;
-using Clases.Botones;
-using Ofelia_Sara.Formularios;
 using Clases.Apariencia;
-using Microsoft.Office.Interop.Word;
+using Clases.Botones;
+using Clases.Texto;
+using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Agregar_Componentes
@@ -35,7 +28,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             textBox_Localidad.Enabled = false;// inicializar en false
         }
 
-   
+
 
         private void SellosDependencia_Load(object sender, EventArgs e)
         {
@@ -94,13 +87,13 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
 
             // Actualiza los controles
-           ActualizarControles();
+            ActualizarControles();
 
             //----para actualizar textbox entre formularios
-                        // Asegura que el cursor esté al final del texto
+            // Asegura que el cursor esté al final del texto
             comboBox_Dependencia.SelectionStart = comboBox_Dependencia.Text.Length;
-                        // Disparar el evento si hay suscriptores
-           DependenciaTextChanged?.Invoke(comboBox_Dependencia.Text);
+            // Disparar el evento si hay suscriptores
+            DependenciaTextChanged?.Invoke(comboBox_Dependencia.Text);
 
             // Si el texto cambia (cuando el usuario escribe), permite la edición nuevamente
 
@@ -108,8 +101,8 @@ namespace Ofelia_Sara.Agregar_Componentes
             {
                 comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDown;
             }
-                // Habilitar el TextBox_Localidad si se escribe en el ComboBox
-                if (!string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+            // Habilitar el TextBox_Localidad si se escribe en el ComboBox
+            if (!string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
             {
                 textBox_Localidad.Enabled = true;
             }
@@ -134,7 +127,7 @@ namespace Ofelia_Sara.Agregar_Componentes
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Dependencia.SelectedIndex = -1;
-            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //-------------------------------------------------------------------------------
         //---------------------BOTON GUARDAR------------------------
@@ -229,7 +222,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                         }
                         catch (Exception ex)
                         {
-                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -271,7 +264,7 @@ namespace Ofelia_Sara.Agregar_Componentes
                 }
                 catch (Exception ex)
                 {
-                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                    MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
@@ -300,9 +293,9 @@ namespace Ofelia_Sara.Agregar_Componentes
         public void ActualizarTextoDependencia(string texto)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
-        if (comboBox_Dependencia.Text != texto)
+            if (comboBox_Dependencia.Text != texto)
             {
-               comboBox_Dependencia.Text = texto;
+                comboBox_Dependencia.Text = texto;
             }
         }
 

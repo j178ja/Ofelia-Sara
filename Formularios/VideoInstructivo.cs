@@ -1,13 +1,6 @@
-﻿using AxWMPLib;
-using Ofelia_Sara.general.clases;
+﻿using Ofelia_Sara.general.clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios
@@ -26,26 +19,26 @@ namespace Ofelia_Sara.Formularios
 
         private void VideoInstructivo_Load(object sender, EventArgs e)
         {
-            
-                // Ruta del archivo MP4
-                string videoPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\videos\instructivoDemo.mp4";
 
-                // Verificar si el archivo existe
-                if (System.IO.File.Exists(videoPath))
-                {
-                    // Establecer la URL en el control AxWindowsMediaPlayer
-                    instructivo.URL = videoPath;
+            // Ruta del archivo MP4
+            string videoPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\videos\instructivoDemo.mp4";
 
-                    // Iniciar la reproducción
-                    instructivo.Ctlcontrols.play();
-                }
-                else
-                {
-                    MessageBox.Show("El archivo de video no se encontró en la ruta especificada.");
-                }
+            // Verificar si el archivo existe
+            if (System.IO.File.Exists(videoPath))
+            {
+                // Establecer la URL en el control AxWindowsMediaPlayer
+                instructivo.URL = videoPath;
+
+                // Iniciar la reproducción
+                instructivo.Ctlcontrols.play();
             }
+            else
+            {
+                MessageBox.Show("El archivo de video no se encontró en la ruta especificada.");
+            }
+        }
 
-        
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -1,23 +1,17 @@
-﻿using System;
+﻿using BaseDatos.Adm_BD.Manager;
+using BaseDatos.Adm_BD.Modelos;
+using BaseDatos.Entidades;
+using Clases.Apariencia;
+using Clases.Botones;
+using Clases.Texto;
+using Ofelia_Sara.Formularios;
+using Ofelia_Sara.Mensajes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BaseDatos.Entidades;
-using BaseDatos.Adm_BD.Manager;
-using BaseDatos.Adm_BD.Modelos;
-
-
-using Clases.Apariencia;
-using Ofelia_Sara.Formularios;
-using Clases.Texto;
-using Clases.Botones;
-using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Acceso_Usuarios
 {
@@ -735,7 +729,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     string selectedItem = listBox_Seleccion.SelectedItem.ToString();
 
                     btn_Guardar.Enabled = true;//sehabilita seleccion
-                
+
                     switch (selectedItem)// Dependiendo del ítem seleccionado, crea el panel de detalles correspondiente
                     {
                         case "Dependencia":
@@ -852,18 +846,18 @@ namespace Ofelia_Sara.Acceso_Usuarios
             }
         }
         //--------------------------------------------------------
-       
+
 
         //__________________________________________________________________________________
         //-------------BOTON CANCELAR---------------------------
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
-         FinalizarEdicion();
-            
-            listBox_Seleccion.SelectedIndex=-1; // hace que se deshabiliten los botones y se ponga gris listbox_Seleccion
+            FinalizarEdicion();
+
+            listBox_Seleccion.SelectedIndex = -1; // hace que se deshabiliten los botones y se ponga gris listbox_Seleccion
         }
-         
+
         private void FinalizarEdicion()
         {
             // Ocultar y eliminar panel_Detalles si está visible
@@ -904,11 +898,11 @@ namespace Ofelia_Sara.Acceso_Usuarios
             panel_Detalles.Location = new Point(panel_Detalles.Location.X, panel_Superior.Bottom);
 
             // Ajusta la posición de panel_Botones justo debajo de panel_Detalles con el margen definido
-            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom -100);
+            panel_Botones.Location = new Point(panel_Botones.Location.X, panel_Detalles.Bottom - 100);
 
-           
+
             // Ajusta la altura de panel1 para que contenga ambos paneles con un margen de 10 px debajo de panel_Botones
-            panel1.Height = panel_Botones.Bottom +110;
+            panel1.Height = panel_Botones.Bottom + 110;
 
             // Ajusta la altura del formulario para que sea 30 píxeles mayor que panel1
             this.Height = panel1.Bottom + 75;
@@ -959,12 +953,12 @@ namespace Ofelia_Sara.Acceso_Usuarios
             //}
             else
             {
-                MensajeGeneral.Mostrar("Tipo de elemento no soportado para eliminación.",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar("Tipo de elemento no soportado para eliminación.", MensajeGeneral.TipoMensaje.Error);
                 return;
             }
 
             // Limpiar el ListBox y recargar datos
-            
+
             //CargarDatosEnListBox();
             ClearModificationControls();
             // Deshabilitar botones
@@ -974,7 +968,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             btn_Eliminar.Enabled = false;
             listBox_Datos.Enabled = false;
             listBox_Datos.BackColor = Color.LightGray;
-            MensajeGeneral.Mostrar("El elemento ha sido eliminado.",MensajeGeneral.TipoMensaje.Exito);
+            MensajeGeneral.Mostrar("El elemento ha sido eliminado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
         // Método auxiliar para eliminar el elemento seleccionado de la fuente de datos
@@ -984,7 +978,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
             dataSource?.Remove(item);
         }
 
-        
+
         //---------------------------------------------------------------------------------------
 
 
@@ -1017,11 +1011,11 @@ namespace Ofelia_Sara.Acceso_Usuarios
                     GuardarCambiosFiscalia();
                     FinalizarEdicion();
                 }
-                
+
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"Error al guardar los cambios: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar($"Error al guardar los cambios: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 

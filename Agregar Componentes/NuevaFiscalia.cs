@@ -1,28 +1,18 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Clases.Texto;
-using Clases.Botones;
-using Ofelia_Sara.Formularios;
-using Clases.Apariencia;
-
-using BaseDatos.Entidades;
-using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
-using BaseDatos.Adm_BD;
-using System.Data.Common;
+using Clases.Apariencia;
+using Clases.Botones;
+using Clases.Texto;
+using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {
-    public partial class NuevaFiscalia: BaseForm
+    public partial class NuevaFiscalia : BaseForm
     {
         public NuevaFiscalia()
         {
@@ -53,12 +43,12 @@ namespace Ofelia_Sara.Agregar_Componentes
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Fiscalia.Focus();
         }
-        
+
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
             MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable en los formularios", MensajeGeneral.TipoMensaje.Informacion);
-            
+
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
@@ -73,7 +63,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
             MayusculaSola.AplicarAControl(textBox_Localidad);
 
-           
+
         }
         ////--------------------------------------------------------------------
         //private void LimpiarTextBox()
@@ -108,7 +98,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             }
         }
 
-        
+
 
         //---------------------BOTON LIMPIAR------------------------
         private void btn_Limpiar_Click(object sender, EventArgs e)
@@ -116,7 +106,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-           
+
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //---------BOTON GUARDAR---------------------------------------
@@ -125,7 +115,7 @@ namespace Ofelia_Sara.Agregar_Componentes
             if
               (string.IsNullOrWhiteSpace(textBox_Fiscalia.Text) ||
                string.IsNullOrWhiteSpace(textBox_AgenteFiscal.Text) ||
-               string.IsNullOrWhiteSpace(textBox_Localidad.Text)||
+               string.IsNullOrWhiteSpace(textBox_Localidad.Text) ||
                string.IsNullOrWhiteSpace(textBox_DeptoJudicial.Text))
             {
                 MessageBox.Show("Debe completar la totalidad de campos.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -143,8 +133,8 @@ namespace Ofelia_Sara.Agregar_Componentes
                 };
 
                 // Instanciar FiscaliasManager y llamar a InsertFiscalia para guardar los datos
-               // FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
-               // fiscaliaManager.InsertFiscalia(nuevaFiscalia);
+                // FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
+                // fiscaliaManager.InsertFiscalia(nuevaFiscalia);
 
                 MensajeGeneral.Mostrar("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", MensajeGeneral.TipoMensaje.Informacion);
 

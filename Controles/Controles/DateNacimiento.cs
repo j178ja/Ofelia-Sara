@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -19,10 +14,10 @@ namespace Controles.Controles
         private bool isClosing = false; // Declarar la variable a nivel de clase
         public CustomDateTextBox()
         {
-            InitializeComponent();    
+            InitializeComponent();
 
-        // Configurar textBox_DateDIA
-        textBox_DateDIA.MaxLength = 2; // Limitar a 2 caracteres
+            // Configurar textBox_DateDIA
+            textBox_DateDIA.MaxLength = 2; // Limitar a 2 caracteres
             textBox_DateDIA.KeyPress += TextBox_Date_KeyPress;
 
             // Configurar textBox_DateMES
@@ -232,7 +227,7 @@ namespace Controles.Controles
         //---------------------------------------------------------------------------
         //--------CALCULAR ANTIGUEDAD----------------------------------------------
 
-     
+
     }
 
 }

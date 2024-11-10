@@ -1,27 +1,21 @@
-﻿using Ofelia_Sara.general.clases;
-using Clases.Reposicon_paneles;
-using Clases.Botones;
-using Clases.Texto;
-using System;
-using System.Windows.Forms;
-using System.Drawing;
-using Ofelia_Sara.Formularios;
-using System.ComponentModel;
-using Controles.Controles;
-using BaseDatos.Entidades;
-using System.Collections.Generic;
+﻿using Clases.Botones;
 using Clases.GenerarDocumentos;
-using System.IO;
-using BaseDatos;
-using BaseDatos.Adm_BD.Manager;
-using BaseDatos.Adm_BD.Modelos;
+using Clases.Texto;
+using Controles.Controles;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
-  
+
 
     public partial class Contravenciones : BaseForm
     {
@@ -33,7 +27,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-          
+
         }
 
         private void Contravenciones_Load(object sender, EventArgs e)
@@ -54,7 +48,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaSola.AplicarAControl(textBox_Apellido);
             MayusculaSola.AplicarAControl(comboBox_Nacionalidad);
 
-           // InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            // InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             //InicializarComboBoxINSTRUCTOR();
             // InicializarComboBoxDEPENDENCIAS();
 
@@ -64,16 +58,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
         }
-      
+
 
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-          //  InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
+            //  InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             //InicializarComboBoxINSTRUCTOR();
-          //  InicializarComboBoxDEPENDENCIAS();
+            //  InicializarComboBoxDEPENDENCIAS();
             comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
             comboBox_Dependencia.SelectedIndex = -1;
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
@@ -100,7 +94,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //--------------------------------------------------------------------------------------------
-    
+
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -144,12 +138,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Edad", textBox_Edad.Text);
             datosFormulario.Add("Domicilio", textBox_Domicilio.Text);
             datosFormulario.Add("Localidad", textBox_Localidad.Text);
-            datosFormulario.Add("Nacionalidad", comboBox_Nacionalidad.SelectedItem.ToString());  
-            datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  
+            datosFormulario.Add("Nacionalidad", comboBox_Nacionalidad.SelectedItem.ToString());
+            datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
             datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
-           
+
             // Verificar que fechaNacimiento no sea nula antes de agregarla al diccionario
             if (fechaNacimiento.HasValue)
             {
@@ -163,7 +157,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                 return null;// Detener el proceso si la fecha de instrucción no es válida
             }
-            
+
             return datosFormulario;
         }
         //------------------------------------------------------------------------------------

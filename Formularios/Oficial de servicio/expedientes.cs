@@ -1,28 +1,17 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿using Clases.Botones;
+using Clases.GenerarDocumentos;
+using Clases.Texto;
+using Controles.Controles;
 using Ofelia_Sara.general.clases;
+using Ofelia_Sara.Mensajes;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms;
-using WordApp = Microsoft.Office.Interop.Word.Application;
-using WinFormsApp = System.Windows.Forms.Application;
-using DrawingPoint = System.Drawing.Point;
-using WordPoint = Microsoft.Office.Interop.Word.Point;
-using Spire.Pdf;
 using System.IO;
-using Spire.Doc;
 using System.Linq;
-using Spire.Doc.Documents;
-using System.Collections.Generic;
-using Clases.Texto;
-using Clases.Botones;
-using Clases.GenerarDocumentos;
-using Clases.Reposicon_paneles;
-using Ofelia_Sara.Formularios;
-using Controles.Controles;
-using System.ComponentModel;
-using Controles.Controles.Reposicionar_paneles.Expedientes;
-using Ofelia_Sara.Mensajes;
+using System.Windows.Forms;
 
 
 
@@ -57,7 +46,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Expedientes_Load(object sender, EventArgs e)
         {
-            this.FormClosing += BuscarPersonal_FormClosing; 
+            this.FormClosing += BuscarPersonal_FormClosing;
 
             InicializarEstiloBoton(btn_Buscar);
             InicializarEstiloBoton(btn_Guardar);
@@ -90,7 +79,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
 
-          
+
         }
 
 
@@ -128,7 +117,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         }
                         catch (Exception ex)
                         {
-                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -248,12 +237,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else
                     {
-                        MensajeGeneral.Mostrar("El archivo arrastrado no es un documento de Word.",MensajeGeneral.TipoMensaje.Error);
+                        MensajeGeneral.Mostrar("El archivo arrastrado no es un documento de Word.", MensajeGeneral.TipoMensaje.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MensajeGeneral.Mostrar("No se pudo procesar el documento: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                    MensajeGeneral.Mostrar("No se pudo procesar el documento: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
@@ -329,7 +318,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     // Mostrar mensaje de advertencia y revertir la selección
                     MensajeGeneral.Mostrar("Ya has cargado un archivo para convertir a WORD. No puedes cambiar sin eliminar el archivo.",
-                                       
+
                                        MensajeGeneral.TipoMensaje.Advertencia);
                     radioButton_Pdf.Checked = false;
                     ActualizarPictureBox(pictureBox_APdf, false);  // Deshabilita PictureBox Pdf
@@ -1156,9 +1145,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
-     
 
-   
+
+
         //------------------------------------------------------------------------------------------------
         //   METODO PARA OBTENER DATOS DEL FORMULARIO
 
@@ -1276,7 +1265,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
     }
 }
-  
+
 
 
 

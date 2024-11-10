@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Clases.Botones
 {
@@ -15,7 +10,7 @@ namespace Clases.Botones
             toolTip.SetToolTip(button, toolTipText);
 
             Timer timer = new Timer();
-            timer.Interval = 100; 
+            timer.Interval = 100;
             timer.Tick += (sender, e) =>
             {
                 if (!button.Enabled && button.ClientRectangle.Contains(button.PointToClient(Control.MousePosition)))

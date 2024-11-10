@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Office.Interop.Word;
 using System.IO; // Para operaciones de archivo
 using System.Windows.Forms;//(usandolo se elimina error de que no reconosca menssageBox)
 using Word = Microsoft.Office.Interop.Word;

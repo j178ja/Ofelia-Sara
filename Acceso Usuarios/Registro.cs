@@ -1,20 +1,13 @@
-﻿using System;
-using MySql.Data.MySqlClient;//Para vincular a base de datos
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
+﻿using BaseDatos.Entidades;
 using Clases.Apariencia;
-using BaseDatos.Entidades;
-using Clases.Texto;
 using Clases.Botones;
-using MySqlX.XDevAPI.Common;
+using Clases.Texto;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -60,7 +53,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             comboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
         }
-       //--------------------------------------------------------------------------
+        //--------------------------------------------------------------------------
 
         private void Btn_Registrarse_Click(object sender, EventArgs e)
         {
@@ -68,14 +61,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (!ValidarTextBoxes(this))
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
-                MensajeGeneral.Mostrar("Debe completar la totalidad de campos.",MensajeGeneral.TipoMensaje.Advertencia);
+                MensajeGeneral.Mostrar("Debe completar la totalidad de campos.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
                 DialogResult result = MessageBox.Show("Se ha registrado un nuevo Usuario.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-              
+
                 // Si el usuario presiona "OK", cerrar el formulario actual
                 if (result == DialogResult.OK)
                 {

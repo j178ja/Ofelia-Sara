@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using Ofelia_Sara.general.clases;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Clases.Apariencia;
+﻿using Clases.Apariencia;
 using Clases.Botones;
 using Clases.Texto;
 using Controles.Controles;
 using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 
@@ -220,7 +213,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                         }
                         catch (Exception ex)
                         {
-                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message,MensajeGeneral.TipoMensaje.Error);
+                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
@@ -405,11 +398,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            comboBox_Nacionalidad.SelectedIndex = -1;  
-            comboBox_EstadoCivil.SelectedIndex = -1;  
-                                                                                       //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
-          
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedIndex = -1;
+            //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+
         }
         // Método para restablecer el placeholder
         private void ClearTextBoxPlaceholder(TextBox textBox)
@@ -521,7 +514,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
         //________________________________________________________________________________
 
-      
+
         private void TextBox_Ocupacion_TextChanged(object sender, EventArgs e)
         {
             // Obtiene el texto actual del TextBox
@@ -666,7 +659,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        
+
 
         private void ComboBox_EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -724,7 +717,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.Location = originalPosition;
         }
         //--------------------------------------------------------------------
-       
+
 
     }
 }
