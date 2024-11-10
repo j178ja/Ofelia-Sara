@@ -1,40 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.8": {
-      "BaseDatos/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/BaseDatos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BaseDatos.dll": {}
-        }
-      },
-      "MECANOGRAFIA/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/MECANOGRAFIA.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MECANOGRAFIA.dll": {}
-        }
-      },
-      "Ofelia-Sara/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "BaseDatos": "1.0.0",
-          "MECANOGRAFIA": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Ofelia-Sara.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Ofelia-Sara.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.8/win7-x86": {
+    "net8.0": {
       "BaseDatos/1.0.0": {
         "type": "project",
         "compile": {
@@ -86,7 +53,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.8": [
+    "net8.0": [
       "Ofelia-Sara >= 1.0.0"
     ]
   },
@@ -112,7 +79,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net48"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -120,8 +87,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net48": {
-          "targetAlias": "net48",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
             "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj": {
               "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj"
@@ -141,14 +108,25 @@
       }
     },
     "frameworks": {
-      "net48": {
-        "targetAlias": "net48",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win7-x86": {
-        "#import": []
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
