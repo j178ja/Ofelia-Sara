@@ -41,6 +41,7 @@
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Leyes = new System.Windows.Forms.PictureBox();
             this.panel_MenuSuperior = new System.Windows.Forms.Panel();
+            this.btn_Grabar = new System.Windows.Forms.Button();
             this.btn_Mecanografia = new System.Windows.Forms.Button();
             this.btn_Minimizar = new System.Windows.Forms.Button();
             this.label_MenuPrincipal = new System.Windows.Forms.Label();
@@ -202,6 +203,7 @@
             // panel_MenuSuperior
             // 
             this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel_MenuSuperior.Controls.Add(this.btn_Grabar);
             this.panel_MenuSuperior.Controls.Add(this.btn_Mecanografia);
             this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
             this.panel_MenuSuperior.Controls.Add(this.label_MenuPrincipal);
@@ -213,6 +215,25 @@
             this.panel_MenuSuperior.Size = new System.Drawing.Size(572, 34);
             this.panel_MenuSuperior.TabIndex = 17;
             this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
+            // 
+            // btn_Grabar
+            // 
+            this.btn_Grabar.BackgroundImage = global::Ofelia_Sara.Properties.Resources.microfono24;
+            this.btn_Grabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Grabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Grabar.FlatAppearance.BorderSize = 0;
+            this.btn_Grabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Grabar.Location = new System.Drawing.Point(396, 1);
+            this.btn_Grabar.Name = "btn_Grabar";
+            this.btn_Grabar.Size = new System.Drawing.Size(32, 32);
+            this.btn_Grabar.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.btn_Grabar, "REDACTAR POR VOZ");
+            this.btn_Grabar.UseVisualStyleBackColor = true;
+            this.btn_Grabar.Click += new System.EventHandler(this.btn_Grabar_Click);
+            this.btn_Grabar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.btn_Grabar.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
+            this.btn_Grabar.MouseHover += new System.EventHandler(this.Btn_MouseHover);
+            this.btn_Grabar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_Mecanografia
             // 
@@ -228,10 +249,10 @@
             this.toolTip1.SetToolTip(this.btn_Mecanografia, "MECANOGRAFIA");
             this.btn_Mecanografia.UseVisualStyleBackColor = true;
             this.btn_Mecanografia.Click += new System.EventHandler(this.Btn_Mecanografia_Click);
-            this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_Mecanografia_MouseDown);
-            this.btn_Mecanografia.MouseLeave += new System.EventHandler(this.Btn_Mecanografia_MouseLeave);
-            this.btn_Mecanografia.MouseHover += new System.EventHandler(this.Btn_Mecanografia_MouseHover);
-            this.btn_Mecanografia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_Mecanografia_MouseUp);
+            this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.btn_Mecanografia.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
+            this.btn_Mecanografia.MouseHover += new System.EventHandler(this.Btn_MouseHover);
+            this.btn_Mecanografia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_Minimizar
             // 
@@ -277,6 +298,9 @@
             this.label_OfeliaSara.Text = "Ofelia - Sara";
             this.toolTip1.SetToolTip(this.label_OfeliaSara, "Instructivo de la aplicación");
             this.label_OfeliaSara.Click += new System.EventHandler(this.Label_OfeliaSara_Click);
+            this.label_OfeliaSara.Paint += new System.Windows.Forms.PaintEventHandler(this.Label_OfeliaSara_Paint);
+            this.label_OfeliaSara.MouseLeave += new System.EventHandler(this.Label_OfeliaSara_MouseLeave);
+            this.label_OfeliaSara.MouseHover += new System.EventHandler(this.Label_OfeliaSara_MouseHover);
             // 
             // btn_Cerrar
             // 
@@ -515,6 +539,7 @@
         private System.Windows.Forms.Label label_MenuPrincipal;
         private System.Windows.Forms.Button btn_Minimizar;
         private System.Windows.Forms.Button btn_Mecanografia;
+        private System.Windows.Forms.Button btn_Grabar;
     }    
  }
 

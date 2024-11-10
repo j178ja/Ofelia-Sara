@@ -52,7 +52,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
             this.BackColor = Color.FromArgb(0, 154, 174); // Color de fondo del formulario
 
-           // Configurar el panel
+            // Configurar el panel
             panel1.BackColor = panelColor; // Color de fondo del panel
             panel1.Paint += panel1_Paint;
         }
@@ -141,51 +141,7 @@ namespace Ofelia_Sara.Registro_de_personal
             }
             else
             {
-                try
-                {
-                    // Crear una instancia de PersonalManager para interactuar con la base de datos
-                    PersonalManager personalManager = new PersonalManager();
-
-                    // Verificar si el número de legajo existe en la base de datos
-                    if (!personalManager.ExisteLegajo(textoFormateado))
-                    {
-                        MensajeGeneral.Mostrar("El número de legajo ingresado no corresponde a un efectivo policial registrado", MensajeGeneral.TipoMensaje.Advertencia);
-                    }
-                    else
-                    {
-                        // Crear una nueva instancia del control PersonalSeleccionadoControl
-                        PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
-
-                        // Suscribirse al evento que abrirá el formulario NuevoPersonal
-                        nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
-
-                        // Actualizar datos en el nuevo control usando el número de legajo
-                        nuevoControl.ActualizarDatosPorLegajo(textoFormateado);
-
-                        // Instanciar la clase AgregarPersonal
-                        AgregarPersonal agregarPersonal = new AgregarPersonal();
-
-                        // Llamar al método para agregar el control al panel
-                        agregarPersonal.AgregarControlAlPanel(
-                            nuevoControl,                 // El control nuevo a agregar
-                            panel_PersonalSeleccionado,   // Panel donde se agregará el control
-                            panel_PersonalSeleccionado,   // Panel que se debe ajustar (mismo panel, en este caso)
-                            panel_ControlesInferiores,    // Panel inferior a reposicionar
-                            panel1,                       // Panel principal
-                            this                          // El formulario actual
-                        );
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar("Error al conectar con la base de datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    // Limpiar el contenido del TextBox independientemente del resultado
-                    textBox_NumeroLegajo.Text = string.Empty;
-                    textBox_NumeroLegajo.Focus();
-                }
+                VerificarNumeroLegajo();
             }
         }
 
@@ -200,7 +156,7 @@ namespace Ofelia_Sara.Registro_de_personal
         }
 
         //---------------------------------------------------------------------------------------------------------------------
-      
+
 
         //____________________________________________________________________________________________
 
@@ -223,7 +179,7 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia)) 
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
                 {
                     // Hacer visibles los botones
                     mensaje.MostrarBotonesConfirmacion(true);
@@ -236,8 +192,110 @@ namespace Ofelia_Sara.Registro_de_personal
                 }
             }
         }
+        //para verificar que el personal seleccionado no haya sido previamente agregado
+        private void VerificarNumeroLegajo()
+        {
+            // Obtener el número ingresado en el TextBox
+            string numeroIngresado = textBox_NumeroLegajo.Text;
+            bool legajoEncontrado = false;
+
+            // Recorrer cada control dentro del panel_PersonalSeleccionado
+            foreach (Control control in panel_PersonalSeleccionado.Controls)
+            {
+                // Verificar si el control es un PersonalSeleccionadoControl
+                if (control is PersonalSeleccionadoControl personalControl)
+                {
+                    // Llamar al método auxiliar para buscar el Label_NumeroLegajo
+                    if (ContieneNumeroLegajo(personalControl, numeroIngresado))
+                    {
+                        MensajeGeneral.Mostrar("El personal seleccionado ya ha sido ingresado para su ratificación testimonial.", MensajeGeneral.TipoMensaje.Advertencia);
+                        legajoEncontrado = true;
+                        break; // Salir del bucle si se encuentra coincidencia
+                    }
+                }
+            }
+
+            // Si no se encontró el legajo, llamar a AgregarPersonalSeleccionado
+            if (!legajoEncontrado)
+            {
+                AgregarPersonalSeleccionado();
+            }
+        }
+
+        // Método auxiliar que busca recursivamente el Label con el número de legajo
+        private bool ContieneNumeroLegajo(Control parentControl, string numeroLegajo)
+        {
+            foreach (Control control in parentControl.Controls)
+            {
+                // Verificar si es un Label que contiene el número de legajo
+                if (control is Label label && label.Name.Contains("NumeroLegajo") && label.Text == numeroLegajo)
+                {
+                    return true;
+                }
+
+                // Llamada recursiva para buscar en controles anidados
+                if (control.HasChildren)
+                {
+                    if (ContieneNumeroLegajo(control, numeroLegajo))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
 
+        private void AgregarPersonalSeleccionado()
+        {
+            try
+            {
+                // Crear una instancia de PersonalManager para interactuar con la base de datos
+                PersonalManager personalManager = new PersonalManager();
+                string textoFormateado = textBox_NumeroLegajo.Text;
+                // Verificar si el número de legajo existe en la base de datos
+                if (!personalManager.ExisteLegajo(textoFormateado))
+                {
+                    MensajeGeneral.Mostrar("El número de legajo ingresado no corresponde a un efectivo policial registrado", MensajeGeneral.TipoMensaje.Advertencia);
+                }
+                else
+                {
+                    // Crear una nueva instancia del control PersonalSeleccionadoControl
+                    PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
+
+                    // Suscribirse al evento que abrirá el formulario NuevoPersonal
+                    nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
+
+                    // Actualizar datos en el nuevo control usando el número de legajo
+                    nuevoControl.ActualizarDatosPorLegajo(textoFormateado);
+
+                    // Instanciar la clase AgregarPersonal
+                    AgregarPersonal agregarPersonal = new AgregarPersonal();
+
+                    // Llamar al método para agregar el control al panel
+                    agregarPersonal.AgregarControlAlPanel(
+                        nuevoControl,                 // El control nuevo a agregar
+                        panel_PersonalSeleccionado,   // Panel donde se agregará el control
+                        panel_PersonalSeleccionado,   // Panel que se debe ajustar (mismo panel, en este caso)
+                        panel_ControlesInferiores,    // Panel inferior a reposicionar
+                        panel1,                       // Panel principal
+
+                        this                          // El formulario actual
+                                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar("Error al conectar con la base de datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                // Limpiar el contenido del TextBox independientemente del resultado
+                textBox_NumeroLegajo.Text = string.Empty;
+                textBox_NumeroLegajo.Focus();
+            }
+
+        }
     }
-}
 
+}

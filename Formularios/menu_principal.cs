@@ -15,6 +15,8 @@ using MECANOGRAFIA;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using Ofelia_Sara.Clases.Botones.btn_Configuracion;
+using System.Collections.Generic;
+using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Formularios
 {
@@ -110,9 +112,9 @@ namespace Ofelia_Sara.Formularios
 
             // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
             comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
-         //   comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
+            //   comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
 
-
+            ConfigurarBotones();
             //MostrarPlaceholder();
         }
         //--------------------------------------------------------------------------------
@@ -301,7 +303,7 @@ namespace Ofelia_Sara.Formularios
             // Verificar si se ha seleccionado un formulario
             if (comboBox_Buscar.SelectedItem == null)
             {
-                MessageBox.Show("Por favor, selecciona un formulario antes de continuar.", "OFELIA-SARA   Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, selecciona un formulario antes de continuar.",MensajeGeneral.TipoMensaje.Advertencia);
                 return;
             }
 
@@ -321,12 +323,12 @@ namespace Ofelia_Sara.Formularios
                 }
                 else
                 {
-                    MessageBox.Show("El formulario seleccionado no está disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("El formulario seleccionado no está disponible.",MensajeGeneral.TipoMensaje.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un formulario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Por favor, selecciona un formulario.",MensajeGeneral.TipoMensaje.Advertencia);
             }
 
 
@@ -424,40 +426,140 @@ namespace Ofelia_Sara.Formularios
         }
 
 
-        private void Btn_Mecanografia_MouseDown(object sender, MouseEventArgs e)
+        // Diccionarios para almacenar el tamaño y la ubicación originales de cada botón
+        private Dictionary<System.Windows.Forms.Button, Size> originalSizes = new Dictionary<System.Windows.Forms.Button, Size>();
+        private Dictionary<System.Windows.Forms.Button, Point> originalLocations = new Dictionary<System.Windows.Forms.Button, Point>();
+
+        // Método para configurar los valores originales al cargar el formulario
+        private void ConfigurarBotones()
         {
-            int reducedWidth = (int)(originalSizeMecanografia.Width * 0.85);
-            int reducedHeight = (int)(originalSizeMecanografia.Height * 0.85);
+            // Almacena el tamaño y la ubicación originales de cada botón
+            originalSizes[btn_Mecanografia] = btn_Mecanografia.Size;
+            originalLocations[btn_Mecanografia] = btn_Mecanografia.Location;
 
-            // Calcular el desplazamiento para centrar el PictureBox
-            int offsetX = (originalSizeMecanografia.Width - reducedWidth) / 2;
-            int offsetY = (originalSizeMecanografia.Height - reducedHeight) / 2;
-
-            // Aplicar el nuevo tamaño y centrar el PictureBox
-            btn_Mecanografia.Size = new Size(reducedWidth, reducedHeight);
-          btn_Mecanografia.Location =new Point(originalLocationMecanografia.X + offsetX, originalLocationMecanografia.Y + offsetY);
+            originalSizes[btn_Grabar] = btn_Grabar.Size;
+            originalLocations[btn_Grabar] = btn_Grabar.Location;
         }
 
-        private void Btn_Mecanografia_MouseUp(object sender, MouseEventArgs e)
+        // Método MouseDown para simular animación de "clic"
+        
+        private void Btn_MouseDown(object sender, MouseEventArgs e)
         {
-            // Restaurar el tamaño y la ubicación original
-           
-            btn_Mecanografia.Size = originalSizeMecanografia;
-            btn_Mecanografia.Location = originalLocationMecanografia;
+            if (sender is System.Windows.Forms.Button boton && originalSizes.ContainsKey(boton) && originalLocations.ContainsKey(boton))
+            {
+                // Disminuye temporalmente el tamaño del botón para simular un clic
+                int reductionAmount = 5; // La cantidad que se reduce el botón
+                boton.Size = new Size(originalSizes[boton].Width - reductionAmount, originalSizes[boton].Height - reductionAmount);
+
+                // Ajusta temporalmente la ubicación para centrar la reducción
+                boton.Location = new Point(
+                    originalLocations[boton].X + reductionAmount / 2,
+                    originalLocations[boton].Y + reductionAmount / 2
+                );
+            }
         }
 
-        private void Btn_Mecanografia_MouseHover(object sender, EventArgs e)
+        // Método MouseUp para restaurar tamaño y ubicación originales
+        private void Btn_MouseUp(object sender, MouseEventArgs e)
         {
-            btn_Mecanografia.FlatAppearance.BorderSize = 1;
-            btn_Mecanografia.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            if (sender is System.Windows.Forms.Button boton && originalSizes.ContainsKey(boton) && originalLocations.ContainsKey(boton))
+            {
+                // Restaurar tamaño y ubicación originales
+                boton.Size = originalSizes[boton];
+                boton.Location = originalLocations[boton];
+            }
         }
 
-        private void Btn_Mecanografia_MouseLeave(object sender, EventArgs e)
-        {
-            btn_Mecanografia.FlatAppearance.BorderSize = 0;
-            btn_Mecanografia.Size = originalSizeMecanografia;
 
+        // Método MouseHover para cambiar borde
+        private void Btn_MouseHover(object sender, EventArgs e)
+        {
+            if (sender is System.Windows.Forms.Button boton)
+            {
+                boton.FlatAppearance.BorderSize = 1;
+                boton.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            }
         }
+
+        // Método MouseLeave para restaurar borde y tamaño originales
+        private void Btn_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is System.Windows.Forms.Button boton && originalSizes.ContainsKey(boton))
+            {
+                boton.FlatAppearance.BorderSize = 0;
+                boton.Size = originalSizes[boton];
+            }
+        }
+        //-----------------------------------------------------------------------------------
+
+        // Bandera para activar o desactivar el subrayado personalizado
+        private bool mostrarSubrayado = false;
+        //para hacer que se extienda 
+        private int lineWidth = 0;
+        private bool isAnimating = false;
+        private Timer animationTimer;
+
+        // Método para activar el subrayado en MouseHover
+        private void Label_OfeliaSara_MouseHover(object sender, EventArgs e)
+        {
+            isAnimating = true;
+            lineWidth = 0;
+
+            // Configurar el Timer si aún no está configurado
+            if (animationTimer == null)
+            {
+                animationTimer = new Timer();
+                animationTimer.Interval = 15; // Intervalo de 20 ms para una animación suave
+                animationTimer.Tick += (s, args) =>
+                {
+                    if (lineWidth < label_OfeliaSara.Width / 2)
+                    {
+                        lineWidth += 2; // Aumenta gradualmente la longitud de la línea
+                        label_OfeliaSara.Invalidate(); // Redibuja el Label
+                    }
+                    else
+                    {
+                        animationTimer.Stop(); // Detiene el Timer cuando se completa la animación
+                    }
+                };
+            }
+
+            animationTimer.Start(); // Inicia el Timer para la animación
+        }
+
+        // Método para desactivar el subrayado en MouseLeave
+        private void Label_OfeliaSara_MouseLeave(object sender, EventArgs e)
+        {
+            isAnimating = false;
+            lineWidth = 0;
+            animationTimer?.Stop(); // Detener el Timer
+            label_OfeliaSara.Invalidate(); // Redibuja el Label para eliminar el subrayado
+        }
+
+
+        // Método Paint para dibujar el subrayado personalizado
+
+
+        private void Label_OfeliaSara_Paint(object sender, PaintEventArgs e)
+        {
+            if (isAnimating)
+            {
+                // Define el color y grosor de la línea
+                using (Pen pen = new Pen(SystemColors.Highlight, 3))
+                {
+                    // Centro del Label
+                    int centerX = label_OfeliaSara.Width / 2;
+                    int y = label_OfeliaSara.Font.Height ; // Posición 3 píxeles debajo del texto
+
+                    // Dibuja la línea desde el centro hacia los extremos
+                    e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
+                }
+            }
+        }
+
+
+
+
 
         private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
@@ -489,7 +591,7 @@ namespace Ofelia_Sara.Formularios
 
             videoInstructivo.Show();
         }
-
+        
 
         //para poder arrastrar el formulario
         private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
@@ -501,7 +603,9 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
+        private void btn_Grabar_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

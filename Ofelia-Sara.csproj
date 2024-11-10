@@ -613,8 +613,10 @@
     <Content Include="Resources\imagenes\iconoEscribiendo.png" />
     <Content Include="Resources\imagenes\IconoExito.png" />
     <Content Include="Resources\imagenes\IconoInformacion.png" />
+    <Content Include="Resources\imagenes\microfono24.png" />
     <Content Include="Resources\imagenes\quitar-usuario16.png" />
     <Content Include="Resources\imagenes\teclado.png" />
+    <Content Include="Resources\imagenes\microfono.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
