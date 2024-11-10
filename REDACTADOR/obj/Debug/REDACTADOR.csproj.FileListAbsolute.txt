@@ -1,0 +1,11 @@
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Properties.Resources.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Redactador.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Resource1.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.GenerateResource.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\REDACTADOR.exe.config
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\REDACTADOR.exe
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\REDACTADOR.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.exe
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.pdb

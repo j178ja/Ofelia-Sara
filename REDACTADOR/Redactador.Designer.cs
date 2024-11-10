@@ -1,4 +1,4 @@
-﻿using DICTADO;
+﻿
 using REDACTADOR.Properties;
 using System.Drawing;
 using System.Windows.Forms;
@@ -33,213 +33,218 @@ namespace REDACTADOR
         /// </summary>
            private void InitializeComponent()
         {
-           System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dictado));
-        panel1 = new Panel();
-        richTextBox1 = new RichTextBox();
-        panel2 = new Panel();
-        btn_Negrita = new Button();
-        btn_Cursiva = new Button();
-        btn_Subrayado = new Button();
-        btn_AlinearIzquierda = new Button();
-        btn_Centrar = new Button();
-        btn_AlinearDerecha = new Button();
-        btn_Justificar = new Button();
-        btn_Eliminar = new Button();
-        btn_Guardar = new Button();
-        btn_MayusculaMiniscula = new Button();
-        btn_AumentarTamaño = new Button();
-        btn_ReducirTamaño = new Button();
-        btn_Microfono = new Button();
-        panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            SuspendLayout();
-        // 
-        // panel1
-        // 
-        panel1.BackColor = Color.FromArgb(178, 213, 230);
-            panel1.Controls.Add(btn_Guardar);
-            panel1.Controls.Add(btn_Eliminar);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(richTextBox1);
-            panel1.Location = new Point(20, 18);
-        panel1.Name = "panel1";
-            panel1.Size = new Size(575, 332);
-        panel1.TabIndex = 0;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Redactador));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_Eliminar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_ReducirTamaño = new System.Windows.Forms.Button();
+            this.btn_AumentarTamaño = new System.Windows.Forms.Button();
+            this.btn_MayusculaMiniscula = new System.Windows.Forms.Button();
+            this.btn_Justificar = new System.Windows.Forms.Button();
+            this.btn_AlinearDerecha = new System.Windows.Forms.Button();
+            this.btn_Centrar = new System.Windows.Forms.Button();
+            this.btn_AlinearIzquierda = new System.Windows.Forms.Button();
+            this.btn_Subrayado = new System.Windows.Forms.Button();
+            this.btn_Cursiva = new System.Windows.Forms.Button();
+            this.btn_Negrita = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_Microfono = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
             // 
-            // richTextBox1
+            // panel1
             // 
-            richTextBox1.Location = new Point(12, 85);
-        richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(550, 150);
-        richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            // 
-            // panel2
-            // 
-            panel2.AutoSize = true;
-            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel2.Controls.Add(btn_ReducirTamaño);
-            panel2.Controls.Add(btn_AumentarTamaño);
-            panel2.Controls.Add(btn_MayusculaMiniscula);
-            panel2.Controls.Add(btn_Justificar);
-            panel2.Controls.Add(btn_AlinearDerecha);
-            panel2.Controls.Add(btn_Centrar);
-            panel2.Controls.Add(btn_AlinearIzquierda);
-            panel2.Controls.Add(btn_Subrayado);
-            panel2.Controls.Add(btn_Cursiva);
-            panel2.Controls.Add(btn_Negrita);
-            panel2.Location = new Point(133, 45);
-        panel2.Name = "panel2";
-            panel2.Size = new Size(305, 31);
-        panel2.TabIndex = 1;
-            // 
-            // btn_Negrita
-            // 
-            btn_Negrita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btn_Negrita.Location = new Point(5, 3);
-        btn_Negrita.Name = "btn_Negrita";
-            btn_Negrita.Size = new Size(25, 25);
-        btn_Negrita.TabIndex = 0;
-            btn_Negrita.Text = "N";
-            btn_Negrita.UseVisualStyleBackColor = true;
-            // 
-            // btn_Cursiva
-            // 
-            btn_Cursiva.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        btn_Cursiva.Location = new Point(30, 3);
-        btn_Cursiva.Name = "btn_Cursiva";
-            btn_Cursiva.Size = new Size(25, 25);
-        btn_Cursiva.TabIndex = 1;
-            btn_Cursiva.Text = "C";
-            btn_Cursiva.UseVisualStyleBackColor = true;
-            // 
-            // btn_Subrayado
-            // 
-            btn_Subrayado.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-        btn_Subrayado.Location = new Point(55, 3);
-        btn_Subrayado.Name = "btn_Subrayado";
-            btn_Subrayado.Size = new Size(25, 25);
-        btn_Subrayado.TabIndex = 2;
-            btn_Subrayado.Text = "S";
-            btn_Subrayado.UseVisualStyleBackColor = true;
-            // 
-            // btn_AlinearIzquierda
-            // 
-            btn_AlinearIzquierda.BackgroundImage = Properties.Resources.izquierda;
-            btn_AlinearIzquierda.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_AlinearIzquierda.Location = new Point(202, 3);
-        btn_AlinearIzquierda.Name = "btn_AlinearIzquierda";
-            btn_AlinearIzquierda.Size = new Size(25, 25);
-        btn_AlinearIzquierda.TabIndex = 3;
-            btn_AlinearIzquierda.UseVisualStyleBackColor = true;
-            // 
-            // btn_Centrar
-            // 
-            btn_Centrar.BackgroundImage = Properties.Resources.centro;
-            btn_Centrar.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_Centrar.Location = new Point(227, 3);
-        btn_Centrar.Name = "btn_Centrar";
-            btn_Centrar.Size = new Size(25, 25);
-        btn_Centrar.TabIndex = 4;
-            btn_Centrar.UseVisualStyleBackColor = true;
-            // 
-            // btn_AlinearDerecha
-            // 
-            btn_AlinearDerecha.BackgroundImage = Properties.Resources.derecha;
-            btn_AlinearDerecha.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_AlinearDerecha.Location = new Point(252, 3);
-        btn_AlinearDerecha.Name = "btn_AlinearDerecha";
-            btn_AlinearDerecha.Size = new Size(25, 25);
-        btn_AlinearDerecha.TabIndex = 5;
-            btn_AlinearDerecha.UseVisualStyleBackColor = true;
-            // 
-            // btn_Justificar
-            // 
-            btn_Justificar.BackgroundImage = Properties.Resources.justificar;
-            btn_Justificar.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_Justificar.Location = new Point(277, 3);
-        btn_Justificar.Name = "btn_Justificar";
-            btn_Justificar.Size = new Size(25, 25);
-        btn_Justificar.TabIndex = 6;
-            btn_Justificar.UseVisualStyleBackColor = true;
-            // 
-            // btn_Eliminar
-            // 
-            btn_Eliminar.BackColor = Color.SkyBlue;
-            btn_Eliminar.Image = (Image) resources.GetObject("btn_Eliminar.Image");
-        btn_Eliminar.Location = new Point(133, 255);
-        btn_Eliminar.Name = "btn_Eliminar";
-            btn_Eliminar.Size = new Size(75, 67);
-        btn_Eliminar.TabIndex = 2;
-            btn_Eliminar.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.btn_Guardar);
+            this.panel1.Controls.Add(this.btn_Eliminar);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Location = new System.Drawing.Point(17, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(539, 324);
+            this.panel1.TabIndex = 0;
             // 
             // btn_Guardar
             // 
-            btn_Guardar.BackColor = Color.SkyBlue;
-            btn_Guardar.Image = (Image) resources.GetObject("btn_Guardar.Image");
-        btn_Guardar.Location = new Point(391, 255);
-        btn_Guardar.Name = "btn_Guardar";
-            btn_Guardar.Size = new Size(75, 67);
-        btn_Guardar.TabIndex = 3;
-            btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.BackgroundImage")));
+            this.btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Guardar.Location = new System.Drawing.Point(335, 255);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(64, 58);
+            this.btn_Guardar.TabIndex = 3;
+            this.btn_Guardar.UseVisualStyleBackColor = false;
             // 
-            // btn_MayusculaMiniscula
+            // btn_Eliminar
             // 
-            btn_MayusculaMiniscula.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        btn_MayusculaMiniscula.Location = new Point(143, 3);
-        btn_MayusculaMiniscula.Name = "btn_MayusculaMiniscula";
-            btn_MayusculaMiniscula.Size = new Size(29, 25);
-        btn_MayusculaMiniscula.TabIndex = 7;
-            btn_MayusculaMiniscula.Text = "Aa";
-            btn_MayusculaMiniscula.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.BackgroundImage")));
+            this.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Eliminar.Location = new System.Drawing.Point(138, 255);
+            this.btn_Eliminar.Name = "btn_Eliminar";
+            this.btn_Eliminar.Size = new System.Drawing.Size(64, 58);
+            this.btn_Eliminar.TabIndex = 2;
+            this.btn_Eliminar.UseVisualStyleBackColor = false;
             // 
-            // btn_AumentarTamaño
+            // panel2
             // 
-            btn_AumentarTamaño.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        btn_AumentarTamaño.Location = new Point(95, 3);
-        btn_AumentarTamaño.Name = "btn_AumentarTamaño";
-            btn_AumentarTamaño.Size = new Size(25, 25);
-        btn_AumentarTamaño.TabIndex = 8;
-            btn_AumentarTamaño.Text = "A";
-            btn_AumentarTamaño.TextAlign = ContentAlignment.TopCenter;
-            btn_AumentarTamaño.UseVisualStyleBackColor = true;
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.Controls.Add(this.btn_ReducirTamaño);
+            this.panel2.Controls.Add(this.btn_AumentarTamaño);
+            this.panel2.Controls.Add(this.btn_MayusculaMiniscula);
+            this.panel2.Controls.Add(this.btn_Justificar);
+            this.panel2.Controls.Add(this.btn_AlinearDerecha);
+            this.panel2.Controls.Add(this.btn_Centrar);
+            this.panel2.Controls.Add(this.btn_AlinearIzquierda);
+            this.panel2.Controls.Add(this.btn_Subrayado);
+            this.panel2.Controls.Add(this.btn_Cursiva);
+            this.panel2.Controls.Add(this.btn_Negrita);
+            this.panel2.Location = new System.Drawing.Point(138, 40);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 28);
+            this.panel2.TabIndex = 1;
             // 
             // btn_ReducirTamaño
             // 
-            btn_ReducirTamaño.Font = new Font("Calibri", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        btn_ReducirTamaño.Location = new Point(119, 3);
-        btn_ReducirTamaño.Name = "btn_ReducirTamaño";
-            btn_ReducirTamaño.Size = new Size(25, 25);
-        btn_ReducirTamaño.TabIndex = 9;
-            btn_ReducirTamaño.Text = "A";
-            btn_ReducirTamaño.TextAlign = ContentAlignment.BottomCenter;
-            btn_ReducirTamaño.UseVisualStyleBackColor = true;
+            this.btn_ReducirTamaño.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ReducirTamaño.Location = new System.Drawing.Point(102, 3);
+            this.btn_ReducirTamaño.Name = "btn_ReducirTamaño";
+            this.btn_ReducirTamaño.Size = new System.Drawing.Size(21, 22);
+            this.btn_ReducirTamaño.TabIndex = 9;
+            this.btn_ReducirTamaño.Text = "A";
+            this.btn_ReducirTamaño.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_ReducirTamaño.UseVisualStyleBackColor = true;
+            // 
+            // btn_AumentarTamaño
+            // 
+            this.btn_AumentarTamaño.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AumentarTamaño.Location = new System.Drawing.Point(81, 3);
+            this.btn_AumentarTamaño.Name = "btn_AumentarTamaño";
+            this.btn_AumentarTamaño.Size = new System.Drawing.Size(21, 22);
+            this.btn_AumentarTamaño.TabIndex = 8;
+            this.btn_AumentarTamaño.Text = "A";
+            this.btn_AumentarTamaño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_AumentarTamaño.UseVisualStyleBackColor = true;
+            // 
+            // btn_MayusculaMiniscula
+            // 
+            this.btn_MayusculaMiniscula.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MayusculaMiniscula.Location = new System.Drawing.Point(123, 3);
+            this.btn_MayusculaMiniscula.Name = "btn_MayusculaMiniscula";
+            this.btn_MayusculaMiniscula.Size = new System.Drawing.Size(25, 22);
+            this.btn_MayusculaMiniscula.TabIndex = 7;
+            this.btn_MayusculaMiniscula.Text = "Aa";
+            this.btn_MayusculaMiniscula.UseVisualStyleBackColor = true;
+            // 
+            // btn_Justificar
+            // 
+            this.btn_Justificar.BackgroundImage = global::REDACTADOR.Properties.Resources.justificar;
+            this.btn_Justificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Justificar.Location = new System.Drawing.Point(237, 3);
+            this.btn_Justificar.Name = "btn_Justificar";
+            this.btn_Justificar.Size = new System.Drawing.Size(21, 22);
+            this.btn_Justificar.TabIndex = 6;
+            this.btn_Justificar.UseVisualStyleBackColor = true;
+            // 
+            // btn_AlinearDerecha
+            // 
+            this.btn_AlinearDerecha.BackgroundImage = global::REDACTADOR.Properties.Resources.derecha;
+            this.btn_AlinearDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_AlinearDerecha.Location = new System.Drawing.Point(216, 3);
+            this.btn_AlinearDerecha.Name = "btn_AlinearDerecha";
+            this.btn_AlinearDerecha.Size = new System.Drawing.Size(21, 22);
+            this.btn_AlinearDerecha.TabIndex = 5;
+            this.btn_AlinearDerecha.UseVisualStyleBackColor = true;
+            // 
+            // btn_Centrar
+            // 
+            this.btn_Centrar.BackgroundImage = global::REDACTADOR.Properties.Resources.centro;
+            this.btn_Centrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Centrar.Location = new System.Drawing.Point(195, 3);
+            this.btn_Centrar.Name = "btn_Centrar";
+            this.btn_Centrar.Size = new System.Drawing.Size(21, 22);
+            this.btn_Centrar.TabIndex = 4;
+            this.btn_Centrar.UseVisualStyleBackColor = true;
+            // 
+            // btn_AlinearIzquierda
+            // 
+            this.btn_AlinearIzquierda.BackgroundImage = global::REDACTADOR.Properties.Resources.izquierda;
+            this.btn_AlinearIzquierda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_AlinearIzquierda.Location = new System.Drawing.Point(173, 3);
+            this.btn_AlinearIzquierda.Name = "btn_AlinearIzquierda";
+            this.btn_AlinearIzquierda.Size = new System.Drawing.Size(21, 22);
+            this.btn_AlinearIzquierda.TabIndex = 3;
+            this.btn_AlinearIzquierda.UseVisualStyleBackColor = true;
+            // 
+            // btn_Subrayado
+            // 
+            this.btn_Subrayado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Subrayado.Location = new System.Drawing.Point(47, 3);
+            this.btn_Subrayado.Name = "btn_Subrayado";
+            this.btn_Subrayado.Size = new System.Drawing.Size(21, 22);
+            this.btn_Subrayado.TabIndex = 2;
+            this.btn_Subrayado.Text = "S";
+            this.btn_Subrayado.UseVisualStyleBackColor = true;
+            // 
+            // btn_Cursiva
+            // 
+            this.btn_Cursiva.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cursiva.Location = new System.Drawing.Point(26, 3);
+            this.btn_Cursiva.Name = "btn_Cursiva";
+            this.btn_Cursiva.Size = new System.Drawing.Size(21, 22);
+            this.btn_Cursiva.TabIndex = 1;
+            this.btn_Cursiva.Text = "C";
+            this.btn_Cursiva.UseVisualStyleBackColor = true;
+            // 
+            // btn_Negrita
+            // 
+            this.btn_Negrita.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Negrita.Location = new System.Drawing.Point(4, 3);
+            this.btn_Negrita.Name = "btn_Negrita";
+            this.btn_Negrita.Size = new System.Drawing.Size(21, 22);
+            this.btn_Negrita.TabIndex = 0;
+            this.btn_Negrita.Text = "N";
+            this.btn_Negrita.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(10, 74);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(519, 165);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
             // btn_Microfono
             // 
-            btn_Microfono.BackColor = Color.GreenYellow;
-            btn_Microfono.BackgroundImage = Properties.Resources.microfono_activo;
-            btn_Microfono.BackgroundImageLayout = ImageLayout.Center;
-            btn_Microfono.Location = new Point(284, 5);
-        btn_Microfono.Name = "btn_Microfono";
-            btn_Microfono.Size = new Size(51, 52);
-        btn_Microfono.TabIndex = 10;
-            btn_Microfono.UseVisualStyleBackColor = false;
+            this.btn_Microfono.BackColor = System.Drawing.Color.Red;
+            this.btn_Microfono.BackgroundImage = global::REDACTADOR.Properties.Resources.microfono_activo;
+            this.btn_Microfono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Microfono.Location = new System.Drawing.Point(260, 3);
+            this.btn_Microfono.Name = "btn_Microfono";
+            this.btn_Microfono.Size = new System.Drawing.Size(44, 45);
+            this.btn_Microfono.TabIndex = 10;
+            this.btn_Microfono.UseVisualStyleBackColor = false;
             // 
-            // Dictado
+            // Redactador
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-        AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(0, 154, 174);
-            ClientSize = new Size(617, 369);
-        Controls.Add(btn_Microfono);
-            Controls.Add(panel1);
-            Name = "Dictado";
-            Text = "REDACTAR TEXTO MEDIANTE VOZ";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.ClientSize = new System.Drawing.Size(568, 361);
+            this.Controls.Add(this.btn_Microfono);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(584, 400);
+            this.Name = "Redactador";
+            this.Text = "REDACTAR TEXTO MEDIANTE VOZ";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
     }
 
 #endregion
@@ -263,5 +268,4 @@ namespace REDACTADOR
 }
 }
 
-    }
-}
+    

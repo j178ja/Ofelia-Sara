@@ -1,6 +1,6 @@
 ﻿using Clases.Botones;
 using Controles.Barra_Busqueda;
-using DICTADO;
+using REDACTADOR;
 using MECANOGRAFIA;
 using Ofelia_Sara.Clases.Botones.btn_Configuracion;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
@@ -606,7 +606,7 @@ namespace Ofelia_Sara.Formularios
         private void btn_Grabar_Click(object sender, EventArgs e)
         {
             // Crear una instancia del formulario Dictado y pasar un mensaje
-            Dictado dictadoForm = new Dictado("Este es un mensaje desde OfeliaSara");
+            Redactador dictadoForm = new Redactador();
             dictadoForm.ShowDialog(); // Mostrar el formulario como modal
         }
 
