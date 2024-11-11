@@ -605,9 +605,22 @@ namespace Ofelia_Sara.Formularios
 
         private void btn_Grabar_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario Dictado y pasar un mensaje
-            Redactador dictadoForm = new Redactador();
-            dictadoForm.ShowDialog(); // Mostrar el formulario como modal
+            // Crear una instancia del formulario Dictado 
+            Redactador redactadorForm = new Redactador();
+
+            // Obtener la ubicación y tamaño del formulario principal
+            Point menuPrincipalLocation = this.Location;
+            Size menuPrincipalSize = this.Size;
+
+            // Calcular la nueva ubicación para el formulario DocumentosForm
+            int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
+            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+
+            // Ajustar la ubicación del formulario DocumentosForm
+            redactadorForm.StartPosition = FormStartPosition.Manual;
+            redactadorForm.Location = new Point(x, y);
+                       
+            redactadorForm.ShowDialog(); // Mostrar el formulario como modal
         }
 
 

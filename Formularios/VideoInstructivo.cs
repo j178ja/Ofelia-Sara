@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.general.clases;
+﻿using BaseDatos.Mensaje;
+using Ofelia_Sara.general.clases;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace Ofelia_Sara.Formularios
             }
             else
             {
-                MessageBox.Show("El archivo de video no se encontró en la ruta especificada.");
+                MensajeGeneral.Mostrar("El archivo de video no se encontró en la ruta especificada.",MensajeGeneral.TipoMensaje.Error);
             }
         }
 

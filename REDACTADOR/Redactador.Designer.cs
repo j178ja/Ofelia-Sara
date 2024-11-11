@@ -59,6 +59,9 @@ namespace REDACTADOR
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.audioVisualizerControl);
             this.panel1.Controls.Add(this.btn_Guardar);
@@ -72,6 +75,7 @@ namespace REDACTADOR
             // 
             // btn_Guardar
             // 
+            this.btn_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.BackgroundImage")));
             this.btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -84,6 +88,7 @@ namespace REDACTADOR
             // 
             // btn_Eliminar
             // 
+            this.btn_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.BackgroundImage")));
             this.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -96,6 +101,7 @@ namespace REDACTADOR
             // 
             // panel_Botones
             // 
+            this.panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel_Botones.AutoSize = true;
             this.panel_Botones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_Botones.Controls.Add(this.btn_ReducirTamaño);
@@ -237,6 +243,9 @@ namespace REDACTADOR
             // 
             // richTextBox_Redactor
             // 
+            this.richTextBox_Redactor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_Redactor.Location = new System.Drawing.Point(10, 74);
             this.richTextBox_Redactor.Name = "richTextBox_Redactor";
             this.richTextBox_Redactor.Size = new System.Drawing.Size(519, 165);
@@ -245,6 +254,7 @@ namespace REDACTADOR
             // 
             // btn_Microfono
             // 
+            this.btn_Microfono.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Microfono.BackColor = System.Drawing.Color.Red;
             this.btn_Microfono.BackgroundImage = global::REDACTADOR.Properties.Resources.microfono_activo;
             this.btn_Microfono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -258,6 +268,8 @@ namespace REDACTADOR
             // 
             // audioVisualizerControl
             // 
+            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.audioVisualizerControl.AutoSize = true;
             this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
