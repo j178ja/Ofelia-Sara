@@ -79,12 +79,14 @@ namespace REDACTADOR
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.BackgroundImage")));
             this.btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Location = new System.Drawing.Point(335, 255);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(64, 58);
             this.btn_Guardar.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btn_Guardar, "CREAR DOCUMENTO WORD");
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // btn_Eliminar
             // 
@@ -92,12 +94,14 @@ namespace REDACTADOR
             this.btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.BackgroundImage")));
             this.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Eliminar.Location = new System.Drawing.Point(138, 255);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(64, 58);
             this.btn_Eliminar.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btn_Eliminar, "ELIMINAR");
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // panel_Botones
             // 
@@ -121,6 +125,7 @@ namespace REDACTADOR
             // 
             // btn_ReducirTamaño
             // 
+            this.btn_ReducirTamaño.BackColor = System.Drawing.Color.White;
             this.btn_ReducirTamaño.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ReducirTamaño.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ReducirTamaño.Location = new System.Drawing.Point(102, 3);
@@ -130,10 +135,14 @@ namespace REDACTADOR
             this.btn_ReducirTamaño.Text = "A";
             this.btn_ReducirTamaño.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip1.SetToolTip(this.btn_ReducirTamaño, "DISMINUIR TAMAÑO");
-            this.btn_ReducirTamaño.UseVisualStyleBackColor = true;
+            this.btn_ReducirTamaño.UseVisualStyleBackColor = false;
+            this.btn_ReducirTamaño.Click += new System.EventHandler(this.btn_DisminuirTamaño_Click);
+            this.btn_ReducirTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
+            this.btn_ReducirTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
             // 
             // btn_AumentarTamaño
             // 
+            this.btn_AumentarTamaño.BackColor = System.Drawing.Color.White;
             this.btn_AumentarTamaño.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AumentarTamaño.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AumentarTamaño.Location = new System.Drawing.Point(81, 3);
@@ -143,10 +152,14 @@ namespace REDACTADOR
             this.btn_AumentarTamaño.Text = "A";
             this.btn_AumentarTamaño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolTip1.SetToolTip(this.btn_AumentarTamaño, "AUMENTAR TAMAÑO");
-            this.btn_AumentarTamaño.UseVisualStyleBackColor = true;
+            this.btn_AumentarTamaño.UseVisualStyleBackColor = false;
+            this.btn_AumentarTamaño.Click += new System.EventHandler(this.btn_AumentarTamaño_Click);
+            this.btn_AumentarTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
+            this.btn_AumentarTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
             // 
             // btn_MayusculaMiniscula
             // 
+            this.btn_MayusculaMiniscula.BackColor = System.Drawing.Color.White;
             this.btn_MayusculaMiniscula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_MayusculaMiniscula.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MayusculaMiniscula.Location = new System.Drawing.Point(123, 3);
@@ -155,10 +168,14 @@ namespace REDACTADOR
             this.btn_MayusculaMiniscula.TabIndex = 7;
             this.btn_MayusculaMiniscula.Text = "Aa";
             this.toolTip1.SetToolTip(this.btn_MayusculaMiniscula, "MAYUSCULA/minuscula");
-            this.btn_MayusculaMiniscula.UseVisualStyleBackColor = true;
+            this.btn_MayusculaMiniscula.UseVisualStyleBackColor = false;
+            this.btn_MayusculaMiniscula.Click += new System.EventHandler(this.btn_MayusculaMiniscula_Click);
+            this.btn_MayusculaMiniscula.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
+            this.btn_MayusculaMiniscula.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
             // 
             // btn_Justificar
             // 
+            this.btn_Justificar.BackColor = System.Drawing.Color.White;
             this.btn_Justificar.BackgroundImage = global::REDACTADOR.Properties.Resources.justificar;
             this.btn_Justificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Justificar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -167,10 +184,12 @@ namespace REDACTADOR
             this.btn_Justificar.Size = new System.Drawing.Size(21, 22);
             this.btn_Justificar.TabIndex = 6;
             this.toolTip1.SetToolTip(this.btn_Justificar, "Justificar");
-            this.btn_Justificar.UseVisualStyleBackColor = true;
+            this.btn_Justificar.UseVisualStyleBackColor = false;
+            this.btn_Justificar.Click += new System.EventHandler(this.btn_Justificar_Click);
             // 
             // btn_AlinearDerecha
             // 
+            this.btn_AlinearDerecha.BackColor = System.Drawing.Color.White;
             this.btn_AlinearDerecha.BackgroundImage = global::REDACTADOR.Properties.Resources.derecha;
             this.btn_AlinearDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_AlinearDerecha.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -179,10 +198,12 @@ namespace REDACTADOR
             this.btn_AlinearDerecha.Size = new System.Drawing.Size(21, 22);
             this.btn_AlinearDerecha.TabIndex = 5;
             this.toolTip1.SetToolTip(this.btn_AlinearDerecha, "Alinear a la DERECHA");
-            this.btn_AlinearDerecha.UseVisualStyleBackColor = true;
+            this.btn_AlinearDerecha.UseVisualStyleBackColor = false;
+            this.btn_AlinearDerecha.Click += new System.EventHandler(this.btn_AlinearDerecha_Click);
             // 
             // btn_Centrar
             // 
+            this.btn_Centrar.BackColor = System.Drawing.Color.White;
             this.btn_Centrar.BackgroundImage = global::REDACTADOR.Properties.Resources.centro;
             this.btn_Centrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Centrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -191,10 +212,12 @@ namespace REDACTADOR
             this.btn_Centrar.Size = new System.Drawing.Size(21, 22);
             this.btn_Centrar.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btn_Centrar, "Centrar");
-            this.btn_Centrar.UseVisualStyleBackColor = true;
+            this.btn_Centrar.UseVisualStyleBackColor = false;
+            this.btn_Centrar.Click += new System.EventHandler(this.btn_Centrar_Click);
             // 
             // btn_AlinearIzquierda
             // 
+            this.btn_AlinearIzquierda.BackColor = System.Drawing.Color.White;
             this.btn_AlinearIzquierda.BackgroundImage = global::REDACTADOR.Properties.Resources.izquierda;
             this.btn_AlinearIzquierda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_AlinearIzquierda.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -203,10 +226,12 @@ namespace REDACTADOR
             this.btn_AlinearIzquierda.Size = new System.Drawing.Size(21, 22);
             this.btn_AlinearIzquierda.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btn_AlinearIzquierda, "Alinear a la IZQUIERDA");
-            this.btn_AlinearIzquierda.UseVisualStyleBackColor = true;
+            this.btn_AlinearIzquierda.UseVisualStyleBackColor = false;
+            this.btn_AlinearIzquierda.Click += new System.EventHandler(this.btn_AlinearIzquierda_Click);
             // 
             // btn_Subrayado
             // 
+            this.btn_Subrayado.BackColor = System.Drawing.Color.White;
             this.btn_Subrayado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Subrayado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Subrayado.Location = new System.Drawing.Point(47, 3);
@@ -215,10 +240,12 @@ namespace REDACTADOR
             this.btn_Subrayado.TabIndex = 2;
             this.btn_Subrayado.Text = "S";
             this.toolTip1.SetToolTip(this.btn_Subrayado, "SUBRAYADO");
-            this.btn_Subrayado.UseVisualStyleBackColor = true;
+            this.btn_Subrayado.UseVisualStyleBackColor = false;
+            this.btn_Subrayado.Click += new System.EventHandler(this.btn_Subrayado_Click);
             // 
             // btn_Cursiva
             // 
+            this.btn_Cursiva.BackColor = System.Drawing.Color.White;
             this.btn_Cursiva.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cursiva.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cursiva.Location = new System.Drawing.Point(26, 3);
@@ -227,10 +254,12 @@ namespace REDACTADOR
             this.btn_Cursiva.TabIndex = 1;
             this.btn_Cursiva.Text = "C";
             this.toolTip1.SetToolTip(this.btn_Cursiva, "CURSIVA");
-            this.btn_Cursiva.UseVisualStyleBackColor = true;
+            this.btn_Cursiva.UseVisualStyleBackColor = false;
+            this.btn_Cursiva.Click += new System.EventHandler(this.btn_Cursiva_Click);
             // 
             // btn_Negrita
             // 
+            this.btn_Negrita.BackColor = System.Drawing.Color.White;
             this.btn_Negrita.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Negrita.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Negrita.Location = new System.Drawing.Point(4, 3);
@@ -239,7 +268,8 @@ namespace REDACTADOR
             this.btn_Negrita.TabIndex = 0;
             this.btn_Negrita.Text = "N";
             this.toolTip1.SetToolTip(this.btn_Negrita, "NEGRITA");
-            this.btn_Negrita.UseVisualStyleBackColor = true;
+            this.btn_Negrita.UseVisualStyleBackColor = false;
+            this.btn_Negrita.Click += new System.EventHandler(this.btn_Negrita_Click);
             // 
             // richTextBox_Redactor
             // 
@@ -251,6 +281,7 @@ namespace REDACTADOR
             this.richTextBox_Redactor.Size = new System.Drawing.Size(519, 165);
             this.richTextBox_Redactor.TabIndex = 0;
             this.richTextBox_Redactor.Text = "";
+            this.richTextBox_Redactor.TextChanged += new System.EventHandler(this.richTextBox_Redactor_TextChanged);
             // 
             // btn_Microfono
             // 
