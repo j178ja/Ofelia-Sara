@@ -11,6 +11,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
     public partial class AgregarDatosPersonalesVictima : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public string TextoNombre
         {
             get { return textBox_Nombre.Text; }
@@ -29,6 +30,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
+
+            this.FormClosing += AgregarDatosPersonalesVictima_FormClosing;//para mensaje de alerta en caso de no guardar datos
         }
 
         private void AgregarDatosPersonalesVictima_Load(object sender, EventArgs e)
@@ -587,6 +590,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         //---------BOTON GUARDAR----------------------------
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
+            datosGuardados = true; // Marcar que los datos fueron guardados
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
@@ -965,6 +969,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
+        //--------------------------------------------------------------------
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void AgregarDatosPersonalesVictima_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del Victima. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
 
     }
 }

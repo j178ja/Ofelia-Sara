@@ -36,7 +36,12 @@ namespace REDACTADOR
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            this.FormClosing += Redactador_FormClosing;
+            this.FormClosing += Redactador_FormClosing;// para mensaje previo a cerrar
+
+            CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left);// para que inicie en justificado
+
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
         }
 
 
@@ -303,7 +308,7 @@ namespace REDACTADOR
 
         private void btn_Justificar_Click(object sender, EventArgs e)
         {
-            CambiarAlineacion(btn_Justificar, HorizontalAlignment.Center); // Usa Center ya que Justify no es soportado directamente
+            CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left); // Usa Center ya que Justify no es soportado directamente
             richTextBox_Redactor.Focus();
         }
 
@@ -330,6 +335,7 @@ namespace REDACTADOR
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this);
+            CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left);// para que inicie en justificado
             richTextBox_Redactor.Focus();
         }
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
@@ -354,6 +360,42 @@ namespace REDACTADOR
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
+        }
+
+        //-------------------------------------------
+        protected void InicializarEstiloBoton(Button boton)
+        {
+            Size originalSize = boton.Size;
+            Point originalLocation = boton.Location;
+
+            // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
+            boton.MouseEnter += (sender, e) =>
+            {
+                // Calcula el incremento para centrar el cambio de tamaño
+                int incremento = 12;
+                int nuevoAncho = originalSize.Width + incremento;
+                int nuevoAlto = originalSize.Height + incremento;
+                int deltaX = (nuevoAncho - originalSize.Width) / 2;
+                int deltaY = (nuevoAlto - originalSize.Height) / 2;
+
+                boton.Size = new Size(nuevoAncho, nuevoAlto);
+                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
+                boton.BackColor = Color.FromArgb(51, 174, 189);
+            };
+
+            // Evento MouseHover: Cambia solo el color de fondo
+            boton.MouseHover += (sender, e) =>
+            {
+                boton.BackColor = Color.FromArgb(51, 174, 189); //20% MAS CLARO QUE EL COLOR OFICIAL Y DE FONDO
+            };
+
+            // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
+            boton.MouseLeave += (sender, e) =>
+            {
+                boton.Size = originalSize;
+                boton.Location = originalLocation;
+                boton.BackColor = Color.SkyBlue;
+            };
         }
     }
 }

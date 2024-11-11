@@ -11,12 +11,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
     public partial class AgregarDatosPersonalesConcubina : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public AgregarDatosPersonalesConcubina()
         {
             InitializeComponent();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            this.FormClosing += AgregarDatos_FormClosing;//para mensaje de alerta en caso de no guardar datos
         }
 
         private void AgregarDatosPersonalesConcubina_Load(object sender, EventArgs e)
@@ -124,6 +127,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
         //--------------------------------------------------------------------
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void AgregarDatos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos de esta persona. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
 
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            datosGuardados = true; // Marcar que los datos fueron guardados
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Clases.Apariencia;
+﻿using BaseDatos.Mensaje;
+using Clases.Apariencia;
 using Clases.Botones;
 using Controles.Controles;
 using Ofelia_Sara.general.clases;
@@ -54,8 +55,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void BuscarForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MessageBox.Show("Complete alguno de los campos requeridos para iniciar la busqueda.", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Complete alguno de los campos requeridos para iniciar la busqueda.",MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -65,7 +65,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
         //_____________________________________________________________________________________

@@ -36,8 +36,9 @@ namespace REDACTADOR
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Redactador));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.audioVisualizerControl = new REDACTADOR.AudioVisualizerControl();
             this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Eliminar = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
             this.panel_Botones = new System.Windows.Forms.Panel();
             this.btn_ReducirTamaño = new System.Windows.Forms.Button();
             this.btn_AumentarTamaño = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace REDACTADOR
             this.richTextBox_Redactor = new System.Windows.Forms.RichTextBox();
             this.btn_Microfono = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.audioVisualizerControl = new REDACTADOR.AudioVisualizerControl();
             this.panel1.SuspendLayout();
             this.panel_Botones.SuspendLayout();
             this.SuspendLayout();
@@ -65,13 +65,24 @@ namespace REDACTADOR
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.audioVisualizerControl);
             this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.btn_Eliminar);
+            this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.panel_Botones);
             this.panel1.Controls.Add(this.richTextBox_Redactor);
             this.panel1.Location = new System.Drawing.Point(17, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(539, 324);
             this.panel1.TabIndex = 0;
+            // 
+            // audioVisualizerControl
+            // 
+            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.audioVisualizerControl.AutoSize = true;
+            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
+            this.audioVisualizerControl.Name = "audioVisualizerControl";
+            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
+            this.audioVisualizerControl.TabIndex = 4;
             // 
             // btn_Guardar
             // 
@@ -88,20 +99,20 @@ namespace REDACTADOR
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
-            // btn_Eliminar
+            // btn_Limpiar
             // 
-            this.btn_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.BackgroundImage")));
-            this.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Eliminar.Location = new System.Drawing.Point(138, 255);
-            this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(64, 58);
-            this.btn_Eliminar.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btn_Eliminar, "ELIMINAR");
-            this.btn_Eliminar.UseVisualStyleBackColor = false;
-            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
+            this.btn_Limpiar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.BackgroundImage")));
+            this.btn_Limpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.Location = new System.Drawing.Point(138, 255);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(64, 58);
+            this.btn_Limpiar.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btn_Limpiar, "ELIMINAR");
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // panel_Botones
             // 
@@ -297,17 +308,6 @@ namespace REDACTADOR
             this.btn_Microfono.UseVisualStyleBackColor = false;
             this.btn_Microfono.Click += new System.EventHandler(this.btn_Microfono_Click);
             // 
-            // audioVisualizerControl
-            // 
-            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.audioVisualizerControl.AutoSize = true;
-            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
-            this.audioVisualizerControl.Name = "audioVisualizerControl";
-            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
-            this.audioVisualizerControl.TabIndex = 4;
-            // 
             // Redactador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +341,7 @@ namespace REDACTADOR
     private Button btn_Cursiva;
     private Button btn_Negrita;
     private Button btn_Guardar;
-    private Button btn_Eliminar;
+    private Button btn_Limpiar;
     private Button btn_MayusculaMiniscula;
     private Button btn_ReducirTamaño;
     private Button btn_AumentarTamaño;

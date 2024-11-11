@@ -69,7 +69,6 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-         
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
@@ -339,6 +338,7 @@
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // label_Nacionalidad
             // 

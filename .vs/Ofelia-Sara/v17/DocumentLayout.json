@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0D31BB3-13E0-4618-B861-4F374C1F6D5E}|REDACTADOR\\REDACTADOR.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\redactador\\clases\\limpiar_formulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0D31BB3-13E0-4618-B861-4F374C1F6D5E}|REDACTADOR\\REDACTADOR.csproj|solutionrelative:redactador\\clases\\limpiar_formulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D0D31BB3-13E0-4618-B861-4F374C1F6D5E}|REDACTADOR\\REDACTADOR.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\redactador\\redactador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0D31BB3-13E0-4618-B861-4F374C1F6D5E}|REDACTADOR\\REDACTADOR.csproj|solutionrelative:redactador\\redactador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "limpiar_formulario.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Clases\\limpiar_formulario.cs",
-              "RelativeDocumentMoniker": "REDACTADOR\\Clases\\limpiar_formulario.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Clases\\limpiar_formulario.cs",
-              "RelativeToolTip": "REDACTADOR\\Clases\\limpiar_formulario.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAmwCsAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T18:57:52.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Redactador.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs",
-              "RelativeDocumentMoniker": "REDACTADOR\\Redactador.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs",
-              "RelativeToolTip": "REDACTADOR\\Redactador.cs",
-              "ViewState": "AQIAABsBAAAAAAAAAAAAAB0BAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T13:58:34.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Redactador.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs",
               "RelativeDocumentMoniker": "REDACTADOR\\Redactador.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs [Dise\u00F1o]",
-              "RelativeToolTip": "REDACTADOR\\Redactador.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "REDACTADOR\\Redactador.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T13:36:53.438Z",
+              "WhenOpened": "2024-11-11T22:56:18.289Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Redactador.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs",
+              "RelativeDocumentMoniker": "REDACTADOR\\Redactador.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs*",
+              "RelativeToolTip": "REDACTADOR\\Redactador.cs*",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAI4BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T22:54:30.329Z",
+              "EditorCaption": ""
             }
           ]
         }

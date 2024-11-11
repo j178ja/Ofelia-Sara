@@ -17,6 +17,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
     public partial class AgregarDatosPersonalesImputado : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private System.Windows.Forms.TextBox textBox_Email;
         // Propiedad pública para establecer el texto del TextBox
         public string TextoNombre
@@ -38,9 +39,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Asigna el evento TextChanged de textBox_Dni a ActualizarEstado
             textBox_Dni.TextChanged += (sender, e) => ActualizarEstado();
 
-            // Suscribirse al evento FormClosing
-            this.FormClosing += AgregarDatosPersonales_FormClosing;
-
+            
+            this.FormClosing += AgregarDatosPersonalesConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
 
             this.textBox_Email = new System.Windows.Forms.TextBox();// Configuración del textBox_Email
 
@@ -52,8 +52,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
-            NumeroTelefonicoControl numeroTelefonico = new NumeroTelefonicoControl();
-            this.Controls.Add(numeroTelefonico);
+           
             btn_AgregarConcubina.Enabled = false;
             InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
 
@@ -392,6 +391,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
+            datosGuardados = true; // Marcar que los datos fueron guardados
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
@@ -717,7 +717,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.Location = originalPosition;
         }
         //--------------------------------------------------------------------
+        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        private void AgregarDatosPersonalesConcubina_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del IMPUTADO. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+               
 
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
 
     }
 }
