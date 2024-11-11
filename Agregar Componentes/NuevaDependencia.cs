@@ -8,7 +8,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-
+using Clases.Apariencia;
 
 namespace Ofelia_Sara.Agregar_Componentes
 {

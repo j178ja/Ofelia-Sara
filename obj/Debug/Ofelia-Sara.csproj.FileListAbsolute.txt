@@ -161,3 +161,12 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\ko-KP\Ofelia-Sara.res
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-S.9C75B350.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.WinMM.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.Core.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.WinForms.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.WinMM.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.Core.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.WinForms.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Imagenes\ICOes.png

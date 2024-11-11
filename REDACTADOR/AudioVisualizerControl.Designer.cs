@@ -28,10 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(512, 30);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // AudioVisualizerControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "AudioVisualizerControl";
+            this.Size = new System.Drawing.Size(518, 36);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+    
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

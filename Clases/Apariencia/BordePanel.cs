@@ -1,4 +1,12 @@
-﻿namespace Clases.Apariencia
+﻿/*  SE USA ASI
+ 
+
+            //para redondear bordes de panel
+            Color customBorderColor = Color.FromArgb(0, 154, 174);
+            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+ */
+
+namespace Clases.Apariencia
 {
     using System.Drawing;
     using System.Drawing.Drawing2D;
