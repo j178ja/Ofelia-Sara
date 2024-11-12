@@ -58,7 +58,7 @@ namespace Ofelia_Sara.Formularios
             ConfigureComboBox(comboBox_Buscar);
             CargarAcciones();//para comboBox_Buscar
 
-            comboBox_Buscar.BringToFront(); // Asegúrate de que comboBoxBuscar está encima de comboBoxGNUA
+            comboBox_Buscar.BringToFront(); // que comboBoxBuscar está encima de comboBoxGNUA
 
             //----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
             timerCerrarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
@@ -437,8 +437,8 @@ namespace Ofelia_Sara.Formularios
             originalSizes[btn_Mecanografia] = btn_Mecanografia.Size;
             originalLocations[btn_Mecanografia] = btn_Mecanografia.Location;
 
-            originalSizes[btn_Grabar] = btn_Grabar.Size;
-            originalLocations[btn_Grabar] = btn_Grabar.Location;
+            originalSizes[btn_Redactador] = btn_Redactador.Size;
+            originalLocations[btn_Redactador] = btn_Redactador.Location;
         }
 
         // Método MouseDown para simular animación de "clic"
@@ -603,7 +603,7 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-        private void btn_Grabar_Click(object sender, EventArgs e)
+        private void btn_Redactador_Click(object sender, EventArgs e)
         {
             // Crear una instancia del formulario Dictado 
             Redactador redactadorForm = new Redactador();
@@ -613,7 +613,7 @@ namespace Ofelia_Sara.Formularios
             Size menuPrincipalSize = this.Size;
 
             // Calcular la nueva ubicación para el formulario DocumentosForm
-            int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
+            int x = menuPrincipalLocation.X - 2; // Mantener la misma posición horizontal
             int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
 
             // Ajustar la ubicación del formulario DocumentosForm

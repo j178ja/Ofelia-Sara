@@ -1,7 +1,6 @@
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.AssemblyReference.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Properties.Resources.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Redactador.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Resource1.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.GenerateResource.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\REDACTADOR.exe.config
@@ -34,3 +33,7 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Mensaje.MensajeGeneral.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Resource.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\Imagenes\ICOes.png
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.VideoInstructivo.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\Interop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.ResolveComReference.cache
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\AxInterop.WMPLib.dll

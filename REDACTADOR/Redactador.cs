@@ -10,18 +10,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
 using REDACTADOR.Mensaje;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Runtime.InteropServices; // Para la importación de funciones nativas
+
 
 
 namespace REDACTADOR
 {
     public partial class Redactador : Form
     {
+        //funcion nativa para ARRASTRAR EL FORMULARIO
+        // Importar las funciones de la API de Windows
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern void ReleaseCapture();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern void SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+        //-----------------------------------------------------
+
         private WaveInEvent waveIn;
         private WaveFileWriter waveFileWriter;
         private string outputFile = "mic_recording.wav";
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private Button botonAlineacionSeleccionado = null; //para saber con que formato de texto se esta trabajando
 
+        Timer timerCerrarForm = new Timer();
+        Timer timerMinimizarForm = new Timer();
         public Redactador()
         {
             InitializeComponent();
@@ -42,7 +59,195 @@ namespace REDACTADOR
 
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
+
+            //----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
+            timerCerrarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
+            timerMinimizarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
+            timerCerrarForm.Tick += TimerCerrar_Tick;
+            timerMinimizarForm.Tick += TimerMinimizar_Tick;
         }
+        //---------------------------------------------------------------------------------
+        //----BARRA SUPERIOR-----
+        private void Btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
+            btn_Cerrar.ForeColor = SystemColors.Control;
+            btn_Cerrar.FlatAppearance.BorderSize = 1;
+            btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
+            timerCerrarForm.Start();
+        }
+        private void TimerCerrar_Tick(object sender, EventArgs e)
+        {
+            timerCerrarForm.Stop();
+            this.Close();
+        }
+
+        private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
+        {
+            btn_Cerrar.BackColor = Color.Lavender;
+            btn_Cerrar.FlatAppearance.BorderSize = 1;
+            btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
+        }
+
+        private void Btn_Cerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Cerrar.BackColor = SystemColors.ButtonFace;
+            btn_Cerrar.ForeColor = SystemColors.ControlDarkDark;
+            btn_Cerrar.FlatAppearance.BorderSize = 1;
+            btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+        }
+        //-------------------------------------------------------------------------
+        private void TimerMinimizar_Tick(object sender, EventArgs e)
+        {
+            timerMinimizarForm.Stop();
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void Btn_Minimizar_Click(object sender, EventArgs e)
+        {
+            btn_Minimizar.BackColor = SystemColors.ActiveCaption;
+            btn_Minimizar.ForeColor = SystemColors.Control;
+            btn_Minimizar.FlatAppearance.BorderSize = 2;
+            btn_Minimizar.FlatAppearance.BorderColor = SystemColors.Highlight;
+            timerMinimizarForm.Start();
+
+        }
+
+        private void Btn_Minimizar_MouseHover(object sender, EventArgs e)
+        {
+            btn_Minimizar.BackColor = Color.Lavender;
+            btn_Minimizar.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
+        }
+
+        private void Btn_Minimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Minimizar.BackColor = SystemColors.ButtonFace;
+            btn_Minimizar.ForeColor = SystemColors.ControlDarkDark;
+            btn_Minimizar.FlatAppearance.BorderSize = 1;
+            btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+        }
+        //--------------------------------------------------------------------------------
+        // Bandera para activar o desactivar el subrayado personalizado
+        private bool mostrarSubrayado = false;
+        //para hacer que se extienda 
+        private int lineWidth = 0;
+        private bool isAnimating = false;
+        private Timer animationTimer;
+
+        // Método para activar el subrayado en MouseHover
+        private void Label_OfeliaSara_MouseHover(object sender, EventArgs e)
+        {
+            isAnimating = true;
+            lineWidth = 0;
+
+            // Configurar el Timer si aún no está configurado
+            if (animationTimer == null)
+            {
+                animationTimer = new Timer();
+                animationTimer.Interval = 15; // Intervalo en ms para una animación suave
+                animationTimer.Tick += (s, args) =>
+                {
+                    if (lineWidth < label_OfeliaSara.Width / 2)
+                    {
+                        lineWidth += 2; // Aumenta gradualmente la longitud de la línea
+                        label_OfeliaSara.Invalidate(); // Redibuja el Label
+                    }
+                    else
+                    {
+                        animationTimer.Stop(); // Detiene el Timer cuando se completa la animación
+                    }
+                };
+            }
+
+            animationTimer.Start(); // Inicia el Timer para la animación
+        }
+
+        // Método para desactivar el subrayado en MouseLeave
+        private void Label_OfeliaSara_MouseLeave(object sender, EventArgs e)
+        {
+            isAnimating = false;
+            lineWidth = 0;
+            animationTimer?.Stop(); // Detener el Timer
+            label_OfeliaSara.Invalidate(); // Redibuja el Label para eliminar el subrayado
+        }
+
+
+        // Método Paint para dibujar el subrayado personalizado
+
+
+        private void Label_OfeliaSara_Paint(object sender, PaintEventArgs e)
+        {
+            if (isAnimating)
+            {
+                // Define el color y grosor de la línea
+                using (Pen pen = new Pen(SystemColors.Highlight, 3))
+                {
+                    // Centro del Label
+                    int centerX = label_OfeliaSara.Width / 2;
+                    int y = label_OfeliaSara.Font.Height; // Posición 3 píxeles debajo del texto
+
+                    // Dibuja la línea desde el centro hacia los extremos
+                    e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
+                }
+            }
+        }
+
+        // Variable para almacenar la posición original del formulario Redactador
+        private Point posicionOriginalRedactador;
+
+        private void Label_OfeliaSara_Click(object sender, EventArgs e)
+        {
+            // Cambiar color y subrayar el texto del label
+            label_OfeliaSara.ForeColor = Color.Coral;
+            label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);
+
+            // Calcular la nueva ubicación para el formulario Redactador
+            Point menuPrincipalLocation = this.Location;
+            Size menuPrincipalSize = this.Size;
+            int xRedactador = menuPrincipalLocation.X - menuPrincipalSize.Width / 2;
+            int y = menuPrincipalLocation.Y; // Mantener la misma posición vertical
+
+            // Almacenar la posición original del formulario Redactador antes de moverlo
+            posicionOriginalRedactador = menuPrincipalLocation;
+
+            // Mover el formulario Redactador
+            this.Location = new Point(xRedactador, y);
+
+            // Crear e inicializar el formulario para mostrar el video
+            VideoInstructivo videoInstructivo = new VideoInstructivo();
+
+            // Suscribirse al evento FormClosed para restaurar el Label y la posición de Redactador
+            videoInstructivo.FormClosed += (s, args) =>
+            {
+                label_OfeliaSara.ForeColor = SystemColors.ControlText;
+                label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Restablecer estilo original
+
+                // Restaurar la posición original del formulario Redactador
+                this.Location = posicionOriginalRedactador;
+            };
+
+            // Calcular la posición de VideoInstructivo al lado de la posición desplazada de Redactador
+            int xVideoInstructivo = xRedactador + menuPrincipalSize.Width + 10;
+
+            // Ajustar la ubicación del formulario VideoInstructivo
+            videoInstructivo.StartPosition = FormStartPosition.Manual;
+            videoInstructivo.Location = new Point(xVideoInstructivo, y);
+
+            videoInstructivo.Show();
+        }
+
+
+
+
+        //para poder arrastrar el formulario
+        private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+        //----------------------------------------------------------------------------------
 
 
         private ToolTip toolTip = new ToolTip();

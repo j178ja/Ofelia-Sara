@@ -41,7 +41,7 @@
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Leyes = new System.Windows.Forms.PictureBox();
             this.panel_MenuSuperior = new System.Windows.Forms.Panel();
-            this.btn_Grabar = new System.Windows.Forms.Button();
+            this.btn_Redactador = new System.Windows.Forms.Button();
             this.btn_Mecanografia = new System.Windows.Forms.Button();
             this.btn_Minimizar = new System.Windows.Forms.Button();
             this.label_MenuPrincipal = new System.Windows.Forms.Label();
@@ -203,7 +203,7 @@
             // panel_MenuSuperior
             // 
             this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel_MenuSuperior.Controls.Add(this.btn_Grabar);
+            this.panel_MenuSuperior.Controls.Add(this.btn_Redactador);
             this.panel_MenuSuperior.Controls.Add(this.btn_Mecanografia);
             this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
             this.panel_MenuSuperior.Controls.Add(this.label_MenuPrincipal);
@@ -216,24 +216,24 @@
             this.panel_MenuSuperior.TabIndex = 17;
             this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
             // 
-            // btn_Grabar
+            // btn_Redactador
             // 
-            this.btn_Grabar.BackgroundImage = global::Ofelia_Sara.Properties.Resources.microfono24;
-            this.btn_Grabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Grabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Grabar.FlatAppearance.BorderSize = 0;
-            this.btn_Grabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Grabar.Location = new System.Drawing.Point(396, 1);
-            this.btn_Grabar.Name = "btn_Grabar";
-            this.btn_Grabar.Size = new System.Drawing.Size(32, 32);
-            this.btn_Grabar.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btn_Grabar, "REDACTAR POR VOZ");
-            this.btn_Grabar.UseVisualStyleBackColor = true;
-            this.btn_Grabar.Click += new System.EventHandler(this.btn_Grabar_Click);
-            this.btn_Grabar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
-            this.btn_Grabar.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
-            this.btn_Grabar.MouseHover += new System.EventHandler(this.Btn_MouseHover);
-            this.btn_Grabar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            this.btn_Redactador.BackgroundImage = global::Ofelia_Sara.Properties.Resources.microfono24;
+            this.btn_Redactador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Redactador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Redactador.FlatAppearance.BorderSize = 0;
+            this.btn_Redactador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Redactador.Location = new System.Drawing.Point(396, 1);
+            this.btn_Redactador.Name = "btn_Redactador";
+            this.btn_Redactador.Size = new System.Drawing.Size(32, 32);
+            this.btn_Redactador.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.btn_Redactador, "REDACTAR POR VOZ");
+            this.btn_Redactador.UseVisualStyleBackColor = true;
+            this.btn_Redactador.Click += new System.EventHandler(this.btn_Redactador_Click);
+            this.btn_Redactador.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.btn_Redactador.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
+            this.btn_Redactador.MouseHover += new System.EventHandler(this.Btn_MouseHover);
+            this.btn_Redactador.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_Mecanografia
             // 
@@ -539,7 +539,7 @@
         private System.Windows.Forms.Label label_MenuPrincipal;
         private System.Windows.Forms.Button btn_Minimizar;
         private System.Windows.Forms.Button btn_Mecanografia;
-        private System.Windows.Forms.Button btn_Grabar;
+        private System.Windows.Forms.Button btn_Redactador;
     }    
  }
 
