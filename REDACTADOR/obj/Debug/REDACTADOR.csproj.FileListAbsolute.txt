@@ -32,8 +32,8 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\System.Sec
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Mensaje.MensajeGeneral.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Resource.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\Imagenes\ICOes.png
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.VideoInstructivo.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\Interop.WMPLib.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.ResolveComReference.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\bin\Debug\Resources\Imagenes\ICOes.png

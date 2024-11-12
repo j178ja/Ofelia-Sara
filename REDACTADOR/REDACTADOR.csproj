@@ -100,6 +100,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Redactador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,20 +130,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Redactador.resx">
       <DependentUpon>Redactador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="VideoInstructivo.resx">
       <DependentUpon>VideoInstructivo.cs</DependentUpon>
@@ -158,24 +159,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Imagenes\centro.png" />
-    <Content Include="Imagenes\derecha.png" />
-    <None Include="Imagenes\microfono-activo1.png" />
+    <Content Include="Resources\Imagenes\centro.png" />
+    <Content Include="Resources\Imagenes\derecha.png" />
+    <None Include="Resources\Imagenes\microfono-activo1.png" />
+    <Content Include="Resources\Imagenes\Maximizar.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\ICOes.png" />
-    <None Include="Imagenes\ICOes.png">
+    <None Include="Resources\Imagenes\ICOes.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Imagenes\IconoAdvertencia.png" />
-    <Content Include="Imagenes\IconoCancelacion.png" />
-    <Content Include="Imagenes\IconoError.png" />
-    <Content Include="Imagenes\IconoExito.png" />
-    <Content Include="Imagenes\IconoInformacion.png" />
-    <Content Include="Imagenes\izquierda.png" />
-    <Content Include="Imagenes\justificar.png" />
-    <Content Include="Imagenes\microfono-activo.png" />
-    <Content Include="Imagenes\microfono-desactivado.png" />
-    <Content Include="Imagenes\voz.png" />
+    <Content Include="Resources\Imagenes\IconoAdvertencia.png" />
+    <Content Include="Resources\Imagenes\IconoCancelacion.png" />
+    <Content Include="Resources\Imagenes\IconoError.png" />
+    <Content Include="Resources\Imagenes\IconoExito.png" />
+    <Content Include="Resources\Imagenes\IconoInformacion.png" />
+    <Content Include="Resources\Imagenes\izquierda.png" />
+    <Content Include="Resources\Imagenes\justificar.png" />
+    <Content Include="Resources\Imagenes\microfono-activo.png" />
+    <Content Include="Resources\Imagenes\microfono-desactivado.png" />
+    <Content Include="Resources\Imagenes\voz.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="stdole">

@@ -169,4 +169,3 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.WinMM.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.Core.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\NAudio.WinForms.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Microsoft.Win32.Registry.xml
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Imagenes\ICOes.png

@@ -99,32 +99,67 @@ namespace REDACTADOR
         //-------------------------------------------------------------------------
         private void TimerMinimizar_Tick(object sender, EventArgs e)
         {
+            // Detener el timer
             timerMinimizarForm.Stop();
+
+            // Minimizar solo el formulario actual
             this.WindowState = FormWindowState.Minimized;
         }
+
         private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
+            // Cambiar estilo visual del botón de minimizar
             btn_Minimizar.BackColor = SystemColors.ActiveCaption;
             btn_Minimizar.ForeColor = SystemColors.Control;
             btn_Minimizar.FlatAppearance.BorderSize = 2;
             btn_Minimizar.FlatAppearance.BorderColor = SystemColors.Highlight;
-            timerMinimizarForm.Start();
 
+            // Si el formulario actual es menuPrincipal, minimizarlo
+            if (this.Name == "menuPrincipal")
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                // Iniciar el timer solo para minimizar el formulario actual (no el menuPrincipal)
+                timerMinimizarForm.Start();
+            }
         }
 
-        private void Btn_Minimizar_MouseHover(object sender, EventArgs e)
+        private void Btn_Maximizar_Click(object sender, EventArgs e)
         {
-            btn_Minimizar.BackColor = Color.Lavender;
-            btn_Minimizar.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
+            // Cambiar estilo visual del botón de maximizar
+            btn_Maximizar.BackColor = SystemColors.ActiveCaption;
+            btn_Maximizar.ForeColor = SystemColors.Control;
+            btn_Maximizar.FlatAppearance.BorderSize = 2;
+         //   btn_Maximizar.FlatAppearance.BorderColor = SystemColors.Highlight;
+
+            // Maximizar el formulario actual
+            this.WindowState = FormWindowState.Maximized;
         }
 
-        private void Btn_Minimizar_MouseLeave(object sender, EventArgs e)
+        private void Btn_Panel_MouseHover(object sender, EventArgs e)
         {
-            btn_Minimizar.BackColor = SystemColors.ButtonFace;
-            btn_Minimizar.ForeColor = SystemColors.ControlDarkDark;
-            btn_Minimizar.FlatAppearance.BorderSize = 1;
-            btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.BackColor = Color.Lavender;
+                btn.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
+            }
         }
+
+        private void Btn_Panel_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.BackColor = SystemColors.ButtonFace;
+                btn.ForeColor = SystemColors.ControlDarkDark;
+                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            }
+        }
+
         //--------------------------------------------------------------------------------
         // Bandera para activar o desactivar el subrayado personalizado
         private bool mostrarSubrayado = false;

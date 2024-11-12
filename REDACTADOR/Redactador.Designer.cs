@@ -69,9 +69,8 @@ namespace REDACTADOR
             // 
             // iconoEscudo
             // 
-            iconoEscudo.BackgroundImage = global::REDACTADOR.Properties.Resources.ICOes;
+            iconoEscudo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconoEscudo.BackgroundImage")));
             iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            iconoEscudo.Image = global::REDACTADOR.Properties.Resources.ICOes;
             iconoEscudo.Location = new System.Drawing.Point(1, 3);
             iconoEscudo.Name = "iconoEscudo";
             iconoEscudo.Size = new System.Drawing.Size(30, 28);
@@ -197,7 +196,7 @@ namespace REDACTADOR
             // btn_Justificar
             // 
             this.btn_Justificar.BackColor = System.Drawing.Color.White;
-            this.btn_Justificar.BackgroundImage = global::REDACTADOR.Properties.Resources.justificar;
+            this.btn_Justificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Justificar.BackgroundImage")));
             this.btn_Justificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Justificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Justificar.Location = new System.Drawing.Point(237, 3);
@@ -211,7 +210,7 @@ namespace REDACTADOR
             // btn_AlinearDerecha
             // 
             this.btn_AlinearDerecha.BackColor = System.Drawing.Color.White;
-            this.btn_AlinearDerecha.BackgroundImage = global::REDACTADOR.Properties.Resources.derecha;
+            this.btn_AlinearDerecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_AlinearDerecha.BackgroundImage")));
             this.btn_AlinearDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_AlinearDerecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AlinearDerecha.Location = new System.Drawing.Point(216, 3);
@@ -225,7 +224,7 @@ namespace REDACTADOR
             // btn_Centrar
             // 
             this.btn_Centrar.BackColor = System.Drawing.Color.White;
-            this.btn_Centrar.BackgroundImage = global::REDACTADOR.Properties.Resources.centro;
+            this.btn_Centrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Centrar.BackgroundImage")));
             this.btn_Centrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Centrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Centrar.Location = new System.Drawing.Point(195, 3);
@@ -239,7 +238,7 @@ namespace REDACTADOR
             // btn_AlinearIzquierda
             // 
             this.btn_AlinearIzquierda.BackColor = System.Drawing.Color.White;
-            this.btn_AlinearIzquierda.BackgroundImage = global::REDACTADOR.Properties.Resources.izquierda;
+            this.btn_AlinearIzquierda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_AlinearIzquierda.BackgroundImage")));
             this.btn_AlinearIzquierda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_AlinearIzquierda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AlinearIzquierda.Location = new System.Drawing.Point(173, 3);
@@ -308,7 +307,7 @@ namespace REDACTADOR
             // 
             this.btn_Microfono.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Microfono.BackColor = System.Drawing.Color.Red;
-            this.btn_Microfono.BackgroundImage = global::REDACTADOR.Properties.Resources.microfono_activo;
+            this.btn_Microfono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Microfono.BackgroundImage")));
             this.btn_Microfono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Microfono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Microfono.Location = new System.Drawing.Point(259, 39);
@@ -320,13 +319,14 @@ namespace REDACTADOR
             // 
             // btn_Minimizar
             // 
+            this.btn_Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Minimizar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Minimizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_Minimizar.FlatAppearance.BorderSize = 2;
             this.btn_Minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minimizar.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Minimizar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Minimizar.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.btn_Minimizar.Location = new System.Drawing.Point(490, 5);
             this.btn_Minimizar.Name = "btn_Minimizar";
             this.btn_Minimizar.Size = new System.Drawing.Size(25, 25);
@@ -336,11 +336,12 @@ namespace REDACTADOR
             this.toolTip1.SetToolTip(this.btn_Minimizar, "Minimizar");
             this.btn_Minimizar.UseVisualStyleBackColor = false;
             this.btn_Minimizar.Click += new System.EventHandler(this.Btn_Minimizar_Click);
-            this.btn_Minimizar.MouseLeave += new System.EventHandler(this.Btn_Minimizar_MouseLeave);
-            this.btn_Minimizar.MouseHover += new System.EventHandler(this.Btn_Minimizar_MouseHover);
+            this.btn_Minimizar.MouseLeave += new System.EventHandler(this.Btn_Panel_MouseLeave);
+            this.btn_Minimizar.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
             // 
             // label_OfeliaSara
             // 
+            this.label_OfeliaSara.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_OfeliaSara.AutoSize = true;
             this.label_OfeliaSara.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_OfeliaSara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -352,11 +353,13 @@ namespace REDACTADOR
             this.label_OfeliaSara.Text = "Ofelia - Sara";
             this.toolTip1.SetToolTip(this.label_OfeliaSara, "Instructivo de la aplicación");
             this.label_OfeliaSara.Click += new System.EventHandler(this.Label_OfeliaSara_Click);
+            this.label_OfeliaSara.Paint += new System.Windows.Forms.PaintEventHandler(this.Label_OfeliaSara_Paint);
             this.label_OfeliaSara.MouseLeave += new System.EventHandler(this.Label_OfeliaSara_MouseLeave);
             this.label_OfeliaSara.MouseHover += new System.EventHandler(this.Label_OfeliaSara_MouseHover);
             // 
             // btn_Cerrar
             // 
+            this.btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Cerrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -377,7 +380,10 @@ namespace REDACTADOR
             // 
             // btn_Maximizar
             // 
+            this.btn_Maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Maximizar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Maximizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Maximizar.BackgroundImage")));
+            this.btn_Maximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Maximizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_Maximizar.FlatAppearance.BorderSize = 2;
@@ -388,13 +394,17 @@ namespace REDACTADOR
             this.btn_Maximizar.Name = "btn_Maximizar";
             this.btn_Maximizar.Size = new System.Drawing.Size(25, 25);
             this.btn_Maximizar.TabIndex = 21;
-            this.btn_Maximizar.Text = "-";
             this.btn_Maximizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip1.SetToolTip(this.btn_Maximizar, "Maximizar");
             this.btn_Maximizar.UseVisualStyleBackColor = false;
+            this.btn_Maximizar.Click += new System.EventHandler(this.Btn_Maximizar_Click);
+            this.btn_Maximizar.MouseLeave += new System.EventHandler(this.Btn_Panel_MouseLeave);
+            this.btn_Maximizar.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
             // 
             // panel_MenuSuperior
             // 
+            this.panel_MenuSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
             this.panel_MenuSuperior.Controls.Add(this.btn_Maximizar);
             this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
@@ -404,7 +414,7 @@ namespace REDACTADOR
             this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
             this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);
             this.panel_MenuSuperior.Name = "panel_MenuSuperior";
-            this.panel_MenuSuperior.Size = new System.Drawing.Size(585, 34);
+            this.panel_MenuSuperior.Size = new System.Drawing.Size(576, 34);
             this.panel_MenuSuperior.TabIndex = 18;
             this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
             // 

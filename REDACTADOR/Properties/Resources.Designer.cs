@@ -163,9 +163,29 @@ namespace REDACTADOR.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Maximizar {
+            get {
+                object obj = ResourceManager.GetObject("Maximizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap microfono_activo {
             get {
                 object obj = ResourceManager.GetObject("microfono_activo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microfono_activo1 {
+            get {
+                object obj = ResourceManager.GetObject("microfono_activo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
