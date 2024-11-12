@@ -30,7 +30,10 @@ namespace REDACTADOR
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HTCAPTION = 0x2;
         //-----------------------------------------------------
-
+        //AMPLIAR FORMULARIO
+        private bool isResizing = false;
+        private Point lastMousePosition;
+        //------------------------------------------------------
         private WaveInEvent waveIn;
         private WaveFileWriter waveFileWriter;
         private string outputFile = "mic_recording.wav";
@@ -637,5 +640,61 @@ namespace REDACTADOR
                 boton.BackColor = Color.SkyBlue;
             };
         }
+        //---------------------------------------------------------------
+     
+            private void Redactador_MouseDown(object sender, MouseEventArgs e)
+            {
+                // Detectar si el usuario está cerca de un borde para redimensionar
+                if (e.Button == MouseButtons.Left)
+                {
+                    isResizing = true;
+                    lastMousePosition = e.Location;
+                }
+            }
+
+            private void Redactador_MouseMove(object sender, MouseEventArgs e)
+            {
+                if (isResizing)
+                {
+                    // Calcular el nuevo tamaño del formulario
+                    int deltaX = e.X - lastMousePosition.X;
+                    int deltaY = e.Y - lastMousePosition.Y;
+
+                    // Cambiar el tamaño del formulario
+                    this.Width += deltaX;
+                    this.Height += deltaY;
+
+                    // Actualizar la última posición del mouse
+                    lastMousePosition = e.Location;
+                }
+                else
+                {
+                    // Cambiar el cursor para mostrar que el formulario es redimensionable
+                    if (e.X >= this.ClientSize.Width - 10 && e.Y >= this.ClientSize.Height - 10)
+                        this.Cursor = Cursors.SizeNWSE;
+                    else
+                        this.Cursor = Cursors.Default;
+                }
+            }
+
+            private void Redactador_MouseUp(object sender, MouseEventArgs e)
+            {
+                isResizing = false;
+            }
+        private void Triangulo_Paint(object sender, PaintEventArgs e)
+        {
+            // Crear un pincel gris para dibujar el triángulo
+            using (Brush brush = new SolidBrush(SystemColors.ControlDark))
+            {
+                // Dibujar un triángulo en la esquina inferior derecha
+                Point p1 = new Point(this.ClientSize.Width - 20, this.ClientSize.Height - 5); 
+                Point p2 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 5); 
+                Point p3 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 20); 
+                e.Graphics.FillPolygon(brush, new Point[] { p1, p2, p3 });
+            }
+        }
+
     }
-}
+
+    }
+

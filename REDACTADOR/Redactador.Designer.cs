@@ -454,6 +454,10 @@ namespace REDACTADOR
             this.Name = "Redactador";
             this.Text = "REDACTAR TEXTO MEDIANTE VOZ";
             this.Load += new System.EventHandler(this.Redactador_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Triangulo_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Redactador_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Redactador_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Redactador_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
