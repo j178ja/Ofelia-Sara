@@ -39,6 +39,7 @@ namespace Ofelia_Sara.Mensajes
 
             btn_No.Visible = false;
             btn_Si.Visible = false;
+            Fecha_Audiencia.Visible = false;
         }
         public enum TipoMensaje
         {
@@ -137,7 +138,7 @@ namespace Ofelia_Sara.Mensajes
             label_Texto.Location = new Point(x, y);
         }
 
-        // Dentro de MensajeGeneral
+
 
         private void Btn_Si_Click(object sender, EventArgs e)
         {
@@ -151,15 +152,66 @@ namespace Ofelia_Sara.Mensajes
             this.Close();
         }
 
-        // En MensajeGeneral
+   
         public void MostrarBotonesConfirmacion(bool mostrar)
         {
             btn_Si.Visible = mostrar;
             btn_No.Visible = mostrar;
             btn_Cerrar.Visible = false;
+            Fecha_Audiencia.Visible = false;
             btn_No.Focus();
             btn_No.BackColor = Color.FromArgb(255, 70, 70);
         }
+
+        public void MensajeAudiencia(string mensaje)
+        {
+            // Muestra el mensaje recibido en el control adecuado, por ejemplo, en un Label
+            label_Texto.Text = mensaje; // lbl_Mensaje es el Label que muestra el mensaje en el formulario
+
+            // Configura la visibilidad de los controles
+            btn_Si.Visible = true;
+            btn_Si.Text = "GUARDAR";
+            btn_Si.BackColor = Color.LimeGreen;
+            btn_Si.ForeColor = Color.Black;
+            btn_Si.Click += Btn_Si_Guardar_Click;
+
+            btn_No.Visible = true;
+            btn_No.Text = "CANCELAR";
+            btn_No.BackColor = Color.IndianRed;
+            btn_No.ForeColor = Color.White;
+            btn_No.Click += Btn_No_Cancelar_Click;
+
+            btn_Cerrar.Visible =false;
+            Fecha_Audiencia.Visible = true;
+            pictureBox_Icono.Visible = false;
+        }
+        // Manejador para el evento Click del botón "GUARDAR"
+        private void Btn_Si_Guardar_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes definir la lógica de guardar la audiencia, o el mensaje de éxito
+            Mostrar("Se ha asignado la fecha indicada", TipoMensaje.Exito);
+        }
+
+        // Manejador para el evento Click del botón "CANCELAR"
+        private void Btn_No_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Cierra el formulario
+        }
+
+        public static void MostrarAudiencia(string mensaje)
+        {
+            using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion)) // o el TipoMensaje que desees
+            {
+                form.MensajeAudiencia(mensaje);
+                form.ShowDialog(); // Muestra el formulario como modal
+            }
+        }
+
+
+
+
+
+
 
     }
 }

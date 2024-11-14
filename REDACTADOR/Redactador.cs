@@ -617,16 +617,27 @@ namespace REDACTADOR
         //-------------------------------------------
         protected void InicializarEstiloBoton(Button boton)
         {
+            // Variables para almacenar el tamaño y la posición original solo al entrar en el botón
             Size originalSize = boton.Size;
             Point originalLocation = boton.Location;
+            Color originalBackColor = boton.BackColor;
+            bool posicionOriginalGuardada = false;
 
-            // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
+            // Evento MouseEnter: captura la posición original y amplía desde el centro
             boton.MouseEnter += (sender, e) =>
             {
-                // Calcula el incremento para centrar el cambio de tamaño
+                if (!posicionOriginalGuardada)
+                {
+                    originalSize = boton.Size;
+                    originalLocation = boton.Location;
+                    posicionOriginalGuardada = true;
+                }
+
+                // Ajustar tamaño y posición desde el centro
                 int incremento = 12;
                 int nuevoAncho = originalSize.Width + incremento;
                 int nuevoAlto = originalSize.Height + incremento;
+
                 int deltaX = (nuevoAncho - originalSize.Width) / 2;
                 int deltaY = (nuevoAlto - originalSize.Height) / 2;
 
@@ -635,23 +646,20 @@ namespace REDACTADOR
                 boton.BackColor = Color.FromArgb(51, 174, 189);
             };
 
-            // Evento MouseHover: Cambia solo el color de fondo
-            boton.MouseHover += (sender, e) =>
-            {
-                boton.BackColor = Color.FromArgb(51, 174, 189); //20% MAS CLARO QUE EL COLOR OFICIAL Y DE FONDO
-            };
-
-            // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
+            // Evento MouseLeave: Restaura el tamaño y posición originales
             boton.MouseLeave += (sender, e) =>
             {
                 boton.Size = originalSize;
                 boton.Location = originalLocation;
-                boton.BackColor = Color.SkyBlue;
+                boton.BackColor = originalBackColor;
+                posicionOriginalGuardada = false;  // Restablecer la bandera para la próxima entrada
             };
         }
+
+
         //---------------------------------------------------------------
-     
-            private void Redactador_MouseDown(object sender, MouseEventArgs e)
+
+        private void Redactador_MouseDown(object sender, MouseEventArgs e)
             {
                 // Detectar si el usuario está cerca de un borde para redimensionar
                 if (e.Button == MouseButtons.Left)

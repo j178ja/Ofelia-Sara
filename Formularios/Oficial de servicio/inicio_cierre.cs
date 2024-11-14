@@ -78,6 +78,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Configurar el TextBox para utilizar autocompletar
             ConfigurarAutocompletar(textBox_Caratula, sugerencias);
+
+            SetupBotonDeslizable();  // Configurar el delegado de validación
         }
 
 
@@ -985,6 +987,68 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ActualizarEstado();
         }
 
+        private void SetupBotonDeslizable()
+        {
+            // Configurar el delegado de validación en el control BotonDeslizable
+            botonDeslizable_Not247.ValidarCampos = () =>
+            {
+                // Llama a la función de validación y almacena el resultado
+                bool camposCompletos = ValidarControlesCompletosEnPaneles();
+
+                if (!camposCompletos)
+                {
+                    // Mostrar mensaje de advertencia si los campos están incompletos
+                    MensajeGeneral.Mostrar("Debe completar la totalidad de los campos para crear la NOTIFICACION de Art. 247 C.P.P.", MensajeGeneral.TipoMensaje.Advertencia);
+                    return false; // Retorna false si los campos están incompletos
+                }
+                else
+                {
+                   
+                    MensajeGeneral.MostrarAudiencia("Indique fecha de pericia.");
+
+                    return true; // Retorna true si los campos están completos
+                }
+
+
+            };
+        }
+
+
+        //--Para verificar los controles y habilitar boton
+        private bool ValidarControlesCompletosEnPaneles()
+        {
+            // Verificar los paneles uno por uno
+            bool camposIncompletos = false;
+
+            camposIncompletos |= !VerificarPanelCompleto(panel_Ipp);
+            camposIncompletos |= !VerificarPanelCompleto(panel_Caratula);
+            camposIncompletos |= !VerificarPanelCompleto(panel_Victima);
+            camposIncompletos |= !VerificarPanelCompleto(panel_Imputado);
+            camposIncompletos |= !VerificarPanelCompleto(panel_Instruccion);
+
+            return !camposIncompletos; // Devuelve verdadero si todos los campos están completos
+        }
+
+        private bool VerificarPanelCompleto(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                // Verificar si el control es un TextBox y está vacío
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    return false; // Campo incompleto
+                }
+
+                // Verificar si el control es un ComboBox y no tiene un elemento seleccionado
+                if (control is ComboBox comboBox && string.IsNullOrWhiteSpace(comboBox.Text))
+                {
+                    return false; // Campo incompleto si el texto está vacío
+                }
+
+
+            }
+            return true; // Todos los campos en el panel están completos
+        }
 
     }
 }

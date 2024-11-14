@@ -30,6 +30,7 @@
         {
             this.label_OfeliaSara = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Fecha_Audiencia = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.label_Texto = new System.Windows.Forms.Label();
             this.pictureBox_Icono = new System.Windows.Forms.PictureBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
@@ -55,12 +56,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.Fecha_Audiencia);
             this.panel1.Controls.Add(this.label_Texto);
             this.panel1.Controls.Add(this.pictureBox_Icono);
             this.panel1.Location = new System.Drawing.Point(12, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(385, 112);
             this.panel1.TabIndex = 4;
+            // 
+            // Fecha_Audiencia
+            // 
+            this.Fecha_Audiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fecha_Audiencia.Location = new System.Drawing.Point(60, 18);
+            this.Fecha_Audiencia.Name = "Fecha_Audiencia";
+            this.Fecha_Audiencia.SelectedDate = new System.DateTime(2024, 11, 14, 14, 7, 21, 678);
+            this.Fecha_Audiencia.Size = new System.Drawing.Size(266, 30);
+            this.Fecha_Audiencia.TabIndex = 5;
             // 
             // label_Texto
             // 
@@ -168,5 +179,6 @@
         private System.Windows.Forms.PictureBox pictureBox_EscudoPolicial;
         private System.Windows.Forms.Button btn_No;
         private System.Windows.Forms.Button btn_Si;
+        private Controles.Controles.TimePickerPersonalizado Fecha_Audiencia;
     }
 }

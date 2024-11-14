@@ -14,6 +14,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
+using static Ofelia_Sara.Controles.Controles.CustomDate;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -81,7 +82,7 @@ namespace Ofelia_Sara.Registro_de_personal
             numeroTelefonicoControl2.ControlWidth = 159;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
-           
+        
         }
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
@@ -110,6 +111,7 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
+            comboBox_Dependencia.SelectedIndex = -1;
             comboBox_Nacionalidad.SelectedIndex = -1;
             comboBox_EstadoCivil.SelectedIndex = -1;
             comboBox_Escalafon.SelectedIndex = -1;
@@ -132,6 +134,7 @@ namespace Ofelia_Sara.Registro_de_personal
         private void configurarTextoEnControles()
         {
             MayusculaSola.AplicarAControl(textBox_Nombre);
+            MayusculaSola.AplicarAControl(textBox_Apellido);
             MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
             MayusculaSola.AplicarAControl(textBox_LocalidadPnal);
             MayusculaSola.AplicarAControl(textBox_PartidoPnal);
@@ -265,11 +268,45 @@ namespace Ofelia_Sara.Registro_de_personal
                 comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
             }
         }
-
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            datosGuardados = true; // Marcar que los datos fueron guardados
+            try
+            {
+                // Crear el objeto Personal con los datos del formulario
+                Personal personal = new Personal
+                {
+                    // Si el DNI está vacío, asignamos un valor predeterminado o lo dejamos como null
+                    DNI = string.IsNullOrEmpty(textBox_Dni.Text) ? null : textBox_Dni.Text,
+
+                    // Si el Domicilio está vacío, asignamos un valor predeterminado o lo dejamos como null
+                    Domicilio = string.IsNullOrEmpty(textBox_DomicilioPnal.Text) ? null : textBox_DomicilioPnal.Text,
+
+                    // Verificamos si el comboBox tiene una selección válida
+                    Nacionalidad = comboBox_Nacionalidad.SelectedItem != null ? comboBox_Nacionalidad.SelectedItem.ToString() : null,
+                    Escalafon = comboBox_Escalafon.SelectedItem != null ? comboBox_Escalafon.SelectedItem.ToString() : null,
+                    Jerarquia = comboBox_Jerarquia.SelectedItem != null ? comboBox_Jerarquia.SelectedItem.ToString() : null,
+
+                    // Si la función está vacía, asignamos un valor predeterminado o lo dejamos como null
+                    Funcion = string.IsNullOrEmpty(textBox_Funcion.Text) ? null : textBox_Funcion.Text,
+                };
+
+                // Llamar al método UpdatePersonal para actualizar los datos en la base de datos
+                PersonalManager personalManager = new PersonalManager();
+                personalManager.UpdatePersonal(personal);
+
+                // Mostrar mensaje de éxito
+                MensajeGeneral.Mostrar("Datos actualizados correctamente.", MensajeGeneral.TipoMensaje.Exito);
+                datosGuardados = true; // Marcar que los datos fueron guardados
+            }
+            catch (Exception ex)
+            {
+                // Mostrar mensaje de error si ocurre alguna excepción
+                MensajeGeneral.Mostrar("Error al actualizar los datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
+                datosGuardados = false; // Marcar que los datos no fueron guardados
+            }
         }
+
+
 
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void NuevoPersonal_FormClosing(object sender, FormClosingEventArgs e)
@@ -323,13 +360,37 @@ namespace Ofelia_Sara.Registro_de_personal
 
                         // Verificar si se obtuvo el DTO correctamente
                         if (personalDTO != null)
-                        {
-                            // Asignar los valores del DTO a los controles del formulario
-                            textBox_DomicilioPnal.Text = personalDTO.Domicilio;
-                            comboBox_Nacionalidad.SelectedItem = personalDTO.Nacionalidad; // Asignar el valor al ComboBox
-                            comboBox_Escalafon.SelectedItem = personalDTO.Escalafon;       // Asignar el valor al ComboBox
-                            comboBox_Jerarquia.SelectedItem = personalDTO.Jerarquia;       // Asignar el valor al ComboBox
-                            textBox_Funcion.Text = personalDTO.Funcion;                     // Asignar el valor al TextBox
+                        { // Asignar los valores del DTO a los controles del formulario
+                            textBox_Dni.Text = personalDTO.DNI ?? "00.000.000";
+                            textBox_Nombre.Text = personalDTO.Nombres;
+                            textBox_Apellido.Text = personalDTO.Apellido;
+
+
+                            textBox_DomicilioPnal.Text = personalDTO.Domicilio ?? "NO ESPECIFICADO";
+                            textBox_LocalidadPnal.Text = personalDTO.Localidad ?? "NO ESPECIFICADO";
+                            textBox_PartidoPnal.Text = personalDTO.Partido ?? "NO ESPECIFICADO";
+                            comboBox_Nacionalidad.SelectedItem = personalDTO.Nacionalidad ?? "NO ESPECIFICADO";
+                            if (comboBox_Nacionalidad.SelectedItem == null && comboBox_Nacionalidad.Items.Count > 0)
+                                comboBox_Nacionalidad.SelectedIndex = 0;  // O establecer un valor específico
+                                                                         
+                            comboBox_Escalafon.SelectedItem = personalDTO.Escalafon;
+                            if (comboBox_Escalafon.SelectedItem == null && comboBox_Escalafon.Items.Count > 0)
+                                comboBox_Escalafon.SelectedIndex = 0;
+
+                            comboBox_Jerarquia.SelectedItem = personalDTO.Jerarquia;
+                            if (comboBox_Jerarquia.SelectedItem == null && comboBox_Jerarquia.Items.Count > 0)
+                                comboBox_Jerarquia.SelectedIndex = 0;
+
+                            textBox_Funcion.Text = personalDTO.Funcion;
+                            comboBox_Dependencia.SelectedItem = personalDTO.Dependencia?? "NO ESPECIFICADO";
+                            if (comboBox_Dependencia.SelectedItem == null && comboBox_Dependencia.Items.Count > 0)
+                                comboBox_Dependencia.SelectedIndex = 0;
+
+                            textBox_LocalidadDependencia.Text = personalDTO.LocalidadDependencia;
+                            textBox_DomicilioDependencia.Text = personalDTO.Domicilio_Dependencia ?? "NO ESPECIFICADO";
+                            textBox_PartidoDependencia.Text = personalDTO.Partido_Dependencia ?? "NO ESPECIFICADO";
+                           
+
                         }
                         else
                         {

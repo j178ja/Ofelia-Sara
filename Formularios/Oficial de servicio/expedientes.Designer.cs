@@ -58,7 +58,7 @@
             this.label_DatosInstruccion = new System.Windows.Forms.Label();
             this.label_Instructor = new System.Windows.Forms.Label();
             this.label_Secretario = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Controles.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.label_Fecha = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -83,7 +83,6 @@
             this.groupBox_SeleccionadorProcedencia.SuspendLayout();
             this.SuspendLayout();
             // 
-          
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
@@ -472,6 +471,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

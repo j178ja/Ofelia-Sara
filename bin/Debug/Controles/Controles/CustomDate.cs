@@ -11,8 +11,6 @@ namespace Ofelia_Sara.Controles.Controles
     public partial class CustomDate : UserControl
     {
 
-
-
         private bool isClosing = false; // Declarar la variable a nivel de clase
         public CustomDate()
         {
@@ -31,6 +29,8 @@ namespace Ofelia_Sara.Controles.Controles
             textBox_DateAÑO.TextChanged += CamposFecha_TextChanged; 
 
             CustomDateTextBox_Load(this, EventArgs.Empty);// inicializar load
+
+
         }
         private void CustomDateTextBox_Load(object sender, EventArgs e)
         {
@@ -291,6 +291,9 @@ namespace Ofelia_Sara.Controles.Controles
                 MensajeGeneral.Mostrar("Por favor, ingrese una fecha válida.", MensajeGeneral.TipoMensaje.Advertencia);
             }
         }
+
+       
+
 
 
     }

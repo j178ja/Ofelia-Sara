@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;timePickerPersonalizadoFecha.Name" xml:space="preserve">
-    <value>timePickerPersonalizadoFecha</value>
-  </data>
-  <data name="&gt;&gt;timePickerPersonalizadoFecha.Type" xml:space="preserve">
-    <value>Controles_Libreria.Controles.TimePickerPersonalizado, Controles_Libreria, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1262,7 +1256,7 @@
     <value>Fecha_Instruccion</value>
   </data>
   <data name="&gt;&gt;Fecha_Instruccion.Type" xml:space="preserve">
-    <value>Controles_Libreria.Controles.TimePickerPersonalizado, Controles_Libreria, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ofelia_Sara.Controles.Controles.TimePickerPersonalizado, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Fecha_Instruccion.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
