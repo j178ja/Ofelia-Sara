@@ -31,14 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesImputado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonDeslizable_StarPlana = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.label_StarPlana = new System.Windows.Forms.Label();
             this.btn_AgregarConcubina = new System.Windows.Forms.Button();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.emailControl1 = new Controles.Controles.EmailControl();
-            this.numeroTelefonicoControl = new Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDateTextBox();
+            this.emailControl1 = new Ofelia_Sara.Controles.Controles.EmailControl();
+            this.numeroTelefonicoControl = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.DateNacimiento();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -94,6 +96,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.botonDeslizable_StarPlana);
+            this.panel1.Controls.Add(this.label_StarPlana);
             this.panel1.Controls.Add(this.btn_AgregarConcubina);
             this.panel1.Controls.Add(this.comboBox_EstadoCivil);
             this.panel1.Controls.Add(this.label_EstadoCivil);
@@ -148,6 +152,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 796);
             this.panel1.TabIndex = 0;
+            // 
+            // botonDeslizable_StarPlana
+            // 
+            this.botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonDeslizable_StarPlana.IsOn = false;
+            this.botonDeslizable_StarPlana.Location = new System.Drawing.Point(112, 469);
+            this.botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
+            this.botonDeslizable_StarPlana.Size = new System.Drawing.Size(40, 20);
+            this.botonDeslizable_StarPlana.TabIndex = 99;
+            this.botonDeslizable_StarPlana.ValidarCampos = null;
+            // 
+            // label_StarPlana
+            // 
+            this.label_StarPlana.AutoSize = true;
+            this.label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_StarPlana.Location = new System.Drawing.Point(28, 470);
+            this.label_StarPlana.Name = "label_StarPlana";
+            this.label_StarPlana.Size = new System.Drawing.Size(83, 16);
+            this.label_StarPlana.TabIndex = 98;
+            this.label_StarPlana.Text = "Star. Plana";
             // 
             // btn_AgregarConcubina
             // 
@@ -396,7 +420,7 @@
             // checkBox_LegajoDetenido
             // 
             this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(480, 470);
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(532, 473);
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 11;
@@ -407,7 +431,7 @@
             // checkBox_NotArt60
             // 
             this.checkBox_NotArt60.AutoSize = true;
-            this.checkBox_NotArt60.Location = new System.Drawing.Point(250, 470);
+            this.checkBox_NotArt60.Location = new System.Drawing.Point(345, 473);
             this.checkBox_NotArt60.Name = "checkBox_NotArt60";
             this.checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
             this.checkBox_NotArt60.TabIndex = 10;
@@ -417,7 +441,7 @@
             // label_LegajoDetenido
             // 
             this.label_LegajoDetenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoDetenido.Location = new System.Drawing.Point(317, 465);
+            this.label_LegajoDetenido.Location = new System.Drawing.Point(369, 468);
             this.label_LegajoDetenido.Name = "label_LegajoDetenido";
             this.label_LegajoDetenido.Size = new System.Drawing.Size(188, 23);
             this.label_LegajoDetenido.TabIndex = 31;
@@ -428,7 +452,7 @@
             // 
             this.label_NotArt60.AutoSize = true;
             this.label_NotArt60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NotArt60.Location = new System.Drawing.Point(62, 468);
+            this.label_NotArt60.Location = new System.Drawing.Point(157, 470);
             this.label_NotArt60.Name = "label_NotArt60";
             this.label_NotArt60.Size = new System.Drawing.Size(182, 16);
             this.label_NotArt60.TabIndex = 30;
@@ -765,7 +789,7 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
-        private Controles.Controles.CustomDateTextBox dateTimePicker_FechaNacimiento;
+        private Controles.Controles.DateNacimiento dateTimePicker_FechaNacimiento;
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
         private Controles.Controles.EmailControl emailControl1;
         private System.Windows.Forms.Label label_LugarNacimiento;
@@ -773,5 +797,7 @@
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
         private System.Windows.Forms.Label label_EstadoCivil;
         private System.Windows.Forms.Button btn_AgregarConcubina;
+        private System.Windows.Forms.Label label_StarPlana;
+        private Controles.Controles.BotonDeslizable botonDeslizable_StarPlana;
     }
 }

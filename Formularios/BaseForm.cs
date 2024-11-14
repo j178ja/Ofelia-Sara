@@ -4,7 +4,7 @@ using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
 using Clases.Apariencia;
-using Controles.Controles;
+using Ofelia_Sara.Controles.Controles;
 using System;
 // Alias para el ShadowForm de tu propia clase
 // using Ofelia_Sara.Base_de_Datos;

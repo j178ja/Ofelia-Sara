@@ -1,7 +1,7 @@
 ﻿using BaseDatos.Mensaje;
 using Clases.Apariencia;
 using Clases.Botones;
-using Controles.Controles;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using System;
 using System.ComponentModel;

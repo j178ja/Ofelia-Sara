@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Controles.Controles
+namespace Ofelia_Sara.Controles.Controles
 {
     partial class TimePickerPersonalizado
     {

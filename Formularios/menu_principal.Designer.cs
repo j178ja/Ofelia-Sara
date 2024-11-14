@@ -202,6 +202,7 @@
             // 
             // panel_MenuSuperior
             // 
+            this.panel_MenuSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
             this.panel_MenuSuperior.Controls.Add(this.btn_Redactador);
             this.panel_MenuSuperior.Controls.Add(this.btn_Mecanografia);

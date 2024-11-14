@@ -3,9 +3,11 @@ using Clases.Botones;
 using Clases.Texto;
 using Controles.Controles;
 using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -17,6 +19,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
     public partial class AgregarDatosPersonalesImputado : BaseForm
     {
+        
+
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private System.Windows.Forms.TextBox textBox_Email;
         // Propiedad pública para establecer el texto del TextBox
@@ -48,6 +52,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            
+            SetupBotonDeslizable();  // Configurar el delegado de validación
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
@@ -736,6 +743,33 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
             }
         }
+
+        private void SetupBotonDeslizable()
+        {
+            // Configurar el delegado de validación en el control BotonDeslizable
+            botonDeslizable_StarPlana.ValidarCampos = () =>
+            {
+            // Lógica de validación
+            bool camposIncompletos =
+                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+                string.IsNullOrWhiteSpace(textBox_Dni.Text); /*||
+                    !dateTimePicker_FechaNacimiento.HasValue();*/
+
+                if (camposIncompletos)
+                {
+                    // Mostrar mensaje de advertencia si los campos están incompletos
+                    MensajeGeneral.Mostrar("Debe completar los campos NOMBRE, DNI y FECHA DE NACIMIENTO para poder solicitar plana del ciudadano", MensajeGeneral.TipoMensaje.Advertencia);
+                    return false; // Retorna false si los campos están incompletos
+                }
+                else
+                {
+                    // Mostrar mensaje de éxito si los campos están completos
+                    MensajeGeneral.Mostrar("Datos completos", MensajeGeneral.TipoMensaje.Exito);
+                    return true; // Retorna true si los campos están completos
+                }
+            };
+        }
+
 
     }
 }

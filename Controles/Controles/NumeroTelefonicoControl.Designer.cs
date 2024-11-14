@@ -1,4 +1,4 @@
-﻿namespace Controles.Controles
+﻿namespace Ofelia_Sara.Controles.Controles
 {
     partial class NumeroTelefonicoControl
     {

@@ -1,8 +1,9 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
-using Controles.Controles;
+using Ofelia_Sara.Controles.Controles;
 using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 
@@ -52,7 +53,7 @@ namespace Clases.Botones
                         break;
 
                     // Si el control es FECHA DE NACIMIENTO
-                    case CustomDateTextBox customDateTextBox:
+                    case DateNacimiento customDateTextBox:
                         customDateTextBox.ClearDate(); // Limpiar el control personalizado
                         customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
                         break;
@@ -72,6 +73,11 @@ namespace Clases.Botones
                     case Control nestedControl when nestedControl.HasChildren:
                         Limpiar(nestedControl);
                         break;
+
+                    case BotonDeslizable botonDeslizable:
+                        botonDeslizable.IsOn = false;
+                        break;
+
 
                     // Si el control es un tipo específico (NuevaCaratulaControl, NuevaPersonaControl), 
                     case NuevaCaratulaControl _:

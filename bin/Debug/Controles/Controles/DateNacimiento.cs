@@ -2,17 +2,19 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using BaseDatos.Mensaje;
+using Controles.Controles;
 
 
-namespace Controles.Controles
+namespace Ofelia_Sara.Controles.Controles
 {
-    public partial class CustomDateTextBox : UserControl
+    public partial class DateNacimiento : UserControl
     {
 
 
 
         private bool isClosing = false; // Declarar la variable a nivel de clase
-        public CustomDateTextBox()
+        public DateNacimiento()
         {
             InitializeComponent();
 
@@ -59,7 +61,7 @@ namespace Controles.Controles
                 catch
                 {
                     // Si la combinación de valores no es válida, devuelve null.
-                    MessageBox.Show("La fecha ingresada no es válida.", "FECHA INVALIDA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("La fecha ingresada no es válida.", MensajeGeneral.TipoMensaje.Error);
                     return null;
                 }
             }

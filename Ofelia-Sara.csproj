@@ -304,6 +304,12 @@
     <Compile Include="Controles\Controles\Reposicionar paneles\Buscar Personal\AgregarPersonal.cs" />
     <Compile Include="Controles\Controles\Reposicionar paneles\Expedientes\AgregarControl.cs" />
     <Compile Include="Controles\Controles\Reposicionar paneles\PosicionarFormularioDebajo.cs" />
+    <Compile Include="Controles\Controles\BotonDeslizable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\BotonDeslizable.Designer.cs">
+      <DependentUpon>BotonDeslizable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -472,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\AgregarJuzgadoControl.resx">
       <DependentUpon>AgregarJuzgadoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\BotonDeslizable.resx">
+      <DependentUpon>BotonDeslizable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>

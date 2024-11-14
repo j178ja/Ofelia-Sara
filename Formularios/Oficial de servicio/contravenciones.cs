@@ -1,7 +1,7 @@
 ﻿using Clases.Botones;
 using Clases.GenerarDocumentos;
 using Clases.Texto;
-using Controles.Controles;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using System;
@@ -128,7 +128,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Crear una instancia de CustomDateTextBox para llamar a ObtenerFecha()
-            CustomDateTextBox customDateTextBox = new CustomDateTextBox();
+            DateNacimiento customDateTextBox = new DateNacimiento();
             var fechaNacimiento = customDateTextBox.ObtenerFecha(); // Llamada al método de instancia
 
             // Añadimos los valores de los controles al diccionario

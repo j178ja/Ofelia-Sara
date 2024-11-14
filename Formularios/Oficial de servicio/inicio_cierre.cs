@@ -2,7 +2,7 @@
 using Clases.Botones;
 using Clases.GenerarDocumentos;
 using Clases.Texto;
-using Controles.Controles;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Clases.Texto;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases;

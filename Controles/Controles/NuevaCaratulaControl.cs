@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 
-namespace Controles.Controles
+namespace Ofelia_Sara.Controles.Controles
 {
     public partial class NuevaCaratulaControl : UserControl
     {

@@ -135,10 +135,19 @@ namespace REDACTADOR
             btn_Maximizar.BackColor = SystemColors.ActiveCaption;
             btn_Maximizar.ForeColor = SystemColors.Control;
             btn_Maximizar.FlatAppearance.BorderSize = 2;
-         //   btn_Maximizar.FlatAppearance.BorderColor = SystemColors.Highlight;
 
-            // Maximizar el formulario actual
-            this.WindowState = FormWindowState.Maximized;
+            // Verificar si el formulario está maximizado
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                // Si está maximizado, restaurar al tamaño mínimo
+                this.WindowState = FormWindowState.Normal;
+                this.Size = this.MinimumSize;
+            }
+            else
+            {
+                // Si no está maximizado, maximizar el formulario
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void Btn_Panel_MouseHover(object sender, EventArgs e)

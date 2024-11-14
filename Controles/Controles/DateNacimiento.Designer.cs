@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace Controles.Controles
+namespace Ofelia_Sara.Controles.Controles
 {
-    partial class CustomDateTextBox
+    partial class DateNacimiento
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TextBox textBox_Date;
