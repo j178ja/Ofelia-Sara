@@ -8,27 +8,27 @@ using Controles.Controles;
 
 namespace Ofelia_Sara.Controles.Controles
 {
-    public partial class DateNacimiento : UserControl
+    public partial class CustomDate : UserControl
     {
 
 
 
         private bool isClosing = false; // Declarar la variable a nivel de clase
-        public DateNacimiento()
+        public CustomDate()
         {
             InitializeComponent();
 
             // Configurar textBox_DateDIA
             textBox_DateDIA.MaxLength = 2; // Limitar a 2 caracteres
-            textBox_DateDIA.KeyPress += TextBox_Date_KeyPress;
+            textBox_DateDIA.TextChanged += CamposFecha_TextChanged;
 
             // Configurar textBox_DateMES
             textBox_DateMES.MaxLength = 2; // Limitar a 2 caracteres
-            textBox_DateMES.KeyPress += TextBox_Date_KeyPress;
+            textBox_DateMES.TextChanged += CamposFecha_TextChanged;
 
             // Configurar textBox_DateAÑOÑ
             textBox_DateAÑO.MaxLength = 4; // Limitar a 4 caracteres
-            textBox_DateAÑO.KeyPress += TextBox_Date_KeyPress;
+            textBox_DateAÑO.TextChanged += CamposFecha_TextChanged; 
 
             CustomDateTextBox_Load(this, EventArgs.Empty);// inicializar load
         }
@@ -42,9 +42,38 @@ namespace Ofelia_Sara.Controles.Controles
         // Método para verificar si el texto ingresado es una fecha válida
         public bool HasValue()
         {
-            DateTime fecha;
-            return DateTime.TryParse(this.Text, out fecha);
+            // Verifica si los campos de día, mes y año no están vacíos
+            if (string.IsNullOrWhiteSpace(textBox_DateDIA.Text) ||
+                string.IsNullOrWhiteSpace(textBox_DateMES.Text) ||
+                string.IsNullOrWhiteSpace(textBox_DateAÑO.Text))
+            {
+                return false; // Retorna false si alguno de los campos está vacío
+            }
+
+            // Intenta convertir los valores de texto a enteros
+            if (int.TryParse(textBox_DateDIA.Text, out int dia) &&
+                int.TryParse(textBox_DateMES.Text, out int mes) &&
+                int.TryParse(textBox_DateAÑO.Text, out int año))
+            {
+                try
+                {
+                    // Intenta crear una fecha válida con los valores proporcionados
+                    new DateTime(año, mes, dia);  // Si la fecha es válida, pasa
+                    return true;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    // Si la fecha no es válida (como 31 de febrero, etc.), retorna false
+                    return false;
+                }
+            }
+
+            // Si alguno de los campos no contiene un número válido, retorna false
+            return false;
         }
+
+
+
         //----OBTENER DATOS DE FECHA NACIMIENTO----------------------
         public DateTime? ObtenerFecha()
         {
@@ -83,56 +112,50 @@ namespace Ofelia_Sara.Controles.Controles
             }
         }
 
+        private bool ValidarCampo(string campo, int valor, int min, int max)
+        {
+            if (valor < min || valor > max)
+            {
+                MensajeGeneral.Mostrar($"{campo} debe estar entre {min} y {max}.", MensajeGeneral.TipoMensaje.Advertencia);
+                return false;
+            }
+            return true;
+        }
+
         private void textBox_DateDIA_TextChanged(object sender, EventArgs e)
         {
             if (textBox_DateDIA.Text.Length == 2 && int.TryParse(textBox_DateDIA.Text, out int dia))
             {
-                if (dia < 1 || dia > 31)
+                if (!ValidarCampo("Día", dia, 1, 31))
                 {
-                    // Mostrar mensaje de error o ajustar el valor
-                    MessageBox.Show("El día debe estar entre 1 y 31.", "DIA INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textBox_DateDIA.Clear(); // Método para limpiar el TextBox
+                    textBox_DateDIA.Clear();
                 }
             }
         }
 
         private void textBox_DateMES_TextChanged(object sender, EventArgs e)
         {
-            // Verificar si el texto tiene  dígitos antes de proceder a la validación
             if (textBox_DateMES.Text.Length == 2 && int.TryParse(textBox_DateMES.Text, out int mes))
-
             {
-                if (mes < 1 || mes > 12)
+                if (!ValidarCampo("Mes", mes, 1, 12))
                 {
-                    // Mostrar mensaje de error o ajustar el valor
-                    MessageBox.Show("El mes debe estar entre 1 y 12.", "MES INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textBox_DateMES.Clear(); // Método para limpiar el TextBox
-
+                    textBox_DateMES.Clear();
                 }
             }
         }
 
         private void textBox_DateAÑO_TextChanged(object sender, EventArgs e)
         {
-            // Obtener el año actual
             int añoActual = DateTime.Now.Year;
-
-            // Validar el año ingresado
-            // Verificar si el texto tiene 4 dígitos antes de proceder a la validación
             if (textBox_DateAÑO.Text.Length == 4 && int.TryParse(textBox_DateAÑO.Text, out int year))
             {
-                // Verificar si el año está en el rango permitido (1930 hasta el año actual)
-                if (year < 1930 || year > añoActual)
+                if (!ValidarCampo("Año", year, 1930, añoActual))
                 {
-                    // Mostrar mensaje de error o ajustar el valor
-                    MessageBox.Show($"El año debe estar entre 1930 y {añoActual}.", "AÑO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    // limpiar el TextBox o ajustar el texto
-                    textBox_DateAÑO.Clear(); // Método para limpiar el TextBox
+                    textBox_DateAÑO.Clear();
                 }
             }
-
-
         }
+
 
 
         private void SetPlaceholder(TextBox textBox, string placeholder)
@@ -216,7 +239,7 @@ namespace Ofelia_Sara.Controles.Controles
                 if (textBox_DateAÑO.Text.Length < 4)
                 {
                     // Mostrar mensaje de advertencia
-                    MessageBox.Show("El año debe tener al menos 4 dígitos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MensajeGeneral.Mostrar("El año debe tener al menos 4 dígitos.", MensajeGeneral.TipoMensaje.Advertencia);
                     e.Cancel = true; // Previene que se cierre el formulario
                 }
             }
@@ -228,6 +251,46 @@ namespace Ofelia_Sara.Controles.Controles
         }
         //---------------------------------------------------------------------------
         //--------CALCULAR ANTIGUEDAD----------------------------------------------
+        // Método para validar automáticamente cuando cambia el texto en los campos de fecha
+        private void CamposFecha_TextChanged(object sender, EventArgs e)
+        {
+            // Llama a CalcularAntiguedad cada vez que se modifica un campo de fecha
+            if (HasValue()) // Asegura que todos los campos tengan valores válidos antes de calcular
+            {
+                CalcularAntiguedad();
+            }
+        }
+
+        public Action<int, int> OnCalcularAntiguedad;
+
+        public void CalcularAntiguedad()
+        {
+            DateTime? fechaNacimiento = ObtenerFecha();
+            if (fechaNacimiento.HasValue)
+            {
+                DateTime fechaActual = DateTime.Now;
+                DateTime fechaNac = fechaNacimiento.Value;
+
+                int años = fechaActual.Year - fechaNac.Year;
+                if (fechaActual.Month < fechaNac.Month || (fechaActual.Month == fechaNac.Month && fechaActual.Day < fechaNac.Day))
+                {
+                    años--;
+                }
+
+                int meses = fechaActual.Month - fechaNac.Month;
+                if (meses < 0)
+                {
+                    meses += 12;
+                }
+
+                // Llama al método en el formulario de destino para mostrar la antigüedad
+                OnCalcularAntiguedad?.Invoke(años, meses);
+            }
+            else
+            {
+                MensajeGeneral.Mostrar("Por favor, ingrese una fecha válida.", MensajeGeneral.TipoMensaje.Advertencia);
+            }
+        }
 
 
     }

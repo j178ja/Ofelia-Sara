@@ -53,7 +53,7 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.Label label_agrGeo2;
         private System.Windows.Forms.Label label_agrGeo;
-        private Controles.Controles.DateNacimiento dateTimePicker_FechaNacimiento;
+        private Controles.Controles.CustomDate dateTimePicker_FechaNacimiento;
         private Controles.Controles.EmailControl emailControl1;
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;

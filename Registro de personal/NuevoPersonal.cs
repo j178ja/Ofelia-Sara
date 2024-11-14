@@ -5,6 +5,7 @@ using Clases.Botones;
 using Clases.Texto;
 using Controles.Controles.Aplicadas_con_controles;
 using MySql.Data.MySqlClient;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
@@ -33,6 +34,8 @@ namespace Ofelia_Sara.Registro_de_personal
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
 
             CargarDatosDependencia(comboBox_Dependencia, dbManager);//para cargar desde base de datos
+
+          
         }
 
 
@@ -40,14 +43,12 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             InitializeComponent();
             this.FormClosing += NuevoPersonal_FormClosing;
+
+            
         }
 
 
-        // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            // para logica de interfaz IFormulario
-        }
+     
 
         private void NuevoPersonal_Load(object sender, EventArgs e)
         {
@@ -71,8 +72,8 @@ namespace Ofelia_Sara.Registro_de_personal
             comboBox_Jerarquia.DataSource = null;
 
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
-
-
+                                                                                   // Asegura la asociación del método MostrarAntiguedad al evento OnCalcularAntiguedad
+            dateTimePicker_Antiguedad.OnCalcularAntiguedad = MostrarAntiguedad;
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
 
@@ -80,6 +81,7 @@ namespace Ofelia_Sara.Registro_de_personal
             numeroTelefonicoControl2.ControlWidth = 159;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
+           
         }
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
@@ -340,6 +342,12 @@ namespace Ofelia_Sara.Registro_de_personal
                     MensajeGeneral.Mostrar("Error al conectar con la base de datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
+        }
+        //----------------CALCULAR ANTIGUEDAD----------------
+        public void MostrarAntiguedad(int años, int meses)
+        {
+            textBox_AntiguedadAños.Text = años.ToString();
+            textBox_AntiguedadMeses.Text = meses.ToString();
         }
 
     }

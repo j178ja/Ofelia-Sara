@@ -40,7 +40,7 @@
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
             this.emailControl1 = new Controles.Controles.EmailControl();
             this.numeroTelefonicoControl = new Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles.Controles.DateNacimiento();
+            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDate();
             this.label_Email = new System.Windows.Forms.Label();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.textBox_Ocupacion = new System.Windows.Forms.TextBox();
@@ -490,7 +490,7 @@
         private System.Windows.Forms.Label label_LugarNacimiento;
         private Controles.Controles.EmailControl emailControl1;
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private Controles.Controles.DateNacimiento dateTimePicker_FechaNacimiento;
+        private Controles.Controles.CustomDate dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Ocupacion;

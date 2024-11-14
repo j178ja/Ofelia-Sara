@@ -40,7 +40,7 @@
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
             this.emailControl1 = new Ofelia_Sara.Controles.Controles.EmailControl();
             this.numeroTelefonicoControl = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.DateNacimiento();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -624,6 +624,7 @@
             this.textBox_Edad.TabIndex = 3;
             this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Edad.TextChanged += new System.EventHandler(this.TextBox_Edad_TextChanged);
+            this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Edad_KeyPress);
             // 
             // textBox_Dni
             // 
@@ -633,6 +634,7 @@
             this.textBox_Dni.TabIndex = 1;
             this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Dni.TextChanged += new System.EventHandler(this.TextBox_Dni_TextChanged);
+            this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Dni_KeyPress);
             // 
             // textBox_Nombre
             // 
@@ -789,7 +791,7 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
-        private Controles.Controles.DateNacimiento dateTimePicker_FechaNacimiento;
+        private Controles.Controles.CustomDate dateTimePicker_FechaNacimiento;
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
         private Controles.Controles.EmailControl emailControl1;
         private System.Windows.Forms.Label label_LugarNacimiento;

@@ -2,7 +2,7 @@
 
 namespace Ofelia_Sara.Controles.Controles
 {
-    partial class DateNacimiento
+    partial class CustomDate
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TextBox textBox_Date;
@@ -89,6 +89,7 @@ namespace Ofelia_Sara.Controles.Controles
             this.textBox_DateDIA.TabIndex = 4;
             this.textBox_DateDIA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_DateDIA.TextChanged += new System.EventHandler(this.textBox_DateDIA_TextChanged);
+            this.textBox_DateDIA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Date_KeyPress);
             // 
             // textBox_DateMES
             // 
@@ -101,6 +102,7 @@ namespace Ofelia_Sara.Controles.Controles
             this.textBox_DateMES.TabIndex = 5;
             this.textBox_DateMES.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_DateMES.TextChanged += new System.EventHandler(this.textBox_DateMES_TextChanged);
+            this.textBox_DateMES.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Date_KeyPress);
             // 
             // textBox_DateAÑO
             // 
@@ -112,8 +114,10 @@ namespace Ofelia_Sara.Controles.Controles
             this.textBox_DateAÑO.Size = new System.Drawing.Size(45, 14);
             this.textBox_DateAÑO.TabIndex = 6;
             this.textBox_DateAÑO.TextChanged += new System.EventHandler(this.textBox_DateAÑO_TextChanged);
+            this.textBox_DateAÑO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Date_KeyPress);
+            this.textBox_DateAÑO.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_DateAÑO_Validating);
             // 
-            // CustomDateTextBox
+            // CustomDate
             // 
             this.Controls.Add(this.textBox_DateAÑO);
             this.Controls.Add(this.textBox_DateMES);
@@ -122,7 +126,7 @@ namespace Ofelia_Sara.Controles.Controles
             this.Controls.Add(this.label_barra);
             this.Controls.Add(this.btn_Calendario);
             this.Controls.Add(this.textBox_Date);
-            this.Name = "CustomDateTextBox";
+            this.Name = "CustomDate";
             this.Size = new System.Drawing.Size(150, 22);
             this.ResumeLayout(false);
             this.PerformLayout();

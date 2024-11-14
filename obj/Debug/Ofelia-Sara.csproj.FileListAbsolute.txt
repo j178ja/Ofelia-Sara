@@ -166,7 +166,7 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-S.9C75B350.Up2
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia-Sara.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Controles.Controles.BotonDeslizable.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.resx
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.cs
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\DateNacimiento.Designer.cs
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Controles.Controles.DateNacimiento.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\CustomDate.resx
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\CustomDate.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\CustomDate.Designer.cs
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Controles.Controles.CustomDate.resources

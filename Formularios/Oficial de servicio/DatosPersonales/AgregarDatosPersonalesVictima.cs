@@ -68,7 +68,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.emailControl1 = new Controles.Controles.EmailControl();
             this.numeroTelefonicoControl1 = new Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles.Controles.DateNacimiento();
+            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDate();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();

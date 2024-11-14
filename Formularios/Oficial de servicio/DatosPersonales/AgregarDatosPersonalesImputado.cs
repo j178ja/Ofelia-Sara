@@ -86,31 +86,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_PerfilIzquierdo.AllowDrop = true;
             pictureBox_CuerpoEntero.AllowDrop = true;
 
-            // Asocia los eventos DragEnter y DragDrop para cada PictureBox
-            pictureBox_Frente.DragEnter += new DragEventHandler(PictureBox_DragEnter);
-            pictureBox_Frente.DragDrop += new DragEventHandler(PictureBox_DragDrop);
-
-            pictureBox_PerfilDerecho.DragEnter += new DragEventHandler(PictureBox_DragEnter);
-            pictureBox_PerfilDerecho.DragDrop += new DragEventHandler(PictureBox_DragDrop);
-
-            pictureBox_PerfilIzquierdo.DragEnter += new DragEventHandler(PictureBox_DragEnter);
-            pictureBox_PerfilIzquierdo.DragDrop += new DragEventHandler(PictureBox_DragDrop);
-
-            pictureBox_CuerpoEntero.DragEnter += new DragEventHandler(PictureBox_DragEnter);
-            pictureBox_CuerpoEntero.DragDrop += new DragEventHandler(PictureBox_DragDrop);
-
+   
             pictureBox_Frente.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_PerfilDerecho.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_PerfilIzquierdo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_CuerpoEntero.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            // Asociar el evento KeyPress al TextBox_Edad
-            textBox_Edad.KeyPress += new KeyPressEventHandler(TextBox_Edad_KeyPress);
-            textBox_Edad.TextChanged += new EventHandler(TextBox_Edad_TextChanged);
-
-            // Asociar el evento KeyPress al TextBox_Dni
-            textBox_Dni.KeyPress += new KeyPressEventHandler(TextBox_Dni_KeyPress);
-
+                
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -752,8 +734,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Lógica de validación
             bool camposIncompletos =
                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Dni.Text); /*||
-                    !dateTimePicker_FechaNacimiento.HasValue();*/
+                string.IsNullOrWhiteSpace(textBox_Dni.Text) ||
+                    !dateTimePicker_FechaNacimiento.HasValue();
 
                 if (camposIncompletos)
                 {
@@ -764,7 +746,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 else
                 {
                     // Mostrar mensaje de éxito si los campos están completos
-                    MensajeGeneral.Mostrar("Datos completos", MensajeGeneral.TipoMensaje.Exito);
+                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario IPP se enviara automaticamente la solicitud de plana" +
+                        "", MensajeGeneral.TipoMensaje.Exito);
                     return true; // Retorna true si los campos están completos
                 }
             };

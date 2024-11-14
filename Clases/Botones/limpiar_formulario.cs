@@ -53,7 +53,7 @@ namespace Clases.Botones
                         break;
 
                     // Si el control es FECHA DE NACIMIENTO
-                    case DateNacimiento customDateTextBox:
+                    case CustomDate customDateTextBox:
                         customDateTextBox.ClearDate(); // Limpiar el control personalizado
                         customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
                         break;

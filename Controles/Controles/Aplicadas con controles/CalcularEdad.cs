@@ -6,10 +6,10 @@ namespace Controles.Controles.Aplicadas_con_controles
 {
     public static class CalcularEdad
     {
-        private static DateNacimiento customDateTextBox;
+        private static CustomDate customDateTextBox;
         private static TextBox textBoxEdad;
 
-        public static void Inicializar(DateNacimiento customDateTextBox, TextBox textBoxEdad)
+        public static void Inicializar(CustomDate customDateTextBox, TextBox textBoxEdad)
         {
             CalcularEdad.customDateTextBox = customDateTextBox;
             CalcularEdad.textBoxEdad = textBoxEdad;

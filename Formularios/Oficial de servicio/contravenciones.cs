@@ -1,6 +1,7 @@
 ﻿using Clases.Botones;
 using Clases.GenerarDocumentos;
 using Clases.Texto;
+using Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
@@ -45,18 +46,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
             MayusculaYnumeros.AplicarAControl(textBox_Localidad);
             MayusculaSola.AplicarAControl(textBox_Nombre);
-            MayusculaSola.AplicarAControl(textBox_Apellido);
+            
             MayusculaSola.AplicarAControl(comboBox_Nacionalidad);
 
-            // InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            //InicializarComboBoxINSTRUCTOR();
-            // InicializarComboBoxDEPENDENCIAS();
+            CalcularEdad.Inicializar(Fecha_Nacimiento, textBox_Edad);//para automatizar edad
 
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
             CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
+
+            SetupBotonDeslizable();  // Configurar el delegado de validación
         }
 
 
@@ -64,10 +65,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-
-            //  InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            //InicializarComboBoxINSTRUCTOR();
-            //  InicializarComboBoxDEPENDENCIAS();
             comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
             comboBox_Dependencia.SelectedIndex = -1;
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
@@ -80,12 +77,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //Verificar si los campos están completados
             if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Apellido.Text) ||
+              
                 string.IsNullOrWhiteSpace(textBox_Dni.Text))
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MensajeGeneral.Mostrar("Debe completar los campos Art, Nombre, Apellido y DNI ", MensajeGeneral.TipoMensaje.Advertencia);
+                MensajeGeneral.Mostrar("Debe completar los campos Art, Nombre y DNI ", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
@@ -128,12 +125,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Crear una instancia de CustomDateTextBox para llamar a ObtenerFecha()
-            DateNacimiento customDateTextBox = new DateNacimiento();
+            CustomDate customDateTextBox = new CustomDate();
             var fechaNacimiento = customDateTextBox.ObtenerFecha(); // Llamada al método de instancia
 
             // Añadimos los valores de los controles al diccionario
             datosFormulario.Add("Nombre", textBox_Nombre.Text);  // "Nombre" es el marcador en Word
-            datosFormulario.Add("Apellido", textBox_Apellido.Text);
+            
             datosFormulario.Add("Dni", textBox_Dni.Text);
             datosFormulario.Add("Edad", textBox_Edad.Text);
             datosFormulario.Add("Domicilio", textBox_Domicilio.Text);
@@ -166,7 +163,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //Verificar si los campos están completados
             if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.Text) ||
                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Apellido.Text) ||
+                
                 string.IsNullOrWhiteSpace(textBox_Dni.Text))
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
@@ -252,8 +249,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     string rutaCarpetaSalida = folderBrowserDialog.SelectedPath;
 
                     // Obtener el texto de textBox_Apellido y formar el nombre de la carpeta
-                    string nombreCarpeta = $"Contrav. {textBox_Apellido.Text}";
-                    string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida, nombreCarpeta);
+                 //   string nombreCarpeta = $"Contrav. {textBox_Apellido.Text}";
+                    string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida/*, nombreCarpeta*/);
 
                     // Crear la carpeta si no existe
                     if (!Directory.Exists(rutaSubcarpeta))
@@ -372,29 +369,33 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
+        //-------BOTON STAR PLANA---------------------------------
+        private void SetupBotonDeslizable()
+        {
+            // Configurar el delegado de validación en el control BotonDeslizable
+            botonDeslizable_StarPlana.ValidarCampos = () =>
+            {
+                // Lógica de validación
+                bool camposIncompletos =
+                    string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_Dni.Text) ||
+                        !Fecha_Nacimiento.HasValue();
 
-        //private void InicializarComboBoxSECRETARIO()
-        //{
-        //    List<Secretario> secretarios = SecretarioManager.ObtenerSecretarios();
-        //    comboBox_Secretario.DataSource = secretarios;
-        //    comboBox_Secretario.DisplayMember = "DescripcionCompleta";
-        //    comboBox_Secretario.SelectedIndex = -1;
-        //}
-        //---------------------------------------------------------------------
-        //private void InicializarComboBoxINSTRUCTOR()
-        //{
-        //    List<Instructor> instructores = InstructorManager.ObtenerInstructores();
-        //    comboBox_Instructor.DataSource = instructores;
-        //    comboBox_Instructor.DisplayMember = "DescripcionCompleta";
-        //    comboBox_Instructor.SelectedIndex = -1;
-        //}
-        //------------------------------------------------------------------------
-        //private void InicializarComboBoxDEPENDENCIAS()
-        //{
-        //    List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
-        //    comboBox_Dependencia.DataSource = dependencias;
-        //    comboBox_Dependencia.DisplayMember = "Dependencia";
-        //    comboBox_Dependencia.SelectedIndex = -1;
-        //}
+                if (camposIncompletos)
+                {
+                    // Mostrar mensaje de advertencia si los campos están incompletos
+                    MensajeGeneral.Mostrar("Debe completar los campos NOMBRE, DNI y FECHA DE NACIMIENTO para poder solicitar plana del ciudadano", MensajeGeneral.TipoMensaje.Advertencia);
+                    return false; // Retorna false si los campos están incompletos
+                }
+                else
+                {
+                    // Mostrar mensaje de éxito si los campos están completos
+                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario  se enviara automaticamente la solicitud de plana" +
+                        "", MensajeGeneral.TipoMensaje.Exito);
+                    return true; // Retorna true si los campos están completos
+                }
+            };
+        }
+
     }
 }

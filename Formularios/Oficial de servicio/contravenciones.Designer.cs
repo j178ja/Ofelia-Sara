@@ -35,7 +35,6 @@
             this.label_ArtInfraccion = new System.Windows.Forms.Label();
             this.label_FechaAudiencia = new System.Windows.Forms.Label();
             this.label_Nombre = new System.Windows.Forms.Label();
-            this.label_Apellido = new System.Windows.Forms.Label();
             this.label_Dni = new System.Windows.Forms.Label();
             this.label_FechaNacimiento = new System.Windows.Forms.Label();
             this.label_Domicilio = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.label_Edad = new System.Windows.Forms.Label();
             this.textBox_ArtInfraccion = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.textBox_Dni = new System.Windows.Forms.TextBox();
             this.textBox_Edad = new System.Windows.Forms.TextBox();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
@@ -63,14 +61,14 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonDeslizable_StarPlana = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.label_StarPlana = new System.Windows.Forms.Label();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
-            this.Fecha_Nacimiento = new Ofelia_Sara.Controles.Controles.DateNacimiento();
+            this.Fecha_Nacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.FechaAudiencia = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.botonDeslizable_StarPlana = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
-            this.label_StarPlana = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +89,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(116, 147);
+            this.label2.Location = new System.Drawing.Point(116, 160);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
             this.label2.Size = new System.Drawing.Size(261, 28);
@@ -122,27 +120,17 @@
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(41, 190);
+            this.label_Nombre.Location = new System.Drawing.Point(41, 203);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(67, 15);
             this.label_Nombre.TabIndex = 4;
             this.label_Nombre.Text = "NOMBRE";
             // 
-            // label_Apellido
-            // 
-            this.label_Apellido.AutoSize = true;
-            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(41, 215);
-            this.label_Apellido.Name = "label_Apellido";
-            this.label_Apellido.Size = new System.Drawing.Size(73, 15);
-            this.label_Apellido.TabIndex = 5;
-            this.label_Apellido.Text = "APELLIDO";
-            // 
             // label_Dni
             // 
             this.label_Dni.AutoSize = true;
             this.label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dni.Location = new System.Drawing.Point(41, 243);
+            this.label_Dni.Location = new System.Drawing.Point(41, 231);
             this.label_Dni.Name = "label_Dni";
             this.label_Dni.Size = new System.Drawing.Size(43, 15);
             this.label_Dni.TabIndex = 6;
@@ -152,7 +140,7 @@
             // 
             this.label_FechaNacimiento.AutoSize = true;
             this.label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_FechaNacimiento.Location = new System.Drawing.Point(41, 269);
+            this.label_FechaNacimiento.Location = new System.Drawing.Point(41, 257);
             this.label_FechaNacimiento.Name = "label_FechaNacimiento";
             this.label_FechaNacimiento.Size = new System.Drawing.Size(139, 15);
             this.label_FechaNacimiento.TabIndex = 7;
@@ -162,7 +150,7 @@
             // 
             this.label_Domicilio.AutoSize = true;
             this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Domicilio.Location = new System.Drawing.Point(41, 293);
+            this.label_Domicilio.Location = new System.Drawing.Point(41, 281);
             this.label_Domicilio.Name = "label_Domicilio";
             this.label_Domicilio.Size = new System.Drawing.Size(78, 15);
             this.label_Domicilio.TabIndex = 9;
@@ -172,7 +160,7 @@
             // 
             this.label_Localidad.AutoSize = true;
             this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Localidad.Location = new System.Drawing.Point(396, 299);
+            this.label_Localidad.Location = new System.Drawing.Point(396, 287);
             this.label_Localidad.Name = "label_Localidad";
             this.label_Localidad.Size = new System.Drawing.Size(82, 15);
             this.label_Localidad.TabIndex = 10;
@@ -182,7 +170,7 @@
             // 
             this.label_Nacionalidad.AutoSize = true;
             this.label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nacionalidad.Location = new System.Drawing.Point(372, 272);
+            this.label_Nacionalidad.Location = new System.Drawing.Point(372, 260);
             this.label_Nacionalidad.Name = "label_Nacionalidad";
             this.label_Nacionalidad.Size = new System.Drawing.Size(106, 15);
             this.label_Nacionalidad.TabIndex = 11;
@@ -192,7 +180,7 @@
             // 
             this.label_Edad.AutoSize = true;
             this.label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Edad.Location = new System.Drawing.Point(434, 243);
+            this.label_Edad.Location = new System.Drawing.Point(434, 231);
             this.label_Edad.Name = "label_Edad";
             this.label_Edad.Size = new System.Drawing.Size(44, 15);
             this.label_Edad.TabIndex = 12;
@@ -207,39 +195,34 @@
             // 
             // textBox_Nombre
             // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(125, 189);
+            this.textBox_Nombre.Location = new System.Drawing.Point(125, 202);
             this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(241, 20);
+            this.textBox_Nombre.Size = new System.Drawing.Size(522, 20);
             this.textBox_Nombre.TabIndex = 5;
-            // 
-            // textBox_Apellido
-            // 
-            this.textBox_Apellido.Location = new System.Drawing.Point(125, 214);
-            this.textBox_Apellido.Name = "textBox_Apellido";
-            this.textBox_Apellido.Size = new System.Drawing.Size(241, 20);
-            this.textBox_Apellido.TabIndex = 6;
             // 
             // textBox_Dni
             // 
-            this.textBox_Dni.Location = new System.Drawing.Point(125, 240);
+            this.textBox_Dni.Location = new System.Drawing.Point(125, 228);
             this.textBox_Dni.Name = "textBox_Dni";
             this.textBox_Dni.Size = new System.Drawing.Size(241, 20);
             this.textBox_Dni.TabIndex = 7;
+            this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
             this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Dni_KeyPress);
             // 
             // textBox_Edad
             // 
-            this.textBox_Edad.Location = new System.Drawing.Point(484, 242);
+            this.textBox_Edad.Location = new System.Drawing.Point(485, 231);
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(77, 20);
             this.textBox_Edad.TabIndex = 8;
+            this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
             this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Edad_KeyPress);
             // 
             // textBox_Localidad
             // 
-            this.textBox_Localidad.Location = new System.Drawing.Point(484, 299);
+            this.textBox_Localidad.Location = new System.Drawing.Point(484, 287);
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(163, 20);
             this.textBox_Localidad.TabIndex = 12;
@@ -247,7 +230,7 @@
             // 
             // textBox_Domicilio
             // 
-            this.textBox_Domicilio.Location = new System.Drawing.Point(125, 292);
+            this.textBox_Domicilio.Location = new System.Drawing.Point(125, 280);
             this.textBox_Domicilio.Name = "textBox_Domicilio";
             this.textBox_Domicilio.Size = new System.Drawing.Size(241, 20);
             this.textBox_Domicilio.TabIndex = 11;
@@ -410,7 +393,6 @@
             this.panel1.Controls.Add(this.label_FechaAudiencia);
             this.panel1.Controls.Add(this.btn_AgregarArtContravencion);
             this.panel1.Controls.Add(this.label_Nombre);
-            this.panel1.Controls.Add(this.label_Apellido);
             this.panel1.Controls.Add(this.label_Dni);
             this.panel1.Controls.Add(this.label_FechaNacimiento);
             this.panel1.Controls.Add(this.label_Domicilio);
@@ -426,7 +408,6 @@
             this.panel1.Controls.Add(this.label_Instructor);
             this.panel1.Controls.Add(this.label_Secretario);
             this.panel1.Controls.Add(this.label_DatosInstruccion);
-            this.panel1.Controls.Add(this.textBox_Apellido);
             this.panel1.Controls.Add(this.textBox_Domicilio);
             this.panel1.Controls.Add(this.textBox_Dni);
             this.panel1.Controls.Add(this.textBox_Localidad);
@@ -435,6 +416,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
+            // 
+            // botonDeslizable_StarPlana
+            // 
+            this.botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonDeslizable_StarPlana.IsOn = false;
+            this.botonDeslizable_StarPlana.Location = new System.Drawing.Point(127, 304);
+            this.botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
+            this.botonDeslizable_StarPlana.Size = new System.Drawing.Size(40, 20);
+            this.botonDeslizable_StarPlana.TabIndex = 101;
+            this.botonDeslizable_StarPlana.ValidarCampos = null;
+            // 
+            // label_StarPlana
+            // 
+            this.label_StarPlana.AutoSize = true;
+            this.label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_StarPlana.Location = new System.Drawing.Point(43, 305);
+            this.label_StarPlana.Name = "label_StarPlana";
+            this.label_StarPlana.Size = new System.Drawing.Size(83, 16);
+            this.label_StarPlana.TabIndex = 100;
+            this.label_StarPlana.Text = "Star. Plana";
             // 
             // comboBox_Nacionalidad
             // 
@@ -447,7 +448,7 @@
             "URUGUAYA",
             "PERUANA",
             "BRASILERA"});
-            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(484, 271);
+            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(484, 259);
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(163, 21);
             this.comboBox_Nacionalidad.TabIndex = 93;
@@ -464,7 +465,7 @@
             // 
             // Fecha_Nacimiento
             // 
-            this.Fecha_Nacimiento.Location = new System.Drawing.Point(195, 266);
+            this.Fecha_Nacimiento.Location = new System.Drawing.Point(195, 254);
             this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
             this.Fecha_Nacimiento.Size = new System.Drawing.Size(149, 21);
             this.Fecha_Nacimiento.TabIndex = 91;
@@ -490,25 +491,6 @@
             this.FechaAudiencia.Name = "FechaAudiencia";
             this.FechaAudiencia.Size = new System.Drawing.Size(279, 24);
             this.FechaAudiencia.TabIndex = 48;
-            // 
-            // botonDeslizable_StarPlana
-            // 
-            this.botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonDeslizable_StarPlana.IsOn = false;
-            this.botonDeslizable_StarPlana.Location = new System.Drawing.Point(127, 316);
-            this.botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
-            this.botonDeslizable_StarPlana.Size = new System.Drawing.Size(40, 20);
-            this.botonDeslizable_StarPlana.TabIndex = 101;
-            // 
-            // label_StarPlana
-            // 
-            this.label_StarPlana.AutoSize = true;
-            this.label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_StarPlana.Location = new System.Drawing.Point(43, 317);
-            this.label_StarPlana.Name = "label_StarPlana";
-            this.label_StarPlana.Size = new System.Drawing.Size(83, 16);
-            this.label_StarPlana.TabIndex = 100;
-            this.label_StarPlana.Text = "Star. Plana";
             // 
             // Contravenciones
             // 
@@ -540,7 +522,6 @@
         private System.Windows.Forms.Label label_ArtInfraccion;
         private System.Windows.Forms.Label label_FechaAudiencia;
         private System.Windows.Forms.Label label_Nombre;
-        private System.Windows.Forms.Label label_Apellido;
         private System.Windows.Forms.Label label_Dni;
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Domicilio;
@@ -549,7 +530,6 @@
         private System.Windows.Forms.Label label_Edad;
         private System.Windows.Forms.TextBox textBox_ArtInfraccion;
         private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.TextBox textBox_Dni;
         private System.Windows.Forms.TextBox textBox_Edad;
         private System.Windows.Forms.TextBox textBox_Localidad;
@@ -571,7 +551,7 @@
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.DateTimePicker FechaAudiencia;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Controles.Controles.DateNacimiento Fecha_Nacimiento;
+        private Controles.Controles.CustomDate Fecha_Nacimiento;
         private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private Controles.Controles.BotonDeslizable botonDeslizable_StarPlana;

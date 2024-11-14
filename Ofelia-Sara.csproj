@@ -263,12 +263,12 @@
     <Compile Include="Controles\Controles\DataTimePickerPersonalizado.Designer.cs">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controles\Controles\DateNacimiento.cs">
+    <Compile Include="Controles\Controles\CustomDate.cs">
       <SubType>UserControl</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Controles\Controles\DateNacimiento.Designer.cs">
-      <DependentUpon>DateNacimiento.cs</DependentUpon>
+    <Compile Include="Controles\Controles\CustomDate.Designer.cs">
+      <DependentUpon>CustomDate.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controles\Controles\EmailControl.cs">
@@ -488,8 +488,8 @@
     <EmbeddedResource Include="Controles\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controles\Controles\DateNacimiento.resx">
-      <DependentUpon>DateNacimiento.cs</DependentUpon>
+    <EmbeddedResource Include="Controles\Controles\CustomDate.resx">
+      <DependentUpon>CustomDate.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\EmailControl.resx">
