@@ -66,35 +66,35 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarCausa = new System.Windows.Forms.Button();
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.checkBox_Cargo = new System.Windows.Forms.CheckBox();
+            this.botonDeslizable_Not247 = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Instruccion = new System.Windows.Forms.Panel();
+            this.timePickerPersonalizado1 = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
+            this.comboBox_DeptoJudicial = new System.Windows.Forms.ComboBox();
+            this.lbl_Localida = new System.Windows.Forms.Label();
+            this.lbl_DeptoJudicial = new System.Windows.Forms.Label();
+            this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
             this.panel_Ipp = new System.Windows.Forms.Panel();
             this.panel_Caratula = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            this.label_Not247 = new System.Windows.Forms.Label();
             this.label_Cargo = new System.Windows.Forms.Label();
             this.label_RatificacionPersonal = new System.Windows.Forms.Label();
-            this.lbl_Localida = new System.Windows.Forms.Label();
-            this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
-            this.lbl_DeptoJudicial = new System.Windows.Forms.Label();
-            this.comboBox_DeptoJudicial = new System.Windows.Forms.ComboBox();
-            this.timePickerPersonalizado1 = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.botonDeslizable_Not247 = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
-            this.panel_Instruccion = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel_Instruccion.SuspendLayout();
             this.panel_Ipp.SuspendLayout();
             this.panel_Caratula.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
             this.panel_Imputado.SuspendLayout();
             this.panel_Victima.SuspendLayout();
-            this.panel_Instruccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Dr
@@ -117,6 +117,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.TextBox_NumeroIpp_TextChanged);
             this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroIpp_KeyPress);
+            this.textBox_NumeroIpp.Leave += new System.EventHandler(this.TextBox_NumeroIpp_Leave);
             // 
             // lbl_Ipp
             // 
@@ -385,7 +386,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
+            this.toolTip.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             this.btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
@@ -398,7 +399,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
+            this.toolTip.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
@@ -411,7 +412,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
+            this.toolTip.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
@@ -424,7 +425,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
             this.btn_Imprimir.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
+            this.toolTip.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
             this.btn_Imprimir.Click += new System.EventHandler(this.Btn_Imprimir_Click);
             // 
@@ -439,7 +440,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarCausa.TabIndex = 27;
             this.btn_AgregarCausa.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
+            this.toolTip.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
             this.btn_AgregarCausa.UseVisualStyleBackColor = false;
             this.btn_AgregarCausa.Click += new System.EventHandler(this.Btn_AgregarCausa_Click);
             // 
@@ -454,7 +455,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarVictima.TabIndex = 28;
             this.btn_AgregarVictima.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarVictima, "Agregar victima");
+            this.toolTip.SetToolTip(this.btn_AgregarVictima, "Agregar victima");
             this.btn_AgregarVictima.UseVisualStyleBackColor = false;
             this.btn_AgregarVictima.Click += new System.EventHandler(this.Btn_AgregarVictima_Click);
             // 
@@ -467,9 +468,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarImputado.TabIndex = 29;
             this.btn_AgregarImputado.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarImputado, "Agregar imputado");
+            this.toolTip.SetToolTip(this.btn_AgregarImputado, "Agregar imputado");
             this.btn_AgregarImputado.UseVisualStyleBackColor = true;
             this.btn_AgregarImputado.Click += new System.EventHandler(this.Btn_AgregarImputado_Click);
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 300;
             // 
             // btn_AgregarDatosImputado
             // 
@@ -480,7 +485,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarDatosImputado.Size = new System.Drawing.Size(27, 23);
             this.btn_AgregarDatosImputado.TabIndex = 38;
             this.btn_AgregarDatosImputado.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarDatosImputado, "Agregar datos personales de Imputado");
+            this.toolTip.SetToolTip(this.btn_AgregarDatosImputado, "Agregar datos personales de Imputado");
             this.btn_AgregarDatosImputado.UseVisualStyleBackColor = true;
             this.btn_AgregarDatosImputado.Click += new System.EventHandler(this.Btn_AgregarDatosImputado_Click);
             // 
@@ -493,7 +498,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarDatosVictima.Size = new System.Drawing.Size(27, 23);
             this.btn_AgregarDatosVictima.TabIndex = 39;
             this.btn_AgregarDatosVictima.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
+            this.toolTip.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
             this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
             this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.Btn_AgregarDatosVictima_Click);
             // 
@@ -504,7 +509,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere RATIFICACION TESTIMONIAL");
+            this.toolTip.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere RATIFICACION TESTIMONIAL");
             this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
             this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoDetenido_CheckedChanged);
             // 
@@ -515,9 +520,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.checkBox_Cargo.Name = "checkBox_Cargo";
             this.checkBox_Cargo.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Cargo.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.checkBox_Cargo, "Marcar si requiere RATIFICACION TESTIMONIAL");
+            this.toolTip.SetToolTip(this.checkBox_Cargo, "Marcar si requiere agregar CARGO JUDICIAL");
             this.checkBox_Cargo.UseVisualStyleBackColor = true;
             this.checkBox_Cargo.CheckedChanged += new System.EventHandler(this.CheckBox_Cargo_CheckedChanged);
+            // 
+            // botonDeslizable_Not247
+            // 
+            this.botonDeslizable_Not247.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonDeslizable_Not247.IsOn = false;
+            this.botonDeslizable_Not247.Location = new System.Drawing.Point(165, 9);
+            this.botonDeslizable_Not247.Name = "botonDeslizable_Not247";
+            this.botonDeslizable_Not247.Size = new System.Drawing.Size(40, 20);
+            this.botonDeslizable_Not247.TabIndex = 42;
+            this.toolTip.SetToolTip(this.botonDeslizable_Not247, "Marcar para establecer fecha de Pericia");
+            this.botonDeslizable_Not247.ValidarCampos = null;
             // 
             // panel1
             // 
@@ -535,9 +551,88 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel1.Location = new System.Drawing.Point(18, 20);
             this.panel1.MinimumSize = new System.Drawing.Size(456, 482);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 489);
+            this.panel1.Size = new System.Drawing.Size(456, 488);
             this.panel1.TabIndex = 30;
             this.panel1.TabStop = true;
+            // 
+            // panel_Instruccion
+            // 
+            this.panel_Instruccion.Controls.Add(this.comboBox_Fiscalia);
+            this.panel_Instruccion.Controls.Add(this.lbl_Dr);
+            this.panel_Instruccion.Controls.Add(this.lbl_Ufid);
+            this.panel_Instruccion.Controls.Add(this.lbl_Instructor);
+            this.panel_Instruccion.Controls.Add(this.lbl_Secretario);
+            this.panel_Instruccion.Controls.Add(this.timePickerPersonalizado1);
+            this.panel_Instruccion.Controls.Add(this.lbl_Fecha);
+            this.panel_Instruccion.Controls.Add(this.comboBox_Secretario);
+            this.panel_Instruccion.Controls.Add(this.comboBox_DeptoJudicial);
+            this.panel_Instruccion.Controls.Add(this.comboBox_Instructor);
+            this.panel_Instruccion.Controls.Add(this.comboBox_AgenteFiscal);
+            this.panel_Instruccion.Controls.Add(this.lbl_Localida);
+            this.panel_Instruccion.Controls.Add(this.lbl_DeptoJudicial);
+            this.panel_Instruccion.Controls.Add(this.comboBox_Dependencia);
+            this.panel_Instruccion.Controls.Add(this.lbl_Dependencia);
+            this.panel_Instruccion.Controls.Add(this.comboBox_Localidad);
+            this.panel_Instruccion.Location = new System.Drawing.Point(21, 132);
+            this.panel_Instruccion.Name = "panel_Instruccion";
+            this.panel_Instruccion.Size = new System.Drawing.Size(417, 188);
+            this.panel_Instruccion.TabIndex = 45;
+            // 
+            // timePickerPersonalizado1
+            // 
+            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.timePickerPersonalizado1.Location = new System.Drawing.Point(113, 167);
+            this.timePickerPersonalizado1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
+            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+            this.timePickerPersonalizado1.Size = new System.Drawing.Size(286, 25);
+            this.timePickerPersonalizado1.TabIndex = 7;
+            // 
+            // comboBox_DeptoJudicial
+            // 
+            this.comboBox_DeptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_DeptoJudicial.FormattingEnabled = true;
+            this.comboBox_DeptoJudicial.Items.AddRange(new object[] {
+            "DOLORES"});
+            this.comboBox_DeptoJudicial.Location = new System.Drawing.Point(113, 57);
+            this.comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
+            this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(286, 21);
+            this.comboBox_DeptoJudicial.TabIndex = 3;
+            this.comboBox_DeptoJudicial.TextChanged += new System.EventHandler(this.ComboBox_DeptoJudicial_TextChanged);
+            // 
+            // lbl_Localida
+            // 
+            this.lbl_Localida.AutoSize = true;
+            this.lbl_Localida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Localida.Location = new System.Drawing.Point(36, 31);
+            this.lbl_Localida.Name = "lbl_Localida";
+            this.lbl_Localida.Size = new System.Drawing.Size(70, 15);
+            this.lbl_Localida.TabIndex = 37;
+            this.lbl_Localida.Text = "Localidad";
+            // 
+            // lbl_DeptoJudicial
+            // 
+            this.lbl_DeptoJudicial.AutoSize = true;
+            this.lbl_DeptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DeptoJudicial.Location = new System.Drawing.Point(3, 60);
+            this.lbl_DeptoJudicial.Name = "lbl_DeptoJudicial";
+            this.lbl_DeptoJudicial.Size = new System.Drawing.Size(103, 15);
+            this.lbl_DeptoJudicial.TabIndex = 35;
+            this.lbl_DeptoJudicial.Text = "Depto. Judicial";
+            // 
+            // comboBox_Localidad
+            // 
+            this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Localidad.FormattingEnabled = true;
+            this.comboBox_Localidad.Items.AddRange(new object[] {
+            "PINAMAR",
+            "VILLA GESELL",
+            "GRAL. MADARIAGA"});
+            this.comboBox_Localidad.Location = new System.Drawing.Point(113, 30);
+            this.comboBox_Localidad.Name = "comboBox_Localidad";
+            this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
+            this.comboBox_Localidad.TabIndex = 2;
+            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Localidad_KeyPress);
             // 
             // panel_Ipp
             // 
@@ -569,7 +664,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
             this.panel_ControlesInferiores.Controls.Add(this.botonDeslizable_Not247);
-            this.panel_ControlesInferiores.Controls.Add(this.label1);
+            this.panel_ControlesInferiores.Controls.Add(this.label_Not247);
             this.panel_ControlesInferiores.Controls.Add(this.checkBox_Cargo);
             this.panel_ControlesInferiores.Controls.Add(this.label_Cargo);
             this.panel_ControlesInferiores.Controls.Add(this.checkBox_LegajoDetenido);
@@ -582,6 +677,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             this.panel_ControlesInferiores.Size = new System.Drawing.Size(415, 165);
             this.panel_ControlesInferiores.TabIndex = 42;
+            // 
+            // label_Not247
+            // 
+            this.label_Not247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Not247.Location = new System.Drawing.Point(21, 9);
+            this.label_Not247.Name = "label_Not247";
+            this.label_Not247.Size = new System.Drawing.Size(186, 20);
+            this.label_Not247.TabIndex = 41;
+            this.label_Not247.Text = "Not. Art. 247 C.P.P.   ";
+            this.label_Not247.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_Cargo
             // 
@@ -602,61 +707,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.label_RatificacionPersonal.TabIndex = 38;
             this.label_RatificacionPersonal.Text = "Ratificación testimonial   ";
             this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl_Localida
-            // 
-            this.lbl_Localida.AutoSize = true;
-            this.lbl_Localida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Localida.Location = new System.Drawing.Point(36, 31);
-            this.lbl_Localida.Name = "lbl_Localida";
-            this.lbl_Localida.Size = new System.Drawing.Size(70, 15);
-            this.lbl_Localida.TabIndex = 37;
-            this.lbl_Localida.Text = "Localidad";
-            // 
-            // comboBox_Localidad
-            // 
-            this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Localidad.FormattingEnabled = true;
-            this.comboBox_Localidad.Items.AddRange(new object[] {
-            "PINAMAR",
-            "VILLA GESELL",
-            "GRAL. MADARIAGA"});
-            this.comboBox_Localidad.Location = new System.Drawing.Point(113, 30);
-            this.comboBox_Localidad.Name = "comboBox_Localidad";
-            this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Localidad.TabIndex = 2;
-            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Localidad_KeyPress);
-            // 
-            // lbl_DeptoJudicial
-            // 
-            this.lbl_DeptoJudicial.AutoSize = true;
-            this.lbl_DeptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DeptoJudicial.Location = new System.Drawing.Point(3, 60);
-            this.lbl_DeptoJudicial.Name = "lbl_DeptoJudicial";
-            this.lbl_DeptoJudicial.Size = new System.Drawing.Size(103, 15);
-            this.lbl_DeptoJudicial.TabIndex = 35;
-            this.lbl_DeptoJudicial.Text = "Depto. Judicial";
-            // 
-            // comboBox_DeptoJudicial
-            // 
-            this.comboBox_DeptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_DeptoJudicial.FormattingEnabled = true;
-            this.comboBox_DeptoJudicial.Items.AddRange(new object[] {
-            "DOLORES"});
-            this.comboBox_DeptoJudicial.Location = new System.Drawing.Point(113, 57);
-            this.comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
-            this.comboBox_DeptoJudicial.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_DeptoJudicial.TabIndex = 3;
-            this.comboBox_DeptoJudicial.TextChanged += new System.EventHandler(this.ComboBox_DeptoJudicial_TextChanged);
-            // 
-            // timePickerPersonalizado1
-            // 
-            this.timePickerPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.timePickerPersonalizado1.Location = new System.Drawing.Point(113, 167);
-            this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
-            this.timePickerPersonalizado1.Size = new System.Drawing.Size(286, 25);
-            this.timePickerPersonalizado1.TabIndex = 7;
             // 
             // panel_Imputado
             // 
@@ -697,69 +747,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "ESTRUCTURA BASICA I.P.P.";
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 18);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Not. Art. 247 C.P.P.   ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // botonDeslizable_Not247
-            // 
-            this.botonDeslizable_Not247.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonDeslizable_Not247.IsOn = false;
-            this.botonDeslizable_Not247.Location = new System.Drawing.Point(165, 9);
-            this.botonDeslizable_Not247.Name = "botonDeslizable_Not247";
-            this.botonDeslizable_Not247.Size = new System.Drawing.Size(40, 20);
-            this.botonDeslizable_Not247.TabIndex = 42;
-            this.botonDeslizable_Not247.ValidarCampos = null;
-            // 
-            // panel_Instruccion
-            // 
-            this.panel_Instruccion.Controls.Add(this.comboBox_Fiscalia);
-            this.panel_Instruccion.Controls.Add(this.lbl_Dr);
-            this.panel_Instruccion.Controls.Add(this.lbl_Ufid);
-            this.panel_Instruccion.Controls.Add(this.lbl_Instructor);
-            this.panel_Instruccion.Controls.Add(this.lbl_Secretario);
-            this.panel_Instruccion.Controls.Add(this.timePickerPersonalizado1);
-            this.panel_Instruccion.Controls.Add(this.lbl_Fecha);
-            this.panel_Instruccion.Controls.Add(this.comboBox_Secretario);
-            this.panel_Instruccion.Controls.Add(this.comboBox_DeptoJudicial);
-            this.panel_Instruccion.Controls.Add(this.comboBox_Instructor);
-            this.panel_Instruccion.Controls.Add(this.comboBox_AgenteFiscal);
-            this.panel_Instruccion.Controls.Add(this.lbl_Localida);
-            this.panel_Instruccion.Controls.Add(this.lbl_DeptoJudicial);
-            this.panel_Instruccion.Controls.Add(this.comboBox_Dependencia);
-            this.panel_Instruccion.Controls.Add(this.lbl_Dependencia);
-            this.panel_Instruccion.Controls.Add(this.comboBox_Localidad);
-            this.panel_Instruccion.Location = new System.Drawing.Point(21, 132);
-            this.panel_Instruccion.Name = "panel_Instruccion";
-            this.panel_Instruccion.Size = new System.Drawing.Size(417, 188);
-            this.panel_Instruccion.TabIndex = 45;
-            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(496, 565);
+            this.ClientSize = new System.Drawing.Size(496, 547);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(516, 598);
+            this.MinimumSize = new System.Drawing.Size(516, 590);
             this.Name = "InicioCierre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACTUACIONES SUMARIALES PREVENCIONALES";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioCierre_FormClosing);
+
             this.Load += new System.EventHandler(this.InicioCierre_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_Instruccion.ResumeLayout(false);
+            this.panel_Instruccion.PerformLayout();
             this.panel_Ipp.ResumeLayout(false);
             this.panel_Ipp.PerformLayout();
             this.panel_Caratula.ResumeLayout(false);
@@ -770,8 +781,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Imputado.PerformLayout();
             this.panel_Victima.ResumeLayout(false);
             this.panel_Victima.PerformLayout();
-            this.panel_Instruccion.ResumeLayout(false);
-            this.panel_Instruccion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -809,7 +818,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Button btn_AgregarCausa;
         private System.Windows.Forms.Button btn_AgregarVictima;
         private System.Windows.Forms.Button btn_AgregarImputado;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Titulo;
 
@@ -830,7 +839,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Label label_Cargo;
         private System.Windows.Forms.CheckBox checkBox_Cargo;
         private Controles.Controles.BotonDeslizable botonDeslizable_Not247;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Not247;
         private System.Windows.Forms.Panel panel_Instruccion;
     }
 }

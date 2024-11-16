@@ -63,6 +63,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             this.FormClosing += BuscarPersonal_FormClosing;
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
+            textBox_NumeroCargo.Focus();
             textBox_NumeroIpp.MaxLength = 6;
             comboBox_Ipp1.MaxLength = 2;
             comboBox_Ipp2.MaxLength = 2;
@@ -438,7 +439,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 return; // Detener el proceso si la validación falla
             }
-
+            datosGuardados = true;
             // Usar FolderBrowserDialog para obtener la ruta donde el usuario quiere guardar los documentos
             using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
             {

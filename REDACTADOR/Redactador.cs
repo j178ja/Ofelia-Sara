@@ -47,7 +47,11 @@ namespace REDACTADOR
             InitializeComponent();
             // Coloca el panel encima del AudioVisualizerControl
             panel_Botones.BringToFront();
-            
+
+            timer_Barras = new Timer();
+            timer_Barras.Interval = 100; // Ajusta el intervalo
+            timer_Barras.Tick += timer_Barras_Tick;
+
         }
         private void Redactador_Load(object sender, EventArgs e)
         {
@@ -77,6 +81,9 @@ namespace REDACTADOR
             btn_Cerrar.ForeColor = SystemColors.Control;
             btn_Cerrar.FlatAppearance.BorderSize = 1;
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
+            timer_Barras.Stop();
+            audioVisualizerControl.Visible = false;
+            
             timerCerrarForm.Start();
         }
         private void TimerCerrar_Tick(object sender, EventArgs e)
@@ -142,11 +149,13 @@ namespace REDACTADOR
                 // Si está maximizado, restaurar al tamaño mínimo
                 this.WindowState = FormWindowState.Normal;
                 this.Size = this.MinimumSize;
+                richTextBox_Redactor.Focus();
             }
             else
             {
                 // Si no está maximizado, maximizar el formulario
                 this.WindowState = FormWindowState.Maximized;
+                richTextBox_Redactor.Focus();
             }
         }
 
@@ -310,11 +319,14 @@ namespace REDACTADOR
             //   DESACTIVAR MICROFONO
             if (btn_Microfono.BackColor == System.Drawing.Color.LimeGreen)
             {
+                timer_Barras.Stop();
                 StopRecording();
                 btn_Microfono.BackColor = System.Drawing.Color.Red;
                 audioVisualizerControl.Visible = false;
-                btn_Microfono.Focus();
+                richTextBox_Redactor.Focus();
                 toolTip.SetToolTip(btn_Microfono, "ACTIVAR micrófono");
+               
+
             }
             else //  ACTIVAR MICROFONO
             {
@@ -324,6 +336,8 @@ namespace REDACTADOR
                 richTextBox_Redactor.Focus();
                 toolTip.SetToolTip(btn_Microfono, "DESACTIVAR micrófono");
                 StartRecording();
+               // CrearBarras(sender, e);
+                timer_Barras.Start();// Inicia el temporizador para actualizar las barras de visualización
             }
         }
 
@@ -356,7 +370,19 @@ namespace REDACTADOR
             waveFileWriter.Write(e.Buffer, 0, e.BytesRecorded);
             waveFileWriter.Flush();
         }
+        private void timer_Barras_Tick(object sender, EventArgs e)
+        {
+            // Generar amplitudes de ejemplo o basadas en datos de audio
+            Random random = new Random();
+            int[] amplitudes = new int[audioVisualizerControl.Controls.Count];
+            for (int i = 0; i < amplitudes.Length; i++)
+            {
+                amplitudes[i] = random.Next(5, 50); // Alturas aleatorias como ejemplo
+            }
 
+            // Llamar al método de actualización de visualización en el control de visualización
+            audioVisualizerControl.UpdateVisualization(amplitudes);
+        }
         //----------- FUNCIONALIDAD DE TECLAS-------------------------------
         private void btn_Negrita_Click(object sender, EventArgs e)
         {

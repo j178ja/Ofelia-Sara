@@ -44,6 +44,9 @@ namespace REDACTADOR
                 };
                 flowLayoutPanel1.Controls.Add(panel);
             }
+
+            int[] amplitudes = { 10, 20, 30, 25, 15 }; // Ejemplo de valores de altura
+            UpdateVisualization(amplitudes);
         }
 
 
@@ -58,6 +61,9 @@ namespace REDACTADOR
                 }
             }
         }
+
+    
+
 
     }
 }

@@ -13,12 +13,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
+using Controles.Controles.Aplicadas_con_controles;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class InicioCierre : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
@@ -80,6 +81,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ConfigurarAutocompletar(textBox_Caratula, sugerencias);
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
+        
         }
 
 
@@ -87,9 +89,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
-            timePickerPersonalizado1.SelectedDate = DateTime.Now;
-            TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
-            TooltipEnBtnDesactivado.ConfigurarToolTipYTimer(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
+            timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+            timePickerPersonalizado1.FechaCambiada += TimePickerPersonalizado1_FechaCambiada;
+
+            TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Carjo Judicial");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente");
 
             //-------------------------------------------------------------------------------
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
@@ -179,7 +189,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-
+                datosGuardados = true; //para que no aparesca mensaje de alerta si se cierra el formulario
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
                 MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
@@ -302,7 +312,31 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        //--EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
 
+        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
+        {
+            CompletarConCeros(sender as TextBox);
+        }
+
+        // Método reutilizable para completar con ceros
+        private void CompletarConCeros(TextBox textBox)
+        {
+            if (textBox != null)
+            {
+                // Obtiene el texto actual del TextBox
+                string currentText = textBox.Text;
+
+                // Verifica si el texto es numérico y no está vacío
+                if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
+                {
+                    // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                    textBox.Text = currentText.PadLeft(6, '0');
+
+                    textBox.SelectionStart = textBox.Text.Length; // Posiciona el cursor al final del texto (opcional)
+                }
+            }
+        }
 
         //--------------------------------------------------------------------------------------------
         //--------BOTON IMPRIMIR-------------------------------
@@ -321,7 +355,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
             {
-
+                datosGuardados = true;
                 CargarImpresion();
 
                 var generador = new GeneradorDocumentos();
@@ -857,16 +891,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (esTextoValido)
             {
                 label_Cargo.ForeColor = Color.Black;
+                label_Not247.ForeColor = Color.Black;
                 label_Cargo.BackColor = Color.Transparent;
+                label_Not247.BackColor = Color.Transparent;
                 checkBox_Cargo.Enabled = true;
+                botonDeslizable_Not247.Enabled = true;
                 checkBox_Cargo.BackColor = Color.Transparent;
+                botonDeslizable_Not247.BackColor = Color.Transparent;
             }
             else
             {
                 label_Cargo.ForeColor = Color.Tomato;
+                label_Not247.ForeColor= Color.Tomato;
                 label_Cargo.BackColor = Color.FromArgb(211, 211, 211); // Gris claro
+                label_Not247.BackColor= Color.FromArgb(211, 211, 211);
                 checkBox_Cargo.Enabled = false;
+                botonDeslizable_Not247.Enabled= false;
                 checkBox_Cargo.BackColor = Color.Tomato;
+                botonDeslizable_Not247.BackColor = Color.FromArgb(211, 211, 211);
+
             }
         }
 
@@ -928,6 +971,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
+                
             }
 
         }
@@ -986,32 +1030,43 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             ActualizarEstado();
         }
-
         private void SetupBotonDeslizable()
         {
-            // Configurar el delegado de validación en el control BotonDeslizable
             botonDeslizable_Not247.ValidarCampos = () =>
             {
-                // Llama a la función de validación y almacena el resultado
+                // Verificar si los campos están completos
                 bool camposCompletos = ValidarControlesCompletosEnPaneles();
 
                 if (!camposCompletos)
                 {
-                    // Mostrar mensaje de advertencia si los campos están incompletos
-                    MensajeGeneral.Mostrar("Debe completar la totalidad de los campos para crear la NOTIFICACION de Art. 247 C.P.P.", MensajeGeneral.TipoMensaje.Advertencia);
-                    return false; // Retorna false si los campos están incompletos
+                    MensajeGeneral.Mostrar(
+                        "Debe completar la totalidad de los campos para crear la NOTIFICACIÓN de Art. 247 C.P.P.",
+                        MensajeGeneral.TipoMensaje.Advertencia
+                    );
+                    return false; // No continuar si los campos están incompletos
                 }
-                else
+
+                if (botonDeslizable_Not247.IsOn)
                 {
-                   
-                    MensajeGeneral.MostrarAudiencia("Indique fecha de pericia.");
+                    // Mostrar el formulario de confirmación
+                    var resultado = MensajeGeneral.MostrarAudiencia("Indique fecha de pericia.", timePickerPersonalizado1);
 
-                    return true; // Retorna true si los campos están completos
+                    // Cambiar el estado del botón deslizante solo si se selecciona "GUARDAR"
+                    if (resultado == DialogResult.OK)
+                    {
+                        botonDeslizable_Not247.IsOn = true; // Mantener activado si el usuario guarda
+                    }
+                    else
+                    {
+                        botonDeslizable_Not247.IsOn = false; // Desactivar si el usuario cancela
+                    }
                 }
 
-
+                return botonDeslizable_Not247.IsOn; // Retornar el estado final del botón
             };
         }
+
+
 
 
         //--Para verificar los controles y habilitar boton
@@ -1025,8 +1080,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             camposIncompletos |= !VerificarPanelCompleto(panel_Victima);
             camposIncompletos |= !VerificarPanelCompleto(panel_Imputado);
             camposIncompletos |= !VerificarPanelCompleto(panel_Instruccion);
-
-            return !camposIncompletos; // Devuelve verdadero si todos los campos están completos
+            botonDeslizable_Not247.IsOn = true;
+            return !camposIncompletos;// Devuelve verdadero si todos los campos están completos
+           
         }
 
         private bool VerificarPanelCompleto(Panel panel)
@@ -1050,5 +1106,35 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true; // Todos los campos en el panel están completos
         }
 
+
+        //--para que muestre mensaje de advertencia previo cerrar formulario
+        private void InicioCierre_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
+
+        private void TimePickerPersonalizado1_FechaCambiada(object sender, EventArgs e)
+        {
+            var control = sender as TimePickerPersonalizado;
+            if (control != null)
+            {
+                DateTime nuevaFecha = control.SelectedDate;
+            }
+        }
+
+     
     }
 }

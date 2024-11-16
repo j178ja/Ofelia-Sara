@@ -128,48 +128,70 @@ namespace Ofelia_Sara.Formularios
             Point botonPosicion = btn_Configurar.PointToScreen(Point.Empty);
             btn_Configurar.ContextMenuStrip.Show(botonPosicion);
         }
+        //-------------------------------------------------------------------
+        private Form formularioSecundarioAbierto = null;
 
+        private void AbrirFormularioSecundario(Form formulario)
+        {
+            // Si ya hay un formulario secundario abierto
+            if (formularioSecundarioAbierto != null)
+            {
+                // Si el formulario que se intenta abrir ya está abierto, solo restaurarlo
+                if (formularioSecundarioAbierto.GetType() == formulario.GetType())
+                {
+                    formularioSecundarioAbierto.WindowState = FormWindowState.Normal;
+                    formularioSecundarioAbierto.BringToFront();
+                    return;
+                }
 
+                // Cerrar el formulario secundario actual
+                formularioSecundarioAbierto.Close();
+            }
 
-        //-----BOTON INICIO-CIERRE------------
+            // Configurar y abrir el nuevo formulario secundario
+            formularioSecundarioAbierto = formulario;
+            formularioSecundarioAbierto.FormClosed += Restablecer_MenuPrincipal_FormClosed;
+            formularioSecundarioAbierto.Show();
+
+            // Minimizar el formulario principal
+            this.Hide();
+        }
+
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
         {
-            // Crea una instancia del formulario a abrir
-            InicioCierre inicioCierreForm = new InicioCierre();
-            // Mostrar el formulario
-            inicioCierreForm.Show();
-
-            // Minimizar el formulario "Menu Principal"
-            this.WindowState = FormWindowState.Minimized;//cierra formulario actual
+            AbrirFormularioSecundario(new InicioCierre());
         }
 
-
-
-        //-------------BOTON CONTRAVENCIONES------------
         private void Btn_Contravenciones_Click(object sender, EventArgs e)
         {
-            // Crea una instancia del formulario a abrir
-            Contravenciones ContravencionesForm = new Contravenciones();
-            // Mostrar el formulario
-            ContravencionesForm.Show();
-
-            // Minimizar el formulario "Menu Principal"
-            this.WindowState = FormWindowState.Minimized;//cierra formulario actual
+            AbrirFormularioSecundario(new Contravenciones());
         }
 
-        //----------------BOTON EXPEDIENTES-----------
         private void Btn_Expedientes_Click(object sender, EventArgs e)
         {
-            // Crea una instancia del formulario a abrir
-            Expedientes ExpedientesForm = new Expedientes();
-            // Mostrar el formulario
-            ExpedientesForm.Show();
-
-            // Minimizar el formulario "Menu Principal"
-            this.WindowState = FormWindowState.Minimized;//cierra formulario actual
+            AbrirFormularioSecundario(new Expedientes());
         }
 
+        private void Restablecer_MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formularioSecundarioAbierto = null;
 
+            // Restaurar el formulario principal
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        // Sobrescribir el evento Resize del formulario principal para ocultarlo si se intenta restaurar
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            // Si hay un formulario secundario abierto, mantener minimizado MenuPrincipal
+            if (this.WindowState == FormWindowState.Normal && formularioSecundarioAbierto != null)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
 
 
         //------------- BOTON BUSCAR--------------------------

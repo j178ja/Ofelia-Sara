@@ -5,6 +5,7 @@
  */
 
 
+using Ofelia_Sara.Controles.Controles;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -13,6 +14,11 @@ namespace Ofelia_Sara.Mensajes
 {
     public partial class MensajeGeneral : Form
     {
+        public DateTime FechaMinima { get; set; } = DateTime.MinValue;
+
+        private bool datosGuardados = false;
+
+
         public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje)
         {
             InitializeComponent();
@@ -27,6 +33,12 @@ namespace Ofelia_Sara.Mensajes
             FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
             FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
 
+            // Configurar la fecha mínima en el control Fecha_Audiencia
+            Fecha_Audiencia.MinDate = FechaMinima;
+            Fecha_Audiencia.SelectedDate = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
+
+            // Fecha_Audiencia.SelectedDate = DateTime.Now; //mantener actualizada fecha
+
             // Ajustar altura del Label según el contenido
             AjustarAlturaContenedores();
             PosicionarBotonCerrar();
@@ -40,6 +52,9 @@ namespace Ofelia_Sara.Mensajes
             btn_No.Visible = false;
             btn_Si.Visible = false;
             Fecha_Audiencia.Visible = false;
+
+          
+
         }
         public enum TipoMensaje
         {
@@ -86,9 +101,11 @@ namespace Ofelia_Sara.Mensajes
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
+           
             this.Close();
         }
-
+       
+           
 
 
         private void AjustarAlturaContenedores()
@@ -142,13 +159,16 @@ namespace Ofelia_Sara.Mensajes
 
         private void Btn_Si_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Yes;
+           // this.DialogResult = DialogResult.Yes;
+            btn_Si.DialogResult = DialogResult.OK;
+
             this.Close();
         }
 
         private void Btn_No_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.No;
+            
             this.Close();
         }
 
@@ -165,7 +185,6 @@ namespace Ofelia_Sara.Mensajes
 
         public void MensajeAudiencia(string mensaje)
         {
-            // Muestra el mensaje recibido en el control adecuado, por ejemplo, en un Label
             label_Texto.Text = mensaje; // lbl_Mensaje es el Label que muestra el mensaje en el formulario
 
             // Configura la visibilidad de los controles
@@ -185,29 +204,52 @@ namespace Ofelia_Sara.Mensajes
             Fecha_Audiencia.Visible = true;
             pictureBox_Icono.Visible = false;
         }
+
         // Manejador para el evento Click del botón "GUARDAR"
         private void Btn_Si_Guardar_Click(object sender, EventArgs e)
         {
-            // Aquí puedes definir la lógica de guardar la audiencia, o el mensaje de éxito
+            this.DialogResult = DialogResult.OK;  // Establece el resultado del formulario como OK
+            datosGuardados = true;
+
+            // Aquí podrías agregar la lógica de guardar la fecha de la audiencia
             Mostrar("Se ha asignado la fecha indicada", TipoMensaje.Exito);
+
+            this.Close();  // Cierra el formulario
         }
+
 
         // Manejador para el evento Click del botón "CANCELAR"
         private void Btn_No_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario
+            this.DialogResult = DialogResult.Cancel;  // Establece el resultado como Cancel
+            this.Close();  // Cierra el formulario
         }
 
-        public static void MostrarAudiencia(string mensaje)
+
+
+        public static DialogResult MostrarAudiencia(string mensaje, TimePickerPersonalizado timePicker)
         {
-            using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion)) // o el TipoMensaje que desees
+            DateTime fechaBase = timePicker.SelectedDate; // Obteniendo la fecha base
+            using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion))
             {
+                form.FechaMinima = fechaBase; // Configurando la fecha mínima
                 form.MensajeAudiencia(mensaje);
-                form.ShowDialog(); // Muestra el formulario como modal
+                return form.ShowDialog(); // Devolver el resultado del diálogo
             }
         }
 
 
+
+
+        private void Fecha_Audiencia_ValueChanged(object sender, EventArgs e)
+        {
+            if (Fecha_Audiencia.SelectedDate < FechaMinima)
+            {
+                MensajeGeneral.Mostrar("Seleccione una fecha posterior a la fecha de inicio de actuaciones.",
+                    MensajeGeneral.TipoMensaje.Advertencia);
+                Fecha_Audiencia.SelectedDate = FechaMinima;
+            }
+        }
 
 
 

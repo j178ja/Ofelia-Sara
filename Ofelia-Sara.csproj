@@ -217,7 +217,7 @@
     <Compile Include="Clases\Botones\imprimir.cs" />
     <Compile Include="Clases\Botones\IncrementarTamaño.cs" />
     <Compile Include="Clases\Botones\limpiar_formulario.cs" />
-    <Compile Include="Clases\Botones\TooltipEnBtnDesactivado.cs" />
+    <Compile Include="Controles\Controles\Aplicadas con controles\TooltipEnBtnDesactivado.cs" />
     <Compile Include="Clases\encrip.cs" />
     <Compile Include="Clases\GenerarDocumentos\GenerarDocumentos.cs" />
     <Compile Include="Clases\Texto\AutompletarCaratula.cs" />
