@@ -174,6 +174,7 @@
             this.panel_ConversorDocumentos.Controls.Add(this.groupBox_ConversorDocumentos);
             this.panel_ConversorDocumentos.Controls.Add(this.label_ConversorDocumentos);
             this.panel_ConversorDocumentos.Name = "panel_ConversorDocumentos";
+            this.panel_ConversorDocumentos.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_ConversorDocumentos_Paint);
             // 
             // panel_ControlesInferiores
             // 
@@ -359,6 +360,7 @@
             // 
             this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             resources.ApplyResources(this.Fecha_Instruccion, "Fecha_Instruccion");
+            this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             // 

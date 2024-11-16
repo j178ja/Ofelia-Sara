@@ -90,7 +90,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             Fecha_Instruccion.SelectedDate = DateTime.Now;
         }
-
+        //-----------------------------------------------------
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox
+            textBox_NumeroCargo.Focus();
+        }
         //-----------------------------------------------------------------------
         private void InicializarComboBoxFISCALIA()
         {

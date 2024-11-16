@@ -36,20 +36,18 @@ namespace Ofelia_Sara.Registro_de_personal
 
             CargarDatosDependencia(comboBox_Dependencia, dbManager);//para cargar desde base de datos
 
-          
+            this.FormClosing += NuevoPersonal_FormClosing;
         }
 
 
         public NuevoPersonal()
         {
             InitializeComponent();
-            this.FormClosing += NuevoPersonal_FormClosing;
-
-            
+         
         }
 
 
-     
+
 
         private void NuevoPersonal_Load(object sender, EventArgs e)
         {
@@ -87,7 +85,7 @@ namespace Ofelia_Sara.Registro_de_personal
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)
         {
-            // Asegura que el cursor esté en textBox_Dependencia
+            // Asegura que el cursor esté en textBox
             textBox_NumeroLegajo.Focus();
         }
         //-----------------------------------------------------------------

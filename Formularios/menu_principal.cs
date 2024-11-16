@@ -261,7 +261,7 @@ namespace Ofelia_Sara.Formularios
         {
             if (!accionesManager.Acciones.Contains(comboBox_Buscar.Text))
             {
-                MessageBox.Show("La tarea que quiere realizar no se encuentra disponible.");
+                MensajeGeneral.Mostrar("La tarea que quiere realizar no se encuentra disponible.", MensajeGeneral.TipoMensaje.Advertencia);
                 e.Cancel = true; // Cancela la acción si la entrada no es válida
             }
         }

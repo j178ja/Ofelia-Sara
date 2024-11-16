@@ -1263,6 +1263,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        private void panel_ConversorDocumentos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -7,7 +7,7 @@ using Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
 using System;
 // Alias para el ShadowForm de tu propia clase
-// using Ofelia_Sara.Base_de_Datos;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -16,19 +16,12 @@ using System.IO;
 using System.Windows.Forms;
 
 
-
-
 namespace Ofelia_Sara.Formularios
 
 {
-
-
     public class BaseForm : Form
     {
         private DatabaseConnection dbConnection;
-
-
-
         protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias// Para cargar comisarías
         protected InstructoresManager instructoresManager = new InstructoresManager();    // Para cargar instructores
         protected SecretariosManager secretariosManager = new SecretariosManager();    // Para cargar instructores
@@ -128,7 +121,6 @@ namespace Ofelia_Sara.Formularios
             }
             else
             {
-                // Opcional: log o advertencia si el ícono no se encuentra
                 Console.WriteLine("No se pudo encontrar el ícono en la ruta especificada.");
             }
         }

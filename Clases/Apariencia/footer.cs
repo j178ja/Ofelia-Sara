@@ -2,6 +2,8 @@
   QUE PERMITE INTRODUCIR 
   ---------------DESARROLLADOR Y VERSION ---------------------------*/
 using Ofelia_Sara.Formularios;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -12,7 +14,6 @@ namespace Clases.Apariencia
     {
         public static LinkLabel CreateFooterLinkLabel(Form form)
         {
-            // Verificar si el formulario es una instancia de Contacto
             if (form is Contacto)
             {
                 return null; // No agregar el LinkLabel si es el formulario Contacto
@@ -25,13 +26,31 @@ namespace Clases.Apariencia
             footerLinkLabel.Size = new System.Drawing.Size(200, 16);
             footerLinkLabel.TabIndex = 0;
             footerLinkLabel.Text = "Desarrollado por Jorge A. Bonato - V. 1.0.0";
-            footerLinkLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right; // Anclar a la parte inferior y derecha
+            footerLinkLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
 
             // Añadir evento de clic
             footerLinkLabel.LinkClicked += (sender, e) =>
             {
-                // Abrir el formulario deseado al hacer clic en el link
+                // Ocultar todos los formularios visibles
+                List<Form> formsToHide = Application.OpenForms.Cast<Form>()
+                    .Where(f => f.Visible && !(f is Contacto)) // Excluir el formulario Contacto
+                    .ToList();
+
+                foreach (Form f in formsToHide)
+                {
+                    f.Hide();
+                }
+
+                // Abrir el formulario Contacto
                 Form contacto = new Contacto();
+                contacto.FormClosed += (s, args) =>
+                {
+                    // Restaurar los formularios previamente ocultos
+                    foreach (Form f in formsToHide)
+                    {
+                        f.Show();
+                    }
+                };
                 contacto.Show();
             };
 
@@ -44,6 +63,6 @@ namespace Clases.Apariencia
 
             return footerLinkLabel;
         }
-
     }
+
 }
