@@ -43,7 +43,7 @@ namespace REDACTADOR
             this.panel_Botones = new System.Windows.Forms.Panel();
             this.btn_ReducirTamaño = new System.Windows.Forms.Button();
             this.btn_AumentarTamaño = new System.Windows.Forms.Button();
-            this.btn_MayusculaMiniscula = new System.Windows.Forms.Button();
+            this.btn_MayusculaMinuscula = new System.Windows.Forms.Button();
             this.btn_Justificar = new System.Windows.Forms.Button();
             this.btn_AlinearDerecha = new System.Windows.Forms.Button();
             this.btn_Centrar = new System.Windows.Forms.Button();
@@ -53,7 +53,6 @@ namespace REDACTADOR
             this.btn_Negrita = new System.Windows.Forms.Button();
             this.richTextBox_Redactor = new System.Windows.Forms.RichTextBox();
             this.btn_Microfono = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Minimizar = new System.Windows.Forms.Button();
             this.label_OfeliaSara = new System.Windows.Forms.Label();
             this.btn_Cerrar = new System.Windows.Forms.Button();
@@ -61,6 +60,7 @@ namespace REDACTADOR
             this.panel_MenuSuperior = new System.Windows.Forms.Panel();
             this.label_Redactador = new System.Windows.Forms.Label();
             this.timer_Barras = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             iconoEscudo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -116,7 +116,6 @@ namespace REDACTADOR
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(64, 58);
             this.btn_Guardar.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "CREAR DOCUMENTO WORD");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
@@ -131,7 +130,6 @@ namespace REDACTADOR
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(64, 58);
             this.btn_Limpiar.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "ELIMINAR");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
@@ -142,7 +140,7 @@ namespace REDACTADOR
             this.panel_Botones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_Botones.Controls.Add(this.btn_ReducirTamaño);
             this.panel_Botones.Controls.Add(this.btn_AumentarTamaño);
-            this.panel_Botones.Controls.Add(this.btn_MayusculaMiniscula);
+            this.panel_Botones.Controls.Add(this.btn_MayusculaMinuscula);
             this.panel_Botones.Controls.Add(this.btn_Justificar);
             this.panel_Botones.Controls.Add(this.btn_AlinearDerecha);
             this.panel_Botones.Controls.Add(this.btn_Centrar);
@@ -166,7 +164,6 @@ namespace REDACTADOR
             this.btn_ReducirTamaño.TabIndex = 9;
             this.btn_ReducirTamaño.Text = "A";
             this.btn_ReducirTamaño.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolTip1.SetToolTip(this.btn_ReducirTamaño, "DISMINUIR TAMAÑO");
             this.btn_ReducirTamaño.UseVisualStyleBackColor = false;
             this.btn_ReducirTamaño.Click += new System.EventHandler(this.btn_DisminuirTamaño_Click);
             this.btn_ReducirTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
@@ -183,27 +180,25 @@ namespace REDACTADOR
             this.btn_AumentarTamaño.TabIndex = 8;
             this.btn_AumentarTamaño.Text = "A";
             this.btn_AumentarTamaño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolTip1.SetToolTip(this.btn_AumentarTamaño, "AUMENTAR TAMAÑO");
             this.btn_AumentarTamaño.UseVisualStyleBackColor = false;
             this.btn_AumentarTamaño.Click += new System.EventHandler(this.btn_AumentarTamaño_Click);
             this.btn_AumentarTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
             this.btn_AumentarTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
             // 
-            // btn_MayusculaMiniscula
+            // btn_MayusculaMinuscula
             // 
-            this.btn_MayusculaMiniscula.BackColor = System.Drawing.Color.White;
-            this.btn_MayusculaMiniscula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_MayusculaMiniscula.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MayusculaMiniscula.Location = new System.Drawing.Point(123, 3);
-            this.btn_MayusculaMiniscula.Name = "btn_MayusculaMiniscula";
-            this.btn_MayusculaMiniscula.Size = new System.Drawing.Size(29, 22);
-            this.btn_MayusculaMiniscula.TabIndex = 7;
-            this.btn_MayusculaMiniscula.Text = "Aa";
-            this.toolTip1.SetToolTip(this.btn_MayusculaMiniscula, "MAYUSCULA/minuscula");
-            this.btn_MayusculaMiniscula.UseVisualStyleBackColor = false;
-            this.btn_MayusculaMiniscula.Click += new System.EventHandler(this.btn_MayusculaMiniscula_Click);
-            this.btn_MayusculaMiniscula.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
-            this.btn_MayusculaMiniscula.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
+            this.btn_MayusculaMinuscula.BackColor = System.Drawing.Color.White;
+            this.btn_MayusculaMinuscula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_MayusculaMinuscula.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MayusculaMinuscula.Location = new System.Drawing.Point(123, 3);
+            this.btn_MayusculaMinuscula.Name = "btn_MayusculaMinuscula";
+            this.btn_MayusculaMinuscula.Size = new System.Drawing.Size(29, 22);
+            this.btn_MayusculaMinuscula.TabIndex = 7;
+            this.btn_MayusculaMinuscula.Text = "Aa";
+            this.btn_MayusculaMinuscula.UseVisualStyleBackColor = false;
+            this.btn_MayusculaMinuscula.Click += new System.EventHandler(this.btn_MayusculaMiniscula_Click);
+            this.btn_MayusculaMinuscula.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
+            this.btn_MayusculaMinuscula.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
             // 
             // btn_Justificar
             // 
@@ -215,7 +210,6 @@ namespace REDACTADOR
             this.btn_Justificar.Name = "btn_Justificar";
             this.btn_Justificar.Size = new System.Drawing.Size(21, 22);
             this.btn_Justificar.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.btn_Justificar, "Justificar");
             this.btn_Justificar.UseVisualStyleBackColor = false;
             this.btn_Justificar.Click += new System.EventHandler(this.btn_Justificar_Click);
             // 
@@ -229,7 +223,6 @@ namespace REDACTADOR
             this.btn_AlinearDerecha.Name = "btn_AlinearDerecha";
             this.btn_AlinearDerecha.Size = new System.Drawing.Size(21, 22);
             this.btn_AlinearDerecha.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.btn_AlinearDerecha, "Alinear a la DERECHA");
             this.btn_AlinearDerecha.UseVisualStyleBackColor = false;
             this.btn_AlinearDerecha.Click += new System.EventHandler(this.btn_AlinearDerecha_Click);
             // 
@@ -243,7 +236,6 @@ namespace REDACTADOR
             this.btn_Centrar.Name = "btn_Centrar";
             this.btn_Centrar.Size = new System.Drawing.Size(21, 22);
             this.btn_Centrar.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.btn_Centrar, "Centrar");
             this.btn_Centrar.UseVisualStyleBackColor = false;
             this.btn_Centrar.Click += new System.EventHandler(this.btn_Centrar_Click);
             // 
@@ -257,7 +249,6 @@ namespace REDACTADOR
             this.btn_AlinearIzquierda.Name = "btn_AlinearIzquierda";
             this.btn_AlinearIzquierda.Size = new System.Drawing.Size(21, 22);
             this.btn_AlinearIzquierda.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btn_AlinearIzquierda, "Alinear a la IZQUIERDA");
             this.btn_AlinearIzquierda.UseVisualStyleBackColor = false;
             this.btn_AlinearIzquierda.Click += new System.EventHandler(this.btn_AlinearIzquierda_Click);
             // 
@@ -271,7 +262,6 @@ namespace REDACTADOR
             this.btn_Subrayado.Size = new System.Drawing.Size(21, 22);
             this.btn_Subrayado.TabIndex = 2;
             this.btn_Subrayado.Text = "S";
-            this.toolTip1.SetToolTip(this.btn_Subrayado, "SUBRAYADO");
             this.btn_Subrayado.UseVisualStyleBackColor = false;
             this.btn_Subrayado.Click += new System.EventHandler(this.btn_Subrayado_Click);
             // 
@@ -285,7 +275,6 @@ namespace REDACTADOR
             this.btn_Cursiva.Size = new System.Drawing.Size(21, 22);
             this.btn_Cursiva.TabIndex = 1;
             this.btn_Cursiva.Text = "C";
-            this.toolTip1.SetToolTip(this.btn_Cursiva, "CURSIVA");
             this.btn_Cursiva.UseVisualStyleBackColor = false;
             this.btn_Cursiva.Click += new System.EventHandler(this.btn_Cursiva_Click);
             // 
@@ -299,7 +288,6 @@ namespace REDACTADOR
             this.btn_Negrita.Size = new System.Drawing.Size(21, 22);
             this.btn_Negrita.TabIndex = 0;
             this.btn_Negrita.Text = "N";
-            this.toolTip1.SetToolTip(this.btn_Negrita, "NEGRITA");
             this.btn_Negrita.UseVisualStyleBackColor = false;
             this.btn_Negrita.Click += new System.EventHandler(this.btn_Negrita_Click);
             // 
@@ -363,7 +351,6 @@ namespace REDACTADOR
             this.label_OfeliaSara.Size = new System.Drawing.Size(109, 26);
             this.label_OfeliaSara.TabIndex = 16;
             this.label_OfeliaSara.Text = "Ofelia - Sara";
-            this.toolTip1.SetToolTip(this.label_OfeliaSara, "Instructivo de la aplicación");
             this.label_OfeliaSara.Click += new System.EventHandler(this.Label_OfeliaSara_Click);
             this.label_OfeliaSara.Paint += new System.Windows.Forms.PaintEventHandler(this.Label_OfeliaSara_Paint);
             this.label_OfeliaSara.MouseLeave += new System.EventHandler(this.Label_OfeliaSara_MouseLeave);
@@ -483,12 +470,11 @@ namespace REDACTADOR
     private Button btn_Negrita;
     private Button btn_Guardar;
     private Button btn_Limpiar;
-    private Button btn_MayusculaMiniscula;
+    private Button btn_MayusculaMinuscula;
     private Button btn_ReducirTamaño;
     private Button btn_AumentarTamaño;
     private Button btn_Microfono;
         private AudioVisualizerControl audioVisualizerControl;
-        private ToolTip toolTip1;
         private Panel panel_MenuSuperior;
         private Button btn_Minimizar;
         private Label label_Redactador;
@@ -496,6 +482,7 @@ namespace REDACTADOR
         private Button btn_Cerrar;
         private Button btn_Maximizar;
         private Timer timer_Barras;
+        private ToolTip toolTip1;
     }
 }
 

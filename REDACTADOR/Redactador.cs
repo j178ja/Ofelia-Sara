@@ -56,7 +56,7 @@ namespace REDACTADOR
         private void Redactador_Load(object sender, EventArgs e)
         {
             audioVisualizerControl.Visible = false;
-            toolTip.SetToolTip(btn_Microfono, "ACTIVAR micrófono");
+            ToolTipGeneral.ShowToolTip(this, btn_Microfono, "ACTIVAR micrófono");
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
@@ -72,6 +72,20 @@ namespace REDACTADOR
             timerMinimizarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
             timerCerrarForm.Tick += TimerCerrar_Tick;
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
+
+            ToolTipGeneral.ShowToolTip(this, btn_Guardar, "CREAR DOCUMENTO WORD");
+            ToolTipGeneral.ShowToolTip(this, btn_Limpiar, "ELIMINAR");
+            ToolTipGeneral.ShowToolTip(this, btn_Negrita, "NEGRITA");
+            ToolTipGeneral.ShowToolTip(this, btn_Cursiva, "CURSIVA");
+            ToolTipGeneral.ShowToolTip(this, btn_Subrayado, "SUBRAYAR");
+            ToolTipGeneral.ShowToolTip(this, btn_AumentarTamaño, "Aumentar tamaño");
+            ToolTipGeneral.ShowToolTip(this, btn_ReducirTamaño, "Reducir tamaño");
+            ToolTipGeneral.ShowToolTip(this, btn_MayusculaMinuscula, "MAYUSCULA/minuscula");
+            ToolTipGeneral.ShowToolTip(this, btn_AlinearIzquierda, "Alinear a la Izquierda");
+            ToolTipGeneral.ShowToolTip(this, btn_Centrar, "CENTRAR");
+            ToolTipGeneral.ShowToolTip(this, btn_AlinearDerecha, "Alinear a la Derecha");
+            ToolTipGeneral.ShowToolTip(this, btn_Justificar, "JUSTIFICAR");
+            ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación");
         }
         //---------------------------------------------------------------------------------
         //----BARRA SUPERIOR-----
@@ -306,40 +320,49 @@ namespace REDACTADOR
         //----------------------------------------------------------------------------------
 
 
+        // private ToolTip toolTip = new ToolTip();
+
         private ToolTip toolTip = new ToolTip();
+
         private void btn_Microfono_Click(object sender, EventArgs e)
         {
             // Verificar si hay dispositivos de entrada (micrófono)
             if (WaveIn.DeviceCount == 0)
             {
-                // No hay micrófono disponible; mostrar mensaje al usuario
-                MensajeGeneral.Mostrar("No se ha detectado ningún micrófono conectado. Conecte un micrófono e inténtelo de nuevo.",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar("No se ha detectado ningún micrófono conectado. Conecte un micrófono e inténtelo de nuevo.", MensajeGeneral.TipoMensaje.Error);
                 return;
             }
-            //   DESACTIVAR MICROFONO
-            if (btn_Microfono.BackColor == System.Drawing.Color.LimeGreen)
+
+            // Ocultar cualquier ToolTip existente antes de mostrar uno nuevo
+            ToolTipGeneral.HideToolTip(btn_Microfono);
+
+            // Cambiar el estado del micrófono (activar/desactivar)
+            if (btn_Microfono.BackColor == System.Drawing.Color.LimeGreen) // Desactivar micrófono
             {
                 timer_Barras.Stop();
                 StopRecording();
                 btn_Microfono.BackColor = System.Drawing.Color.Red;
                 audioVisualizerControl.Visible = false;
                 richTextBox_Redactor.Focus();
-                toolTip.SetToolTip(btn_Microfono, "ACTIVAR micrófono");
-               
 
+                // Mostrar ToolTip para activar el micrófono
+                ToolTipGeneral.ShowToolTip(this, btn_Microfono, "ACTIVAR micrófono");
             }
-            else //  ACTIVAR MICROFONO
+            else // Activar micrófono
             {
-                
                 btn_Microfono.BackColor = System.Drawing.Color.LimeGreen;
                 audioVisualizerControl.Visible = true;
                 richTextBox_Redactor.Focus();
-                toolTip.SetToolTip(btn_Microfono, "DESACTIVAR micrófono");
+
+                // Mostrar ToolTip para desactivar el micrófono
+                ToolTipGeneral.ShowToolTip(this, btn_Microfono, "DESACTIVAR micrófono");
+
                 StartRecording();
-               // CrearBarras(sender, e);
-                timer_Barras.Start();// Inicia el temporizador para actualizar las barras de visualización
+                timer_Barras.Start(); // Inicia el temporizador para actualizar las barras de visualización
             }
         }
+
+
 
 
         private void StartRecording()
@@ -737,6 +760,7 @@ namespace REDACTADOR
             }
         }
 
+      
     }
 
     }

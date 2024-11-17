@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Clases\BordePanel.cs" />
     <Compile Include="Clases\limpiar_formulario.cs" />
+    <Compile Include="Clases\ToolTipGeneral.cs" />
     <Compile Include="Mensaje\FormUtils.cs" />
     <Compile Include="Mensaje\MensajeGeneral.cs">
       <SubType>Form</SubType>
