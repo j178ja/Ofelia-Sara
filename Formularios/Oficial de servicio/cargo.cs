@@ -63,7 +63,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             this.FormClosing += BuscarPersonal_FormClosing;
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
-            textBox_NumeroCargo.Focus();
+            this.Shown += Focus_Shown;//para que haga foco en un textBox
             textBox_NumeroIpp.MaxLength = 6;
             comboBox_Ipp1.MaxLength = 2;
             comboBox_Ipp2.MaxLength = 2;

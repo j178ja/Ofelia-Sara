@@ -2,6 +2,7 @@
 using Clases.GenerarDocumentos;
 using Clases.Texto;
 using Controles.Controles;
+using Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using System;
@@ -79,7 +80,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
 
-
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Convertir, "Seleccione que tipo de archivo desea y agrege un archivo.", "Presione para generar un archivo en el formato deseado");
+            TooltipEnControlDesactivado.TooltipActivo(this, btn_EliminarArchivo, "Eliminar seleccion y archivo agregado.");
         }
 
 

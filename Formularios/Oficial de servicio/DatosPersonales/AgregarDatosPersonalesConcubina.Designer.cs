@@ -38,9 +38,9 @@
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.emailControl1 = new Controles.Controles.EmailControl();
-            this.numeroTelefonicoControl = new Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDate();
+            this.emailControl1 = new Ofelia_Sara.Controles.Controles.EmailControl();
+            this.numeroTelefonicoControl = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
             this.label_Email = new System.Windows.Forms.Label();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.textBox_Ocupacion = new System.Windows.Forms.TextBox();
@@ -150,7 +150,6 @@
             this.btn_AgregarConcubina.Size = new System.Drawing.Size(20, 20);
             this.btn_AgregarConcubina.TabIndex = 97;
             this.btn_AgregarConcubina.Text = ". . .";
-            this.toolTip1.SetToolTip(this.btn_AgregarConcubina, "Seleccione para agregar nuevo familiar");
             this.btn_AgregarConcubina.UseVisualStyleBackColor = true;
             this.btn_AgregarConcubina.Click += new System.EventHandler(this.btn_AgregarConcubina_Click);
             // 

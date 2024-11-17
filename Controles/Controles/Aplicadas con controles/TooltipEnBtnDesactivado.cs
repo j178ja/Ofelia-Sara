@@ -6,15 +6,12 @@ namespace Controles.Controles.Aplicadas_con_controles
 {
     public partial class TooltipEnControlDesactivado
     {
-        public static void ConfigurarToolTip(Form form, Control control, string toolTipText)
+        public static void ConfigurarToolTip(Form form, Control control, string toolTipTextDisabled, string toolTipTextEnabled)
         {
             ToolTip customToolTip = new ToolTip
             {
                 OwnerDraw = true // Habilitar dibujo personalizado
             };
-
-            ToolTip defaultToolTip = new ToolTip();
-            defaultToolTip.SetToolTip(control, ""); // Inicializar vacío
 
             Timer timer = new Timer { Interval = 100 };
             bool isCustomToolTipVisible = false;
@@ -22,39 +19,34 @@ namespace Controles.Controles.Aplicadas_con_controles
             // Manejar el evento Draw para personalizar el ToolTip
             customToolTip.Draw += (sender, e) =>
             {
+                // Determinar si el control está habilitado o no para ajustar el diseño
+                bool isEnabled = control.Enabled;
+                Color backgroundColor = isEnabled ? Color.LightBlue : SystemColors.Info;
+                Icon icon = isEnabled ? SystemIcons.Information : SystemIcons.Warning;
+                string toolTipText = isEnabled ? toolTipTextEnabled : toolTipTextDisabled;
+
                 // Fondo del ToolTip
-                e.Graphics.FillRectangle(SystemBrushes.Info, e.Bounds);
+                e.Graphics.FillRectangle(new SolidBrush(backgroundColor), e.Bounds);
 
-                // Icono de advertencia con padding izquierdo de 7 px (4 + 3)
-                Icon warningIcon = SystemIcons.Warning;
-                int iconX = e.Bounds.X + 7; // Padding izquierdo de 7 px (4 + 3)
+                // Icono con padding
+                int iconX = e.Bounds.X + 7; // Padding izquierdo
                 int iconY = e.Bounds.Y + 5; // Ajuste del ícono
-                e.Graphics.DrawIcon(warningIcon, new Rectangle(iconX, iconY, 16, 16));
+                e.Graphics.DrawIcon(icon, new Rectangle(iconX, iconY, 16, 16));
 
-                // Dividir el texto en líneas si es necesario
+                // Dividir el texto en líneas
                 string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
                 using (Font font = new Font("Arial", 10))
                 {
-                    float lineHeight = font.GetHeight(e.Graphics) + 6; // Reducir altura del texto en 3 px
-                    float textY = e.Bounds.Y + 4; // Margen superior
-
-                    // Definir el ancho disponible para el texto, considerando el icono y un margen izquierdo específico
-                    int leftMargin = 7 + 16 + 20; // Margen izquierdo (icono + padding)
-                    int rightMargin = 10; // Margen derecho del texto
+                    float lineHeight = font.GetHeight(e.Graphics) + 6;
+                    float textY = e.Bounds.Y + 4;
+                    int leftMargin = 7 + 16 + 20; // Margen izquierdo
+                    int rightMargin = 10; // Margen derecho
 
                     foreach (string line in lines)
                     {
-                        SizeF textSize = e.Graphics.MeasureString(line, font);
-
-                        // Posición X del texto (después del icono y margen izquierdo, con margen derecho ajustado)
-                        float textX = e.Bounds.X + leftMargin; // Posición del texto desde la izquierda
-                        float maxTextX = e.Bounds.X + e.Bounds.Width - rightMargin - textSize.Width; // Margen derecho ajustado
-
-                        // Asegurar que el texto no sobrepase el margen derecho
-                        textX = Math.Min(textX, maxTextX);
-
+                        float textX = e.Bounds.X + leftMargin;
                         e.Graphics.DrawString(line, font, Brushes.Black, new PointF(textX, textY));
-                        textY += lineHeight; // Avanzar a la siguiente línea
+                        textY += lineHeight;
                     }
                 }
             };
@@ -66,7 +58,7 @@ namespace Controles.Controles.Aplicadas_con_controles
                 {
                     using (Font font = new Font("Arial", 10))
                     {
-                        // Dividir el texto en líneas y calcular el tamaño total
+                        string toolTipText = control.Enabled ? toolTipTextEnabled : toolTipTextDisabled;
                         string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
                         float maxWidth = 0;
                         float totalHeight = 0;
@@ -78,11 +70,10 @@ namespace Controles.Controles.Aplicadas_con_controles
                             totalHeight += textSize.Height;
                         }
 
-                        // Asegurar que el tamaño tenga en cuenta el espacio del icono y los márgenes
                         int leftMargin = 7 + 16 + 10; // Margen izquierdo
                         int rightMargin = 10; // Margen derecho
-                        int width = (int)(maxWidth + leftMargin + rightMargin); // Espacio total para el texto con márgenes
-                        int height = (int)(totalHeight + 8); // Alto con espacio para varias líneas
+                        int width = (int)(maxWidth + leftMargin + rightMargin);
+                        int height = (int)(totalHeight + 8);
                         e.ToolTipSize = new Size(width, height);
                     }
                 }
@@ -90,31 +81,35 @@ namespace Controles.Controles.Aplicadas_con_controles
 
             timer.Tick += (sender, e) =>
             {
-                // Asegurarse de que el ToolTip personalizado se muestre solo si el control está deshabilitado
-                if (!control.Enabled && control.ClientRectangle.Contains(control.PointToClient(Control.MousePosition)))
+                // Verificar si el mouse está sobre el control
+                if (control.ClientRectangle.Contains(control.PointToClient(Control.MousePosition)))
                 {
+                    // Obtener la posición actual del cursor relativa al control
+                    Point cursorPosition = control.PointToClient(Control.MousePosition);
+
+                    // Calcular la posición del ToolTip (7 px a la derecha y 5 px abajo)
+                    int toolTipX = cursorPosition.X + 7;
+                    int toolTipY = cursorPosition.Y + 5;
+
                     if (!isCustomToolTipVisible)
                     {
                         isCustomToolTipVisible = true;
-                        defaultToolTip.Active = false; // Desactivar ToolTip predeterminado
 
-                        // Mostrar ToolTip más abajo
-                        Point toolTipLocation = new Point(control.Width / 2, control.Height / 5 + 5);
-                        customToolTip.Show(toolTipText, control, toolTipLocation);
+                        // Determinar el texto del ToolTip según el estado del control
+                        string toolTipText = control.Enabled ? toolTipTextEnabled : toolTipTextDisabled;
+
+                        // Mostrar ToolTip personalizado con la posición ajustada
+                        customToolTip.Show(toolTipText, control, new Point(toolTipX, toolTipY));
                     }
                 }
-                else
+                else if (isCustomToolTipVisible)
                 {
-                    // Si el control está habilitado o el ToolTip personalizado está oculto, mostrar el predeterminado
-                    if (isCustomToolTipVisible)
-                    {
-                        isCustomToolTipVisible = false;
-                        customToolTip.Hide(control); // Ocultar ToolTip personalizado
-                        defaultToolTip.Active = true; // Reactivar ToolTip predeterminado
-                    }
+                    isCustomToolTipVisible = false;
+                    customToolTip.Hide(control);
                 }
             };
 
+            // Manejo del evento FormClosing para limpiar recursos
             form.FormClosing += (sender, e) =>
             {
                 timer.Stop();
@@ -123,31 +118,134 @@ namespace Controles.Controles.Aplicadas_con_controles
 
             timer.Start();
         }
+        //-------
 
-        public static void DesactivarToolTipsEnControlesDesactivados(Control parentControl)
+            public static void DesactivarToolTipsEnControlesDesactivados(Control parentControl)
         {
-            // Instancia única del ToolTip compartido
             ToolTip sharedToolTip = new ToolTip
             {
-                Active = false // Inicialmente desactivado
+                Active = false
             };
 
             foreach (Control control in parentControl.Controls)
             {
-                // Si el control está deshabilitado, desactivar el ToolTip predeterminado
                 if (!control.Enabled)
                 {
-                    sharedToolTip.SetToolTip(control, string.Empty); // Desactivar el ToolTip
+                    sharedToolTip.SetToolTip(control, string.Empty);
                 }
 
-                // Si el control tiene hijos, recorrerlos recursivamente
                 if (control.HasChildren)
                 {
-                    DesactivarToolTipsEnControlesDesactivados(control); // Llamada recursiva
+                    DesactivarToolTipsEnControlesDesactivados(control);
                 }
             }
         }
 
 
+        public static void TooltipActivo(Form form, Control control, string toolTipText)
+        {
+            ToolTip customToolTip = new ToolTip
+            {
+                OwnerDraw = true // Habilitar dibujo personalizado
+            };
+
+            Timer timer = new Timer { Interval = 100 };
+            bool isCustomToolTipVisible = false;
+
+            // Manejar el evento Draw para personalizar el ToolTip
+            customToolTip.Draw += (sender, e) =>
+            {
+                // Fondo azul claro
+                e.Graphics.FillRectangle(new SolidBrush(Color.LightBlue), e.Bounds);
+
+                // Icono de información con padding
+                Icon infoIcon = SystemIcons.Information;
+                int iconX = e.Bounds.X + 7; // Padding izquierdo
+                int iconY = e.Bounds.Y + 5; // Ajuste del ícono
+                e.Graphics.DrawIcon(infoIcon, new Rectangle(iconX, iconY, 16, 16));
+
+                // Dividir el texto en líneas
+                string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
+                using (Font font = new Font("Arial", 10))
+                {
+                    float lineHeight = font.GetHeight(e.Graphics) + 6;
+                    float textY = e.Bounds.Y + 4;
+                    int leftMargin = 7 + 16 + 20; // Margen izquierdo
+                    int rightMargin = 10; // Margen derecho
+
+                    foreach (string line in lines)
+                    {
+                        float textX = e.Bounds.X + leftMargin;
+                        e.Graphics.DrawString(line, font, Brushes.Black, new PointF(textX, textY));
+                        textY += lineHeight;
+                    }
+                }
+            };
+
+            // Configurar tamaño dinámico del ToolTip
+            customToolTip.Popup += (sender, e) =>
+            {
+                using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+                {
+                    using (Font font = new Font("Arial", 10))
+                    {
+                        string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
+                        float maxWidth = 0;
+                        float totalHeight = 0;
+
+                        foreach (string line in lines)
+                        {
+                            SizeF textSize = g.MeasureString(line, font);
+                            maxWidth = Math.Max(maxWidth, textSize.Width);
+                            totalHeight += textSize.Height;
+                        }
+
+                        int leftMargin = 7 + 16 + 10; // Margen izquierdo
+                        int rightMargin = 10; // Margen derecho
+                        int width = (int)(maxWidth + leftMargin + rightMargin);
+                        int height = (int)(totalHeight + 8);
+                        e.ToolTipSize = new Size(width, height);
+                    }
+                }
+            };
+
+            timer.Tick += (sender, e) =>
+            {
+                // Obtener la posición actual del cursor relativa al control
+                Point cursorPosition = control.PointToClient(Control.MousePosition);
+
+                // Calcular la posición del ToolTip (5 px abajo y 5 px a la derecha del cursor)
+                int toolTipX = cursorPosition.X + 7; // Ajuste horizontal
+                int toolTipY = cursorPosition.Y + 5; // Ajuste vertical
+
+                // Mostrar el ToolTip personalizado si el mouse está sobre el control
+                if (control.ClientRectangle.Contains(cursorPosition))
+                {
+                    if (!isCustomToolTipVisible)
+                    {
+                        isCustomToolTipVisible = true;
+
+                        // Mostrar ToolTip personalizado en la nueva posición
+                        customToolTip.Show(toolTipText, control, new Point(toolTipX, toolTipY));
+                    }
+                }
+                else if (isCustomToolTipVisible)
+                {
+                    isCustomToolTipVisible = false;
+                    customToolTip.Hide(control);
+                }
+            };
+
+            // Manejo del evento FormClosing para limpiar recursos
+            form.FormClosing += (sender, e) =>
+            {
+                timer.Stop();
+                timer.Dispose();
+            };
+
+            timer.Start();
+
+        }
     }
 }
+

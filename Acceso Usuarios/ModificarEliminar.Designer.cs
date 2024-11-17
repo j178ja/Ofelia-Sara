@@ -131,7 +131,6 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 31;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR CAMBIOS");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
@@ -157,7 +156,6 @@
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(75, 66);
             this.btn_Editar.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btn_Editar, "EDITAR");
             this.btn_Editar.UseVisualStyleBackColor = false;
             this.btn_Editar.Click += new System.EventHandler(this.Btn_Editar_Click);
             // 
@@ -170,7 +168,6 @@
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(75, 67);
             this.btn_Eliminar.TabIndex = 32;
-            this.toolTip1.SetToolTip(this.btn_Eliminar, "ELIMINAR ELEMENTO");
             this.btn_Eliminar.UseVisualStyleBackColor = false;
             this.btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
             // 

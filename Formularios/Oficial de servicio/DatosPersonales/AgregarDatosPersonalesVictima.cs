@@ -66,9 +66,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
-            this.emailControl1 = new Controles.Controles.EmailControl();
-            this.numeroTelefonicoControl1 = new Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Controles.Controles.CustomDate();
+            this.emailControl1 = new Ofelia_Sara.Controles.Controles.EmailControl();
+            this.numeroTelefonicoControl1 = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -106,7 +106,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
             this.SuspendLayout();
             // 
-
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -277,7 +276,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 78;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
@@ -310,7 +308,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
@@ -323,7 +320,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 

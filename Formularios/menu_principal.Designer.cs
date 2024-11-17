@@ -170,7 +170,6 @@
             this.comboBox_Buscar.Name = "comboBox_Buscar";
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.comboBox_Buscar, "Ingrese que tarea desea realizar");
             this.comboBox_Buscar.MouseHover += new System.EventHandler(this.ComboBox_Buscar_MouseHover);
             // 
             // btn_Configurar
@@ -184,7 +183,6 @@
             this.btn_Configurar.Name = "btn_Configurar";
             this.btn_Configurar.Size = new System.Drawing.Size(34, 32);
             this.btn_Configurar.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btn_Configurar, "Configuración formularios");
             this.btn_Configurar.UseVisualStyleBackColor = false;
             this.btn_Configurar.Click += new System.EventHandler(this.Btn_Configurar_Click);
             // 
@@ -228,7 +226,6 @@
             this.btn_Redactador.Name = "btn_Redactador";
             this.btn_Redactador.Size = new System.Drawing.Size(32, 32);
             this.btn_Redactador.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btn_Redactador, "REDACTAR POR VOZ");
             this.btn_Redactador.UseVisualStyleBackColor = true;
             this.btn_Redactador.Click += new System.EventHandler(this.btn_Redactador_Click);
             this.btn_Redactador.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
@@ -247,7 +244,6 @@
             this.btn_Mecanografia.Name = "btn_Mecanografia";
             this.btn_Mecanografia.Size = new System.Drawing.Size(42, 32);
             this.btn_Mecanografia.TabIndex = 21;
-            this.toolTip1.SetToolTip(this.btn_Mecanografia, "MECANOGRAFIA");
             this.btn_Mecanografia.UseVisualStyleBackColor = true;
             this.btn_Mecanografia.Click += new System.EventHandler(this.Btn_Mecanografia_Click);
             this.btn_Mecanografia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
@@ -297,7 +293,6 @@
             this.label_OfeliaSara.Size = new System.Drawing.Size(109, 26);
             this.label_OfeliaSara.TabIndex = 16;
             this.label_OfeliaSara.Text = "Ofelia - Sara";
-            this.toolTip1.SetToolTip(this.label_OfeliaSara, "Instructivo de la aplicación");
             this.label_OfeliaSara.Click += new System.EventHandler(this.Label_OfeliaSara_Click);
             this.label_OfeliaSara.Paint += new System.Windows.Forms.PaintEventHandler(this.Label_OfeliaSara_Paint);
             this.label_OfeliaSara.MouseLeave += new System.EventHandler(this.Label_OfeliaSara_MouseLeave);

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numeroTelefonicoControl1 = new Controles.Controles.NumeroTelefonicoControl();
+            this.numeroTelefonicoControl1 = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
             this.label_TelValidacion2 = new System.Windows.Forms.Label();
             this.label_TelValidacion = new System.Windows.Forms.Label();
             this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
@@ -57,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
             this.SuspendLayout();
             // 
-            
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
@@ -165,7 +164,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
@@ -178,7 +176,6 @@
             this.btn_Registrarse.Name = "btn_Registrarse";
             this.btn_Registrarse.Size = new System.Drawing.Size(75, 67);
             this.btn_Registrarse.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btn_Registrarse, "REGISTRARSE");
             this.btn_Registrarse.UseVisualStyleBackColor = false;
             this.btn_Registrarse.Click += new System.EventHandler(this.Btn_Registrarse_Click);
             // 

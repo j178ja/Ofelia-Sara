@@ -14,6 +14,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -93,13 +94,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             timePickerPersonalizado1.FechaCambiada += TimePickerPersonalizado1_FechaCambiada;
 
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Carjo Judicial");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia.", "Marcar para establecer fecha de Pericia");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente.", "Agregar una caratula adicional");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
+            TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.");
+         
+
+
 
             //-------------------------------------------------------------------------------
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
@@ -659,7 +664,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void CheckBox_LegajoDetenido_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
-            if (checkBox_LegajoDetenido.Checked)
+            if (checkBox_RatificacionTestimonial.Checked)
             {
                 // Crear y mostrar el formulario BuscarPersonal
                 BuscarPersonal buscarPersonalForm = new BuscarPersonal();

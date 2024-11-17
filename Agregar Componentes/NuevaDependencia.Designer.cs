@@ -138,7 +138,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar Formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
@@ -151,7 +150,6 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar y cargar Dependencia");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 

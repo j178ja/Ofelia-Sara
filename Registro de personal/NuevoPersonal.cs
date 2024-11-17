@@ -80,7 +80,7 @@ namespace Ofelia_Sara.Registro_de_personal
             numeroTelefonicoControl2.ControlWidth = 159;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
-        
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para verificar informaciòn.", "Verificar datos de Legajo Ingresado.");
         }
         //-----------------------------------------------------------------------------
         private void Focus_Shown(object sender, EventArgs e)

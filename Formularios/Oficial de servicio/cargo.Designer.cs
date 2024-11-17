@@ -46,7 +46,7 @@
             this.lbl_Dependencia = new System.Windows.Forms.Label();
             this.comboBox_AgenteFiscal = new System.Windows.Forms.ComboBox();
             this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Controles.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.lbl_Secretario = new System.Windows.Forms.Label();
             this.lbl_Instructor = new System.Windows.Forms.Label();
             this.lbl_Ufid = new System.Windows.Forms.Label();
@@ -83,7 +83,6 @@
             this.panel_Victima.SuspendLayout();
             this.SuspendLayout();
             // 
-            
             // label_Cargo
             // 
             this.label_Cargo.AutoSize = true;
@@ -300,6 +299,7 @@
             // 
             this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.Fecha_Instruccion.Location = new System.Drawing.Point(129, 318);
+            this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 25);
@@ -594,7 +594,6 @@
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(106, 92);
             this.btn_Imprimir.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.btn_Imprimir, "IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
             this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
@@ -607,7 +606,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "LIMPIAR formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
@@ -620,7 +618,6 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR Cargo");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
@@ -633,7 +630,6 @@
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar listado de cargos");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // Cargo

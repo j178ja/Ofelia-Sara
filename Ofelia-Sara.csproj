@@ -251,6 +251,7 @@
     </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\CalcularAntiguedad.cs" />
     <Compile Include="Controles\Controles\Aplicadas con controles\CalcularEdad.cs" />
+    <Compile Include="Controles\Controles\Aplicadas con controles\ToolTipGeneral.cs" />
     <Compile Include="Controles\Controles\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>

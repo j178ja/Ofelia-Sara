@@ -67,9 +67,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
             this.btn_AgregarImputado = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBox_RatificacionTestimonial = new System.Windows.Forms.CheckBox();
             this.btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             this.btn_AgregarDatosVictima = new System.Windows.Forms.Button();
-            this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.checkBox_Cargo = new System.Windows.Forms.CheckBox();
             this.botonDeslizable_Not247 = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -386,7 +386,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 18;
-            this.toolTip.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             this.btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
@@ -399,7 +398,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 10;
-            this.toolTip.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
@@ -412,7 +410,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 12;
-            this.toolTip.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
@@ -425,7 +422,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
             this.btn_Imprimir.TabIndex = 11;
-            this.toolTip.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
             this.btn_Imprimir.Click += new System.EventHandler(this.Btn_Imprimir_Click);
             // 
@@ -440,7 +436,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarCausa.TabIndex = 27;
             this.btn_AgregarCausa.Text = "+";
-            this.toolTip.SetToolTip(this.btn_AgregarCausa, "Agregar una caratula adicional");
             this.btn_AgregarCausa.UseVisualStyleBackColor = false;
             this.btn_AgregarCausa.Click += new System.EventHandler(this.Btn_AgregarCausa_Click);
             // 
@@ -455,7 +450,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarVictima.TabIndex = 28;
             this.btn_AgregarVictima.Text = "+";
-            this.toolTip.SetToolTip(this.btn_AgregarVictima, "Agregar victima");
             this.btn_AgregarVictima.UseVisualStyleBackColor = false;
             this.btn_AgregarVictima.Click += new System.EventHandler(this.Btn_AgregarVictima_Click);
             // 
@@ -468,13 +462,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarImputado.TabIndex = 29;
             this.btn_AgregarImputado.Text = "+";
-            this.toolTip.SetToolTip(this.btn_AgregarImputado, "Agregar imputado");
             this.btn_AgregarImputado.UseVisualStyleBackColor = true;
             this.btn_AgregarImputado.Click += new System.EventHandler(this.Btn_AgregarImputado_Click);
             // 
             // toolTip
             // 
             this.toolTip.AutomaticDelay = 300;
+            // 
+            // checkBox_RatificacionTestimonial
+            // 
+            this.checkBox_RatificacionTestimonial.AutoSize = true;
+            this.checkBox_RatificacionTestimonial.Location = new System.Drawing.Point(203, 37);
+            this.checkBox_RatificacionTestimonial.Name = "checkBox_RatificacionTestimonial";
+            this.checkBox_RatificacionTestimonial.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_RatificacionTestimonial.TabIndex = 8;
+            this.checkBox_RatificacionTestimonial.UseVisualStyleBackColor = true;
+            this.checkBox_RatificacionTestimonial.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoDetenido_CheckedChanged);
             // 
             // btn_AgregarDatosImputado
             // 
@@ -485,7 +488,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarDatosImputado.Size = new System.Drawing.Size(27, 23);
             this.btn_AgregarDatosImputado.TabIndex = 38;
             this.btn_AgregarDatosImputado.Text = "+";
-            this.toolTip.SetToolTip(this.btn_AgregarDatosImputado, "Agregar datos personales de Imputado");
             this.btn_AgregarDatosImputado.UseVisualStyleBackColor = true;
             this.btn_AgregarDatosImputado.Click += new System.EventHandler(this.Btn_AgregarDatosImputado_Click);
             // 
@@ -498,20 +500,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_AgregarDatosVictima.Size = new System.Drawing.Size(27, 23);
             this.btn_AgregarDatosVictima.TabIndex = 39;
             this.btn_AgregarDatosVictima.Text = "+";
-            this.toolTip.SetToolTip(this.btn_AgregarDatosVictima, "Agregar datos personales de Victima");
             this.btn_AgregarDatosVictima.UseVisualStyleBackColor = true;
             this.btn_AgregarDatosVictima.Click += new System.EventHandler(this.Btn_AgregarDatosVictima_Click);
-            // 
-            // checkBox_LegajoDetenido
-            // 
-            this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(203, 37);
-            this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
-            this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_LegajoDetenido.TabIndex = 8;
-            this.toolTip.SetToolTip(this.checkBox_LegajoDetenido, "Marcar si requiere RATIFICACION TESTIMONIAL");
-            this.checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
-            this.checkBox_LegajoDetenido.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoDetenido_CheckedChanged);
             // 
             // checkBox_Cargo
             // 
@@ -520,7 +510,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.checkBox_Cargo.Name = "checkBox_Cargo";
             this.checkBox_Cargo.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Cargo.TabIndex = 9;
-            this.toolTip.SetToolTip(this.checkBox_Cargo, "Marcar si requiere agregar CARGO JUDICIAL");
             this.checkBox_Cargo.UseVisualStyleBackColor = true;
             this.checkBox_Cargo.CheckedChanged += new System.EventHandler(this.CheckBox_Cargo_CheckedChanged);
             // 
@@ -532,7 +521,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.botonDeslizable_Not247.Name = "botonDeslizable_Not247";
             this.botonDeslizable_Not247.Size = new System.Drawing.Size(40, 20);
             this.botonDeslizable_Not247.TabIndex = 42;
-            this.toolTip.SetToolTip(this.botonDeslizable_Not247, "Marcar para establecer fecha de Pericia");
             this.botonDeslizable_Not247.ValidarCampos = null;
             // 
             // panel1
@@ -667,7 +655,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_ControlesInferiores.Controls.Add(this.label_Not247);
             this.panel_ControlesInferiores.Controls.Add(this.checkBox_Cargo);
             this.panel_ControlesInferiores.Controls.Add(this.label_Cargo);
-            this.panel_ControlesInferiores.Controls.Add(this.checkBox_LegajoDetenido);
+            this.panel_ControlesInferiores.Controls.Add(this.checkBox_RatificacionTestimonial);
             this.panel_ControlesInferiores.Controls.Add(this.label_RatificacionPersonal);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
@@ -763,7 +751,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACTUACIONES SUMARIALES PREVENCIONALES";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioCierre_FormClosing);
-
             this.Load += new System.EventHandler(this.InicioCierre_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.lbl_Titulo, 0);
@@ -835,7 +822,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Panel panel_Caratula;
         private System.Windows.Forms.Panel panel_Ipp;
         private System.Windows.Forms.Label label_RatificacionPersonal;
-        private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
+        private System.Windows.Forms.CheckBox checkBox_RatificacionTestimonial;
         private System.Windows.Forms.Label label_Cargo;
         private System.Windows.Forms.CheckBox checkBox_Cargo;
         private Controles.Controles.BotonDeslizable botonDeslizable_Not247;

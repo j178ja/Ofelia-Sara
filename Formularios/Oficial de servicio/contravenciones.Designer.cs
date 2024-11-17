@@ -330,7 +330,6 @@
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 44;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // btn_Guardar
@@ -342,7 +341,6 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar formulario");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
@@ -355,7 +353,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 46;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -368,7 +365,6 @@
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(122, 93);
             this.btn_Imprimir.TabIndex = 47;
-            this.toolTip1.SetToolTip(this.btn_Imprimir, "Guardar e IMPRIMIR");
             this.btn_Imprimir.UseVisualStyleBackColor = false;
             this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
@@ -461,6 +457,7 @@
             this.Fecha_Instruccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
             this.Fecha_Instruccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 9, 25, 22, 49, 58, 572);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(295, 29);

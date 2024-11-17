@@ -401,7 +401,6 @@
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 51;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivos guardados");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // label_Titulo
@@ -467,7 +466,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
@@ -480,7 +478,6 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "Guardar ");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 

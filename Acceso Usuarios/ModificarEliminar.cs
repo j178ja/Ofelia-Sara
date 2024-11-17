@@ -4,6 +4,8 @@ using BaseDatos.Entidades;
 using Clases.Apariencia;
 using Clases.Botones;
 using Clases.Texto;
+using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Mensajes;
 using System;
@@ -79,6 +81,11 @@ namespace Ofelia_Sara.Acceso_Usuarios
             listBox_Seleccion.SelectedIndex = -1;
 
             secretariosManager = new SecretariosManager();
+
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Editar, "Seleccione los campos requeridos para poder EDITAR.", "EDITAR");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", "ELIMINAR");
+            ToolTipGeneral.ShowToolTip(this, btn_Cancelar, "CANCELAR");
+          
         }
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)

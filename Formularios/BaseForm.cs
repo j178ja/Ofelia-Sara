@@ -5,6 +5,7 @@ using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
 using Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using System;
 // Alias para el ShadowForm de tu propia clase
 
@@ -13,6 +14,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -71,6 +73,8 @@ namespace Ofelia_Sara.Formularios
             ConfigureTextBoxAutoComplete();
 
             instructoresManager = new InstructoresManager();
+
+         
         }
         //--------------------------------------------------------------------------------
 
@@ -294,7 +298,7 @@ namespace Ofelia_Sara.Formularios
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "BaseForm";
-
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -419,6 +423,38 @@ namespace Ofelia_Sara.Formularios
             return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
         }
 
+        //----------------------------------------------------------------------------------
+        /// <summary>
+        /// Configura automáticamente los ToolTips para los botones comunes en todos los formularios.
+        /// </summary>
+        private void ToolTipsGenerales()
+        {
+            // Lista de botones y sus textos de ToolTip
+            var buttonsWithToolTips = new Dictionary<string, string>
+        {
+            { "btn_Imprimir", "Guardar e IMPRIMIR." },
+            { "btn_Limpiar", "Limpiar formulario." },
+            { "btn_Guardar", "GUARDAR." },
+            { "btn_Buscar", "Buscar archivos guardados." }
+        };
+
+            // Iterar por cada par de botón y texto
+            foreach (var entry in buttonsWithToolTips)
+            {
+                // Buscar el botón por su nombre
+                var button = Controls.Find(entry.Key, true).FirstOrDefault() as Control;
+                if (button != null)
+                {
+                    // Aplicar el ToolTip
+                    ToolTipGeneral.ShowToolTip(this, button, entry.Value);
+                }
+            }
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            ToolTipsGenerales();// para aplicar tooltip comun a los formularios
+        }
     }
 }
 

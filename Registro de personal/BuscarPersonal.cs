@@ -2,6 +2,7 @@
 using BaseDatos.Adm_BD.Manager;
 using Clases.Texto;
 using Controles.Controles;
+using Controles.Controles.Aplicadas_con_controles;
 using Controles.Controles.Reposicionar_paneles.Buscar_Personal;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Mensajes;
@@ -48,6 +49,8 @@ namespace Ofelia_Sara.Registro_de_personal
             // Configurar el panel
             panel1.BackColor = panelColor; // Color de fondo del panel
             panel1.Paint += panel1_Paint;
+
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para agregar ratificafciòn.", "Agregar nueva ratificacion");
         }
 
         //---redibujar para solucionar problema de bordes redondeados

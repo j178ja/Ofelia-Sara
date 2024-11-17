@@ -41,6 +41,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
         }
 
         private void comboBox_EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)

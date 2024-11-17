@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 
 
@@ -116,7 +117,16 @@ namespace Ofelia_Sara.Formularios
 
             ConfigurarBotones();
             //MostrarPlaceholder();
+
+            ToolTipGeneral.ShowToolTip(this, btn_Configurar, "Configuración de elementos.");
+            ToolTipGeneral.ShowToolTip(this, btn_Leyes, "Leyes y decretos útiles.");
+            ToolTipGeneral.ShowToolTip(this, btn_Mecanografia, "MECANOGRAFIA");
+            ToolTipGeneral.ShowToolTip(this, btn_Redactador, "REDACTAR POR VOZ");
+            ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación.");
+            ToolTipGeneral.ShowToolTip(this, btn_BuscarTarea, "Buscar tarea seleccionada.");
+            ToolTipGeneral.ShowToolTip(this, comboBox_Buscar, " Ingrese que tarea desea realizar.");
         }
+       
         //--------------------------------------------------------------------------------
 
 

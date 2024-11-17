@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPersonal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_Apellido = new System.Windows.Forms.TextBox();
+            this.label_Apellido = new System.Windows.Forms.Label();
             this.btn_AgregarPersonal = new System.Windows.Forms.Button();
             this.numeroTelefonicoControl2 = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
             this.numeroTelefonicoControl1 = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
@@ -99,8 +101,6 @@
             this.lbl_Legajo = new System.Windows.Forms.Label();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox_Apellido = new System.Windows.Forms.TextBox();
-            this.label_Apellido = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,6 +180,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 881);
             this.panel1.TabIndex = 3;
+            // 
+            // textBox_Apellido
+            // 
+            this.textBox_Apellido.Location = new System.Drawing.Point(121, 150);
+            this.textBox_Apellido.Name = "textBox_Apellido";
+            this.textBox_Apellido.Size = new System.Drawing.Size(449, 20);
+            this.textBox_Apellido.TabIndex = 150;
+            // 
+            // label_Apellido
+            // 
+            this.label_Apellido.AutoSize = true;
+            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Apellido.Location = new System.Drawing.Point(34, 152);
+            this.label_Apellido.Name = "label_Apellido";
+            this.label_Apellido.Size = new System.Drawing.Size(81, 15);
+            this.label_Apellido.TabIndex = 151;
+            this.label_Apellido.Text = "APELLIDO :";
             // 
             // btn_AgregarPersonal
             // 
@@ -800,7 +817,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 38;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "LIMPIAR formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
@@ -813,7 +829,6 @@
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 37;
-            this.toolTip1.SetToolTip(this.btn_Guardar, "GUARDAR nuevo efectivo policial");
             this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
@@ -851,23 +866,6 @@
             this.lbl_Titulo.Size = new System.Drawing.Size(381, 24);
             this.lbl_Titulo.TabIndex = 32;
             this.lbl_Titulo.Text = "REGISTRAR NUEVO PERSONAL";
-            // 
-            // textBox_Apellido
-            // 
-            this.textBox_Apellido.Location = new System.Drawing.Point(121, 150);
-            this.textBox_Apellido.Name = "textBox_Apellido";
-            this.textBox_Apellido.Size = new System.Drawing.Size(449, 20);
-            this.textBox_Apellido.TabIndex = 150;
-            // 
-            // label_Apellido
-            // 
-            this.label_Apellido.AutoSize = true;
-            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(34, 152);
-            this.label_Apellido.Name = "label_Apellido";
-            this.label_Apellido.Size = new System.Drawing.Size(81, 15);
-            this.label_Apellido.TabIndex = 151;
-            this.label_Apellido.Text = "APELLIDO :";
             // 
             // NuevoPersonal
             // 
