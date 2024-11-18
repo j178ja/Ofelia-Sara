@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Fecha_Actuacion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
             this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
@@ -53,7 +54,6 @@
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Fecha_Actuacion = new Controles.Controles.TimePickerPersonalizado();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(536, 396);
             this.panel1.TabIndex = 2;
+            // 
+            // Fecha_Actuacion
+            // 
+            this.Fecha_Actuacion.Location = new System.Drawing.Point(141, 267);
+            this.Fecha_Actuacion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.Fecha_Actuacion.Name = "Fecha_Actuacion";
+            this.Fecha_Actuacion.SelectedDate = new System.DateTime(2024, 10, 5, 20, 38, 40, 690);
+            this.Fecha_Actuacion.Size = new System.Drawing.Size(364, 27);
+            this.Fecha_Actuacion.TabIndex = 29;
             // 
             // comboBox_Secretario
             // 
@@ -217,7 +226,6 @@
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.btn_Buscar, "Buscar archivo");
             this.btn_Buscar.UseVisualStyleBackColor = false;
             this.btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
@@ -231,7 +239,6 @@
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.btn_Limpiar, "Eliminar busqueda");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
@@ -335,14 +342,6 @@
             this.label_Ipp.Size = new System.Drawing.Size(43, 16);
             this.label_Ipp.TabIndex = 0;
             this.label_Ipp.Text = "I.P.P.";
-            // 
-            // Fecha_Actuacion
-            // 
-            this.Fecha_Actuacion.Location = new System.Drawing.Point(141, 267);
-            this.Fecha_Actuacion.Name = "Fecha_Actuacion";
-            this.Fecha_Actuacion.SelectedDate = new System.DateTime(2024, 10, 5, 20, 38, 40, 690);
-            this.Fecha_Actuacion.Size = new System.Drawing.Size(364, 27);
-            this.Fecha_Actuacion.TabIndex = 29;
             // 
             // BuscarForm
             // 

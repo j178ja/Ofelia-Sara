@@ -217,6 +217,12 @@
     <Compile Include="Clases\Botones\imprimir.cs" />
     <Compile Include="Clases\Botones\IncrementarTamaño.cs" />
     <Compile Include="Clases\Botones\limpiar_formulario.cs" />
+    <Compile Include="Controles\Controles\Aplicadas con controles\ComboBoxConBorde.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\Aplicadas con controles\TextBoxConBorde.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\TooltipEnBtnDesactivado.cs" />
     <Compile Include="Clases\encrip.cs" />
     <Compile Include="Clases\GenerarDocumentos\GenerarDocumentos.cs" />
@@ -251,6 +257,7 @@
     </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\CalcularAntiguedad.cs" />
     <Compile Include="Controles\Controles\Aplicadas con controles\CalcularEdad.cs" />
+    <Compile Include="Controles\Controles\Aplicadas con controles\TooltipError.cs" />
     <Compile Include="Controles\Controles\Aplicadas con controles\ToolTipGeneral.cs" />
     <Compile Include="Controles\Controles\CalendarForm.cs">
       <SubType>Form</SubType>
@@ -310,6 +317,12 @@
     </Compile>
     <Compile Include="Controles\Controles\BotonDeslizable.Designer.cs">
       <DependentUpon>BotonDeslizable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\TooltipError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\TooltipError.Designer.cs">
+      <DependentUpon>TooltipError.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.cs">
       <SubType>Form</SubType>
@@ -614,6 +627,8 @@
     <Content Include=".gitignore" />
     <Content Include="Resources\imagenes\editar.png" />
     <Content Include="Resources\imagenes\eliminarUsuario.png" />
+    <Content Include="Resources\imagenes\errorProvider.ico" />
+    <Content Include="Resources\imagenes\errorProvider.png" />
     <Content Include="Resources\imagenes\IconoAdvertencia.png" />
     <Content Include="Resources\imagenes\IconoAplicacion.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

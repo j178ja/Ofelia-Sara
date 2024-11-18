@@ -3,6 +3,7 @@ using BaseDatos.Adm_BD;
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
+using BaseDatos.Mensaje;
 using Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
@@ -21,8 +22,15 @@ using System.Windows.Forms;
 namespace Ofelia_Sara.Formularios
 
 {
+
     public class BaseForm : Form
     {
+        private PictureBox pictureBoxError;
+        private ToolTip toolTipError;
+        private Timer errorTimer;
+        private bool isPictureBoxVisible = true;
+        private Dictionary<Control, PictureBox> pictureBoxesErrores = new Dictionary<Control, PictureBox>();
+
         private DatabaseConnection dbConnection;
         protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias// Para cargar comisarías
         protected InstructoresManager instructoresManager = new InstructoresManager();    // Para cargar instructores
@@ -32,7 +40,8 @@ namespace Ofelia_Sara.Formularios
         private readonly AutocompletarManager autocompletarManager; // Define una lista para almacenar los elementos de autocompletado
 
         private LinkLabel footerLinkLabel;
-
+       
+        private IContainer components;
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
         // Método OnLoad combinado
@@ -43,10 +52,13 @@ namespace Ofelia_Sara.Formularios
 
         public BaseForm()
         {
+
             CargarIconoFormulario();
 
             InitializeFooterLinkLabel();
 
+            // Llamar al método para aplicar TextBoxConBorde a todos los controles TextBox
+            AplicarTextBoxConBorde(this);
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -74,7 +86,15 @@ namespace Ofelia_Sara.Formularios
 
             instructoresManager = new InstructoresManager();
 
-         
+            // Inicializar el Timer
+            errorTimer = new Timer
+            {
+                Interval = 500 // Intervalo en milisegundos (500 ms = 0.5 segundos)
+            };
+            errorTimer.Tick += ErrorTimer_Tick;
+
+           
+
         }
         //--------------------------------------------------------------------------------
 
@@ -362,7 +382,7 @@ namespace Ofelia_Sara.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Instructores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Instructores: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -387,7 +407,7 @@ namespace Ofelia_Sara.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Secretarios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Secretarios: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -411,7 +431,7 @@ namespace Ofelia_Sara.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos de Fiscalías: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar($"Error al cargar datos de Fiscalías: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -454,8 +474,134 @@ namespace Ofelia_Sara.Formularios
         private void BaseForm_Load(object sender, EventArgs e)
         {
             ToolTipsGenerales();// para aplicar tooltip comun a los formularios
+
+           
+
         }
+
+        //---- para error provider
+
+        // Método para establecer el error en un control
+        protected void SetError(Control control, string mensaje)
+        {
+            if (control == null || string.IsNullOrEmpty(mensaje))
+                return;
+
+            // Validar si el control es un TextBoxConBorde y aplicar borde de error
+            if (control is TextBoxConBorde textBox)
+            {
+                textBox.MostrarBordeError = true;
+            }
+
+            // Si no existe un PictureBox asociado al control, se crea
+            if (!pictureBoxesErrores.ContainsKey(control))
+            {
+                PictureBox pictureBoxError = new PictureBox
+                {
+                    Image = Properties.Resources.errorProvider, // Imagen de error
+                    Size = new Size(18, 16),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    BackColor = Color.White,
+                    Visible = false // Oculto inicialmente
+                };
+
+              
+
+                // Agregar el PictureBox al formulario y al diccionario
+                this.Controls.Add(pictureBoxError);
+                pictureBoxesErrores[control] = pictureBoxError;
+            }
+
+            // Obtener el PictureBox asociado al control
+            PictureBox pictureBox = pictureBoxesErrores[control];
+
+            // Calcular la posición absoluta del control en relación al formulario
+            Point controlLocation = control.Parent.PointToScreen(control.Location);
+            Point formLocation = this.PointToClient(controlLocation);
+
+            // Ajustar la posición del PictureBox
+            pictureBox.Location = new Point(
+                formLocation.X + control.Width - pictureBox.Width - 7,
+                formLocation.Y + 2);
+
+            // Asegurarse de que el PictureBox esté visible y al frente
+            pictureBox.BringToFront();
+            pictureBox.Visible = true;
+
+            // Configurar el ToolTip asociado al PictureBox con un error
+            ToolTipError.InitializeToolTipOnHover(pictureBox, mensaje);
+        }
+
+        protected void ClearError(Control control)
+        {
+            if (control == null)
+                return;
+
+            // Validar si el control es un TextBoxConBorde y quitar el borde de error
+            if (control is TextBoxConBorde textBox)
+            {
+                textBox.MostrarBordeError = false;
+            }
+
+            // Si existe un PictureBox asociado al control, ocultarlo
+            if (pictureBoxesErrores.TryGetValue(control, out PictureBox pictureBox))
+            {
+                pictureBox.Visible = false;
+                ToolTipError.HideToolTip();
+            }
+        }
+
+
+        //----------------------------------------------------------------------
+
+
+        // Método que recorre los controles del formulario y cambia los TextBox a TextBoxConBorde
+        private void AplicarTextBoxConBorde(Form formulario)
+        {
+            foreach (Control control in formulario.Controls)
+            {
+                if (control is TextBox)
+                {
+                    // Crea un nuevo TextBoxConBorde
+                    TextBoxConBorde textBoxConBorde = new TextBoxConBorde
+                    {
+                        Text = control.Text,             // Copia el texto actual
+                        Location = control.Location,     // Copia la ubicación
+                        Size = control.Size              // Copia el tamaño
+                    };
+
+                    // Remueve el control viejo (TextBox) y añade el nuevo (TextBoxConBorde)
+                    formulario.Controls.Remove(control);
+                    formulario.Controls.Add(textBoxConBorde);
+                }
+            }
+        }
+
+        private int Counter = 0;
+
+        private void ErrorTimer_Tick(object sender, EventArgs e)
+        {
+            // Alternar la visibilidad del PictureBox
+            isPictureBoxVisible = !isPictureBoxVisible;
+            pictureBoxError.Visible = isPictureBoxVisible;
+
+            // Incrementar el contador
+            Counter++;
+
+            // Detener el timer después de 6 pulsaciones (3 ciclos completos de parpadeo)
+            if (Counter >= 6)
+            {
+                errorTimer.Stop();
+                Counter = 0; // Reiniciar el contador
+                pictureBoxError.Visible = true; // Asegurarse de que quede visible al finalizar
+            }
+        }
+
+
+
+
     }
+
 }
 
 

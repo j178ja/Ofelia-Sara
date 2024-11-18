@@ -14,7 +14,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles;
+
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -182,25 +183,47 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //---------BOTON GUARDAR--------------
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
+            // Verificar si los campos básicos están completos
+            if (!ValidarAntesdeGuardar()) // Verificación usando ErrorProvider
+            {
+                // Mostrar mensaje de advertencia si hay errores
+                MensajeGeneral.Mostrar("Debe completar los campos Carátula, Imputado y Víctima.",
+                                       MensajeGeneral.TipoMensaje.Advertencia);
+                return; // Detener la ejecución si hay errores
+            }
 
-            // Verificar si los campos están completados
-            if (string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Imputado.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Victima.Text))
-            {
-                // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
-                // crea ventana con icono de advertencia y titulo de advertencia
-                MensajeGeneral.Mostrar("Debe completar los campos Caratula, Imputado y Victima.", MensajeGeneral.TipoMensaje.Advertencia);
-            }
-            else
-            {
-                datosGuardados = true; //para que no aparesca mensaje de alerta si se cierra el formulario
-                // Si todos los campos están completos, mostrar el mensaje de confirmación
-                //Crea ventana con icono especial de confirmacion y titulo confirmacion
-                MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
-            }
+            datosGuardados = true; // Evitar mensaje de alerta al cerrar el formulario
+                                   // Mostrar mensaje de confirmación al guardar exitosamente
+            MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
 
         }
+
+        private bool ValidarAntesdeGuardar()
+        {
+            bool esValido = false;
+
+            // Validar campos requeridos
+            esValido &= ValidarCampo(textBox_Caratula, "El campo 'Carátula' es obligatorio.");
+            esValido &= ValidarCampo(textBox_Imputado, "El campo 'Imputado' es obligatorio.");
+            esValido &= ValidarCampo(textBox_Victima, "El campo 'Víctima' es obligatorio.");
+
+            return esValido;
+        }
+
+        private bool ValidarCampo(Control control, string mensajeError)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                // Si el campo está vacío, se establece un error en el control y se muestra el PictureBoxError
+                SetError(control, mensajeError);
+                return false;
+            }
+
+            // Si el campo está completo, se limpia el error
+            ClearError(control);
+            return true;
+        }
+
         //--------------------------------------------------------------
 
         //----BOTON LIMPIAR/ELIMINAR-----------------------
@@ -707,6 +730,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
+           
 
             // Crear y mostrar el formulario BuscarPersonal
             BuscarForm buscarForm = new BuscarForm();
