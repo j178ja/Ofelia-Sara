@@ -577,13 +577,18 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
+
+
+       
         private int Counter = 0;
 
         private void ErrorTimer_Tick(object sender, EventArgs e)
         {
-            // Alternar la visibilidad del PictureBox
-            isPictureBoxVisible = !isPictureBoxVisible;
-            pictureBoxError.Visible = isPictureBoxVisible;
+            // Alternar la visibilidad de todos los PictureBox de error
+            foreach (var pictureBox in pictureBoxesErrores.Values)
+            {
+                pictureBox.Visible = !pictureBox.Visible; // Alterna la visibilidad
+            }
 
             // Incrementar el contador
             Counter++;
@@ -593,16 +598,24 @@ namespace Ofelia_Sara.Formularios
             {
                 errorTimer.Stop();
                 Counter = 0; // Reiniciar el contador
-                pictureBoxError.Visible = true; // Asegurarse de que quede visible al finalizar
+
+                // Asegurarse de que los PictureBox queden visibles al finalizar
+                foreach (var pictureBox in pictureBoxesErrores.Values)
+                {
+                    pictureBox.Visible = true;
+                }
             }
         }
 
-
-
-
     }
 
+
+
+
+
 }
+
+
 
 
 

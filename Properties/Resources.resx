@@ -184,4 +184,22 @@
   <data name="errorProvider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\errorProvider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\atras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buscar75_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\buscar75%.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar_Dependencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\agregar_Dependencia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar_General" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\agregar_General.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\agregar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sello_de_goma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\sello-de-goma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

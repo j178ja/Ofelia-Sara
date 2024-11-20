@@ -17,6 +17,7 @@ using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 
 
+
 namespace Ofelia_Sara.Formularios
 {
     public partial class MenuPrincipal : BaseForm
@@ -71,6 +72,7 @@ namespace Ofelia_Sara.Formularios
             originalSizeMecanografia = btn_Mecanografia.Size;
             originalLocationMecanografia = btn_Mecanografia.Location;
 
+          
 
         }
 
@@ -125,6 +127,8 @@ namespace Ofelia_Sara.Formularios
             ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación.");
             ToolTipGeneral.ShowToolTip(this, btn_BuscarTarea, "Buscar tarea seleccionada.");
             ToolTipGeneral.ShowToolTip(this, comboBox_Buscar, " Ingrese que tarea desea realizar.");
+
+            
         }
        
         //--------------------------------------------------------------------------------
@@ -654,10 +658,7 @@ namespace Ofelia_Sara.Formularios
                        
             redactadorForm.ShowDialog(); // Mostrar el formulario como modal
         }
-
-
-
-
+        
 
     }
 }

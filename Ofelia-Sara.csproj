@@ -213,6 +213,7 @@
     <Compile Include="Clases\Apariencia\footer.cs" />
     <Compile Include="Clases\Apariencia\Iconos.cs" />
     <Compile Include="Clases\Botones\btn_Configuracion\AuxiliarConfiguracion.cs" />
+    <Compile Include="Clases\Botones\btn_Configuracion\cambioBackenHover.cs" />
     <Compile Include="Clases\Botones\btn_Configuracion\Configuracion.cs" />
     <Compile Include="Clases\Botones\imprimir.cs" />
     <Compile Include="Clases\Botones\IncrementarTamaño.cs" />
@@ -625,6 +626,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Resources\imagenes\agregar_Dependencia.png" />
+    <Content Include="Resources\imagenes\agregar_General.png" />
+    <Content Include="Resources\imagenes\agregar_Usuario.png" />
+    <Content Include="Resources\imagenes\atras.png" />
+    <Content Include="Resources\imagenes\buscar75%25.png" />
     <Content Include="Resources\imagenes\editar.png" />
     <Content Include="Resources\imagenes\eliminarUsuario.png" />
     <Content Include="Resources\imagenes\errorProvider.ico" />
@@ -640,6 +646,7 @@
     <Content Include="Resources\imagenes\IconoInformacion.png" />
     <Content Include="Resources\imagenes\microfono24.png" />
     <Content Include="Resources\imagenes\quitar-usuario16.png" />
+    <Content Include="Resources\imagenes\sello-de-goma.png" />
     <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\imagenes\microfono.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
