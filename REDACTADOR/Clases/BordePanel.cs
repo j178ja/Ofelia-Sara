@@ -9,7 +9,6 @@
     using System.Drawing;
     using System.Drawing.Drawing2D;
     using System.Windows.Forms;
-
     public static class PanelExtensions
     {
         // Método para aplicar bordes redondeados a un panel específico
@@ -50,5 +49,6 @@
             // Redibujar el panel cuando cambie de tamaño
             panel.Resize += (sender, e) => { panel.Invalidate(); };
         }
+
     }
 }

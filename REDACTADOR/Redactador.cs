@@ -58,7 +58,8 @@ namespace REDACTADOR
             audioVisualizerControl.Visible = false;
             ToolTipGeneral.ShowToolTip(this, btn_Microfono, "ACTIVAR micrófono");
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.RedondearBordes(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
 
             this.FormClosing += Redactador_FormClosing;// para mensaje previo a cerrar
 
@@ -758,6 +759,54 @@ namespace REDACTADOR
                 Point p3 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 20); 
                 e.Graphics.FillPolygon(brush, new Point[] { p1, p2, p3 });
             }
+        }
+
+        private void SubirAudio_MouseHover(object sender, EventArgs e)
+        {
+            
+            panel_SubirAudio.BackColor= Color.LightGreen;
+        }
+
+        private void SubirAudio_Click(object sender, EventArgs e)
+        {
+           // Cambiar la ubicación del panel
+    panel_SubirAudio.Location = new Point(370, 3);
+
+            panel_SubirAudio.BackColor = Color.LimeGreen;
+            label_SubirAudio.ForeColor = Color.White;
+
+            // Cambiar el estilo de la fuente a Bold, Subrayado, y tamaño más pequeño
+            label_SubirAudio.Font = new Font(
+                label_SubirAudio.Font.FontFamily,
+                6.5f, // Tamaño más pequeño
+                FontStyle.Bold | FontStyle.Underline
+            );
+           
+            // Convertir el texto a mayúsculas
+            label_SubirAudio.Text = label_SubirAudio.Text.ToUpper();
+        }
+
+
+
+        private void SubirAudio_MouseLeave(object sender, EventArgs e)
+        {
+            // Cambiar la ubicación del panel
+            panel_SubirAudio.Location = new Point(378, 3);
+
+            panel_SubirAudio.BackColor = SystemColors.Menu;
+            label_SubirAudio.ForeColor = SystemColors.ControlText; // Color de texto predeterminado
+
+            // Restaurar la fuente a regular (sin subrayado ni negrita)
+            label_SubirAudio.Font = new Font(
+                label_SubirAudio.Font.FontFamily, // Familia de la fuente actual
+                label_SubirAudio.Font.Size,       // Tamaño de la fuente actual
+                FontStyle.Regular                 // Estilo regular
+            );
+            // Restaurar la fuente al formato original
+            label_SubirAudio.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular);
+
+            // Restaurar el texto a CamelCase
+            label_SubirAudio.Text = "Transcribir";
         }
 
       

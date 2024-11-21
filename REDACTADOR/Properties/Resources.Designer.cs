@@ -63,6 +63,36 @@ namespace REDACTADOR.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cargarAudio {
+            get {
+                object obj = ResourceManager.GetObject("cargarAudio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cargarAudio24 {
+            get {
+                object obj = ResourceManager.GetObject("cargarAudio24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap casa_hobbit {
+            get {
+                object obj = ResourceManager.GetObject("casa_hobbit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap centro {
             get {
                 object obj = ResourceManager.GetObject("centro", resourceCulture);
@@ -73,9 +103,39 @@ namespace REDACTADOR.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chochis {
+            get {
+                object obj = ResourceManager.GetObject("chochis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap derecha {
             get {
                 object obj = ResourceManager.GetObject("derecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fondo_De_Pantalla_De_Dibujos_Animados {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_De_Pantalla_De_Dibujos_Animados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gandalf {
+            get {
+                object obj = ResourceManager.GetObject("gandalf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +256,16 @@ namespace REDACTADOR.Properties {
         internal static System.Drawing.Bitmap microfono_desactivado {
             get {
                 object obj = ResourceManager.GetObject("microfono_desactivado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TENEBRIOS {
+            get {
+                object obj = ResourceManager.GetObject("TENEBRIOS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

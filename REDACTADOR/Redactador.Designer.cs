@@ -37,7 +37,6 @@ namespace REDACTADOR
             System.Windows.Forms.PictureBox iconoEscudo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Redactador));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.audioVisualizerControl = new REDACTADOR.AudioVisualizerControl();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.panel_Botones = new System.Windows.Forms.Panel();
@@ -52,20 +51,26 @@ namespace REDACTADOR
             this.btn_Cursiva = new System.Windows.Forms.Button();
             this.btn_Negrita = new System.Windows.Forms.Button();
             this.richTextBox_Redactor = new System.Windows.Forms.RichTextBox();
-            this.btn_Microfono = new System.Windows.Forms.Button();
             this.btn_Minimizar = new System.Windows.Forms.Button();
             this.label_OfeliaSara = new System.Windows.Forms.Label();
             this.btn_Cerrar = new System.Windows.Forms.Button();
-            this.btn_Maximizar = new System.Windows.Forms.Button();
             this.panel_MenuSuperior = new System.Windows.Forms.Panel();
+            this.panel_SubirAudio = new System.Windows.Forms.Panel();
+            this.label_SubirAudio = new System.Windows.Forms.Label();
+            this.pictureBox_SubirAudio = new System.Windows.Forms.PictureBox();
+            this.btn_Maximizar = new System.Windows.Forms.Button();
             this.label_Redactador = new System.Windows.Forms.Label();
             this.timer_Barras = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_Microfono = new System.Windows.Forms.Button();
+            this.audioVisualizerControl = new REDACTADOR.AudioVisualizerControl();
             iconoEscudo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel_Botones.SuspendLayout();
             this.panel_MenuSuperior.SuspendLayout();
+            this.panel_SubirAudio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SubirAudio)).BeginInit();
             this.SuspendLayout();
             // 
             // iconoEscudo
@@ -93,17 +98,6 @@ namespace REDACTADOR
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(547, 360);
             this.panel1.TabIndex = 0;
-            // 
-            // audioVisualizerControl
-            // 
-            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.audioVisualizerControl.AutoSize = true;
-            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
-            this.audioVisualizerControl.Name = "audioVisualizerControl";
-            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
-            this.audioVisualizerControl.TabIndex = 4;
             // 
             // btn_Guardar
             // 
@@ -303,20 +297,6 @@ namespace REDACTADOR
             this.richTextBox_Redactor.Text = "";
             this.richTextBox_Redactor.TextChanged += new System.EventHandler(this.richTextBox_Redactor_TextChanged);
             // 
-            // btn_Microfono
-            // 
-            this.btn_Microfono.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Microfono.BackColor = System.Drawing.Color.Red;
-            this.btn_Microfono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Microfono.BackgroundImage")));
-            this.btn_Microfono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Microfono.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Microfono.Location = new System.Drawing.Point(259, 39);
-            this.btn_Microfono.Name = "btn_Microfono";
-            this.btn_Microfono.Size = new System.Drawing.Size(44, 45);
-            this.btn_Microfono.TabIndex = 10;
-            this.btn_Microfono.UseVisualStyleBackColor = false;
-            this.btn_Microfono.Click += new System.EventHandler(this.btn_Microfono_Click);
-            // 
             // btn_Minimizar
             // 
             this.btn_Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -377,6 +357,62 @@ namespace REDACTADOR
             this.btn_Cerrar.MouseLeave += new System.EventHandler(this.Btn_Cerrar_MouseLeave);
             this.btn_Cerrar.MouseHover += new System.EventHandler(this.Btn_Cerrar_MouseHover);
             // 
+            // panel_MenuSuperior
+            // 
+            this.panel_MenuSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel_MenuSuperior.Controls.Add(this.panel_SubirAudio);
+            this.panel_MenuSuperior.Controls.Add(this.btn_Maximizar);
+            this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
+            this.panel_MenuSuperior.Controls.Add(this.label_Redactador);
+            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
+            this.panel_MenuSuperior.Controls.Add(this.label_OfeliaSara);
+            this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
+            this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);
+            this.panel_MenuSuperior.Name = "panel_MenuSuperior";
+            this.panel_MenuSuperior.Size = new System.Drawing.Size(576, 34);
+            this.panel_MenuSuperior.TabIndex = 18;
+            this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
+            // 
+            // panel_SubirAudio
+            // 
+            this.panel_SubirAudio.AutoSize = true;
+            this.panel_SubirAudio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_SubirAudio.Controls.Add(this.label_SubirAudio);
+            this.panel_SubirAudio.Controls.Add(this.pictureBox_SubirAudio);
+            this.panel_SubirAudio.Location = new System.Drawing.Point(378, 3);
+            this.panel_SubirAudio.Name = "panel_SubirAudio";
+            this.panel_SubirAudio.Size = new System.Drawing.Size(94, 28);
+            this.panel_SubirAudio.TabIndex = 22;
+            // 
+            // label_SubirAudio
+            // 
+            this.label_SubirAudio.AutoSize = true;
+            this.label_SubirAudio.Location = new System.Drawing.Point(32, 5);
+            this.label_SubirAudio.Name = "label_SubirAudio";
+            this.label_SubirAudio.Size = new System.Drawing.Size(59, 13);
+            this.label_SubirAudio.TabIndex = 1;
+            this.label_SubirAudio.Text = "Transcribir ";
+            this.label_SubirAudio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_SubirAudio.Click += new System.EventHandler(this.SubirAudio_Click);
+            this.label_SubirAudio.MouseLeave += new System.EventHandler(this.SubirAudio_MouseLeave);
+            this.label_SubirAudio.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
+            // 
+            // pictureBox_SubirAudio
+            // 
+            this.pictureBox_SubirAudio.BackgroundImage = global::REDACTADOR.Properties.Resources.cargarAudio;
+            this.pictureBox_SubirAudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_SubirAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_SubirAudio.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox_SubirAudio.Name = "pictureBox_SubirAudio";
+            this.pictureBox_SubirAudio.Size = new System.Drawing.Size(32, 24);
+            this.pictureBox_SubirAudio.TabIndex = 0;
+            this.pictureBox_SubirAudio.TabStop = false;
+            this.pictureBox_SubirAudio.Click += new System.EventHandler(this.SubirAudio_Click);
+            this.pictureBox_SubirAudio.MouseLeave += new System.EventHandler(this.SubirAudio_MouseLeave);
+            this.pictureBox_SubirAudio.MouseHover += new System.EventHandler(this.SubirAudio_MouseHover);
+            // 
             // btn_Maximizar
             // 
             this.btn_Maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -400,23 +436,6 @@ namespace REDACTADOR
             this.btn_Maximizar.MouseLeave += new System.EventHandler(this.Btn_Panel_MouseLeave);
             this.btn_Maximizar.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
             // 
-            // panel_MenuSuperior
-            // 
-            this.panel_MenuSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel_MenuSuperior.Controls.Add(this.btn_Maximizar);
-            this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
-            this.panel_MenuSuperior.Controls.Add(this.label_Redactador);
-            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
-            this.panel_MenuSuperior.Controls.Add(this.label_OfeliaSara);
-            this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
-            this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panel_MenuSuperior.Name = "panel_MenuSuperior";
-            this.panel_MenuSuperior.Size = new System.Drawing.Size(576, 34);
-            this.panel_MenuSuperior.TabIndex = 18;
-            this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
-            // 
             // label_Redactador
             // 
             this.label_Redactador.AutoSize = true;
@@ -426,6 +445,31 @@ namespace REDACTADOR
             this.label_Redactador.Size = new System.Drawing.Size(112, 18);
             this.label_Redactador.TabIndex = 19;
             this.label_Redactador.Text = "REDACTADOR";
+            // 
+            // btn_Microfono
+            // 
+            this.btn_Microfono.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Microfono.BackColor = System.Drawing.Color.Red;
+            this.btn_Microfono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Microfono.BackgroundImage")));
+            this.btn_Microfono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Microfono.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Microfono.Location = new System.Drawing.Point(259, 39);
+            this.btn_Microfono.Name = "btn_Microfono";
+            this.btn_Microfono.Size = new System.Drawing.Size(44, 45);
+            this.btn_Microfono.TabIndex = 10;
+            this.btn_Microfono.UseVisualStyleBackColor = false;
+            this.btn_Microfono.Click += new System.EventHandler(this.btn_Microfono_Click);
+            // 
+            // audioVisualizerControl
+            // 
+            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.audioVisualizerControl.AutoSize = true;
+            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
+            this.audioVisualizerControl.Name = "audioVisualizerControl";
+            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
+            this.audioVisualizerControl.TabIndex = 4;
             // 
             // Redactador
             // 
@@ -452,6 +496,9 @@ namespace REDACTADOR
             this.panel_Botones.ResumeLayout(false);
             this.panel_MenuSuperior.ResumeLayout(false);
             this.panel_MenuSuperior.PerformLayout();
+            this.panel_SubirAudio.ResumeLayout(false);
+            this.panel_SubirAudio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SubirAudio)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -483,6 +530,9 @@ namespace REDACTADOR
         private Button btn_Maximizar;
         private Timer timer_Barras;
         private ToolTip toolTip1;
+        private Panel panel_SubirAudio;
+        private PictureBox pictureBox_SubirAudio;
+        private Label label_SubirAudio;
     }
 }
 

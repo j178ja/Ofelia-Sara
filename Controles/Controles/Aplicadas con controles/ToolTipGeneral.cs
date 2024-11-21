@@ -114,8 +114,8 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
                 Point cursorPosition = control.PointToClient(Control.MousePosition);
 
                 // Calcular la posición del ToolTip
-                int toolTipX = cursorPosition.X+5; //  posición horizontal del cursor
-                int toolTipY = cursorPosition.Y + 5; // píxeles debajo del cursor
+                int toolTipX = cursorPosition.X+8; //  posición horizontal del cursor
+                int toolTipY = cursorPosition.Y + 10; // píxeles debajo del cursor
 
                 // Mostrar el ToolTip personalizado si el mouse está sobre el control
                 if (control.ClientRectangle.Contains(cursorPosition))

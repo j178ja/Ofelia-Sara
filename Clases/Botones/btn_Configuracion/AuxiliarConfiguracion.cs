@@ -32,12 +32,16 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
 
             // Crear ítems para el menú usando el método CrearMenuItem
-            var item_Agregar = CrearMenuItem("AGREGAR");
-            var item_Buscar = CrearMenuItem("BUSCAR ...");
-            var item_Remover = CrearMenuItem("EDITAR/REMOVER");
+            var item_Agregar = CrearMenuItem("AGREGAR",null);
+            var item_Buscar = CrearMenuItem("BUSCAR ...",null);
+            var item_Remover = CrearMenuItem("EDITAR/REMOVER", Item_Remover_Click);
             item_Remover.Click += new EventHandler(Item_Remover_Click);
-            var item_Salir = CrearMenuItem("SALIR");
-            var SubItem_Agregar_Sellos = CrearMenuItem("SELLOS");
+            var item_Salir = CrearMenuItem("SALIR",null);
+            var SubItem_Agregar_Sellos = CrearMenuItem("SELLOS", null);
+                        
+           // Agregar el evento Click para "EDITAR/REMOVER"
+            item_Remover.Click += new EventHandler(Item_Remover_Click);
+
 
             // Agregar imágenes a los ítems
             item_Agregar.Image = Properties.Resources.agregar_General;
@@ -81,84 +85,127 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
 
 
-        private ToolStripMenuItem CrearMenuItem(string texto)
+        private ToolStripMenuItem CrearMenuItem(string texto, EventHandler onClick)
         {
             var menuItem = new ToolStripMenuItem(texto);
+
+            // Estilo inicial
+            menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+            menuItem.ForeColor = Color.Black; // Texto original
+            menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente original
 
             // Evento MouseEnter para cambiar el color al pasar el cursor
             menuItem.MouseEnter += (sender, e) =>
             {
-                menuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo
-                menuItem.ForeColor = Color.Black; // Texto
-                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size + 2, FontStyle.Bold); // Negrita y tamaño incrementado
-
-                // Llamamos a la animación para incrementar el tamaño de la imagen
-               
+                menuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo al pasar el mouse
+                menuItem.ForeColor = Color.Black; // Texto negro
+                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size + 2, FontStyle.Bold); // Aumentar tamaño y negrita
             };
 
             // Evento MouseLeave para restaurar el color al quitar el cursor
             menuItem.MouseLeave += (sender, e) =>
             {
-                menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo
-                menuItem.ForeColor = Color.Black; // Texto
-                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size - 2, FontStyle.Regular);
-
-                // Llamamos a la animación para incrementar el tamaño de la imagen
+                menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+                menuItem.ForeColor = Color.Black; // Texto original
+                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size - 2, FontStyle.Regular); // Fuente regular
             };
+
             // Evento Click para cambiar el fondo al hacer clic
             menuItem.Click += (sender, e) =>
             {
+                // Cambiar el estilo al hacer clic
                 menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo tras clic
-                menuItem.ForeColor = Color.White; // Texto para mayor contraste
-                menuItem.Font = new Font(menuItem.Font, FontStyle.Bold); // Negrita 
+                menuItem.ForeColor = Color.White; // Texto blanco
+                menuItem.Font = new Font(menuItem.Font, FontStyle.Bold); // Negrita
+
+                // Configurar un temporizador para restaurar el estilo después de un corto periodo
+                var timer = new Timer { Interval = 300 }; // 300 ms
+                timer.Tick += (s, ev) =>
+                {
+                    timer.Stop();  // Detener el Timer
+                    timer.Dispose(); // Liberar recursos
+
+                    // Restaurar el estilo original
+                    menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+                    menuItem.ForeColor = Color.Black; // Texto original
+                    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
+
+                    // Ejecutar la acción asociada
+                    onClick?.Invoke(sender, e); // Llamar al método asociado al clic
+                };
+                timer.Start();
             };
 
-            // Evento DropDownOpened para cambiar el estilo cuando el submenú está abierto
-            menuItem.DropDownOpened += (sender, e) =>
-            {
-                // Aumentar tamaño y negrita de la fuente
-                menuItem.Font = new Font(menuItem.Font, FontStyle.Bold);
-            };
+            //// Evento DropDownOpened para cambiar el estilo cuando el submenú está abierto
+            //menuItem.DropDownOpened += (sender, e) =>
+            //{
+            //    // Estilo al abrir el submenú
+            //    menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo submenú
+            //    menuItem.ForeColor = Color.White; // Texto blanco
+            //    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Bold); // Fuente en negrita
+            //};
 
-            // Evento DropDownClosed para restaurar el estilo cuando el submenú está cerrado
-            menuItem.DropDownClosed += (sender, e) =>
-            {
-                // Restaurar tamaño y estilo de la fuente
-                menuItem.Font = new Font(menuItem.Font, FontStyle.Regular);
-            };
+            //// Evento DropDownClosed para restaurar el estilo cuando el submenú está cerrado
+            //menuItem.DropDownClosed += (sender, e) =>
+            //{
+            //    // Restaurar el estilo al cerrar el submenú
+            //    menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+            //    menuItem.ForeColor = Color.Black; // Texto original
+            //    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
+            //};
+
             return menuItem;
         }
 
-        private ToolStripMenuItem CrearSubMenuItem(string texto, EventHandler onClick = null)
+
+
+        private ToolStripMenuItem CrearSubMenuItem(string texto, EventHandler onClick)
         {
             var subMenuItem = new ToolStripMenuItem(texto);
 
-            // Asignar un evento onClick si es proporcionado
-            if (onClick != null)
-                subMenuItem.Click += onClick;
+            // Asociar evento Click principal
+            subMenuItem.Click += onClick;
 
-            // Evento MouseEnter para cambiar el estilo al pasar el cursor
+            // Evento MouseEnter para cambiar el color al pasar el cursor
             subMenuItem.MouseEnter += (sender, e) =>
             {
                 subMenuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo
                 subMenuItem.ForeColor = Color.Black; // Texto
-                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size + 2, FontStyle.Bold);
+                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size + 2, FontStyle.Bold); // Negrita y tamaño incrementado
             };
 
-            // Evento MouseLeave para restaurar el estilo al quitar el cursor
+            // Evento MouseLeave para restaurar el color al quitar el cursor
             subMenuItem.MouseLeave += (sender, e) =>
             {
-                subMenuItem.BackColor = Color.FromArgb(186, 223, 249); // Fondo original
-                subMenuItem.ForeColor = Color.Black; // Texto original
-                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size-2, FontStyle.Regular);
+                subMenuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo
+                subMenuItem.ForeColor = Color.Black; // Texto
+                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size - 2, FontStyle.Regular);
             };
 
-            // Evento Click para aplicar un estilo específico al seleccionar
+            // Evento Click para cambiar el fondo al hacer clic
             subMenuItem.Click += (sender, e) =>
             {
+                // Cambiar el estilo al hacer clic
                 subMenuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo tras clic
-                subMenuItem.ForeColor = Color.White; // Texto para mayor contraste
-                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size, FontStyle.Bold);
+                subMenuItem.ForeColor = Color.White; // Texto en blanco para mayor contraste
+                subMenuItem.Font = new Font(subMenuItem.Font, FontStyle.Bold); // Negrita
+
+                // Configurar un temporizador para restaurar el estilo después de un corto periodo
+                var timer = new Timer { Interval = 300 }; // 300 ms
+                timer.Tick += (s, ev) =>
+                {
+                    timer.Stop();  // Detener el Timer
+                    timer.Dispose(); // Liberar recursos
+
+                    // Restaurar el estilo original
+                    subMenuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+                    subMenuItem.ForeColor = Color.Black; // Texto original
+                    subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size, FontStyle.Regular); // Fuente normal
+
+                    // Ejecutar la acción asociada
+                    onClick?.Invoke(sender, e); // Llamar al método de apertura del formulario
+                };
+                timer.Start();
             };
 
             return subMenuItem;
@@ -218,7 +265,8 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
         private void AgregarSubItemsBuscar(ToolStripMenuItem item_Buscar)
         {
             // Crear y agregar subítems al ítem "BUSCAR"
-            var subItem_Buscar_Ipp = CrearSubMenuItem("N° I.P.P.", (s, e) => Buscar_Ipp());
+            var subItem_Buscar_Ipp = CrearSubMenuItem( "N° I.P.P.", (s, e) => Buscar_Ipp());
+
             var subItem_Buscar_Caratula = CrearSubMenuItem("CARATULA", (s, e) => Buscar_Caratula());
             var subItem_Buscar_Victima = CrearSubMenuItem("VICTIMA", (s, e) => Buscar_Victima());
             var subItem_Buscar_Imputado = CrearSubMenuItem("IMPUTADO", (s, e) => Buscar_Imputado());
@@ -250,8 +298,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         private void AgregarSubItemsSellos(ToolStripMenuItem SubItem_Agregar_Sellos)
         {
-
-            // Crear los subítems
+            // Crear los subítems y asociar la función correspondiente
             var subItem_Sello_Medalla = CrearSubMenuItem("SELLO MEDALLA", (s, e) => Sello_Medalla());
             var subItem_Escalera = CrearSubMenuItem("ESCALERA", (s, e) => Escalera());
             var subItem_Foliador = CrearSubMenuItem("FOLIADOR", (s, e) => Foliador());
@@ -262,7 +309,8 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
 
             AplicarEstiloItem(SubItem_Agregar_Sellos);
-            // agregar imagenes
+
+            // Agregar imágenes
             subItem_Sello_Medalla.Image = Properties.Resources.ICOes;
             subItem_Escalera.Image = Properties.Resources.ICOes;
             subItem_Foliador.Image = Properties.Resources.ICOes;
@@ -311,7 +359,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         private void Sello_Medalla()
         {
-            AbrirFormulario<SellosDependencia>();
+            AbrirFormulario<SellosDependencia>( );
         }
 
         private void Escalera()
@@ -364,12 +412,12 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         private void Buscar_Instructor()
         {
-            AbrirFormulario<BuscarForm>("textBox_Instructor");
+        AbrirFormulario<BuscarForm>("textBox_Instructor");
         }
         // Método para abrir formularios y posicionar el cursor en un control específico
         private void Buscar_Dependencia()
         {
-            AbrirFormulario<BuscarForm>("textBox_Dependencia");
+             AbrirFormulario<BuscarForm>("textBox_Dependencia");
         }
 
         // ------PARA Btn REMOVER----------------------
@@ -383,26 +431,18 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
         // Método para abrir formularios sin pasar parámetros (básico)
         private void AbrirFormulario<T>(string controlName = null) where T : Form, new()
         {
-            // Verificar si el formulario ya está abierto
             Form form = Application.OpenForms.OfType<T>().FirstOrDefault();
 
             if (form == null)
             {
-                // Si el formulario no está abierto, crear una nueva instancia
                 form = new T();
-
-
-                // Posicionar el nuevo formulario justo debajo del formulario principal
                 FormPositioner.PosicionarDebajo(_menuPrincipal, form);
-                // Ajustar la posición para la separación deseada
-                form.Left = _menuPrincipal.Left - 6;  // 6 píxeles a la izquierda
-                form.Top = _menuPrincipal.Top + _menuPrincipal.Height + 10;  // 10 píxeles hacia abajo
-
+                form.Left = _menuPrincipal.Left - 6;
+                form.Top = _menuPrincipal.Top + _menuPrincipal.Height + 10;
                 form.Show();
             }
             else
             {
-                // Si el formulario ya está abierto, lo traemos al frente
                 form.BringToFront();
             }
 
@@ -411,10 +451,24 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
                 Control control = form.Controls[controlName];
                 if (control != null)
                 {
-                    PosicionarCursorEnTextBox(control); // Llama directamente
+                    PosicionarCursorEnTextBox(control);
                 }
             }
         }
+
+        private void AbrirConDemora(Action accion, int delayMilliseconds = 100)
+        {
+            var timer = new Timer { Interval = delayMilliseconds };
+            timer.Tick += (sender, e) =>
+            {
+                timer.Stop();
+                timer.Dispose();
+                accion?.Invoke();
+            };
+            timer.Start();
+        }
+
+
         public void PosicionarCursorEnTextBox(Control control)
         {
             if (control is TextBox textBox)
@@ -424,6 +478,9 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             }
         }
         //-----------------------------------------------------------------------
+      
+
+
     }
 
 }

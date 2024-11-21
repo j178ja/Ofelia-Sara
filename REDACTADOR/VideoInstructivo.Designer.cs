@@ -33,6 +33,7 @@ namespace REDACTADOR
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoInstructivo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Carrusel = new System.Windows.Forms.TableLayoutPanel();
             this.instructivo = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instructivo)).BeginInit();
@@ -44,12 +45,32 @@ namespace REDACTADOR
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.Carrusel);
             this.panel1.Controls.Add(this.instructivo);
-            this.panel1.Location = new System.Drawing.Point(22, 24);
+            this.panel1.Location = new System.Drawing.Point(22, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 349);
+            this.panel1.Size = new System.Drawing.Size(530, 434);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // Carrusel
+            // 
+            this.Carrusel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Carrusel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.Carrusel.ColumnCount = 5;
+            this.Carrusel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.75525F));
+            this.Carrusel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.24475F));
+            this.Carrusel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.Carrusel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.Carrusel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.Carrusel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Carrusel.Location = new System.Drawing.Point(43, 18);
+            this.Carrusel.Name = "Carrusel";
+            this.Carrusel.RowCount = 1;
+            this.Carrusel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Carrusel.Size = new System.Drawing.Size(444, 76);
+            this.Carrusel.TabIndex = 1;
+            this.Carrusel.Paint += new System.Windows.Forms.PaintEventHandler(this.Carrusel_Paint);
             // 
             // instructivo
             // 
@@ -57,10 +78,10 @@ namespace REDACTADOR
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.instructivo.Enabled = true;
-            this.instructivo.Location = new System.Drawing.Point(43, 19);
+            this.instructivo.Location = new System.Drawing.Point(43, 102);
             this.instructivo.Name = "instructivo";
             this.instructivo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("instructivo.OcxState")));
-            this.instructivo.Size = new System.Drawing.Size(444, 312);
+            this.instructivo.Size = new System.Drawing.Size(444, 319);
             this.instructivo.TabIndex = 0;
             // 
             // VideoInstructivo
@@ -68,7 +89,7 @@ namespace REDACTADOR
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(574, 398);
+            this.ClientSize = new System.Drawing.Size(574, 471);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(584, 437);
@@ -85,5 +106,6 @@ namespace REDACTADOR
 
         private System.Windows.Forms.Panel panel1;
         private AxWMPLib.AxWindowsMediaPlayer instructivo;
+        private System.Windows.Forms.TableLayoutPanel Carrusel;
     }
 }

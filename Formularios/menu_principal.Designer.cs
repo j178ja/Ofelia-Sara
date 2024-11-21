@@ -86,6 +86,9 @@
             iconoEscudo.Size = new System.Drawing.Size(30, 28);
             iconoEscudo.TabIndex = 18;
             iconoEscudo.TabStop = false;
+            iconoEscudo.Click += new System.EventHandler(this.iconoEscudo_Click);
+           
+            iconoEscudo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_InicioCierre
             // 
@@ -347,35 +350,35 @@
             this.iNSTRUCTORToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.iNSTRUCTORToolStripMenuItem.Image = global::Ofelia_Sara.Properties.Resources.editar;
             this.iNSTRUCTORToolStripMenuItem.Name = "iNSTRUCTORToolStripMenuItem";
-            this.iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.iNSTRUCTORToolStripMenuItem.Text = "INSTRUCTOR";
             // 
             // sECToolStripMenuItem
             // 
             this.sECToolStripMenuItem.Image = global::Ofelia_Sara.Properties.Resources.editar;
             this.sECToolStripMenuItem.Name = "sECToolStripMenuItem";
-            this.sECToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sECToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.sECToolStripMenuItem.Text = "SECRETARIO";
             // 
             // uFIDToolStripMenuItem
             // 
             this.uFIDToolStripMenuItem.Image = global::Ofelia_Sara.Properties.Resources.editar;
             this.uFIDToolStripMenuItem.Name = "uFIDToolStripMenuItem";
-            this.uFIDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uFIDToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.uFIDToolStripMenuItem.Text = "U.F.I.D.";
             // 
             // aGENTEFISCALToolStripMenuItem
             // 
             this.aGENTEFISCALToolStripMenuItem.Image = global::Ofelia_Sara.Properties.Resources.editar;
             this.aGENTEFISCALToolStripMenuItem.Name = "aGENTEFISCALToolStripMenuItem";
-            this.aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.aGENTEFISCALToolStripMenuItem.Text = "AGENTE FISCAL";
             // 
             // dEPENToolStripMenuItem
             // 
             this.dEPENToolStripMenuItem.Image = global::Ofelia_Sara.Properties.Resources.editar;
             this.dEPENToolStripMenuItem.Name = "dEPENToolStripMenuItem";
-            this.dEPENToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dEPENToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.dEPENToolStripMenuItem.Text = "DEPENDENCIA";
             // 
             // sELLOSToolStripMenuItem
@@ -386,7 +389,7 @@
             this.fOLIADORToolStripMenuItem});
             this.sELLOSToolStripMenuItem.Image = global::Ofelia_Sara.Properties.Resources.editar;
             this.sELLOSToolStripMenuItem.Name = "sELLOSToolStripMenuItem";
-            this.sELLOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sELLOSToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.sELLOSToolStripMenuItem.Text = "SELLOS";
             // 
             // mEDALLAToolStripMenuItem

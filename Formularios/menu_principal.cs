@@ -14,6 +14,8 @@ using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using System.Diagnostics;
+using Clases.Apariencia;
 
 
 
@@ -33,6 +35,7 @@ namespace Ofelia_Sara.Formularios
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HTCAPTION = 0x2;
         //-----------------------------------------------------
+        private System.Windows.Forms.PictureBox iconoEscudo;//para escudo que lleva a boletin oficial
 
 
         //private ContextMenuStrip contextMenu;
@@ -109,6 +112,8 @@ namespace Ofelia_Sara.Formularios
             //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
             IncrementarTamaño.Incrementar(btn_Configurar);
             IncrementarTamaño.Incrementar(btn_Leyes);
+           
+          
 
             comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -658,7 +663,26 @@ namespace Ofelia_Sara.Formularios
                        
             redactadorForm.ShowDialog(); // Mostrar el formulario como modal
         }
-        
 
+       
+
+private void iconoEscudo_Click(object sender, EventArgs e)
+    {
+        string url = "https://boletin.mseg.gba.gov.ar/";
+        try
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true // Necesario para abrir el navegador predeterminado
+            });
+        }
+        catch (Exception ex)
+        {
+            MensajeGeneral.Mostrar($"No se pudo abrir la página web: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+        }
+    }
+
+       
     }
 }
