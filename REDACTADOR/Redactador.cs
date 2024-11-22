@@ -12,6 +12,7 @@ using NAudio.Wave;
 using REDACTADOR.Mensaje;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
+using System.IO;
 
 
 
@@ -763,16 +764,18 @@ namespace REDACTADOR
 
         private void SubirAudio_MouseHover(object sender, EventArgs e)
         {
-            
             panel_SubirAudio.BackColor= Color.LightGreen;
+            pictureBox_SubirAudio.BackColor = Color.LightGreen;
+            label_SubirAudio.BackColor = Color.LightGreen;
         }
-
-        private void SubirAudio_Click(object sender, EventArgs e)
+        private async void SubirAudio_Click(object sender, EventArgs e)
         {
-           // Cambiar la ubicación del panel
-    panel_SubirAudio.Location = new Point(370, 3);
+            // Cambiar la ubicación del panel
+            panel_SubirAudio.Location = new Point(370, 3);
 
             panel_SubirAudio.BackColor = Color.LimeGreen;
+            pictureBox_SubirAudio.BackColor = Color.LightGreen;
+            label_SubirAudio.BackColor = Color.LightGreen;
             label_SubirAudio.ForeColor = Color.White;
 
             // Cambiar el estilo de la fuente a Bold, Subrayado, y tamaño más pequeño
@@ -781,9 +784,33 @@ namespace REDACTADOR
                 6.5f, // Tamaño más pequeño
                 FontStyle.Bold | FontStyle.Underline
             );
-           
+
             // Convertir el texto a mayúsculas
             label_SubirAudio.Text = label_SubirAudio.Text.ToUpper();
+
+            await Task.Delay(700); // Delay antes de abrir fileDialog
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                // Configurar el filtro para mostrar solo archivos de audio
+                openFileDialog.Filter = "Archivos de audio (*.mp3;*.wav;*.flac)|*.mp3;*.wav;*.flac|Todos los archivos (*.*)|*.*";
+                openFileDialog.Title = "Seleccionar un archivo de audio";
+                openFileDialog.Multiselect = false; // Solo permitir seleccionar un archivo
+
+                // Mostrar el diálogo y verificar si el usuario seleccionó un archivo
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Obtener la ruta completa del archivo seleccionado
+                    string archivoSeleccionado = openFileDialog.FileName;
+
+                    // Obtener solo el nombre del archivo (sin la ruta)
+                    string nombreArchivo = Path.GetFileName(archivoSeleccionado);
+
+                    // Aquí puedes manejar el archivo seleccionado, por ejemplo, reproducirlo o cargarlo
+                    MensajeGeneral.Mostrar($"Archivo seleccionado: {nombreArchivo}", MensajeGeneral.TipoMensaje.Informacion);
+                }
+
+            }
         }
 
 
@@ -794,6 +821,9 @@ namespace REDACTADOR
             panel_SubirAudio.Location = new Point(378, 3);
 
             panel_SubirAudio.BackColor = SystemColors.Menu;
+            label_SubirAudio.BackColor = SystemColors.Menu;
+            pictureBox_SubirAudio.BackColor = SystemColors.Menu;
+
             label_SubirAudio.ForeColor = SystemColors.ControlText; // Color de texto predeterminado
 
             // Restaurar la fuente a regular (sin subrayado ni negrita)

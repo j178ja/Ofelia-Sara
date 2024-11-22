@@ -13,6 +13,8 @@ namespace REDACTADOR
 {
     public partial class VideoInstructivo : Form
     {
+        // Declarar las instancias de PictureBoxCircular
+       
         public VideoInstructivo()
         {
             InitializeComponent();
@@ -29,6 +31,11 @@ namespace REDACTADOR
         {
             InicializarCarruselConImagenes();
    
+
+            // Habilitar doble búfer en el TableLayoutPanel (Carrusel)
+            Carrusel.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                .SetValue(Carrusel, true, null);
+
             CargarImagenFondo();// para cargar imagen e iniciar animacion
 
             // Ruta del archivo MP4
@@ -47,6 +54,9 @@ namespace REDACTADOR
             {
                 MensajeGeneral.Mostrar("El archivo de video no se encontró en la ruta especificada.", MensajeGeneral.TipoMensaje.Error);
             }
+
+            
+
         }
 
 
@@ -202,87 +212,131 @@ namespace REDACTADOR
         private float scaleFactor = 0.1f;  // Inicial tamaño pequeño
         private float scaleSpeed = 0.02f;  // Velocidad de expansión
         private Timer animacionTimer;      // Timer para controlar la animación
-        private Image fondoAnimado;  
+        private Image fondoAnimado;
 
         // Iniciar la animación
 
-        // Este método se puede llamar en el constructor o en el evento Load del formulario
         private void CargarImagenFondo()
         {
-            // Asignar la imagen al fondoAnimado (ajusta la ruta a tu imagen)
+            // Asignar la imagen al fondoAnimado desde Resources
             fondoAnimado = Properties.Resources.ICOes;
 
-
             // Si la imagen se carga correctamente, inicia la animación
-            IniciarAnimacionFondo();
+            if (fondoAnimado != null)
+            {
+                IniciarAnimacionFondo();
+            }
         }
 
         private void IniciarAnimacionFondo()
         {
-            animacionTimer = new Timer();
-            animacionTimer.Interval = 30;  // Actualizar cada 30 ms (ajusta para suavizar)
+            animacionTimer = new Timer
+            {
+                Interval = 10 
+            };
             animacionTimer.Tick += AnimacionFondo_Tick;
             animacionTimer.Start();
+
+            // Inicializar el factor de escala
+            scaleFactor = 0.1f; 
         }
 
         // Evento Tick del Timer para controlar la animación
         private void AnimacionFondo_Tick(object sender, EventArgs e)
         {
-            // Aumentar el factor de escala para expandir la imagen
-            scaleFactor += scaleSpeed;
+            // Incrementar el factor de escala para hacer crecer la imagen
+            scaleFactor += 0.01f;
 
-            // Si la imagen alcanza el tamaño máximo (es decir, cubre el TableLayout), reiniciamos
-            if (scaleFactor >= 1.0f)
+            // Si la imagen alcanza o supera el tamaño máximo, reinicia el ciclo
+            if (scaleFactor >= 4f) 
             {
-                scaleFactor = 0.1f;  // Reiniciar el tamaño a pequeño
+                scaleFactor = 0.1f; // Reinicia al tamaño pequeño
             }
 
-            // Redibujar el fondo con el nuevo tamaño
-            this.Invalidate();
+            // Redibujar únicamente el TableLayoutPanel (Carrusel)
+            Carrusel.Invalidate();
         }
 
-        // Evento Paint del TableLayoutPanel
+        // Evento Paint para dibujar la imagen de fondo animada en el TableLayoutPanel
         private void Carrusel_Paint(object sender, PaintEventArgs e)
         {
             TableLayoutPanel table = sender as TableLayoutPanel;
 
             if (table != null && fondoAnimado != null)
             {
+                Graphics g = e.Graphics;
+
                 // Calcular el nuevo tamaño de la imagen basado en scaleFactor
-                int imagenWidth = (int)(table.Width * scaleFactor);
-                int imagenHeight = (int)(table.Height * scaleFactor);
+                int imagenWidth = (int)(fondoAnimado.Width * scaleFactor);
+                int imagenHeight = (int)(fondoAnimado.Height * scaleFactor);
 
                 // Calcular la posición para centrar la imagen
-                int imageX = (table.Width - imagenWidth) / 2;
-                int imageY = (table.Height - imagenHeight) / 2;
+                int imageX = (table.ClientSize.Width - imagenWidth) / 2;
+                int imageY = (table.ClientSize.Height - imagenHeight) / 2;
 
-                // Dibujar la imagen en el centro, expandiéndola
-                e.Graphics.DrawImage(fondoAnimado, imageX, imageY, imagenWidth, imagenHeight);
+                // Dibujar la imagen escalada en el centro
+                g.DrawImage(fondoAnimado, new Rectangle(imageX, imageY, imagenWidth, imagenHeight));
 
-                // Dibujar los bordes redondeados (ya explicado anteriormente)
-                int radius = 6;
+                // Opcional: Dibujar bordes redondeados en el TableLayoutPanel
+                int radius = 6; // Radio de los bordes redondeados
                 Rectangle clientRect = table.ClientRectangle;
 
-                if (table.Padding != Padding.Empty)
+                using (GraphicsPath path = RedondearBordes.CreateRoundedRectangle(clientRect, radius))
                 {
-                    clientRect.X += table.Padding.Left;
-                    clientRect.Y += table.Padding.Top;
-                    clientRect.Width -= (table.Padding.Left + table.Padding.Right);
-                    clientRect.Height -= (table.Padding.Top + table.Padding.Bottom);
-                }
+                    using (Pen pen = new Pen(Color.Black, 2)) // Color y grosor del borde
+                    {
+                        g.DrawPath(pen, path);
+                    }
 
-                GraphicsPath path = RedondearBordes.CreateRoundedRectangle(clientRect, radius);
-                using (Pen pen = new Pen(Color.Black, 2))
-                {
-                    e.Graphics.DrawPath(pen, path);
+                    // Aplicar la región redondeada al TableLayoutPanel
+                    table.Region = new Region(path);
                 }
-
-                table.Region = new Region(path);
             }
         }
 
 
 
+        // Evento Paint para dibujar la imagen de fondo animada
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            if (fondoAnimado != null)
+            {
+                Graphics g = e.Graphics;
+
+                // Calcular el centro del área de dibujo
+                int centerX = this.ClientSize.Width / 2;
+                int centerY = this.ClientSize.Height / 2;
+
+                // Calcular las dimensiones de la imagen escalada
+                int scaledWidth = (int)(fondoAnimado.Width * scaleFactor);
+                int scaledHeight = (int)(fondoAnimado.Height * scaleFactor);
+
+                // Calcular la posición para centrar la imagen
+                int posX = centerX - (scaledWidth / 2);
+                int posY = centerY - (scaledHeight / 2);
+
+                // Dibujar la imagen escalada en la posición calculada
+                g.DrawImage(fondoAnimado, new Rectangle(posX, posY, scaledWidth, scaledHeight));
+            }
+        }
+
+        //--------------------
+       
+
+        // Eventos para manejar el clic en los PictureBox
+        private void Btn_Anterior_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Acción al hacer clic en el botón "Anterior"
+            MessageBox.Show("Anterior clickeado");
+        }
+
+        private void Btn_Siguiente_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Acción al hacer clic en el botón "Siguiente"
+            MessageBox.Show("Siguiente clickeado");
+        }
     }
 }
 

@@ -92,6 +92,9 @@
     <Compile Include="Clases\BordePanel.cs" />
     <Compile Include="Clases\BordeTable.cs" />
     <Compile Include="Clases\limpiar_formulario.cs" />
+    <Compile Include="Clases\PictureBoxCircular.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Clases\ToolTipGeneral.cs" />
     <Compile Include="Mensaje\FormUtils.cs" />
     <Compile Include="Mensaje\MensajeGeneral.cs">
@@ -163,10 +166,12 @@
   <ItemGroup>
     <Content Include="Resources\Imagenes\cargarAudio.png" />
     <Content Include="Resources\Imagenes\cargarAudio24.png" />
+    <Content Include="Resources\Imagenes\carrusel\anterior.png" />
     <Content Include="Resources\Imagenes\carrusel\casa hobbit.jpg" />
     <Content Include="Resources\Imagenes\carrusel\chochis.jpg" />
     <Content Include="Resources\Imagenes\carrusel\Fondo De Pantalla De Dibujos Animados.jpeg" />
     <Content Include="Resources\Imagenes\carrusel\gandalf.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\siguiente.png" />
     <Content Include="Resources\Imagenes\carrusel\TENEBRIOS.jpg" />
     <Content Include="Resources\Imagenes\centro.png" />
     <Content Include="Resources\Imagenes\derecha.png" />
