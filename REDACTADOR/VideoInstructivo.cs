@@ -6,6 +6,8 @@ using System;
 using System.Drawing;
 
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.IO;
 
 
 
@@ -13,8 +15,10 @@ namespace REDACTADOR
 {
     public partial class VideoInstructivo : Form
     {
-        // Declarar las instancias de PictureBoxCircular
-       
+        private List<Image> imagenes = new List<Image>(); // Lista para almacenar las imágenes cargadas
+        private int indiceInicio = 0; // Índice para manejar las imágenes mostradas
+        private Dictionary<PictureBox, string> videoPaths = new Dictionary<PictureBox, string>();
+  
         public VideoInstructivo()
         {
             InitializeComponent();
@@ -22,165 +26,204 @@ namespace REDACTADOR
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            this.Resize += new EventHandler(VideoInstructivo_Resize); // Suscripción al evento Resize
-
-            this.Carrusel.Paint += Carrusel_Paint;
+           // this.Resize += new EventHandler(VideoInstructivo_Resize); // Suscripción al evento Resize
+            SetDoubleBuffered(Carrusel);
         }
+
 
         private void VideoInstructivo_Load(object sender, EventArgs e)
         {
-            InicializarCarruselConImagenes();
-   
+            
+            BuscarCarpetaImagenes();//metodo para buscar la carpeta de imagenes a mostrar en el carrusell
 
-            // Habilitar doble búfer en el TableLayoutPanel (Carrusel)
-            Carrusel.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
-                .SetValue(Carrusel, true, null);
+            InicializarCarruselConImagenes();//carga las imagenes en el carrusel
+            CentrarPanelContenedorCarrusel(); // centra el carrusel en el panel1
+            CargarImagenFondo(); // carga e inicia animacion de fondo del carrusel
 
-            CargarImagenFondo();// para cargar imagen e iniciar animacion
+            this.MaximizeBox = false; // Deshabilitar el botón de maximizar
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;  // Evita redimensionar el formulario
+        }
 
-            // Ruta del archivo MP4
-            string videoPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\Resources\videos\instructivoDemo.mp4";
+        /// <summary>
+        /// metodo para buscar las imagenes que seran mostradas en el carrusel
+        /// </summary>
+        private void BuscarCarpetaImagenes()
+        {
+            string rutaCarpetaImagenes = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\Resources\Imagenes\carrusel\Fotogramas\";
 
-            // Verificar si el archivo existe
-            if (System.IO.File.Exists(videoPath))
+            if (Directory.Exists(rutaCarpetaImagenes))
             {
-                // Establecer la URL en el control AxWindowsMediaPlayer
-                instructivo.URL = videoPath;
-
-                // Iniciar la reproducción
-                instructivo.Ctlcontrols.play();
+                foreach (string archivo in Directory.GetFiles(rutaCarpetaImagenes, "*.jpg"))
+                {
+                    try
+                    {
+                        Image img = Image.FromFile(archivo);
+                        imagenes.Add(img);
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar($"Error al cargar la imagen {archivo}: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+                    }
+                }
             }
             else
             {
-                MensajeGeneral.Mostrar("El archivo de video no se encontró en la ruta especificada.", MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar("La carpeta de imágenes no existe.", MensajeGeneral.TipoMensaje.Error);
             }
-
-            
-
         }
-
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+            /// <summary>
+            /// Método para activar DoubleBuffered en cualquier control
+            /// </summary>
+            private void SetDoubleBuffered(Control control)
         {
-
+            typeof(Control).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
+                null, control, new object[] { true });
         }
-        private void VideoInstructivo_Resize(object sender, EventArgs e)
+
+        /// <summary>
+        /// panel contenedor de tableLayout CARRUSEL usado para cuando carga el formulario tenga un tamño mayor
+        /// y contenga tanto el carrusel como los botones anterior y siguiente
+        /// </summary>
+        private void CentrarPanelContenedorCarrusel()
         {
-            // Margen opcional
-            int margen = 10;
-            int bottomMargin = 30; // Margen inferior deseado
+            if (panel1 != null && panel_ContenedorCarrusel != null)
+            {
+                // Establecer la altura de panel1 
+                panel1.Height = 280;
 
-            // Ajustar el tamaño del panel manteniendo el margen inferior
-            panel1.Width = this.ClientSize.Width - margen * 2;
-            panel1.Height = this.ClientSize.Height - bottomMargin - margen; // Restar el margen inferior y superior
-            panel1.Location = new Point(margen, margen); // Centrar el panel con margen superior y lateral
+                // Aumentar la altura de panel_ContenedorCarrusel 
+                int nuevaAltura = (int)(panel_ContenedorCarrusel.Height * 2.8);
+                panel_ContenedorCarrusel.Height = nuevaAltura;
 
-            // Calcular proporciones del AxWindowsMediaPlayer
-            float mediaPlayerProporcionAncho = 444f / 530f; // Proporción de ancho del MediaPlayer
-            float mediaPlayerProporcionAlto = 255f / 298f;  // Proporción de alto del MediaPlayer
+                // Calcular la posición vertical (alineación vertical / 2)
+                int nuevaPosicionY = (panel1.Height - panel_ContenedorCarrusel.Height) / 2;
 
-            // Ajustar el tamaño del AxWindowsMediaPlayer manteniendo proporciones
-            instructivo.Width = (int)(panel1.ClientSize.Width * mediaPlayerProporcionAncho);
-            instructivo.Height = (int)(panel1.ClientSize.Height * mediaPlayerProporcionAlto);
-            instructivo.Location = new Point((panel1.ClientSize.Width - instructivo.Width) / 2, (panel1.ClientSize.Height - instructivo.Height) / 2); // Centrar el MediaPlayer en el panel
+                // Establecer la nueva ubicación del panel_ContenedorCarrusel
+                panel_ContenedorCarrusel.Location = new Point(
+                    panel_ContenedorCarrusel.Location.X, // Mantener la posición horizontal
+                    nuevaPosicionY                       // Establecer la posición vertical centrada
+                    );
+            }
         }
 
+
+
+
+        //private void VideoInstructivo_Resize(object sender, EventArgs e)
+        //{
+
+        //    //int margen = 10;
+        //    //int bottomMargin = 30; // Margen inferior deseado
+
+        //    //// Ajustar el tamaño del panel manteniendo el margen inferior
+        //    //panel1.Width = this.ClientSize.Width - margen * 2;
+        //    //panel1.Height = this.ClientSize.Height - bottomMargin - margen; // Restar el margen inferior y superior
+        //    //panel1.Location = new Point(margen, margen); // Centrar el panel con margen superior y lateral
+
+        //    //// Calcular proporciones del AxWindowsMediaPlayer
+        //    float mediaPlayerProporcionAncho = 444f / 530f; // Proporción de ancho del MediaPlayer
+        //    float mediaPlayerProporcionAlto = 255f / 298f;  // Proporción de alto del MediaPlayer
+
+        //    // Ajustar el tamaño del AxWindowsMediaPlayer manteniendo proporciones
+        //    instructivo.Width = (int)(panel1.ClientSize.Width * mediaPlayerProporcionAncho);
+        //    instructivo.Height = (int)(panel1.ClientSize.Height * mediaPlayerProporcionAlto);
+        //    instructivo.Location = new Point((panel1.ClientSize.Width - instructivo.Width) / 2, (panel1.ClientSize.Height - instructivo.Height) / 2); // Centrar el MediaPlayer en el panel
+        //}
+        /// <summary>
+        /// carga las imagenes en las columnas obteniendolas por medio de su indice
+        /// </summary>
         private void InicializarCarruselConImagenes()
         {
-            // Lista de imágenes desde recursos
-            Image[] imagenes = {
-        Properties.Resources.casa_hobbit,
-        Properties.Resources.chochis,
-        Properties.Resources.Fondo_De_Pantalla_De_Dibujos_Animados,
-        Properties.Resources.gandalf,
-        Properties.Resources.TENEBRIOS
-    };
-
-            // Limpiar controles existentes en el TableLayoutPanel
+            // Limpiar controles del carrusel
             Carrusel.Controls.Clear();
 
-            // Establecer el número de filas y columnas
-            Carrusel.RowCount = 1; // Solo una fila
-            Carrusel.ColumnCount = imagenes.Length; // Número de columnas basado en las imágenes
+            // Máximo de imágenes a mostrar
+            int maxImagenesMostrar = 5;
 
-            // Establecer las propiedades de las columnas para que se distribuyan igualmente
-            for (int i = 0; i < Carrusel.ColumnCount; i++)
+            for (int i = 0; i < maxImagenesMostrar; i++)
             {
-                Carrusel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / Carrusel.ColumnCount));
-            }
+                int indiceImagen = (indiceInicio + i) % imagenes.Count; // Calcula el índice circular
 
-            // Establecer la altura de la fila para que sea fija de 76
-            Carrusel.RowStyles.Clear(); // Limpiar estilos previos de fila
-            Carrusel.RowStyles.Add(new RowStyle(SizeType.Absolute, 76F)); // Establecer altura fija de la fila
+                // Crear PictureBox para la imagen correspondiente
+                PictureBox pictureBox = CrearPictureBoxConImagen(imagenes[indiceImagen]);
 
-            // Agregar imágenes a las celdas con bordes redondeados
-            for (int i = 0; i < imagenes.Length; i++)
-            {
-                // Crear el PictureBox
-                PictureBox pictureBox = new PictureBox
-                {
-                    Image = imagenes[i],
-                    SizeMode = PictureBoxSizeMode.StretchImage, // Estiramos la imagen para que cubra el área
-                    Dock = DockStyle.None,
-                    Anchor = AnchorStyles.None // No anclado a los bordes
-                };
+                // Configurar la imagen según su posición
+                AplicarFormatoAImagen(pictureBox, i);
 
-                // Aplicar bordes redondeados
-                pictureBox.Paint += (sender, e) =>
-                {
-                    PictureBox pb = sender as PictureBox;
-                    if (pb != null)
-                    {
-                        int radius = 6; // Tamaño del radio de las esquinas
-                        GraphicsPath path = CreateRoundedRectanglePath(pb.ClientRectangle, radius);
-                        pb.Region = new Region(path);
-                    }
-                };
-
-                // Ajustar la altura y el ancho de la imagen según la columna
-                if (i == 2) // Columna 3 (índice 2)
-                {
-                    // La imagen en la columna 3 tiene la altura completa de 76 y debe estirarse para cubrir todo el ancho
-                    pictureBox.Height = 76;
-                    pictureBox.Width = Carrusel.GetColumnWidths()[i]; // Establecer el ancho para abarcar toda la celda
-
-                    // Centrar verticalmente
-                    pictureBox.Top = (76 - pictureBox.Height) / 2;
-                    // Centrar horizontalmente (en este caso, con DockStyle.None y configurando Left)
-                    pictureBox.Left = (Carrusel.ClientSize.Width / Carrusel.ColumnCount - pictureBox.Width) / 2;
-                }
-                else if (i == 1 || i == 3) // Columnas 2 y 4 (índices 1 y 3)
-                {
-                    // Las imágenes en las columnas 2 y 4 tienen una altura del 75% de 76 (es decir, 57)
-                    pictureBox.Height = (int)(76 * 0.75);
-                    pictureBox.Width = Carrusel.GetColumnWidths()[i]; // Ajustar el ancho
-
-                    // Centrar verticalmente
-                    pictureBox.Top = (76 - pictureBox.Height) / 2;
-                    // Centrar horizontalmente
-                    pictureBox.Left = (Carrusel.ClientSize.Width / Carrusel.ColumnCount - pictureBox.Width) / 2;
-                }
-                else if (i == 0 || i == 4) // Columnas 1 y 5 (índices 0 y 4)
-                {
-                    // Las imágenes en las columnas 1 y 5 tienen una altura del 50% de 76 (es decir, 38)
-                    pictureBox.Height = (int)(76 * 0.5);
-                    pictureBox.Width = Carrusel.GetColumnWidths()[i]; // Ajustar el ancho
-
-                    // Centrar verticalmente
-                    pictureBox.Top = (76 - pictureBox.Height) / 2;
-                    // Centrar horizontalmente
-                    pictureBox.Left = (Carrusel.ClientSize.Width / Carrusel.ColumnCount - pictureBox.Width) / 2;
-                }
-
-                // Agregar el PictureBox al TableLayoutPanel en la columna `i` y fila `0`
+                // Agregar al carrusel
                 Carrusel.Controls.Add(pictureBox, i, 0);
             }
         }
 
+        /// <summary>
+        /// establece propiedades para las imagenes del carrusel LE DA BORDE REDONDEADO
+        /// </summary>
+    
+        private PictureBox CrearPictureBoxConImagen(Image imagen)
+        {
+            PictureBox pictureBox = new PictureBox
+            {
+                Image = imagen,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                 Dock = DockStyle.None,
+                 Anchor = AnchorStyles.None
+                         
+            };
+
+            // Aplicar bordes redondeados
+            pictureBox.Paint += (sender, e) =>
+            {
+                PictureBox pb = sender as PictureBox;
+                if (pb != null)
+                {
+                    int radius = 6;
+                    GraphicsPath path = CreateRoundedRectanglePath(pb.ClientRectangle, radius);
+                    pb.Region = new Region(path);
+                }
+            };
+            return pictureBox;
+        }
 
         /// <summary>
-        /// Crea un GraphicsPath para un rectángulo con esquinas redondeadas.
+        /// aplicar formato de columnas para cuando se inicializa y se carga el carrusel
+        /// </summary>
+      
+        private void AplicarFormatoAImagen(PictureBox pictureBox, int columna)
+        {
+            int alturaBase = 180;
+            int anchoColumna = Carrusel.Width / Carrusel.ColumnCount;
+            int anchoColumna3 = (int)(Carrusel.Width * 0.40);
+
+            switch (columna)
+            {
+                case 2: // Columna 3 (CENTRAL)
+                    pictureBox.Height = alturaBase;
+                    pictureBox.Dock = DockStyle.Fill; //establece que la imagen ocupe el ancho y alto de la columna
+               
+                    break;
+                case 1: // Columna 2
+                case 3: // Columna 4
+                    pictureBox.Height = (int)(alturaBase * 0.75);
+                    break;
+                case 0: // Columna 1
+                case 4: // Columna 5
+                    pictureBox.Height = (int)(alturaBase * 0.5);
+                    break;
+            }
+            // Ajustar el ancho de la imagen para que abarque el ancho de la columna
+            pictureBox.Width = anchoColumna;
+
+            // Centrar la imagen verticalmente dentro de la celda
+            pictureBox.Top = (alturaBase - pictureBox.Height) / 2;
+
+            // Ajustar la posición horizontal para centrar la imagen dentro de la columna
+            pictureBox.Left = 0; // No es necesario centrar horizontalmente, ya que abarcará todo el ancho de la columna
+        }
+
+
+        /// <summary>
+        /// Crea un GraphicsPath para un rectángulo con esquinas redondeadas. REDIBUJA TABLELAYOUT "CARRUSEL"
         /// </summary>
         private GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int radius)
         {
@@ -206,16 +249,18 @@ namespace REDACTADOR
             return path;
         }
 
-        //--------------------
-        //para fondo animado de carrusel
+        /// <summary>
+        /// declaracion de variables que se van a usar para la animacion del fondo del carrusel
+        /// </summary>
 
         private float scaleFactor = 0.1f;  // Inicial tamaño pequeño
         private float scaleSpeed = 0.02f;  // Velocidad de expansión
         private Timer animacionTimer;      // Timer para controlar la animación
         private Image fondoAnimado;
 
-        // Iniciar la animación
-
+        /// <summary>
+        /// // establecer la imagen que se va a ampliar e iniciarla
+        /// </summary>
         private void CargarImagenFondo()
         {
             // Asignar la imagen al fondoAnimado desde Resources
@@ -227,28 +272,34 @@ namespace REDACTADOR
                 IniciarAnimacionFondo();
             }
         }
+        /// <summary>
+        ///     // para inicializar la imagen que se amplia en el fondo del carrusel
+        /// </summary>
 
         private void IniciarAnimacionFondo()
         {
             animacionTimer = new Timer
             {
-                Interval = 10 
+                Interval = 10
             };
             animacionTimer.Tick += AnimacionFondo_Tick;
             animacionTimer.Start();
 
             // Inicializar el factor de escala
-            scaleFactor = 0.1f; 
+            scaleFactor = 0.1f;
         }
 
-        // Evento Tick del Timer para controlar la animación
+
+        /// <summary>
+        /// Evento Tick del Timer para controlar la animación
+        /// </summary>
         private void AnimacionFondo_Tick(object sender, EventArgs e)
         {
             // Incrementar el factor de escala para hacer crecer la imagen
             scaleFactor += 0.01f;
 
             // Si la imagen alcanza o supera el tamaño máximo, reinicia el ciclo
-            if (scaleFactor >= 4f) 
+            if (scaleFactor >= 4f)
             {
                 scaleFactor = 0.1f; // Reinicia al tamaño pequeño
             }
@@ -257,7 +308,9 @@ namespace REDACTADOR
             Carrusel.Invalidate();
         }
 
-        // Evento Paint para dibujar la imagen de fondo animada en el TableLayoutPanel
+        /// <summary>
+         /// Evento Paint para dibujar la imagen de fondo animada en el TableLayoutPanel
+        /// </summary>
         private void Carrusel_Paint(object sender, PaintEventArgs e)
         {
             TableLayoutPanel table = sender as TableLayoutPanel;
@@ -294,49 +347,59 @@ namespace REDACTADOR
             }
         }
 
-
-
-        // Evento Paint para dibujar la imagen de fondo animada
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-
-            if (fondoAnimado != null)
-            {
-                Graphics g = e.Graphics;
-
-                // Calcular el centro del área de dibujo
-                int centerX = this.ClientSize.Width / 2;
-                int centerY = this.ClientSize.Height / 2;
-
-                // Calcular las dimensiones de la imagen escalada
-                int scaledWidth = (int)(fondoAnimado.Width * scaleFactor);
-                int scaledHeight = (int)(fondoAnimado.Height * scaleFactor);
-
-                // Calcular la posición para centrar la imagen
-                int posX = centerX - (scaledWidth / 2);
-                int posY = centerY - (scaledHeight / 2);
-
-                // Dibujar la imagen escalada en la posición calculada
-                g.DrawImage(fondoAnimado, new Rectangle(posX, posY, scaledWidth, scaledHeight));
-            }
-        }
-
-        //--------------------
        
+      
 
-        // Eventos para manejar el clic en los PictureBox
-        private void Btn_Anterior_MouseClick(object sender, MouseEventArgs e)
+        /// <summary>
+        /// METODOS PARA CAMBIAR IMAGENES DENTRO DEL CARRUSEL
+        /// </summary>
+        
+        private void btn_SiguienteImagen_Click(object sender, EventArgs e)
         {
-            // Acción al hacer clic en el botón "Anterior"
-            MessageBox.Show("Anterior clickeado");
+            if (imagenes.Count == 0) return;
+
+            // Avanzar el índice y actualizar el carrusel
+            indiceInicio = (indiceInicio + 1) % imagenes.Count;
+            InicializarCarruselConImagenes();
         }
 
-        private void Btn_Siguiente_MouseClick(object sender, MouseEventArgs e)
+        private void btn_AnteriorImagen_Click(object sender, EventArgs e)
         {
-            // Acción al hacer clic en el botón "Siguiente"
-            MessageBox.Show("Siguiente clickeado");
+            if (imagenes.Count == 0) return;
+
+            // Retroceder el índice y actualizar el carrusel
+            indiceInicio = (indiceInicio - 1 + imagenes.Count) % imagenes.Count;
+            InicializarCarruselConImagenes();
         }
+
+
+
+
+        // Evento Click para el PictureBox
+        //private void PictureBox_Click(object sender, EventArgs e)
+        //{
+        //    PictureBox clickedPictureBox = sender as PictureBox;
+
+        //    // Verificar si el PictureBox tiene un video asignado en el diccionario
+        //    if (clickedPictureBox != null && videoPaths.ContainsKey(clickedPictureBox))
+        //    {
+        //        // Obtener la ruta del video desde el diccionario
+        //        string videoPath = videoPaths[clickedPictureBox];
+
+        //        // Asignar la ruta al reproductor de video
+        //        instructivo.URL = videoPath;
+
+        //        // Reproducir el video
+        //        instructivo.Ctlcontrols.play();
+
+        //        // Hacer visible el reproductor de video
+        //        instructivo.Visible = true;
+
+        //        // Ajustar el tamaño del reproductor (opcional)
+        //        instructivo.Dock = DockStyle.Fill;
+        //    }
+        //}
+
+      
     }
 }
-

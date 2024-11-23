@@ -170,6 +170,16 @@
     <Content Include="Resources\Imagenes\carrusel\casa hobbit.jpg" />
     <Content Include="Resources\Imagenes\carrusel\chochis.jpg" />
     <Content Include="Resources\Imagenes\carrusel\Fondo De Pantalla De Dibujos Animados.jpeg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\1.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\2.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\3.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\4.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\5.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\6.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\7.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\8.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\9.jpg" />
+    <Content Include="Resources\Imagenes\carrusel\Fotogramas\10.jpg" />
     <Content Include="Resources\Imagenes\carrusel\gandalf.jpg" />
     <Content Include="Resources\Imagenes\carrusel\siguiente.png" />
     <Content Include="Resources\Imagenes\carrusel\TENEBRIOS.jpg" />

@@ -34,8 +34,6 @@ namespace Ofelia_Sara.Formularios
 
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HTCAPTION = 0x2;
-        //-----------------------------------------------------
-        private System.Windows.Forms.PictureBox iconoEscudo;//para escudo que lleva a boletin oficial
 
 
         //private ContextMenuStrip contextMenu;
@@ -75,8 +73,6 @@ namespace Ofelia_Sara.Formularios
             originalSizeMecanografia = btn_Mecanografia.Size;
             originalLocationMecanografia = btn_Mecanografia.Location;
 
-          
-
         }
 
         //_________________________________--________________________________
@@ -112,6 +108,7 @@ namespace Ofelia_Sara.Formularios
             //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
             IncrementarTamaño.Incrementar(btn_Configurar);
             IncrementarTamaño.Incrementar(btn_Leyes);
+            IncrementarTamaño.Incrementar(iconoEscudo);
            
           
 
@@ -132,6 +129,7 @@ namespace Ofelia_Sara.Formularios
             ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación.");
             ToolTipGeneral.ShowToolTip(this, btn_BuscarTarea, "Buscar tarea seleccionada.");
             ToolTipGeneral.ShowToolTip(this, comboBox_Buscar, " Ingrese que tarea desea realizar.");
+            ToolTipGeneral.ShowToolTip(this, iconoEscudo, "Boletín Informativo.");
 
             
         }

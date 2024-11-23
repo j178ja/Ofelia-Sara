@@ -30,12 +30,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.PictureBox iconoEscudo;
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Expedientes = new System.Windows.Forms.Button();
             this.btn_Contravenciones = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconoEscudo = new System.Windows.Forms.PictureBox();
+
             this.btn_BuscarTarea = new System.Windows.Forms.Button();
             this.comboBox_Buscar = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
@@ -69,7 +71,7 @@
             this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            iconoEscudo = new System.Windows.Forms.PictureBox();
+        
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).BeginInit();
@@ -81,13 +83,14 @@
             // 
             iconoEscudo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
             iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            iconoEscudo.Cursor = System.Windows.Forms.Cursors.Hand;
             iconoEscudo.Location = new System.Drawing.Point(1, 3);
             iconoEscudo.Name = "iconoEscudo";
             iconoEscudo.Size = new System.Drawing.Size(30, 28);
             iconoEscudo.TabIndex = 18;
             iconoEscudo.TabStop = false;
+            this.toolTip1.SetToolTip(iconoEscudo, "Boletin Informativo");
             iconoEscudo.Click += new System.EventHandler(this.iconoEscudo_Click);
-           
             iconoEscudo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_InicioCierre
@@ -525,6 +528,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox btn_Leyes;
+        private System.Windows.Forms.PictureBox iconoEscudo;
         private System.Windows.Forms.Button btn_InicioCierre;
         private System.Windows.Forms.Button btn_Expedientes;
         private System.Windows.Forms.Button btn_Contravenciones;
