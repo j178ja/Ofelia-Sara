@@ -626,9 +626,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <None Include="Resources\cursorFlecha.cur" />
-    <None Include="Resources\aprovechar.png" />
-    <None Include="Resources\aprovechar.cur" />
+    <None Include="Resources\Cursor\cursorFlecha.cur" />
+    <None Include="Resources\Cursor\hand.cur" />
+    <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
     <Content Include="Resources\imagenes\agregar_Dependencia.png" />
     <Content Include="Resources\imagenes\agregar_General.png" />
     <Content Include="Resources\imagenes\agregar_Usuario.png" />

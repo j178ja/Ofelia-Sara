@@ -133,8 +133,11 @@
   <data name="chochis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\carrusel\chochis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cursorFlecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cursor\cursorFlecha.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="CursorlapizDerecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CursorlapizDerecha.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\Cursor\CursorlapizDerecha.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="derecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\derecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +148,11 @@
   <data name="gandalf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\carrusel\gandalf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cursor\hand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ICOes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICOes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Imagenes\ICOes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconoAdvertencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\IconoAdvertencia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

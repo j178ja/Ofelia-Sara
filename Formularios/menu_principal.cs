@@ -7,7 +7,7 @@ using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
-using REDACTADOR;
+using REDACTADOR.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

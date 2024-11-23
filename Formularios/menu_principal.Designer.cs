@@ -209,7 +209,7 @@
             this.panel_MenuSuperior.Controls.Add(this.btn_Mecanografia);
             this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
             this.panel_MenuSuperior.Controls.Add(this.label_MenuPrincipal);
-//            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
+            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
             this.panel_MenuSuperior.Controls.Add(this.label_OfeliaSara);
             this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
             this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);

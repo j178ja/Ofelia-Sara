@@ -3,7 +3,7 @@ using REDACTADOR.Properties;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace REDACTADOR
+namespace REDACTADOR.Formularios
 {
     partial class Redactador
     {
@@ -31,7 +31,7 @@ namespace REDACTADOR
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-           private void InitializeComponent()
+        private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox iconoEscudo;

@@ -29,7 +29,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.AudioVisualizerControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Mensaje.MensajeGeneral.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Properties.Resources.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Redactador.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Resource.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.VideoInstructivo.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.GenerateResource.cache
@@ -37,3 +36,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.csproj.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\REDACTADOR\obj\Debug\REDACTADOR.Formularios.Redactador.resources

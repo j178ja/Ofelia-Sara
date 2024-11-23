@@ -5,6 +5,7 @@ using Ofelia_Sara.Formularios;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Ofelia_Sara.Mensajes;
 
 
 
@@ -17,6 +18,11 @@ namespace Clases.Apariencia
             if (form is Contacto)
             {
                 return null; // No agregar el LinkLabel si es el formulario Contacto
+            }
+            // Excluir los formularios Contacto y MensajeGeneral
+            if (form is Contacto || form is MensajeGeneral)
+            {
+                return null; // No agregar el LinkLabel si es uno de los formularios excluidos
             }
 
             LinkLabel footerLinkLabel = new LinkLabel();

@@ -9,10 +9,11 @@ using Ofelia_Sara.Controles.Controles;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios;
 
 namespace Ofelia_Sara.Mensajes
 {
-    public partial class MensajeGeneral : Form
+    public partial class MensajeGeneral : BaseForm
     {
         public DateTime FechaMinima { get; set; } = DateTime.MinValue;
 

@@ -7,12 +7,13 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using REDACTADOR.Formularios;
 
 
 
 namespace REDACTADOR
 {
-    public partial class VideoInstructivo : Form
+    public partial class VideoInstructivo : BaseForm
     {
         private List<Image> imagenes = new List<Image>(); // Lista para almacenar las imágenes cargadas
         private int indiceInicio = 0; // Índice para manejar las imágenes mostradas

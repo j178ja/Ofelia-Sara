@@ -75,6 +75,7 @@
             // btn_Registrar
             // 
             this.btn_Registrar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Registrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;

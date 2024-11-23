@@ -26,6 +26,7 @@ namespace Ofelia_Sara.Formularios
     public class BaseForm : Form
     {
         private Cursor customHandCursor;
+        private Cursor CursorLapizDerecha;
         private PictureBox pictureBoxError;
         private ToolTip toolTipError;
         private Timer errorTimer;
@@ -101,13 +102,25 @@ namespace Ofelia_Sara.Formularios
                 this.Cursor = new Cursor(cursorStream);
             }
             // Cargar el cursor personalizado desde los recursos
-            using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.aprovechar))
+            using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
             {
                 customHandCursor = new Cursor(cursorHand);
             }
+            using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
+            {
+                CursorLapizDerecha = new Cursor(cursorStream);
+            }
         }
         //--------------------------------------------------------------------------------
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            ToolTipsGenerales();// para aplicar tooltip comun a los formularios
 
+            // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
+            AsignarCursorPersonalizado(this.Controls);
+
+        }
+        //--------------------------------------------------------------------------
         private void DibujarFondoDegradado(Graphics g, int width, int height)
         {
             // Definir el centro del área de degradado
@@ -165,8 +178,13 @@ namespace Ofelia_Sara.Formularios
         {
             foreach (Control control in controls)
             {
+                // Si el control es un TextBox, ComboBox o RichTextBox, asigna el cursor CursorLapizDerecha
+                if (control is TextBox || control is ComboBox || control is RichTextBox)
+                {
+                    control.Cursor = CursorLapizDerecha;
+                }
                 // Si el control tiene el cursor predeterminado "Hand", reemplázalo con el personalizado
-                if (control.Cursor == Cursors.Hand)
+                else if (control.Cursor == Cursors.Hand)
                 {
                     control.Cursor = customHandCursor;
                 }
@@ -178,6 +196,7 @@ namespace Ofelia_Sara.Formularios
                 }
             }
         }
+
         //-------------------------------------------------------------------------------
         //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
         protected void ConfigurarComboBoxEscalafonJerarquia(ComboBox comboBox_Escalafon, ComboBox comboBox_Jerarquia)
@@ -500,14 +519,7 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-            ToolTipsGenerales();// para aplicar tooltip comun a los formularios
-
-            // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
-            AsignarCursorPersonalizado(this.Controls);
-
-        }
+      
 
         //---- para error provider
 

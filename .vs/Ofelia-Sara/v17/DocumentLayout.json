@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\clases\\apariencia\\footer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:clases\\apariencia\\footer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0D31BB3-13E0-4618-B861-4F374C1F6D5E}|REDACTADOR\\REDACTADOR.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\redactador\\redactador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0D31BB3-13E0-4618-B861-4F374C1F6D5E}|REDACTADOR\\REDACTADOR.csproj|solutionrelative:redactador\\redactador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,26 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "menu_principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\menu_principal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\menu_principal.cs [Dise\u00F1o]",
+              "Title": "footer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases\\Apariencia\\footer.cs",
+              "RelativeDocumentMoniker": "Clases\\Apariencia\\footer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Clases\\Apariencia\\footer.cs*",
+              "RelativeToolTip": "Clases\\Apariencia\\footer.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T04:55:18.419Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Redactador.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs",
-              "RelativeDocumentMoniker": "REDACTADOR\\Redactador.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Redactador.cs",
-              "RelativeToolTip": "REDACTADOR\\Redactador.cs",
-              "ViewState": "AQIAAC8CAAAAAAAAAAAAAD8CAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T04:46:18.604Z",
+              "WhenOpened": "2024-11-23T15:19:17.868Z",
               "EditorCaption": ""
             },
             {
@@ -69,9 +53,9 @@
               "RelativeDocumentMoniker": "Formularios\\BaseForm.cs",
               "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\BaseForm.cs",
               "RelativeToolTip": "Formularios\\BaseForm.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAmwGcAAABdAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAqwG8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T04:45:39.612Z",
+              "WhenOpened": "2024-11-23T14:13:05.224Z",
               "EditorCaption": ""
             }
           ]

@@ -113,6 +113,16 @@ namespace REDACTADOR.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
+        internal static byte[] cursorFlecha {
+            get {
+                object obj = ResourceManager.GetObject("cursorFlecha", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
         internal static byte[] CursorlapizDerecha {
             get {
                 object obj = ResourceManager.GetObject("CursorlapizDerecha", resourceCulture);
@@ -147,6 +157,16 @@ namespace REDACTADOR.Properties {
             get {
                 object obj = ResourceManager.GetObject("gandalf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] hand {
+            get {
+                object obj = ResourceManager.GetObject("hand", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

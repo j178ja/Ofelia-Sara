@@ -7,16 +7,16 @@ using System.IO;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using REDACTADOR.Formularios;
 
 
-
-namespace REDACTADOR
+namespace REDACTADOR.Formularios
 {
-    public partial class Redactador : Form
+    public partial class Redactador : BaseForm
     {
-        //funcion nativa para ARRASTRAR EL FORMULARIO
-        // Importar las funciones de la API de Windows
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+     //funcion nativa para ARRASTRAR EL FORMULARIO
+    // Importar las funciones de la API de Windows
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern void ReleaseCapture();
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -51,7 +51,7 @@ namespace REDACTADOR
             timer_Barras = new Timer();
             timer_Barras.Interval = 100; // Ajusta el intervalo
             timer_Barras.Tick += timer_Barras_Tick;
-
+        
         }
         private void Redactador_Load(object sender, EventArgs e)
         {

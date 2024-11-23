@@ -83,10 +83,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudioVisualizerControl.cs">
+    <Compile Include="Controles\AudioVisualizerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AudioVisualizerControl.Designer.cs">
+    <Compile Include="Controles\AudioVisualizerControl.Designer.cs">
       <DependentUpon>AudioVisualizerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\BordePanel.cs" />
@@ -96,6 +96,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\ToolTipGeneral.cs" />
+    <Compile Include="Formularios\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensaje\FormUtils.cs" />
     <Compile Include="Mensaje\MensajeGeneral.cs">
       <SubType>Form</SubType>
@@ -105,29 +111,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formularios\Redactador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Redactador.Designer.cs">
+      <DependentUpon>Redactador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Redactador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Redactador.Designer.cs">
-      <DependentUpon>Redactador.cs</DependentUpon>
     </Compile>
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="VideoInstructivo.cs">
+    <Compile Include="Formularios\VideoInstructivo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VideoInstructivo.Designer.cs">
+    <Compile Include="Formularios\VideoInstructivo.Designer.cs">
       <DependentUpon>VideoInstructivo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AudioVisualizerControl.resx">
+    <EmbeddedResource Include="Controles\AudioVisualizerControl.resx">
       <DependentUpon>AudioVisualizerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensaje\MensajeGeneral.resx">
@@ -138,7 +144,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Redactador.resx">
+    <EmbeddedResource Include="Formularios\Redactador.resx">
       <DependentUpon>Redactador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource.resx">
@@ -146,7 +152,7 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="VideoInstructivo.resx">
+    <EmbeddedResource Include="Formularios\VideoInstructivo.resx">
       <DependentUpon>VideoInstructivo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -164,7 +170,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CursorlapizDerecha.cur" />
+    <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
+    <None Include="Resources\Cursor\cursorFlecha.cur" />
+    <None Include="Resources\Cursor\hand.cur" />
     <Content Include="Resources\Imagenes\cargarAudio.png" />
     <Content Include="Resources\Imagenes\cargarAudio24.png" />
     <Content Include="Resources\Imagenes\carrusel\anterior.png" />
@@ -189,7 +197,6 @@
     <None Include="Resources\Imagenes\microfono-activo1.png" />
     <Content Include="Resources\Imagenes\Maximizar.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
-    <None Include="Resources\ICOes.png" />
     <None Include="Resources\Imagenes\ICOes.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
