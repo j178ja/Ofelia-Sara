@@ -25,6 +25,7 @@ namespace Ofelia_Sara.Formularios
 
     public class BaseForm : Form
     {
+        private Cursor customHandCursor;
         private PictureBox pictureBoxError;
         private ToolTip toolTipError;
         private Timer errorTimer;
@@ -94,7 +95,16 @@ namespace Ofelia_Sara.Formularios
             errorTimer.Tick += ErrorTimer_Tick;
 
 
-
+            // Cargar el cursor desde los recursos
+            using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
+            {
+                this.Cursor = new Cursor(cursorStream);
+            }
+            // Cargar el cursor personalizado desde los recursos
+            using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.aprovechar))
+            {
+                customHandCursor = new Cursor(cursorHand);
+            }
         }
         //--------------------------------------------------------------------------------
 
@@ -148,7 +158,26 @@ namespace Ofelia_Sara.Formularios
                 Console.WriteLine("No se pudo encontrar el ícono en la ruta especificada.");
             }
         }
+        /// <summary>
+        /// Sustituir CURSOR HAND
+        /// </summary>
+        private void AsignarCursorPersonalizado(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                // Si el control tiene el cursor predeterminado "Hand", reemplázalo con el personalizado
+                if (control.Cursor == Cursors.Hand)
+                {
+                    control.Cursor = customHandCursor;
+                }
 
+                // Si el control tiene hijos, aplica el cambio recursivamente
+                if (control.HasChildren)
+                {
+                    AsignarCursorPersonalizado(control.Controls);
+                }
+            }
+        }
         //-------------------------------------------------------------------------------
         //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
         protected void ConfigurarComboBoxEscalafonJerarquia(ComboBox comboBox_Escalafon, ComboBox comboBox_Jerarquia)
@@ -475,7 +504,8 @@ namespace Ofelia_Sara.Formularios
         {
             ToolTipsGenerales();// para aplicar tooltip comun a los formularios
 
-
+            // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
+            AsignarCursorPersonalizado(this.Controls);
 
         }
 

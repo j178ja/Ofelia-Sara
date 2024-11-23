@@ -91,6 +91,16 @@ namespace Ofelia_Sara.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] aprovechar {
+            get {
+                object obj = ResourceManager.GetObject("aprovechar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap atras {
@@ -117,6 +127,16 @@ namespace Ofelia_Sara.Properties {
             get {
                 object obj = ResourceManager.GetObject("buscar75_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] cursorFlecha {
+            get {
+                object obj = ResourceManager.GetObject("cursorFlecha", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

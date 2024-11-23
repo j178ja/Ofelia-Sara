@@ -573,9 +573,12 @@ namespace REDACTADOR
             // Convertir coordenadas del control a coordenadas absolutas de pantalla
             Point caretScreenPosition = richTextBox_Redactor.PointToScreen(caretPosition);
 
-            // Definir el cursor personalizado
-            Cursor myCustomCursor = new Cursor("C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Resources\\CursorlapizDerecha.cur");
-            richTextBox_Redactor.Cursor = myCustomCursor;
+            // Cargar el cursor desde los recursos del proyecto
+            using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
+            {
+                Cursor myCustomCursor = new Cursor(cursorStream);
+                richTextBox_Redactor.Cursor = myCustomCursor; // Asigna el cursor personalizado
+            }
 
             // Mover el cursor a la posición convertida
             Cursor.Position = new Point(caretScreenPosition.X + 15, caretScreenPosition.Y);
@@ -602,6 +605,10 @@ namespace REDACTADOR
         // Evento que se activa cada vez que el contenido del RichTextBox cambia
         private void richTextBox_Redactor_TextChanged(object sender, EventArgs e)
         {
+            // Ocultar el caret
+            HideCaret(richTextBox_Redactor.Handle);// oculta caret
+            ChangeCursorToCustom(); //muestra cursor especial
+           
             // Detectar si el último carácter escrito es en mayúsculas o minúsculas
             if (richTextBox_Redactor.Text.Length > 0)
             {
