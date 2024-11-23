@@ -1,21 +1,21 @@
-﻿using Clases.Botones;
+﻿using Clases.Apariencia;
+using Clases.Botones;
 using Controles.Barra_Busqueda;
-using REDACTADOR;
 using MECANOGRAFIA;
 using Ofelia_Sara.Clases.Botones.btn_Configuracion;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using REDACTADOR;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using System.Diagnostics;
-using Clases.Apariencia;
 
 
 
@@ -43,6 +43,7 @@ namespace Ofelia_Sara.Formularios
         Timer timerMinimizarForm = new Timer();
         private Size originalSizeMecanografia;
         private Point originalLocationMecanografia;
+        private PictureBox iconoEscudo;
 
         // Definir el texto del placeholder
         private string placeholderText = "Buscar tipo de actuación...";
@@ -109,8 +110,8 @@ namespace Ofelia_Sara.Formularios
             IncrementarTamaño.Incrementar(btn_Configurar);
             IncrementarTamaño.Incrementar(btn_Leyes);
             IncrementarTamaño.Incrementar(iconoEscudo);
-           
-          
+
+
 
             comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -131,9 +132,9 @@ namespace Ofelia_Sara.Formularios
             ToolTipGeneral.ShowToolTip(this, comboBox_Buscar, " Ingrese que tarea desea realizar.");
             ToolTipGeneral.ShowToolTip(this, iconoEscudo, "Boletín Informativo.");
 
-            
+
         }
-       
+
         //--------------------------------------------------------------------------------
 
 
@@ -658,29 +659,29 @@ namespace Ofelia_Sara.Formularios
             // Ajustar la ubicación del formulario DocumentosForm
             redactadorForm.StartPosition = FormStartPosition.Manual;
             redactadorForm.Location = new Point(x, y);
-                       
+
             redactadorForm.ShowDialog(); // Mostrar el formulario como modal
         }
 
-       
 
-private void iconoEscudo_Click(object sender, EventArgs e)
-    {
-        string url = "https://boletin.mseg.gba.gov.ar/";
-        try
+
+        private void iconoEscudo_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo
+            string url = "https://boletin.mseg.gba.gov.ar/";
+            try
             {
-                FileName = url,
-                UseShellExecute = true // Necesario para abrir el navegador predeterminado
-            });
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Necesario para abrir el navegador predeterminado
+                });
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"No se pudo abrir la página web: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
         }
-        catch (Exception ex)
-        {
-            MensajeGeneral.Mostrar($"No se pudo abrir la página web: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-        }
-    }
 
-       
+
     }
 }

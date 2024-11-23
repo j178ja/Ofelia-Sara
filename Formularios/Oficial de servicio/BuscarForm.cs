@@ -55,7 +55,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void BuscarForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MensajeGeneral.Mostrar("Complete alguno de los campos requeridos para iniciar la busqueda.",MensajeGeneral.TipoMensaje.Informacion);
+            MensajeGeneral.Mostrar("Complete alguno de los campos requeridos para iniciar la busqueda.", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
@@ -65,7 +65,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
         //_____________________________________________________________________________________

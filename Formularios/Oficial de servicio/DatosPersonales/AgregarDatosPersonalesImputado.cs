@@ -1,13 +1,10 @@
 ﻿using Clases.Apariencia;
 using Clases.Botones;
 using Clases.Texto;
-using Controles.Controles;
 using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -19,7 +16,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
     public partial class AgregarDatosPersonalesImputado : BaseForm
     {
-        
+
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private System.Windows.Forms.TextBox textBox_Email;
@@ -43,7 +40,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Asigna el evento TextChanged de textBox_Dni a ActualizarEstado
             textBox_Dni.TextChanged += (sender, e) => ActualizarEstado();
 
-            
+
             this.FormClosing += AgregarDatosPersonalesConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
 
             this.textBox_Email = new System.Windows.Forms.TextBox();// Configuración del textBox_Email
@@ -53,13 +50,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            
+
             SetupBotonDeslizable();  // Configurar el delegado de validación
         }
         //-------------------------------------------------------------------------------
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
-           
+
             btn_AgregarConcubina.Enabled = false;
             InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
 
@@ -86,13 +83,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_PerfilIzquierdo.AllowDrop = true;
             pictureBox_CuerpoEntero.AllowDrop = true;
 
-   
+
             pictureBox_Frente.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_PerfilDerecho.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_PerfilIzquierdo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_CuerpoEntero.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                
+
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -715,7 +712,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 {
                     // Hacer visibles los botones
                     mensaje.MostrarBotonesConfirmacion(true);
-               
+
 
                     DialogResult result = mensaje.ShowDialog();
                     if (result == DialogResult.No)
@@ -731,11 +728,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Configurar el delegado de validación en el control BotonDeslizable
             botonDeslizable_StarPlana.ValidarCampos = () =>
             {
-            // Lógica de validación
-            bool camposIncompletos =
-                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Dni.Text) ||
-                    !dateTimePicker_FechaNacimiento.HasValue();
+                // Lógica de validación
+                bool camposIncompletos =
+                    string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_Dni.Text) ||
+                        !dateTimePicker_FechaNacimiento.HasValue();
 
                 if (camposIncompletos)
                 {

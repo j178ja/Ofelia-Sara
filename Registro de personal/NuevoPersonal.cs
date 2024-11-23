@@ -5,7 +5,6 @@ using Clases.Botones;
 using Clases.Texto;
 using Controles.Controles.Aplicadas_con_controles;
 using MySql.Data.MySqlClient;
-using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
@@ -14,7 +13,6 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
-using static Ofelia_Sara.Controles.Controles.CustomDate;
 
 namespace Ofelia_Sara.Registro_de_personal
 {
@@ -43,7 +41,7 @@ namespace Ofelia_Sara.Registro_de_personal
         public NuevoPersonal()
         {
             InitializeComponent();
-         
+
         }
 
 
@@ -370,7 +368,7 @@ namespace Ofelia_Sara.Registro_de_personal
                             comboBox_Nacionalidad.SelectedItem = personalDTO.Nacionalidad ?? "NO ESPECIFICADO";
                             if (comboBox_Nacionalidad.SelectedItem == null && comboBox_Nacionalidad.Items.Count > 0)
                                 comboBox_Nacionalidad.SelectedIndex = 0;  // O establecer un valor específico
-                                                                         
+
                             comboBox_Escalafon.SelectedItem = personalDTO.Escalafon;
                             if (comboBox_Escalafon.SelectedItem == null && comboBox_Escalafon.Items.Count > 0)
                                 comboBox_Escalafon.SelectedIndex = 0;
@@ -380,14 +378,14 @@ namespace Ofelia_Sara.Registro_de_personal
                                 comboBox_Jerarquia.SelectedIndex = 0;
 
                             textBox_Funcion.Text = personalDTO.Funcion;
-                            comboBox_Dependencia.SelectedItem = personalDTO.Dependencia?? "NO ESPECIFICADO";
+                            comboBox_Dependencia.SelectedItem = personalDTO.Dependencia ?? "NO ESPECIFICADO";
                             if (comboBox_Dependencia.SelectedItem == null && comboBox_Dependencia.Items.Count > 0)
                                 comboBox_Dependencia.SelectedIndex = 0;
 
                             textBox_LocalidadDependencia.Text = personalDTO.LocalidadDependencia;
                             textBox_DomicilioDependencia.Text = personalDTO.Domicilio_Dependencia ?? "NO ESPECIFICADO";
                             textBox_PartidoDependencia.Text = personalDTO.Partido_Dependencia ?? "NO ESPECIFICADO";
-                           
+
 
                         }
                         else

@@ -2,7 +2,6 @@
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
 
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -27,8 +26,8 @@ namespace Clases
                         textBox.Clear();
                         break;
 
-               
-                
+
+
                     // Si el control es un RichTextBox, limpiar su contenido
                     case RichTextBox richTextBox:
                         richTextBox.Text = string.Empty;
@@ -41,12 +40,12 @@ namespace Clases
                                      button.Name == "btn_AlinearDerecha" ||
                                      button.Name == "btn_AlinearIzquierda" ||
                                      button.Name == "btn_Centrar" ||
-                                     button.Name == "btn_Justificar" ):
+                                     button.Name == "btn_Justificar"):
                         // Restablecer el color de fondo de los botones de formato
-                        button.BackColor = Color.White; 
+                        button.BackColor = Color.White;
                         break;
 
-                    case Button button when (button.Name == "btn_Microfono" ):
+                    case Button button when (button.Name == "btn_Microfono"):
                         // Restablecer el color de fondo 
                         button.BackColor = Color.Red;
                         //StopRecording();
@@ -56,7 +55,7 @@ namespace Clases
                         Limpiar(nestedControl);
                         break;
 
-                   
+
                         control.Controls.Remove(c);
                         c.Dispose();
                         break;
@@ -64,7 +63,7 @@ namespace Clases
             }
         }
 
-     
+
 
 
     }

@@ -40,7 +40,7 @@ namespace Ofelia_Sara.Formularios
         private readonly AutocompletarManager autocompletarManager; // Define una lista para almacenar los elementos de autocompletado
 
         private LinkLabel footerLinkLabel;
-       
+
         private IContainer components;
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
@@ -93,7 +93,7 @@ namespace Ofelia_Sara.Formularios
             };
             errorTimer.Tick += ErrorTimer_Tick;
 
-           
+
 
         }
         //--------------------------------------------------------------------------------
@@ -475,7 +475,7 @@ namespace Ofelia_Sara.Formularios
         {
             ToolTipsGenerales();// para aplicar tooltip comun a los formularios
 
-           
+
 
         }
 
@@ -505,7 +505,7 @@ namespace Ofelia_Sara.Formularios
                     Visible = false // Oculto inicialmente
                 };
 
-              
+
 
                 // Agregar el PictureBox al formulario y al diccionario
                 this.Controls.Add(pictureBoxError);
@@ -579,7 +579,7 @@ namespace Ofelia_Sara.Formularios
 
 
 
-       
+
         private int Counter = 0;
 
         private void ErrorTimer_Tick(object sender, EventArgs e)

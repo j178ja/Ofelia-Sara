@@ -3,8 +3,8 @@ using Ofelia_Sara.Agregar_Componentes;
 using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System;
-using System.Linq;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -32,14 +32,14 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
 
             // Crear ítems para el menú usando el método CrearMenuItem
-            var item_Agregar = CrearMenuItem("AGREGAR",null);
-            var item_Buscar = CrearMenuItem("BUSCAR ...",null);
+            var item_Agregar = CrearMenuItem("AGREGAR", null);
+            var item_Buscar = CrearMenuItem("BUSCAR ...", null);
             var item_Remover = CrearMenuItem("EDITAR/REMOVER", Item_Remover_Click);
             item_Remover.Click += new EventHandler(Item_Remover_Click);
-            var item_Salir = CrearMenuItem("SALIR",null);
+            var item_Salir = CrearMenuItem("SALIR", null);
             var SubItem_Agregar_Sellos = CrearMenuItem("SELLOS", null);
-                        
-           // Agregar el evento Click para "EDITAR/REMOVER"
+
+            // Agregar el evento Click para "EDITAR/REMOVER"
             item_Remover.Click += new EventHandler(Item_Remover_Click);
 
 
@@ -51,7 +51,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             SubItem_Agregar_Sellos.Image = Properties.Resources.sello_de_goma;
 
 
-         
+
             // Agregar subítems al ítem "AGREGAR"
             AgregarSubItemsAgregar(item_Agregar);
 
@@ -72,7 +72,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
             // Manejo de eventos de salida
             item_Salir.Click += (sender, e) => ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).Close();
-            
+
             menu_Configurar.Renderer = new CustomMenuStripRenderer();
             // Aplicar estilos a todos los ítems del menú
             foreach (ToolStripItem item in menu_Configurar.Items)
@@ -257,7 +257,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             subItem_Agregar_Dependencia.Image = Properties.Resources.agregar_Dependencia;
             subItem_Agregar_UFID.Image = Properties.Resources.agregar_Dependencia;
             subItem_Agregar_AgenteFiscal.Image = Properties.Resources.agregar_Usuario;
-           
+
 
 
         }
@@ -265,7 +265,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
         private void AgregarSubItemsBuscar(ToolStripMenuItem item_Buscar)
         {
             // Crear y agregar subítems al ítem "BUSCAR"
-            var subItem_Buscar_Ipp = CrearSubMenuItem( "N° I.P.P.", (s, e) => Buscar_Ipp());
+            var subItem_Buscar_Ipp = CrearSubMenuItem("N° I.P.P.", (s, e) => Buscar_Ipp());
 
             var subItem_Buscar_Caratula = CrearSubMenuItem("CARATULA", (s, e) => Buscar_Caratula());
             var subItem_Buscar_Victima = CrearSubMenuItem("VICTIMA", (s, e) => Buscar_Victima());
@@ -359,7 +359,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         private void Sello_Medalla()
         {
-            AbrirFormulario<SellosDependencia>( );
+            AbrirFormulario<SellosDependencia>();
         }
 
         private void Escalera()
@@ -412,12 +412,12 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
 
         private void Buscar_Instructor()
         {
-        AbrirFormulario<BuscarForm>("textBox_Instructor");
+            AbrirFormulario<BuscarForm>("textBox_Instructor");
         }
         // Método para abrir formularios y posicionar el cursor en un control específico
         private void Buscar_Dependencia()
         {
-             AbrirFormulario<BuscarForm>("textBox_Dependencia");
+            AbrirFormulario<BuscarForm>("textBox_Dependencia");
         }
 
         // ------PARA Btn REMOVER----------------------
@@ -478,7 +478,7 @@ namespace Ofelia_Sara.Clases.Botones.btn_Configuracion
             }
         }
         //-----------------------------------------------------------------------
-      
+
 
 
     }

@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using System;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Controles.Controles.Aplicadas_con_controles
@@ -120,7 +120,7 @@ namespace Controles.Controles.Aplicadas_con_controles
         }
         //-------
 
-            public static void DesactivarToolTipsEnControlesDesactivados(Control parentControl)
+        public static void DesactivarToolTipsEnControlesDesactivados(Control parentControl)
         {
             ToolTip sharedToolTip = new ToolTip
             {

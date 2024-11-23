@@ -1,7 +1,4 @@
-﻿using iTextSharp.text;
-using Ofelia_Sara.Clases.Botones.btn_Configuracion;
-using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Windows.Forms;
 
 namespace Clases.Botones.btn_Configuracion
 {
@@ -15,7 +12,7 @@ namespace Clases.Botones.btn_Configuracion
         {
             // Crear el menú contextual
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
-           
+
             // Crear ítems para el menú
             ToolStripMenuItem item_Agregar = new ToolStripMenuItem("AGREGAR");
             ToolStripMenuItem item_Buscar = new ToolStripMenuItem("BUSCAR ...");
@@ -30,7 +27,7 @@ namespace Clases.Botones.btn_Configuracion
             item_Agregar.DropDownItems.Add(subItem_Agregar_Secretario);
             item_Agregar.DropDownItems.Add(subItem_Agregar_Instructor);
 
-          
+
 
             // Añadir ítems al menú
             menu_Configurar.Items.Add(item_Agregar);

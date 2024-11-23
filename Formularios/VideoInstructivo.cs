@@ -35,7 +35,7 @@ namespace Ofelia_Sara.Formularios
             }
             else
             {
-                MensajeGeneral.Mostrar("El archivo de video no se encontró en la ruta especificada.",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar("El archivo de video no se encontró en la ruta especificada.", MensajeGeneral.TipoMensaje.Error);
             }
         }
 

@@ -51,6 +51,7 @@ namespace REDACTADOR
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.panel_ContenedorCarrusel);
             this.panel1.Location = new System.Drawing.Point(22, 12);
+            this.panel1.MinimumSize = new System.Drawing.Size(530, 276);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(530, 276);
             this.panel1.TabIndex = 1;
@@ -119,11 +120,12 @@ namespace REDACTADOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(574, 311);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(590, 350);
             this.Name = "VideoInstructivo";
             this.Text = "INSTRUCTIVO DIGITAL";
             this.Load += new System.EventHandler(this.VideoInstructivo_Load);

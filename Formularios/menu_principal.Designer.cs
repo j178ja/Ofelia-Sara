@@ -30,14 +30,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+           // System.Windows.Forms.PictureBox iconoEscudo;
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Expedientes = new System.Windows.Forms.Button();
             this.btn_Contravenciones = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconoEscudo = new System.Windows.Forms.PictureBox();
-
             this.btn_BuscarTarea = new System.Windows.Forms.Button();
             this.comboBox_Buscar = new System.Windows.Forms.ComboBox();
             this.btn_Configurar = new System.Windows.Forms.Button();
@@ -71,27 +69,13 @@
             this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-        
-            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
+            iconoEscudo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel_MenuSuperior.SuspendLayout();
             this.menu_Configurar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // iconoEscudo
-            // 
-            iconoEscudo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
-            iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            iconoEscudo.Cursor = System.Windows.Forms.Cursors.Hand;
-            iconoEscudo.Location = new System.Drawing.Point(1, 3);
-            iconoEscudo.Name = "iconoEscudo";
-            iconoEscudo.Size = new System.Drawing.Size(30, 28);
-            iconoEscudo.TabIndex = 18;
-            iconoEscudo.TabStop = false;
-            this.toolTip1.SetToolTip(iconoEscudo, "Boletin Informativo");
-            iconoEscudo.Click += new System.EventHandler(this.iconoEscudo_Click);
-            iconoEscudo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_InicioCierre
             // 
@@ -203,6 +187,19 @@
             this.btn_Leyes.TabIndex = 1;
             this.btn_Leyes.TabStop = false;
             this.btn_Leyes.Click += new System.EventHandler(this.Btn_Leyes_Click);
+            // 
+            // iconoEscudo
+            // 
+            iconoEscudo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
+            iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            iconoEscudo.Cursor = System.Windows.Forms.Cursors.Hand;
+            iconoEscudo.Location = new System.Drawing.Point(1, 3);
+            iconoEscudo.Name = "iconoEscudo";
+            iconoEscudo.Size = new System.Drawing.Size(30, 28);
+            iconoEscudo.TabIndex = 18;
+            iconoEscudo.TabStop = false;
+            iconoEscudo.Click += new System.EventHandler(this.iconoEscudo_Click);
+            iconoEscudo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // panel_MenuSuperior
             // 
@@ -515,9 +512,9 @@
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel_MenuSuperior, 0);
-            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
             this.panel_MenuSuperior.ResumeLayout(false);
             this.panel_MenuSuperior.PerformLayout();
             this.menu_Configurar.ResumeLayout(false);
@@ -528,7 +525,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox btn_Leyes;
-        private System.Windows.Forms.PictureBox iconoEscudo;
         private System.Windows.Forms.Button btn_InicioCierre;
         private System.Windows.Forms.Button btn_Expedientes;
         private System.Windows.Forms.Button btn_Contravenciones;

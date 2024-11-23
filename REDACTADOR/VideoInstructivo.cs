@@ -1,13 +1,12 @@
 ﻿using Clases;
-using REDACTADOR.Mensaje;
 using REDACTADOR.Clases;
-using System.Drawing.Drawing2D;
+using REDACTADOR.Mensaje;
 using System;
-using System.Drawing;
-
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
+using System.Windows.Forms;
 
 
 
@@ -18,7 +17,7 @@ namespace REDACTADOR
         private List<Image> imagenes = new List<Image>(); // Lista para almacenar las imágenes cargadas
         private int indiceInicio = 0; // Índice para manejar las imágenes mostradas
         private Dictionary<PictureBox, string> videoPaths = new Dictionary<PictureBox, string>();
-  
+
         public VideoInstructivo()
         {
             InitializeComponent();
@@ -26,14 +25,17 @@ namespace REDACTADOR
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-           // this.Resize += new EventHandler(VideoInstructivo_Resize); // Suscripción al evento Resize
+            this.Resize += VideoInstuctivo_Resize;
+
             SetDoubleBuffered(Carrusel);
+
+
         }
 
 
         private void VideoInstructivo_Load(object sender, EventArgs e)
         {
-            
+
             BuscarCarpetaImagenes();//metodo para buscar la carpeta de imagenes a mostrar en el carrusell
 
             InicializarCarruselConImagenes();//carga las imagenes en el carrusel
@@ -71,10 +73,10 @@ namespace REDACTADOR
                 MensajeGeneral.Mostrar("La carpeta de imágenes no existe.", MensajeGeneral.TipoMensaje.Error);
             }
         }
-            /// <summary>
-            /// Método para activar DoubleBuffered en cualquier control
-            /// </summary>
-            private void SetDoubleBuffered(Control control)
+        /// <summary>
+        /// Método para activar DoubleBuffered en cualquier control
+        /// </summary>
+        private void SetDoubleBuffered(Control control)
         {
             typeof(Control).InvokeMember("DoubleBuffered",
                 System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
@@ -149,26 +151,28 @@ namespace REDACTADOR
                 PictureBox pictureBox = CrearPictureBoxConImagen(imagenes[indiceImagen]);
 
                 // Configurar la imagen según su posición
-                AplicarFormatoAImagen(pictureBox, i);
+                AplicarFormatoAImagen(pictureBox, i, 160);
 
                 // Agregar al carrusel
                 Carrusel.Controls.Add(pictureBox, i, 0);
+                // Asociar el evento Click al método
+                pictureBox.Click += PictureBox_Click;
             }
         }
 
         /// <summary>
         /// establece propiedades para las imagenes del carrusel LE DA BORDE REDONDEADO
         /// </summary>
-    
+
         private PictureBox CrearPictureBoxConImagen(Image imagen)
         {
             PictureBox pictureBox = new PictureBox
             {
                 Image = imagen,
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                 Dock = DockStyle.None,
-                 Anchor = AnchorStyles.None
-                         
+                Dock = DockStyle.None,
+                Anchor = AnchorStyles.None
+
             };
 
             // Aplicar bordes redondeados
@@ -188,19 +192,16 @@ namespace REDACTADOR
         /// <summary>
         /// aplicar formato de columnas para cuando se inicializa y se carga el carrusel
         /// </summary>
-      
-        private void AplicarFormatoAImagen(PictureBox pictureBox, int columna)
+
+        private void AplicarFormatoAImagen(PictureBox pictureBox, int columna, int alturaBase)
         {
-            int alturaBase = 180;
             int anchoColumna = Carrusel.Width / Carrusel.ColumnCount;
-            int anchoColumna3 = (int)(Carrusel.Width * 0.40);
 
             switch (columna)
             {
                 case 2: // Columna 3 (CENTRAL)
                     pictureBox.Height = alturaBase;
-                    pictureBox.Dock = DockStyle.Fill; //establece que la imagen ocupe el ancho y alto de la columna
-               
+                    pictureBox.Dock = DockStyle.Fill; // La imagen ocupa todo el espacio disponible
                     break;
                 case 1: // Columna 2
                 case 3: // Columna 4
@@ -211,15 +212,17 @@ namespace REDACTADOR
                     pictureBox.Height = (int)(alturaBase * 0.5);
                     break;
             }
+
             // Ajustar el ancho de la imagen para que abarque el ancho de la columna
             pictureBox.Width = anchoColumna;
 
             // Centrar la imagen verticalmente dentro de la celda
             pictureBox.Top = (alturaBase - pictureBox.Height) / 2;
 
-            // Ajustar la posición horizontal para centrar la imagen dentro de la columna
-            pictureBox.Left = 0; // No es necesario centrar horizontalmente, ya que abarcará todo el ancho de la columna
+            // La imagen ocupará el ancho completo de la columna
+            pictureBox.Left = 0;
         }
+
 
 
         /// <summary>
@@ -309,7 +312,7 @@ namespace REDACTADOR
         }
 
         /// <summary>
-         /// Evento Paint para dibujar la imagen de fondo animada en el TableLayoutPanel
+        /// Evento Paint para dibujar la imagen de fondo animada en el TableLayoutPanel
         /// </summary>
         private void Carrusel_Paint(object sender, PaintEventArgs e)
         {
@@ -347,13 +350,13 @@ namespace REDACTADOR
             }
         }
 
-       
-      
+
+
 
         /// <summary>
         /// METODOS PARA CAMBIAR IMAGENES DENTRO DEL CARRUSEL
         /// </summary>
-        
+
         private void btn_SiguienteImagen_Click(object sender, EventArgs e)
         {
             if (imagenes.Count == 0) return;
@@ -375,10 +378,69 @@ namespace REDACTADOR
 
 
 
-        // Evento Click para el PictureBox
-        //private void PictureBox_Click(object sender, EventArgs e)
-        //{
-        //    PictureBox clickedPictureBox = sender as PictureBox;
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox clickedPictureBox = sender as PictureBox;
+
+            if (clickedPictureBox != null)
+            {
+                // Ajustar el tamaño del panel
+                panel_ContenedorCarrusel.Height = 76;
+                panel_ContenedorCarrusel.Location = new Point(5, 14);
+                this.MaximizeBox = true;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+
+
+
+
+
+                // Obtener la columna donde está el PictureBox
+                int columna = Carrusel.GetColumn(clickedPictureBox);
+
+                // Redimensionar las imágenes con una altura base de 76
+                AplicarFormatoAImagen(clickedPictureBox, columna, 76);
+
+            }
+        }
+        /// <summary>
+        /// metodo para proporcionar carrucel cuando se agranda formulario
+        /// </summary>
+
+
+        private void VideoInstuctivo_Resize(object sender, EventArgs e)
+        {
+            // Verificar si el evento fue disparado desde el formulario
+            if (sender == this)
+            {
+                // Redimensionar solo si se cambia el tamaño del formulario
+                AjustarCarrusel();
+            }
+        }
+
+        private void AjustarCarrusel()
+        {
+            // Validar el tamaño del formulario
+            if (panel1.Width <= 530) // Estado mínimo
+            {
+
+                panel_ContenedorCarrusel.Height = 100; // Altura fija mínima
+
+            }
+            else // Estado redimensionado
+            {
+                // Proporciones dinámicas
+                panel_ContenedorCarrusel.Width = (int)(panel1.Width * 0.8); // 80% del ancho del panel1
+                panel_ContenedorCarrusel.Height = (int)(panel1.Height * 0.15); // 30% del alto del panel1
+            }
+
+            // Centrar el carrusel dentro del panel
+            panel_ContenedorCarrusel.Left = (panel1.Width - panel_ContenedorCarrusel.Width) / 2;
+
+        }
+
+
+
+
 
         //    // Verificar si el PictureBox tiene un video asignado en el diccionario
         //    if (clickedPictureBox != null && videoPaths.ContainsKey(clickedPictureBox))
@@ -400,6 +462,7 @@ namespace REDACTADOR
         //    }
         //}
 
-      
+
+
     }
 }

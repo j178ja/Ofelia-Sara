@@ -111,6 +111,16 @@ namespace REDACTADOR.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] CursorlapizDerecha {
+            get {
+                object obj = ResourceManager.GetObject("CursorlapizDerecha", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap derecha {

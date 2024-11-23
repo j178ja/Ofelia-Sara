@@ -2,12 +2,8 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
@@ -103,7 +99,7 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 
                         int leftMargin = 10; // Margen izquierdo
                         int rightMargin = 25; // Espacio para el ícono
-                        int width = (int)(maxWidth + leftMargin + rightMargin );
+                        int width = (int)(maxWidth + leftMargin + rightMargin);
                         int height = (int)(totalHeight + 8);
                         e.ToolTipSize = new Size(width, height);
                     }
@@ -114,7 +110,7 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
                 Point cursorPosition = control.PointToClient(Control.MousePosition);
 
                 // Calcular la posición del ToolTip
-                int toolTipX = cursorPosition.X+8; //  posición horizontal del cursor
+                int toolTipX = cursorPosition.X + 8; //  posición horizontal del cursor
                 int toolTipY = cursorPosition.Y + 10; // píxeles debajo del cursor
 
                 // Mostrar el ToolTip personalizado si el mouse está sobre el control

@@ -1,18 +1,12 @@
 ﻿using Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using NAudio.Wave;
 using REDACTADOR.Mensaje;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using System.Runtime.InteropServices; // Para la importación de funciones nativas
+using System;
+using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices; // Para la importación de funciones nativas
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 
@@ -31,6 +25,11 @@ namespace REDACTADOR
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HTCAPTION = 0x2;
         //-----------------------------------------------------
+        //cambiar el caret
+        // Importar la función nativa de Windows para ocultar el caret
+        [DllImport("user32.dll")]
+        private static extern bool HideCaret(IntPtr hWnd);
+        //-----------------------------------------------------------
         //AMPLIAR FORMULARIO
         private bool isResizing = false;
         private Point lastMousePosition;
@@ -59,7 +58,7 @@ namespace REDACTADOR
             audioVisualizerControl.Visible = false;
             ToolTipGeneral.ShowToolTip(this, btn_Microfono, "ACTIVAR micrófono");
             Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.RedondearBordes(panel1,borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
 
             this.FormClosing += Redactador_FormClosing;// para mensaje previo a cerrar
@@ -88,6 +87,8 @@ namespace REDACTADOR
             ToolTipGeneral.ShowToolTip(this, btn_AlinearDerecha, "Alinear a la Derecha");
             ToolTipGeneral.ShowToolTip(this, btn_Justificar, "JUSTIFICAR");
             ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación");
+
+            richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
         }
         //---------------------------------------------------------------------------------
         //----BARRA SUPERIOR-----
@@ -99,7 +100,7 @@ namespace REDACTADOR
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
             timer_Barras.Stop();
             audioVisualizerControl.Visible = false;
-            
+
             timerCerrarForm.Start();
         }
         private void TimerCerrar_Tick(object sender, EventArgs e)
@@ -439,11 +440,11 @@ namespace REDACTADOR
                 AplicarFormato(FontStyle.Italic);
                 richTextBox_Redactor.Focus();
             }
-            
+
         }
         private void btn_Subrayado_Click(object sender, EventArgs e)
         {
-            
+
             if (btn_Subrayado.BackColor == Color.White)
             {
                 btn_Subrayado.BackColor = Color.SkyBlue;
@@ -453,7 +454,7 @@ namespace REDACTADOR
             else
             {
                 btn_Subrayado.BackColor = Color.White;
-                AplicarFormato(FontStyle.Underline); 
+                AplicarFormato(FontStyle.Underline);
                 richTextBox_Redactor.Focus();
             }
         }
@@ -509,7 +510,7 @@ namespace REDACTADOR
         //--------------BOTON ALTERNANCIA MAYUSCULA-MINUSCULA------
 
 
-       
+
 
         // Variable para almacenar si la escritura actual está en mayúsculas o minúsculas
         private bool escribirEnMayusculas = false;
@@ -555,6 +556,48 @@ namespace REDACTADOR
                 }
             }
         }
+        /// <summary>
+        /// metodos para cambiar el caret en el richtextBox
+        /// </summary>
+        /// 
+        // Ruta al archivo de cursor personalizado
+       
+        private void ChangeCursorToCustom()
+        {
+            // Obtener la posición del caret (índice de caracteres)
+            int caretIndex = richTextBox_Redactor.SelectionStart;
+
+            // Obtener las coordenadas de la posición del caret en el control
+            Point caretPosition = richTextBox_Redactor.GetPositionFromCharIndex(caretIndex);
+
+            // Convertir coordenadas del control a coordenadas absolutas de pantalla
+            Point caretScreenPosition = richTextBox_Redactor.PointToScreen(caretPosition);
+
+            // Definir el cursor personalizado
+            Cursor myCustomCursor = new Cursor("C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\REDACTADOR\\Resources\\CursorlapizDerecha.cur");
+            richTextBox_Redactor.Cursor = myCustomCursor;
+
+            // Mover el cursor a la posición convertida
+            Cursor.Position = new Point(caretScreenPosition.X + 15, caretScreenPosition.Y);
+        }
+
+
+        private void RichTextBox_Redactor_GotFocus(object sender, EventArgs e)
+        {
+            // Ocultar el caret del RichTextBox
+           HideCaret(richTextBox_Redactor.Handle);
+            // Llamar al método que cambia el cursor y lo mueve junto al caret
+            ChangeCursorToCustom();
+        }
+
+        private void RichTextBox_Redactor_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Opcional: Vuelve a ocultar el caret si reaparece
+            HideCaret(richTextBox_Redactor.Handle);
+            // Llamar al método que cambia el cursor y lo mueve junto al caret
+            ChangeCursorToCustom();
+        }
+
 
         // Evento que se activa cada vez que el contenido del RichTextBox cambia
         private void richTextBox_Redactor_TextChanged(object sender, EventArgs e)
@@ -711,60 +754,60 @@ namespace REDACTADOR
         //---------------------------------------------------------------
 
         private void Redactador_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Detectar si el usuario está cerca de un borde para redimensionar
+            if (e.Button == MouseButtons.Left)
             {
-                // Detectar si el usuario está cerca de un borde para redimensionar
-                if (e.Button == MouseButtons.Left)
-                {
-                    isResizing = true;
-                    lastMousePosition = e.Location;
-                }
+                isResizing = true;
+                lastMousePosition = e.Location;
             }
+        }
 
-            private void Redactador_MouseMove(object sender, MouseEventArgs e)
+        private void Redactador_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isResizing)
             {
-                if (isResizing)
-                {
-                    // Calcular el nuevo tamaño del formulario
-                    int deltaX = e.X - lastMousePosition.X;
-                    int deltaY = e.Y - lastMousePosition.Y;
+                // Calcular el nuevo tamaño del formulario
+                int deltaX = e.X - lastMousePosition.X;
+                int deltaY = e.Y - lastMousePosition.Y;
 
-                    // Cambiar el tamaño del formulario
-                    this.Width += deltaX;
-                    this.Height += deltaY;
+                // Cambiar el tamaño del formulario
+                this.Width += deltaX;
+                this.Height += deltaY;
 
-                    // Actualizar la última posición del mouse
-                    lastMousePosition = e.Location;
-                }
+                // Actualizar la última posición del mouse
+                lastMousePosition = e.Location;
+            }
+            else
+            {
+                // Cambiar el cursor para mostrar que el formulario es redimensionable
+                if (e.X >= this.ClientSize.Width - 10 && e.Y >= this.ClientSize.Height - 10)
+                    this.Cursor = Cursors.SizeNWSE;
                 else
-                {
-                    // Cambiar el cursor para mostrar que el formulario es redimensionable
-                    if (e.X >= this.ClientSize.Width - 10 && e.Y >= this.ClientSize.Height - 10)
-                        this.Cursor = Cursors.SizeNWSE;
-                    else
-                        this.Cursor = Cursors.Default;
-                }
+                    this.Cursor = Cursors.Default;
             }
+        }
 
-            private void Redactador_MouseUp(object sender, MouseEventArgs e)
-            {
-                isResizing = false;
-            }
+        private void Redactador_MouseUp(object sender, MouseEventArgs e)
+        {
+            isResizing = false;
+        }
         private void Triangulo_Paint(object sender, PaintEventArgs e)
         {
             // Crear un pincel gris para dibujar el triángulo
             using (Brush brush = new SolidBrush(SystemColors.ControlDark))
             {
                 // Dibujar un triángulo en la esquina inferior derecha
-                Point p1 = new Point(this.ClientSize.Width - 20, this.ClientSize.Height - 5); 
-                Point p2 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 5); 
-                Point p3 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 20); 
+                Point p1 = new Point(this.ClientSize.Width - 20, this.ClientSize.Height - 5);
+                Point p2 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 5);
+                Point p3 = new Point(this.ClientSize.Width - 5, this.ClientSize.Height - 20);
                 e.Graphics.FillPolygon(brush, new Point[] { p1, p2, p3 });
             }
         }
 
         private void SubirAudio_MouseHover(object sender, EventArgs e)
         {
-            panel_SubirAudio.BackColor= Color.LightGreen;
+            panel_SubirAudio.BackColor = Color.LightGreen;
             pictureBox_SubirAudio.BackColor = Color.LightGreen;
             label_SubirAudio.BackColor = Color.LightGreen;
         }
@@ -839,8 +882,8 @@ namespace REDACTADOR
             label_SubirAudio.Text = "Transcribir";
         }
 
-      
-    }
 
     }
+
+}
 

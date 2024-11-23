@@ -37,6 +37,7 @@ namespace REDACTADOR
             System.Windows.Forms.PictureBox iconoEscudo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Redactador));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.audioVisualizerControl = new REDACTADOR.AudioVisualizerControl();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.panel_Botones = new System.Windows.Forms.Panel();
@@ -63,7 +64,6 @@ namespace REDACTADOR
             this.timer_Barras = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Microfono = new System.Windows.Forms.Button();
-            this.audioVisualizerControl = new REDACTADOR.AudioVisualizerControl();
             iconoEscudo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,6 +98,17 @@ namespace REDACTADOR
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(547, 360);
             this.panel1.TabIndex = 0;
+            // 
+            // audioVisualizerControl
+            // 
+            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.audioVisualizerControl.AutoSize = true;
+            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
+            this.audioVisualizerControl.Name = "audioVisualizerControl";
+            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
+            this.audioVisualizerControl.TabIndex = 4;
             // 
             // btn_Guardar
             // 
@@ -296,6 +307,7 @@ namespace REDACTADOR
             this.richTextBox_Redactor.TabIndex = 0;
             this.richTextBox_Redactor.Text = "";
             this.richTextBox_Redactor.TextChanged += new System.EventHandler(this.richTextBox_Redactor_TextChanged);
+            this.richTextBox_Redactor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_Redactor_MouseMove);
             // 
             // btn_Minimizar
             // 
@@ -459,17 +471,6 @@ namespace REDACTADOR
             this.btn_Microfono.TabIndex = 10;
             this.btn_Microfono.UseVisualStyleBackColor = false;
             this.btn_Microfono.Click += new System.EventHandler(this.btn_Microfono_Click);
-            // 
-            // audioVisualizerControl
-            // 
-            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.audioVisualizerControl.AutoSize = true;
-            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
-            this.audioVisualizerControl.Name = "audioVisualizerControl";
-            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
-            this.audioVisualizerControl.TabIndex = 4;
             // 
             // Redactador
             // 

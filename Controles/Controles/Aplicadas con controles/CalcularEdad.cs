@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Ofelia_Sara.Controles.Controles;
+using System;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles;
 
 namespace Controles.Controles.Aplicadas_con_controles
 {

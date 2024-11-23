@@ -53,7 +53,7 @@ namespace Ofelia_Sara.Mensajes
             btn_Si.Visible = false;
             Fecha_Audiencia.Visible = false;
 
-          
+
 
         }
         public enum TipoMensaje
@@ -101,11 +101,11 @@ namespace Ofelia_Sara.Mensajes
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
-           
+
             this.Close();
         }
-       
-           
+
+
 
 
         private void AjustarAlturaContenedores()
@@ -159,7 +159,7 @@ namespace Ofelia_Sara.Mensajes
 
         private void Btn_Si_Click(object sender, EventArgs e)
         {
-           // this.DialogResult = DialogResult.Yes;
+            // this.DialogResult = DialogResult.Yes;
             btn_Si.DialogResult = DialogResult.OK;
 
             this.Close();
@@ -168,11 +168,11 @@ namespace Ofelia_Sara.Mensajes
         private void Btn_No_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.No;
-            
+
             this.Close();
         }
 
-   
+
         public void MostrarBotonesConfirmacion(bool mostrar)
         {
             btn_Si.Visible = mostrar;
@@ -200,7 +200,7 @@ namespace Ofelia_Sara.Mensajes
             btn_No.ForeColor = Color.White;
             btn_No.Click += Btn_No_Cancelar_Click;
 
-            btn_Cerrar.Visible =false;
+            btn_Cerrar.Visible = false;
             Fecha_Audiencia.Visible = true;
             pictureBox_Icono.Visible = false;
         }

@@ -3,21 +3,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Clases
-{ 
-public static class ToolTipGeneral
 {
-    // Ruta predeterminada del ícono
-    private static readonly string DefaultIconPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\imagenes\ICOes.png";
+    public static class ToolTipGeneral
+    {
+        // Ruta predeterminada del ícono
+        private static readonly string DefaultIconPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\imagenes\ICOes.png";
 
-    // Diccionario para gestionar ToolTips asociados a controles
-    private static readonly Dictionary<Control, ToolTip> ActiveToolTips = new Dictionary<Control, ToolTip>();
+        // Diccionario para gestionar ToolTips asociados a controles
+        private static readonly Dictionary<Control, ToolTip> ActiveToolTips = new Dictionary<Control, ToolTip>();
 
 
         /// <summary>
@@ -144,31 +141,31 @@ public static class ToolTipGeneral
                 }
             };
 
-      
 
-        // Manejar cierre del formulario para detener el temporizador
-        form.FormClosing += (sender, e) =>
+
+            // Manejar cierre del formulario para detener el temporizador
+            form.FormClosing += (sender, e) =>
+            {
+                timer.Stop();
+                timer.Dispose();
+            };
+
+            // Iniciar temporizador y almacenar el ToolTip
+            timer.Start();
+            ActiveToolTips[control] = customToolTip;
+        }
+
+        /// <summary>
+        /// Oculta el ToolTip asociado a un control.
+        /// </summary>
+        /// <param name="control">Control al que se desea ocultar el ToolTip.</param>
+        public static void HideToolTip(Control control)
         {
-            timer.Stop();
-            timer.Dispose();
-        };
-
-        // Iniciar temporizador y almacenar el ToolTip
-        timer.Start();
-        ActiveToolTips[control] = customToolTip;
-    }
-
-    /// <summary>
-    /// Oculta el ToolTip asociado a un control.
-    /// </summary>
-    /// <param name="control">Control al que se desea ocultar el ToolTip.</param>
-    public static void HideToolTip(Control control)
-    {
-        if (ActiveToolTips.ContainsKey(control))
-        {
-            ActiveToolTips[control].Hide(control);
-            ActiveToolTips.Remove(control);
+            if (ActiveToolTips.ContainsKey(control))
+            {
+                ActiveToolTips[control].Hide(control);
+                ActiveToolTips.Remove(control);
+            }
         }
     }
-}
 }

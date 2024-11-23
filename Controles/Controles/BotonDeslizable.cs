@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.Mensajes;
 
 namespace Ofelia_Sara.Controles.Controles
 {
-   
+
     public partial class BotonDeslizable : UserControl
     {
         private bool isOn = false;
@@ -21,7 +14,7 @@ namespace Ofelia_Sara.Controles.Controles
         private int cornerRadius = 3; // Ajuste de radio para bordes redondeados
 
         // Delegado para validar los campos antes de cambiar el estado
-   
+
         public BotonDeslizable()
         {
             InitializeComponent();
@@ -79,7 +72,7 @@ namespace Ofelia_Sara.Controles.Controles
         // Delegado para la validación de campos
         public Func<bool> ValidarCampos { get; set; }
 
-       
+
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
@@ -108,9 +101,9 @@ namespace Ofelia_Sara.Controles.Controles
                 }
             }
         }
-    
 
-    private void UpdateSliderRect()
+
+        private void UpdateSliderRect()
         {
             int sliderSize = this.Height - sliderPadding * 2;
             int xPosition = isOn ? this.Width - sliderSize - sliderPadding : sliderPadding;

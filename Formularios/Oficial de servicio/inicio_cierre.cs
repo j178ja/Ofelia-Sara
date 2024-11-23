@@ -2,8 +2,9 @@
 using Clases.Botones;
 using Clases.GenerarDocumentos;
 using Clases.Texto;
-using Ofelia_Sara.Controles.Controles;
+using Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Clases.Texto;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
@@ -13,8 +14,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Controles.Controles;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -83,7 +82,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ConfigurarAutocompletar(textBox_Caratula, sugerencias);
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
-        
+
         }
 
 
@@ -103,7 +102,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.");
-         
+
 
 
 
@@ -730,7 +729,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
-           
+
 
             // Crear y mostrar el formulario BuscarPersonal
             BuscarForm buscarForm = new BuscarForm();
@@ -931,11 +930,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             else
             {
                 label_Cargo.ForeColor = Color.Tomato;
-                label_Not247.ForeColor= Color.Tomato;
+                label_Not247.ForeColor = Color.Tomato;
                 label_Cargo.BackColor = Color.FromArgb(211, 211, 211); // Gris claro
-                label_Not247.BackColor= Color.FromArgb(211, 211, 211);
+                label_Not247.BackColor = Color.FromArgb(211, 211, 211);
                 checkBox_Cargo.Enabled = false;
-                botonDeslizable_Not247.Enabled= false;
+                botonDeslizable_Not247.Enabled = false;
                 checkBox_Cargo.BackColor = Color.Tomato;
                 botonDeslizable_Not247.BackColor = Color.FromArgb(211, 211, 211);
 
@@ -1000,7 +999,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
-                
+
             }
 
         }
@@ -1111,7 +1110,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             camposIncompletos |= !VerificarPanelCompleto(panel_Instruccion);
             botonDeslizable_Not247.IsOn = true;
             return !camposIncompletos;// Devuelve verdadero si todos los campos están completos
-           
+
         }
 
         private bool VerificarPanelCompleto(Panel panel)
@@ -1164,6 +1163,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-     
+
     }
 }

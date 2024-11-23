@@ -3,7 +3,6 @@
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
 using Ofelia_Sara.Controles.Controles;
 using System;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 

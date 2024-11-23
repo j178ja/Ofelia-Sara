@@ -1,5 +1,5 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 
 public static class ToolTipError
@@ -22,7 +22,7 @@ public static class ToolTipError
                 IsBalloon = true, // Formato globo de diálogo
                 BackColor = Color.LightBlue, // Color de fondo
                 ForeColor = Color.Black // Color de texto
-               
+
             };
 
             // Asignar eventos de hover

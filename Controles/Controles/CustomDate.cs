@@ -1,9 +1,9 @@
-﻿using System;
+﻿using BaseDatos.Mensaje;
+using Controles.Controles;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using BaseDatos.Mensaje;
-using Controles.Controles;
 
 
 namespace Ofelia_Sara.Controles.Controles
@@ -26,7 +26,7 @@ namespace Ofelia_Sara.Controles.Controles
 
             // Configurar textBox_DateAÑOÑ
             textBox_DateAÑO.MaxLength = 4; // Limitar a 4 caracteres
-            textBox_DateAÑO.TextChanged += CamposFecha_TextChanged; 
+            textBox_DateAÑO.TextChanged += CamposFecha_TextChanged;
 
             CustomDateTextBox_Load(this, EventArgs.Empty);// inicializar load
 
@@ -292,7 +292,7 @@ namespace Ofelia_Sara.Controles.Controles
             }
         }
 
-       
+
 
 
 

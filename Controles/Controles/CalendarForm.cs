@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Ofelia_Sara.Mensajes;
+using System;
 using System.ComponentModel;
 using System.Drawing;
-
 using System.Windows.Forms;
-using Ofelia_Sara.Mensajes;
 
 namespace Controles.Controles
 {
@@ -30,7 +29,7 @@ namespace Controles.Controles
             this.DialogResult = DialogResult.OK;
             this.Close();
             MensajeGeneral.Mostrar("Seleccion guardada.", MensajeGeneral.TipoMensaje.Exito);
-        
+
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)

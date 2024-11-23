@@ -164,6 +164,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\CursorlapizDerecha.cur" />
     <Content Include="Resources\Imagenes\cargarAudio.png" />
     <Content Include="Resources\Imagenes\cargarAudio24.png" />
     <Content Include="Resources\Imagenes\carrusel\anterior.png" />
