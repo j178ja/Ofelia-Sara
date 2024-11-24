@@ -6,10 +6,11 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\Document
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\bin\Debug\DocumentFormat.OpenXml.Framework.xml
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.AssemblyReference.cache
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.Mecanografia.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.Properties.Resources.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.GenerateResource.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGR.92E38B0A.Up2Date
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.pdb
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.Formularios.Mecanografia.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\MECANOGRAFIA\obj\Debug\MECANOGRAFIA.Mensaje.MensajeGeneral.resources

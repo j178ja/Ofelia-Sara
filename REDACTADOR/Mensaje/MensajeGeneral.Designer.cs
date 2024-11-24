@@ -150,6 +150,7 @@
             this.Name = "MensajeGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MensajeGral";
+            this.Load += new System.EventHandler(this.MensajeGeneral_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Icono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EscudoPolicial)).EndInit();

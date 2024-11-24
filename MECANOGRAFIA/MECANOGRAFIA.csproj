@@ -73,16 +73,32 @@
     <Compile Include="Clases\Contadora.cs" />
     <Compile Include="Clases\Dedos.cs" />
     <Compile Include="Clases\Texto_TipearPersonalizado.cs" />
-    <Compile Include="Mecanografia.cs">
+    <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mecanografia.Designer.cs">
+    <Compile Include="Formularios\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Mecanografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Mecanografia.Designer.cs">
       <DependentUpon>Mecanografia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\FormUtils.cs" />
+    <Compile Include="Mensaje\MensajeGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje\MensajeGeneral.Designer.cs">
+      <DependentUpon>MensajeGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Mecanografia.resx">
+    <EmbeddedResource Include="Formularios\Mecanografia.resx">
       <DependentUpon>Mecanografia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\MensajeGeneral.resx">
+      <DependentUpon>MensajeGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,10 +137,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\teclado.png" />
+    <None Include="Resources\Cursor\cursorFlecha.cur" />
+    <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
+    <None Include="Resources\Cursor\hand.cur" />
+    <None Include="Resources\Imagenes\ICOes.png" />
+    <None Include="Resources\Imagenes\IconoAdvertencia.png" />
+    <None Include="Resources\Imagenes\IconoCancelacion.png" />
+    <None Include="Resources\Imagenes\IconoError.png" />
+    <None Include="Resources\Imagenes\IconoExito.png" />
+    <None Include="Resources\Imagenes\IconoInformacion.png" />
+    <Content Include="Resources\Imagenes\teclado.png" />
     <Content Include="TEXTOS\denuncia.txt" />
-    <None Include="Resources\doc.png" />
-    <None Include="doc.png" />
+    <None Include="Resources\Imagenes\doc.png" />
     <Content Include="Para que sirve.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

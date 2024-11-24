@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MECANOGRAFIA
+namespace MECANOGRAFIA.Formularios
 {
     internal static class Program
     {

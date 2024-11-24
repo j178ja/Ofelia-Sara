@@ -1,5 +1,5 @@
-﻿using Clases;
-using REDACTADOR.Clases;
+﻿using REDACTADOR.Clases;
+
 using REDACTADOR.Mensaje;
 using System;
 using System.Collections.Generic;

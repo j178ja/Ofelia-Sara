@@ -8,10 +8,12 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using REDACTADOR.Formularios;
+
 
 namespace REDACTADOR.Mensaje
 {
-    public partial class MensajeGeneral : Form
+    public partial class MensajeGeneral : BaseForm
     {
         public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje)
         {
@@ -161,5 +163,9 @@ namespace REDACTADOR.Mensaje
             btn_No.BackColor = Color.FromArgb(255, 70, 70);
         }
 
+        private void MensajeGeneral_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

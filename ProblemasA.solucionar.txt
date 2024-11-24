@@ -29,6 +29,8 @@ EL TOOLTIP ERROR NO POSEE EL FORMATO BUBLE
 
 NO SE APLICA HAN EN HOVER DE BTN_Configurar
 
+EFECTO BLUR DE PRESENTACION NO SE DISTINGE
+
 --------------------------------------------------------------------------------------------
          FALTA HACER
          

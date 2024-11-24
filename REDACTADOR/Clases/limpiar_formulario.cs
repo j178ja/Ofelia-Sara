@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace Clases
+namespace REDACTADOR.Clases
 
 {
     public static class LimpiarFormulario

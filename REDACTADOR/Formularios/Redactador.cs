@@ -1,4 +1,4 @@
-﻿using Clases;
+﻿using REDACTADOR.Clases;
 using NAudio.Wave;
 using REDACTADOR.Mensaje;
 using System;

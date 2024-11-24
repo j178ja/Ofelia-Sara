@@ -7,7 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 
 
-namespace MECANOGRAFIA
+namespace MECANOGRAFIA.Formularios
 {
 
 

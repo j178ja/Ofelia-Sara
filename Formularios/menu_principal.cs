@@ -1,7 +1,8 @@
 ﻿using Clases.Apariencia;
+using Ofelia_Sara.Clases.Apariencia;
 using Clases.Botones;
 using Controles.Barra_Busqueda;
-using MECANOGRAFIA;
+using MECANOGRAFIA.Formularios;
 using Ofelia_Sara.Clases.Botones.btn_Configuracion;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
@@ -13,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
@@ -74,6 +76,7 @@ namespace Ofelia_Sara.Formularios
             originalSizeMecanografia = btn_Mecanografia.Size;
             originalLocationMecanografia = btn_Mecanografia.Location;
 
+            RedondearBordes.Aplicar(this, 16);
         }
 
         //_________________________________--________________________________
@@ -136,7 +139,7 @@ namespace Ofelia_Sara.Formularios
         }
 
         //--------------------------------------------------------------------------------
-
+      
 
 
         //------------BOTON CONFIGURAR--------------------------------------------------

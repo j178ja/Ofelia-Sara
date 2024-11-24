@@ -4,7 +4,8 @@
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.RedondearBordes(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
  
- */namespace Clases
+ */
+namespace REDACTADOR.Clases
 {
     using System.Drawing;
     using System.Drawing.Drawing2D;

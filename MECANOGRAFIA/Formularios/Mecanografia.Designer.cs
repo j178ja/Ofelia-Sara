@@ -1,4 +1,4 @@
-﻿namespace MECANOGRAFIA
+﻿namespace MECANOGRAFIA.Formularios
 {
     partial class Mecanografia
     {
