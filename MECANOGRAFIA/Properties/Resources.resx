@@ -127,7 +127,7 @@
   <data name="doc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\doc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="handPersonalizado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cursor\hand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ICOes" type="System.Resources.ResXFileRef, System.Windows.Forms">

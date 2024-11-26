@@ -50,6 +50,7 @@ namespace Ofelia_Sara.Formularios
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+          
         }
 
         public BaseForm()
@@ -118,6 +119,7 @@ namespace Ofelia_Sara.Formularios
 
             // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
             AsignarCursorPersonalizado(this.Controls);
+            PersonalizarComboBoxes(this);
 
         }
         //--------------------------------------------------------------------------
@@ -179,12 +181,12 @@ namespace Ofelia_Sara.Formularios
             foreach (Control control in controls)
             {
                 // Si el control es un TextBox, ComboBox o RichTextBox, asigna el cursor CursorLapizDerecha
-                if (control is TextBox || control is ComboBox || control is RichTextBox)
+                if (control is TextBox || control is ComboBox || control is RichTextBox )
                 {
                     control.Cursor = CursorLapizDerecha;
                 }
                 // Si el control tiene el cursor predeterminado "Hand", reemplázalo con el personalizado
-                else if (control.Cursor == Cursors.Hand)
+                else if (control.Cursor == Cursors.Hand || control is LinkLabel )
                 {
                     control.Cursor = customHandCursor;
                 }
@@ -196,6 +198,101 @@ namespace Ofelia_Sara.Formularios
                 }
             }
         }
+        //--------------------------------------------------------------------------
+        /// <summary>
+        /// METODOS PARA ASIGNAR FLECHA A COMBOBOX
+        /// </summary>
+        /// 
+
+
+        private void PersonalizarComboBoxes(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is ComboBox comboBox)
+                {
+                    AplicarFlechaPersonalizada(comboBox);
+                }
+
+                // Procesar controles hijos (recursivo)
+                if (control.HasChildren)
+                {
+                    PersonalizarComboBoxes(control);
+                }
+            }
+        }
+
+
+        private Rectangle ObtenerAreaFlecha(ComboBox comboBox)
+        {
+            int arrowWidth = SystemInformation.VerticalScrollBarWidth; // Ancho típico del área de la flecha
+            int x = comboBox.Width - arrowWidth; // Inicia al borde derecho menos el ancho de la flecha
+            int y = 0; // Inicia desde la parte superior del ComboBox
+            int height = comboBox.Height; // Coincide con el alto del ComboBox
+            return new Rectangle(comboBox.Left + x, comboBox.Top + y, arrowWidth, height);
+        }
+       
+        private void AplicarFlechaPersonalizada(ComboBox comboBox)
+        {
+            Rectangle flechaArea = ObtenerAreaFlecha(comboBox); // Obtener el área completa de la flecha
+
+            PictureBox flechaPersonalizada = new PictureBox
+            {
+                SizeMode = PictureBoxSizeMode.Zoom,//ajusta la imagen sin que se deforme
+                Size = new Size(flechaArea.Width-1, flechaArea.Height-2), // Tamaño completo del área de la flecha
+              //  BackColor = SystemColors.ControlLight, // Fondo que destaca la propiedad de desplegar
+                BackColor = Color.White, //blanco resalta y es igual al comboBox
+                Cursor = Cursors.Hand,
+                Location = new Point(flechaArea.X, flechaArea.Y+1), // Ajustar la ubicación
+                Anchor = AnchorStyles.Top | AnchorStyles.Right // Alinear correctamente
+            };
+
+            ActualizarFlecha(comboBox, flechaPersonalizada);
+
+            // Agregar el PictureBox al contenedor padre del ComboBox
+            comboBox.Parent.Controls.Add(flechaPersonalizada);
+            flechaPersonalizada.BringToFront();
+
+            // Abrir el desplegable del ComboBox al hacer clic en la flecha personalizada
+            flechaPersonalizada.Click += (s, e) => comboBox.DroppedDown = true;
+
+            // Actualizar la flecha cuando el estado del ComboBox cambie
+            comboBox.EnabledChanged += (s, e) => ActualizarFlecha(comboBox, flechaPersonalizada);
+
+            // Actualizar la posición y tamaño de la flecha personalizada si el ComboBox cambia de tamaño
+            comboBox.SizeChanged += (s, e) =>
+            {
+                Rectangle nuevaArea = ObtenerAreaFlecha(comboBox);
+                flechaPersonalizada.Size = new Size(nuevaArea.Width, nuevaArea.Height);
+                flechaPersonalizada.Location = new Point(nuevaArea.X, nuevaArea.Y);
+            };
+        }
+
+        private void ActualizarFlecha(ComboBox comboBox, PictureBox flechaPersonalizada)
+        {
+            // Imagen neutra por defecto
+            flechaPersonalizada.Image = Properties.Resources.triangulo_inverso2;
+           
+            // Eventos para cambiar el color en Hover
+            flechaPersonalizada.MouseEnter += (s, e) =>
+            {
+                flechaPersonalizada.Image = comboBox.Enabled
+                    ? Properties.Resources.flechaG_Verde // Imagen verde si está habilitado
+                    : Properties.Resources.flechaG_Roja; // Imagen roja si está deshabilitado
+            };
+
+            // Volver a la imagen neutra al salir del hover
+            flechaPersonalizada.MouseLeave += (s, e) =>
+            {
+                flechaPersonalizada.Image = Properties.Resources.triangulo_inverso2;
+            };
+        }
+
+
+
+
+
+
 
         //-------------------------------------------------------------------------------
         //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------

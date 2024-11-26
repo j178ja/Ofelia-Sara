@@ -121,6 +121,16 @@ namespace Ofelia_Sara.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon configuracion {
+            get {
+                object obj = ResourceManager.GetObject("configuracion", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
         internal static byte[] cursorFlecha {
@@ -173,6 +183,26 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap engranajeConfiguracion {
+            get {
+                object obj = ResourceManager.GetObject("engranajeConfiguracion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap engranajeOriginal {
+            get {
+                object obj = ResourceManager.GetObject("engranajeOriginal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap errorProvider {
             get {
                 object obj = ResourceManager.GetObject("errorProvider", resourceCulture);
@@ -187,6 +217,26 @@ namespace Ofelia_Sara.Properties {
             get {
                 object obj = ResourceManager.GetObject("errorProvider1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flechaG_Roja {
+            get {
+                object obj = ResourceManager.GetObject("flechaG_Roja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flechaG_Verde {
+            get {
+                object obj = ResourceManager.GetObject("flechaG_Verde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -276,6 +326,16 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap IconoInformacion {
             get {
                 object obj = ResourceManager.GetObject("IconoInformacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icoPredeterminadoComboBox {
+            get {
+                object obj = ResourceManager.GetObject("icoPredeterminadoComboBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -208,6 +208,11 @@
     </Compile>
     <Compile Include="Clases\Agregar_Componentes\ConfiguradorTextBox.cs" />
     <Compile Include="Clases\Agregar_Componentes\ManejoDeNuevosComponentes.cs" />
+    <Compile Include="Clases\Animaciones\AgregarFormularioAnimacion.cs" />
+    <Compile Include="Clases\Animaciones\LimpiarFormularioAnimacion.cs" />
+    <Compile Include="Clases\Animaciones\Occilacion.cs" />
+    <Compile Include="Clases\Animaciones\Rotacion.cs" />
+    <Compile Include="Clases\Animaciones\Zoom.cs" />
     <Compile Include="Clases\Apariencia\apariencia_formularios.cs" />
     <Compile Include="Clases\Apariencia\BordePanel.cs" />
     <Compile Include="Clases\Apariencia\BordePersonalizado.cs" />
@@ -217,7 +222,7 @@
     <Compile Include="Clases\Botones\btn_Configuracion\cambioBackenHover.cs" />
     <Compile Include="Clases\Botones\btn_Configuracion\Configuracion.cs" />
     <Compile Include="Clases\Botones\imprimir.cs" />
-    <Compile Include="Clases\Botones\IncrementarTamaño.cs" />
+    <Compile Include="Clases\Animaciones\IncrementarTamaño.cs" />
     <Compile Include="Clases\Botones\limpiar_formulario.cs" />
     <Compile Include="Controles\Controles\Aplicadas con controles\ComboBoxConBorde.cs">
       <SubType>Component</SubType>
@@ -644,10 +649,16 @@
     <Content Include="Resources\imagenes\agregar_Usuario.png" />
     <Content Include="Resources\imagenes\atras.png" />
     <Content Include="Resources\imagenes\buscar75%25.png" />
+    <Content Include="Resources\imagenes\configuracion.ico" />
+    <Content Include="Resources\imagenes\engranajeOriginal.png" />
     <Content Include="Resources\imagenes\editar.png" />
     <Content Include="Resources\imagenes\eliminarUsuario.png" />
+    <Content Include="Resources\imagenes\engranajeConfiguracion.png" />
     <Content Include="Resources\imagenes\errorProvider.ico" />
     <Content Include="Resources\imagenes\errorProvider.png" />
+    <Content Include="Resources\imagenes\flecha-intento1.png" />
+    <Content Include="Resources\imagenes\flechaG-Roja.png" />
+    <Content Include="Resources\imagenes\flechaG-Verde.png" />
     <Content Include="Resources\imagenes\IconoAdvertencia.png" />
     <Content Include="Resources\imagenes\IconoAplicacion.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -662,6 +673,8 @@
     <Content Include="Resources\imagenes\sello-de-goma.png" />
     <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\imagenes\microfono.png" />
+    <Content Include="Resources\imagenes\triangulo-inverso.png" />
+    <Content Include="Resources\imagenes\triangulo-inverso2.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

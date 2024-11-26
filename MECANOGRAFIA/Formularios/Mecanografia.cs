@@ -11,7 +11,7 @@ namespace MECANOGRAFIA.Formularios
 {
 
 
-    public partial class Mecanografia : Form
+    public partial class Mecanografia : BaseForm
     {
         private Label alertaLabel; // Variable para el Label de alerta
         private Label label_Tiempo; // Label para mostrar el tiempo transcurrido

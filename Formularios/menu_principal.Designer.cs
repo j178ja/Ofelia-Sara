@@ -31,7 +31,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-           // System.Windows.Forms.PictureBox iconoEscudo;
             this.btn_InicioCierre = new System.Windows.Forms.Button();
             this.btn_Expedientes = new System.Windows.Forms.Button();
             this.btn_Contravenciones = new System.Windows.Forms.Button();
@@ -41,6 +40,7 @@
             this.btn_Configurar = new System.Windows.Forms.Button();
             this.btn_Leyes = new System.Windows.Forms.PictureBox();
             this.panel_MenuSuperior = new System.Windows.Forms.Panel();
+            this.btn_BoletinOficial = new System.Windows.Forms.Button();
             this.btn_Redactador = new System.Windows.Forms.Button();
             this.btn_Mecanografia = new System.Windows.Forms.Button();
             this.btn_Minimizar = new System.Windows.Forms.Button();
@@ -69,10 +69,8 @@
             this.dEPENDENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            iconoEscudo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
             this.panel_MenuSuperior.SuspendLayout();
             this.menu_Configurar.SuspendLayout();
             this.SuspendLayout();
@@ -160,12 +158,13 @@
             this.comboBox_Buscar.Name = "comboBox_Buscar";
             this.comboBox_Buscar.Size = new System.Drawing.Size(294, 28);
             this.comboBox_Buscar.TabIndex = 14;
+            this.comboBox_Buscar.SelectedIndexChanged += new System.EventHandler(this.comboBox_Buscar_SelectedIndexChanged);
             this.comboBox_Buscar.MouseHover += new System.EventHandler(this.ComboBox_Buscar_MouseHover);
             // 
             // btn_Configurar
             // 
             this.btn_Configurar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Configurar.BackgroundImage")));
-            this.btn_Configurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Configurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Configurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Configurar.FlatAppearance.BorderSize = 0;
             this.btn_Configurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -175,6 +174,8 @@
             this.btn_Configurar.TabIndex = 13;
             this.btn_Configurar.UseVisualStyleBackColor = false;
             this.btn_Configurar.Click += new System.EventHandler(this.Btn_Configurar_Click);
+          
+            this.btn_Configurar.MouseHover += new System.EventHandler(this.Btn_Configurar_Hover);
             // 
             // btn_Leyes
             // 
@@ -188,28 +189,15 @@
             this.btn_Leyes.TabStop = false;
             this.btn_Leyes.Click += new System.EventHandler(this.Btn_Leyes_Click);
             // 
-            // iconoEscudo
-            // 
-            iconoEscudo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
-            iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            iconoEscudo.Cursor = System.Windows.Forms.Cursors.Hand;
-            iconoEscudo.Location = new System.Drawing.Point(1, 3);
-            iconoEscudo.Name = "iconoEscudo";
-            iconoEscudo.Size = new System.Drawing.Size(30, 28);
-            iconoEscudo.TabIndex = 18;
-            iconoEscudo.TabStop = false;
-            iconoEscudo.Click += new System.EventHandler(this.iconoEscudo_Click);
-            iconoEscudo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
-            // 
             // panel_MenuSuperior
             // 
             this.panel_MenuSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel_MenuSuperior.Controls.Add(this.btn_BoletinOficial);
             this.panel_MenuSuperior.Controls.Add(this.btn_Redactador);
             this.panel_MenuSuperior.Controls.Add(this.btn_Mecanografia);
             this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
             this.panel_MenuSuperior.Controls.Add(this.label_MenuPrincipal);
-            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
             this.panel_MenuSuperior.Controls.Add(this.label_OfeliaSara);
             this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
             this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);
@@ -217,6 +205,20 @@
             this.panel_MenuSuperior.Size = new System.Drawing.Size(572, 34);
             this.panel_MenuSuperior.TabIndex = 17;
             this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
+            // 
+            // btn_BoletinOficial
+            // 
+            this.btn_BoletinOficial.BackgroundImage = global::Ofelia_Sara.Properties.Resources.ICOes;
+            this.btn_BoletinOficial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_BoletinOficial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BoletinOficial.FlatAppearance.BorderSize = 0;
+            this.btn_BoletinOficial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BoletinOficial.Location = new System.Drawing.Point(3, 3);
+            this.btn_BoletinOficial.Name = "btn_BoletinOficial";
+            this.btn_BoletinOficial.Size = new System.Drawing.Size(31, 30);
+            this.btn_BoletinOficial.TabIndex = 19;
+            this.btn_BoletinOficial.UseVisualStyleBackColor = true;
+            this.btn_BoletinOficial.Click += new System.EventHandler(this.btn_BoletinOficial_Click);
             // 
             // btn_Redactador
             // 
@@ -514,7 +516,6 @@
             this.Controls.SetChildIndex(this.panel_MenuSuperior, 0);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Leyes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
             this.panel_MenuSuperior.ResumeLayout(false);
             this.panel_MenuSuperior.PerformLayout();
             this.menu_Configurar.ResumeLayout(false);
@@ -561,6 +562,7 @@
         private System.Windows.Forms.Button btn_Minimizar;
         private System.Windows.Forms.Button btn_Mecanografia;
         private System.Windows.Forms.Button btn_Redactador;
+        private System.Windows.Forms.Button btn_BoletinOficial;
     }    
  }
 

@@ -1,6 +1,6 @@
 ﻿using Clases.Apariencia;
 using Ofelia_Sara.Clases.Apariencia;
-using Clases.Botones;
+using Clases.Animaciones;
 using Controles.Barra_Busqueda;
 using MECANOGRAFIA.Formularios;
 using Ofelia_Sara.Clases.Botones.btn_Configuracion;
@@ -18,6 +18,9 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
+using Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Clases.Botones;
+using Ofelia_Sara.General.Animaciones;
 
 
 
@@ -45,10 +48,10 @@ namespace Ofelia_Sara.Formularios
         Timer timerMinimizarForm = new Timer();
         private Size originalSizeMecanografia;
         private Point originalLocationMecanografia;
-        private PictureBox iconoEscudo;
 
         // Definir el texto del placeholder
         private string placeholderText = "Buscar tipo de actuación...";
+
 
         public MenuPrincipal()
         {
@@ -76,7 +79,8 @@ namespace Ofelia_Sara.Formularios
             originalSizeMecanografia = btn_Mecanografia.Size;
             originalLocationMecanografia = btn_Mecanografia.Location;
 
-            RedondearBordes.Aplicar(this, 16);
+            RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
+
         }
 
         //_________________________________--________________________________
@@ -106,14 +110,15 @@ namespace Ofelia_Sara.Formularios
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
+          
             // Configurar el botón para usar el menú de contexto
             btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();
+            btn_BuscarTarea.Enabled = false;//deshabilitar btn al cargar
 
             //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
             IncrementarTamaño.Incrementar(btn_Configurar);
             IncrementarTamaño.Incrementar(btn_Leyes);
-            IncrementarTamaño.Incrementar(iconoEscudo);
-
+            IncrementarTamaño.Incrementar(btn_BoletinOficial);
 
 
             comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -131,24 +136,48 @@ namespace Ofelia_Sara.Formularios
             ToolTipGeneral.ShowToolTip(this, btn_Mecanografia, "MECANOGRAFIA");
             ToolTipGeneral.ShowToolTip(this, btn_Redactador, "REDACTAR POR VOZ");
             ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación.");
-            ToolTipGeneral.ShowToolTip(this, btn_BuscarTarea, "Buscar tarea seleccionada.");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
             ToolTipGeneral.ShowToolTip(this, comboBox_Buscar, " Ingrese que tarea desea realizar.");
-            ToolTipGeneral.ShowToolTip(this, iconoEscudo, "Boletín Informativo.");
+            ToolTipGeneral.ShowToolTip(this, btn_BoletinOficial, "Boletín Informativo.");
 
-
+            Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
+                                             Properties.Resources.engranajeOriginal);   // Imagen original
         }
 
         //--------------------------------------------------------------------------------
-      
+
 
 
         //------------BOTON CONFIGURAR--------------------------------------------------
+        /// <summary>
+        /// metodos aplicados a btn_Configurar
+        /// </summary>
+
+     
         private void Btn_Configurar_Click(object sender, EventArgs e)
         {
             // Mostrar el ContextMenuStrip en la posición del botón
             Point botonPosicion = btn_Configurar.PointToScreen(Point.Empty);
             btn_Configurar.ContextMenuStrip.Show(botonPosicion);
         }
+
+        private void Btn_Configurar_Hover(object sender, EventArgs e)
+        {
+           
+
+            // Aplicar rotación (animación izquierda)
+            Rotacion.Aplicar(
+                btn_Configurar,
+                Properties.Resources.engranajeConfiguracion, // Imagen animada
+                Properties.Resources.engranajeOriginal      // Imagen original
+            );
+        }
+
+    
+
+        
+
+
         //-------------------------------------------------------------------
         private Form formularioSecundarioAbierto = null;
 
@@ -668,7 +697,7 @@ namespace Ofelia_Sara.Formularios
 
 
 
-        private void iconoEscudo_Click(object sender, EventArgs e)
+        private void btn_BoletinOficial_Click(object sender, EventArgs e)
         {
             string url = "https://boletin.mseg.gba.gov.ar/";
             try
@@ -685,6 +714,17 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
+        private void comboBox_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Buscar.SelectedIndex > 0 || !string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
+            {
+                btn_BuscarTarea.Enabled = true;
+            }
+            else
+            {
+                btn_BuscarTarea.Enabled = false;
+            }
 
+        }
     }
 }

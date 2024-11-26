@@ -26,7 +26,7 @@ namespace MECANOGRAFIA.Formularios
                 this.Cursor = new Cursor(cursorStream);
             }
             // Cargar el cursor personalizado desde los recursos
-            using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
+            using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.handPersonalizado))
             {
                 customHandCursor = new Cursor(cursorHand);
             }

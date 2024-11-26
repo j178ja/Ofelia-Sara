@@ -173,6 +173,7 @@
             // linkLabel_Correo
             // 
             this.linkLabel_Correo.AutoSize = true;
+            this.linkLabel_Correo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_Correo.LinkColor = System.Drawing.Color.Black;
             this.linkLabel_Correo.Location = new System.Drawing.Point(106, 389);

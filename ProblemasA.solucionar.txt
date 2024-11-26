@@ -31,6 +31,8 @@ NO SE APLICA HAN EN HOVER DE BTN_Configurar
 
 EFECTO BLUR DE PRESENTACION NO SE DISTINGE
 
+CUSTOMHANDCURSOR EN LINKLABEL NO SE ESTA APLICANDO- SE LO INDICO EN BASEFORM
+
 --------------------------------------------------------------------------------------------
          FALTA HACER
          

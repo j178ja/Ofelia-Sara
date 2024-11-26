@@ -93,9 +93,9 @@ namespace MECANOGRAFIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
-        internal static byte[] hand {
+        internal static byte[] handPersonalizado {
             get {
-                object obj = ResourceManager.GetObject("hand", resourceCulture);
+                object obj = ResourceManager.GetObject("handPersonalizado", resourceCulture);
                 return ((byte[])(obj));
             }
         }

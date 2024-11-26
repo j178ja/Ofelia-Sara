@@ -2,13 +2,18 @@
  * SIN PERDER EL POSICIONAMIENTO*/
 
 
-
-
-using System.Drawing;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
-namespace Clases.Botones
+
+
+namespace Clases.Animaciones
+
 {
+
+
+
     public static class IncrementarTamaño
     {
         public static void Incrementar(System.Windows.Forms.Button boton)
@@ -101,3 +106,5 @@ namespace Clases.Botones
         }
     }
 }
+
+

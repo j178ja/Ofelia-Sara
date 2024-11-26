@@ -33,6 +33,9 @@ namespace Clases.Apariencia
             footerLinkLabel.TabIndex = 0;
             footerLinkLabel.Text = "Desarrollado por Jorge A. Bonato - V. 1.0.0";
             footerLinkLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            footerLinkLabel.Cursor=Cursors.Hand;
+       
+
 
             // Añadir evento de clic
             footerLinkLabel.LinkClicked += (sender, e) =>
