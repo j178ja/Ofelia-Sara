@@ -209,6 +209,7 @@
     <Compile Include="Clases\Agregar_Componentes\ConfiguradorTextBox.cs" />
     <Compile Include="Clases\Agregar_Componentes\ManejoDeNuevosComponentes.cs" />
     <Compile Include="Clases\Animaciones\AgregarFormularioAnimacion.cs" />
+    <Compile Include="Clases\Animaciones\CheckBoxAnimado.cs" />
     <Compile Include="Clases\Animaciones\LimpiarFormularioAnimacion.cs" />
     <Compile Include="Clases\Animaciones\Occilacion.cs" />
     <Compile Include="Clases\Animaciones\Rotacion.cs" />
@@ -649,6 +650,7 @@
     <Content Include="Resources\imagenes\agregar_Usuario.png" />
     <Content Include="Resources\imagenes\atras.png" />
     <Content Include="Resources\imagenes\buscar75%25.png" />
+    <Content Include="Resources\imagenes\check-Personalizado.png" />
     <Content Include="Resources\imagenes\configuracion.ico" />
     <Content Include="Resources\imagenes\engranajeOriginal.png" />
     <Content Include="Resources\imagenes\editar.png" />
@@ -656,7 +658,6 @@
     <Content Include="Resources\imagenes\engranajeConfiguracion.png" />
     <Content Include="Resources\imagenes\errorProvider.ico" />
     <Content Include="Resources\imagenes\errorProvider.png" />
-    <Content Include="Resources\imagenes\flecha-intento1.png" />
     <Content Include="Resources\imagenes\flechaG-Roja.png" />
     <Content Include="Resources\imagenes\flechaG-Verde.png" />
     <Content Include="Resources\imagenes\IconoAdvertencia.png" />
@@ -673,8 +674,7 @@
     <Content Include="Resources\imagenes\sello-de-goma.png" />
     <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\imagenes\microfono.png" />
-    <Content Include="Resources\imagenes\triangulo-inverso.png" />
-    <Content Include="Resources\imagenes\triangulo-inverso2.png" />
+    <Content Include="Resources\imagenes\icoPredeterminadoComboBox.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

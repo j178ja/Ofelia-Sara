@@ -229,4 +229,7 @@
   <data name="icoPredeterminadoComboBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\icoPredeterminadoComboBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="check_Personalizado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\check-Personalizado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -167,8 +167,29 @@ namespace Ofelia_Sara.Registro_de_personal
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            datosGuardados = true; // Marcar que los datos fueron guardados
+            // Verificar si se han agregado controles del tipo PersonalSeleccionadoControl al panel
+            var controlesAgregados = panel_PersonalSeleccionado.Controls.OfType<PersonalSeleccionadoControl>().Count();
+
+            if (controlesAgregados <= 0)
+            {
+                MensajeGeneral.Mostrar(
+                    "No ha seleccionado ningún efectivo policial al que recepcionarle Ratificación Testimonial.",
+                    MensajeGeneral.TipoMensaje.Advertencia
+                );
+            }
+            else
+            {
+                // Marcar que los datos fueron guardados
+                datosGuardados = true;
+
+                MensajeGeneral.Mostrar(
+                    "Listado de Ratificaciones Testimoniales guardado exitosamente.",
+                    MensajeGeneral.TipoMensaje.Exito
+                );
+            }
         }
+
+
 
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)

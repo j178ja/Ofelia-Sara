@@ -82,19 +82,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Ipp = new System.Windows.Forms.Panel();
             this.panel_Caratula = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            this.pictureBox_CheckRatificacion = new System.Windows.Forms.PictureBox();
             this.label_Not247 = new System.Windows.Forms.Label();
             this.label_Cargo = new System.Windows.Forms.Label();
             this.label_RatificacionPersonal = new System.Windows.Forms.Label();
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.pictureBox_CheckCargo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel_Instruccion.SuspendLayout();
             this.panel_Ipp.SuspendLayout();
             this.panel_Caratula.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckRatificacion)).BeginInit();
             this.panel_Imputado.SuspendLayout();
             this.panel_Victima.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckCargo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Dr
@@ -312,6 +316,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // comboBox_Ipp1
             // 
+            this.comboBox_Ipp1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox_Ipp1.FormattingEnabled = true;
             this.comboBox_Ipp1.Items.AddRange(new object[] {
             "00",
@@ -335,6 +340,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // comboBox_Ipp2
             // 
+            this.comboBox_Ipp2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox_Ipp2.FormattingEnabled = true;
             this.comboBox_Ipp2.Items.AddRange(new object[] {
             "00",
@@ -472,12 +478,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // checkBox_RatificacionTestimonial
             // 
             this.checkBox_RatificacionTestimonial.AutoSize = true;
-            this.checkBox_RatificacionTestimonial.Location = new System.Drawing.Point(203, 37);
+            this.checkBox_RatificacionTestimonial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.checkBox_RatificacionTestimonial.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.checkBox_RatificacionTestimonial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox_RatificacionTestimonial.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
+            this.checkBox_RatificacionTestimonial.Location = new System.Drawing.Point(201, 38);
             this.checkBox_RatificacionTestimonial.Name = "checkBox_RatificacionTestimonial";
             this.checkBox_RatificacionTestimonial.Size = new System.Drawing.Size(15, 14);
             this.checkBox_RatificacionTestimonial.TabIndex = 8;
+            this.checkBox_RatificacionTestimonial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.checkBox_RatificacionTestimonial.UseVisualStyleBackColor = true;
-            this.checkBox_RatificacionTestimonial.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoDetenido_CheckedChanged);
+            this.checkBox_RatificacionTestimonial.CheckedChanged += new System.EventHandler(this.CheckBox_RatificacionTestimonial_CheckedChanged);
             // 
             // btn_AgregarDatosImputado
             // 
@@ -651,6 +662,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
+            this.panel_ControlesInferiores.Controls.Add(this.pictureBox_CheckCargo);
+            this.panel_ControlesInferiores.Controls.Add(this.pictureBox_CheckRatificacion);
             this.panel_ControlesInferiores.Controls.Add(this.botonDeslizable_Not247);
             this.panel_ControlesInferiores.Controls.Add(this.label_Not247);
             this.panel_ControlesInferiores.Controls.Add(this.checkBox_Cargo);
@@ -665,6 +678,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             this.panel_ControlesInferiores.Size = new System.Drawing.Size(415, 165);
             this.panel_ControlesInferiores.TabIndex = 42;
+            // 
+            // pictureBox_CheckRatificacion
+            // 
+            this.pictureBox_CheckRatificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_CheckRatificacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_CheckRatificacion.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
+            this.pictureBox_CheckRatificacion.Location = new System.Drawing.Point(222, 31);
+            this.pictureBox_CheckRatificacion.Name = "pictureBox_CheckRatificacion";
+            this.pictureBox_CheckRatificacion.Size = new System.Drawing.Size(26, 28);
+            this.pictureBox_CheckRatificacion.TabIndex = 43;
+            this.pictureBox_CheckRatificacion.TabStop = false;
+            this.pictureBox_CheckRatificacion.Click += new System.EventHandler(this.CheckPickture_Click);
             // 
             // label_Not247
             // 
@@ -735,6 +760,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.lbl_Titulo.TabIndex = 31;
             this.lbl_Titulo.Text = "ESTRUCTURA BASICA I.P.P.";
             // 
+            // pictureBox_CheckCargo
+            // 
+            this.pictureBox_CheckCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_CheckCargo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_CheckCargo.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
+            this.pictureBox_CheckCargo.Location = new System.Drawing.Point(389, 31);
+            this.pictureBox_CheckCargo.Name = "pictureBox_CheckCargo";
+            this.pictureBox_CheckCargo.Size = new System.Drawing.Size(26, 28);
+            this.pictureBox_CheckCargo.TabIndex = 44;
+            this.pictureBox_CheckCargo.TabStop = false;
+            this.pictureBox_CheckCargo.Click += new System.EventHandler(this.CheckPickture_Click);
+            // 
             // InicioCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,10 +801,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Caratula.PerformLayout();
             this.panel_ControlesInferiores.ResumeLayout(false);
             this.panel_ControlesInferiores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckRatificacion)).EndInit();
             this.panel_Imputado.ResumeLayout(false);
             this.panel_Imputado.PerformLayout();
             this.panel_Victima.ResumeLayout(false);
             this.panel_Victima.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckCargo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -828,5 +867,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private Controles.Controles.BotonDeslizable botonDeslizable_Not247;
         private System.Windows.Forms.Label label_Not247;
         private System.Windows.Forms.Panel panel_Instruccion;
+        private System.Windows.Forms.PictureBox pictureBox_CheckRatificacion;
+        private System.Windows.Forms.PictureBox pictureBox_CheckCargo;
     }
 }

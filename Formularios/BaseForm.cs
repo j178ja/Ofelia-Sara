@@ -46,12 +46,7 @@ namespace Ofelia_Sara.Formularios
         private IContainer components;
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
-        // Método OnLoad combinado
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-          
-        }
+       
 
         public BaseForm()
         {
@@ -112,14 +107,46 @@ namespace Ofelia_Sara.Formularios
                 CursorLapizDerecha = new Cursor(cursorStream);
             }
         }
+
+        //--------------------------------------------------------------------------------
+        // Método OnLoad combinado
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
+            AsignarCursorPersonalizado(this.Controls);
+
+            foreach (var control in ObtenerTodosLosControles(this))
+            {
+                if (control is ComboBox comboBox)
+                {
+                    AplicarFlechaPersonalizada(comboBox);
+                }
+            }
+        }
+        private IEnumerable<Control> ObtenerTodosLosControles(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                yield return control;
+
+                // Llamada recursiva para controles hijos
+                foreach (Control child in ObtenerTodosLosControles(control))
+                {
+                    yield return child;
+                }
+            }
+        }
+
         //--------------------------------------------------------------------------------
         private void BaseForm_Load(object sender, EventArgs e)
         {
             ToolTipsGenerales();// para aplicar tooltip comun a los formularios
 
-            // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
-            AsignarCursorPersonalizado(this.Controls);
-            PersonalizarComboBoxes(this);
+            //// Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
+            //AsignarCursorPersonalizado(this.Controls);
+           // PersonalizarComboBoxes(this);
 
         }
         //--------------------------------------------------------------------------
@@ -244,7 +271,8 @@ namespace Ofelia_Sara.Formularios
                 BackColor = Color.White, //blanco resalta y es igual al comboBox
                 Cursor = Cursors.Hand,
                 Location = new Point(flechaArea.X, flechaArea.Y+1), // Ajustar la ubicación
-                Anchor = AnchorStyles.Top | AnchorStyles.Right // Alinear correctamente
+                Anchor = AnchorStyles.Top | AnchorStyles.Right ,// Alinear correctamente
+                  Tag = comboBox
             };
 
             ActualizarFlecha(comboBox, flechaPersonalizada);
@@ -271,7 +299,7 @@ namespace Ofelia_Sara.Formularios
         private void ActualizarFlecha(ComboBox comboBox, PictureBox flechaPersonalizada)
         {
             // Imagen neutra por defecto
-            flechaPersonalizada.Image = Properties.Resources.triangulo_inverso2;
+            flechaPersonalizada.Image = Properties.Resources.icoPredeterminadoComboBox;
            
             // Eventos para cambiar el color en Hover
             flechaPersonalizada.MouseEnter += (s, e) =>
@@ -284,7 +312,7 @@ namespace Ofelia_Sara.Formularios
             // Volver a la imagen neutra al salir del hover
             flechaPersonalizada.MouseLeave += (s, e) =>
             {
-                flechaPersonalizada.Image = Properties.Resources.triangulo_inverso2;
+                flechaPersonalizada.Image = Properties.Resources.icoPredeterminadoComboBox;
             };
         }
 
@@ -327,6 +355,7 @@ namespace Ofelia_Sara.Formularios
 
             // Llama al método estático de FooterHelper para obtener el footerLabel configurado
             this.footerLinkLabel = FooterHelper.CreateFooterLinkLabel(this);
+           
             this.Controls.Add(this.footerLinkLabel);
         }
 

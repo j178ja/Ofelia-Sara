@@ -229,6 +229,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
                     }
+                   
                 }
             }
         }

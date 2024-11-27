@@ -6,6 +6,7 @@ using Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Clases.Texto;
 using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
+using Ofelia_Sara.general.animaciones;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using Ofelia_Sara.Registro_de_personal;
@@ -20,6 +21,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class InicioCierre : BaseForm
     {
+        
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = new List<string>();
@@ -83,12 +85,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
 
+            //personalizacion de checkBox
+
+
+
+          
+
+
         }
 
 
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
+
+            pictureBox_CheckRatificacion.Visible = false;
+            pictureBox_CheckCargo.Visible = false;
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
             timePickerPersonalizado1.FechaCambiada += TimePickerPersonalizado1_FechaCambiada;
@@ -130,6 +142,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO
+
 
         }
 
@@ -683,11 +696,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true; // Todos los controles están completos
         }
 
-        private void CheckBox_LegajoDetenido_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_RatificacionTestimonial_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
             if (checkBox_RatificacionTestimonial.Checked)
             {
+
+                pictureBox_CheckRatificacion.Visible = true;
+
+                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
+                pictureBox_CheckRatificacion.Location = new Point(
+                    checkBox_RatificacionTestimonial.Location.X,
+                    checkBox_RatificacionTestimonial.Location.Y - 8
+                );
+
+                // Ocultar el CheckBox
+                checkBox_RatificacionTestimonial.Visible = false;
+
+
                 // Crear y mostrar el formulario BuscarPersonal
                 BuscarPersonal buscarPersonalForm = new BuscarPersonal();
 
@@ -715,6 +741,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Suscribirse al evento FormClosed del formulario Cargo
                 buscarPersonalForm.FormClosed += (s, args) =>
                 {
+                    if (buscarPersonalForm.DialogResult == DialogResult.Cancel)
+                    {
+                        // Acciones si el resultado del diálogo es "Sí"
+                        checkBox_RatificacionTestimonial.Visible = true;
+                        checkBox_RatificacionTestimonial.Checked = false;
+                        pictureBox_CheckRatificacion.Visible = false;
+                    }
+                    else if (buscarPersonalForm.DialogResult == DialogResult.Yes)
+                    {
+                        checkBox_RatificacionTestimonial.Visible = false;
+                        pictureBox_CheckRatificacion.Visible = true;
+                    }
+
                     // Calcular la nueva posición para centrar el formulario original
                     int centerX = (screenWidth - originalForm.Width) / 2;
                     int centerY = (screenHeight - originalForm.Height) / 2;
@@ -727,7 +766,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void Btn_Buscar_Click(object sender, EventArgs e)
+        //-----------------------------------------------------------------------------
+        private void CheckPickture_Click(object sender, EventArgs e)
+        {
+            if (sender is PictureBox clickedPictureBox)
+            {
+                if (clickedPictureBox.Name == "pictureBox_CheckRatificacion")
+                {
+                    // Manejar lógica para pictureBox_CheckRatificacion
+                    pictureBox_CheckRatificacion.Visible = false;
+                    checkBox_RatificacionTestimonial.Visible = true;
+                }
+                else if (clickedPictureBox.Name == "pictureBox_CheckCargo")
+                {
+                    // Manejar lógica para pictureBox_CheckCargo
+                    pictureBox_CheckCargo.Visible = false;
+                    checkBox_Cargo.Visible = true;
+                }
+            }
+        }
+
+      
+
+            //-----------------------------------------------------------------------------
+            private void Btn_Buscar_Click(object sender, EventArgs e)
         {
 
 
@@ -946,6 +1008,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar si el CheckBox está marcado
             if (checkBox_Cargo.Checked)
             {
+                pictureBox_CheckCargo.Visible = true;
+
+                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
+                pictureBox_CheckCargo.Location = new Point(
+                    checkBox_Cargo.Location.X,
+                    checkBox_Cargo.Location.Y - 8
+                );
+                // Ocultar el CheckBox
+                checkBox_Cargo.Visible = false;
+
                 string Ipp1 = comboBox_Ipp1.Text;
                 string Ipp2 = comboBox_Ipp2.Text;
                 string NumeroIpp = textBox_NumeroIpp.Text;
@@ -989,14 +1061,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Suscribirse al evento FormClosed del formulario Cargo
                 cargo.FormClosed += (s, args) =>
                 {
+                    if (cargo.DialogResult == DialogResult.OK)
+                    {
+                        // Acciones si el resultado del diálogo es "Sí"
+                        checkBox_Cargo.Visible = true;
+                        checkBox_Cargo.Checked = false;
+                        pictureBox_CheckCargo.Visible = false;
+                    }
+                    else
+                    {
+                        checkBox_Cargo.Visible = false;
+                       pictureBox_CheckCargo.Visible = true;
+                    }
                     // Calcular la nueva posición para centrar el formulario original
                     int centerX = (screenWidth - originalForm.Width) / 2;
                     int centerY = (screenHeight - originalForm.Height) / 2;
 
                     // Reposicionar el formulario original en el centro de la pantalla
                     originalForm.Location = new Point(centerX, centerY);
-                };
 
+                 
+                };
+             
+
+              
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
 
