@@ -85,13 +85,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
 
-            //personalizacion de checkBox
-
-
-
-          
-
-
         }
 
 
@@ -114,8 +107,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.");
-
-
 
 
             //-------------------------------------------------------------------------------
@@ -313,7 +304,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 comboBox_Ipp4.SelectionStart = comboBox_Ipp4.Text.Length;
             }
         }
-        //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
+
+        /// <summary>
+        /// EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
+        /// </summary>
+     
+
         private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -351,8 +347,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-
-        //--EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
+        /// <summary>
+        /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
+        /// </summary>
 
         private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
@@ -423,7 +420,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
         //----------------------------------------------------------------------
-
+        /// <summary>
+        ///  CARGAR DATOS DESDE FORMULARIO INICIO-CIERRE
+        /// </summary>
+       
         //--------Diccionario para cargar los datos a los marcadores del documento-------------
         private Dictionary<string, string> ObtenerDatosFormulario()
         {
@@ -439,6 +439,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return datosFormulario;
         }
 
+        /// <summary>
+        /// METODO PARA VALIDAD Y ABRIR FORMULARIO AGREGAR DATOS VICTIMA
+        /// </summary>
+    
         //----BOTON AGREGAR DATOS VICTIMA-----------------------------
         private void Btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
@@ -495,7 +499,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             agregarDatosPersonalesVictima.Show();
 
         }
-
+        /// <summary>
+        /// METODO PARA ACTUALIZAR TEXTBOX 'VICTIMA' DESDE FORM AGREGAR DATOS VICTIMA
+        /// </summary>
+      
         // Método para actualizar el TextBox en inicioCierre
         private void UpdateVictimaTextBox(string text)
         {
@@ -504,7 +511,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
         //------------------------------------------------------------------------------
-
+        /// <summary>
+        /// METODO PARA HABILITAR BTN AGREGAR CAUSA
+        /// </summary>
+       
         //-----------------METODO HABILITA BTN AGREGAR CAUSA------------------------------
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
@@ -776,12 +786,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Manejar lógica para pictureBox_CheckRatificacion
                     pictureBox_CheckRatificacion.Visible = false;
                     checkBox_RatificacionTestimonial.Visible = true;
+                    checkBox_RatificacionTestimonial.Checked = false;
                 }
                 else if (clickedPictureBox.Name == "pictureBox_CheckCargo")
                 {
-                    // Manejar lógica para pictureBox_CheckCargo
+                   // Manejar lógica para pictureBox_CheckCargo
                     pictureBox_CheckCargo.Visible = false;
                     checkBox_Cargo.Visible = true;
+                    checkBox_Cargo.Checked = false;
                 }
             }
         }
@@ -1083,8 +1095,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                  
                 };
              
-
-              
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
 
@@ -1251,6 +1261,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
+      
     }
 }

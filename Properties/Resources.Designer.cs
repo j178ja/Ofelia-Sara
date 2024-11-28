@@ -83,6 +83,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AGREGAR_IMAGEN {
+            get {
+                object obj = ResourceManager.GetObject("AGREGAR_IMAGEN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_Usuario {
             get {
                 object obj = ResourceManager.GetObject("agregar_Usuario", resourceCulture);
@@ -406,6 +416,16 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap pdf {
             get {
                 object obj = ResourceManager.GetObject("pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QUITAR_IMAGEN {
+            get {
+                object obj = ResourceManager.GetObject("QUITAR_IMAGEN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

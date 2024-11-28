@@ -14,6 +14,10 @@ namespace Ofelia_Sara.Controles.Controles
         private int cornerRadius = 3; // Ajuste de radio para bordes redondeados
 
         // Delegado para validar los campos antes de cambiar el estado
+        public Func<bool> ValidarCampos { get; set; }
+
+        // Evento para notificar cambios en el estado de IsOn
+        public event EventHandler IsOnChanged;
 
         public BotonDeslizable()
         {
@@ -21,6 +25,21 @@ namespace Ofelia_Sara.Controles.Controles
             this.Cursor = Cursors.Hand;
             this.Size = new Size(40, 20); // Tamaño del control ajustado
             UpdateSliderRect();
+        }
+
+        public bool IsOn
+        {
+            get => isOn;
+            set
+            {
+                if (isOn != value)
+                {
+                    isOn = value;
+                    IsOnChanged?.Invoke(this, EventArgs.Empty); // Invocar evento de cambio
+                    UpdateSliderRect();
+                    Invalidate(); // Redibuja el control para reflejar el nuevo estado
+                }
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -31,7 +50,6 @@ namespace Ofelia_Sara.Controles.Controles
             using (SolidBrush backgroundBrush = new SolidBrush(isOn ? Color.Green : Color.Red))
             using (GraphicsPath path = new GraphicsPath())
             {
-                // Esquinas redondeadas con el nuevo radio ajustado
                 path.AddArc(sliderPadding, sliderPadding, cornerRadius, cornerRadius, 180, 90);
                 path.AddArc(this.Width - cornerRadius - sliderPadding, sliderPadding, cornerRadius, cornerRadius, 270, 90);
                 path.AddArc(this.Width - cornerRadius - sliderPadding, this.Height - cornerRadius - sliderPadding, cornerRadius, cornerRadius, 0, 90);
@@ -50,16 +68,13 @@ namespace Ofelia_Sara.Controles.Controles
             Rectangle textRect;
             if (isOn)
             {
-                // Texto "SI" alineado a la izquierda con margen
                 textRect = new Rectangle(sliderPadding, 0, this.Width / 2, this.Height);
             }
             else
             {
-                // Texto "NO" alineado a la derecha con margen para evitar recorte
                 textRect = new Rectangle(this.Width / 2 - sliderPadding, 0, this.Width / 2, this.Height);
             }
 
-            // Dibujar el texto
             TextRenderer.DrawText(
                 e.Graphics,
                 isOn ? "SI" : "NO",
@@ -69,39 +84,18 @@ namespace Ofelia_Sara.Controles.Controles
                 TextFormatFlags.VerticalCenter | TextFormatFlags.Left
             );
         }
-        // Delegado para la validación de campos
-        public Func<bool> ValidarCampos { get; set; }
-
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
 
-            // Si hay un delegado de validación asignado, lo invocamos
             if (ValidarCampos != null && !ValidarCampos.Invoke())
             {
-                // Si la validación falla, no cambiamos el estado del botón
                 return;
             }
 
-            // Cambiar el estado del botón
-            IsOn = !IsOn; // Cambia el estado usando la propiedad
+            IsOn = !IsOn; // Cambiar el estado usando la propiedad
         }
-
-        public bool IsOn
-        {
-            get => isOn;
-            set
-            {
-                if (isOn != value)
-                {
-                    isOn = value;
-                    UpdateSliderRect();
-                    Invalidate(); // Redibuja el control para reflejar el nuevo estado
-                }
-            }
-        }
-
 
         private void UpdateSliderRect()
         {

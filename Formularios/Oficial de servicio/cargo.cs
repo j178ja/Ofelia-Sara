@@ -4,6 +4,7 @@ using Clases.Apariencia;
 using Clases.Botones;
 using Clases.GenerarDocumentos;
 using Clases.Texto;
+using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using System;
@@ -21,6 +22,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     public partial class Cargo : BaseForm
 
     {
+        
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public Cargo()
         {
@@ -29,6 +31,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
+
+         
+
+            botonDeslizable_Visu.IsOnChanged += botonDeslizable_Visu_IsOnChanged;
         }
         //----------------------------------------------------------------------------------
         //---sobrecargar para que reciba los datos desde form iniciocierre
@@ -53,9 +62,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.Text = secretario;
             comboBox_Dependencia.Text = dependencia;
 
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
-            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
+           
+
+           
+
+         
         }
         //----------------------------------------------------------------------------------------
 
@@ -88,15 +99,73 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-            Fecha_Instruccion.SelectedDate = DateTime.Now;
+            Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
+
+            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
+
+            pictureBox_CheckLegajoVehicular.Visible = false;// para ocultar el check realizado
+
         }
+
+
+
+
+        private void botonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (botonDeslizable_Visu.IsOn)
+                {
+                    Visu formVISU = new Visu();
+                    formVISU.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir el formulario Visu: {ex.Message}");
+            }
+        }
+
+
         //-----------------------------------------------------
+        /// <summary>
+        /// METODO PARA DAR FOCO EN NUMERO DE CARGO, AL ABRIR FORMULARIO
+        /// </summary>
+
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox
             textBox_NumeroCargo.Focus();
         }
         //-----------------------------------------------------------------------
+        private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                switch (textBox.Name)
+                {
+                    case "textBox_Caratula":
+                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        break;
+
+                    case "textBox_Victima":
+                        btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        break;
+
+                    case "textBox_Imputado":
+                        btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+
+        //----------------------------------------------------------------------------------
         private void InicializarComboBoxFISCALIA()
         {
 
@@ -199,6 +268,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
+            checkBox_LegajoVehicular.Visible = true;
+
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
@@ -208,11 +279,58 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
         }
+        //-----------------------------------------------------------------------------------
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            datosGuardados = true; // Marcar que los datos fueron guardados
+            // Verificar si los campos básicos están completos
+            if (!ValidarAntesdeGuardar()) // Verificación usando ErrorProvider
+            {
+                // Mostrar mensaje de advertencia si hay errores
+                MensajeGeneral.Mostrar("Debe completar los campos requeridos.",
+                                       MensajeGeneral.TipoMensaje.Advertencia);
+                return; // Detener la ejecución si hay errores
+            }
+
+            datosGuardados = true; // Evitar mensaje de alerta al cerrar el formulario
+                                   // Mostrar mensaje de confirmación al guardar exitosamente
+            MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
+
+
+        private bool ValidarAntesdeGuardar()
+        {
+            bool esValido = false;
+
+            // Validar campos requeridos
+            esValido &= ValidarCampo(comboBox_Instructor, "Debe indicar quien es el Instructor de las actuaciones.");
+            esValido &= ValidarCampo(comboBox_Secretario, "Debe indicar quien es el Secretario de las actuaciones.");
+            esValido &= ValidarCampo(comboBox_Dependencia, "El campo 'Dependencia' es obligatorio.");
+            esValido &= ValidarCampo(comboBox_Fiscalia, "El campo 'FISCALIA' es obligatorio.");
+            esValido &= ValidarCampo(textBox_Caratula, "El campo 'Carátula' es obligatorio.");
+            esValido &= ValidarCampo(textBox_Imputado, "El campo 'Imputado' es obligatorio.");
+            esValido &= ValidarCampo(textBox_Victima, "El campo 'Víctima' es obligatorio.");
+            esValido &= ValidarCampo(textBox_NumeroCargo, "Ingrese 'N° CARGO' correspondiente.");
+            esValido &= ValidarCampo(textBox_NumeroIpp, "Ingrese 'N° IPP' correspondiente.");
+
+            return esValido;
+        }
+
+        private bool ValidarCampo(Control control, string mensajeError)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                // Si el campo está vacío, se establece un error en el control y se muestra el PictureBoxError
+                SetError(control, mensajeError);
+                return false;
+            }
+
+            // Si el campo está completo, se limpia el error
+            ClearError(control);
+            return true;
+        }
+
+        //---------------------------------------------------------------------------------
 
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
@@ -229,7 +347,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
                     }
-                   
+
                 }
             }
         }
@@ -334,13 +452,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         //--------------------------------------------------------------------------------------
         //---Validar datos previo impresion 
-        private bool ValidarDatosFormulario()
+        private bool ValidarAntesde_IMPRIMIR()
         {
             //Verificar si los campos están completados
-            if (string.IsNullOrWhiteSpace(textBox_NumeroIpp.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Caratula.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Victima.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Imputado.Text))
+            if (ValidarAntesdeGuardar())
 
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
@@ -441,7 +556,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
             // Llamar al método de validación
-            if (!ValidarDatosFormulario())
+            if (!ValidarAntesde_IMPRIMIR())
             {
                 return; // Detener el proceso si la validación falla
             }
@@ -493,5 +608,32 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
+
+        private void pictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
+        {
+
+            // Manejar lógica para pictureBox_CheckRatificacion
+            pictureBox_CheckLegajoVehicular.Visible = false;
+            checkBox_LegajoVehicular.Visible = true;
+            checkBox_LegajoVehicular.Checked = false;
+
+
+        }
+
+        private void checkBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verificar si el CheckBox está marcado
+            if (checkBox_LegajoVehicular.Checked)
+            {
+                pictureBox_CheckLegajoVehicular.Visible = true;
+                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
+                pictureBox_CheckLegajoVehicular.Location = new Point(
+                    checkBox_LegajoVehicular.Location.X,
+                    checkBox_LegajoVehicular.Location.Y-8);
+            }
+        }
+
+     
+
     }
 }

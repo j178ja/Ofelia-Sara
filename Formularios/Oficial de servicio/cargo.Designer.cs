@@ -31,12 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cargo));
             this.label_Cargo = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_DescripcioMuestra = new System.Windows.Forms.Label();
             this.textBox_DescripcionMuestra = new System.Windows.Forms.TextBox();
             this.textBox_NumeroCargo = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label_Barra = new System.Windows.Forms.Label();
             this.comboBox_Año = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonDeslizable_Visu = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.label_Not247 = new System.Windows.Forms.Label();
+            this.pictureBox_CheckLegajoVehicular = new System.Windows.Forms.PictureBox();
+            this.checkBox_LegajoVehicular = new System.Windows.Forms.CheckBox();
+            this.label_LegajoVehicular = new System.Windows.Forms.Label();
             this.label_Localidad = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
@@ -70,13 +75,14 @@
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.lbl_Victima = new System.Windows.Forms.Label();
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label_CargoSecuestros = new System.Windows.Forms.Label();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckLegajoVehicular)).BeginInit();
             this.panel_Ipp.SuspendLayout();
             this.panel_Caratula.SuspendLayout();
             this.panel_Imputado.SuspendLayout();
@@ -93,21 +99,21 @@
             this.label_Cargo.TabIndex = 0;
             this.label_Cargo.Text = "CARGO N°";
             // 
-            // label12
+            // label_DescripcioMuestra
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(86, 353);
-            this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            this.label12.Size = new System.Drawing.Size(283, 25);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "DESCRIPCION DE LA MUESTRA";
+            this.label_DescripcioMuestra.AutoSize = true;
+            this.label_DescripcioMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DescripcioMuestra.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DescripcioMuestra.Location = new System.Drawing.Point(86, 377);
+            this.label_DescripcioMuestra.Name = "label_DescripcioMuestra";
+            this.label_DescripcioMuestra.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
+            this.label_DescripcioMuestra.Size = new System.Drawing.Size(283, 25);
+            this.label_DescripcioMuestra.TabIndex = 11;
+            this.label_DescripcioMuestra.Text = "DESCRIPCION DE LA MUESTRA";
             // 
             // textBox_DescripcionMuestra
             // 
-            this.textBox_DescripcionMuestra.Location = new System.Drawing.Point(40, 389);
+            this.textBox_DescripcionMuestra.Location = new System.Drawing.Point(40, 408);
             this.textBox_DescripcionMuestra.Multiline = true;
             this.textBox_DescripcionMuestra.Name = "textBox_DescripcionMuestra";
             this.textBox_DescripcionMuestra.Size = new System.Drawing.Size(393, 122);
@@ -123,15 +129,15 @@
             this.textBox_NumeroCargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_NumeroCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroCargo_KeyPress);
             // 
-            // label13
+            // label_Barra
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(292, 43);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 16);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "/";
+            this.label_Barra.AutoSize = true;
+            this.label_Barra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Barra.Location = new System.Drawing.Point(292, 43);
+            this.label_Barra.Name = "label_Barra";
+            this.label_Barra.Size = new System.Drawing.Size(11, 16);
+            this.label_Barra.TabIndex = 16;
+            this.label_Barra.Text = "/";
             // 
             // comboBox_Año
             // 
@@ -149,6 +155,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.botonDeslizable_Visu);
+            this.panel1.Controls.Add(this.label_Not247);
+            this.panel1.Controls.Add(this.pictureBox_CheckLegajoVehicular);
+            this.panel1.Controls.Add(this.checkBox_LegajoVehicular);
+            this.panel1.Controls.Add(this.label_LegajoVehicular);
             this.panel1.Controls.Add(this.label_Localidad);
             this.panel1.Controls.Add(this.comboBox_Localidad);
             this.panel1.Controls.Add(this.comboBox_Secretario);
@@ -167,21 +178,81 @@
             this.panel1.Controls.Add(this.panel_Caratula);
             this.panel1.Controls.Add(this.panel_Imputado);
             this.panel1.Controls.Add(this.panel_Victima);
-            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label_CargoSecuestros);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.label_Cargo);
-            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label_DescripcioMuestra);
             this.panel1.Controls.Add(this.textBox_DescripcionMuestra);
             this.panel1.Controls.Add(this.textBox_NumeroCargo);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label_Barra);
             this.panel1.Controls.Add(this.comboBox_Año);
             this.panel1.Location = new System.Drawing.Point(15, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 634);
+            this.panel1.Size = new System.Drawing.Size(470, 652);
             this.panel1.TabIndex = 33;
+            // 
+            // botonDeslizable_Visu
+            // 
+            this.botonDeslizable_Visu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonDeslizable_Visu.IsOn = false;
+            this.botonDeslizable_Visu.Location = new System.Drawing.Point(136, 346);
+            this.botonDeslizable_Visu.Name = "botonDeslizable_Visu";
+            this.botonDeslizable_Visu.Size = new System.Drawing.Size(40, 20);
+            this.botonDeslizable_Visu.TabIndex = 69;
+            this.botonDeslizable_Visu.ValidarCampos = null;
+            this.botonDeslizable_Visu.IsOnChanged += new System.EventHandler(this.botonDeslizable_Visu_IsOnChanged);
+
+            // 
+            // label_Not247
+            // 
+            this.label_Not247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Not247.Location = new System.Drawing.Point(39, 346);
+            this.label_Not247.Name = "label_Not247";
+            this.label_Not247.Size = new System.Drawing.Size(137, 20);
+            this.label_Not247.TabIndex = 68;
+            this.label_Not247.Text = "USAR VISU  ";
+            this.label_Not247.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox_CheckLegajoVehicular
+            // 
+            this.pictureBox_CheckLegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_CheckLegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_CheckLegajoVehicular.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
+            this.pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(418, 344);
+            this.pictureBox_CheckLegajoVehicular.Name = "pictureBox_CheckLegajoVehicular";
+            this.pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 28);
+            this.pictureBox_CheckLegajoVehicular.TabIndex = 67;
+            this.pictureBox_CheckLegajoVehicular.TabStop = false;
+            this.pictureBox_CheckLegajoVehicular.Click += new System.EventHandler(this.pictureBox_CheckLegajoVehicular_Click);
+            // 
+            // checkBox_LegajoVehicular
+            // 
+            this.checkBox_LegajoVehicular.AutoSize = true;
+            this.checkBox_LegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.checkBox_LegajoVehicular.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.checkBox_LegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox_LegajoVehicular.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
+            this.checkBox_LegajoVehicular.Location = new System.Drawing.Point(397, 352);
+            this.checkBox_LegajoVehicular.Name = "checkBox_LegajoVehicular";
+            this.checkBox_LegajoVehicular.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_LegajoVehicular.TabIndex = 65;
+            this.checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
+            this.checkBox_LegajoVehicular.CheckedChanged += new System.EventHandler(this.checkBox_LegajoVehicular_CheckedChanged);
+            // 
+            // label_LegajoVehicular
+            // 
+            this.label_LegajoVehicular.AutoSize = true;
+            this.label_LegajoVehicular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_LegajoVehicular.Location = new System.Drawing.Point(225, 350);
+            this.label_LegajoVehicular.Name = "label_LegajoVehicular";
+            this.label_LegajoVehicular.Size = new System.Drawing.Size(166, 16);
+            this.label_LegajoVehicular.TabIndex = 66;
+            this.label_LegajoVehicular.Text = "LEGAJO VEHICULAR   ";
+            this.label_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_Localidad
             // 
@@ -465,6 +536,7 @@
             this.textBox_Caratula.Name = "textBox_Caratula";
             this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
             this.textBox_Caratula.TabIndex = 7;
+            this.textBox_Caratula.TextChanged += new System.EventHandler(this.HabilitaBTN_Agregar_TextChanged);
             // 
             // lbl_Caratula
             // 
@@ -507,6 +579,7 @@
             this.textBox_Imputado.Name = "textBox_Imputado";
             this.textBox_Imputado.Size = new System.Drawing.Size(286, 20);
             this.textBox_Imputado.TabIndex = 9;
+            this.textBox_Imputado.TextChanged += new System.EventHandler(this.HabilitaBTN_Agregar_TextChanged);
             // 
             // lbl_Imputado
             // 
@@ -548,6 +621,7 @@
             this.textBox_Victima.Name = "textBox_Victima";
             this.textBox_Victima.Size = new System.Drawing.Size(286, 20);
             this.textBox_Victima.TabIndex = 8;
+            this.textBox_Victima.TextChanged += new System.EventHandler(this.HabilitaBTN_Agregar_TextChanged);
             // 
             // lbl_Victima
             // 
@@ -572,25 +646,25 @@
             this.btn_AgregarVictima.Text = "+";
             this.btn_AgregarVictima.UseVisualStyleBackColor = false;
             // 
-            // label17
+            // label_CargoSecuestros
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(85, 0);
-            this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label17.Size = new System.Drawing.Size(299, 24);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "CARGOS PARA SECUESTROS";
+            this.label_CargoSecuestros.AutoSize = true;
+            this.label_CargoSecuestros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_CargoSecuestros.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CargoSecuestros.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_CargoSecuestros.Location = new System.Drawing.Point(85, 0);
+            this.label_CargoSecuestros.Name = "label_CargoSecuestros";
+            this.label_CargoSecuestros.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label_CargoSecuestros.Size = new System.Drawing.Size(299, 24);
+            this.label_CargoSecuestros.TabIndex = 34;
+            this.label_CargoSecuestros.Text = "CARGOS PARA SECUESTROS";
             // 
             // btn_Imprimir
             // 
             this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
-            this.btn_Imprimir.Location = new System.Drawing.Point(327, 531);
+            this.btn_Imprimir.Location = new System.Drawing.Point(327, 550);
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(106, 92);
             this.btn_Imprimir.TabIndex = 18;
@@ -602,7 +676,7 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(228, 544);
+            this.btn_Limpiar.Location = new System.Drawing.Point(228, 563);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 19;
@@ -614,7 +688,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(131, 544);
+            this.btn_Guardar.Location = new System.Drawing.Point(131, 563);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 17;
@@ -626,7 +700,7 @@
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(40, 544);
+            this.btn_Buscar.Location = new System.Drawing.Point(40, 563);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 22;
@@ -636,8 +710,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 692);
+            this.ClientSize = new System.Drawing.Size(506, 702);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -649,6 +724,7 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckLegajoVehicular)).EndInit();
             this.panel_Ipp.ResumeLayout(false);
             this.panel_Ipp.PerformLayout();
             this.panel_Caratula.ResumeLayout(false);
@@ -665,17 +741,17 @@
         #endregion
 
         private System.Windows.Forms.Label label_Cargo;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_DescripcioMuestra;
         private System.Windows.Forms.TextBox textBox_DescripcionMuestra;
         private System.Windows.Forms.TextBox textBox_NumeroCargo;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label_Barra;
         private System.Windows.Forms.ComboBox comboBox_Año;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Imprimir;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label_CargoSecuestros;
         private System.Windows.Forms.Panel panel_Ipp;
         private System.Windows.Forms.TextBox textBox_NumeroIpp;
         private System.Windows.Forms.ComboBox comboBox_Ipp1;
@@ -710,5 +786,10 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label_Localidad;
         private System.Windows.Forms.ComboBox comboBox_Localidad;
+        private System.Windows.Forms.PictureBox pictureBox_CheckLegajoVehicular;
+        private System.Windows.Forms.CheckBox checkBox_LegajoVehicular;
+        private System.Windows.Forms.Label label_LegajoVehicular;
+        private Controles.Controles.BotonDeslizable botonDeslizable_Visu;
+        private System.Windows.Forms.Label label_Not247;
     }
 }

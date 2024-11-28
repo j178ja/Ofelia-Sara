@@ -425,6 +425,12 @@
     <Compile Include="Formularios\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Oficial de servicio\Visu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Oficial de servicio\Visu.Designer.cs">
+      <DependentUpon>Visu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Presentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -589,6 +595,9 @@
     <EmbeddedResource Include="Formularios\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Oficial de servicio\Visu.resx">
+      <DependentUpon>Visu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -647,6 +656,7 @@
     <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
     <Content Include="Resources\imagenes\agregar_Dependencia.png" />
     <Content Include="Resources\imagenes\agregar_General.png" />
+    <Content Include="Resources\imagenes\AGREGAR_IMAGEN.png" />
     <Content Include="Resources\imagenes\agregar_Usuario.png" />
     <Content Include="Resources\imagenes\atras.png" />
     <Content Include="Resources\imagenes\buscar75%25.png" />
@@ -670,6 +680,7 @@
     <Content Include="Resources\imagenes\IconoExito.png" />
     <Content Include="Resources\imagenes\IconoInformacion.png" />
     <Content Include="Resources\imagenes\microfono24.png" />
+    <Content Include="Resources\imagenes\QUITAR IMAGEN.png" />
     <Content Include="Resources\imagenes\quitar-usuario16.png" />
     <Content Include="Resources\imagenes\sello-de-goma.png" />
     <Content Include="Resources\imagenes\teclado.png" />

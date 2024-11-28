@@ -171,3 +171,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\C
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\Controles\Controles\CustomDate.Designer.cs
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Controles.Controles.CustomDate.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Presentacion.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\Ofelia_Sara.Formularios.Oficial_de_servicio.Visu.resources
