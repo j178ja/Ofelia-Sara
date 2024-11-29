@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaImagen));
             this.pictureBox_Imagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Imagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_Imagen
@@ -38,23 +39,24 @@
             this.pictureBox_Imagen.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_Imagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Imagen.BackgroundImage")));
             this.pictureBox_Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_Imagen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_Imagen.ImageLocation = "";
             this.pictureBox_Imagen.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_Imagen.Name = "pictureBox_Imagen";
             this.pictureBox_Imagen.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_Imagen.TabIndex = 19;
             this.pictureBox_Imagen.TabStop = false;
+            this.pictureBox_Imagen.Click += new System.EventHandler(this.NuevaImagen_Click);
+            this.pictureBox_Imagen.DragDrop += new System.Windows.Forms.DragEventHandler(this.NuevaImagen_DragDrop);
+            this.pictureBox_Imagen.DragEnter += new System.Windows.Forms.DragEventHandler(this.NuevaImagen_DragEnter);
+            this.pictureBox_Imagen.MouseLeave += new System.EventHandler(this.NuevaImagen_MouseLeave);
+            this.pictureBox_Imagen.MouseHover += new System.EventHandler(this.NuevaImagen_MouseHover);
             // 
             // NuevaImagen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.pictureBox_Imagen);
-            this.Name = "NuevaImagen";
             this.Size = new System.Drawing.Size(97, 116);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Imagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -69,7 +69,7 @@
             this.panel_Imagenes = new System.Windows.Forms.Panel();
             this.btn_AmpliarReducir_IMAGENES = new System.Windows.Forms.Button();
             this.panel_AgregarImagenes = new System.Windows.Forms.Panel();
-            this.nuevaImagen1 = new Ofelia_Sara.Controles.Controles.NuevaImagen();
+            this.nuevaImagen = new Ofelia_Sara.Controles.Controles.NuevaImagen();
             this.pictureBox_QuitarImagen = new System.Windows.Forms.PictureBox();
             this.pictureBox_AgregarImagen = new System.Windows.Forms.PictureBox();
             this.botonDeslizable_Descripcion_IA = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
@@ -95,6 +95,8 @@
             this.label_DatosInstruccion = new System.Windows.Forms.Label();
             this.pictureBox_DatosVehiculo = new System.Windows.Forms.PictureBox();
             this.panel_DatosEspecificos = new System.Windows.Forms.Panel();
+            this.textBox_Chasis = new System.Windows.Forms.TextBox();
+            this.textBox_Motor = new System.Windows.Forms.TextBox();
             this.btn_AmpliarReducir_VEHICULO = new System.Windows.Forms.Button();
             this.textBox_Dominio = new System.Windows.Forms.TextBox();
             this.label_Color = new System.Windows.Forms.Label();
@@ -104,8 +106,6 @@
             this.label_Motor = new System.Windows.Forms.Label();
             this.label_Modelo = new System.Windows.Forms.Label();
             this.label_Marca = new System.Windows.Forms.Label();
-            this.comboBox_Chasis = new System.Windows.Forms.ComboBox();
-            this.comboBox_Motor = new System.Windows.Forms.ComboBox();
             this.comboBox_Marca = new System.Windows.Forms.ComboBox();
             this.comboBox_Modelo = new System.Windows.Forms.ComboBox();
             this.label_DatosVehiculo = new System.Windows.Forms.Label();
@@ -120,6 +120,7 @@
             this.panel_Victima.SuspendLayout();
             this.panel_Imagenes.SuspendLayout();
             this.panel_AgregarImagenes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuevaImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QuitarImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AgregarImagen)).BeginInit();
             this.panel_Descripcion.SuspendLayout();
@@ -620,20 +621,25 @@
             // 
             // panel_AgregarImagenes
             // 
-            this.panel_AgregarImagenes.Controls.Add(this.nuevaImagen1);
+            this.panel_AgregarImagenes.Controls.Add(this.nuevaImagen);
             this.panel_AgregarImagenes.Location = new System.Drawing.Point(3, 21);
             this.panel_AgregarImagenes.Name = "panel_AgregarImagenes";
             this.panel_AgregarImagenes.Size = new System.Drawing.Size(591, 125);
             this.panel_AgregarImagenes.TabIndex = 46;
             // 
-            // nuevaImagen1
+            // nuevaImagen
             // 
-            this.nuevaImagen1.AutoSize = true;
-            this.nuevaImagen1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nuevaImagen1.Location = new System.Drawing.Point(243, 9);
-            this.nuevaImagen1.Name = "nuevaImagen1";
-            this.nuevaImagen1.Size = new System.Drawing.Size(97, 116);
-            this.nuevaImagen1.TabIndex = 0;
+            this.nuevaImagen.AllowDrop = true;
+            this.nuevaImagen.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.nuevaImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nuevaImagen.HoverImage = null;
+            this.nuevaImagen.Image = ((System.Drawing.Image)(resources.GetObject("nuevaImagen.Image")));
+            this.nuevaImagen.Location = new System.Drawing.Point(243, 9);
+            this.nuevaImagen.Name = "nuevaImagen";
+            this.nuevaImagen.Size = new System.Drawing.Size(97, 116);
+            this.nuevaImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.nuevaImagen.TabIndex = 0;
+            this.nuevaImagen.TabStop = false;
             // 
             // pictureBox_QuitarImagen
             // 
@@ -788,6 +794,7 @@
             // groupBox_TipoExamenVisu
             // 
             this.groupBox_TipoExamenVisu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_TipoExamenVisu.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_PanelImagenes);
             this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_Motovehiculo);
             this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_Automovil);
@@ -796,6 +803,7 @@
             this.groupBox_TipoExamenVisu.Controls.Add(this.radioButton_Motovehiculo);
             this.groupBox_TipoExamenVisu.Controls.Add(this.radioButton_Objeto);
             this.groupBox_TipoExamenVisu.Controls.Add(this.radioButton_Automovil);
+            this.groupBox_TipoExamenVisu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox_TipoExamenVisu.Location = new System.Drawing.Point(27, 339);
             this.groupBox_TipoExamenVisu.Name = "groupBox_TipoExamenVisu";
             this.groupBox_TipoExamenVisu.Size = new System.Drawing.Size(578, 73);
@@ -917,6 +925,8 @@
             // panel_DatosEspecificos
             // 
             this.panel_DatosEspecificos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_DatosEspecificos.Controls.Add(this.textBox_Chasis);
+            this.panel_DatosEspecificos.Controls.Add(this.textBox_Motor);
             this.panel_DatosEspecificos.Controls.Add(this.btn_AmpliarReducir_VEHICULO);
             this.panel_DatosEspecificos.Controls.Add(this.textBox_Dominio);
             this.panel_DatosEspecificos.Controls.Add(this.label_Color);
@@ -926,14 +936,26 @@
             this.panel_DatosEspecificos.Controls.Add(this.label_Motor);
             this.panel_DatosEspecificos.Controls.Add(this.label_Modelo);
             this.panel_DatosEspecificos.Controls.Add(this.label_Marca);
-            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Chasis);
-            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Motor);
             this.panel_DatosEspecificos.Controls.Add(this.comboBox_Marca);
             this.panel_DatosEspecificos.Controls.Add(this.comboBox_Modelo);
             this.panel_DatosEspecificos.Location = new System.Drawing.Point(0, 15);
             this.panel_DatosEspecificos.Name = "panel_DatosEspecificos";
             this.panel_DatosEspecificos.Size = new System.Drawing.Size(596, 107);
             this.panel_DatosEspecificos.TabIndex = 26;
+            // 
+            // textBox_Chasis
+            // 
+            this.textBox_Chasis.Location = new System.Drawing.Point(389, 54);
+            this.textBox_Chasis.Name = "textBox_Chasis";
+            this.textBox_Chasis.Size = new System.Drawing.Size(171, 20);
+            this.textBox_Chasis.TabIndex = 88;
+            // 
+            // textBox_Motor
+            // 
+            this.textBox_Motor.Location = new System.Drawing.Point(102, 56);
+            this.textBox_Motor.Name = "textBox_Motor";
+            this.textBox_Motor.Size = new System.Drawing.Size(171, 20);
+            this.textBox_Motor.TabIndex = 87;
             // 
             // btn_AmpliarReducir_VEHICULO
             // 
@@ -1025,22 +1047,6 @@
             this.label_Marca.TabIndex = 9;
             this.label_Marca.Text = "MARCA :";
             // 
-            // comboBox_Chasis
-            // 
-            this.comboBox_Chasis.FormattingEnabled = true;
-            this.comboBox_Chasis.Location = new System.Drawing.Point(389, 54);
-            this.comboBox_Chasis.Name = "comboBox_Chasis";
-            this.comboBox_Chasis.Size = new System.Drawing.Size(171, 21);
-            this.comboBox_Chasis.TabIndex = 3;
-            // 
-            // comboBox_Motor
-            // 
-            this.comboBox_Motor.FormattingEnabled = true;
-            this.comboBox_Motor.Location = new System.Drawing.Point(102, 53);
-            this.comboBox_Motor.Name = "comboBox_Motor";
-            this.comboBox_Motor.Size = new System.Drawing.Size(171, 21);
-            this.comboBox_Motor.TabIndex = 2;
-            // 
             // comboBox_Marca
             // 
             this.comboBox_Marca.FormattingEnabled = true;
@@ -1131,7 +1137,7 @@
             this.panel_Imagenes.ResumeLayout(false);
             this.panel_Imagenes.PerformLayout();
             this.panel_AgregarImagenes.ResumeLayout(false);
-            this.panel_AgregarImagenes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuevaImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QuitarImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AgregarImagen)).EndInit();
             this.panel_Descripcion.ResumeLayout(false);
@@ -1169,8 +1175,6 @@
         private System.Windows.Forms.Panel panel_Imagenes;
         private System.Windows.Forms.Label label_DescripcionConIA;
         private System.Windows.Forms.Panel panel_DatosEspecificos;
-        private System.Windows.Forms.ComboBox comboBox_Chasis;
-        private System.Windows.Forms.ComboBox comboBox_Motor;
         private System.Windows.Forms.ComboBox comboBox_Marca;
         private System.Windows.Forms.ComboBox comboBox_Modelo;
         private Controles.Controles.BotonDeslizable botonDeslizable_Descripcion_IA;
@@ -1225,7 +1229,7 @@
         private System.Windows.Forms.PictureBox pictureBox_QuitarImagen;
         private System.Windows.Forms.PictureBox pictureBox_AgregarImagen;
         private System.Windows.Forms.Panel panel_AgregarImagenes;
-        private Controles.Controles.NuevaImagen nuevaImagen1;
+        private Controles.Controles.NuevaImagen nuevaImagen;
         private System.Windows.Forms.Button btn_AmpliarReducir_INSTRUCCION;
         private System.Windows.Forms.Button btn_AmpliarReducir_DESCRIPCION;
         private System.Windows.Forms.Button btn_AmpliarReducir_VEHICULO;
@@ -1235,5 +1239,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Descripcion;
         private System.Windows.Forms.PictureBox pictureBox_PanelImagenes;
         private System.Windows.Forms.Panel panel_DatosVehiculo;
+        private System.Windows.Forms.TextBox textBox_Chasis;
+        private System.Windows.Forms.TextBox textBox_Motor;
     }
 }

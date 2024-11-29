@@ -259,4 +259,10 @@
   <data name="verificacion_exitosa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\verificacion_exitosa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="agregar_imagen_HOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\agregar imagen_HOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar_imagen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\agregar imagen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

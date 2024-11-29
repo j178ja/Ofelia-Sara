@@ -228,6 +228,9 @@
     <Compile Include="Controles\Controles\Aplicadas con controles\ComboBoxConBorde.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\Controles\Aplicadas con controles\PanelConBordePersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\TextBoxConBorde.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -300,7 +303,7 @@
       <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Controles\NuevaImagen.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controles\Controles\NuevaImagen.Designer.cs">
       <DependentUpon>NuevaImagen.cs</DependentUpon>
@@ -664,6 +667,8 @@
     <None Include="Resources\Cursor\hand.cur" />
     <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
     <Content Include="Resources\imagenes\Advertencia_Faltante.png" />
+    <Content Include="Resources\imagenes\agregar imagen.png" />
+    <Content Include="Resources\imagenes\agregar imagen_HOVER.png" />
     <Content Include="Resources\imagenes\agregar_Dependencia.png" />
     <Content Include="Resources\imagenes\agregar_General.png" />
     <Content Include="Resources\imagenes\AGREGAR_IMAGEN.png" />

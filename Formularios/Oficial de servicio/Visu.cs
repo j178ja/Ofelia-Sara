@@ -8,19 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BaseDatos.Entidades;
 using BaseDatos.Mensaje;
 using Clases.Animaciones;
 using Clases.Apariencia;
+using Clases.Texto;
 using iTextSharp.text.pdf.codec.wmf;
 using Microsoft.Office.Interop.Word;
 using Ofelia_Sara.Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class Visu : BaseForm
     {
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+                                            
+        private List<string> victimas = new List<string>(); // Listas para almacenar víctimas e imputados
+        private List<string> imputados = new List<string>(); // Listas para almacenar víctimas e imputados
+
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Imagenes = true;// 
         private bool panelExpandido_Vehiculo = true;// 
@@ -32,24 +39,66 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private int alturaOriginalPanel_Vehiculo;
         private int alturaOriginalPanel_Descripcion;
         private int alturaContraidaPanel = 30;
+
+
+        
+
+
         public Visu()
         {
             InitializeComponent();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            //..............................
+           
+            //..............................
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBotonAgregar(btn_AgregarCausa);
+            InicializarEstiloBotonAgregar(btn_AgregarVictima);
+            InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
             panel_Imagenes.Visible = false;
+            panel_DatosVehiculo.Visible = false;
             panel_DatosEspecificos.Visible = false;
             panel_Descripcion.Visible = false;
 
             richTextBox_Descripcion.TextChanged += (sender, e) => ValidarPanelDescripcion();
 
+            comboBox_Marca.TextChanged += (s, e) =>  ValidarPanelVehiculo();
+            comboBox_Modelo.TextChanged += (s, e) =>  ValidarPanelVehiculo();
+            comboBox_Color.TextChanged += (s, e) =>  ValidarPanelVehiculo();
+            textBox_Chasis.TextChanged += (s, e) =>  ValidarPanelVehiculo();
+            textBox_Motor.TextChanged += (s, e) =>  ValidarPanelVehiculo();
+            textBox_Dominio.TextChanged += (s, e) =>  ValidarPanelVehiculo();
 
+          
         }
+      
 
         private void Visu_Load(object sender, EventArgs e)
         {
+            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
+            MayusculaSola.AplicarAControl(textBox_Victima);
+            MayusculaSola.AplicarAControl(textBox_Imputado);
+            MayusculaSola.AplicarAControl(comboBox_Localidad);
+            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
+            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
+            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+            //......................................................
+            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
+            //.......................................................................
+            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+
+            //cargar desde base de datos
+            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
+
             pictureBox_AgregarImagen.BringToFront();
             pictureBox_QuitarImagen.BringToFront();
             pictureBox_DatosVehiculo.BringToFront();
@@ -68,13 +117,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ValidarPanelDescripcion();
             ValidarPanelVehiculo();
 
+            //para que se carge el panel contraido
             if (panelExpandido_Instruccion)
             {
                 // Contraer el panel
                 panel_DatosInstruccion.Height = alturaContraidaPanel;
                 btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
                 panelExpandido_Instruccion = false;
-
 
                 foreach (Control control in panel_DatosInstruccion.Controls)
                 {
@@ -87,10 +136,159 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         control.Visible = false; // Oculta los demás controles
                     }
                 }
+            }
+            //.................
+            //Para cambiar el borde del group segun este seleccionado o no un radiobutom
+            foreach (Control ctrl in groupBox_TipoExamenVisu.Controls)
+            {
+                if (ctrl is RadioButton radioButton)
+                {
+                    radioButton.CheckedChanged += radioButton_CheckedChanged;
+                }
+            }
+
+        }
+        //--------------------------------------------------------------------------
+        //-----para inicializar los COMBOBOX FISCALIA----------------
+        private void InicializarComboBoxFISCALIA()
+        {
+
+            // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
+            List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
+            List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
+            List<string> localidades = FiscaliaManager.ObtenerLocalidades().Distinct().ToList();
+            List<string> deptosJudiciales = FiscaliaManager.ObtenerDeptosJudiciales().Distinct().ToList();
+
+            // Asignar las listas a los ComboBoxes correspondientes
+            comboBox_Fiscalia.DataSource = nombresFiscalias;
+            comboBox_AgenteFiscal.DataSource = agentesFiscales;
+            comboBox_Localidad.DataSource = localidades;
+        
+
+
+            comboBox_Fiscalia.SelectedIndex = -1;
+            comboBox_AgenteFiscal.SelectedIndex = -1;
+            comboBox_Localidad.SelectedIndex = -1;
+          
+        }
+
+        private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Desactivar los ComboBoxes de detalle mientras se actualizan
+            comboBox_AgenteFiscal.Enabled = false;
+            comboBox_Localidad.Enabled = false;
+    
+
+            // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
+            if (comboBox_Fiscalia.SelectedItem != null)
+            {
+                string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
+                Fiscaliajson fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
+
+                if (fiscalia != null)
+                {
+                    // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
+                    comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
+                    comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
+                   
+                }
+                else
+                {
+                    // Si no se encuentra la fiscalía, limpiar los ComboBoxes
+                    comboBox_AgenteFiscal.DataSource = null;
+                    comboBox_Localidad.DataSource = null;
+             
+                }
+
+                // Reactivar los ComboBoxes de detalle
+                comboBox_AgenteFiscal.Enabled = true;
+                comboBox_Localidad.Enabled = true;
+         
+            }
+            else
+            {
+                // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
+                comboBox_AgenteFiscal.DataSource = null;
+                comboBox_Localidad.DataSource = null;
+              
+
+                comboBox_AgenteFiscal.Enabled = false;
+                comboBox_Localidad.Enabled = false;
 
             }
         }
+        //----------------------------------------------------------------
+        //-------------------BOTON AGREGAR CAUSA---------------------
+        private void Btn_AgregarCausa_Click(object sender, EventArgs e)
+        {
+            // Llamar al método en el UserControl para agregar el control
+            NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
 
+        }
+
+        //------------BOTON AGREGAR VICTIMA----------------------------
+        private void Btn_AgregarVictima_Click(object sender, EventArgs e)
+        {
+            // Primero, valida todos los controles existentes en el panel
+            bool controlesCompletos = ValidarControlesExistentes(panel_Victima);
+
+            if (!controlesCompletos)
+            {
+
+                // Muestra un mensaje si algún control en el panel está vacío
+                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", MensajeGeneral.TipoMensaje.Advertencia);
+                return; // Sal de la función para evitar agregar un nuevo control
+            }
+            else
+            {
+                // Llamar al método en el UserControl para agregar el control
+                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
+
+                // Agregar la nueva víctima a la lista
+                string nuevaVictima = "Nombre de la nueva víctima";
+                victimas.Add(nuevaVictima);
+
+                // Actualizar la lista visual en el formulario, si corresponde
+                //lstVictimas.Items.Add(nuevaVictima);
+            }
+        }
+
+        //-------------BOTON AGREGAR IMPUTADO------------------------------
+        private void Btn_AgregarImputado_Click(object sender, EventArgs e)
+        {
+            // Primero, valida todos los controles existentes en el panel
+            bool controlesCompletos = ValidarControlesExistentes(panel_Imputado);
+
+            if (!controlesCompletos)
+            {
+                // Muestra un mensaje si algún control en el panel está vacío
+                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.", MensajeGeneral.TipoMensaje.Advertencia);
+                return; // Sal de la función para evitar agregar un nuevo control
+            }
+            else
+            {
+                // Llamar al método en el UserControl para agregar el control
+                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
+
+                // Agregar el nuevo imputado a la lista
+                string nuevoImputado = "Nombre del nuevo imputado"; // Aquí deberías obtener el nombre del imputado del nuevo control agregado
+                imputados.Add(nuevoImputado);
+
+            }
+        }
+        // ---METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL
+        private bool ValidarControlesExistentes(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                var personaControl = control as NuevaPersonaControl;
+                if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
+                {
+                    return false; // Retorna false si se encuentra un control vacío
+                }
+            }
+            return true; // Todos los controles están completos
+        }
         //---------------------------------------------------------------------------
         private void Visu_HelpButtonClicked(object sender, CancelEventArgs e)
         {
@@ -108,6 +306,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
+            // Verificar si algún RadioButton en el grupo está seleccionado
+            bool isChecked = groupBox_TipoExamenVisu.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
+
+            // Cambiar el color del borde del GroupBox según el estado de los RadioButton
+            if (isChecked)
+            {
+                groupBox_TipoExamenVisu.Paint += GroupBox_TipoExamenVisu_Paint_Activated;
+            }
+            else
+            {
+                groupBox_TipoExamenVisu.Paint += GroupBox_TipoExamenVisu_Paint_Default;
+            }
+
+            // Forzar el repintado del GroupBox
+            groupBox_TipoExamenVisu.Invalidate();
+       //............................
             // Asegúrate de que el sender es un RadioButton
             if (sender is RadioButton radioButton)
             {
@@ -183,38 +397,79 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Redibuja el RadioButton para reflejar el cambio
             radioButton.Invalidate();
         }
-      
+        //----------------------------------------------------------------------------------------------------
+        // METODOS PARA CAMBIAR EL COLOR DE BORDE DEL GROUP SEGUN ESTE SELECCIONADO O NO 
+
+        private void GroupBox_TipoExamenVisu_Paint_Activated(object sender, PaintEventArgs e)
+        {
+            using (Pen pen = new Pen(Color.Green, 2)) // Borde verde cuando algún CheckBox está seleccionado
+            {
+                e.Graphics.DrawRectangle(pen, groupBox_TipoExamenVisu.ClientRectangle);
+            }
+        }
+
+        private void GroupBox_TipoExamenVisu_Paint_Default(object sender, PaintEventArgs e)
+        {
+            using (Pen pen = new Pen(Color.Black, 1)) // Borde negro por defecto
+            {
+                e.Graphics.DrawRectangle(pen, groupBox_TipoExamenVisu.ClientRectangle);
+            }
+        }
+
+        //---------------------------------------------------------------------------------
+
         /// <summary>
         /// METODO PARA AGREGAR IMAGENES
         /// </summary>
-     
+
         private void pictureBox_AgregarImagen_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del control NuevaImagen
-            NuevaImagen nuevaImagen = new NuevaImagen();
+            foreach (Control ctrl in panel_AgregarImagenes.Controls)
+            {
+                NuevaImagen imagenControl = ctrl as NuevaImagen;
+                if (imagenControl != null) // Si es de tipo NuevaImagen
+                {
+                    if (imagenControl.Image == null || imagenControl.Image == Properties.Resources.agregar_imagen1)
+                    {
+                        MessageBox.Show("Control sin imagen o imagen predeterminada detectada.");
+                        MessageBox.Show("Todos los controles deben contener una imagen antes de agregar una nueva.");
+                        return; // No agregar una nueva imagen si alguna no tiene una imagen cargada o tiene la imagen predeterminada
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"El control {ctrl.Name} no es de tipo NuevaImagen.");
+                }
+            }
 
-            // Se agrega nuevo control hasta 6
-            int nuevaPosicionX = (panel_AgregarImagenes.Controls.Count > 0 && panel_AgregarImagenes.Controls.Count<=5) ?
-                                 panel_AgregarImagenes.Controls[panel_AgregarImagenes.Controls.Count - 1].Left - nuevaImagen.Width - 5 :
+
+
+            // Si llegamos aquí, significa que todos los controles tienen una imagen válida
+            // Verificar el límite de 5 controles
+            if (panel_AgregarImagenes.Controls.Count >= 5)
+            {
+                MensajeGeneral.Mostrar("Límite máximo de 5 imágenes alcanzado.", MensajeGeneral.TipoMensaje.Error);
+                return;
+            }
+
+            // Crear una instancia del control NuevaImagen
+            NuevaImagen nuevoControlImagen = new NuevaImagen();
+
+            // Establecer la posición de la nueva imagen
+            int nuevaPosicionX = (panel_AgregarImagenes.Controls.Count > 0) ?
+                                 panel_AgregarImagenes.Controls[panel_AgregarImagenes.Controls.Count - 1].Right + 5 :
                                  8; // Ajusta este valor para definir el margen inicial
 
-            // Establecer la posición del nuevo control
-            nuevaImagen.Location = new System.Drawing.Point(nuevaPosicionX, 8);
+            nuevoControlImagen.Location = new System.Drawing.Point(nuevaPosicionX, 8);
 
             // Agregar el nuevo control al panel
-            panel_AgregarImagenes.Controls.Add(nuevaImagen);
+            panel_AgregarImagenes.Controls.Add(nuevoControlImagen);
 
             // Calcular el ancho total de todos los controles en el panel, con márgenes
             int totalWidth = 0;
             foreach (Control control in panel_AgregarImagenes.Controls)
             {
                 totalWidth += control.Width + 5; // 5 es el margen entre controles
-
-                if (panel_AgregarImagenes.Controls.Count > 5)
-                {
-                    MensajeGeneral.Mostrar("Limite máximo de 5 imagenes", MensajeGeneral.TipoMensaje.Error);
-                    return;
-                }
             }
 
             // Calcular la posición de inicio para centrar los controles en el panel
@@ -232,7 +487,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// METODO PARA QUITAR IMAGENES
         /// </summary>
-     
+
         private void pictureBox_QuitarImagen_Click(object sender, EventArgs e)
         {
             // Verifica que haya más de un control en el panel
@@ -366,7 +621,32 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Ajustar la altura del formulario (+20 px)
                 this.Height = panel1.Location.Y + panel1.Height + 20;
         }
+        //----------------------------------------------------------------------------------
+        private void AplicarBordePanel(PanelConBordePersonalizado panel, bool camposCompletos)
+        {
+            if (panel.Width == panel.MinimumSize.Width) // Verifica si el panel está contraído
+            {
+                if (camposCompletos)
+                {
+                    panel.BordeColor = Color.FromArgb(4, 200, 0); // Verde
+                    panel.BordeGrosor = 2;
+                }
+                else
+                {
+                    panel.BordeColor = Color.FromArgb(255, 0, 0); // Rojo
+                    panel.BordeGrosor = 2;
+                }
+            }
+            else
+            {
+                // Restaurar el borde original cuando el panel no esté contraído
+                panel.BordeColor = Color.Transparent;
+                panel.BordeGrosor = 1;
+            }
+        }
 
+
+        //----------------------------------------------------------------------------------
         /// <summary>
         /// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
         /// </summary>
@@ -627,6 +907,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             bool camposValidos = true;
 
+          
+
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_DatosInstruccion.Controls)
             {
@@ -648,13 +930,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 pictureBox_Validacion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
                 pictureBox_Validacion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+               
             }
             else
             {
                 pictureBox_Validacion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
                 pictureBox_Validacion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-               
+              
             }
 
             // Ajustar la posición del pictureBox al lado del label
@@ -717,21 +1000,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Asegurarse de que el pictureBox sea visible
             pictureBox_DatosVehiculo.Visible = true;
         }
+
+
+        //----------------------------------------------------------------------------------------------
         // METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
         private void ValidarPanelDescripcion()
         {
-            if (!string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text))
+            bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
+
+            if (camposValidos)
             {
                 pictureBox_Descripcion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
                 pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo transparente
-                label_Descripcion.BackColor= Color.FromArgb(4, 200, 0);//resalta con color verde mas brillante que el original
+                label_Descripcion.BackColor = Color.FromArgb(4, 200, 0); // Resalta con color verde más brillante que el original
             }
             else
             {
                 pictureBox_Descripcion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo  de imagen transparente
-                label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); //retoma color original verde agua
+                pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo de imagen transparente
+                label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
             }
+
+            
 
             // Ajustar la posición del pictureBox al lado del label
             pictureBox_Descripcion.Location = new System.Drawing.Point(
@@ -745,6 +1035,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Asegurarse de que el pictureBox sea visible
             pictureBox_Descripcion.Visible = true;
         }
+
         //-----------------------------------------------------------------------------------
         //--para que muestre mensaje de advertencia previo cerrar formulario
         private void Visu_FormClosing(object sender, FormClosingEventArgs e)
