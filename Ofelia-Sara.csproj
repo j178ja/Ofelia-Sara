@@ -299,6 +299,12 @@
     <Compile Include="Controles\Controles\NuevaCaratulaControl.Designer.cs">
       <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Controles\NuevaImagen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\NuevaImagen.Designer.cs">
+      <DependentUpon>NuevaImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Controles\NuevaPersonaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -532,6 +538,9 @@
     <EmbeddedResource Include="Controles\Controles\NuevaCaratulaControl.resx">
       <DependentUpon>NuevaCaratulaControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\NuevaImagen.resx">
+      <DependentUpon>NuevaImagen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\NuevaPersonaControl.resx">
       <DependentUpon>NuevaPersonaControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -654,14 +663,18 @@
     <None Include="Resources\Cursor\cursorFlecha.cur" />
     <None Include="Resources\Cursor\hand.cur" />
     <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
+    <Content Include="Resources\imagenes\Advertencia_Faltante.png" />
     <Content Include="Resources\imagenes\agregar_Dependencia.png" />
     <Content Include="Resources\imagenes\agregar_General.png" />
     <Content Include="Resources\imagenes\AGREGAR_IMAGEN.png" />
     <Content Include="Resources\imagenes\agregar_Usuario.png" />
     <Content Include="Resources\imagenes\atras.png" />
+    <Content Include="Resources\imagenes\auto.png" />
     <Content Include="Resources\imagenes\buscar75%25.png" />
     <Content Include="Resources\imagenes\check-Personalizado.png" />
     <Content Include="Resources\imagenes\configuracion.ico" />
+    <Content Include="Resources\imagenes\dobleFlechaABAJO.png" />
+    <Content Include="Resources\imagenes\dobleFlechaARRIBA .png" />
     <Content Include="Resources\imagenes\engranajeOriginal.png" />
     <Content Include="Resources\imagenes\editar.png" />
     <Content Include="Resources\imagenes\eliminarUsuario.png" />
@@ -670,6 +683,7 @@
     <Content Include="Resources\imagenes\errorProvider.png" />
     <Content Include="Resources\imagenes\flechaG-Roja.png" />
     <Content Include="Resources\imagenes\flechaG-Verde.png" />
+    <Content Include="Resources\imagenes\herramienta.png" />
     <Content Include="Resources\imagenes\IconoAdvertencia.png" />
     <Content Include="Resources\imagenes\IconoAplicacion.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -680,12 +694,14 @@
     <Content Include="Resources\imagenes\IconoExito.png" />
     <Content Include="Resources\imagenes\IconoInformacion.png" />
     <Content Include="Resources\imagenes\microfono24.png" />
+    <Content Include="Resources\imagenes\moto.png" />
     <Content Include="Resources\imagenes\QUITAR IMAGEN.png" />
     <Content Include="Resources\imagenes\quitar-usuario16.png" />
     <Content Include="Resources\imagenes\sello-de-goma.png" />
     <Content Include="Resources\imagenes\teclado.png" />
     <Content Include="Resources\imagenes\microfono.png" />
     <Content Include="Resources\imagenes\icoPredeterminadoComboBox.png" />
+    <Content Include="Resources\imagenes\verificacion_exitosa.png" />
     <Content Include="Resources\videos\instructivoDemo.mp4" />
     <None Include="Resources\imagenes\IconoEscudoPolicia.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

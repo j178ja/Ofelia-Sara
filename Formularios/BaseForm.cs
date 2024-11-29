@@ -645,79 +645,87 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-      
+
 
         //---- para error provider
+        protected void CrearPictureBoxError(Control parent, string nombre, Point ubicacion)
+        {
+            PictureBox pictureBoxError = new PictureBox
+            {
+                Name = nombre,
+                Size = new Size(16, 16), 
+                Location = ubicacion,
+                Image = Properties.Resources.errorProvider, 
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Visible = false // Por defecto, no visible
+            };
 
+            // Agrega el PictureBox al panel o al control padre
+            parent.Controls.Add(pictureBoxError);
+        }
         // Método para establecer el error en un control
+        // Método para configurar un PictureBox de error en el control.
         protected void SetError(Control control, string mensaje)
         {
             if (control == null || string.IsNullOrEmpty(mensaje))
                 return;
 
-            // Validar si el control es un TextBoxConBorde y aplicar borde de error
+            // Si el control es un TextBoxConBorde, aplica el borde de error.
             if (control is TextBoxConBorde textBox)
             {
                 textBox.MostrarBordeError = true;
             }
 
-            // Si no existe un PictureBox asociado al control, se crea
+            // Verifica si ya existe un PictureBox asociado a este control, si no, lo crea.
             if (!pictureBoxesErrores.ContainsKey(control))
             {
-                PictureBox pictureBoxError = new PictureBox
-                {
-                    Image = Properties.Resources.errorProvider, // Imagen de error
-                    Size = new Size(18, 16),
-                    SizeMode = PictureBoxSizeMode.StretchImage,
-                    BackColor = Color.White,
-                    Visible = false // Oculto inicialmente
-                };
+                // Crea un nuevo PictureBox usando el método CrearPictureBoxError.
+                CrearPictureBoxError(control.Parent, $"Error_{control.Name}", new Point(0, 0));
 
-
-
-                // Agregar el PictureBox al formulario y al diccionario
-                this.Controls.Add(pictureBoxError);
-                pictureBoxesErrores[control] = pictureBoxError;
+                // Agrega el PictureBox al diccionario.
+                pictureBoxesErrores[control] = control.Parent.Controls.Find($"Error_{control.Name}", true).FirstOrDefault() as PictureBox;
             }
 
-            // Obtener el PictureBox asociado al control
+            // Obtén el PictureBox asociado al control.
             PictureBox pictureBox = pictureBoxesErrores[control];
 
-            // Calcular la posición absoluta del control en relación al formulario
+            // Calcula la posición del PictureBox en relación al control.
             Point controlLocation = control.Parent.PointToScreen(control.Location);
             Point formLocation = this.PointToClient(controlLocation);
 
-            // Ajustar la posición del PictureBox
+            // Ajusta la posición del PictureBox.
             pictureBox.Location = new Point(
                 formLocation.X + control.Width - pictureBox.Width - 7,
                 formLocation.Y + 2);
 
-            // Asegurarse de que el PictureBox esté visible y al frente
+            // Asegúrate de que el PictureBox esté visible y al frente.
             pictureBox.BringToFront();
             pictureBox.Visible = true;
 
-            // Configurar el ToolTip asociado al PictureBox con un error
+            // Configura el ToolTip asociado al PictureBox con el mensaje de error.
             ToolTipError.InitializeToolTipOnHover(pictureBox, mensaje);
         }
 
+        // Método para limpiar el error de un control.
         protected void ClearError(Control control)
         {
             if (control == null)
                 return;
 
-            // Validar si el control es un TextBoxConBorde y quitar el borde de error
+            // Si el control es un TextBoxConBorde, quita el borde de error.
             if (control is TextBoxConBorde textBox)
             {
                 textBox.MostrarBordeError = false;
             }
 
-            // Si existe un PictureBox asociado al control, ocultarlo
+            // Si existe un PictureBox asociado al control, ocúltalo.
             if (pictureBoxesErrores.TryGetValue(control, out PictureBox pictureBox))
             {
                 pictureBox.Visible = false;
                 ToolTipError.HideToolTip();
             }
         }
+
 
 
         //----------------------------------------------------------------------

@@ -63,6 +63,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Advertencia_Faltante {
+            get {
+                object obj = ResourceManager.GetObject("Advertencia_Faltante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_Dependencia {
             get {
                 object obj = ResourceManager.GetObject("agregar_Dependencia", resourceCulture);
@@ -106,6 +116,16 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap atras {
             get {
                 object obj = ResourceManager.GetObject("atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap auto {
+            get {
+                object obj = ResourceManager.GetObject("auto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -167,6 +187,26 @@ namespace Ofelia_Sara.Properties {
             get {
                 object obj = ResourceManager.GetObject("CursorlapizDerecha", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dobleFlechaABAJO {
+            get {
+                object obj = ResourceManager.GetObject("dobleFlechaABAJO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dobleFlechaARRIBA {
+            get {
+                object obj = ResourceManager.GetObject("dobleFlechaARRIBA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -267,6 +307,16 @@ namespace Ofelia_Sara.Properties {
             get {
                 object obj = ResourceManager.GetObject("hand", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap herramienta {
+            get {
+                object obj = ResourceManager.GetObject("herramienta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -383,6 +433,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap moto {
+            get {
+                object obj = ResourceManager.GetObject("moto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ojo_Contraseña {
             get {
                 object obj = ResourceManager.GetObject("ojo_Contraseña", resourceCulture);
@@ -456,6 +516,16 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap subir_documentos {
             get {
                 object obj = ResourceManager.GetObject("subir_documentos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verificacion_exitosa {
+            get {
+                object obj = ResourceManager.GetObject("verificacion_exitosa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
