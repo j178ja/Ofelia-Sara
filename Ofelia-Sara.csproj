@@ -228,6 +228,9 @@
     <Compile Include="Controles\Controles\Aplicadas con controles\ComboBoxConBorde.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\Controles\Aplicadas con controles\PanelConBordeNeon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\PanelConBordePersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>

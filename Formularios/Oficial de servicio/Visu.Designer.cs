@@ -30,13 +30,57 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Visu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox_Validacion = new System.Windows.Forms.PictureBox();
+            this.panel_DatosVehiculo = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.panel_DatosEspecificos = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.textBox_Chasis = new System.Windows.Forms.TextBox();
+            this.comboBox_Marca = new System.Windows.Forms.ComboBox();
+            this.textBox_Motor = new System.Windows.Forms.TextBox();
+            this.btn_AmpliarReducir_VEHICULO = new System.Windows.Forms.Button();
+            this.comboBox_Modelo = new System.Windows.Forms.ComboBox();
+            this.label_Marca = new System.Windows.Forms.Label();
+            this.textBox_Dominio = new System.Windows.Forms.TextBox();
+            this.label_Modelo = new System.Windows.Forms.Label();
+            this.label_Color = new System.Windows.Forms.Label();
+            this.label_Motor = new System.Windows.Forms.Label();
+            this.comboBox_Color = new System.Windows.Forms.ComboBox();
+            this.label_Chasis = new System.Windows.Forms.Label();
+            this.label_Dominio = new System.Windows.Forms.Label();
+            this.pictureBox_DatosVehiculo = new System.Windows.Forms.PictureBox();
+            this.label_DatosVehiculo = new System.Windows.Forms.Label();
+            this.panel_Imagenes = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.pictureBox_PanelImagenes = new System.Windows.Forms.PictureBox();
+            this.btn_AmpliarReducir_IMAGENES = new System.Windows.Forms.Button();
+            this.panel_AgregarImagenes = new System.Windows.Forms.Panel();
+            this.nuevaImagen = new Ofelia_Sara.Controles.Controles.NuevaImagen();
+            this.label_DescripcionConIA = new System.Windows.Forms.Label();
+            this.botonDeslizable_Descripcion_IA = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.pictureBox_QuitarImagen = new System.Windows.Forms.PictureBox();
+            this.pictureBox_AgregarImagen = new System.Windows.Forms.PictureBox();
+            this.panel_Descripcion = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.pictureBox_Descripcion = new System.Windows.Forms.PictureBox();
+            this.richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
+            this.btn_AmpliarReducir_DESCRIPCION = new System.Windows.Forms.Button();
+            this.label_Descripcion = new System.Windows.Forms.Label();
+            this.panel_SeleccionVisu = new System.Windows.Forms.Panel();
+            this.panel_TipoExamenVisu = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.pictureBox_Motovehiculo = new System.Windows.Forms.PictureBox();
+            this.radioButton_Motovehiculo = new System.Windows.Forms.RadioButton();
+            this.radioButton_Objeto = new System.Windows.Forms.RadioButton();
+            this.pictureBox_Automovil = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Objeto = new System.Windows.Forms.PictureBox();
+            this.radioButton_Automovil = new System.Windows.Forms.RadioButton();
+            this.label_SeleccionVisu = new System.Windows.Forms.Label();
+            this.btn_Imprimir = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.pictureBox_PanelInstruccion = new System.Windows.Forms.PictureBox();
             this.panel_DatosInstruccion = new System.Windows.Forms.Panel();
+            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.btn_AmpliarReducir_INSTRUCCION = new System.Windows.Forms.Button();
             this.label_Localidad = new System.Windows.Forms.Label();
             this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
             this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
-            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
             this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
             this.comboBox_Fiscalia = new System.Windows.Forms.ComboBox();
             this.lbl_Dependencia = new System.Windows.Forms.Label();
@@ -66,111 +110,587 @@
             this.textBox_Victima = new System.Windows.Forms.TextBox();
             this.lbl_Victima = new System.Windows.Forms.Label();
             this.btn_AgregarVictima = new System.Windows.Forms.Button();
-            this.panel_Imagenes = new System.Windows.Forms.Panel();
-            this.btn_AmpliarReducir_IMAGENES = new System.Windows.Forms.Button();
-            this.panel_AgregarImagenes = new System.Windows.Forms.Panel();
-            this.nuevaImagen = new Ofelia_Sara.Controles.Controles.NuevaImagen();
-            this.pictureBox_QuitarImagen = new System.Windows.Forms.PictureBox();
-            this.pictureBox_AgregarImagen = new System.Windows.Forms.PictureBox();
-            this.botonDeslizable_Descripcion_IA = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
-            this.label_DescripcionConIA = new System.Windows.Forms.Label();
-            this.panel_Descripcion = new System.Windows.Forms.Panel();
-            this.pictureBox_Descripcion = new System.Windows.Forms.PictureBox();
-            this.btn_AmpliarReducir_DESCRIPCION = new System.Windows.Forms.Button();
-            this.richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
-            this.label_Descripcion = new System.Windows.Forms.Label();
-            this.btn_Imprimir = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.groupBox_TipoExamenVisu = new System.Windows.Forms.GroupBox();
-            this.pictureBox_PanelImagenes = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Motovehiculo = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Automovil = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Objeto = new System.Windows.Forms.PictureBox();
-            this.label_SeleccionVisu = new System.Windows.Forms.Label();
-            this.radioButton_Motovehiculo = new System.Windows.Forms.RadioButton();
-            this.radioButton_Objeto = new System.Windows.Forms.RadioButton();
-            this.radioButton_Automovil = new System.Windows.Forms.RadioButton();
             this.label_DatosInstruccion = new System.Windows.Forms.Label();
-            this.pictureBox_DatosVehiculo = new System.Windows.Forms.PictureBox();
-            this.panel_DatosEspecificos = new System.Windows.Forms.Panel();
-            this.textBox_Chasis = new System.Windows.Forms.TextBox();
-            this.textBox_Motor = new System.Windows.Forms.TextBox();
-            this.btn_AmpliarReducir_VEHICULO = new System.Windows.Forms.Button();
-            this.textBox_Dominio = new System.Windows.Forms.TextBox();
-            this.label_Color = new System.Windows.Forms.Label();
-            this.comboBox_Color = new System.Windows.Forms.ComboBox();
-            this.label_Dominio = new System.Windows.Forms.Label();
-            this.label_Chasis = new System.Windows.Forms.Label();
-            this.label_Motor = new System.Windows.Forms.Label();
-            this.label_Modelo = new System.Windows.Forms.Label();
-            this.label_Marca = new System.Windows.Forms.Label();
-            this.comboBox_Marca = new System.Windows.Forms.ComboBox();
-            this.comboBox_Modelo = new System.Windows.Forms.ComboBox();
-            this.label_DatosVehiculo = new System.Windows.Forms.Label();
             this.label_ExamenVisu = new System.Windows.Forms.Label();
-            this.panel_DatosVehiculo = new System.Windows.Forms.Panel();
+            this.panel_Instruccion = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Validacion)).BeginInit();
-            this.panel_DatosInstruccion.SuspendLayout();
-            this.panel_Ipp.SuspendLayout();
-            this.panel_Caratula.SuspendLayout();
-            this.panel_Imputado.SuspendLayout();
-            this.panel_Victima.SuspendLayout();
+            this.panel_DatosVehiculo.SuspendLayout();
+            this.panel_DatosEspecificos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_DatosVehiculo)).BeginInit();
             this.panel_Imagenes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelImagenes)).BeginInit();
             this.panel_AgregarImagenes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuevaImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QuitarImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AgregarImagen)).BeginInit();
             this.panel_Descripcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Descripcion)).BeginInit();
-            this.groupBox_TipoExamenVisu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelImagenes)).BeginInit();
+            this.panel_SeleccionVisu.SuspendLayout();
+            this.panel_TipoExamenVisu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Motovehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Automovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Objeto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_DatosVehiculo)).BeginInit();
-            this.panel_DatosEspecificos.SuspendLayout();
-            this.panel_DatosVehiculo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelInstruccion)).BeginInit();
+            this.panel_DatosInstruccion.SuspendLayout();
+            this.panel_Ipp.SuspendLayout();
+            this.panel_Caratula.SuspendLayout();
+            this.panel_Imputado.SuspendLayout();
+            this.panel_Victima.SuspendLayout();
+            this.panel_Instruccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.pictureBox_Validacion);
-            this.panel1.Controls.Add(this.panel_DatosInstruccion);
+            this.panel1.Controls.Add(this.panel_DatosVehiculo);
             this.panel1.Controls.Add(this.panel_Imagenes);
             this.panel1.Controls.Add(this.panel_Descripcion);
+            this.panel1.Controls.Add(this.panel_SeleccionVisu);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.btn_Limpiar);
-            this.panel1.Controls.Add(this.groupBox_TipoExamenVisu);
-            this.panel1.Controls.Add(this.label_DatosInstruccion);
             this.panel1.Location = new System.Drawing.Point(18, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(634, 948);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox_Validacion
+            // panel_DatosVehiculo
             // 
-            this.pictureBox_Validacion.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Validacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Validacion.Location = new System.Drawing.Point(290, 25);
-            this.pictureBox_Validacion.Name = "pictureBox_Validacion";
-            this.pictureBox_Validacion.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox_Validacion.TabIndex = 33;
-            this.pictureBox_Validacion.TabStop = false;
+            this.panel_DatosVehiculo.BorderRadius = 10;
+            this.panel_DatosVehiculo.CamposCompletos = false;
+            this.panel_DatosVehiculo.Controls.Add(this.panel_DatosEspecificos);
+            this.panel_DatosVehiculo.Controls.Add(this.pictureBox_DatosVehiculo);
+            this.panel_DatosVehiculo.Controls.Add(this.label_DatosVehiculo);
+            this.panel_DatosVehiculo.EstaContraido = false;
+            this.panel_DatosVehiculo.Location = new System.Drawing.Point(17, 579);
+            this.panel_DatosVehiculo.Name = "panel_DatosVehiculo";
+            this.panel_DatosVehiculo.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.panel_DatosVehiculo.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_DatosVehiculo.Size = new System.Drawing.Size(599, 127);
+            this.panel_DatosVehiculo.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            this.panel_DatosVehiculo.TabIndex = 30;
+            // 
+            // panel_DatosEspecificos
+            // 
+            this.panel_DatosEspecificos.BorderRadius = 10;
+            this.panel_DatosEspecificos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_DatosEspecificos.CamposCompletos = false;
+            this.panel_DatosEspecificos.Controls.Add(this.textBox_Chasis);
+            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Marca);
+            this.panel_DatosEspecificos.Controls.Add(this.textBox_Motor);
+            this.panel_DatosEspecificos.Controls.Add(this.btn_AmpliarReducir_VEHICULO);
+            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Modelo);
+            this.panel_DatosEspecificos.Controls.Add(this.label_Marca);
+            this.panel_DatosEspecificos.Controls.Add(this.textBox_Dominio);
+            this.panel_DatosEspecificos.Controls.Add(this.label_Modelo);
+            this.panel_DatosEspecificos.Controls.Add(this.label_Color);
+            this.panel_DatosEspecificos.Controls.Add(this.label_Motor);
+            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Color);
+            this.panel_DatosEspecificos.Controls.Add(this.label_Chasis);
+            this.panel_DatosEspecificos.Controls.Add(this.label_Dominio);
+            this.panel_DatosEspecificos.EstaContraido = false;
+            this.panel_DatosEspecificos.Location = new System.Drawing.Point(2, 17);
+            this.panel_DatosEspecificos.Name = "panel_DatosEspecificos";
+            this.panel_DatosEspecificos.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.panel_DatosEspecificos.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_DatosEspecificos.Size = new System.Drawing.Size(596, 107);
+            this.panel_DatosEspecificos.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            this.panel_DatosEspecificos.TabIndex = 86;
+            // 
+            // textBox_Chasis
+            // 
+            this.textBox_Chasis.Location = new System.Drawing.Point(392, 55);
+            this.textBox_Chasis.Name = "textBox_Chasis";
+            this.textBox_Chasis.Size = new System.Drawing.Size(171, 20);
+            this.textBox_Chasis.TabIndex = 88;
+            // 
+            // comboBox_Marca
+            // 
+            this.comboBox_Marca.FormattingEnabled = true;
+            this.comboBox_Marca.Location = new System.Drawing.Point(105, 27);
+            this.comboBox_Marca.Name = "comboBox_Marca";
+            this.comboBox_Marca.Size = new System.Drawing.Size(171, 21);
+            this.comboBox_Marca.TabIndex = 1;
+            // 
+            // textBox_Motor
+            // 
+            this.textBox_Motor.Location = new System.Drawing.Point(105, 57);
+            this.textBox_Motor.Name = "textBox_Motor";
+            this.textBox_Motor.Size = new System.Drawing.Size(171, 20);
+            this.textBox_Motor.TabIndex = 87;
+            // 
+            // btn_AmpliarReducir_VEHICULO
+            // 
+            this.btn_AmpliarReducir_VEHICULO.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_AmpliarReducir_VEHICULO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AmpliarReducir_VEHICULO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_AmpliarReducir_VEHICULO.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_AmpliarReducir_VEHICULO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_AmpliarReducir_VEHICULO.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
+            this.btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(556, -2);
+            this.btn_AmpliarReducir_VEHICULO.Name = "btn_AmpliarReducir_VEHICULO";
+            this.btn_AmpliarReducir_VEHICULO.Size = new System.Drawing.Size(31, 23);
+            this.btn_AmpliarReducir_VEHICULO.TabIndex = 86;
+            this.btn_AmpliarReducir_VEHICULO.UseVisualStyleBackColor = false;
+            this.btn_AmpliarReducir_VEHICULO.Click += new System.EventHandler(this.btn_AmpliarReducir_VEHICULO_Click);
+            // 
+            // comboBox_Modelo
+            // 
+            this.comboBox_Modelo.FormattingEnabled = true;
+            this.comboBox_Modelo.Location = new System.Drawing.Point(392, 28);
+            this.comboBox_Modelo.Name = "comboBox_Modelo";
+            this.comboBox_Modelo.Size = new System.Drawing.Size(171, 21);
+            this.comboBox_Modelo.TabIndex = 0;
+            // 
+            // label_Marca
+            // 
+            this.label_Marca.AutoSize = true;
+            this.label_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Marca.Location = new System.Drawing.Point(41, 28);
+            this.label_Marca.Name = "label_Marca";
+            this.label_Marca.Size = new System.Drawing.Size(62, 15);
+            this.label_Marca.TabIndex = 9;
+            this.label_Marca.Text = "MARCA :";
+            // 
+            // textBox_Dominio
+            // 
+            this.textBox_Dominio.Location = new System.Drawing.Point(105, 83);
+            this.textBox_Dominio.Name = "textBox_Dominio";
+            this.textBox_Dominio.Size = new System.Drawing.Size(171, 20);
+            this.textBox_Dominio.TabIndex = 31;
+            // 
+            // label_Modelo
+            // 
+            this.label_Modelo.AutoSize = true;
+            this.label_Modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Modelo.Location = new System.Drawing.Point(314, 28);
+            this.label_Modelo.Name = "label_Modelo";
+            this.label_Modelo.Size = new System.Drawing.Size(74, 15);
+            this.label_Modelo.TabIndex = 25;
+            this.label_Modelo.Text = "MODELO :";
+            // 
+            // label_Color
+            // 
+            this.label_Color.AutoSize = true;
+            this.label_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Color.Location = new System.Drawing.Point(328, 83);
+            this.label_Color.Name = "label_Color";
+            this.label_Color.Size = new System.Drawing.Size(62, 15);
+            this.label_Color.TabIndex = 30;
+            this.label_Color.Text = "COLOR :";
+            // 
+            // label_Motor
+            // 
+            this.label_Motor.AutoSize = true;
+            this.label_Motor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Motor.Location = new System.Drawing.Point(18, 56);
+            this.label_Motor.Name = "label_Motor";
+            this.label_Motor.Size = new System.Drawing.Size(85, 15);
+            this.label_Motor.TabIndex = 26;
+            this.label_Motor.Text = "N° MOTOR :";
+            // 
+            // comboBox_Color
+            // 
+            this.comboBox_Color.FormattingEnabled = true;
+            this.comboBox_Color.Location = new System.Drawing.Point(392, 82);
+            this.comboBox_Color.Name = "comboBox_Color";
+            this.comboBox_Color.Size = new System.Drawing.Size(171, 21);
+            this.comboBox_Color.TabIndex = 29;
+            // 
+            // label_Chasis
+            // 
+            this.label_Chasis.AutoSize = true;
+            this.label_Chasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Chasis.Location = new System.Drawing.Point(303, 56);
+            this.label_Chasis.Name = "label_Chasis";
+            this.label_Chasis.Size = new System.Drawing.Size(84, 15);
+            this.label_Chasis.TabIndex = 27;
+            this.label_Chasis.Text = "N° CHASIS :";
+            // 
+            // label_Dominio
+            // 
+            this.label_Dominio.AutoSize = true;
+            this.label_Dominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Dominio.Location = new System.Drawing.Point(28, 83);
+            this.label_Dominio.Name = "label_Dominio";
+            this.label_Dominio.Size = new System.Drawing.Size(75, 15);
+            this.label_Dominio.TabIndex = 28;
+            this.label_Dominio.Text = "DOMINIO :";
+            // 
+            // pictureBox_DatosVehiculo
+            // 
+            this.pictureBox_DatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_DatosVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_DatosVehiculo.Location = new System.Drawing.Point(246, 6);
+            this.pictureBox_DatosVehiculo.Name = "pictureBox_DatosVehiculo";
+            this.pictureBox_DatosVehiculo.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox_DatosVehiculo.TabIndex = 34;
+            this.pictureBox_DatosVehiculo.TabStop = false;
+            // 
+            // label_DatosVehiculo
+            // 
+            this.label_DatosVehiculo.AutoSize = true;
+            this.label_DatosVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_DatosVehiculo.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DatosVehiculo.Location = new System.Drawing.Point(29, 3);
+            this.label_DatosVehiculo.Name = "label_DatosVehiculo";
+            this.label_DatosVehiculo.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
+            this.label_DatosVehiculo.Size = new System.Drawing.Size(219, 25);
+            this.label_DatosVehiculo.TabIndex = 24;
+            this.label_DatosVehiculo.Text = "DATOS DEL VEHICULO";
+            // 
+            // panel_Imagenes
+            // 
+            this.panel_Imagenes.BorderRadius = 10;
+            this.panel_Imagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Imagenes.CamposCompletos = false;
+            this.panel_Imagenes.Controls.Add(this.pictureBox_PanelImagenes);
+            this.panel_Imagenes.Controls.Add(this.btn_AmpliarReducir_IMAGENES);
+            this.panel_Imagenes.Controls.Add(this.panel_AgregarImagenes);
+            this.panel_Imagenes.Controls.Add(this.label_DescripcionConIA);
+            this.panel_Imagenes.Controls.Add(this.botonDeslizable_Descripcion_IA);
+            this.panel_Imagenes.Controls.Add(this.pictureBox_QuitarImagen);
+            this.panel_Imagenes.Controls.Add(this.pictureBox_AgregarImagen);
+            this.panel_Imagenes.EstaContraido = false;
+            this.panel_Imagenes.Location = new System.Drawing.Point(17, 423);
+            this.panel_Imagenes.Name = "panel_Imagenes";
+            this.panel_Imagenes.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.panel_Imagenes.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_Imagenes.Size = new System.Drawing.Size(599, 153);
+            this.panel_Imagenes.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            this.panel_Imagenes.TabIndex = 86;
+            // 
+            // pictureBox_PanelImagenes
+            // 
+            this.pictureBox_PanelImagenes.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_PanelImagenes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_PanelImagenes.Location = new System.Drawing.Point(484, 3);
+            this.pictureBox_PanelImagenes.Name = "pictureBox_PanelImagenes";
+            this.pictureBox_PanelImagenes.Size = new System.Drawing.Size(29, 25);
+            this.pictureBox_PanelImagenes.TabIndex = 35;
+            this.pictureBox_PanelImagenes.TabStop = false;
+            // 
+            // btn_AmpliarReducir_IMAGENES
+            // 
+            this.btn_AmpliarReducir_IMAGENES.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_AmpliarReducir_IMAGENES.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AmpliarReducir_IMAGENES.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_AmpliarReducir_IMAGENES.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_AmpliarReducir_IMAGENES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_AmpliarReducir_IMAGENES.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
+            this.btn_AmpliarReducir_IMAGENES.Location = new System.Drawing.Point(559, 0);
+            this.btn_AmpliarReducir_IMAGENES.Name = "btn_AmpliarReducir_IMAGENES";
+            this.btn_AmpliarReducir_IMAGENES.Size = new System.Drawing.Size(31, 23);
+            this.btn_AmpliarReducir_IMAGENES.TabIndex = 85;
+            this.btn_AmpliarReducir_IMAGENES.UseVisualStyleBackColor = false;
+            this.btn_AmpliarReducir_IMAGENES.Click += new System.EventHandler(this.btn_AmpliarReducir_IMAGENES_Click);
+            // 
+            // panel_AgregarImagenes
+            // 
+            this.panel_AgregarImagenes.Controls.Add(this.nuevaImagen);
+            this.panel_AgregarImagenes.Location = new System.Drawing.Point(2, 24);
+            this.panel_AgregarImagenes.Name = "panel_AgregarImagenes";
+            this.panel_AgregarImagenes.Size = new System.Drawing.Size(600, 125);
+            this.panel_AgregarImagenes.TabIndex = 46;
+            // 
+            // nuevaImagen
+            // 
+            this.nuevaImagen.AllowDrop = true;
+            this.nuevaImagen.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.nuevaImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nuevaImagen.HoverImage = null;
+            this.nuevaImagen.Image = ((System.Drawing.Image)(resources.GetObject("nuevaImagen.Image")));
+            this.nuevaImagen.Location = new System.Drawing.Point(243, 9);
+            this.nuevaImagen.Name = "nuevaImagen";
+            this.nuevaImagen.Size = new System.Drawing.Size(97, 116);
+            this.nuevaImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.nuevaImagen.TabIndex = 0;
+            this.nuevaImagen.TabStop = false;
+            // 
+            // label_DescripcionConIA
+            // 
+            this.label_DescripcionConIA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_DescripcionConIA.AutoSize = true;
+            this.label_DescripcionConIA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DescripcionConIA.Location = new System.Drawing.Point(194, 5);
+            this.label_DescripcionConIA.Name = "label_DescripcionConIA";
+            this.label_DescripcionConIA.Size = new System.Drawing.Size(176, 16);
+            this.label_DescripcionConIA.TabIndex = 19;
+            this.label_DescripcionConIA.Text = "Realizar descripción con I.A.";
+            // 
+            // botonDeslizable_Descripcion_IA
+            // 
+            this.botonDeslizable_Descripcion_IA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.botonDeslizable_Descripcion_IA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonDeslizable_Descripcion_IA.IsOn = false;
+            this.botonDeslizable_Descripcion_IA.Location = new System.Drawing.Point(378, 3);
+            this.botonDeslizable_Descripcion_IA.Name = "botonDeslizable_Descripcion_IA";
+            this.botonDeslizable_Descripcion_IA.Size = new System.Drawing.Size(40, 22);
+            this.botonDeslizable_Descripcion_IA.TabIndex = 43;
+            this.botonDeslizable_Descripcion_IA.ValidarCampos = null;
+            // 
+            // pictureBox_QuitarImagen
+            // 
+            this.pictureBox_QuitarImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_QuitarImagen.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_QuitarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_QuitarImagen.BackgroundImage")));
+            this.pictureBox_QuitarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_QuitarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_QuitarImagen.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox_QuitarImagen.Name = "pictureBox_QuitarImagen";
+            this.pictureBox_QuitarImagen.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox_QuitarImagen.TabIndex = 45;
+            this.pictureBox_QuitarImagen.TabStop = false;
+            this.pictureBox_QuitarImagen.Click += new System.EventHandler(this.pictureBox_QuitarImagen_Click);
+            // 
+            // pictureBox_AgregarImagen
+            // 
+            this.pictureBox_AgregarImagen.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_AgregarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_AgregarImagen.BackgroundImage")));
+            this.pictureBox_AgregarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_AgregarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_AgregarImagen.Location = new System.Drawing.Point(62, 2);
+            this.pictureBox_AgregarImagen.Name = "pictureBox_AgregarImagen";
+            this.pictureBox_AgregarImagen.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox_AgregarImagen.TabIndex = 44;
+            this.pictureBox_AgregarImagen.TabStop = false;
+            this.pictureBox_AgregarImagen.Click += new System.EventHandler(this.pictureBox_AgregarImagen_Click);
+            // 
+            // panel_Descripcion
+            // 
+            this.panel_Descripcion.BorderRadius = 10;
+            this.panel_Descripcion.CamposCompletos = false;
+            this.panel_Descripcion.Controls.Add(this.pictureBox_Descripcion);
+            this.panel_Descripcion.Controls.Add(this.richTextBox_Descripcion);
+            this.panel_Descripcion.Controls.Add(this.btn_AmpliarReducir_DESCRIPCION);
+            this.panel_Descripcion.Controls.Add(this.label_Descripcion);
+            this.panel_Descripcion.EstaContraido = false;
+            this.panel_Descripcion.Location = new System.Drawing.Point(17, 708);
+            this.panel_Descripcion.Name = "panel_Descripcion";
+            this.panel_Descripcion.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.panel_Descripcion.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_Descripcion.Size = new System.Drawing.Size(599, 133);
+            this.panel_Descripcion.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            this.panel_Descripcion.TabIndex = 85;
+            // 
+            // pictureBox_Descripcion
+            // 
+            this.pictureBox_Descripcion.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_Descripcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_Descripcion.Location = new System.Drawing.Point(367, 1);
+            this.pictureBox_Descripcion.Name = "pictureBox_Descripcion";
+            this.pictureBox_Descripcion.Size = new System.Drawing.Size(29, 25);
+            this.pictureBox_Descripcion.TabIndex = 36;
+            this.pictureBox_Descripcion.TabStop = false;
+            // 
+            // richTextBox_Descripcion
+            // 
+            this.richTextBox_Descripcion.Location = new System.Drawing.Point(3, 27);
+            this.richTextBox_Descripcion.Name = "richTextBox_Descripcion";
+            this.richTextBox_Descripcion.Size = new System.Drawing.Size(590, 96);
+            this.richTextBox_Descripcion.TabIndex = 2;
+            this.richTextBox_Descripcion.Text = "";
+            // 
+            // btn_AmpliarReducir_DESCRIPCION
+            // 
+            this.btn_AmpliarReducir_DESCRIPCION.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_AmpliarReducir_DESCRIPCION.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_AmpliarReducir_DESCRIPCION.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
+            this.btn_AmpliarReducir_DESCRIPCION.Location = new System.Drawing.Point(560, 1);
+            this.btn_AmpliarReducir_DESCRIPCION.Name = "btn_AmpliarReducir_DESCRIPCION";
+            this.btn_AmpliarReducir_DESCRIPCION.Size = new System.Drawing.Size(31, 23);
+            this.btn_AmpliarReducir_DESCRIPCION.TabIndex = 84;
+            this.btn_AmpliarReducir_DESCRIPCION.UseVisualStyleBackColor = false;
+            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.btn_AmpliarReducir_DESCRIPCION_Click);
+            // 
+            // label_Descripcion
+            // 
+            this.label_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_Descripcion.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Descripcion.Location = new System.Drawing.Point(219, 1);
+            this.label_Descripcion.Name = "label_Descripcion";
+            this.label_Descripcion.Size = new System.Drawing.Size(150, 25);
+            this.label_Descripcion.TabIndex = 23;
+            this.label_Descripcion.Text = "DESCRIPCION ";
+            this.label_Descripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel_SeleccionVisu
+            // 
+            this.panel_SeleccionVisu.Controls.Add(this.panel_TipoExamenVisu);
+            this.panel_SeleccionVisu.Controls.Add(this.label_SeleccionVisu);
+            this.panel_SeleccionVisu.Location = new System.Drawing.Point(14, 334);
+            this.panel_SeleccionVisu.Name = "panel_SeleccionVisu";
+            this.panel_SeleccionVisu.Size = new System.Drawing.Size(611, 84);
+            this.panel_SeleccionVisu.TabIndex = 1;
+            // 
+            // panel_TipoExamenVisu
+            // 
+            this.panel_TipoExamenVisu.BorderRadius = 10;
+            this.panel_TipoExamenVisu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_TipoExamenVisu.CamposCompletos = false;
+            this.panel_TipoExamenVisu.Controls.Add(this.pictureBox_Motovehiculo);
+            this.panel_TipoExamenVisu.Controls.Add(this.radioButton_Motovehiculo);
+            this.panel_TipoExamenVisu.Controls.Add(this.radioButton_Objeto);
+            this.panel_TipoExamenVisu.Controls.Add(this.pictureBox_Automovil);
+            this.panel_TipoExamenVisu.Controls.Add(this.pictureBox_Objeto);
+            this.panel_TipoExamenVisu.Controls.Add(this.radioButton_Automovil);
+            this.panel_TipoExamenVisu.EstaContraido = false;
+            this.panel_TipoExamenVisu.Location = new System.Drawing.Point(3, 14);
+            this.panel_TipoExamenVisu.Name = "panel_TipoExamenVisu";
+            this.panel_TipoExamenVisu.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.panel_TipoExamenVisu.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_TipoExamenVisu.Size = new System.Drawing.Size(599, 69);
+            this.panel_TipoExamenVisu.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            this.panel_TipoExamenVisu.TabIndex = 1;
+            // 
+            // pictureBox_Motovehiculo
+            // 
+            this.pictureBox_Motovehiculo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Motovehiculo.BackgroundImage")));
+            this.pictureBox_Motovehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_Motovehiculo.Location = new System.Drawing.Point(398, 20);
+            this.pictureBox_Motovehiculo.Name = "pictureBox_Motovehiculo";
+            this.pictureBox_Motovehiculo.Size = new System.Drawing.Size(40, 39);
+            this.pictureBox_Motovehiculo.TabIndex = 35;
+            this.pictureBox_Motovehiculo.TabStop = false;
+            // 
+            // radioButton_Motovehiculo
+            // 
+            this.radioButton_Motovehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_Motovehiculo.Location = new System.Drawing.Point(440, 20);
+            this.radioButton_Motovehiculo.Name = "radioButton_Motovehiculo";
+            this.radioButton_Motovehiculo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.radioButton_Motovehiculo.Size = new System.Drawing.Size(138, 39);
+            this.radioButton_Motovehiculo.TabIndex = 2;
+            this.radioButton_Motovehiculo.TabStop = true;
+            this.radioButton_Motovehiculo.Text = "MOTOVEHICULO";
+            this.radioButton_Motovehiculo.UseVisualStyleBackColor = true;
+            this.radioButton_Motovehiculo.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // radioButton_Objeto
+            // 
+            this.radioButton_Objeto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_Objeto.Location = new System.Drawing.Point(78, 20);
+            this.radioButton_Objeto.Name = "radioButton_Objeto";
+            this.radioButton_Objeto.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.radioButton_Objeto.Size = new System.Drawing.Size(85, 39);
+            this.radioButton_Objeto.TabIndex = 1;
+            this.radioButton_Objeto.TabStop = true;
+            this.radioButton_Objeto.Text = "OBJETO";
+            this.radioButton_Objeto.UseVisualStyleBackColor = true;
+            this.radioButton_Objeto.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // pictureBox_Automovil
+            // 
+            this.pictureBox_Automovil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Automovil.BackgroundImage")));
+            this.pictureBox_Automovil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_Automovil.Location = new System.Drawing.Point(218, 20);
+            this.pictureBox_Automovil.Name = "pictureBox_Automovil";
+            this.pictureBox_Automovil.Size = new System.Drawing.Size(40, 39);
+            this.pictureBox_Automovil.TabIndex = 34;
+            this.pictureBox_Automovil.TabStop = false;
+            // 
+            // pictureBox_Objeto
+            // 
+            this.pictureBox_Objeto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Objeto.BackgroundImage")));
+            this.pictureBox_Objeto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_Objeto.Location = new System.Drawing.Point(36, 20);
+            this.pictureBox_Objeto.Name = "pictureBox_Objeto";
+            this.pictureBox_Objeto.Size = new System.Drawing.Size(40, 39);
+            this.pictureBox_Objeto.TabIndex = 33;
+            this.pictureBox_Objeto.TabStop = false;
+            // 
+            // radioButton_Automovil
+            // 
+            this.radioButton_Automovil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton_Automovil.Location = new System.Drawing.Point(260, 20);
+            this.radioButton_Automovil.Name = "radioButton_Automovil";
+            this.radioButton_Automovil.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.radioButton_Automovil.Size = new System.Drawing.Size(103, 39);
+            this.radioButton_Automovil.TabIndex = 0;
+            this.radioButton_Automovil.TabStop = true;
+            this.radioButton_Automovil.Text = "AUTOMOVIL";
+            this.radioButton_Automovil.UseVisualStyleBackColor = true;
+            this.radioButton_Automovil.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // label_SeleccionVisu
+            // 
+            this.label_SeleccionVisu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_SeleccionVisu.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_SeleccionVisu.Location = new System.Drawing.Point(29, 3);
+            this.label_SeleccionVisu.Name = "label_SeleccionVisu";
+            this.label_SeleccionVisu.Padding = new System.Windows.Forms.Padding(20, 3, 10, 5);
+            this.label_SeleccionVisu.Size = new System.Drawing.Size(276, 25);
+            this.label_SeleccionVisu.TabIndex = 32;
+            this.label_SeleccionVisu.Text = "REALIZAR EXAMEN DE VISU A :";
+            // 
+            // btn_Imprimir
+            // 
+            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
+            this.btn_Imprimir.Location = new System.Drawing.Point(479, 854);
+            this.btn_Imprimir.Name = "btn_Imprimir";
+            this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
+            this.btn_Imprimir.TabIndex = 20;
+            this.btn_Imprimir.UseVisualStyleBackColor = false;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
+            this.btn_Buscar.Location = new System.Drawing.Point(41, 862);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Buscar.TabIndex = 22;
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
+            this.btn_Guardar.Location = new System.Drawing.Point(186, 862);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Guardar.TabIndex = 19;
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
+            this.btn_Limpiar.Location = new System.Drawing.Point(332, 862);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
+            this.btn_Limpiar.TabIndex = 21;
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // pictureBox_PanelInstruccion
+            // 
+            this.pictureBox_PanelInstruccion.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_PanelInstruccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_PanelInstruccion.Location = new System.Drawing.Point(273, 1);
+            this.pictureBox_PanelInstruccion.Name = "pictureBox_PanelInstruccion";
+            this.pictureBox_PanelInstruccion.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox_PanelInstruccion.TabIndex = 33;
+            this.pictureBox_PanelInstruccion.TabStop = false;
             // 
             // panel_DatosInstruccion
             // 
             this.panel_DatosInstruccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Instructor);
             this.panel_DatosInstruccion.Controls.Add(this.btn_AmpliarReducir_INSTRUCCION);
             this.panel_DatosInstruccion.Controls.Add(this.label_Localidad);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Localidad);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Secretario);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Instructor);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Dependencia);
             this.panel_DatosInstruccion.Controls.Add(this.comboBox_Fiscalia);
             this.panel_DatosInstruccion.Controls.Add(this.lbl_Dependencia);
@@ -185,10 +705,23 @@
             this.panel_DatosInstruccion.Controls.Add(this.panel_Caratula);
             this.panel_DatosInstruccion.Controls.Add(this.panel_Imputado);
             this.panel_DatosInstruccion.Controls.Add(this.panel_Victima);
-            this.panel_DatosInstruccion.Location = new System.Drawing.Point(27, 37);
+            this.panel_DatosInstruccion.Location = new System.Drawing.Point(3, 13);
             this.panel_DatosInstruccion.Name = "panel_DatosInstruccion";
-            this.panel_DatosInstruccion.Size = new System.Drawing.Size(586, 297);
+            this.panel_DatosInstruccion.Size = new System.Drawing.Size(596, 297);
             this.panel_DatosInstruccion.TabIndex = 27;
+            // 
+            // comboBox_Instructor
+            // 
+            this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Instructor.FormattingEnabled = true;
+            this.comboBox_Instructor.Items.AddRange(new object[] {
+            "Comisario Miguel Moreno",
+            "subcomisario Melisa Perea Peña",
+            "Comisario Arias"});
+            this.comboBox_Instructor.Location = new System.Drawing.Point(183, 183);
+            this.comboBox_Instructor.Name = "comboBox_Instructor";
+            this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
+            this.comboBox_Instructor.TabIndex = 84;
             // 
             // btn_AmpliarReducir_INSTRUCCION
             // 
@@ -198,7 +731,7 @@
             this.btn_AmpliarReducir_INSTRUCCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_AmpliarReducir_INSTRUCCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_AmpliarReducir_INSTRUCCION.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
-            this.btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(546, -1);
+            this.btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(559, -1);
             this.btn_AmpliarReducir_INSTRUCCION.Name = "btn_AmpliarReducir_INSTRUCCION";
             this.btn_AmpliarReducir_INSTRUCCION.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_INSTRUCCION.TabIndex = 83;
@@ -242,19 +775,6 @@
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Secretario.TabIndex = 68;
-            // 
-            // comboBox_Instructor
-            // 
-            this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Instructor.FormattingEnabled = true;
-            this.comboBox_Instructor.Items.AddRange(new object[] {
-            "Comisario Miguel Moreno",
-            "subcomisario Melisa Perea Peña",
-            "Comisario Arias"});
-            this.comboBox_Instructor.Location = new System.Drawing.Point(184, 183);
-            this.comboBox_Instructor.Name = "comboBox_Instructor";
-            this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Instructor.TabIndex = 67;
             // 
             // comboBox_Dependencia
             // 
@@ -325,6 +845,7 @@
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 25);
             this.Fecha_Instruccion.TabIndex = 70;
+            this.Fecha_Instruccion.Load += new System.EventHandler(this.Fecha_Instruccion_Load);
             // 
             // lbl_Secretario
             // 
@@ -388,6 +909,9 @@
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
             this.textBox_NumeroIpp.TabIndex = 5;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
+            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
+            this.textBox_NumeroIpp.Leave += new System.EventHandler(this.TextBox_NumeroIpp_Leave);
             // 
             // comboBox_Ipp1
             // 
@@ -410,6 +934,7 @@
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 3;
             this.comboBox_Ipp1.Text = "03";
+            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
             // 
             // comboBox_Ipp2
             // 
@@ -430,6 +955,7 @@
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 4;
             this.comboBox_Ipp2.Text = "03";
+            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
             // 
             // lbl_00
             // 
@@ -452,6 +978,7 @@
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 6;
             this.comboBox_Ipp4.Text = "24";
+            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
             // 
             // lbl_Ipp
             // 
@@ -504,6 +1031,8 @@
             this.btn_AgregarCausa.TabIndex = 27;
             this.btn_AgregarCausa.Text = "+";
             this.btn_AgregarCausa.UseVisualStyleBackColor = false;
+            this.btn_AgregarCausa.TextChanged += new System.EventHandler(this.HabilitaBTN_Agregar_TextChanged);
+            this.btn_AgregarCausa.Click += new System.EventHandler(this.Btn_AgregarCausa_Click);
             // 
             // panel_Imputado
             // 
@@ -539,12 +1068,14 @@
             // 
             this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarImputado.Location = new System.Drawing.Point(416, 1);
+            this.btn_AgregarImputado.Location = new System.Drawing.Point(416, 2);
             this.btn_AgregarImputado.Name = "btn_AgregarImputado";
             this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarImputado.TabIndex = 29;
             this.btn_AgregarImputado.Text = "+";
             this.btn_AgregarImputado.UseVisualStyleBackColor = true;
+            this.btn_AgregarImputado.TextChanged += new System.EventHandler(this.HabilitaBTN_Agregar_TextChanged);
+            this.btn_AgregarImputado.Click += new System.EventHandler(this.Btn_AgregarImputado_Click);
             // 
             // panel_Victima
             // 
@@ -587,493 +1118,20 @@
             this.btn_AgregarVictima.TabIndex = 28;
             this.btn_AgregarVictima.Text = "+";
             this.btn_AgregarVictima.UseVisualStyleBackColor = false;
-            // 
-            // panel_Imagenes
-            // 
-            this.panel_Imagenes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_Imagenes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel_Imagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Imagenes.Controls.Add(this.btn_AmpliarReducir_IMAGENES);
-            this.panel_Imagenes.Controls.Add(this.panel_AgregarImagenes);
-            this.panel_Imagenes.Controls.Add(this.pictureBox_QuitarImagen);
-            this.panel_Imagenes.Controls.Add(this.pictureBox_AgregarImagen);
-            this.panel_Imagenes.Controls.Add(this.botonDeslizable_Descripcion_IA);
-            this.panel_Imagenes.Controls.Add(this.label_DescripcionConIA);
-            this.panel_Imagenes.Location = new System.Drawing.Point(17, 418);
-            this.panel_Imagenes.Name = "panel_Imagenes";
-            this.panel_Imagenes.Size = new System.Drawing.Size(599, 150);
-            this.panel_Imagenes.TabIndex = 25;
-            // 
-            // btn_AmpliarReducir_IMAGENES
-            // 
-            this.btn_AmpliarReducir_IMAGENES.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_AmpliarReducir_IMAGENES.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AmpliarReducir_IMAGENES.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_AmpliarReducir_IMAGENES.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_IMAGENES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_IMAGENES.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
-            this.btn_AmpliarReducir_IMAGENES.Location = new System.Drawing.Point(559, -1);
-            this.btn_AmpliarReducir_IMAGENES.Name = "btn_AmpliarReducir_IMAGENES";
-            this.btn_AmpliarReducir_IMAGENES.Size = new System.Drawing.Size(31, 23);
-            this.btn_AmpliarReducir_IMAGENES.TabIndex = 85;
-            this.btn_AmpliarReducir_IMAGENES.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_IMAGENES.Click += new System.EventHandler(this.btn_AmpliarReducir_IMAGENES_Click);
-            // 
-            // panel_AgregarImagenes
-            // 
-            this.panel_AgregarImagenes.Controls.Add(this.nuevaImagen);
-            this.panel_AgregarImagenes.Location = new System.Drawing.Point(3, 21);
-            this.panel_AgregarImagenes.Name = "panel_AgregarImagenes";
-            this.panel_AgregarImagenes.Size = new System.Drawing.Size(591, 125);
-            this.panel_AgregarImagenes.TabIndex = 46;
-            // 
-            // nuevaImagen
-            // 
-            this.nuevaImagen.AllowDrop = true;
-            this.nuevaImagen.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.nuevaImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nuevaImagen.HoverImage = null;
-            this.nuevaImagen.Image = ((System.Drawing.Image)(resources.GetObject("nuevaImagen.Image")));
-            this.nuevaImagen.Location = new System.Drawing.Point(243, 9);
-            this.nuevaImagen.Name = "nuevaImagen";
-            this.nuevaImagen.Size = new System.Drawing.Size(97, 116);
-            this.nuevaImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.nuevaImagen.TabIndex = 0;
-            this.nuevaImagen.TabStop = false;
-            // 
-            // pictureBox_QuitarImagen
-            // 
-            this.pictureBox_QuitarImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_QuitarImagen.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_QuitarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_QuitarImagen.BackgroundImage")));
-            this.pictureBox_QuitarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_QuitarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_QuitarImagen.Location = new System.Drawing.Point(12, 0);
-            this.pictureBox_QuitarImagen.Name = "pictureBox_QuitarImagen";
-            this.pictureBox_QuitarImagen.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox_QuitarImagen.TabIndex = 45;
-            this.pictureBox_QuitarImagen.TabStop = false;
-            this.pictureBox_QuitarImagen.Click += new System.EventHandler(this.pictureBox_QuitarImagen_Click);
-            // 
-            // pictureBox_AgregarImagen
-            // 
-            this.pictureBox_AgregarImagen.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_AgregarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_AgregarImagen.BackgroundImage")));
-            this.pictureBox_AgregarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_AgregarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_AgregarImagen.Location = new System.Drawing.Point(63, -1);
-            this.pictureBox_AgregarImagen.Name = "pictureBox_AgregarImagen";
-            this.pictureBox_AgregarImagen.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox_AgregarImagen.TabIndex = 44;
-            this.pictureBox_AgregarImagen.TabStop = false;
-            this.pictureBox_AgregarImagen.Click += new System.EventHandler(this.pictureBox_AgregarImagen_Click);
-            // 
-            // botonDeslizable_Descripcion_IA
-            // 
-            this.botonDeslizable_Descripcion_IA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.botonDeslizable_Descripcion_IA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonDeslizable_Descripcion_IA.IsOn = false;
-            this.botonDeslizable_Descripcion_IA.Location = new System.Drawing.Point(378, 0);
-            this.botonDeslizable_Descripcion_IA.Name = "botonDeslizable_Descripcion_IA";
-            this.botonDeslizable_Descripcion_IA.Size = new System.Drawing.Size(40, 22);
-            this.botonDeslizable_Descripcion_IA.TabIndex = 43;
-            this.botonDeslizable_Descripcion_IA.ValidarCampos = null;
-            // 
-            // label_DescripcionConIA
-            // 
-            this.label_DescripcionConIA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_DescripcionConIA.AutoSize = true;
-            this.label_DescripcionConIA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DescripcionConIA.Location = new System.Drawing.Point(194, 2);
-            this.label_DescripcionConIA.Name = "label_DescripcionConIA";
-            this.label_DescripcionConIA.Size = new System.Drawing.Size(176, 16);
-            this.label_DescripcionConIA.TabIndex = 19;
-            this.label_DescripcionConIA.Text = "Realizar descripción con I.A.";
-            // 
-            // panel_Descripcion
-            // 
-            this.panel_Descripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_Descripcion.Controls.Add(this.pictureBox_Descripcion);
-            this.panel_Descripcion.Controls.Add(this.btn_AmpliarReducir_DESCRIPCION);
-            this.panel_Descripcion.Controls.Add(this.richTextBox_Descripcion);
-            this.panel_Descripcion.Controls.Add(this.label_Descripcion);
-            this.panel_Descripcion.Location = new System.Drawing.Point(14, 712);
-            this.panel_Descripcion.Name = "panel_Descripcion";
-            this.panel_Descripcion.Size = new System.Drawing.Size(602, 138);
-            this.panel_Descripcion.TabIndex = 24;
-            // 
-            // pictureBox_Descripcion
-            // 
-            this.pictureBox_Descripcion.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Descripcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Descripcion.Location = new System.Drawing.Point(364, 0);
-            this.pictureBox_Descripcion.Name = "pictureBox_Descripcion";
-            this.pictureBox_Descripcion.Size = new System.Drawing.Size(29, 25);
-            this.pictureBox_Descripcion.TabIndex = 36;
-            this.pictureBox_Descripcion.TabStop = false;
-            // 
-            // btn_AmpliarReducir_DESCRIPCION
-            // 
-            this.btn_AmpliarReducir_DESCRIPCION.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_AmpliarReducir_DESCRIPCION.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_DESCRIPCION.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
-            this.btn_AmpliarReducir_DESCRIPCION.Location = new System.Drawing.Point(560, 0);
-            this.btn_AmpliarReducir_DESCRIPCION.Name = "btn_AmpliarReducir_DESCRIPCION";
-            this.btn_AmpliarReducir_DESCRIPCION.Size = new System.Drawing.Size(31, 23);
-            this.btn_AmpliarReducir_DESCRIPCION.TabIndex = 84;
-            this.btn_AmpliarReducir_DESCRIPCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.btn_AmpliarReducir_DESCRIPCION_Click);
-            // 
-            // richTextBox_Descripcion
-            // 
-            this.richTextBox_Descripcion.Location = new System.Drawing.Point(3, 28);
-            this.richTextBox_Descripcion.Name = "richTextBox_Descripcion";
-            this.richTextBox_Descripcion.Size = new System.Drawing.Size(596, 96);
-            this.richTextBox_Descripcion.TabIndex = 2;
-            this.richTextBox_Descripcion.Text = "";
-            // 
-            // label_Descripcion
-            // 
-            this.label_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_Descripcion.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Descripcion.Location = new System.Drawing.Point(216, 0);
-            this.label_Descripcion.Name = "label_Descripcion";
-            this.label_Descripcion.Size = new System.Drawing.Size(150, 25);
-            this.label_Descripcion.TabIndex = 23;
-            this.label_Descripcion.Text = "DESCRIPCION ";
-            this.label_Descripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_Imprimir
-            // 
-            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
-            this.btn_Imprimir.Location = new System.Drawing.Point(479, 854);
-            this.btn_Imprimir.Name = "btn_Imprimir";
-            this.btn_Imprimir.Size = new System.Drawing.Size(93, 83);
-            this.btn_Imprimir.TabIndex = 20;
-            this.btn_Imprimir.UseVisualStyleBackColor = false;
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(41, 862);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Buscar.TabIndex = 22;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(186, 862);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 19;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
-            // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(332, 862);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Limpiar.TabIndex = 21;
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            // 
-            // groupBox_TipoExamenVisu
-            // 
-            this.groupBox_TipoExamenVisu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox_TipoExamenVisu.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_PanelImagenes);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_Motovehiculo);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_Automovil);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.pictureBox_Objeto);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.label_SeleccionVisu);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.radioButton_Motovehiculo);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.radioButton_Objeto);
-            this.groupBox_TipoExamenVisu.Controls.Add(this.radioButton_Automovil);
-            this.groupBox_TipoExamenVisu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox_TipoExamenVisu.Location = new System.Drawing.Point(27, 339);
-            this.groupBox_TipoExamenVisu.Name = "groupBox_TipoExamenVisu";
-            this.groupBox_TipoExamenVisu.Size = new System.Drawing.Size(578, 73);
-            this.groupBox_TipoExamenVisu.TabIndex = 0;
-            this.groupBox_TipoExamenVisu.TabStop = false;
-            // 
-            // pictureBox_PanelImagenes
-            // 
-            this.pictureBox_PanelImagenes.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_PanelImagenes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_PanelImagenes.Location = new System.Drawing.Point(291, 0);
-            this.pictureBox_PanelImagenes.Name = "pictureBox_PanelImagenes";
-            this.pictureBox_PanelImagenes.Size = new System.Drawing.Size(29, 25);
-            this.pictureBox_PanelImagenes.TabIndex = 35;
-            this.pictureBox_PanelImagenes.TabStop = false;
-            // 
-            // pictureBox_Motovehiculo
-            // 
-            this.pictureBox_Motovehiculo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Motovehiculo.BackgroundImage")));
-            this.pictureBox_Motovehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_Motovehiculo.Location = new System.Drawing.Point(382, 28);
-            this.pictureBox_Motovehiculo.Name = "pictureBox_Motovehiculo";
-            this.pictureBox_Motovehiculo.Size = new System.Drawing.Size(40, 39);
-            this.pictureBox_Motovehiculo.TabIndex = 35;
-            this.pictureBox_Motovehiculo.TabStop = false;
-            // 
-            // pictureBox_Automovil
-            // 
-            this.pictureBox_Automovil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Automovil.BackgroundImage")));
-            this.pictureBox_Automovil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_Automovil.Location = new System.Drawing.Point(219, 28);
-            this.pictureBox_Automovil.Name = "pictureBox_Automovil";
-            this.pictureBox_Automovil.Size = new System.Drawing.Size(40, 39);
-            this.pictureBox_Automovil.TabIndex = 34;
-            this.pictureBox_Automovil.TabStop = false;
-            // 
-            // pictureBox_Objeto
-            // 
-            this.pictureBox_Objeto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Objeto.BackgroundImage")));
-            this.pictureBox_Objeto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_Objeto.Location = new System.Drawing.Point(37, 28);
-            this.pictureBox_Objeto.Name = "pictureBox_Objeto";
-            this.pictureBox_Objeto.Size = new System.Drawing.Size(40, 39);
-            this.pictureBox_Objeto.TabIndex = 33;
-            this.pictureBox_Objeto.TabStop = false;
-            // 
-            // label_SeleccionVisu
-            // 
-            this.label_SeleccionVisu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_SeleccionVisu.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_SeleccionVisu.Location = new System.Drawing.Point(15, 0);
-            this.label_SeleccionVisu.Name = "label_SeleccionVisu";
-            this.label_SeleccionVisu.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            this.label_SeleccionVisu.Size = new System.Drawing.Size(293, 25);
-            this.label_SeleccionVisu.TabIndex = 32;
-            this.label_SeleccionVisu.Text = "REALIZAR EXAMEN DE VISU A :";
-            // 
-            // radioButton_Motovehiculo
-            // 
-            this.radioButton_Motovehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Motovehiculo.Location = new System.Drawing.Point(424, 28);
-            this.radioButton_Motovehiculo.Name = "radioButton_Motovehiculo";
-            this.radioButton_Motovehiculo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.radioButton_Motovehiculo.Size = new System.Drawing.Size(138, 39);
-            this.radioButton_Motovehiculo.TabIndex = 2;
-            this.radioButton_Motovehiculo.TabStop = true;
-            this.radioButton_Motovehiculo.Text = "MOTOVEHICULO";
-            this.radioButton_Motovehiculo.UseVisualStyleBackColor = true;
-            this.radioButton_Motovehiculo.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
-            // 
-            // radioButton_Objeto
-            // 
-            this.radioButton_Objeto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Objeto.Location = new System.Drawing.Point(79, 28);
-            this.radioButton_Objeto.Name = "radioButton_Objeto";
-            this.radioButton_Objeto.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.radioButton_Objeto.Size = new System.Drawing.Size(85, 39);
-            this.radioButton_Objeto.TabIndex = 1;
-            this.radioButton_Objeto.TabStop = true;
-            this.radioButton_Objeto.Text = "OBJETO";
-            this.radioButton_Objeto.UseVisualStyleBackColor = true;
-            this.radioButton_Objeto.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
-            // 
-            // radioButton_Automovil
-            // 
-            this.radioButton_Automovil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Automovil.Location = new System.Drawing.Point(261, 28);
-            this.radioButton_Automovil.Name = "radioButton_Automovil";
-            this.radioButton_Automovil.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.radioButton_Automovil.Size = new System.Drawing.Size(103, 39);
-            this.radioButton_Automovil.TabIndex = 0;
-            this.radioButton_Automovil.TabStop = true;
-            this.radioButton_Automovil.Text = "AUTOMOVIL";
-            this.radioButton_Automovil.UseVisualStyleBackColor = true;
-            this.radioButton_Automovil.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.btn_AgregarVictima.TextChanged += new System.EventHandler(this.HabilitaBTN_Agregar_TextChanged);
+            this.btn_AgregarVictima.Click += new System.EventHandler(this.Btn_AgregarVictima_Click);
             // 
             // label_DatosInstruccion
             // 
             this.label_DatosInstruccion.AutoSize = true;
             this.label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label_DatosInstruccion.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DatosInstruccion.Location = new System.Drawing.Point(40, 25);
+            this.label_DatosInstruccion.Location = new System.Drawing.Point(23, 1);
             this.label_DatosInstruccion.Name = "label_DatosInstruccion";
             this.label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
             this.label_DatosInstruccion.Size = new System.Drawing.Size(260, 25);
             this.label_DatosInstruccion.TabIndex = 32;
             this.label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCIÓN";
-            // 
-            // pictureBox_DatosVehiculo
-            // 
-            this.pictureBox_DatosVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_DatosVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_DatosVehiculo.Location = new System.Drawing.Point(240, 0);
-            this.pictureBox_DatosVehiculo.Name = "pictureBox_DatosVehiculo";
-            this.pictureBox_DatosVehiculo.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox_DatosVehiculo.TabIndex = 34;
-            this.pictureBox_DatosVehiculo.TabStop = false;
-            // 
-            // panel_DatosEspecificos
-            // 
-            this.panel_DatosEspecificos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_DatosEspecificos.Controls.Add(this.textBox_Chasis);
-            this.panel_DatosEspecificos.Controls.Add(this.textBox_Motor);
-            this.panel_DatosEspecificos.Controls.Add(this.btn_AmpliarReducir_VEHICULO);
-            this.panel_DatosEspecificos.Controls.Add(this.textBox_Dominio);
-            this.panel_DatosEspecificos.Controls.Add(this.label_Color);
-            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Color);
-            this.panel_DatosEspecificos.Controls.Add(this.label_Dominio);
-            this.panel_DatosEspecificos.Controls.Add(this.label_Chasis);
-            this.panel_DatosEspecificos.Controls.Add(this.label_Motor);
-            this.panel_DatosEspecificos.Controls.Add(this.label_Modelo);
-            this.panel_DatosEspecificos.Controls.Add(this.label_Marca);
-            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Marca);
-            this.panel_DatosEspecificos.Controls.Add(this.comboBox_Modelo);
-            this.panel_DatosEspecificos.Location = new System.Drawing.Point(0, 15);
-            this.panel_DatosEspecificos.Name = "panel_DatosEspecificos";
-            this.panel_DatosEspecificos.Size = new System.Drawing.Size(596, 107);
-            this.panel_DatosEspecificos.TabIndex = 26;
-            // 
-            // textBox_Chasis
-            // 
-            this.textBox_Chasis.Location = new System.Drawing.Point(389, 54);
-            this.textBox_Chasis.Name = "textBox_Chasis";
-            this.textBox_Chasis.Size = new System.Drawing.Size(171, 20);
-            this.textBox_Chasis.TabIndex = 88;
-            // 
-            // textBox_Motor
-            // 
-            this.textBox_Motor.Location = new System.Drawing.Point(102, 56);
-            this.textBox_Motor.Name = "textBox_Motor";
-            this.textBox_Motor.Size = new System.Drawing.Size(171, 20);
-            this.textBox_Motor.TabIndex = 87;
-            // 
-            // btn_AmpliarReducir_VEHICULO
-            // 
-            this.btn_AmpliarReducir_VEHICULO.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_AmpliarReducir_VEHICULO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AmpliarReducir_VEHICULO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_AmpliarReducir_VEHICULO.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_VEHICULO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_VEHICULO.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
-            this.btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(558, 1);
-            this.btn_AmpliarReducir_VEHICULO.Name = "btn_AmpliarReducir_VEHICULO";
-            this.btn_AmpliarReducir_VEHICULO.Size = new System.Drawing.Size(31, 23);
-            this.btn_AmpliarReducir_VEHICULO.TabIndex = 86;
-            this.btn_AmpliarReducir_VEHICULO.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_VEHICULO.Click += new System.EventHandler(this.btn_AmpliarReducir_VEHICULO_Click);
-            // 
-            // textBox_Dominio
-            // 
-            this.textBox_Dominio.Location = new System.Drawing.Point(102, 82);
-            this.textBox_Dominio.Name = "textBox_Dominio";
-            this.textBox_Dominio.Size = new System.Drawing.Size(171, 20);
-            this.textBox_Dominio.TabIndex = 31;
-            // 
-            // label_Color
-            // 
-            this.label_Color.AutoSize = true;
-            this.label_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Color.Location = new System.Drawing.Point(325, 82);
-            this.label_Color.Name = "label_Color";
-            this.label_Color.Size = new System.Drawing.Size(62, 15);
-            this.label_Color.TabIndex = 30;
-            this.label_Color.Text = "COLOR :";
-            // 
-            // comboBox_Color
-            // 
-            this.comboBox_Color.FormattingEnabled = true;
-            this.comboBox_Color.Location = new System.Drawing.Point(389, 81);
-            this.comboBox_Color.Name = "comboBox_Color";
-            this.comboBox_Color.Size = new System.Drawing.Size(171, 21);
-            this.comboBox_Color.TabIndex = 29;
-            // 
-            // label_Dominio
-            // 
-            this.label_Dominio.AutoSize = true;
-            this.label_Dominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dominio.Location = new System.Drawing.Point(25, 82);
-            this.label_Dominio.Name = "label_Dominio";
-            this.label_Dominio.Size = new System.Drawing.Size(75, 15);
-            this.label_Dominio.TabIndex = 28;
-            this.label_Dominio.Text = "DOMINIO :";
-            // 
-            // label_Chasis
-            // 
-            this.label_Chasis.AutoSize = true;
-            this.label_Chasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Chasis.Location = new System.Drawing.Point(300, 55);
-            this.label_Chasis.Name = "label_Chasis";
-            this.label_Chasis.Size = new System.Drawing.Size(84, 15);
-            this.label_Chasis.TabIndex = 27;
-            this.label_Chasis.Text = "N° CHASIS :";
-            // 
-            // label_Motor
-            // 
-            this.label_Motor.AutoSize = true;
-            this.label_Motor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Motor.Location = new System.Drawing.Point(15, 55);
-            this.label_Motor.Name = "label_Motor";
-            this.label_Motor.Size = new System.Drawing.Size(85, 15);
-            this.label_Motor.TabIndex = 26;
-            this.label_Motor.Text = "N° MOTOR :";
-            // 
-            // label_Modelo
-            // 
-            this.label_Modelo.AutoSize = true;
-            this.label_Modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Modelo.Location = new System.Drawing.Point(311, 27);
-            this.label_Modelo.Name = "label_Modelo";
-            this.label_Modelo.Size = new System.Drawing.Size(74, 15);
-            this.label_Modelo.TabIndex = 25;
-            this.label_Modelo.Text = "MODELO :";
-            // 
-            // label_Marca
-            // 
-            this.label_Marca.AutoSize = true;
-            this.label_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Marca.Location = new System.Drawing.Point(38, 27);
-            this.label_Marca.Name = "label_Marca";
-            this.label_Marca.Size = new System.Drawing.Size(62, 15);
-            this.label_Marca.TabIndex = 9;
-            this.label_Marca.Text = "MARCA :";
-            // 
-            // comboBox_Marca
-            // 
-            this.comboBox_Marca.FormattingEnabled = true;
-            this.comboBox_Marca.Location = new System.Drawing.Point(102, 26);
-            this.comboBox_Marca.Name = "comboBox_Marca";
-            this.comboBox_Marca.Size = new System.Drawing.Size(171, 21);
-            this.comboBox_Marca.TabIndex = 1;
-            // 
-            // comboBox_Modelo
-            // 
-            this.comboBox_Modelo.FormattingEnabled = true;
-            this.comboBox_Modelo.Location = new System.Drawing.Point(389, 27);
-            this.comboBox_Modelo.Name = "comboBox_Modelo";
-            this.comboBox_Modelo.Size = new System.Drawing.Size(171, 21);
-            this.comboBox_Modelo.TabIndex = 0;
-            // 
-            // label_DatosVehiculo
-            // 
-            this.label_DatosVehiculo.AutoSize = true;
-            this.label_DatosVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DatosVehiculo.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DatosVehiculo.Location = new System.Drawing.Point(23, 0);
-            this.label_DatosVehiculo.Name = "label_DatosVehiculo";
-            this.label_DatosVehiculo.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            this.label_DatosVehiculo.Size = new System.Drawing.Size(219, 25);
-            this.label_DatosVehiculo.TabIndex = 24;
-            this.label_DatosVehiculo.Text = "DATOS DEL VEHICULO";
             // 
             // label_ExamenVisu
             // 
@@ -1088,24 +1146,29 @@
             this.label_ExamenVisu.TabIndex = 32;
             this.label_ExamenVisu.Text = "EXAMEN DE VISU";
             // 
-            // panel_DatosVehiculo
+            // panel_Instruccion
             // 
-            this.panel_DatosVehiculo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_DatosVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel_DatosVehiculo.Controls.Add(this.panel_DatosEspecificos);
-            this.panel_DatosVehiculo.Controls.Add(this.pictureBox_DatosVehiculo);
-            this.panel_DatosVehiculo.Controls.Add(this.label_DatosVehiculo);
-            this.panel_DatosVehiculo.Location = new System.Drawing.Point(35, 600);
-            this.panel_DatosVehiculo.Name = "panel_DatosVehiculo";
-            this.panel_DatosVehiculo.Size = new System.Drawing.Size(599, 125);
-            this.panel_DatosVehiculo.TabIndex = 1;
+            this.panel_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel_Instruccion.BorderRadius = 10;
+            this.panel_Instruccion.CamposCompletos = false;
+            this.panel_Instruccion.Controls.Add(this.panel_DatosInstruccion);
+            this.panel_Instruccion.Controls.Add(this.label_DatosInstruccion);
+            this.panel_Instruccion.Controls.Add(this.pictureBox_PanelInstruccion);
+            this.panel_Instruccion.EstaContraido = false;
+            this.panel_Instruccion.Location = new System.Drawing.Point(32, 36);
+            this.panel_Instruccion.Name = "panel_Instruccion";
+            this.panel_Instruccion.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.panel_Instruccion.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_Instruccion.Size = new System.Drawing.Size(602, 317);
+            this.panel_Instruccion.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            this.panel_Instruccion.TabIndex = 87;
             // 
             // Visu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 1000);
-            this.Controls.Add(this.panel_DatosVehiculo);
+            this.Controls.Add(this.panel_Instruccion);
             this.Controls.Add(this.label_ExamenVisu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1120,10 +1183,28 @@
             this.Load += new System.EventHandler(this.Visu_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.label_ExamenVisu, 0);
-            this.Controls.SetChildIndex(this.panel_DatosVehiculo, 0);
+            this.Controls.SetChildIndex(this.panel_Instruccion, 0);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Validacion)).EndInit();
+            this.panel_DatosVehiculo.ResumeLayout(false);
+            this.panel_DatosVehiculo.PerformLayout();
+            this.panel_DatosEspecificos.ResumeLayout(false);
+            this.panel_DatosEspecificos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_DatosVehiculo)).EndInit();
+            this.panel_Imagenes.ResumeLayout(false);
+            this.panel_Imagenes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelImagenes)).EndInit();
+            this.panel_AgregarImagenes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nuevaImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QuitarImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AgregarImagen)).EndInit();
+            this.panel_Descripcion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Descripcion)).EndInit();
+            this.panel_SeleccionVisu.ResumeLayout(false);
+            this.panel_TipoExamenVisu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Motovehiculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Automovil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Objeto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelInstruccion)).EndInit();
             this.panel_DatosInstruccion.ResumeLayout(false);
             this.panel_DatosInstruccion.PerformLayout();
             this.panel_Ipp.ResumeLayout(false);
@@ -1134,24 +1215,8 @@
             this.panel_Imputado.PerformLayout();
             this.panel_Victima.ResumeLayout(false);
             this.panel_Victima.PerformLayout();
-            this.panel_Imagenes.ResumeLayout(false);
-            this.panel_Imagenes.PerformLayout();
-            this.panel_AgregarImagenes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nuevaImagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QuitarImagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AgregarImagen)).EndInit();
-            this.panel_Descripcion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Descripcion)).EndInit();
-            this.groupBox_TipoExamenVisu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelImagenes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Motovehiculo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Automovil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Objeto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_DatosVehiculo)).EndInit();
-            this.panel_DatosEspecificos.ResumeLayout(false);
-            this.panel_DatosEspecificos.PerformLayout();
-            this.panel_DatosVehiculo.ResumeLayout(false);
-            this.panel_DatosVehiculo.PerformLayout();
+            this.panel_Instruccion.ResumeLayout(false);
+            this.panel_Instruccion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1161,7 +1226,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_ExamenVisu;
-        private System.Windows.Forms.GroupBox groupBox_TipoExamenVisu;
         private System.Windows.Forms.RadioButton radioButton_Motovehiculo;
         private System.Windows.Forms.RadioButton radioButton_Objeto;
         private System.Windows.Forms.RadioButton radioButton_Automovil;
@@ -1170,11 +1234,8 @@
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Limpiar;
-        private System.Windows.Forms.Panel panel_Descripcion;
         private System.Windows.Forms.Label label_Descripcion;
-        private System.Windows.Forms.Panel panel_Imagenes;
         private System.Windows.Forms.Label label_DescripcionConIA;
-        private System.Windows.Forms.Panel panel_DatosEspecificos;
         private System.Windows.Forms.ComboBox comboBox_Marca;
         private System.Windows.Forms.ComboBox comboBox_Modelo;
         private Controles.Controles.BotonDeslizable botonDeslizable_Descripcion_IA;
@@ -1193,7 +1254,7 @@
         private System.Windows.Forms.Label label_Localidad;
         private System.Windows.Forms.ComboBox comboBox_Localidad;
         private System.Windows.Forms.ComboBox comboBox_Secretario;
-        private System.Windows.Forms.ComboBox comboBox_Instructor;
+        
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
         private System.Windows.Forms.ComboBox comboBox_Fiscalia;
         private System.Windows.Forms.Label lbl_Dependencia;
@@ -1234,12 +1295,19 @@
         private System.Windows.Forms.Button btn_AmpliarReducir_DESCRIPCION;
         private System.Windows.Forms.Button btn_AmpliarReducir_VEHICULO;
         private System.Windows.Forms.Button btn_AmpliarReducir_IMAGENES;
-        private System.Windows.Forms.PictureBox pictureBox_Validacion;
+        private System.Windows.Forms.PictureBox pictureBox_PanelInstruccion;
         private System.Windows.Forms.PictureBox pictureBox_DatosVehiculo;
         private System.Windows.Forms.PictureBox pictureBox_Descripcion;
         private System.Windows.Forms.PictureBox pictureBox_PanelImagenes;
-        private System.Windows.Forms.Panel panel_DatosVehiculo;
         private System.Windows.Forms.TextBox textBox_Chasis;
         private System.Windows.Forms.TextBox textBox_Motor;
+        private System.Windows.Forms.Panel panel_SeleccionVisu;
+        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_TipoExamenVisu;
+        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Descripcion;
+        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Imagenes;
+        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_DatosEspecificos;
+        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_DatosVehiculo;
+        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Instruccion;
+        private System.Windows.Forms.ComboBox comboBox_Instructor;
     }
 }

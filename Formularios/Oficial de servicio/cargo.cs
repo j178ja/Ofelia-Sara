@@ -62,11 +62,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.Text = secretario;
             comboBox_Dependencia.Text = dependencia;
 
-           
-
-           
-
-         
         }
         //----------------------------------------------------------------------------------------
 
@@ -119,13 +114,81 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 if (botonDeslizable_Visu.IsOn)
                 {
-                    Visu formVISU = new Visu();
-                    formVISU.Show();
+
+                    //.........
+
+                    string Ipp1 = comboBox_Ipp1.Text;
+                    string Ipp2 = comboBox_Ipp2.Text;
+                    string NumeroIpp = textBox_NumeroIpp.Text;
+                    string Ipp4 = comboBox_Ipp4.Text;
+                    string Caratula = textBox_Caratula.Text;
+                    string Victima = textBox_Victima.Text;
+                    string Imputado = textBox_Imputado.Text;
+                    string Fiscalia = comboBox_Fiscalia.Text;
+                    string AgenteFiscal = comboBox_AgenteFiscal.Text;
+                    string Localidad = comboBox_Localidad.Text;
+                    string Instructor = comboBox_Instructor.Text;
+                    string Secretario = comboBox_Secretario.Text;
+                    string Dependencia = comboBox_Dependencia.Text;
+
+                    // Crear y mostrar el formulario CVISU, pasando los valores obtenidos
+                    Visu visu = new Visu(Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
+                                            Fiscalia, AgenteFiscal, Localidad, Instructor, Secretario, Dependencia);
+
+
+                    // Obtener el formulario original (inicioCierre)
+                    Form originalForm = this;
+
+                    // Obtener el tamaño de ambos formularios
+                    int totalWidth = originalForm.Width + visu.Width;
+                    int height = Math.Max(originalForm.Height, visu.Height);
+
+                    // Calcular la posición para centrar ambos formularios en la pantalla
+                    int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                    int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+                    int startX = (screenWidth - totalWidth) / 2;
+                    int startY = (screenHeight - height) / 2;
+
+                    // Posicionar el formulario original a la izquierda
+                    originalForm.Location = new Point(startX, startY);
+
+                    // Posicionar el formulario Cargo a la derecha del formulario original
+                    visu.StartPosition = FormStartPosition.Manual;
+                    visu.Location = new Point(startX + originalForm.Width, startY);
+
+                    // Suscribirse al evento FormClosed del formulario VISU
+                    visu.FormClosed += (s, args) =>
+                    {
+                        if (visu.DialogResult == DialogResult.OK)
+                        {
+                            // Acciones si el resultado del diálogo es "Sí"
+                            botonDeslizable_Visu.IsOn = false;
+                        }
+                        else
+                        {
+                            botonDeslizable_Visu.IsOn = true;
+                        }
+                        // Calcular la nueva posición para centrar el formulario original
+                        int centerX = (screenWidth - originalForm.Width) / 2;
+                        int centerY = (screenHeight - originalForm.Height) / 2;
+
+                        // Reposicionar el formulario original en el centro de la pantalla
+                        originalForm.Location = new Point(centerX, centerY);
+
+
+                    };
+
+                    // Mostrar el nuevo formulario
+                    visu.ShowDialog();
+
+
+                    //...........
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al abrir el formulario Visu: {ex.Message}");
+                MensajeGeneral.Mostrar($"Error al abrir el formulario Visu: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -360,8 +423,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 e.Handled = true; // Cancelar la entrada si no es un número
             }
         }
+ 
+        /// <summary>
+        /// PARA VALIDAR LIMITE DE 2 NUMEROS EN NUMEROS DE IPP
+        /// </summary>
+       
 
-        private void comboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
+        private void comboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -370,24 +438,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void comboBox_Ipp2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
-
-        private void comboBox_Ipp4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
-
+        /// <summary>
+        /// PARA LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -442,6 +497,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        /// <summary>
+        /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
+        /// </summary>
+
+        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
+        {
+            CompletarConCeros(sender as TextBox);
+        }
+
+
+        // Método reutilizable para completar con ceros
+        private void CompletarConCeros(TextBox textBox)
+        {
+            if (textBox != null)
+            {
+                // Obtiene el texto actual del TextBox
+                string currentText = textBox.Text;
+
+                // Verifica si el texto es numérico y no está vacío
+                if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
+                {
+                    // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                    textBox.Text = currentText.PadLeft(6, '0');
+
+                    textBox.SelectionStart = textBox.Text.Length; // Posiciona el cursor al final del texto (opcional)
+                }
+            }
+        }
         private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -632,8 +715,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     checkBox_LegajoVehicular.Location.Y-8);
             }
         }
-
-     
 
     }
 }

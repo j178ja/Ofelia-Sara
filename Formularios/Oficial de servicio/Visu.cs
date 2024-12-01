@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -18,6 +19,7 @@ using Microsoft.Office.Interop.Word;
 using Ofelia_Sara.Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Clases.Botones;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -34,14 +36,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool panelExpandido_Descripcion = true;// 
 
         // Altura original y contraída del panel
-        private int alturaOriginalPanel;
+        private int alturaOriginalPanel_Instruccion;
         private int alturaOriginalPanel_Imagenes;
         private int alturaOriginalPanel_Vehiculo;
         private int alturaOriginalPanel_Descripcion;
         private int alturaContraidaPanel = 30;
 
+        private Label labelImagenes;// Para la imagen de carga completa en panel imagenes
 
-        
 
 
         public Visu()
@@ -72,12 +74,42 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Motor.TextChanged += (s, e) =>  ValidarPanelVehiculo();
             textBox_Dominio.TextChanged += (s, e) =>  ValidarPanelVehiculo();
 
-          
+            pictureBox_PanelImagenes.Visible = true;
         }
-      
+        //---FIN CONSTRUCTOR
+        //-----------------------------------------------------------
+        //SOBRECARGA PARA RECIBIR DATOS DE VARGO
+        //---sobrecargar para que reciba los datos desde form iniciocierre
+        public Visu(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
+                 string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
+                 string instructor, string secretario, string dependencia)
+        {
+            InitializeComponent();
+
+            // Asignar los valores a los controles específicos del formulario
+            comboBox_Ipp1.Text = ipp1;
+            comboBox_Ipp2.Text = ipp2;
+            textBox_NumeroIpp.Text = numeroIpp;
+            comboBox_Ipp4.Text = ipp4;
+            textBox_Caratula.Text = caratula;
+            textBox_Victima.Text = victima;
+            textBox_Imputado.Text = imputado;
+            comboBox_Fiscalia.Text = fiscalia;  // Asignación al control
+            comboBox_AgenteFiscal.Text = agenteFiscal;
+            comboBox_Localidad.Text = localidad;
+            comboBox_Instructor.Text = instructor;
+            comboBox_Secretario.Text = secretario;
+            comboBox_Dependencia.Text = dependencia;
+
+        }
+        //---fin sobrecarga
+        //-------------------------------------------------
 
         private void Visu_Load(object sender, EventArgs e)
         {
+            pictureBox_PanelImagenes.Visible = true;
+
+            //  estilo de letras en panel instructor
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
             MayusculaSola.AplicarAControl(textBox_Imputado);
@@ -86,6 +118,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+            //......................................................
+            // estilo de letras en panel datos vehiculo
+            MayusculaYnumeros.AplicarAControl(textBox_Dominio);
+            MayusculaYnumeros.AplicarAControl(textBox_Motor);
+            MayusculaYnumeros.AplicarAControl(textBox_Chasis);
             //......................................................
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -96,35 +133,56 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+            CargarDatosInstructor( comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
+           //.....................................................
+           // llevar al frente label y picture
             pictureBox_AgregarImagen.BringToFront();
             pictureBox_QuitarImagen.BringToFront();
             pictureBox_DatosVehiculo.BringToFront();
             label_DatosInstruccion.BringToFront();
+            pictureBox_PanelInstruccion.BringToFront();
             btn_AmpliarReducir_INSTRUCCION.BringToFront();
             label_DatosVehiculo.BringToFront();
+            label_SeleccionVisu.BringToFront();
 
+            //.....................................................
             Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
-         
-            alturaOriginalPanel = panel_DatosInstruccion.Height;// Guardar la altura original del panel
-            alturaOriginalPanel_Imagenes = panel_Imagenes.Height;// Guardar la altura original del panel
-            alturaOriginalPanel_Vehiculo = panel_DatosVehiculo.Height;// Guardar la altura original del panel
-            alturaOriginalPanel_Descripcion = panel_Descripcion.Height;// Guardar la altura original del panel
 
+            //.....................................................
+            //// Guardar la altura original del panel
+            alturaOriginalPanel_Instruccion = panel_Instruccion.Height;
+            alturaOriginalPanel_Imagenes = panel_Imagenes.Height;
+            alturaOriginalPanel_Vehiculo = panel_DatosVehiculo.Height;
+            alturaOriginalPanel_Descripcion = panel_Descripcion.Height;
+
+            //.....................................................
+            //validar datos de los paneles y mostras picture de completo-impleto y error
             ValidarPanelDatosInstruccion();
             ValidarPanelDescripcion();
             ValidarPanelVehiculo();
+            // Validar panel solo si está contraído
+            if (!panelExpandido_Imagenes && labelImagenes != null)
+            {
+                ValidarPanelImagenes();
+            }
 
-            //para que se carge el panel contraido
+            //...................................................
+
+            //para que se carge el panel INSTRUCION contraido
             if (panelExpandido_Instruccion)
             {
                 // Contraer el panel
-                panel_DatosInstruccion.Height = alturaContraidaPanel;
+                panel_Instruccion.Height = alturaContraidaPanel;
                 btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                panelExpandido_Instruccion = false;
+                panelExpandido_Instruccion = false; //PANEL CONTRAIDO
+                panel_Instruccion.BorderStyle = BorderStyle.FixedSingle;
 
+                // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
+                btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(561, 1);
+                // Ocultar todos los controles excepto el botón de ampliación/reducción
                 foreach (Control control in panel_DatosInstruccion.Controls)
                 {
                     if (control == btn_AmpliarReducir_INSTRUCCION)
@@ -134,12 +192,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     else
                     {
                         control.Visible = false; // Oculta los demás controles
+                        panel_DatosInstruccion.Visible = false;
                     }
                 }
             }
-            //.................
-            //Para cambiar el borde del group segun este seleccionado o no un radiobutom
-            foreach (Control ctrl in groupBox_TipoExamenVisu.Controls)
+
+            //.........................................................
+            //Para cambiar el borde del PANEL SELECCIONAR TIPO VISU segun este seleccionado o no un radiobutom
+                foreach (Control ctrl in panel_TipoExamenVisu.Controls)
             {
                 if (ctrl is RadioButton radioButton)
                 {
@@ -147,8 +207,181 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
 
+            //.........................................................
+
         }
-        //--------------------------------------------------------------------------
+        //-------FIN LOAD    
+
+
+        //------METODOS PANEL INSTRUCCION-----------------------
+
+        /// <summary>
+        ///  TRAER DATOS DESDE CARGO
+        /// </summary>
+        /// 
+
+        //------------------------------------------------------------------------------------------------
+        //   METODO PARA OBTENER DATOS DEL FORMULARIO
+
+        //------------------------------------------------------------------------------------------------
+        //   METODO PARA OBTENER DATOS DEL FORMULARIO
+
+        public Dictionary<string, string> ObtenerDatosFormulario()
+        {
+            var datosFormulario = new Dictionary<string, string>();
+
+            // Verificar si los datos del formulario son válidos
+            if (datosFormulario == null)
+            {
+                // Detener la generación de documentos si hay algún error
+                return null;
+            }
+
+            // Añadimos los valores de los controles al diccionario
+           
+            datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);
+            datosFormulario.Add("Caratula", textBox_Caratula.Text);
+            datosFormulario.Add("Victima", textBox_Victima.Text);
+            datosFormulario.Add("Imputado", textBox_Imputado.Text);
+
+            datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
+            datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
+            datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
+            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+
+            return datosFormulario;
+        }
+        //-------------------------------------------------------------------
+
+        /// <summary>
+        /// PARA LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Obtiene el TextBox que disparó el evento
+                System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+
+                if (textBox != null)
+                {
+                    // Obtiene el texto actual del TextBox
+                    string currentText = textBox.Text;
+
+                    // Verifica si el texto es numérico
+                    if (int.TryParse(currentText, out _))
+                    {
+                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                        string completedText = currentText.PadLeft(6, '0');
+
+                        // Actualiza el texto del TextBox
+                        textBox.Text = completedText;
+
+                        // Posiciona el cursor al final del texto
+                        textBox.SelectionStart = textBox.Text.Length;
+
+                        // Cancelar el manejo predeterminado de la tecla Enter
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+
+
+        private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
+        {
+            // Limitar a 6 caracteres
+            if (textBox_NumeroIpp.Text.Length > 6)
+            {
+                // Si el texto excede los 6 caracteres, cortar el exceso
+                textBox_NumeroIpp.Text = textBox_NumeroIpp.Text.Substring(0, 6);
+
+                // Mover el cursor al final del texto
+                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
+
+            }
+        }
+
+
+        /// <summary>
+        /// PARA VALIDAR LIMITE DE 2 NUMEROS EN NUMEROS DE IPP
+        /// </summary>
+
+        private void comboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar la entrada si no es un número
+            }
+        }
+
+        /// <summary>
+        ///  HABILITAR BTN AGREGAR CAUSA-IMPUTADO-VICTIMA DESDE EVENTO TEXTCHANGED
+        /// </summary>
+
+        private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                switch (textBox.Name)
+                {
+                    case "textBox_Caratula":
+                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        break;
+
+                    case "textBox_Victima":
+                        btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        break;
+
+                    case "textBox_Imputado":
+                        btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+        /// <summary>
+        /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
+        /// </summary>
+
+        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
+        {
+            CompletarConCeros(sender as TextBox);
+        }
+
+
+        // Método reutilizable para completar con ceros
+        private void CompletarConCeros(TextBox textBox)
+        {
+            if (textBox != null)
+            {
+                // Obtiene el texto actual del TextBox
+                string currentText = textBox.Text;
+
+                // Verifica si el texto es numérico y no está vacío
+                if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
+                {
+                    // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                    textBox.Text = currentText.PadLeft(6, '0');
+
+                    textBox.SelectionStart = textBox.Text.Length; // Posiciona el cursor al final del texto (opcional)
+                }
+            }
+        }
+        //----------------------------------------------------------------------------------
         //-----para inicializar los COMBOBOX FISCALIA----------------
         private void InicializarComboBoxFISCALIA()
         {
@@ -164,8 +397,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.DataSource = agentesFiscales;
             comboBox_Localidad.DataSource = localidades;
         
-
-
             comboBox_Fiscalia.SelectedIndex = -1;
             comboBox_AgenteFiscal.SelectedIndex = -1;
             comboBox_Localidad.SelectedIndex = -1;
@@ -177,7 +408,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Desactivar los ComboBoxes de detalle mientras se actualizan
             comboBox_AgenteFiscal.Enabled = false;
             comboBox_Localidad.Enabled = false;
-    
 
             // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
             if (comboBox_Fiscalia.SelectedItem != null)
@@ -190,27 +420,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
                     comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
                     comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
-                   
+
                 }
                 else
                 {
                     // Si no se encuentra la fiscalía, limpiar los ComboBoxes
                     comboBox_AgenteFiscal.DataSource = null;
                     comboBox_Localidad.DataSource = null;
-             
+
                 }
 
                 // Reactivar los ComboBoxes de detalle
                 comboBox_AgenteFiscal.Enabled = true;
                 comboBox_Localidad.Enabled = true;
-         
             }
             else
             {
                 // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
                 comboBox_AgenteFiscal.DataSource = null;
                 comboBox_Localidad.DataSource = null;
-              
 
                 comboBox_AgenteFiscal.Enabled = false;
                 comboBox_Localidad.Enabled = false;
@@ -307,20 +535,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si algún RadioButton en el grupo está seleccionado
-            bool isChecked = groupBox_TipoExamenVisu.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
+            bool isChecked = panel_TipoExamenVisu.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
 
             // Cambiar el color del borde del GroupBox según el estado de los RadioButton
             if (isChecked)
             {
-                groupBox_TipoExamenVisu.Paint += GroupBox_TipoExamenVisu_Paint_Activated;
+                panel_TipoExamenVisu.Paint += Panel_TipoExamenVisu_Paint_Activated;
             }
             else
             {
-                groupBox_TipoExamenVisu.Paint += GroupBox_TipoExamenVisu_Paint_Default;
+                panel_TipoExamenVisu.Paint += Panel_TipoExamenVisu_Paint_Default;
             }
 
             // Forzar el repintado del GroupBox
-            groupBox_TipoExamenVisu.Invalidate();
+            panel_TipoExamenVisu.Invalidate();
        //............................
             // Asegúrate de que el sender es un RadioButton
             if (sender is RadioButton radioButton)
@@ -400,19 +628,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //----------------------------------------------------------------------------------------------------
         // METODOS PARA CAMBIAR EL COLOR DE BORDE DEL GROUP SEGUN ESTE SELECCIONADO O NO 
 
-        private void GroupBox_TipoExamenVisu_Paint_Activated(object sender, PaintEventArgs e)
+        private void Panel_TipoExamenVisu_Paint_Activated(object sender, PaintEventArgs e)
         {
             using (Pen pen = new Pen(Color.Green, 2)) // Borde verde cuando algún CheckBox está seleccionado
             {
-                e.Graphics.DrawRectangle(pen, groupBox_TipoExamenVisu.ClientRectangle);
+                e.Graphics.DrawRectangle(pen, panel_TipoExamenVisu.ClientRectangle);
             }
         }
 
-        private void GroupBox_TipoExamenVisu_Paint_Default(object sender, PaintEventArgs e)
+        private void Panel_TipoExamenVisu_Paint_Default(object sender, PaintEventArgs e)
         {
             using (Pen pen = new Pen(Color.Black, 1)) // Borde negro por defecto
             {
-                e.Graphics.DrawRectangle(pen, groupBox_TipoExamenVisu.ClientRectangle);
+                e.Graphics.DrawRectangle(pen, panel_TipoExamenVisu.ClientRectangle);
             }
         }
 
@@ -584,8 +812,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 int posicionVertical = 0; // Comienza desde la parte superior de panel1
 
                 // Ajustar posición de groupBox_TipoExamenVisu (siempre visible)
-                groupBox_TipoExamenVisu.Location = new System.Drawing.Point(groupBox_TipoExamenVisu.Location.X, posicionVertical);
-                posicionVertical += groupBox_TipoExamenVisu.Height;
+                panel_TipoExamenVisu.Location = new System.Drawing.Point(panel_TipoExamenVisu.Location.X, posicionVertical);
+                posicionVertical += panel_TipoExamenVisu.Height;
 
                 // Ajustar posición de panel_DatosInstruccion
                 if (panel_DatosInstruccion.Visible)
@@ -622,28 +850,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 this.Height = panel1.Location.Y + panel1.Height + 20;
         }
         //----------------------------------------------------------------------------------
-        private void AplicarBordePanel(PanelConBordePersonalizado panel, bool camposCompletos)
-        {
-            if (panel.Width == panel.MinimumSize.Width) // Verifica si el panel está contraído
-            {
-                if (camposCompletos)
-                {
-                    panel.BordeColor = Color.FromArgb(4, 200, 0); // Verde
-                    panel.BordeGrosor = 2;
-                }
-                else
-                {
-                    panel.BordeColor = Color.FromArgb(255, 0, 0); // Rojo
-                    panel.BordeGrosor = 2;
-                }
-            }
-            else
-            {
-                // Restaurar el borde original cuando el panel no esté contraído
-                panel.BordeColor = Color.Transparent;
-                panel.BordeGrosor = 1;
-            }
-        }
+
 
 
         //----------------------------------------------------------------------------------
@@ -655,249 +862,325 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
         {
-            if (panelExpandido_Instruccion)
+            if (panel_Instruccion is PanelConBordeNeon panelConNeon)
             {
-                // Contraer el panel
-                panel_DatosInstruccion.Height = alturaContraidaPanel;
-                btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                panelExpandido_Instruccion = false;
-
-                // Ocultar todos los controles excepto el botón de ampliación/reducción
-                foreach (Control control in panel_DatosInstruccion.Controls)
+                if (panelExpandido_Instruccion)
                 {
-                    if (control == btn_AmpliarReducir_INSTRUCCION)
+                    // Contraer el panel
+                    panel_Instruccion.Height = alturaContraidaPanel;
+                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    panelExpandido_Instruccion = false; //PANEL CONTRAIDO
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
+
+                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
+                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(561, 1);
+
+
+                    // Ocultar todos los controles excepto el botón de ampliación/reducción
+                    foreach (Control control in panel_DatosInstruccion.Controls)
                     {
-                        control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                        if (control == btn_AmpliarReducir_INSTRUCCION)
+                        {
+                            control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                        }
+                        else
+                        {
+                            control.Visible = false; // Oculta los demás controles
+                            panel_DatosInstruccion.Visible = false;
+                        }
                     }
-                    else
+
+                    // Ocultar controles de error personalizados
+                    foreach (Control control in panel_DatosInstruccion.Controls)
                     {
-                        control.Visible = false; // Oculta los demás controles
+                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+                        {
+                            control.Visible = false; // Ocultar imágenes de error
+                        }
                     }
                 }
-
-                // Ocultar controles de error personalizados
-                foreach (Control control in panel_DatosInstruccion.Controls)
+                else
                 {
-                    if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+                    // Expandir el panel
+                    panel_Instruccion.Height = alturaOriginalPanel_Instruccion;
+                    panel_Instruccion.BorderStyle = BorderStyle.None;
+                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
+                    panelExpandido_Instruccion = true;
+                    panel_DatosInstruccion.Visible = true;
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+
+                    // Mover el botón al panel_DatosEspecificos
+                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
+                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(558, 1);
+
+                    // Mostrar todos los controles
+                    foreach (Control control in panel_DatosInstruccion.Controls)
                     {
-                        control.Visible = false; // Ocultar imágenes de error
+                        control.Visible = true;
+                    }
+
+                    // Asegurarte de que las imágenes de error se muestren si es necesario
+                    foreach (Control control in panel_DatosInstruccion.Controls)
+                    {
+                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+                        {
+                            control.Visible = true; // Mostrar imágenes de error
+                        }
                     }
                 }
             }
-            else
-            {
-                // Expandir el panel
-                panel_DatosInstruccion.Height = alturaOriginalPanel;
-                btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-                panelExpandido_Instruccion = true;
 
-                // Mostrar todos los controles
-                foreach (Control control in panel_DatosInstruccion.Controls)
-                {
-                    control.Visible = true;
-                }
-
-                // Asegurarte de que las imágenes de error se muestren si es necesario
-                foreach (Control control in panel_DatosInstruccion.Controls)
-                {
-                    if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-                    {
-                        control.Visible = true; // Mostrar imágenes de error
-                    }
-                }
-            }
         }
-
-
 
 
 
         private void btn_AmpliarReducir_IMAGENES_Click(object sender, EventArgs e)
         {
-            if (panelExpandido_Imagenes)
+            if (panel_Imagenes is PanelConBordeNeon panelConNeon)
             {
-                // Contraer el panel
-                panel_Imagenes.Height = alturaContraidaPanel;
-                btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                panelExpandido_Imagenes = false;
-
-                // Crear un nuevo Label y configurarlo con las propiedades especificadas
-                Label labelImagenes = new Label();
-                labelImagenes.BackColor = Color.FromArgb(0, 192, 192);
-                labelImagenes.Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline);
-                labelImagenes.ForeColor = SystemColors.ControlText;
-                labelImagenes.Padding = new Padding(20, 3, 20, 5);
-                labelImagenes.Text = "IMAGENES";
-                labelImagenes.AutoSize = true;
-                labelImagenes.Location = new System.Drawing.Point(23, 1);
-
-                // Asegurar que el Label esté al frente en el panel
-                labelImagenes.BringToFront();
-
-                // Agregar el Label al panel
-                panel_Imagenes.Controls.Add(labelImagenes);
-
-                // Ocultar otros controles excepto el botón de ampliar/reducir
-                foreach (Control control in panel_Imagenes.Controls)
+                if (panelExpandido_Imagenes)
                 {
-                    if (control == btn_AmpliarReducir_IMAGENES || control == labelImagenes)
+                    // Contraer el panel
+                    panel_Imagenes.Height = alturaContraidaPanel;
+                    btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaABAJO;
+                    panel_Imagenes.BorderStyle = BorderStyle.None;
+                    panelExpandido_Imagenes = false;
+                    panelConNeon.CambiarEstado(true, false);
+
+                    // Crear Label si no existe
+                    if (labelImagenes == null)
                     {
-                        control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                        labelImagenes = new Label
+                        {
+                            BackColor = Color.FromArgb(0, 192, 192),
+                            Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline),
+                            ForeColor = SystemColors.ControlText,
+                            Padding = new Padding(20, 3, 20, 5),
+                            Text = "IMAGENES",
+                            AutoSize = true,
+                            Location = new System.Drawing.Point(23, 1)
+                        };
+
+                        panel_Imagenes.Controls.Add(labelImagenes);
+                        labelImagenes.BringToFront();
                     }
-                    else
+
+                    foreach (Control control in panel_Imagenes.Controls)
                     {
-                        control.Visible = false; // Oculta los demás controles
+                        control.Visible = control == btn_AmpliarReducir_IMAGENES || control == labelImagenes || control == pictureBox_PanelImagenes;
+                    }
+                    pictureBox_PanelImagenes.Visible = true;
+                }
+                else
+                {
+                    // Expandir el panel
+                    panel_Imagenes.Height = alturaOriginalPanel_Imagenes;
+                    btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
+                    panelExpandido_Imagenes = true;
+                    panel_Imagenes.BorderStyle = BorderStyle.FixedSingle;
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+
+                    // Ocultar o quitar el Label cuando el panel se expande
+                    foreach (Control control in panel_Imagenes.Controls)
+                    {
+                        if (control is Label && control.Text == "IMAGENES")
+                        {
+                            control.Visible = false; //OCULTAR ESTE CONTROL
+
+                        }
+                        else
+                        {
+                            control.Visible = true; // Mostrar los demás controles
+                        }
                     }
                 }
+                //     AjustarTamanoFormulario();
             }
-            else
-            {
-                // Expandir el panel
-                panel_Imagenes.Height = alturaOriginalPanel_Imagenes;
-                btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-                panelExpandido_Imagenes = true;
-
-                // Ocultar o quitar el Label cuando el panel se expande
-                foreach (Control control in panel_Imagenes.Controls)
-                {
-                    if (control is Label && control.Text == "IMAGENES")
-                    {
-                        control.Visible = false; //OCULTAR ESTE CONTROL
-                                                
-                    }
-                    else
-                    {
-                        control.Visible = true; // Mostrar los demás controles
-                    }
-                }
-            }
-       //     AjustarTamanoFormulario();
         }
-
         private void btn_AmpliarReducir_VEHICULO_Click(object sender, EventArgs e)
         {
-            if (panelExpandido_Vehiculo)
+            if (panel_DatosVehiculo is PanelConBordeNeon panelConNeon)
             {
-                // Contraer el panel
-                panel_DatosVehiculo.Height = alturaContraidaPanel;
-                btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                panelExpandido_Vehiculo = false;
-                panel_DatosVehiculo.BorderStyle = BorderStyle.FixedSingle;
-
-                // Cambiar la posición y el padre del botón al panel_DatosVehiculo
-                btn_AmpliarReducir_VEHICULO.Parent = panel_DatosVehiculo;
-                btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(558, 1);
-
-                // Crear y agregar el Label "DATOS DEL VEHICULO"
-                Label labelVehiculo = new Label
+                if (panelExpandido_Vehiculo)
                 {
-                    Name = "labelVehiculo", // Asegúrate de asignar un nombre único al Label
-                    BackColor = Color.FromArgb(0, 192, 192),
-                    Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline),
-                    ForeColor = SystemColors.ControlText,
-                    Padding = new Padding(20, 3, 20, 5),
-                    Text = "DATOS DEL VEHICULO",
-                    AutoSize = true,
-                    Location = new System.Drawing.Point(23, 1)
-                };
-
-                // Asegurarse de que el Label esté visible en el frente
-                labelVehiculo.BringToFront();
-
-                // Agregar el Label al panel
-                panel_DatosVehiculo.Controls.Add(labelVehiculo);
-
-                // Ocultar otros controles excepto el botón y el Label
-                foreach (Control control in panel_DatosVehiculo.Controls)
-                {
-                    if (control == btn_AmpliarReducir_VEHICULO || control == labelVehiculo
-                        ||  control == pictureBox_DatosVehiculo) 
-                    {
-                        control.Visible = true; // Mantener visible
-                    }
-                    else
-                    {
-                        control.Visible = false; // Ocultar los demás controles
-                    }
-                }
-            }
-            else
-            {
-                // Expandir el panel
-                panel_DatosVehiculo.Height = alturaOriginalPanel_Vehiculo;
-                btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaARRIBA;
-                panelExpandido_Vehiculo = true;
+                    // Contraer el panel
+                    panel_DatosVehiculo.Height = alturaContraidaPanel;
                 panel_DatosVehiculo.BorderStyle = BorderStyle.None;
 
-                // Mover el botón al panel_DatosEspecificos
-                btn_AmpliarReducir_VEHICULO.Parent = panel_DatosEspecificos;
-                btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(558, 1);
+                btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    panelExpandido_Vehiculo = false;
 
-                // Buscar y ocultar o eliminar el Label dinámico
-                Control labelVehiculo = panel_DatosVehiculo.Controls["labelVehiculo"];
-                if (labelVehiculo != null)
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
+
+                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                    btn_AmpliarReducir_VEHICULO.Parent = panel_DatosVehiculo;
+                    btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(561, 1);
+
+                    // Crear y agregar el Label "DATOS DEL VEHICULO"
+                    Label labelVehiculo = new Label
+                    {
+                        Name = "labelVehiculo", // Asegúrate de asignar un nombre único al Label
+                        BackColor = Color.FromArgb(0, 192, 192),
+                        Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline),
+                        ForeColor = SystemColors.ControlText,
+                        Padding = new Padding(20, 3, 20, 5),
+                        Text = "DATOS DEL VEHICULO",
+                        AutoSize = true,
+                        Location = new System.Drawing.Point(23, 1)
+                    };
+
+                    // Asegurarse de que el Label esté visible en el frente
+                    labelVehiculo.BringToFront();
+
+                    // Agregar el Label al panel
+                    panel_DatosVehiculo.Controls.Add(labelVehiculo);
+
+                    // Ocultar otros controles excepto el botón y el Label
+                    foreach (Control control in panel_DatosVehiculo.Controls)
+                    {
+                        if (control == btn_AmpliarReducir_VEHICULO || control == labelVehiculo || control == pictureBox_DatosVehiculo)
+                        {
+                            control.Visible = true; // Mantener visible
+                        }
+                        else
+                        {
+                            control.Visible = false; // Ocultar los demás controles
+                        }
+                    }
+                }
+                else
                 {
-                    panel_DatosVehiculo.Controls.Remove(labelVehiculo);
-                    labelVehiculo.Dispose(); // Liberar recursos del Label
+                    // Expandir el panel
+                    panel_DatosVehiculo.Height = alturaOriginalPanel_Vehiculo;
+                    btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaARRIBA;
+                    panelExpandido_Vehiculo = true;
+                    panel_DatosVehiculo.BorderStyle = BorderStyle.None;
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+
+                    // Mover el botón al panel_DatosEspecificos
+                    btn_AmpliarReducir_VEHICULO.Parent = panel_DatosEspecificos;
+                    btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(558, 1);
+
+                    // Buscar y ocultar o eliminar el Label dinámico
+                    Control labelVehiculo = panel_DatosVehiculo.Controls["labelVehiculo"];
+                    if (labelVehiculo != null)
+                    {
+                        panel_DatosVehiculo.Controls.Remove(labelVehiculo);
+                        labelVehiculo.Dispose(); // Liberar recursos del Label
+                    }
+
+                    // Mostrar los demás controles del panel
+                    foreach (Control control in panel_DatosVehiculo.Controls)
+                    {
+                        control.Visible = true;
+                    }
                 }
 
-                // Mostrar los demás controles del panel
-                foreach (Control control in panel_DatosVehiculo.Controls)
-                {
-                    control.Visible = true;
-                }
+                // Ajustar el tamaño del formulario si es necesario
+                //AjustarTamanoFormulario();
             }
-
-            // Ajustar el tamaño del formulario si es necesario
-        //    AjustarTamanoFormulario();
         }
+
         //---------------------------------------------------------------------
         private void btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
         {
-            if (panelExpandido_Descripcion)
+            // Verificar si el panel es de tipo PanelConBordeNeon
+            if (panel_Descripcion is PanelConBordeNeon panelConNeon)
             {
-                // Contraer el panel
-                panel_Descripcion.Height = alturaContraidaPanel;
-                btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                panelExpandido_Descripcion = false;
-                panel_Descripcion.BorderStyle = BorderStyle.FixedSingle;
-
-
-
-
-                foreach (Control control in panel_Descripcion.Controls)
+                if (panelExpandido_Descripcion)
                 {
-                    if (control == btn_AmpliarReducir_DESCRIPCION ||
-                        control == label_Descripcion ||
-                        control == pictureBox_Descripcion) // Compara directamente el control
+                    // Contraer el panel
+                    panelConNeon.Height = alturaContraidaPanel;
+                    btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    panelExpandido_Descripcion = false;
+
+                    // Aplicar borde neón para el estado contraído
+                    bool camposCompletos = VerificarCamposEnPanel(panelConNeon); // Método personalizado para verificar campos
+                    panelConNeon.CambiarEstado(true, camposCompletos);
+
+                    foreach (Control control in panelConNeon.Controls)
                     {
-                        control.Visible = true; // Mantener visible
-                    }
-                    else
-                    {
-                        control.Visible = false; // Ocultar los demás controles
+                        if (control == btn_AmpliarReducir_DESCRIPCION ||
+                            control == label_Descripcion ||
+                            control == pictureBox_Descripcion) // Compara directamente el control
+                        {
+                            control.Visible = true; // Mantener visible
+                        }
+                        else
+                        {
+                            control.Visible = false; // Ocultar los demás controles
+                        }
                     }
                 }
+                else
+                {
+                    // Expandir el panel
+                    panelConNeon.Height = alturaOriginalPanel_Descripcion;
+                    btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaARRIBA;
+                    panelExpandido_Descripcion = true;
 
+                    // Eliminar el efecto neón para el estado expandido
+                    panelConNeon.CambiarEstado(false, false);
+
+                    // Mostrar los demás controles del panel
+                    foreach (Control control in panelConNeon.Controls)
+                    {
+                        control.Visible = true;
+                    }
+                }
             }
             else
             {
-                // Expandir el panel
-                panel_Descripcion.Height = alturaOriginalPanel_Descripcion;
-                btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaARRIBA;
-                panelExpandido_Descripcion = true;
-                panel_Descripcion.BorderStyle = BorderStyle.None;
+                MessageBox.Show("El panel no es de tipo PanelConBordeNeon.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-                // Mostrar los demás controles del panel
-                foreach (Control control in panel_Descripcion.Controls)
+
+        private bool VerificarCamposEnPanel(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                // Verificar TextBox
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    control.Visible = true;
+                    return false; // Campo TextBox incompleto
+                }
+
+                // Verificar ComboBox
+                if (control is ComboBox comboBox && comboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(comboBox.Text))
+                {
+                    return false; // Campo ComboBox incompleto
+                }
+
+                // Verificar RichTextBox
+                if (control is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
+                {
+                    return false; // Campo RichTextBox incompleto
+                }
+
+                // Verificar PictureBox
+                if (control is PictureBox pictureBox)
+                {
+                    // Verificar si no hay imagen o si la imagen es la predeterminada
+                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen1)
+                    {
+                        return false; // Campo PictureBox sin imagen válida
+                    }
                 }
             }
-
-            // Ajustar el tamaño del formulario si es necesario
-            //    AjustarTamanoFormulario();
+            return true; // Todos los campos están completos
         }
+
 
         /// <summary>
         /// METODO PARA VALIDAR DAROS DE LOS PANELES
@@ -927,30 +1210,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Actualizar la imagen en pictureBox
             if (camposValidos)
             {
-                pictureBox_Validacion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_Validacion.BackColor = Color.Transparent; // Fondo transparente
+                pictureBox_PanelInstruccion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
                
             }
             else
             {
-                pictureBox_Validacion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_Validacion.BackColor = Color.Transparent; // Fondo transparente
+                pictureBox_PanelInstruccion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
               
             }
 
             // Ajustar la posición del pictureBox al lado del label
-            pictureBox_Validacion.Location = new System.Drawing.Point(
+            pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
                 label_DatosInstruccion.Right + 5, // A la derecha del label con un margen de 5 px
-                label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_Validacion.Height) / 2 // Centrado verticalmente
+                label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_PanelInstruccion.Height) / 2 // Centrado verticalmente
             );
 
             // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-            pictureBox_Validacion.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_PanelInstruccion.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // Asegurarse de que el pictureBox sea visible
-            pictureBox_Validacion.Visible = true;
+            pictureBox_PanelInstruccion.Visible = true;
         }
 
 
@@ -1035,6 +1318,33 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Asegurarse de que el pictureBox sea visible
             pictureBox_Descripcion.Visible = true;
         }
+        //----------------------------------------------------------------------------------------------
+        // METODO PARA VALIDAR DATOS EN PANEL IMAGEES
+        private void ValidarPanelImagenes()
+        {
+            bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
+
+            if (camposValidos)
+            {
+                pictureBox_PanelImagenes.Image = Properties.Resources.verificacion_exitosa;
+                pictureBox_PanelImagenes.BackColor = Color.Transparent;
+                labelImagenes.BackColor = Color.FromArgb(4, 200, 0);
+            }
+            else
+            {
+                pictureBox_PanelImagenes.Image = Properties.Resources.Advertencia_Faltante;
+                pictureBox_PanelImagenes.BackColor = Color.Transparent;
+                labelImagenes.BackColor = Color.FromArgb(0, 192, 192);
+            }
+
+            pictureBox_PanelImagenes.Location = new System.Drawing.Point(
+                labelImagenes.Right + 5,
+                labelImagenes.Top + (labelImagenes.Height - pictureBox_PanelImagenes.Height) / 2
+            );
+
+            pictureBox_PanelImagenes.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox_PanelImagenes.Visible = true;
+        }
 
         //-----------------------------------------------------------------------------------
         //--para que muestre mensaje de advertencia previo cerrar formulario
@@ -1098,6 +1408,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Si el campo está completo, se limpia el error
             ClearError(control);
             return true;
+        }
+
+        private void Fecha_Instruccion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
+
+           
+
+
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); ;
+
+
         }
 
        
