@@ -64,6 +64,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_DatosVehiculo.Visible = false;
             panel_DatosEspecificos.Visible = false;
             panel_Descripcion.Visible = false;
+            panel_ControlesInferiores.Visible = false;
 
             richTextBox_Descripcion.TextChanged += (sender, e) => ValidarPanelDescripcion();
 
@@ -74,7 +75,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Motor.TextChanged += (s, e) =>  ValidarPanelVehiculo();
             textBox_Dominio.TextChanged += (s, e) =>  ValidarPanelVehiculo();
 
-            pictureBox_PanelImagenes.Visible = true;
+            //.........................................................
+            AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
+           
+            
+
         }
         //---FIN CONSTRUCTOR
         //-----------------------------------------------------------
@@ -195,6 +200,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         panel_DatosInstruccion.Visible = false;
                     }
                 }
+                //para que carge no visible
+                panel_Imagenes.Visible = false;
+                panel_DatosVehiculo.Visible = false;
+                panel_DatosEspecificos.Visible = false;
+                panel_Descripcion.Visible = false;
+                panel_ControlesInferiores.Visible = false;
             }
 
             //.........................................................
@@ -208,6 +219,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             //.........................................................
+            AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
 
         }
         //-------FIN LOAD    
@@ -597,6 +609,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     radioButton.ForeColor = SystemColors.ControlText;
                     radioButton.BackColor = Color.FromArgb(178, 213, 230);
                 }
+                AjustarTamanoFormulario();
             }
         }
 
@@ -808,47 +821,75 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void AjustarTamanoFormulario()
         {
+            int posicionVertical = 35; // Comienza desde la parte superior de panel1
+
+            // Ajustar posición de panel_Instruccion (se contrae y expande)
+            if (panel_Instruccion.Visible)
+            {
+                panel_Instruccion.Location = new System.Drawing.Point(panel_Instruccion.Location.X, posicionVertical);
+                posicionVertical += panel_Instruccion.Height;
+                // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
+                posicionVertical += 10;
+            }
+                        
+            // Ajustar posición de panel_SeleccionVisu (tamaño fijo)
+            panel_SeleccionVisu.Location = new System.Drawing.Point(panel_SeleccionVisu.Location.X, posicionVertical);
+            posicionVertical += panel_SeleccionVisu.Height;
+            // Agregar separación de 10 píxeles entre panel_SeleccionVisu y panel_Imagenes
+            posicionVertical += 10;
+
+            // Ajustar posición de panel_Imagenes (se contrae y expande)
+            if (panel_Imagenes.Visible)
+            {
+                panel_Imagenes.Location = new System.Drawing.Point(panel_Imagenes.Location.X, posicionVertical);
+                posicionVertical += panel_Imagenes.Height;
+                posicionVertical += 10;
+            }
             
-                int posicionVertical = 0; // Comienza desde la parte superior de panel1
+            // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
+            if (panel_DatosVehiculo.Visible)
+            {
+                panel_DatosVehiculo.Location = new System.Drawing.Point(panel_DatosVehiculo.Location.X, posicionVertical);
+                posicionVertical += panel_DatosVehiculo.Height;
+                posicionVertical += 10;
+            }
+            
+            // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
+            if (panel_Descripcion.Visible)
+            {
+                panel_Descripcion.Location = new System.Drawing.Point(panel_Descripcion.Location.X, posicionVertical);
+                posicionVertical += panel_Descripcion.Height;
+                posicionVertical += 10; // Agregar separación después de panel_Descripción
+            }
 
-                // Ajustar posición de groupBox_TipoExamenVisu (siempre visible)
-                panel_TipoExamenVisu.Location = new System.Drawing.Point(panel_TipoExamenVisu.Location.X, posicionVertical);
-                posicionVertical += panel_TipoExamenVisu.Height;
+            // Ajustar posición de panel_ControlesInferiores
+            if (panel_ControlesInferiores.Visible)
+            {
+                panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, posicionVertical);
+                posicionVertical += panel_ControlesInferiores.Height;
+                posicionVertical += 10;
+            }
+            // Ajustar la altura de panel1 para que se ajuste al contenido visible
+            panel1.Height = posicionVertical;
 
-                // Ajustar posición de panel_DatosInstruccion
-                if (panel_DatosInstruccion.Visible)
-                {
-                    panel_DatosInstruccion.Location = new System.Drawing.Point(panel_DatosInstruccion.Location.X, posicionVertical);
-                    posicionVertical += panel_DatosInstruccion.Height;
-                }
-
-                // Ajustar posición de panel_Imagenes
-                if (panel_Imagenes.Visible)
-                {
-                    panel_Imagenes.Location = new System.Drawing.Point(panel_Imagenes.Location.X, posicionVertical);
-                    posicionVertical += panel_Imagenes.Height;
-                }
-
-                // Ajustar posición de panel_DatosVehiculo
-                if (panel_DatosVehiculo.Visible)
-                {
-                    panel_DatosVehiculo.Location = new System.Drawing.Point(panel_DatosVehiculo.Location.X, posicionVertical);
-                    posicionVertical += panel_DatosVehiculo.Height;
-                }
-
-                // Ajustar posición de panel_Descripcion
-                if (panel_Descripcion.Visible)
-                {
-                    panel_Descripcion.Location = new System.Drawing.Point(panel_Descripcion.Location.X, posicionVertical);
-                    posicionVertical += panel_Descripcion.Height;
-                }
-
-                // Ajustar la altura de panel1
-                panel1.Height = posicionVertical;
-
-                // Ajustar la altura del formulario (+20 px)
-                this.Height = panel1.Location.Y + panel1.Height + 20;
+            // Ajustar la altura del formulario sumando un margen adicional de 20 px
+            this.Height = panel1.Location.Y + panel1.Height + 75;
+         
+            
+            
+            // Activar scroll si la altura del formulario supera los 800 píxeles
+            if (this.Height > 800)
+            {
+                this.AutoScroll = true;
+            }
+            else
+            {
+                this.AutoScroll = false;
+            }
         }
+
+
+
         //----------------------------------------------------------------------------------
 
 
@@ -933,6 +974,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         }
                     }
                 }
+                AjustarTamanoFormulario();
             }
 
         }
@@ -1001,7 +1043,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         }
                     }
                 }
-                //     AjustarTamanoFormulario();
+                     AjustarTamanoFormulario();
             }
         }
         private void btn_AmpliarReducir_VEHICULO_Click(object sender, EventArgs e)
@@ -1087,7 +1129,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
 
                 // Ajustar el tamaño del formulario si es necesario
-                //AjustarTamanoFormulario();
+                AjustarTamanoFormulario();
             }
         }
 
@@ -1138,11 +1180,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         control.Visible = true;
                     }
                 }
+                AjustarTamanoFormulario();
             }
-            else
-            {
-                MessageBox.Show("El panel no es de tipo PanelConBordeNeon.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+         
         }
 
 
@@ -1234,11 +1274,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Asegurarse de que el pictureBox sea visible
             pictureBox_PanelInstruccion.Visible = true;
+            AjustarTamanoFormulario();
         }
 
 
 
-        // METODO VALIDAR DATOS EN PANEL IMAGENES
+       
         // METODO PARA VALIDAR DATOS EN PANEL DATOS VEHICULO
         private void ValidarPanelVehiculo()
         {
@@ -1296,12 +1337,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 pictureBox_Descripcion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
                 pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo transparente
                 label_Descripcion.BackColor = Color.FromArgb(4, 200, 0); // Resalta con color verde más brillante que el original
+                panel_ControlesInferiores.Visible = true;
             }
             else
             {
                 pictureBox_Descripcion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
                 pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo de imagen transparente
                 label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
+                panel_ControlesInferiores.Visible = false;
             }
 
             
@@ -1317,6 +1360,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Asegurarse de que el pictureBox sea visible
             pictureBox_Descripcion.Visible = true;
+          
         }
         //----------------------------------------------------------------------------------------------
         // METODO PARA VALIDAR DATOS EN PANEL IMAGEES
@@ -1410,20 +1454,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true;
         }
 
-        private void Fecha_Instruccion_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-
-           
-
-
+        
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); ;
-
 
         }
 

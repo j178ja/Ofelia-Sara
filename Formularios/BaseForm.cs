@@ -105,6 +105,8 @@ namespace Ofelia_Sara.Formularios
             {
                 CursorLapizDerecha = new Cursor(cursorStream);
             }
+
+            TraerLabelsAlFrente();//traer los label titulo al frente
         }
 
         //--------------------------------------------------------------------------------
@@ -146,7 +148,7 @@ namespace Ofelia_Sara.Formularios
             //// Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
             AsignarCursorPersonalizado(this.Controls);
             PersonalizarComboBoxes(this);
-
+            TraerLabelsAlFrente();//traer los label titulo al frente
         }
         //--------------------------------------------------------------------------
         private void DibujarFondoDegradado(Graphics g, int width, int height)
@@ -784,7 +786,22 @@ namespace Ofelia_Sara.Formularios
             }
         }
 
-    }
+        //para traer label titulo siempre al frente
+        private void TraerLabelsAlFrente()
+        {
+            // Itera a través de todos los controles de la forma
+            foreach (Control control in Controls)
+            {
+                // Verifica si el control es un Label y su nombre comienza con "label_TITULO"
+                if (control is Label label && label.Name.StartsWith("label_TITULO"))
+                {
+                    label.BringToFront(); // Trae el label al frente
+                }
+            }
+
+        }
+
+        }
 
 
 

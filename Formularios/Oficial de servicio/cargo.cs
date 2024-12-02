@@ -6,6 +6,7 @@ using Clases.GenerarDocumentos;
 using Clases.Texto;
 using Ofelia_Sara.Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
 using System;
@@ -24,7 +25,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     public partial class Cargo : BaseForm
 
     {
+        private int alturaOriginalPanel_Descripcion;
+        private int alturaOriginalPanel_Instruccion;
+        private int alturaContraidaPanel = 30; //altura de panel contraido
+        private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
+        private bool panelExpandido_Descripcion = true;// 
         
+       
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public Cargo()
         {
@@ -37,11 +44,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
-         
-
             botonDeslizable_Visu.IsOnChanged += botonDeslizable_Visu_IsOnChanged;
+
+            label_Descripcion.BringToFront();
+            pictureBox_Descripcion.BringToFront();
+
+            //para q se actualize imagen de panel descripcion
+            richTextBox_Descripcion.TextChanged += (sender, e) => ValidarPanelDescripcion();
+            panel_ControlesInferiores.Visible = false;// inicialice no visible
+            panel_Descripcion.Visible = true;
+
+            AjustarTamanoFormulario();//para cargar formulario con tamaño ajustado
         }
-        //----------------------------------------------------------------------------------
+        //---FIN CONSTRUCTOR----------------
+
         //---sobrecargar para que reciba los datos desde form iniciocierre
         public Cargo(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
                  string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
@@ -65,7 +81,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.Text = dependencia;
 
         }
-        //----------------------------------------------------------------------------------------
+        //-------FIN SOBRECARGA--------------------------------
 
         private void Cargo_Load(object sender, EventArgs e)
         {
@@ -105,9 +121,39 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             pictureBox_CheckLegajoVehicular.Visible = false;// para ocultar el check realizado
 
+            //...................................................
+            ValidarPanelDatosInstruccion();
+            ValidarPanelDescripcion();
+            //para que se carge el panel INSTRUCION contraido
+            if (panelExpandido_Instruccion)
+            {
+                // Contraer el panel
+                panel_Instruccion.Height = alturaContraidaPanel;
+                btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                panelExpandido_Instruccion = false; //PANEL CONTRAIDO
+                panel_Instruccion.BorderStyle = BorderStyle.FixedSingle;
+
+                // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
+                btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(422, 0);
+                // Ocultar todos los controles excepto el botón de ampliación/reducción
+                foreach (Control control in panel_DatosInstruccion.Controls)
+                {
+                    if (control == btn_AmpliarReducir_INSTRUCCION)
+                    {
+                        control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                    }
+                    else
+                    {
+                        control.Visible = false; // Oculta los demás controles
+                        panel_DatosInstruccion.Visible = false;
+                    }
+                }
+            }
+           AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
         }
 
-
+        //-------FIN  LOAD------------------
         private void botonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
         {
             try
@@ -154,20 +200,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Restaurar la posición de Cargo antes de mostrar Visu
                     formCargo.Location = posicionOriginalCargo;
 
-                    // Posicionar los formularios
-                    int totalWidth = formCargo.Width + visu.Width;
-                    int height = Math.Max(formCargo.Height, visu.Height);
-
+                    // Obtener dimensiones de la pantalla
                     int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
                     int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
 
-                    int startX = (screenWidth - totalWidth) / 2;
-                    int startY = (screenHeight - height) / 2;
+                    // Calcular posiciones
+                    int margenSuperior = (int)(screenHeight * 0.15); // 15% del margen superior
+                    int centerX = (screenWidth - formCargo.Width - visu.Width) / 2;
 
-                    formCargo.Location = new Point(startX, startY);
-
+                    // Asignar las posiciones a los formularios
+                    formCargo.Location = new Point(centerX, margenSuperior);
                     visu.StartPosition = FormStartPosition.Manual;
-                    visu.Location = new Point(startX + formCargo.Width, startY);
+                    visu.Location = new Point(centerX + formCargo.Width + 10, margenSuperior);
+
+                    // Posicionar los formularios
+                    formCargo.Location = new Point(centerX, margenSuperior);
+                    visu.StartPosition = FormStartPosition.Manual;
+                    visu.Location = new Point(centerX + formCargo.Width, margenSuperior);
 
                     // Manejar el cierre del formulario Visu
                     visu.FormClosed += (s, args) =>
@@ -195,7 +244,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     };
 
                     // Mostrar el formulario Visu como diálogo
-                    visu.ShowDialog();
+                    visu.Show();
                 }
             }
             catch (Exception ex)
@@ -569,10 +618,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
             // validad Descripcion de la muestra
-            if (string.IsNullOrWhiteSpace(textBox_DescripcionMuestra.Text))
+            if (string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text))
             {
                 MensajeGeneral.Mostrar("Describa la muestra del cargo", MensajeGeneral.TipoMensaje.Advertencia);
-                textBox_DescripcionMuestra.Focus();
+                richTextBox_Descripcion.Focus();
                 return false; // Detener el proceso si no hay texto válido
             }
 
@@ -728,6 +777,329 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     checkBox_LegajoVehicular.Location.Y-8);
             }
         }
+
+        /// <summary>
+        /// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
+        {
+            if (panel_Instruccion is PanelConBordeNeon panelConNeon)
+            {
+                if (panelExpandido_Instruccion)
+                {
+                    // Contraer el panel
+                    panel_Instruccion.Height = alturaContraidaPanel;
+                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    panelExpandido_Instruccion = false; //PANEL CONTRAIDO
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
+
+                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
+                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(561, 1);
+
+
+                    // Ocultar todos los controles excepto el botón de ampliación/reducción
+                    foreach (Control control in panel_DatosInstruccion.Controls)
+                    {
+                        if (control == btn_AmpliarReducir_INSTRUCCION)
+                        {
+                            control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                        }
+                        else
+                        {
+                            control.Visible = false; // Oculta los demás controles
+                            panel_DatosInstruccion.Visible = false;
+                        }
+                    }
+
+                    // Ocultar controles de error personalizados
+                    foreach (Control control in panel_DatosInstruccion.Controls)
+                    {
+                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+                        {
+                            control.Visible = false; // Ocultar imágenes de error
+                        }
+                    }
+                }
+                else
+                {
+                    // Expandir el panel
+                    panel_Instruccion.Height = alturaOriginalPanel_Instruccion;
+                    panel_Instruccion.BorderStyle = BorderStyle.None;
+                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
+                    panelExpandido_Instruccion = true;
+                    panel_DatosInstruccion.Visible = true;
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+
+                    // Mover el botón al panel_DatosEspecificos
+                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
+                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(558, 1);
+
+                    // Mostrar todos los controles
+                    foreach (Control control in panel_DatosInstruccion.Controls)
+                    {
+                        control.Visible = true;
+                    }
+
+                    // Asegurarte de que las imágenes de error se muestren si es necesario
+                    foreach (Control control in panel_DatosInstruccion.Controls)
+                    {
+                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+                        {
+                            control.Visible = true; // Mostrar imágenes de error
+                        }
+                    }
+                }
+                AjustarTamanoFormulario();
+            }
+
+        }
+
+
+        /// <summary>
+        /// METODO PARA VALIDAR DAROS DE LOS PANELES
+        /// </summary>
+
+        private void ValidarPanelDatosInstruccion()
+        {
+            bool camposValidos = true;
+
+
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_DatosInstruccion.Controls)
+            {
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_PanelInstruccion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
+                label_DatosInstruccion.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_PanelInstruccion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
+                label_DatosInstruccion.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
+                label_DatosInstruccion.Right + 5, // A la derecha del label con un margen de 5 px
+                label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_PanelInstruccion.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_PanelInstruccion.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_PanelInstruccion.Visible = true;
+        }
+
+     
+        /// <summary>
+        /// PARA AMPLIAR Y REDUCIR EL AREA DESCRIPCION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
+        {
+            // Verificar si el panel es de tipo PanelConBordeNeon
+            if (panel_Descripcion is PanelConBordeNeon panelConNeon)
+            {
+                if (panelExpandido_Descripcion)
+                {
+                    // Contraer el panel
+                    panelConNeon.Height = alturaContraidaPanel;
+                    btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    panelExpandido_Descripcion = false;
+
+                    // Aplicar borde neón para el estado contraído
+                    bool camposCompletos = VerificarCamposEnPanel(panelConNeon); // Método personalizado para verificar campos
+                    panelConNeon.CambiarEstado(true, camposCompletos);
+
+                    foreach (Control control in panelConNeon.Controls)
+                    {
+                        if (control == btn_AmpliarReducir_DESCRIPCION ||
+                            control == label_Descripcion ||
+                            control == pictureBox_Descripcion) // Compara directamente el control
+                        {
+                            control.Visible = true; // Mantener visible
+                        }
+                        else
+                        {
+                            control.Visible = false; // Ocultar los demás controles
+                        }
+                    }
+                }
+                else
+                {
+                    // Expandir el panel
+                    panelConNeon.Height = alturaOriginalPanel_Descripcion;
+                    btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaARRIBA;
+                    panelExpandido_Descripcion = true;
+
+                    // Eliminar el efecto neón para el estado expandido
+                    panelConNeon.CambiarEstado(false, false);
+
+                    // Mostrar los demás controles del panel
+                    foreach (Control control in panelConNeon.Controls)
+                    {
+                        control.Visible = true;
+                    }
+                }
+                AjustarTamanoFormulario();
+            }
+
+        }
+
+        private bool VerificarCamposEnPanel(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                // Verificar TextBox
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    return false; // Campo TextBox incompleto
+                }
+
+                // Verificar ComboBox
+                if (control is ComboBox comboBox && comboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(comboBox.Text))
+                {
+                    return false; // Campo ComboBox incompleto
+                }
+
+                // Verificar RichTextBox
+                if (control is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
+                {
+                    return false; // Campo RichTextBox incompleto
+                }
+
+                // Verificar PictureBox
+                if (control is PictureBox pictureBox)
+                {
+                    // Verificar si no hay imagen o si la imagen es la predeterminada
+                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen1)
+                    {
+                        return false; // Campo PictureBox sin imagen válida
+                    }
+                }
+            }
+            return true; // Todos los campos están completos
+        }
+        // METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
+        private void ValidarPanelDescripcion()
+        {
+            bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
+
+            if (camposValidos)
+            {
+                pictureBox_Descripcion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo transparente
+                label_Descripcion.BackColor = Color.FromArgb(4, 200, 0); // Resalta con color verde más brillante que el original
+                panel_ControlesInferiores.Visible = true;
+            }
+            else
+            {
+                pictureBox_Descripcion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo de imagen transparente
+                label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
+                panel_ControlesInferiores.Visible = false;
+            }
+
+
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_Descripcion.Location = new System.Drawing.Point(
+                label_Descripcion.Right + 5, // A la derecha del label con un margen de 5 px
+                label_Descripcion.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_Descripcion.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_Descripcion.Visible = true;
+
+        }
+
+        private void AjustarTamanoFormulario()
+        {
+            int posicionVertical = 70; // Comienza desde la parte superior de panel1
+
+            // Ajustar posición de panel_Instruccion (se contrae y expande)
+            if (panel_Instruccion.Visible)
+            {
+                panel_Instruccion.Location = new System.Drawing.Point(panel_Instruccion.Location.X, posicionVertical);
+                posicionVertical += panel_Instruccion.Height;
+                // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
+              
+            }
+            posicionVertical += 20;
+
+            // Ajustar posición de panel_SeleccionVisu (tamaño fijo)
+            panel_SeleccionVisu.Location = new System.Drawing.Point(panel_SeleccionVisu.Location.X, posicionVertical);
+            posicionVertical += panel_SeleccionVisu.Height;
+            // Agregar separación de 10 píxeles entre panel_SeleccionVisu y panel_Imagenes
+            posicionVertical += 10;
+
+                   
+
+            // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
+            if (panel_Descripcion.Visible)
+            {
+                panel_Descripcion.Location = new System.Drawing.Point(panel_Descripcion.Location.X, posicionVertical);
+                posicionVertical += panel_Descripcion.Height;
+                posicionVertical += 10; // Agregar separación después de panel_Descripción
+            }
+
+            // Ajustar posición de panel_ControlesInferiores
+            if (panel_ControlesInferiores.Visible)
+            {
+                panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, posicionVertical);
+                posicionVertical += panel_ControlesInferiores.Height;
+                posicionVertical += 10;
+            }
+            // Ajustar la altura de panel1 para que se ajuste al contenido visible
+            panel1.Height = posicionVertical;
+
+            // Ajustar la altura del formulario sumando un margen adicional de 20 px
+            this.Height = panel1.Location.Y + panel1.Height + 75;
+
+
+
+            // Activar scroll si la altura del formulario supera los 800 píxeles
+            if (this.Height > 800)
+            {
+                this.AutoScroll = true;
+            }
+            else
+            {
+                this.AutoScroll = false;
+            }
+        }
+
 
     }
 }

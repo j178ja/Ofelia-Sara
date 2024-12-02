@@ -28,7 +28,8 @@ namespace Ofelia_Sara
            // Application.Run(new MenuPrincipal());
 
             //Application.Run(new Visu());
-            Application.Run(new InicioCierre());
+           // Application.Run(new InicioCierre());
+            Application.Run(new Cargo());
 
         }
     }
