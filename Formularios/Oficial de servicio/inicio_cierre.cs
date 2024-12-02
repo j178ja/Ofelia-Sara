@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles; //para tooltip general
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -92,12 +92,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
-            pictureBox_CheckRatificacion.Visible = false;
+            pictureBox_CheckRatificacion.Visible = false; //oculata ambos check hasta ques se marque
             pictureBox_CheckCargo.Visible = false;
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
-            timePickerPersonalizado1.FechaCambiada += TimePickerPersonalizado1_FechaCambiada;
+            timePickerPersonalizado1.FechaCambiada += TimePickerPersonalizado1_FechaCambiada;//para seleccionar fecha Not 247
 
+            //  tooltip DESCATIVADO-ACTIVADO
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
@@ -108,7 +109,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.");
 
-
+            ToolTipGeneral.ShowToolTip(this, Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
             //-------------------------------------------------------------------------------
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
@@ -132,11 +133,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
-            ActualizarEstado();//PARA LABEL Y CHECK CARGO
+            ActualizarEstado();//PARA LABEL Y CHECK CARGO,labell btn_not247 y btn_StudRML
 
 
+            // Llama al método para aplicar el color inicial del contador de rml
+            Btn_ContadorRML.TextChanged += (s, ev) => ActualizarColorTexto(Btn_ContadorRML);
+            ActualizarColorTexto(Btn_ContadorRML);
+
+            Btn_Contador247.Visible = false;//invisibiliza el contador hasta que pase a SI btn deslizable
+            Btn_Contador247.TextChanged += (s, ev) => ActualizarColorTexto(Btn_Contador247);
+            ActualizarColorTexto(Btn_Contador247);
         }
-
+        // --FIN LOAD
         //-----------------------------------------------------------------------------
         private void GuardarDatos()
         {
@@ -234,12 +242,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-
+          
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxINSTRUCTOR();
-            InicializarComboBoxDEPENDENCIAS();
-
+          
+            Btn_Contador247.Text = "0";
+            Btn_ContadorRML.Text = "0";
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //-------------------------------------------------------------------------------
@@ -881,29 +888,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //----------------------------------------------------------------
-        private void InicializarComboBoxSECRETARIO()
-        {
-            List<SecretarioJson> secretarios = SecretarioManager.ObtenerSecretarios();
-            comboBox_Secretario.DataSource = secretarios;
-            comboBox_Secretario.DisplayMember = "DescripcionCompleta";
-            comboBox_Secretario.SelectedIndex = -1;
-        }
-        //---------------------------------------------------------------------
-        private void InicializarComboBoxINSTRUCTOR()
-        {
-            List<InstructorJson> instructores = InstructorManager.ObtenerInstructores();
-            comboBox_Instructor.DataSource = instructores;
-            comboBox_Instructor.DisplayMember = "DescripcionCompleta";
-            comboBox_Instructor.SelectedIndex = -1;
-        }
-        //------------------------------------------------------------------------
-        private void InicializarComboBoxDEPENDENCIAS()
-        {
-            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
-            comboBox_Dependencia.DataSource = dependencias;
-            comboBox_Dependencia.DisplayMember = "Dependencia";
-            comboBox_Dependencia.SelectedIndex = -1;
-        }
+
 
 
 
@@ -993,28 +978,58 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (esTextoValido)
             {
                 label_Cargo.ForeColor = Color.Black;
-                label_Not247.ForeColor = Color.Black;
                 label_Cargo.BackColor = Color.Transparent;
-                label_Not247.BackColor = Color.Transparent;
                 checkBox_Cargo.Enabled = true;
-                botonDeslizable_Not247.Enabled = true;
                 checkBox_Cargo.BackColor = Color.Transparent;
+
+                label_Not247.ForeColor = Color.Black;
+                label_Not247.BackColor = Color.Transparent;
+                botonDeslizable_Not247.Enabled = true;// habilitar btn 247
                 botonDeslizable_Not247.BackColor = Color.Transparent;
+
+
+                Btn_ContadorRML.Visible = true;
+                label_StudRML.Visible = true;
+
             }
             else
             {
                 label_Cargo.ForeColor = Color.Tomato;
-                label_Not247.ForeColor = Color.Tomato;
                 label_Cargo.BackColor = Color.FromArgb(211, 211, 211); // Gris claro
-                label_Not247.BackColor = Color.FromArgb(211, 211, 211);
                 checkBox_Cargo.Enabled = false;
-                botonDeslizable_Not247.Enabled = false;
                 checkBox_Cargo.BackColor = Color.Tomato;
+
+                label_Not247.ForeColor = Color.Tomato;
+                label_Not247.BackColor = Color.FromArgb(211, 211, 211);
+                botonDeslizable_Not247.Enabled = false;// deshabilitar btn 247
                 botonDeslizable_Not247.BackColor = Color.FromArgb(211, 211, 211);
+
+                Btn_ContadorRML.Visible = false;
+                label_StudRML.Visible = false;
+             
 
             }
         }
+        //--------------------------------------------------------------------
+        /// <summary>
+        /// VALIDACION CAMBIO DE COLOR PARA BTN_CONTADOR RML
+        /// </summary>
+        // Método para actualizar el color del texto del botón según su valor
+        private void ActualizarColorTexto(Button boton)
+        {
+            if (boton.Text == "0")
+            {
+                boton.ForeColor = Color.Tomato; // Texto rojo si el valor es "0"
+             
+            }
+            else
+            {
+                boton.ForeColor = Color.White; // Texto blanco para cualquier otro valor
+              
+            }
+        }
 
+        //------------------------------------------------------------------
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
@@ -1025,7 +1040,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
                 pictureBox_CheckCargo.Location = new Point(
                     checkBox_Cargo.Location.X,
-                    checkBox_Cargo.Location.Y - 8
+                    checkBox_Cargo.Location.Y -5
                 );
                 // Ocultar el CheckBox
                 checkBox_Cargo.Visible = false;
@@ -1111,6 +1126,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (checkBox_Cargo.Checked)
             {
                 checkBox_Cargo.Checked = false;
+              
             }
         }
 

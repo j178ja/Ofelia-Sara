@@ -71,8 +71,7 @@ namespace Ofelia_Sara.Formularios
             // Solo ejecutar si NO es tiempo de diseño
             InitializeComponent();
 
-            // Verificamos si está en tiempo de ejecución
-            // Evitar que se ejecute el código en modo diseño
+           
             // Evitar ejecución en tiempo de diseño
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
             {
@@ -145,8 +144,8 @@ namespace Ofelia_Sara.Formularios
             ToolTipsGenerales();// para aplicar tooltip comun a los formularios
 
             //// Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
-            //AsignarCursorPersonalizado(this.Controls);
-           // PersonalizarComboBoxes(this);
+            AsignarCursorPersonalizado(this.Controls);
+            PersonalizarComboBoxes(this);
 
         }
         //--------------------------------------------------------------------------
@@ -182,7 +181,7 @@ namespace Ofelia_Sara.Formularios
             if (this.DesignMode)
             {
                 // Ruta de ícono para el diseñador de Visual Studio
-                iconPath = Path.Combine(@"C:\Ruta\Absoluta\A\Tu\Proyecto\Resources\imagenes", "IconoEscudoPolicia.ico");
+                iconPath = Path.Combine(@"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\imagenes\IconoEscudoPolicia.ico", "IconoEscudoPolicia.ico");
             }
             else
             {
@@ -195,10 +194,7 @@ namespace Ofelia_Sara.Formularios
             {
                 IconoEscudo.SetFormIcon(this, iconPath);
             }
-            else
-            {
-                Console.WriteLine("No se pudo encontrar el ícono en la ruta especificada.");
-            }
+         
         }
         /// <summary>
         /// Sustituir CURSOR HAND
@@ -207,11 +203,16 @@ namespace Ofelia_Sara.Formularios
         {
             foreach (Control control in controls)
             {
-                // Si el control es un TextBox, ComboBox o RichTextBox, asigna el cursor CursorLapizDerecha
-                if (control is TextBox || control is ComboBox || control is RichTextBox )
+                // Si el control es RichTextBox, asigna el cursor CursorLapizDerecha
+                if ( control is RichTextBox )
                 {
                     control.Cursor = CursorLapizDerecha;
                 }
+                if (control is ComboBox)
+                {
+                    control.Cursor = Cursors.IBeam;
+                }
+
                 // Si el control tiene el cursor predeterminado "Hand", reemplázalo con el personalizado
                 else if (control.Cursor == Cursors.Hand || control is LinkLabel )
                 {

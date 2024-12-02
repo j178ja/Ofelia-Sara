@@ -159,7 +159,7 @@ namespace Ofelia_Sara.Registro_de_personal
         private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Ingrese un número de legajo policial válido para caragar nueva ratificacion testimonial", MensajeGeneral.TipoMensaje.Informacion);
+            MensajeGeneral.Mostrar("Ingresando número de legajo, al guardar se generará las ratificaciones testimoniales del personal seleccionado", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

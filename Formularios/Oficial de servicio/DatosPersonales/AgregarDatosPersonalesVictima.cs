@@ -101,6 +101,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.botonDeslizable_StudRML = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.label_StudRML = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
@@ -109,6 +111,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.botonDeslizable_StudRML);
+            this.panel1.Controls.Add(this.label_StudRML);
             this.panel1.Controls.Add(this.comboBox_EstadoCivil);
             this.panel1.Controls.Add(this.label_EstadoCivil);
             this.panel1.Controls.Add(this.emailControl1);
@@ -534,6 +538,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Titulo.Size = new System.Drawing.Size(194, 25);
             this.label_Titulo.TabIndex = 51;
             this.label_Titulo.Text = "DATOS VICTIMA";
+            // 
+            // botonDeslizable_StudRML
+            // 
+            this.botonDeslizable_StudRML.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonDeslizable_StudRML.IsOn = false;
+            this.botonDeslizable_StudRML.Location = new System.Drawing.Point(479, 491);
+            this.botonDeslizable_StudRML.Name = "botonDeslizable_StudRML";
+            this.botonDeslizable_StudRML.Size = new System.Drawing.Size(40, 20);
+            this.botonDeslizable_StudRML.TabIndex = 100;
+            this.botonDeslizable_StudRML.ValidarCampos = null;
+            // 
+            // label_StudRML
+            // 
+            this.label_StudRML.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_StudRML.Location = new System.Drawing.Point(385, 491);
+            this.label_StudRML.Name = "label_StudRML";
+            this.label_StudRML.Size = new System.Drawing.Size(135, 20);
+            this.label_StudRML.TabIndex = 99;
+            this.label_StudRML.Text = "Stud. R.M.L   ";
+            this.label_StudRML.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AgregarDatosPersonalesVictima
             // 

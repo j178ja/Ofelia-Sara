@@ -19,15 +19,16 @@ namespace Ofelia_Sara
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //// Mostrar el formulario de presentación y luego continuar con el menú principal
-            using (Presentacion presentacion = new Presentacion())
-            {
-                Application.Run(presentacion);
-            }
+            //using (Presentacion presentacion = new Presentacion())
+            //{
+            //    Application.Run(presentacion);
+            //}
 
             //Después de cerrar Presentacion, abrir MenuPrincipal
-            Application.Run(new MenuPrincipal());
+           // Application.Run(new MenuPrincipal());
 
             //Application.Run(new Visu());
+            Application.Run(new InicioCierre());
 
         }
     }

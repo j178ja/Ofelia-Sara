@@ -219,6 +219,7 @@
     <Compile Include="Clases\Apariencia\BordePersonalizado.cs" />
     <Compile Include="Clases\Apariencia\footer.cs" />
     <Compile Include="Clases\Apariencia\Iconos.cs" />
+    <Compile Include="Clases\Apariencia\VisibilidadYOcultamientoForm.cs" />
     <Compile Include="Clases\Botones\btn_Configuracion\AuxiliarConfiguracion.cs" />
     <Compile Include="Clases\Botones\btn_Configuracion\cambioBackenHover.cs" />
     <Compile Include="Clases\Botones\btn_Configuracion\Configuracion.cs" />

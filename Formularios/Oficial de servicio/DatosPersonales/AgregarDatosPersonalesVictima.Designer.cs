@@ -58,5 +58,7 @@
         private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
         private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
         private System.Windows.Forms.Label label_EstadoCivil;
+        private Controles.Controles.BotonDeslizable botonDeslizable_StudRML;
+        private System.Windows.Forms.Label label_StudRML;
     }
 }

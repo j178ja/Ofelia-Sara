@@ -4,6 +4,7 @@ using Clases.Apariencia;
 using Clases.Botones;
 using Clases.GenerarDocumentos;
 using Clases.Texto;
+using Ofelia_Sara.Clases.Apariencia;
 using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
@@ -14,6 +15,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 
 
@@ -106,84 +108,94 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-
-
         private void botonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
         {
             try
             {
                 if (botonDeslizable_Visu.IsOn)
                 {
+                    // Recolectar datos
+                    string ipp1 = comboBox_Ipp1.Text;
+                    string ipp2 = comboBox_Ipp2.Text;
+                    string numeroIpp = textBox_NumeroIpp.Text;
+                    string ipp4 = comboBox_Ipp4.Text;
+                    string caratula = textBox_Caratula.Text;
+                    string victima = textBox_Victima.Text;
+                    string imputado = textBox_Imputado.Text;
+                    string fiscalia = comboBox_Fiscalia.Text;
+                    string agenteFiscal = comboBox_AgenteFiscal.Text;
+                    string localidad = comboBox_Localidad.Text;
+                    string instructor = comboBox_Instructor.Text;
+                    string secretario = comboBox_Secretario.Text;
+                    string dependencia = comboBox_Dependencia.Text;
 
-                    //.........
+                    // Crear el formulario Visu con los datos recolectados
+                    Visu visu = new Visu(ipp1, ipp2, numeroIpp, ipp4, caratula, victima, imputado,
+                                         fiscalia, agenteFiscal, localidad, instructor, secretario, dependencia);
 
-                    string Ipp1 = comboBox_Ipp1.Text;
-                    string Ipp2 = comboBox_Ipp2.Text;
-                    string NumeroIpp = textBox_NumeroIpp.Text;
-                    string Ipp4 = comboBox_Ipp4.Text;
-                    string Caratula = textBox_Caratula.Text;
-                    string Victima = textBox_Victima.Text;
-                    string Imputado = textBox_Imputado.Text;
-                    string Fiscalia = comboBox_Fiscalia.Text;
-                    string AgenteFiscal = comboBox_AgenteFiscal.Text;
-                    string Localidad = comboBox_Localidad.Text;
-                    string Instructor = comboBox_Instructor.Text;
-                    string Secretario = comboBox_Secretario.Text;
-                    string Dependencia = comboBox_Dependencia.Text;
+                    // Guardar el formulario actual (Cargo) y su posición original
+                    Form formCargo = this;
+                    Point posicionOriginalCargo = formCargo.Location;
 
-                    // Crear y mostrar el formulario CVISU, pasando los valores obtenidos
-                    Visu visu = new Visu(Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
-                                            Fiscalia, AgenteFiscal, Localidad, Instructor, Secretario, Dependencia);
+                    // Obtener el formulario inicio_cierre y guardar su posición original
+                    Form inicioCierre = Application.OpenForms["inicio_cierre"];
+                    Point posicionOriginalInicioCierre = inicioCierre != null ? inicioCierre.Location : Point.Empty;
 
+                    // Ocultar formularios visibles excepto Cargo
+                    List<Form> formsToHide = Application.OpenForms.Cast<Form>()
+                        .Where(f => f.Visible && f != formCargo && f != visu)
+                        .ToList();
 
-                    // Obtener el formulario original (inicioCierre)
-                    Form originalForm = this;
+                    foreach (Form f in formsToHide)
+                    {
+                        f.Hide();
+                    }
 
-                    // Obtener el tamaño de ambos formularios
-                    int totalWidth = originalForm.Width + visu.Width;
-                    int height = Math.Max(originalForm.Height, visu.Height);
+                    // Restaurar la posición de Cargo antes de mostrar Visu
+                    formCargo.Location = posicionOriginalCargo;
 
-                    // Calcular la posición para centrar ambos formularios en la pantalla
+                    // Posicionar los formularios
+                    int totalWidth = formCargo.Width + visu.Width;
+                    int height = Math.Max(formCargo.Height, visu.Height);
+
                     int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
                     int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
 
                     int startX = (screenWidth - totalWidth) / 2;
                     int startY = (screenHeight - height) / 2;
 
-                    // Posicionar el formulario original a la izquierda
-                    originalForm.Location = new Point(startX, startY);
+                    formCargo.Location = new Point(startX, startY);
 
-                    // Posicionar el formulario Cargo a la derecha del formulario original
                     visu.StartPosition = FormStartPosition.Manual;
-                    visu.Location = new Point(startX + originalForm.Width, startY);
+                    visu.Location = new Point(startX + formCargo.Width, startY);
 
-                    // Suscribirse al evento FormClosed del formulario VISU
+                    // Manejar el cierre del formulario Visu
                     visu.FormClosed += (s, args) =>
                     {
-                        if (visu.DialogResult == DialogResult.OK)
+                        // Restaurar inicio_cierre si estaba oculto
+                        if (inicioCierre != null)
                         {
-                            // Acciones si el resultado del diálogo es "Sí"
-                            botonDeslizable_Visu.IsOn = false;
+                            inicioCierre.Show();
+                            inicioCierre.Location = posicionOriginalInicioCierre;
+                            inicioCierre.BringToFront();
                         }
-                        else
+
+                        // Restaurar los formularios previamente ocultos
+                        foreach (Form f in formsToHide)
                         {
-                            botonDeslizable_Visu.IsOn = true;
+                            f.Show();
+                            f.BringToFront();
                         }
-                        // Calcular la nueva posición para centrar el formulario original
-                        int centerX = (screenWidth - originalForm.Width) / 2;
-                        int centerY = (screenHeight - originalForm.Height) / 2;
 
-                        // Reposicionar el formulario original en el centro de la pantalla
-                        originalForm.Location = new Point(centerX, centerY);
+                        // Manejar el estado del botón deslizante
+                        botonDeslizable_Visu.IsOn = visu.DialogResult == DialogResult.OK ? false : true;
 
-
+                        // Volver a la posición original de Cargo
+                        formCargo.Location = posicionOriginalCargo;
                     };
 
-                    // Mostrar el nuevo formulario
+                    // Mostrar el formulario Visu como diálogo
                     visu.ShowDialog();
-
-
-                    //...........
                 }
             }
             catch (Exception ex)
@@ -191,6 +203,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 MensajeGeneral.Mostrar($"Error al abrir el formulario Visu: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
+
 
 
         //-----------------------------------------------------
