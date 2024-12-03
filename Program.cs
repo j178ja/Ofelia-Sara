@@ -1,5 +1,6 @@
 ﻿using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.Registro_de_personal;
 using System;
 using System.Windows.Forms;
 
@@ -18,18 +19,19 @@ namespace Ofelia_Sara
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //// Mostrar el formulario de presentación y luego continuar con el menú principal
-            using (Presentacion presentacion = new Presentacion())
-            {
-                Application.Run(presentacion);
-            }
+           // //// Mostrar el formulario de presentación y luego continuar con el menú principal
+           // using (Presentacion presentacion = new Presentacion())
+           // {
+           //     Application.Run(presentacion);
+           // }
 
-           // Después de cerrar Presentacion, abrir MenuPrincipal
-            Application.Run(new MenuPrincipal());
+           //// Después de cerrar Presentacion, abrir MenuPrincipal
+           // Application.Run(new MenuPrincipal());
 
             //Application.Run(new Visu());
             // Application.Run(new InicioCierre());
             //Application.Run(new Cargo());
+            Application.Run(new NuevoPersonal());
 
         }
     }

@@ -823,6 +823,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 control.Region = new Region(path);
             }
         }
+        //------------------------------------------------------------------------------
+
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
         /// </summary>
