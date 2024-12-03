@@ -35,7 +35,7 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.panel_Destino = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
-            this.pictureBox_DestinoLaboral = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Destino = new System.Windows.Forms.PictureBox();
             this.panel_Detalle_Destino = new System.Windows.Forms.Panel();
             this.btn_AmpliarReducir_DESTINO = new System.Windows.Forms.Button();
             this.textBox_PartidoDependencia = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.textBox_DomicilioDependencia = new System.Windows.Forms.TextBox();
             this.label_Localidad = new System.Windows.Forms.Label();
             this.label_DomicilioDependencia = new System.Windows.Forms.Label();
-            this.label_DestinoLaboral = new System.Windows.Forms.Label();
+            this.label_Destino = new System.Windows.Forms.Label();
             this.panel_Armamento = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
             this.pictureBox_Armamento = new System.Windows.Forms.PictureBox();
             this.panel_Detalle_Armamento = new System.Windows.Forms.Panel();
@@ -121,7 +121,7 @@
             this.panel1.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
             this.panel_Destino.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_DestinoLaboral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Destino)).BeginInit();
             this.panel_Detalle_Destino.SuspendLayout();
             this.panel_Armamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Armamento)).BeginInit();
@@ -187,9 +187,9 @@
             // 
             this.panel_Destino.BorderRadius = 10;
             this.panel_Destino.CamposCompletos = false;
-            this.panel_Destino.Controls.Add(this.pictureBox_DestinoLaboral);
+            this.panel_Destino.Controls.Add(this.pictureBox_Destino);
             this.panel_Destino.Controls.Add(this.panel_Detalle_Destino);
-            this.panel_Destino.Controls.Add(this.label_DestinoLaboral);
+            this.panel_Destino.Controls.Add(this.label_Destino);
             this.panel_Destino.EstaContraido = false;
             this.panel_Destino.Location = new System.Drawing.Point(11, 637);
             this.panel_Destino.Name = "panel_Destino";
@@ -199,15 +199,15 @@
             this.panel_Destino.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
             this.panel_Destino.TabIndex = 153;
             // 
-            // pictureBox_DestinoLaboral
+            // pictureBox_Destino
             // 
-            this.pictureBox_DestinoLaboral.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_DestinoLaboral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_DestinoLaboral.Location = new System.Drawing.Point(282, 5);
-            this.pictureBox_DestinoLaboral.Name = "pictureBox_DestinoLaboral";
-            this.pictureBox_DestinoLaboral.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox_DestinoLaboral.TabIndex = 137;
-            this.pictureBox_DestinoLaboral.TabStop = false;
+            this.pictureBox_Destino.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_Destino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_Destino.Location = new System.Drawing.Point(282, 5);
+            this.pictureBox_Destino.Name = "pictureBox_Destino";
+            this.pictureBox_Destino.Size = new System.Drawing.Size(29, 22);
+            this.pictureBox_Destino.TabIndex = 137;
+            this.pictureBox_Destino.TabStop = false;
             // 
             // panel_Detalle_Destino
             // 
@@ -221,9 +221,9 @@
             this.panel_Detalle_Destino.Controls.Add(this.textBox_DomicilioDependencia);
             this.panel_Detalle_Destino.Controls.Add(this.label_Localidad);
             this.panel_Detalle_Destino.Controls.Add(this.label_DomicilioDependencia);
-            this.panel_Detalle_Destino.Location = new System.Drawing.Point(3, 12);
+            this.panel_Detalle_Destino.Location = new System.Drawing.Point(0, 12);
             this.panel_Detalle_Destino.Name = "panel_Detalle_Destino";
-            this.panel_Detalle_Destino.Size = new System.Drawing.Size(589, 131);
+            this.panel_Detalle_Destino.Size = new System.Drawing.Size(595, 131);
             this.panel_Detalle_Destino.TabIndex = 0;
             // 
             // btn_AmpliarReducir_DESTINO
@@ -243,7 +243,7 @@
             // 
             // textBox_PartidoDependencia
             // 
-            this.textBox_PartidoDependencia.Location = new System.Drawing.Point(149, 106);
+            this.textBox_PartidoDependencia.Location = new System.Drawing.Point(151, 106);
             this.textBox_PartidoDependencia.Name = "textBox_PartidoDependencia";
             this.textBox_PartidoDependencia.Size = new System.Drawing.Size(402, 20);
             this.textBox_PartidoDependencia.TabIndex = 150;
@@ -252,7 +252,7 @@
             // 
             this.label_Partido.AutoSize = true;
             this.label_Partido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Partido.Location = new System.Drawing.Point(68, 106);
+            this.label_Partido.Location = new System.Drawing.Point(70, 106);
             this.label_Partido.Name = "label_Partido";
             this.label_Partido.Size = new System.Drawing.Size(74, 15);
             this.label_Partido.TabIndex = 151;
@@ -262,7 +262,7 @@
             // 
             this.comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Dependencia.FormattingEnabled = true;
-            this.comboBox_Dependencia.Location = new System.Drawing.Point(149, 27);
+            this.comboBox_Dependencia.Location = new System.Drawing.Point(151, 27);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(402, 21);
             this.comboBox_Dependencia.TabIndex = 149;
@@ -274,7 +274,7 @@
             // 
             this.label_Dependencia.AutoSize = true;
             this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dependencia.Location = new System.Drawing.Point(35, 28);
+            this.label_Dependencia.Location = new System.Drawing.Point(37, 28);
             this.label_Dependencia.Name = "label_Dependencia";
             this.label_Dependencia.Size = new System.Drawing.Size(112, 15);
             this.label_Dependencia.TabIndex = 148;
@@ -282,14 +282,14 @@
             // 
             // textBox_LocalidadDependencia
             // 
-            this.textBox_LocalidadDependencia.Location = new System.Drawing.Point(149, 79);
+            this.textBox_LocalidadDependencia.Location = new System.Drawing.Point(151, 79);
             this.textBox_LocalidadDependencia.Name = "textBox_LocalidadDependencia";
             this.textBox_LocalidadDependencia.Size = new System.Drawing.Size(402, 20);
             this.textBox_LocalidadDependencia.TabIndex = 145;
             // 
             // textBox_DomicilioDependencia
             // 
-            this.textBox_DomicilioDependencia.Location = new System.Drawing.Point(149, 53);
+            this.textBox_DomicilioDependencia.Location = new System.Drawing.Point(151, 53);
             this.textBox_DomicilioDependencia.Name = "textBox_DomicilioDependencia";
             this.textBox_DomicilioDependencia.Size = new System.Drawing.Size(402, 20);
             this.textBox_DomicilioDependencia.TabIndex = 144;
@@ -298,7 +298,7 @@
             // 
             this.label_Localidad.AutoSize = true;
             this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Localidad.Location = new System.Drawing.Point(57, 80);
+            this.label_Localidad.Location = new System.Drawing.Point(59, 80);
             this.label_Localidad.Name = "label_Localidad";
             this.label_Localidad.Size = new System.Drawing.Size(90, 15);
             this.label_Localidad.TabIndex = 147;
@@ -308,23 +308,23 @@
             // 
             this.label_DomicilioDependencia.AutoSize = true;
             this.label_DomicilioDependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DomicilioDependencia.Location = new System.Drawing.Point(-3, 54);
+            this.label_DomicilioDependencia.Location = new System.Drawing.Point(-1, 54);
             this.label_DomicilioDependencia.Name = "label_DomicilioDependencia";
             this.label_DomicilioDependencia.Size = new System.Drawing.Size(151, 15);
             this.label_DomicilioDependencia.TabIndex = 146;
             this.label_DomicilioDependencia.Text = "DOMICILIO LABORAL :";
             // 
-            // label_DestinoLaboral
+            // label_Destino
             // 
-            this.label_DestinoLaboral.AutoSize = true;
-            this.label_DestinoLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DestinoLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DestinoLaboral.Location = new System.Drawing.Point(92, 5);
-            this.label_DestinoLaboral.Name = "label_DestinoLaboral";
-            this.label_DestinoLaboral.Padding = new System.Windows.Forms.Padding(20, 3, 10, 5);
-            this.label_DestinoLaboral.Size = new System.Drawing.Size(190, 26);
-            this.label_DestinoLaboral.TabIndex = 111;
-            this.label_DestinoLaboral.Text = "DESTINO LABORAL";
+            this.label_Destino.AutoSize = true;
+            this.label_Destino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_Destino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Destino.Location = new System.Drawing.Point(92, 5);
+            this.label_Destino.Name = "label_Destino";
+            this.label_Destino.Padding = new System.Windows.Forms.Padding(20, 3, 10, 5);
+            this.label_Destino.Size = new System.Drawing.Size(190, 26);
+            this.label_Destino.TabIndex = 111;
+            this.label_Destino.Text = "DESTINO LABORAL";
             // 
             // panel_Armamento
             // 
@@ -334,11 +334,11 @@
             this.panel_Armamento.Controls.Add(this.panel_Detalle_Armamento);
             this.panel_Armamento.Controls.Add(this.label_Armamento);
             this.panel_Armamento.EstaContraido = false;
-            this.panel_Armamento.Location = new System.Drawing.Point(11, 481);
+            this.panel_Armamento.Location = new System.Drawing.Point(12, 481);
             this.panel_Armamento.Name = "panel_Armamento";
             this.panel_Armamento.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.panel_Armamento.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_Armamento.Size = new System.Drawing.Size(595, 150);
+            this.panel_Armamento.Size = new System.Drawing.Size(594, 150);
             this.panel_Armamento.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
             this.panel_Armamento.TabIndex = 152;
             // 
@@ -368,9 +368,9 @@
             this.panel_Detalle_Armamento.Controls.Add(this.label_ArmaModelo);
             this.panel_Detalle_Armamento.Controls.Add(this.textBox_ArmaMarca);
             this.panel_Detalle_Armamento.Controls.Add(this.label_ArmaMarca);
-            this.panel_Detalle_Armamento.Location = new System.Drawing.Point(2, 19);
+            this.panel_Detalle_Armamento.Location = new System.Drawing.Point(1, 19);
             this.panel_Detalle_Armamento.Name = "panel_Detalle_Armamento";
-            this.panel_Detalle_Armamento.Size = new System.Drawing.Size(590, 129);
+            this.panel_Detalle_Armamento.Size = new System.Drawing.Size(593, 129);
             this.panel_Detalle_Armamento.TabIndex = 0;
             // 
             // btn_AmpliarReducir_ARMAMENTO
@@ -567,7 +567,7 @@
             this.panel_Detalle_Revista.Controls.Add(this.label_Jerarquia);
             this.panel_Detalle_Revista.Location = new System.Drawing.Point(1, 20);
             this.panel_Detalle_Revista.Name = "panel_Detalle_Revista";
-            this.panel_Detalle_Revista.Size = new System.Drawing.Size(590, 134);
+            this.panel_Detalle_Revista.Size = new System.Drawing.Size(593, 134);
             this.panel_Detalle_Revista.TabIndex = 0;
             // 
             // btn_AmpliarReducir_REVISTA
@@ -772,9 +772,9 @@
             this.panel_Detalle_Personal.Controls.Add(this.label_FechaNacimiento);
             this.panel_Detalle_Personal.Controls.Add(this.label_Dni);
             this.panel_Detalle_Personal.Controls.Add(this.label_Nombre);
-            this.panel_Detalle_Personal.Location = new System.Drawing.Point(3, 15);
+            this.panel_Detalle_Personal.Location = new System.Drawing.Point(1, 15);
             this.panel_Detalle_Personal.Name = "panel_Detalle_Personal";
-            this.panel_Detalle_Personal.Size = new System.Drawing.Size(588, 251);
+            this.panel_Detalle_Personal.Size = new System.Drawing.Size(593, 251);
             this.panel_Detalle_Personal.TabIndex = 0;
             // 
             // btn_AmpliarReducir_DATOSPERSONALES
@@ -1124,7 +1124,7 @@
             this.panel_ControlesInferiores.ResumeLayout(false);
             this.panel_Destino.ResumeLayout(false);
             this.panel_Destino.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_DestinoLaboral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Destino)).EndInit();
             this.panel_Detalle_Destino.ResumeLayout(false);
             this.panel_Detalle_Destino.PerformLayout();
             this.panel_Armamento.ResumeLayout(false);
@@ -1217,7 +1217,7 @@
         private System.Windows.Forms.Label label_ArmaMarca;
         private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Destino;
         private System.Windows.Forms.Panel panel_Detalle_Destino;
-        private System.Windows.Forms.Label label_DestinoLaboral;
+        private System.Windows.Forms.Label label_Destino;
         private System.Windows.Forms.TextBox textBox_PartidoDependencia;
         private System.Windows.Forms.Label label_Partido;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;
@@ -1233,7 +1233,7 @@
         private System.Windows.Forms.Button btn_AmpliarReducir_ARMAMENTO;
         private System.Windows.Forms.Button btn_AmpliarReducir_REVISTA;
         private System.Windows.Forms.Button btn_AmpliarReducir_DATOSPERSONALES;
-        private System.Windows.Forms.PictureBox pictureBox_DestinoLaboral;
+        private System.Windows.Forms.PictureBox pictureBox_Destino;
         private System.Windows.Forms.PictureBox pictureBox_Armamento;
         private System.Windows.Forms.PictureBox pictureBox_SituacionRevista;
         private System.Windows.Forms.PictureBox pictureBox_DatosPersonales;

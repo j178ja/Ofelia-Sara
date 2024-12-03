@@ -231,17 +231,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         //-------FIN LOAD    
 
-
-        //------METODOS PANEL INSTRUCCION-----------------------
-
-        /// <summary>
-        ///  TRAER DATOS DESDE CARGO
-        /// </summary>
-        /// 
-
-        //------------------------------------------------------------------------------------------------
-        //   METODO PARA OBTENER DATOS DEL FORMULARIO
-
         //------------------------------------------------------------------------------------------------
         //   METODO PARA OBTENER DATOS DEL FORMULARIO
 

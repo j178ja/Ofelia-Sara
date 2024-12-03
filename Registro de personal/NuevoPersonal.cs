@@ -55,7 +55,7 @@ namespace Ofelia_Sara.Registro_de_personal
             label_TITULO.BringToFront();
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
-            label_DestinoLaboral.BringToFront();
+            label_Destino.BringToFront();
              //cargar con picture no visible
              pictureBox_DatosPersonales.Visible = false;
             pictureBox_SituacionRevista.Visible = false;
@@ -115,7 +115,7 @@ namespace Ofelia_Sara.Registro_de_personal
             label_TITULO.BringToFront();
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
-            label_DestinoLaboral.BringToFront();
+            label_Destino.BringToFront();
 
             //.....................................................
             //// Guardar la altura original del panel
@@ -125,6 +125,42 @@ namespace Ofelia_Sara.Registro_de_personal
             alturaOriginalPanel_Destino = panel_Destino.Height;
 
             //.....................................................
+            //...................................................
+
+            //para que se carge el panel INSTRUCION contraido
+            if (panelExpandido_Armamento)
+            {
+                // Contraer el panel
+                panel_Armamento.Height = alturaContraidaPanel;
+                btn_AmpliarReducir_ARMAMENTO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                panelExpandido_Armamento = false; //PANEL CONTRAIDO
+                panel_Armamento.BorderStyle = BorderStyle.FixedSingle;
+
+                // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
+                btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(552, 1);
+                // Ocultar todos los controles excepto el botón de ampliación/reducción
+                foreach (Control control in panel_Detalle_Armamento.Controls)
+                {
+                    if (control == btn_AmpliarReducir_ARMAMENTO)
+                    {
+                        control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                    }
+                    else
+                    {
+                        control.Visible = false; // Oculta los demás controles
+                        panel_Detalle_Armamento.Visible = false;
+                    }
+                }
+                AjustarTamanoFormulario();
+            }
+            //.......................
+            //para actualizar picture de cada panel y color de borde y label
+            ValidarPanelDatosPersonales();
+            ValidarPanelRevista();
+            ValidarPanelArmamento();
+            ValidarPanelDestino();
+            //.........................................................
         }
         //--- FIN LOAD----------
 
@@ -552,7 +588,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_DatosPersonales;
-                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(561, 1);
+                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(554, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -592,7 +628,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_Detalle_Personal;
-                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(552, 0);
+                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(554, 0);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_Detalle_Personal.Controls)
@@ -630,7 +666,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_REVISTA.Parent = panel_Revista;
-                    btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(561, 1);
+                    btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(554, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -709,7 +745,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
-                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(561, 1);
+                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(554, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -786,7 +822,7 @@ namespace Ofelia_Sara.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_DESTINO.Parent = panel_Destino;
-                    btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(561, 1);
+                    btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(554, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -886,7 +922,7 @@ namespace Ofelia_Sara.Registro_de_personal
         /// METODO PARA VALIDAR DAROS DE LOS PANELES
         /// </summary>
 
-        private void ValidarPanelDatosInstruccion()
+        private void ValidarPanelDatosPersonales()
         {
             bool camposValidos = true;
 
@@ -938,6 +974,156 @@ namespace Ofelia_Sara.Registro_de_personal
         }
 
         //------------------------------------------------------------------------------
+        private void ValidarPanelRevista()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Revista.Controls)
+            {
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_SituacionRevista.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_SituacionRevista.BackColor = Color.Transparent; // Fondo transparente
+                label_SituacionRevista.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_SituacionRevista.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_SituacionRevista.BackColor = Color.Transparent; // Fondo transparente
+                label_SituacionRevista.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_SituacionRevista.Location = new System.Drawing.Point(
+                label_SituacionRevista.Right + 5, // A la derecha del label con un margen de 5 px
+               label_SituacionRevista.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_SituacionRevista.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_SituacionRevista.Visible = true;
+            AjustarTamanoFormulario();
+        }
+
+        //------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------
+        private void ValidarPanelArmamento()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Armamento.Controls)
+            {
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_Armamento.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_Armamento.BackColor = Color.Transparent; // Fondo transparente
+                label_Armamento.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_Armamento.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_Armamento.BackColor = Color.Transparent; // Fondo transparente
+                label_Armamento.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_Armamento.Location = new System.Drawing.Point(
+                 label_Armamento.Right + 5, // A la derecha del label con un margen de 5 px
+                label_Armamento.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_Armamento.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_Armamento.Visible = true;
+            AjustarTamanoFormulario();
+        }
+        //------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------
+        private void ValidarPanelDestino()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Destino.Controls)
+            {
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_Destino.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_Destino.BackColor = Color.Transparent; // Fondo transparente
+                label_Destino.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_Destino.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_Destino.BackColor = Color.Transparent; // Fondo transparente
+                label_Destino.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_Destino.Location = new System.Drawing.Point(
+                 label_Destino.Right + 5, // A la derecha del label con un margen de 5 px
+               label_Destino.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_Destino.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_Destino.Visible = true;
+            AjustarTamanoFormulario();
+        }
+        //------------------------------------------------------------------------------
 
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
@@ -976,7 +1162,7 @@ namespace Ofelia_Sara.Registro_de_personal
             {
                 panel_Destino.Location = new System.Drawing.Point(panel_Destino.Location.X, posicionVertical);
                 posicionVertical += panel_Destino.Height;
-                //posicionVertical += 10; // Agregar separación después de panel_Descripción
+                
             }
 
             // Ajustar posición de panel_ControlesInferiores
