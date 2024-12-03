@@ -174,7 +174,6 @@
             this.btn_Configurar.TabIndex = 13;
             this.btn_Configurar.UseVisualStyleBackColor = false;
             this.btn_Configurar.Click += new System.EventHandler(this.Btn_Configurar_Click);
-          
             this.btn_Configurar.MouseHover += new System.EventHandler(this.Btn_Configurar_Hover);
             // 
             // btn_Leyes

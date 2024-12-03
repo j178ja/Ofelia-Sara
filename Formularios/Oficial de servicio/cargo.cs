@@ -121,6 +121,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             pictureBox_CheckLegajoVehicular.Visible = false;// para ocultar el check realizado
 
+
+            //.....................................................
+            //// Guardar la altura original del panel
+            alturaOriginalPanel_Instruccion = panel_Instruccion.Height;
+            alturaOriginalPanel_Descripcion = panel_Descripcion.Height;
             //...................................................
             ValidarPanelDatosInstruccion();
             ValidarPanelDescripcion();
@@ -681,12 +686,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
             // Añadimos los valores de los controles al diccionario
-            datosFormulario.Add("NumeroCargo", textBox_NumeroCargo.Text);
+            
             datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);
             datosFormulario.Add("Caratula", textBox_Caratula.Text);
             datosFormulario.Add("Victima", textBox_Victima.Text);
             datosFormulario.Add("Imputado", textBox_Imputado.Text);
 
+            datosFormulario.Add("Fiscalia", comboBox_Fiscalia.SelectedItem.ToString());
+            datosFormulario.Add("AgenteFiscal", comboBox_AgenteFiscal.SelectedItem.ToString());
+            datosFormulario.Add("Localidad", comboBox_Localidad.SelectedItem.ToString());
 
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
@@ -700,6 +708,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //------------------------------------------------------------------------------------
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
+            
             // Llamar al método de validación
             if (!ValidarAntesde_IMPRIMIR())
             {
@@ -800,7 +809,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
-                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(561, 1);
+                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(422, 0);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -834,13 +843,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
                     panelExpandido_Instruccion = true;
                     panel_DatosInstruccion.Visible = true;
+                    label_DatosInstruccion.BringToFront();
+                    pictureBox_PanelInstruccion.BringToFront();
 
                     // Cambiar el estilo del borde
                     panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
-                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(558, 1);
+                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(418, 0);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_DatosInstruccion.Controls)
@@ -856,6 +867,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                             control.Visible = true; // Mostrar imágenes de error
                         }
                     }
+                    panel_DatosInstruccion.Visible = true;
                 }
                 AjustarTamanoFormulario();
             }
@@ -1041,6 +1053,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Asegurarse de que el pictureBox sea visible
             pictureBox_Descripcion.Visible = true;
+            AjustarTamanoFormulario();
 
         }
 
@@ -1100,6 +1113,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
+       
     }
 }

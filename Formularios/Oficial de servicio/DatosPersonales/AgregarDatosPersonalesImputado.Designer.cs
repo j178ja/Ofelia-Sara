@@ -54,7 +54,7 @@
             this.label_Apodo = new System.Windows.Forms.Label();
             this.label_Telefono = new System.Windows.Forms.Label();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.label_Titulo = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             this.checkBox_NotArt60 = new System.Windows.Forms.CheckBox();
             this.label_LegajoDetenido = new System.Windows.Forms.Label();
@@ -84,6 +84,8 @@
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox_CheckLegajoDetenido = new System.Windows.Forms.PictureBox();
+            this.pictureBox_CheckNotArt60 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
@@ -91,11 +93,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PerfilIzquierdo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PerfilDerecho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Frente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckLegajoDetenido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckNotArt60)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.pictureBox_CheckNotArt60);
+            this.panel1.Controls.Add(this.pictureBox_CheckLegajoDetenido);
             this.panel1.Controls.Add(this.botonDeslizable_StarPlana);
             this.panel1.Controls.Add(this.label_StarPlana);
             this.panel1.Controls.Add(this.btn_AgregarConcubina);
@@ -119,7 +125,7 @@
             this.panel1.Controls.Add(this.label_Apodo);
             this.panel1.Controls.Add(this.label_Telefono);
             this.panel1.Controls.Add(this.btn_Buscar);
-            this.panel1.Controls.Add(this.label_Titulo);
+            this.panel1.Controls.Add(this.label_TITULO);
             this.panel1.Controls.Add(this.checkBox_LegajoDetenido);
             this.panel1.Controls.Add(this.checkBox_NotArt60);
             this.panel1.Controls.Add(this.label_LegajoDetenido);
@@ -150,14 +156,14 @@
             this.panel1.Controls.Add(this.label_CircunstanciasPersonales);
             this.panel1.Location = new System.Drawing.Point(25, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 796);
+            this.panel1.Size = new System.Drawing.Size(564, 781);
             this.panel1.TabIndex = 0;
             // 
             // botonDeslizable_StarPlana
             // 
             this.botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
             this.botonDeslizable_StarPlana.IsOn = false;
-            this.botonDeslizable_StarPlana.Location = new System.Drawing.Point(112, 469);
+            this.botonDeslizable_StarPlana.Location = new System.Drawing.Point(107, 453);
             this.botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
             this.botonDeslizable_StarPlana.Size = new System.Drawing.Size(40, 20);
             this.botonDeslizable_StarPlana.TabIndex = 99;
@@ -167,7 +173,7 @@
             // 
             this.label_StarPlana.AutoSize = true;
             this.label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_StarPlana.Location = new System.Drawing.Point(28, 470);
+            this.label_StarPlana.Location = new System.Drawing.Point(23, 454);
             this.label_StarPlana.Name = "label_StarPlana";
             this.label_StarPlana.Size = new System.Drawing.Size(83, 16);
             this.label_StarPlana.TabIndex = 98;
@@ -177,7 +183,7 @@
             // 
             this.btn_AgregarConcubina.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_AgregarConcubina.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarConcubina.Location = new System.Drawing.Point(529, 175);
+            this.btn_AgregarConcubina.Location = new System.Drawing.Point(524, 159);
             this.btn_AgregarConcubina.Name = "btn_AgregarConcubina";
             this.btn_AgregarConcubina.Size = new System.Drawing.Size(20, 20);
             this.btn_AgregarConcubina.TabIndex = 97;
@@ -195,7 +201,7 @@
             "VIUDO/A",
             "CONCUBINO/A",
             ""});
-            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(403, 174);
+            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(398, 158);
             this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
             this.comboBox_EstadoCivil.Size = new System.Drawing.Size(120, 21);
             this.comboBox_EstadoCivil.TabIndex = 96;
@@ -205,7 +211,7 @@
             // 
             this.label_EstadoCivil.AutoSize = true;
             this.label_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_EstadoCivil.Location = new System.Drawing.Point(312, 176);
+            this.label_EstadoCivil.Location = new System.Drawing.Point(307, 160);
             this.label_EstadoCivil.Name = "label_EstadoCivil";
             this.label_EstadoCivil.Size = new System.Drawing.Size(88, 15);
             this.label_EstadoCivil.TabIndex = 95;
@@ -213,7 +219,7 @@
             // 
             // textBox_LugarNacimiento
             // 
-            this.textBox_LugarNacimiento.Location = new System.Drawing.Point(160, 175);
+            this.textBox_LugarNacimiento.Location = new System.Drawing.Point(155, 159);
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(150, 20);
             this.textBox_LugarNacimiento.TabIndex = 94;
@@ -223,7 +229,7 @@
             // 
             this.label_LugarNacimiento.AutoSize = true;
             this.label_LugarNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LugarNacimiento.Location = new System.Drawing.Point(32, 175);
+            this.label_LugarNacimiento.Location = new System.Drawing.Point(27, 159);
             this.label_LugarNacimiento.Name = "label_LugarNacimiento";
             this.label_LugarNacimiento.Size = new System.Drawing.Size(127, 15);
             this.label_LugarNacimiento.TabIndex = 93;
@@ -233,7 +239,7 @@
             // 
             this.emailControl1.AutoSize = true;
             this.emailControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.emailControl1.Location = new System.Drawing.Point(122, 434);
+            this.emailControl1.Location = new System.Drawing.Point(117, 418);
             this.emailControl1.Name = "emailControl1";
             this.emailControl1.Size = new System.Drawing.Size(332, 24);
             this.emailControl1.TabIndex = 92;
@@ -243,14 +249,14 @@
             this.numeroTelefonicoControl.AutoSize = true;
             this.numeroTelefonicoControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.numeroTelefonicoControl.ControlWidth = 162;
-            this.numeroTelefonicoControl.Location = new System.Drawing.Point(122, 407);
+            this.numeroTelefonicoControl.Location = new System.Drawing.Point(117, 391);
             this.numeroTelefonicoControl.Name = "numeroTelefonicoControl";
             this.numeroTelefonicoControl.Size = new System.Drawing.Size(162, 25);
             this.numeroTelefonicoControl.TabIndex = 91;
             // 
             // dateTimePicker_FechaNacimiento
             // 
-            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(403, 124);
+            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(398, 108);
             this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
             this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 18);
             this.dateTimePicker_FechaNacimiento.TabIndex = 90;
@@ -260,7 +266,7 @@
             // 
             this.label_agrGeo2.AutoSize = true;
             this.label_agrGeo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_agrGeo2.Location = new System.Drawing.Point(75, 307);
+            this.label_agrGeo2.Location = new System.Drawing.Point(70, 291);
             this.label_agrGeo2.Name = "label_agrGeo2";
             this.label_agrGeo2.Size = new System.Drawing.Size(94, 15);
             this.label_agrGeo2.TabIndex = 89;
@@ -270,7 +276,7 @@
             // 
             this.label_agrGeo.AutoSize = true;
             this.label_agrGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_agrGeo.Location = new System.Drawing.Point(31, 290);
+            this.label_agrGeo.Location = new System.Drawing.Point(26, 274);
             this.label_agrGeo.Name = "label_agrGeo";
             this.label_agrGeo.Size = new System.Drawing.Size(195, 15);
             this.label_agrGeo.TabIndex = 88;
@@ -280,7 +286,7 @@
             // 
             this.label_AgregarDomicilio.AutoSize = true;
             this.label_AgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregarDomicilio.Location = new System.Drawing.Point(26, 359);
+            this.label_AgregarDomicilio.Location = new System.Drawing.Point(21, 343);
             this.label_AgregarDomicilio.Name = "label_AgregarDomicilio";
             this.label_AgregarDomicilio.Size = new System.Drawing.Size(200, 15);
             this.label_AgregarDomicilio.TabIndex = 87;
@@ -291,7 +297,7 @@
             this.pictureBox_Geoposicionamiento.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox_Geoposicionamiento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Geoposicionamiento.BackgroundImage")));
             this.pictureBox_Geoposicionamiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Geoposicionamiento.Location = new System.Drawing.Point(229, 279);
+            this.pictureBox_Geoposicionamiento.Location = new System.Drawing.Point(224, 263);
             this.pictureBox_Geoposicionamiento.Name = "pictureBox_Geoposicionamiento";
             this.pictureBox_Geoposicionamiento.Size = new System.Drawing.Size(295, 55);
             this.pictureBox_Geoposicionamiento.TabIndex = 86;
@@ -306,7 +312,7 @@
             this.pictureBox_Domicilio.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox_Domicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Domicilio.BackgroundImage")));
             this.pictureBox_Domicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Domicilio.Location = new System.Drawing.Point(229, 342);
+            this.pictureBox_Domicilio.Location = new System.Drawing.Point(224, 326);
             this.pictureBox_Domicilio.Name = "pictureBox_Domicilio";
             this.pictureBox_Domicilio.Size = new System.Drawing.Size(295, 55);
             this.pictureBox_Domicilio.TabIndex = 85;
@@ -320,7 +326,7 @@
             // 
             this.label_Email.AutoSize = true;
             this.label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Email.Location = new System.Drawing.Point(29, 434);
+            this.label_Email.Location = new System.Drawing.Point(24, 418);
             this.label_Email.Name = "label_Email";
             this.label_Email.Size = new System.Drawing.Size(56, 15);
             this.label_Email.TabIndex = 79;
@@ -337,7 +343,7 @@
             "URUGUAYA",
             "PERUANA",
             "BRASILERA"});
-            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(372, 150);
+            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(367, 134);
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(151, 21);
             this.comboBox_Nacionalidad.TabIndex = 77;
@@ -346,7 +352,7 @@
             // 
             // textBox_Ocupacion
             // 
-            this.textBox_Ocupacion.Location = new System.Drawing.Point(126, 201);
+            this.textBox_Ocupacion.Location = new System.Drawing.Point(121, 185);
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(181, 20);
             this.textBox_Ocupacion.TabIndex = 5;
@@ -357,7 +363,7 @@
             // 
             this.label_Ocupacion.AutoSize = true;
             this.label_Ocupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Ocupacion.Location = new System.Drawing.Point(31, 202);
+            this.label_Ocupacion.Location = new System.Drawing.Point(26, 186);
             this.label_Ocupacion.Name = "label_Ocupacion";
             this.label_Ocupacion.Size = new System.Drawing.Size(94, 15);
             this.label_Ocupacion.TabIndex = 76;
@@ -365,7 +371,7 @@
             // 
             // textBox_Apodo
             // 
-            this.textBox_Apodo.Location = new System.Drawing.Point(374, 201);
+            this.textBox_Apodo.Location = new System.Drawing.Point(369, 185);
             this.textBox_Apodo.Name = "textBox_Apodo";
             this.textBox_Apodo.Size = new System.Drawing.Size(150, 20);
             this.textBox_Apodo.TabIndex = 6;
@@ -376,7 +382,7 @@
             // 
             this.label_Apodo.AutoSize = true;
             this.label_Apodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apodo.Location = new System.Drawing.Point(313, 202);
+            this.label_Apodo.Location = new System.Drawing.Point(308, 186);
             this.label_Apodo.Name = "label_Apodo";
             this.label_Apodo.Size = new System.Drawing.Size(62, 15);
             this.label_Apodo.TabIndex = 74;
@@ -386,7 +392,7 @@
             // 
             this.label_Telefono.AutoSize = true;
             this.label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono.Location = new System.Drawing.Point(29, 408);
+            this.label_Telefono.Location = new System.Drawing.Point(24, 392);
             this.label_Telefono.Name = "label_Telefono";
             this.label_Telefono.Size = new System.Drawing.Size(87, 15);
             this.label_Telefono.TabIndex = 73;
@@ -397,29 +403,29 @@
             this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(75, 708);
+            this.btn_Buscar.Location = new System.Drawing.Point(75, 696);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 51;
             this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
-            // label_Titulo
+            // label_TITULO
             // 
-            this.label_Titulo.AutoSize = true;
-            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(175, 0);
-            this.label_Titulo.Name = "label_Titulo";
-            this.label_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label_Titulo.Size = new System.Drawing.Size(220, 25);
-            this.label_Titulo.TabIndex = 50;
-            this.label_Titulo.Text = "DATOS IMPUTADO";
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(180, -10);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label_TITULO.Size = new System.Drawing.Size(220, 25);
+            this.label_TITULO.TabIndex = 50;
+            this.label_TITULO.Text = "DATOS IMPUTADO";
             // 
             // checkBox_LegajoDetenido
             // 
             this.checkBox_LegajoDetenido.AutoSize = true;
-            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(532, 473);
+            this.checkBox_LegajoDetenido.Location = new System.Drawing.Point(527, 457);
             this.checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
             this.checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             this.checkBox_LegajoDetenido.TabIndex = 11;
@@ -430,7 +436,7 @@
             // checkBox_NotArt60
             // 
             this.checkBox_NotArt60.AutoSize = true;
-            this.checkBox_NotArt60.Location = new System.Drawing.Point(345, 473);
+            this.checkBox_NotArt60.Location = new System.Drawing.Point(340, 457);
             this.checkBox_NotArt60.Name = "checkBox_NotArt60";
             this.checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
             this.checkBox_NotArt60.TabIndex = 10;
@@ -440,7 +446,7 @@
             // label_LegajoDetenido
             // 
             this.label_LegajoDetenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoDetenido.Location = new System.Drawing.Point(369, 468);
+            this.label_LegajoDetenido.Location = new System.Drawing.Point(364, 452);
             this.label_LegajoDetenido.Name = "label_LegajoDetenido";
             this.label_LegajoDetenido.Size = new System.Drawing.Size(188, 23);
             this.label_LegajoDetenido.TabIndex = 31;
@@ -451,7 +457,7 @@
             // 
             this.label_NotArt60.AutoSize = true;
             this.label_NotArt60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NotArt60.Location = new System.Drawing.Point(157, 470);
+            this.label_NotArt60.Location = new System.Drawing.Point(152, 454);
             this.label_NotArt60.Name = "label_NotArt60";
             this.label_NotArt60.Size = new System.Drawing.Size(182, 16);
             this.label_NotArt60.TabIndex = 30;
@@ -462,7 +468,7 @@
             this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(250, 708);
+            this.btn_Limpiar.Location = new System.Drawing.Point(250, 696);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 13;
@@ -474,7 +480,7 @@
             this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(430, 708);
+            this.btn_Guardar.Location = new System.Drawing.Point(430, 696);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
@@ -484,7 +490,7 @@
             // label_CuerpoEntero
             // 
             this.label_CuerpoEntero.AutoSize = true;
-            this.label_CuerpoEntero.Location = new System.Drawing.Point(449, 677);
+            this.label_CuerpoEntero.Location = new System.Drawing.Point(449, 665);
             this.label_CuerpoEntero.Name = "label_CuerpoEntero";
             this.label_CuerpoEntero.Size = new System.Drawing.Size(100, 13);
             this.label_CuerpoEntero.TabIndex = 12;
@@ -493,7 +499,7 @@
             // label_PerfilIzquierdo
             // 
             this.label_PerfilIzquierdo.AutoSize = true;
-            this.label_PerfilIzquierdo.Location = new System.Drawing.Point(310, 677);
+            this.label_PerfilIzquierdo.Location = new System.Drawing.Point(310, 665);
             this.label_PerfilIzquierdo.Name = "label_PerfilIzquierdo";
             this.label_PerfilIzquierdo.Size = new System.Drawing.Size(107, 13);
             this.label_PerfilIzquierdo.TabIndex = 11;
@@ -502,7 +508,7 @@
             // label1_PerfilDerecho
             // 
             this.label1_PerfilDerecho.AutoSize = true;
-            this.label1_PerfilDerecho.Location = new System.Drawing.Point(171, 677);
+            this.label1_PerfilDerecho.Location = new System.Drawing.Point(171, 665);
             this.label1_PerfilDerecho.Name = "label1_PerfilDerecho";
             this.label1_PerfilDerecho.Size = new System.Drawing.Size(100, 13);
             this.label1_PerfilDerecho.TabIndex = 10;
@@ -511,7 +517,7 @@
             // label_Frente
             // 
             this.label_Frente.AutoSize = true;
-            this.label_Frente.Location = new System.Drawing.Point(54, 677);
+            this.label_Frente.Location = new System.Drawing.Point(54, 665);
             this.label_Frente.Name = "label_Frente";
             this.label_Frente.Size = new System.Drawing.Size(50, 13);
             this.label_Frente.TabIndex = 9;
@@ -522,7 +528,7 @@
             this.pictureBox_CuerpoEntero.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_CuerpoEntero.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_CuerpoEntero.BackgroundImage")));
             this.pictureBox_CuerpoEntero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_CuerpoEntero.Location = new System.Drawing.Point(452, 551);
+            this.pictureBox_CuerpoEntero.Location = new System.Drawing.Point(452, 539);
             this.pictureBox_CuerpoEntero.Name = "pictureBox_CuerpoEntero";
             this.pictureBox_CuerpoEntero.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_CuerpoEntero.TabIndex = 20;
@@ -536,7 +542,7 @@
             this.pictureBox_PerfilIzquierdo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_PerfilIzquierdo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_PerfilIzquierdo.BackgroundImage")));
             this.pictureBox_PerfilIzquierdo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_PerfilIzquierdo.Location = new System.Drawing.Point(315, 551);
+            this.pictureBox_PerfilIzquierdo.Location = new System.Drawing.Point(315, 539);
             this.pictureBox_PerfilIzquierdo.Name = "pictureBox_PerfilIzquierdo";
             this.pictureBox_PerfilIzquierdo.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_PerfilIzquierdo.TabIndex = 19;
@@ -550,7 +556,7 @@
             this.pictureBox_PerfilDerecho.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox_PerfilDerecho.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_PerfilDerecho.BackgroundImage")));
             this.pictureBox_PerfilDerecho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_PerfilDerecho.Location = new System.Drawing.Point(175, 551);
+            this.pictureBox_PerfilDerecho.Location = new System.Drawing.Point(175, 539);
             this.pictureBox_PerfilDerecho.Name = "pictureBox_PerfilDerecho";
             this.pictureBox_PerfilDerecho.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_PerfilDerecho.TabIndex = 18;
@@ -565,7 +571,7 @@
             this.pictureBox_Frente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Frente.BackgroundImage")));
             this.pictureBox_Frente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox_Frente.ImageLocation = "";
-            this.pictureBox_Frente.Location = new System.Drawing.Point(31, 551);
+            this.pictureBox_Frente.Location = new System.Drawing.Point(31, 539);
             this.pictureBox_Frente.Name = "pictureBox_Frente";
             this.pictureBox_Frente.Size = new System.Drawing.Size(94, 113);
             this.pictureBox_Frente.TabIndex = 17;
@@ -579,7 +585,7 @@
             this.label_ParaLegajoImputado.AutoSize = true;
             this.label_ParaLegajoImputado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label_ParaLegajoImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ParaLegajoImputado.Location = new System.Drawing.Point(127, 503);
+            this.label_ParaLegajoImputado.Location = new System.Drawing.Point(127, 491);
             this.label_ParaLegajoImputado.Name = "label_ParaLegajoImputado";
             this.label_ParaLegajoImputado.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
             this.label_ParaLegajoImputado.Size = new System.Drawing.Size(319, 30);
@@ -590,7 +596,7 @@
             // 
             this.label_Nacionalidad.AutoSize = true;
             this.label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nacionalidad.Location = new System.Drawing.Point(259, 150);
+            this.label_Nacionalidad.Location = new System.Drawing.Point(254, 134);
             this.label_Nacionalidad.Name = "label_Nacionalidad";
             this.label_Nacionalidad.Size = new System.Drawing.Size(114, 15);
             this.label_Nacionalidad.TabIndex = 14;
@@ -598,7 +604,7 @@
             // 
             // textBox_Localidad
             // 
-            this.textBox_Localidad.Location = new System.Drawing.Point(125, 253);
+            this.textBox_Localidad.Location = new System.Drawing.Point(120, 237);
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
@@ -607,7 +613,7 @@
             // 
             // textBox_Domicilio
             // 
-            this.textBox_Domicilio.Location = new System.Drawing.Point(126, 227);
+            this.textBox_Domicilio.Location = new System.Drawing.Point(121, 211);
             this.textBox_Domicilio.Name = "textBox_Domicilio";
             this.textBox_Domicilio.Size = new System.Drawing.Size(398, 20);
             this.textBox_Domicilio.TabIndex = 7;
@@ -615,7 +621,7 @@
             // 
             // textBox_Edad
             // 
-            this.textBox_Edad.Location = new System.Drawing.Point(90, 149);
+            this.textBox_Edad.Location = new System.Drawing.Point(85, 133);
             this.textBox_Edad.Name = "textBox_Edad";
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
@@ -625,7 +631,7 @@
             // 
             // textBox_Dni
             // 
-            this.textBox_Dni.Location = new System.Drawing.Point(74, 123);
+            this.textBox_Dni.Location = new System.Drawing.Point(69, 107);
             this.textBox_Dni.Name = "textBox_Dni";
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
@@ -635,7 +641,7 @@
             // 
             // textBox_Nombre
             // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(124, 93);
+            this.textBox_Nombre.Location = new System.Drawing.Point(119, 77);
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(399, 20);
             this.textBox_Nombre.TabIndex = 0;
@@ -645,7 +651,7 @@
             // 
             this.label_Localidad.AutoSize = true;
             this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Localidad.Location = new System.Drawing.Point(33, 254);
+            this.label_Localidad.Location = new System.Drawing.Point(28, 238);
             this.label_Localidad.Name = "label_Localidad";
             this.label_Localidad.Size = new System.Drawing.Size(90, 15);
             this.label_Localidad.TabIndex = 7;
@@ -655,7 +661,7 @@
             // 
             this.label_Domicilio.AutoSize = true;
             this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Domicilio.Location = new System.Drawing.Point(34, 228);
+            this.label_Domicilio.Location = new System.Drawing.Point(29, 212);
             this.label_Domicilio.Name = "label_Domicilio";
             this.label_Domicilio.Size = new System.Drawing.Size(86, 15);
             this.label_Domicilio.TabIndex = 5;
@@ -665,7 +671,7 @@
             // 
             this.label_Edad.AutoSize = true;
             this.label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Edad.Location = new System.Drawing.Point(32, 148);
+            this.label_Edad.Location = new System.Drawing.Point(27, 132);
             this.label_Edad.Name = "label_Edad";
             this.label_Edad.Size = new System.Drawing.Size(52, 15);
             this.label_Edad.TabIndex = 4;
@@ -675,7 +681,7 @@
             // 
             this.label_FechaNacimiento.AutoSize = true;
             this.label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_FechaNacimiento.Location = new System.Drawing.Point(258, 125);
+            this.label_FechaNacimiento.Location = new System.Drawing.Point(253, 109);
             this.label_FechaNacimiento.Name = "label_FechaNacimiento";
             this.label_FechaNacimiento.Size = new System.Drawing.Size(147, 15);
             this.label_FechaNacimiento.TabIndex = 3;
@@ -685,7 +691,7 @@
             // 
             this.label_Dni.AutoSize = true;
             this.label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dni.Location = new System.Drawing.Point(33, 124);
+            this.label_Dni.Location = new System.Drawing.Point(28, 108);
             this.label_Dni.Name = "label_Dni";
             this.label_Dni.Size = new System.Drawing.Size(39, 15);
             this.label_Dni.TabIndex = 2;
@@ -695,7 +701,7 @@
             // 
             this.label_Nombre.AutoSize = true;
             this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(32, 94);
+            this.label_Nombre.Location = new System.Drawing.Point(27, 78);
             this.label_Nombre.Name = "label_Nombre";
             this.label_Nombre.Size = new System.Drawing.Size(75, 15);
             this.label_Nombre.TabIndex = 1;
@@ -706,18 +712,40 @@
             this.label_CircunstanciasPersonales.AutoSize = true;
             this.label_CircunstanciasPersonales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label_CircunstanciasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CircunstanciasPersonales.Location = new System.Drawing.Point(102, 46);
+            this.label_CircunstanciasPersonales.Location = new System.Drawing.Point(97, 30);
             this.label_CircunstanciasPersonales.Name = "label_CircunstanciasPersonales";
             this.label_CircunstanciasPersonales.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
             this.label_CircunstanciasPersonales.Size = new System.Drawing.Size(349, 30);
             this.label_CircunstanciasPersonales.TabIndex = 0;
             this.label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
             // 
+            // pictureBox_CheckLegajoDetenido
+            // 
+            this.pictureBox_CheckLegajoDetenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_CheckLegajoDetenido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_CheckLegajoDetenido.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
+            this.pictureBox_CheckLegajoDetenido.Location = new System.Drawing.Point(523, 423);
+            this.pictureBox_CheckLegajoDetenido.Name = "pictureBox_CheckLegajoDetenido";
+            this.pictureBox_CheckLegajoDetenido.Size = new System.Drawing.Size(26, 28);
+            this.pictureBox_CheckLegajoDetenido.TabIndex = 100;
+            this.pictureBox_CheckLegajoDetenido.TabStop = false;
+            // 
+            // pictureBox_CheckNotArt60
+            // 
+            this.pictureBox_CheckNotArt60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox_CheckNotArt60.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_CheckNotArt60.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
+            this.pictureBox_CheckNotArt60.Location = new System.Drawing.Point(491, 423);
+            this.pictureBox_CheckNotArt60.Name = "pictureBox_CheckNotArt60";
+            this.pictureBox_CheckNotArt60.Size = new System.Drawing.Size(26, 28);
+            this.pictureBox_CheckNotArt60.TabIndex = 101;
+            this.pictureBox_CheckNotArt60.TabStop = false;
+            // 
             // AgregarDatosPersonalesImputado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 862);
+            this.ClientSize = new System.Drawing.Size(616, 844);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
@@ -737,6 +765,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PerfilIzquierdo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PerfilDerecho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Frente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckLegajoDetenido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckNotArt60)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,7 +804,7 @@
         private System.Windows.Forms.Label label_NotArt60;
         private System.Windows.Forms.CheckBox checkBox_LegajoDetenido;
         private System.Windows.Forms.CheckBox checkBox_NotArt60;
-        private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Label label_Telefono;
         private System.Windows.Forms.TextBox textBox_Apodo;
@@ -798,5 +828,7 @@
         private System.Windows.Forms.Button btn_AgregarConcubina;
         private System.Windows.Forms.Label label_StarPlana;
         private Controles.Controles.BotonDeslizable botonDeslizable_StarPlana;
+        private System.Windows.Forms.PictureBox pictureBox_CheckNotArt60;
+        private System.Windows.Forms.PictureBox pictureBox_CheckLegajoDetenido;
     }
 }

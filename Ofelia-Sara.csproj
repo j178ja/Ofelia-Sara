@@ -226,6 +226,12 @@
     <Compile Include="Clases\Botones\imprimir.cs" />
     <Compile Include="Clases\Animaciones\IncrementarTamaño.cs" />
     <Compile Include="Clases\Botones\limpiar_formulario.cs" />
+    <Compile Include="Controles\Boton_Contador.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Boton_Contador.Designer.cs">
+      <DependentUpon>Boton_Contador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\ComboBoxConBorde.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -525,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Barras personalizadas\CustomProgressBar.resx">
       <DependentUpon>CustomProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Boton_Contador.resx">
+      <DependentUpon>Boton_Contador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\AgregarFiscaliaControl.resx">
       <DependentUpon>AgregarFiscaliaControl.cs</DependentUpon>

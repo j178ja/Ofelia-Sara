@@ -49,7 +49,7 @@
             this.label_Apodo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.label_Titulo = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.label_Nacionalidad = new System.Windows.Forms.Label();
@@ -90,7 +90,6 @@
             this.panel1.Controls.Add(this.label_Apodo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Buscar);
-            this.panel1.Controls.Add(this.label_Titulo);
             this.panel1.Controls.Add(this.btn_Limpiar);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.label_Nacionalidad);
@@ -302,18 +301,18 @@
             this.btn_Buscar.TabIndex = 51;
             this.btn_Buscar.UseVisualStyleBackColor = false;
             // 
-            // label_Titulo
+            // label_TITULO
             // 
-            this.label_Titulo.AutoSize = true;
-            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(164, 0);
-            this.label_Titulo.Name = "label_Titulo";
-            this.label_Titulo.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.label_Titulo.Size = new System.Drawing.Size(261, 25);
-            this.label_Titulo.TabIndex = 50;
-            this.label_Titulo.Text = "DATOS DE FAMILIAR";
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(180, 18);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.label_TITULO.Size = new System.Drawing.Size(261, 25);
+            this.label_TITULO.TabIndex = 50;
+            this.label_TITULO.Text = "DATOS DE FAMILIAR";
             // 
             // btn_Limpiar
             // 
@@ -466,11 +465,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 560);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_TITULO);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarDatosPersonalesConcubina";
             this.Text = "DATOS PAREJA, CONCUBINA /O";
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesConcubina_Load);
+            this.Controls.SetChildIndex(this.label_TITULO, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -498,7 +499,7 @@
         private System.Windows.Forms.Label label_Apodo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Label label_Nacionalidad;

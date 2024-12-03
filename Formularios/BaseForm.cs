@@ -643,7 +643,7 @@ namespace Ofelia_Sara.Formularios
                 if (button != null)
                 {
                     // Aplicar el ToolTip
-                    ToolTipGeneral.ShowToolTip(this, button, entry.Value);
+                    ToolTipGeneral.ShowToolTip( button, entry.Value);
                 }
             }
         }

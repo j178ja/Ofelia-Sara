@@ -1696,40 +1696,40 @@
   <data name="&gt;&gt;label_Victima.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="label_Titulo.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label_TITULO.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label_Titulo.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label_TITULO.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
-  <data name="label_Titulo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label_TITULO.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label_Titulo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 0</value>
+  <data name="label_TITULO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>345, -11</value>
   </data>
-  <data name="label_Titulo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="label_TITULO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>20, 0, 20, 0</value>
   </data>
-  <data name="label_Titulo.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_TITULO.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 24</value>
   </data>
-  <data name="label_Titulo.TabIndex" type="System.Int32, mscorlib">
+  <data name="label_TITULO.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <data name="label_Titulo.Text" xml:space="preserve">
+  <data name="label_TITULO.Text" xml:space="preserve">
     <value>EXPEDIENTES</value>
   </data>
-  <data name="&gt;&gt;label_Titulo.Name" xml:space="preserve">
-    <value>label_Titulo</value>
+  <data name="&gt;&gt;label_TITULO.Name" xml:space="preserve">
+    <value>label_TITULO</value>
   </data>
-  <data name="&gt;&gt;label_Titulo.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_TITULO.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label_Titulo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label_TITULO.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label_Titulo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_TITULO.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">

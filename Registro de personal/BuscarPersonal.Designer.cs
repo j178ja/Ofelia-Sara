@@ -38,7 +38,7 @@
             this.btn_AgregarPersonal = new System.Windows.Forms.Button();
             this.textBox_NumeroLegajo = new System.Windows.Forms.TextBox();
             this.lbl_Legajo = new System.Windows.Forms.Label();
-            this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
@@ -55,7 +55,6 @@
             this.panel1.Controls.Add(this.btn_AgregarPersonal);
             this.panel1.Controls.Add(this.textBox_NumeroLegajo);
             this.panel1.Controls.Add(this.lbl_Legajo);
-            this.panel1.Controls.Add(this.lbl_Titulo);
             this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(671, 190);
@@ -117,7 +116,7 @@
             this.btn_AgregarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarPersonal.FlatAppearance.BorderSize = 3;
             this.btn_AgregarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarPersonal.Location = new System.Drawing.Point(478, 44);
+            this.btn_AgregarPersonal.Location = new System.Drawing.Point(492, 36);
             this.btn_AgregarPersonal.Name = "btn_AgregarPersonal";
             this.btn_AgregarPersonal.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarPersonal.TabIndex = 35;
@@ -129,7 +128,7 @@
             // textBox_NumeroLegajo
             // 
             this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(309, 45);
+            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(323, 37);
             this.textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 22);
             this.textBox_NumeroLegajo.TabIndex = 34;
@@ -141,25 +140,25 @@
             // 
             this.lbl_Legajo.AutoSize = true;
             this.lbl_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Legajo.Location = new System.Drawing.Point(161, 48);
+            this.lbl_Legajo.Location = new System.Drawing.Point(175, 40);
             this.lbl_Legajo.Name = "lbl_Legajo";
             this.lbl_Legajo.Size = new System.Drawing.Size(142, 16);
             this.lbl_Legajo.TabIndex = 33;
             this.lbl_Legajo.Text = "LEGAJO POLICIAL :";
             // 
-            // lbl_Titulo
+            // label_TITULO
             // 
-            this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Titulo.Location = new System.Drawing.Point(227, 0);
-            this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.lbl_Titulo.Size = new System.Drawing.Size(248, 24);
-            this.lbl_Titulo.TabIndex = 32;
-            this.lbl_Titulo.Text = "BUSCAR PERSONAL";
+            this.label_TITULO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(244, 9);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.label_TITULO.Size = new System.Drawing.Size(248, 24);
+            this.label_TITULO.TabIndex = 32;
+            this.label_TITULO.Text = "BUSCAR PERSONAL";
             // 
             // BuscarPersonal
             // 
@@ -168,6 +167,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(714, 241);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_TITULO);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -178,6 +178,7 @@
             this.Text = " SELECCIONAR PERSONAL POLICIAL";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.BuscarPersonal_HelpButtonClicked);
             this.Load += new System.EventHandler(this.BuscarPersonal_Load);
+            this.Controls.SetChildIndex(this.label_TITULO, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -190,7 +191,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Label lbl_Legajo;
         private System.Windows.Forms.TextBox textBox_NumeroLegajo;
         private System.Windows.Forms.Button btn_AgregarPersonal;

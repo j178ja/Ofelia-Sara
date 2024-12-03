@@ -7,7 +7,7 @@ using Ofelia_Sara.Registro_de_personal;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 
 
@@ -17,6 +17,8 @@ namespace Controles.Controles
 
     public partial class PersonalSeleccionadoControl : UserControl
     {
+        public event EventHandler Eliminado;
+
         // Evento que será lanzado cuando se clickee el botón para modificar el personal
         public event EventHandler ModificarPersonalClicked;
 
@@ -25,7 +27,10 @@ namespace Controles.Controles
         {
             InitializeComponent();
             _personalManager = new PersonalManager();
-
+                  
+                ToolTipGeneral.ShowToolTip( btn_ModificarPersonal, "MODIFICAR personal");
+                ToolTipGeneral.ShowToolTip( btn_EliminarControl, "ELIMINAR personal");
+            
         }
 
         public void ActualizarDatosPorLegajo(string numeroLegajo)
@@ -66,7 +71,6 @@ namespace Controles.Controles
 
                 // Para que el color y la fuente se apliquen, desmarcamos la selección
                 richTextBox_JerarquiaEscalafon.SelectionLength = 0;
-
 
             }
             else
@@ -122,16 +126,19 @@ namespace Controles.Controles
                 // Llamar al método para reposicionar los controles y ajustar tamaños
                 agregarPersonal.ReposicionarControles(panel_PersonalSeleccionado, controlEliminado, panel1, formulario);
             }
-
+            
             // Eliminar este control del panel
             panel_PersonalSeleccionado.Controls.Remove(controlEliminado);
+
+            // Emitir el evento Eliminado
+            Eliminado?.Invoke(this, EventArgs.Empty);
         }
 
 
 
         private void PersonalSeleccionadoControl_Load(object sender, EventArgs e)
         {
-
+           
         }
 
     }

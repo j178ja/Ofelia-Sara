@@ -82,8 +82,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Ipp = new System.Windows.Forms.Panel();
             this.panel_Caratula = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
-            this.Btn_Contador247 = new System.Windows.Forms.Button();
-            this.Btn_ContadorRML = new System.Windows.Forms.Button();
+            this.fecha_Pericia = new System.Windows.Forms.MaskedTextBox();
             this.label_StudRML = new System.Windows.Forms.Label();
             this.pictureBox_CheckCargo = new System.Windows.Forms.PictureBox();
             this.pictureBox_CheckRatificacion = new System.Windows.Forms.PictureBox();
@@ -92,7 +91,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.label_RatificacionPersonal = new System.Windows.Forms.Label();
             this.panel_Imputado = new System.Windows.Forms.Panel();
             this.panel_Victima = new System.Windows.Forms.Panel();
-            this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
+            this.Btn_Contador247 = new Ofelia_Sara.Controles.Boton_Contador();
+            this.btn_ContadorRatificaciones = new Ofelia_Sara.Controles.Boton_Contador();
+            this.Btn_ContadorRML = new Ofelia_Sara.Controles.Boton_Contador();
             this.panel1.SuspendLayout();
             this.panel_Instruccion.SuspendLayout();
             this.panel_Ipp.SuspendLayout();
@@ -485,7 +487,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.checkBox_RatificacionTestimonial.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.checkBox_RatificacionTestimonial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox_RatificacionTestimonial.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
-            this.checkBox_RatificacionTestimonial.Location = new System.Drawing.Point(201, 38);
+            this.checkBox_RatificacionTestimonial.Location = new System.Drawing.Point(207, 42);
             this.checkBox_RatificacionTestimonial.Name = "checkBox_RatificacionTestimonial";
             this.checkBox_RatificacionTestimonial.Size = new System.Drawing.Size(15, 14);
             this.checkBox_RatificacionTestimonial.TabIndex = 8;
@@ -533,7 +535,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             this.botonDeslizable_Not247.Cursor = System.Windows.Forms.Cursors.Hand;
             this.botonDeslizable_Not247.IsOn = false;
-            this.botonDeslizable_Not247.Location = new System.Drawing.Point(173, 9);
+            this.botonDeslizable_Not247.Location = new System.Drawing.Point(181, 9);
             this.botonDeslizable_Not247.Name = "botonDeslizable_Not247";
             this.botonDeslizable_Not247.Size = new System.Drawing.Size(40, 20);
             this.botonDeslizable_Not247.TabIndex = 42;
@@ -667,8 +669,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
-            this.panel_ControlesInferiores.Controls.Add(this.Btn_Contador247);
             this.panel_ControlesInferiores.Controls.Add(this.Btn_ContadorRML);
+            this.panel_ControlesInferiores.Controls.Add(this.btn_ContadorRatificaciones);
+            this.panel_ControlesInferiores.Controls.Add(this.Btn_Contador247);
+            this.panel_ControlesInferiores.Controls.Add(this.fecha_Pericia);
             this.panel_ControlesInferiores.Controls.Add(this.label_StudRML);
             this.panel_ControlesInferiores.Controls.Add(this.pictureBox_CheckCargo);
             this.panel_ControlesInferiores.Controls.Add(this.pictureBox_CheckRatificacion);
@@ -682,47 +686,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(10, 320);
+            this.panel_ControlesInferiores.Location = new System.Drawing.Point(7, 320);
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(438, 165);
+            this.panel_ControlesInferiores.Size = new System.Drawing.Size(441, 165);
             this.panel_ControlesInferiores.TabIndex = 42;
             // 
-            // Btn_Contador247
+            // fecha_Pericia
             // 
-            this.Btn_Contador247.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.Btn_Contador247.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Contador247.FlatAppearance.BorderSize = 0;
-            this.Btn_Contador247.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Contador247.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Contador247.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_Contador247.Location = new System.Drawing.Point(0, 9);
-            this.Btn_Contador247.Name = "Btn_Contador247";
-            this.Btn_Contador247.Size = new System.Drawing.Size(25, 21);
-            this.Btn_Contador247.TabIndex = 48;
-            this.Btn_Contador247.Text = "0";
-            this.Btn_Contador247.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_Contador247.UseVisualStyleBackColor = false;
-            // 
-            // Btn_ContadorRML
-            // 
-            this.Btn_ContadorRML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.Btn_ContadorRML.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_ContadorRML.FlatAppearance.BorderSize = 0;
-            this.Btn_ContadorRML.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ContadorRML.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_ContadorRML.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_ContadorRML.Location = new System.Drawing.Point(384, 8);
-            this.Btn_ContadorRML.Name = "Btn_ContadorRML";
-            this.Btn_ContadorRML.Size = new System.Drawing.Size(25, 21);
-            this.Btn_ContadorRML.TabIndex = 47;
-            this.Btn_ContadorRML.Text = "0";
-            this.Btn_ContadorRML.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_ContadorRML.UseVisualStyleBackColor = false;
+            this.fecha_Pericia.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.fecha_Pericia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fecha_Pericia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.fecha_Pericia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha_Pericia.Location = new System.Drawing.Point(222, 11);
+            this.fecha_Pericia.Mask = "00/00/0000";
+            this.fecha_Pericia.Name = "fecha_Pericia";
+            this.fecha_Pericia.Size = new System.Drawing.Size(89, 13);
+            this.fecha_Pericia.TabIndex = 50;
+            this.fecha_Pericia.ValidatingType = typeof(System.DateTime);
             // 
             // label_StudRML
             // 
             this.label_StudRML.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_StudRML.Location = new System.Drawing.Point(289, 9);
+            this.label_StudRML.Location = new System.Drawing.Point(317, 9);
             this.label_StudRML.Name = "label_StudRML";
             this.label_StudRML.Size = new System.Drawing.Size(121, 20);
             this.label_StudRML.TabIndex = 45;
@@ -746,7 +731,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.pictureBox_CheckRatificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox_CheckRatificacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_CheckRatificacion.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
-            this.pictureBox_CheckRatificacion.Location = new System.Drawing.Point(222, 31);
+            this.pictureBox_CheckRatificacion.Location = new System.Drawing.Point(228, 35);
             this.pictureBox_CheckRatificacion.Name = "pictureBox_CheckRatificacion";
             this.pictureBox_CheckRatificacion.Size = new System.Drawing.Size(26, 28);
             this.pictureBox_CheckRatificacion.TabIndex = 43;
@@ -756,7 +741,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // label_Not247
             // 
             this.label_Not247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Not247.Location = new System.Drawing.Point(23, 9);
+            this.label_Not247.Location = new System.Drawing.Point(31, 9);
             this.label_Not247.Name = "label_Not247";
             this.label_Not247.Size = new System.Drawing.Size(195, 20);
             this.label_Not247.TabIndex = 41;
@@ -776,9 +761,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // label_RatificacionPersonal
             // 
             this.label_RatificacionPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RatificacionPersonal.Location = new System.Drawing.Point(20, 28);
+            this.label_RatificacionPersonal.Location = new System.Drawing.Point(29, 32);
             this.label_RatificacionPersonal.Name = "label_RatificacionPersonal";
-            this.label_RatificacionPersonal.Size = new System.Drawing.Size(207, 28);
+            this.label_RatificacionPersonal.Size = new System.Drawing.Size(204, 28);
             this.label_RatificacionPersonal.TabIndex = 38;
             this.label_RatificacionPersonal.Text = "Ratificación testimonial   ";
             this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -809,18 +794,51 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Victima.Size = new System.Drawing.Size(446, 27);
             this.panel_Victima.TabIndex = 40;
             // 
-            // lbl_Titulo
+            // label_TITULO
             // 
-            this.lbl_Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Titulo.Location = new System.Drawing.Point(93, 9);
-            this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.lbl_Titulo.Size = new System.Drawing.Size(301, 24);
-            this.lbl_Titulo.TabIndex = 31;
-            this.lbl_Titulo.Text = "ESTRUCTURA BASICA I.P.P.";
+            this.label_TITULO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(93, 9);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label_TITULO.Size = new System.Drawing.Size(301, 24);
+            this.label_TITULO.TabIndex = 31;
+            this.label_TITULO.Text = "ESTRUCTURA BASICA I.P.P.";
+            // 
+            // Btn_Contador247
+            // 
+            this.Btn_Contador247.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Contador247.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.Btn_Contador247.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Contador247.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Btn_Contador247.Location = new System.Drawing.Point(0, 9);
+            this.Btn_Contador247.Name = "Btn_Contador247";
+            this.Btn_Contador247.Size = new System.Drawing.Size(21, 19);
+            this.Btn_Contador247.TabIndex = 52;
+            // 
+            // btn_ContadorRatificaciones
+            // 
+            this.btn_ContadorRatificaciones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_ContadorRatificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.btn_ContadorRatificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ContadorRatificaciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_ContadorRatificaciones.Location = new System.Drawing.Point(0, 37);
+            this.btn_ContadorRatificaciones.Name = "btn_ContadorRatificaciones";
+            this.btn_ContadorRatificaciones.Size = new System.Drawing.Size(21, 19);
+            this.btn_ContadorRatificaciones.TabIndex = 53;
+            // 
+            // Btn_ContadorRML
+            // 
+            this.Btn_ContadorRML.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_ContadorRML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.Btn_ContadorRML.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_ContadorRML.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Btn_ContadorRML.Location = new System.Drawing.Point(410, 9);
+            this.Btn_ContadorRML.Name = "Btn_ContadorRML";
+            this.Btn_ContadorRML.Size = new System.Drawing.Size(21, 19);
+            this.Btn_ContadorRML.TabIndex = 54;
             // 
             // InicioCierre
             // 
@@ -828,7 +846,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(496, 547);
-            this.Controls.Add(this.lbl_Titulo);
+            this.Controls.Add(this.label_TITULO);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
@@ -840,7 +858,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioCierre_FormClosing);
             this.Load += new System.EventHandler(this.InicioCierre_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.lbl_Titulo, 0);
+            this.Controls.SetChildIndex(this.label_TITULO, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_Instruccion.ResumeLayout(false);
@@ -896,7 +914,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Button btn_AgregarImputado;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
 
         private Controles.Controles.TimePickerPersonalizado timePickerPersonalizado1;
         private System.Windows.Forms.Label lbl_DeptoJudicial;
@@ -920,7 +938,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.PictureBox pictureBox_CheckRatificacion;
         private System.Windows.Forms.PictureBox pictureBox_CheckCargo;
         private System.Windows.Forms.Label label_StudRML;
-        private System.Windows.Forms.Button Btn_ContadorRML;
-        private System.Windows.Forms.Button Btn_Contador247;
+        private System.Windows.Forms.MaskedTextBox fecha_Pericia;
+        private Controles.Boton_Contador Btn_ContadorRML;
+        private Controles.Boton_Contador btn_ContadorRatificaciones;
+        private Controles.Boton_Contador Btn_Contador247;
     }
 }

@@ -84,7 +84,7 @@ namespace Ofelia_Sara.Acceso_Usuarios
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Editar, "Seleccione los campos requeridos para poder EDITAR.", "EDITAR");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", "ELIMINAR");
-            ToolTipGeneral.ShowToolTip(this, btn_Cancelar, "CANCELAR");
+            ToolTipGeneral.ShowToolTip( btn_Cancelar, "CANCELAR");
 
         }
 

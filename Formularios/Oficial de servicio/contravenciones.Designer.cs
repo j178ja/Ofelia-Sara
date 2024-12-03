@@ -66,7 +66,7 @@
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.Fecha_Nacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
-            this.label_Titulo = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.FechaAudiencia = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
@@ -379,7 +379,7 @@
             this.panel1.Controls.Add(this.comboBox_Nacionalidad);
             this.panel1.Controls.Add(this.Fecha_Instruccion);
             this.panel1.Controls.Add(this.Fecha_Nacimiento);
-            this.panel1.Controls.Add(this.label_Titulo);
+            this.panel1.Controls.Add(this.label_TITULO);
             this.panel1.Controls.Add(this.FechaAudiencia);
             this.panel1.Controls.Add(this.textBox_Nombre);
             this.panel1.Controls.Add(this.btn_Imprimir);
@@ -470,18 +470,18 @@
             this.Fecha_Nacimiento.Size = new System.Drawing.Size(149, 21);
             this.Fecha_Nacimiento.TabIndex = 91;
             // 
-            // label_Titulo
+            // label_TITULO
             // 
-            this.label_Titulo.AutoSize = true;
-            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(208, 0);
-            this.label_Titulo.Name = "label_Titulo";
-            this.label_Titulo.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            this.label_Titulo.Size = new System.Drawing.Size(282, 25);
-            this.label_Titulo.TabIndex = 49;
-            this.label_Titulo.Text = "CONTRAVENCIONES";
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(206, -11);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            this.label_TITULO.Size = new System.Drawing.Size(282, 25);
+            this.label_TITULO.TabIndex = 49;
+            this.label_TITULO.Text = "CONTRAVENCIONES";
             // 
             // FechaAudiencia
             // 
@@ -549,7 +549,7 @@
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.DateTimePicker FechaAudiencia;
         private System.Windows.Forms.ToolTip toolTip1;
         private Controles.Controles.CustomDate Fecha_Nacimiento;

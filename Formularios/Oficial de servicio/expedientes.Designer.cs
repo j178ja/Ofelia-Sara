@@ -72,7 +72,7 @@
             this.label_Caratula = new System.Windows.Forms.Label();
             this.textBox_Causante = new System.Windows.Forms.TextBox();
             this.label_Victima = new System.Windows.Forms.Label();
-            this.label_Titulo = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_ConversorDocumentos.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
@@ -102,7 +102,7 @@
             this.panel1.Controls.Add(this.label_Caratula);
             this.panel1.Controls.Add(this.textBox_Causante);
             this.panel1.Controls.Add(this.label_Victima);
-            this.panel1.Controls.Add(this.label_Titulo);
+            this.panel1.Controls.Add(this.label_TITULO);
             this.panel1.Name = "panel1";
             // 
             // textBox_NumeroIpp
@@ -460,12 +460,12 @@
             resources.ApplyResources(this.label_Victima, "label_Victima");
             this.label_Victima.Name = "label_Victima";
             // 
-            // label_Titulo
+            // label_TITULO
             // 
-            resources.ApplyResources(this.label_Titulo, "label_Titulo");
-            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Name = "label_Titulo";
+            resources.ApplyResources(this.label_TITULO, "label_TITULO");
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Name = "label_TITULO";
             // 
             // Expedientes
             // 
@@ -502,7 +502,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.ComboBox comboBox_Secretario;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.ComboBox comboBox_Dependencia;

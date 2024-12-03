@@ -100,7 +100,6 @@
             this.btn_ModificarPersonal.Name = "btn_ModificarPersonal";
             this.btn_ModificarPersonal.Size = new System.Drawing.Size(22, 25);
             this.btn_ModificarPersonal.TabIndex = 36;
-            this.toolTip1.SetToolTip(this.btn_ModificarPersonal, "MODIFICAR Personal");
             this.btn_ModificarPersonal.UseVisualStyleBackColor = false;
             this.btn_ModificarPersonal.Click += new System.EventHandler(this.btn_ModificarPersonal_Click);
             // 
@@ -112,14 +111,12 @@
             this.btn_EliminarControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EliminarControl.FlatAppearance.BorderSize = 0;
-            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarControl.Image = global::Ofelia_Sara.Properties.Resources.eliminarUsuario;
             this.btn_EliminarControl.Location = new System.Drawing.Point(668, 4);
             this.btn_EliminarControl.Name = "btn_EliminarControl";
             this.btn_EliminarControl.Size = new System.Drawing.Size(22, 25);
             this.btn_EliminarControl.TabIndex = 51;
-            this.toolTip1.SetToolTip(this.btn_EliminarControl, "ELIMINAR Personal");
             this.btn_EliminarControl.UseVisualStyleBackColor = false;
             this.btn_EliminarControl.Click += new System.EventHandler(this.Btn_EliminarControl_Click);
             // 

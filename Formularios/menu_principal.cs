@@ -131,14 +131,14 @@ namespace Ofelia_Sara.Formularios
             ConfigurarBotones();
             //MostrarPlaceholder();
 
-            ToolTipGeneral.ShowToolTip(this, btn_Configurar, "Configuración de elementos.");
-            ToolTipGeneral.ShowToolTip(this, btn_Leyes, "Leyes y decretos útiles.");
-            ToolTipGeneral.ShowToolTip(this, btn_Mecanografia, "MECANOGRAFIA");
-            ToolTipGeneral.ShowToolTip(this, btn_Redactador, "REDACTAR POR VOZ");
-            ToolTipGeneral.ShowToolTip(this, label_OfeliaSara, "Instructivo de la aplicación.");
+            ToolTipGeneral.ShowToolTip( btn_Configurar, "Configuración de elementos.");
+            ToolTipGeneral.ShowToolTip( btn_Leyes, "Leyes y decretos útiles.");
+            ToolTipGeneral.ShowToolTip( btn_Mecanografia, "MECANOGRAFIA");
+            ToolTipGeneral.ShowToolTip( btn_Redactador, "REDACTAR POR VOZ");
+            ToolTipGeneral.ShowToolTip( label_OfeliaSara, "Instructivo de la aplicación.");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
-            ToolTipGeneral.ShowToolTip(this, comboBox_Buscar, " Ingrese que tarea desea realizar.");
-            ToolTipGeneral.ShowToolTip(this, btn_BoletinOficial, "Boletín Informativo.");
+            ToolTipGeneral.ShowToolTip( comboBox_Buscar, " Ingrese que tarea desea realizar.");
+            ToolTipGeneral.ShowToolTip( btn_BoletinOficial, "Boletín Informativo.");
 
             Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
                                              Properties.Resources.engranajeOriginal);   // Imagen original

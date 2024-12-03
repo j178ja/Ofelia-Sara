@@ -9,6 +9,7 @@ using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.general.animaciones;
 using Ofelia_Sara.general.clases;
 using Ofelia_Sara.Mensajes;
+using Ofelia_Sara.Controles;
 using Ofelia_Sara.Registro_de_personal;
 using System;
 using System.Collections.Generic;
@@ -84,10 +85,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ConfigurarAutocompletar(textBox_Caratula, sugerencias);
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
-
+ 
         }
+        //---FIN CONSTRUCTOR----
 
-
+        // Propiedad pública para acceder al botón
+        // En InicioCierre, agrega una propiedad pública que devuelva el botón
+        public Boton_Contador BtnContadorRatificaciones
+        {
+            get { return btn_ContadorRatificaciones; } // Asegúrate de que esta instancia esté inicializada en el diseñador
+        }
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
@@ -109,7 +116,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.");
 
-            ToolTipGeneral.ShowToolTip(this, Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
+            ToolTipGeneral.ShowToolTip( Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
+            ToolTipGeneral.ShowToolTip( btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
+            ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
             //-------------------------------------------------------------------------------
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
@@ -135,14 +144,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO,labell btn_not247 y btn_StudRML
 
-
-            // Llama al método para aplicar el color inicial del contador de rml
-            Btn_ContadorRML.TextChanged += (s, ev) => ActualizarColorTexto(Btn_ContadorRML);
-            ActualizarColorTexto(Btn_ContadorRML);
-
             Btn_Contador247.Visible = false;//invisibiliza el contador hasta que pase a SI btn deslizable
-            Btn_Contador247.TextChanged += (s, ev) => ActualizarColorTexto(Btn_Contador247);
-            ActualizarColorTexto(Btn_Contador247);
+            fecha_Pericia.Visible = false;  //para ocultar fecha de pericia hasta ques se establesca
+            btn_ContadorRatificaciones.Visible = false;// oculta contador hasta el check
+            Btn_ContadorRML.Visible = false;
         }
         // --FIN LOAD
         //-----------------------------------------------------------------------------
@@ -718,7 +723,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar si el CheckBox está marcado
             if (checkBox_RatificacionTestimonial.Checked)
             {
-
+                btn_ContadorRatificaciones.Visible = true;
                 pictureBox_CheckRatificacion.Visible = true;
 
                 // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
@@ -1011,23 +1016,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //--------------------------------------------------------------------
-        /// <summary>
-        /// VALIDACION CAMBIO DE COLOR PARA BTN_CONTADOR RML
-        /// </summary>
-        // Método para actualizar el color del texto del botón según su valor
-        private void ActualizarColorTexto(Button boton)
-        {
-            if (boton.Text == "0")
-            {
-                boton.ForeColor = Color.Tomato; // Texto rojo si el valor es "0"
-             
-            }
-            else
-            {
-                boton.ForeColor = Color.White; // Texto blanco para cualquier otro valor
-              
-            }
-        }
+       
 
         //------------------------------------------------------------------
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
@@ -1183,8 +1172,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     MensajeGeneral.Mostrar(
                         "Debe completar la totalidad de los campos para crear la NOTIFICACIÓN de Art. 247 C.P.P.",
-                        MensajeGeneral.TipoMensaje.Advertencia
-                    );
+                        MensajeGeneral.TipoMensaje.Advertencia);
                     return false; // No continuar si los campos están incompletos
                 }
 
@@ -1277,6 +1265,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-      
+       
+
     }
 }

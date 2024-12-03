@@ -4,7 +4,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
 namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
     public static class ToolTipGeneral
@@ -15,10 +14,9 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
         /// <summary>
         /// Muestra un ToolTip personalizado con un ícono al final del texto.
         /// </summary>
-        /// <param name="form">Formulario padre donde se muestra el ToolTip.</param>
         /// <param name="control">Control al que se asocia el ToolTip.</param>
         /// <param name="toolTipText">Texto que se mostrará en el ToolTip.</param>
-        public static void ShowToolTip(Form form, Control control, string toolTipText)
+        public static void ShowToolTip(Control control, string toolTipText)
         {
             ToolTip customToolTip = new ToolTip
             {
@@ -104,13 +102,15 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
                         e.ToolTipSize = new Size(width, height);
                     }
                 }
-            }; timer.Tick += (sender, e) =>
+            };
+
+            timer.Tick += (sender, e) =>
             {
                 // Obtener la posición actual del cursor en relación al control
                 Point cursorPosition = control.PointToClient(Control.MousePosition);
 
                 // Calcular la posición del ToolTip
-                int toolTipX = cursorPosition.X + 8; //  posición horizontal del cursor
+                int toolTipX = cursorPosition.X + 8; // posición horizontal del cursor
                 int toolTipY = cursorPosition.Y + 10; // píxeles debajo del cursor
 
                 // Mostrar el ToolTip personalizado si el mouse está sobre el control
@@ -129,13 +129,6 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
                     isCustomToolTipVisible = false;
                     customToolTip.Hide(control);
                 }
-            };
-
-
-            form.FormClosing += (sender, e) =>
-            {
-                timer.Stop();
-                timer.Dispose();
             };
 
             timer.Start();

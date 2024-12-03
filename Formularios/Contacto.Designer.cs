@@ -40,7 +40,7 @@
             this.pictureBox_Wpp = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel_Correo = new System.Windows.Forms.LinkLabel();
-            this.label_NombreContacto = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Github)).BeginInit();
@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.pictureBox_Wpp);
             this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel_Correo);
-            this.panel1.Controls.Add(this.label_NombreContacto);
+            this.panel1.Controls.Add(this.label_TITULO);
             this.panel1.Location = new System.Drawing.Point(26, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(745, 462);
@@ -184,18 +184,18 @@
             this.linkLabel_Correo.Text = "jbestudiosycapacitaciones@gmail.com";
             this.linkLabel_Correo.Click += new System.EventHandler(this.pictureBox_Correo_Click);
             // 
-            // label_NombreContacto
+            // label_TITULO
             // 
-            this.label_NombreContacto.AutoSize = true;
-            this.label_NombreContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_NombreContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NombreContacto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_NombreContacto.Location = new System.Drawing.Point(210, 0);
-            this.label_NombreContacto.Name = "label_NombreContacto";
-            this.label_NombreContacto.Padding = new System.Windows.Forms.Padding(30, 0, 30, 5);
-            this.label_NombreContacto.Size = new System.Drawing.Size(338, 36);
-            this.label_NombreContacto.TabIndex = 0;
-            this.label_NombreContacto.Text = "JORGE A. BONATO";
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(211, -16);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 5);
+            this.label_TITULO.Size = new System.Drawing.Size(338, 36);
+            this.label_TITULO.TabIndex = 0;
+            this.label_TITULO.Text = "JORGE A. BONATO";
             // 
             // Contacto
             // 
@@ -225,7 +225,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_NombreContacto;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel_Correo;
         private System.Windows.Forms.PictureBox pictureBox_Wpp;

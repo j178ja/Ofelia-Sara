@@ -53,7 +53,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
             //..............................
-           
+            // Asignación de eventos
+            comboBox_Marca.TextChanged += (s, e) => ValidarPanelVehiculo();
+            comboBox_Marca.SelectedIndexChanged += (s, e) => ValidarPanelVehiculo();
+            comboBox_Modelo.TextChanged += (s, e) => ValidarPanelVehiculo();
+            comboBox_Modelo.SelectedIndexChanged += (s, e) => ValidarPanelVehiculo();
+            comboBox_Color.TextChanged += (s, e) => ValidarPanelVehiculo();
+            comboBox_Color.SelectedIndexChanged += (s, e) => ValidarPanelVehiculo();
+            textBox_Chasis.TextChanged += (s, e) => ValidarPanelVehiculo();
+            textBox_Motor.TextChanged += (s, e) => ValidarPanelVehiculo();
+            textBox_Dominio.TextChanged += (s, e) => ValidarPanelVehiculo();
+
+            // Validar panel al cargar
+            this.Load += (s, e) => ValidarPanelVehiculo();
             //..............................
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarCausa);
@@ -63,17 +75,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Imagenes.Visible = false;
             panel_DatosVehiculo.Visible = false;
             panel_DatosEspecificos.Visible = false;
-            panel_Descripcion.Visible = false;
-            panel_ControlesInferiores.Visible = false;
-
+            
+            //para q se actualize imagen de panel descripcion
             richTextBox_Descripcion.TextChanged += (sender, e) => ValidarPanelDescripcion();
-
-            comboBox_Marca.TextChanged += (s, e) =>  ValidarPanelVehiculo();
-            comboBox_Modelo.TextChanged += (s, e) =>  ValidarPanelVehiculo();
-            comboBox_Color.TextChanged += (s, e) =>  ValidarPanelVehiculo();
-            textBox_Chasis.TextChanged += (s, e) =>  ValidarPanelVehiculo();
-            textBox_Motor.TextChanged += (s, e) =>  ValidarPanelVehiculo();
-            textBox_Dominio.TextChanged += (s, e) =>  ValidarPanelVehiculo();
+            panel_ControlesInferiores.Visible = false;// inicialice no visible
+            panel_Descripcion.Visible = true;
 
             //.........................................................
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
@@ -220,6 +226,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             //.........................................................
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
+
 
         }
         //-------FIN LOAD    
@@ -1279,51 +1286,31 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-       
+
         // METODO PARA VALIDAR DATOS EN PANEL DATOS VEHICULO
         private void ValidarPanelVehiculo()
         {
-            bool camposValidos = true;
+            bool camposValidos = VerificarCamposEnPanel(panel_DatosEspecificos);
 
-            // Iterar sobre los controles dentro del panel
-            foreach (Control control in panel_DatosEspecificos.Controls)
-            {
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
-                }
-                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-                }
-            }
             if (camposValidos)
             {
-                pictureBox_DatosVehiculo.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_DatosVehiculo.BackColor = Color.Transparent; // Fondo transparente
-                label_DatosVehiculo.BackColor = Color.FromArgb(4, 200, 0);//resalta con color verde mas brillante que el original
+                pictureBox_DatosVehiculo.Image = Properties.Resources.verificacion_exitosa;
+                label_DatosVehiculo.BackColor = Color.FromArgb(4, 200, 0);
             }
             else
             {
-                pictureBox_DatosVehiculo.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_DatosVehiculo.BackColor = Color.Transparent; // Fondo  de imagen transparente
-                label_DatosVehiculo.BackColor = Color.FromArgb(0, 192, 192); //retoma color original verde agua
+                pictureBox_DatosVehiculo.Image = Properties.Resources.Advertencia_Faltante;
+                label_DatosVehiculo.BackColor = Color.FromArgb(0, 192, 192);
             }
 
-            // Ajustar la posición del pictureBox al lado del label
             pictureBox_DatosVehiculo.Location = new System.Drawing.Point(
-                label_DatosVehiculo.Right + 5, // A la derecha del label con un margen de 5 px
-                label_DatosVehiculo.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2 // Centrado verticalmente
+                label_DatosVehiculo.Right + 5,
+                label_DatosVehiculo.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2
             );
-
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
             pictureBox_DatosVehiculo.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Asegurarse de que el pictureBox sea visible
             pictureBox_DatosVehiculo.Visible = true;
         }
+
 
 
         //----------------------------------------------------------------------------------------------
@@ -1347,7 +1334,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_ControlesInferiores.Visible = false;
             }
 
-            
+
 
             // Ajustar la posición del pictureBox al lado del label
             pictureBox_Descripcion.Location = new System.Drawing.Point(
@@ -1360,7 +1347,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Asegurarse de que el pictureBox sea visible
             pictureBox_Descripcion.Visible = true;
-          
+            AjustarTamanoFormulario();
+
         }
         //----------------------------------------------------------------------------------------------
         // METODO PARA VALIDAR DATOS EN PANEL IMAGEES

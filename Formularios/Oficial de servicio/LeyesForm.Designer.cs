@@ -30,17 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView_Documentos = new System.Windows.Forms.ListView();
-            this.label_Leyes = new System.Windows.Forms.Label();
+            this.label_TITULO = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
             this.panel1.Controls.Add(this.listView_Documentos);
-            this.panel1.Controls.Add(this.label_Leyes);
+            this.panel1.Controls.Add(this.label_TITULO);
             this.panel1.Location = new System.Drawing.Point(20, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(529, 272);
@@ -51,24 +49,24 @@
             this.listView_Documentos.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.listView_Documentos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listView_Documentos.HideSelection = false;
-            this.listView_Documentos.Location = new System.Drawing.Point(3, 49);
+            this.listView_Documentos.Location = new System.Drawing.Point(3, 36);
             this.listView_Documentos.Name = "listView_Documentos";
-            this.listView_Documentos.Size = new System.Drawing.Size(524, 196);
+            this.listView_Documentos.Size = new System.Drawing.Size(524, 209);
             this.listView_Documentos.TabIndex = 2;
             this.listView_Documentos.UseCompatibleStateImageBehavior = false;
             // 
-            // label_Leyes
+            // label_TITULO
             // 
-            this.label_Leyes.AutoSize = true;
-            this.label_Leyes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Leyes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Leyes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Leyes.Location = new System.Drawing.Point(120, 0);
-            this.label_Leyes.Name = "label_Leyes";
-            this.label_Leyes.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.label_Leyes.Size = new System.Drawing.Size(272, 30);
-            this.label_Leyes.TabIndex = 1;
-            this.label_Leyes.Text = "LEYES Y DECRETOS";
+            this.label_TITULO.AutoSize = true;
+            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
+            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_TITULO.Location = new System.Drawing.Point(120, -10);
+            this.label_TITULO.Name = "label_TITULO";
+            this.label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.label_TITULO.Size = new System.Drawing.Size(272, 30);
+            this.label_TITULO.TabIndex = 1;
+            this.label_TITULO.Text = "LEYES Y DECRETOS";
             // 
             // LeyesForm
             // 
@@ -92,7 +90,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_Leyes;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.ListView listView_Documentos;
     }
 }

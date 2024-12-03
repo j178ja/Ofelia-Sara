@@ -114,6 +114,8 @@
             this.radioButton_Automovil = new System.Windows.Forms.RadioButton();
             this.label_SeleccionVisu = new System.Windows.Forms.Label();
             this.label_TITULO = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
             this.panel_Instruccion.SuspendLayout();
@@ -158,6 +160,7 @@
             // 
             // panel_ControlesInferiores
             // 
+            this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
             this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
@@ -349,6 +352,7 @@
             this.comboBox_Fiscalia.Name = "comboBox_Fiscalia";
             this.comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
             this.comboBox_Fiscalia.TabIndex = 65;
+            this.comboBox_Fiscalia.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Fiscalia_SelectedIndexChanged);
             // 
             // lbl_Dependencia
             // 
@@ -701,7 +705,7 @@
             this.panel_DatosVehiculo.Name = "panel_DatosVehiculo";
             this.panel_DatosVehiculo.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.panel_DatosVehiculo.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_DatosVehiculo.Size = new System.Drawing.Size(599, 127);
+            this.panel_DatosVehiculo.Size = new System.Drawing.Size(599, 131);
             this.panel_DatosVehiculo.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
             this.panel_DatosVehiculo.TabIndex = 30;
             // 
@@ -710,6 +714,8 @@
             this.panel_DatosEspecificos.BorderRadius = 10;
             this.panel_DatosEspecificos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_DatosEspecificos.CamposCompletos = false;
+            this.panel_DatosEspecificos.Controls.Add(this.comboBox1);
+            this.panel_DatosEspecificos.Controls.Add(this.label1);
             this.panel_DatosEspecificos.Controls.Add(this.textBox_Chasis);
             this.panel_DatosEspecificos.Controls.Add(this.comboBox_Marca);
             this.panel_DatosEspecificos.Controls.Add(this.textBox_Motor);
@@ -728,13 +734,13 @@
             this.panel_DatosEspecificos.Name = "panel_DatosEspecificos";
             this.panel_DatosEspecificos.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.panel_DatosEspecificos.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_DatosEspecificos.Size = new System.Drawing.Size(596, 107);
+            this.panel_DatosEspecificos.Size = new System.Drawing.Size(596, 113);
             this.panel_DatosEspecificos.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
             this.panel_DatosEspecificos.TabIndex = 86;
             // 
             // textBox_Chasis
             // 
-            this.textBox_Chasis.Location = new System.Drawing.Point(392, 55);
+            this.textBox_Chasis.Location = new System.Drawing.Point(379, 41);
             this.textBox_Chasis.Name = "textBox_Chasis";
             this.textBox_Chasis.Size = new System.Drawing.Size(171, 20);
             this.textBox_Chasis.TabIndex = 88;
@@ -742,14 +748,14 @@
             // comboBox_Marca
             // 
             this.comboBox_Marca.FormattingEnabled = true;
-            this.comboBox_Marca.Location = new System.Drawing.Point(105, 27);
+            this.comboBox_Marca.Location = new System.Drawing.Point(105, 16);
             this.comboBox_Marca.Name = "comboBox_Marca";
             this.comboBox_Marca.Size = new System.Drawing.Size(171, 21);
             this.comboBox_Marca.TabIndex = 1;
             // 
             // textBox_Motor
             // 
-            this.textBox_Motor.Location = new System.Drawing.Point(105, 57);
+            this.textBox_Motor.Location = new System.Drawing.Point(105, 41);
             this.textBox_Motor.Name = "textBox_Motor";
             this.textBox_Motor.Size = new System.Drawing.Size(171, 20);
             this.textBox_Motor.TabIndex = 87;
@@ -772,7 +778,7 @@
             // comboBox_Modelo
             // 
             this.comboBox_Modelo.FormattingEnabled = true;
-            this.comboBox_Modelo.Location = new System.Drawing.Point(392, 28);
+            this.comboBox_Modelo.Location = new System.Drawing.Point(379, 17);
             this.comboBox_Modelo.Name = "comboBox_Modelo";
             this.comboBox_Modelo.Size = new System.Drawing.Size(171, 21);
             this.comboBox_Modelo.TabIndex = 0;
@@ -781,7 +787,7 @@
             // 
             this.label_Marca.AutoSize = true;
             this.label_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Marca.Location = new System.Drawing.Point(41, 28);
+            this.label_Marca.Location = new System.Drawing.Point(41, 17);
             this.label_Marca.Name = "label_Marca";
             this.label_Marca.Size = new System.Drawing.Size(62, 15);
             this.label_Marca.TabIndex = 9;
@@ -789,7 +795,7 @@
             // 
             // textBox_Dominio
             // 
-            this.textBox_Dominio.Location = new System.Drawing.Point(105, 83);
+            this.textBox_Dominio.Location = new System.Drawing.Point(105, 66);
             this.textBox_Dominio.Name = "textBox_Dominio";
             this.textBox_Dominio.Size = new System.Drawing.Size(171, 20);
             this.textBox_Dominio.TabIndex = 31;
@@ -798,7 +804,7 @@
             // 
             this.label_Modelo.AutoSize = true;
             this.label_Modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Modelo.Location = new System.Drawing.Point(314, 28);
+            this.label_Modelo.Location = new System.Drawing.Point(301, 17);
             this.label_Modelo.Name = "label_Modelo";
             this.label_Modelo.Size = new System.Drawing.Size(74, 15);
             this.label_Modelo.TabIndex = 25;
@@ -808,7 +814,7 @@
             // 
             this.label_Color.AutoSize = true;
             this.label_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Color.Location = new System.Drawing.Point(328, 83);
+            this.label_Color.Location = new System.Drawing.Point(315, 66);
             this.label_Color.Name = "label_Color";
             this.label_Color.Size = new System.Drawing.Size(62, 15);
             this.label_Color.TabIndex = 30;
@@ -818,7 +824,7 @@
             // 
             this.label_Motor.AutoSize = true;
             this.label_Motor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Motor.Location = new System.Drawing.Point(18, 56);
+            this.label_Motor.Location = new System.Drawing.Point(18, 41);
             this.label_Motor.Name = "label_Motor";
             this.label_Motor.Size = new System.Drawing.Size(85, 15);
             this.label_Motor.TabIndex = 26;
@@ -827,7 +833,7 @@
             // comboBox_Color
             // 
             this.comboBox_Color.FormattingEnabled = true;
-            this.comboBox_Color.Location = new System.Drawing.Point(392, 82);
+            this.comboBox_Color.Location = new System.Drawing.Point(379, 65);
             this.comboBox_Color.Name = "comboBox_Color";
             this.comboBox_Color.Size = new System.Drawing.Size(171, 21);
             this.comboBox_Color.TabIndex = 29;
@@ -836,7 +842,7 @@
             // 
             this.label_Chasis.AutoSize = true;
             this.label_Chasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Chasis.Location = new System.Drawing.Point(303, 56);
+            this.label_Chasis.Location = new System.Drawing.Point(290, 42);
             this.label_Chasis.Name = "label_Chasis";
             this.label_Chasis.Size = new System.Drawing.Size(84, 15);
             this.label_Chasis.TabIndex = 27;
@@ -846,7 +852,7 @@
             // 
             this.label_Dominio.AutoSize = true;
             this.label_Dominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dominio.Location = new System.Drawing.Point(28, 83);
+            this.label_Dominio.Location = new System.Drawing.Point(28, 67);
             this.label_Dominio.Name = "label_Dominio";
             this.label_Dominio.Size = new System.Drawing.Size(75, 15);
             this.label_Dominio.TabIndex = 28;
@@ -1000,7 +1006,7 @@
             this.panel_Descripcion.Controls.Add(this.btn_AmpliarReducir_DESCRIPCION);
             this.panel_Descripcion.Controls.Add(this.label_Descripcion);
             this.panel_Descripcion.EstaContraido = false;
-            this.panel_Descripcion.Location = new System.Drawing.Point(17, 708);
+            this.panel_Descripcion.Location = new System.Drawing.Point(17, 710);
             this.panel_Descripcion.Name = "panel_Descripcion";
             this.panel_Descripcion.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.panel_Descripcion.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1174,6 +1180,24 @@
             this.label_TITULO.TabIndex = 32;
             this.label_TITULO.Text = "EXAMEN DE VISU";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(105, 88);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(94, 21);
+            this.comboBox1.TabIndex = 89;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(59, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "AÑO :";
+            // 
             // Visu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1319,5 +1343,7 @@
         private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Instruccion;
         private System.Windows.Forms.ComboBox comboBox_Instructor;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
