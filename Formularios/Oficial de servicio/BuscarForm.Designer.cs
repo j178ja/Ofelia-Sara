@@ -90,7 +90,7 @@
             // Fecha_Actuacion
             // 
             this.Fecha_Actuacion.Location = new System.Drawing.Point(141, 267);
-            this.Fecha_Actuacion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+          
             this.Fecha_Actuacion.Name = "Fecha_Actuacion";
             this.Fecha_Actuacion.SelectedDate = new System.DateTime(2024, 10, 5, 20, 38, 40, 690);
             this.Fecha_Actuacion.Size = new System.Drawing.Size(364, 27);

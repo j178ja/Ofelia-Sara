@@ -16,6 +16,8 @@ namespace Ofelia_Sara.Mensajes
     public partial class MensajeGeneral : BaseForm
     {
         public DateTime FechaMinima { get; set; } = DateTime.MinValue;
+        public DateTime FechaSeleccionada { get; private set; }
+
 
         private bool datosGuardados = false;
 
@@ -35,8 +37,8 @@ namespace Ofelia_Sara.Mensajes
             FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
 
             // Configurar la fecha mínima en el control Fecha_Audiencia
-            Fecha_Audiencia.MinDate = FechaMinima;
-            Fecha_Audiencia.SelectedDate = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
+            //     SelectedDate * VALUE
+            Fecha_Compromiso.Value = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
 
             // Fecha_Audiencia.SelectedDate = DateTime.Now; //mantener actualizada fecha
 
@@ -52,7 +54,7 @@ namespace Ofelia_Sara.Mensajes
 
             btn_No.Visible = false;
             btn_Si.Visible = false;
-            Fecha_Audiencia.Visible = false;
+            Fecha_Compromiso.Visible = false;
 
 
 
@@ -179,12 +181,12 @@ namespace Ofelia_Sara.Mensajes
             btn_Si.Visible = mostrar;
             btn_No.Visible = mostrar;
             btn_Cerrar.Visible = false;
-            Fecha_Audiencia.Visible = false;
+            Fecha_Compromiso.Visible = false;
             btn_No.Focus();
             btn_No.BackColor = Color.FromArgb(255, 70, 70);
         }
 
-        public void MensajeAudiencia(string mensaje)
+        public void MensajeCompromiso(string mensaje)
         {
             label_Texto.Text = mensaje; // lbl_Mensaje es el Label que muestra el mensaje en el formulario
 
@@ -202,21 +204,27 @@ namespace Ofelia_Sara.Mensajes
             btn_No.Click += Btn_No_Cancelar_Click;
 
             btn_Cerrar.Visible = false;
-            Fecha_Audiencia.Visible = true;
+            Fecha_Compromiso.Visible = true;
+            Fecha_Compromiso.BringToFront();
             pictureBox_Icono.Visible = false;
+          
         }
 
         // Manejador para el evento Click del botón "GUARDAR"
         private void Btn_Si_Guardar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;  // Establece el resultado del formulario como OK
+            this.DialogResult = DialogResult.OK;
             datosGuardados = true;
 
-            // Aquí podrías agregar la lógica de guardar la fecha de la audiencia
+            // Obtener la fecha seleccionada del TimePicker
+            FechaSeleccionada = Fecha_Compromiso.Value;/*SelectedDate*/
+
+            // Mostrar mensaje de confirmación
             Mostrar("Se ha asignado la fecha indicada", TipoMensaje.Exito);
 
-            this.Close();  // Cierra el formulario
+            this.Close();
         }
+
 
 
         // Manejador para el evento Click del botón "CANCELAR"
@@ -228,33 +236,22 @@ namespace Ofelia_Sara.Mensajes
 
 
 
-        public static DialogResult MostrarAudiencia(string mensaje, TimePickerPersonalizado timePicker)
+        public static DateTime? MostrarCompromiso(string mensaje, DateTimePicker timePicker)
         {
-            DateTime fechaBase = timePicker.SelectedDate; // Obteniendo la fecha base
             using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion))
             {
-                form.FechaMinima = fechaBase; // Configurando la fecha mínima
-                form.MensajeAudiencia(mensaje);
-                return form.ShowDialog(); // Devolver el resultado del diálogo
+                // Pasar el TimePicker personalizado al formulario emergente
+                form.Fecha_Compromiso = timePicker;
+                form.MensajeCompromiso(mensaje);
+
+                // Mostrar el formulario y obtener el resultado
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    return timePicker.Value;
+                }
+
+                return null;
             }
         }
-
-
-
-
-        private void Fecha_Audiencia_ValueChanged(object sender, EventArgs e)
-        {
-            if (Fecha_Audiencia.SelectedDate < FechaMinima)
-            {
-                MensajeGeneral.Mostrar("Seleccione una fecha posterior a la fecha de inicio de actuaciones.",
-                    MensajeGeneral.TipoMensaje.Advertencia);
-                Fecha_Audiencia.SelectedDate = FechaMinima;
-            }
-        }
-
-
-
-
-
     }
 }

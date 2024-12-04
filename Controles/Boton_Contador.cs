@@ -17,64 +17,44 @@ namespace Ofelia_Sara.Controles
         {
             InitializeComponent();
             CrearControles();
-
-            this.Text = "0"; // Inicializar el texto del botón en "0"
-            ActualizarColorTexto(); // Actualizar el color del texto en función de su valor
         }
 
-        // Propiedad pública para acceder al botón desde el formulario
         public Button BtnContador => btnContador;
 
-        /// <summary>
-        /// Permite modificar el contenido de texto desde diferentes formularios y actualiza el color del texto
-        /// </summary>
         public new string Text
         {
             get => btnContador.Text;
             set
             {
                 btnContador.Text = value;
-                ActualizarColorTexto();
+                
+                ActualizarTamañoYColor();
+               
             }
         }
 
-        /// <summary>
-        /// Crear controles iniciales
-        /// </summary>
         private void CrearControles()
         {
-            // Inicializar el botón
             btnContador = new Button
             {
-                Size = new Size(21, 21),
-               // Dock = DockStyle.Fill,
                 FlatStyle = FlatStyle.Flat,
-               
-                Text = "0",
                 TextAlign = ContentAlignment.MiddleCenter,
                 BackColor = Color.FromArgb(0, 154, 174),
-               
                 Cursor = Cursors.Hand
             };
 
             btnContador.Click += BtnContador_Click;
             Controls.Add(btnContador);
 
-            // Crear el ContextMenuStrip
             listaDesplegable = new ContextMenuStrip
             {
                 Renderer = new CustomRenderer()
             };
         }
 
-        /// <summary>
-        /// Cargar elementos dinámicamente en el menú desplegable
-        /// </summary>
-        /// <param name="elementos">Lista de elementos a mostrar</param>
         public void CargarElementos(List<string> elementos)
         {
-            listaDesplegable.Items.Clear(); // Limpiar lista previa
-
+            listaDesplegable.Items.Clear();
             foreach (var item in elementos)
             {
                 var menuItem = CrearMenuItem(item);
@@ -82,9 +62,6 @@ namespace Ofelia_Sara.Controles
             }
         }
 
-        /// <summary>
-        /// Crear un ToolStripMenuItem personalizado
-        /// </summary>
         private ToolStripMenuItem CrearMenuItem(string item)
         {
             var menuItem = new ToolStripMenuItem(item)
@@ -95,11 +72,9 @@ namespace Ofelia_Sara.Controles
                 Image = Properties.Resources.ICOes
             };
 
-            // Eventos de hover
             menuItem.MouseHover += (s, e) => menuItem.BackColor = Color.FromArgb(81, 169, 251);
             menuItem.MouseLeave += (s, e) => menuItem.BackColor = Color.FromArgb(178, 213, 230);
 
-            // Ícono de eliminación
             var iconoEliminar = new ToolStripMenuItem
             {
                 Image = Properties.Resources.eliminarUsuario,
@@ -112,9 +87,6 @@ namespace Ofelia_Sara.Controles
             return menuItem;
         }
 
-        /// <summary>
-        /// Mostrar un mensaje de confirmación para eliminar un elemento
-        /// </summary>
         private void MostrarMensajeEliminacion(ToolStripMenuItem menuItem, string item)
         {
             using (var mensaje = new MensajeGeneral(
@@ -130,25 +102,47 @@ namespace Ofelia_Sara.Controles
             }
         }
 
-        /// <summary>
-        /// Evento de clic del botón principal
-        /// </summary>
         private void BtnContador_Click(object sender, EventArgs e)
         {
             listaDesplegable.Show(btnContador, new Point(0, btnContador.Height));
         }
 
-        /// <summary>
-        /// Actualizar el color del texto del botón según su valor
-        /// </summary>
-        public void ActualizarColorTexto()
+        private void ActualizarTamañoYColor()
         {
-            btnContador.ForeColor = btnContador.Text == "0" ? Color.Crimson : Color.White;
+            // Cambiar el color del fondo según el valor del texto
+            if (btnContador.Text == "0")
+            {
+                btnContador.BackColor = Color.Crimson;
+                btnContador.ForeColor = Color.White;
+            }
+            else
+            {
+                btnContador.BackColor = Color.FromArgb(0, 154, 174);
+                btnContador.ForeColor = Color.White;
+            }
+
+            // Medir el ancho necesario para el texto
+            using (Graphics g = btnContador.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(btnContador.Text, btnContador.Font);
+                int newWidth = Math.Max(21, (int)textSize.Width + 10); // Ancho mínimo de 21 px más margen
+
+                // Si el texto excede el tamaño mínimo, expandir el botón hacia la izquierda
+                int offset = newWidth - btnContador.Width;
+
+                if (offset > 0)
+                {
+                    btnContador.Width = newWidth;
+                    btnContador.Left -= offset;
+
+                    // Ajustar el tamaño del UserControl para que coincida con el botón
+                    this.Size = new Size(btnContador.Width, btnContador.Height);
+                }
+            }
         }
 
-        /// <summary>
-        /// Renderer personalizado para el ContextMenuStrip
-        /// </summary>
+
+
         private class CustomRenderer : ToolStripProfessionalRenderer
         {
             protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
@@ -157,6 +151,10 @@ namespace Ofelia_Sara.Controles
                 base.OnRenderMenuItemBackground(e);
             }
         }
+
+        private void Boton_Contador_Load(object sender, EventArgs e)
+        {
+            ActualizarTamañoYColor();
+        }
     }
 }
-

@@ -36,5 +36,30 @@ namespace Ofelia_Sara.Formularios
         {
 
         }
+
+        private void label_Not247_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fecha_Pericia_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void botonDeslizable_Not247_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Contador247_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

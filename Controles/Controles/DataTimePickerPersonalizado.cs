@@ -1,82 +1,71 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
+
 
 namespace Ofelia_Sara.Controles.Controles
 {
-
-
     public partial class TimePickerPersonalizado : UserControl
     {
-        public event EventHandler FechaCambiada;
-        public TimePickerPersonalizado() : this(200, 30) // Valores por defecto
+        private DateTimePicker dateTimePickerPersonalizado;
+
+        public TimePickerPersonalizado()
         {
+            InitializeComponent();
+            CrearControles();
         }
 
+        // Constructor para permitir pasar parámetros de tamaño
         public TimePickerPersonalizado(int width, int height)
         {
             InitializeComponent();
-
-            // Ajustar el tamaño del DateTimePicker y del UserControl
-            dateTimePickerGeneral.Width = width;
-            dateTimePickerGeneral.Height = height;
-            this.Size = new Size(width, height);
-
-
+            CrearControles();
+            this.Width = width;
+            this.Height = height;
+            AjustarTamanoDateTimePicker();
         }
 
-        private void DateTimePickerGeneral_ValueChanged(object sender, EventArgs e)
+        private void CrearControles()
         {
-            // Obtener la fecha seleccionada del DateTimePicker
-            DateTime fechaSeleccionada = dateTimePickerGeneral.Value;
+            dateTimePickerPersonalizado = new DateTimePicker
+            {
+                Format = DateTimePickerFormat.Custom,
+                CustomFormat = "dd 'DE' MMMM 'DE' yyyy",
+                ShowUpDown = false, // Desactiva el selector de flechas
+                Width = this.Width, // Ajuste automático
+                Height = this.Height,
+                Cursor = Cursors.Hand
+            };
 
-            // Formatear el texto para mostrar solo el mes y el año en mayúsculas
-            string mesEnMayusculas = fechaSeleccionada.ToString("MMMM").ToUpper();
+            dateTimePickerPersonalizado.ValueChanged += dateTimePickerPersonalizado_ValueChanged;
+            this.Controls.Add(dateTimePickerPersonalizado);
 
-            // Mostrar el mes formateado en mayúsculas
-            dateTimePickerGeneral.CustomFormat = $"dd ' DE  ' {mesEnMayusculas} ' DE  ' yyyy";
-
-            // Disparar el evento personalizado
-            FechaCambiada?.Invoke(this, EventArgs.Empty);
+            // Ajustar el tamaño del DateTimePicker al cambiar el tamaño del UserControl
+            this.SizeChanged += (sender, e) => AjustarTamanoDateTimePicker();
         }
 
-        // Propiedad para acceder y modificar la fecha desde fuera del control
+        private void dateTimePickerPersonalizado_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dateTimePickerPersonalizado.Value;
+            string fechaFormateada = fechaSeleccionada.ToString("dd 'DE' MMMM 'DE' yyyy", CultureInfo.InvariantCulture).ToUpper();
+
+            // Usar un método auxiliar para establecer el texto, si el DateTimePicker permite actualizar el texto directamente
+            dateTimePickerPersonalizado.Text = fechaFormateada;
+        }
+
+
+
+        private void AjustarTamanoDateTimePicker()
+        {
+            dateTimePickerPersonalizado.Width = this.Width;
+            dateTimePickerPersonalizado.Height = this.Height;
+        }
+
         public DateTime SelectedDate
         {
-            get => dateTimePickerGeneral.Value;
-            set
-            {
-                if (value < MinDate)
-                {
-                    dateTimePickerGeneral.Value = MinDate; // Ajusta si la fecha es menor
-                }
-                else
-                {
-                    dateTimePickerGeneral.Value = value;
-                }
-            }
+            get => dateTimePickerPersonalizado.Value;
+            set => dateTimePickerPersonalizado.Value = value;
         }
-
-        public DateTime MinDate
-        {
-            get => dateTimePickerGeneral.MinDate;
-            set => dateTimePickerGeneral.MinDate = value;
-        }
-        private void TimePickerPersonalizado_SizeChanged(object sender, EventArgs e)
-        {
-            AdjustDateTimePickerSize();
-        }
-
-        // Método para ajustar el tamaño del DateTimePicker al tamaño del UserControl
-        private void AdjustDateTimePickerSize()
-        {
-            dateTimePickerGeneral.Width = this.Width;
-            dateTimePickerGeneral.Height = this.Height;
-        }
-
-
-
-
     }
 }
-

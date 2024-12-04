@@ -27,13 +27,13 @@ namespace Ofelia_Sara.Formularios
     {
         private Cursor customHandCursor;
         private Cursor CursorLapizDerecha;
-        private PictureBox pictureBoxError;
-        private ToolTip toolTipError;
+       // private PictureBox pictureBoxError;
+        //private ToolTip toolTipError;
         private Timer errorTimer;
-        private bool isPictureBoxVisible = true;
+       // private bool isPictureBoxVisible = true;
         private Dictionary<Control, PictureBox> pictureBoxesErrores = new Dictionary<Control, PictureBox>();
 
-        private DatabaseConnection dbConnection;
+       // private DatabaseConnection dbConnection;
         protected ComisariasManager dbManager = new ComisariasManager();//para cargar comisarias// Para cargar comisarías
         protected InstructoresManager instructoresManager = new InstructoresManager();    // Para cargar instructores
         protected SecretariosManager secretariosManager = new SecretariosManager();    // Para cargar instructores
@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Formularios
 
         private LinkLabel footerLinkLabel;
 
-        private IContainer components;
+       // private IContainer components;
         protected TimePickerPersonalizado timePickerPersonalizadoFecha;
 
        

@@ -1,4 +1,5 @@
 ﻿
+using BaseDatos.Mensaje;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -81,12 +82,7 @@ namespace Ofelia_Sara.Controles.Controles
                 // Redimensionar el panel después de eliminar el control
                 NuevaPersonaControlHelper.AjustarAlturaPanel(panel);
             }
-            //// Llamar al método de reposicionamiento en el formulario principal
-            //Form formularioPrincipal = this.FindForm();
-            //if (formularioPrincipal is InicioCierre inicioCierre)
-            //{
-
-            //}   HAY QUE CREAR UN METODO EFICIENTE PARA REPOSICIONAR
+          // metodo reposiconamiento
         }
 
 
@@ -129,11 +125,11 @@ namespace Ofelia_Sara.Controles.Controles
             // Dependiendo del tipo, seleccionar el nombre del formulario a cargar
             if (TipoPersona == "Victima")
             {
-                nombreFormulario = "NombreDelProyecto.OtroNamespace.AgregarDatosPersonalesVictima";
+                nombreFormulario = "OfeliaSara.Formularios.DatosPersonales.AgregarDatosPersonalesVictima";
             }
             else if (TipoPersona == "Imputado")
             {
-                nombreFormulario = "NombreDelProyecto.OtroNamespace.AgregarDatosPersonalesImputado";
+                nombreFormulario = "OfeliaSara.Formularios.DatosPersonales.AgregarDatosPersonalesImputado";
             }
 
             if (!string.IsNullOrEmpty(nombreFormulario))
@@ -157,12 +153,12 @@ namespace Ofelia_Sara.Controles.Controles
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo encontrar el formulario especificado.");
+                        MensajeGeneral.Mostrar("No se pudo encontrar el formulario especificado.",MensajeGeneral.TipoMensaje.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar el formulario: " + ex.Message);
+                    MensajeGeneral.Mostrar("Error al cargar el formulario: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }

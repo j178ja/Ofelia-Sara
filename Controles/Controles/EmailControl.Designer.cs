@@ -40,7 +40,6 @@
             this.textBox_Email.Size = new System.Drawing.Size(230, 20);
             this.textBox_Email.TabIndex = 0;
             this.textBox_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            
             // 
             // label_arroba
             // 
@@ -54,6 +53,7 @@
             // 
             // comboBox_EmpresaEmail
             // 
+            this.comboBox_EmpresaEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_EmpresaEmail.FormattingEnabled = true;
             this.comboBox_EmpresaEmail.Items.AddRange(new object[] {
             "gmail.com",

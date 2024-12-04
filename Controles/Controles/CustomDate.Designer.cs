@@ -50,7 +50,6 @@ namespace Ofelia_Sara.Controles.Controles
             this.btn_Calendario.Size = new System.Drawing.Size(18, 20);
             this.btn_Calendario.TabIndex = 1;
             this.btn_Calendario.Text = "...";
-            this.toolTip1.SetToolTip(this.btn_Calendario, "Seleccione fecha");
             this.btn_Calendario.UseVisualStyleBackColor = false;
             this.btn_Calendario.Click += new System.EventHandler(this.btn_Calendario_Click);
             // 

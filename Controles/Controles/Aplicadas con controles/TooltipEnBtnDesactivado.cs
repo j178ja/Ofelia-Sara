@@ -141,9 +141,14 @@ namespace Controles.Controles.Aplicadas_con_controles
             }
         }
 
-
-        public static void TooltipActivo(Form form, Control control, string toolTipText)
+        public static void TooltipActivo(Form form, Control control, string toolTipText, bool activar)
         {
+            // Verificar si el control está habilitado y visible antes de mostrar el ToolTip
+            if (!activar || !control.Visible || !control.Enabled)
+            {
+                return; // No mostrar el ToolTip si el control está deshabilitado o no es visible
+            }
+
             ToolTip customToolTip = new ToolTip
             {
                 OwnerDraw = true // Habilitar dibujo personalizado
@@ -244,8 +249,7 @@ namespace Controles.Controles.Aplicadas_con_controles
             };
 
             timer.Start();
-
         }
+
     }
 }
-

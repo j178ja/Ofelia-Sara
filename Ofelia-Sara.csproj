@@ -261,9 +261,6 @@
     <Compile Include="Controles\Barra Busqueda\PlaceholderComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controles\Barras personalizadas\CustomProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controles\Controles\AgregarFiscaliaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -337,7 +334,7 @@
       <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Controles\Reposicionar paneles\Buscar Personal\AgregarPersonal.cs" />
-    <Compile Include="Controles\Controles\Reposicionar paneles\Expedientes\AgregarControl.cs" />
+    <Compile Include="Controles\Controles\Reposicionar paneles\InicioCierre\ReposicionarSegunAgregado.cs" />
     <Compile Include="Controles\Controles\Reposicionar paneles\PosicionarFormularioDebajo.cs" />
     <Compile Include="Controles\Controles\BotonDeslizable.cs">
       <SubType>UserControl</SubType>
@@ -528,9 +525,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Acceso Usuarios\UsuarioForm.resx">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controles\Barras personalizadas\CustomProgressBar.resx">
-      <DependentUpon>CustomProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Boton_Contador.resx">
       <DependentUpon>Boton_Contador.cs</DependentUpon>
@@ -777,7 +771,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controles\Controles\Reposicionar paneles\Inicio-Cierre\" />
+    <Folder Include="Controles\Controles\Reposicionar paneles\Expedientes\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">

@@ -116,7 +116,7 @@
             this.btn_AgregarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AgregarPersonal.FlatAppearance.BorderSize = 3;
             this.btn_AgregarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarPersonal.Location = new System.Drawing.Point(492, 36);
+            this.btn_AgregarPersonal.Location = new System.Drawing.Point(496, 37);
             this.btn_AgregarPersonal.Name = "btn_AgregarPersonal";
             this.btn_AgregarPersonal.Size = new System.Drawing.Size(15, 23);
             this.btn_AgregarPersonal.TabIndex = 35;
@@ -128,7 +128,7 @@
             // textBox_NumeroLegajo
             // 
             this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(323, 37);
+            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(327, 38);
             this.textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
             this.textBox_NumeroLegajo.Size = new System.Drawing.Size(163, 22);
             this.textBox_NumeroLegajo.TabIndex = 34;
@@ -140,7 +140,7 @@
             // 
             this.lbl_Legajo.AutoSize = true;
             this.lbl_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Legajo.Location = new System.Drawing.Point(175, 40);
+            this.lbl_Legajo.Location = new System.Drawing.Point(179, 41);
             this.lbl_Legajo.Name = "lbl_Legajo";
             this.lbl_Legajo.Size = new System.Drawing.Size(142, 16);
             this.lbl_Legajo.TabIndex = 33;

@@ -457,7 +457,7 @@
             this.Fecha_Instruccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
             this.Fecha_Instruccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+           // this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 9, 25, 22, 49, 58, 572);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(295, 29);

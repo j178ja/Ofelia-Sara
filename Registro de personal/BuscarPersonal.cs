@@ -30,8 +30,8 @@ namespace Ofelia_Sara.Registro_de_personal
         {
             InitializeComponent();
             this.FormClosing += BuscarPersonal_FormClosing;
-
         }
+        //---FIN CONSTRUCTOR
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
         {
@@ -61,13 +61,17 @@ namespace Ofelia_Sara.Registro_de_personal
                 control.Eliminado += (s, arg) => ActualizarContadorRatificaciones();
             }
 
-            
-
         }
         // FIN LOAD------------------
 
-        //---redibujar para solucionar problema de bordes redondeados
-
+        /// <summary>
+        /// METODO PARA REDIBUJAR BORDES REDONDEADOS
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="borderRadius"></param>
+        /// <param name="borderSize"></param>
+        /// <param name="borderColor"></param>
+      
         private void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
         {
             using (GraphicsPath path = new GraphicsPath())
@@ -84,25 +88,31 @@ namespace Ofelia_Sara.Registro_de_personal
                 }
             }
         }
-
-
-
+        //....................
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
         }
-
         //-----------------------------------------------------------------------------
+
+        /// <summary>
+        /// METODO PARA CARGAR CON FOCO EN NUMERO DE LEGAJO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
-
-
         //________________________________________________________________________________
 
-        //------- BOTON PARA REGISTRAR DATOS COMPLETOS DE NUEVO PERSONAL----------
+        /// <summary>
+        /// METODO PARA REGISTRAR UNA NUEVA RATIFICACION TESTIMONIAL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
             // Obtener el texto del TextBox_NumeroLegajo en BuscarPersonal
@@ -112,9 +122,14 @@ namespace Ofelia_Sara.Registro_de_personal
             NuevoPersonal nuevoPersonalForm = new NuevoPersonal(numeroLegajo);
             nuevoPersonalForm.ShowDialog();
         }
+        //-------------------------------------------------------------------
 
+        /// <summary>
+        /// METODO DE VALIDACION DE NUMERO DE LEGAJO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-        //-----------------METODO PARA LOS NUMEROS EN TEXTBOX NUMERO LEGAJO-----------------
         private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite dígitos y teclas de control
@@ -131,14 +146,25 @@ namespace Ofelia_Sara.Registro_de_personal
 
             }
         }
-
         //_________________________________________________________________________________________
 
-        //-------VALIDACION ACTIVACION BTN_AGREGAR PERSONAL------------------------------------------
+        /// <summary>
+        /// VALIDACION ACTIVACION BTN_AGREGAR PERSONAL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
         }
+        //--------------------------------------------------------------------
+
+        /// <summary>
+        /// METODO PARA VERIFICAR NUMERO DE LEGAJO EN BASE DE DATOS Y AGREGAR RATIFICACION 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void btn_AgregarPersonal_Click(object sender, EventArgs e)
         {
@@ -154,22 +180,29 @@ namespace Ofelia_Sara.Registro_de_personal
                 ActualizarContadorRatificaciones();
             }
         }
+        //---------------------------------------------------------------------------
+
+        /// <summary>
+        /// Este método manejará el evento cuando el botón Modificar Personal sea clicado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
 
-
-        // Este método manejará el evento cuando el botón Modificar Personal sea clicado
         private void PersonalSeleccionadoControl_ModificarPersonalClicked(object sender, EventArgs e)
         {
             // Abrir el formulario NuevoPersonal
             NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
             nuevoPersonalForm.ShowDialog();
         }
-
         //---------------------------------------------------------------------------------------------------------------------
 
-
-        //____________________________________________________________________________________________
-
+        /// <summary>
+        /// MENSAJE DE AYUDA EN FORMULARIO 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+       
         private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -178,7 +211,13 @@ namespace Ofelia_Sara.Registro_de_personal
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
+        //-------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// EVENTO PARA GUARDAR LAS RATIFICACIONES TESTIMONIALES
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             // Verificar si se han agregado controles del tipo PersonalSeleccionadoControl al panel
@@ -203,12 +242,17 @@ namespace Ofelia_Sara.Registro_de_personal
             }
             
         }
+        //-------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-
-        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             if (!datosGuardados) // Si los datos no han sido guardados
             {
                 using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
@@ -224,7 +268,12 @@ namespace Ofelia_Sara.Registro_de_personal
                 }
             }
         }
-        // Método para verificar que el personal seleccionado no haya sido previamente agregado
+        //------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Método para verificar que el personal seleccionado no haya sido previamente agregado
+        /// </summary>
+
         private void VerificarNumeroLegajo()
         {
             string numeroIngresado = textBox_NumeroLegajo.Text;
@@ -237,11 +286,17 @@ namespace Ofelia_Sara.Registro_de_personal
             else
             {
                 // Si no se encuentra el legajo, llama a AgregarPersonalSeleccionado
-                AgregarPersonalSeleccionado();
+                AgregarPersonalSeleccionado(); //verifica si existe en base de datos  y lo agrega 
             }
         }
+        //------------------------------------------------------------------------------------------
 
-        // Método auxiliar para buscar si el legajo ya está agregado en los controles existentes
+        /// <summary>
+        ///  Método auxiliar para buscar si el legajo ya está agregado en los controles existentes
+        /// </summary>
+        /// <param name="numeroLegajo"></param>
+        /// <returns></returns>
+        
         private bool EsLegajoYaAgregado(string numeroLegajo)
         {
             foreach (Control control in panel_PersonalSeleccionado.Controls)
@@ -261,8 +316,11 @@ namespace Ofelia_Sara.Registro_de_personal
             }
             return false; // Retorna false si no encuentra coincidencias
         }
+        //----------------------------------------------------------------------------------
 
-        // Método para agregar un nuevo control de personal seleccionado al panel
+        /// <summary>
+        ///  Método para agregar un nuevo control de personal seleccionado al panel
+        /// </summary>
         private void AgregarPersonalSeleccionado()
         {
             try
@@ -308,8 +366,9 @@ namespace Ofelia_Sara.Registro_de_personal
         }
         //-----------------------------------------------
 
-
-        //para actualizar el contador de ratificaciones testimoniales
+        /// <summary>
+        /// METODO PARA ACTUALIZAR CONTADOR DE RATIFICACIONES EN FORM INCIO CIERRE
+        /// </summary>
         private void ActualizarContadorRatificaciones()
         {
             // Contar los controles en el panel
@@ -322,12 +381,14 @@ namespace Ofelia_Sara.Registro_de_personal
                 // Acceder a la propiedad pública que devuelve la instancia de Boton_Contador
                 Boton_Contador btnContadorControl = formInicioCierre.BtnContadorRatificaciones;
 
-                //if (btnContadorControl != null)
-                //{
-                //    // Acceder al botón interno y actualizar su texto
-                //    btnContadorControl.BtnContador.Text = numeroControles.ToString();
-                   
-                //}
+                if (btnContadorControl != null)
+                {
+                    // Acceder al botón interno y actualizar su texto
+                    btnContadorControl.BtnContador.Text = numeroControles.ToString();
+
+                    // Llamar al método para actualizar el color del botón
+                   // btnContadorControl.ActualizarTamañoYColor();
+                }
             }
         }
 

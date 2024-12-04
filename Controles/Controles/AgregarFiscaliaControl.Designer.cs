@@ -62,6 +62,7 @@
             // 
             // comboBox_Localidad
             // 
+            this.comboBox_Localidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Localidad.FormattingEnabled = true;
             this.comboBox_Localidad.Items.AddRange(new object[] {
@@ -95,6 +96,7 @@
             // 
             // comboBox_DeptoJudicial
             // 
+            this.comboBox_DeptoJudicial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_DeptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_DeptoJudicial.FormattingEnabled = true;
             this.comboBox_DeptoJudicial.Items.AddRange(new object[] {
@@ -106,6 +108,7 @@
             // 
             // comboBox_AgenteFiscal
             // 
+            this.comboBox_AgenteFiscal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_AgenteFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_AgenteFiscal.FormattingEnabled = true;
             this.comboBox_AgenteFiscal.Items.AddRange(new object[] {
@@ -129,6 +132,7 @@
             // 
             // comboBox_Fiscalia
             // 
+            this.comboBox_Fiscalia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_Fiscalia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Fiscalia.FormattingEnabled = true;
             this.comboBox_Fiscalia.Items.AddRange(new object[] {

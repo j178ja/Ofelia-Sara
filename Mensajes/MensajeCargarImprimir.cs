@@ -15,7 +15,7 @@ namespace Ofelia_Sara.general.clases
 
         private Panel MensajeImprimir;
         private Panel innerPanel;
-        private CustomProgressBar progressBar;
+        private ProgressBar progressBar;
         private Label label1;
         private Timer timer1;
         private Button btn_CancelarImpresion;
@@ -90,7 +90,7 @@ namespace Ofelia_Sara.general.clases
             this.imagen_Impresora = new System.Windows.Forms.PictureBox();
             this.btn_CancelarImpresion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar = new Ofelia_Sara.general.clases.CustomProgressBar();
+            //this.progressBar = new Ofelia_Sara.general.clases.CustomProgressBar();
             this.MensajeImprimir.SuspendLayout();
             this.innerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_Impresora)).BeginInit();

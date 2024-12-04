@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 
 namespace Ofelia_Sara.Controles.Controles
@@ -30,7 +31,7 @@ namespace Ofelia_Sara.Controles.Controles
 
             CustomDateTextBox_Load(this, EventArgs.Empty);// inicializar load
 
-
+            ToolTipGeneral.ShowToolTip(btn_Calendario, "Seleccione fecha.");
         }
         private void CustomDateTextBox_Load(object sender, EventArgs e)
         {

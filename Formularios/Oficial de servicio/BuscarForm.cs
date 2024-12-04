@@ -22,7 +22,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             // Crear una instancia de TimePickerPersonalizado con tamaño especificado
-            TimePickerPersonalizado fecha_Instruccion = new TimePickerPersonalizado(263, 26);
+            TimePickerPersonalizado fecha_Instruccion = new TimePickerPersonalizado();
 
             // Establecer la ubicación del UserControl
             fecha_Instruccion.Location = new Point(150, 50);

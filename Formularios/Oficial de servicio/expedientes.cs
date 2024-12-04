@@ -81,7 +81,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Convertir, "Seleccione que tipo de archivo desea y agrege un archivo.", "Presione para generar un archivo en el formato deseado");
-            TooltipEnControlDesactivado.TooltipActivo(this, btn_EliminarArchivo, "Eliminar seleccion y archivo agregado.");
+            TooltipEnControlDesactivado.TooltipActivo(this, btn_EliminarArchivo, "Eliminar seleccion y archivo agregado.", btn_EliminarArchivo.Enabled && btn_EliminarArchivo.Visible);
         }
 
 
