@@ -1254,38 +1254,41 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Validar campos completos
                 if (!ValidarControlesCompletosEnPaneles())
                 {
-                    //no estan completos mostrar mensaje de advertencia
+                    // No están completos: mostrar mensaje de advertencia
                     MensajeGeneral.Mostrar(
                         "Debe completar la totalidad de los campos para crear la NOTIFICACIÓN de Art. 247 C.P.P.",
                         MensajeGeneral.TipoMensaje.Advertencia);
                     return false;
                 }
 
-                //estan los campos completos, crear mensaje con timepicker
-
+                // Si los campos están completos, proceder
                 if (botonDeslizable_Not247.IsOn)
                 {
                     // Configurar fecha mínima basada en otro TimePicker
                     DateTime fechaBase = timePickerPersonalizado1.SelectedDate;
 
-                    // Mostrar el formulario con el TimePicker
-                    var mensajeCompromiso = new DateTimePicker();
-                   
-                    // Mostrar el formulario con el TimePicker
-                    var fechaSeleccionada = MensajeGeneral.MostrarCompromiso("Indique fecha de pericia.", mensajeCompromiso);
+                    // Mostrar el formulario de MensajeGeneral con el DateTimePicker
+                    var fechaSeleccionada = MensajeGeneral.MostrarCompromiso(
+                        "Indique fecha de pericia.",
+                        fechaMinima: fechaBase);
 
-                    if (fechaSeleccionada < fechaBase)
-                    {
-                        MensajeGeneral.Mostrar("Seleccione una fecha posterior a la fecha de inicio de actuaciones.",
-                            MensajeGeneral.TipoMensaje.Advertencia);
-
-                    }
                     if (fechaSeleccionada.HasValue)
                     {
-                        botonDeslizable_Not247.IsOn = true; // Mantener activado si el usuario guarda
+                        if (fechaSeleccionada.Value < fechaBase)
+                        {
+                            MensajeGeneral.Mostrar(
+                                "Seleccione una fecha posterior a la fecha de inicio de actuaciones.",
+                                MensajeGeneral.TipoMensaje.Advertencia);
+                            return false;
+                        }
+
+                        // Si la fecha es válida, realizar las actualizaciones
+                        botonDeslizable_Not247.IsOn = true;
 
                         // Reposicionar el botón 10 píxeles a la izquierda
-                        botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X - 10, botonDeslizable_Not247.Location.Y);
+                        botonDeslizable_Not247.Location = new Point(
+                            botonDeslizable_Not247.Location.X - 10,
+                            botonDeslizable_Not247.Location.Y);
 
                         fecha_Pericia.Text = fechaSeleccionada.Value.ToString("dd/MM/yyyy");
                         fecha_Pericia.Visible = true;
@@ -1293,22 +1296,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         panel_Not247.BackColor = SystemColors.GradientInactiveCaption;
 
                         Btn_Contador247.Visible = true;
-                        Btn_Contador247.Text = "3"; // comienza con 3 por FISCALIA, DEFENSORIA, JUZ.GTIAS + imputados y víctimas
+                        Btn_Contador247.Text = "3"; // Por FISCALIA, DEFENSORIA, JUZ.GTIAS + imputados y víctimas
                     }
                     else
                     {
-                        // En caso de no haber una fecha seleccionada
-                        botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X + 10, botonDeslizable_Not247.Location.Y);
-                                        
+                        // En caso de no seleccionar una fecha
+                        botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X + 10,botonDeslizable_Not247.Location.Y);
+                        panel_Not247.BackColor=Color.Transparent;
+                        fecha_Pericia.Visible = false;
+                        fecha_Pericia.Enabled=false;
+                        Btn_Contador247.Visible = false;
                         botonDeslizable_Not247.IsOn = false;
                     }
                 }
 
                 return botonDeslizable_Not247.IsOn;
-
             };
         }
-
 
 
         //--Para verificar los controles y habilitar boton
@@ -1405,7 +1409,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             var mensajeCompromiso = new DateTimePicker();
 
             // Mostrar el formulario con el TimePicker
-            var fechaSeleccionada = MensajeGeneral.MostrarCompromiso("Indique fecha de pericia.", mensajeCompromiso);
+            var fechaSeleccionada = MensajeGeneral.MostrarCompromiso("Indique fecha de pericia.", fechaMinima: fechaBase);
 
             if (fechaSeleccionada < fechaBase)
             {
@@ -1417,9 +1421,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 botonDeslizable_Not247.IsOn = true; // Mantener activado si el usuario guarda
 
-                // Reposicionar el botón 10 píxeles a la izquierda
-                botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X - 10, botonDeslizable_Not247.Location.Y);
-
                 fecha_Pericia.Text = fechaSeleccionada.Value.ToString("dd/MM/yyyy");
                 fecha_Pericia.Visible = true;
                 fecha_Pericia.Enabled = true;
@@ -1429,10 +1430,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                // En caso de no haber una fecha seleccionada
-                botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X + 10, botonDeslizable_Not247.Location.Y);
-
-                botonDeslizable_Not247.IsOn = false;
+              return;
             }
         }
 
@@ -1446,26 +1444,50 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             fecha_Pericia.BackColor = SystemColors.ActiveCaption; // Cambiar el color de fondo al color de control activo
             fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
+
+            //// Verificar si el texto ingresado es una fecha válida
+            //if (DateTime.TryParse(fecha_Pericia.Text, out DateTime fechaIngresada))
+            //{
+            //    // Comparar la fecha ingresada con la fecha de instrucción
+            //    if (fechaIngresada < timePickerPersonalizado1.SelectedDate)
+            //    {
+            //        MensajeGeneral.Mostrar("La fecha no puede ser anterior a la fecha de instrucción.", MensajeGeneral.TipoMensaje.Advertencia);
+            //        fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
+            //        fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
+            //    }
+            //}
+            //else
+            //{
+            //    MensajeGeneral.Mostrar("La fecha ingresada no es válida. Por favor, ingrese una fecha en el formato correcto.", MensajeGeneral.TipoMensaje.Error);
+            //    fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
+            //    fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
+
+            //}
         }
 
-        private void panel_ControlesInferiores_Paint(object sender, PaintEventArgs e)
+
+            private void fecha_Pericia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            // Verificar si el texto ingresado es una fecha válida
+            if (DateTime.TryParse(fecha_Pericia.Text, out DateTime fechaIngresada))
+            {
+                // Comparar la fecha ingresada con la fecha de instrucción
+                if (fechaIngresada < timePickerPersonalizado1.SelectedDate)
+                {
+                    MensajeGeneral.Mostrar("La fecha no puede ser anterior a la fecha de instrucción.", MensajeGeneral.TipoMensaje.Advertencia);
+                    fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
+                    fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
+                }
+            }
+            else
+            {
+                MensajeGeneral.Mostrar("La fecha ingresada no es válida. Por favor, ingrese una fecha en el formato correcto.", MensajeGeneral.TipoMensaje.Error);
+                fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
+                fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
+            }
 
         }
+        //-------------------------------------------------------------
 
-        private void label_RatificacionPersonal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_Cargo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_ContadorRatificaciones_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -216,14 +216,15 @@ namespace Ofelia_Sara.Mensajes
             this.DialogResult = DialogResult.OK;
             datosGuardados = true;
 
-            // Obtener la fecha seleccionada del TimePicker
-            FechaSeleccionada = Fecha_Compromiso.Value;/*SelectedDate*/
+            // Obtener la fecha seleccionada del DateTimePicker
+            FechaSeleccionada = Fecha_Compromiso.Value;
 
-            // Mostrar mensaje de confirmación
-            Mostrar("Se ha asignado la fecha indicada", TipoMensaje.Exito);
+            // Mostrar mensaje de confirmación con la fecha seleccionada
+            Mostrar($"Se ha asignado la fecha {Fecha_Compromiso.Value.ToString("dd/MM/yyyy")}.", TipoMensaje.Exito);
 
             this.Close();
         }
+
 
 
 
@@ -235,23 +236,27 @@ namespace Ofelia_Sara.Mensajes
         }
 
 
-
-        public static DateTime? MostrarCompromiso(string mensaje, DateTimePicker timePicker)
+        public static DateTime? MostrarCompromiso(string mensaje, DateTime fechaMinima)
         {
             using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion))
             {
-                // Pasar el TimePicker personalizado al formulario emergente
-                form.Fecha_Compromiso = timePicker;
+                // Establece la fecha mínima en el TimePicker
+                form.Fecha_Compromiso.MinDate = fechaMinima;
+
+                // Muestra el mensaje de compromiso
                 form.MensajeCompromiso(mensaje);
 
-                // Mostrar el formulario y obtener el resultado
+                // Mostrar el formulario y obtener la fecha seleccionada si se confirma
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    return timePicker.Value;
+                    return form.Fecha_Compromiso.Value;
                 }
 
-                return null;
+                return null; // En caso de cancelar
             }
         }
+
+
+
     }
 }

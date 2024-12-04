@@ -677,7 +677,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             this.panel_ControlesInferiores.Size = new System.Drawing.Size(441, 165);
             this.panel_ControlesInferiores.TabIndex = 42;
-            this.panel_ControlesInferiores.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_ControlesInferiores_Paint);
             // 
             // panel_Not247
             // 
@@ -721,12 +720,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.fecha_Pericia.Click += new System.EventHandler(this.fecha_Pericia_Click);
             this.fecha_Pericia.MouseEnter += new System.EventHandler(this.fecha_Pericia_Enter);
             this.fecha_Pericia.MouseLeave += new System.EventHandler(this.fecha_Pericia_Leave);
+            this.fecha_Pericia.Validating += new System.ComponentModel.CancelEventHandler(this.fecha_Pericia_Validating);
             // 
             // botonDeslizable_Not247
             // 
             this.botonDeslizable_Not247.Cursor = System.Windows.Forms.Cursors.Hand;
             this.botonDeslizable_Not247.IsOn = false;
-            this.botonDeslizable_Not247.Location = new System.Drawing.Point(179, 7);
+            this.botonDeslizable_Not247.Location = new System.Drawing.Point(179, 8);
             this.botonDeslizable_Not247.Name = "botonDeslizable_Not247";
             this.botonDeslizable_Not247.Size = new System.Drawing.Size(40, 20);
             this.botonDeslizable_Not247.TabIndex = 54;
@@ -769,7 +769,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.btn_ContadorRatificaciones.Name = "btn_ContadorRatificaciones";
             this.btn_ContadorRatificaciones.Size = new System.Drawing.Size(21, 23);
             this.btn_ContadorRatificaciones.TabIndex = 53;
-            this.btn_ContadorRatificaciones.Load += new System.EventHandler(this.btn_ContadorRatificaciones_Load);
             // 
             // label_StudRML
             // 
@@ -814,7 +813,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.label_Cargo.TabIndex = 40;
             this.label_Cargo.Text = "   Cargo   ";
             this.label_Cargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_Cargo.Click += new System.EventHandler(this.label_Cargo_Click);
             // 
             // label_RatificacionPersonal
             // 
@@ -825,7 +823,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.label_RatificacionPersonal.TabIndex = 38;
             this.label_RatificacionPersonal.Text = "Ratificación testimonial   ";
             this.label_RatificacionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_RatificacionPersonal.Click += new System.EventHandler(this.label_RatificacionPersonal_Click);
             // 
             // panel_Imputado
             // 
