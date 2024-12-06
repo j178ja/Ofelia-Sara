@@ -580,7 +580,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             this.timePickerPersonalizado1.Location = new System.Drawing.Point(113, 167);
             this.timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 12, 3, 0, 0, 0, 0);
+            this.timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 12, 5, 18, 42, 59, 901);
             this.timePickerPersonalizado1.Size = new System.Drawing.Size(287, 21);
             this.timePickerPersonalizado1.TabIndex = 38;
             // 
@@ -687,7 +687,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.panel_Not247.Controls.Add(this.label_Not247);
             this.panel_Not247.Location = new System.Drawing.Point(4, 2);
             this.panel_Not247.Name = "panel_Not247";
-            this.panel_Not247.Size = new System.Drawing.Size(314, 34);
+            this.panel_Not247.Size = new System.Drawing.Size(322, 34);
             this.panel_Not247.TabIndex = 55;
             // 
             // Btn_Contador247
@@ -711,15 +711,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.fecha_Pericia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fecha_Pericia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fecha_Pericia.Location = new System.Drawing.Point(213, 8);
-            this.fecha_Pericia.Mask = "00/00/0000";
+            this.fecha_Pericia.Mask = "00/00/0000 00:00";
             this.fecha_Pericia.Name = "fecha_Pericia";
-            this.fecha_Pericia.Size = new System.Drawing.Size(89, 20);
+            this.fecha_Pericia.Size = new System.Drawing.Size(109, 20);
             this.fecha_Pericia.TabIndex = 55;
             this.fecha_Pericia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fecha_Pericia.ValidatingType = typeof(System.DateTime);
+            this.fecha_Pericia.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.fecha_Pericia_TypeValidationCompleted);
             this.fecha_Pericia.Click += new System.EventHandler(this.fecha_Pericia_Click);
             this.fecha_Pericia.MouseEnter += new System.EventHandler(this.fecha_Pericia_Enter);
-            this.fecha_Pericia.MouseLeave += new System.EventHandler(this.fecha_Pericia_Leave);
+            this.fecha_Pericia.MouseLeave += new System.EventHandler(this.fecha_Pericia_MouseLeave);
             this.fecha_Pericia.Validating += new System.ComponentModel.CancelEventHandler(this.fecha_Pericia_Validating);
             // 
             // botonDeslizable_Not247

@@ -10,6 +10,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios;
+using System.Windows.Navigation;
+using Controles.Controles;
 
 namespace Ofelia_Sara.Mensajes
 {
@@ -18,6 +20,8 @@ namespace Ofelia_Sara.Mensajes
         public DateTime FechaMinima { get; set; } = DateTime.MinValue;
         public DateTime FechaSeleccionada { get; private set; }
 
+        public DateTimePicker SelectFecha_Compromiso { get; private set; }
+        public DateTimePicker SelectHora_Compromiso { get; private set; }
 
         private bool datosGuardados = false;
 
@@ -38,7 +42,7 @@ namespace Ofelia_Sara.Mensajes
 
             // Configurar la fecha mínima en el control Fecha_Audiencia
             //     SelectedDate * VALUE
-            Fecha_Compromiso.Value = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
+            //SelectFecha_Compromiso.Value = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
 
             // Fecha_Audiencia.SelectedDate = DateTime.Now; //mantener actualizada fecha
 
@@ -56,7 +60,17 @@ namespace Ofelia_Sara.Mensajes
             btn_Si.Visible = false;
             Fecha_Compromiso.Visible = false;
 
+            // Inicializa los controles si no se han inicializado aún
+            if (SelectFecha_Compromiso == null)
+            {
+                SelectFecha_Compromiso = new DateTimePicker();
+            }
 
+            if (SelectHora_Compromiso == null)
+            {
+                SelectHora_Compromiso = new DateTimePicker();
+                // Configuración adicional de SelectHora_Compromiso
+            }
 
         }
         public enum TipoMensaje
@@ -216,14 +230,28 @@ namespace Ofelia_Sara.Mensajes
             this.DialogResult = DialogResult.OK;
             datosGuardados = true;
 
-            // Obtener la fecha seleccionada del DateTimePicker
-            FechaSeleccionada = Fecha_Compromiso.Value;
+            // Verifica que los controles sean del tipo adecuado y que se pueda acceder a su valor
+            if (SelectFecha_Compromiso != null && SelectHora_Compromiso != null &&
+                SelectFecha_Compromiso.Value != null && SelectHora_Compromiso.Value != null)
+            {
+                // Combina la fecha y la hora seleccionadas
+                FechaSeleccionada = SelectFecha_Compromiso.Value.Date + SelectHora_Compromiso.Value.TimeOfDay;
 
-            // Mostrar mensaje de confirmación con la fecha seleccionada
-            Mostrar($"Se ha asignado la fecha {Fecha_Compromiso.Value.ToString("dd/MM/yyyy")}.", TipoMensaje.Exito);
+                // Muestra un mensaje de confirmación con la fecha seleccionada
+                Mostrar($"Se ha asignado la fecha {FechaSeleccionada.ToString("dd/MM/yyyy HH:mm")}.", TipoMensaje.Exito);
 
-            this.Close();
+                // Cierra el formulario después de mostrar el mensaje
+                this.Close();
+            }
+            else
+            {
+                // Manejo de error si los controles no tienen un valor válido
+                Mostrar("No se ha seleccionado una fecha o hora válida.", TipoMensaje.Advertencia);
+            }
         }
+
+
+
 
 
 
@@ -236,26 +264,38 @@ namespace Ofelia_Sara.Mensajes
         }
 
 
-        public static DateTime? MostrarCompromiso(string mensaje, DateTime fechaMinima)
+    public static DateTime? MostrarCompromiso(string mensaje, DateTime fechaMinima)
+{
+    using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion))
+    {
+        // Establece la fecha mínima en el DateTimePicker de fecha
+        form.SelectFecha_Compromiso.MinDate = fechaMinima;
+
+        // Muestra el mensaje de compromiso y configura los controles
+        form.MensajeCompromiso(mensaje);
+
+        // Mostrar el formulario y esperar la selección del usuario
+        if (form.ShowDialog() == DialogResult.OK)
         {
-            using (var form = new MensajeGeneral(mensaje, TipoMensaje.Informacion))
-            {
-                // Establece la fecha mínima en el TimePicker
-                form.Fecha_Compromiso.MinDate = fechaMinima;
+            // Combina la fecha y la hora seleccionadas en un solo DateTime
+            DateTime fechaCompleta = form.SelectFecha_Compromiso.Value.Date +
+                                     form.SelectHora_Compromiso.Value.TimeOfDay;
 
-                // Muestra el mensaje de compromiso
-                form.MensajeCompromiso(mensaje);
-
-                // Mostrar el formulario y obtener la fecha seleccionada si se confirma
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    return form.Fecha_Compromiso.Value;
-                }
-
-                return null; // En caso de cancelar
-            }
+            return fechaCompleta;
         }
 
+        return null; // En caso de cancelar
+    }
+}
+
+        public DateTime? ObtenerFechaYHoraSeleccionadas()
+        {
+            if (SelectFecha_Compromiso.Value != null && SelectHora_Compromiso.Value != null)
+            {
+                return SelectFecha_Compromiso.Value.Date + SelectHora_Compromiso.Value.TimeOfDay;
+            }
+            return null; // Devuelve null si no se ha seleccionado una fecha o hora
+        }
 
 
     }

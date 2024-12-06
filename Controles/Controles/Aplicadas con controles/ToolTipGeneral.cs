@@ -8,6 +8,8 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
     public static class ToolTipGeneral
     {
+        private static Timer timer;
+        private static ToolTip customToolTip;
         // Ruta predeterminada del ícono
         private static readonly string DefaultIconPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\imagenes\ICOes.png";
 
@@ -113,25 +115,51 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
                 int toolTipX = cursorPosition.X + 8; // posición horizontal del cursor
                 int toolTipY = cursorPosition.Y + 10; // píxeles debajo del cursor
 
-                // Mostrar el ToolTip personalizado si el mouse está sobre el control
-                if (control.ClientRectangle.Contains(cursorPosition))
-                {
-                    if (!isCustomToolTipVisible)
-                    {
-                        isCustomToolTipVisible = true;
 
-                        // Mostrar ToolTip personalizado en la nueva posición
-                        customToolTip.Show(toolTipText, control, new Point(toolTipX, toolTipY));
+                try
+                {
+                    if (!control.IsDisposed && control.IsHandleCreated)
+                    {
+                        if (control.ClientRectangle.Contains(cursorPosition))
+                        {
+                            if (!isCustomToolTipVisible)
+                            {
+                                isCustomToolTipVisible = true;
+                                customToolTip.Show(toolTipText, control, new Point(toolTipX, toolTipY));
+                            }
+                        }
+                        else if (isCustomToolTipVisible)
+                        {
+                            isCustomToolTipVisible = false;
+                            customToolTip.Hide(control);
+                        }
                     }
                 }
-                else if (isCustomToolTipVisible)
+                catch (ObjectDisposedException)
                 {
-                    isCustomToolTipVisible = false;
-                    customToolTip.Hide(control);
+                    // Log o ignora la excepción si el control ha sido desechado
                 }
+
             };
 
             timer.Start();
         }
+        //........................................
+        public static void DisposeToolTips()
+        {
+            if (timer != null)
+            {
+                timer.Stop();
+                timer.Dispose();
+                timer = null;
+            }
+
+            if (customToolTip != null)
+            {
+                customToolTip.Dispose();
+                customToolTip = null;
+            }
+        }
+
     }
 }

@@ -173,8 +173,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //..................................................................
 
             Btn_ContadorRML.Text = "0";
-           
-        
+
+            fecha_Pericia.ValidatingType = typeof(DateTime); // Configurar tipo de validación
         }
         // --FIN LOAD
         //-----------------------------------------------------------------------------
@@ -300,9 +300,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
 
-           comboBox_Dependencia.SelectedIndex = -1;
-           comboBox_Instructor.SelectedIndex = -1;
-           comboBox_Secretario.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Instructor.SelectedIndex = -1;
+            comboBox_Secretario.SelectedIndex = -1;
 
             Btn_Contador247.Visible = false;
             Btn_Contador247.Enabled = false;
@@ -1290,7 +1290,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                             botonDeslizable_Not247.Location.X - 10,
                             botonDeslizable_Not247.Location.Y);
 
-                        fecha_Pericia.Text = fechaSeleccionada.Value.ToString("dd/MM/yyyy");
+                        fecha_Pericia.Text = fechaSeleccionada.Value.ToString("dd/MM/yyyy HH:mm");
                         fecha_Pericia.Visible = true;
                         fecha_Pericia.Enabled = true;
                         panel_Not247.BackColor = SystemColors.GradientInactiveCaption;
@@ -1301,10 +1301,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     else
                     {
                         // En caso de no seleccionar una fecha
-                        botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X + 10,botonDeslizable_Not247.Location.Y);
-                        panel_Not247.BackColor=Color.Transparent;
+                        botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X + 10, botonDeslizable_Not247.Location.Y);
+                        panel_Not247.BackColor = Color.Transparent;
                         fecha_Pericia.Visible = false;
-                        fecha_Pericia.Enabled=false;
+                        fecha_Pericia.Enabled = false;
                         Btn_Contador247.Visible = false;
                         botonDeslizable_Not247.IsOn = false;
                     }
@@ -1383,7 +1383,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (sender is TimePickerPersonalizado control)
             {
                 // Tomar la fecha seleccionada del TimePicker
-                DateTime nuevaFecha = control.SelectedDate;
+                DateTime nuevaFecha = control.FechaSeleccionada;
 
                 // Lógica de asignación para el caso específico (ejemplo: fecha_Pericia)
                 if (control.Name == "timePickerFechaCompromiso")
@@ -1393,6 +1393,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
+
 
         /// <summary>
         /// METODO PARA CAMBIAR FECHA DE COMPROMISO SELECCIONADA
@@ -1430,63 +1431,60 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-              return;
+                return;
             }
         }
 
         private void fecha_Pericia_Enter(object sender, EventArgs e)
         {
-            fecha_Pericia.BackColor = Color.Crimson;
+            fecha_Pericia.BackColor = Color.FromArgb(0, 154, 174);
             fecha_Pericia.ForeColor = Color.White;
         }
 
-        private void fecha_Pericia_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// Se ejecuta automáticamente cuando el usuario abandona el control MaskedTextBox (pierde el foco) y la propiedad ValidatingType está configurada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void fecha_Pericia_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
-            fecha_Pericia.BackColor = SystemColors.ActiveCaption; // Cambiar el color de fondo al color de control activo
-            fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
+            if (!e.IsValidInput)
+            {
+                MensajeGeneral.Mostrar("Por favor, ingrese una fecha y hora válida.", MensajeGeneral.TipoMensaje.Advertencia);
 
-            //// Verificar si el texto ingresado es una fecha válida
-            //if (DateTime.TryParse(fecha_Pericia.Text, out DateTime fechaIngresada))
-            //{
-            //    // Comparar la fecha ingresada con la fecha de instrucción
-            //    if (fechaIngresada < timePickerPersonalizado1.SelectedDate)
-            //    {
-            //        MensajeGeneral.Mostrar("La fecha no puede ser anterior a la fecha de instrucción.", MensajeGeneral.TipoMensaje.Advertencia);
-            //        fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
-            //        fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
-            //    }
-            //}
-            //else
-            //{
-            //    MensajeGeneral.Mostrar("La fecha ingresada no es válida. Por favor, ingrese una fecha en el formato correcto.", MensajeGeneral.TipoMensaje.Error);
-            //    fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
-            //    fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
-
-            //}
+              //  Evitar que el control pierda el foco si el dato no es válido
+                ((MaskedTextBox)sender).Focus();
+            }
         }
-
-
-            private void fecha_Pericia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        /// <summary>
+        /// VALIDA QUE COUNCIDA CON PARAMETRO DE FECHA INSTRUCCION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void fecha_Pericia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // Verificar si el texto ingresado es una fecha válida
             if (DateTime.TryParse(fecha_Pericia.Text, out DateTime fechaIngresada))
             {
-                // Comparar la fecha ingresada con la fecha de instrucción
                 if (fechaIngresada < timePickerPersonalizado1.SelectedDate)
                 {
                     MensajeGeneral.Mostrar("La fecha no puede ser anterior a la fecha de instrucción.", MensajeGeneral.TipoMensaje.Advertencia);
-                    fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
-                    fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
+                    e.Cancel = true; // Evitar que el control pierda el foco
                 }
             }
-            else
-            {
-                MensajeGeneral.Mostrar("La fecha ingresada no es válida. Por favor, ingrese una fecha en el formato correcto.", MensajeGeneral.TipoMensaje.Error);
-                fecha_Pericia.Focus(); // Opcional: volver a poner el foco en el control
-                fecha_Pericia.Clear(); // Opcional: limpiar el texto ingresado
-            }
+           
+        }
+
+
+        private void fecha_Pericia_MouseLeave(object sender, EventArgs e)
+        {
+            fecha_Pericia.BackColor = SystemColors.ActiveCaption; // Cambiar el color de fondo al color de control activo
+            fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
 
         }
+
+       
         //-------------------------------------------------------------
 
     }

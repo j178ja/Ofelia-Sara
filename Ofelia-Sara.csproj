@@ -277,11 +277,11 @@
     <Compile Include="Controles\Controles\Aplicadas con controles\CalcularEdad.cs" />
     <Compile Include="Controles\Controles\Aplicadas con controles\TooltipError.cs" />
     <Compile Include="Controles\Controles\Aplicadas con controles\ToolTipGeneral.cs" />
-    <Compile Include="Controles\Controles\CalendarForm.cs">
+    <Compile Include="Controles\Controles\CALENDARIO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controles\Controles\CalendarForm.Designer.cs">
-      <DependentUpon>CalendarForm.cs</DependentUpon>
+    <Compile Include="Controles\Controles\CALENDARIO.Designer.cs">
+      <DependentUpon>CALENDARIO.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
@@ -296,6 +296,12 @@
     <Compile Include="Controles\Controles\CustomDate.Designer.cs">
       <DependentUpon>CustomDate.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Controles\Controles\DateCompromiso_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\DateCompromiso_Control.Designer.cs">
+      <DependentUpon>DateCompromiso_Control.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Controles\EmailControl.cs">
       <SubType>UserControl</SubType>
@@ -538,8 +544,8 @@
     <EmbeddedResource Include="Controles\Controles\BotonDeslizable.resx">
       <DependentUpon>BotonDeslizable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controles\Controles\CalendarForm.resx">
-      <DependentUpon>CalendarForm.cs</DependentUpon>
+    <EmbeddedResource Include="Controles\Controles\CALENDARIO.resx">
+      <DependentUpon>CALENDARIO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
@@ -547,6 +553,9 @@
     <EmbeddedResource Include="Controles\Controles\CustomDate.resx">
       <DependentUpon>CustomDate.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\DateCompromiso_Control.resx">
+      <DependentUpon>DateCompromiso_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\EmailControl.resx">
       <DependentUpon>EmailControl.cs</DependentUpon>
@@ -682,6 +691,7 @@
     <None Include="Resources\Cursor\cursorFlecha.cur" />
     <None Include="Resources\Cursor\hand.cur" />
     <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
+    <None Include="Resources\calendario.png" />
     <Content Include="Resources\imagenes\Advertencia_Faltante.png" />
     <Content Include="Resources\imagenes\agregar imagen.png" />
     <Content Include="Resources\imagenes\agregar imagen_HOVER.png" />
@@ -692,6 +702,7 @@
     <Content Include="Resources\imagenes\atras.png" />
     <Content Include="Resources\imagenes\auto.png" />
     <Content Include="Resources\imagenes\buscar75%25.png" />
+    <Content Include="Resources\imagenes\Calendario.jpg" />
     <Content Include="Resources\imagenes\check-Personalizado.png" />
     <Content Include="Resources\imagenes\configuracion.ico" />
     <Content Include="Resources\imagenes\dobleFlechaABAJO.png" />

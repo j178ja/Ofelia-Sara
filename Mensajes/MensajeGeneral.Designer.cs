@@ -30,13 +30,13 @@
         {
             this.label_OfeliaSara = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Fecha_Compromiso = new Ofelia_Sara.Controles.Controles.DateCompromiso_Control();
             this.label_Texto = new System.Windows.Forms.Label();
             this.pictureBox_Icono = new System.Windows.Forms.PictureBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pictureBox_EscudoPolicial = new System.Windows.Forms.PictureBox();
             this.btn_Si = new System.Windows.Forms.Button();
             this.btn_No = new System.Windows.Forms.Button();
-            this.Fecha_Compromiso = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Icono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EscudoPolicial)).BeginInit();
@@ -63,6 +63,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(385, 112);
             this.panel1.TabIndex = 4;
+            // 
+            // Fecha_Compromiso
+            // 
+            this.Fecha_Compromiso.AutoSize = true;
+            this.Fecha_Compromiso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.Fecha_Compromiso.Location = new System.Drawing.Point(15, 35);
+            this.Fecha_Compromiso.Name = "Fecha_Compromiso";
+            this.Fecha_Compromiso.Size = new System.Drawing.Size(360, 24);
+            this.Fecha_Compromiso.TabIndex = 5;
             // 
             // label_Texto
             // 
@@ -136,15 +145,6 @@
             this.btn_No.UseVisualStyleBackColor = false;
             this.btn_No.Click += new System.EventHandler(this.Btn_No_Click);
             // 
-            // Fecha_Compromiso
-            // 
-            this.Fecha_Compromiso.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fecha_Compromiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fecha_Compromiso.Location = new System.Drawing.Point(20, 26);
-            this.Fecha_Compromiso.Name = "Fecha_Compromiso";
-            this.Fecha_Compromiso.Size = new System.Drawing.Size(346, 24);
-            this.Fecha_Compromiso.TabIndex = 5;
-            // 
             // MensajeGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +168,7 @@
             this.Controls.SetChildIndex(this.btn_Si, 0);
             this.Controls.SetChildIndex(this.btn_No, 0);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Icono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_EscudoPolicial)).EndInit();
             this.ResumeLayout(false);
@@ -185,6 +186,6 @@
         private System.Windows.Forms.PictureBox pictureBox_EscudoPolicial;
         private System.Windows.Forms.Button btn_No;
         private System.Windows.Forms.Button btn_Si;
-        private System.Windows.Forms.DateTimePicker Fecha_Compromiso;
+        private Controles.Controles.DateCompromiso_Control Fecha_Compromiso;
     }
 }

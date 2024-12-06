@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
 namespace Controles.Controles
 {
@@ -15,11 +16,15 @@ namespace Controles.Controles
         {
             InitializeComponent();
             this.FormClosing += Calendario_FormClosing;
+                SelectedDate = DateTime.Now; // Inicializa con la fecha actual
+                monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
         }
 
         private void CalendarForm_Load(object sender, EventArgs e)
         {
             // No es necesario establecer SelectionMode
+            SelectedDate = DateTime.Now; // Inicializa con la fecha actual
+            monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
@@ -62,6 +67,7 @@ namespace Controles.Controles
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
                     }
+                    ToolTipGeneral.DisposeToolTips();
                 }
             }
         }
@@ -93,5 +99,8 @@ namespace Controles.Controles
             btn_Cancelar.Font = new Font(btn_Cancelar.Font, FontStyle.Regular);
 
         }
+
+
+
     }
 }
