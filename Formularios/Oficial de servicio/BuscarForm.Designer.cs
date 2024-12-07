@@ -89,11 +89,12 @@
             // 
             // Fecha_Actuacion
             // 
+            this.Fecha_Actuacion.BackColor = System.Drawing.SystemColors.Window;
+            this.Fecha_Actuacion.FechaSeleccionada = new System.DateTime(((long)(0)));
             this.Fecha_Actuacion.Location = new System.Drawing.Point(141, 267);
-          
             this.Fecha_Actuacion.Name = "Fecha_Actuacion";
             this.Fecha_Actuacion.SelectedDate = new System.DateTime(2024, 10, 5, 20, 38, 40, 690);
-            this.Fecha_Actuacion.Size = new System.Drawing.Size(364, 27);
+            this.Fecha_Actuacion.Size = new System.Drawing.Size(364, 26);
             this.Fecha_Actuacion.TabIndex = 29;
             // 
             // comboBox_Secretario

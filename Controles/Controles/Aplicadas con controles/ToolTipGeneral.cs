@@ -10,7 +10,6 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
     {
         private static Timer timer;
         private static ToolTip customToolTip;
-        // Ruta predeterminada del ícono
         private static readonly string DefaultIconPath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Resources\imagenes\ICOes.png";
 
         /// <summary>
@@ -20,106 +19,104 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
         /// <param name="toolTipText">Texto que se mostrará en el ToolTip.</param>
         public static void ShowToolTip(Control control, string toolTipText)
         {
-            ToolTip customToolTip = new ToolTip
+            try
             {
-                OwnerDraw = true // Habilitar dibujo personalizado
-            };
-
-            Timer timer = new Timer { Interval = 100 };
-            bool isCustomToolTipVisible = false;
-
-            // Manejar el evento Draw para personalizar el ToolTip
-            customToolTip.Draw += (sender, e) =>
-            {
-                // Color de fondo
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 154, 174)), e.Bounds);
-
-                // Dividir el texto en líneas
-                string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
-                using (Font font = new Font("Arial", 10))
+                customToolTip = new ToolTip
                 {
-                    float lineHeight = font.GetHeight(e.Graphics) + 6;
-                    float textY = e.Bounds.Y + 4;
-                    int leftMargin = 10; // Margen izquierdo
-                    int rightMargin = 30; // Espacio reservado para el ícono
+                    OwnerDraw = true // Habilitar dibujo personalizado
+                };
 
-                    // Dibujar el texto
-                    foreach (string line in lines)
-                    {
-                        float textX = e.Bounds.X + leftMargin;
-                        e.Graphics.DrawString(line, font, Brushes.White, new PointF(textX, textY));
-                        textY += lineHeight;
-                    }
+                timer = new Timer { Interval = 100 };
+                bool isCustomToolTipVisible = false;
 
-                    // Dibujar el ícono al final
+                // Configurar dibujo personalizado
+                customToolTip.Draw += (sender, e) =>
+                {
                     try
                     {
-                        if (System.IO.File.Exists(DefaultIconPath))
-                        {
-                            // Cargar el ícono fuera del bloque 'using'
-                            Bitmap iconBitmap = new Bitmap(DefaultIconPath);
+                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 154, 174)), e.Bounds);
 
-                            // Redimensionar el ícono a 16x16 si es necesario
-                            iconBitmap = new Bitmap(iconBitmap, new Size(16, 16));
-
-                            int iconX = e.Bounds.Right - iconBitmap.Width - 5; // Ajustar al borde derecho
-                            int iconY = e.Bounds.Top + (e.Bounds.Height - iconBitmap.Height) / 2; // Centrar verticalmente
-                            e.Graphics.DrawImage(iconBitmap, new Rectangle(iconX, iconY, iconBitmap.Width, iconBitmap.Height));
-                        }
-                        else
+                        string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
+                        using (Font font = new Font("Arial", 10))
                         {
-                            // Mostrar un mensaje de error si no se encuentra el ícono
-                            e.Graphics.DrawString("Icono no encontrado", new Font("Arial", 10), Brushes.Red, new PointF(e.Bounds.Right - 120, e.Bounds.Y + 5));
+                            float lineHeight = font.GetHeight(e.Graphics) + 6;
+                            float textY = e.Bounds.Y + 4;
+                            int leftMargin = 10; // Margen izquierdo
+                            int rightMargin = 30; // Espacio reservado para el ícono
+
+                            foreach (string line in lines)
+                            {
+                                float textX = e.Bounds.X + leftMargin;
+                                e.Graphics.DrawString(line, font, Brushes.White, new PointF(textX, textY));
+                                textY += lineHeight;
+                            }
+
+                            // Dibujar el ícono
+                            if (System.IO.File.Exists(DefaultIconPath))
+                            {
+                                using (Bitmap iconBitmap = new Bitmap(DefaultIconPath))
+                                {
+                                    Bitmap resizedIcon = new Bitmap(iconBitmap, new Size(16, 16));
+                                    int iconX = e.Bounds.Right - resizedIcon.Width - 5;
+                                    int iconY = e.Bounds.Top + (e.Bounds.Height - resizedIcon.Height) / 2;
+                                    e.Graphics.DrawImage(resizedIcon, new Rectangle(iconX, iconY, resizedIcon.Width, resizedIcon.Height));
+                                }
+                            }
+                            else
+                            {
+                                e.Graphics.DrawString("Ícono no encontrado", font, Brushes.Red, new PointF(e.Bounds.Right - 120, e.Bounds.Y + 5));
+                            }
                         }
                     }
                     catch (Exception ex)
                     {
-                        e.Graphics.DrawString($"Error: {ex.Message}", new Font("Arial", 10), Brushes.Red, new PointF(e.Bounds.Right - 120, e.Bounds.Y + 5));
+                        e.Graphics.DrawString($"Error: {ex.Message}", new Font("Arial", 8), Brushes.Red, e.Bounds.Location);
                     }
-                }
-            };
+                };
 
-            // Configurar tamaño dinámico del ToolTip
-            customToolTip.Popup += (sender, e) =>
-            {
-                using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+                // Configurar tamaño dinámico
+                customToolTip.Popup += (sender, e) =>
                 {
-                    using (Font font = new Font("Arial", 10))
+                    try
                     {
-                        string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
-                        float maxWidth = 0;
-                        float totalHeight = 0;
-
-                        foreach (string line in lines)
+                        using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
                         {
-                            SizeF textSize = g.MeasureString(line, font);
-                            maxWidth = Math.Max(maxWidth, textSize.Width);
-                            totalHeight += textSize.Height;
+                            using (Font font = new Font("Arial", 10))
+                            {
+                                string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
+                                float maxWidth = 0;
+                                float totalHeight = 0;
+
+                                foreach (string line in lines)
+                                {
+                                    SizeF textSize = g.MeasureString(line, font);
+                                    maxWidth = Math.Max(maxWidth, textSize.Width);
+                                    totalHeight += textSize.Height;
+                                }
+
+                                int leftMargin = 10;
+                                int rightMargin = 25;
+                                e.ToolTipSize = new Size((int)(maxWidth + leftMargin + rightMargin), (int)(totalHeight + 8));
+                            }
                         }
-
-                        int leftMargin = 10; // Margen izquierdo
-                        int rightMargin = 25; // Espacio para el ícono
-                        int width = (int)(maxWidth + leftMargin + rightMargin);
-                        int height = (int)(totalHeight + 8);
-                        e.ToolTipSize = new Size(width, height);
                     }
-                }
-            };
-
-            timer.Tick += (sender, e) =>
-            {
-                // Obtener la posición actual del cursor en relación al control
-                Point cursorPosition = control.PointToClient(Control.MousePosition);
-
-                // Calcular la posición del ToolTip
-                int toolTipX = cursorPosition.X + 8; // posición horizontal del cursor
-                int toolTipY = cursorPosition.Y + 10; // píxeles debajo del cursor
-
-
-                try
-                {
-                    if (!control.IsDisposed && control.IsHandleCreated)
+                    catch (Exception ex)
                     {
+                        MessageBox.Show($"Error configurando el tamaño del ToolTip: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                };
+
+                timer.Tick += (sender, e) =>
+                {
+                    try
+                    {
+                        if (control == null || control.IsDisposed || !control.IsHandleCreated)
+                            return;
+
+                        Point cursorPosition = control.PointToClient(Control.MousePosition);
+                        int toolTipX = cursorPosition.X + 8;
+                        int toolTipY = cursorPosition.Y + 10;
+
                         if (control.ClientRectangle.Contains(cursorPosition))
                         {
                             if (!isCustomToolTipVisible)
@@ -134,32 +131,44 @@ namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
                             customToolTip.Hide(control);
                         }
                     }
-                }
-                catch (ObjectDisposedException)
-                {
-                    // Log o ignora la excepción si el control ha sido desechado
-                }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error durante el Tick del ToolTip: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                };
 
-            };
-
-            timer.Start();
+                timer.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al inicializar el ToolTip: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        //........................................
+
+        /// <summary>
+        /// Libera recursos asociados con los ToolTips.
+        /// </summary>
         public static void DisposeToolTips()
         {
-            if (timer != null)
+            try
             {
-                timer.Stop();
-                timer.Dispose();
-                timer = null;
-            }
+                if (timer != null)
+                {
+                    timer.Stop();
+                    timer.Dispose();
+                    timer = null;
+                }
 
-            if (customToolTip != null)
+                if (customToolTip != null)
+                {
+                    customToolTip.Dispose();
+                    customToolTip = null;
+                }
+            }
+            catch (Exception ex)
             {
-                customToolTip.Dispose();
-                customToolTip = null;
+                MessageBox.Show($"Error al liberar recursos del ToolTip: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

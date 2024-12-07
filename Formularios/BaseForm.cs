@@ -56,7 +56,7 @@ namespace Ofelia_Sara.Formularios
             InitializeFooterLinkLabel();
 
             // Llamar al método para aplicar TextBoxConBorde a todos los controles TextBox
-            AplicarTextBoxConBorde(this);
+           // AplicarTextBoxConBorde(this);
             //------------------CAMBIAR FONDO----------------------------------------------------
             // Cambiar el color de fondo del formulario usando AparienciaFormularios
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado #009AAE
@@ -118,13 +118,13 @@ namespace Ofelia_Sara.Formularios
             // Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
             AsignarCursorPersonalizado(this.Controls);
 
-            foreach (var control in ObtenerTodosLosControles(this))
-            {
-                if (control is ComboBox comboBox)
-                {
-                    AplicarFlechaPersonalizada(comboBox);
-                }
-            }
+            //foreach (var control in ObtenerTodosLosControles(this))
+            //{
+            //    if (control is ComboBox comboBox)
+            //    {
+            //        AplicarFlechaPersonalizada(comboBox);
+            //    }
+            //}
         }
         private IEnumerable<Control> ObtenerTodosLosControles(Control parent)
         {
@@ -147,7 +147,7 @@ namespace Ofelia_Sara.Formularios
 
             //// Recorre todos los controles y asigna el cursor "Hand" personalizado donde sea necesario
             AsignarCursorPersonalizado(this.Controls);
-            PersonalizarComboBoxes(this);
+           // PersonalizarComboBoxes(this);
             TraerLabelsAlFrente();//traer los label titulo al frente
         }
         //--------------------------------------------------------------------------
@@ -235,89 +235,89 @@ namespace Ofelia_Sara.Formularios
         /// 
 
 
-        private void PersonalizarComboBoxes(Control parent)
-        {
-            foreach (Control control in parent.Controls)
-            {
-                if (control is ComboBox comboBox)
-                {
-                    AplicarFlechaPersonalizada(comboBox);
-                }
+        //private void PersonalizarComboBoxes(Control parent)
+        //{
+        //    foreach (Control control in parent.Controls)
+        //    {
+        //        if (control is ComboBox comboBox)
+        //        {
+        //            AplicarFlechaPersonalizada(comboBox);
+        //        }
 
-                // Procesar controles hijos (recursivo)
-                if (control.HasChildren)
-                {
-                    PersonalizarComboBoxes(control);
-                }
-            }
-        }
+        //        // Procesar controles hijos (recursivo)
+        //        if (control.HasChildren)
+        //        {
+        //            PersonalizarComboBoxes(control);
+        //        }
+        //    }
+        //}
 
 
-        private Rectangle ObtenerAreaFlecha(ComboBox comboBox)
-        {
-            int arrowWidth = SystemInformation.VerticalScrollBarWidth; // Ancho típico del área de la flecha
-            int x = comboBox.Width - arrowWidth; // Inicia al borde derecho menos el ancho de la flecha
-            int y = 0; // Inicia desde la parte superior del ComboBox
-            int height = comboBox.Height; // Coincide con el alto del ComboBox
-            return new Rectangle(comboBox.Left + x, comboBox.Top + y, arrowWidth, height);
-        }
+        ////private Rectangle ObtenerAreaFlecha(ComboBox comboBox)
+        ////{
+        ////    int arrowWidth = SystemInformation.VerticalScrollBarWidth; // Ancho típico del área de la flecha
+        ////    int x = comboBox.Width - arrowWidth; // Inicia al borde derecho menos el ancho de la flecha
+        ////    int y = 0; // Inicia desde la parte superior del ComboBox
+        ////    int height = comboBox.Height; // Coincide con el alto del ComboBox
+        ////    return new Rectangle(comboBox.Left + x, comboBox.Top + y, arrowWidth, height);
+        ////}
        
-        private void AplicarFlechaPersonalizada(ComboBox comboBox)
-        {
-            Rectangle flechaArea = ObtenerAreaFlecha(comboBox); // Obtener el área completa de la flecha
+        ////private void AplicarFlechaPersonalizada(ComboBox comboBox)
+        ////{
+        ////    Rectangle flechaArea = ObtenerAreaFlecha(comboBox); // Obtener el área completa de la flecha
 
-            PictureBox flechaPersonalizada = new PictureBox
-            {
-                SizeMode = PictureBoxSizeMode.Zoom,//ajusta la imagen sin que se deforme
-                Size = new Size(flechaArea.Width-1, flechaArea.Height-2), // Tamaño completo del área de la flecha
-              //  BackColor = SystemColors.ControlLight, // Fondo que destaca la propiedad de desplegar
-                BackColor = Color.White, //blanco resalta y es igual al comboBox
-                Cursor = Cursors.Hand,
-                Location = new Point(flechaArea.X, flechaArea.Y+1), // Ajustar la ubicación
-                Anchor = AnchorStyles.Top | AnchorStyles.Right ,// Alinear correctamente
-                  Tag = comboBox
-            };
+        ////    PictureBox flechaPersonalizada = new PictureBox
+        ////    {
+        ////        SizeMode = PictureBoxSizeMode.Zoom,//ajusta la imagen sin que se deforme
+        ////        Size = new Size(flechaArea.Width-1, flechaArea.Height-2), // Tamaño completo del área de la flecha
+        ////      //  BackColor = SystemColors.ControlLight, // Fondo que destaca la propiedad de desplegar
+        ////        BackColor = Color.White, //blanco resalta y es igual al comboBox
+        ////        Cursor = Cursors.Hand,
+        ////        Location = new Point(flechaArea.X, flechaArea.Y+1), // Ajustar la ubicación
+        ////        Anchor = AnchorStyles.Top | AnchorStyles.Right ,// Alinear correctamente
+        ////          Tag = comboBox
+        ////    };
 
-            ActualizarFlecha(comboBox, flechaPersonalizada);
+        ////    ActualizarFlecha(comboBox, flechaPersonalizada);
 
-            // Agregar el PictureBox al contenedor padre del ComboBox
-            comboBox.Parent.Controls.Add(flechaPersonalizada);
-            flechaPersonalizada.BringToFront();
+        ////    // Agregar el PictureBox al contenedor padre del ComboBox
+        ////    comboBox.Parent.Controls.Add(flechaPersonalizada);
+        ////    flechaPersonalizada.BringToFront();
 
-            // Abrir el desplegable del ComboBox al hacer clic en la flecha personalizada
-            flechaPersonalizada.Click += (s, e) => comboBox.DroppedDown = true;
+        ////    // Abrir el desplegable del ComboBox al hacer clic en la flecha personalizada
+        ////    flechaPersonalizada.Click += (s, e) => comboBox.DroppedDown = true;
 
-            // Actualizar la flecha cuando el estado del ComboBox cambie
-            comboBox.EnabledChanged += (s, e) => ActualizarFlecha(comboBox, flechaPersonalizada);
+        ////    // Actualizar la flecha cuando el estado del ComboBox cambie
+        ////    comboBox.EnabledChanged += (s, e) => ActualizarFlecha(comboBox, flechaPersonalizada);
 
-            // Actualizar la posición y tamaño de la flecha personalizada si el ComboBox cambia de tamaño
-            comboBox.SizeChanged += (s, e) =>
-            {
-                Rectangle nuevaArea = ObtenerAreaFlecha(comboBox);
-                flechaPersonalizada.Size = new Size(nuevaArea.Width, nuevaArea.Height);
-                flechaPersonalizada.Location = new Point(nuevaArea.X, nuevaArea.Y);
-            };
-        }
+        ////    // Actualizar la posición y tamaño de la flecha personalizada si el ComboBox cambia de tamaño
+        ////    comboBox.SizeChanged += (s, e) =>
+        ////    {
+        ////        Rectangle nuevaArea = ObtenerAreaFlecha(comboBox);
+        ////        flechaPersonalizada.Size = new Size(nuevaArea.Width, nuevaArea.Height);
+        ////        flechaPersonalizada.Location = new Point(nuevaArea.X, nuevaArea.Y);
+        ////    };
+        ////}
 
-        private void ActualizarFlecha(ComboBox comboBox, PictureBox flechaPersonalizada)
-        {
-            // Imagen neutra por defecto
-            flechaPersonalizada.Image = Properties.Resources.icoPredeterminadoComboBox;
+        ////private void ActualizarFlecha(ComboBox comboBox, PictureBox flechaPersonalizada)
+        ////{
+        ////    // Imagen neutra por defecto
+        ////    flechaPersonalizada.Image = Properties.Resources.icoPredeterminadoComboBox;
            
-            // Eventos para cambiar el color en Hover
-            flechaPersonalizada.MouseEnter += (s, e) =>
-            {
-                flechaPersonalizada.Image = comboBox.Enabled
-                    ? Properties.Resources.flechaG_Verde // Imagen verde si está habilitado
-                    : Properties.Resources.flechaG_Roja; // Imagen roja si está deshabilitado
-            };
+        ////    // Eventos para cambiar el color en Hover
+        ////    flechaPersonalizada.MouseEnter += (s, e) =>
+        ////    {
+        ////        flechaPersonalizada.Image = comboBox.Enabled
+        ////            ? Properties.Resources.flechaG_Verde // Imagen verde si está habilitado
+        ////            : Properties.Resources.flechaG_Roja; // Imagen roja si está deshabilitado
+        ////    };
 
-            // Volver a la imagen neutra al salir del hover
-            flechaPersonalizada.MouseLeave += (s, e) =>
-            {
-                flechaPersonalizada.Image = Properties.Resources.icoPredeterminadoComboBox;
-            };
-        }
+        ////    // Volver a la imagen neutra al salir del hover
+        ////    flechaPersonalizada.MouseLeave += (s, e) =>
+        ////    {
+        ////        flechaPersonalizada.Image = Properties.Resources.icoPredeterminadoComboBox;
+        ////    };
+        ////}
 
 
 
@@ -650,111 +650,111 @@ namespace Ofelia_Sara.Formularios
 
 
 
-        //---- para error provider
-        protected void CrearPictureBoxError(Control parent, string nombre, Point ubicacion)
-        {
-            PictureBox pictureBoxError = new PictureBox
-            {
-                Name = nombre,
-                Size = new Size(16, 16), 
-                Location = ubicacion,
-                Image = Properties.Resources.errorProvider, 
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Visible = false // Por defecto, no visible
-            };
+        ////---- para error provider
+        //protected void CrearPictureBoxError(Control parent, string nombre, Point ubicacion)
+        //{
+        //    PictureBox pictureBoxError = new PictureBox
+        //    {
+        //        Name = nombre,
+        //        Size = new Size(16, 16), 
+        //        Location = ubicacion,
+        //        Image = Properties.Resources.errorProvider, 
+        //        SizeMode = PictureBoxSizeMode.StretchImage,
+        //        Visible = false // Por defecto, no visible
+        //    };
 
-            // Agrega el PictureBox al panel o al control padre
-            parent.Controls.Add(pictureBoxError);
-        }
-        // Método para establecer el error en un control
-        // Método para configurar un PictureBox de error en el control.
-        protected void SetError(Control control, string mensaje)
-        {
-            if (control == null || string.IsNullOrEmpty(mensaje))
-                return;
+        //    // Agrega el PictureBox al panel o al control padre
+        //    parent.Controls.Add(pictureBoxError);
+        //}
+        //// Método para establecer el error en un control
+        //// Método para configurar un PictureBox de error en el control.
+        //protected void SetError(Control control, string mensaje)
+        //{
+        //    if (control == null || string.IsNullOrEmpty(mensaje))
+        //        return;
 
-            // Si el control es un TextBoxConBorde, aplica el borde de error.
-            if (control is TextBoxConBorde textBox)
-            {
-                textBox.MostrarBordeError = true;
-            }
+        //    // Si el control es un TextBoxConBorde, aplica el borde de error.
+        //    if (control is TextBoxCon textBox)
+        //    {
+        //        textBox.MostrarBordeError = true;
+        //    }
 
-            // Verifica si ya existe un PictureBox asociado a este control, si no, lo crea.
-            if (!pictureBoxesErrores.ContainsKey(control))
-            {
-                // Crea un nuevo PictureBox usando el método CrearPictureBoxError.
-                CrearPictureBoxError(control.Parent, $"Error_{control.Name}", new Point(0, 0));
+        //    // Verifica si ya existe un PictureBox asociado a este control, si no, lo crea.
+        //    if (!pictureBoxesErrores.ContainsKey(control))
+        //    {
+        //        // Crea un nuevo PictureBox usando el método CrearPictureBoxError.
+        //        CrearPictureBoxError(control.Parent, $"Error_{control.Name}", new Point(0, 0));
 
-                // Agrega el PictureBox al diccionario.
-                pictureBoxesErrores[control] = control.Parent.Controls.Find($"Error_{control.Name}", true).FirstOrDefault() as PictureBox;
-            }
+        //        // Agrega el PictureBox al diccionario.
+        //        pictureBoxesErrores[control] = control.Parent.Controls.Find($"Error_{control.Name}", true).FirstOrDefault() as PictureBox;
+        //    }
 
-            // Obtén el PictureBox asociado al control.
-            PictureBox pictureBox = pictureBoxesErrores[control];
+        //    // Obtén el PictureBox asociado al control.
+        //    PictureBox pictureBox = pictureBoxesErrores[control];
 
-            // Calcula la posición del PictureBox en relación al control.
-            Point controlLocation = control.Parent.PointToScreen(control.Location);
-            Point formLocation = this.PointToClient(controlLocation);
+        //    // Calcula la posición del PictureBox en relación al control.
+        //    Point controlLocation = control.Parent.PointToScreen(control.Location);
+        //    Point formLocation = this.PointToClient(controlLocation);
 
-            // Ajusta la posición del PictureBox.
-            pictureBox.Location = new Point(
-                formLocation.X + control.Width - pictureBox.Width - 7,
-                formLocation.Y + 2);
+        //    // Ajusta la posición del PictureBox.
+        //    pictureBox.Location = new Point(
+        //        formLocation.X + control.Width - pictureBox.Width - 7,
+        //        formLocation.Y + 2);
 
-            // Asegúrate de que el PictureBox esté visible y al frente.
-            pictureBox.BringToFront();
-            pictureBox.Visible = true;
+        //    // Asegúrate de que el PictureBox esté visible y al frente.
+        //    pictureBox.BringToFront();
+        //    pictureBox.Visible = true;
 
-            // Configura el ToolTip asociado al PictureBox con el mensaje de error.
-            ToolTipError.InitializeToolTipOnHover(pictureBox, mensaje);
-        }
+        //    // Configura el ToolTip asociado al PictureBox con el mensaje de error.
+        //    ToolTipError.InitializeToolTipOnHover(pictureBox, mensaje);
+        //}
 
-        // Método para limpiar el error de un control.
-        protected void ClearError(Control control)
-        {
-            if (control == null)
-                return;
+        //// Método para limpiar el error de un control.
+        //protected void ClearError(Control control)
+        //{
+        //    if (control == null)
+        //        return;
 
-            // Si el control es un TextBoxConBorde, quita el borde de error.
-            if (control is TextBoxConBorde textBox)
-            {
-                textBox.MostrarBordeError = false;
-            }
+        //    // Si el control es un TextBoxConBorde, quita el borde de error.
+        //    if (control is TextBox textBox)
+        //    {
+        //        textBox.MostrarBordeError = false;
+        //    }
 
-            // Si existe un PictureBox asociado al control, ocúltalo.
-            if (pictureBoxesErrores.TryGetValue(control, out PictureBox pictureBox))
-            {
-                pictureBox.Visible = false;
-                ToolTipError.HideToolTip();
-            }
-        }
+        //    // Si existe un PictureBox asociado al control, ocúltalo.
+        //    if (pictureBoxesErrores.TryGetValue(control, out PictureBox pictureBox))
+        //    {
+        //        pictureBox.Visible = false;
+        //        ToolTipError.HideToolTip();
+        //    }
+        //}
 
 
 
         //----------------------------------------------------------------------
 
 
-        // Método que recorre los controles del formulario y cambia los TextBox a TextBoxConBorde
-        private void AplicarTextBoxConBorde(Form formulario)
-        {
-            foreach (Control control in formulario.Controls)
-            {
-                if (control is TextBox)
-                {
-                    // Crea un nuevo TextBoxConBorde
-                    TextBoxConBorde textBoxConBorde = new TextBoxConBorde
-                    {
-                        Text = control.Text,             // Copia el texto actual
-                        Location = control.Location,     // Copia la ubicación
-                        Size = control.Size              // Copia el tamaño
-                    };
+        //// Método que recorre los controles del formulario y cambia los TextBox a TextBoxConBorde
+        //private void AplicarTextBoxConBorde(Form formulario)
+        //{
+        //    foreach (Control control in formulario.Controls)
+        //    {
+        //        if (control is TextBox)
+        //        {
+        //            // Crea un nuevo TextBoxConBorde
+        //            TextBoxConBorde textBoxConBorde = new TextBoxConBorde
+        //            {
+        //                Text = control.Text,             // Copia el texto actual
+        //                Location = control.Location,     // Copia la ubicación
+        //                Size = control.Size              // Copia el tamaño
+        //            };
 
-                    // Remueve el control viejo (TextBox) y añade el nuevo (TextBoxConBorde)
-                    formulario.Controls.Remove(control);
-                    formulario.Controls.Add(textBoxConBorde);
-                }
-            }
-        }
+        //            // Remueve el control viejo (TextBox) y añade el nuevo (TextBoxConBorde)
+        //            formulario.Controls.Remove(control);
+        //            formulario.Controls.Add(textBoxConBorde);
+        //        }
+        //    }
+        //}
 
 
 

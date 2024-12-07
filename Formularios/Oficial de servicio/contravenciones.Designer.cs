@@ -61,14 +61,14 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.FechaAudiencia = new Ofelia_Sara.Controles.Controles.DateCompromiso_Control();
             this.botonDeslizable_StarPlana = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
             this.label_StarPlana = new System.Windows.Forms.Label();
             this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
-            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.Fecha_Nacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
             this.label_TITULO = new System.Windows.Forms.Label();
-            this.FechaAudiencia = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -374,13 +374,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.Fecha_Instruccion);
+            this.panel1.Controls.Add(this.FechaAudiencia);
             this.panel1.Controls.Add(this.botonDeslizable_StarPlana);
             this.panel1.Controls.Add(this.label_StarPlana);
             this.panel1.Controls.Add(this.comboBox_Nacionalidad);
-            this.panel1.Controls.Add(this.Fecha_Instruccion);
             this.panel1.Controls.Add(this.Fecha_Nacimiento);
             this.panel1.Controls.Add(this.label_TITULO);
-            this.panel1.Controls.Add(this.FechaAudiencia);
             this.panel1.Controls.Add(this.textBox_Nombre);
             this.panel1.Controls.Add(this.btn_Imprimir);
             this.panel1.Controls.Add(this.label_DatosInfraccion);
@@ -415,6 +415,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 620);
             this.panel1.TabIndex = 48;
+            // 
+            // FechaAudiencia
+            // 
+            this.FechaAudiencia.AutoSize = true;
+            this.FechaAudiencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.FechaAudiencia.Location = new System.Drawing.Point(203, 108);
+            this.FechaAudiencia.Name = "FechaAudiencia";
+            this.FechaAudiencia.Size = new System.Drawing.Size(363, 24);
+            this.FechaAudiencia.TabIndex = 102;
             // 
             // botonDeslizable_StarPlana
             // 
@@ -452,17 +461,6 @@
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(163, 21);
             this.comboBox_Nacionalidad.TabIndex = 93;
             // 
-            // Fecha_Instruccion
-            // 
-            this.Fecha_Instruccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
-            this.Fecha_Instruccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-           // this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
-            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 9, 25, 22, 49, 58, 572);
-            this.Fecha_Instruccion.Size = new System.Drawing.Size(295, 29);
-            this.Fecha_Instruccion.TabIndex = 92;
-            // 
             // Fecha_Nacimiento
             // 
             this.Fecha_Nacimiento.Location = new System.Drawing.Point(195, 254);
@@ -483,14 +481,15 @@
             this.label_TITULO.TabIndex = 49;
             this.label_TITULO.Text = "CONTRAVENCIONES";
             // 
-            // FechaAudiencia
+            // Fecha_Instruccion
             // 
-            this.FechaAudiencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FechaAudiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaAudiencia.Location = new System.Drawing.Point(209, 105);
-            this.FechaAudiencia.Name = "FechaAudiencia";
-            this.FechaAudiencia.Size = new System.Drawing.Size(279, 24);
-            this.FechaAudiencia.TabIndex = 48;
+            this.Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
+            this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
+            this.Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
+            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
+            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 12, 5, 23, 23, 53, 67);
+            this.Fecha_Instruccion.Size = new System.Drawing.Size(296, 21);
+            this.Fecha_Instruccion.TabIndex = 103;
             // 
             // Contravenciones
             // 
@@ -550,12 +549,12 @@
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_TITULO;
-        private System.Windows.Forms.DateTimePicker FechaAudiencia;
         private System.Windows.Forms.ToolTip toolTip1;
         private Controles.Controles.CustomDate Fecha_Nacimiento;
-        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private Controles.Controles.BotonDeslizable botonDeslizable_StarPlana;
         private System.Windows.Forms.Label label_StarPlana;
+        private Controles.Controles.DateCompromiso_Control FechaAudiencia;
+        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
     }
 }

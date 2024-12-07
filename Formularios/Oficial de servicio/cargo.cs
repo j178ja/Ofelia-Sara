@@ -451,12 +451,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (string.IsNullOrWhiteSpace(control.Text))
             {
                 // Si el campo está vacío, se establece un error en el control y se muestra el PictureBoxError
-                SetError(control, mensajeError);
+                //SetError(control, mensajeError);
                 return false;
             }
 
             // Si el campo está completo, se limpia el error
-            ClearError(control);
+            //ClearError(control);
             return true;
         }
 

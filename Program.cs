@@ -33,6 +33,10 @@ namespace Ofelia_Sara
             //Application.Run(new Cargo());
             //  Application.Run(new NuevoPersonal());
 
+
+            // Application.Run(new IMPRESION());
+            // Application.Run(new Form1());
+
         }
     }
 }

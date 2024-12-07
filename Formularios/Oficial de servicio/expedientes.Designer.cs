@@ -102,7 +102,6 @@
             this.panel1.Controls.Add(this.label_Caratula);
             this.panel1.Controls.Add(this.textBox_Causante);
             this.panel1.Controls.Add(this.label_Victima);
-            this.panel1.Controls.Add(this.label_TITULO);
             this.panel1.Name = "panel1";
             // 
             // textBox_NumeroIpp
@@ -358,9 +357,9 @@
             // 
             // Fecha_Instruccion
             // 
-            this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
+            this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
             resources.ApplyResources(this.Fecha_Instruccion, "Fecha_Instruccion");
-           // this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             // 
@@ -473,6 +472,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_TITULO);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
@@ -480,6 +480,7 @@
             this.Name = "Expedientes";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Expedientes_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Expedientes_Load);
+            this.Controls.SetChildIndex(this.label_TITULO, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

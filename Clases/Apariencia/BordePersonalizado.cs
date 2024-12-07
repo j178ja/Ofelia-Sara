@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* se lo usa asi 
+  RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Drawing;

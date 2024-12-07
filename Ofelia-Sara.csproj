@@ -232,16 +232,10 @@
     <Compile Include="Controles\Boton_Contador.Designer.cs">
       <DependentUpon>Boton_Contador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controles\Controles\Aplicadas con controles\ComboBoxConBorde.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\PanelConBordeNeon.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\PanelConBordePersonalizado.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controles\Controles\Aplicadas con controles\TextBoxConBorde.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controles\Controles\Aplicadas con controles\TooltipEnBtnDesactivado.cs" />
@@ -282,6 +276,12 @@
     </Compile>
     <Compile Include="Controles\Controles\CALENDARIO.Designer.cs">
       <DependentUpon>CALENDARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Controles\comboBoxIMG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\comboBoxIMG.Designer.cs">
+      <DependentUpon>comboBoxIMG.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Controles\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
@@ -354,11 +354,23 @@
     <Compile Include="Controles\Controles\TooltipError.Designer.cs">
       <DependentUpon>TooltipError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Controles\Verificador_ACTUACION.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Controles\Verificador_ACTUACION.Designer.cs">
+      <DependentUpon>Verificador_ACTUACION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\IMPRESION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\IMPRESION.Designer.cs">
+      <DependentUpon>IMPRESION.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Oficial de servicio\ConversorDeDocumentos.cs">
       <SubType>Form</SubType>
@@ -547,6 +559,9 @@
     <EmbeddedResource Include="Controles\Controles\CALENDARIO.resx">
       <DependentUpon>CALENDARIO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\comboBoxIMG.resx">
+      <DependentUpon>comboBoxIMG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Controles\DataTimePickerPersonalizado.resx">
       <DependentUpon>DataTimePickerPersonalizado.cs</DependentUpon>
     </EmbeddedResource>
@@ -575,6 +590,9 @@
     <EmbeddedResource Include="Controles\Controles\PersonalSeleccionadoControl.resx">
       <DependentUpon>PersonalSeleccionadoControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Controles\Verificador_ACTUACION.resx">
+      <DependentUpon>Verificador_ACTUACION.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Contacto.resx">
       <DependentUpon>Contacto.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,6 +604,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\IMPRESION.resx">
+      <DependentUpon>IMPRESION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Oficial de servicio\Contravenciones.resx">
       <DependentUpon>Contravenciones.cs</DependentUpon>
@@ -691,7 +712,7 @@
     <None Include="Resources\Cursor\cursorFlecha.cur" />
     <None Include="Resources\Cursor\hand.cur" />
     <None Include="Resources\Cursor\CursorlapizDerecha.cur" />
-    <None Include="Resources\calendario.png" />
+    <None Include="Resources\imagenes\calendario.png" />
     <Content Include="Resources\imagenes\Advertencia_Faltante.png" />
     <Content Include="Resources\imagenes\agregar imagen.png" />
     <Content Include="Resources\imagenes\agregar imagen_HOVER.png" />
@@ -705,12 +726,15 @@
     <Content Include="Resources\imagenes\Calendario.jpg" />
     <Content Include="Resources\imagenes\check-Personalizado.png" />
     <Content Include="Resources\imagenes\configuracion.ico" />
+    <Content Include="Resources\imagenes\correo_Enviado.png" />
+    <Content Include="Resources\imagenes\Descargar_carpeta.png" />
     <Content Include="Resources\imagenes\dobleFlechaABAJO.png" />
     <Content Include="Resources\imagenes\dobleFlechaARRIBA .png" />
     <Content Include="Resources\imagenes\engranajeOriginal.png" />
     <Content Include="Resources\imagenes\editar.png" />
     <Content Include="Resources\imagenes\eliminarUsuario.png" />
     <Content Include="Resources\imagenes\engranajeConfiguracion.png" />
+    <Content Include="Resources\imagenes\enviar_Correo.png" />
     <Content Include="Resources\imagenes\errorProvider.ico" />
     <Content Include="Resources\imagenes\errorProvider.png" />
     <Content Include="Resources\imagenes\flechaG-Roja.png" />
@@ -725,6 +749,7 @@
     <Content Include="Resources\imagenes\iconoEscribiendo.png" />
     <Content Include="Resources\imagenes\IconoExito.png" />
     <Content Include="Resources\imagenes\IconoInformacion.png" />
+    <Content Include="Resources\imagenes\Inspecionar_formulario.png" />
     <Content Include="Resources\imagenes\microfono24.png" />
     <Content Include="Resources\imagenes\moto.png" />
     <Content Include="Resources\imagenes\QUITAR IMAGEN.png" />

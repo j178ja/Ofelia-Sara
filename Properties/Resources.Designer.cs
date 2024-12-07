@@ -22,7 +22,7 @@ namespace Ofelia_Sara.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -173,9 +173,9 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendario {
+        internal static System.Drawing.Bitmap Calendario {
             get {
-                object obj = ResourceManager.GetObject("calendario", resourceCulture);
+                object obj = ResourceManager.GetObject("Calendario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

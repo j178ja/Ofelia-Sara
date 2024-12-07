@@ -75,6 +75,8 @@
             this.pictureBox_PanelInstruccion = new System.Windows.Forms.PictureBox();
             this.panel_DatosVehiculo = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
             this.panel_DatosEspecificos = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox_Chasis = new System.Windows.Forms.TextBox();
             this.comboBox_Marca = new System.Windows.Forms.ComboBox();
             this.textBox_Motor = new System.Windows.Forms.TextBox();
@@ -114,8 +116,6 @@
             this.radioButton_Automovil = new System.Windows.Forms.RadioButton();
             this.label_SeleccionVisu = new System.Windows.Forms.Label();
             this.label_TITULO = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_ControlesInferiores.SuspendLayout();
             this.panel_Instruccion.SuspendLayout();
@@ -389,12 +389,12 @@
             // 
             // Fecha_Instruccion
             // 
-            this.Fecha_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
+            this.Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
+            this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
             this.Fecha_Instruccion.Location = new System.Drawing.Point(184, 265);
-           // this.Fecha_Instruccion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
             this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
-            this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 25);
+            this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
             this.Fecha_Instruccion.TabIndex = 70;
             // 
             // lbl_Secretario
@@ -737,6 +737,24 @@
             this.panel_DatosEspecificos.Size = new System.Drawing.Size(596, 113);
             this.panel_DatosEspecificos.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
             this.panel_DatosEspecificos.TabIndex = 86;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(105, 88);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(94, 21);
+            this.comboBox1.TabIndex = 89;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(59, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "AÑO :";
             // 
             // textBox_Chasis
             // 
@@ -1179,24 +1197,6 @@
             this.label_TITULO.Size = new System.Drawing.Size(205, 24);
             this.label_TITULO.TabIndex = 32;
             this.label_TITULO.Text = "EXAMEN DE VISU";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(105, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(94, 21);
-            this.comboBox1.TabIndex = 89;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
-            this.label1.TabIndex = 90;
-            this.label1.Text = "AÑO :";
             // 
             // Visu
             // 

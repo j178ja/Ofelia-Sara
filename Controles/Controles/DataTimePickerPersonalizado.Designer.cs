@@ -31,7 +31,7 @@ namespace Ofelia_Sara.Controles.Controles
             this.Btn_Calendario.Dock = System.Windows.Forms.DockStyle.Right;
             this.Btn_Calendario.Location = new System.Drawing.Point(263, 0);
             this.Btn_Calendario.Name = "Btn_Calendario";
-            this.Btn_Calendario.Size = new System.Drawing.Size(24, 22);
+            this.Btn_Calendario.Size = new System.Drawing.Size(24, 21);
             this.Btn_Calendario.TabIndex = 1;
             this.Btn_Calendario.UseVisualStyleBackColor = false;
             this.Btn_Calendario.Click += new System.EventHandler(this.Btn_Calendario_Click);
@@ -107,7 +107,7 @@ namespace Ofelia_Sara.Controles.Controles
             this.Controls.Add(this.textBox_DIA);
             this.Controls.Add(this.Btn_Calendario);
             this.Name = "TimePickerPersonalizado";
-            this.Size = new System.Drawing.Size(287, 22);
+            this.Size = new System.Drawing.Size(287, 21);
             this.ResumeLayout(false);
             this.PerformLayout();
 

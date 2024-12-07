@@ -238,7 +238,7 @@ namespace Ofelia_Sara.Mensajes
                 FechaSeleccionada = SelectFecha_Compromiso.Value.Date + SelectHora_Compromiso.Value.TimeOfDay;
 
                 // Muestra un mensaje de confirmación con la fecha seleccionada
-                Mostrar($"Se ha asignado la fecha {FechaSeleccionada.ToString("dd/MM/yyyy HH:mm")}.", TipoMensaje.Exito);
+                Mostrar($"Se ha asignado la fecha {FechaSeleccionada.ToString("dd/MM/yyyy HH:mm")} Hs.", TipoMensaje.Exito);
 
                 // Cierra el formulario después de mostrar el mensaje
                 this.Close();
@@ -246,7 +246,7 @@ namespace Ofelia_Sara.Mensajes
             else
             {
                 // Manejo de error si los controles no tienen un valor válido
-                Mostrar("No se ha seleccionado una fecha o hora válida.", TipoMensaje.Advertencia);
+                Mostrar("No se ha seleccionado una fecha y hora válida.", TipoMensaje.Advertencia);
             }
         }
 

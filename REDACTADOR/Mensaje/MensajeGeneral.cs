@@ -62,7 +62,7 @@ namespace REDACTADOR.Mensaje
                     pictureBox_Icono.Image = Properties.Resources.IconoAdvertencia;
                     break;
                 case TipoMensaje.Error:
-                    pictureBox_Icono.Image = Properties.Resources.IconoError;
+                  //  pictureBox_Icono.Image = Properties.Resources.IconoError;
                     break;
                 case TipoMensaje.Exito:
                     pictureBox_Icono.Image = Properties.Resources.IconoExito;

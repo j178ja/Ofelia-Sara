@@ -1247,7 +1247,7 @@
     <value>112, 126</value>
   </data>
   <data name="Fecha_Instruccion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 25</value>
+    <value>286, 21</value>
   </data>
   <data name="Fecha_Instruccion.TabIndex" type="System.Int32, mscorlib">
     <value>66</value>
@@ -1696,42 +1696,6 @@
   <data name="&gt;&gt;label_Victima.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="label_TITULO.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_TITULO.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14.25pt</value>
-  </data>
-  <data name="label_TITULO.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label_TITULO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, -11</value>
-  </data>
-  <data name="label_TITULO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 0, 20, 0</value>
-  </data>
-  <data name="label_TITULO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 24</value>
-  </data>
-  <data name="label_TITULO.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="label_TITULO.Text" xml:space="preserve">
-    <value>EXPEDIENTES</value>
-  </data>
-  <data name="&gt;&gt;label_TITULO.Name" xml:space="preserve">
-    <value>label_TITULO</value>
-  </data>
-  <data name="&gt;&gt;label_TITULO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_TITULO.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label_TITULO.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 20</value>
   </data>
@@ -1752,6 +1716,42 @@
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label_TITULO.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_TITULO.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="label_TITULO.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_TITULO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>366, 7</value>
+  </data>
+  <data name="label_TITULO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 0, 20, 0</value>
+  </data>
+  <data name="label_TITULO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 24</value>
+  </data>
+  <data name="label_TITULO.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="label_TITULO.Text" xml:space="preserve">
+    <value>EXPEDIENTES</value>
+  </data>
+  <data name="&gt;&gt;label_TITULO.Name" xml:space="preserve">
+    <value>label_TITULO</value>
+  </data>
+  <data name="&gt;&gt;label_TITULO.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_TITULO.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_TITULO.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

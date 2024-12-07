@@ -397,5 +397,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             };
         }
 
+        private void Fecha_Instruccion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
