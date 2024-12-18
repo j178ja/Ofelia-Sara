@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
-            this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.lbl_00 = new System.Windows.Forms.Label();
-            this.comboBox_Ipp4 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp4 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.panel_ConversorDocumentos = new System.Windows.Forms.Panel();
             this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
@@ -58,12 +58,12 @@
             this.label_DatosInstruccion = new System.Windows.Forms.Label();
             this.label_Instructor = new System.Windows.Forms.Label();
             this.label_Secretario = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado();
             this.label_Fecha = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
-            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
-            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
-            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
+            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
             this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
             this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
@@ -111,7 +111,7 @@
             // 
             // comboBox_Ipp1
             // 
-            this.comboBox_Ipp1.FormattingEnabled = true;
+            
             this.comboBox_Ipp1.Items.AddRange(new object[] {
             resources.GetString("comboBox_Ipp1.Items"),
             resources.GetString("comboBox_Ipp1.Items1"),
@@ -128,7 +128,7 @@
             // 
             // comboBox_Ipp2
             // 
-            this.comboBox_Ipp2.FormattingEnabled = true;
+            
             this.comboBox_Ipp2.Items.AddRange(new object[] {
             resources.GetString("comboBox_Ipp2.Items"),
             resources.GetString("comboBox_Ipp2.Items1"),
@@ -150,7 +150,7 @@
             // 
             // comboBox_Ipp4
             // 
-            this.comboBox_Ipp4.FormattingEnabled = true;
+            
             this.comboBox_Ipp4.Items.AddRange(new object[] {
             resources.GetString("comboBox_Ipp4.Items"),
             resources.GetString("comboBox_Ipp4.Items1"),
@@ -375,7 +375,7 @@
             // 
             // comboBox_Dependencia
             // 
-            this.comboBox_Dependencia.FormattingEnabled = true;
+            
             this.comboBox_Dependencia.Items.AddRange(new object[] {
             resources.GetString("comboBox_Dependencia.Items"),
             resources.GetString("comboBox_Dependencia.Items1"),
@@ -387,7 +387,7 @@
             // comboBox_Instructor
             // 
             resources.ApplyResources(this.comboBox_Instructor, "comboBox_Instructor");
-            this.comboBox_Instructor.FormattingEnabled = true;
+            
             this.comboBox_Instructor.Items.AddRange(new object[] {
             resources.GetString("comboBox_Instructor.Items"),
             resources.GetString("comboBox_Instructor.Items1"),
@@ -397,7 +397,7 @@
             // comboBox_Secretario
             // 
             resources.ApplyResources(this.comboBox_Secretario, "comboBox_Secretario");
-            this.comboBox_Secretario.FormattingEnabled = true;
+            
             this.comboBox_Secretario.Items.AddRange(new object[] {
             resources.GetString("comboBox_Secretario.Items"),
             resources.GetString("comboBox_Secretario.Items1"),
@@ -504,12 +504,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_TITULO;
-        private System.Windows.Forms.ComboBox comboBox_Secretario;
-        private System.Windows.Forms.ComboBox comboBox_Instructor;
-        private System.Windows.Forms.ComboBox comboBox_Dependencia;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Secretario;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Instructor;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Dependencia;
         private System.Windows.Forms.Label label_Dependencia;
         private System.Windows.Forms.Label label_Fecha;
-        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
+        private Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label label_Secretario;
         private System.Windows.Forms.Label label_Instructor;
         private System.Windows.Forms.TextBox textBox_Caratula;
@@ -542,9 +542,9 @@
         private System.Windows.Forms.Panel panel_ControlesInferiores;
         private System.Windows.Forms.Label label_Ipp;
         private System.Windows.Forms.TextBox textBox_NumeroIpp;
-        private System.Windows.Forms.ComboBox comboBox_Ipp1;
-        private System.Windows.Forms.ComboBox comboBox_Ipp2;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp1;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp2;
         private System.Windows.Forms.Label lbl_00;
-        private System.Windows.Forms.ComboBox comboBox_Ipp4;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp4;
     }
 }

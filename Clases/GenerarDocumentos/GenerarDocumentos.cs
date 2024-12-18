@@ -5,7 +5,7 @@ using System.Windows.Forms;//(usandolo se elimina error de que no reconosca mens
 using Word = Microsoft.Office.Interop.Word;
 
 
-namespace Clases.GenerarDocumentos
+namespace Ofelia_Sara.Clases.GenerarDocumentos
 {
     public class GeneradorDocumentos
     {

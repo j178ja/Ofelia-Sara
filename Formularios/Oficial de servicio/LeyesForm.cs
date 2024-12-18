@@ -1,9 +1,10 @@
-﻿using Clases.Apariencia;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios.General;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {

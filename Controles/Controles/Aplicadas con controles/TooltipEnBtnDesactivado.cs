@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Controles.Controles.Aplicadas_con_controles
+namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
     public partial class TooltipEnControlDesactivado
     {

@@ -1,8 +1,8 @@
-﻿namespace Controles.Barra_Busqueda
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+namespace Ofelia_Sara.Controles.Barra_Busqueda
+{
     public class TareasManager
     {
         // Lista interna de tareas

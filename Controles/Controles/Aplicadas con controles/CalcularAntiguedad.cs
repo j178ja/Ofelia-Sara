@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Controles.Controles.Aplicadas_con_controles
+namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
     public class CalcularAntiguedad
     {

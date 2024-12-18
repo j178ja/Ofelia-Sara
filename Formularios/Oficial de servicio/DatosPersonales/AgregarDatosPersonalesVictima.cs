@@ -1,11 +1,13 @@
-﻿using Clases.Botones;
-using Clases.Texto;
-using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.Mensajes;
+﻿using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.General;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+
+using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -64,13 +66,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.botonDeslizable_StudRML = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.botonDeslizable_StudRML = new Ofelia_Sara.Controles.General.BotonDeslizable();
             this.label_StudRML = new System.Windows.Forms.Label();
-            this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstadoCivil = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
-            this.emailControl1 = new Ofelia_Sara.Controles.Controles.EmailControl();
-            this.numeroTelefonicoControl1 = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
+            this.emailControl1 = new Ofelia_Sara.Controles.Ofl_Sara.EmailControl();
+            this.numeroTelefonicoControl1 = new Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Ofl_Sara.CustomDate();
             this.label_agrGeo2 = new System.Windows.Forms.Label();
             this.label_agrGeo = new System.Windows.Forms.Label();
             this.label_AgregarDomicilio = new System.Windows.Forms.Label();
@@ -83,7 +85,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.label_Notificacion258 = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.comboBox_Nacionalidad = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_Email = new System.Windows.Forms.Label();
             this.label_Telefono = new System.Windows.Forms.Label();
             this.pictureBox_Geoposicionamiento = new System.Windows.Forms.PictureBox();
@@ -179,7 +181,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // comboBox_EstadoCivil
             // 
-            this.comboBox_EstadoCivil.FormattingEnabled = true;
+            
             this.comboBox_EstadoCivil.Items.AddRange(new object[] {
             "SOLTERO/A",
             "CASADO/A",
@@ -356,7 +358,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             "ARGENTINA",
             "PARAGUAYA",
             "BOLIVIANA"});
-            this.comboBox_Nacionalidad.FormattingEnabled = true;
+            
             this.comboBox_Nacionalidad.Items.AddRange(new object[] {
             "ARGENTINA",
             "PARAGUAYA",

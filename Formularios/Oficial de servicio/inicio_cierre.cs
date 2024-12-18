@@ -1,28 +1,27 @@
 ﻿using BaseDatos.Entidades;
-using Clases.Botones;
-using Clases.GenerarDocumentos;
-using Clases.Texto;
-using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Clases.Texto;
-using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.GenerarDocumentos;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Ofelia_Sara.general.animaciones;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.Mensajes;
+using Ofelia_Sara.Clases.General.Animaciones;
+using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Controles;
-using Ofelia_Sara.Registro_de_personal;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles; //para tooltip general
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre;
-
+using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Controles.Ofl_Sara;
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class InicioCierre : BaseForm
     {
+
         private ReposicionarSegunAgregado reposicionador;//para reposicionar paneles
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
@@ -38,6 +37,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
         public InicioCierre()
         {
+            ConsoleHelper.AllocConsole();
+            Console.WriteLine($"INICIO ejecucion");
             InitializeComponent();
 
             //.......para reposicionar paneles
@@ -135,15 +136,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
 
-            ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
-            ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
-            ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
+            //ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
+            //ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
+            //ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
             //...........................................................................
             //carcteristicas de texto en controles
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
             MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad);
+            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
             MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
@@ -345,16 +346,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void ComboBox_Ipp_TextUpdate(object sender, EventArgs e)
         {
-            // Limitar a 2 caracteres
-            if (comboBox_Ipp2.Text.Length > 2)
+            TextBox textBox = sender as TextBox; // El sender será el InnerTextBox
+            if (textBox != null && textBox.Text.Length > 2)
             {
-                // Si el texto excede los 2 caracteres, cortar el exceso
-                comboBox_Ipp2.Text = comboBox_Ipp2.Text.Substring(0, 2);
-
-                // Mover el cursor al final del texto
-                comboBox_Ipp2.SelectionStart = comboBox_Ipp2.Text.Length;
+                textBox.Text = textBox.Text.Substring(0, 2); // Limitar a 2 caracteres
+                textBox.SelectionStart = textBox.Text.Length; // Mantener el cursor al final
             }
         }
+
         //------------------------------------------------------------------
 
         /// <summary>

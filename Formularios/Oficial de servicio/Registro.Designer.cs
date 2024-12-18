@@ -52,7 +52,7 @@
             // 
             // timePickerPersonalizadoFecha
             // 
-            this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 7, 2, 40, 58, 723);
+         //   this.timePickerPersonalizadoFecha.SelectedDate = new System.DateTime(2024, 8, 7, 2, 40, 58, 723);
             // 
             // panel4
             // 

@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesConcubina));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox_Parentesco = new System.Windows.Forms.ComboBox();
+            this.comboBox_Parentesco = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_Parentesco = new System.Windows.Forms.Label();
             this.btn_AgregarConcubina = new System.Windows.Forms.Button();
-            this.comboBox_EstadoCivil = new System.Windows.Forms.ComboBox();
+            this.comboBox_EstadoCivil = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_EstadoCivil = new System.Windows.Forms.Label();
             this.textBox_LugarNacimiento = new System.Windows.Forms.TextBox();
             this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.emailControl1 = new Ofelia_Sara.Controles.Controles.EmailControl();
-            this.numeroTelefonicoControl = new Ofelia_Sara.Controles.Controles.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
+            this.emailControl1 = new Ofelia_Sara.Controles.Ofl_Sara.EmailControl();
+            this.numeroTelefonicoControl = new Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl();
+            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Ofl_Sara.CustomDate();
             this.label_Email = new System.Windows.Forms.Label();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.comboBox_Nacionalidad = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.textBox_Ocupacion = new System.Windows.Forms.TextBox();
             this.label_Ocupacion = new System.Windows.Forms.Label();
             this.textBox_Apodo = new System.Windows.Forms.TextBox();
@@ -112,7 +112,7 @@
             // 
             // comboBox_Parentesco
             // 
-            this.comboBox_Parentesco.FormattingEnabled = true;
+            
             this.comboBox_Parentesco.Items.AddRange(new object[] {
             "Esposa/o",
             "Concubina/o",
@@ -154,7 +154,7 @@
             // 
             // comboBox_EstadoCivil
             // 
-            this.comboBox_EstadoCivil.FormattingEnabled = true;
+            
             this.comboBox_EstadoCivil.Items.AddRange(new object[] {
             "SOLTERO/A",
             "CASADO/A",
@@ -232,7 +232,7 @@
             // 
             // comboBox_Nacionalidad
             // 
-            this.comboBox_Nacionalidad.FormattingEnabled = true;
+            
             this.comboBox_Nacionalidad.Items.AddRange(new object[] {
             "ARGENTINA",
             "PARAGUAYA",
@@ -484,15 +484,15 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_AgregarConcubina;
-        private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_EstadoCivil;
         private System.Windows.Forms.Label label_EstadoCivil;
         private System.Windows.Forms.TextBox textBox_LugarNacimiento;
         private System.Windows.Forms.Label label_LugarNacimiento;
-        private Controles.Controles.EmailControl emailControl1;
-        private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl;
-        private Controles.Controles.CustomDate dateTimePicker_FechaNacimiento;
+        private Ofelia_Sara.Controles.Ofl_Sara.EmailControl emailControl1;
+        private Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl;
+        private Ofelia_Sara.Controles.Ofl_Sara.CustomDate dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.Label label_Email;
-        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Ocupacion;
         private System.Windows.Forms.Label label_Ocupacion;
         private System.Windows.Forms.TextBox textBox_Apodo;
@@ -515,7 +515,7 @@
         private System.Windows.Forms.Label label_Dni;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.Label label_CircunstanciasPersonales;
-        private System.Windows.Forms.ComboBox comboBox_Parentesco;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Parentesco;
         private System.Windows.Forms.Label label_Parentesco;
         private System.Windows.Forms.ToolTip toolTip1;
     }

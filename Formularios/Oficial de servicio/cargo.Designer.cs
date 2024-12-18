@@ -33,47 +33,47 @@
             this.label_Cargo = new System.Windows.Forms.Label();
             this.textBox_NumeroCargo = new System.Windows.Forms.TextBox();
             this.label_Barra = new System.Windows.Forms.Label();
-            this.comboBox_Año = new System.Windows.Forms.ComboBox();
+            this.comboBox_Año = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_ControlesInferiores = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.panel_ControlesInferiores = new Ofelia_Sara.Controles.General.PanelConBordeNeon();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.panel_Descripcion = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.panel_Descripcion = new Ofelia_Sara.Controles.General.PanelConBordeNeon();
             this.richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
             this.btn_AmpliarReducir_DESCRIPCION = new System.Windows.Forms.Button();
             this.pictureBox_Descripcion = new System.Windows.Forms.PictureBox();
             this.label_Descripcion = new System.Windows.Forms.Label();
             this.panel_SeleccionVisu = new System.Windows.Forms.Panel();
-            this.botonDeslizable_Visu = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.botonDeslizable_Visu = new Ofelia_Sara.Controles.General.BotonDeslizable();
             this.label_Not247 = new System.Windows.Forms.Label();
             this.pictureBox_CheckLegajoVehicular = new System.Windows.Forms.PictureBox();
             this.checkBox_LegajoVehicular = new System.Windows.Forms.CheckBox();
             this.label_LegajoVehicular = new System.Windows.Forms.Label();
-            this.panel_Instruccion = new Ofelia_Sara.Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon();
+            this.panel_Instruccion = new Ofelia_Sara.Controles.General.PanelConBordeNeon();
             this.panel_DatosInstruccion = new System.Windows.Forms.Panel();
-            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
+            this.comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.btn_AmpliarReducir_INSTRUCCION = new System.Windows.Forms.Button();
             this.label_Localidad = new System.Windows.Forms.Label();
-            this.comboBox_Localidad = new System.Windows.Forms.ComboBox();
-            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
-            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
-            this.comboBox_Fiscalia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Localidad = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Fiscalia = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.lbl_Dependencia = new System.Windows.Forms.Label();
-            this.comboBox_AgenteFiscal = new System.Windows.Forms.ComboBox();
+            this.comboBox_AgenteFiscal = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado();
             this.lbl_Secretario = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_Ufid = new System.Windows.Forms.Label();
             this.lbl_Dr = new System.Windows.Forms.Label();
             this.panel_Ipp = new System.Windows.Forms.Panel();
             this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
-            this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.lbl_00 = new System.Windows.Forms.Label();
-            this.comboBox_Ipp4 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp4 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.lbl_Ipp = new System.Windows.Forms.Label();
             this.panel_Caratula = new System.Windows.Forms.Panel();
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
@@ -138,7 +138,7 @@
             // 
             // comboBox_Año
             // 
-            this.comboBox_Año.FormattingEnabled = true;
+            
             this.comboBox_Año.Items.AddRange(new object[] {
             "24",
             "25",
@@ -411,7 +411,7 @@
             // comboBox_Instructor
             // 
             this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Instructor.FormattingEnabled = true;
+            
             this.comboBox_Instructor.Items.AddRange(new object[] {
             "Comisario Miguel Moreno",
             "subcomisario Melisa Perea Peña",
@@ -449,7 +449,7 @@
             // comboBox_Localidad
             // 
             this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Localidad.FormattingEnabled = true;
+            
             this.comboBox_Localidad.Items.AddRange(new object[] {
             "PINAMAR",
             "VILLA GESELL",
@@ -463,7 +463,7 @@
             // comboBox_Secretario
             // 
             this.comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Secretario.FormattingEnabled = true;
+            
             this.comboBox_Secretario.Items.AddRange(new object[] {
             "Oficial Ayudante Jorge A. Bonato",
             "Oficial Subayudante Ariel Vasquez",
@@ -477,7 +477,7 @@
             // 
             // comboBox_Dependencia
             // 
-            this.comboBox_Dependencia.FormattingEnabled = true;
+            
             this.comboBox_Dependencia.Items.AddRange(new object[] {
             "EPC I PINAMAR",
             "EPC II OSTENDE",
@@ -491,8 +491,8 @@
             // comboBox_Fiscalia
             // 
             this.comboBox_Fiscalia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Fiscalia.FormattingEnabled = true;
-            this.comboBox_Fiscalia.ItemHeight = 13;
+            
+    
             this.comboBox_Fiscalia.Items.AddRange(new object[] {
             "04",
             "05",
@@ -516,7 +516,7 @@
             // comboBox_AgenteFiscal
             // 
             this.comboBox_AgenteFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_AgenteFiscal.FormattingEnabled = true;
+            
             this.comboBox_AgenteFiscal.Items.AddRange(new object[] {
             "Calderón Pablo",
             "Mercuri Walter",
@@ -614,7 +614,7 @@
             // 
             // comboBox_Ipp1
             // 
-            this.comboBox_Ipp1.FormattingEnabled = true;
+            
             this.comboBox_Ipp1.Items.AddRange(new object[] {
             "00",
             "01",
@@ -628,7 +628,7 @@
             "09"});
             this.comboBox_Ipp1.Location = new System.Drawing.Point(106, 2);
             this.comboBox_Ipp1.MaxDropDownItems = 10;
-            this.comboBox_Ipp1.MaxLength = 2;
+            this.comboBox_Ipp1.InnerTextBox.MaxLength = 2;
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 3;
@@ -637,7 +637,7 @@
             // 
             // comboBox_Ipp2
             // 
-            this.comboBox_Ipp2.FormattingEnabled = true;
+            
             this.comboBox_Ipp2.Items.AddRange(new object[] {
             "00",
             "01",
@@ -667,7 +667,7 @@
             // 
             // comboBox_Ipp4
             // 
-            this.comboBox_Ipp4.FormattingEnabled = true;
+            
             this.comboBox_Ipp4.Items.AddRange(new object[] {
             "24",
             "25",
@@ -900,33 +900,33 @@
         private System.Windows.Forms.Label label_Cargo;
         private System.Windows.Forms.TextBox textBox_NumeroCargo;
         private System.Windows.Forms.Label label_Barra;
-        private System.Windows.Forms.ComboBox comboBox_Año;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Año;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Instruccion;
+        private Ofelia_Sara.Controles.General.PanelConBordeNeon panel_Instruccion;
         private System.Windows.Forms.Panel panel_DatosInstruccion;
-        private System.Windows.Forms.ComboBox comboBox_Instructor;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Instructor;
         private System.Windows.Forms.Button btn_AmpliarReducir_INSTRUCCION;
         private System.Windows.Forms.Label label_Localidad;
-        private System.Windows.Forms.ComboBox comboBox_Localidad;
-        private System.Windows.Forms.ComboBox comboBox_Secretario;
-        private System.Windows.Forms.ComboBox comboBox_Dependencia;
-        private System.Windows.Forms.ComboBox comboBox_Fiscalia;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Localidad;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Secretario;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Dependencia;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Fiscalia;
         private System.Windows.Forms.Label lbl_Dependencia;
-        private System.Windows.Forms.ComboBox comboBox_AgenteFiscal;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_AgenteFiscal;
         private System.Windows.Forms.Label lbl_Fecha;
-        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
+        private Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label lbl_Secretario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_Ufid;
         private System.Windows.Forms.Label lbl_Dr;
         private System.Windows.Forms.Panel panel_Ipp;
         private System.Windows.Forms.TextBox textBox_NumeroIpp;
-        private System.Windows.Forms.ComboBox comboBox_Ipp1;
-        private System.Windows.Forms.ComboBox comboBox_Ipp2;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp1;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp2;
         private System.Windows.Forms.Label lbl_00;
-        private System.Windows.Forms.ComboBox comboBox_Ipp4;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp4;
         private System.Windows.Forms.Label lbl_Ipp;
         private System.Windows.Forms.Panel panel_Caratula;
         private System.Windows.Forms.TextBox textBox_Caratula;
@@ -943,14 +943,14 @@
         private System.Windows.Forms.Label label_DatosInstruccion;
         private System.Windows.Forms.PictureBox pictureBox_PanelInstruccion;
         private System.Windows.Forms.Panel panel_SeleccionVisu;
-        private Controles.Controles.BotonDeslizable botonDeslizable_Visu;
+        private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_Visu;
         private System.Windows.Forms.Label label_Not247;
         private System.Windows.Forms.PictureBox pictureBox_CheckLegajoVehicular;
         private System.Windows.Forms.CheckBox checkBox_LegajoVehicular;
         private System.Windows.Forms.Label label_LegajoVehicular;
-        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_Descripcion;
+        private Ofelia_Sara.Controles.General.PanelConBordeNeon panel_Descripcion;
         private System.Windows.Forms.Label label_Descripcion;
-        private Controles.Controles.Aplicadas_con_controles.PanelConBordeNeon panel_ControlesInferiores;
+        private Ofelia_Sara.Controles.General.PanelConBordeNeon panel_ControlesInferiores;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;

@@ -1,14 +1,15 @@
-﻿using BaseDatos.Mensaje;
-using Clases.Apariencia;
-using Clases.Botones;
-using Ofelia_Sara.Controles.Controles;
-using Ofelia_Sara.general.clases;
+﻿
+using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Controles.Controles.Ofl_Sara;
+using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using Ofelia_Sara.Controles.Ofl_Sara;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -82,50 +83,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //-------------------------------------------------------------
-        //---------------COMBO BOX IPP 1      ------------------
-        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void ComboBox_Ipp1_TextUpdate(object sender, EventArgs e)
-        {
-            // Limitar a 2 caracteres
-            if (comboBox_Ipp1.Text.Length > 2)
-            {
-                // Si el texto excede los 2 caracteres, cortar el exceso
-                comboBox_Ipp1.Text = comboBox_Ipp1.Text.Substring(0, 2);
+        
 
-                // Mover el cursor al final del texto
-                comboBox_Ipp1.SelectionStart = comboBox_Ipp1.Text.Length;
+ 
+        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
+        private void ComboBox_Ipp_TextUpdate(object sender, EventArgs e)
+        {
+        // se aplica a textBox ya que el customComboBox esta construido con textBox
+            if (sender is TextBox textBox)
+            {
+                // Limitar a 2 caracteres
+                if (textBox.Text.Length > 2)
+                {
+                    textBox.Text = textBox.Text.Substring(0, 2);
+
+                    // Mover el cursor al final del texto
+                    textBox.SelectionStart = textBox.Text.Length;
+                }
             }
         }
 
-        //---------------COMBO BOX IPP 2      ------------------
-        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void ComboBox_Ipp2_TextUpdate(object sender, EventArgs e)
-        {
-            // Limitar a 2 caracteres
-            if (comboBox_Ipp2.Text.Length > 2)
-            {
-                // Si el texto excede los 2 caracteres, cortar el exceso
-                comboBox_Ipp2.Text = comboBox_Ipp2.Text.Substring(0, 2);
-
-                // Mover el cursor al final del texto
-                comboBox_Ipp2.SelectionStart = comboBox_Ipp2.Text.Length;
-            }
-        }
-
-        //---------------COMBO BOX IPP 4      ------------------
-        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
-        private void ComboBox_Ipp4_TextUpdate(object sender, EventArgs e)
-        {
-            // Limitar a 2 caracteres
-            if (comboBox_Ipp4.Text.Length > 2)
-            {
-                // Si el texto excede los 2 caracteres, cortar el exceso
-                comboBox_Ipp4.Text = comboBox_Ipp4.Text.Substring(0, 2);
-
-                // Mover el cursor al final del texto
-                comboBox_Ipp4.SelectionStart = comboBox_Ipp4.Text.Length;
-            }
-        }
         //-----EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
         // Verifica si el carácter presionado es un número o una tecla de control (como Backspace)
         private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
@@ -230,7 +207,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void ComboBox_Secretario_TextChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+            Ofelia_Sara.Controles.General.CustomComboBox comboBox = sender as Ofelia_Sara.Controles.General.CustomComboBox;
 
             if (comboBox != null)
             {
@@ -256,7 +233,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void ComboBox_Instructor_TextChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+            Ofelia_Sara.Controles.General.CustomComboBox comboBox = sender as Ofelia_Sara.Controles.General.CustomComboBox;
 
             if (comboBox != null)
             {
@@ -282,7 +259,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+            Ofelia_Sara.Controles.General.CustomComboBox comboBox = sender as Ofelia_Sara.Controles.General.CustomComboBox;
 
             if (comboBox != null)
             {

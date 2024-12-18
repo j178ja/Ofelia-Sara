@@ -39,7 +39,7 @@
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.Label label_Telefono;
-        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -53,12 +53,12 @@
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.Label label_agrGeo2;
         private System.Windows.Forms.Label label_agrGeo;
-        private Controles.Controles.CustomDate dateTimePicker_FechaNacimiento;
-        private Controles.Controles.EmailControl emailControl1;
-        private Controles.Controles.NumeroTelefonicoControl numeroTelefonicoControl1;
-        private System.Windows.Forms.ComboBox comboBox_EstadoCivil;
+        private Ofelia_Sara.Controles.Ofl_Sara.CustomDate dateTimePicker_FechaNacimiento;
+        private Ofelia_Sara.Controles.Ofl_Sara.EmailControl emailControl1;
+        private Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl1;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_EstadoCivil;
         private System.Windows.Forms.Label label_EstadoCivil;
-        private Controles.Controles.BotonDeslizable botonDeslizable_StudRML;
+        private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_StudRML;
         private System.Windows.Forms.Label label_StudRML;
         private System.Windows.Forms.PictureBox pictureBox_CheckNotificacion258;
     }

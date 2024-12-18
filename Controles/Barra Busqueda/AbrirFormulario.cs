@@ -1,7 +1,8 @@
 ﻿using System.Windows.Forms;
 //using Ofelia_Sara.Agregar_Componentes;
 
-namespace Controles.Barra_Busqueda
+namespace Ofelia_Sara.Controles.Barra_Busqueda
+
 {
     public class AbrirFormularios_BarraBusqueda
     {

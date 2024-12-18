@@ -199,7 +199,7 @@
     <value>comboBox_Ipp1</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -250,7 +250,7 @@
     <value>comboBox_Ipp2</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -307,7 +307,7 @@
     <value>comboBox_Ipp4</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp4.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1355,7 +1355,7 @@
     <value>comboBox_Dependencia</value>
   </data>
   <data name="&gt;&gt;comboBox_Dependencia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBox_Dependencia.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1388,7 +1388,7 @@
     <value>comboBox_Instructor</value>
   </data>
   <data name="&gt;&gt;comboBox_Instructor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBox_Instructor.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1427,7 +1427,7 @@
     <value>comboBox_Secretario</value>
   </data>
   <data name="&gt;&gt;comboBox_Secretario.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;comboBox_Secretario.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.general.clases.Apariencia_General;
+using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Clases.General.Botones;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -45,7 +46,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (textBox != null)
             {
                 // Convertir el texto a mayúsculas ignorando caracteres especiales
-                textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+               // textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
 
                 // Para mantener el cursor al final del texto
                 textBox.SelectionStart = textBox.Text.Length;

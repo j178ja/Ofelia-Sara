@@ -52,23 +52,23 @@
             this.label_Instructor = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.label_Fecha = new System.Windows.Forms.Label();
-            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
-            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
-            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
+            this.comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.btn_AgregarArtContravencion = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.FechaAudiencia = new Ofelia_Sara.Controles.Controles.DateCompromiso_Control();
-            this.botonDeslizable_StarPlana = new Ofelia_Sara.Controles.Controles.BotonDeslizable();
+            this.FechaAudiencia = new Ofelia_Sara.Controles.Ofl_Sara.DateCompromiso_Control();
+            this.botonDeslizable_StarPlana = new Ofelia_Sara.Controles.General.BotonDeslizable();
             this.label_StarPlana = new System.Windows.Forms.Label();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
-            this.Fecha_Nacimiento = new Ofelia_Sara.Controles.Controles.CustomDate();
+            this.comboBox_Nacionalidad = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.Fecha_Nacimiento = new Ofelia_Sara.Controles.Ofl_Sara.CustomDate();
             this.label_TITULO = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
+            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -289,7 +289,7 @@
             // 
             // comboBox_Secretario
             // 
-            this.comboBox_Secretario.FormattingEnabled = true;
+            
             this.comboBox_Secretario.Location = new System.Drawing.Point(153, 394);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(296, 21);
@@ -297,7 +297,7 @@
             // 
             // comboBox_Instructor
             // 
-            this.comboBox_Instructor.FormattingEnabled = true;
+            
             this.comboBox_Instructor.Location = new System.Drawing.Point(153, 421);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(296, 21);
@@ -305,7 +305,7 @@
             // 
             // comboBox_Dependencia
             // 
-            this.comboBox_Dependencia.FormattingEnabled = true;
+            
             this.comboBox_Dependencia.Location = new System.Drawing.Point(153, 448);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(296, 21);
@@ -447,7 +447,7 @@
             // 
             // comboBox_Nacionalidad
             // 
-            this.comboBox_Nacionalidad.FormattingEnabled = true;
+            
             this.comboBox_Nacionalidad.Items.AddRange(new object[] {
             "ARGENTINA",
             "PARAGUAYA",
@@ -539,9 +539,9 @@
         private System.Windows.Forms.Label label_Instructor;
         private System.Windows.Forms.Label label_Dependencia;
         private System.Windows.Forms.Label label_Fecha;
-        private System.Windows.Forms.ComboBox comboBox_Secretario;
-        private System.Windows.Forms.ComboBox comboBox_Instructor;
-        private System.Windows.Forms.ComboBox comboBox_Dependencia;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Secretario;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Instructor;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Dependencia;
         private System.Windows.Forms.Button btn_AgregarArtContravencion;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Guardar;
@@ -550,11 +550,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Controles.Controles.CustomDate Fecha_Nacimiento;
-        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
-        private Controles.Controles.BotonDeslizable botonDeslizable_StarPlana;
+        private Ofelia_Sara.Controles.Ofl_Sara.CustomDate Fecha_Nacimiento;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Nacionalidad;
+        private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_StarPlana;
         private System.Windows.Forms.Label label_StarPlana;
-        private Controles.Controles.DateCompromiso_Control FechaAudiencia;
-        private Controles.Controles.TimePickerPersonalizado Fecha_Instruccion;
+        private Ofelia_Sara.Controles.Ofl_Sara.DateCompromiso_Control FechaAudiencia;
+        private Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado Fecha_Instruccion;
     }
 }

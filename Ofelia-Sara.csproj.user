@@ -10,4 +10,182 @@
     <FallbackCulture>es-ES</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Controles\General\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\Boton_Contador.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\Redactador\PictureBoxCircular.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\Barra Busqueda\PlaceholderComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\NuevaImagen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\General\BotonDeslizable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\General\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\General\PanelConBordeNeon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\General\PanelConBordePersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controles\General\TooltipError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\AgregarFiscaliaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\AgregarJuzgadoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\CALENDARIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\CustomDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\DataTimePickerPersonalizado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\DateCompromiso_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\EmailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\NuevaCaratulaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\NuevaPersonaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\NumeroTelefonicoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\PersonalSeleccionadoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\Verificador_ACTUACION.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Redactador\AudioVisualizerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\BaseFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\Contacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\IMPRESION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\Mensajes\MensajeGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\menu_principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\Presentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\Mensajes\MensajeCargarImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\Mensajes\MensajeGenerarDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\VideoInstructivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\General\VideoInstructivoR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Mecanografia\Mecanografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\ModificarEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\UsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Agregar Componentes\NuevaDependencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Agregar Componentes\NuevaFiscalia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Agregar Componentes\NuevoInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Agregar Componentes\NuevoSecretario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Agregar Componentes\SellosDependencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\BuscarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\cargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\contravenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesConcubina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesImputado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\DatosPersonales\AgregarDatosPersonalesVictima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\expedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\inicio_cierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\LeyesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Registro de personal\BuscarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Registro de personal\NuevoPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Oficial de servicio\Visu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Redactador\Redactador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

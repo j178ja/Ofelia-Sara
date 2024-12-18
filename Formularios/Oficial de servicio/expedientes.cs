@@ -1,10 +1,10 @@
-﻿using Clases.Botones;
-using Clases.GenerarDocumentos;
-using Clases.Texto;
-using Controles.Controles;
-using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.Mensajes;
+﻿using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.GenerarDocumentos;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.General;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-
+using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 
 
 

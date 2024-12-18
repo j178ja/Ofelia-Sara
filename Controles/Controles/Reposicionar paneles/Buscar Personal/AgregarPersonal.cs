@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Controles.Controles.Reposicionar_paneles.Buscar_Personal
+namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.Buscar_Personal
 {
 
     public class AgregarPersonal

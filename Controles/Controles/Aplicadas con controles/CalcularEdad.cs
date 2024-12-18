@@ -1,8 +1,9 @@
 ﻿using Ofelia_Sara.Controles.Controles;
 using System;
 using System.Windows.Forms;
+using Ofelia_Sara.Controles.Ofl_Sara;
 
-namespace Controles.Controles.Aplicadas_con_controles
+namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
     public static class CalcularEdad
     {

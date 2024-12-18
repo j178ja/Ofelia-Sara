@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Fecha_Actuacion = new Ofelia_Sara.Controles.Controles.TimePickerPersonalizado();
-            this.comboBox_Secretario = new System.Windows.Forms.ComboBox();
-            this.comboBox_Instructor = new System.Windows.Forms.ComboBox();
-            this.comboBox_Dependencia = new System.Windows.Forms.ComboBox();
+            this.Fecha_Actuacion = new Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado();
+            this.comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_00 = new System.Windows.Forms.Label();
-            this.comboBox_Ipp4 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Ipp2 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Ipp1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ipp4 = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
+            this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_Caratula = new System.Windows.Forms.Label();
             this.textBox_Caratula = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
@@ -100,7 +100,7 @@
             // comboBox_Secretario
             // 
             this.comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Secretario.FormattingEnabled = true;
+            
             this.comboBox_Secretario.Location = new System.Drawing.Point(142, 231);
             this.comboBox_Secretario.Name = "comboBox_Secretario";
             this.comboBox_Secretario.Size = new System.Drawing.Size(363, 26);
@@ -111,7 +111,7 @@
             // comboBox_Instructor
             // 
             this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Instructor.FormattingEnabled = true;
+            
             this.comboBox_Instructor.Location = new System.Drawing.Point(142, 196);
             this.comboBox_Instructor.Name = "comboBox_Instructor";
             this.comboBox_Instructor.Size = new System.Drawing.Size(363, 26);
@@ -122,7 +122,7 @@
             // comboBox_Dependencia
             // 
             this.comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Dependencia.FormattingEnabled = true;
+            
             this.comboBox_Dependencia.Location = new System.Drawing.Point(142, 161);
             this.comboBox_Dependencia.Name = "comboBox_Dependencia";
             this.comboBox_Dependencia.Size = new System.Drawing.Size(363, 26);
@@ -143,7 +143,7 @@
             // comboBox_Ipp4
             // 
             this.comboBox_Ipp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Ipp4.FormattingEnabled = true;
+            
             this.comboBox_Ipp4.Items.AddRange(new object[] {
             "24",
             "25",
@@ -152,13 +152,13 @@
             this.comboBox_Ipp4.Name = "comboBox_Ipp4";
             this.comboBox_Ipp4.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp4.TabIndex = 24;
-            this.comboBox_Ipp4.TextUpdate += new System.EventHandler(this.ComboBox_Ipp4_TextUpdate);
+            this.comboBox_Ipp4.InnerTextBox.TextChanged += new System.EventHandler(this.ComboBox_Ipp_TextUpdate);
             this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp4_KeyPress);
             // 
             // comboBox_Ipp2
             // 
             this.comboBox_Ipp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Ipp2.FormattingEnabled = true;
+            
             this.comboBox_Ipp2.Items.AddRange(new object[] {
             "00",
             "01",
@@ -174,13 +174,13 @@
             this.comboBox_Ipp2.Name = "comboBox_Ipp2";
             this.comboBox_Ipp2.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp2.TabIndex = 23;
-            this.comboBox_Ipp2.TextUpdate += new System.EventHandler(this.ComboBox_Ipp2_TextUpdate);
+            this.comboBox_Ipp2.InnerTextBox.TextChanged += new System.EventHandler(this.ComboBox_Ipp_TextUpdate);
             this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp2_KeyPress);
             // 
             // comboBox_Ipp1
             // 
             this.comboBox_Ipp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Ipp1.FormattingEnabled = true;
+           
             this.comboBox_Ipp1.Items.AddRange(new object[] {
             "00",
             "01",
@@ -196,7 +196,7 @@
             this.comboBox_Ipp1.Name = "comboBox_Ipp1";
             this.comboBox_Ipp1.Size = new System.Drawing.Size(57, 26);
             this.comboBox_Ipp1.TabIndex = 3;
-            this.comboBox_Ipp1.TextUpdate += new System.EventHandler(this.ComboBox_Ipp1_TextUpdate);
+            this.comboBox_Ipp1.InnerTextBox.TextChanged += new System.EventHandler(this.ComboBox_Ipp_TextUpdate);
             this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp1_KeyPress);
             // 
             // label_Caratula
@@ -387,13 +387,13 @@
         private System.Windows.Forms.Label label_Caratula;
         private System.Windows.Forms.TextBox textBox_Caratula;
         private System.Windows.Forms.Label label_00;
-        private System.Windows.Forms.ComboBox comboBox_Ipp4;
-        private System.Windows.Forms.ComboBox comboBox_Ipp2;
-        private System.Windows.Forms.ComboBox comboBox_Ipp1;
-        private System.Windows.Forms.ComboBox comboBox_Secretario;
-        private System.Windows.Forms.ComboBox comboBox_Instructor;
-        private System.Windows.Forms.ComboBox comboBox_Dependencia;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp4;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp2;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp1;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Secretario;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Instructor;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Dependencia;
        
-        private Controles.Controles.TimePickerPersonalizado Fecha_Actuacion;
+        private Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado Fecha_Actuacion;
     }
 }

@@ -1,14 +1,15 @@
 ﻿
 using BaseDatos.Entidades;
-using Clases.Apariencia;
-using Clases.Botones;
-using Clases.GenerarDocumentos;
-using Clases.Texto;
-using Ofelia_Sara.Clases.Apariencia;
+using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.GenerarDocumentos;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.Controles.General;
 using Ofelia_Sara.Controles.Controles;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.Mensajes;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-
+using Ofelia_Sara.Controles.General;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -89,9 +90,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
             textBox_NumeroIpp.MaxLength = 6;
-            comboBox_Ipp1.MaxLength = 2;
-            comboBox_Ipp2.MaxLength = 2;
-            comboBox_Ipp4.MaxLength = 2;
+            comboBox_Ipp1.InnerTextBox.MaxLength = 2;
+            comboBox_Ipp2.InnerTextBox.MaxLength = 2;
+            comboBox_Ipp4.InnerTextBox.MaxLength = 2;
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -106,7 +107,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
             MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad);
+            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
 
             MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
@@ -1012,7 +1013,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 if (control is PictureBox pictureBox)
                 {
                     // Verificar si no hay imagen o si la imagen es la predeterminada
-                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen1)
+                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
                     {
                         return false; // Campo PictureBox sin imagen válida
                     }

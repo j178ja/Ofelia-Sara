@@ -1,9 +1,9 @@
-﻿using Clases.Apariencia;
-using Clases.Botones;
-using Clases.Texto;
-using Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.general.clases;
-using Ofelia_Sara.Mensajes;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.General;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
