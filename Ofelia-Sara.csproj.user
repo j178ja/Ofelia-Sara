@@ -11,6 +11,9 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Controles\General\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Controles\General\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -28,9 +31,6 @@
     </Compile>
     <Compile Update="Controles\General\BotonDeslizable.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controles\General\CustomComboBox.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controles\General\PanelConBordeNeon.cs">
       <SubType>Component</SubType>

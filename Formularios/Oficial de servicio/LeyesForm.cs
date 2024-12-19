@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -56,22 +57,38 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void CargarDocumentosEnListView()
         {
-            string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Leyes");
+            // Ruta relativa a la carpeta "BaseDatos\Leyes" desde el directorio base de la aplicación
+            string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BaseDatos", "Leyes");
+
+            // Verificar que la carpeta exista
+            if (!Directory.Exists(carpetaDocumentos))
+            {
+                MensajeGeneral.Mostrar($"La carpeta no existe: {carpetaDocumentos}", MensajeGeneral.TipoMensaje.Error);
+                return;
+            }
+
+            // Obtener los archivos PDF en la carpeta
             string[] archivos = Directory.GetFiles(carpetaDocumentos, "*.pdf");
 
+            // Iterar sobre los archivos encontrados
             foreach (string archivo in archivos)
             {
                 FileInfo fileInfo = new FileInfo(archivo);
 
-                // Eliminar la extensión .pdf del nombre del archivo
+                // Obtener el nombre del archivo sin la extensión
                 string nombreArchivoSinExtension = Path.GetFileNameWithoutExtension(fileInfo.Name);
 
-                // Añadir el archivo al ListView sin la extensión
-                ListViewItem item = new ListViewItem(nombreArchivoSinExtension);
-                item.Tag = fileInfo.FullName;
+                // Crear un ListViewItem con el nombre del archivo sin la extensión
+                ListViewItem item = new ListViewItem(nombreArchivoSinExtension)
+                {
+                    Tag = fileInfo.FullName // Guardar la ruta completa en la propiedad Tag
+                };
+
+                // Añadir el ítem al ListView
                 listView_Documentos.Items.Add(item);
             }
         }
+
         private void listView_Documentos_DoubleClick(object sender, EventArgs e)
         {
             // Verifica si hay elementos seleccionados
@@ -83,8 +100,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Agrega la extensión .pdf al nombre del archivo
                 string fileName = fileNameWithoutExtension + ".pdf";
 
-                // Ruta completa del archivo
-                string filePath = Path.Combine(@"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Leyes", fileName);
+                // Construye la ruta relativa a partir del directorio base
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string carpetaDocumentos = Path.Combine(baseDirectory, "BaseDatos", "Leyes");
+                string filePath = Path.Combine(carpetaDocumentos, fileName);
 
                 // Verifica si el archivo existe
                 if (File.Exists(filePath))
@@ -98,10 +117,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
                 else
                 {
-                    MessageBox.Show("El archivo no existe: " + filePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar("El archivo no existe: " + filePath, MensajeGeneral.TipoMensaje.Error);
                 }
             }
         }
+
 
 
 

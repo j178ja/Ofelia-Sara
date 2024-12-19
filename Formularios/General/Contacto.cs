@@ -1,5 +1,6 @@
 ﻿using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -23,6 +24,24 @@ namespace Ofelia_Sara.Formularios.General
             txt_Curriculum();
         }
 
+
+        private void AbrirUrl(string url)
+        {
+            try
+            {
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Usa el navegador predeterminado o cliente de correo
+                };
+                Process.Start(processInfo);
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"No se pudo abrir el enlace: {url}. Error: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+        }
+
         private void pictureBox_Correo_Click(object sender, EventArgs e)
         {
             // Define el destinatario, el asunto y el cuerpo del mensaje (opcional)
@@ -30,13 +49,13 @@ namespace Ofelia_Sara.Formularios.General
             string subject = "Asunto del correo";
             string body = "Cuerpo del mensaje";
 
-            // Construye la URL mailto
-            string mailtoUrl = $"mailto:{to}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(body)}";
-
+            
             // Abre la aplicación de correo predeterminada del usuario
             try
             {
-                System.Diagnostics.Process.Start(mailtoUrl);
+                string mailtoUrl = $"mailto:{to}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(body)}";
+
+                AbrirUrl(mailtoUrl);
             }
             catch (Exception ex)
             {
@@ -51,13 +70,14 @@ namespace Ofelia_Sara.Formularios.General
                                                   // Define el mensaje (opcional)
             string message = "Hola, ¿cómo estás?";
 
-            // Construye la URL de WhatsApp
-            string whatsappUrl = $"https://wa.me/{phoneNumber}?text={Uri.EscapeDataString(message)}";
+          
 
             // Abre la URL en el navegador predeterminado
             try
             {
-                System.Diagnostics.Process.Start(whatsappUrl);
+                string whatsappUrl = $"https://wa.me/{phoneNumber}?text={Uri.EscapeDataString(message)}";
+
+                AbrirUrl(whatsappUrl);
             }
             catch (Exception ex)
             {
@@ -67,13 +87,12 @@ namespace Ofelia_Sara.Formularios.General
 
         private void pictureBox_Linkedin_Click(object sender, EventArgs e)
         {
-            // Define la URL del perfil de LinkedIn
-            string linkedinProfileUrl = "https://www.linkedin.com/in/jorge-bonato-ba2521271/";
-
+           
             // Abre la URL en el navegador predeterminado
             try
             {
-                System.Diagnostics.Process.Start(linkedinProfileUrl);
+                string linkedinProfileUrl = "https://www.linkedin.com/in/jorge-bonato-ba2521271/";
+                AbrirUrl(linkedinProfileUrl);
             }
             catch (Exception ex)
             {
@@ -84,13 +103,13 @@ namespace Ofelia_Sara.Formularios.General
 
         private void pictureBox_Github_Click(object sender, EventArgs e)
         {
-            // Define la URL del perfil de Github
-            string GithubUrl = "https://github.com/j178ja";
+           
 
             // Abre la URL en el navegador predeterminado
             try
             {
-                System.Diagnostics.Process.Start(GithubUrl);
+                string githubUrl = "https://github.com/j178ja";
+                AbrirUrl(githubUrl); // Llama al método genérico para abrir la URL
             }
             catch (Exception ex)
             {

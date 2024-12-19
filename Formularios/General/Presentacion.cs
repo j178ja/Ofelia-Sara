@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -113,9 +114,7 @@ namespace Ofelia_Sara.Formularios.General
 
             fondoAnimado = Properties.Resources.EscudoPolicia_PNG;
                       
-            AplicarBordesRedondeados(20);
-       
-
+           
         }
         //---finalizacion de constructor-----
         //--------------------------------------------------------------------
@@ -125,6 +124,7 @@ namespace Ofelia_Sara.Formularios.General
              aparecerTimer.Start(); // Iniciar el efecto de aparición al cargar el formulario
              AplicarBlurEfecto(); // Llamar al efecto blur
             InicializarBufferedGraphics();
+           
         }
         private void InicializarBufferedGraphics()
         {
@@ -154,6 +154,7 @@ namespace Ofelia_Sara.Formularios.General
             if (this.Opacity < 1)
             {
                 this.Opacity += 0.05; // Incrementar la opacidad gradualmente
+                RedondearBordes.Aplicar(this, 36);//Redondea los bordes de panel superior e inferior
             }
             else
             {
@@ -189,22 +190,7 @@ namespace Ofelia_Sara.Formularios.General
                 this.Close(); // Cerrar el formulario
             }
         }
-     
-/// <summary>
-/// aplica bordes redondeados al formulario
-/// </summary>
-
-        private void AplicarBordesRedondeados(int radio)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, radio, radio, 180, 90); // Esquina superior izquierda
-            path.AddArc(this.Width - radio, 0, radio, radio, 270, 90); // Superior derecha
-            path.AddArc(this.Width - radio, this.Height - radio, radio, radio, 0, 90); // Inferior derecha
-            path.AddArc(0, this.Height - radio, radio, radio, 90, 90); // Inferior izquierda
-            path.CloseFigure();
-
-            this.Region = new Region(path);
-        }
+    
 
 
         private void AplicarBlurEfecto()
