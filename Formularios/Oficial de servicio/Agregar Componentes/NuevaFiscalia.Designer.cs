@@ -32,10 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
-            this.textBox_DeptoJudicial = new System.Windows.Forms.TextBox();
-            this.textBox_Localidad = new System.Windows.Forms.TextBox();
-            this.textBox_AgenteFiscal = new System.Windows.Forms.TextBox();
-            this.textBox_Fiscalia = new System.Windows.Forms.TextBox();
+            this.textBox_DeptoJudicial = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Localidad = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_AgenteFiscal = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Fiscalia = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_DptoJudicial = new System.Windows.Forms.Label();
             this.label_Localidad = new System.Windows.Forms.Label();
             this.label_Dr = new System.Windows.Forms.Label();
@@ -202,10 +202,10 @@
         private System.Windows.Forms.Label label_Localidad;
         private System.Windows.Forms.Label label_Dr;
         private System.Windows.Forms.Label label_Ufid;
-        private System.Windows.Forms.TextBox textBox_DeptoJudicial;
-        private System.Windows.Forms.TextBox textBox_Localidad;
-        private System.Windows.Forms.TextBox textBox_AgenteFiscal;
-        private System.Windows.Forms.TextBox textBox_Fiscalia;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_DeptoJudicial;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Localidad;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_AgenteFiscal;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Fiscalia;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
     }

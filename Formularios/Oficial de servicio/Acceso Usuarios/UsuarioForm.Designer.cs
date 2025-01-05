@@ -32,8 +32,8 @@
             this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
             this.btn_Registrarse = new System.Windows.Forms.Button();
             this.btn_Ingresar = new System.Windows.Forms.Button();
-            this.textBox_Contraseña = new System.Windows.Forms.TextBox();
-            this.textBox_Usuario = new System.Windows.Forms.TextBox();
+            this.textBox_Contraseña = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Usuario = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.label_Validacion = new System.Windows.Forms.Label();
@@ -180,8 +180,8 @@
         private System.Windows.Forms.Label label_Usuario;
         private System.Windows.Forms.Label label_Validacion;
         private System.Windows.Forms.Button btn_Ingresar;
-        private System.Windows.Forms.TextBox textBox_Contraseña;
-        private System.Windows.Forms.TextBox textBox_Usuario;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Contraseña;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Usuario;
         private System.Windows.Forms.Label label_Contraseña;
         private System.Windows.Forms.Button btn_Registrarse;
         private System.Windows.Forms.PictureBox pictureBox_OjoContraseña;

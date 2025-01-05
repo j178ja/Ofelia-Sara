@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ofelia_Sara.Controles;
+using Ofelia_Sara.Controles.General;
+using System;
 using System.Windows.Forms;
 
 
@@ -26,30 +28,31 @@ namespace Ofelia_Sara.Clases.General.Texto
             return texto;
         }
 
-        public static void AplicarFormatoYLimite(TextBox textBox, int maxLength)
+        public static void AplicarFormatoYLimite(CustomTextBox customTextBox, int maxLength)
         {
-            if (textBox == null)
-                throw new ArgumentNullException(nameof(textBox));
+            if (customTextBox == null)
+                throw new ArgumentNullException(nameof(customTextBox));
 
             // Establecer la longitud máxima
-            textBox.MaxLength = maxLength;
+            customTextBox.MaxLength = maxLength;
 
             // Manejar el evento TextChanged para aplicar formato
-            textBox.TextChanged += (sender, e) =>
+            customTextBox.TextChanged += (sender, e) =>
             {
-                // Obtener el texto del TextBox
-                string texto = textBox.Text;
+                // Obtener el texto del CustomTextBox
+                string texto = customTextBox.TextValue; // Usa TextValue para acceder al texto
 
                 // Aplicar formato
                 string textoFormateado = FormatearNumeroConPuntos(texto);
 
                 // Evitar un bucle infinito al actualizar el texto
-                if (textBox.Text != textoFormateado)
+                if (texto != textoFormateado)
                 {
-                    textBox.Text = textoFormateado;
-                    textBox.SelectionStart = textBox.Text.Length; // Mover el cursor al final del texto
+                    customTextBox.TextValue = textoFormateado; // Actualiza el texto
+                    customTextBox.InnerTextBox.SelectionStart = textoFormateado.Length; // Mover el cursor al final
                 }
             };
         }
+
     }
 }

@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Controles.Ofl_Sara;
+using Ofelia_Sara.Controles.General;
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class InicioCierre : BaseForm
@@ -216,7 +217,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         /// <param name="textBox"></param>
         /// <param name="sugerencias"></param>
-        private void ConfigurarAutocompletar(TextBox textBox, List<string> sugerencias)
+        private void ConfigurarAutocompletar(CustomTextBox textBox, List<string> sugerencias)
         {
             AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
             autoCompleteCollection.AddRange(sugerencias.ToArray());

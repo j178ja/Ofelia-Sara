@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label_Caratula = new System.Windows.Forms.Label();
-            this.textBox_Caratula = new System.Windows.Forms.TextBox();
+            this.textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.btn_EliminarControl = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
@@ -93,7 +93,7 @@
         #endregion
 
         private System.Windows.Forms.Label label_Caratula;
-        private System.Windows.Forms.TextBox textBox_Caratula;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Caratula;
         private System.Windows.Forms.Button btn_EliminarControl;
         private System.Windows.Forms.ToolTip toolTip1;
     }

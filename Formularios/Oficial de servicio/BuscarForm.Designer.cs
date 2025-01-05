@@ -40,7 +40,7 @@
             this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_Caratula = new System.Windows.Forms.Label();
-            this.textBox_Caratula = new System.Windows.Forms.TextBox();
+            this.textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.label_Fecha = new System.Windows.Forms.Label();
@@ -49,9 +49,9 @@
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.label_Imputado = new System.Windows.Forms.Label();
             this.label_Victima = new System.Windows.Forms.Label();
-            this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
-            this.textBox_Imputado = new System.Windows.Forms.TextBox();
-            this.textBox_Victima = new System.Windows.Forms.TextBox();
+            this.textBox_NumeroIpp = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Imputado = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Victima = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Ipp = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
@@ -372,9 +372,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Ipp;
-        private System.Windows.Forms.TextBox textBox_NumeroIpp;
-        private System.Windows.Forms.TextBox textBox_Imputado;
-        private System.Windows.Forms.TextBox textBox_Victima;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_NumeroIpp;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Imputado;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Victima;
         private System.Windows.Forms.Label label_Fecha;
         private System.Windows.Forms.Label label_Secretario;
         private System.Windows.Forms.Label label_Instructor;
@@ -385,7 +385,7 @@
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label_Caratula;
-        private System.Windows.Forms.TextBox textBox_Caratula;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Caratula;
         private System.Windows.Forms.Label label_00;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp4;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp2;

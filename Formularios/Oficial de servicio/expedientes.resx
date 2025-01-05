@@ -142,7 +142,7 @@
     <value>textBox_NumeroIpp</value>
   </data>
   <data name="&gt;&gt;textBox_NumeroIpp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBox_NumeroIpp.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1601,7 +1601,7 @@
     <value>textBox_Caratula</value>
   </data>
   <data name="&gt;&gt;textBox_Caratula.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBox_Caratula.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1655,7 +1655,7 @@
     <value>textBox_Causante</value>
   </data>
   <data name="&gt;&gt;textBox_Causante.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBox_Causante.Parent" xml:space="preserve">
     <value>panel1</value>

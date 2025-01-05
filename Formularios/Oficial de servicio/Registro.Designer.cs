@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_Legajo = new System.Windows.Forms.Label();
-            this.textBox_Legajo = new System.Windows.Forms.TextBox();
+            this.textBox_Legajo = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Apellido = new System.Windows.Forms.Label();
-            this.textBox_Apellido = new System.Windows.Forms.TextBox();
-            this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.textBox_Jerarquia = new System.Windows.Forms.TextBox();
+            this.textBox_Apellido = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Nombre = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Jerarquia = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.label_Jerarquia = new System.Windows.Forms.Label();
             this.label_Registro = new System.Windows.Forms.Label();
-            this.textBox_Contraseña = new System.Windows.Forms.TextBox();
-            this.textBox_Usuario = new System.Windows.Forms.TextBox();
+            this.textBox_Contraseña = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Usuario = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Contraseña = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -254,19 +254,19 @@
 
         #endregion
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox_Contraseña;
-        private System.Windows.Forms.TextBox textBox_Usuario;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Contraseña;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Usuario;
         private System.Windows.Forms.Label label_Contraseña;
         private System.Windows.Forms.Label label_Usuario;
-        private System.Windows.Forms.TextBox textBox_Apellido;
-        private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.TextBox textBox_Jerarquia;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Apellido;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Nombre;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Jerarquia;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.Label label_Jerarquia;
         private System.Windows.Forms.Label label_Registro;
         private System.Windows.Forms.Label label_Apellido;
         private System.Windows.Forms.Label label_Legajo;
-        private System.Windows.Forms.TextBox textBox_Legajo;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Legajo;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Registrarse;
         private System.Windows.Forms.ToolTip toolTip1;

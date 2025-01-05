@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SellosDependencia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_Localidad = new System.Windows.Forms.TextBox();
+            this.textBox_Localidad = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Localidad = new System.Windows.Forms.Label();
             this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.label_Dependencia = new System.Windows.Forms.Label();
@@ -261,7 +261,7 @@
         private System.Windows.Forms.PictureBox pictureBox_SelloMedalla;
         private System.Windows.Forms.Label label_Dependencia;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Dependencia;
-        private System.Windows.Forms.TextBox textBox_Localidad;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Localidad;
         private System.Windows.Forms.Label label_Localidad;
     }
 }

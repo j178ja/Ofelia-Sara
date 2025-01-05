@@ -26,11 +26,11 @@
         private System.Windows.Forms.PictureBox pictureBox_Geoposicionamiento;
         private System.Windows.Forms.PictureBox pictureBox_Domicilio;
         private System.Windows.Forms.Label label_Nacionalidad;
-        private System.Windows.Forms.TextBox textBox_Localidad;
-        private System.Windows.Forms.TextBox textBox_Domicilio;
-        private System.Windows.Forms.TextBox textBox_Edad;
-        private System.Windows.Forms.TextBox textBox_Dni;
-        private System.Windows.Forms.TextBox textBox_Nombre;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Localidad;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Domicilio;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Edad;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Dni;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Nombre;
         private System.Windows.Forms.Label label_Localidad;
         private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.Label label_Edad;
@@ -46,9 +46,9 @@
         private System.Windows.Forms.CheckBox checkBox_Notificacion258;
         private System.Windows.Forms.Label label_Notificacion258;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.TextBox textBox_LugarNacimiento;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_LugarNacimiento;
         private System.Windows.Forms.Label label_LugarNacimiento;
-        private System.Windows.Forms.TextBox textBox_Ocupacion;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Ocupacion;
         private System.Windows.Forms.Label label_Ocupacion;
         private System.Windows.Forms.Label label_AgregarDomicilio;
         private System.Windows.Forms.Label label_agrGeo2;

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_NumeroIpp = new System.Windows.Forms.TextBox();
+            this.textBox_NumeroIpp = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.lbl_00 = new System.Windows.Forms.Label();
@@ -68,9 +68,9 @@
             this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
             this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
             this.label_DatosActuacion = new System.Windows.Forms.Label();
-            this.textBox_Caratula = new System.Windows.Forms.TextBox();
+            this.textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Caratula = new System.Windows.Forms.Label();
-            this.textBox_Causante = new System.Windows.Forms.TextBox();
+            this.textBox_Causante = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Victima = new System.Windows.Forms.Label();
             this.label_TITULO = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -512,9 +512,9 @@
         private Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Label label_Secretario;
         private System.Windows.Forms.Label label_Instructor;
-        private System.Windows.Forms.TextBox textBox_Caratula;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Caratula;
         private System.Windows.Forms.Label label_Caratula;
-        private System.Windows.Forms.TextBox textBox_Causante;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Causante;
         private System.Windows.Forms.Label label_Victima;
         private System.Windows.Forms.Label label_DatosInstruccion;
         private System.Windows.Forms.GroupBox groupBox_ConversorDocumentos;
@@ -541,7 +541,7 @@
         private System.Windows.Forms.GroupBox groupBox_TextosConvertidos;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
         private System.Windows.Forms.Label label_Ipp;
-        private System.Windows.Forms.TextBox textBox_NumeroIpp;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_NumeroIpp;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp1;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Ipp2;
         private System.Windows.Forms.Label lbl_00;

@@ -19,7 +19,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-        private System.Windows.Forms.TextBox textBox_Email;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Email;
         // Propiedad pública para establecer el texto del TextBox
         public string TextoNombre
         {
@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             this.FormClosing += AgregarDatosPersonalesConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
 
-            this.textBox_Email = new System.Windows.Forms.TextBox();// Configuración del textBox_Email
+            this.textBox_Email = new Ofelia_Sara.Controles.General.CustomTextBox();// Configuración del textBox_Email
 
             comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
 

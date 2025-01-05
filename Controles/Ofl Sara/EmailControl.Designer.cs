@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_Email = new System.Windows.Forms.TextBox();
+            this.textBox_Email = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_arroba = new System.Windows.Forms.Label();
             this.comboBox_EmpresaEmail = new Ofelia_Sara.Controles.General.CustomComboBox();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_Email;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Email;
         private System.Windows.Forms.Label label_arroba;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_EmpresaEmail;
     }

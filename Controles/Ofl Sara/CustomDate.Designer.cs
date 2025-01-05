@@ -5,7 +5,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
     partial class CustomDate
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.TextBox textBox_Date;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Date;
 
         protected override void Dispose(bool disposing)
         {
@@ -19,7 +19,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            textBox_Date = new TextBox();
+            textBox_Date = new Ofelia_Sara.Controles.General.CustomTextBox();
             toolTip1 = new ToolTip(components);
             label_barra = new Label();
             label1 = new Label();

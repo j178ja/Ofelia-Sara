@@ -2,15 +2,16 @@
 using System;
 using System.Windows.Forms;
 using Ofelia_Sara.Controles.Ofl_Sara;
+using Ofelia_Sara.Controles.General;
 
 namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
     public static class CalcularEdad
     {
         private static CustomDate customDateTextBox;
-        private static TextBox textBoxEdad;
+        private static CustomTextBox textBoxEdad;
 
-        public static void Inicializar(CustomDate customDateTextBox, TextBox textBoxEdad)
+        public static void Inicializar(CustomDate customDateTextBox, CustomTextBox textBoxEdad)
         {
             CalcularEdad.customDateTextBox = customDateTextBox;
             CalcularEdad.textBoxEdad = textBoxEdad;

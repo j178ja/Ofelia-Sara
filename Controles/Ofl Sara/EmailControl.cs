@@ -47,7 +47,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             SetPlaceholder(textBox_Email, placeholder);
         }
 
-        private void SetPlaceholder(System.Windows.Forms.TextBox textBox, string placeholder)
+        private void SetPlaceholder(Ofelia_Sara.Controles.General.CustomTextBox textBox, string placeholder)
         {
             textBox.Text = placeholder;
             textBox.ForeColor = Color.Gray;

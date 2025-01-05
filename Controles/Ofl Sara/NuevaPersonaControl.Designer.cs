@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaPersonaControl));
             this.btn_AgregarDatosPersona = new System.Windows.Forms.Button();
             this.label_Persona = new System.Windows.Forms.Label();
-            this.textBox_Persona = new System.Windows.Forms.TextBox();
+            this.textBox_Persona = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.btn_EliminarControl = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
@@ -106,7 +106,7 @@
 
         private System.Windows.Forms.Button btn_AgregarDatosPersona;
         private System.Windows.Forms.Label label_Persona;
-        private System.Windows.Forms.TextBox textBox_Persona;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Persona;
         private System.Windows.Forms.Button btn_EliminarControl;
         private System.Windows.Forms.ToolTip toolTip1;
     }

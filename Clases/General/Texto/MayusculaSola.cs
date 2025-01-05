@@ -1,72 +1,123 @@
-﻿using System;
+﻿using Ofelia_Sara.Controles.General;
+using System;
 using System.Text;
 using System.Windows.Forms;
-
 public static class MayusculaSola
 {
-    // Método para aplicar la lógica de conversión a mayúsculas a un TextBox específico.
-    public static void AplicarAControl(TextBox textBox)
+    // Método para aplicar la lógica de conversión a mayúsculas a cualquier control de texto.
+    public static void AplicarAControl(Control control)
     {
-        if (textBox == null)
-            throw new ArgumentNullException(nameof(textBox), "El TextBox no puede ser nulo.");
+        if (control == null)
+            throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
 
-        // Configura el evento KeyPress para permitir solo letras y espacios.
+        // Verificar si el control es compatible
+        if (!(control is TextBoxBase || control is ComboBox || control is CustomTextBox))
+            throw new ArgumentException("El control no es compatible. Solo se admiten TextBox, ComboBox y controles personalizados derivados.");
+
+        // Configurar eventos para convertir texto a mayúsculas y filtrar caracteres
+        if (control is TextBoxBase textBox)
+        {
+            ConfigurarEventosTextBox(textBox);
+        }
+        else if (control is ComboBox comboBox)
+        {
+            ConfigurarEventosComboBox(comboBox);
+        }
+        else if (control is CustomTextBox customTextBox)
+        {
+            ConfigurarEventosCustomTextBox(customTextBox);
+        }
+    }
+
+    // Configurar eventos para controles TextBox o RichTextBox
+    private static void ConfigurarEventosTextBox(TextBoxBase textBox)
+    {
         textBox.KeyPress += (sender, e) =>
         {
-            // Permite letras, espacios y caracteres de control.
+            // Permite letras, espacios y caracteres de control
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
-                e.Handled = true; // Rechaza otros caracteres.
+                e.Handled = true; // Rechaza otros caracteres
             }
         };
 
-        // Configura el evento TextChanged para convertir el texto a mayúsculas y filtrar caracteres no permitidos.
         textBox.TextChanged += (sender, e) =>
         {
-            // Guarda la posición del cursor.
+            // Guarda la posición del cursor
             int selectionStart = textBox.SelectionStart;
 
-            // Convierte el texto usando el método FiltrarYConvertirAMayusculas.
+            // Convierte el texto a mayúsculas
             string convertedText = FiltrarYConvertirAMayusculas(textBox.Text);
 
-            // Actualiza el texto del TextBox y posiciona el cursor al final.
-            textBox.Text = convertedText;
-            textBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final del texto.
+            // Actualiza el texto del TextBox y posiciona el cursor al final
+            if (textBox.Text != convertedText)
+            {
+                textBox.Text = convertedText;
+                textBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final
+            }
         };
     }
 
-    // Método para aplicar la lógica de conversión a mayúsculas a un ComboBox específico.
-    public static void AplicarAControl(ComboBox comboBox)
+    // Configurar eventos para ComboBox
+    private static void ConfigurarEventosComboBox(ComboBox comboBox)
     {
-        if (comboBox == null)
-            throw new ArgumentNullException(nameof(comboBox), "El ComboBox no puede ser nulo.");
-
-        // Configura el evento KeyPress para permitir solo letras y espacios.
         comboBox.KeyPress += (sender, e) =>
         {
-            // Permite letras, espacios y caracteres de control.
+            // Permite letras, espacios y caracteres de control
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
-                e.Handled = true; // Rechaza otros caracteres.
+                e.Handled = true; // Rechaza otros caracteres
             }
             else
             {
-                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte el carácter a mayúsculas.
+                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte el carácter a mayúsculas
             }
         };
     }
 
-    // Método para filtrar el texto permitiendo solo letras y espacios en blanco.
+    // Configurar eventos para CustomTextBox
+    private static void ConfigurarEventosCustomTextBox(CustomTextBox customTextBox)
+    {
+        customTextBox.KeyPress += (sender, e) =>
+        {
+            // Permite letras, espacios y caracteres de control
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza otros caracteres
+            }
+        };
+
+        customTextBox.TextChanged += (sender, e) =>
+        {
+            // Guarda la posición del cursor
+            int selectionStart = customTextBox.SelectionStart;
+
+            // Convierte el texto a mayúsculas
+            string convertedText = FiltrarYConvertirAMayusculas(customTextBox.TextValue);
+
+            // Actualiza el texto del CustomTextBox y posiciona el cursor al final
+            if (customTextBox.TextValue != convertedText)
+            {
+                customTextBox.TextValue = convertedText;
+                customTextBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final
+            }
+        };
+    }
+
+    // Método para filtrar el texto permitiendo solo letras y espacios en blanco
     private static string FiltrarYConvertirAMayusculas(string input)
     {
+        if (string.IsNullOrEmpty(input))
+            return string.Empty;
+
         StringBuilder filteredText = new StringBuilder();
         foreach (char c in input)
         {
             if (char.IsLetter(c) || char.IsWhiteSpace(c))
             {
-                filteredText.Append(c); // Agrega caracteres válidos al texto filtrado.
+                filteredText.Append(c); // Agrega caracteres válidos al texto filtrado
             }
         }
-        return filteredText.ToString().ToUpper(); // Convierte el texto a mayúsculas.
+        return filteredText.ToString().ToUpper(); // Convierte el texto a mayúsculas
     }
 }

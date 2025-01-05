@@ -161,7 +161,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void TextBox_Victima_TextChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+            Ofelia_Sara.Controles.General.CustomTextBox textBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
             if (textBox != null)
             {
                 // Convertir todo el texto a mayúsculas
@@ -172,7 +172,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+            Ofelia_Sara.Controles.General.CustomTextBox textBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
             if (textBox != null)
             {
                 // Convertir todo el texto a mayúsculas
@@ -290,7 +290,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+            Ofelia_Sara.Controles.General.CustomTextBox textBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
 
             if (textBox != null)
             {

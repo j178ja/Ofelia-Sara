@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package Name="Ofelia Sara" Manufacturer="Ofelia Sara Application" Version="1.0.0.0" UpgradeCode="2a76bbcf-569f-4028-8134-2b17d848dcc3">
+		<StandardDirectory Id="ProgramFilesFolder">
+			<Directory Id="INSTALLFOLDER" Name="Ofelia_Sara">
+				<Component Id="MainExecutable" Guid="2a76bbcf-569f-4028-8134-2b17d848dcc3">
+					<File Id="OfeliaSaraExe" Source="Ofelia-Sara.exe" KeyPath="yes" />
+				</Component>
+			</Directory>
+		</StandardDirectory>
+		<StandardDirectory Id="DesktopFolder">
+			<Component Id="DesktopShortcutComponent" Guid="a1111111-b222-cccc-d333-eeeeeeeeeeee">
+				<Shortcut Id="DesktopShortcut" Name="Ofelia Sara" Target="[INSTALLFOLDER]Ofelia-Sara.exe" Icon="IconoEscudoPolicia" />
+			</Component>
+		</StandardDirectory>
+
+		<Feature Id="MainFeature" Title="Ofelia Sara" Level="1">
+			<ComponentRef Id="MainExecutable" />
+			<ComponentRef Id="DesktopShortcutComponent" />
+		</Feature>
+
+		<Icon Id="IconoEscudoPolicia" SourceFile="IconoEscudoPolicia.ico" />
+	</Package>
+</Wix>

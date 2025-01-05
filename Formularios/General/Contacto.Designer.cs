@@ -84,7 +84,8 @@
             // textBox_Curriculum
             // 
             this.textBox_Curriculum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.textBox_Curriculum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_Curriculum.BorderStyle= System.Windows.Forms.BorderStyle.None;
+            this.textBox_Curriculum.Enabled = false;
             this.textBox_Curriculum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Curriculum.Location = new System.Drawing.Point(22, 114);
             this.textBox_Curriculum.Multiline = true;

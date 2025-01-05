@@ -36,7 +36,7 @@
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.panel_PersonalSeleccionado = new System.Windows.Forms.Panel();
             this.btn_AgregarPersonal = new System.Windows.Forms.Button();
-            this.textBox_NumeroLegajo = new System.Windows.Forms.TextBox();
+            this.textBox_NumeroLegajo = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.lbl_Legajo = new System.Windows.Forms.Label();
             this.label_TITULO = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Label lbl_Legajo;
-        private System.Windows.Forms.TextBox textBox_NumeroLegajo;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_NumeroLegajo;
         private System.Windows.Forms.Button btn_AgregarPersonal;
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Button btn_Guardar;

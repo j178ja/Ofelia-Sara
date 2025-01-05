@@ -1,4 +1,4 @@
-﻿
+﻿using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Clases.General;
 using System.Drawing;
 
@@ -37,7 +37,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioCierre));
             lbl_Dr = new System.Windows.Forms.Label();
-            textBox_NumeroIpp = new System.Windows.Forms.TextBox();
+            textBox_NumeroIpp = new Ofelia_Sara.Controles.General.CustomTextBox();
             lbl_Ipp = new System.Windows.Forms.Label();
             lbl_Caratula = new System.Windows.Forms.Label();
             lbl_Victima = new System.Windows.Forms.Label();
@@ -47,9 +47,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Secretario = new System.Windows.Forms.Label();
             lbl_Fecha = new System.Windows.Forms.Label();
             lbl_Dependencia = new System.Windows.Forms.Label();
-            textBox_Caratula = new System.Windows.Forms.TextBox();
-            textBox_Victima = new System.Windows.Forms.TextBox();
-            textBox_Imputado = new System.Windows.Forms.TextBox();
+            textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_Victima = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_Imputado = new Ofelia_Sara.Controles.General.CustomTextBox();
             comboBox_Fiscalia = new Ofelia_Sara.Controles.General.CustomComboBox();
             comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
             comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
@@ -644,7 +644,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // panel_Caratula
             // 
             panel_Caratula.BackColor = Color.Transparent;
-            panel_Caratula.Controls.Add(textBox_Caratula);
+            panel_Caratula.Controls.Add(
+                textBox_Caratula);
             panel_Caratula.Controls.Add(lbl_Caratula);
             panel_Caratula.Controls.Add(btn_AgregarCausa);
             panel_Caratula.Location = new Point(54, 63);
@@ -918,7 +919,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
         private System.Windows.Forms.Label lbl_Dr;
-        private System.Windows.Forms.TextBox textBox_NumeroIpp;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_NumeroIpp;
         private System.Windows.Forms.Label lbl_Ipp;
         private System.Windows.Forms.Label lbl_Caratula;
         private System.Windows.Forms.Label lbl_Victima;
@@ -928,9 +929,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Label lbl_Secretario;
         private System.Windows.Forms.Label lbl_Fecha;
         private System.Windows.Forms.Label lbl_Dependencia;
-        private System.Windows.Forms.TextBox textBox_Caratula;
-        private System.Windows.Forms.TextBox textBox_Victima;
-        private System.Windows.Forms.TextBox textBox_Imputado;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Caratula;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Victima;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Imputado;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Fiscalia;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Instructor;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Secretario;

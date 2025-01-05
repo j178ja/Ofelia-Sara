@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaDependencia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_Partido = new System.Windows.Forms.TextBox();
-            this.textBox_Localidad = new System.Windows.Forms.TextBox();
+            this.textBox_Partido = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Localidad = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Partido = new System.Windows.Forms.Label();
             this.label_Localidad = new System.Windows.Forms.Label();
             this.checkBox_AgregarSellos = new System.Windows.Forms.CheckBox();
             this.label_AgregarSellos = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
-            this.textBox_Domicilio = new System.Windows.Forms.TextBox();
-            this.textBox_Dependencia = new System.Windows.Forms.TextBox();
+            this.textBox_Domicilio = new Ofelia_Sara.Controles.General.CustomTextBox();
+            this.textBox_Dependencia = new Ofelia_Sara.Controles.General.CustomTextBox();
             this.label_Domicilio = new System.Windows.Forms.Label();
             this.label_Dependencia = new System.Windows.Forms.Label();
             this.label_NuevaDep = new System.Windows.Forms.Label();
@@ -231,8 +231,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_NuevaDep;
-        private System.Windows.Forms.TextBox textBox_Domicilio;
-        private System.Windows.Forms.TextBox textBox_Dependencia;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Domicilio;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Dependencia;
         private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.Label label_Dependencia;
         private System.Windows.Forms.Label label_AgregarSellos;
@@ -241,8 +241,8 @@
         private System.Windows.Forms.CheckBox checkBox_AgregarSellos;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.HelpProvider help_NuevaDependencia;
-        private System.Windows.Forms.TextBox textBox_Partido;
-        private System.Windows.Forms.TextBox textBox_Localidad;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Partido;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Localidad;
         private System.Windows.Forms.Label label_Partido;
         private System.Windows.Forms.Label label_Localidad;
     }

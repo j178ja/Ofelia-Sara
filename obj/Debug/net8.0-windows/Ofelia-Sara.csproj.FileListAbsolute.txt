@@ -4,7 +4,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Intero
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia-Sara.csproj.ResolveComReference.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.General.BotonDeslizable.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.General.CustomComboBox.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.CustomTextBox.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Controles.Ofl_Sara.AgregarFiscaliaControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Controles.Ofl_Sara.AgregarJuzgadoControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Ofl_Sara.Boton_Contador.resources
@@ -133,3 +132,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\refint
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia-Sara.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia-Sara.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\ref\Ofelia-Sara.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.General.CustomTextBox.resources

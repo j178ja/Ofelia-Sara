@@ -523,7 +523,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (e.KeyChar == (char)Keys.Enter)
             {
                 // Obtiene el TextBox que disparó el evento
-                System.Windows.Forms.TextBox textBox = sender as System.Windows.Forms.TextBox;
+                Ofelia_Sara.Controles.General.CustomTextBox textBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
 
                 if (textBox != null)
                 {

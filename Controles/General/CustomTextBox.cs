@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Ofelia_Sara.Controles
+namespace Ofelia_Sara.Controles.General
 {
-    public class CustomTextBox : Control
+    public partial class CustomTextBox : Control
     {
         private TextBox textBox;
         private Timer animationTimer;
@@ -18,14 +18,15 @@ namespace Ofelia_Sara.Controles
         public CustomTextBox()
         {
             // Configuración del TextBox
+          
             textBox = new TextBox
             {
                 BorderStyle = BorderStyle.None,
-                Location = new Point(5, 5),
-                Width = this.Width - 10,
-                Anchor = AnchorStyles.Left | AnchorStyles.Right,
-                BackColor = this.BackColor,
-                ForeColor = this.ForeColor
+                Dock = DockStyle.Fill,
+                //Anchor = AnchorStyles.Left | AnchorStyles.Right,
+                BackColor = Color.Yellow,
+                ForeColor = this.ForeColor,
+               
             };
             textBox.GotFocus += TextBox_GotFocus;
             textBox.LostFocus += TextBox_LostFocus;
@@ -41,6 +42,9 @@ namespace Ofelia_Sara.Controles
             this.Width = 200;
             this.BackColor = Color.White;
         }
+
+        // Propiedad para exponer el TextBox interno
+        public TextBox InnerTextBox => textBox;
 
         private void TextBox_GotFocus(object sender, EventArgs e)
         {
@@ -118,6 +122,82 @@ namespace Ofelia_Sara.Controles
             base.OnResize(e);
             textBox.Width = this.Width - 10;
             textBox.Height = this.Height - 10;
+        }
+
+        // Propiedad para TextAlign
+        public HorizontalAlignment TextAlign
+        {
+            get => textBox.TextAlign;
+            set => textBox.TextAlign = value;
+        }
+
+        // Propiedad para Multiline
+        public bool Multiline
+        {
+            get => textBox.Multiline;
+            set
+            {
+                textBox.Multiline = value;
+                // Ajustar altura si es multiline
+                if (value)
+                {
+                    textBox.Height = this.Height - 10; 
+                }
+            }
+        }
+        // Propiedad para acceder a SelectionStart
+        public int SelectionStart
+        {
+            get => textBox.SelectionStart;
+            set => textBox.SelectionStart = value;
+        }
+
+        // Método para limpiar el texto
+        public void Clear()
+        {
+            textBox.Clear();
+        }
+
+        // Propiedad para ReadOnly
+        public bool ReadOnly
+        {
+            get => textBox.ReadOnly;
+            set => textBox.ReadOnly = value;
+        }
+
+        // Propiedad para PasswordChar
+        public char PasswordChar
+        {
+            get => textBox.PasswordChar;
+            set => textBox.PasswordChar = value;
+        }
+
+        // Propiedad AutoCompleteSource
+        public AutoCompleteSource AutoCompleteSource
+        {
+            get => textBox.AutoCompleteSource;
+            set => textBox.AutoCompleteSource = value;
+        }
+
+        // Propiedad para MaxLength
+        public int MaxLength
+        {
+            get => textBox.MaxLength;
+            set => textBox.MaxLength = value;
+        }
+
+        // Propiedad AutoCompleteMode
+        public AutoCompleteMode AutoCompleteMode
+        {
+            get => textBox.AutoCompleteMode;
+            set => textBox.AutoCompleteMode = value;
+        }
+
+        // Propiedad AutoCompleteCustomSource
+        public AutoCompleteStringCollection AutoCompleteCustomSource
+        {
+            get => textBox.AutoCompleteCustomSource;
+            set => textBox.AutoCompleteCustomSource = value;
         }
     }
 }
