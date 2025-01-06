@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Ofelia_Sara.BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Clases.BaseDatos;
+using System.Diagnostics;
 
 namespace BaseDatos.Adm_BD.Manager
 {
@@ -16,8 +17,20 @@ namespace BaseDatos.Adm_BD.Manager
         // Constructor que inicializa DatabaseConnection y evita ejecución en tiempo de diseño
         public ComisariasManager()
         {
+            if (Process.GetCurrentProcess().ProcessName.Contains("devenv"))
+            {
+                return; // No inicializar en tiempo de diseño
+            }
+
             dbConnection = BloqueadorTiempoDiseño.GetDatabaseConnection();
+            if (dbConnection == null)
+            {
+                throw new InvalidOperationException("DatabaseConnection no se pudo inicializar.");
+            }
         }
+
+
+
 
         // Método para insertar una nueva comisaría en la base de datos
         public void InsertComisaria(string nombre, string direccion, string localidad, string partido)

@@ -6,22 +6,35 @@ namespace Ofelia_Sara.Clases.BaseDatos
 { 
 public class DatabaseConnection
 {
-    private readonly string connectionString;
-    private MySqlConnection connection;
+        public string connectionString;
+        private MySqlConnection connection;
 
     public DatabaseConnection()
     {
-        if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
-        {
-            Console.WriteLine("Modo diseño detectado, omitiendo inicialización de DatabaseConnection.");
-            return; // Salir en tiempo de diseño
+
+            if (IsInDesignMode())
+            {
+                Console.WriteLine("Modo diseño detectado, omitiendo inicialización de DatabaseConnection.");
+                return;
+            }
+
+            InitializeConnection();
         }
 
-        connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-        connection = new MySqlConnection(connectionString);
-    }
 
-    public MySqlConnection Connection
+        private void InitializeConnection()
+        {
+         
+            connection = new MySqlConnection(connectionString);
+        }
+
+        private static bool IsInDesignMode()
+        {
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
+                   AppDomain.CurrentDomain.FriendlyName.Contains("DefaultDomain");
+        }
+
+        public MySqlConnection Connection
     {
         get
         {
