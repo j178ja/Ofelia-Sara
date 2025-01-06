@@ -123,24 +123,25 @@ namespace Ofelia_Sara.Formularios.General
             IncrementarTamaño.Incrementar(btn_BoletinOficial);
 
 
-            comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-         //   comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
+           // comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
             comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
             //   comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
 
             ConfigurarBotones();
-            //MostrarPlaceholder();
+            // MostrarPlaceholder();
+         
 
-            //  ToolTipGeneral.ShowToolTip( btn_Configurar, "Configuración de elementos.");
-            // ToolTipGeneral.ShowToolTip( btn_Leyes, "Leyes y decretos útiles.");
-            //  ToolTipGeneral.ShowToolTip( btn_Mecanografia, "MECANOGRAFIA");
-            //  ToolTipGeneral.ShowToolTip( btn_Redactador, "REDACTAR POR VOZ");
-            //   ToolTipGeneral.ShowToolTip( label_OfeliaSara, "Instructivo de la aplicación.");
-            //  TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
-            //   ToolTipGeneral.ShowToolTip( comboBox_Buscar, " Ingrese que tarea desea realizar.");
-            //   ToolTipGeneral.ShowToolTip( btn_BoletinOficial, "Boletín Informativo.");
+            ToolTipGeneral.ShowToolTip(btn_Configurar, "Configuración de elementos.");
+            ToolTipGeneral.ShowToolTip(btn_Leyes, "Leyes y decretos útiles.");
+            ToolTipGeneral.ShowToolTip(btn_Mecanografia, "MECANOGRAFIA");
+            ToolTipGeneral.ShowToolTip(btn_Redactador, "REDACTAR POR VOZ");
+            ToolTipGeneral.ShowToolTip(label_OfeliaSara, "Instructivo de la aplicación.");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
+            ToolTipGeneral.ShowToolTip(comboBox_Buscar, " Ingrese que tarea desea realizar.");
+            ToolTipGeneral.ShowToolTip(btn_BoletinOficial, "Boletín Informativo.");
 
             Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
                                              Properties.Resources.engranajeOriginal);   // Imagen original

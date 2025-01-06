@@ -37,7 +37,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioCierre));
             lbl_Dr = new System.Windows.Forms.Label();
-            textBox_NumeroIpp = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_NumeroIpp = new CustomTextBox();
             lbl_Ipp = new System.Windows.Forms.Label();
             lbl_Caratula = new System.Windows.Forms.Label();
             lbl_Victima = new System.Windows.Forms.Label();
@@ -47,18 +47,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Secretario = new System.Windows.Forms.Label();
             lbl_Fecha = new System.Windows.Forms.Label();
             lbl_Dependencia = new System.Windows.Forms.Label();
-            textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
-            textBox_Victima = new Ofelia_Sara.Controles.General.CustomTextBox();
-            textBox_Imputado = new Ofelia_Sara.Controles.General.CustomTextBox();
-            comboBox_Fiscalia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
-            comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
-            comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            comboBox_AgenteFiscal = new Ofelia_Sara.Controles.General.CustomComboBox();
-            comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
+            textBox_Caratula = new CustomTextBox();
+            textBox_Victima = new CustomTextBox();
+            textBox_Imputado = new CustomTextBox();
+            comboBox_Fiscalia = new CustomComboBox();
+            comboBox_Instructor = new CustomComboBox();
+            comboBox_Secretario = new CustomComboBox();
+            comboBox_Dependencia = new CustomComboBox();
+            comboBox_AgenteFiscal = new CustomComboBox();
+            comboBox_Ipp1 = new CustomComboBox();
+            comboBox_Ipp2 = new CustomComboBox();
             lbl_00 = new System.Windows.Forms.Label();
-            comboBox_Ipp4 = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Ipp4 = new CustomComboBox();
             btn_Buscar = new System.Windows.Forms.Button();
             btn_Guardar = new System.Windows.Forms.Button();
             btn_Limpiar = new System.Windows.Forms.Button();
@@ -74,20 +74,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1 = new System.Windows.Forms.Panel();
             panel_Instruccion = new System.Windows.Forms.Panel();
             timePickerPersonalizado1 = new Controles.Ofl_Sara.TimePickerPersonalizado();
-            comboBox_DeptoJudicial = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_DeptoJudicial = new CustomComboBox();
             lbl_Localida = new System.Windows.Forms.Label();
             lbl_DeptoJudicial = new System.Windows.Forms.Label();
-            comboBox_Localidad = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Localidad = new CustomComboBox();
             panel_Ipp = new System.Windows.Forms.Panel();
             panel_Caratula = new System.Windows.Forms.Panel();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
             panel_Not247 = new System.Windows.Forms.Panel();
-            Btn_Contador247 = new Ofelia_Sara.Controles.Ofl_Sara.Boton_Contador();
+            Btn_Contador247 = new Controles.Ofl_Sara.Boton_Contador();
             fecha_Pericia = new System.Windows.Forms.MaskedTextBox();
-            botonDeslizable_Not247 = new Controles.General.BotonDeslizable();
+            botonDeslizable_Not247 = new BotonDeslizable();
             label_Not247 = new System.Windows.Forms.Label();
-            Btn_ContadorRML = new Ofelia_Sara.Controles.Ofl_Sara.Boton_Contador();
-            btn_ContadorRatificaciones = new Ofelia_Sara.Controles.Ofl_Sara.Boton_Contador();
+            Btn_ContadorRML = new Controles.Ofl_Sara.Boton_Contador();
+            btn_ContadorRatificaciones = new Controles.Ofl_Sara.Boton_Contador();
             label_StudRML = new System.Windows.Forms.Label();
             pictureBox_CheckCargo = new System.Windows.Forms.PictureBox();
             pictureBox_CheckRatificacion = new System.Windows.Forms.PictureBox();
@@ -121,13 +121,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // textBox_NumeroIpp
             // 
+            textBox_NumeroIpp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_NumeroIpp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_NumeroIpp.BackColor = Color.White;
+            textBox_NumeroIpp.ErrorColor = Color.Red;
+            textBox_NumeroIpp.FocusColor = Color.Blue;
             textBox_NumeroIpp.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox_NumeroIpp.Location = new Point(245, 8);
             textBox_NumeroIpp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_NumeroIpp.MaxLength = 32767;
+            textBox_NumeroIpp.Multiline = false;
             textBox_NumeroIpp.Name = "textBox_NumeroIpp";
+            textBox_NumeroIpp.PasswordChar = '\0';
+            textBox_NumeroIpp.ReadOnly = false;
+            textBox_NumeroIpp.SelectionStart = 0;
+            textBox_NumeroIpp.ShowError = false;
             textBox_NumeroIpp.Size = new Size(111, 20);
             textBox_NumeroIpp.TabIndex = 2;
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.TextChanged += TextBox_NumeroIpp_TextChanged;
             textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
             textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
@@ -147,7 +159,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Caratula.AutoSize = true;
             lbl_Caratula.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Caratula.Location = new Point(8, 5);
+            lbl_Caratula.Location = new Point(13, 6);
             lbl_Caratula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Caratula.Name = "lbl_Caratula";
             lbl_Caratula.Size = new Size(76, 15);
@@ -158,7 +170,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Victima.AutoSize = true;
             lbl_Victima.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Victima.Location = new Point(71, 5);
+            lbl_Victima.Location = new Point(75, 5);
             lbl_Victima.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Victima.Name = "lbl_Victima";
             lbl_Victima.Size = new Size(60, 15);
@@ -170,7 +182,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Imputado.AutoSize = true;
             lbl_Imputado.BackColor = Color.Transparent;
             lbl_Imputado.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Imputado.Location = new Point(49, 5);
+            lbl_Imputado.Location = new Point(56, 6);
             lbl_Imputado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Imputado.Name = "lbl_Imputado";
             lbl_Imputado.Size = new Size(78, 15);
@@ -181,7 +193,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Ufid.AutoSize = true;
             lbl_Ufid.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Ufid.Location = new Point(64, 7);
+            lbl_Ufid.Location = new Point(68, 9);
             lbl_Ufid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Ufid.Name = "lbl_Ufid";
             lbl_Ufid.Size = new Size(51, 15);
@@ -192,7 +204,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Instructor.AutoSize = true;
             lbl_Instructor.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Instructor.Location = new Point(13, 98);
+            lbl_Instructor.Location = new Point(24, 84);
             lbl_Instructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Instructor.Name = "lbl_Instructor";
             lbl_Instructor.Size = new Size(95, 15);
@@ -203,7 +215,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Secretario.AutoSize = true;
             lbl_Secretario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Secretario.Location = new Point(18, 132);
+            lbl_Secretario.Location = new Point(26, 111);
             lbl_Secretario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Secretario.Name = "lbl_Secretario";
             lbl_Secretario.Size = new Size(93, 15);
@@ -214,7 +226,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Fecha.AutoSize = true;
             lbl_Fecha.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Fecha.Location = new Point(64, 195);
+            lbl_Fecha.Location = new Point(68, 166);
             lbl_Fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Fecha.Name = "lbl_Fecha";
             lbl_Fecha.Size = new Size(51, 15);
@@ -225,7 +237,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Dependencia.AutoSize = true;
             lbl_Dependencia.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Dependencia.Location = new Point(5, 163);
+            lbl_Dependencia.Location = new Point(14, 142);
             lbl_Dependencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Dependencia.Name = "lbl_Dependencia";
             lbl_Dependencia.Size = new Size(104, 15);
@@ -236,117 +248,274 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             textBox_Caratula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             textBox_Caratula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            textBox_Caratula.BackColor = Color.White;
+            textBox_Caratula.ErrorColor = Color.Red;
+            textBox_Caratula.FocusColor = Color.Blue;
             textBox_Caratula.Location = new Point(102, 3);
             textBox_Caratula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Caratula.MaxLength = 32767;
             textBox_Caratula.Multiline = true;
             textBox_Caratula.Name = "textBox_Caratula";
+            textBox_Caratula.PasswordChar = '\0';
+            textBox_Caratula.ReadOnly = false;
+            textBox_Caratula.SelectionStart = 0;
+            textBox_Caratula.ShowError = false;
             textBox_Caratula.Size = new Size(333, 22);
             textBox_Caratula.TabIndex = 0;
+            textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            textBox_Caratula.TextValue = "";
             textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;
             textBox_Caratula.KeyPress += TextBox_Caratula_KeyPress;
             // 
             // textBox_Victima
             // 
+            textBox_Victima.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Victima.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Victima.BackColor = Color.White;
+            textBox_Victima.ErrorColor = Color.Red;
+            textBox_Victima.FocusColor = Color.Blue;
             textBox_Victima.Location = new Point(147, 3);
             textBox_Victima.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Victima.MaxLength = 32767;
+            textBox_Victima.Multiline = false;
             textBox_Victima.Name = "textBox_Victima";
+            textBox_Victima.PasswordChar = '\0';
+            textBox_Victima.ReadOnly = false;
+            textBox_Victima.SelectionStart = 0;
+            textBox_Victima.ShowError = false;
             textBox_Victima.Size = new Size(333, 23);
             textBox_Victima.TabIndex = 0;
+            textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            textBox_Victima.TextValue = "";
             textBox_Victima.TextChanged += TextBox_Victima_TextChanged;
             // 
             // textBox_Imputado
             // 
+            textBox_Imputado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Imputado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Imputado.BackColor = Color.White;
+            textBox_Imputado.ErrorColor = Color.Red;
+            textBox_Imputado.FocusColor = Color.Blue;
             textBox_Imputado.Location = new Point(147, 3);
             textBox_Imputado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Imputado.MaxLength = 32767;
+            textBox_Imputado.Multiline = false;
             textBox_Imputado.Name = "textBox_Imputado";
+            textBox_Imputado.PasswordChar = '\0';
+            textBox_Imputado.ReadOnly = false;
+            textBox_Imputado.SelectionStart = 0;
+            textBox_Imputado.ShowError = false;
             textBox_Imputado.Size = new Size(333, 23);
             textBox_Imputado.TabIndex = 0;
+            textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            textBox_Imputado.TextValue = "";
             textBox_Imputado.TextChanged += TextBox_Imputado_TextChanged;
             // 
             // comboBox_Fiscalia
             // 
+            comboBox_Fiscalia.ArrowImage = (Image)resources.GetObject("comboBox_Fiscalia.ArrowImage");
+            comboBox_Fiscalia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Fiscalia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Fiscalia.BackColor = Color.White;
+            comboBox_Fiscalia.DataSource = null;
+            comboBox_Fiscalia.DefaultImage = (Image)resources.GetObject("comboBox_Fiscalia.DefaultImage");
+            comboBox_Fiscalia.DisabledImage = (Image)resources.GetObject("comboBox_Fiscalia.DisabledImage");
+            comboBox_Fiscalia.DisplayMember = null;
+            comboBox_Fiscalia.DropDownHeight = 252;
+            comboBox_Fiscalia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Fiscalia.DroppedDown = false;
+            comboBox_Fiscalia.ErrorColor = Color.Red;
+            comboBox_Fiscalia.FocusColor = Color.Blue;
             comboBox_Fiscalia.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            
-            comboBox_Fiscalia.Items.AddRange(new object[] { "04", "05", "08" });
             comboBox_Fiscalia.Location = new Point(132, 3);
             comboBox_Fiscalia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Fiscalia.MaxDropDownItems = 10;
             comboBox_Fiscalia.Name = "comboBox_Fiscalia";
+            comboBox_Fiscalia.PressedImage = (Image)resources.GetObject("comboBox_Fiscalia.PressedImage");
+            comboBox_Fiscalia.SelectedIndex = -1;
+            comboBox_Fiscalia.SelectedItem = null;
+            comboBox_Fiscalia.SelectedText = "";
+            comboBox_Fiscalia.SelectionStart = 0;
+            comboBox_Fiscalia.ShowError = false;
             comboBox_Fiscalia.Size = new Size(106, 21);
             comboBox_Fiscalia.TabIndex = 0;
             comboBox_Fiscalia.SelectedIndexChanged += ComboBox_Fiscalia_SelectedIndexChanged;
             // 
             // comboBox_Instructor
             // 
+            comboBox_Instructor.ArrowImage = (Image)resources.GetObject("comboBox_Instructor.ArrowImage");
+            comboBox_Instructor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Instructor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Instructor.BackColor = Color.White;
+            comboBox_Instructor.DataSource = null;
+            comboBox_Instructor.DefaultImage = (Image)resources.GetObject("comboBox_Instructor.DefaultImage");
+            comboBox_Instructor.DisabledImage = (Image)resources.GetObject("comboBox_Instructor.DisabledImage");
+            comboBox_Instructor.DisplayMember = null;
+            comboBox_Instructor.DropDownHeight = 252;
+            comboBox_Instructor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Instructor.DroppedDown = false;
+            comboBox_Instructor.ErrorColor = Color.Red;
+            comboBox_Instructor.FocusColor = Color.Blue;
             comboBox_Instructor.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            
-            comboBox_Instructor.Items.AddRange(new object[] { "Comisario Miguel Moreno", "subcomisario Melisa Perea Peña", "Comisario Arias" });
-            comboBox_Instructor.Location = new Point(132, 98);
+            comboBox_Instructor.Location = new Point(131, 84);
             comboBox_Instructor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Instructor.MaxDropDownItems = 10;
             comboBox_Instructor.Name = "comboBox_Instructor";
+            comboBox_Instructor.PressedImage = (Image)resources.GetObject("comboBox_Instructor.PressedImage");
+            comboBox_Instructor.SelectedIndex = -1;
+            comboBox_Instructor.SelectedItem = null;
+            comboBox_Instructor.SelectedText = "";
+            comboBox_Instructor.SelectionStart = 0;
+            comboBox_Instructor.ShowError = false;
             comboBox_Instructor.Size = new Size(333, 21);
             comboBox_Instructor.TabIndex = 4;
             comboBox_Instructor.TextChanged += ComboBox_Instructor_TextChanged;
             // 
             // comboBox_Secretario
             // 
+            comboBox_Secretario.ArrowImage = (Image)resources.GetObject("comboBox_Secretario.ArrowImage");
+            comboBox_Secretario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Secretario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Secretario.BackColor = Color.White;
+            comboBox_Secretario.DataSource = null;
+            comboBox_Secretario.DefaultImage = (Image)resources.GetObject("comboBox_Secretario.DefaultImage");
+            comboBox_Secretario.DisabledImage = (Image)resources.GetObject("comboBox_Secretario.DisabledImage");
+            comboBox_Secretario.DisplayMember = null;
+            comboBox_Secretario.DropDownHeight = 252;
+            comboBox_Secretario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Secretario.DroppedDown = false;
+            comboBox_Secretario.ErrorColor = Color.Red;
+            comboBox_Secretario.FocusColor = Color.Blue;
             comboBox_Secretario.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            
-            comboBox_Secretario.Items.AddRange(new object[] { "Oficial Ayudante Jorge A. Bonato", "Oficial Subayudante Ariel Vasquez", "Oficial Subinspector Martin Ali Bonato", "Sargento Nerea Sandoval", "Sargento Eleana Dirocco" });
-            comboBox_Secretario.Location = new Point(132, 130);
+            comboBox_Secretario.Location = new Point(131, 111);
             comboBox_Secretario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Secretario.MaxDropDownItems = 10;
             comboBox_Secretario.Name = "comboBox_Secretario";
+            comboBox_Secretario.PressedImage = (Image)resources.GetObject("comboBox_Secretario.PressedImage");
+            comboBox_Secretario.SelectedIndex = -1;
+            comboBox_Secretario.SelectedItem = null;
+            comboBox_Secretario.SelectedText = "";
+            comboBox_Secretario.SelectionStart = 0;
+            comboBox_Secretario.ShowError = false;
             comboBox_Secretario.Size = new Size(333, 21);
             comboBox_Secretario.TabIndex = 5;
             comboBox_Secretario.TextChanged += ComboBox_Secretario_TextChanged;
             // 
             // comboBox_Dependencia
             // 
-            
-            comboBox_Dependencia.Items.AddRange(new object[] { "EPC I PINAMAR", "EPC II OSTENDE", "EPC III VALERIA DEL MAR", "EPC IV CARILÓ" });
-            comboBox_Dependencia.Location = new Point(132, 162);
+            comboBox_Dependencia.ArrowImage = (Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Dependencia.BackColor = Color.White;
+            comboBox_Dependencia.DataSource = null;
+            comboBox_Dependencia.DefaultImage = (Image)resources.GetObject("comboBox_Dependencia.DefaultImage");
+            comboBox_Dependencia.DisabledImage = (Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
+            comboBox_Dependencia.DisplayMember = null;
+            comboBox_Dependencia.DropDownHeight = 252;
+            comboBox_Dependencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DroppedDown = false;
+            comboBox_Dependencia.ErrorColor = Color.Red;
+            comboBox_Dependencia.FocusColor = Color.Blue;
+            comboBox_Dependencia.Location = new Point(131, 138);
             comboBox_Dependencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
-            comboBox_Dependencia.Size = new Size(333, 23);
+            comboBox_Dependencia.PressedImage = (Image)resources.GetObject("comboBox_Dependencia.PressedImage");
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedItem = null;
+            comboBox_Dependencia.SelectedText = "";
+            comboBox_Dependencia.SelectionStart = 0;
+            comboBox_Dependencia.ShowError = false;
+            comboBox_Dependencia.Size = new Size(333, 22);
             comboBox_Dependencia.TabIndex = 6;
             comboBox_Dependencia.TextChanged += ComboBox_Dependencia_TextChanged;
             // 
             // comboBox_AgenteFiscal
             // 
+            comboBox_AgenteFiscal.ArrowImage = (Image)resources.GetObject("comboBox_AgenteFiscal.ArrowImage");
+            comboBox_AgenteFiscal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_AgenteFiscal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_AgenteFiscal.BackColor = Color.White;
+            comboBox_AgenteFiscal.DataSource = null;
+            comboBox_AgenteFiscal.DefaultImage = (Image)resources.GetObject("comboBox_AgenteFiscal.DefaultImage");
+            comboBox_AgenteFiscal.DisabledImage = (Image)resources.GetObject("comboBox_AgenteFiscal.DisabledImage");
+            comboBox_AgenteFiscal.DisplayMember = null;
+            comboBox_AgenteFiscal.DropDownHeight = 252;
+            comboBox_AgenteFiscal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_AgenteFiscal.DroppedDown = false;
+            comboBox_AgenteFiscal.ErrorColor = Color.Red;
+            comboBox_AgenteFiscal.FocusColor = Color.Blue;
             comboBox_AgenteFiscal.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-         
-            comboBox_AgenteFiscal.Items.AddRange(new object[] { "Calderón Pablo", "Mercuri Walter", "Zamboni Veronica" });
             comboBox_AgenteFiscal.Location = new Point(276, 3);
             comboBox_AgenteFiscal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_AgenteFiscal.MaxDropDownItems = 10;
             comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
+            comboBox_AgenteFiscal.PressedImage = (Image)resources.GetObject("comboBox_AgenteFiscal.PressedImage");
+            comboBox_AgenteFiscal.SelectedIndex = -1;
+            comboBox_AgenteFiscal.SelectedItem = null;
+            comboBox_AgenteFiscal.SelectedText = "";
+            comboBox_AgenteFiscal.SelectionStart = 0;
+            comboBox_AgenteFiscal.ShowError = false;
             comboBox_AgenteFiscal.Size = new Size(188, 21);
             comboBox_AgenteFiscal.TabIndex = 1;
             comboBox_AgenteFiscal.TextChanged += ComboBox_AgenteFiscal_TextChanged;
             // 
             // comboBox_Ipp1
             // 
-           
-            comboBox_Ipp1.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09" });
+            comboBox_Ipp1.ArrowImage = (Image)resources.GetObject("comboBox_Ipp1.ArrowImage");
+            comboBox_Ipp1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp1.BackColor = Color.White;
+            comboBox_Ipp1.DataSource = null;
+            comboBox_Ipp1.DefaultImage = (Image)resources.GetObject("comboBox_Ipp1.DefaultImage");
+            comboBox_Ipp1.DisabledImage = (Image)resources.GetObject("comboBox_Ipp1.DisabledImage");
+            comboBox_Ipp1.DisplayMember = null;
+            comboBox_Ipp1.DropDownHeight = 252;
+            comboBox_Ipp1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp1.DroppedDown = false;
+            comboBox_Ipp1.ErrorColor = Color.Red;
+            comboBox_Ipp1.FocusColor = Color.Blue;
             comboBox_Ipp1.Location = new Point(130, 7);
             comboBox_Ipp1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Ipp1.MaxDropDownItems = 10;
-            comboBox_Ipp1.InnerTextBox.MaxLength = 2;
             comboBox_Ipp1.Name = "comboBox_Ipp1";
-            comboBox_Ipp1.Size = new Size(52, 23);
+            comboBox_Ipp1.PressedImage = (Image)resources.GetObject("comboBox_Ipp1.PressedImage");
+            comboBox_Ipp1.SelectedIndex = -1;
+            comboBox_Ipp1.SelectedItem = null;
+            comboBox_Ipp1.SelectedText = "";
+            comboBox_Ipp1.SelectionStart = 0;
+            comboBox_Ipp1.ShowError = false;
+            comboBox_Ipp1.Size = new Size(52, 21);
             comboBox_Ipp1.TabIndex = 0;
-            comboBox_Ipp1.InnerTextBox.TextChanged += ComboBox_Ipp_TextUpdate;
             comboBox_Ipp1.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // comboBox_Ipp2
             // 
-            
-           
-            comboBox_Ipp2.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09" });
+            comboBox_Ipp2.ArrowImage = (Image)resources.GetObject("comboBox_Ipp2.ArrowImage");
+            comboBox_Ipp2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp2.BackColor = Color.White;
+            comboBox_Ipp2.DataSource = null;
+            comboBox_Ipp2.DefaultImage = (Image)resources.GetObject("comboBox_Ipp2.DefaultImage");
+            comboBox_Ipp2.DisabledImage = (Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
+            comboBox_Ipp2.DisplayMember = null;
+            comboBox_Ipp2.DropDownHeight = 252;
+            comboBox_Ipp2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp2.DroppedDown = false;
+            comboBox_Ipp2.ErrorColor = Color.Red;
+            comboBox_Ipp2.FocusColor = Color.Blue;
             comboBox_Ipp2.Location = new Point(187, 7);
             comboBox_Ipp2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Ipp2.MaxDropDownItems = 10;
             comboBox_Ipp2.Name = "comboBox_Ipp2";
-            comboBox_Ipp2.Size = new Size(52, 23);
+            comboBox_Ipp2.PressedImage = (Image)resources.GetObject("comboBox_Ipp2.PressedImage");
+            comboBox_Ipp2.SelectedIndex = -1;
+            comboBox_Ipp2.SelectedItem = null;
+            comboBox_Ipp2.SelectedText = "";
+            comboBox_Ipp2.SelectionStart = 0;
+            comboBox_Ipp2.ShowError = false;
+            comboBox_Ipp2.Size = new Size(52, 21);
             comboBox_Ipp2.TabIndex = 1;
-            comboBox_Ipp2.InnerTextBox.TextChanged += ComboBox_Ipp_TextUpdate;
             comboBox_Ipp2.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // lbl_00
@@ -361,14 +530,31 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // comboBox_Ipp4
             // 
-           
-            comboBox_Ipp4.Items.AddRange(new object[] { "24", "25", "26" });
+            comboBox_Ipp4.ArrowImage = (Image)resources.GetObject("comboBox_Ipp4.ArrowImage");
+            comboBox_Ipp4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp4.BackColor = Color.White;
+            comboBox_Ipp4.DataSource = null;
+            comboBox_Ipp4.DefaultImage = (Image)resources.GetObject("comboBox_Ipp4.DefaultImage");
+            comboBox_Ipp4.DisabledImage = (Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
+            comboBox_Ipp4.DisplayMember = null;
+            comboBox_Ipp4.DropDownHeight = 252;
+            comboBox_Ipp4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp4.DroppedDown = false;
+            comboBox_Ipp4.ErrorColor = Color.Red;
+            comboBox_Ipp4.FocusColor = Color.Blue;
             comboBox_Ipp4.Location = new Point(364, 7);
             comboBox_Ipp4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Ipp4.MaxDropDownItems = 10;
             comboBox_Ipp4.Name = "comboBox_Ipp4";
-            comboBox_Ipp4.Size = new Size(59, 23);
+            comboBox_Ipp4.PressedImage = (Image)resources.GetObject("comboBox_Ipp4.PressedImage");
+            comboBox_Ipp4.SelectedIndex = -1;
+            comboBox_Ipp4.SelectedItem = null;
+            comboBox_Ipp4.SelectedText = "";
+            comboBox_Ipp4.SelectionStart = 0;
+            comboBox_Ipp4.ShowError = false;
+            comboBox_Ipp4.Size = new Size(59, 21);
             comboBox_Ipp4.TabIndex = 3;
-            comboBox_Ipp4.InnerTextBox.TextChanged += ComboBox_Ipp_TextUpdate;
             comboBox_Ipp4.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // btn_Buscar
@@ -574,32 +760,51 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             timePickerPersonalizado1.BackColor = SystemColors.Window;
             timePickerPersonalizado1.FechaSeleccionada = new System.DateTime(0L);
-            timePickerPersonalizado1.Location = new Point(132, 193);
+            timePickerPersonalizado1.Location = new Point(130, 166);
             timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             timePickerPersonalizado1.Name = "timePickerPersonalizado1";
             timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 12, 5, 18, 42, 59, 901);
-            timePickerPersonalizado1.Size = new Size(335, 24);
+            timePickerPersonalizado1.Size = new Size(335, 21);
             timePickerPersonalizado1.TabIndex = 38;
             // 
             // comboBox_DeptoJudicial
             // 
+            comboBox_DeptoJudicial.ArrowImage = (Image)resources.GetObject("comboBox_DeptoJudicial.ArrowImage");
+            comboBox_DeptoJudicial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_DeptoJudicial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_DeptoJudicial.BackColor = Color.White;
+            comboBox_DeptoJudicial.DataSource = null;
+            comboBox_DeptoJudicial.DefaultImage = (Image)resources.GetObject("comboBox_DeptoJudicial.DefaultImage");
+            comboBox_DeptoJudicial.DisabledImage = (Image)resources.GetObject("comboBox_DeptoJudicial.DisabledImage");
+            comboBox_DeptoJudicial.DisplayMember = null;
+            comboBox_DeptoJudicial.DropDownHeight = 252;
+            comboBox_DeptoJudicial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_DeptoJudicial.DroppedDown = false;
+            comboBox_DeptoJudicial.ErrorColor = Color.Red;
+            comboBox_DeptoJudicial.FocusColor = Color.Blue;
             comboBox_DeptoJudicial.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            
-            comboBox_DeptoJudicial.Items.AddRange(new object[] { "DOLORES" });
-            comboBox_DeptoJudicial.Location = new Point(132, 66);
+            comboBox_DeptoJudicial.Location = new Point(132, 57);
             comboBox_DeptoJudicial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_DeptoJudicial.MaxDropDownItems = 10;
             comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
+            comboBox_DeptoJudicial.PressedImage = (Image)resources.GetObject("comboBox_DeptoJudicial.PressedImage");
+            comboBox_DeptoJudicial.SelectedIndex = -1;
+            comboBox_DeptoJudicial.SelectedItem = null;
+            comboBox_DeptoJudicial.SelectedText = "";
+            comboBox_DeptoJudicial.SelectionStart = 0;
+            comboBox_DeptoJudicial.ShowError = false;
             comboBox_DeptoJudicial.Size = new Size(333, 21);
             comboBox_DeptoJudicial.TabIndex = 3;
             comboBox_DeptoJudicial.TextChanged += ComboBox_DeptoJudicial_TextChanged;
+           // comboBox_DeptoJudicial.Click += this.comboBox_DeptoJudicial_Click;
             // 
             // lbl_Localida
             // 
             lbl_Localida.AutoSize = true;
             lbl_Localida.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Localida.Location = new Point(42, 36);
+            lbl_Localida.Location = new Point(49, 30);
             lbl_Localida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lbl_Localida.Name = "lbl_Localida";
+            lbl_Localida.Name = "lbl_Localidad";
             lbl_Localida.Size = new Size(70, 15);
             lbl_Localida.TabIndex = 37;
             lbl_Localida.Text = "Localidad";
@@ -608,20 +813,40 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_DeptoJudicial.AutoSize = true;
             lbl_DeptoJudicial.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_DeptoJudicial.Location = new Point(4, 69);
+            lbl_DeptoJudicial.Location = new Point(16, 57);
             lbl_DeptoJudicial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_DeptoJudicial.Name = "lbl_DeptoJudicial";
             lbl_DeptoJudicial.Size = new Size(103, 15);
             lbl_DeptoJudicial.TabIndex = 35;
             lbl_DeptoJudicial.Text = "Depto. Judicial";
+            lbl_DeptoJudicial.Click += lbl_DeptoJudicial_Click;
             // 
             // comboBox_Localidad
             // 
+            comboBox_Localidad.ArrowImage = (Image)resources.GetObject("comboBox_Localidad.ArrowImage");
+            comboBox_Localidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Localidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Localidad.BackColor = Color.White;
+            comboBox_Localidad.DataSource = null;
+            comboBox_Localidad.DefaultImage = (Image)resources.GetObject("comboBox_Localidad.DefaultImage");
+            comboBox_Localidad.DisabledImage = (Image)resources.GetObject("comboBox_Localidad.DisabledImage");
+            comboBox_Localidad.DisplayMember = null;
+            comboBox_Localidad.DropDownHeight = 252;
+            comboBox_Localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Localidad.DroppedDown = false;
+            comboBox_Localidad.ErrorColor = Color.Red;
+            comboBox_Localidad.FocusColor = Color.Blue;
             comboBox_Localidad.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox_Localidad.Items.AddRange(new object[] { "PINAMAR", "VILLA GESELL", "GRAL. MADARIAGA" });
-            comboBox_Localidad.Location = new Point(132, 35);
+            comboBox_Localidad.Location = new Point(132, 30);
             comboBox_Localidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Localidad.MaxDropDownItems = 10;
             comboBox_Localidad.Name = "comboBox_Localidad";
+            comboBox_Localidad.PressedImage = (Image)resources.GetObject("comboBox_Localidad.PressedImage");
+            comboBox_Localidad.SelectedIndex = -1;
+            comboBox_Localidad.SelectedItem = null;
+            comboBox_Localidad.SelectedText = "";
+            comboBox_Localidad.SelectionStart = 0;
+            comboBox_Localidad.ShowError = false;
             comboBox_Localidad.Size = new Size(333, 21);
             comboBox_Localidad.TabIndex = 2;
             comboBox_Localidad.KeyPress += ComboBox_Localidad_KeyPress;
@@ -644,8 +869,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // panel_Caratula
             // 
             panel_Caratula.BackColor = Color.Transparent;
-            panel_Caratula.Controls.Add(
-                textBox_Caratula);
+            panel_Caratula.Controls.Add(textBox_Caratula);
             panel_Caratula.Controls.Add(lbl_Caratula);
             panel_Caratula.Controls.Add(btn_AgregarCausa);
             panel_Caratula.Location = new Point(54, 63);
@@ -693,7 +917,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // Btn_Contador247
             // 
-            
             Btn_Contador247.BackColor = Color.FromArgb(0, 154, 174);
             Btn_Contador247.Cursor = System.Windows.Forms.Cursors.Hand;
             Btn_Contador247.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -704,6 +927,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Btn_Contador247.Name = "Btn_Contador247";
             Btn_Contador247.Size = new Size(24, 24);
             Btn_Contador247.TabIndex = 56;
+            Btn_Contador247.Text = null;
             // 
             // fecha_Pericia
             // 
@@ -749,7 +973,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // Btn_ContadorRML
             // 
-            
             Btn_ContadorRML.BackColor = Color.FromArgb(0, 154, 174);
             Btn_ContadorRML.Cursor = System.Windows.Forms.Cursors.Hand;
             Btn_ContadorRML.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -760,10 +983,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Btn_ContadorRML.Name = "Btn_ContadorRML";
             Btn_ContadorRML.Size = new Size(24, 27);
             Btn_ContadorRML.TabIndex = 54;
+            Btn_ContadorRML.Text = null;
             // 
             // btn_ContadorRatificaciones
             // 
-            
             btn_ContadorRatificaciones.BackColor = Color.FromArgb(0, 154, 174);
             btn_ContadorRatificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_ContadorRatificaciones.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -774,6 +997,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_ContadorRatificaciones.Name = "btn_ContadorRatificaciones";
             btn_ContadorRatificaciones.Size = new Size(24, 27);
             btn_ContadorRatificaciones.TabIndex = 53;
+            btn_ContadorRatificaciones.Text = null;
             // 
             // label_StudRML
             // 
@@ -894,6 +1118,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Text = "ACTUACIONES SUMARIALES PREVENCIONALES";
             FormClosing += InicioCierre_FormClosing;
             Load += InicioCierre_Load;
+            Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(label_TITULO, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel_Instruccion.ResumeLayout(false);

@@ -137,9 +137,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
 
-            //ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
-            //ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
-            //ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
+            ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
+            ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
+            ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
             //...........................................................................
             //carcteristicas de texto en controles
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
@@ -1453,7 +1453,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 MensajeGeneral.Mostrar("Por favor, ingrese una fecha y hora válida.", MensajeGeneral.TipoMensaje.Advertencia);
 
-              //  Evitar que el control pierda el foco si el dato no es válido
+                //  Evitar que el control pierda el foco si el dato no es válido
                 ((MaskedTextBox)sender).Focus();
             }
         }
@@ -1473,7 +1473,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     e.Cancel = true; // Evitar que el control pierda el foco
                 }
             }
-           
+
         }
 
 
@@ -1484,7 +1484,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-       
+        private void lbl_DeptoJudicial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         //-------------------------------------------------------------
 
     }

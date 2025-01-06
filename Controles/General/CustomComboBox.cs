@@ -33,7 +33,7 @@ namespace Ofelia_Sara.Controles.General
             textBox = new TextBox
             {
                 BorderStyle = BorderStyle.None,
-                Dock = DockStyle.Fill,
+               // Dock = DockStyle.Fill,
                 BackColor = Color.GreenYellow,
                 TextAlign = HorizontalAlignment.Center,
             };
@@ -638,5 +638,18 @@ namespace Ofelia_Sara.Controles.General
                 e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
             }
         }
+
+        // altura de textBox
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            int textBoxHeight = (int)(this.Height * 0.5); // 90% de la altura del control
+            int verticalPadding = (this.Height - textBoxHeight) / 2; // Centrar verticalmente
+
+            textBox.SetBounds(0, verticalPadding, this.Width - arrowPictureBox.Width, textBoxHeight);
+            arrowPictureBox.SetBounds(this.Width - arrowPictureBox.Width, 0, arrowPictureBox.Width, this.Height);
+        }
+
     }
 }
