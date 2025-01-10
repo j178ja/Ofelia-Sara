@@ -10,36 +10,115 @@ using System.Windows.Forms;
 using Ofelia_Sara.Formularios.General.Mensajes;
 
 using Microsoft.Office.Interop.Word;
+using System.Drawing.Drawing2D;
+
+
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
-{
-
-
-    public partial class DateCompromiso_Control : UserControl
     {
-        public DateCompromiso_Control()
+        public partial class DateCompromiso_Control : UserControl
         {
-            InitializeComponent();
+            private Timer animationTimer;
+            private int animationProgress;
+            private bool isFocused;
+            private bool showError;
+            private Color focusColor = Color.Blue;
+            private Color errorColor = Color.Red;
 
-            SelectFecha_Compromiso.Click += (sender, e) =>
+            public DateCompromiso_Control()
             {
-                using (var calendarForm = new CALENDARIO())
+                InitializeComponent();
+
+                SelectFecha_Compromiso.Click += (sender, e) =>
                 {
-                    if (calendarForm.ShowDialog() == DialogResult.OK)
+                    using (var calendarForm = new CALENDARIO())
                     {
-                        DateTime selectedDate = calendarForm.SelectedDate;
+                        if (calendarForm.ShowDialog() == DialogResult.OK)
+                        {
+                            DateTime selectedDate = calendarForm.SelectedDate;
+                        }
                     }
+                };
+
+                SelectFecha_Compromiso.Enter += (s, e) => FocusControl(SelectFecha_Compromiso);
+                SelectHora_Compromiso.Enter += (s, e) => FocusControl(SelectHora_Compromiso);
+
+                SelectFecha_Compromiso.Leave += (s, e) => ValidateControl(SelectFecha_Compromiso);
+                SelectHora_Compromiso.Leave += (s, e) => ValidateControl(SelectHora_Compromiso);
+
+                this.Paint += OnCustomPaint;
+            }
+
+            private void FocusControl(Control control)
+            {
+                isFocused = true;
+                showError = false;
+                StartAnimation();
+            }
+
+            private void ValidateControl(Control control)
+            {
+                if (string.IsNullOrWhiteSpace(control.Text))
+                {
+                    showError = true;
+                    isFocused = false;
                 }
-            };
-            SelectHora_Compromiso.Paint += Select_Paint;
-            SelectFecha_Compromiso.Paint += Select_Paint;
+                else
+                {
+                    showError = false;
+                    isFocused = false;
+                }
+                this.Invalidate();
+            }
 
-        }
+            private void StartAnimation()
+            {
+                animationProgress = 0;
 
-        //--------------------------------------------------------
+                if (animationTimer == null)
+                {
+                    animationTimer = new Timer { Interval = 15 };
+                    animationTimer.Tick += (s, e) =>
+                    {
+                        if (animationProgress < 100)
+                        {
+                            animationProgress += 5;
+                            this.Invalidate();
+                        }
+                        else
+                        {
+                            animationTimer.Stop();
+                        }
+                    };
+                }
 
+                animationTimer.Start();
+            }
 
-        private void SelectedHora_Compromiso_Validating(object sender, CancelEventArgs e)
+            protected override void OnPaint(PaintEventArgs e)
+            {
+               // base.OnPaint(e); // causa que el resto de los controles no se visualicen 
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+                Color underlineColor = showError ? errorColor : (isFocused ? focusColor : this.BackColor);
+                using (Brush brush = new SolidBrush(underlineColor))
+                {
+                    int lineWidth = 3;
+                    float progress = animationProgress / 100f;
+                    int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);
+                    int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
+                    e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
+                }
+            }
+
+            private void OnCustomPaint(object sender, PaintEventArgs e)
+            {
+                this.Invalidate();
+            }
+     
+    
+
+    private void SelectedHora_Compromiso_Validating(object sender, CancelEventArgs e)
         {
             // Extrae la parte de hora y minutos del texto
             string[] partes = SelectHora_Compromiso.Text.Split(':');
@@ -74,90 +153,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 }
             }
         }
-        //------------------------------------------------
-        //-----------------------------------------------------------------------------------
-
-        // Bandera para activar o desactivar el subrayado personalizado
-        private bool mostrarSubrayado = false;
-        //para hacer que se extienda 
-        private int lineWidth = 0;
-        private bool isAnimating = false;
-        private Timer animationTimer;
-
-        private void Select_Focus(object sender, EventArgs e)
-        {
-            if (sender == SelectHora_Compromiso)
-            {
-                ConfigurarAnimacion(SelectHora_Compromiso);
-            }
-            else if (sender == SelectFecha_Compromiso)
-            {
-                ConfigurarAnimacion(SelectFecha_Compromiso);
-            }
-            else
-            {
-                isAnimating = false;
-                lineWidth = 0;
-                animationTimer?.Stop();
-                SelectHora_Compromiso.Invalidate();
-            }
-        }
-        //-------------------------------------------
-        private void ConfigurarAnimacion(Control control)
-        {
-            control.Focus();
-            isAnimating = true;
-            lineWidth = 0;
-
-            if (animationTimer == null)
-            {
-                animationTimer = new Timer();
-                animationTimer.Interval = 15; // Intervalo de animación
-                animationTimer.Tick += (s, args) =>
-                {
-                    if (lineWidth < control.Width / 2)
-                    {
-                        lineWidth += 2; // Incremento gradual
-                        control.Invalidate(); // Redibuja el control
-                    }
-                    else
-                    {
-                        animationTimer.Stop(); // Detiene la animación
-                    }
-                };
-            }
-            animationTimer.Start(); // Inicia la animación
-        }
-
-        private void Select_Paint(object sender, PaintEventArgs e)
-        {
-            if (isAnimating)
-            {
-                // Define el color y grosor de la línea
-                using (Pen pen = new Pen(SystemColors.Highlight, 3))
-                {
-                    // Centro del Label
-                    int centerX = SelectHora_Compromiso.Width / 2;
-                    int y = SelectHora_Compromiso.Font.Height; // Posición 3 píxeles debajo del texto
-
-                    // Dibuja la línea desde el centro hacia los extremos
-                    e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
-                }
-            }
-        }
-
-        private void SelectFecha_Compromiso_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SelectHora_Compromiso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        //------------------------------------------------------------
-
-
+      
     }
 }

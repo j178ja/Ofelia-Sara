@@ -123,15 +123,16 @@ namespace Ofelia_Sara.Formularios.General
             IncrementarTamaño.Incrementar(btn_BoletinOficial);
 
 
-           // comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
+          //  comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+           // comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
-            comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
-            //   comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
+            //comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
+            //
+            //comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
 
             ConfigurarBotones();
-            // MostrarPlaceholder();
+             MostrarPlaceholder();
          
 
             ToolTipGeneral.ShowToolTip(btn_Configurar, "Configuración de elementos.");
@@ -145,6 +146,9 @@ namespace Ofelia_Sara.Formularios.General
 
             Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
                                              Properties.Resources.engranajeOriginal);   // Imagen original
+
+            comboBox_Buscar.PlaceholderText = "Buscar tipo de actuación...";
+            comboBox_Buscar.PlaceholderColor = Color.LightGray;
         }
 
         //--------------------------------------------------------------------------------
@@ -321,16 +325,16 @@ namespace Ofelia_Sara.Formularios.General
 
 
 
-        private void ComboBox_Buscar_GotFocus(object sender, EventArgs e)
-        {
-            if (comboBox_Buscar.Text == placeholderText)
-            {
-                comboBox_Buscar.Text = "";
-                comboBox_Buscar.ForeColor = Color.Black;
-            }
-        }
+        //private void ComboBox_Buscar_GotFocus(object sender, EventArgs e)
+        //{
+        //    if (comboBox_Buscar.Text == placeholderText)
+        //    {
+        //        comboBox_Buscar.Text = "";
+        //        comboBox_Buscar.ForeColor = Color.Black;
+        //    }
+        //}
 
-        //esta generando problemas
+        
         //private void ComboBox_Buscar_LostFocus(object sender, EventArgs e)
         //{
         //    if (string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
@@ -348,7 +352,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             // Establecer el texto del placeholder y cambiar el color a gris
             comboBox_Buscar.Text = placeholderText;
-            comboBox_Buscar.ForeColor = Color.Gray;
+            comboBox_Buscar.ForeColor = Color.LightGray;
         }
 
         //_________________________________________________________________________________

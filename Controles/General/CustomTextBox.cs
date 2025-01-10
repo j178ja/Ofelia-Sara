@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -14,7 +15,8 @@ namespace Ofelia_Sara.Controles.General
         private bool showError;
         private Color focusColor = Color.Blue;
         private Color errorColor = Color.Red;
-
+        private string placeholderText = string.Empty;
+        private Color placeholderColor = Color.Gray;
         public CustomTextBox()
         {
             // Configuración del TextBox
@@ -22,9 +24,8 @@ namespace Ofelia_Sara.Controles.General
             textBox = new TextBox
             {
                 BorderStyle = BorderStyle.None,
-                Dock = DockStyle.Fill,
-                //Anchor = AnchorStyles.Left | AnchorStyles.Right,
-                BackColor = Color.Yellow,
+                Dock = DockStyle.Fill, //abarque todo el ancho
+                BackColor = Color.Yellow, // color provisorio para analizar errores
                 ForeColor = this.ForeColor,
                
             };
@@ -73,6 +74,37 @@ namespace Ofelia_Sara.Controles.General
             if (animationProgress == 100) animationTimer.Stop();
         }
 
+        /// <summary>
+        /// PROPIEDADES PLACEHOLDER
+        /// </summary>
+        /// <param name="e"></param>
+      
+
+        [Category("Custom Properties")]
+        [Description("The text displayed as a placeholder.")]
+        public string PlaceholderText
+        {
+            get => placeholderText;
+            set
+            {
+                placeholderText = value;
+                Invalidate(); // Redibuja el control
+            }
+        }
+
+        [Category("Custom Properties")]
+        [Description("The color of the placeholder text.")]
+        public Color PlaceholderColor
+        {
+            get => placeholderColor;
+            set
+            {
+                placeholderColor = value;
+                Invalidate(); // Redibuja el control
+            }
+        }
+
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -85,6 +117,15 @@ namespace Ofelia_Sara.Controles.General
                 int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);
                 int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
                 e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
+            }
+
+            // Si el control está vacío y no tiene foco, muestra el placeholder
+        if (string.IsNullOrEmpty(this.Text) && !this.Focused && !string.IsNullOrEmpty(PlaceholderText))
+            {
+                using (Brush brush = new SolidBrush(PlaceholderColor))
+                {
+                    e.Graphics.DrawString(PlaceholderText, this.Font, brush, new PointF(1, 1));
+                }
             }
         }
 

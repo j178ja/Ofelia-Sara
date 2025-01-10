@@ -57,7 +57,7 @@ namespace Ofelia_Sara.Formularios.General
             secretariosManager = new SecretariosManager();
 
             InitializeCustomCursors();
-            TraerLabelsAlFrente();
+            TraerLabelsAlFrente();// deberia traer los titulos al frente para que se vean completos
             InitializeComponent();
             InitializeFooterLinkLabel();
         }
@@ -144,7 +144,7 @@ namespace Ofelia_Sara.Formularios.General
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado
             this.BackColor = customColor;
 
-            // Aplicar otras configuraciones visuales si es necesario
+           
         }
 
         /// <summary>

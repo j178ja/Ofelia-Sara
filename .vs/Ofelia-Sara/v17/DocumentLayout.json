@@ -3,15 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\controles\\aplicadas con controles\\tooltipgeneral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\controles\\aplicadas con controles\\tooltipgeneral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\datatimepickerpersonalizado.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\datatimepickerpersonalizado.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\datatimepickerpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\datatimepickerpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\6aa8ede6030ed6e0468ebd300913317ba39f8546d82201c60c0dfee19951ba64\\TextBox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\datatimepickerpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\datatimepickerpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\datecompromiso_control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\datecompromiso_control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,40 +43,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ToolTipGeneral.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\ToolTipGeneral.cs",
-              "RelativeDocumentMoniker": "Controles\\Controles\\Aplicadas con controles\\ToolTipGeneral.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\ToolTipGeneral.cs*",
-              "RelativeToolTip": "Controles\\Controles\\Aplicadas con controles\\ToolTipGeneral.cs*",
-              "ViewState": "AgIAACsAAAAAAAAAAAAgwI0AAAABAAAAAAAAAA==",
+              "Title": "DataTimePickerPersonalizado.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DataTimePickerPersonalizado.Designer.cs",
+              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\DataTimePickerPersonalizado.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DataTimePickerPersonalizado.Designer.cs*",
+              "RelativeToolTip": "Controles\\Ofl Sara\\DataTimePickerPersonalizado.Designer.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAtwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T19:16:37.254Z",
+              "WhenOpened": "2025-01-09T21:50:02.806Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TextBox.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\6aa8ede6030ed6e0468ebd300913317ba39f8546d82201c60c0dfee19951ba64\\TextBox.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\6aa8ede6030ed6e0468ebd300913317ba39f8546d82201c60c0dfee19951ba64\\TextBox.cs",
-              "ToolTip": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\6aa8ede6030ed6e0468ebd300913317ba39f8546d82201c60c0dfee19951ba64\\TextBox.cs [Solo lectura]",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\6aa8ede6030ed6e0468ebd300913317ba39f8546d82201c60c0dfee19951ba64\\TextBox.cs [Solo lectura]",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAswIUAAAAEAAAAAQAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DataTimePickerPersonalizado.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs",
+              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T12:36:08.759Z",
-              "EditorCaption": " [Solo lectura]"
+              "WhenOpened": "2025-01-09T21:30:47.769Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "menu_principal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
-              "RelativeToolTip": "Formularios\\General\\menu_principal.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAcwIYAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DataTimePickerPersonalizado.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs",
+              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs",
+              "RelativeToolTip": "Controles\\Ofl Sara\\DataTimePickerPersonalizado.cs",
+              "ViewState": "AgIAAG8DAAAAAAAAAAA4wJ0DAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T12:35:17.249Z",
+              "WhenOpened": "2025-01-09T21:14:35.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DateCompromiso_Control.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DateCompromiso_Control.cs",
+              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\DateCompromiso_Control.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\DateCompromiso_Control.cs",
+              "RelativeToolTip": "Controles\\Ofl Sara\\DateCompromiso_Control.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T15:39:07.557Z",
               "EditorCaption": ""
             }
           ]

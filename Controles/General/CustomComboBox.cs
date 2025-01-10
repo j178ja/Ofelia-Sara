@@ -22,8 +22,12 @@ namespace Ofelia_Sara.Controles.General
          private Image defaultImage = Properties.Resources.Flecha_Triangulo; // Imagen predeterminada
          private Image pressedImage = Properties.Resources.flechaG_Verde; // Imagen cuando se presiona
          private Image disabledImage = Properties.Resources.flechaG_Roja; // Imagen cuando está deshabilitado
-       
 
+        private string placeholderText = " ";//para que no se muestre placeholder y se asigne en cada control especifico
+        private Color placeholderColor = Color.Gray;
+        private Color defaultTextColor = Color.Black;
+        private bool isPlaceholderActive = true;
+        private bool isPlaceholderVisible = false; // Bandera para saber si el placeholder está visible
         public event EventHandler SelectedIndexChanged;
 
         public CustomComboBox()
@@ -33,15 +37,20 @@ namespace Ofelia_Sara.Controles.General
             textBox = new TextBox
             {
                 BorderStyle = BorderStyle.None,
-               // Dock = DockStyle.Fill,
+              
                 BackColor = Color.GreenYellow,
                 TextAlign = HorizontalAlignment.Center,
-            };
+                ForeColor = placeholderColor, // Inicia con el color del placeholder
+                Text = placeholderText // Inicializa con el texto del placeholder
 
+            };
+            // agregar metodos al textbox
             textBox.GotFocus += TextBox_GotFocus;
             textBox.LostFocus += TextBox_LostFocus;
             textBox.TextChanged += TextBox_TextChanged;
-           
+            textBox.MouseEnter += TextBox_MouseEnter;
+            textBox.MouseLeave += TextBox_MouseLeave;
+
             Controls.Add(textBox);
 
             // Configuración del PictureBox (flecha)
@@ -214,6 +223,8 @@ namespace Ofelia_Sara.Controles.General
             showError = false;
             animationProgress = 0;
             animationTimer.Start();
+
+            HidePlaceholder();
         }
 
         private void TextBox_LostFocus(object sender, EventArgs e)
@@ -222,57 +233,65 @@ namespace Ofelia_Sara.Controles.General
             animationProgress = 0;
             animationTimer.Start();
             dropdownList.Visible = false;
+
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                ShowPlaceholder();
+            }
         }
+      
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             OnTextChanged(e);
         }
 
+
+        // Evento cuando el mouse entra en el TextBox
+        private void TextBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                ShowPlaceholder();
+            }
+        }
+
+        // Evento cuando el mouse sale del TextBox
+        private void TextBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text) && !textBox.Focused)
+            {
+                HidePlaceholder();
+            }
+        }
+
+        // Mostrar placeholder
+        private void ShowPlaceholder()
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholderText;
+                textBox.ForeColor = placeholderColor;
+                isPlaceholderVisible = true;
+            }
+        }
+
+        // Ocultar placeholder
+        private void HidePlaceholder()
+        {
+            if (isPlaceholderVisible)
+            {
+                textBox.Text = string.Empty;
+                textBox.ForeColor = defaultTextColor;
+                isPlaceholderVisible = false;
+            }
+        }
+
+
+
+     
         //------------------------------------------------------------------------------
 
-        /// <summary>
-        /// EVENTO DESENCADENADOS CON CLICK DE IMAGEN
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        //private void ArrowPictureBox_Click(object sender, EventArgs e)
-        //{
-        //    Form parentForm = this.FindForm();
-
-        //    // Asegúrate de que el dropdownList esté en el formulario principal
-        //    if (dropdownList.Parent != parentForm)
-        //    {
-        //        parentForm.Controls.Add(dropdownList);
-        //        dropdownList.BringToFront();
-        //    }
-
-
-        //    // Calcular la posición en relación al formulario principal
-        //    Point dropdownLocation = this.PointToScreen(Point.Empty); // Obtener posición global del CustomComboBox
-        //    dropdownLocation = parentForm.PointToClient(new Point(dropdownLocation.X, dropdownLocation.Y + this.Height)); // Ajustar al formulario
-
-        //    dropdownList.Location = dropdownLocation;
-
-        //    // Configurar el ancho del dropdownList
-        //    dropdownList.Width = this.Width - arrowPictureBox.Width;
-
-        //    // Alternar visibilidad
-        //    dropdownList.Visible = !dropdownList.Visible;
-
-        //    // Manejar clics fuera del dropdownList
-        //    if (dropdownList.Visible)
-        //    {
-        //        parentForm.MouseClick += ParentForm_ClickOutside;
-        //        dropdownList.LostFocus += DropdownList_LostFocus;
-        //    }
-        //    else
-        //    {
-        //        parentForm.MouseClick -= ParentForm_ClickOutside;
-        //        dropdownList.LostFocus -= DropdownList_LostFocus;
-        //    }
-        //}
 
         private void ArrowPictureBox_Click(object sender, EventArgs e)
         {
@@ -649,6 +668,34 @@ namespace Ofelia_Sara.Controles.General
 
             textBox.SetBounds(0, verticalPadding, this.Width - arrowPictureBox.Width, textBoxHeight);
             arrowPictureBox.SetBounds(this.Width - arrowPictureBox.Width, 0, arrowPictureBox.Width, this.Height);
+        }
+
+
+        // Propiedades públicas para configurar el placeholder
+        public string PlaceholderText
+        {
+            get => placeholderText;
+            set
+            {
+                placeholderText = value;
+                if (isPlaceholderVisible)
+                {
+                    textBox.Text = placeholderText;
+                }
+            }
+        }
+
+        public Color PlaceholderColor
+        {
+            get => placeholderColor;
+            set
+            {
+                placeholderColor = value;
+                if (isPlaceholderVisible)
+                {
+                    textBox.ForeColor = placeholderColor;
+                }
+            }
         }
 
     }

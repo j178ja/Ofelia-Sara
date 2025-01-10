@@ -5,6 +5,7 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\Base
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\BaseDatos\Leyes\Decreto 8031 Codigo de Faltas.pdf
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\BaseDatos\Leyes\Ley 13982.pdf
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\BaseDatos\Leyes\Reglamento de tramite y correspondencia.pdf
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\MyInstaller\Ofelia-Sara.exe
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\Ofelia-Sara.dll.config
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\Ofelia-Sara.deps.json
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\Ofelia-Sara.runtimeconfig.json
@@ -133,4 +134,3 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\refi
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia-Sara.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia-Sara.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\ref\Ofelia-Sara.dll
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\MyInstaller\Ofelia-Sara.exe

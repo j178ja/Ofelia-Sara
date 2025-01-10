@@ -55,7 +55,7 @@ namespace Ofelia_Sara.Clases.General.Botones
                     // Si el control es FECHA DE NACIMIENTO
                     case CustomDate customDateTextBox:
                         customDateTextBox.ClearDate(); // Limpiar el control personalizado
-                        customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
+                       // customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
                         break;
 
                     // Si el control es email 

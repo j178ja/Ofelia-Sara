@@ -46,42 +46,39 @@
             SelectHora_Compromiso.Size = new System.Drawing.Size(71, 17);
             SelectHora_Compromiso.TabIndex = 7;
             SelectHora_Compromiso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            SelectHora_Compromiso.MaskInputRejected += SelectHora_Compromiso_MaskInputRejected;
             SelectHora_Compromiso.Validating += SelectedHora_Compromiso_Validating;
             // 
             // panel_Horario
             // 
             panel_Horario.BackColor = System.Drawing.SystemColors.Window;
             panel_Horario.Controls.Add(SelectHora_Compromiso);
-            panel_Horario.Location = new System.Drawing.Point(308, 0);
+            panel_Horario.Location = new System.Drawing.Point(304, 0);
             panel_Horario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel_Horario.Name = "panel_Horario";
-            panel_Horario.Size = new System.Drawing.Size(82, 24);
+            panel_Horario.Size = new System.Drawing.Size(80, 21);
             panel_Horario.TabIndex = 9;
             // 
             // SelectFecha_Compromiso
             // 
             SelectFecha_Compromiso.BackColor = System.Drawing.SystemColors.Window;
             SelectFecha_Compromiso.FechaSeleccionada = new System.DateTime(0L);
-            SelectFecha_Compromiso.Location = new System.Drawing.Point(4, 0);
+            SelectFecha_Compromiso.Location = new System.Drawing.Point(0, 0);
             SelectFecha_Compromiso.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             SelectFecha_Compromiso.Name = "SelectFecha_Compromiso";
             SelectFecha_Compromiso.SelectedDate = new System.DateTime(2024, 12, 5, 0, 0, 0, 0);
-            SelectFecha_Compromiso.Size = new System.Drawing.Size(302, 24);
+            SelectFecha_Compromiso.Size = new System.Drawing.Size(302, 21);
             SelectFecha_Compromiso.TabIndex = 8;
-            SelectFecha_Compromiso.Load += SelectFecha_Compromiso_Load;
             // 
             // DateCompromiso_Control
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             Controls.Add(panel_Horario);
             Controls.Add(SelectFecha_Compromiso);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "DateCompromiso_Control";
-            Size = new System.Drawing.Size(394, 27);
+            Size = new System.Drawing.Size(384, 30);
             panel_Horario.ResumeLayout(false);
             panel_Horario.PerformLayout();
             ResumeLayout(false);

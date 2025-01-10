@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.General;
 
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
@@ -25,19 +26,28 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateMES.MaxLength = 2; // Limitar a 2 caracteres
             textBox_DateMES.TextChanged += CamposFecha_TextChanged;
 
-            // Configurar textBox_DateAÑOÑ
+            // Configurar textBox_DateAÑO
             textBox_DateAÑO.MaxLength = 4; // Limitar a 4 caracteres
             textBox_DateAÑO.TextChanged += CamposFecha_TextChanged;
 
             CustomDateTextBox_Load(this, EventArgs.Empty);// inicializar load
 
-          //  ToolTipGeneral.ShowToolTip(btn_Calendario, "Seleccione fecha.");
+            ToolTipGeneral.ShowToolTip(btn_Calendario, "Seleccione fecha.");
+            ToolTipGeneral.ShowToolTip(textBox_DateDIA, " Ingrese DIA.");
+            ToolTipGeneral.ShowToolTip(textBox_DateMES, " Ingrese MES.");
+            ToolTipGeneral.ShowToolTip(textBox_DateAÑO, " Ingrese AÑO.");
+
         }
         private void CustomDateTextBox_Load(object sender, EventArgs e)
         {
-            SetPlaceholder(textBox_DateDIA, "dd");
-            SetPlaceholder(textBox_DateMES, "mm");
-            SetPlaceholder(textBox_DateAÑO, "aaaa");
+            
+            textBox_DateDIA.PlaceholderText = "dd";
+            textBox_DateMES.PlaceholderText = "mm";
+            textBox_DateAÑO.PlaceholderText = "aaaa";
+            textBox_DateDIA.PlaceholderColor = Color.LightGray;
+            textBox_DateMES.PlaceholderColor = Color.LightGray;
+            textBox_DateAÑO.PlaceholderColor = Color.LightGray;
+
         }
         //-----------------------------------------------------------------------
         // Método para verificar si el texto ingresado es una fecha válida
@@ -123,7 +133,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             return true;
         }
 
-        private void textBox_DateDIA_TextChanged(object sender, EventArgs e)
+        private void TextBox_DateDIA_TextChanged(object sender, EventArgs e)
         {
             if (textBox_DateDIA.Text.Length == 2 && int.TryParse(textBox_DateDIA.Text, out int dia))
             {
@@ -134,7 +144,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        private void textBox_DateMES_TextChanged(object sender, EventArgs e)
+        private void TextBox_DateMES_TextChanged(object sender, EventArgs e)
         {
             if (textBox_DateMES.Text.Length == 2 && int.TryParse(textBox_DateMES.Text, out int mes))
             {
@@ -145,7 +155,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        private void textBox_DateAÑO_TextChanged(object sender, EventArgs e)
+        private void TextBox_DateAÑO_TextChanged(object sender, EventArgs e)
         {
             int añoActual = DateTime.Now.Year;
             if (textBox_DateAÑO.Text.Length == 4 && int.TryParse(textBox_DateAÑO.Text, out int year))
@@ -159,34 +169,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
 
-        private void SetPlaceholder(TextBox textBox, string placeholder)
-        {
-            textBox.Text = placeholder;
-            textBox.ForeColor = Color.Gray;
-
-            textBox.Enter += (sender, e) =>
-            {
-                if (textBox.Text == placeholder)
-                {
-                    textBox.Text = "";
-                    textBox.ForeColor = Color.Black;
-                }
-            };
-
-            textBox.Leave += (sender, e) =>
-            {
-                if (textBox.Text == "")
-                {
-                    textBox.Text = placeholder;
-                    textBox.ForeColor = Color.Gray;
-                }
-            };
-        }
 
         // Propiedad para almacenar el control asociado
         public string TextoAsociado { get; set; }
 
-        private void btn_Calendario_Click(object sender, EventArgs e)
+        private void Btn_Calendario_Click(object sender, EventArgs e)
         {
             using (var calendarForm = new CALENDARIO())
             {
@@ -214,12 +201,12 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
 
-        public void RestorePlaceholders()
-        {
-            SetPlaceholder(textBox_DateDIA, "dd");
-            SetPlaceholder(textBox_DateMES, "mm");
-            SetPlaceholder(textBox_DateAÑO, "aaaa");
-        }
+        //public void RestorePlaceholders()
+        //{
+        //    SetPlaceholder(textBox_DateDIA, "dd");
+        //    SetPlaceholder(textBox_DateMES, "mm");
+        //    SetPlaceholder(textBox_DateAÑO, "aaaa");
+        //}
 
         public void ClearDate()
         {
@@ -240,7 +227,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
 
 
-        private void textBox_DateAÑO_Validating(object sender, CancelEventArgs e)
+        private void TextBox_DateAÑO_Validating(object sender, CancelEventArgs e)
         {
             if (!isClosing)
             {

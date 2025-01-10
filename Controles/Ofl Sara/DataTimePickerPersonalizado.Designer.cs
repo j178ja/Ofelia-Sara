@@ -17,22 +17,22 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             Btn_Calendario = new Button();
             textBox_DIA = new TextBox();
             label_DE1 = new Label();
-            label1 = new Label();
+            label_DE2 = new Label();
             textBox_MES = new TextBox();
             textBox_AÑO = new TextBox();
             SuspendLayout();
             // 
             // Btn_Calendario
             // 
-            Btn_Calendario.AutoSize = true;
             Btn_Calendario.BackColor = SystemColors.Window;
             Btn_Calendario.BackgroundImage = Properties.Resources.Calendario;
             Btn_Calendario.BackgroundImageLayout = ImageLayout.Zoom;
             Btn_Calendario.Cursor = Cursors.Hand;
             Btn_Calendario.Dock = DockStyle.Right;
+            Btn_Calendario.Font = new Font("Segoe UI", 9F);
             Btn_Calendario.Location = new Point(263, 0);
             Btn_Calendario.Name = "Btn_Calendario";
-            Btn_Calendario.Size = new Size(24, 19);
+            Btn_Calendario.Size = new Size(24, 26);
             Btn_Calendario.TabIndex = 1;
             Btn_Calendario.UseVisualStyleBackColor = false;
             Btn_Calendario.Click += Btn_Calendario_Click;
@@ -47,30 +47,32 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DIA.Size = new Size(33, 13);
             textBox_DIA.TabIndex = 2;
             textBox_DIA.TextAlign = HorizontalAlignment.Center;
-            textBox_DIA.Click += textBox_DIA_Click;
+            textBox_DIA.Click += TextBox_DIA_Click;
             textBox_DIA.TextChanged += Limitar_TextUpdate;
-            textBox_DIA.Enter += textBox_DIA_Enter;
+            textBox_DIA.Enter += TextBox_DIA_Enter;
             textBox_DIA.KeyPress += SoloNumeros_KeyPress;
             // 
             // label_DE1
             // 
             label_DE1.AutoSize = true;
-            label_DE1.Location = new Point(58, 3);
+            label_DE1.BackColor = Color.Transparent;
+            label_DE1.Location = new Point(58, 0);
             label_DE1.Name = "label_DE1";
             label_DE1.Size = new Size(21, 15);
             label_DE1.TabIndex = 3;
             label_DE1.Text = "DE";
-            label_DE1.TextAlign = ContentAlignment.BottomCenter;
+            label_DE1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // label_DE2
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(160, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(21, 15);
-            label1.TabIndex = 4;
-            label1.Text = "DE";
-            label1.TextAlign = ContentAlignment.BottomCenter;
+            label_DE2.AutoSize = true;
+            label_DE2.BackColor = Color.Transparent;
+            label_DE2.Location = new Point(160, 0);
+            label_DE2.Name = "label_DE2";
+            label_DE2.Size = new Size(21, 15);
+            label_DE2.TabIndex = 4;
+            label_DE2.Text = "DE";
+            label_DE2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox_MES
             // 
@@ -82,9 +84,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.Size = new Size(79, 13);
             textBox_MES.TabIndex = 5;
             textBox_MES.TextAlign = HorizontalAlignment.Center;
-            textBox_MES.Click += textBox_MES_Click;
-            textBox_MES.Enter += textBox_MES_Enter;
-            textBox_MES.KeyPress += textBox_MES_KeyPress;
+            textBox_MES.Click += TextBox_MES_Click;
+            textBox_MES.Enter += TextBox_MES_Enter;
+            textBox_MES.KeyPress += TextBox_MES_KeyPress;
             // 
             // textBox_AÑO
             // 
@@ -95,9 +97,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_AÑO.Name = "textBox_AÑO";
             textBox_AÑO.Size = new Size(55, 13);
             textBox_AÑO.TabIndex = 6;
-            textBox_AÑO.Click += textBox_AÑO_Click;
+            textBox_AÑO.Click += TextBox_AÑO_Click;
             textBox_AÑO.TextChanged += Limitar_TextUpdate;
-            textBox_AÑO.Enter += textBox_AÑO_Enter;
+            textBox_AÑO.Enter += TextBox_AÑO_Enter;
             textBox_AÑO.KeyPress += SoloNumeros_KeyPress;
             // 
             // TimePickerPersonalizado
@@ -105,12 +107,12 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             BackColor = SystemColors.Window;
             Controls.Add(textBox_AÑO);
             Controls.Add(textBox_MES);
-            Controls.Add(label1);
+            Controls.Add(label_DE2);
             Controls.Add(label_DE1);
             Controls.Add(textBox_DIA);
             Controls.Add(Btn_Calendario);
             Name = "TimePickerPersonalizado";
-            Size = new Size(287, 19);
+            Size = new Size(287, 26);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,7 +128,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private TextBox textBox_DIA;
         private Label label_DE1;
-        private Label label1;
+        private Label label_DE2;
         private TextBox textBox_MES;
         private TextBox textBox_AÑO;
     }

@@ -136,7 +136,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.ReadOnly = false;
             textBox_NumeroIpp.SelectionStart = 0;
             textBox_NumeroIpp.ShowError = false;
-            textBox_NumeroIpp.Size = new Size(111, 20);
+            textBox_NumeroIpp.Size = new Size(111, 21);
             textBox_NumeroIpp.TabIndex = 2;
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
@@ -260,7 +260,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.ReadOnly = false;
             textBox_Caratula.SelectionStart = 0;
             textBox_Caratula.ShowError = false;
-            textBox_Caratula.Size = new Size(333, 22);
+            textBox_Caratula.Size = new Size(333, 21);
             textBox_Caratula.TabIndex = 0;
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Caratula.TextValue = "";
@@ -283,7 +283,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Victima.ReadOnly = false;
             textBox_Victima.SelectionStart = 0;
             textBox_Victima.ShowError = false;
-            textBox_Victima.Size = new Size(333, 23);
+            textBox_Victima.Size = new Size(333, 21);
             textBox_Victima.TabIndex = 0;
             textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Victima.TextValue = "";
@@ -305,7 +305,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Imputado.ReadOnly = false;
             textBox_Imputado.SelectionStart = 0;
             textBox_Imputado.ShowError = false;
-            textBox_Imputado.Size = new Size(333, 23);
+            textBox_Imputado.Size = new Size(333, 21);
             textBox_Imputado.TabIndex = 0;
             textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Imputado.TextValue = "";
@@ -331,6 +331,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Fiscalia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Fiscalia.MaxDropDownItems = 10;
             comboBox_Fiscalia.Name = "comboBox_Fiscalia";
+            comboBox_Fiscalia.PlaceholderColor = Color.Gray;
+            comboBox_Fiscalia.PlaceholderText = " ";
             comboBox_Fiscalia.PressedImage = (Image)resources.GetObject("comboBox_Fiscalia.PressedImage");
             comboBox_Fiscalia.SelectedIndex = -1;
             comboBox_Fiscalia.SelectedItem = null;
@@ -361,6 +363,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Instructor.MaxDropDownItems = 10;
             comboBox_Instructor.Name = "comboBox_Instructor";
+            comboBox_Instructor.PlaceholderColor = Color.Gray;
+            comboBox_Instructor.PlaceholderText = " ";
             comboBox_Instructor.PressedImage = (Image)resources.GetObject("comboBox_Instructor.PressedImage");
             comboBox_Instructor.SelectedIndex = -1;
             comboBox_Instructor.SelectedItem = null;
@@ -391,6 +395,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Secretario.MaxDropDownItems = 10;
             comboBox_Secretario.Name = "comboBox_Secretario";
+            comboBox_Secretario.PlaceholderColor = Color.Gray;
+            comboBox_Secretario.PlaceholderText = " ";
             comboBox_Secretario.PressedImage = (Image)resources.GetObject("comboBox_Secretario.PressedImage");
             comboBox_Secretario.SelectedIndex = -1;
             comboBox_Secretario.SelectedItem = null;
@@ -420,6 +426,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
+            comboBox_Dependencia.PlaceholderColor = Color.Gray;
+            comboBox_Dependencia.PlaceholderText = " ";
             comboBox_Dependencia.PressedImage = (Image)resources.GetObject("comboBox_Dependencia.PressedImage");
             comboBox_Dependencia.SelectedIndex = -1;
             comboBox_Dependencia.SelectedItem = null;
@@ -450,6 +458,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_AgenteFiscal.MaxDropDownItems = 10;
             comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
+            comboBox_AgenteFiscal.PlaceholderColor = Color.Gray;
+            comboBox_AgenteFiscal.PlaceholderText = " ";
             comboBox_AgenteFiscal.PressedImage = (Image)resources.GetObject("comboBox_AgenteFiscal.PressedImage");
             comboBox_AgenteFiscal.SelectedIndex = -1;
             comboBox_AgenteFiscal.SelectedItem = null;
@@ -479,6 +489,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Ipp1.MaxDropDownItems = 10;
             comboBox_Ipp1.Name = "comboBox_Ipp1";
+            comboBox_Ipp1.PlaceholderColor = Color.Gray;
+            comboBox_Ipp1.PlaceholderText = " ";
             comboBox_Ipp1.PressedImage = (Image)resources.GetObject("comboBox_Ipp1.PressedImage");
             comboBox_Ipp1.SelectedIndex = -1;
             comboBox_Ipp1.SelectedItem = null;
@@ -508,6 +520,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Ipp2.MaxDropDownItems = 10;
             comboBox_Ipp2.Name = "comboBox_Ipp2";
+            comboBox_Ipp2.PlaceholderColor = Color.Gray;
+            comboBox_Ipp2.PlaceholderText = " ";
             comboBox_Ipp2.PressedImage = (Image)resources.GetObject("comboBox_Ipp2.PressedImage");
             comboBox_Ipp2.SelectedIndex = -1;
             comboBox_Ipp2.SelectedItem = null;
@@ -547,6 +561,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Ipp4.MaxDropDownItems = 10;
             comboBox_Ipp4.Name = "comboBox_Ipp4";
+            comboBox_Ipp4.PlaceholderColor = Color.Gray;
+            comboBox_Ipp4.PlaceholderText = " ";
             comboBox_Ipp4.PressedImage = (Image)resources.GetObject("comboBox_Ipp4.PressedImage");
             comboBox_Ipp4.SelectedIndex = -1;
             comboBox_Ipp4.SelectedItem = null;
@@ -787,6 +803,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_DeptoJudicial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_DeptoJudicial.MaxDropDownItems = 10;
             comboBox_DeptoJudicial.Name = "comboBox_DeptoJudicial";
+            comboBox_DeptoJudicial.PlaceholderColor = Color.Gray;
+            comboBox_DeptoJudicial.PlaceholderText = " ";
             comboBox_DeptoJudicial.PressedImage = (Image)resources.GetObject("comboBox_DeptoJudicial.PressedImage");
             comboBox_DeptoJudicial.SelectedIndex = -1;
             comboBox_DeptoJudicial.SelectedItem = null;
@@ -796,7 +814,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_DeptoJudicial.Size = new Size(333, 21);
             comboBox_DeptoJudicial.TabIndex = 3;
             comboBox_DeptoJudicial.TextChanged += ComboBox_DeptoJudicial_TextChanged;
-           // comboBox_DeptoJudicial.Click += this.comboBox_DeptoJudicial_Click;
             // 
             // lbl_Localida
             // 
@@ -804,7 +821,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Localida.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_Localida.Location = new Point(49, 30);
             lbl_Localida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lbl_Localida.Name = "lbl_Localidad";
+            lbl_Localida.Name = "lbl_Localida";
             lbl_Localida.Size = new Size(70, 15);
             lbl_Localida.TabIndex = 37;
             lbl_Localida.Text = "Localidad";
@@ -841,6 +858,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Localidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             comboBox_Localidad.MaxDropDownItems = 10;
             comboBox_Localidad.Name = "comboBox_Localidad";
+            comboBox_Localidad.PlaceholderColor = Color.Gray;
+            comboBox_Localidad.PlaceholderText = " ";
             comboBox_Localidad.PressedImage = (Image)resources.GetObject("comboBox_Localidad.PressedImage");
             comboBox_Localidad.SelectedIndex = -1;
             comboBox_Localidad.SelectedItem = null;
