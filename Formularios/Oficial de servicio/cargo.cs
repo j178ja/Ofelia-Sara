@@ -113,7 +113,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-            Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
+           // Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -700,7 +700,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+          //  datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
 
 

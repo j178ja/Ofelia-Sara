@@ -339,19 +339,19 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
+      "Microsoft.Win32.SystemEvents/9.0.0": {
         "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
           }
         }
       },
@@ -618,10 +618,10 @@
           }
         }
       },
-      "Spire.Doc/12.8.12": {
+      "Spire.Doc/12.12.12": {
         "dependencies": {
           "HarfBuzzSharp": "2.6.1.5",
-          "System.Drawing.Common": "7.0.0",
+          "System.Drawing.Common": "9.0.0",
           "System.Security.Cryptography.Pkcs": "6.0.0",
           "System.Security.Cryptography.Xml": "6.0.0",
           "System.Security.Permissions": "8.0.0",
@@ -629,26 +629,26 @@
         },
         "runtime": {
           "lib/net6.0/Spire.Doc.dll": {
-            "assemblyVersion": "12.8.12.0",
-            "fileVersion": "12.8.12.3360"
+            "assemblyVersion": "12.12.12.0",
+            "fileVersion": "12.12.12.3360"
           }
         }
       },
-      "Spire.PDF/10.8.1": {
+      "Spire.PDF/11.1.0": {
         "dependencies": {
-          "System.Drawing.Common": "7.0.0",
+          "System.Drawing.Common": "9.0.0",
           "System.Text.Encoding.CodePages": "8.0.0"
         },
         "runtime": {
           "lib/net6.0/Spire.Pdf.dll": {
-            "assemblyVersion": "10.8.1.0",
-            "fileVersion": "10.8.1.1360"
+            "assemblyVersion": "11.1.0.0",
+            "fileVersion": "11.1.0.1360"
           }
         }
       },
       "Spire.XLS/13.8.9": {
         "dependencies": {
-          "System.Drawing.Common": "7.0.0",
+          "System.Drawing.Common": "9.0.0",
           "System.Security.Cryptography.Xml": "6.0.0",
           "System.Text.Encoding.CodePages": "8.0.0"
         },
@@ -819,22 +819,18 @@
           "System.Runtime": "4.3.1"
         }
       },
-      "System.Drawing.Common/7.0.0": {
+      "System.Drawing.Common/9.0.0": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
+          "Microsoft.Win32.SystemEvents": "9.0.0"
         },
         "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
           }
         }
       },
@@ -1775,12 +1771,12 @@
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
+    "Microsoft.Win32.SystemEvents/9.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
-      "path": "microsoft.win32.systemevents/7.0.0",
-      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+      "sha512": "sha512-z8FfGIaoeALdD+KF44A2uP8PZIQQtDGiXsOLuN8nohbKhkyKt7zGaZb+fKiCxTuBqG22Q7myIAioSWaIcOOrOw==",
+      "path": "microsoft.win32.systemevents/9.0.0",
+      "hashPath": "microsoft.win32.systemevents.9.0.0.nupkg.sha512"
     },
     "MySql.Data/9.1.0": {
       "type": "package",
@@ -1943,19 +1939,19 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
-    "Spire.Doc/12.8.12": {
+    "Spire.Doc/12.12.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-n/heaQdsM6fQV5FV4l3Ag7HsCAidk3EjykY65xh5ZhP70jKkmC++LqU3+QWEnfJyQb0IMYKOU5N7+Zot5d85qw==",
-      "path": "spire.doc/12.8.12",
-      "hashPath": "spire.doc.12.8.12.nupkg.sha512"
+      "sha512": "sha512-mRTnZMAHC3HWzV29AkVtHkJzLceAMUuwLb/HbnTIwhV+qb81JcOt5+DIENUe9Hxsoi82by7OiftXhx6icMUqTg==",
+      "path": "spire.doc/12.12.12",
+      "hashPath": "spire.doc.12.12.12.nupkg.sha512"
     },
-    "Spire.PDF/10.8.1": {
+    "Spire.PDF/11.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tslgFYDi0JdE3oFFGt8GFE7kKlaQZgn3D4ZDrB1/EZq7oDkR8vd1DIHDQPOoTUFcvEHU2vncqYkjaIHc92nXtg==",
-      "path": "spire.pdf/10.8.1",
-      "hashPath": "spire.pdf.10.8.1.nupkg.sha512"
+      "sha512": "sha512-gwrGsb18mdaLqUZzsTlVlp0sGaRz/KB9WZOUFEUTFxY6SDxl4nKF0bjZ9x8ANB7pe1lwqhSFofILtn2UFoYF4w==",
+      "path": "spire.pdf/11.1.0",
+      "hashPath": "spire.pdf.11.1.0.nupkg.sha512"
     },
     "Spire.XLS/13.8.9": {
       "type": "package",
@@ -2041,12 +2037,12 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
-    "System.Drawing.Common/7.0.0": {
+    "System.Drawing.Common/9.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "path": "system.drawing.common/7.0.0",
-      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+      "sha512": "sha512-uoozjI3+dlgKh2onFJcz8aNLh6TRCPlLSh8Dbuljc8CdvqXrxHOVysJlrHvlsOCqceqGBR1wrMPxlnzzhynktw==",
+      "path": "system.drawing.common/9.0.0",
+      "hashPath": "system.drawing.common.9.0.0.nupkg.sha512"
     },
     "System.Dynamic.Runtime/4.0.11": {
       "type": "package",

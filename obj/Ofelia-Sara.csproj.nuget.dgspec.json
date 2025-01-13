@@ -68,11 +68,11 @@
             },
             "Spire.Doc": {
               "target": "Package",
-              "version": "[12.8.12, )"
+              "version": "[12.12.12, )"
             },
             "Spire.PDF": {
               "target": "Package",
-              "version": "[10.8.1, )"
+              "version": "[11.1.0, )"
             },
             "Spire.XLS": {
               "target": "Package",
@@ -80,7 +80,7 @@
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[9.0.0, )"
             },
             "itext7": {
               "target": "Package",

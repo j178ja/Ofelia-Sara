@@ -134,3 +134,8 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\refi
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia-Sara.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia-Sara.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\ref\Ofelia-Sara.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\System.Drawing.Common.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\System.Private.Windows.Core.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia_Sara.Controles.Ofl_Sara.SelectorFecha.resources

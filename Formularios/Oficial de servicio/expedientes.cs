@@ -78,7 +78,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             AgregarRadioButtonALosPaneles();
 
-            Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
+          //  Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Convertir, "Seleccione que tipo de archivo desea y agrege un archivo.", "Presione para generar un archivo en el formato deseado");
             TooltipEnControlDesactivado.TooltipActivo(this, btn_EliminarArchivo, "Eliminar seleccion y archivo agregado.", btn_EliminarArchivo.Enabled && btn_EliminarArchivo.Visible);
@@ -1163,7 +1163,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  // Ajusté los nombres de las claves para ser únicos
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+           // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
         }
@@ -1174,8 +1174,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (string.IsNullOrWhiteSpace(textBox_Causante.Text) ||
                 comboBox_Instructor.SelectedItem == null ||
                 comboBox_Secretario.SelectedItem == null ||
-                comboBox_Dependencia.SelectedItem == null ||
-                Fecha_Instruccion.SelectedDate == null)
+                comboBox_Dependencia.SelectedItem == null)// ||
+               // Fecha_Instruccion.SelectedDate == null)
 
             {
                 MensajeGeneral.Mostrar("Por favor, complete todos los campos requeridos.", MensajeGeneral.TipoMensaje.Advertencia);

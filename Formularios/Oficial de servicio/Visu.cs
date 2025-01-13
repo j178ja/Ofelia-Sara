@@ -163,7 +163,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_SeleccionVisu.BringToFront();
 
             //.....................................................
-            Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+          //  Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
             //.....................................................
             //// Guardar la altura original del panel
@@ -259,7 +259,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+         //   datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
         }

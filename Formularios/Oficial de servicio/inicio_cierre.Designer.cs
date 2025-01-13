@@ -779,7 +779,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             timePickerPersonalizado1.Location = new Point(130, 166);
             timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-            timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 12, 5, 18, 42, 59, 901);
+           // timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 12, 5, 18, 42, 59, 901);
             timePickerPersonalizado1.Size = new Size(335, 21);
             timePickerPersonalizado1.TabIndex = 38;
             // 
@@ -836,7 +836,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_DeptoJudicial.Size = new Size(103, 15);
             lbl_DeptoJudicial.TabIndex = 35;
             lbl_DeptoJudicial.Text = "Depto. Judicial";
-            lbl_DeptoJudicial.Click += lbl_DeptoJudicial_Click;
+   
             // 
             // comboBox_Localidad
             // 

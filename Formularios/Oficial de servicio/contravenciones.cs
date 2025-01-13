@@ -35,7 +35,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Contravenciones_Load(object sender, EventArgs e)
         {
             this.FormClosing += BuscarPersonal_FormClosing;
-            Fecha_Instruccion.SelectedDate = DateTime.Now;
+            //Fecha_Instruccion.SelectedDate = DateTime.Now;
             //// Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
@@ -140,7 +140,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+           // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             // Verificar que fechaNacimiento no sea nula antes de agregarla al diccionario
             if (fechaNacimiento.HasValue)

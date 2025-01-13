@@ -122,7 +122,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_CheckRatificacion.Visible = false; //oculata ambos check hasta ques se marque
             pictureBox_CheckCargo.Visible = false;
 
-            timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+           // timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
             //  tooltip DESCATIVADO-ACTIVADO
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
@@ -1265,7 +1265,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 if (botonDeslizable_Not247.IsOn)
                 {
                     // Configurar fecha mínima basada en otro TimePicker
-                    DateTime fechaBase = timePickerPersonalizado1.SelectedDate;
+                    DateTime fechaBase = timePickerPersonalizado1.FechaSeleccionada;
 
                     // Mostrar el formulario de MensajeGeneral con el DateTimePicker
                     var fechaSeleccionada = MensajeGeneral.MostrarCompromiso(
@@ -1405,7 +1405,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
 
             // Configurar fecha mínima basada en otro TimePicker
-            DateTime fechaBase = timePickerPersonalizado1.SelectedDate;
+            DateTime fechaBase = timePickerPersonalizado1.FechaSeleccionada;
             // Mostrar el formulario con el TimePicker
             var mensajeCompromiso = new DateTimePicker();
 
@@ -1467,7 +1467,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar si el texto ingresado es una fecha válida
             if (DateTime.TryParse(fecha_Pericia.Text, out DateTime fechaIngresada))
             {
-                if (fechaIngresada < timePickerPersonalizado1.SelectedDate)
+                if (fechaIngresada < timePickerPersonalizado1.FechaSeleccionada)
                 {
                     MensajeGeneral.Mostrar("La fecha no puede ser anterior a la fecha de instrucción.", MensajeGeneral.TipoMensaje.Advertencia);
                     e.Cancel = true; // Evitar que el control pierda el foco
@@ -1484,10 +1484,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-        private void lbl_DeptoJudicial_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
         //-------------------------------------------------------------

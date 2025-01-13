@@ -393,7 +393,7 @@
             this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
             this.Fecha_Instruccion.Location = new System.Drawing.Point(184, 265);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
-            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+           // this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
             this.Fecha_Instruccion.TabIndex = 70;
             // 

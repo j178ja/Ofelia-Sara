@@ -20,6 +20,12 @@
     <Compile Update="Controles\Ofl Sara\Boton_Contador.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Controles\Ofl Sara\DataTimePickerPersonalizado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controles\Ofl Sara\SelectorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Controles\Redactador\PictureBoxCircular.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -51,9 +57,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controles\Ofl Sara\CustomDate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controles\Ofl Sara\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Controles\Ofl Sara\DateCompromiso_Control.cs">

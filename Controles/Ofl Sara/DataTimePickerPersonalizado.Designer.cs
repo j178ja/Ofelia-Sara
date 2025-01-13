@@ -32,7 +32,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             Btn_Calendario.Font = new Font("Segoe UI", 9F);
             Btn_Calendario.Location = new Point(263, 0);
             Btn_Calendario.Name = "Btn_Calendario";
-            Btn_Calendario.Size = new Size(24, 26);
+            Btn_Calendario.Size = new Size(24, 21);
             Btn_Calendario.TabIndex = 1;
             Btn_Calendario.UseVisualStyleBackColor = false;
             Btn_Calendario.Click += Btn_Calendario_Click;
@@ -47,10 +47,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DIA.Size = new Size(33, 13);
             textBox_DIA.TabIndex = 2;
             textBox_DIA.TextAlign = HorizontalAlignment.Center;
-            textBox_DIA.Click += TextBox_DIA_Click;
-            textBox_DIA.TextChanged += Limitar_TextUpdate;
-            textBox_DIA.Enter += TextBox_DIA_Enter;
-            textBox_DIA.KeyPress += SoloNumeros_KeyPress;
+            
             // 
             // label_DE1
             // 
@@ -84,9 +81,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.Size = new Size(79, 13);
             textBox_MES.TabIndex = 5;
             textBox_MES.TextAlign = HorizontalAlignment.Center;
-            textBox_MES.Click += TextBox_MES_Click;
-            textBox_MES.Enter += TextBox_MES_Enter;
-            textBox_MES.KeyPress += TextBox_MES_KeyPress;
+          
             // 
             // textBox_AÑO
             // 
@@ -97,10 +92,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_AÑO.Name = "textBox_AÑO";
             textBox_AÑO.Size = new Size(55, 13);
             textBox_AÑO.TabIndex = 6;
-            textBox_AÑO.Click += TextBox_AÑO_Click;
-            textBox_AÑO.TextChanged += Limitar_TextUpdate;
-            textBox_AÑO.Enter += TextBox_AÑO_Enter;
-            textBox_AÑO.KeyPress += SoloNumeros_KeyPress;
+         
             // 
             // TimePickerPersonalizado
             // 
@@ -112,7 +104,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             Controls.Add(textBox_DIA);
             Controls.Add(Btn_Calendario);
             Name = "TimePickerPersonalizado";
-            Size = new Size(287, 26);
+            Size = new Size(287, 21);
             ResumeLayout(false);
             PerformLayout();
         }

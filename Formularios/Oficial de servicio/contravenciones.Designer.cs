@@ -558,7 +558,7 @@
             Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
             Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
             Fecha_Instruccion.Name = "Fecha_Instruccion";
-            Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 12, 5, 23, 23, 53, 67);
+         //   Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 12, 5, 23, 23, 53, 67);
             Fecha_Instruccion.Size = new System.Drawing.Size(296, 21);
             Fecha_Instruccion.TabIndex = 103;
             // 
