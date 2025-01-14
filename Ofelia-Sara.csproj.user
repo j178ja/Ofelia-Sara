@@ -95,6 +95,9 @@
     <Compile Update="Formularios\General\IMPRESION.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\General\InstructivoDigital.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\General\Mensajes\MensajeGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +111,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\General\Mensajes\MensajeGenerarDocumentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Formularios\General\VideoInstructivo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Formularios\General\VideoInstructivoR.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Mecanografia\Mecanografia.cs">

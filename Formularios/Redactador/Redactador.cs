@@ -13,6 +13,7 @@ using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Clases.General.Botones;
+using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
 
 namespace Ofelia_Sara.Formularios.Redactador
@@ -61,7 +62,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         private void Redactador_Load(object sender, EventArgs e)
         {
             audioVisualizerControl.Visible = false;
-         //   ToolTipGeneral.ShowToolTip( btn_Microfono, "ACTIVAR micrófono");
+            ToolTipGeneral.ShowToolTip( btn_Microfono, "ACTIVAR micrófono");
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
@@ -79,7 +80,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             timerCerrarForm.Tick += TimerCerrar_Tick;
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
 
-           /* ToolTipGeneral.ShowToolTip( btn_Guardar, "CREAR DOCUMENTO WORD");
+            ToolTipGeneral.ShowToolTip( btn_Guardar, "CREAR DOCUMENTO WORD");
             ToolTipGeneral.ShowToolTip( btn_Limpiar, "ELIMINAR");
             ToolTipGeneral.ShowToolTip( btn_Negrita, "NEGRITA");
             ToolTipGeneral.ShowToolTip( btn_Cursiva, "CURSIVA");
@@ -92,7 +93,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             ToolTipGeneral.ShowToolTip( btn_AlinearDerecha, "Alinear a la Derecha");
             ToolTipGeneral.ShowToolTip( btn_Justificar, "JUSTIFICAR");
             ToolTipGeneral.ShowToolTip( label_OfeliaSara, "Instructivo de la aplicación");
-           */
+           
             richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
         }
         //---------------------------------------------------------------------------------
@@ -291,7 +292,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.Location = new Point(xRedactador, y);
 
             // Crear e inicializar el formulario para mostrar el video
-            VideoInstructivoR videoInstructivo = new VideoInstructivoR();
+            InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.Redactador);
 
             // Suscribirse al evento FormClosed para restaurar el Label y la posición de Redactador
             videoInstructivo.FormClosed += (s, args) =>
@@ -363,7 +364,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.Focus();
 
                 // Mostrar ToolTip para desactivar el micrófono
-            //    ToolTipGeneral.ShowToolTip( btn_Microfono, "DESACTIVAR micrófono");
+                ToolTipGeneral.ShowToolTip( btn_Microfono, "DESACTIVAR micrófono");
 
                 StartRecording();
                 timer_Barras.Start(); // Inicia el temporizador para actualizar las barras de visualización

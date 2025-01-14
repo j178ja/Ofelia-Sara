@@ -153,6 +153,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anteriorClick {
+            get {
+                object obj = ResourceManager.GetObject("anteriorClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap atras {
             get {
                 object obj = ResourceManager.GetObject("atras", resourceCulture);
@@ -956,6 +966,26 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap sello_de_goma {
             get {
                 object obj = ResourceManager.GetObject("sello_de_goma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap siguiente {
+            get {
+                object obj = ResourceManager.GetObject("siguiente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap siguienteClick {
+            get {
+                object obj = ResourceManager.GetObject("siguienteClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

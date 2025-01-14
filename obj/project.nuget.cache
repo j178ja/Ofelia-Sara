@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XI0CXqMixTI=",
+  "dgSpecHash": "6I+3aBjmTMg=",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Ofelia-Sara.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,8 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\libvlcsharp\\3.9.1\\libvlcsharp.3.9.1.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\libvlcsharp.winforms\\3.9.1\\libvlcsharp.winforms.3.9.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.configuration.binder\\9.0.0\\microsoft.extensions.configuration.binder.9.0.0.nupkg.sha512",
@@ -123,6 +125,9 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\vlc.dotnet.core\\3.1.0\\vlc.dotnet.core.3.1.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\vlc.dotnet.core.interops\\3.1.0\\vlc.dotnet.core.interops.3.1.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\vlc.dotnet.forms\\3.1.0\\vlc.dotnet.forms.3.1.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\zstdsharp.port\\0.8.0\\zstdsharp.port.0.8.0.nupkg.sha512"
   ],
   "logs": []

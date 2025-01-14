@@ -19,6 +19,7 @@ using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Formularios.Redactador;
 using Ofelia_Sara.Formularios.Mecanografia;
 using Ofelia_Sara.Controles.General;
+using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
 
 
@@ -649,7 +650,7 @@ namespace Ofelia_Sara.Formularios.General
 
 
             // Crear e inicializar el formulario para mostrar el video
-            VideoInstructivo videoInstructivo = new VideoInstructivo();
+            InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.InicioCierre);
 
             // Suscribirse al evento FormClosed para restaurar el Label
             videoInstructivo.FormClosed += (s, args) =>

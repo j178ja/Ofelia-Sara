@@ -3,34 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\selectorfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\selectorfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\instructivodigital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\instructivodigital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\selectorfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\selectorfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\instructivodigital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\instructivodigital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\selectorfecha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\selectorfecha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\menu_principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\menu_principal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\instructivodigital.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\instructivodigital.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,66 +38,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "menu_principal.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.Designer.cs",
-              "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.Designer.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.Designer.cs",
-              "RelativeToolTip": "Formularios\\General\\menu_principal.Designer.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAswDsBAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T14:59:14.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SelectorFecha.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\SelectorFecha.cs",
-              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\SelectorFecha.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\SelectorFecha.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Controles\\Ofl Sara\\SelectorFecha.cs [Dise\u00F1o]*",
+              "Title": "InstructivoDigital.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\InstructivoDigital.cs",
+              "RelativeDocumentMoniker": "Formularios\\General\\InstructivoDigital.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\InstructivoDigital.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Formularios\\General\\InstructivoDigital.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T14:47:04.833Z",
+              "WhenOpened": "2025-01-14T17:44:07.151Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "menu_principal.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
-              "RelativeToolTip": "Formularios\\General\\menu_principal.cs",
-              "ViewState": "AgIAAEkCAAAAAAAAAAAgwFUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T13:47:52.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SelectorFecha.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\SelectorFecha.Designer.cs",
-              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\SelectorFecha.Designer.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\SelectorFecha.Designer.cs",
-              "RelativeToolTip": "Controles\\Ofl Sara\\SelectorFecha.Designer.cs",
-              "ViewState": "AgIAAAUCAAAAAAAAAAAmwB4CAABDAAAAAAAAAA==",
+              "Title": "InstructivoDigital.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\InstructivoDigital.Designer.cs",
+              "RelativeDocumentMoniker": "Formularios\\General\\InstructivoDigital.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\InstructivoDigital.Designer.cs",
+              "RelativeToolTip": "Formularios\\General\\InstructivoDigital.Designer.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAWwF4AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T12:28:05.755Z",
+              "WhenOpened": "2025-01-14T15:11:58.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SelectorFecha.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\SelectorFecha.cs",
-              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\SelectorFecha.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\SelectorFecha.cs*",
-              "RelativeToolTip": "Controles\\Ofl Sara\\SelectorFecha.cs*",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAgwKQAAAAvAAAAAAAAAA==",
+              "Title": "InstructivoDigital.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\InstructivoDigital.cs",
+              "RelativeDocumentMoniker": "Formularios\\General\\InstructivoDigital.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\InstructivoDigital.cs*",
+              "RelativeToolTip": "Formularios\\General\\InstructivoDigital.cs*",
+              "ViewState": "AgIAANAAAAAAAAAAAAAswOQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T11:35:35.274Z",
+              "WhenOpened": "2025-01-13T18:14:42.198Z",
               "EditorCaption": ""
             }
           ]

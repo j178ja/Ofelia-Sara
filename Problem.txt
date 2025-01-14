@@ -1,0 +1,4 @@
+﻿
+
+en formulario INSTRUCTIVO DIGITAL  hay que modificar, para usar rutas relativas
+ y mejorar mucho la estetica

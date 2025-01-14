@@ -511,6 +511,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             btn_Anterior.Size = new Size(34, 35);
             btn_Anterior.TabIndex = 2;
             btn_Anterior.TabStop = false;
+            btn_Anterior.Click += Btn_Anterior_Click;
             // 
             // btn_Siguiente
             // 
@@ -522,6 +523,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             btn_Siguiente.Size = new Size(34, 35);
             btn_Siguiente.TabIndex = 3;
             btn_Siguiente.TabStop = false;
+            btn_Siguiente.Click += Btn_Siguiente_Click;
             // 
             // label_TextoMesAño
             // 
@@ -532,9 +534,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             label_TextoMesAño.Location = new Point(56, 1);
             label_TextoMesAño.Name = "label_TextoMesAño";
             label_TextoMesAño.Padding = new Padding(15, 0, 15, 0);
-            label_TextoMesAño.Size = new Size(154, 30);
+            label_TextoMesAño.Size = new Size(49, 30);
             label_TextoMesAño.TabIndex = 0;
-            label_TextoMesAño.Text = "DICIEMBRE";
+            label_TextoMesAño.Text = " ";
             label_TextoMesAño.TextAlign = ContentAlignment.MiddleCenter;
             label_TextoMesAño.Click += Label_TextoMesAño_Click;
             label_TextoMesAño.Paint += Label_TextoMesAño_Paint;

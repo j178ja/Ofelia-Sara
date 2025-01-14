@@ -82,6 +82,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             ConfigurarSelector();
             RedondearBordes.Aplicar(label_TextoMesAño, 20);
+            ActualizarMes();
+            label_TextoMesAño.Invalidate();
         }
 
         private void CentrarLabelHorizontal()
@@ -91,6 +93,45 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 label_TextoMesAño.Location.Y
             );
         }
+        /// <summary>
+        /// METODO PARA MOSTRAR LISTADO DE MESES
+        /// </summary>
+
+        private int mesActual = DateTime.Now.Month; // Mes actual (1-12)
+        private readonly string[] meses =
+        {
+    "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+    "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"
+};
+
+        private void ActualizarMes()
+        {
+            label_TextoMesAño.Text = meses[mesActual - 1]; // Los meses están basados en índices (0-11)
+            CentrarLabelHorizontal(); // Asegura que el texto esté centrado
+            label_TextoMesAño.Invalidate();
+        }
+
+        private void Btn_Anterior_Click(object sender, EventArgs e)
+        {
+            mesActual--;
+            if (mesActual < 1)
+            {
+                mesActual = 12; // Volver a Diciembre si se pasa antes de Enero
+            }
+            ActualizarMes();
+        }
+
+        private void Btn_Siguiente_Click(object sender, EventArgs e)
+        {
+            mesActual++;
+            if (mesActual > 12)
+            {
+                mesActual = 1; // Volver a Enero si se pasa después de Diciembre
+            }
+            ActualizarMes();
+        }
+
+        //--------------------------------------------------------
 
         private void InicializarTimer()
         {
@@ -162,7 +203,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                     // Dibujar la línea de subrayado animada
                     e.Graphics.DrawLine(pen, startX, y, endX, y);
                 }
-                label_TextoMesAño.Invalidate();
+
             }
 
             if (mostrarBorde)

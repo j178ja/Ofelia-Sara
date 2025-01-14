@@ -188,6 +188,25 @@
           }
         }
       },
+      "LibVLCSharp/3.9.1": {
+        "runtime": {
+          "lib/net8.0/LibVLCSharp.dll": {
+            "assemblyVersion": "3.9.1.0",
+            "fileVersion": "3.9.1.0"
+          }
+        }
+      },
+      "LibVLCSharp.WinForms/3.9.1": {
+        "dependencies": {
+          "LibVLCSharp": "3.9.1"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/LibVLCSharp.WinForms.dll": {
+            "assemblyVersion": "3.9.1.0",
+            "fileVersion": "3.9.1.0"
+          }
+        }
+      },
       "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
         "dependencies": {
           "System.AppContext": "4.1.0",
@@ -1585,6 +1604,36 @@
           }
         }
       },
+      "Vlc.DotNet.Core/3.1.0": {
+        "dependencies": {
+          "Vlc.DotNet.Core.Interops": "3.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Vlc.DotNet.Core.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "Vlc.DotNet.Core.Interops/3.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Vlc.DotNet.Core.Interops.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "Vlc.DotNet.Forms/3.1.0": {
+        "dependencies": {
+          "Vlc.DotNet.Core": "3.1.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Vlc.DotNet.Forms.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
       "ZstdSharp.Port/0.8.0": {
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {
@@ -1672,6 +1721,20 @@
       "sha512": "sha512-Wp2F7BamQ2Q/7Hk834nV9vRQapgcr8kgv9Jvfm8J3D0IhDqZMMl+a2yxUq5ltJitvXvQfB8W6K4F4fCbw/P6YQ==",
       "path": "k4os.hash.xxhash/1.0.8",
       "hashPath": "k4os.hash.xxhash.1.0.8.nupkg.sha512"
+    },
+    "LibVLCSharp/3.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SNvZz5bIJJ0GAaywmXyskZ+ZO42vomDUWXIo5qDpsG9x2kdQrtOuqRx/KNQDnbxBBStYXQUI7DlhzJwz/3xG6g==",
+      "path": "libvlcsharp/3.9.1",
+      "hashPath": "libvlcsharp.3.9.1.nupkg.sha512"
+    },
+    "LibVLCSharp.WinForms/3.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1xYQgPLFoCPpBvHsasb9ke5GpD+s1FOtMu/pndAywb752uuT8JzFIvPy3I10t6vWXlRNk+GDOBm6RZBnVyP2ww==",
+      "path": "libvlcsharp.winforms/3.9.1",
+      "hashPath": "libvlcsharp.winforms.3.9.1.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
       "type": "package",
@@ -2428,6 +2491,27 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "Vlc.DotNet.Core/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t9jinVlEEgS0PHyNeu+jGE06yKeqyQ4RG7Bpno1M1ghxAhogpc7rFkRg5/CMHINsZJw4nr88I3xrUecanlA5kA==",
+      "path": "vlc.dotnet.core/3.1.0",
+      "hashPath": "vlc.dotnet.core.3.1.0.nupkg.sha512"
+    },
+    "Vlc.DotNet.Core.Interops/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-22JkrxSBN9OVkxT3zMgwT67kUc+RQx35+NG5md9n9qM7vEI2EUEVqHeKiO8ssF7/mYi6Z8lJx4AgdWa5JAvONw==",
+      "path": "vlc.dotnet.core.interops/3.1.0",
+      "hashPath": "vlc.dotnet.core.interops.3.1.0.nupkg.sha512"
+    },
+    "Vlc.DotNet.Forms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B40j4tmKKwLz4O+BfVv7t5Yeygq4nkSBNJXFr7VQfoVU3a4WLFSisR1FxOnBwM/soM2/BIJuNhICCIF+C5XHWA==",
+      "path": "vlc.dotnet.forms/3.1.0",
+      "hashPath": "vlc.dotnet.forms.3.1.0.nupkg.sha512"
     },
     "ZstdSharp.Port/0.8.0": {
       "type": "package",
