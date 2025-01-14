@@ -36,7 +36,7 @@
             btn_Contravenciones = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
             btn_BuscarTarea = new System.Windows.Forms.Button();
-            comboBox_Buscar = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Buscar = new Controles.General.CustomComboBox();
             btn_Configurar = new System.Windows.Forms.Button();
             btn_Leyes = new System.Windows.Forms.PictureBox();
             panel_MenuSuperior = new System.Windows.Forms.Panel();
@@ -79,6 +79,8 @@
             // 
             btn_InicioCierre.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             btn_InicioCierre.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_InicioCierre.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            btn_InicioCierre.FlatAppearance.BorderSize = 0;
             btn_InicioCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btn_InicioCierre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             btn_InicioCierre.Location = new System.Drawing.Point(58, 99);
@@ -89,6 +91,11 @@
             btn_InicioCierre.Text = "I.P.P.";
             btn_InicioCierre.UseVisualStyleBackColor = false;
             btn_InicioCierre.Click += Btn_InicioCierre_Click;
+            btn_InicioCierre.Paint += Subrayado_Paint;
+            btn_InicioCierre.MouseDown += Boton_MouseDown;
+            btn_InicioCierre.MouseEnter += Subrayado_MouseEnter;
+            btn_InicioCierre.MouseLeave += Subrayado_MouseLeave;
+            btn_InicioCierre.MouseUp += Boton_MouseUp;
             // 
             // btn_Expedientes
             // 
@@ -104,6 +111,11 @@
             btn_Expedientes.Text = "EXPEDIENTES";
             btn_Expedientes.UseVisualStyleBackColor = false;
             btn_Expedientes.Click += Btn_Expedientes_Click;
+            btn_Expedientes.Paint += Subrayado_Paint;
+            btn_Expedientes.MouseDown += Boton_MouseDown;
+            btn_Expedientes.MouseEnter += Subrayado_MouseEnter;
+            btn_Expedientes.MouseLeave += Subrayado_MouseLeave;
+            btn_Expedientes.MouseUp += Boton_MouseUp;
             // 
             // btn_Contravenciones
             // 
@@ -119,6 +131,11 @@
             btn_Contravenciones.Text = "CONTRAVENCIONES";
             btn_Contravenciones.UseVisualStyleBackColor = false;
             btn_Contravenciones.Click += Btn_Contravenciones_Click;
+            btn_Contravenciones.Paint += Subrayado_Paint;
+            btn_Contravenciones.MouseDown += Boton_MouseDown;
+            btn_Contravenciones.MouseEnter += Subrayado_MouseEnter;
+            btn_Contravenciones.MouseLeave += Subrayado_MouseLeave;
+            btn_Contravenciones.MouseUp += Boton_MouseUp;
             // 
             // panel1
             // 
@@ -154,14 +171,33 @@
             // 
             // comboBox_Buscar
             // 
+            comboBox_Buscar.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Buscar.ArrowImage");
+            comboBox_Buscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Buscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Buscar.BackColor = System.Drawing.Color.White;
             comboBox_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            
+            comboBox_Buscar.DataSource = null;
+            comboBox_Buscar.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Buscar.DefaultImage");
+            comboBox_Buscar.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Buscar.DisabledImage");
+            comboBox_Buscar.DisplayMember = null;
+            comboBox_Buscar.DropDownHeight = 252;
+            comboBox_Buscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Buscar.DroppedDown = false;
+            comboBox_Buscar.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Buscar.FocusColor = System.Drawing.Color.Blue;
             comboBox_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-
             comboBox_Buscar.Location = new System.Drawing.Point(174, 38);
             comboBox_Buscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Buscar.MaxDropDownItems = 10;
             comboBox_Buscar.Name = "comboBox_Buscar";
+            comboBox_Buscar.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Buscar.PlaceholderText = " ";
+            comboBox_Buscar.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Buscar.PressedImage");
+            comboBox_Buscar.SelectedIndex = -1;
+            comboBox_Buscar.SelectedItem = null;
+            comboBox_Buscar.SelectedText = "";
+            comboBox_Buscar.SelectionStart = 0;
+            comboBox_Buscar.ShowError = false;
             comboBox_Buscar.Size = new System.Drawing.Size(342, 28);
             comboBox_Buscar.TabIndex = 14;
             comboBox_Buscar.SelectedIndexChanged += comboBox_Buscar_SelectedIndexChanged;
@@ -313,9 +349,9 @@
             label_OfeliaSara.TabIndex = 16;
             label_OfeliaSara.Text = "Ofelia - Sara";
             label_OfeliaSara.Click += Label_OfeliaSara_Click;
-            label_OfeliaSara.Paint += Label_OfeliaSara_Paint;
-            label_OfeliaSara.MouseLeave += Label_OfeliaSara_MouseLeave;
-            label_OfeliaSara.MouseHover += Label_OfeliaSara_MouseHover;
+            label_OfeliaSara.Paint += Subrayado_Paint;
+            label_OfeliaSara.MouseLeave += Subrayado_MouseLeave;
+            label_OfeliaSara.MouseHover += Subrayado_MouseEnter;
             // 
             // btn_Cerrar
             // 
@@ -508,7 +544,8 @@
             StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             Text = "MENU PRINCIPAL";
             Load += MenuPrincipal_Load;
-       
+            Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(panel_MenuSuperior, 0);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btn_Leyes).EndInit();
             panel_MenuSuperior.ResumeLayout(false);

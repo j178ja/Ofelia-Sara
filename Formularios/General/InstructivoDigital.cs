@@ -226,7 +226,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             panel1.Height = 100; // Reducir el tamaño de panel1
             panel2.Visible = true;
-            pictureBox_Central.Dock = DockStyle.Fill;
+       
 
             panel2.Location = new Point(panel2.Location.X, panel1.Bottom + 20); // Posicionar panel2 debajo de panel1
 

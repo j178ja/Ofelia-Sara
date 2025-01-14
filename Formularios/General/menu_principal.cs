@@ -42,6 +42,8 @@ namespace Ofelia_Sara.Formularios.General
         private const int HTCAPTION = 0x2;
 
 
+        //----------------------------
+
         //private ContextMenuStrip contextMenu;
         private AuxiliarConfiguracion auxiliarConfiguracion;
         private AccionesManager accionesManager;//para el comboBox
@@ -83,7 +85,7 @@ namespace Ofelia_Sara.Formularios.General
 
             RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
 
-            
+
         }
 
         //_________________________________--________________________________
@@ -113,7 +115,7 @@ namespace Ofelia_Sara.Formularios.General
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            
+
             // Configurar el botón para usar el menú de contexto
             btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();
             btn_BuscarTarea.Enabled = false;//deshabilitar btn al cargar
@@ -124,8 +126,8 @@ namespace Ofelia_Sara.Formularios.General
             IncrementarTamaño.Incrementar(btn_BoletinOficial);
 
 
-          //  comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-           // comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //  comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            // comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
             //comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
@@ -133,8 +135,8 @@ namespace Ofelia_Sara.Formularios.General
             //comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
 
             ConfigurarBotones();
-             MostrarPlaceholder();
-         
+            MostrarPlaceholder();
+
 
             ToolTipGeneral.ShowToolTip(btn_Configurar, "Configuración de elementos.");
             ToolTipGeneral.ShowToolTip(btn_Leyes, "Leyes y decretos útiles.");
@@ -217,17 +219,20 @@ namespace Ofelia_Sara.Formularios.General
 
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
         {
-            AbrirFormularioSecundario(new InicioCierre());
+           
+           // AbrirFormularioSecundario(new InicioCierre());
         }
 
         private void Btn_Contravenciones_Click(object sender, EventArgs e)
         {
-            AbrirFormularioSecundario(new Contravenciones());
+           
+           // AbrirFormularioSecundario(new Contravenciones());
         }
 
         private void Btn_Expedientes_Click(object sender, EventArgs e)
         {
-            AbrirFormularioSecundario(new Expedientes());
+            
+           // AbrirFormularioSecundario(new Expedientes());
         }
 
         private void Restablecer_MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -255,11 +260,11 @@ namespace Ofelia_Sara.Formularios.General
         //------------- BOTON BUSCAR--------------------------
         private BindingSource bindingSource;
 
-        private void ConfigureComboBox (CustomComboBox customComboBox)
+        private void ConfigureComboBox(CustomComboBox customComboBox)
         {
             // Configurar el ComboBox para autocompletado
             customComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Habilita el autocompletado
-           // customComboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                                                                              // customComboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
             // Ajustar la altura de la lista desplegable para mostrar más ítems
             customComboBox.DropDownHeight = 80;
@@ -335,7 +340,7 @@ namespace Ofelia_Sara.Formularios.General
         //    }
         //}
 
-        
+
         //private void ComboBox_Buscar_LostFocus(object sender, EventArgs e)
         //{
         //    if (string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
@@ -572,108 +577,8 @@ namespace Ofelia_Sara.Formularios.General
                 boton.Size = originalSizes[boton];
             }
         }
+
         //-----------------------------------------------------------------------------------
-
-        // Bandera para activar o desactivar el subrayado personalizado
-        private bool mostrarSubrayado = false;
-        //para hacer que se extienda 
-        private int lineWidth = 0;
-        private bool isAnimating = false;
-        private Timer animationTimer;
-
-        // Método para activar el subrayado en MouseHover
-        private void Label_OfeliaSara_MouseHover(object sender, EventArgs e)
-        {
-            isAnimating = true;
-            lineWidth = 0;
-
-            // Configurar el Timer si aún no está configurado
-            if (animationTimer == null)
-            {
-                animationTimer = new Timer();
-                animationTimer.Interval = 15; // Intervalo en ms para una animación suave
-                animationTimer.Tick += (s, args) =>
-                {
-                    if (lineWidth < label_OfeliaSara.Width / 2)
-                    {
-                        lineWidth += 2; // Aumenta gradualmente la longitud de la línea
-                        label_OfeliaSara.Invalidate(); // Redibuja el Label
-                    }
-                    else
-                    {
-                        animationTimer.Stop(); // Detiene el Timer cuando se completa la animación
-                    }
-                };
-            }
-
-            animationTimer.Start(); // Inicia el Timer para la animación
-        }
-
-        // Método para desactivar el subrayado en MouseLeave
-        private void Label_OfeliaSara_MouseLeave(object sender, EventArgs e)
-        {
-            isAnimating = false;
-            lineWidth = 0;
-            animationTimer?.Stop(); // Detener el Timer
-            label_OfeliaSara.Invalidate(); // Redibuja el Label para eliminar el subrayado
-        }
-
-
-        // Método Paint para dibujar el subrayado personalizado
-
-
-        private void Label_OfeliaSara_Paint(object sender, PaintEventArgs e)
-        {
-            if (isAnimating)
-            {
-                // Define el color y grosor de la línea
-                using (Pen pen = new Pen(SystemColors.Highlight, 3))
-                {
-                    // Centro del Label
-                    int centerX = label_OfeliaSara.Width / 2;
-                    int y = label_OfeliaSara.Font.Height; // Posición 3 píxeles debajo del texto
-
-                    // Dibuja la línea desde el centro hacia los extremos
-                    e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
-                }
-            }
-        }
-
-
-
-
-
-        private void Label_OfeliaSara_Click(object sender, EventArgs e)
-        {
-            label_OfeliaSara.ForeColor = Color.Coral;
-            label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);//para subrayar
-
-
-            // Crear e inicializar el formulario para mostrar el video
-            InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.InicioCierre);
-
-            // Suscribirse al evento FormClosed para restaurar el Label
-            videoInstructivo.FormClosed += (s, args) =>
-            {
-                label_OfeliaSara.ForeColor = SystemColors.ControlText;
-                label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Eliminar subrayado
-            };
-
-            // Obtener la ubicación y tamaño del formulario principal
-            Point menuPrincipalLocation = this.Location;
-            Size menuPrincipalSize = this.Size;
-
-            // Calcular la nueva ubicación para el formulario DocumentosForm
-            int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
-            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
-
-            // Ajustar la ubicación del formulario DocumentosForm
-            videoInstructivo.StartPosition = FormStartPosition.Manual;
-            videoInstructivo.Location = new Point(x, y);
-
-            videoInstructivo.Show();
-        }
-
 
         //para poder arrastrar el formulario
         private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
@@ -737,7 +642,135 @@ namespace Ofelia_Sara.Formularios.General
             }
 
         }
-        //-----------------------------------------------------------
-  
+        //--------------------------------------------------------------------------------
+        //private Form videoInstructivo; // Variable para almacenar la instancia del formulario
+        //private void Label_OfeliaSara_Click(object sender, EventArgs e)
+        //{
+        //    label_OfeliaSara.ForeColor = Color.Coral;
+        //    label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);//para subrayar
+
+        //    if (videoInstructivo == null || videoInstructivo.IsDisposed) // Verifica si no está abierto
+        //    {
+        //        // Crear e inicializar el formulario para mostrar el video
+        //        InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.InicioCierre);
+        //    }
+        //    // Suscribirse al evento FormClosed para restaurar el Label
+        //    videoInstructivo.FormClosed += (s, args) =>
+        //    {
+        //        label_OfeliaSara.ForeColor = SystemColors.ControlText;
+        //        label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Eliminar subrayado
+        //    };
+
+        //    // Obtener la ubicación y tamaño del formulario principal
+        //    Point menuPrincipalLocation = this.Location;
+        //    Size menuPrincipalSize = this.Size;
+
+        //    // Calcular la nueva ubicación para el formulario DocumentosForm
+        //    int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
+        //    int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+
+        //    // Ajustar la ubicación del formulario DocumentosForm
+        //    videoInstructivo.StartPosition = FormStartPosition.Manual;
+        //    videoInstructivo.Location = new Point(x, y);
+
+        //    videoInstructivo.Show();
+        //}
+        private Form videoInstructivo; // Variable para almacenar la instancia del formulario
+
+        private void Label_OfeliaSara_Click(object sender, EventArgs e)
+        {
+            // Cambiar estilo del Label
+            label_OfeliaSara.ForeColor = Color.Coral;
+            label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline); // Subrayar
+
+            if (videoInstructivo == null || videoInstructivo.IsDisposed) // Verifica si no está abierto
+            {
+                // Crear e inicializar el formulario para mostrar el video
+                videoInstructivo = new InstructivoDigital(ModuloOrigen.InicioCierre);
+
+                // Suscribirse al evento FormClosed para restaurar el Label
+                videoInstructivo.FormClosed += (s, args) =>
+                {
+                    label_OfeliaSara.ForeColor = SystemColors.ControlText;
+                    label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Eliminar subrayado
+                };
+
+                // Obtener la ubicación y tamaño del formulario principal
+                Point menuPrincipalLocation = this.Location;
+                Size menuPrincipalSize = this.Size;
+
+                // Calcular la nueva ubicación para el formulario InstructivoDigital
+                int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
+                int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+
+                // Ajustar la ubicación del formulario InstructivoDigital
+                videoInstructivo.StartPosition = FormStartPosition.Manual;
+                videoInstructivo.Location = new Point(x, y);
+
+                videoInstructivo.Show();
+            }
+            else
+            {
+                videoInstructivo.Focus(); // Llevar al frente si ya está abierto
+            }
+        }
+
+
+        // Variables auxiliares para animación
+        private int lineWidth = 0;
+        private bool isAnimating = false;
+
+        private void Subrayado_MouseEnter(object sender, EventArgs e)
+        {
+            
+                if (sender is Control control)
+                {
+                    SubrayadoAnimado.Iniciar(control);
+                }
+            
+        }
+
+        private void Subrayado_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Control control)
+            {
+                SubrayadoAnimado.Detener(control);
+                control.Invalidate(); // Redibuja para eliminar el subrayado
+            }
+        }
+
+        private void Subrayado_Paint(object sender, PaintEventArgs e)
+        {
+            if (videoInstructivo == null || videoInstructivo.IsDisposed) // Aplica subrayado solo si el formulario no está abierto
+            {
+                if (sender is Control control)
+                {
+                    SubrayadoAnimado.Aplicar(control, e.Graphics, SystemColors.Highlight);
+                }
+            }
+        }
+
+        //------------------------------------
+
+        private void Boton_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (sender is Button boton)
+            {
+                boton.BackColor = Color.FromArgb(0, 169, 184); // Fondo al presionar
+         
+            }
+
+        }
+        private void Boton_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (sender is Button boton)
+            {
+                boton.BackColor = Color.FromArgb(0, 154, 174); // Fondo original
+       
+            }
+        }
+
+
+
     }
 }

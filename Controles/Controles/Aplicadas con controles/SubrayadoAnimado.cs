@@ -11,38 +11,77 @@ private void Label_TextoMesAño_Paint(object sender, PaintEventArgs e)
 }
 */
 
-
-
-
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 public static class SubrayadoAnimado
 {
-    public static void Aplicar(Control control, Graphics g, ref int lineWidth, bool isAnimating, Color color, int grosor = 3)
+    private static readonly Dictionary<Control, (Timer Timer, int LineWidth, bool IsAnimating)> Estados = new();
+
+    public static void Aplicar(Control control, Graphics g, Color color, int grosor = 3)
     {
-        if (!isAnimating) return;
+        if (!Estados.TryGetValue(control, out var estado) || !estado.IsAnimating) return;
 
         using (Pen pen = new Pen(color, grosor))
         {
-            // Calcular ancho del texto si el control es un Label
-            int textoAncho = control is Label
-                ? TextRenderer.MeasureText(control.Text, control.Font).Width
-                : control.Width;
+            int textoAncho = TextRenderer.MeasureText(control.Text, control.Font).Width;
+            int subrayadoAncho = Math.Min(estado.LineWidth, textoAncho);
 
-            // Ajustar la animación al ancho del texto
-            int subrayadoAncho = Math.Min(lineWidth, textoAncho);
-
-            // Posición inicial y final del subrayado
             int startX = (control.Width - subrayadoAncho) / 2;
             int endX = startX + subrayadoAncho;
-
-            // Posición vertical del subrayado (debajo del control)
             int y = control.Height - 3;
 
-            // Dibujar la línea
             g.DrawLine(pen, startX, y, endX, y);
+        }
+    }
+
+    public static void Iniciar(Control control, int incremento = 5)
+    {
+        if (!Estados.ContainsKey(control))
+        {
+            Estados[control] = (null, 0, false);
+        }
+
+        // Detén cualquier animación previa
+        Detener(control);
+
+        var estado = Estados[control];
+        estado.LineWidth = 0;
+        estado.IsAnimating = true;
+
+        Timer timer = new Timer { Interval = 15 };
+        timer.Tick += (s, e) =>
+        {
+            if (estado.LineWidth < control.Width)
+            {
+                estado.LineWidth += incremento;
+                Estados[control] = estado; // Actualiza el estado
+                control.Invalidate(); // Redibuja el control
+            }
+            else
+            {
+                timer.Stop();
+                estado.IsAnimating = false;
+                Estados[control] = estado; // Actualiza el estado
+            }
+        };
+
+        estado.Timer = timer;
+        Estados[control] = estado; // Actualiza el estado
+        timer.Start();
+    }
+
+    public static void Detener(Control control)
+    {
+        if (Estados.TryGetValue(control, out var estado))
+        {
+            estado.Timer?.Stop();
+            estado.Timer?.Dispose();
+            estado.LineWidth = 0;
+            estado.IsAnimating = false;
+            Estados[control] = estado; // Actualiza el estado
         }
     }
 }
