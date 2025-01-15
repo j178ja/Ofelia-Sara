@@ -82,7 +82,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 // Redimensionar el panel después de eliminar el control
                 NuevaPersonaControlHelper.AjustarAlturaPanel(panel);
             }
-          // metodo reposiconamiento
+            // metodo reposiconamiento
         }
 
 
@@ -153,7 +153,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                     }
                     else
                     {
-                        MensajeGeneral.Mostrar("No se pudo encontrar el formulario especificado.",MensajeGeneral.TipoMensaje.Error);
+                        MensajeGeneral.Mostrar("No se pudo encontrar el formulario especificado.", MensajeGeneral.TipoMensaje.Error);
                     }
                 }
                 catch (Exception ex)

@@ -1,36 +1,26 @@
-﻿using System;
+﻿using BaseDatos.Entidades;
+using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.General;
+using Ofelia_Sara.Controles.Ofl_Sara;
+using Ofelia_Sara.Formularios.General;
+//using iTextSharp.text.pdf.codec.wmf;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BaseDatos.Entidades;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
-using Ofelia_Sara.Clases.General.Animaciones;
-using Ofelia_Sara.Clases.General.Apariencia;
-using Ofelia_Sara.Clases.General.Texto;
-//using iTextSharp.text.pdf.codec.wmf;
-using Microsoft.Office.Interop.Word;
-using Ofelia_Sara.Formularios.General.Mensajes;
-using Ofelia_Sara.Controles.Controles.General;
-using Ofelia_Sara.Controles.Controles;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Controles.Ofl_Sara;
-using Ofelia_Sara.Controles.General;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class Visu : BaseForm
     {
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-                                            
+
         private List<string> victimas = new List<string>(); // Listas para almacenar víctimas e imputados
         private List<string> imputados = new List<string>(); // Listas para almacenar víctimas e imputados
 
@@ -79,7 +69,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Imagenes.Visible = false;
             panel_DatosVehiculo.Visible = false;
             panel_DatosEspecificos.Visible = false;
-            
+
             //para q se actualize imagen de panel descripcion
             richTextBox_Descripcion.TextChanged += (sender, e) => ValidarPanelDescripcion();
             panel_ControlesInferiores.Visible = false;// inicialice no visible
@@ -87,8 +77,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             //.........................................................
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
-           
-            
+
+
 
         }
         //---FIN CONSTRUCTOR
@@ -148,11 +138,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor( comboBox_Instructor, instructoresManager);
+            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
-           //.....................................................
-           // llevar al frente label y picture
+            //.....................................................
+            // llevar al frente label y picture
             pictureBox_AgregarImagen.BringToFront();
             pictureBox_QuitarImagen.BringToFront();
             pictureBox_DatosVehiculo.BringToFront();
@@ -163,7 +153,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_SeleccionVisu.BringToFront();
 
             //.....................................................
-          //  Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+            //  Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
             //.....................................................
             //// Guardar la altura original del panel
@@ -220,7 +210,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             //.........................................................
             //Para cambiar el borde del PANEL SELECCIONAR TIPO VISU segun este seleccionado o no un radiobutom
-                foreach (Control ctrl in panel_TipoExamenVisu.Controls)
+            foreach (Control ctrl in panel_TipoExamenVisu.Controls)
             {
                 if (ctrl is RadioButton radioButton)
                 {
@@ -250,7 +240,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Añadimos los valores de los controles al diccionario
-           
+
             datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);
             datosFormulario.Add("Caratula", textBox_Caratula.Text);
             datosFormulario.Add("Victima", textBox_Victima.Text);
@@ -259,7 +249,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-         //   datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+            //   datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
         }
@@ -408,11 +398,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Fiscalia.DataSource = nombresFiscalias;
             comboBox_AgenteFiscal.DataSource = agentesFiscales;
             comboBox_Localidad.DataSource = localidades;
-        
+
             comboBox_Fiscalia.SelectedIndex = -1;
             comboBox_AgenteFiscal.SelectedIndex = -1;
             comboBox_Localidad.SelectedIndex = -1;
-          
+
         }
 
         private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
@@ -561,7 +551,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Forzar el repintado del GroupBox
             panel_TipoExamenVisu.Invalidate();
-       //............................
+            //............................
             // Asegúrate de que el sender es un RadioButton
             if (sender is RadioButton radioButton)
             {
@@ -573,11 +563,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                     panel_Imagenes.Visible = true;
                     panel_Descripcion.Visible = true;
-           //         AjustarTamanoFormulario();
+                    //         AjustarTamanoFormulario();
                     // Controla la visibilidad del panel de datos del vehículo
                     panel_DatosVehiculo.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
                     panel_DatosEspecificos.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
-            //        AjustarTamanoFormulario();
+                    //        AjustarTamanoFormulario();
                     // Cambia la imagen y el color de fondo del PictureBox correspondiente
                     if (radioButton == radioButton_Automovil)
                     {
@@ -591,7 +581,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         ApplyRoundedCorners(pictureBox_Motovehiculo, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Motovehiculo.BackColor = Color.FromArgb(4, 234, 0);
-                        ApplyRoundedCorners(radioButton, 6, false, true, true, false); 
+                        ApplyRoundedCorners(radioButton, 6, false, true, true, false);
                     }
                     else if (radioButton == radioButton_Objeto)
                     {
@@ -600,9 +590,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         pictureBox_Objeto.BackColor = Color.FromArgb(4, 234, 0);
                         ApplyRoundedCorners(radioButton, 6, false, true, true, false);
                     }
-                    
+
                 }
-                else 
+                else
                 {
                     // Restaura el estilo normal si el RadioButton se desmarca
                     radioButton.Font = new System.Drawing.Font(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Regular);
@@ -634,7 +624,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             radioButton.Font = customFont;
             radioButton.ForeColor = SystemColors.HotTrack;
             radioButton.BackColor = Color.FromArgb(228, 247, 222);
-           
+
             // Redibuja el RadioButton para reflejar el cambio
             radioButton.Invalidate();
         }
@@ -767,7 +757,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// METODO ESPECIFICO PARA REDONDEAR PICTURE Y RADIOBUTON
         /// </summary>
-       
+
         private GraphicsPath GetRoundedRectanglePath(System.Drawing.Rectangle bounds, int radius,
                                              bool roundTopLeft, bool roundTopRight,
                                              bool roundBottomRight, bool roundBottomLeft)
@@ -833,7 +823,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
                 posicionVertical += 10;
             }
-                        
+
             // Ajustar posición de panel_SeleccionVisu (tamaño fijo)
             panel_SeleccionVisu.Location = new System.Drawing.Point(panel_SeleccionVisu.Location.X, posicionVertical);
             posicionVertical += panel_SeleccionVisu.Height;
@@ -847,7 +837,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 posicionVertical += panel_Imagenes.Height;
                 posicionVertical += 10;
             }
-            
+
             // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
             if (panel_DatosVehiculo.Visible)
             {
@@ -855,7 +845,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 posicionVertical += panel_DatosVehiculo.Height;
                 posicionVertical += 10;
             }
-            
+
             // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
             if (panel_Descripcion.Visible)
             {
@@ -876,9 +866,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Ajustar la altura del formulario sumando un margen adicional de 20 px
             this.Height = panel1.Location.Y + panel1.Height + 75;
-         
-            
-            
+
+
+
             // Activar scroll si la altura del formulario supera los 800 píxeles
             if (this.Height > 800)
             {
@@ -1045,7 +1035,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         }
                     }
                 }
-                     AjustarTamanoFormulario();
+                AjustarTamanoFormulario();
             }
         }
         private void btn_AmpliarReducir_VEHICULO_Click(object sender, EventArgs e)
@@ -1056,9 +1046,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     // Contraer el panel
                     panel_DatosVehiculo.Height = alturaContraidaPanel;
-                panel_DatosVehiculo.BorderStyle = BorderStyle.None;
+                    panel_DatosVehiculo.BorderStyle = BorderStyle.None;
 
-                btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
                     panelExpandido_Vehiculo = false;
 
                     // Cambiar el estilo del borde
@@ -1184,7 +1174,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
                 AjustarTamanoFormulario();
             }
-         
+
         }
 
 
@@ -1232,7 +1222,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             bool camposValidos = true;
 
-          
+
 
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_DatosInstruccion.Controls)
@@ -1255,14 +1245,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 pictureBox_PanelInstruccion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
                 pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-               
+
             }
             else
             {
                 pictureBox_PanelInstruccion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
                 pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-              
+
             }
 
             // Ajustar la posición del pictureBox al lado del label
@@ -1441,12 +1431,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-        
+
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); ;
 
         }
 
-       
+
     }
 
 }

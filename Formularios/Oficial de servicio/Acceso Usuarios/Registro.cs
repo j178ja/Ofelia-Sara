@@ -2,13 +2,13 @@
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.General;
+using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Controles.General;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 {
@@ -31,7 +31,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-          //  ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            //  ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
             // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;

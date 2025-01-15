@@ -26,11 +26,8 @@ private void AbrirVisu()
  */
 
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Apariencia

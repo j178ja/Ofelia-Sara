@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace Ofelia_Sara. Clases.General.Apariencia
+namespace Ofelia_Sara.Clases.General.Apariencia
 {
     public static class AparienciaFormularios
     {

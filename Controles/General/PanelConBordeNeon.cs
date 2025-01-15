@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -20,7 +14,7 @@ namespace Ofelia_Sara.Controles.General
         public Color NeonColorCompleto { get; set; } = Color.FromArgb(0, 255, 0); // Verde para campos completos
         public Color NeonColorIncompleto { get; set; } = Color.FromArgb(255, 0, 0); // Rojo para campos incompletos
         public Color SombraColor { get; set; } = Color.FromArgb(200, 0, 198, 255); // Sombra más oscura y transparente
-      
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

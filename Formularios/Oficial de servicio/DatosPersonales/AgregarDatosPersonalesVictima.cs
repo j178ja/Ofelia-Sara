@@ -1,13 +1,11 @@
 ﻿using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -181,7 +179,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             // comboBox_EstadoCivil
             // 
-            
+
             this.comboBox_EstadoCivil.Items.AddRange(new object[] {
             "SOLTERO/A",
             "CASADO/A",
@@ -358,7 +356,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             "ARGENTINA",
             "PARAGUAYA",
             "BOLIVIANA"});
-            
+
             this.comboBox_Nacionalidad.Items.AddRange(new object[] {
             "ARGENTINA",
             "PARAGUAYA",

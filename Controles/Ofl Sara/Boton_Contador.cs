@@ -15,7 +15,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             CrearControles();
             ActualizarTamañoYColor();
-           
+
         }
 
         // Propiedad 'Text' para establecer el texto del botón

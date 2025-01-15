@@ -20,14 +20,14 @@ namespace Ofelia_Sara.Controles.General
         public CustomTextBox()
         {
             // Configuración del TextBox
-          
+
             textBox = new TextBox
             {
                 BorderStyle = BorderStyle.None,
                 Dock = DockStyle.Fill, //abarque todo el ancho
                 BackColor = Color.Yellow, // color provisorio para analizar errores
                 ForeColor = this.ForeColor,
-               
+
             };
             textBox.GotFocus += TextBox_GotFocus;
             textBox.LostFocus += TextBox_LostFocus;
@@ -78,7 +78,7 @@ namespace Ofelia_Sara.Controles.General
         /// PROPIEDADES PLACEHOLDER
         /// </summary>
         /// <param name="e"></param>
-      
+
 
         [Category("Custom Properties")]
         [Description("The text displayed as a placeholder.")]
@@ -120,7 +120,7 @@ namespace Ofelia_Sara.Controles.General
             }
 
             // Si el control está vacío y no tiene foco, muestra el placeholder
-        if (string.IsNullOrEmpty(this.Text) && !this.Focused && !string.IsNullOrEmpty(PlaceholderText))
+            if (string.IsNullOrEmpty(this.Text) && !this.Focused && !string.IsNullOrEmpty(PlaceholderText))
             {
                 using (Brush brush = new SolidBrush(PlaceholderColor))
                 {
@@ -182,7 +182,7 @@ namespace Ofelia_Sara.Controles.General
                 // Ajustar altura si es multiline
                 if (value)
                 {
-                    textBox.Height = this.Height - 10; 
+                    textBox.Height = this.Height - 10;
                 }
             }
         }

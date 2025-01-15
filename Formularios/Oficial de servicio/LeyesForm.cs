@@ -1,11 +1,11 @@
 ﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Formularios.General.Mensajes;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {

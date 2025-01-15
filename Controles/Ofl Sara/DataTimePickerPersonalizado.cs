@@ -1,12 +1,8 @@
-﻿using System;
+﻿using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using System;
 using System.Drawing;
-using System.Globalization;
-using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
-
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using System.Drawing.Drawing2D;
-using Ofelia_Sara.Controles.Ofl_Sara;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
 {
@@ -23,7 +19,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private Color focusColor = Color.Blue;
         private Color errorColor = Color.Red;
 
-        
+
         public DateTime FechaSeleccionada
         {
             get => fechaSeleccionada;

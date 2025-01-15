@@ -34,8 +34,8 @@ namespace Ofelia_Sara.Clases.General.Apariencia
             footerLinkLabel.TabIndex = 0;
             footerLinkLabel.Text = "Desarrollado por Jorge A. Bonato - V. 1.0.0";
             footerLinkLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            footerLinkLabel.Cursor=Cursors.Hand;
-       
+            footerLinkLabel.Cursor = Cursors.Hand;
+
 
 
             // Añadir evento de clic

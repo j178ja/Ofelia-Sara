@@ -5,8 +5,6 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using Ofelia_Sara.Properties;
-using System.IO;
 namespace Ofelia_Sara.Controles.General
 {
 
@@ -35,7 +33,7 @@ namespace Ofelia_Sara.Controles.General
 
         public CustomComboBox()
         {
-            
+
             // Configuración del TextBox
             textBox = new TextBox
             {
@@ -306,7 +304,7 @@ namespace Ofelia_Sara.Controles.General
 
         private void ArrowPictureBox_Click(object sender, EventArgs e)
         {
-            
+
             if (dropdownList.Visible)
             {
                 dropdownList.Visible = false; // Ocultar si ya está abierto
@@ -450,7 +448,7 @@ namespace Ofelia_Sara.Controles.General
             // Restablecer la imagen cuando se suelta el botón
             arrowPictureBox.Image = defaultImage;
 
-            
+
         }
 
         private void DropdownList_MouseClick(object sender, MouseEventArgs e)
@@ -511,8 +509,8 @@ namespace Ofelia_Sara.Controles.General
                 //            textBox.Cursor = Cursors.IBeam;
                 //            textBox.BackColor = Color.Red; // Fondo editable
                 //        }
-                   }
             }
+        }
 
         //-----------------------------------------------------------------------------
 
@@ -649,7 +647,7 @@ namespace Ofelia_Sara.Controles.General
 
         // Propiedad DisplayMember
         private string displayMember;
-              
+
         public string DisplayMember
         {
             get => displayMember;

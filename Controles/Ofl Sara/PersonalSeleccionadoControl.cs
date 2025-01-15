@@ -1,14 +1,12 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.Buscar_Personal;
-using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 
 
 
@@ -128,7 +126,7 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
                 // Llamar al método para reposicionar los controles y ajustar tamaños
                 agregarPersonal.ReposicionarControles(panel_PersonalSeleccionado, controlEliminado, panel1, formulario);
             }
-            
+
             // Eliminar este control del panel
             panel_PersonalSeleccionado.Controls.Remove(controlEliminado);
 
@@ -140,7 +138,7 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
 
         private void PersonalSeleccionadoControl_Load(object sender, EventArgs e)
         {
-           
+
         }
 
     }

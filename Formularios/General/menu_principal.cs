@@ -1,24 +1,19 @@
-﻿using Ofelia_Sara.Clases.General.Apariencia;
-using Ofelia_Sara.Clases.General.Animaciones;
-using Ofelia_Sara.Controles.Barra_Busqueda;
+﻿using Ofelia_Sara.Clases.General.Animaciones;
+using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones.btn_Configuracion;
+using Ofelia_Sara.Controles.Barra_Busqueda;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
-
+using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
-using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Formularios.Redactador;
-using Ofelia_Sara.Formularios.Mecanografia;
-using Ofelia_Sara.Controles.General;
 using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
 
@@ -84,11 +79,9 @@ namespace Ofelia_Sara.Formularios.General
             originalLocationMecanografia = btn_Mecanografia.Location;
 
             RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
-
-
         }
 
-        //_________________________________--________________________________
+        //_______ FIN CONSTRUCTOR----------------------------------
 
         private void PosicionarMenu()
         {
@@ -154,7 +147,7 @@ namespace Ofelia_Sara.Formularios.General
             comboBox_Buscar.PlaceholderColor = Color.LightGray;
         }
 
-        //--------------------------------------------------------------------------------
+        //------ FIN LOAD-----------------------------------
 
 
 
@@ -171,10 +164,13 @@ namespace Ofelia_Sara.Formularios.General
             btn_Configurar.ContextMenuStrip.Show(botonPosicion);
         }
 
+        /// <summary>
+        /// EVENTO ACTIVACION ROTACION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Configurar_Hover(object sender, EventArgs e)
         {
-
-
             // Aplicar rotación (animación izquierda)
             Rotacion.Aplicar(
                 btn_Configurar,
@@ -182,10 +178,6 @@ namespace Ofelia_Sara.Formularios.General
                 Properties.Resources.engranajeOriginal      // Imagen original
             );
         }
-
-
-
-
 
 
         //-------------------------------------------------------------------
@@ -219,19 +211,19 @@ namespace Ofelia_Sara.Formularios.General
 
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
         {
-           
+
             AbrirFormularioSecundario(new InicioCierre());
         }
 
         private void Btn_Contravenciones_Click(object sender, EventArgs e)
         {
-           
+
             AbrirFormularioSecundario(new Contravenciones());
         }
 
         private void Btn_Expedientes_Click(object sender, EventArgs e)
         {
-            
+
             AbrirFormularioSecundario(new Expedientes());
         }
 
@@ -493,36 +485,43 @@ namespace Ofelia_Sara.Formularios.General
         }
         //--------------------------------------------------------------------------------
         //eventos para abrir aplicacion mecanografia
+        private Form mecanografia = null; // Variable para almacenar la referencia del formulario
         private void Btn_Mecanografia_Click(object sender, EventArgs e)
         {
-            // Desplazar el formulario menuPrincipal un 10% hacia abajo desde el borde superior de la pantalla
-            int newY = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.05); // 5% de la altura de la pantalla
+            // Verifica si el formulario ya está abierto y no está cerrado o eliminado
+            if (mecanografia == null || mecanografia.IsDisposed)
+            {
+                // Desplazar el formulario menuPrincipal un 10% hacia abajo desde el borde superior de la pantalla
+                int newY = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.05); // 5% de la altura de la pantalla
 
-            // Cambiar la ubicación del formulario menuPrincipal
-            this.Location = new Point(this.Location.X, newY);
+                // Cambiar la ubicación del formulario menuPrincipal
+                this.Location = new Point(this.Location.X, newY);
 
+                // Crear una instancia del formulario Redactador
+                mecanografia = new Ofelia_Sara.Formularios.Mecanografia.Mecanografia();
 
+                // Obtener la ubicación y tamaño del formulario principal
+                Point menuPrincipalLocation = this.Location;
+                Size menuPrincipalSize = this.Size;
 
-            // Crear una instancia del formulario Redactador
-            Ofelia_Sara.Formularios.Mecanografia.Mecanografia mecanografia = new Ofelia_Sara.Formularios.Mecanografia.Mecanografia();
+                // Obtener el tamaño del formulario Mecanografia
+                Size mecanografiaSize = mecanografia.Size;
 
-            // Obtener la ubicación y tamaño del formulario principal
-            Point menuPrincipalLocation = this.Location;
-            Size menuPrincipalSize = this.Size;
+                // Calcular la nueva ubicación para el formulario 
+                int x = menuPrincipalLocation.X + (menuPrincipalSize.Width - mecanografiaSize.Width) / 2; // Centramos en el eje X
+                int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10;
 
-            // Obtener el tamaño del formulario Mecanografia
-            Size mecanografiaSize = mecanografia.Size;
+                // Ajustar la ubicación del formulario 
+                mecanografia.StartPosition = FormStartPosition.Manual;
+                mecanografia.Location = new Point(x, y);
 
-            // Calcular la nueva ubicación para el formulario 
-
-            int x = menuPrincipalLocation.X + (menuPrincipalSize.Width - mecanografiaSize.Width) / 2; // Centramos en el eje X
-            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10;
-
-            // Ajustar la ubicación del formulario 
-            mecanografia.StartPosition = FormStartPosition.Manual;
-            mecanografia.Location = new Point(x, y);
-
-            mecanografia.Show();
+                mecanografia.Show();
+            }else
+            {
+                // Si ya está abierto, lo trae al frente
+                mecanografia.WindowState = FormWindowState.Normal; // Si estaba minimizado
+                mecanografia.BringToFront();
+            }
         }
 
 
@@ -594,7 +593,7 @@ namespace Ofelia_Sara.Formularios.General
         //-----------------------------------------------------------------------------------
 
         //para poder arrastrar el formulario
-        private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
+        private void Panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -603,30 +602,116 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private void btn_Redactador_Click(object sender, EventArgs e)
-        {
-            // Crear una instancia del formulario Redactador
-            Ofelia_Sara.Formularios.Redactador.Redactador redactadorForm = new Ofelia_Sara.Formularios.Redactador.Redactador();
 
-            // Obtener la ubicación y tamaño del formulario principal
+        /// <summary>
+        /// EVENTO PARA ABRIR FUNCION REDACTADOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private List<Form> redactadorForms = new List<Form>(); // Lista para almacenar las instancias de los formularios
+
+        private void Btn_Redactador_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario Redactador
+            var nuevaRedactadorForm = new Ofelia_Sara.Formularios.Redactador.Redactador();
+
+            // Ajustar el texto del Label para indicar el número de instancia
+            int numeroInstancia = redactadorForms.Count + 1;
+            Label labelRedactador = nuevaRedactadorForm.Controls.Find("label_Redactador", true).FirstOrDefault() as Label;
+
+            if (labelRedactador != null)
+            {
+                labelRedactador.Text = $"DOCUMENTO N° {numeroInstancia}";
+                labelRedactador.ForeColor = Color.Blue;
+                labelRedactador.Font = new Font(labelRedactador.Font, FontStyle.Bold);
+            }
+
+            // Obtener la ubicación y tamaño del formulario principal (menuPrincipal)
             Point menuPrincipalLocation = this.Location;
             Size menuPrincipalSize = this.Size;
 
-            // Calcular la nueva ubicación para el formulario DocumentosForm
-            int x = menuPrincipalLocation.X - 2; // Mantener la misma posición horizontal
-            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+            // Calcular la posición base para las instancias
+            int baseY = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Debajo de menuPrincipal
+            int baseX = menuPrincipalLocation.X + (menuPrincipalSize.Width / 2); // Centro horizontal de menuPrincipal
 
-            // Ajustar la ubicación del formulario Redactador
-            redactadorForm.StartPosition = FormStartPosition.Manual;
-            redactadorForm.Location = new Point(x, y);
+            // Ajustar el tamaño del formulario `Redactador`
+            Size redactadorSize = nuevaRedactadorForm.Size;
 
-            redactadorForm.ShowDialog(); // Mostrar el formulario como modal
+            // Posición inicial para la primera instancia
+            if (redactadorForms.Count == 0)
+            {
+                nuevaRedactadorForm.StartPosition = FormStartPosition.Manual;
+                nuevaRedactadorForm.Location = new Point(
+                    baseX - (redactadorSize.Width / 2), // Centrar en el eje X
+                    baseY // Posición debajo de menuPrincipal
+                );
+            }
+            else
+            {
+                // Minimizar formularios anteriores si ya hay dos visibles
+                if (redactadorForms.Count >= 2)
+                {
+                    foreach (var form in redactadorForms)
+                    {
+                        if (!form.IsDisposed)
+                        {
+                            form.WindowState = FormWindowState.Minimized;
+                        }
+                    }
+                }
+
+                // Reposicionar las dos últimas instancias si existen
+                if (redactadorForms.Count > 0)
+                {
+                    var ultimaInstancia = redactadorForms.LastOrDefault(f => !f.IsDisposed);
+                    if (ultimaInstancia != null)
+                    {
+                        ultimaInstancia.Location = new Point(
+                            baseX - redactadorSize.Width - 10, // Izquierda
+                            baseY
+                        );
+                        ultimaInstancia.WindowState = FormWindowState.Normal;
+                    }
+                }
+
+                // Posicionar la nueva instancia a la derecha
+                nuevaRedactadorForm.StartPosition = FormStartPosition.Manual;
+                nuevaRedactadorForm.Location = new Point(baseX + 10, baseY); // Derecha
+            }
+
+            // Mostrar el formulario
+            nuevaRedactadorForm.Show();
+
+            // Agregar la nueva instancia a la lista
+            redactadorForms.Add(nuevaRedactadorForm);
+
+            // Manejar el cierre del formulario
+            nuevaRedactadorForm.FormClosed += (s, args) =>
+            {
+                redactadorForms.Remove(nuevaRedactadorForm);
+
+                // Restaurar las últimas dos instancias visibles al cerrar una
+                var ultimasDos = redactadorForms.Where(f => !f.IsDisposed).TakeLast(2).ToList();
+                if (ultimasDos.Count > 0)
+                {
+                    int xOffset = (menuPrincipalSize.Width - (ultimasDos.Count * redactadorSize.Width)) / 2;
+                    for (int i = 0; i < ultimasDos.Count; i++)
+                    {
+                        ultimasDos[i].Location = new Point(
+                            menuPrincipalLocation.X + xOffset + (i * redactadorSize.Width),
+                            baseY
+                        );
+                        ultimasDos[i].WindowState = FormWindowState.Normal;
+                    }
+                }
+            };
         }
 
 
 
 
-        private void btn_BoletinOficial_Click(object sender, EventArgs e)
+
+        private void Btn_BoletinOficial_Click(object sender, EventArgs e)
         {
             string url = "https://boletin.mseg.gba.gov.ar/";
             try
@@ -643,7 +728,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private void comboBox_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_Buscar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_Buscar.SelectedIndex > 0 || !string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
             {
@@ -735,12 +820,12 @@ namespace Ofelia_Sara.Formularios.General
 
         private void Subrayado_MouseEnter(object sender, EventArgs e)
         {
-            
-                if (sender is Control control)
-                {
-                    SubrayadoAnimado.Iniciar(control);
-                }
-            
+
+            if (sender is Control control)
+            {
+                SubrayadoAnimado.Iniciar(control);
+            }
+
         }
 
         private void Subrayado_MouseLeave(object sender, EventArgs e)
@@ -770,7 +855,7 @@ namespace Ofelia_Sara.Formularios.General
             if (sender is Button boton)
             {
                 boton.BackColor = Color.FromArgb(0, 169, 184); // Fondo al presionar
-         
+
             }
 
         }
@@ -779,7 +864,7 @@ namespace Ofelia_Sara.Formularios.General
             if (sender is Button boton)
             {
                 boton.BackColor = Color.FromArgb(0, 154, 174); // Fondo original
-       
+
             }
         }
 

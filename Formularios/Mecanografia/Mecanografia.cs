@@ -1,12 +1,11 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using Ofelia_Sara.Clases.Mecanografia;
+using Ofelia_Sara.Formularios.General;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.IO.Packaging;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.General;
 
 namespace Ofelia_Sara.Formularios.Mecanografia
 

@@ -1,18 +1,16 @@
 ﻿using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Controles.Ofl_Sara;
+using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Controles.Ofl_Sara;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -140,7 +138,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-           // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+            // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             // Verificar que fechaNacimiento no sea nula antes de agregarla al diccionario
             if (fechaNacimiento.HasValue)

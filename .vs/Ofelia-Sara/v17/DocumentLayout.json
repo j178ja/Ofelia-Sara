@@ -14,7 +14,7 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
           "DockedHeight": 200,
@@ -40,9 +40,9 @@
               "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
               "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs*",
               "RelativeToolTip": "Formularios\\General\\menu_principal.cs*",
-              "ViewState": "AgIAAGUBAAAAAAAAAAArwIwBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJYCAAAAAAAAAAAmwMQCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T14:54:35.982Z",
+              "WhenOpened": "2025-01-15T15:30:01.416Z",
               "EditorCaption": ""
             },
             {
@@ -54,7 +54,7 @@
               "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs [Dise\u00F1o]*",
               "RelativeToolTip": "Formularios\\General\\menu_principal.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T14:54:15.622Z",
+              "WhenOpened": "2025-01-15T15:06:20.616Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

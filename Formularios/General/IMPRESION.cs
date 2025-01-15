@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles;
-using Ofelia_Sara.Clases.General.Apariencia;
-using Ofelia_Sara.Formularios.General.Mensajes;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Controles.Ofl_Sara;
-using BaseDatos.Adm_BD.Manager;
-using Ofelia_Sara.Clases;
-using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
 {
@@ -21,10 +11,10 @@ namespace Ofelia_Sara.Formularios.General
     {
         public IMPRESION()
         {
-        
+
             InitializeComponent();
 
-         
+
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);

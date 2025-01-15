@@ -1,10 +1,10 @@
 ﻿
+using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.General;
 
 
 

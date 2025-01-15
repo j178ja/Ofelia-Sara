@@ -1,23 +1,20 @@
 ﻿using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
-using Ofelia_Sara.Clases.General.Animaciones;
+using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre;
+using Ofelia_Sara.Controles.General;
+using Ofelia_Sara.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Controles;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre;
-using Ofelia_Sara.Formularios.General.Mensajes;
-using Ofelia_Sara.Controles.Ofl_Sara;
-using Ofelia_Sara.Controles.General;
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class InicioCierre : BaseForm
@@ -122,7 +119,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_CheckRatificacion.Visible = false; //oculata ambos check hasta ques se marque
             pictureBox_CheckCargo.Visible = false;
 
-           // timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+            // timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
             //  tooltip DESCATIVADO-ACTIVADO
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
@@ -1484,10 +1481,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-       
 
 
-       
+
+
 
     }
 }

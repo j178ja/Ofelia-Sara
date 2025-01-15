@@ -1,11 +1,10 @@
 ﻿using BaseDatos.Adm_BD.Modelos;
-using Ofelia_Sara.Formularios.General.Mensajes;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using Ofelia_Sara.BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Clases.BaseDatos;
+using Ofelia_Sara.Formularios.General.Mensajes;
+using System;
+using System.Collections.Generic;
 
 namespace BaseDatos.Adm_BD.Manager
 {

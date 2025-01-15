@@ -1,11 +1,10 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
-using Ofelia_Sara.Controles.Controles;
-using System;
-using System.Windows.Forms;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Controles.Ofl_Sara;
+using System;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Botones
 
@@ -55,7 +54,7 @@ namespace Ofelia_Sara.Clases.General.Botones
                     // Si el control es FECHA DE NACIMIENTO
                     case CustomDate customDateTextBox:
                         customDateTextBox.ClearDate(); // Limpiar el control personalizado
-                       // customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
+                                                       // customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
                         break;
 
                     // Si el control es email 

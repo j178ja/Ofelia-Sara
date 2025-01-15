@@ -1,12 +1,11 @@
 ﻿using Clases.Reposicon_paneles;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes;
-using Ofelia_Sara.Formularios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 
 
 namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion

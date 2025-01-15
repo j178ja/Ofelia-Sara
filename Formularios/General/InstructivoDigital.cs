@@ -1,16 +1,11 @@
-﻿using Ofelia_Sara.Formularios.General.Mensajes;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using Ofelia_Sara.Clases.General.Apariencia;
 using System.Drawing.Drawing2D;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
 {
@@ -30,9 +25,9 @@ namespace Ofelia_Sara.Formularios.General
             RedondearBordes.Aplicar(panel1, 16);
             RedondearBordes.Aplicar(panel2, 16);
 
-             this.Height = panel1.Height + 90; // Ajustar la altura al tamaño de panel1
-            this.MinimumSize = new Size(this.Width, panel1.Height+90);
-           
+            this.Height = panel1.Height + 90; // Ajustar la altura al tamaño de panel1
+            this.MinimumSize = new Size(this.Width, panel1.Height + 90);
+
 
             axWindowsMediaPlayer_Preview.Visible = false;
             // Inicializa las listas de videos para cada módulo
@@ -286,7 +281,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-       
+
 
 
         //----------------------------------------------------------------------

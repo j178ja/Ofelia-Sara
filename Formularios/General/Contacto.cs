@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Formularios.General
@@ -16,8 +15,8 @@ namespace Ofelia_Sara.Formularios.General
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
         }
-       
-       
+
+
 
         private void Contacto_Load(object sender, EventArgs e)
         {
@@ -49,7 +48,7 @@ namespace Ofelia_Sara.Formularios.General
             string subject = "Asunto del correo";
             string body = "Cuerpo del mensaje";
 
-            
+
             // Abre la aplicación de correo predeterminada del usuario
             try
             {
@@ -59,7 +58,7 @@ namespace Ofelia_Sara.Formularios.General
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"No se pudo abrir el cliente de correo. Error: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar($"No se pudo abrir el cliente de correo. Error: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
@@ -70,7 +69,7 @@ namespace Ofelia_Sara.Formularios.General
                                                   // Define el mensaje (opcional)
             string message = "Hola, ¿cómo estás?";
 
-          
+
 
             // Abre la URL en el navegador predeterminado
             try
@@ -81,13 +80,13 @@ namespace Ofelia_Sara.Formularios.General
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"No se pudo abrir WhatsApp. Error: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar($"No se pudo abrir WhatsApp. Error: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
         private void pictureBox_Linkedin_Click(object sender, EventArgs e)
         {
-           
+
             // Abre la URL en el navegador predeterminado
             try
             {
@@ -96,14 +95,14 @@ namespace Ofelia_Sara.Formularios.General
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"No se pudo abrir LinkedIn. Error: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar($"No se pudo abrir LinkedIn. Error: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
 
         }
 
         private void pictureBox_Github_Click(object sender, EventArgs e)
         {
-           
+
 
             // Abre la URL en el navegador predeterminado
             try

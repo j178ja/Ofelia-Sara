@@ -29,7 +29,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private string ComboBoxFilePath { get; set; }
         public NuevaDependencia()
         {
-           
+
 
             InitializeComponent();
             // Asocia el evento Load del formulario al manejador NuevaDependencia_Load

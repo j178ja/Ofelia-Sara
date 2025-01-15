@@ -1,14 +1,7 @@
 ﻿using Ofelia_Sara.Clases.General.Apariencia;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,8 +70,8 @@ namespace Ofelia_Sara.Formularios.General
             origen = ObtenerCoordenadasIcono(); // Obtiene las coordenadas del ícono 
             Size origenTamaño = new Size(15, 15);
             // Calcular la posición para centrar el formulario
-            int xCentro = (Screen.PrimaryScreen.WorkingArea.Width - 600) / 2; 
-            int yCentro = (Screen.PrimaryScreen.WorkingArea.Height - 450) / 2; 
+            int xCentro = (Screen.PrimaryScreen.WorkingArea.Width - 600) / 2;
+            int yCentro = (Screen.PrimaryScreen.WorkingArea.Height - 450) / 2;
 
             // Crear el destino
             destino = new Rectangle(xCentro, yCentro, 600, 450);
@@ -86,7 +79,7 @@ namespace Ofelia_Sara.Formularios.General
             // Configurar el formulario para que inicie en la posición del ícono
             this.StartPosition = FormStartPosition.Manual;
             this.Location = origen;
-                
+
 
             // Inicializar el timer para la animación
             animacionPresentacionTimer = new Timer();
@@ -113,18 +106,18 @@ namespace Ofelia_Sara.Formularios.General
             blurTimer.Start(); // Iniciar el monitoreo de opacidad
 
             fondoAnimado = Properties.Resources.EscudoPolicia_PNG;
-                      
-           
+
+
         }
         //---finalizacion de constructor-----
         //--------------------------------------------------------------------
 
         private void Presentacion_Load(object sender, EventArgs e)
         {
-             aparecerTimer.Start(); // Iniciar el efecto de aparición al cargar el formulario
-             AplicarBlurEfecto(); // Llamar al efecto blur
+            aparecerTimer.Start(); // Iniciar el efecto de aparición al cargar el formulario
+            AplicarBlurEfecto(); // Llamar al efecto blur
             InicializarBufferedGraphics();
-           
+
         }
         private void InicializarBufferedGraphics()
         {
@@ -190,7 +183,7 @@ namespace Ofelia_Sara.Formularios.General
                 this.Close(); // Cerrar el formulario
             }
         }
-    
+
 
 
         private void AplicarBlurEfecto()
@@ -222,7 +215,7 @@ namespace Ofelia_Sara.Formularios.General
         // ANIMACION IMAGEN DE FONDO
         private void IniciarAnimacionFondo()
         {
-            if (this.Size==destino.Size)
+            if (this.Size == destino.Size)
             {
                 animacionFondoTimer = new Timer
                 {
@@ -310,8 +303,8 @@ namespace Ofelia_Sara.Formularios.General
         /// <summary>
         /// obtiene la ubicacion del cursor para iniciar desde ahi la animacion
         /// </summary>
-     
-            private Point ObtenerCoordenadasIcono()
+
+        private Point ObtenerCoordenadasIcono()
         {
             // Obtener la posición actual del cursor
             Point posicionCursor = Cursor.Position;

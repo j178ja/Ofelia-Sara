@@ -1,11 +1,4 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.IO;
-using System.Windows.Forms;
 using BaseDatos.Adm_BD;
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
@@ -13,6 +6,12 @@ using Ofelia_Sara.Clases.BaseDatos;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
 {
@@ -144,7 +143,7 @@ namespace Ofelia_Sara.Formularios.General
             Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado
             this.BackColor = customColor;
 
-           
+
         }
 
         /// <summary>

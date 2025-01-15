@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Ofelia_Sara.Clases.BaseDatos;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ofelia_Sara.Clases.BaseDatos;
 
 namespace Ofelia_Sara.BaseDatos.Adm_BD.Manager
 {

@@ -9,8 +9,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Formularios;
-using System.Windows.Navigation;
 
 
 namespace Ofelia_Sara.Formularios.General.Mensajes
@@ -297,6 +295,6 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             return null; // Devuelve null si no se ha seleccionado una fecha o hora
         }
 
-        
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
+using Ofelia_Sara.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -9,7 +9,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Ofl_Sara;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -83,13 +82,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
         //-------------------------------------------------------------
-        
 
- 
+
+
         //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void ComboBox_Ipp_TextUpdate(object sender, EventArgs e)
         {
-        // se aplica a textBox ya que el customComboBox esta construido con textBox
+            // se aplica a textBox ya que el customComboBox esta construido con textBox
             if (sender is TextBox textBox)
             {
                 // Limitar a 2 caracteres

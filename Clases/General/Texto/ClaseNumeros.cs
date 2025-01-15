@@ -1,7 +1,5 @@
-﻿using Ofelia_Sara.Controles;
-using Ofelia_Sara.Controles.General;
+﻿using Ofelia_Sara.Controles.General;
 using System;
-using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Clases.General.Texto

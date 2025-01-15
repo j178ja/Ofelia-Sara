@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Formularios.General;
+﻿using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
 {
@@ -25,7 +17,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             InitializeComponent();
 
-           
+
 
             // Configuración inicial
             pictureBox_CheckSeleccionado.Visible = false;
@@ -38,8 +30,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void Verificador_ACTUACION_Load(object sender, EventArgs e)
         {
             // Configuración de ToolTips para los controles
-           // ToolTipGeneral.ShowToolTip(Remover_Control, "ELIMINAR del listado de actuaciones.");
-           // ToolTipGeneral.ShowToolTip(linkLabel_Actuacion, "REDIRIGIR a formulario.");
+            // ToolTipGeneral.ShowToolTip(Remover_Control, "ELIMINAR del listado de actuaciones.");
+            // ToolTipGeneral.ShowToolTip(linkLabel_Actuacion, "REDIRIGIR a formulario.");
             //ToolTipGeneral.ShowToolTip(pictureBox_PrevisualizadorDocumento, "VISUALIZAR documento.");
         }
         public bool IsImagenVisible
@@ -124,8 +116,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             checkBox_Selecionar.Checked = false;
             pictureBox_CheckSeleccionado.Visible = false;
-            
-           
+
+
 
             checkBox_Selecionar.Visible = true;
         }
@@ -150,7 +142,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
                 // Si el usuario seleccionó "Sí", proceder con la eliminación
                 RemoverVerificador();
-               // ActualizarContadores();
+                // ActualizarContadores();
             }
         }
 
@@ -163,7 +155,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             {
                 // Remover este control del contenedor
                 parentTable.Controls.Remove(this);
-               
+
                 // Ajustar la distribución después de eliminar el control
                 AjustarDistribucionGeneral(parentTable);
 

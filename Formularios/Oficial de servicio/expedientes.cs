@@ -1,10 +1,10 @@
 ﻿using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Clases.General.Texto;
-using Ofelia_Sara.Controles.Controles;
+using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,6 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 
 
 
@@ -78,7 +77,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             AgregarRadioButtonALosPaneles();
 
-          //  Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
+            //  Fecha_Instruccion.SelectedDate = DateTime.Now;//actualizar fecha
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Convertir, "Seleccione que tipo de archivo desea y agrege un archivo.", "Presione para generar un archivo en el formato deseado");
             TooltipEnControlDesactivado.TooltipActivo(this, btn_EliminarArchivo, "Eliminar seleccion y archivo agregado.", btn_EliminarArchivo.Enabled && btn_EliminarArchivo.Visible);
@@ -1163,7 +1162,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  // Ajusté los nombres de las claves para ser únicos
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-           // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+            // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
         }
@@ -1175,7 +1174,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 comboBox_Instructor.SelectedItem == null ||
                 comboBox_Secretario.SelectedItem == null ||
                 comboBox_Dependencia.SelectedItem == null)// ||
-               // Fecha_Instruccion.SelectedDate == null)
+                                                          // Fecha_Instruccion.SelectedDate == null)
 
             {
                 MensajeGeneral.Mostrar("Por favor, complete todos los campos requeridos.", MensajeGeneral.TipoMensaje.Advertencia);

@@ -3,14 +3,14 @@ using System;
 using System.ComponentModel;
 
 namespace Ofelia_Sara.Clases.BaseDatos
-{ 
-public class DatabaseConnection
 {
+    public class DatabaseConnection
+    {
         public string connectionString;
         private MySqlConnection connection;
 
-    public DatabaseConnection()
-    {
+        public DatabaseConnection()
+        {
 
             if (IsInDesignMode())
             {
@@ -24,7 +24,7 @@ public class DatabaseConnection
 
         private void InitializeConnection()
         {
-         
+
             connection = new MySqlConnection(connectionString);
         }
 
@@ -35,31 +35,31 @@ public class DatabaseConnection
         }
 
         public MySqlConnection Connection
-    {
-        get
         {
-            if (connection == null)
+            get
             {
-                connection = new MySqlConnection(connectionString);
+                if (connection == null)
+                {
+                    connection = new MySqlConnection(connectionString);
+                }
+                return connection;
             }
-            return connection;
         }
-    }
 
-    public void OpenConnection()
-    {
-        if (connection?.State == System.Data.ConnectionState.Closed)
+        public void OpenConnection()
         {
-            connection.Open();
+            if (connection?.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Open();
+            }
         }
-    }
 
-    public void CloseConnection()
-    {
-        if (connection?.State == System.Data.ConnectionState.Open)
+        public void CloseConnection()
         {
-            connection.Close();
+            if (connection?.State == System.Data.ConnectionState.Open)
+            {
+                connection.Close();
+            }
         }
     }
-}
 }

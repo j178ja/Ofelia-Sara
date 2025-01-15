@@ -48,8 +48,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-           // ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
-            
+            // ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;

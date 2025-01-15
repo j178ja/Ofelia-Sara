@@ -2,14 +2,11 @@
 using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
-using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Clases.General.Texto;
-using Ofelia_Sara.Controles.Controles.General;
-using Ofelia_Sara.Controles.Controles;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Clases.GenerarDocumentos;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,8 +14,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using Ofelia_Sara.Controles.General;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -31,8 +26,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private int alturaContraidaPanel = 30; //altura de panel contraido
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Descripcion = true;// 
-        
-       
+
+
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public Cargo()
         {
@@ -113,7 +108,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-           // Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
+            // Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -156,7 +151,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                 }
             }
-           AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
+            AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
         }
 
         //-------FIN  LOAD------------------
@@ -491,11 +486,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 e.Handled = true; // Cancelar la entrada si no es un número
             }
         }
- 
+
         /// <summary>
         /// PARA VALIDAR LIMITE DE 2 NUMEROS EN NUMEROS DE IPP
         /// </summary>
-       
+
 
         private void comboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -687,7 +682,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
             // Añadimos los valores de los controles al diccionario
-            
+
             datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);
             datosFormulario.Add("Caratula", textBox_Caratula.Text);
             datosFormulario.Add("Victima", textBox_Victima.Text);
@@ -700,7 +695,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-          //  datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+            //  datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
 
 
@@ -709,7 +704,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //------------------------------------------------------------------------------------
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
-            
+
             // Llamar al método de validación
             if (!ValidarAntesde_IMPRIMIR())
             {
@@ -784,7 +779,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
                 pictureBox_CheckLegajoVehicular.Location = new Point(
                     checkBox_LegajoVehicular.Location.X,
-                    checkBox_LegajoVehicular.Location.Y-8);
+                    checkBox_LegajoVehicular.Location.Y - 8);
             }
         }
 
@@ -930,7 +925,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_PanelInstruccion.Visible = true;
         }
 
-     
+
         /// <summary>
         /// PARA AMPLIAR Y REDUCIR EL AREA DESCRIPCION
         /// </summary>
@@ -1068,7 +1063,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_Instruccion.Location = new System.Drawing.Point(panel_Instruccion.Location.X, posicionVertical);
                 posicionVertical += panel_Instruccion.Height;
                 // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
-              
+
             }
             posicionVertical += 20;
 
@@ -1078,7 +1073,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Agregar separación de 10 píxeles entre panel_SeleccionVisu y panel_Imagenes
             posicionVertical += 10;
 
-                   
+
 
             // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
             if (panel_Descripcion.Visible)
@@ -1114,6 +1109,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-       
+
     }
 }

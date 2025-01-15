@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Clases.General.Texto;
-using Ofelia_Sara.Clases.General.Botones;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
@@ -18,17 +11,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public Registro()
         {
             InitializeComponent();
-        
+
         }
 
         private void Registro_Load(object sender, EventArgs e)
         {
             InicializarEstiloBoton(btn_Registrarse);
             InicializarEstiloBoton(btn_Limpiar);
-            
+
         }
 
-       
+
         private void textBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir dígitos y el carácter de control de retroceso
@@ -38,7 +31,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-      
+
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
@@ -46,7 +39,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (textBox != null)
             {
                 // Convertir el texto a mayúsculas ignorando caracteres especiales
-               // textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+                // textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
 
                 // Para mantener el cursor al final del texto
                 textBox.SelectionStart = textBox.Text.Length;

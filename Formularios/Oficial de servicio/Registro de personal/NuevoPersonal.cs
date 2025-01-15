@@ -1,21 +1,18 @@
 ﻿using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
+using MySql.Data.MySqlClient;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using MySql.Data.MySqlClient;
-using Ofelia_Sara.Formularios;
-using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
-using Ofelia_Sara.Controles.Controles.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.General;
-using Ofelia_Sara.Controles.Ofl_Sara;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
@@ -91,7 +88,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             //para que se despliege la lista en los comboBox ESCALAFON -JERARQUIA
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-          //  ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon.InnerTextBox, comboBox_Jerarquia.InnerTextBox);
+            //  ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon.InnerTextBox, comboBox_Jerarquia.InnerTextBox);
             // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;

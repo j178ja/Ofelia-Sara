@@ -47,9 +47,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             if (this.Image != null)
             {
                 originalImage = this.Image; // Guardar la imagen original
-               // this.Image = Properties.Resources.agregar_imagen_HOVER; // Cambiar a la imagen de hover
-               // this.BackColor= Color.FromArgb(86, 184, 254);
-                this.BackColor= SystemColors.ControlLightLight;
+                                            // this.Image = Properties.Resources.agregar_imagen_HOVER; // Cambiar a la imagen de hover
+                                            // this.BackColor= Color.FromArgb(86, 184, 254);
+                this.BackColor = SystemColors.ControlLightLight;
             }
         }
 
@@ -60,7 +60,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             if (originalImage != null)
             {
                 this.Image = originalImage; // Restaurar la imagen original
-               // this.Image = Properties.Resources.agregar_imagen1;// a ser reemplazado por animacion
+                                            // this.Image = Properties.Resources.agregar_imagen1;// a ser reemplazado por animacion
                 this.BackColor = SystemColors.ControlLight;
             }
         }

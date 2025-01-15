@@ -200,7 +200,7 @@
             comboBox_Buscar.ShowError = false;
             comboBox_Buscar.Size = new System.Drawing.Size(342, 28);
             comboBox_Buscar.TabIndex = 14;
-            comboBox_Buscar.SelectedIndexChanged += comboBox_Buscar_SelectedIndexChanged;
+            comboBox_Buscar.SelectedIndexChanged += ComboBox_Buscar_SelectedIndexChanged;
             comboBox_Buscar.MouseHover += ComboBox_Buscar_MouseHover;
             // 
             // btn_Configurar
@@ -248,7 +248,7 @@
             panel_MenuSuperior.Name = "panel_MenuSuperior";
             panel_MenuSuperior.Size = new System.Drawing.Size(667, 39);
             panel_MenuSuperior.TabIndex = 17;
-            panel_MenuSuperior.MouseDown += panel_MenuSuperior_MouseDown;
+            panel_MenuSuperior.MouseDown += Panel_MenuSuperior_MouseDown;
             // 
             // btn_BoletinOficial
             // 
@@ -263,7 +263,7 @@
             btn_BoletinOficial.Size = new System.Drawing.Size(36, 35);
             btn_BoletinOficial.TabIndex = 19;
             btn_BoletinOficial.UseVisualStyleBackColor = true;
-            btn_BoletinOficial.Click += btn_BoletinOficial_Click;
+            btn_BoletinOficial.Click += Btn_BoletinOficial_Click;
             // 
             // btn_Redactador
             // 
@@ -278,7 +278,7 @@
             btn_Redactador.Size = new System.Drawing.Size(37, 37);
             btn_Redactador.TabIndex = 22;
             btn_Redactador.UseVisualStyleBackColor = true;
-            btn_Redactador.Click += btn_Redactador_Click;
+            btn_Redactador.Click += Btn_Redactador_Click;
             btn_Redactador.MouseDown += Btn_MouseDown;
             btn_Redactador.MouseLeave += Btn_MouseLeave;
             btn_Redactador.MouseHover += Btn_MouseHover;

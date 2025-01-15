@@ -1,23 +1,18 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Clases.General.Texto;
-using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.Buscar_Personal;
-
-using Ofelia_Sara.Controles;
-using Ofelia_Sara.Formularios;
-using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Ofl_Sara;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 {
@@ -57,9 +52,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             panel1.Paint += panel1_Paint;
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para agregar ratificafciòn.", "Agregar nueva ratificacion");
-       //..........................
-         //Suscribir eventos para controles existentes en el panel al cargar el formulario
-             foreach (var control in panel_PersonalSeleccionado.Controls.OfType<PersonalSeleccionadoControl>())
+            //..........................
+            //Suscribir eventos para controles existentes en el panel al cargar el formulario
+            foreach (var control in panel_PersonalSeleccionado.Controls.OfType<PersonalSeleccionadoControl>())
             {
                 control.Eliminado += (s, arg) => ActualizarContadorRatificaciones();
             }
@@ -74,7 +69,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="borderRadius"></param>
         /// <param name="borderSize"></param>
         /// <param name="borderColor"></param>
-      
+
         private void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
         {
             using (GraphicsPath path = new GraphicsPath())
@@ -205,7 +200,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-       
+
         private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -243,7 +238,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                     MensajeGeneral.TipoMensaje.Exito
                 );
             }
-            
+
         }
         //-------------------------------------------------------------------------------------------
 
@@ -255,7 +250,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
             if (!datosGuardados) // Si los datos no han sido guardados
             {
                 using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
@@ -299,7 +294,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="numeroLegajo"></param>
         /// <returns></returns>
-        
+
         private bool EsLegajoYaAgregado(string numeroLegajo)
         {
             foreach (Control control in panel_PersonalSeleccionado.Controls)
@@ -351,7 +346,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                     panel_PersonalSeleccionado,
                     panel_ControlesInferiores,
                     panel1,
-                    this                     
+                    this
                 );
                 ActualizarContadorRatificaciones();
             }
@@ -388,10 +383,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 {
                     // Actualizar el texto del botón usando la propiedad Text
                     btnContadorControl.Text = numeroControles.ToString();
-                
-                // Llamar al método para actualizar el color del botón
-                // btnContadorControl.ActualizarTamañoYColor();
-            }
+
+                    // Llamar al método para actualizar el color del botón
+                    // btnContadorControl.ActualizarTamañoYColor();
+                }
             }
         }
 

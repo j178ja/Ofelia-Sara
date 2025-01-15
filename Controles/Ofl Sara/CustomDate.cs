@@ -1,11 +1,9 @@
-﻿using Ofelia_Sara.Formularios.General.Mensajes;
-using Ofelia_Sara.Controles.Ofl_Sara;
+﻿using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
-using Ofelia_Sara.Controles.General;
 
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
@@ -40,7 +38,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         private void CustomDateTextBox_Load(object sender, EventArgs e)
         {
-            
+
             textBox_DateDIA.PlaceholderText = "dd";
             textBox_DateMES.PlaceholderText = "mm";
             textBox_DateAÑO.PlaceholderText = "aaaa";
@@ -197,7 +195,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 }
             }
         }
-        
+
 
 
 

@@ -3,9 +3,8 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 
-namespace  Ofelia_Sara.Controles.Ofl_Sara
+namespace Ofelia_Sara.Controles.Ofl_Sara
 
 {
     public partial class CALENDARIO : Form
@@ -17,8 +16,8 @@ namespace  Ofelia_Sara.Controles.Ofl_Sara
         {
             InitializeComponent();
             this.FormClosing += Calendario_FormClosing;
-                SelectedDate = DateTime.Now; // Inicializa con la fecha actual
-                monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
+            SelectedDate = DateTime.Now; // Inicializa con la fecha actual
+            monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
         }
 
         private void CalendarForm_Load(object sender, EventArgs e)
@@ -68,7 +67,7 @@ namespace  Ofelia_Sara.Controles.Ofl_Sara
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
                     }
-         //           ToolTipGeneral.DisposeToolTips();
+                    //           ToolTipGeneral.DisposeToolTips();
                 }
             }
         }

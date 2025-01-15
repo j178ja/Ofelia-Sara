@@ -1,15 +1,7 @@
-﻿using Microsoft.Office.Interop.Word;
-using Ofelia_Sara.Clases.General.Apariencia;
-using Ofelia_Sara.Formularios.General;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -153,8 +145,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void Label_TextoMesAño_Click(object sender, EventArgs e)
         {
-            
-         
+
+
         }
 
         private void Label_TextoMesAño_MouseHover(object sender, EventArgs e)
@@ -194,8 +186,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                     int subrayadoAncho = Math.Min(lineWidth, textoAncho);
 
                     // Calcular las posiciones inicial y final para el subrayado animado
-                    int startX = (label_TextoMesAño.Width - subrayadoAncho -45) / 2;
-                    int endX = startX + subrayadoAncho+45;
+                    int startX = (label_TextoMesAño.Width - subrayadoAncho - 45) / 2;
+                    int endX = startX + subrayadoAncho + 45;
 
                     // Posición vertical del subrayado
                     int y = label_TextoMesAño.Height - 3;
@@ -208,13 +200,13 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
             if (mostrarBorde)
             {
-              
+
                 using (Pen borderPen = new Pen(Color.Blue, 3))
                 {
-                    
+
                     // Crear un GraphicsPath para un borde redondeado
                     int radius = 16; // Radio de las esquinas redondeadas
-                    System.Drawing.Rectangle rect = new System.Drawing.Rectangle(1, 1, label_TextoMesAño.Width-2 , label_TextoMesAño.Height -3);
+                    System.Drawing.Rectangle rect = new System.Drawing.Rectangle(1, 1, label_TextoMesAño.Width - 2, label_TextoMesAño.Height - 3);
 
                     using (GraphicsPath path = CrearRectanguloRedondeado(rect, radius))
                     {
