@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+
+
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -6,7 +9,7 @@ using Ofelia_Sara.Properties;
 using System.IO;
 namespace Ofelia_Sara.Controles.General
 {
-   
+
     public class CustomComboBox : Control
     {
         private TextBox textBox;
@@ -19,9 +22,9 @@ namespace Ofelia_Sara.Controles.General
         private Color focusColor = Color.Blue;
         private Color errorColor = Color.Red;
 
-         private Image defaultImage = Properties.Resources.Flecha_Triangulo; // Imagen predeterminada
-         private Image pressedImage = Properties.Resources.flechaG_Verde; // Imagen cuando se presiona
-         private Image disabledImage = Properties.Resources.flechaG_Roja; // Imagen cuando está deshabilitado
+        private Image defaultImage = Properties.Resources.Flecha_Triangulo; // Imagen predeterminada
+        private Image pressedImage = Properties.Resources.flechaG_Verde; // Imagen cuando se presiona
+        private Image disabledImage = Properties.Resources.flechaG_Roja; // Imagen cuando está deshabilitado
 
         private string placeholderText = " ";//para que no se muestre placeholder y se asigne en cada control especifico
         private Color placeholderColor = Color.Gray;
@@ -36,14 +39,14 @@ namespace Ofelia_Sara.Controles.General
             // Configuración del TextBox
             textBox = new TextBox
             {
+                Size = new Size(21, this.Height),
                 BorderStyle = BorderStyle.None,
-              
-                BackColor = Color.GreenYellow,
+                BackColor = Color.GreenYellow,// al momento solo como indicador
                 TextAlign = HorizontalAlignment.Center,
                 ForeColor = placeholderColor, // Inicia con el color del placeholder
-                Text = placeholderText // Inicializa con el texto del placeholder
-
+                Text = placeholderText // Inicializa con el texto del placeholder /se puede editar en forma especifica segun el control
             };
+
             // agregar metodos al textbox
             textBox.GotFocus += TextBox_GotFocus;
             textBox.LostFocus += TextBox_LostFocus;
@@ -56,17 +59,17 @@ namespace Ofelia_Sara.Controles.General
             // Configuración del PictureBox (flecha)
             arrowPictureBox = new PictureBox
             {
-                Size = new Size(20, this.Height),
+                Size = new Size(21, this.Height),
                 Dock = DockStyle.Right,
                 Cursor = Cursors.Hand,
                 BackColor = Color.White,
-                Image = defaultImage, // Imagen predeterminada
+                Image = defaultImage, // Imagen predeterminada "triangulo"
                 SizeMode = PictureBoxSizeMode.CenterImage,
             };
-            arrowPictureBox.Click += ArrowPictureBox_Click;
             // Manejar los eventos de clic
-            arrowPictureBox.MouseDown += ArrowPictureBox_MouseDown;
-            arrowPictureBox.MouseUp += ArrowPictureBox_MouseUp;
+            arrowPictureBox.Click += ArrowPictureBox_Click;//mostrar listado en el click
+            arrowPictureBox.MouseDown += ArrowPictureBox_MouseDown; //cambiar imagen al presionar
+            arrowPictureBox.MouseUp += ArrowPictureBox_MouseUp; //cambiar imagen al soltar
             Controls.Add(arrowPictureBox);
 
             // Configuración del ListBox (desplegable)
@@ -98,8 +101,9 @@ namespace Ofelia_Sara.Controles.General
             this.Height = 30;
             this.Width = 200;
             this.BackColor = Color.White;
+            dropdownList.LostFocus += DropdownList_LostFocus;
         }
-
+        //------FIN CONSTRUCTOR-----------
 
         private void DropdownList_Paint(object sender, PaintEventArgs e)
         {
@@ -125,7 +129,7 @@ namespace Ofelia_Sara.Controles.General
                 }
 
                 // Dibujar borde de color
-                using (Pen borderPen = new Pen(Color.FromArgb(0, 154, 174), 4)) 
+                using (Pen borderPen = new Pen(Color.FromArgb(0, 154, 174), 4))
                 {
                     g.DrawPath(borderPen, path);
                 }
@@ -169,7 +173,7 @@ namespace Ofelia_Sara.Controles.General
 
             Color textColor = isHovered ? Color.White : dropdownList.ForeColor;
             Font textFont = isHovered ? new Font(dropdownList.Font, FontStyle.Bold) : dropdownList.Font;
-            
+
             // Dibujar fondo
             using (Brush backgroundBrush = new SolidBrush(backgroundColor))
             {
@@ -239,15 +243,18 @@ namespace Ofelia_Sara.Controles.General
                 ShowPlaceholder();
             }
         }
-      
+
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             OnTextChanged(e);
         }
 
-
-        // Evento cuando el mouse entra en el TextBox
+        /// <summary>
+        /// Evento cuando el mouse entra en el TextBox MUESTRA PLACEHOLDER
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_MouseEnter(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -255,8 +262,11 @@ namespace Ofelia_Sara.Controles.General
                 ShowPlaceholder();
             }
         }
-
-        // Evento cuando el mouse sale del TextBox
+        // <summary>
+        /// Evento cuando el mouse sale del TextBox OCULTA PLACEHOLDER
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_MouseLeave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text) && !textBox.Focused)
@@ -265,7 +275,9 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
-        // Mostrar placeholder
+        /// <summary>
+        /// EVENTO PARA MOSTRAR PLACEHOLDER
+        /// </summary>
         private void ShowPlaceholder()
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -276,7 +288,9 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
-        // Ocultar placeholder
+        /// <summary>
+        /// EVENTO PARA OCULTAR PLACEHOLDER
+        /// </summary>
         private void HidePlaceholder()
         {
             if (isPlaceholderVisible)
@@ -287,74 +301,131 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
-
-
-     
         //------------------------------------------------------------------------------
 
 
         private void ArrowPictureBox_Click(object sender, EventArgs e)
         {
-            // Asegúrate de que el dropdownList esté en el formulario principal
-            Form parentForm = this.FindForm();
+            
+            if (dropdownList.Visible)
+            {
+                dropdownList.Visible = false; // Ocultar si ya está abierto
+                OcultarDropdown();
+                return;
+            }
+            else
+            {
+                // Mostrar el dropdownList y posicionarlo correctamente
+                MostrarDropdown();
+            }
+
+            Form parentForm = FindForm();
             if (dropdownList.Parent != parentForm)
             {
                 parentForm.Controls.Add(dropdownList);
                 dropdownList.BringToFront();
             }
 
-            // Calcular la posición relativa al CustomComboBox
-            Point controlLocation = this.PointToScreen(Point.Empty); // Posición global del CustomComboBox
-            Point dropdownLocation = parentForm.PointToClient(controlLocation); // Ajustar al formulario principal
+            // Establecer la posición y tamaño del ListBox
+            Point locationOnForm = PointToScreen(Point.Empty);
+            Point dropdownLocation = parentForm.PointToClient(locationOnForm);
+            dropdownList.Location = new Point(dropdownLocation.X, dropdownLocation.Y + Height);
+            dropdownList.Width = Width;
 
-            // Ajustar posición para que el dropdownList aparezca debajo del CustomComboBox
-            dropdownList.Location = new Point(dropdownLocation.X, dropdownLocation.Y + this.Height);
-
-            // Configurar el ancho del dropdownList
-            dropdownList.Width = this.Width - arrowPictureBox.Width;
-
-            // Alternar visibilidad
-            dropdownList.Visible = !dropdownList.Visible;
-
-            // Manejar clics fuera del dropdownList
-            if (dropdownList.Visible)
-            {
-                parentForm.MouseClick += ParentForm_ClickOutside;
-                dropdownList.LostFocus += DropdownList_LostFocus;
-            }
-            else
-            {
-                parentForm.MouseClick -= ParentForm_ClickOutside;
-                dropdownList.LostFocus -= DropdownList_LostFocus;
-            }
+            dropdownList.Visible = true;
+            isFocused = true;
+            animationProgress = 0;
+            animationTimer.Start();
+            //// Manejo del clic fuera del dropdown
+            parentForm.MouseClick -= ParentForm_ClickOutside; // Elimina suscripciones duplicadas
+            parentForm.MouseClick += ParentForm_ClickOutside; // Vuelve a suscribirse
         }
 
 
 
-        private void ParentForm_ClickOutside(object sender, EventArgs e)
+
+        /// <summary>
+        /// EVENTO PARA OCULTAR LIST CUANDO SE HACE CLICK FUERA DE EL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ParentForm_ClickOutside(object sender, MouseEventArgs e)
         {
-            // Ocultar el dropdownList si se hace clic fuera 
-            dropdownList.Visible = false;
+            Form parentForm = FindForm();
+            Point cursorPosition = parentForm.PointToClient(Cursor.Position);
 
-            // Eliminar eventos para evitar múltiples registros
-            Form parentForm = this.FindForm();
-            parentForm.Click -= ParentForm_ClickOutside;
-            dropdownList.LostFocus -= DropdownList_LostFocus;
+            if (!dropdownList.Bounds.Contains(cursorPosition) && !Bounds.Contains(cursorPosition))
+            {
+                OcultarDropdown();
+
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    showError = true; // Mostrar subrayado rojo
+                    Invalidate(); // Redibujar el control
+                }
+            }
         }
-
-
 
 
         private void DropdownList_LostFocus(object sender, EventArgs e)
         {
-            // Ocultar el dropdownList al perder el foco
-            dropdownList.Visible = false;
+            OcultarDropdown();
 
-            // Eliminar eventos
-            Form parentForm = this.FindForm();
-            parentForm.Click -= ParentForm_ClickOutside;
-            dropdownList.LostFocus -= DropdownList_LostFocus;
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                showError = true; // Mostrar subrayado rojo
+                Invalidate(); // Redibujar el control
+            }
         }
+
+        private void OcultarDropdown()
+        {
+            if (!dropdownList.Visible) return;
+
+            dropdownList.Visible = false;
+            isFocused = false;
+            animationProgress = 0;
+            animationTimer.Stop();
+
+            Form parentForm = FindForm();
+            if (parentForm != null)
+            {
+                parentForm.MouseClick -= ParentForm_ClickOutside;
+            }
+
+            // Si no hay texto, aplica subrayado rojo
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                showError = true;
+                Invalidate();
+            }
+        }
+
+
+
+        private void MostrarDropdown()
+        {
+            if (dropdownList.Visible) return;
+
+            dropdownList.Visible = true;
+            dropdownList.BringToFront();
+
+            Form parentForm = FindForm();
+            if (parentForm != null)
+            {
+                parentForm.MouseClick -= ParentForm_ClickOutside; // Evita duplicados
+                parentForm.MouseClick += ParentForm_ClickOutside;
+            }
+
+            isFocused = true;
+            animationProgress = 0;
+            animationTimer.Start();
+        }
+
+
+
+
+        //------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// METODO PARA CAMBIAR IMAGEN EN EL CLICK
@@ -366,6 +437,12 @@ namespace Ofelia_Sara.Controles.General
         {
             // Cambiar la imagen cuando se presiona el botón
             arrowPictureBox.Image = pressedImage;
+            Form parentForm = FindForm();
+            if (dropdownList.Parent != parentForm)
+            {
+                parentForm.Controls.Add(dropdownList);
+                dropdownList.BringToFront();
+            }
         }
 
         private void ArrowPictureBox_MouseUp(object sender, MouseEventArgs e)
@@ -373,10 +450,7 @@ namespace Ofelia_Sara.Controles.General
             // Restablecer la imagen cuando se suelta el botón
             arrowPictureBox.Image = defaultImage;
 
-            // Mostrar u ocultar el desplegable
-            dropdownList.Location = new Point(this.Left, this.Bottom);
-            dropdownList.Width = this.Width;
-            dropdownList.Visible = !dropdownList.Visible;
+            
         }
 
         private void DropdownList_MouseClick(object sender, MouseEventArgs e)
@@ -403,9 +477,9 @@ namespace Ofelia_Sara.Controles.General
         /// 
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
-            animationProgress = Math.Min(animationProgress + 5, 100);
+            animationProgress = Math.Min(animationProgress + 5, 100);// avance dinamico de la animacion de subrayado
             this.Invalidate();
-            if (animationProgress == 100) animationTimer.Stop();
+            if (animationProgress == 100) animationTimer.Stop();// se detiene al finalizar 
         }
 
         protected override void OnEnabledChanged(EventArgs e)
@@ -423,26 +497,26 @@ namespace Ofelia_Sara.Controles.General
             get => dropDownStyle;
             set
             {
-                dropDownStyle = value;
-                if (dropDownStyle == ComboBoxStyle.DropDownList)
-                {
-                    textBox.ReadOnly = true; // Deshabilita la edición del TextBox
-                    textBox.Cursor = Cursors.Default; // Cambia el cursor
-                    textBox.BackColor = SystemColors.Control; // Fondo gris como DropDownList
-                   
-                }
-                else
-                {
-                    textBox.ReadOnly = false;
-                    textBox.Cursor = Cursors.IBeam;
-                    textBox.BackColor = Color.White; // Fondo editable
-                }
+                //        dropDownStyle = value;
+                //        if (dropDownStyle == ComboBoxStyle.DropDownList)
+                //        {
+                //            textBox.ReadOnly = true; // Deshabilita la edición del TextBox
+                //            textBox.Cursor = Cursors.Default; // Cambia el cursor
+                //            textBox.BackColor = SystemColors.Control; // Fondo gris como DropDownList
+
+                //        }
+                //        else
+                //        {
+                //            textBox.ReadOnly = false;
+                //            textBox.Cursor = Cursors.IBeam;
+                //            textBox.BackColor = Color.Red; // Fondo editable
+                //        }
+                   }
             }
-        }
 
         //-----------------------------------------------------------------------------
 
-        // Propiedades Públicas
+        // Propiedades Públicas CAMBIO DE IMAGEN 
         public Image DefaultImage
         {
             get => defaultImage;
@@ -471,6 +545,8 @@ namespace Ofelia_Sara.Controles.General
                 }
             }
         }
+
+        //---------------------------------------------------------------------------------------------------
 
         // Propiedades Públicas
         public ListBox.ObjectCollection Items => dropdownList.Items;
@@ -501,10 +577,13 @@ namespace Ofelia_Sara.Controles.General
                 textBox.Text = dropdownList.SelectedItem?.ToString();
             }
         }
+
+        //---------------------------------------------------------------------------------------------------
+
         // Propiedad pública para acceder al TextBox interno
         public TextBox InnerTextBox => textBox;
 
-        // Ahora puedes acceder a las propiedades de TextBox, por ejemplo:
+        // acceder a las propiedades de TextBox
         public int SelectionStart
         {
             get => textBox.SelectionStart;
@@ -546,7 +625,7 @@ namespace Ofelia_Sara.Controles.General
             set => errorColor = value;
         }
 
-
+        //---------------------------------------------------------------------------------------------------
 
         public AutoCompleteStringCollection AutoCompleteCustomSource
         {
@@ -566,16 +645,11 @@ namespace Ofelia_Sara.Controles.General
             set => textBox.AutoCompleteSource = value;
         }
 
-
-
-
-
-
-        private string displayMember;
-
-
+        //---------------------------------------------------------------------------------------------------
 
         // Propiedad DisplayMember
+        private string displayMember;
+              
         public string DisplayMember
         {
             get => displayMember;
@@ -585,7 +659,7 @@ namespace Ofelia_Sara.Controles.General
                 dropdownList.DisplayMember = displayMember; // Configurar el miembro de visualización
             }
         }
-
+        //---------------------------------------------------------------------------------------------------
 
 
         private int maxDropDownItems = 10;
@@ -647,12 +721,12 @@ namespace Ofelia_Sara.Controles.General
         {
             base.OnPaint(e);
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
+            // Establece color azul en estado de foco y rojo en error
             using (Brush brush = new SolidBrush(isFocused ? focusColor : (showError ? errorColor : this.BackColor)))
             {
-                int lineWidth = 3;
+                int lineWidth = 3;// ancho de linea
                 float progress = animationProgress / 100f;
-                int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);
+                int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);// para que inicie desde el centro
                 int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
                 e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
             }
@@ -663,7 +737,7 @@ namespace Ofelia_Sara.Controles.General
         {
             base.OnResize(e);
 
-            int textBoxHeight = (int)(this.Height * 0.5); // 90% de la altura del control
+            int textBoxHeight = (int)(this.Height * 0.8); // Acomoda la altura del textBox dentro del control permitiendo ver el subrayado debajo
             int verticalPadding = (this.Height - textBoxHeight) / 2; // Centrar verticalmente
 
             textBox.SetBounds(0, verticalPadding, this.Width - arrowPictureBox.Width, textBoxHeight);

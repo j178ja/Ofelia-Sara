@@ -59,7 +59,7 @@
             panel1.Controls.Add(btn_Siguiente);
             panel1.Controls.Add(axWindowsMediaPlayer_Preview);
             panel1.Controls.Add(tableLayoutPanel_Videos);
-            panel1.Location = new System.Drawing.Point(23, 22);
+            panel1.Location = new System.Drawing.Point(23, 12);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(608, 240);
             panel1.TabIndex = 1;
@@ -174,23 +174,22 @@
             // 
             // panel2
             // 
-            panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            panel2.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel2.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel2.Controls.Add(axWindowsMediaPlayer_Videos);
-            panel2.Location = new System.Drawing.Point(23, 278);
+            panel2.Location = new System.Drawing.Point(23, 258);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(608, 354);
+            panel2.Size = new System.Drawing.Size(608, 353);
             panel2.TabIndex = 2;
             // 
             // axWindowsMediaPlayer_Videos
             // 
-            axWindowsMediaPlayer_Videos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            axWindowsMediaPlayer_Videos.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             axWindowsMediaPlayer_Videos.Enabled = true;
             axWindowsMediaPlayer_Videos.Location = new System.Drawing.Point(15, 16);
-            axWindowsMediaPlayer_Videos.MinimumSize = new System.Drawing.Size(576, 321);
             axWindowsMediaPlayer_Videos.Name = "axWindowsMediaPlayer_Videos";
             axWindowsMediaPlayer_Videos.OcxState = (System.Windows.Forms.AxHost.State)resources.GetObject("axWindowsMediaPlayer_Videos.OcxState");
-            axWindowsMediaPlayer_Videos.Size = new System.Drawing.Size(579, 321);
+            axWindowsMediaPlayer_Videos.Size = new System.Drawing.Size(579, 320);
             axWindowsMediaPlayer_Videos.TabIndex = 0;
             axWindowsMediaPlayer_Videos.PlayStateChange += axWindowsMediaPlayer_Videos_PlayStateChange;
             // 
@@ -198,10 +197,9 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(654, 672);
+            ClientSize = new System.Drawing.Size(654, 639);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            MinimumSize = new System.Drawing.Size(670, 0);
             Name = "InstructivoDigital";
             Text = "INSTRUCTIVO DIGITAL";
             Load += InstructivoDigital_Load;

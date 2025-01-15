@@ -962,11 +962,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             fecha_Pericia.TabIndex = 55;
             fecha_Pericia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             fecha_Pericia.ValidatingType = typeof(System.DateTime);
-            fecha_Pericia.TypeValidationCompleted += fecha_Pericia_TypeValidationCompleted;
-            fecha_Pericia.Click += fecha_Pericia_Click;
-            fecha_Pericia.MouseEnter += fecha_Pericia_Enter;
-            fecha_Pericia.MouseLeave += fecha_Pericia_MouseLeave;
-            fecha_Pericia.Validating += fecha_Pericia_Validating;
+            fecha_Pericia.TypeValidationCompleted += Fecha_Pericia_TypeValidationCompleted;
+            fecha_Pericia.Click += Fecha_Pericia_Click;
+            fecha_Pericia.MouseEnter += Fecha_Pericia_Enter;
+            fecha_Pericia.MouseLeave += Fecha_Pericia_MouseLeave;
+            fecha_Pericia.Validating += Fecha_Pericia_Validating;
             // 
             // botonDeslizable_Not247
             // 

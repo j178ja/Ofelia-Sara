@@ -220,19 +220,19 @@ namespace Ofelia_Sara.Formularios.General
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
         {
            
-           // AbrirFormularioSecundario(new InicioCierre());
+            AbrirFormularioSecundario(new InicioCierre());
         }
 
         private void Btn_Contravenciones_Click(object sender, EventArgs e)
         {
            
-           // AbrirFormularioSecundario(new Contravenciones());
+            AbrirFormularioSecundario(new Contravenciones());
         }
 
         private void Btn_Expedientes_Click(object sender, EventArgs e)
         {
             
-           // AbrirFormularioSecundario(new Expedientes());
+            AbrirFormularioSecundario(new Expedientes());
         }
 
         private void Restablecer_MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -363,25 +363,38 @@ namespace Ofelia_Sara.Formularios.General
 
         //_________________________________________________________________________________
         //----------------BTON LEYES------------------------------
+        private Form leyesForm = null; // Variable para almacenar la referencia del formulario
+
         private void Btn_Leyes_Click(object sender, EventArgs e)
         {
-            // Crear e inicializar el formulario para mostrar documentos
-            LeyesForm leyesForm = new LeyesForm();
+            // Verifica si el formulario ya está abierto y no está cerrado o eliminado
+            if (leyesForm == null || leyesForm.IsDisposed)
+            {
+                // Crear e inicializar el formulario para mostrar documentos
+                leyesForm = new LeyesForm(); // Usar la variable global en lugar de declarar una nueva local
 
-            // Obtener la ubicación y tamaño del formulario principal
-            Point menuPrincipalLocation = this.Location;
-            Size menuPrincipalSize = this.Size;
+                // Obtener la ubicación y tamaño del formulario principal
+                Point menuPrincipalLocation = this.Location;
+                Size menuPrincipalSize = this.Size;
 
-            // Calcular la nueva ubicación para el formulario DocumentosForm
-            int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
-            int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+                // Calcular la nueva ubicación para el formulario LeyesForm
+                int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
+                int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
 
-            // Ajustar la ubicación del formulario DocumentosForm
-            leyesForm.StartPosition = FormStartPosition.Manual;
-            leyesForm.Location = new Point(x, y);
+                // Ajustar la ubicación del formulario LeyesForm
+                leyesForm.StartPosition = FormStartPosition.Manual;
+                leyesForm.Location = new Point(x, y);
 
-            leyesForm.Show();
+                leyesForm.Show();
+            }
+            else
+            {
+                // Si ya está abierto, lo trae al frente
+                leyesForm.WindowState = FormWindowState.Normal; // Si estaba minimizado
+                leyesForm.BringToFront();
+            }
         }
+
 
         private void Btn_BuscarTarea_Click(object sender, EventArgs e)
         {

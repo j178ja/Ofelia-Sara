@@ -30,7 +30,9 @@ namespace Ofelia_Sara.Formularios.General
             RedondearBordes.Aplicar(panel1, 16);
             RedondearBordes.Aplicar(panel2, 16);
 
-            this.Height = panel1.Height + 100; // Ajustar la altura al tamaño de panel1
+             this.Height = panel1.Height + 90; // Ajustar la altura al tamaño de panel1
+            this.MinimumSize = new Size(this.Width, panel1.Height+90);
+           
 
             axWindowsMediaPlayer_Preview.Visible = false;
             // Inicializa las listas de videos para cada módulo
@@ -169,9 +171,6 @@ namespace Ofelia_Sara.Formularios.General
 
 
 
-
-
-
         private void PictureBox_Click(object sender, EventArgs e)
         {
             if (sender is PictureBox pictureBox && pictureBox.Tag is string rutaVideo)
@@ -212,7 +211,7 @@ namespace Ofelia_Sara.Formularios.General
         private void InstructivoDigital_Load(object sender, EventArgs e)
         {
             panel2.Visible = false; // Ocultar panel2 inicialmente
-
+            ValidarPanel2();
         }
 
 
@@ -226,14 +225,14 @@ namespace Ofelia_Sara.Formularios.General
         {
             panel1.Height = 100; // Reducir el tamaño de panel1
             panel2.Visible = true;
-       
+            ValidarPanel2();
 
-            panel2.Location = new Point(panel2.Location.X, panel1.Bottom + 20); // Posicionar panel2 debajo de panel1
+            panel2.Location = new Point(panel2.Location.X, panel1.Bottom + 5); // Posicionar panel2 debajo de panel1
 
             // Usar Form.ActiveForm para obtener el formulario activo
             if (Form.ActiveForm is InstructivoDigital formulario)
             {
-                formulario.Height = panel1.Height + panel2.Height + 120; // Expandir el tamaño del formulario
+                formulario.Height = panel1.Height + panel2.Height + 100; // Expandir el tamaño del formulario
             }
 
             axWindowsMediaPlayer_Videos.URL = rutaVideo;
@@ -245,7 +244,12 @@ namespace Ofelia_Sara.Formularios.General
             axWindowsMediaPlayer_Videos.Ctlcontrols.stop();
             panel2.Visible = false;
             panel1.Height = 240; // Restaurar tamaño original de panel1
-            this.Height = panel1.Height + 100; // Restaurar altura del formulario
+            //this.Height = panel1.Height + 90; // Restaurar altura del formulario
+            // Usar Form.ActiveForm para obtener el formulario activo
+            if (Form.ActiveForm is InstructivoDigital formulario)
+            {
+                formulario.Height = panel1.Height + panel2.Height + 90; // Expandir el tamaño del formulario
+            }
         }
         private void axWindowsMediaPlayer_Videos_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
@@ -262,11 +266,30 @@ namespace Ofelia_Sara.Formularios.General
                     break;
             }
         }
-   
+        //--------------------------------------------------------------------
+        private void ValidarPanel2()
+        {
+            if (panel2.Visible)
+            {
+                // Hacer el formulario redimensionable
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.MinimumSize = new Size(this.Width, panel1.Height + panel2.Height + 90);
+                this.MaximumSize = new Size(0, 0); // Permitir redimensionamiento completo
+            }
+            else
+            {
+                // Hacer el formulario no redimensionable
+                this.FormBorderStyle = FormBorderStyle.FixedSingle;
+                this.MinimumSize = new Size(this.Width, this.Height); // Bloquear tamaño actual
+                this.MaximumSize = new Size(this.Width, this.Height); // Bloquear tamaño actual
+            }
+        }
 
 
+       
 
-     
+
+        //----------------------------------------------------------------------
         /// <summary>
         /// EVENTOS CAMBIO DE IMAGEN EN BOTON, POSTERIORMENTE SE DEBE CREAR UN MEJOR BOTON CON ANIMACION
         /// </summary>

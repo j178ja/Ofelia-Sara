@@ -1401,7 +1401,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void fecha_Pericia_Click(object sender, EventArgs e)
+        private void Fecha_Pericia_Click(object sender, EventArgs e)
         {
 
             // Configurar fecha mínima basada en otro TimePicker
@@ -1435,7 +1435,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void fecha_Pericia_Enter(object sender, EventArgs e)
+        private void Fecha_Pericia_Enter(object sender, EventArgs e)
         {
             fecha_Pericia.BackColor = Color.FromArgb(0, 154, 174);
             fecha_Pericia.ForeColor = Color.White;
@@ -1447,7 +1447,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void fecha_Pericia_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        private void Fecha_Pericia_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
             if (!e.IsValidInput)
             {
@@ -1462,7 +1462,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void fecha_Pericia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Fecha_Pericia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // Verificar si el texto ingresado es una fecha válida
             if (DateTime.TryParse(fecha_Pericia.Text, out DateTime fechaIngresada))
@@ -1477,7 +1477,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        private void fecha_Pericia_MouseLeave(object sender, EventArgs e)
+        private void Fecha_Pericia_MouseLeave(object sender, EventArgs e)
         {
             fecha_Pericia.BackColor = SystemColors.ActiveCaption; // Cambiar el color de fondo al color de control activo
             fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
@@ -1487,7 +1487,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
        
 
 
-        //-------------------------------------------------------------
+       
 
     }
 }
