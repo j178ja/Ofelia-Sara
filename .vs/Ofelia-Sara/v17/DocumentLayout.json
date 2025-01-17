@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\controles\\aplicadas con controles\\subrayadoanimado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\controles\\aplicadas con controles\\subrayadoanimado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -53,7 +45,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MensajeGeneral.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.cs",
               "RelativeDocumentMoniker": "Formularios\\General\\Mensajes\\MensajeGeneral.cs",
@@ -66,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "SubrayadoAnimado.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs",
@@ -79,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "menu_principal.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
               "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
@@ -92,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "menu_principal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
               "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
@@ -104,41 +96,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "SubrayadoAnimado.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs",
               "RelativeDocumentMoniker": "Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs",
-              "RelativeToolTip": "Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAowHgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs*",
+              "RelativeToolTip": "Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs*",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwEUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-16T19:32:38.77Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LeyesForm.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\LeyesForm.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\LeyesForm.cs*",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAUwIAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T11:51:33.718Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LeyesForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\LeyesForm.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\LeyesForm.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T11:51:20.186Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

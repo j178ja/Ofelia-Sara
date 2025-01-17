@@ -67,7 +67,7 @@ public static class SubrayadoAnimado
 
         int maxWidth = target switch
         {
-            Control control => control.Width,
+            Control control => control.Width-20,
             ListViewItem item => item.Bounds.Width,
             _ => 0
         };
