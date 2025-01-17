@@ -3,23 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\controles\\aplicadas con controles\\subrayadoanimado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\controles\\aplicadas con controles\\subrayadoanimado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\mensajes\\mensajegeneral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\mensajes\\mensajegeneral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\mensajes\\mensajegeneral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\mensajes\\mensajegeneral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\mensajes\\mensajegeneral.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\mensajes\\mensajegeneral.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\menu_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,28 +43,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MensajeGeneral.cs",
+              "Title": "MensajeGeneral.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.cs",
               "RelativeDocumentMoniker": "Formularios\\General\\Mensajes\\MensajeGeneral.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.cs",
-              "RelativeToolTip": "Formularios\\General\\Mensajes\\MensajeGeneral.cs",
-              "ViewState": "AgIAAAgBAAAAAAAAAIA1wCIBAAA4AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Formularios\\General\\Mensajes\\MensajeGeneral.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T15:26:47.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T16:27:27.916Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SubrayadoAnimado.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs",
-              "ToolTip": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs [Solo lectura]",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\bd713e69d4e14c7de0262d2c5647815969f4be9acefdce5e11f0ce109e73b563\\SubrayadoAnimado.cs [Solo lectura]",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAFUAAAAAAAAAAQAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MensajeGeneral.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.Designer.cs",
+              "RelativeDocumentMoniker": "Formularios\\General\\Mensajes\\MensajeGeneral.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.Designer.cs",
+              "RelativeToolTip": "Formularios\\General\\Mensajes\\MensajeGeneral.Designer.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAKUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T14:22:24.548Z",
-              "EditorCaption": " [Solo lectura]"
+              "WhenOpened": "2025-01-17T16:23:04.614Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -77,34 +73,22 @@
               "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
               "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
               "RelativeToolTip": "Formularios\\General\\menu_principal.cs",
-              "ViewState": "AgIAACADAAAAAAAAAAASwDkDAAApAAAAAAAAAA==",
+              "ViewState": "AgIAACgDAAAAAAAAAAAAAEYDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T19:33:03.885Z",
+              "WhenOpened": "2025-01-17T16:14:56.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "menu_principal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs",
-              "RelativeDocumentMoniker": "Formularios\\General\\menu_principal.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\menu_principal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\General\\menu_principal.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T19:32:53.955Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SubrayadoAnimado.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs",
-              "RelativeDocumentMoniker": "Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs*",
-              "RelativeToolTip": "Controles\\Controles\\Aplicadas con controles\\SubrayadoAnimado.cs*",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwEUAAAAuAAAAAAAAAA==",
+              "Title": "MensajeGeneral.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.cs",
+              "RelativeDocumentMoniker": "Formularios\\General\\Mensajes\\MensajeGeneral.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\Mensajes\\MensajeGeneral.cs*",
+              "RelativeToolTip": "Formularios\\General\\Mensajes\\MensajeGeneral.cs*",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAuwMUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T19:32:38.77Z",
+              "WhenOpened": "2025-01-17T16:13:57.853Z",
               "EditorCaption": ""
             }
           ]

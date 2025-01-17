@@ -67,7 +67,6 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             if (SelectHora_Compromiso == null)
             {
                 SelectHora_Compromiso = new DateTimePicker();
-                // Configuración adicional de SelectHora_Compromiso
             }
 
         }
@@ -195,7 +194,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             btn_Cerrar.Visible = false;
             Fecha_Compromiso.Visible = false;
             btn_No.Focus();
-            btn_No.BackColor = Color.FromArgb(255, 70, 70);
+            btn_No.BackColor = Color.FromArgb(234, 40, 0);
+            btn_No.ForeColor = Color.White;
         }
 
         public void MensajeCompromiso(string mensaje)
@@ -211,7 +211,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
             btn_No.Visible = true;
             btn_No.Text = "CANCELAR";
-            btn_No.BackColor = Color.IndianRed;
+           // btn_No.BackColor = Color.IndianRed;
+            btn_No.BackColor = Color.FromArgb(234, 40, 0);
             btn_No.ForeColor = Color.White;
             btn_No.Click += Btn_No_Cancelar_Click;
 
@@ -294,6 +295,60 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
             return null; // Devuelve null si no se ha seleccionado una fecha o hora
         }
+
+
+
+        // Variables auxiliares para animación
+       
+
+        private Color originalBackColor; // Para almacenar el color original del botón
+
+        private void Subrayado_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                // Guardar el color original
+                originalBackColor = button.BackColor;
+
+                // Cambiar el color del fondo según el color actual
+                if (button.BackColor == Color.FromArgb(234, 40, 0))
+                {
+                    button.BackColor = ControlPaint.Light(button.BackColor); // Hacerlo más claro
+                }
+                else if (button.BackColor == SystemColors.GradientInactiveCaption)
+                {
+                    button.BackColor = ControlPaint.Light(button.BackColor); // Hacerlo más claro
+                }
+
+                // Iniciar el subrayado animado
+                SubrayadoAnimado.Iniciar(button);
+            }
+        }
+
+        private void Subrayado_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                // Restaurar el color original
+                button.BackColor = originalBackColor;
+
+                // Detener el subrayado animado
+                SubrayadoAnimado.Detener(button);
+
+                // Redibujar el botón para asegurarse de que el subrayado desaparezca
+                button.Invalidate();
+            }
+        }
+
+        private void Subrayado_Paint(object sender, PaintEventArgs e)
+        {
+            if (sender is Control control)
+            {
+                // Aplicar el subrayado animado
+                SubrayadoAnimado.Aplicar(control, e.Graphics, SystemColors.Highlight, 3);
+            }
+        }
+
 
 
     }

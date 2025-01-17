@@ -68,13 +68,13 @@
             // Fecha_Compromiso
             // 
             Fecha_Compromiso.AutoSize = true;
+            Fecha_Compromiso.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             Fecha_Compromiso.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             Fecha_Compromiso.Location = new System.Drawing.Point(25, 37);
             Fecha_Compromiso.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Fecha_Compromiso.Name = "Fecha_Compromiso";
-            Fecha_Compromiso.Size = new System.Drawing.Size(396, 27);
+            Fecha_Compromiso.Size = new System.Drawing.Size(381, 24);
             Fecha_Compromiso.TabIndex = 5;
-            
             // 
             // label_Texto
             // 
@@ -112,6 +112,10 @@
             btn_Cerrar.Text = "CERRAR";
             btn_Cerrar.UseVisualStyleBackColor = false;
             btn_Cerrar.Click += Btn_Cerrar_Click;
+            btn_Cerrar.Paint += Subrayado_Paint;
+            btn_Cerrar.MouseEnter += Subrayado_MouseEnter;
+            btn_Cerrar.MouseLeave += Subrayado_MouseLeave;
+           
             // 
             // pictureBox_EscudoPolicial
             // 
@@ -138,6 +142,9 @@
             btn_Si.Text = "SI";
             btn_Si.UseVisualStyleBackColor = false;
             btn_Si.Click += Btn_Si_Click;
+            btn_Si.Paint += Subrayado_Paint;
+            btn_Si.MouseEnter += Subrayado_MouseEnter;
+            btn_Si.MouseLeave += Subrayado_MouseLeave;
             // 
             // btn_No
             // 
@@ -153,6 +160,10 @@
             btn_No.Text = "NO";
             btn_No.UseVisualStyleBackColor = false;
             btn_No.Click += Btn_No_Click;
+            btn_No.Paint += Subrayado_Paint;
+            btn_No.MouseEnter += Subrayado_MouseEnter;
+            btn_No.MouseLeave += Subrayado_MouseLeave;
+           
             // 
             // MensajeGeneral
             // 
