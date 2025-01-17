@@ -5,50 +5,56 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class LeyesForm : BaseForm
     {
+        private ListViewItem hoverItem = null; // Ítem actualmente en hover
+        private Color hoverColor = Color.LightBlue; // Color de fondo al pasar el cursor
+        private Color selectedColor = Color.FromArgb(0, 154, 174); // Color de fondo al hacer clic
+        private Color selectedTextColor = Color.White; // Color del texto al hacer clic
+        private Color subrayadoColor = Color.Blue; // Color del subrayado
+
         public LeyesForm()
         {
             InitializeComponent();
 
+            // Personalizar bordes del panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            this.listView_Documentos.DoubleClick += new System.EventHandler(this.listView_Documentos_DoubleClick);
-
+            // Eventos del ListView
+            listView_Documentos.Click += ListView_Documentos_Click;
+          //  listView_Documentos.SelectedIndexChanged += ListView_Documentos_SelectedIndexChanged;
+            listView_Documentos.OwnerDraw = true;
+            listView_Documentos.DrawItem += ListView_Documentos_DrawItem;
+            listView_Documentos.MouseMove += ListView_Documentos_MouseMove;
+            listView_Documentos.MouseLeave += ListView_Documentos_MouseLeave;
         }
 
         private void LeyesForm_Load(object sender, EventArgs e)
         {
             CargarDocumentosEnListView();
-
             ConfigurarListView();
-
-
+            listView_Documentos.SelectedItems.Clear(); // Limpia selección inicial
+            listView_Documentos.Invalidate(); // Redibuja el ListView
         }
+
         private void ConfigurarListView()
         {
-            // Configurar el tamaño de la fuente
             listView_Documentos.Font = new Font(listView_Documentos.Font.FontFamily, 12);
-
-            // Configurar el modo de vista
             listView_Documentos.View = View.Details;
-
-            // Asegurarse de que el ListView sea scrollable verticalmente
             listView_Documentos.Scrollable = true;
             listView_Documentos.FullRowSelect = true;
 
-            // Añadir una columna si no hay ninguna
             if (listView_Documentos.Columns.Count == 0)
             {
-                listView_Documentos.Columns.Add("", listView_Documentos.Width - 4); // Ajustar el ancho de la columna al ancho del ListView
+                listView_Documentos.Columns.Add("", listView_Documentos.Width - 4);
             }
 
-            // Ajustar la columna al ancho del control para evitar el scroll horizontal
             if (listView_Documentos.Columns.Count > 0)
             {
                 listView_Documentos.Columns[0].Width = listView_Documentos.ClientSize.Width - SystemInformation.VerticalScrollBarWidth;
@@ -57,63 +63,139 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void CargarDocumentosEnListView()
         {
-            // Ruta relativa a la carpeta "BaseDatos\Leyes" desde el directorio base de la aplicación
             string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BaseDatos", "Leyes");
 
-            // Verificar que la carpeta exista
             if (!Directory.Exists(carpetaDocumentos))
             {
                 MensajeGeneral.Mostrar($"La carpeta no existe: {carpetaDocumentos}", MensajeGeneral.TipoMensaje.Error);
                 return;
             }
 
-            // Obtener los archivos PDF en la carpeta
             string[] archivos = Directory.GetFiles(carpetaDocumentos, "*.pdf");
 
-            // Iterar sobre los archivos encontrados
             foreach (string archivo in archivos)
             {
                 FileInfo fileInfo = new FileInfo(archivo);
-
-                // Obtener el nombre del archivo sin la extensión
                 string nombreArchivoSinExtension = Path.GetFileNameWithoutExtension(fileInfo.Name);
 
-                // Crear un ListViewItem con el nombre del archivo sin la extensión
                 ListViewItem item = new ListViewItem(nombreArchivoSinExtension)
                 {
-                    Tag = fileInfo.FullName // Guardar la ruta completa en la propiedad Tag
+                    Tag = fileInfo.FullName
                 };
 
-                // Añadir el ítem al ListView
                 listView_Documentos.Items.Add(item);
             }
         }
-
-        private void listView_Documentos_DoubleClick(object sender, EventArgs e)
+        private void ListView_Documentos_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
-            // Verifica si hay elementos seleccionados
+            int leftMargin = 10; // Margen izquierdo adicional en píxeles
+
+            bool isHovered = (hoverItem == e.Item);
+            bool isSelected = e.Item.Selected;
+
+            // Establecer colores según el estado del ítem
+            Color backgroundColor = isSelected ? selectedColor : isHovered ? hoverColor : listView_Documentos.BackColor;
+            Color textColor = isSelected ? selectedTextColor : listView_Documentos.ForeColor;
+
+            // Dibujar fondo
+            using (Brush backgroundBrush = new SolidBrush(backgroundColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Crear una fuente temporal para el texto en negrita si está en hover
+            Font textFont = isHovered
+                ? new Font(listView_Documentos.Font, FontStyle.Bold)
+                : listView_Documentos.Font;
+
+            // Dibujar texto desplazado con margen izquierdo
+            Rectangle textBounds = new Rectangle(e.Bounds.Left + leftMargin, e.Bounds.Top, e.Bounds.Width - leftMargin, e.Bounds.Height);
+
+            TextRenderer.DrawText(
+                e.Graphics,
+                e.Item.Text,
+                textFont,
+                textBounds, // Usar los límites desplazados
+                textColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Left
+            );
+
+            // Subrayado dinámico si el ítem está en hover
+            if (isHovered)
+            {
+                SubrayadoAnimado.Aplicar(e.Item, e.Graphics, subrayadoColor, 3);
+            }
+
+          
+        }
+
+
+        private void ListView_Documentos_MouseMove(object sender, MouseEventArgs e)
+        {
+            ListViewItem item = listView_Documentos.GetItemAt(e.X, e.Y);
+
+            if (item != hoverItem)
+            {
+                // Detener subrayado en el ítem anterior
+                if (hoverItem != null)
+                {
+                    SubrayadoAnimado.Detener(hoverItem);
+                    listView_Documentos.Invalidate(hoverItem.Bounds);
+                }
+
+                // Actualizar el ítem actual
+                hoverItem = item;
+
+                if (hoverItem != null)
+                {
+                    SubrayadoAnimado.Iniciar(hoverItem);
+                    listView_Documentos.Invalidate(hoverItem.Bounds);
+                }
+            }
+        }
+
+        private void ListView_Documentos_MouseLeave(object sender, EventArgs e)
+        {
+            if (hoverItem != null)
+            {
+                SubrayadoAnimado.Detener(hoverItem);
+                hoverItem = null;
+            }
+
+            listView_Documentos.Invalidate();
+        }
+
+        private async void ListView_Documentos_Click(object sender, EventArgs e)
+        {
             if (listView_Documentos.SelectedItems.Count > 0)
             {
-                // Obtén el nombre del archivo seleccionado sin la extensión
-                string fileNameWithoutExtension = listView_Documentos.SelectedItems[0].Text;
-
-                // Agrega la extensión .pdf al nombre del archivo
+                ListViewItem selectedItem = listView_Documentos.SelectedItems[0];
+                string fileNameWithoutExtension = selectedItem.Text;
                 string fileName = fileNameWithoutExtension + ".pdf";
 
-                // Construye la ruta relativa a partir del directorio base
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 string carpetaDocumentos = Path.Combine(baseDirectory, "BaseDatos", "Leyes");
                 string filePath = Path.Combine(carpetaDocumentos, fileName);
 
-                // Verifica si el archivo existe
+                // Introducir un retraso antes de abrir el archivo
+                await Task.Delay(100); // Agregar un pequeño retraso
+
                 if (File.Exists(filePath))
                 {
-                    // Abre el archivo con el programa predeterminado
                     Process.Start(new ProcessStartInfo
                     {
                         FileName = filePath,
-                        UseShellExecute = true // Usa el programa asociado para abrir el archivo
+                        UseShellExecute = true
                     });
+
+                    // Restablecer el estilo del ítem seleccionado
+                    selectedItem.BackColor = listView_Documentos.BackColor; // Fondo predeterminado del ListView
+                    selectedItem.ForeColor = listView_Documentos.ForeColor; // Color de texto predeterminado
+                    selectedItem.Font = listView_Documentos.Font;           // Fuente predeterminada
+
+                    // Forzar redibujo del ítem
+                    selectedItem.Selected = false; // Desseleccionar el ítem
+                    listView_Documentos.Invalidate(selectedItem.Bounds); // Redibujar el ítem
                 }
                 else
                 {
@@ -122,6 +204,27 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+
+
+
+        //private void ListView_Documentos_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    foreach (ListViewItem item in listView_Documentos.Items)
+        //    {
+        //        if (item.Selected)
+        //        {
+        //            item.BackColor = selectedColor;
+        //            item.ForeColor = selectedTextColor;
+        //            item.Font = new Font(listView_Documentos.Font, FontStyle.Bold);
+        //        }
+        //        else
+        //        {
+        //            item.BackColor = listView_Documentos.BackColor;
+        //            item.ForeColor = listView_Documentos.ForeColor;
+        //            item.Font = listView_Documentos.Font;
+        //        }
+        //    }
+        //}
 
 
 

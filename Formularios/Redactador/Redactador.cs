@@ -5,8 +5,10 @@ using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -267,49 +269,73 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
 
-        // Variable para almacenar la posición original del formulario Redactador
+        //// Variable para almacenar la posición original del formulario Redactador
         private Point posicionOriginalRedactador;
+        private List<(Form formulario, Point posicion)> otrasInstanciasRedactador = new List<(Form, Point)>(); // Lista para almacenar las instancias ocultas y sus posiciones originales
 
         private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
-            // Cambiar color y subrayar el texto del label
+            // Cambiar color y subrayar el texto del Label
             label_OfeliaSara.ForeColor = Color.Coral;
             label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);
 
-            // Calcular la nueva ubicación para el formulario Redactador
-            Point menuPrincipalLocation = this.Location;
-            Size menuPrincipalSize = this.Size;
-            int xRedactador = menuPrincipalLocation.X - menuPrincipalSize.Width / 2;
-            int y = menuPrincipalLocation.Y; // Mantener la misma posición vertical
+            // Guardar la posición original del formulario actual
+            posicionOriginalRedactador = this.Location;
 
-            // Almacenar la posición original del formulario Redactador antes de moverlo
-            posicionOriginalRedactador = menuPrincipalLocation;
+            // Calcular la posición de los formularios debajo de `menuPrincipal`
+            Rectangle screenBounds = Screen.PrimaryScreen.WorkingArea;
 
-            // Mover el formulario Redactador
-            this.Location = new Point(xRedactador, y);
+            int formWidth = this.Width;
+            int totalWidth = formWidth * 2 + 5; // Espacio para `Redactador` y `videoInstructivo` con margen
+            int centerX = (screenBounds.Width - totalWidth) / 2; // Centrado horizontal
 
-            // Crear e inicializar el formulario para mostrar el video
+            // Mover el formulario Redactador al centro-izquierdo
+            int xRedactador = centerX;
+            this.Location = new Point(xRedactador);
+
+            // Crear e inicializar el formulario VideoInstructivo
             InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.Redactador);
 
-            // Suscribirse al evento FormClosed para restaurar el Label y la posición de Redactador
+            // Posicionar VideoInstructivo al centro-derecho
+            int xVideoInstructivo = xRedactador + formWidth ; // A la derecha de Redactador
+            videoInstructivo.StartPosition = FormStartPosition.Manual;
+            videoInstructivo.Location = new Point(xVideoInstructivo);
+
+            // Guardar las posiciones originales de otras instancias y ocultarlas
+            otrasInstanciasRedactador = Application.OpenForms.Cast<Form>()
+                .Where(f => f != this && f is Redactador)
+                .Select(f => (f, f.Location)) // Guardar el formulario y su posición original
+                .ToList();
+
+            foreach (var (formulario, _) in otrasInstanciasRedactador)
+            {
+                formulario.WindowState = FormWindowState.Minimized; // Minimizar otras instancias
+            }
+
+            // Restaurar posiciones originales y estado de otras instancias al cerrar VideoInstructivo
             videoInstructivo.FormClosed += (s, args) =>
             {
+                // Restaurar estilo original del Label
                 label_OfeliaSara.ForeColor = SystemColors.ControlText;
-                label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Restablecer estilo original
+                label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular);
 
-                // Restaurar la posición original del formulario Redactador
+                // Restaurar la posición del formulario Redactador actual
                 this.Location = posicionOriginalRedactador;
+
+                // Restaurar las posiciones originales y estado de otras instancias
+                foreach (var (formulario, posicion) in otrasInstanciasRedactador)
+                {
+                    formulario.WindowState = FormWindowState.Normal;
+                    formulario.Location = posicion;
+                }
             };
-
-            // Calcular la posición de VideoInstructivo al lado de la posición desplazada de Redactador
-            int xVideoInstructivo = xRedactador + menuPrincipalSize.Width + 10;
-
-            // Ajustar la ubicación del formulario VideoInstructivo
-            videoInstructivo.StartPosition = FormStartPosition.Manual;
-            videoInstructivo.Location = new Point(xVideoInstructivo, y);
-
-            videoInstructivo.Show();
+            // Mostrar VideoInstructivo como diálogo modal
+            videoInstructivo.ShowDialog();
         }
+    
+
+
+
 
 
 

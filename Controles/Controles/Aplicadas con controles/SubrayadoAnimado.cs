@@ -18,70 +18,103 @@ using System.Windows.Forms;
 
 public static class SubrayadoAnimado
 {
-    private static readonly Dictionary<Control, (Timer Timer, int LineWidth, bool IsAnimating)> Estados = new();
+    private static readonly Dictionary<object, (Timer Timer, int LineWidth, bool IsAnimating)> Estados = new();
 
-    public static void Aplicar(Control control, Graphics g, Color color, int grosor = 3)
+    public static void Aplicar(object target, Graphics g, Color color, int grosor = 3)
     {
-        if (!Estados.TryGetValue(control, out var estado) || !estado.IsAnimating) return;
+        if (!Estados.TryGetValue(target, out var estado) || !estado.IsAnimating) return;
 
         using (Pen pen = new Pen(color, grosor))
         {
-            int textoAncho = TextRenderer.MeasureText(control.Text, control.Font).Width;
-            int subrayadoAncho = Math.Min(estado.LineWidth, textoAncho);
+            int width;
+            int startX, endX, y;
 
-            int startX = (control.Width - subrayadoAncho) / 2;
-            int endX = startX + subrayadoAncho;
-            int y = control.Height - 3;
+            if (target is Control control)
+            {
+                width = control.Width;
+                y = control.Height - grosor; // Línea cerca del borde inferior del control
+            }
+            else if (target is ListViewItem item)
+            {
+                width = item.Bounds.Width;
+                y = item.Bounds.Bottom - grosor; // Línea cerca del borde inferior del ítem
+            }
+            else
+            {
+                return; // No es un tipo soportado
+            }
+
+            int subrayadoAncho = Math.Min(estado.LineWidth, width);
+            startX = (width - subrayadoAncho) / 2; // Comenzar desde el centro
+            endX = startX + subrayadoAncho;
 
             g.DrawLine(pen, startX, y, endX, y);
         }
     }
 
-    public static void Iniciar(Control control, int incremento = 5)
+    public static void Iniciar(object target, int incrementoBase = 5)
     {
-        if (!Estados.ContainsKey(control))
+        if (!Estados.ContainsKey(target))
         {
-            Estados[control] = (null, 0, false);
+            Estados[target] = (null, 0, false);
         }
 
-        // Detén cualquier animación previa
-        Detener(control);
+        Detener(target);
 
-        var estado = Estados[control];
+        var estado = Estados[target];
         estado.LineWidth = 0;
         estado.IsAnimating = true;
+
+        int maxWidth = target switch
+        {
+            Control control => control.Width,
+            ListViewItem item => item.Bounds.Width,
+            _ => 0
+        };
+
+        if (maxWidth == 0) return;
+
+        int incremento = Math.Max(1, incrementoBase * maxWidth / 200); // Ajustar velocidad según el tamaño
 
         Timer timer = new Timer { Interval = 15 };
         timer.Tick += (s, e) =>
         {
-            if (estado.LineWidth < control.Width)
+            if (estado.LineWidth < maxWidth)
             {
                 estado.LineWidth += incremento;
-                Estados[control] = estado; // Actualiza el estado
-                control.Invalidate(); // Redibuja el control
+                Estados[target] = estado;
+                if (target is Control control)
+                {
+                    control.Invalidate();
+                }
+                else if (target is ListViewItem item)
+                {
+                    item.ListView?.Invalidate(item.Bounds);
+                }
             }
             else
             {
                 timer.Stop();
                 estado.IsAnimating = false;
-                Estados[control] = estado; // Actualiza el estado
+                Estados[target] = estado;
             }
         };
 
         estado.Timer = timer;
-        Estados[control] = estado; // Actualiza el estado
+        Estados[target] = estado;
         timer.Start();
     }
 
-    public static void Detener(Control control)
+    public static void Detener(object target)
     {
-        if (Estados.TryGetValue(control, out var estado))
+        if (Estados.TryGetValue(target, out var estado))
         {
             estado.Timer?.Stop();
             estado.Timer?.Dispose();
             estado.LineWidth = 0;
             estado.IsAnimating = false;
-            Estados[control] = estado; // Actualiza el estado
+            Estados[target] = estado;
         }
     }
 }
+

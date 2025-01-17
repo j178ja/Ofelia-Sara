@@ -39,7 +39,7 @@ namespace Ofelia_Sara.Controles.General
             {
                 Size = new Size(21, this.Height),
                 BorderStyle = BorderStyle.None,
-                BackColor = Color.GreenYellow,// al momento solo como indicador
+                BackColor = Color.White,
                 TextAlign = HorizontalAlignment.Center,
                 ForeColor = placeholderColor, // Inicia con el color del placeholder
                 Text = placeholderText // Inicializa con el texto del placeholder /se puede editar en forma especifica segun el control

@@ -824,8 +824,8 @@ namespace Ofelia_Sara.Formularios.General
             if (sender is Control control)
             {
                 SubrayadoAnimado.Iniciar(control);
-            }
 
+            }
         }
 
         private void Subrayado_MouseLeave(object sender, EventArgs e)
@@ -843,10 +843,12 @@ namespace Ofelia_Sara.Formularios.General
             {
                 if (sender is Control control)
                 {
-                    SubrayadoAnimado.Aplicar(control, e.Graphics, SystemColors.Highlight);
+                    // Asegúrate de que se use el método correcto
+                    SubrayadoAnimado.Aplicar(control, e.Graphics, SystemColors.Highlight, 3);
                 }
             }
         }
+
 
         //------------------------------------
 
