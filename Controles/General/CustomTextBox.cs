@@ -23,9 +23,11 @@ namespace Ofelia_Sara.Controles.General
 
             textBox = new TextBox
             {
+                Size = new Size(21, this.Height),
                 BorderStyle = BorderStyle.None,
-                Dock = DockStyle.Fill, //abarque todo el ancho
-                BackColor = Color.Yellow, // color provisorio para analizar errores
+            
+                TextAlign = HorizontalAlignment.Center,
+                BackColor = Color.White, // color provisorio para analizar errores
                 ForeColor = this.ForeColor,
 
             };
@@ -161,9 +163,21 @@ namespace Ofelia_Sara.Controles.General
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            textBox.Width = this.Width - 10;
-            textBox.Height = this.Height - 10;
+
+            // Calcula la altura ajustada del TextBox para adaptarlo al control
+            int textBoxHeight = (int)(this.Height * 0.9); // El TextBox ocupa el 80% de la altura del control
+            int verticalPadding = (this.Height - textBoxHeight) / 2; // Espaciado vertical para centrar el TextBox
+
+            // Ajusta las dimensiones y posición del TextBox dentro del control
+            textBox.SetBounds(
+                5,                   // Margen izquierdo
+                verticalPadding,     // Margen superior
+                this.Width - 10,     // Ancho ajustado (control - márgenes)
+                textBoxHeight        // Altura ajustada
+            );
         }
+
+
 
         // Propiedad para TextAlign
         public HorizontalAlignment TextAlign

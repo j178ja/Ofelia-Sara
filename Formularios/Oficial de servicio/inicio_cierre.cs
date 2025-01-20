@@ -466,9 +466,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void InicializarComboBox()
         {
-            comboBox_Ipp1.SelectedIndex = 3;
-            comboBox_Ipp2.SelectedIndex = 3;
-            comboBox_Ipp4.SelectedIndex = 0;
+            //comboBox_Ipp1.SelectedIndex = 3;
+            //comboBox_Ipp2.SelectedIndex = 3;  //se comento ya que generaba error despues de la migracion
+            //comboBox_Ipp4.SelectedIndex = 0;
 
         }
         //----------------------------------------------------------------------

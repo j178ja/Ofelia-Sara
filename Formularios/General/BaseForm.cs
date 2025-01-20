@@ -39,23 +39,23 @@ namespace Ofelia_Sara.Formularios.General
             }
 
             // Inicialización en tiempo de ejecución
-            InitializeRuntimeMode();
+            InitializeRuntime();
         }
         //-----INICIALIZAR EN TIEMPO DE EJECUCION-----------
-        protected override void InitializeRuntimeMode()
+        protected  void InitializeRuntime()
         {
-            base.InitializeRuntimeMode();
-            CargarIconoFormulario();
+            //    base.InitializeRuntimeMode();
+               CargarIconoFormulario();
 
-            // Inicialización específica de BaseForm
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            //    // Inicialización específica de BaseForm
+            //    this.AutoScaleMode = AutoScaleMode.Dpi;
 
-            InitializeManagers();
-            dbManager = new ComisariasManager();
-            instructoresManager = new InstructoresManager();
-            secretariosManager = new SecretariosManager();
+            //    InitializeManagers();
+            //    dbManager = new ComisariasManager();
+            //    instructoresManager = new InstructoresManager();
+            //    secretariosManager = new SecretariosManager();
 
-            InitializeCustomCursors();
+            //    InitializeCustomCursors();
             TraerLabelsAlFrente();// deberia traer los titulos al frente para que se vean completos
             InitializeComponent();
             InitializeFooterLinkLabel();
@@ -432,6 +432,7 @@ namespace Ofelia_Sara.Formularios.General
 
                 // Establece el color del texto
                 boton.ForeColor = textoColor;
+                boton.TextAlign = ContentAlignment.MiddleCenter;
             };
 
             // Evento MouseEnter: Cambia el tamaño desde el centro y el color del texto

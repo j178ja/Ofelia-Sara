@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeyesForm));
             panel1 = new System.Windows.Forms.Panel();
             listView_Documentos = new System.Windows.Forms.ListView();
             label_TITULO = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             ClientSize = new System.Drawing.Size(571, 321);
             Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "LeyesForm";
             Text = "LEYES Y DECCRETOS UTILES";
