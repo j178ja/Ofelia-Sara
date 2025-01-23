@@ -60,12 +60,31 @@ namespace Ofelia_Sara.Controles.General
         }
 
 
+        //private void TextBox_LostFocus(object sender, EventArgs e)
+        //{
+        //    isFocused = false;
+
+        //    // Verifica si el texto está vacío para activar el subrayado rojo
+        //    if (string.IsNullOrWhiteSpace(this.Text))
+        //    {
+        //        showError = true; // Activa el subrayado rojo
+        //    }
+        //    else
+        //    {
+        //        showError = false; // Desactiva el subrayado rojo
+        //    }
+
+        //    animationProgress = 0; // Reinicia la animación
+        //    animationTimer.Start();
+
+        //    Invalidate(); // Redibuja el control para reflejar los cambios
+        //}
         private void TextBox_LostFocus(object sender, EventArgs e)
         {
             isFocused = false;
 
             // Verifica si el texto está vacío para activar el subrayado rojo
-            if (string.IsNullOrWhiteSpace(this.Text))
+            if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 showError = true; // Activa el subrayado rojo
             }
