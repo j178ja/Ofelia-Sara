@@ -36,7 +36,7 @@ namespace Ofelia_Sara.Formularios.General
                 catch (Exception ex)
                 {
                     // Log o manejo de errores para evitar bloqueos en el diseñador
-                    Debug.WriteLine($"Error en tiempo de diseño: {ex.Message}");
+                    Console.WriteLine("Error en tiempo de diseño: {ex.Message}" );
                 }
             }
             else
@@ -45,12 +45,18 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        private void MensajeGeneral(string v, MensajeGeneral.TipoMensaje error)
+        {
+            throw new NotImplementedException();
+        }
 
         protected void InitializeRuntimeMode()
         {
             InitializeComponent(); // Llama primero para inicializar los controles
             this.AutoScaleMode = AutoScaleMode.Dpi;
-
+            dbManager = new ComisariasManager();
+            instructoresManager = new InstructoresManager();
+            secretariosManager = new SecretariosManager();
             InitializeManagers();
             InitializeCustomCursors();
             TraerLabelsAlFrente();
@@ -123,7 +129,7 @@ namespace Ofelia_Sara.Formularios.General
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"Error cargando cursorHand: {ex.Message}",MensajeGeneral.TipoMensaje.Error);
+                Console.WriteLine($"Error cargando cursorHand: {ex.Message}");
             }
 
             try

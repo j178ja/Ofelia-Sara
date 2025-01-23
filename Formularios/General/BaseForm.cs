@@ -65,48 +65,48 @@ namespace Ofelia_Sara.Formularios.General
         /// <summary>
         /// Inicializa los manejadores necesarios.
         /// </summary>
-        private void InitializeManagers()
-        {
-            try
-            {
-                dbManager = new ComisariasManager();
-                instructoresManager = new InstructoresManager();
-                secretariosManager = new SecretariosManager();
-                autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error inicializando managers: {ex.Message}");
-            }
-        }
+        //private void InitializeManagers()
+        //{
+        //    try
+        //    {
+        //        dbManager = new ComisariasManager();
+        //        instructoresManager = new InstructoresManager();
+        //        secretariosManager = new SecretariosManager();
+        //        autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error inicializando managers: {ex.Message}");
+        //    }
+        //}
 
-        /// <summary>
-        /// Inicializa cursores personalizados.
-        /// </summary>
-        private void InitializeCustomCursors()
-        {
-            try
-            {
-                using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
-                {
-                    this.Cursor = new Cursor(cursorStream);
-                }
+        ///// <summary>
+        ///// Inicializa cursores personalizados.
+        ///// </summary>
+        //private void InitializeCustomCursors()
+        //{
+        //    try
+        //    {
+        //        using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
+        //        {
+        //            this.Cursor = new Cursor(cursorStream);
+        //        }
 
-                using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
-                {
-                    customHandCursor = new Cursor(cursorHand);
-                }
+        //        using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
+        //        {
+        //            customHandCursor = new Cursor(cursorHand);
+        //        }
 
-                using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
-                {
-                    CursorLapizDerecha = new Cursor(cursorStream);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error cargando cursores: {ex.Message}");
-            }
-        }
+        //        using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
+        //        {
+        //            CursorLapizDerecha = new Cursor(cursorStream);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error cargando cursores: {ex.Message}");
+        //    }
+        //}
 
         /// <summary>
         /// Configura el autocompletado en los TextBox relevantes.
@@ -214,17 +214,55 @@ namespace Ofelia_Sara.Formularios.General
 
 
         //--------
+        //public void CargarDatosDependencia(CustomComboBox customComboBox, ComisariasManager dbManager)
+        //{
+        //    try
+        //    {
+        //        // Obtener los datos desde la base de datos
+        //        List<Comisaria> comisarias = dbManager.GetComisarias();
+
+        //        // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
+        //        customComboBox.Items.Clear();
+
+        //        // Recorrer la lista de comisarías y agregar los datos al ComboBox
+        //        foreach (Comisaria comisaria in comisarias)
+        //        {
+        //            string item = $"{comisaria.Nombre}   {comisaria.Localidad}"; // Utiliza las propiedades de la clase Comisaria
+        //            customComboBox.Items.Add(item);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MensajeGeneral.Mostrar($"Error al cargar datos de Dependencias: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+        //    }
+        //}
+
         public void CargarDatosDependencia(CustomComboBox customComboBox, ComisariasManager dbManager)
         {
             try
             {
+                // Validar que los parámetros no sean nulos
+                if (customComboBox == null)
+                {
+                    throw new ArgumentNullException(nameof(customComboBox), "El ComboBox no puede ser nulo.");
+                }
+
+                if (dbManager == null)
+                {
+                    throw new ArgumentNullException(nameof(dbManager), "El gestor de base de datos no puede ser nulo.");
+                }
+
                 // Obtener los datos desde la base de datos
                 List<Comisaria> comisarias = dbManager.GetComisarias();
+                if (comisarias == null)
+                {
+                    throw new InvalidOperationException("No se pudieron obtener las comisarías desde la base de datos.");
+                }
 
                 // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
                 customComboBox.Items.Clear();
 
-                // Recorrer la lista de comisarías y agregar los datos al ComboBox
+                //// Recorrer la lista de comisarías y agregar los datos al ComboBox
                 foreach (Comisaria comisaria in comisarias)
                 {
                     string item = $"{comisaria.Nombre}   {comisaria.Localidad}"; // Utiliza las propiedades de la clase Comisaria
@@ -233,10 +271,13 @@ namespace Ofelia_Sara.Formularios.General
             }
             catch (Exception ex)
             {
-                MensajeGeneral.Mostrar($"Error al cargar datos de Dependencias: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+                // Mostrar un mensaje más detallado con la pila de llamadas
+                MensajeGeneral.Mostrar(
+                    $"Error al cargar datos de Dependencias: {ex.Message}\n{ex.StackTrace}",
+                    MensajeGeneral.TipoMensaje.Error
+                );
             }
         }
-
 
 
 
@@ -244,6 +285,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             try
             {
+                
                 // Obtener los datos desde la base de datos
                 List<Instructor> instructores = dbManager.GetInstructors(); // Asegúrate de usar el método correcto
 

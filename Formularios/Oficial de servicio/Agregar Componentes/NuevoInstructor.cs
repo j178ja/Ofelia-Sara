@@ -33,6 +33,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+
+            pictureBox_CheckFirmaDigitalizada.Visible = false;// ocultar la imagen de reemplazo del check
         }
 
         //-------------------------------------------
@@ -186,6 +188,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     pictureBox_FirmaDigitalizada.Enabled = true;
                     pictureBox_FirmaDigitalizada.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
                     pictureBox_FirmaDigitalizada.BackColor = SystemColors.ControlLight;
+                    checkBox_AgregarFirma.Visible = false;
+                    pictureBox_CheckFirmaDigitalizada.Visible = true;
                 }
                 else
                 {
@@ -196,6 +200,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
                 pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
             }
+        }
+
+        private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
+        {
+            pictureBox_CheckFirmaDigitalizada.Visible = false;
+            checkBox_AgregarFirma.Visible = true;
+            checkBox_AgregarFirma.Checked = false;
+            pictureBox_FirmaDigitalizada.Enabled = false;
+            pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+            pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
         }
 
         private void PictureBox_FirmaDigitalizada_Paint(object sender, PaintEventArgs e)
@@ -312,5 +326,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 textBox.SelectionStart = textoFormateado.Length; // Colocar al final si está fuera de rango
             }
         }
+
+        
     }
 }

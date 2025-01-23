@@ -1,6 +1,7 @@
 ﻿using Ofelia_Sara.Clases.BaseDatos;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace Ofelia_Sara.BaseDatos.Adm_BD.Manager
 {
@@ -12,21 +13,28 @@ namespace Ofelia_Sara.BaseDatos.Adm_BD.Manager
         /// <returns>Una instancia de DatabaseConnection o null si está en modo diseño.</returns>
         public static DatabaseConnection GetDatabaseConnection()
         {
-            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            if (IsInDesignMode())
             {
-                return null; // No inicializamos nada en modo diseño
+                Debug.WriteLine("Modo diseño detectado. DatabaseConnection no será inicializado.");
+                return null;
             }
-            return new DatabaseConnection();
+
+          
+            DatabaseConnection connection = new DatabaseConnection();
+            if (connection == null)
+            {
+                throw new InvalidOperationException("DatabaseConnection se inicializó como null inesperadamente.");
+            }
+
+            return connection;
         }
 
-        /// <summary>
-        /// Determina si la aplicación está en modo diseño.
-        /// </summary>
-        /// <returns>true si está en modo diseño; de lo contrario, false.</returns>
+
         private static bool IsInDesignMode()
         {
             return LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
                    AppDomain.CurrentDomain.FriendlyName.Contains("DefaultDomain");
         }
+
     }
 }

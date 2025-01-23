@@ -32,6 +32,7 @@ namespace Ofelia_Sara.Controles.General
         private bool isPlaceholderVisible = false; // Bandera para saber si el placeholder está visible
         public event EventHandler SelectedIndexChanged;
 
+        private static CustomComboBox activeComboBox; // para guardar el comboBox activo
         public CustomComboBox()
         {
 
@@ -101,8 +102,54 @@ namespace Ofelia_Sara.Controles.General
             this.Width = 200;
             this.BackColor = Color.White;
             dropdownList.LostFocus += DropdownList_LostFocus;
+
+
         }
         //------FIN CONSTRUCTOR-----------
+        // Registrar eventos globales en el formulario y sus controles
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnParentChanged(e);
+            RegistrarEventosGlobales();
+        }
+
+
+        private void RegistrarEventosGlobales()
+        {
+            Form parentForm = FindForm();
+            if (parentForm != null)
+            {
+                parentForm.MouseDown -= Global_MouseDown; // Evita duplicados
+                parentForm.MouseDown += Global_MouseDown; // Registrar el evento global
+            }
+        }
+
+        private void RegistrarEventos(Control control)
+        {
+            control.MouseDown += Global_MouseDown;
+
+            foreach (Control child in control.Controls)
+            {
+                RegistrarEventos(child);
+            }
+        }
+
+        private void Global_MouseDown(object sender, MouseEventArgs e)
+        {
+            Form parentForm = FindForm();
+            if (parentForm == null) return;
+
+            // Obtener la posición del cursor en el formulario
+            Point cursorPosition = parentForm.PointToClient(Cursor.Position);
+
+            // Validar si el clic ocurrió fuera del CustomComboBox o su dropdownList
+            if (activeComboBox == this &&
+                !dropdownList.Bounds.Contains(cursorPosition) &&
+                !Bounds.Contains(cursorPosition))
+            {
+                OcultarDropdown();
+            }
+        }
 
         private void DropdownList_Paint(object sender, PaintEventArgs e)
         {
@@ -212,9 +259,18 @@ namespace Ofelia_Sara.Controles.General
             hoveredIndex = -1; // Resetea el índice hover
             dropdownList.Invalidate(); // Redibuja el control
         }
-  
 
-        //-------------------------------------------------------
+
+        private void DropdownList_LostFocus(object sender, EventArgs e)
+        {
+            OcultarDropdown();
+
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                showError = true; // Mostrar subrayado rojo
+                Invalidate(); // Redibujar el control
+            }
+        }
 
         /// <summary>
         /// METODO PARA INICIAR ANIMACION CUANDO EL TEXTBOX TIENE EL FOCO
@@ -236,48 +292,22 @@ namespace Ofelia_Sara.Controles.General
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        //private void TextBox_LostFocus(object sender, EventArgs e)
-        //{
-        //    isFocused = false;
-        //    animationProgress = 0;
-        //    animationTimer.Stop();
-        //    dropdownList.Visible = false;
-
-        //    if (string.IsNullOrWhiteSpace(textBox.Text))
-        //    {
-        //        ShowPlaceholder();
-        //    }
-        //}
-        //private void TextBox_LostFocus(object sender, EventArgs e)
-        //{
-        //    isFocused = false;
-
-        //    // Si no hay texto y no se seleccionó un ítem, activar error
-        //    if (string.IsNullOrWhiteSpace(textBox.Text) && dropdownList.SelectedItem == null)
-        //    {
-        //        showError = true; // Mostrar subrayado rojo
-        //        animationProgress = 0; // Reiniciar animación
-        //        animationTimer.Start();
-        //    }
-        //    else
-        //    {
-        //        showError = false; // No hay error, detener animación si estaba activa
-        //        animationProgress = 100;
-        //        animationTimer.Stop();
-        //    }
-
-        //    Invalidate(); // Redibujar
-        //}
+       
         private void TextBox_LostFocus(object sender, EventArgs e)
         {
             isFocused = false;
-
+            // Ocultar el placeholder si aún está visible
+            if (isPlaceholderVisible)
+            {
+                HidePlaceholder();
+            }
             // Si no hay texto y no se seleccionó un ítem, activar error
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 showError = true; // Mostrar subrayado rojo
                 animationProgress = 0; // Reiniciar animación
                 animationTimer.Start();
+               
             }
             else
             {
@@ -285,6 +315,7 @@ namespace Ofelia_Sara.Controles.General
                 animationProgress = 100;
                 animationTimer.Stop();
             }
+          
 
             Invalidate(); // Redibujar
         }
@@ -326,28 +357,31 @@ namespace Ofelia_Sara.Controles.General
         /// </summary>
         private void ShowPlaceholder()
         {
+            // Mostrar el placeholder solo si el texto está vacío
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 textBox.Text = placeholderText;
-                textBox.ForeColor = placeholderColor;
+                textBox.ForeColor = placeholderColor; // Cambiar al color del placeholder
                 isPlaceholderVisible = true;
             }
         }
+
 
         /// <summary>
         /// EVENTO PARA OCULTAR PLACEHOLDER
         /// </summary>
         private void HidePlaceholder()
         {
-            if (isPlaceholderVisible)
+            // Solo ocultar el placeholder si está visible y el texto actual es el placeholder
+            if (isPlaceholderVisible && textBox.Text == placeholderText)
             {
-                textBox.Text = string.Empty;
-                textBox.ForeColor = defaultTextColor;
+                textBox.Text = string.Empty; // Limpiar el texto
+                textBox.ForeColor = defaultTextColor; // Cambiar el color al texto por defecto
                 isPlaceholderVisible = false;
             }
         }
 
-        //------------------------------------------------------------------------------
+
 
 
         private void ArrowPictureBox_Click(object sender, EventArgs e)
@@ -357,14 +391,16 @@ namespace Ofelia_Sara.Controles.General
             {
                 dropdownList.Visible = false; // Ocultar si ya está abierto
                 OcultarDropdown();
-                       
+                // Quitar el foco del TextBox
+                FindForm().ActiveControl = null; // Establece que ningún control tenga foco
                 return;
             }
             else
             {
                 // Mostrar el dropdownList y posicionarlo correctamente
                 MostrarDropdown();
-               
+                // Dar foco al TextBox
+                textBox.Focus();
             }
 
             Form parentForm = FindForm();
@@ -380,10 +416,7 @@ namespace Ofelia_Sara.Controles.General
             dropdownList.Location = new Point(dropdownLocation.X, dropdownLocation.Y + Height);
             dropdownList.Width = Width;
 
-            //dropdownList.Visible = true;
-            //isFocused = true;
-            //animationProgress = 0;
-            //animationTimer.Start();
+          
             //// Manejo del clic fuera del dropdown
             parentForm.MouseClick -= ParentForm_ClickOutside; // Elimina suscripciones duplicadas
             parentForm.MouseClick += ParentForm_ClickOutside; // Vuelve a suscribirse
@@ -392,81 +425,39 @@ namespace Ofelia_Sara.Controles.General
 
 
 
-        /// <summary>
-        /// EVENTO PARA OCULTAR LIST CUANDO SE HACE CLICK FUERA DE EL
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void ParentForm_ClickOutside(object sender, MouseEventArgs e)
-        //{
-        //    Form parentForm = FindForm();
-        //    Point cursorPosition = parentForm.PointToClient(Cursor.Position);
 
-        //    if (!dropdownList.Bounds.Contains(cursorPosition) && !Bounds.Contains(cursorPosition))
-        //    {
-        //        OcultarDropdown();
-
-        //        if (string.IsNullOrWhiteSpace(textBox.Text))
-        //        {
-        //            showError = true; // Mostrar subrayado rojo
-        //            Invalidate(); // Redibujar el control
-        //        }
-        //    }
-        //}
         private void ParentForm_ClickOutside(object sender, MouseEventArgs e)
         {
             Form parentForm = FindForm();
+            if (parentForm == null) return;
+
             Point cursorPosition = parentForm.PointToClient(Cursor.Position);
 
             if (!dropdownList.Bounds.Contains(cursorPosition) && !Bounds.Contains(cursorPosition))
             {
                 OcultarDropdown();
-
-                // Si no hay texto y no se seleccionó un ítem, activar error
-                if (string.IsNullOrWhiteSpace(textBox.Text) && dropdownList.SelectedItem == null)
-                {
-                    showError = true; // Mostrar subrayado rojo
-                    animationProgress = 0; // Reiniciar animación
-                    animationTimer.Start();
-                }
-                else
-                {
-                    showError = false; // No hay error, detener animación
-                    animationProgress = 100;
-                    animationTimer.Stop();
-                }
-
-                Invalidate(); // Redibujar
             }
         }
 
 
 
-        private void DropdownList_LostFocus(object sender, EventArgs e)
-        {
-            OcultarDropdown();
 
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                showError = true; // Mostrar subrayado rojo
-                Invalidate(); // Redibujar el control
-            }
-        }
 
-        
+        // Método para ocultar el dropdown
         private void OcultarDropdown()
         {
             if (!dropdownList.Visible) return;
 
             dropdownList.Visible = false;
-
+            activeComboBox = null;
             Form parentForm = FindForm();
             if (parentForm != null)
             {
-                parentForm.MouseClick -= ParentForm_ClickOutside;
+                // Eliminar la suscripción al evento MouseDown
+                parentForm.MouseDown -= ParentForm_ClickOutside;
             }
 
-            // Si no hay texto y no se seleccionó un ítem, activar error
+            // Validar si no hay texto ni un elemento seleccionado
             if (string.IsNullOrWhiteSpace(textBox.Text) && dropdownList.SelectedItem == null)
             {
                 showError = true; // Mostrar subrayado rojo
@@ -484,29 +475,35 @@ namespace Ofelia_Sara.Controles.General
         }
 
 
+
+    
+
         private void MostrarDropdown()
         {
             if (dropdownList.Visible) return;
 
             dropdownList.Visible = true;
             dropdownList.BringToFront();
+            activeComboBox = this;
 
             Form parentForm = FindForm();
             if (parentForm != null)
             {
-                parentForm.MouseClick -= ParentForm_ClickOutside; // Evita duplicados
-                parentForm.MouseClick += ParentForm_ClickOutside;
+                // Registrar el evento MouseDown del formulario
+                parentForm.MouseDown -= ParentForm_ClickOutside; // Evitar duplicados
+                parentForm.MouseDown += ParentForm_ClickOutside;
             }
 
             isFocused = true;
             animationProgress = 0;
             animationTimer.Start();
+
+            // Registrar eventos globales en el formulario
+            RegistrarEventosGlobales();
         }
 
 
 
-
-        //------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// METODO PARA CAMBIAR IMAGEN EN EL CLICK
@@ -534,14 +531,6 @@ namespace Ofelia_Sara.Controles.General
 
         }
 
-        //private void DropdownList_MouseClick(object sender, MouseEventArgs e)
-        //{
-        //    if (dropdownList.SelectedItem != null)
-        //    {
-        //        textBox.Text = dropdownList.SelectedItem.ToString();
-        //        dropdownList.Visible = false;
-        //    }
-        //}
 
         private void DropdownList_MouseClick(object sender, MouseEventArgs e)
         {

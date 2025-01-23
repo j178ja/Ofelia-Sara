@@ -52,17 +52,34 @@ namespace Ofelia_Sara.Controles.General
         private void TextBox_GotFocus(object sender, EventArgs e)
         {
             isFocused = true;
-            showError = false;
-            animationProgress = 0;
+            showError = false; // Quita el subrayado rojo si estaba activo
+            animationProgress = 0; // Reinicia la animación
             animationTimer.Start();
+
+            Invalidate(); // Redibuja el control
         }
+
 
         private void TextBox_LostFocus(object sender, EventArgs e)
         {
             isFocused = false;
-            animationProgress = 0;
+
+            // Verifica si el texto está vacío para activar el subrayado rojo
+            if (string.IsNullOrWhiteSpace(this.Text))
+            {
+                showError = true; // Activa el subrayado rojo
+            }
+            else
+            {
+                showError = false; // Desactiva el subrayado rojo
+            }
+
+            animationProgress = 0; // Reinicia la animación
             animationTimer.Start();
+
+            Invalidate(); // Redibuja el control para reflejar los cambios
         }
+
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {

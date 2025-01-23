@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.ComponentModel;
+using System.Configuration;
 
 namespace Ofelia_Sara.Clases.BaseDatos
 {

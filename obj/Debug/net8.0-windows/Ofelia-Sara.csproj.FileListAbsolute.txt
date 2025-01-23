@@ -28,8 +28,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.Mensajes.MensajeGenerarDocumentos.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.MenuPrincipal.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.Presentacion.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.VideoInstructivo.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.VideoInstructivoR.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.Mecanografia.Mecanografia.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios.ModificarEliminar.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios.Registro.resources
@@ -133,3 +131,18 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia-Sara.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\ref\Ofelia-Sara.dll
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.General.CustomTextBox.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\MyInstaller\Ofelia-Sara.exe
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\LibVLCSharp.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\LibVLCSharp.WinForms.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\Vlc.DotNet.Core.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\Vlc.DotNet.Core.Interops.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\Vlc.DotNet.Forms.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\Interop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\net8.0-windows\AxInterop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\AxInterop.WMPLib.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Ofl_Sara.SelectorFecha.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.InstructivoDigital.resources

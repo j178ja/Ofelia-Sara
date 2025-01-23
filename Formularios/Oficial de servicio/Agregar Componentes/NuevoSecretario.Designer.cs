@@ -1,4 +1,6 @@
-﻿namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
+﻿using System.Windows.Forms;
+
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     partial class NuevoSecretario
     {
@@ -29,288 +31,425 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoSecretario));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.label_Dependencia = new System.Windows.Forms.Label();
-            this.comboBox_Jerarquia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Escalafon = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.label_Escalafon = new System.Windows.Forms.Label();
-            this.label_Jerarquia = new System.Windows.Forms.Label();
-            this.textBox_NumeroLegajo = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Legajo = new System.Windows.Forms.Label();
-            this.pictureBox_FirmaDigitalizada = new System.Windows.Forms.PictureBox();
-            this.textBox_Funcion = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Funcion = new System.Windows.Forms.Label();
-            this.textBox_Apellido = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Apellido = new System.Windows.Forms.Label();
-            this.textBox_Nombre = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Nombre = new System.Windows.Forms.Label();
-            this.checkBox_AgregarFirma = new System.Windows.Forms.CheckBox();
-            this.label_AgregaFirma = new System.Windows.Forms.Label();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.label_NuevoSecretario = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FirmaDigitalizada)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            pictureBox_CheckFirmaDigitalizada = new PictureBox();
+            comboBox_Dependencia = new Controles.General.CustomComboBox();
+            label_Dependencia = new Label();
+            comboBox_Jerarquia = new Controles.General.CustomComboBox();
+            comboBox_Escalafon = new Controles.General.CustomComboBox();
+            label_Escalafon = new Label();
+            label_Jerarquia = new Label();
+            textBox_NumeroLegajo = new Controles.General.CustomTextBox();
+            label_Legajo = new Label();
+            pictureBox_FirmaDigitalizada = new PictureBox();
+            textBox_Funcion = new Controles.General.CustomTextBox();
+            label_Funcion = new Label();
+            textBox_Apellido = new Controles.General.CustomTextBox();
+            label_Apellido = new Label();
+            textBox_Nombre = new Controles.General.CustomTextBox();
+            label_Nombre = new Label();
+            checkBox_AgregarFirma = new CheckBox();
+            label_AgregaFirma = new Label();
+            btn_Limpiar = new Button();
+            btn_Guardar = new Button();
+            label_NuevoSecretario = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckFirmaDigitalizada).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_FirmaDigitalizada).BeginInit();
+            SuspendLayout();
             // 
-          
-            //
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.comboBox_Dependencia);
-            this.panel1.Controls.Add(this.label_Dependencia);
-            this.panel1.Controls.Add(this.comboBox_Jerarquia);
-            this.panel1.Controls.Add(this.comboBox_Escalafon);
-            this.panel1.Controls.Add(this.label_Escalafon);
-            this.panel1.Controls.Add(this.label_Jerarquia);
-            this.panel1.Controls.Add(this.textBox_NumeroLegajo);
-            this.panel1.Controls.Add(this.label_Legajo);
-            this.panel1.Controls.Add(this.pictureBox_FirmaDigitalizada);
-            this.panel1.Controls.Add(this.textBox_Funcion);
-            this.panel1.Controls.Add(this.label_Funcion);
-            this.panel1.Controls.Add(this.textBox_Apellido);
-            this.panel1.Controls.Add(this.label_Apellido);
-            this.panel1.Controls.Add(this.textBox_Nombre);
-            this.panel1.Controls.Add(this.label_Nombre);
-            this.panel1.Controls.Add(this.checkBox_AgregarFirma);
-            this.panel1.Controls.Add(this.label_AgregaFirma);
-            this.panel1.Controls.Add(this.btn_Limpiar);
-            this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.label_NuevoSecretario);
-            this.panel1.Location = new System.Drawing.Point(23, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(523, 461);
-            this.panel1.TabIndex = 2;
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(pictureBox_CheckFirmaDigitalizada);
+            panel1.Controls.Add(comboBox_Dependencia);
+            panel1.Controls.Add(label_Dependencia);
+            panel1.Controls.Add(comboBox_Jerarquia);
+            panel1.Controls.Add(comboBox_Escalafon);
+            panel1.Controls.Add(label_Escalafon);
+            panel1.Controls.Add(label_Jerarquia);
+            panel1.Controls.Add(textBox_NumeroLegajo);
+            panel1.Controls.Add(label_Legajo);
+            panel1.Controls.Add(pictureBox_FirmaDigitalizada);
+            panel1.Controls.Add(textBox_Funcion);
+            panel1.Controls.Add(label_Funcion);
+            panel1.Controls.Add(textBox_Apellido);
+            panel1.Controls.Add(label_Apellido);
+            panel1.Controls.Add(textBox_Nombre);
+            panel1.Controls.Add(label_Nombre);
+            panel1.Controls.Add(checkBox_AgregarFirma);
+            panel1.Controls.Add(label_AgregaFirma);
+            panel1.Controls.Add(btn_Limpiar);
+            panel1.Controls.Add(btn_Guardar);
+            panel1.Controls.Add(label_NuevoSecretario);
+            panel1.Location = new System.Drawing.Point(23, 27);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(523, 461);
+            panel1.TabIndex = 2;
+            // 
+            // pictureBox_CheckFirmaDigitalizada
+            // 
+            pictureBox_CheckFirmaDigitalizada.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox_CheckFirmaDigitalizada.Cursor = Cursors.Hand;
+            pictureBox_CheckFirmaDigitalizada.Image = Properties.Resources.check_Personalizado;
+            pictureBox_CheckFirmaDigitalizada.Location = new System.Drawing.Point(246, 294);
+            pictureBox_CheckFirmaDigitalizada.Margin = new Padding(4, 3, 4, 3);
+            pictureBox_CheckFirmaDigitalizada.Name = "pictureBox_CheckFirmaDigitalizada";
+            pictureBox_CheckFirmaDigitalizada.Size = new System.Drawing.Size(30, 32);
+            pictureBox_CheckFirmaDigitalizada.TabIndex = 68;
+            pictureBox_CheckFirmaDigitalizada.TabStop = false;
+            pictureBox_CheckFirmaDigitalizada.Click += PictureBox_CheckFirmaDigitalizada_Click;
             // 
             // comboBox_Dependencia
             // 
-            
-            this.comboBox_Dependencia.Location = new System.Drawing.Point(154, 211);
-            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
-            this.comboBox_Dependencia.Size = new System.Drawing.Size(327, 21);
-            this.comboBox_Dependencia.TabIndex = 64;
+            comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.AutoCompleteMode = AutoCompleteMode.None;
+            comboBox_Dependencia.AutoCompleteSource = AutoCompleteSource.None;
+            comboBox_Dependencia.BackColor = System.Drawing.Color.White;
+            comboBox_Dependencia.DataSource = null;
+            comboBox_Dependencia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DefaultImage");
+            comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
+            comboBox_Dependencia.DisplayMember = null;
+            comboBox_Dependencia.DropDownHeight = 252;
+            comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DroppedDown = false;
+            comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Dependencia.Location = new System.Drawing.Point(154, 211);
+            comboBox_Dependencia.MaxDropDownItems = 10;
+            comboBox_Dependencia.Name = "comboBox_Dependencia";
+            comboBox_Dependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Dependencia.PlaceholderText = " ";
+            comboBox_Dependencia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.PressedImage");
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedItem = null;
+            comboBox_Dependencia.SelectedText = "";
+            comboBox_Dependencia.SelectionStart = 0;
+            comboBox_Dependencia.ShowError = false;
+            comboBox_Dependencia.Size = new System.Drawing.Size(327, 21);
+            comboBox_Dependencia.TabIndex = 64;
             // 
             // label_Dependencia
             // 
-            this.label_Dependencia.AutoSize = true;
-            this.label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dependencia.Location = new System.Drawing.Point(27, 212);
-            this.label_Dependencia.Name = "label_Dependencia";
-            this.label_Dependencia.Size = new System.Drawing.Size(123, 16);
-            this.label_Dependencia.TabIndex = 63;
-            this.label_Dependencia.Text = "DEPENDENCIA :";
+            label_Dependencia.AutoSize = true;
+            label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Dependencia.Location = new System.Drawing.Point(27, 212);
+            label_Dependencia.Name = "label_Dependencia";
+            label_Dependencia.Size = new System.Drawing.Size(123, 16);
+            label_Dependencia.TabIndex = 63;
+            label_Dependencia.Text = "DEPENDENCIA :";
             // 
             // comboBox_Jerarquia
             // 
-            this.comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.comboBox_Jerarquia.Location = new System.Drawing.Point(155, 107);
-            this.comboBox_Jerarquia.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBox_Jerarquia.Name = "comboBox_Jerarquia";
-            this.comboBox_Jerarquia.Size = new System.Drawing.Size(326, 23);
-            this.comboBox_Jerarquia.TabIndex = 62;
+            comboBox_Jerarquia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.ArrowImage");
+            comboBox_Jerarquia.AutoCompleteMode = AutoCompleteMode.None;
+            comboBox_Jerarquia.AutoCompleteSource = AutoCompleteSource.None;
+            comboBox_Jerarquia.BackColor = System.Drawing.Color.White;
+            comboBox_Jerarquia.DataSource = null;
+            comboBox_Jerarquia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DefaultImage");
+            comboBox_Jerarquia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DisabledImage");
+            comboBox_Jerarquia.DisplayMember = null;
+            comboBox_Jerarquia.DropDownHeight = 252;
+            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Jerarquia.DroppedDown = false;
+            comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Jerarquia.Location = new System.Drawing.Point(155, 107);
+            comboBox_Jerarquia.Margin = new Padding(0);
+            comboBox_Jerarquia.MaxDropDownItems = 10;
+            comboBox_Jerarquia.Name = "comboBox_Jerarquia";
+            comboBox_Jerarquia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Jerarquia.PlaceholderText = " ";
+            comboBox_Jerarquia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.PressedImage");
+            comboBox_Jerarquia.SelectedIndex = -1;
+            comboBox_Jerarquia.SelectedItem = null;
+            comboBox_Jerarquia.SelectedText = "";
+            comboBox_Jerarquia.SelectionStart = 0;
+            comboBox_Jerarquia.ShowError = false;
+            comboBox_Jerarquia.Size = new System.Drawing.Size(326, 23);
+            comboBox_Jerarquia.TabIndex = 62;
             // 
             // comboBox_Escalafon
             // 
-            this.comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.comboBox_Escalafon.Location = new System.Drawing.Point(155, 80);
-            this.comboBox_Escalafon.Name = "comboBox_Escalafon";
-            this.comboBox_Escalafon.Size = new System.Drawing.Size(326, 21);
-            this.comboBox_Escalafon.TabIndex = 61;
+            comboBox_Escalafon.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.ArrowImage");
+            comboBox_Escalafon.AutoCompleteMode = AutoCompleteMode.None;
+            comboBox_Escalafon.AutoCompleteSource = AutoCompleteSource.None;
+            comboBox_Escalafon.BackColor = System.Drawing.Color.White;
+            comboBox_Escalafon.DataSource = null;
+            comboBox_Escalafon.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DefaultImage");
+            comboBox_Escalafon.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DisabledImage");
+            comboBox_Escalafon.DisplayMember = null;
+            comboBox_Escalafon.DropDownHeight = 252;
+            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Escalafon.DroppedDown = false;
+            comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Escalafon.Location = new System.Drawing.Point(155, 80);
+            comboBox_Escalafon.MaxDropDownItems = 10;
+            comboBox_Escalafon.Name = "comboBox_Escalafon";
+            comboBox_Escalafon.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Escalafon.PlaceholderText = " ";
+            comboBox_Escalafon.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.PressedImage");
+            comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Escalafon.SelectedItem = null;
+            comboBox_Escalafon.SelectedText = "";
+            comboBox_Escalafon.SelectionStart = 0;
+            comboBox_Escalafon.ShowError = false;
+            comboBox_Escalafon.Size = new System.Drawing.Size(326, 21);
+            comboBox_Escalafon.TabIndex = 61;
             // 
             // label_Escalafon
             // 
-            this.label_Escalafon.AutoSize = true;
-            this.label_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Escalafon.Location = new System.Drawing.Point(15, 82);
-            this.label_Escalafon.Name = "label_Escalafon";
-            this.label_Escalafon.Size = new System.Drawing.Size(135, 16);
-            this.label_Escalafon.TabIndex = 60;
-            this.label_Escalafon.Text = "SUBESCALAFON :";
+            label_Escalafon.AutoSize = true;
+            label_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Escalafon.Location = new System.Drawing.Point(15, 82);
+            label_Escalafon.Name = "label_Escalafon";
+            label_Escalafon.Size = new System.Drawing.Size(135, 16);
+            label_Escalafon.TabIndex = 60;
+            label_Escalafon.Text = "SUBESCALAFON :";
             // 
             // label_Jerarquia
             // 
-            this.label_Jerarquia.AutoSize = true;
-            this.label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Jerarquia.Location = new System.Drawing.Point(48, 109);
-            this.label_Jerarquia.Name = "label_Jerarquia";
-            this.label_Jerarquia.Size = new System.Drawing.Size(101, 16);
-            this.label_Jerarquia.TabIndex = 59;
-            this.label_Jerarquia.Text = "JERARQUIA :";
+            label_Jerarquia.AutoSize = true;
+            label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Jerarquia.Location = new System.Drawing.Point(48, 109);
+            label_Jerarquia.Name = "label_Jerarquia";
+            label_Jerarquia.Size = new System.Drawing.Size(101, 16);
+            label_Jerarquia.TabIndex = 59;
+            label_Jerarquia.Text = "JERARQUIA :";
             // 
             // textBox_NumeroLegajo
             // 
-            this.textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroLegajo.Location = new System.Drawing.Point(157, 53);
-            this.textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
-            this.textBox_NumeroLegajo.Size = new System.Drawing.Size(192, 21);
-            this.textBox_NumeroLegajo.TabIndex = 53;
-            this.textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroLegajo.TextChanged += new System.EventHandler(this.textBox_NumeroLegajo_TextChanged);
-            this.textBox_NumeroLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroLegajo_KeyPress);
+            textBox_NumeroLegajo.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_NumeroLegajo.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_NumeroLegajo.BackColor = System.Drawing.Color.White;
+            textBox_NumeroLegajo.ErrorColor = System.Drawing.Color.Red;
+            textBox_NumeroLegajo.FocusColor = System.Drawing.Color.Blue;
+            textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_NumeroLegajo.Location = new System.Drawing.Point(154, 53);
+            textBox_NumeroLegajo.MaxLength = 32767;
+            textBox_NumeroLegajo.Multiline = false;
+            textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
+            textBox_NumeroLegajo.PasswordChar = '\0';
+            textBox_NumeroLegajo.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_NumeroLegajo.PlaceholderText = "";
+            textBox_NumeroLegajo.ReadOnly = false;
+            textBox_NumeroLegajo.SelectionStart = 0;
+            textBox_NumeroLegajo.ShowError = false;
+            textBox_NumeroLegajo.Size = new System.Drawing.Size(195, 21);
+            textBox_NumeroLegajo.TabIndex = 53;
+            textBox_NumeroLegajo.TextAlign = HorizontalAlignment.Center;
+            textBox_NumeroLegajo.TextValue = "";
+            textBox_NumeroLegajo.TextChanged += textBox_NumeroLegajo_TextChanged;
+            textBox_NumeroLegajo.KeyPress += textBox_NumeroLegajo_KeyPress;
             // 
             // label_Legajo
             // 
-            this.label_Legajo.AutoSize = true;
-            this.label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Legajo.Location = new System.Drawing.Point(78, 56);
-            this.label_Legajo.Name = "label_Legajo";
-            this.label_Legajo.Size = new System.Drawing.Size(73, 16);
-            this.label_Legajo.TabIndex = 52;
-            this.label_Legajo.Text = "LEGAJO :";
+            label_Legajo.AutoSize = true;
+            label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Legajo.Location = new System.Drawing.Point(78, 56);
+            label_Legajo.Name = "label_Legajo";
+            label_Legajo.Size = new System.Drawing.Size(73, 16);
+            label_Legajo.TabIndex = 52;
+            label_Legajo.Text = "LEGAJO :";
             // 
             // pictureBox_FirmaDigitalizada
             // 
-            this.pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_FirmaDigitalizada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage")));
-            this.pictureBox_FirmaDigitalizada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(275, 275);
-            this.pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
-            this.pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(206, 81);
-            this.pictureBox_FirmaDigitalizada.TabIndex = 51;
-            this.pictureBox_FirmaDigitalizada.TabStop = false;
-            this.pictureBox_FirmaDigitalizada.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_FirmaDigitalizada.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
-            this.pictureBox_FirmaDigitalizada.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
-            this.pictureBox_FirmaDigitalizada.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_FirmaDigitalizada_Paint);
+            pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ControlLight;
+            pictureBox_FirmaDigitalizada.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage");
+            pictureBox_FirmaDigitalizada.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(275, 275);
+            pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
+            pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(206, 81);
+            pictureBox_FirmaDigitalizada.TabIndex = 51;
+            pictureBox_FirmaDigitalizada.TabStop = false;
+            pictureBox_FirmaDigitalizada.Click += PictureBox_Click;
+            pictureBox_FirmaDigitalizada.DragDrop += PictureBox_DragDrop;
+            pictureBox_FirmaDigitalizada.DragEnter += PictureBox_DragEnter;
+            pictureBox_FirmaDigitalizada.Paint += PictureBox_FirmaDigitalizada_Paint;
             // 
             // textBox_Funcion
             // 
-            this.textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Funcion.Location = new System.Drawing.Point(155, 238);
-            this.textBox_Funcion.Name = "textBox_Funcion";
-            this.textBox_Funcion.Size = new System.Drawing.Size(326, 21);
-            this.textBox_Funcion.TabIndex = 3;
+            textBox_Funcion.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Funcion.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Funcion.BackColor = System.Drawing.Color.White;
+            textBox_Funcion.ErrorColor = System.Drawing.Color.Red;
+            textBox_Funcion.FocusColor = System.Drawing.Color.Blue;
+            textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_Funcion.Location = new System.Drawing.Point(155, 238);
+            textBox_Funcion.MaxLength = 32767;
+            textBox_Funcion.Multiline = false;
+            textBox_Funcion.Name = "textBox_Funcion";
+            textBox_Funcion.PasswordChar = '\0';
+            textBox_Funcion.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Funcion.PlaceholderText = "";
+            textBox_Funcion.ReadOnly = false;
+            textBox_Funcion.SelectionStart = 0;
+            textBox_Funcion.ShowError = false;
+            textBox_Funcion.Size = new System.Drawing.Size(326, 21);
+            textBox_Funcion.TabIndex = 3;
+            textBox_Funcion.TextAlign = HorizontalAlignment.Center;
+            textBox_Funcion.TextValue = "";
             // 
             // label_Funcion
             // 
-            this.label_Funcion.AutoSize = true;
-            this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(68, 241);
-            this.label_Funcion.Name = "label_Funcion";
-            this.label_Funcion.Size = new System.Drawing.Size(82, 16);
-            this.label_Funcion.TabIndex = 49;
-            this.label_Funcion.Text = "FUNCION :";
+            label_Funcion.AutoSize = true;
+            label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Funcion.Location = new System.Drawing.Point(68, 241);
+            label_Funcion.Name = "label_Funcion";
+            label_Funcion.Size = new System.Drawing.Size(82, 16);
+            label_Funcion.TabIndex = 49;
+            label_Funcion.Text = "FUNCION :";
             // 
             // textBox_Apellido
             // 
-            this.textBox_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Apellido.Location = new System.Drawing.Point(155, 174);
-            this.textBox_Apellido.Name = "textBox_Apellido";
-            this.textBox_Apellido.Size = new System.Drawing.Size(326, 21);
-            this.textBox_Apellido.TabIndex = 2;
+            textBox_Apellido.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Apellido.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Apellido.BackColor = System.Drawing.Color.White;
+            textBox_Apellido.ErrorColor = System.Drawing.Color.Red;
+            textBox_Apellido.FocusColor = System.Drawing.Color.Blue;
+            textBox_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_Apellido.Location = new System.Drawing.Point(155, 174);
+            textBox_Apellido.MaxLength = 32767;
+            textBox_Apellido.Multiline = false;
+            textBox_Apellido.Name = "textBox_Apellido";
+            textBox_Apellido.PasswordChar = '\0';
+            textBox_Apellido.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Apellido.PlaceholderText = "";
+            textBox_Apellido.ReadOnly = false;
+            textBox_Apellido.SelectionStart = 0;
+            textBox_Apellido.ShowError = false;
+            textBox_Apellido.Size = new System.Drawing.Size(326, 21);
+            textBox_Apellido.TabIndex = 2;
+            textBox_Apellido.TextAlign = HorizontalAlignment.Center;
+            textBox_Apellido.TextValue = "";
             // 
             // label_Apellido
             // 
-            this.label_Apellido.AutoSize = true;
-            this.label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Apellido.Location = new System.Drawing.Point(62, 177);
-            this.label_Apellido.Name = "label_Apellido";
-            this.label_Apellido.Size = new System.Drawing.Size(87, 16);
-            this.label_Apellido.TabIndex = 47;
-            this.label_Apellido.Text = "APELLIDO :";
+            label_Apellido.AutoSize = true;
+            label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Apellido.Location = new System.Drawing.Point(62, 177);
+            label_Apellido.Name = "label_Apellido";
+            label_Apellido.Size = new System.Drawing.Size(87, 16);
+            label_Apellido.TabIndex = 47;
+            label_Apellido.Text = "APELLIDO :";
             // 
             // textBox_Nombre
             // 
-            this.textBox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Nombre.Location = new System.Drawing.Point(155, 145);
-            this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(326, 21);
-            this.textBox_Nombre.TabIndex = 1;
+            textBox_Nombre.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Nombre.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Nombre.BackColor = System.Drawing.Color.White;
+            textBox_Nombre.ErrorColor = System.Drawing.Color.Red;
+            textBox_Nombre.FocusColor = System.Drawing.Color.Blue;
+            textBox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_Nombre.Location = new System.Drawing.Point(155, 145);
+            textBox_Nombre.MaxLength = 32767;
+            textBox_Nombre.Multiline = false;
+            textBox_Nombre.Name = "textBox_Nombre";
+            textBox_Nombre.PasswordChar = '\0';
+            textBox_Nombre.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Nombre.PlaceholderText = "";
+            textBox_Nombre.ReadOnly = false;
+            textBox_Nombre.SelectionStart = 0;
+            textBox_Nombre.ShowError = false;
+            textBox_Nombre.Size = new System.Drawing.Size(326, 21);
+            textBox_Nombre.TabIndex = 1;
+            textBox_Nombre.TextAlign = HorizontalAlignment.Center;
+            textBox_Nombre.TextValue = "";
             // 
             // label_Nombre
             // 
-            this.label_Nombre.AutoSize = true;
-            this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(69, 146);
-            this.label_Nombre.Name = "label_Nombre";
-            this.label_Nombre.Size = new System.Drawing.Size(80, 16);
-            this.label_Nombre.TabIndex = 45;
-            this.label_Nombre.Text = "NOMBRE :";
+            label_Nombre.AutoSize = true;
+            label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Nombre.Location = new System.Drawing.Point(69, 146);
+            label_Nombre.Name = "label_Nombre";
+            label_Nombre.Size = new System.Drawing.Size(80, 16);
+            label_Nombre.TabIndex = 45;
+            label_Nombre.Text = "NOMBRE :";
             // 
             // checkBox_AgregarFirma
             // 
-            this.checkBox_AgregarFirma.AutoSize = true;
-            this.checkBox_AgregarFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_AgregarFirma.Location = new System.Drawing.Point(254, 298);
-            this.checkBox_AgregarFirma.Name = "checkBox_AgregarFirma";
-            this.checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_AgregarFirma.TabIndex = 4;
-            this.checkBox_AgregarFirma.UseVisualStyleBackColor = true;
-            this.checkBox_AgregarFirma.CheckedChanged += new System.EventHandler(this.checkBox_AgregarFirma_CheckedChanged);
+            checkBox_AgregarFirma.AutoSize = true;
+            checkBox_AgregarFirma.Cursor = Cursors.Hand;
+            checkBox_AgregarFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            checkBox_AgregarFirma.Location = new System.Drawing.Point(248, 299);
+            checkBox_AgregarFirma.Name = "checkBox_AgregarFirma";
+            checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
+            checkBox_AgregarFirma.TabIndex = 4;
+            checkBox_AgregarFirma.UseVisualStyleBackColor = true;
+            checkBox_AgregarFirma.CheckedChanged += checkBox_AgregarFirma_CheckedChanged;
             // 
             // label_AgregaFirma
             // 
-            this.label_AgregaFirma.AutoSize = true;
-            this.label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregaFirma.Location = new System.Drawing.Point(27, 296);
-            this.label_AgregaFirma.Name = "label_AgregaFirma";
-            this.label_AgregaFirma.Size = new System.Drawing.Size(212, 15);
-            this.label_AgregaFirma.TabIndex = 43;
-            this.label_AgregaFirma.Text = "AGREGAR FIRMA DIGITALIZADA";
+            label_AgregaFirma.AutoSize = true;
+            label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_AgregaFirma.Location = new System.Drawing.Point(27, 296);
+            label_AgregaFirma.Name = "label_AgregaFirma";
+            label_AgregaFirma.Size = new System.Drawing.Size(212, 15);
+            label_AgregaFirma.TabIndex = 43;
+            label_AgregaFirma.Text = "AGREGAR FIRMA DIGITALIZADA";
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(81, 375);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Limpiar.TabIndex = 6;
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Limpiar.Cursor = Cursors.Hand;
+            btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
+            btn_Limpiar.Location = new System.Drawing.Point(81, 375);
+            btn_Limpiar.Name = "btn_Limpiar";
+            btn_Limpiar.Size = new System.Drawing.Size(75, 67);
+            btn_Limpiar.TabIndex = 6;
+            btn_Limpiar.UseVisualStyleBackColor = false;
+            btn_Limpiar.Click += btn_Limpiar_Click;
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(408, 375);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 5;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Guardar.Cursor = Cursors.Hand;
+            btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
+            btn_Guardar.Location = new System.Drawing.Point(408, 375);
+            btn_Guardar.Name = "btn_Guardar";
+            btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            btn_Guardar.TabIndex = 5;
+            btn_Guardar.UseVisualStyleBackColor = false;
+            btn_Guardar.Click += btn_Guardar_Click;
             // 
             // label_NuevoSecretario
             // 
-            this.label_NuevoSecretario.AutoSize = true;
-            this.label_NuevoSecretario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_NuevoSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NuevoSecretario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_NuevoSecretario.Location = new System.Drawing.Point(145, 0);
-            this.label_NuevoSecretario.Name = "label_NuevoSecretario";
-            this.label_NuevoSecretario.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label_NuevoSecretario.Size = new System.Drawing.Size(240, 24);
-            this.label_NuevoSecretario.TabIndex = 38;
-            this.label_NuevoSecretario.Text = "NUEVO SECRETARIO";
+            label_NuevoSecretario.AutoSize = true;
+            label_NuevoSecretario.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_NuevoSecretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_NuevoSecretario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_NuevoSecretario.Location = new System.Drawing.Point(145, 0);
+            label_NuevoSecretario.Name = "label_NuevoSecretario";
+            label_NuevoSecretario.Padding = new Padding(10, 0, 10, 0);
+            label_NuevoSecretario.Size = new System.Drawing.Size(240, 24);
+            label_NuevoSecretario.TabIndex = 38;
+            label_NuevoSecretario.Text = "NUEVO SECRETARIO";
             // 
             // NuevoSecretario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 530);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "NuevoSecretario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AGREGAR NUEVO SECRETARIO";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.NuevoSecretario_HelpButtonClicked);
-            this.Load += new System.EventHandler(this.NuevoSecretario_Load);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_FirmaDigitalizada)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(569, 530);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            HelpButton = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "NuevoSecretario";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AGREGAR NUEVO SECRETARIO";
+            HelpButtonClicked += NuevoSecretario_HelpButtonClicked;
+            Load += NuevoSecretario_Load;
+            Controls.SetChildIndex(panel1, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckFirmaDigitalizada).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_FirmaDigitalizada).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -336,5 +475,6 @@
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Escalafon;
         private System.Windows.Forms.Label label_Escalafon;
         private System.Windows.Forms.Label label_Jerarquia;
+        private System.Windows.Forms.PictureBox pictureBox_CheckFirmaDigitalizada;
     }
 }

@@ -16,15 +16,14 @@ namespace BaseDatos.Adm_BD.Manager
         // Constructor que inicializa DatabaseConnection y evita ejecución en tiempo de diseño
         public ComisariasManager()
         {
-            if (Process.GetCurrentProcess().ProcessName.Contains("devenv"))
-            {
-                return; // No inicializar en tiempo de diseño
-            }
-
+           
+            // Obtener la conexión desde BloqueadorTiempoDiseño
             dbConnection = BloqueadorTiempoDiseño.GetDatabaseConnection();
+
+            // Si dbConnection es null, lanza una excepción con un mensaje claro
             if (dbConnection == null)
             {
-                throw new InvalidOperationException("DatabaseConnection no se pudo inicializar.");
+                throw new InvalidOperationException("DatabaseConnection no pudo inicializarse. Verifica que la aplicación no esté en modo diseño y que la configuración de la base de datos sea válida.");
             }
         }
 

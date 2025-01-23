@@ -29,475 +29,603 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_NumeroIpp = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.lbl_00 = new System.Windows.Forms.Label();
-            this.comboBox_Ipp4 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.label_Ipp = new System.Windows.Forms.Label();
-            this.panel_ConversorDocumentos = new System.Windows.Forms.Panel();
-            this.panel_ControlesInferiores = new System.Windows.Forms.Panel();
-            this.btn_Imprimir = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.groupBox_TextosConvertidos = new System.Windows.Forms.GroupBox();
-            this.btn_Convertir = new System.Windows.Forms.Button();
-            this.groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
-            this.btn_EliminarArchivo = new System.Windows.Forms.Button();
-            this.radioButton_Word = new System.Windows.Forms.RadioButton();
-            this.radioButton_Pdf = new System.Windows.Forms.RadioButton();
-            this.pictureBox_AWord = new System.Windows.Forms.PictureBox();
-            this.pictureBox_APdf = new System.Windows.Forms.PictureBox();
-            this.label_ConvertirAWord = new System.Windows.Forms.Label();
-            this.label_ConvertirAPdf = new System.Windows.Forms.Label();
-            this.label_ConversorDocumentos = new System.Windows.Forms.Label();
-            this.panel_Control = new System.Windows.Forms.Panel();
-            this.panel_DatosInstruccion = new System.Windows.Forms.Panel();
-            this.label_DatosInstruccion = new System.Windows.Forms.Label();
-            this.label_Instructor = new System.Windows.Forms.Label();
-            this.label_Secretario = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado();
-            this.label_Fecha = new System.Windows.Forms.Label();
-            this.label_Dependencia = new System.Windows.Forms.Label();
-            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
-            this.radioButton_Juzgado = new System.Windows.Forms.RadioButton();
-            this.radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
-            this.label_DatosActuacion = new System.Windows.Forms.Label();
-            this.textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Caratula = new System.Windows.Forms.Label();
-            this.textBox_Causante = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Victima = new System.Windows.Forms.Label();
-            this.label_TITULO = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel_ConversorDocumentos.SuspendLayout();
-            this.panel_ControlesInferiores.SuspendLayout();
-            this.groupBox_ConversorDocumentos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).BeginInit();
-            this.panel_DatosInstruccion.SuspendLayout();
-            this.groupBox_SeleccionadorProcedencia.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            textBox_NumeroIpp = new Controles.General.CustomTextBox();
+            comboBox_Ipp1 = new Controles.General.CustomComboBox();
+            comboBox_Ipp2 = new Controles.General.CustomComboBox();
+            lbl_00 = new System.Windows.Forms.Label();
+            comboBox_Ipp4 = new Controles.General.CustomComboBox();
+            label_Ipp = new System.Windows.Forms.Label();
+            panel_ConversorDocumentos = new System.Windows.Forms.Panel();
+            panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            btn_Imprimir = new System.Windows.Forms.Button();
+            btn_Guardar = new System.Windows.Forms.Button();
+            btn_Buscar = new System.Windows.Forms.Button();
+            btn_Limpiar = new System.Windows.Forms.Button();
+            groupBox_TextosConvertidos = new System.Windows.Forms.GroupBox();
+            btn_Convertir = new System.Windows.Forms.Button();
+            groupBox_ConversorDocumentos = new System.Windows.Forms.GroupBox();
+            btn_EliminarArchivo = new System.Windows.Forms.Button();
+            radioButton_Word = new System.Windows.Forms.RadioButton();
+            radioButton_Pdf = new System.Windows.Forms.RadioButton();
+            pictureBox_AWord = new System.Windows.Forms.PictureBox();
+            pictureBox_APdf = new System.Windows.Forms.PictureBox();
+            label_ConvertirAWord = new System.Windows.Forms.Label();
+            label_ConvertirAPdf = new System.Windows.Forms.Label();
+            label_ConversorDocumentos = new System.Windows.Forms.Label();
+            panel_Control = new System.Windows.Forms.Panel();
+            panel_DatosInstruccion = new System.Windows.Forms.Panel();
+            label_DatosInstruccion = new System.Windows.Forms.Label();
+            label_Instructor = new System.Windows.Forms.Label();
+            label_Secretario = new System.Windows.Forms.Label();
+            Fecha_Instruccion = new Controles.Ofl_Sara.TimePickerPersonalizado();
+            label_Fecha = new System.Windows.Forms.Label();
+            label_Dependencia = new System.Windows.Forms.Label();
+            comboBox_Dependencia = new Controles.General.CustomComboBox();
+            comboBox_Instructor = new Controles.General.CustomComboBox();
+            comboBox_Secretario = new Controles.General.CustomComboBox();
+            groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
+            radioButton_Juzgado = new System.Windows.Forms.RadioButton();
+            radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
+            label_DatosActuacion = new System.Windows.Forms.Label();
+            textBox_Caratula = new Controles.General.CustomTextBox();
+            label_Caratula = new System.Windows.Forms.Label();
+            textBox_Causante = new Controles.General.CustomTextBox();
+            label_Victima = new System.Windows.Forms.Label();
+            label_TITULO = new System.Windows.Forms.Label();
+            panel1.SuspendLayout();
+            panel_ConversorDocumentos.SuspendLayout();
+            panel_ControlesInferiores.SuspendLayout();
+            groupBox_ConversorDocumentos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_AWord).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_APdf).BeginInit();
+            panel_DatosInstruccion.SuspendLayout();
+            groupBox_SeleccionadorProcedencia.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.textBox_NumeroIpp);
-            this.panel1.Controls.Add(this.comboBox_Ipp1);
-            this.panel1.Controls.Add(this.comboBox_Ipp2);
-            this.panel1.Controls.Add(this.lbl_00);
-            this.panel1.Controls.Add(this.comboBox_Ipp4);
-            this.panel1.Controls.Add(this.label_Ipp);
-            this.panel1.Controls.Add(this.panel_ConversorDocumentos);
-            this.panel1.Controls.Add(this.panel_Control);
-            this.panel1.Controls.Add(this.panel_DatosInstruccion);
-            this.panel1.Controls.Add(this.groupBox_SeleccionadorProcedencia);
-            this.panel1.Controls.Add(this.label_DatosActuacion);
-            this.panel1.Controls.Add(this.textBox_Caratula);
-            this.panel1.Controls.Add(this.label_Caratula);
-            this.panel1.Controls.Add(this.textBox_Causante);
-            this.panel1.Controls.Add(this.label_Victima);
-            this.panel1.Name = "panel1";
+            resources.ApplyResources(panel1, "panel1");
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(textBox_NumeroIpp);
+            panel1.Controls.Add(comboBox_Ipp1);
+            panel1.Controls.Add(comboBox_Ipp2);
+            panel1.Controls.Add(lbl_00);
+            panel1.Controls.Add(comboBox_Ipp4);
+            panel1.Controls.Add(label_Ipp);
+            panel1.Controls.Add(panel_ConversorDocumentos);
+            panel1.Controls.Add(panel_Control);
+            panel1.Controls.Add(panel_DatosInstruccion);
+            panel1.Controls.Add(groupBox_SeleccionadorProcedencia);
+            panel1.Controls.Add(label_DatosActuacion);
+            panel1.Controls.Add(textBox_Caratula);
+            panel1.Controls.Add(label_Caratula);
+            panel1.Controls.Add(textBox_Causante);
+            panel1.Controls.Add(label_Victima);
+            panel1.Name = "panel1";
             // 
             // textBox_NumeroIpp
             // 
-            resources.ApplyResources(this.textBox_NumeroIpp, "textBox_NumeroIpp");
-            this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
+            textBox_NumeroIpp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_NumeroIpp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_NumeroIpp.BackColor = System.Drawing.Color.White;
+            textBox_NumeroIpp.ErrorColor = System.Drawing.Color.Red;
+            textBox_NumeroIpp.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(textBox_NumeroIpp, "textBox_NumeroIpp");
+            textBox_NumeroIpp.MaxLength = 32767;
+            textBox_NumeroIpp.Multiline = false;
+            textBox_NumeroIpp.Name = "textBox_NumeroIpp";
+            textBox_NumeroIpp.PasswordChar = '\0';
+            textBox_NumeroIpp.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_NumeroIpp.PlaceholderText = "";
+            textBox_NumeroIpp.ReadOnly = false;
+            textBox_NumeroIpp.SelectionStart = 0;
+            textBox_NumeroIpp.ShowError = false;
+            textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_NumeroIpp.TextValue = "";
             // 
             // comboBox_Ipp1
             // 
-            
-            this.comboBox_Ipp1.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Ipp1.Items"),
-            resources.GetString("comboBox_Ipp1.Items1"),
-            resources.GetString("comboBox_Ipp1.Items2"),
-            resources.GetString("comboBox_Ipp1.Items3"),
-            resources.GetString("comboBox_Ipp1.Items4"),
-            resources.GetString("comboBox_Ipp1.Items5"),
-            resources.GetString("comboBox_Ipp1.Items6"),
-            resources.GetString("comboBox_Ipp1.Items7"),
-            resources.GetString("comboBox_Ipp1.Items8"),
-            resources.GetString("comboBox_Ipp1.Items9")});
-            resources.ApplyResources(this.comboBox_Ipp1, "comboBox_Ipp1");
-            this.comboBox_Ipp1.Name = "comboBox_Ipp1";
+            comboBox_Ipp1.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.ArrowImage");
+            comboBox_Ipp1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp1.BackColor = System.Drawing.Color.White;
+            comboBox_Ipp1.DataSource = null;
+            comboBox_Ipp1.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.DefaultImage");
+            comboBox_Ipp1.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.DisabledImage");
+            comboBox_Ipp1.DisplayMember = null;
+            comboBox_Ipp1.DropDownHeight = 252;
+            comboBox_Ipp1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp1.DroppedDown = false;
+            comboBox_Ipp1.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Ipp1.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(comboBox_Ipp1, "comboBox_Ipp1");
+            comboBox_Ipp1.MaxDropDownItems = 10;
+            comboBox_Ipp1.Name = "comboBox_Ipp1";
+            comboBox_Ipp1.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Ipp1.PlaceholderText = " ";
+            comboBox_Ipp1.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.PressedImage");
+            comboBox_Ipp1.SelectedIndex = -1;
+            comboBox_Ipp1.SelectedItem = null;
+            comboBox_Ipp1.SelectedText = "";
+            comboBox_Ipp1.SelectionStart = 0;
+            comboBox_Ipp1.ShowError = false;
             // 
             // comboBox_Ipp2
             // 
-            
-            this.comboBox_Ipp2.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Ipp2.Items"),
-            resources.GetString("comboBox_Ipp2.Items1"),
-            resources.GetString("comboBox_Ipp2.Items2"),
-            resources.GetString("comboBox_Ipp2.Items3"),
-            resources.GetString("comboBox_Ipp2.Items4"),
-            resources.GetString("comboBox_Ipp2.Items5"),
-            resources.GetString("comboBox_Ipp2.Items6"),
-            resources.GetString("comboBox_Ipp2.Items7"),
-            resources.GetString("comboBox_Ipp2.Items8"),
-            resources.GetString("comboBox_Ipp2.Items9")});
-            resources.ApplyResources(this.comboBox_Ipp2, "comboBox_Ipp2");
-            this.comboBox_Ipp2.Name = "comboBox_Ipp2";
+            comboBox_Ipp2.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.ArrowImage");
+            comboBox_Ipp2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp2.BackColor = System.Drawing.Color.White;
+            comboBox_Ipp2.DataSource = null;
+            comboBox_Ipp2.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DefaultImage");
+            comboBox_Ipp2.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
+            comboBox_Ipp2.DisplayMember = null;
+            comboBox_Ipp2.DropDownHeight = 252;
+            comboBox_Ipp2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp2.DroppedDown = false;
+            comboBox_Ipp2.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Ipp2.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(comboBox_Ipp2, "comboBox_Ipp2");
+            comboBox_Ipp2.MaxDropDownItems = 10;
+            comboBox_Ipp2.Name = "comboBox_Ipp2";
+            comboBox_Ipp2.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Ipp2.PlaceholderText = " ";
+            comboBox_Ipp2.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.PressedImage");
+            comboBox_Ipp2.SelectedIndex = -1;
+            comboBox_Ipp2.SelectedItem = null;
+            comboBox_Ipp2.SelectedText = "";
+            comboBox_Ipp2.SelectionStart = 0;
+            comboBox_Ipp2.ShowError = false;
             // 
             // lbl_00
             // 
-            resources.ApplyResources(this.lbl_00, "lbl_00");
-            this.lbl_00.Name = "lbl_00";
+            resources.ApplyResources(lbl_00, "lbl_00");
+            lbl_00.Name = "lbl_00";
             // 
             // comboBox_Ipp4
             // 
-            
-            this.comboBox_Ipp4.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Ipp4.Items"),
-            resources.GetString("comboBox_Ipp4.Items1"),
-            resources.GetString("comboBox_Ipp4.Items2")});
-            resources.ApplyResources(this.comboBox_Ipp4, "comboBox_Ipp4");
-            this.comboBox_Ipp4.Name = "comboBox_Ipp4";
+            comboBox_Ipp4.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.ArrowImage");
+            comboBox_Ipp4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp4.BackColor = System.Drawing.Color.White;
+            comboBox_Ipp4.DataSource = null;
+            comboBox_Ipp4.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DefaultImage");
+            comboBox_Ipp4.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
+            comboBox_Ipp4.DisplayMember = null;
+            comboBox_Ipp4.DropDownHeight = 252;
+            comboBox_Ipp4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp4.DroppedDown = false;
+            comboBox_Ipp4.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Ipp4.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(comboBox_Ipp4, "comboBox_Ipp4");
+            comboBox_Ipp4.MaxDropDownItems = 10;
+            comboBox_Ipp4.Name = "comboBox_Ipp4";
+            comboBox_Ipp4.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Ipp4.PlaceholderText = " ";
+            comboBox_Ipp4.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.PressedImage");
+            comboBox_Ipp4.SelectedIndex = -1;
+            comboBox_Ipp4.SelectedItem = null;
+            comboBox_Ipp4.SelectedText = "";
+            comboBox_Ipp4.SelectionStart = 0;
+            comboBox_Ipp4.ShowError = false;
             // 
             // label_Ipp
             // 
-            resources.ApplyResources(this.label_Ipp, "label_Ipp");
-            this.label_Ipp.Name = "label_Ipp";
+            resources.ApplyResources(label_Ipp, "label_Ipp");
+            label_Ipp.Name = "label_Ipp";
             // 
             // panel_ConversorDocumentos
             // 
-            resources.ApplyResources(this.panel_ConversorDocumentos, "panel_ConversorDocumentos");
-            this.panel_ConversorDocumentos.BackColor = System.Drawing.Color.Transparent;
-            this.panel_ConversorDocumentos.Controls.Add(this.panel_ControlesInferiores);
-            this.panel_ConversorDocumentos.Controls.Add(this.groupBox_TextosConvertidos);
-            this.panel_ConversorDocumentos.Controls.Add(this.btn_Convertir);
-            this.panel_ConversorDocumentos.Controls.Add(this.groupBox_ConversorDocumentos);
-            this.panel_ConversorDocumentos.Controls.Add(this.label_ConversorDocumentos);
-            this.panel_ConversorDocumentos.Name = "panel_ConversorDocumentos";
-            this.panel_ConversorDocumentos.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_ConversorDocumentos_Paint);
+            resources.ApplyResources(panel_ConversorDocumentos, "panel_ConversorDocumentos");
+            panel_ConversorDocumentos.BackColor = System.Drawing.Color.Transparent;
+            panel_ConversorDocumentos.Controls.Add(panel_ControlesInferiores);
+            panel_ConversorDocumentos.Controls.Add(groupBox_TextosConvertidos);
+            panel_ConversorDocumentos.Controls.Add(btn_Convertir);
+            panel_ConversorDocumentos.Controls.Add(groupBox_ConversorDocumentos);
+            panel_ConversorDocumentos.Controls.Add(label_ConversorDocumentos);
+            panel_ConversorDocumentos.Name = "panel_ConversorDocumentos";
+            panel_ConversorDocumentos.Paint += panel_ConversorDocumentos_Paint;
             // 
             // panel_ControlesInferiores
             // 
-            resources.ApplyResources(this.panel_ControlesInferiores, "panel_ControlesInferiores");
-            this.panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
+            resources.ApplyResources(panel_ControlesInferiores, "panel_ControlesInferiores");
+            panel_ControlesInferiores.BackColor = System.Drawing.Color.Transparent;
+            panel_ControlesInferiores.Controls.Add(btn_Imprimir);
+            panel_ControlesInferiores.Controls.Add(btn_Guardar);
+            panel_ControlesInferiores.Controls.Add(btn_Buscar);
+            panel_ControlesInferiores.Controls.Add(btn_Limpiar);
+            panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             // 
             // btn_Imprimir
             // 
-            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Imprimir, "btn_Imprimir");
-            this.btn_Imprimir.Name = "btn_Imprimir";
-            this.btn_Imprimir.UseVisualStyleBackColor = false;
-            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
+            btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(btn_Imprimir, "btn_Imprimir");
+            btn_Imprimir.Name = "btn_Imprimir";
+            btn_Imprimir.UseVisualStyleBackColor = false;
+            btn_Imprimir.Click += btn_Imprimir_Click;
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Guardar, "btn_Guardar");
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.UseVisualStyleBackColor = false;
+            btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(btn_Guardar, "btn_Guardar");
+            btn_Guardar.Name = "btn_Guardar";
+            btn_Guardar.UseVisualStyleBackColor = false;
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Buscar, "btn_Buscar");
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = false;
+            btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(btn_Buscar, "btn_Buscar");
+            btn_Buscar.Name = "btn_Buscar";
+            btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_Limpiar, "btn_Limpiar");
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(btn_Limpiar, "btn_Limpiar");
+            btn_Limpiar.Name = "btn_Limpiar";
+            btn_Limpiar.UseVisualStyleBackColor = false;
+            btn_Limpiar.Click += btn_Limpiar_Click;
             // 
             // groupBox_TextosConvertidos
             // 
-            resources.ApplyResources(this.groupBox_TextosConvertidos, "groupBox_TextosConvertidos");
-            this.groupBox_TextosConvertidos.Name = "groupBox_TextosConvertidos";
-            this.groupBox_TextosConvertidos.TabStop = false;
+            resources.ApplyResources(groupBox_TextosConvertidos, "groupBox_TextosConvertidos");
+            groupBox_TextosConvertidos.Name = "groupBox_TextosConvertidos";
+            groupBox_TextosConvertidos.TabStop = false;
             // 
             // btn_Convertir
             // 
-            this.btn_Convertir.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Convertir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Convertir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn_Convertir.FlatAppearance.BorderSize = 2;
-            this.btn_Convertir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Convertir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            resources.ApplyResources(this.btn_Convertir, "btn_Convertir");
-            this.btn_Convertir.Name = "btn_Convertir";
-            this.btn_Convertir.UseVisualStyleBackColor = false;
-            this.btn_Convertir.Click += new System.EventHandler(this.btn_Convertir_Click);
+            btn_Convertir.BackColor = System.Drawing.Color.WhiteSmoke;
+            btn_Convertir.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Convertir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            btn_Convertir.FlatAppearance.BorderSize = 2;
+            btn_Convertir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(255, 128, 128);
+            btn_Convertir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+            resources.ApplyResources(btn_Convertir, "btn_Convertir");
+            btn_Convertir.Name = "btn_Convertir";
+            btn_Convertir.UseVisualStyleBackColor = false;
+            btn_Convertir.Click += btn_Convertir_Click;
             // 
             // groupBox_ConversorDocumentos
             // 
-            resources.ApplyResources(this.groupBox_ConversorDocumentos, "groupBox_ConversorDocumentos");
-            this.groupBox_ConversorDocumentos.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox_ConversorDocumentos.Controls.Add(this.btn_EliminarArchivo);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Word);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.radioButton_Pdf);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_AWord);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.pictureBox_APdf);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.label_ConvertirAWord);
-            this.groupBox_ConversorDocumentos.Controls.Add(this.label_ConvertirAPdf);
-            this.groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
-            this.groupBox_ConversorDocumentos.TabStop = false;
+            resources.ApplyResources(groupBox_ConversorDocumentos, "groupBox_ConversorDocumentos");
+            groupBox_ConversorDocumentos.BackColor = System.Drawing.SystemColors.ButtonFace;
+            groupBox_ConversorDocumentos.Controls.Add(btn_EliminarArchivo);
+            groupBox_ConversorDocumentos.Controls.Add(radioButton_Word);
+            groupBox_ConversorDocumentos.Controls.Add(radioButton_Pdf);
+            groupBox_ConversorDocumentos.Controls.Add(pictureBox_AWord);
+            groupBox_ConversorDocumentos.Controls.Add(pictureBox_APdf);
+            groupBox_ConversorDocumentos.Controls.Add(label_ConvertirAWord);
+            groupBox_ConversorDocumentos.Controls.Add(label_ConvertirAPdf);
+            groupBox_ConversorDocumentos.Name = "groupBox_ConversorDocumentos";
+            groupBox_ConversorDocumentos.TabStop = false;
             // 
             // btn_EliminarArchivo
             // 
-            this.btn_EliminarArchivo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.borrar;
-            resources.ApplyResources(this.btn_EliminarArchivo, "btn_EliminarArchivo");
-            this.btn_EliminarArchivo.Name = "btn_EliminarArchivo";
-            this.btn_EliminarArchivo.UseVisualStyleBackColor = true;
-            this.btn_EliminarArchivo.Click += new System.EventHandler(this.btn_EliminarArchivo_Click);
+            btn_EliminarArchivo.BackgroundImage = Properties.Resources.borrar;
+            resources.ApplyResources(btn_EliminarArchivo, "btn_EliminarArchivo");
+            btn_EliminarArchivo.Name = "btn_EliminarArchivo";
+            btn_EliminarArchivo.UseVisualStyleBackColor = true;
+            btn_EliminarArchivo.Click += btn_EliminarArchivo_Click;
             // 
             // radioButton_Word
             // 
-            resources.ApplyResources(this.radioButton_Word, "radioButton_Word");
-            this.radioButton_Word.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Word.Name = "radioButton_Word";
-            this.radioButton_Word.TabStop = true;
-            this.radioButton_Word.UseVisualStyleBackColor = true;
-            this.radioButton_Word.CheckedChanged += new System.EventHandler(this.radioButton_Word_CheckedChanged);
+            resources.ApplyResources(radioButton_Word, "radioButton_Word");
+            radioButton_Word.Cursor = System.Windows.Forms.Cursors.Hand;
+            radioButton_Word.Name = "radioButton_Word";
+            radioButton_Word.TabStop = true;
+            radioButton_Word.UseVisualStyleBackColor = true;
+            radioButton_Word.CheckedChanged += radioButton_Word_CheckedChanged;
             // 
             // radioButton_Pdf
             // 
-            resources.ApplyResources(this.radioButton_Pdf, "radioButton_Pdf");
-            this.radioButton_Pdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Pdf.Name = "radioButton_Pdf";
-            this.radioButton_Pdf.TabStop = true;
-            this.radioButton_Pdf.UseVisualStyleBackColor = true;
-            this.radioButton_Pdf.CheckedChanged += new System.EventHandler(this.radioButton_Pdf_CheckedChanged);
+            resources.ApplyResources(radioButton_Pdf, "radioButton_Pdf");
+            radioButton_Pdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            radioButton_Pdf.Name = "radioButton_Pdf";
+            radioButton_Pdf.TabStop = true;
+            radioButton_Pdf.UseVisualStyleBackColor = true;
+            radioButton_Pdf.CheckedChanged += radioButton_Pdf_CheckedChanged;
             // 
             // pictureBox_AWord
             // 
-            this.pictureBox_AWord.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_AWord.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
-            resources.ApplyResources(this.pictureBox_AWord, "pictureBox_AWord");
-            this.pictureBox_AWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_AWord.Name = "pictureBox_AWord";
-            this.pictureBox_AWord.TabStop = false;
-            this.pictureBox_AWord.Click += new System.EventHandler(this.PictureBox_AWord_Click);
-            this.pictureBox_AWord.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragDrop);
-            this.pictureBox_AWord.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_AWord_DragEnter);
-            this.pictureBox_AWord.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            pictureBox_AWord.BackColor = System.Drawing.SystemColors.ControlLight;
+            pictureBox_AWord.BackgroundImage = Properties.Resources.subir_documentos;
+            resources.ApplyResources(pictureBox_AWord, "pictureBox_AWord");
+            pictureBox_AWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_AWord.Name = "pictureBox_AWord";
+            pictureBox_AWord.TabStop = false;
+            pictureBox_AWord.Click += PictureBox_AWord_Click;
+            pictureBox_AWord.DragDrop += PictureBox_AWord_DragDrop;
+            pictureBox_AWord.DragEnter += PictureBox_AWord_DragEnter;
+            pictureBox_AWord.Paint += PictureBox_Paint;
             // 
             // pictureBox_APdf
             // 
-            this.pictureBox_APdf.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox_APdf.BackgroundImage = global::Ofelia_Sara.Properties.Resources.subir_documentos;
-            resources.ApplyResources(this.pictureBox_APdf, "pictureBox_APdf");
-            this.pictureBox_APdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_APdf.Name = "pictureBox_APdf";
-            this.pictureBox_APdf.TabStop = false;
-            this.pictureBox_APdf.Click += new System.EventHandler(this.PictureBox_APdf_Click);
-            this.pictureBox_APdf.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragDrop);
-            this.pictureBox_APdf.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_APdf_DragEnter);
-            this.pictureBox_APdf.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            pictureBox_APdf.BackColor = System.Drawing.SystemColors.ControlLight;
+            pictureBox_APdf.BackgroundImage = Properties.Resources.subir_documentos;
+            resources.ApplyResources(pictureBox_APdf, "pictureBox_APdf");
+            pictureBox_APdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_APdf.Name = "pictureBox_APdf";
+            pictureBox_APdf.TabStop = false;
+            pictureBox_APdf.Click += PictureBox_APdf_Click;
+            pictureBox_APdf.DragDrop += PictureBox_APdf_DragDrop;
+            pictureBox_APdf.DragEnter += PictureBox_APdf_DragEnter;
+            pictureBox_APdf.Paint += PictureBox_Paint;
             // 
             // label_ConvertirAWord
             // 
-            resources.ApplyResources(this.label_ConvertirAWord, "label_ConvertirAWord");
-            this.label_ConvertirAWord.Name = "label_ConvertirAWord";
+            resources.ApplyResources(label_ConvertirAWord, "label_ConvertirAWord");
+            label_ConvertirAWord.Name = "label_ConvertirAWord";
             // 
             // label_ConvertirAPdf
             // 
-            resources.ApplyResources(this.label_ConvertirAPdf, "label_ConvertirAPdf");
-            this.label_ConvertirAPdf.Name = "label_ConvertirAPdf";
+            resources.ApplyResources(label_ConvertirAPdf, "label_ConvertirAPdf");
+            label_ConvertirAPdf.Name = "label_ConvertirAPdf";
             // 
             // label_ConversorDocumentos
             // 
-            resources.ApplyResources(this.label_ConversorDocumentos, "label_ConversorDocumentos");
-            this.label_ConversorDocumentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_ConversorDocumentos.Name = "label_ConversorDocumentos";
+            resources.ApplyResources(label_ConversorDocumentos, "label_ConversorDocumentos");
+            label_ConversorDocumentos.BackColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            label_ConversorDocumentos.Name = "label_ConversorDocumentos";
             // 
             // panel_Control
             // 
-            resources.ApplyResources(this.panel_Control, "panel_Control");
-            this.panel_Control.Name = "panel_Control";
+            resources.ApplyResources(panel_Control, "panel_Control");
+            panel_Control.Name = "panel_Control";
             // 
             // panel_DatosInstruccion
             // 
-            resources.ApplyResources(this.panel_DatosInstruccion, "panel_DatosInstruccion");
-            this.panel_DatosInstruccion.Controls.Add(this.label_DatosInstruccion);
-            this.panel_DatosInstruccion.Controls.Add(this.label_Instructor);
-            this.panel_DatosInstruccion.Controls.Add(this.label_Secretario);
-            this.panel_DatosInstruccion.Controls.Add(this.Fecha_Instruccion);
-            this.panel_DatosInstruccion.Controls.Add(this.label_Fecha);
-            this.panel_DatosInstruccion.Controls.Add(this.label_Dependencia);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Dependencia);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Instructor);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Secretario);
-            this.panel_DatosInstruccion.Name = "panel_DatosInstruccion";
+            resources.ApplyResources(panel_DatosInstruccion, "panel_DatosInstruccion");
+            panel_DatosInstruccion.Controls.Add(label_DatosInstruccion);
+            panel_DatosInstruccion.Controls.Add(label_Instructor);
+            panel_DatosInstruccion.Controls.Add(label_Secretario);
+            panel_DatosInstruccion.Controls.Add(Fecha_Instruccion);
+            panel_DatosInstruccion.Controls.Add(label_Fecha);
+            panel_DatosInstruccion.Controls.Add(label_Dependencia);
+            panel_DatosInstruccion.Controls.Add(comboBox_Dependencia);
+            panel_DatosInstruccion.Controls.Add(comboBox_Instructor);
+            panel_DatosInstruccion.Controls.Add(comboBox_Secretario);
+            panel_DatosInstruccion.Name = "panel_DatosInstruccion";
             // 
             // label_DatosInstruccion
             // 
-            resources.ApplyResources(this.label_DatosInstruccion, "label_DatosInstruccion");
-            this.label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DatosInstruccion.Name = "label_DatosInstruccion";
+            resources.ApplyResources(label_DatosInstruccion, "label_DatosInstruccion");
+            label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            label_DatosInstruccion.Name = "label_DatosInstruccion";
             // 
             // label_Instructor
             // 
-            resources.ApplyResources(this.label_Instructor, "label_Instructor");
-            this.label_Instructor.Name = "label_Instructor";
+            resources.ApplyResources(label_Instructor, "label_Instructor");
+            label_Instructor.Name = "label_Instructor";
             // 
             // label_Secretario
             // 
-            resources.ApplyResources(this.label_Secretario, "label_Secretario");
-            this.label_Secretario.Name = "label_Secretario";
+            resources.ApplyResources(label_Secretario, "label_Secretario");
+            label_Secretario.Name = "label_Secretario";
             // 
             // Fecha_Instruccion
             // 
-            this.Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
-            this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
-            resources.ApplyResources(this.Fecha_Instruccion, "Fecha_Instruccion");
-            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
-           // this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+            Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
+            Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
+            resources.ApplyResources(Fecha_Instruccion, "Fecha_Instruccion");
+            Fecha_Instruccion.Name = "Fecha_Instruccion";
             // 
             // label_Fecha
             // 
-            resources.ApplyResources(this.label_Fecha, "label_Fecha");
-            this.label_Fecha.Name = "label_Fecha";
+            resources.ApplyResources(label_Fecha, "label_Fecha");
+            label_Fecha.Name = "label_Fecha";
             // 
             // label_Dependencia
             // 
-            resources.ApplyResources(this.label_Dependencia, "label_Dependencia");
-            this.label_Dependencia.Name = "label_Dependencia";
+            resources.ApplyResources(label_Dependencia, "label_Dependencia");
+            label_Dependencia.Name = "label_Dependencia";
             // 
             // comboBox_Dependencia
             // 
-            
-            this.comboBox_Dependencia.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Dependencia.Items"),
-            resources.GetString("comboBox_Dependencia.Items1"),
-            resources.GetString("comboBox_Dependencia.Items2"),
-            resources.GetString("comboBox_Dependencia.Items3")});
-            resources.ApplyResources(this.comboBox_Dependencia, "comboBox_Dependencia");
-            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
+            comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Dependencia.BackColor = System.Drawing.Color.White;
+            comboBox_Dependencia.DataSource = null;
+            comboBox_Dependencia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DefaultImage");
+            comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
+            comboBox_Dependencia.DisplayMember = null;
+            comboBox_Dependencia.DropDownHeight = 252;
+            comboBox_Dependencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DroppedDown = false;
+            comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(comboBox_Dependencia, "comboBox_Dependencia");
+            comboBox_Dependencia.MaxDropDownItems = 10;
+            comboBox_Dependencia.Name = "comboBox_Dependencia";
+            comboBox_Dependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Dependencia.PlaceholderText = " ";
+            comboBox_Dependencia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.PressedImage");
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedItem = null;
+            comboBox_Dependencia.SelectedText = "";
+            comboBox_Dependencia.SelectionStart = 0;
+            comboBox_Dependencia.ShowError = false;
             // 
             // comboBox_Instructor
             // 
-            resources.ApplyResources(this.comboBox_Instructor, "comboBox_Instructor");
-            
-            this.comboBox_Instructor.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Instructor.Items"),
-            resources.GetString("comboBox_Instructor.Items1"),
-            resources.GetString("comboBox_Instructor.Items2")});
-            this.comboBox_Instructor.Name = "comboBox_Instructor";
+            comboBox_Instructor.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.ArrowImage");
+            comboBox_Instructor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Instructor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Instructor.BackColor = System.Drawing.Color.White;
+            comboBox_Instructor.DataSource = null;
+            comboBox_Instructor.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DefaultImage");
+            comboBox_Instructor.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DisabledImage");
+            comboBox_Instructor.DisplayMember = null;
+            comboBox_Instructor.DropDownHeight = 252;
+            comboBox_Instructor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Instructor.DroppedDown = false;
+            comboBox_Instructor.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Instructor.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(comboBox_Instructor, "comboBox_Instructor");
+            comboBox_Instructor.MaxDropDownItems = 10;
+            comboBox_Instructor.Name = "comboBox_Instructor";
+            comboBox_Instructor.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Instructor.PlaceholderText = " ";
+            comboBox_Instructor.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.PressedImage");
+            comboBox_Instructor.SelectedIndex = -1;
+            comboBox_Instructor.SelectedItem = null;
+            comboBox_Instructor.SelectedText = "";
+            comboBox_Instructor.SelectionStart = 0;
+            comboBox_Instructor.ShowError = false;
             // 
             // comboBox_Secretario
             // 
-            resources.ApplyResources(this.comboBox_Secretario, "comboBox_Secretario");
-            
-            this.comboBox_Secretario.Items.AddRange(new object[] {
-            resources.GetString("comboBox_Secretario.Items"),
-            resources.GetString("comboBox_Secretario.Items1"),
-            resources.GetString("comboBox_Secretario.Items2"),
-            resources.GetString("comboBox_Secretario.Items3"),
-            resources.GetString("comboBox_Secretario.Items4")});
-            this.comboBox_Secretario.Name = "comboBox_Secretario";
+            comboBox_Secretario.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.ArrowImage");
+            comboBox_Secretario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Secretario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Secretario.BackColor = System.Drawing.Color.White;
+            comboBox_Secretario.DataSource = null;
+            comboBox_Secretario.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DefaultImage");
+            comboBox_Secretario.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DisabledImage");
+            comboBox_Secretario.DisplayMember = null;
+            comboBox_Secretario.DropDownHeight = 252;
+            comboBox_Secretario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Secretario.DroppedDown = false;
+            comboBox_Secretario.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Secretario.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(comboBox_Secretario, "comboBox_Secretario");
+            comboBox_Secretario.MaxDropDownItems = 10;
+            comboBox_Secretario.Name = "comboBox_Secretario";
+            comboBox_Secretario.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Secretario.PlaceholderText = " ";
+            comboBox_Secretario.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.PressedImage");
+            comboBox_Secretario.SelectedIndex = -1;
+            comboBox_Secretario.SelectedItem = null;
+            comboBox_Secretario.SelectedText = "";
+            comboBox_Secretario.SelectionStart = 0;
+            comboBox_Secretario.ShowError = false;
             // 
             // groupBox_SeleccionadorProcedencia
             // 
-            this.groupBox_SeleccionadorProcedencia.Controls.Add(this.radioButton_Juzgado);
-            this.groupBox_SeleccionadorProcedencia.Controls.Add(this.radioButton_Fiscalia);
-            this.groupBox_SeleccionadorProcedencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.groupBox_SeleccionadorProcedencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            resources.ApplyResources(this.groupBox_SeleccionadorProcedencia, "groupBox_SeleccionadorProcedencia");
-            this.groupBox_SeleccionadorProcedencia.Name = "groupBox_SeleccionadorProcedencia";
-            this.groupBox_SeleccionadorProcedencia.TabStop = false;
+            groupBox_SeleccionadorProcedencia.Controls.Add(radioButton_Juzgado);
+            groupBox_SeleccionadorProcedencia.Controls.Add(radioButton_Fiscalia);
+            groupBox_SeleccionadorProcedencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            groupBox_SeleccionadorProcedencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(groupBox_SeleccionadorProcedencia, "groupBox_SeleccionadorProcedencia");
+            groupBox_SeleccionadorProcedencia.Name = "groupBox_SeleccionadorProcedencia";
+            groupBox_SeleccionadorProcedencia.TabStop = false;
             // 
             // radioButton_Juzgado
             // 
-            resources.ApplyResources(this.radioButton_Juzgado, "radioButton_Juzgado");
-            this.radioButton_Juzgado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_Juzgado.Name = "radioButton_Juzgado";
-            this.radioButton_Juzgado.TabStop = true;
-            this.radioButton_Juzgado.UseVisualStyleBackColor = true;
-            this.radioButton_Juzgado.CheckedChanged += new System.EventHandler(this.radioButton_Juzgado_CheckedChanged);
+            resources.ApplyResources(radioButton_Juzgado, "radioButton_Juzgado");
+            radioButton_Juzgado.Cursor = System.Windows.Forms.Cursors.Hand;
+            radioButton_Juzgado.Name = "radioButton_Juzgado";
+            radioButton_Juzgado.TabStop = true;
+            radioButton_Juzgado.UseVisualStyleBackColor = true;
+            radioButton_Juzgado.CheckedChanged += radioButton_Juzgado_CheckedChanged;
             // 
             // radioButton_Fiscalia
             // 
-            resources.ApplyResources(this.radioButton_Fiscalia, "radioButton_Fiscalia");
-            this.radioButton_Fiscalia.Name = "radioButton_Fiscalia";
-            this.radioButton_Fiscalia.TabStop = true;
-            this.radioButton_Fiscalia.UseVisualStyleBackColor = true;
-            this.radioButton_Fiscalia.CheckedChanged += new System.EventHandler(this.radioButton_Fiscalia_CheckedChanged);
+            resources.ApplyResources(radioButton_Fiscalia, "radioButton_Fiscalia");
+            radioButton_Fiscalia.Name = "radioButton_Fiscalia";
+            radioButton_Fiscalia.TabStop = true;
+            radioButton_Fiscalia.UseVisualStyleBackColor = true;
+            radioButton_Fiscalia.CheckedChanged += radioButton_Fiscalia_CheckedChanged;
             // 
             // label_DatosActuacion
             // 
-            resources.ApplyResources(this.label_DatosActuacion, "label_DatosActuacion");
-            this.label_DatosActuacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DatosActuacion.Name = "label_DatosActuacion";
+            resources.ApplyResources(label_DatosActuacion, "label_DatosActuacion");
+            label_DatosActuacion.BackColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            label_DatosActuacion.Name = "label_DatosActuacion";
             // 
             // textBox_Caratula
             // 
-            resources.ApplyResources(this.textBox_Caratula, "textBox_Caratula");
-            this.textBox_Caratula.Name = "textBox_Caratula";
+            textBox_Caratula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Caratula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Caratula.BackColor = System.Drawing.Color.White;
+            textBox_Caratula.ErrorColor = System.Drawing.Color.Red;
+            textBox_Caratula.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(textBox_Caratula, "textBox_Caratula");
+            textBox_Caratula.MaxLength = 32767;
+            textBox_Caratula.Multiline = true;
+            textBox_Caratula.Name = "textBox_Caratula";
+            textBox_Caratula.PasswordChar = '\0';
+            textBox_Caratula.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Caratula.PlaceholderText = "";
+            textBox_Caratula.ReadOnly = false;
+            textBox_Caratula.SelectionStart = 0;
+            textBox_Caratula.ShowError = false;
+            textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Caratula.TextValue = "";
             // 
             // label_Caratula
             // 
-            resources.ApplyResources(this.label_Caratula, "label_Caratula");
-            this.label_Caratula.Name = "label_Caratula";
+            resources.ApplyResources(label_Caratula, "label_Caratula");
+            label_Caratula.Name = "label_Caratula";
             // 
             // textBox_Causante
             // 
-            resources.ApplyResources(this.textBox_Causante, "textBox_Causante");
-            this.textBox_Causante.Name = "textBox_Causante";
+            textBox_Causante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Causante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Causante.BackColor = System.Drawing.Color.White;
+            textBox_Causante.ErrorColor = System.Drawing.Color.Red;
+            textBox_Causante.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(textBox_Causante, "textBox_Causante");
+            textBox_Causante.MaxLength = 32767;
+            textBox_Causante.Multiline = false;
+            textBox_Causante.Name = "textBox_Causante";
+            textBox_Causante.PasswordChar = '\0';
+            textBox_Causante.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Causante.PlaceholderText = "";
+            textBox_Causante.ReadOnly = false;
+            textBox_Causante.SelectionStart = 0;
+            textBox_Causante.ShowError = false;
+            textBox_Causante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Causante.TextValue = "";
             // 
             // label_Victima
             // 
-            resources.ApplyResources(this.label_Victima, "label_Victima");
-            this.label_Victima.Name = "label_Victima";
+            resources.ApplyResources(label_Victima, "label_Victima");
+            label_Victima.Name = "label_Victima";
             // 
             // label_TITULO
             // 
-            resources.ApplyResources(this.label_TITULO, "label_TITULO");
-            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_TITULO.Name = "label_TITULO";
+            resources.ApplyResources(label_TITULO, "label_TITULO");
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Name = "label_TITULO";
             // 
             // Expedientes
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label_TITULO);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Expedientes";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Expedientes_HelpButtonClicked);
-            this.Load += new System.EventHandler(this.Expedientes_Load);
-            this.Controls.SetChildIndex(this.label_TITULO, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel_ConversorDocumentos.ResumeLayout(false);
-            this.panel_ConversorDocumentos.PerformLayout();
-            this.panel_ControlesInferiores.ResumeLayout(false);
-            this.groupBox_ConversorDocumentos.ResumeLayout(false);
-            this.groupBox_ConversorDocumentos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_AWord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_APdf)).EndInit();
-            this.panel_DatosInstruccion.ResumeLayout(false);
-            this.panel_DatosInstruccion.PerformLayout();
-            this.groupBox_SeleccionadorProcedencia.ResumeLayout(false);
-            this.groupBox_SeleccionadorProcedencia.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            Controls.Add(panel1);
+            Controls.Add(label_TITULO);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            HelpButton = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Expedientes";
+            HelpButtonClicked += Expedientes_HelpButtonClicked;
+            Load += Expedientes_Load;
+            Controls.SetChildIndex(label_TITULO, 0);
+            Controls.SetChildIndex(panel1, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel_ConversorDocumentos.ResumeLayout(false);
+            panel_ConversorDocumentos.PerformLayout();
+            panel_ControlesInferiores.ResumeLayout(false);
+            groupBox_ConversorDocumentos.ResumeLayout(false);
+            groupBox_ConversorDocumentos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_AWord).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_APdf).EndInit();
+            panel_DatosInstruccion.ResumeLayout(false);
+            panel_DatosInstruccion.PerformLayout();
+            groupBox_SeleccionadorProcedencia.ResumeLayout(false);
+            groupBox_SeleccionadorProcedencia.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

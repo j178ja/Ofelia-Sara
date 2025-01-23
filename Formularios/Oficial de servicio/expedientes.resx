@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,9 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>None</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="textBox_NumeroIpp.Font" type="System.Drawing.Font, System.Drawing">
@@ -135,14 +135,11 @@
   <data name="textBox_NumeroIpp.TabIndex" type="System.Int32, mscorlib">
     <value>95</value>
   </data>
-  <data name="textBox_NumeroIpp.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
   <data name="&gt;&gt;textBox_NumeroIpp.Name" xml:space="preserve">
     <value>textBox_NumeroIpp</value>
   </data>
   <data name="&gt;&gt;textBox_NumeroIpp.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBox_NumeroIpp.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -150,44 +147,41 @@
   <data name="&gt;&gt;textBox_NumeroIpp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="comboBox_Ipp1.Items" xml:space="preserve">
-    <value>00</value>
+  <data name="comboBox_Ipp1.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Ipp1.Items1" xml:space="preserve">
-    <value>01</value>
+  <data name="comboBox_Ipp1.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Ipp1.Items2" xml:space="preserve">
-    <value>02</value>
-  </data>
-  <data name="comboBox_Ipp1.Items3" xml:space="preserve">
-    <value>03</value>
-  </data>
-  <data name="comboBox_Ipp1.Items4" xml:space="preserve">
-    <value>04</value>
-  </data>
-  <data name="comboBox_Ipp1.Items5" xml:space="preserve">
-    <value>05</value>
-  </data>
-  <data name="comboBox_Ipp1.Items6" xml:space="preserve">
-    <value>06</value>
-  </data>
-  <data name="comboBox_Ipp1.Items7" xml:space="preserve">
-    <value>07</value>
-  </data>
-  <data name="comboBox_Ipp1.Items8" xml:space="preserve">
-    <value>08</value>
-  </data>
-  <data name="comboBox_Ipp1.Items9" xml:space="preserve">
-    <value>09</value>
+  <data name="comboBox_Ipp1.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="comboBox_Ipp1.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 110</value>
   </data>
-  <data name="comboBox_Ipp1.MaxDropDownItems" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="comboBox_Ipp1.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="comboBox_Ipp1.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="comboBox_Ipp1.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 21</value>
@@ -199,7 +193,7 @@
     <value>comboBox_Ipp1</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp1.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp1.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -207,38 +201,41 @@
   <data name="&gt;&gt;comboBox_Ipp1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="comboBox_Ipp2.Items" xml:space="preserve">
-    <value>00</value>
+  <data name="comboBox_Ipp2.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Ipp2.Items1" xml:space="preserve">
-    <value>01</value>
+  <data name="comboBox_Ipp2.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Ipp2.Items2" xml:space="preserve">
-    <value>02</value>
-  </data>
-  <data name="comboBox_Ipp2.Items3" xml:space="preserve">
-    <value>03</value>
-  </data>
-  <data name="comboBox_Ipp2.Items4" xml:space="preserve">
-    <value>04</value>
-  </data>
-  <data name="comboBox_Ipp2.Items5" xml:space="preserve">
-    <value>05</value>
-  </data>
-  <data name="comboBox_Ipp2.Items6" xml:space="preserve">
-    <value>06</value>
-  </data>
-  <data name="comboBox_Ipp2.Items7" xml:space="preserve">
-    <value>07</value>
-  </data>
-  <data name="comboBox_Ipp2.Items8" xml:space="preserve">
-    <value>08</value>
-  </data>
-  <data name="comboBox_Ipp2.Items9" xml:space="preserve">
-    <value>09</value>
+  <data name="comboBox_Ipp2.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="comboBox_Ipp2.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 110</value>
+  </data>
+  <data name="comboBox_Ipp2.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="comboBox_Ipp2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 21</value>
@@ -250,7 +247,7 @@
     <value>comboBox_Ipp2</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp2.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -265,7 +262,7 @@
     <value>370, 115</value>
   </data>
   <data name="lbl_00.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 13</value>
+    <value>24, 15</value>
   </data>
   <data name="lbl_00.TabIndex" type="System.Int32, mscorlib">
     <value>97</value>
@@ -277,7 +274,7 @@
     <value>lbl_00</value>
   </data>
   <data name="&gt;&gt;lbl_00.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl_00.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -285,17 +282,41 @@
   <data name="&gt;&gt;lbl_00.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="comboBox_Ipp4.Items" xml:space="preserve">
-    <value>24</value>
+  <data name="comboBox_Ipp4.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Ipp4.Items1" xml:space="preserve">
-    <value>25</value>
+  <data name="comboBox_Ipp4.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Ipp4.Items2" xml:space="preserve">
-    <value>26</value>
+  <data name="comboBox_Ipp4.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="comboBox_Ipp4.Location" type="System.Drawing.Point, System.Drawing">
     <value>316, 110</value>
+  </data>
+  <data name="comboBox_Ipp4.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="comboBox_Ipp4.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 21</value>
@@ -307,7 +328,7 @@
     <value>comboBox_Ipp4</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp4.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBox_Ipp4.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -340,7 +361,7 @@
     <value>label_Ipp</value>
   </data>
   <data name="&gt;&gt;label_Ipp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Ipp.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -492,7 +513,7 @@
     <value>btn_Imprimir</value>
   </data>
   <data name="&gt;&gt;btn_Imprimir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_Imprimir.Parent" xml:space="preserve">
     <value>panel_ControlesInferiores</value>
@@ -566,7 +587,7 @@
     <value>btn_Guardar</value>
   </data>
   <data name="&gt;&gt;btn_Guardar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_Guardar.Parent" xml:space="preserve">
     <value>panel_ControlesInferiores</value>
@@ -646,7 +667,7 @@
     <value>btn_Buscar</value>
   </data>
   <data name="&gt;&gt;btn_Buscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_Buscar.Parent" xml:space="preserve">
     <value>panel_ControlesInferiores</value>
@@ -752,7 +773,7 @@
     <value>btn_Limpiar</value>
   </data>
   <data name="&gt;&gt;btn_Limpiar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_Limpiar.Parent" xml:space="preserve">
     <value>panel_ControlesInferiores</value>
@@ -773,7 +794,7 @@
     <value>panel_ControlesInferiores</value>
   </data>
   <data name="&gt;&gt;panel_ControlesInferiores.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel_ControlesInferiores.Parent" xml:space="preserve">
     <value>panel_ConversorDocumentos</value>
@@ -800,7 +821,7 @@
     <value>groupBox_TextosConvertidos</value>
   </data>
   <data name="&gt;&gt;groupBox_TextosConvertidos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox_TextosConvertidos.Parent" xml:space="preserve">
     <value>panel_ConversorDocumentos</value>
@@ -830,7 +851,7 @@
     <value>btn_Convertir</value>
   </data>
   <data name="&gt;&gt;btn_Convertir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_Convertir.Parent" xml:space="preserve">
     <value>panel_ConversorDocumentos</value>
@@ -857,7 +878,7 @@
     <value>btn_EliminarArchivo</value>
   </data>
   <data name="&gt;&gt;btn_EliminarArchivo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_EliminarArchivo.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -884,7 +905,7 @@
     <value>radioButton_Word</value>
   </data>
   <data name="&gt;&gt;radioButton_Word.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton_Word.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -911,7 +932,7 @@
     <value>radioButton_Pdf</value>
   </data>
   <data name="&gt;&gt;radioButton_Pdf.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton_Pdf.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -938,7 +959,7 @@
     <value>pictureBox_AWord</value>
   </data>
   <data name="&gt;&gt;pictureBox_AWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox_AWord.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -965,7 +986,7 @@
     <value>pictureBox_APdf</value>
   </data>
   <data name="&gt;&gt;pictureBox_APdf.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox_APdf.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -998,7 +1019,7 @@
     <value>label_ConvertirAWord</value>
   </data>
   <data name="&gt;&gt;label_ConvertirAWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_ConvertirAWord.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -1031,7 +1052,7 @@
     <value>label_ConvertirAPdf</value>
   </data>
   <data name="&gt;&gt;label_ConvertirAPdf.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_ConvertirAPdf.Parent" xml:space="preserve">
     <value>groupBox_ConversorDocumentos</value>
@@ -1052,7 +1073,7 @@
     <value>groupBox_ConversorDocumentos</value>
   </data>
   <data name="&gt;&gt;groupBox_ConversorDocumentos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox_ConversorDocumentos.Parent" xml:space="preserve">
     <value>panel_ConversorDocumentos</value>
@@ -1072,6 +1093,7 @@
   <data name="label_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
     <value>251, 5</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label_ConversorDocumentos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 5, 30, 5</value>
   </data>
@@ -1088,7 +1110,7 @@
     <value>label_ConversorDocumentos</value>
   </data>
   <data name="&gt;&gt;label_ConversorDocumentos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_ConversorDocumentos.Parent" xml:space="preserve">
     <value>panel_ConversorDocumentos</value>
@@ -1109,7 +1131,7 @@
     <value>panel_ConversorDocumentos</value>
   </data>
   <data name="&gt;&gt;panel_ConversorDocumentos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel_ConversorDocumentos.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1130,7 +1152,7 @@
     <value>panel_Control</value>
   </data>
   <data name="&gt;&gt;panel_Control.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel_Control.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1169,7 +1191,7 @@
     <value>label_DatosInstruccion</value>
   </data>
   <data name="&gt;&gt;label_DatosInstruccion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_DatosInstruccion.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1202,7 +1224,7 @@
     <value>label_Instructor</value>
   </data>
   <data name="&gt;&gt;label_Instructor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Instructor.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1235,7 +1257,7 @@
     <value>label_Secretario</value>
   </data>
   <data name="&gt;&gt;label_Secretario.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Secretario.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1256,7 +1278,7 @@
     <value>Fecha_Instruccion</value>
   </data>
   <data name="&gt;&gt;Fecha_Instruccion.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.Controles.TimePickerPersonalizado, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Fecha_Instruccion.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1289,7 +1311,7 @@
     <value>label_Fecha</value>
   </data>
   <data name="&gt;&gt;label_Fecha.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Fecha.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1322,7 +1344,7 @@
     <value>label_Dependencia</value>
   </data>
   <data name="&gt;&gt;label_Dependencia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Dependencia.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1330,20 +1352,41 @@
   <data name="&gt;&gt;label_Dependencia.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="comboBox_Dependencia.Items" xml:space="preserve">
-    <value>EPC I PINAMAR</value>
+  <data name="comboBox_Dependencia.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Dependencia.Items1" xml:space="preserve">
-    <value>EPC II OSTENDE</value>
+  <data name="comboBox_Dependencia.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="comboBox_Dependencia.Items2" xml:space="preserve">
-    <value>EPC III VALERIA DEL MAR</value>
-  </data>
-  <data name="comboBox_Dependencia.Items3" xml:space="preserve">
-    <value>EPC IV CARILÓ</value>
+  <data name="comboBox_Dependencia.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="comboBox_Dependencia.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 99</value>
+  </data>
+  <data name="comboBox_Dependencia.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="comboBox_Dependencia.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 21</value>
@@ -1355,7 +1398,7 @@
     <value>comboBox_Dependencia</value>
   </data>
   <data name="&gt;&gt;comboBox_Dependencia.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBox_Dependencia.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1363,20 +1406,44 @@
   <data name="&gt;&gt;comboBox_Dependencia.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="comboBox_Instructor.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Instructor.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Instructor.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="comboBox_Instructor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="comboBox_Instructor.Items" xml:space="preserve">
-    <value>Comisario Miguel Moreno</value>
-  </data>
-  <data name="comboBox_Instructor.Items1" xml:space="preserve">
-    <value>subcomisario Melisa Perea Peña</value>
-  </data>
-  <data name="comboBox_Instructor.Items2" xml:space="preserve">
-    <value>Comisario Arias</value>
-  </data>
   <data name="comboBox_Instructor.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 44</value>
+  </data>
+  <data name="comboBox_Instructor.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="comboBox_Instructor.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 21</value>
@@ -1388,7 +1455,7 @@
     <value>comboBox_Instructor</value>
   </data>
   <data name="&gt;&gt;comboBox_Instructor.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBox_Instructor.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1396,26 +1463,44 @@
   <data name="&gt;&gt;comboBox_Instructor.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="comboBox_Secretario.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Secretario.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Secretario.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="comboBox_Secretario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="comboBox_Secretario.Items" xml:space="preserve">
-    <value>Oficial Ayudante Jorge A. Bonato</value>
-  </data>
-  <data name="comboBox_Secretario.Items1" xml:space="preserve">
-    <value>Oficial Subayudante Ariel Vasquez</value>
-  </data>
-  <data name="comboBox_Secretario.Items2" xml:space="preserve">
-    <value>Oficial Subinspector Martin Ali Bonato</value>
-  </data>
-  <data name="comboBox_Secretario.Items3" xml:space="preserve">
-    <value>Sargento Nerea Sandoval</value>
-  </data>
-  <data name="comboBox_Secretario.Items4" xml:space="preserve">
-    <value>Sargento Eleana Dirocco</value>
-  </data>
   <data name="comboBox_Secretario.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 72</value>
+  </data>
+  <data name="comboBox_Secretario.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="comboBox_Secretario.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 21</value>
@@ -1427,7 +1512,7 @@
     <value>comboBox_Secretario</value>
   </data>
   <data name="&gt;&gt;comboBox_Secretario.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBox_Secretario.Parent" xml:space="preserve">
     <value>panel_DatosInstruccion</value>
@@ -1448,7 +1533,7 @@
     <value>panel_DatosInstruccion</value>
   </data>
   <data name="&gt;&gt;panel_DatosInstruccion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel_DatosInstruccion.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1481,7 +1566,7 @@
     <value>radioButton_Juzgado</value>
   </data>
   <data name="&gt;&gt;radioButton_Juzgado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton_Juzgado.Parent" xml:space="preserve">
     <value>groupBox_SeleccionadorProcedencia</value>
@@ -1514,7 +1599,7 @@
     <value>radioButton_Fiscalia</value>
   </data>
   <data name="&gt;&gt;radioButton_Fiscalia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton_Fiscalia.Parent" xml:space="preserve">
     <value>groupBox_SeleccionadorProcedencia</value>
@@ -1541,7 +1626,7 @@
     <value>groupBox_SeleccionadorProcedencia</value>
   </data>
   <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1577,7 +1662,7 @@
     <value>label_DatosActuacion</value>
   </data>
   <data name="&gt;&gt;label_DatosActuacion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_DatosActuacion.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1588,11 +1673,8 @@
   <data name="textBox_Caratula.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 83</value>
   </data>
-  <data name="textBox_Caratula.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="textBox_Caratula.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 20</value>
+    <value>286, 21</value>
   </data>
   <data name="textBox_Caratula.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1601,7 +1683,7 @@
     <value>textBox_Caratula</value>
   </data>
   <data name="&gt;&gt;textBox_Caratula.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBox_Caratula.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1634,7 +1716,7 @@
     <value>label_Caratula</value>
   </data>
   <data name="&gt;&gt;label_Caratula.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Caratula.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1655,7 +1737,7 @@
     <value>textBox_Causante</value>
   </data>
   <data name="&gt;&gt;textBox_Causante.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBox_Causante.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1688,7 +1770,7 @@
     <value>label_Victima</value>
   </data>
   <data name="&gt;&gt;label_Victima.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_Victima.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1697,7 +1779,7 @@
     <value>14</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 20</value>
+    <value>18, 45</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>886, 727</value>
@@ -1709,7 +1791,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1745,22 +1827,22 @@
     <value>label_TITULO</value>
   </data>
   <data name="&gt;&gt;label_TITULO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_TITULO.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_TITULO.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>931, 783</value>
+    <value>936, 807</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2845,8 +2927,14 @@
         xhscrAxtalEAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9024, 902, 9024, 902</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>945, 795</value>
+    <value>16, 9</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -2858,6 +2946,6 @@
     <value>Expedientes</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Formularios.BaseForm, Ofelia-Sara, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ofelia_Sara.Formularios.General.BaseForm, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

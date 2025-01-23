@@ -41,7 +41,7 @@ namespace BaseDatos.Adm_BD.Manager
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error al insertar secretario: {ex.Message}");
+                    MensajeGeneral.Mostrar($"Error al insertar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
                 }
                 finally
                 {
