@@ -49,6 +49,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
+            pictureBox_CheckAgregarSellos.Visible = false;
+
             dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
         }
 
@@ -187,6 +189,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Verifica si el CheckBox está marcado
             if (checkBox_AgregarSellos.Checked)
             {
+                pictureBox_CheckAgregarSellos.Visible = true;
                 // Guarda la posición actual del formulario principal
                 originalPosition = this.Location;
 
@@ -239,8 +242,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void ActualizarEstado()
         {
             // Verifica si textBox_Dependencia y textBox_Localidad no están vacíos ni contienen solo espacios
-            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.Text) &&
-                                 !string.IsNullOrWhiteSpace(textBox_Localidad.Text);
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Dependencia.TextValue) &&
+                                 !string.IsNullOrWhiteSpace(textBox_Localidad.TextValue);
 
             // Actualiza el color del label y el estado del CheckBox según el texto de los TextBox
             label_AgregarSellos.ForeColor = esTextoValido ? Color.Black : Color.Tomato;

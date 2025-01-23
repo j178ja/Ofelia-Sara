@@ -290,5 +290,15 @@ namespace Ofelia_Sara.Controles.General
             get => textBox.AutoCompleteCustomSource;
             set => textBox.AutoCompleteCustomSource = value;
         }
+
+        // Evento para TextChanged
+        public event EventHandler TextChanged
+        {
+            add => textBox.TextChanged += value;
+            remove => textBox.TextChanged -= value;
+        }
+
+     
+
     }
 }
