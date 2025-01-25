@@ -46,7 +46,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Expedientes_Load(object sender, EventArgs e)
         {
-            this.FormClosing += BuscarPersonal_FormClosing;
+            this.FormClosing += Expedientes_FormClosing;
 
             InicializarEstiloBoton(btn_Buscar);
             InicializarEstiloBoton(btn_Guardar);
@@ -1246,7 +1246,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
-        private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        private void Expedientes_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {

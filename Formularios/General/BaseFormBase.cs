@@ -6,7 +6,8 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Diagnostics;
 using Ofelia_Sara.Formularios.General.Mensajes;
-
+using System.Drawing;
+using System.Linq;
 
 namespace Ofelia_Sara.Formularios.General
 {
@@ -23,6 +24,9 @@ namespace Ofelia_Sara.Formularios.General
         protected bool IsInDesignMode => DesignMode ||
                                   LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
                                   Process.GetCurrentProcess().ProcessName == "devenv";
+
+        private PictureBox arrowPictureBox; // Representa la imagen del control
+        private Image disabledImage = Properties.Resources.flechaG_Roja; // Imagen deshabilitada
 
 
         public BaseFormBase()
@@ -109,7 +113,7 @@ namespace Ofelia_Sara.Formularios.General
             {
                 using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
                 {
-                    this.Cursor = new Cursor(cursorStream);
+                    this.Cursor = new Cursor(cursorStream); // Cursor predeterminado
                 }
             }
             catch (Exception ex)
@@ -121,11 +125,8 @@ namespace Ofelia_Sara.Formularios.General
             {
                 using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.hand))
                 {
-                   cursorHandPersonalizado = new Cursor(cursorStream);
+                    cursorHandPersonalizado = new Cursor(cursorStream); // Cursor para Hand
                 }
-
-
-
             }
             catch (Exception ex)
             {
@@ -136,17 +137,29 @@ namespace Ofelia_Sara.Formularios.General
             {
                 using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
                 {
-                    CursorLapizDerecha = new Cursor(cursorStream);
+                    CursorLapizDerecha = new Cursor(cursorStream); // Cursor para lápiz
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error cargando CursorlapizDerecha: {ex.Message}");
             }
+
+          
         }
 
+       
+
+
+
+
     }
+
+
 }
+
+
+ 
 
 
 

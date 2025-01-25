@@ -112,6 +112,47 @@ namespace Ofelia_Sara.Controles.General
             if (animationProgress == 100) animationTimer.Stop();
         }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            // Calcula la altura ajustada del TextBox para adaptarlo al control
+            int textBoxHeight = (int)(this.Height * 0.9); // El TextBox ocupa el 80% de la altura del control
+            int verticalPadding = (this.Height - textBoxHeight) / 2; // Espaciado vertical para centrar el TextBox
+
+            // Ajusta las dimensiones y posición del TextBox dentro del control
+            textBox.SetBounds(
+                5,                   // Margen izquierdo
+                verticalPadding,     // Margen superior
+                this.Width - 10,     // Ancho ajustado (control - márgenes)
+                textBoxHeight        // Altura ajustada
+            );
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            using (Brush brush = new SolidBrush(isFocused ? focusColor : (showError ? errorColor : this.BackColor)))
+            {
+                int lineWidth = 3;
+                float progress = animationProgress / 100f;
+                int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);
+                int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
+                e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
+            }
+
+            // Si el control está vacío y no tiene foco, muestra el placeholder
+            if (string.IsNullOrEmpty(this.Text) && !this.Focused && !string.IsNullOrEmpty(PlaceholderText))
+            {
+                using (Brush brush = new SolidBrush(PlaceholderColor))
+                {
+                    e.Graphics.DrawString(PlaceholderText, this.Font, brush, new PointF(1, 1));
+                }
+            }
+        }
+
         /// <summary>
         /// PROPIEDADES PLACEHOLDER
         /// </summary>
@@ -143,30 +184,6 @@ namespace Ofelia_Sara.Controles.General
         }
 
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-            using (Brush brush = new SolidBrush(isFocused ? focusColor : (showError ? errorColor : this.BackColor)))
-            {
-                int lineWidth = 3;
-                float progress = animationProgress / 100f;
-                int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);
-                int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
-                e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
-            }
-
-            // Si el control está vacío y no tiene foco, muestra el placeholder
-            if (string.IsNullOrEmpty(this.Text) && !this.Focused && !string.IsNullOrEmpty(PlaceholderText))
-            {
-                using (Brush brush = new SolidBrush(PlaceholderColor))
-                {
-                    e.Graphics.DrawString(PlaceholderText, this.Font, brush, new PointF(1, 1));
-                }
-            }
-        }
-
         // Propiedades Públicas
         public string TextValue
         {
@@ -196,23 +213,7 @@ namespace Ofelia_Sara.Controles.General
             set => errorColor = value;
         }
 
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-
-            // Calcula la altura ajustada del TextBox para adaptarlo al control
-            int textBoxHeight = (int)(this.Height * 0.9); // El TextBox ocupa el 80% de la altura del control
-            int verticalPadding = (this.Height - textBoxHeight) / 2; // Espaciado vertical para centrar el TextBox
-
-            // Ajusta las dimensiones y posición del TextBox dentro del control
-            textBox.SetBounds(
-                5,                   // Margen izquierdo
-                verticalPadding,     // Margen superior
-                this.Width - 10,     // Ancho ajustado (control - márgenes)
-                textBoxHeight        // Altura ajustada
-            );
-        }
-
+   
 
 
         // Propiedad para TextAlign
@@ -298,7 +299,12 @@ namespace Ofelia_Sara.Controles.General
             remove => textBox.TextChanged -= value;
         }
 
-     
+        public event KeyPressEventHandler KeyPress
+        {
+            add { textBox.KeyPress += value; }
+            remove { textBox.KeyPress -= value; }
+        }
+
 
     }
 }

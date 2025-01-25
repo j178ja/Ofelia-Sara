@@ -1,4 +1,5 @@
-﻿namespace Ofelia_Sara.Formularios.General
+﻿using Ofelia_Sara.Controles.General;
+namespace Ofelia_Sara.Formularios.General
 {
     partial class MenuPrincipal
     {
@@ -181,7 +182,7 @@
             comboBox_Buscar.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Buscar.DisabledImage");
             comboBox_Buscar.DisplayMember = null;
             comboBox_Buscar.DropDownHeight = 252;
-            comboBox_Buscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Buscar.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Buscar.DroppedDown = false;
             comboBox_Buscar.ErrorColor = System.Drawing.Color.Red;
             comboBox_Buscar.FocusColor = System.Drawing.Color.Blue;

@@ -6,6 +6,7 @@ using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ofelia_Sara.Controles.General;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -605,7 +606,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             ActualizarControlesPicture();
 
-            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+            comboBox_EstadoCivil.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
 
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
         }

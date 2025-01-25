@@ -587,27 +587,59 @@ namespace Ofelia_Sara.Controles.General
         }
 
 
-        private ComboBoxStyle dropDownStyle = ComboBoxStyle.DropDown; // Valor predeterminado
+        //private ComboBoxStyle dropDownStyle = ComboBoxStyle.DropDown; // Valor predeterminado
 
-        public ComboBoxStyle DropDownStyle
+        //public ComboBoxStyle DropDownStyle
+        //{
+        //    get => dropDownStyle;
+        //    set
+        //    {
+        //        //        dropDownStyle = value;
+        //        //        if (dropDownStyle == ComboBoxStyle.DropDownList)
+        //        //        {
+        //        //            textBox.ReadOnly = true; // Deshabilita la edición del TextBox
+        //        //            textBox.Cursor = Cursors.Default; // Cambia el cursor
+        //        //            textBox.BackColor = SystemColors.Control; // Fondo gris como DropDownList
+
+        //        //        }
+        //        //        else
+        //        //        {
+        //        //            textBox.ReadOnly = false;
+        //        //            textBox.Cursor = Cursors.IBeam;
+        //        //            textBox.BackColor = Color.Red; // Fondo editable
+        //        //        }
+        //    }
+        //}
+
+
+        public enum CustomComboBoxStyle
+        {
+            DropDown,
+            DropDownList
+        }
+
+        private CustomComboBoxStyle dropDownStyle = CustomComboBoxStyle.DropDown;
+
+        public CustomComboBoxStyle DropDownStyle
         {
             get => dropDownStyle;
             set
             {
-                //        dropDownStyle = value;
-                //        if (dropDownStyle == ComboBoxStyle.DropDownList)
-                //        {
-                //            textBox.ReadOnly = true; // Deshabilita la edición del TextBox
-                //            textBox.Cursor = Cursors.Default; // Cambia el cursor
-                //            textBox.BackColor = SystemColors.Control; // Fondo gris como DropDownList
-
-                //        }
-                //        else
-                //        {
-                //            textBox.ReadOnly = false;
-                //            textBox.Cursor = Cursors.IBeam;
-                //            textBox.BackColor = Color.Red; // Fondo editable
-                //        }
+                dropDownStyle = value;
+                if (dropDownStyle == CustomComboBoxStyle.DropDownList)
+                {
+                    // Desactiva la escritura
+                    textBox.ReadOnly = true;
+                    textBox.Cursor = Cursors.Default; // Cambia el cursor para reflejar que no es editable
+                    textBox.BackColor = Color.White; // Fondo gris como DropDownList
+                }
+                else
+                {
+                    // Permite la escritura
+                    textBox.ReadOnly = false;
+                    textBox.Cursor = Cursors.IBeam; // Vuelve al cursor de texto
+                    textBox.BackColor = Color.White; // Fondo editable
+                }
             }
         }
 
@@ -693,6 +725,18 @@ namespace Ofelia_Sara.Controles.General
             set => textBox.SelectedText = value;
         }
 
+        public string TextValue
+        {
+            get => textBox.Text;
+            set => textBox.Text = value;
+        }
+
+        // Evento para TextChanged
+        public event EventHandler TextChanged
+        {
+            add => textBox.TextChanged += value;
+            remove => textBox.TextChanged -= value;
+        }
 
         public bool ShowError
         {
@@ -874,7 +918,7 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
-     
+
 
 
     }

@@ -21,6 +21,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class NuevoSecretario : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public NuevoSecretario()
         {
             InitializeComponent();
@@ -35,6 +36,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             pictureBox_CheckFirmaDigitalizada.Visible = false;
+
+            this.FormClosing += NuevoSecretario_FormClosing;
+
+            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+
         }
         // Implementación del método de la interfaz IFormulario
         public void Inicializar()
@@ -50,9 +57,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-            // ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
 
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
+            comboBox_Jerarquia.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
             //para recibir imagenes y cargarlas con click
@@ -73,6 +81,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
+
+        private void NuevoSecretario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
         {
@@ -80,10 +106,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         }
 
         //-----------BOTON LIMPIAR---------------
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Jerarquia.SelectedIndex = -1;
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //______________________________________________________________________________
@@ -92,37 +119,37 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
 
         //-------------BOTON GUARDAR--------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
-                 string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                 string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.TextValue) ||
+                 string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
+                 string.IsNullOrWhiteSpace(textBox_Apellido.TextValue))
             {
                 MensajeGeneral.Mostrar("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
                 // Convertir el valor de textBox_NumeroLegajo a float, y asignar un valor por defecto si está vacío
-                float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text)
+                float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue)
                                ? 100000 // valor por defecto
-                               : float.Parse(textBox_NumeroLegajo.Text);
+                               : float.Parse(textBox_NumeroLegajo.TextValue);
 
 
 
                 var nuevoSecretario = new Secretario
                 {
                     Legajo = legajo,
-                    Subescalafon = comboBox_Escalafon.Text,
-                    Jerarquia = comboBox_Jerarquia.Text,
-                    Nombre = textBox_Nombre.Text,
-                    Apellido = textBox_Apellido.Text,
-                    Dependencia = comboBox_Dependencia.Text,
-                    Funcion = textBox_Funcion.Text
+                    Subescalafon = comboBox_Escalafon.TextValue,
+                    Jerarquia = comboBox_Jerarquia.TextValue,
+                    Nombre = textBox_Nombre.TextValue,
+                    Apellido = textBox_Apellido.TextValue,
+                    Dependencia = comboBox_Dependencia.TextValue,
+                    Funcion = textBox_Funcion.TextValue
                 };
 
                 SecretariosManager manager = new SecretariosManager();
                 manager.InsertSecretario(nuevoSecretario.Legajo, nuevoSecretario.Subescalafon, nuevoSecretario.Jerarquia, nuevoSecretario.Nombre, nuevoSecretario.Apellido, nuevoSecretario.Dependencia, nuevoSecretario.Funcion);
-
+                datosGuardados = true;
                 MensajeGeneral.Mostrar("Se ha guardado un nuevo secretario.", MensajeGeneral.TipoMensaje.Exito);
                 LimpiarFormulario.Limpiar(this);
                 comboBox_Escalafon.SelectedIndex = -1;
@@ -155,8 +182,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
 
             //  deshabilitar la edición del ComboBox_Escalafon
-            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
         }
 
@@ -182,7 +209,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
             pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
         }
-        private void checkBox_AgregarFirma_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_AgregarFirma_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = sender as CheckBox;
             if (checkBox != null)
@@ -231,7 +258,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite dígitos y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -240,7 +267,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
 

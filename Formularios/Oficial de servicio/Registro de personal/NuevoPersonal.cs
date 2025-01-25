@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
+using static Ofelia_Sara.Controles.General.CustomComboBox;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
@@ -98,7 +99,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                                                                                    // Asegura la asociación del método MostrarAntiguedad al evento OnCalcularAntiguedad
             dateTimePicker_Antiguedad.OnCalcularAntiguedad = MostrarAntiguedad;
 
-            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
+            comboBox_EstadoCivil.DropDownStyle = CustomComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
+          
 
             numeroTelefonicoControl1.ControlWidth = 159;
             numeroTelefonicoControl2.ControlWidth = 159;

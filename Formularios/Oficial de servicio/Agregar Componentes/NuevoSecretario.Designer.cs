@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Ofelia_Sara.Controles.General;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
@@ -111,7 +112,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
@@ -150,7 +151,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Jerarquia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DisabledImage");
             comboBox_Jerarquia.DisplayMember = null;
             comboBox_Jerarquia.DropDownHeight = 252;
-            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
             comboBox_Jerarquia.DroppedDown = false;
             comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
@@ -181,7 +182,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Escalafon.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DisabledImage");
             comboBox_Escalafon.DisplayMember = null;
             comboBox_Escalafon.DropDownHeight = 252;
-            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
             comboBox_Escalafon.DroppedDown = false;
             comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
             comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
@@ -242,8 +243,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_NumeroLegajo.TabIndex = 53;
             textBox_NumeroLegajo.TextAlign = HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
-            textBox_NumeroLegajo.TextChanged += textBox_NumeroLegajo_TextChanged;
-            textBox_NumeroLegajo.KeyPress += textBox_NumeroLegajo_KeyPress;
+            textBox_NumeroLegajo.TextChanged += TextBox_NumeroLegajo_TextChanged;
+            textBox_NumeroLegajo.KeyPress += TextBox_NumeroLegajo_KeyPress;
             // 
             // label_Legajo
             // 
@@ -379,7 +380,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
             checkBox_AgregarFirma.TabIndex = 4;
             checkBox_AgregarFirma.UseVisualStyleBackColor = true;
-            checkBox_AgregarFirma.CheckedChanged += checkBox_AgregarFirma_CheckedChanged;
+            checkBox_AgregarFirma.CheckedChanged += CheckBox_AgregarFirma_CheckedChanged;
             // 
             // label_AgregaFirma
             // 
@@ -401,7 +402,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 6;
             btn_Limpiar.UseVisualStyleBackColor = false;
-            btn_Limpiar.Click += btn_Limpiar_Click;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
             // btn_Guardar
             // 
@@ -413,7 +414,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             btn_Guardar.Size = new System.Drawing.Size(75, 67);
             btn_Guardar.TabIndex = 5;
             btn_Guardar.UseVisualStyleBackColor = false;
-            btn_Guardar.Click += btn_Guardar_Click;
+            btn_Guardar.Click += Btn_Guardar_Click;
             // 
             // label_NuevoSecretario
             // 

@@ -322,7 +322,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Fiscalia.DisabledImage = (Image)resources.GetObject("comboBox_Fiscalia.DisabledImage");
             comboBox_Fiscalia.DisplayMember = null;
             comboBox_Fiscalia.DropDownHeight = 252;
-            comboBox_Fiscalia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Fiscalia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Fiscalia.DroppedDown = false;
             comboBox_Fiscalia.ErrorColor = Color.Red;
             comboBox_Fiscalia.FocusColor = Color.Blue;
@@ -354,7 +354,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.DisabledImage = (Image)resources.GetObject("comboBox_Instructor.DisabledImage");
             comboBox_Instructor.DisplayMember = null;
             comboBox_Instructor.DropDownHeight = 252;
-            comboBox_Instructor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Instructor.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Instructor.DroppedDown = false;
             comboBox_Instructor.ErrorColor = Color.Red;
             comboBox_Instructor.FocusColor = Color.Blue;
@@ -386,7 +386,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.DisabledImage = (Image)resources.GetObject("comboBox_Secretario.DisabledImage");
             comboBox_Secretario.DisplayMember = null;
             comboBox_Secretario.DropDownHeight = 252;
-            comboBox_Secretario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Secretario.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Secretario.DroppedDown = false;
             comboBox_Secretario.ErrorColor = Color.Red;
             comboBox_Secretario.FocusColor = Color.Blue;
@@ -418,7 +418,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.DisabledImage = (Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = Color.Red;
             comboBox_Dependencia.FocusColor = Color.Blue;
@@ -449,7 +449,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.DisabledImage = (Image)resources.GetObject("comboBox_AgenteFiscal.DisabledImage");
             comboBox_AgenteFiscal.DisplayMember = null;
             comboBox_AgenteFiscal.DropDownHeight = 252;
-            comboBox_AgenteFiscal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_AgenteFiscal.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_AgenteFiscal.DroppedDown = false;
             comboBox_AgenteFiscal.ErrorColor = Color.Red;
             comboBox_AgenteFiscal.FocusColor = Color.Blue;
@@ -481,7 +481,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.DisabledImage = (Image)resources.GetObject("comboBox_Ipp1.DisabledImage");
             comboBox_Ipp1.DisplayMember = null;
             comboBox_Ipp1.DropDownHeight = 252;
-            comboBox_Ipp1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp1.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Ipp1.DroppedDown = false;
             comboBox_Ipp1.ErrorColor = Color.Red;
             comboBox_Ipp1.FocusColor = Color.Blue;
@@ -512,7 +512,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.DisabledImage = (Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
             comboBox_Ipp2.DisplayMember = null;
             comboBox_Ipp2.DropDownHeight = 252;
-            comboBox_Ipp2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp2.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Ipp2.DroppedDown = false;
             comboBox_Ipp2.ErrorColor = Color.Red;
             comboBox_Ipp2.FocusColor = Color.Blue;
@@ -553,7 +553,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.DisabledImage = (Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
             comboBox_Ipp4.DisplayMember = null;
             comboBox_Ipp4.DropDownHeight = 252;
-            comboBox_Ipp4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp4.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Ipp4.DroppedDown = false;
             comboBox_Ipp4.ErrorColor = Color.Red;
             comboBox_Ipp4.FocusColor = Color.Blue;
@@ -794,7 +794,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_DeptoJudicial.DisabledImage = (Image)resources.GetObject("comboBox_DeptoJudicial.DisabledImage");
             comboBox_DeptoJudicial.DisplayMember = null;
             comboBox_DeptoJudicial.DropDownHeight = 252;
-            comboBox_DeptoJudicial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_DeptoJudicial.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_DeptoJudicial.DroppedDown = false;
             comboBox_DeptoJudicial.ErrorColor = Color.Red;
             comboBox_DeptoJudicial.FocusColor = Color.Blue;
@@ -849,7 +849,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Localidad.DisabledImage = (Image)resources.GetObject("comboBox_Localidad.DisabledImage");
             comboBox_Localidad.DisplayMember = null;
             comboBox_Localidad.DropDownHeight = 252;
-            comboBox_Localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Localidad.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox_Localidad.DroppedDown = false;
             comboBox_Localidad.ErrorColor = Color.Red;
             comboBox_Localidad.FocusColor = Color.Blue;

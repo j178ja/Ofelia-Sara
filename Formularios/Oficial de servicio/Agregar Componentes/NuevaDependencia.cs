@@ -13,6 +13,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class NuevaDependencia : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private SellosDependencia sellosDependenciaForm;
 
         private ComisariasManager dbManager;
@@ -52,6 +53,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_CheckAgregarSellos.Visible = false;
 
             dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
+
+
+            this.FormClosing += NuevaDependencia_FormClosing;
         }
 
         private void NuevaDependencia_Load(object sender, EventArgs e)
@@ -72,6 +76,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependencia;
             sellosDependenciaForm.LocalidadTextChanged += ActualizarTextoLocalidad;
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
+
         }
         //-----------------------------------------------------------------------------
 
@@ -103,10 +108,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Obtener datos desde los TextBox
-            string dependencia = textBox_Dependencia.Text;
-            string domicilio = textBox_Domicilio.Text;
-            string localidad = textBox_Localidad.Text;
-            string partido = textBox_Partido.Text;
+            string dependencia = textBox_Dependencia.TextValue;
+            string domicilio = textBox_Domicilio.TextValue;
+            string localidad = textBox_Localidad.TextValue;
+            string partido = textBox_Partido.TextValue;
 
             if (!string.IsNullOrEmpty(dependencia) && !string.IsNullOrEmpty(localidad))
             {
@@ -118,9 +123,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     dbManager.InsertComisaria(dependencia, domicilio, localidad, partido); // Utiliza el método de inserción
 
                     MensajeGeneral.Mostrar("Se ha guardado la nueva Dependencia en la base de datos.", MensajeGeneral.TipoMensaje.Exito);
-
+                    datosGuardados = true; // Marcar que los datos fueron guardados
                     // Limpiar el formulario
                     LimpiarFormulario.Limpiar(this);
+                   
 
                 }
                 catch (Exception ex)
@@ -237,6 +243,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             this.Location = originalPosition;
         }
 
+
+
+        private void NuevaDependencia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
         //-------------------------------------------------------------------------
         //--Para habilitar check y modificar label
         private void ActualizarEstado()
@@ -268,10 +293,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             //---para actualizar en tiempo real textbox DEPENDENCIA
             // Asegura que el cursor esté al final del texto
-            textBox_Dependencia.SelectionStart = textBox_Dependencia.Text.Length;
+            textBox_Dependencia.SelectionStart = textBox_Dependencia.TextValue.Length;
 
             // Dispara el evento si hay suscriptores
-            DependenciaTextChanged?.Invoke(textBox_Dependencia.Text);
+            DependenciaTextChanged?.Invoke(textBox_Dependencia.TextValue);
         }
 
 
@@ -281,55 +306,55 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             //---para actualizar en tiempo real textbox DEPENDENCIA
             // Asegura que el cursor esté al final del texto
-            textBox_Localidad.SelectionStart = textBox_Localidad.Text.Length;
+            textBox_Localidad.SelectionStart = textBox_Localidad.TextValue.Length;
 
             // Dispara el evento si hay suscriptores
-            LocalidadTextChanged?.Invoke(textBox_Localidad.Text);
+            LocalidadTextChanged?.Invoke(textBox_Localidad.TextValue);
         }
         //-----------------------------------------------------------------------------
         //---para actualizar automaticamente entre form NuevaDependencia y SellosDependencia--
 
         public string TextoDependencia
         {
-            get { return textBox_Dependencia.Text; }
-            set { textBox_Dependencia.Text = value; }
+            get { return textBox_Dependencia.TextValue; }
+            set { textBox_Dependencia.TextValue = value; }
         }
         public string TextoLocalidad
         {
-            get { return textBox_Localidad.Text; }
-            set { textBox_Localidad.Text = value; }
+            get { return textBox_Localidad.TextValue; }
+            set { textBox_Localidad.TextValue = value; }
         }
 
 
         public void ActualizarTextoDependencia(string texto)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
-            if (textBox_Dependencia.Text != texto)
+            if (textBox_Dependencia.TextValue != texto)
             {
-                textBox_Dependencia.Text = texto;
+                textBox_Dependencia.TextValue = texto;
             }
         }
         public void ActualizarTextoLocalidad(string texto)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
-            if (textBox_Localidad.Text != texto)
+            if (textBox_Localidad.TextValue != texto)
             {
-                textBox_Localidad.Text = texto;
+                textBox_Localidad.TextValue = texto;
             }
         }
 
         public void ActualizarTextoDependenciaDesdeSellosDependencia(string nuevoTexto)
         {
-            if (textBox_Dependencia.Text != nuevoTexto)
+            if (textBox_Dependencia.TextValue != nuevoTexto)
             {
-                textBox_Dependencia.Text = nuevoTexto;
+                textBox_Dependencia.TextValue = nuevoTexto;
             }
         }
         public void ActualizarTextoLocalidadDesdeSellosDependencia(string nuevoTexto)
         {
-            if (textBox_Localidad.Text != nuevoTexto)
+            if (textBox_Localidad.TextValue != nuevoTexto)
             {
-                textBox_Localidad.Text = nuevoTexto;
+                textBox_Localidad.TextValue = nuevoTexto;
             }
         }
     }

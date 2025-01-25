@@ -7,7 +7,7 @@ using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using Ofelia_Sara.Controles.General;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
@@ -45,7 +45,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             this.textBox_Email = new Ofelia_Sara.Controles.General.CustomTextBox();// Configuración del textBox_Email
 
-            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+            comboBox_EstadoCivil.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);

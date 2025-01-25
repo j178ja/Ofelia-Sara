@@ -1,4 +1,5 @@
 ﻿
+using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -12,7 +13,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 {
     public partial class UsuarioForm : BaseForm
     {
-
+        private Timer capsLockTimer; // Timer para verificar Caps Lock
         public UsuarioForm()
         {
             InitializeComponent();
@@ -20,6 +21,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
+            pictureBox_OjoContraseña.Enabled = false;
+        
+            textBox_Contraseña.InnerTextBox.GotFocus += (s, e) => IndicadorMayusculaActivado();
+            textBox_Contraseña.InnerTextBox.KeyPress += (s, e) => IndicadorMayusculaActivado();
+            textBox_Contraseña.InnerTextBox.LostFocus += (s, e) => pictureBox_MayusculaActivada.Visible = false;
+            InicializarCapsLockTimer(); // Inicializar el Timer
+
+            // Inicializa el estado de Caps Lock al cargar el formulario
+            capsLockState = Control.IsKeyLocked(Keys.CapsLock);
+            IndicadorMayusculaActivado(); // Muestra u oculta el indicador inicial
+
+            // Inicia el Timer para seguir verificando el estado
+            InicializarCapsLockTimer();
         }
 
         private void Usuario_Load(object sender, EventArgs e)
@@ -29,7 +43,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             //sobre ojo
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
-            pictureBox_OjoContraseña.Enabled = false;
+
             this.Shown += Focus_Shown;//para que haga foco en un textBox
         }
         //-----------------------------------------------------------------------------
@@ -87,7 +101,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
         private void TextBox_Contraseña_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_Contraseña.Text))
+            if (string.IsNullOrEmpty(textBox_Contraseña.TextValue))
             {
                 // Desactiva la imagen si no hay texto
                 pictureBox_OjoContraseña.Enabled = false;
@@ -146,6 +160,52 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             // Lógica de validación (e.g., comparación de contraseñas, etc.)
             return true; // Retornar true si la validación es correcta
         }
+        private bool capsLockState = false; // Almacena el estado actual de Caps Lock
+
+        private void InicializarCapsLockTimer()
+        {
+            capsLockTimer = new Timer
+            {
+                Interval = 200 // Verificar cada 200 ms
+            };
+            capsLockTimer.Tick += CapsLockTimer_Tick;
+            capsLockTimer.Start();
+        }
+
+        private void CapsLockTimer_Tick(object sender, EventArgs e)
+        {
+            // Verifica si el estado de Caps Lock ha cambiado
+            bool isCapsLock = Control.IsKeyLocked(Keys.CapsLock);
+
+            if (isCapsLock != capsLockState) // Solo actualiza si hay un cambio en el estado
+            {
+                capsLockState = isCapsLock;
+                IndicadorMayusculaActivado(); // Actualiza el indicador visual
+            }
+        }
+
+        private void IndicadorMayusculaActivado()
+        {
+            if (capsLockState)
+            {
+                pictureBox_MayusculaActivada.Visible = true; // Mostrar el indicador visual
+                ToolTipGeneral.ShowToolTip(pictureBox_MayusculaActivada, "Mayúsculas activadas.");
+            }
+            else
+            {
+                pictureBox_MayusculaActivada.Visible = false; // Ocultar el indicador visual
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            // Detener el Timer al cerrar el formulario para evitar fugas de recursos
+            capsLockTimer?.Stop();
+            capsLockTimer?.Dispose();
+            base.OnFormClosing(e);
+        }
+
+
 
     }
 }

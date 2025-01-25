@@ -14,6 +14,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class NuevaFiscalia : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public NuevaFiscalia()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             MayusculaSola.AplicarAControl(textBox_Localidad);
-
+            this.FormClosing += NuevaFiscalia_FormClosing;
         }
 
         private void Fiscalia_Load(object sender, EventArgs e)
@@ -42,6 +43,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Fiscalia.Focus();
+        }
+
+        private void NuevaFiscalia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
         }
 
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
@@ -66,13 +85,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         }
         ////--------------------------------------------------------------------
-        //private void LimpiarTextBox()
-        //{
-        //    textBox_Fiscalia.Clear();
-        //    textBox_AgenteFiscal.Clear();
-        //    textBox_Localidad.Clear();
-        //    textBox_DeptoJudicial.Clear();
-        //}
+        
 
 
         //--------------------------------------------------------------------
@@ -113,10 +126,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             if
-              (string.IsNullOrWhiteSpace(textBox_Fiscalia.Text) ||
-               string.IsNullOrWhiteSpace(textBox_AgenteFiscal.Text) ||
-               string.IsNullOrWhiteSpace(textBox_Localidad.Text) ||
-               string.IsNullOrWhiteSpace(textBox_DeptoJudicial.Text))
+              (string.IsNullOrWhiteSpace(textBox_Fiscalia.TextValue) ||
+               string.IsNullOrWhiteSpace(textBox_AgenteFiscal.TextValue) ||
+               string.IsNullOrWhiteSpace(textBox_Localidad.TextValue) ||
+               string.IsNullOrWhiteSpace(textBox_DeptoJudicial.TextValue))
             {
                 MessageBox.Show("Debe completar la totalidad de campos.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -126,21 +139,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 // Crear una instancia de Fiscalia con los datos del formulario
                 var nuevaFiscalia = new Fiscalia
                 {
-                    Ufid = textBox_Fiscalia.Text,
-                    AgenteFiscal = textBox_AgenteFiscal.Text,
-                    Localidad = textBox_Localidad.Text,
-                    DeptoJudicial = textBox_DeptoJudicial.Text
+                    Ufid = textBox_Fiscalia.TextValue,
+                    AgenteFiscal = textBox_AgenteFiscal.TextValue,
+                    Localidad = textBox_Localidad.TextValue,
+                    DeptoJudicial = textBox_DeptoJudicial.TextValue
                 };
 
                 // Instanciar FiscaliasManager y llamar a InsertFiscalia para guardar los datos
                 // FiscaliasManager fiscaliaManager = new FiscaliasManager(dbConnection);
                 // fiscaliaManager.InsertFiscalia(nuevaFiscalia);
-
+                datosGuardados = true;
                 MensajeGeneral.Mostrar("Se ha cargado nueva fiscalia y Agente Fiscal en los formularios.", MensajeGeneral.TipoMensaje.Informacion);
 
                 // Limpiar los campos después de guardar
-                // LimpiarTextBox();
-                LimpiarFormulario.Limpiar(this);
+                 LimpiarFormulario.Limpiar(this);
             }
         }
     }

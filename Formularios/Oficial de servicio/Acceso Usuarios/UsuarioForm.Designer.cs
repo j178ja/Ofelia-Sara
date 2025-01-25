@@ -28,150 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
-            this.btn_Registrarse = new System.Windows.Forms.Button();
-            this.btn_Ingresar = new System.Windows.Forms.Button();
-            this.textBox_Contraseña = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.textBox_Usuario = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Contraseña = new System.Windows.Forms.Label();
-            this.label_Usuario = new System.Windows.Forms.Label();
-            this.label_Validacion = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            pictureBox_MayusculaActivada = new System.Windows.Forms.PictureBox();
+            pictureBox_OjoContraseña = new System.Windows.Forms.PictureBox();
+            btn_Registrarse = new System.Windows.Forms.Button();
+            btn_Ingresar = new System.Windows.Forms.Button();
+            textBox_Contraseña = new Controles.General.CustomTextBox();
+            textBox_Usuario = new Controles.General.CustomTextBox();
+            label_Contraseña = new System.Windows.Forms.Label();
+            label_Usuario = new System.Windows.Forms.Label();
+            label_Validacion = new System.Windows.Forms.Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_MayusculaActivada).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_OjoContraseña).BeginInit();
+            SuspendLayout();
             // 
-         
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.pictureBox_OjoContraseña);
-            this.panel1.Controls.Add(this.btn_Registrarse);
-            this.panel1.Controls.Add(this.btn_Ingresar);
-            this.panel1.Controls.Add(this.textBox_Contraseña);
-            this.panel1.Controls.Add(this.textBox_Usuario);
-            this.panel1.Controls.Add(this.label_Contraseña);
-            this.panel1.Controls.Add(this.label_Usuario);
-            this.panel1.Controls.Add(this.label_Validacion);
-            this.panel1.Location = new System.Drawing.Point(20, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 179);
-            this.panel1.TabIndex = 3;
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(pictureBox_MayusculaActivada);
+            panel1.Controls.Add(pictureBox_OjoContraseña);
+            panel1.Controls.Add(btn_Registrarse);
+            panel1.Controls.Add(btn_Ingresar);
+            panel1.Controls.Add(textBox_Contraseña);
+            panel1.Controls.Add(textBox_Usuario);
+            panel1.Controls.Add(label_Contraseña);
+            panel1.Controls.Add(label_Usuario);
+            panel1.Controls.Add(label_Validacion);
+            panel1.Location = new System.Drawing.Point(20, 15);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(526, 179);
+            panel1.TabIndex = 3;
+            // 
+            // pictureBox_MayusculaActivada
+            // 
+            pictureBox_MayusculaActivada.BackgroundImage = Properties.Resources.letra_mayuscula;
+            pictureBox_MayusculaActivada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_MayusculaActivada.Location = new System.Drawing.Point(169, 81);
+            pictureBox_MayusculaActivada.Name = "pictureBox_MayusculaActivada";
+            pictureBox_MayusculaActivada.Size = new System.Drawing.Size(21, 24);
+            pictureBox_MayusculaActivada.TabIndex = 29;
+            pictureBox_MayusculaActivada.TabStop = false;
             // 
             // pictureBox_OjoContraseña
             // 
-            this.pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 81);
-            this.pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
-            this.pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 22);
-            this.pictureBox_OjoContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_OjoContraseña.TabIndex = 28;
-            this.pictureBox_OjoContraseña.TabStop = false;
-            this.pictureBox_OjoContraseña.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_OjoContraseña_MouseDown);
-            this.pictureBox_OjoContraseña.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_OjoContraseña_MouseUp);
+            pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            pictureBox_OjoContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_OjoContraseña.Location = new System.Drawing.Point(427, 81);
+            pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
+            pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 22);
+            pictureBox_OjoContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox_OjoContraseña.TabIndex = 28;
+            pictureBox_OjoContraseña.TabStop = false;
+            pictureBox_OjoContraseña.MouseDown += PictureBox_OjoContraseña_MouseDown;
+            pictureBox_OjoContraseña.MouseUp += PictureBox_OjoContraseña_MouseUp;
             // 
             // btn_Registrarse
             // 
-            this.btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Registrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Registrarse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Registrarse.Location = new System.Drawing.Point(189, 129);
-            this.btn_Registrarse.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Registrarse.Name = "btn_Registrarse";
-            this.btn_Registrarse.Size = new System.Drawing.Size(116, 33);
-            this.btn_Registrarse.TabIndex = 6;
-            this.btn_Registrarse.Text = "REGISTRARSE";
-            this.btn_Registrarse.UseVisualStyleBackColor = false;
-            this.btn_Registrarse.Click += new System.EventHandler(this.Btn_Registrarse_Click);
+            btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Registrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_Registrarse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            btn_Registrarse.Location = new System.Drawing.Point(189, 129);
+            btn_Registrarse.Margin = new System.Windows.Forms.Padding(0);
+            btn_Registrarse.Name = "btn_Registrarse";
+            btn_Registrarse.Size = new System.Drawing.Size(116, 33);
+            btn_Registrarse.TabIndex = 6;
+            btn_Registrarse.Text = "REGISTRARSE";
+            btn_Registrarse.UseVisualStyleBackColor = false;
+            btn_Registrarse.Click += Btn_Registrarse_Click;
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Ingresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Ingresar.FlatAppearance.BorderSize = 0;
-            this.btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Ingresar.Location = new System.Drawing.Point(333, 129);
-            this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(88, 33);
-            this.btn_Ingresar.TabIndex = 5;
-            this.btn_Ingresar.Text = "INGRESAR";
-            this.btn_Ingresar.UseVisualStyleBackColor = false;
-            this.btn_Ingresar.Click += new System.EventHandler(this.Btn_Ingresar_Click);
+            btn_Ingresar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Ingresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            btn_Ingresar.FlatAppearance.BorderSize = 0;
+            btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_Ingresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            btn_Ingresar.Location = new System.Drawing.Point(333, 129);
+            btn_Ingresar.Name = "btn_Ingresar";
+            btn_Ingresar.Size = new System.Drawing.Size(88, 33);
+            btn_Ingresar.TabIndex = 5;
+            btn_Ingresar.Text = "INGRESAR";
+            btn_Ingresar.UseVisualStyleBackColor = false;
+            btn_Ingresar.Click += Btn_Ingresar_Click;
             // 
             // textBox_Contraseña
             // 
-            this.textBox_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Contraseña.Location = new System.Drawing.Point(189, 80);
-            this.textBox_Contraseña.Name = "textBox_Contraseña";
-            this.textBox_Contraseña.PasswordChar = '*';
-            this.textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
-            this.textBox_Contraseña.TabIndex = 4;
-            this.textBox_Contraseña.TextChanged += new System.EventHandler(this.TextBox_Contraseña_TextChanged);
+            textBox_Contraseña.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Contraseña.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Contraseña.BackColor = System.Drawing.Color.White;
+            textBox_Contraseña.ErrorColor = System.Drawing.Color.Red;
+            textBox_Contraseña.FocusColor = System.Drawing.Color.Blue;
+            textBox_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_Contraseña.Location = new System.Drawing.Point(189, 80);
+            textBox_Contraseña.MaxLength = 32767;
+            textBox_Contraseña.Multiline = false;
+            textBox_Contraseña.Name = "textBox_Contraseña";
+            textBox_Contraseña.PasswordChar = '*';
+            textBox_Contraseña.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Contraseña.PlaceholderText = "";
+            textBox_Contraseña.ReadOnly = false;
+            textBox_Contraseña.SelectionStart = 0;
+            textBox_Contraseña.ShowError = false;
+            textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
+            textBox_Contraseña.TabIndex = 4;
+            textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Contraseña.TextValue = "";
+            textBox_Contraseña.TextChanged += TextBox_Contraseña_TextChanged;
+          
             // 
             // textBox_Usuario
             // 
-            this.textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Usuario.Location = new System.Drawing.Point(189, 46);
-            this.textBox_Usuario.Name = "textBox_Usuario";
-            this.textBox_Usuario.Size = new System.Drawing.Size(232, 24);
-            this.textBox_Usuario.TabIndex = 3;
+            textBox_Usuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Usuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Usuario.BackColor = System.Drawing.Color.White;
+            textBox_Usuario.ErrorColor = System.Drawing.Color.Red;
+            textBox_Usuario.FocusColor = System.Drawing.Color.Blue;
+            textBox_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_Usuario.Location = new System.Drawing.Point(189, 46);
+            textBox_Usuario.MaxLength = 32767;
+            textBox_Usuario.Multiline = false;
+            textBox_Usuario.Name = "textBox_Usuario";
+            textBox_Usuario.PasswordChar = '\0';
+            textBox_Usuario.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Usuario.PlaceholderText = "";
+            textBox_Usuario.ReadOnly = false;
+            textBox_Usuario.SelectionStart = 0;
+            textBox_Usuario.ShowError = false;
+            textBox_Usuario.Size = new System.Drawing.Size(232, 24);
+            textBox_Usuario.TabIndex = 3;
+            textBox_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Usuario.TextValue = "";
             // 
             // label_Contraseña
             // 
-            this.label_Contraseña.AutoSize = true;
-            this.label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Contraseña.Location = new System.Drawing.Point(53, 85);
-            this.label_Contraseña.Name = "label_Contraseña";
-            this.label_Contraseña.Size = new System.Drawing.Size(119, 16);
-            this.label_Contraseña.TabIndex = 2;
-            this.label_Contraseña.Text = "CONTRASEÑA :";
+            label_Contraseña.AutoSize = true;
+            label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Contraseña.Location = new System.Drawing.Point(53, 85);
+            label_Contraseña.Name = "label_Contraseña";
+            label_Contraseña.Size = new System.Drawing.Size(119, 16);
+            label_Contraseña.TabIndex = 2;
+            label_Contraseña.Text = "CONTRASEÑA :";
             // 
             // label_Usuario
             // 
-            this.label_Usuario.AutoSize = true;
-            this.label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Usuario.Location = new System.Drawing.Point(89, 51);
-            this.label_Usuario.Name = "label_Usuario";
-            this.label_Usuario.Size = new System.Drawing.Size(83, 16);
-            this.label_Usuario.TabIndex = 1;
-            this.label_Usuario.Text = "USUARIO :";
+            label_Usuario.AutoSize = true;
+            label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Usuario.Location = new System.Drawing.Point(89, 51);
+            label_Usuario.Name = "label_Usuario";
+            label_Usuario.Size = new System.Drawing.Size(83, 16);
+            label_Usuario.TabIndex = 1;
+            label_Usuario.Text = "USUARIO :";
             // 
             // label_Validacion
             // 
-            this.label_Validacion.AutoSize = true;
-            this.label_Validacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Validacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Validacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Validacion.Location = new System.Drawing.Point(115, 0);
-            this.label_Validacion.Name = "label_Validacion";
-            this.label_Validacion.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.label_Validacion.Size = new System.Drawing.Size(306, 26);
-            this.label_Validacion.TabIndex = 0;
-            this.label_Validacion.Text = "VALIDACION DE USUARIOS";
+            label_Validacion.AutoSize = true;
+            label_Validacion.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_Validacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Validacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_Validacion.Location = new System.Drawing.Point(115, 0);
+            label_Validacion.Name = "label_Validacion";
+            label_Validacion.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            label_Validacion.Size = new System.Drawing.Size(306, 26);
+            label_Validacion.TabIndex = 0;
+            label_Validacion.Text = "VALIDACION DE USUARIOS";
             // 
             // UsuarioForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 232);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "UsuarioForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VALIDACION DE PERMISOS";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.UsuarioForm_HelpButtonClicked);
-            this.Load += new System.EventHandler(this.Usuario_Load);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_OjoContraseña)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(569, 232);
+            Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            HelpButton = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "UsuarioForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "VALIDACION DE PERMISOS";
+            HelpButtonClicked += UsuarioForm_HelpButtonClicked;
+            Load += Usuario_Load;
+            Controls.SetChildIndex(panel1, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_MayusculaActivada).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_OjoContraseña).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -185,5 +228,6 @@
         private System.Windows.Forms.Label label_Contraseña;
         private System.Windows.Forms.Button btn_Registrarse;
         private System.Windows.Forms.PictureBox pictureBox_OjoContraseña;
+        private System.Windows.Forms.PictureBox pictureBox_MayusculaActivada;
     }
 }

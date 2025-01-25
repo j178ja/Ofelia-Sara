@@ -2,6 +2,7 @@
 using BaseDatos.Adm_BD;
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
+using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.BaseDatos;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Controles.General;
@@ -512,6 +513,31 @@ namespace Ofelia_Sara.Formularios.General
 
             // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
             boton.Invalidate();
+        }
+
+        //-------------------------------------------------------------------------------
+        //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
+        protected void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
+        {    // Configurar el evento SelectedIndexChanged
+            comboBox_Escalafon.SelectedIndexChanged += (sender, e) =>
+            {
+                if (comboBox_Escalafon.SelectedItem != null)
+                {
+                    string escalafon = comboBox_Escalafon.SelectedItem.ToString();
+                    comboBox_Jerarquia.Enabled = true;
+                    comboBox_Jerarquia.DataSource = JerarquiasManager.ObtenerJerarquias(escalafon);
+                }
+                else
+                {
+                    comboBox_Jerarquia.Enabled = false;
+                    comboBox_Jerarquia.DataSource = null;
+                }
+            };
+
+            // Configurar el ComboBox_Jerarquia inicialmente como desactivado
+            comboBox_Jerarquia.Enabled = false;
+            comboBox_Jerarquia.DataSource = null;
+
         }
     }
 }

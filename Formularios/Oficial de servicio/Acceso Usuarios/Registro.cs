@@ -42,8 +42,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             pictureBox_OjoContraseña.Enabled = false;
 
             //  deshabilitar la edición del ComboBox_Escalafon
-            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
             ClaseNumeros.AplicarFormatoYLimite(textBox_Legajo, 7);
             MayusculaSola.AplicarAControl(textBox_Nombre);

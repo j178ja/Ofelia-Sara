@@ -1,4 +1,6 @@
-﻿namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
+﻿using System.Windows.Forms;
+
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     partial class NuevaDependencia
     {
@@ -144,6 +146,7 @@
             // checkBox_AgregarSellos
             // 
             checkBox_AgregarSellos.AutoSize = true;
+            checkBox_AgregarSellos.Cursor = Cursors.Hand;
             checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             checkBox_AgregarSellos.Location = new System.Drawing.Point(186, 205);
             checkBox_AgregarSellos.Name = "checkBox_AgregarSellos";

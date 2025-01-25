@@ -18,6 +18,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class NuevoInstructor : BaseForm
     {
+        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public NuevoInstructor()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
             pictureBox_CheckFirmaDigitalizada.Visible = false;// ocultar la imagen de reemplazo del check
+            this.FormClosing += NuevoInstructor_FormClosing;
         }
 
         //-------------------------------------------
@@ -72,6 +74,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
+
+        private void NuevoInstructor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
         //-----------------------------------------------------------------
         protected void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
         {
@@ -91,34 +111,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         //---------BOTON GUARDAR---------------------------------------
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Apellido.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.TextValue) ||
+                string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
+                string.IsNullOrWhiteSpace(textBox_Apellido.TextValue))
             {
                 MensajeGeneral.Mostrar("Debe completar los campos JERARQUIA, NOMBRE y APELLIDO.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
                 // Convertir el valor de textBox_NumeroLegajo a float, y asignar un valor por defecto si está vacío
-                float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text)
+                float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue)
                                ? 100000 // valor por defecto
-                               : float.Parse(textBox_NumeroLegajo.Text);
+                               : float.Parse(textBox_NumeroLegajo.TextValue);
 
                 var nuevoInstructor = new Instructor
                 {
                     Legajo = legajo,
-                    Subescalafon = comboBox_Escalafon.Text,
-                    Jerarquia = comboBox_Jerarquia.Text,
-                    Nombre = textBox_Nombre.Text,
-                    Apellido = textBox_Apellido.Text,
-                    Dependencia = comboBox_Dependencia.Text,
-                    Funcion = textBox_Funcion.Text
+                    Subescalafon = comboBox_Escalafon.TextValue,
+                    Jerarquia = comboBox_Jerarquia.TextValue,
+                    Nombre = textBox_Nombre.TextValue,
+                    Apellido = textBox_Apellido.TextValue,
+                    Dependencia = comboBox_Dependencia.TextValue,
+                    Funcion = textBox_Funcion.TextValue
                 };
 
 
                 InstructoresManager manager = new InstructoresManager();
                 manager.InsertInstructor(nuevoInstructor.Legajo, nuevoInstructor.Subescalafon, nuevoInstructor.Jerarquia, nuevoInstructor.Nombre, nuevoInstructor.Apellido, nuevoInstructor.Dependencia, nuevoInstructor.Funcion);
-
+                datosGuardados = true;
                 MensajeGeneral.Mostrar("Se ha guardado un nuevo instructor.", MensajeGeneral.TipoMensaje.Exito);
                 LimpiarFormulario.Limpiar(this);
                 comboBox_Escalafon.SelectedIndex = -1;
@@ -153,8 +173,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
 
             //  deshabilitar la edición del ComboBox_Escalafon
-            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
         }
 

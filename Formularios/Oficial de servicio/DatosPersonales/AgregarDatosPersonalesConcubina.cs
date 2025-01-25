@@ -1,6 +1,7 @@
 ﻿using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -40,7 +41,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             btn_AgregarConcubina.Enabled = false;
             InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
 
-            comboBox_EstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+            comboBox_EstadoCivil.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
         }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Ofelia_Sara.Controles.General;
+using System.Windows.Forms;
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     partial class NuevoInstructor
@@ -110,7 +111,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
@@ -149,7 +150,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Jerarquia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DisabledImage");
             comboBox_Jerarquia.DisplayMember = null;
             comboBox_Jerarquia.DropDownHeight = 252;
-            comboBox_Jerarquia.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
             comboBox_Jerarquia.DroppedDown = false;
             comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
@@ -180,7 +181,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Escalafon.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DisabledImage");
             comboBox_Escalafon.DisplayMember = null;
             comboBox_Escalafon.DropDownHeight = 252;
-            comboBox_Escalafon.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
             comboBox_Escalafon.DroppedDown = false;
             comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
             comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
