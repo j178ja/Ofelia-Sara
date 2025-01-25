@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             panel1 = new System.Windows.Forms.Panel();
+            pictureBox_MayusculaActivada = new System.Windows.Forms.PictureBox();
             numeroTelefonicoControl1 = new Controles.Ofl_Sara.NumeroTelefonicoControl();
             label_TelValidacion2 = new System.Windows.Forms.Label();
             label_TelValidacion = new System.Windows.Forms.Label();
@@ -54,12 +55,14 @@
             label_Usuario = new System.Windows.Forms.Label();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_MayusculaActivada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_OjoContraseña).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(pictureBox_MayusculaActivada);
             panel1.Controls.Add(numeroTelefonicoControl1);
             panel1.Controls.Add(label_TelValidacion2);
             panel1.Controls.Add(label_TelValidacion);
@@ -85,6 +88,17 @@
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(527, 409);
             panel1.TabIndex = 4;
+            // 
+            // pictureBox_MayusculaActivada
+            // 
+            pictureBox_MayusculaActivada.BackColor = System.Drawing.Color.MediumTurquoise;
+            pictureBox_MayusculaActivada.BackgroundImage = Properties.Resources.letra_mayuscula;
+            pictureBox_MayusculaActivada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_MayusculaActivada.Location = new System.Drawing.Point(183, 237);
+            pictureBox_MayusculaActivada.Name = "pictureBox_MayusculaActivada";
+            pictureBox_MayusculaActivada.Size = new System.Drawing.Size(21, 24);
+            pictureBox_MayusculaActivada.TabIndex = 30;
+            pictureBox_MayusculaActivada.TabStop = false;
             // 
             // numeroTelefonicoControl1
             // 
@@ -139,7 +153,7 @@
             comboBox_Jerarquia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DefaultImage");
             comboBox_Jerarquia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DisabledImage");
             comboBox_Jerarquia.DisplayMember = null;
-            comboBox_Jerarquia.DropDownHeight = 96;
+            comboBox_Jerarquia.DropDownHeight = 252;
             comboBox_Jerarquia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Jerarquia.DroppedDown = false;
             comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
@@ -170,7 +184,7 @@
             comboBox_Escalafon.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DefaultImage");
             comboBox_Escalafon.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DisabledImage");
             comboBox_Escalafon.DisplayMember = null;
-            comboBox_Escalafon.DropDownHeight = 96;
+            comboBox_Escalafon.DropDownHeight = 252;
             comboBox_Escalafon.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Escalafon.DroppedDown = false;
             comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
@@ -433,6 +447,7 @@
             Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_MayusculaActivada).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_OjoContraseña).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -462,5 +477,6 @@
         private System.Windows.Forms.Label label_TelValidacion2;
         private System.Windows.Forms.Label label_TelValidacion;
         private Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl1;
+        private System.Windows.Forms.PictureBox pictureBox_MayusculaActivada;
     }
 }

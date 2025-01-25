@@ -62,6 +62,7 @@
             // 
             // pictureBox_MayusculaActivada
             // 
+            pictureBox_MayusculaActivada.BackColor = System.Drawing.Color.MediumTurquoise;
             pictureBox_MayusculaActivada.BackgroundImage = Properties.Resources.letra_mayuscula;
             pictureBox_MayusculaActivada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pictureBox_MayusculaActivada.Location = new System.Drawing.Point(169, 81);
@@ -96,6 +97,9 @@
             btn_Registrarse.Text = "REGISTRARSE";
             btn_Registrarse.UseVisualStyleBackColor = false;
             btn_Registrarse.Click += Btn_Registrarse_Click;
+            btn_Registrarse.Paint += Subrayado_Paint;
+            btn_Registrarse.MouseEnter += Subrayado_MouseEnter;
+            btn_Registrarse.MouseLeave += Subrayado_MouseLeave;
             // 
             // btn_Ingresar
             // 
@@ -111,6 +115,9 @@
             btn_Ingresar.Text = "INGRESAR";
             btn_Ingresar.UseVisualStyleBackColor = false;
             btn_Ingresar.Click += Btn_Ingresar_Click;
+            btn_Ingresar.Paint += Subrayado_Paint;
+            btn_Ingresar.MouseEnter += Subrayado_MouseEnter;
+            btn_Ingresar.MouseLeave += Subrayado_MouseLeave;
             // 
             // textBox_Contraseña
             // 
@@ -135,7 +142,6 @@
             textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Contraseña.TextValue = "";
             textBox_Contraseña.TextChanged += TextBox_Contraseña_TextChanged;
-          
             // 
             // textBox_Usuario
             // 

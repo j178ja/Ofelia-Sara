@@ -206,6 +206,38 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         }
 
 
+        // Variables auxiliares para animación
+        private int lineWidth = 0;
+        private bool isAnimating = false;
 
+        private void Subrayado_MouseEnter(object sender, EventArgs e)
+        {
+
+            if (sender is Control control)
+            {
+                SubrayadoAnimado.Iniciar(control);
+
+            }
+        }
+
+        private void Subrayado_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Control control)
+            {
+                SubrayadoAnimado.Detener(control);
+                control.Invalidate(); // Redibuja para eliminar el subrayado
+            }
+        }
+
+        private void Subrayado_Paint(object sender, PaintEventArgs e)
+        {
+            
+                if (sender is Control control)
+                {
+                    // Asegúrate de que se use el método correcto
+                    SubrayadoAnimado.Aplicar(control, e.Graphics, SystemColors.Highlight, 3);
+                }
+            
+        }
     }
 }
