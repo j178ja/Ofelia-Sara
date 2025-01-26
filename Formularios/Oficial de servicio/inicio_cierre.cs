@@ -120,6 +120,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_CheckCargo.Visible = false;
 
             // timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+            textBox_NumeroIpp.MaxLength = 6; //limitar la cantidad de caracteres para numeroz de IPP
 
             //  tooltip DESCATIVADO-ACTIVADO
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
@@ -150,9 +151,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //.....................................................................
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
-            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
-            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
-            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
 
@@ -321,13 +322,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {
             // Limitar a 6 caracteres
-            if (textBox_NumeroIpp.Text.Length > 6)
+            if (textBox_NumeroIpp.TextValue.Length > 6)
             {
                 // Si el texto excede los 6 caracteres, cortar el exceso
-                textBox_NumeroIpp.Text = textBox_NumeroIpp.Text.Substring(0, 6);
+                textBox_NumeroIpp.TextValue = textBox_NumeroIpp.TextValue.Substring(0, 6);
 
                 // Mover el cursor al final del texto
-                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
+                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.TextValue.Length;
                 ActualizarEstado();
             }
 
@@ -357,43 +358,42 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
         /// </summary>
+
+
         private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-
-            // Verifica si la tecla presionada es Enter
+            // Verificar si la tecla presionada es Enter
             if (e.KeyChar == (char)Keys.Enter)
             {
-                // Obtiene el TextBox que disparó el evento
-                TextBox textBox = sender as TextBox;
-
-                if (textBox != null)
+                // Si el evento viene del InnerTextBox, obtenemos el control padre
+                if (sender is TextBox innerTextBox && innerTextBox.Parent is CustomTextBox customTextBox)
                 {
-                    // Obtiene el texto actual del TextBox
-                    string currentText = textBox.Text;
+                    // Obtiene el texto actual
+                    string currentText = customTextBox.TextValue;
 
-                    // Verifica si el texto es numérico
+                    // Verifica si es un número válido
                     if (int.TryParse(currentText, out _))
                     {
-                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
+                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
                         string completedText = currentText.PadLeft(6, '0');
 
-                        // Actualiza el texto del TextBox
-                        textBox.Text = completedText;
+                        // Actualiza el texto en el CustomTextBox
+                        customTextBox.TextValue = completedText;
 
                         // Posiciona el cursor al final del texto
-                        textBox.SelectionStart = textBox.Text.Length;
+                        customTextBox.SelectionStart = customTextBox.TextValue.Length;
 
-                        // Cancelar el manejo predeterminado de la tecla Enter
+                        // Cancela el manejo predeterminado de la tecla Enter
                         e.Handled = true;
                     }
                 }
             }
         }
+
+
+
+
+
         //-------------------------------------------------------------------------
 
         /// <summary>
@@ -401,24 +401,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
-            CompletarConCeros(sender as TextBox);
+            CompletarConCeros(sender as CustomTextBox);
         }
 
         // Método reutilizable para completar con ceros
-        private void CompletarConCeros(TextBox textBox)
+        private void CompletarConCeros(CustomTextBox customtextBox)
         {
-            if (textBox != null)
+            if (customtextBox != null)
             {
                 // Obtiene el texto actual del TextBox
-                string currentText = textBox.Text;
+                string currentText = customtextBox.TextValue;
 
                 // Verifica si el texto es numérico y no está vacío
                 if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
                 {
                     // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                    textBox.Text = currentText.PadLeft(6, '0');
+                    customtextBox.TextValue = currentText.PadLeft(6, '0');
 
-                    textBox.SelectionStart = textBox.Text.Length; // Posiciona el cursor al final del texto (opcional)
+                    customtextBox.SelectionStart = customtextBox.TextValue.Length; // Posiciona el cursor al final del texto (opcional)
                 }
             }
         }

@@ -133,6 +133,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.Multiline = false;
             textBox_NumeroIpp.Name = "textBox_NumeroIpp";
             textBox_NumeroIpp.PasswordChar = '\0';
+            textBox_NumeroIpp.PlaceholderColor = Color.Gray;
+            textBox_NumeroIpp.PlaceholderText = "";
             textBox_NumeroIpp.ReadOnly = false;
             textBox_NumeroIpp.SelectionStart = 0;
             textBox_NumeroIpp.ShowError = false;
@@ -257,6 +259,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.Multiline = true;
             textBox_Caratula.Name = "textBox_Caratula";
             textBox_Caratula.PasswordChar = '\0';
+            textBox_Caratula.PlaceholderColor = Color.Gray;
+            textBox_Caratula.PlaceholderText = "";
             textBox_Caratula.ReadOnly = false;
             textBox_Caratula.SelectionStart = 0;
             textBox_Caratula.ShowError = false;
@@ -280,6 +284,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Victima.Multiline = false;
             textBox_Victima.Name = "textBox_Victima";
             textBox_Victima.PasswordChar = '\0';
+            textBox_Victima.PlaceholderColor = Color.Gray;
+            textBox_Victima.PlaceholderText = "";
             textBox_Victima.ReadOnly = false;
             textBox_Victima.SelectionStart = 0;
             textBox_Victima.ShowError = false;
@@ -302,6 +308,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Imputado.Multiline = false;
             textBox_Imputado.Name = "textBox_Imputado";
             textBox_Imputado.PasswordChar = '\0';
+            textBox_Imputado.PlaceholderColor = Color.Gray;
+            textBox_Imputado.PlaceholderText = "";
             textBox_Imputado.ReadOnly = false;
             textBox_Imputado.SelectionStart = 0;
             textBox_Imputado.ShowError = false;
@@ -322,7 +330,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Fiscalia.DisabledImage = (Image)resources.GetObject("comboBox_Fiscalia.DisabledImage");
             comboBox_Fiscalia.DisplayMember = null;
             comboBox_Fiscalia.DropDownHeight = 252;
-            comboBox_Fiscalia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Fiscalia.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Fiscalia.DroppedDown = false;
             comboBox_Fiscalia.ErrorColor = Color.Red;
             comboBox_Fiscalia.FocusColor = Color.Blue;
@@ -341,6 +349,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Fiscalia.ShowError = false;
             comboBox_Fiscalia.Size = new Size(106, 21);
             comboBox_Fiscalia.TabIndex = 0;
+            comboBox_Fiscalia.TextValue = "";
             comboBox_Fiscalia.SelectedIndexChanged += ComboBox_Fiscalia_SelectedIndexChanged;
             // 
             // comboBox_Instructor
@@ -354,7 +363,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.DisabledImage = (Image)resources.GetObject("comboBox_Instructor.DisabledImage");
             comboBox_Instructor.DisplayMember = null;
             comboBox_Instructor.DropDownHeight = 252;
-            comboBox_Instructor.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Instructor.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Instructor.DroppedDown = false;
             comboBox_Instructor.ErrorColor = Color.Red;
             comboBox_Instructor.FocusColor = Color.Blue;
@@ -373,6 +382,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.ShowError = false;
             comboBox_Instructor.Size = new Size(333, 21);
             comboBox_Instructor.TabIndex = 4;
+            comboBox_Instructor.TextValue = "";
             comboBox_Instructor.TextChanged += ComboBox_Instructor_TextChanged;
             // 
             // comboBox_Secretario
@@ -386,7 +396,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.DisabledImage = (Image)resources.GetObject("comboBox_Secretario.DisabledImage");
             comboBox_Secretario.DisplayMember = null;
             comboBox_Secretario.DropDownHeight = 252;
-            comboBox_Secretario.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Secretario.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Secretario.DroppedDown = false;
             comboBox_Secretario.ErrorColor = Color.Red;
             comboBox_Secretario.FocusColor = Color.Blue;
@@ -405,6 +415,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.ShowError = false;
             comboBox_Secretario.Size = new Size(333, 21);
             comboBox_Secretario.TabIndex = 5;
+            comboBox_Secretario.TextValue = "";
             comboBox_Secretario.TextChanged += ComboBox_Secretario_TextChanged;
             // 
             // comboBox_Dependencia
@@ -418,7 +429,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.DisabledImage = (Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = Color.Red;
             comboBox_Dependencia.FocusColor = Color.Blue;
@@ -436,6 +447,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.ShowError = false;
             comboBox_Dependencia.Size = new Size(333, 22);
             comboBox_Dependencia.TabIndex = 6;
+            comboBox_Dependencia.TextValue = "";
             comboBox_Dependencia.TextChanged += ComboBox_Dependencia_TextChanged;
             // 
             // comboBox_AgenteFiscal
@@ -449,7 +461,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.DisabledImage = (Image)resources.GetObject("comboBox_AgenteFiscal.DisabledImage");
             comboBox_AgenteFiscal.DisplayMember = null;
             comboBox_AgenteFiscal.DropDownHeight = 252;
-            comboBox_AgenteFiscal.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_AgenteFiscal.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_AgenteFiscal.DroppedDown = false;
             comboBox_AgenteFiscal.ErrorColor = Color.Red;
             comboBox_AgenteFiscal.FocusColor = Color.Blue;
@@ -468,6 +480,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.ShowError = false;
             comboBox_AgenteFiscal.Size = new Size(188, 21);
             comboBox_AgenteFiscal.TabIndex = 1;
+            comboBox_AgenteFiscal.TextValue = "";
             comboBox_AgenteFiscal.TextChanged += ComboBox_AgenteFiscal_TextChanged;
             // 
             // comboBox_Ipp1
@@ -481,7 +494,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.DisabledImage = (Image)resources.GetObject("comboBox_Ipp1.DisabledImage");
             comboBox_Ipp1.DisplayMember = null;
             comboBox_Ipp1.DropDownHeight = 252;
-            comboBox_Ipp1.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp1.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp1.DroppedDown = false;
             comboBox_Ipp1.ErrorColor = Color.Red;
             comboBox_Ipp1.FocusColor = Color.Blue;
@@ -499,6 +512,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.ShowError = false;
             comboBox_Ipp1.Size = new Size(52, 21);
             comboBox_Ipp1.TabIndex = 0;
+            comboBox_Ipp1.TextValue = "";
             comboBox_Ipp1.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // comboBox_Ipp2
@@ -512,7 +526,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.DisabledImage = (Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
             comboBox_Ipp2.DisplayMember = null;
             comboBox_Ipp2.DropDownHeight = 252;
-            comboBox_Ipp2.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp2.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp2.DroppedDown = false;
             comboBox_Ipp2.ErrorColor = Color.Red;
             comboBox_Ipp2.FocusColor = Color.Blue;
@@ -530,6 +544,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.ShowError = false;
             comboBox_Ipp2.Size = new Size(52, 21);
             comboBox_Ipp2.TabIndex = 1;
+            comboBox_Ipp2.TextValue = "";
             comboBox_Ipp2.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // lbl_00
@@ -553,7 +568,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.DisabledImage = (Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
             comboBox_Ipp4.DisplayMember = null;
             comboBox_Ipp4.DropDownHeight = 252;
-            comboBox_Ipp4.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp4.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp4.DroppedDown = false;
             comboBox_Ipp4.ErrorColor = Color.Red;
             comboBox_Ipp4.FocusColor = Color.Blue;
@@ -571,6 +586,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.ShowError = false;
             comboBox_Ipp4.Size = new Size(59, 21);
             comboBox_Ipp4.TabIndex = 3;
+            comboBox_Ipp4.TextValue = "";
             comboBox_Ipp4.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // btn_Buscar
@@ -779,7 +795,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             timePickerPersonalizado1.Location = new Point(130, 166);
             timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             timePickerPersonalizado1.Name = "timePickerPersonalizado1";
-           // timePickerPersonalizado1.SelectedDate = new System.DateTime(2024, 12, 5, 18, 42, 59, 901);
             timePickerPersonalizado1.Size = new Size(335, 21);
             timePickerPersonalizado1.TabIndex = 38;
             // 
@@ -794,7 +809,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_DeptoJudicial.DisabledImage = (Image)resources.GetObject("comboBox_DeptoJudicial.DisabledImage");
             comboBox_DeptoJudicial.DisplayMember = null;
             comboBox_DeptoJudicial.DropDownHeight = 252;
-            comboBox_DeptoJudicial.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_DeptoJudicial.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_DeptoJudicial.DroppedDown = false;
             comboBox_DeptoJudicial.ErrorColor = Color.Red;
             comboBox_DeptoJudicial.FocusColor = Color.Blue;
@@ -813,6 +828,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_DeptoJudicial.ShowError = false;
             comboBox_DeptoJudicial.Size = new Size(333, 21);
             comboBox_DeptoJudicial.TabIndex = 3;
+            comboBox_DeptoJudicial.TextValue = "";
             comboBox_DeptoJudicial.TextChanged += ComboBox_DeptoJudicial_TextChanged;
             // 
             // lbl_Localida
@@ -836,7 +852,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_DeptoJudicial.Size = new Size(103, 15);
             lbl_DeptoJudicial.TabIndex = 35;
             lbl_DeptoJudicial.Text = "Depto. Judicial";
-   
             // 
             // comboBox_Localidad
             // 
@@ -849,7 +864,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Localidad.DisabledImage = (Image)resources.GetObject("comboBox_Localidad.DisabledImage");
             comboBox_Localidad.DisplayMember = null;
             comboBox_Localidad.DropDownHeight = 252;
-            comboBox_Localidad.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Localidad.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Localidad.DroppedDown = false;
             comboBox_Localidad.ErrorColor = Color.Red;
             comboBox_Localidad.FocusColor = Color.Blue;
@@ -868,6 +883,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Localidad.ShowError = false;
             comboBox_Localidad.Size = new Size(333, 21);
             comboBox_Localidad.TabIndex = 2;
+            comboBox_Localidad.TextValue = "";
             comboBox_Localidad.KeyPress += ComboBox_Localidad_KeyPress;
             // 
             // panel_Ipp

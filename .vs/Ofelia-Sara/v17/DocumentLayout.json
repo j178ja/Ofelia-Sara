@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\numerotelefonicocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\numerotelefonicocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\numerotelefonicocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\numerotelefonicocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\ofl sara\\numerotelefonicocontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\ofl sara\\numerotelefonicocontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\controles\\general\\customtextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\general\\customtextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,53 +38,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NumeroTelefonicoControl.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\NumeroTelefonicoControl.Designer.cs",
-              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\NumeroTelefonicoControl.Designer.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\NumeroTelefonicoControl.Designer.cs",
-              "RelativeToolTip": "Controles\\Ofl Sara\\NumeroTelefonicoControl.Designer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T11:52:10.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "CustomTextBox.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\General\\CustomTextBox.cs",
               "RelativeDocumentMoniker": "Controles\\General\\CustomTextBox.cs",
               "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\General\\CustomTextBox.cs",
               "RelativeToolTip": "Controles\\General\\CustomTextBox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAASwGkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T11:29:26.753Z",
+              "WhenOpened": "2025-01-26T22:33:42.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NumeroTelefonicoControl.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\NumeroTelefonicoControl.cs",
-              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\NumeroTelefonicoControl.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\NumeroTelefonicoControl.cs*",
-              "RelativeToolTip": "Controles\\Ofl Sara\\NumeroTelefonicoControl.cs*",
-              "ViewState": "AgIAADMAAAAAAAAAAAAgwGYAAAAAAAAAAAAAAA==",
+              "Title": "inicio_cierre.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs*",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs*",
+              "ViewState": "AgIAAGQBAAAAAAAAAAASwIcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T11:19:54.784Z",
+              "WhenOpened": "2025-01-26T22:27:24.011Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NumeroTelefonicoControl.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\NumeroTelefonicoControl.cs",
-              "RelativeDocumentMoniker": "Controles\\Ofl Sara\\NumeroTelefonicoControl.cs",
-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Controles\\Ofl Sara\\NumeroTelefonicoControl.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Controles\\Ofl Sara\\NumeroTelefonicoControl.cs [Dise\u00F1o]*",
+              "DocumentIndex": 2,
+              "Title": "inicio_cierre.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",
+              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T11:19:48.089Z",
+              "WhenOpened": "2025-01-26T22:27:16.88Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

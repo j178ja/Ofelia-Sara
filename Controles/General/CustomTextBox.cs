@@ -293,17 +293,17 @@ namespace Ofelia_Sara.Controles.General
         }
 
         // Evento para TextChanged
-        public event EventHandler TextChanged
+        public new event EventHandler TextChanged
         {
             add => textBox.TextChanged += value;
             remove => textBox.TextChanged -= value;
         }
-
-        public event KeyPressEventHandler KeyPress
+        public new event KeyPressEventHandler KeyPress
         {
-            add { textBox.KeyPress += value; }
-            remove { textBox.KeyPress -= value; }
+            add => textBox.KeyPress += value; // textBox es el InnerTextBox
+            remove => textBox.KeyPress -= value;
         }
+
 
 
     }
