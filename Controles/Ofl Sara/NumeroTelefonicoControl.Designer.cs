@@ -28,36 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.maskedTextBox_Telefono = new System.Windows.Forms.MaskedTextBox();
-            this.SuspendLayout();
+            maskedTextBox_Telefono = new System.Windows.Forms.MaskedTextBox();
+            panel_ContenedorMasked = new System.Windows.Forms.Panel();
+            panel_ContenedorMasked.SuspendLayout();
+            SuspendLayout();
             // 
             // maskedTextBox_Telefono
             // 
-            this.maskedTextBox_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox_Telefono.Location = new System.Drawing.Point(0, 0);
-            this.maskedTextBox_Telefono.Mask = "(99999)915-00000000";
-            this.maskedTextBox_Telefono.Name = "maskedTextBox_Telefono";
-            this.maskedTextBox_Telefono.Size = new System.Drawing.Size(159, 22);
-            this.maskedTextBox_Telefono.TabIndex = 0;
-            this.maskedTextBox_Telefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            maskedTextBox_Telefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            maskedTextBox_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            maskedTextBox_Telefono.Location = new System.Drawing.Point(2, 2);
+            maskedTextBox_Telefono.Margin = new System.Windows.Forms.Padding(0);
+            maskedTextBox_Telefono.Mask = " +54  (99999)  15-0   0000000";
+            maskedTextBox_Telefono.Name = "maskedTextBox_Telefono";
+            maskedTextBox_Telefono.Size = new System.Drawing.Size(189, 15);
+            maskedTextBox_Telefono.TabIndex = 0;
+            maskedTextBox_Telefono.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            // 
+            // panel_ContenedorMasked
+            // 
+            panel_ContenedorMasked.BackColor = System.Drawing.Color.White;
+            panel_ContenedorMasked.Controls.Add(maskedTextBox_Telefono);
+            panel_ContenedorMasked.Location = new System.Drawing.Point(0, 0);
+            panel_ContenedorMasked.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            panel_ContenedorMasked.Name = "panel_ContenedorMasked";
+            panel_ContenedorMasked.Size = new System.Drawing.Size(198, 21);
+            panel_ContenedorMasked.TabIndex = 1;
             // 
             // NumeroTelefonicoControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.maskedTextBox_Telefono);
-            this.Name = "NumeroTelefonicoControl";
-            this.Size = new System.Drawing.Size(162, 25);
-            this.Load += new System.EventHandler(this.NumeroTelefonicoControl_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            Controls.Add(panel_ContenedorMasked);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "NumeroTelefonicoControl";
+            Size = new System.Drawing.Size(198, 26);
+            Load += NumeroTelefonicoControl_Load;
+            panel_ContenedorMasked.ResumeLayout(false);
+            panel_ContenedorMasked.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.MaskedTextBox maskedTextBox_Telefono;
+        private System.Windows.Forms.Panel panel_ContenedorMasked;
     }
 }
