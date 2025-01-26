@@ -513,7 +513,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.Size = new Size(52, 21);
             comboBox_Ipp1.TabIndex = 0;
             comboBox_Ipp1.TextValue = "";
+            comboBox_Ipp1.TextChanged += ComboBox_Ipp_TextUpdate;
             comboBox_Ipp1.KeyPress += ComboBox_Ipp_KeyPress;
+            comboBox_Ipp1.Leave += ComboBox_Ipp_Leave;
             // 
             // comboBox_Ipp2
             // 
@@ -545,7 +547,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.Size = new Size(52, 21);
             comboBox_Ipp2.TabIndex = 1;
             comboBox_Ipp2.TextValue = "";
+            comboBox_Ipp2.TextChanged += ComboBox_Ipp_TextUpdate;
             comboBox_Ipp2.KeyPress += ComboBox_Ipp_KeyPress;
+            comboBox_Ipp2.Leave += ComboBox_Ipp_Leave;
             // 
             // lbl_00
             // 
@@ -587,7 +591,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.Size = new Size(59, 21);
             comboBox_Ipp4.TabIndex = 3;
             comboBox_Ipp4.TextValue = "";
+            comboBox_Ipp4.TextChanged += ComboBox_Ipp_TextUpdate;
             comboBox_Ipp4.KeyPress += ComboBox_Ipp_KeyPress;
+            comboBox_Ipp4.Leave += ComboBox_Ipp_Leave;
             // 
             // btn_Buscar
             // 

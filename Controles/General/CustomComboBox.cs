@@ -918,8 +918,13 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
+        public new event KeyPressEventHandler KeyPress
+        {
+            add => textBox.KeyPress += value; // textBox es el TextBox interno del CustomComboBox
+            remove => textBox.KeyPress -= value;
+        }
 
-
+     
 
     }
 }

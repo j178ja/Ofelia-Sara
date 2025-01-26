@@ -353,6 +353,71 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+
+        /// <summary>
+        /// METODO PARA QUE SOLO SE AGREGEN NUMEROS A COMBOBOX IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Si el evento viene del InnerTextBox, obtenemos el control padre
+                if (sender is TextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
+                {
+                    // Obtiene el texto actual
+                    string currentText = customComboBox.TextValue;
+
+                    // Verifica si es un número válido
+                    if (int.TryParse(currentText, out _))
+                    {
+                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
+                        string completedText = currentText.PadLeft(2, '0');
+
+                        // Actualiza el texto en el CustomTextBox
+                        customComboBox.TextValue = completedText;
+
+                        // Posiciona el cursor al final del texto
+                        customComboBox.SelectionStart = customComboBox.TextValue.Length;
+
+                        // Cancela el manejo predeterminado de la tecla Enter
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
+        {
+            // Verifica si el sender es un CustomComboBox
+            if (sender is CustomComboBox customComboBox)
+            {
+                // Obtiene el texto actual
+                string currentText = customComboBox.TextValue;
+
+                // Verifica si es un número válido
+                if (int.TryParse(currentText, out _))
+                {
+                    // Completa el texto con ceros a la izquierda hasta 6 caracteres
+                    string completedText = currentText.PadLeft(2, '0');
+
+                    // Actualiza el texto en el CustomComboBox
+                    customComboBox.TextValue = completedText;
+
+                    // Posiciona el cursor al final del texto
+                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
+                }
+            }
+        }
+
+
+
         //------------------------------------------------------------------
 
         /// <summary>
@@ -1022,25 +1087,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.Text.Length;
         }
 
-        private void ComboBox_Ipp1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo acepta dígitos
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo acepta dígitos
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-
+     
+    
 
         //--Para habilitar check y modificar label
         private void ActualizarEstado()
