@@ -63,7 +63,7 @@
             Controls.Add(panel_ContenedorMasked);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "NumeroTelefonicoControl";
-            Size = new System.Drawing.Size(198, 26);
+            Size = new System.Drawing.Size(201, 26);
             Load += NumeroTelefonicoControl_Load;
             panel_ContenedorMasked.ResumeLayout(false);
             panel_ContenedorMasked.PerformLayout();

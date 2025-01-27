@@ -102,8 +102,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             comboBox_EstadoCivil.DropDownStyle = CustomComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
           
 
-            numeroTelefonicoControl1.ControlWidth = 159;
-            numeroTelefonicoControl2.ControlWidth = 159;
+            //numeroTelefonicoControl1.ControlWidth = 159;
+            //numeroTelefonicoControl2.ControlWidth = 159;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para verificar informaciòn.", "Verificar datos de Legajo Ingresado.");

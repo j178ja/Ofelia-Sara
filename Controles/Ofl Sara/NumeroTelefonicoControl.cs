@@ -1,12 +1,14 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 using static iText.Commons.Utils.PlaceHolderTextUtil;
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
 {
-
+    [Designer(typeof(ResizableControlDesigner))] // Permitir ajustes en el diseñador
     public partial class NumeroTelefonicoControl : UserControl
     {
         private bool isPlaceholderActive;
@@ -26,9 +28,28 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             animationTimer.Tick += AnimationTimer_Tick;
             CustomNumeroTelefonicoControl_Load(this, EventArgs.Empty);
 
+            SetStyle(ControlStyles.ResizeRedraw, true); // Habilitar redibujado en redimensionamiento
+        }
+
+        // Sobreescribir el evento OnResize para ajustar el comportamiento al redimensionar
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            this.Invalidate(); // Forzar redibujado
+        }
+        internal class ResizableControlDesigner : ControlDesigner
+        {
+            public override SelectionRules SelectionRules
+            {
+                get
+                {
+                    // Permitir mover y redimensionar en todas las direcciones
+                    return SelectionRules.Visible | SelectionRules.Moveable | SelectionRules.AllSizeable;
+                }
+            }
         }
         // Propiedad para ajustar el ancho del control
-    
+
         public int ControlWidth
         {
             get { return this.Width; }

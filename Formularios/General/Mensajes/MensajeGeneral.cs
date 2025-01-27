@@ -24,7 +24,53 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         private bool datosGuardados = false;
 
 
-        public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje)
+        //public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje)
+        //{
+        //    InitializeComponent();
+
+        //    // Configura el mensaje y el icono
+        //    label_Texto.Text = mensaje;
+        //    ConfigurarIcono(tipoMensaje);
+
+        //    //Color bordeForm = System.Drawing.Color.DarkGray;
+        //    Color bordeForm = Color.Black;
+        //    Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
+        //    FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
+        //    FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
+
+        //    // Configurar la fecha mínima en el control Fecha_Audiencia
+        //    //     SelectedDate * VALUE
+        //    //SelectFecha_Compromiso.Value = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
+
+        //    // Fecha_Audiencia.SelectedDate = DateTime.Now; //mantener actualizada fecha
+
+        //    // Ajustar altura del Label según el contenido
+        //    AjustarAlturaContenedores();
+        //    PosicionarBotonCerrar();
+
+        //    // Centrar el label inicialmente
+        //    CenterLabelInPanel();
+
+        //    // Asignar el evento Resize de panel1
+        //    panel1.Resize += panel1_Resize;
+
+        //    btn_No.Visible = false;
+        //    btn_Si.Visible = false;
+        //    Fecha_Compromiso.Visible = false;
+
+        //    // Inicializa los controles si no se han inicializado aún
+        //    if (SelectFecha_Compromiso == null)
+        //    {
+        //        SelectFecha_Compromiso = new DateTimePicker();
+        //    }
+
+        //    if (SelectHora_Compromiso == null)
+        //    {
+        //        SelectHora_Compromiso = new DateTimePicker();
+        //    }
+
+        //}
+        public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje, Point? posicion = null)
         {
             InitializeComponent();
 
@@ -32,17 +78,10 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             label_Texto.Text = mensaje;
             ConfigurarIcono(tipoMensaje);
 
-            //Color bordeForm = System.Drawing.Color.DarkGray;
             Color bordeForm = Color.Black;
             Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
             FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
             FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
-
-            // Configurar la fecha mínima en el control Fecha_Audiencia
-            //     SelectedDate * VALUE
-            //SelectFecha_Compromiso.Value = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
-
-            // Fecha_Audiencia.SelectedDate = DateTime.Now; //mantener actualizada fecha
 
             // Ajustar altura del Label según el contenido
             AjustarAlturaContenedores();
@@ -58,7 +97,6 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             btn_Si.Visible = false;
             Fecha_Compromiso.Visible = false;
 
-            // Inicializa los controles si no se han inicializado aún
             if (SelectFecha_Compromiso == null)
             {
                 SelectFecha_Compromiso = new DateTimePicker();
@@ -69,7 +107,18 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 SelectHora_Compromiso = new DateTimePicker();
             }
 
+            // Configura la posición del formulario si se especificó
+            if (posicion.HasValue)
+            {
+                StartPosition = FormStartPosition.Manual; // Permitir posición manual
+                Location = posicion.Value; // Establecer la ubicación
+            }
+            else
+            {
+                StartPosition = FormStartPosition.CenterScreen; // Por defecto al centro
+            }
         }
+
         public enum TipoMensaje
         {
             Informacion,
@@ -104,13 +153,14 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
-        public static void Mostrar(string mensaje, TipoMensaje tipoMensaje = TipoMensaje.Informacion)
+        public static void Mostrar(string mensaje, TipoMensaje tipoMensaje = TipoMensaje.Informacion, Point? posicion = null)
         {
-            using (var form = new MensajeGeneral(mensaje, tipoMensaje))
+            using (var form = new MensajeGeneral(mensaje, tipoMensaje, posicion))
             {
                 form.ShowDialog(); // Muestra el formulario como modal
             }
         }
+
 
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)

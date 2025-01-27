@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
 using System;
 using System.Windows.Forms;
 
@@ -25,8 +26,8 @@ namespace Ofelia_Sara
             //}
 
             //// Después de cerrar Presentacion, abrir MenuPrincipal
-            Application.Run(new MenuPrincipal());
-            // Application.Run(new Contravenciones());
+           // Application.Run(new MenuPrincipal());
+             Application.Run(new NuevoPersonal());
 
 
         }

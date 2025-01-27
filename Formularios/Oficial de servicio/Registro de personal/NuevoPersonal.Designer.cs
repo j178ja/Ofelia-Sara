@@ -38,12 +38,12 @@
             pictureBox_Destino = new System.Windows.Forms.PictureBox();
             panel_Detalle_Destino = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_DESTINO = new System.Windows.Forms.Button();
-            textBox_PartidoDependencia = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_PartidoDependencia = new Controles.General.CustomTextBox();
             label_Partido = new System.Windows.Forms.Label();
-            comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Dependencia = new Controles.General.CustomComboBox();
             label_Dependencia = new System.Windows.Forms.Label();
-            textBox_LocalidadDependencia = new Ofelia_Sara.Controles.General.CustomTextBox();
-            textBox_DomicilioDependencia = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_LocalidadDependencia = new Controles.General.CustomTextBox();
+            textBox_DomicilioDependencia = new Controles.General.CustomTextBox();
             label_Localidad = new System.Windows.Forms.Label();
             label_DomicilioDependencia = new System.Windows.Forms.Label();
             label_Destino = new System.Windows.Forms.Label();
@@ -51,17 +51,17 @@
             pictureBox_Armamento = new System.Windows.Forms.PictureBox();
             panel_Detalle_Armamento = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_ARMAMENTO = new System.Windows.Forms.Button();
-            textBox_ChalecoNumero = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_ChalecoNumero = new Controles.General.CustomTextBox();
             label_ChalecoNumero = new System.Windows.Forms.Label();
-            textBox_ChalecoModelo = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_ChalecoModelo = new Controles.General.CustomTextBox();
             label_ChalecoModelo = new System.Windows.Forms.Label();
-            textBox_ChalecoMarca = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_ChalecoMarca = new Controles.General.CustomTextBox();
             label_ChalecoMarca = new System.Windows.Forms.Label();
-            textBox_ArmaNumero = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_ArmaNumero = new Controles.General.CustomTextBox();
             label_ArmaNumero = new System.Windows.Forms.Label();
-            textBox_ArmaModelo = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_ArmaModelo = new Controles.General.CustomTextBox();
             label_ArmaModelo = new System.Windows.Forms.Label();
-            textBox_ArmaMarca = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_ArmaMarca = new Controles.General.CustomTextBox();
             label_ArmaMarca = new System.Windows.Forms.Label();
             label_Armamento = new System.Windows.Forms.Label();
             panel_Revista = new Controles.General.PanelConBordeNeon();
@@ -70,51 +70,51 @@
             panel_Detalle_Revista = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_REVISTA = new System.Windows.Forms.Button();
             label_Meses = new System.Windows.Forms.Label();
-            textBox_AntiguedadMeses = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_AntiguedadMeses = new Controles.General.CustomTextBox();
             label_Años = new System.Windows.Forms.Label();
-            textBox_AntiguedadAños = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_AntiguedadAños = new Controles.General.CustomTextBox();
             label_Antiguedad = new System.Windows.Forms.Label();
-            textBox_Funcion = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_Funcion = new Controles.General.CustomTextBox();
             label_Funcion = new System.Windows.Forms.Label();
             dateTimePicker_Antiguedad = new Controles.Ofl_Sara.CustomDate();
             label_Ingreso = new System.Windows.Forms.Label();
-            comboBox_Escalafon = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Escalafon = new Controles.General.CustomComboBox();
             label_Subescalafon = new System.Windows.Forms.Label();
-            comboBox_Jerarquia = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Jerarquia = new Controles.General.CustomComboBox();
             label_Jerarquia = new System.Windows.Forms.Label();
             panel_DatosPersonales = new Controles.General.PanelConBordeNeon();
             pictureBox_DatosPersonales = new System.Windows.Forms.PictureBox();
             label_DatosPersonales = new System.Windows.Forms.Label();
             panel_Detalle_Personal = new System.Windows.Forms.Panel();
-            btn_AmpliarReducir_DATOSPERSONALES = new System.Windows.Forms.Button();
-            textBox_Apellido = new Ofelia_Sara.Controles.General.CustomTextBox();
-            label_Apellido = new System.Windows.Forms.Label();
-            numeroTelefonicoControl2 = new Controles.Ofl_Sara.NumeroTelefonicoControl();
             numeroTelefonicoControl1 = new Controles.Ofl_Sara.NumeroTelefonicoControl();
-            comboBox_EstadoCivil = new Ofelia_Sara.Controles.General.CustomComboBox();
-            textBox_PartidoPnal = new Ofelia_Sara.Controles.General.CustomTextBox();
+            numeroTelefonicoControl2 = new Controles.Ofl_Sara.NumeroTelefonicoControl();
+            btn_AmpliarReducir_DATOSPERSONALES = new System.Windows.Forms.Button();
+            textBox_Apellido = new Controles.General.CustomTextBox();
+            label_Apellido = new System.Windows.Forms.Label();
+            comboBox_EstadoCivil = new Controles.General.CustomComboBox();
+            textBox_PartidoPnal = new Controles.General.CustomTextBox();
             label_PartidoPnal = new System.Windows.Forms.Label();
             label_Telefono2 = new System.Windows.Forms.Label();
             label_EstadoCivil = new System.Windows.Forms.Label();
-            textBox_LocalidadPnal = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_LocalidadPnal = new Controles.General.CustomTextBox();
             label_LocalidadPnal = new System.Windows.Forms.Label();
-            textBox_DomicilioPnal = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_DomicilioPnal = new Controles.General.CustomTextBox();
             label_Domicilio = new System.Windows.Forms.Label();
             label_Telefono1 = new System.Windows.Forms.Label();
             dateTimePicker_FechaNacimiento = new Controles.Ofl_Sara.CustomDate();
-            textBox_LugarNacimiento = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_LugarNacimiento = new Controles.General.CustomTextBox();
             label_LugarNacimiento = new System.Windows.Forms.Label();
-            comboBox_Nacionalidad = new Ofelia_Sara.Controles.General.CustomComboBox();
+            comboBox_Nacionalidad = new Controles.General.CustomComboBox();
             label_Nacionalidad = new System.Windows.Forms.Label();
-            textBox_Edad = new Ofelia_Sara.Controles.General.CustomTextBox();
-            textBox_Dni = new Ofelia_Sara.Controles.General.CustomTextBox();
-            textBox_Nombre = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_Edad = new Controles.General.CustomTextBox();
+            textBox_Dni = new Controles.General.CustomTextBox();
+            textBox_Nombre = new Controles.General.CustomTextBox();
             label_Edad = new System.Windows.Forms.Label();
             label_FechaNacimiento = new System.Windows.Forms.Label();
             label_Dni = new System.Windows.Forms.Label();
             label_Nombre = new System.Windows.Forms.Label();
             btn_AgregarPersonal = new System.Windows.Forms.Button();
-            textBox_NumeroLegajo = new Ofelia_Sara.Controles.General.CustomTextBox();
+            textBox_NumeroLegajo = new Controles.General.CustomTextBox();
             lbl_Legajo = new System.Windows.Forms.Label();
             label_TITULO = new System.Windows.Forms.Label();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
@@ -251,17 +251,32 @@
             // 
             // textBox_PartidoDependencia
             // 
+            textBox_PartidoDependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_PartidoDependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_PartidoDependencia.BackColor = System.Drawing.Color.White;
+            textBox_PartidoDependencia.ErrorColor = System.Drawing.Color.Red;
+            textBox_PartidoDependencia.FocusColor = System.Drawing.Color.Blue;
             textBox_PartidoDependencia.Location = new System.Drawing.Point(176, 122);
             textBox_PartidoDependencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_PartidoDependencia.MaxLength = 32767;
+            textBox_PartidoDependencia.Multiline = false;
             textBox_PartidoDependencia.Name = "textBox_PartidoDependencia";
+            textBox_PartidoDependencia.PasswordChar = '\0';
+            textBox_PartidoDependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_PartidoDependencia.PlaceholderText = "";
+            textBox_PartidoDependencia.ReadOnly = false;
+            textBox_PartidoDependencia.SelectionStart = 0;
+            textBox_PartidoDependencia.ShowError = false;
             textBox_PartidoDependencia.Size = new System.Drawing.Size(468, 23);
             textBox_PartidoDependencia.TabIndex = 150;
+            textBox_PartidoDependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_PartidoDependencia.TextValue = "";
             // 
             // label_Partido
             // 
             label_Partido.AutoSize = true;
             label_Partido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Partido.Location = new System.Drawing.Point(82, 122);
+            label_Partido.Location = new System.Drawing.Point(85, 122);
             label_Partido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Partido.Name = "label_Partido";
             label_Partido.Size = new System.Drawing.Size(74, 15);
@@ -270,13 +285,38 @@
             // 
             // comboBox_Dependencia
             // 
+            comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.ArrowPictureBox = null;
+            comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Dependencia.BackColor = System.Drawing.Color.White;
+            comboBox_Dependencia.DataSource = null;
+            comboBox_Dependencia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DefaultImage");
+            comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
+            comboBox_Dependencia.DisplayMember = null;
+            comboBox_Dependencia.DropDownHeight = 252;
+            comboBox_Dependencia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Dependencia.DroppedDown = false;
+            comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            
+            comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Dependencia.Location = new System.Drawing.Point(176, 31);
             comboBox_Dependencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
-            comboBox_Dependencia.Size = new System.Drawing.Size(468, 21);
+            comboBox_Dependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Dependencia.PlaceholderText = " ";
+            comboBox_Dependencia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.PressedImage");
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedItem = null;
+            comboBox_Dependencia.SelectedText = "";
+            comboBox_Dependencia.SelectionStart = 0;
+            comboBox_Dependencia.ShowError = false;
+            comboBox_Dependencia.Size = new System.Drawing.Size(467, 21);
             comboBox_Dependencia.TabIndex = 149;
+            comboBox_Dependencia.Text = " ";
+            comboBox_Dependencia.TextValue = " ";
             comboBox_Dependencia.SelectedIndexChanged += ComboBox_Dependencia_SelectedIndexChanged;
             comboBox_Dependencia.TextChanged += ComboBox_Dependencia_TextChanged;
             comboBox_Dependencia.Enter += textBox_DatosDependencia_Enter;
@@ -285,7 +325,7 @@
             // 
             label_Dependencia.AutoSize = true;
             label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Dependencia.Location = new System.Drawing.Point(43, 32);
+            label_Dependencia.Location = new System.Drawing.Point(47, 31);
             label_Dependencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Dependencia.Name = "label_Dependencia";
             label_Dependencia.Size = new System.Drawing.Size(112, 15);
@@ -294,19 +334,49 @@
             // 
             // textBox_LocalidadDependencia
             // 
+            textBox_LocalidadDependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_LocalidadDependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_LocalidadDependencia.BackColor = System.Drawing.Color.White;
+            textBox_LocalidadDependencia.ErrorColor = System.Drawing.Color.Red;
+            textBox_LocalidadDependencia.FocusColor = System.Drawing.Color.Blue;
             textBox_LocalidadDependencia.Location = new System.Drawing.Point(176, 91);
             textBox_LocalidadDependencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_LocalidadDependencia.MaxLength = 32767;
+            textBox_LocalidadDependencia.Multiline = false;
             textBox_LocalidadDependencia.Name = "textBox_LocalidadDependencia";
+            textBox_LocalidadDependencia.PasswordChar = '\0';
+            textBox_LocalidadDependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_LocalidadDependencia.PlaceholderText = "";
+            textBox_LocalidadDependencia.ReadOnly = false;
+            textBox_LocalidadDependencia.SelectionStart = 0;
+            textBox_LocalidadDependencia.ShowError = false;
             textBox_LocalidadDependencia.Size = new System.Drawing.Size(468, 23);
             textBox_LocalidadDependencia.TabIndex = 145;
+            textBox_LocalidadDependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_LocalidadDependencia.TextValue = "";
             // 
             // textBox_DomicilioDependencia
             // 
+            textBox_DomicilioDependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_DomicilioDependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_DomicilioDependencia.BackColor = System.Drawing.Color.White;
+            textBox_DomicilioDependencia.ErrorColor = System.Drawing.Color.Red;
+            textBox_DomicilioDependencia.FocusColor = System.Drawing.Color.Blue;
             textBox_DomicilioDependencia.Location = new System.Drawing.Point(176, 61);
             textBox_DomicilioDependencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_DomicilioDependencia.MaxLength = 32767;
+            textBox_DomicilioDependencia.Multiline = false;
             textBox_DomicilioDependencia.Name = "textBox_DomicilioDependencia";
+            textBox_DomicilioDependencia.PasswordChar = '\0';
+            textBox_DomicilioDependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_DomicilioDependencia.PlaceholderText = "";
+            textBox_DomicilioDependencia.ReadOnly = false;
+            textBox_DomicilioDependencia.SelectionStart = 0;
+            textBox_DomicilioDependencia.ShowError = false;
             textBox_DomicilioDependencia.Size = new System.Drawing.Size(468, 23);
             textBox_DomicilioDependencia.TabIndex = 144;
+            textBox_DomicilioDependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_DomicilioDependencia.TextValue = "";
             // 
             // label_Localidad
             // 
@@ -323,7 +393,7 @@
             // 
             label_DomicilioDependencia.AutoSize = true;
             label_DomicilioDependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_DomicilioDependencia.Location = new System.Drawing.Point(-1, 62);
+            label_DomicilioDependencia.Location = new System.Drawing.Point(8, 61);
             label_DomicilioDependencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_DomicilioDependencia.Name = "label_DomicilioDependencia";
             label_DomicilioDependencia.Size = new System.Drawing.Size(151, 15);
@@ -411,11 +481,26 @@
             // 
             // textBox_ChalecoNumero
             // 
+            textBox_ChalecoNumero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_ChalecoNumero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_ChalecoNumero.BackColor = System.Drawing.Color.White;
+            textBox_ChalecoNumero.ErrorColor = System.Drawing.Color.Red;
+            textBox_ChalecoNumero.FocusColor = System.Drawing.Color.Blue;
             textBox_ChalecoNumero.Location = new System.Drawing.Point(176, 118);
             textBox_ChalecoNumero.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_ChalecoNumero.MaxLength = 32767;
+            textBox_ChalecoNumero.Multiline = false;
             textBox_ChalecoNumero.Name = "textBox_ChalecoNumero";
+            textBox_ChalecoNumero.PasswordChar = '\0';
+            textBox_ChalecoNumero.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ChalecoNumero.PlaceholderText = "";
+            textBox_ChalecoNumero.ReadOnly = false;
+            textBox_ChalecoNumero.SelectionStart = 0;
+            textBox_ChalecoNumero.ShowError = false;
             textBox_ChalecoNumero.Size = new System.Drawing.Size(334, 23);
             textBox_ChalecoNumero.TabIndex = 153;
+            textBox_ChalecoNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_ChalecoNumero.TextValue = "";
             // 
             // label_ChalecoNumero
             // 
@@ -431,11 +516,26 @@
             // 
             // textBox_ChalecoModelo
             // 
-            textBox_ChalecoModelo.Location = new System.Drawing.Point(468, 89);
+            textBox_ChalecoModelo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_ChalecoModelo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_ChalecoModelo.BackColor = System.Drawing.Color.White;
+            textBox_ChalecoModelo.ErrorColor = System.Drawing.Color.Red;
+            textBox_ChalecoModelo.FocusColor = System.Drawing.Color.Blue;
+            textBox_ChalecoModelo.Location = new System.Drawing.Point(455, 89);
             textBox_ChalecoModelo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_ChalecoModelo.MaxLength = 32767;
+            textBox_ChalecoModelo.Multiline = false;
             textBox_ChalecoModelo.Name = "textBox_ChalecoModelo";
-            textBox_ChalecoModelo.Size = new System.Drawing.Size(173, 23);
+            textBox_ChalecoModelo.PasswordChar = '\0';
+            textBox_ChalecoModelo.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ChalecoModelo.PlaceholderText = "";
+            textBox_ChalecoModelo.ReadOnly = false;
+            textBox_ChalecoModelo.SelectionStart = 0;
+            textBox_ChalecoModelo.ShowError = false;
+            textBox_ChalecoModelo.Size = new System.Drawing.Size(185, 23);
             textBox_ChalecoModelo.TabIndex = 151;
+            textBox_ChalecoModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_ChalecoModelo.TextValue = "";
             // 
             // label_ChalecoModelo
             // 
@@ -451,11 +551,26 @@
             // 
             // textBox_ChalecoMarca
             // 
+            textBox_ChalecoMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_ChalecoMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_ChalecoMarca.BackColor = System.Drawing.Color.White;
+            textBox_ChalecoMarca.ErrorColor = System.Drawing.Color.Red;
+            textBox_ChalecoMarca.FocusColor = System.Drawing.Color.Blue;
             textBox_ChalecoMarca.Location = new System.Drawing.Point(176, 88);
             textBox_ChalecoMarca.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_ChalecoMarca.MaxLength = 32767;
+            textBox_ChalecoMarca.Multiline = false;
             textBox_ChalecoMarca.Name = "textBox_ChalecoMarca";
-            textBox_ChalecoMarca.Size = new System.Drawing.Size(173, 23);
+            textBox_ChalecoMarca.PasswordChar = '\0';
+            textBox_ChalecoMarca.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ChalecoMarca.PlaceholderText = "";
+            textBox_ChalecoMarca.ReadOnly = false;
+            textBox_ChalecoMarca.SelectionStart = 0;
+            textBox_ChalecoMarca.ShowError = false;
+            textBox_ChalecoMarca.Size = new System.Drawing.Size(192, 23);
             textBox_ChalecoMarca.TabIndex = 149;
+            textBox_ChalecoMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_ChalecoMarca.TextValue = "";
             // 
             // label_ChalecoMarca
             // 
@@ -472,11 +587,26 @@
             // 
             // textBox_ArmaNumero
             // 
+            textBox_ArmaNumero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_ArmaNumero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_ArmaNumero.BackColor = System.Drawing.Color.White;
+            textBox_ArmaNumero.ErrorColor = System.Drawing.Color.Red;
+            textBox_ArmaNumero.FocusColor = System.Drawing.Color.Blue;
             textBox_ArmaNumero.Location = new System.Drawing.Point(176, 58);
             textBox_ArmaNumero.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_ArmaNumero.MaxLength = 32767;
+            textBox_ArmaNumero.Multiline = false;
             textBox_ArmaNumero.Name = "textBox_ArmaNumero";
+            textBox_ArmaNumero.PasswordChar = '\0';
+            textBox_ArmaNumero.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ArmaNumero.PlaceholderText = "";
+            textBox_ArmaNumero.ReadOnly = false;
+            textBox_ArmaNumero.SelectionStart = 0;
+            textBox_ArmaNumero.ShowError = false;
             textBox_ArmaNumero.Size = new System.Drawing.Size(334, 23);
             textBox_ArmaNumero.TabIndex = 147;
+            textBox_ArmaNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_ArmaNumero.TextValue = "";
             // 
             // label_ArmaNumero
             // 
@@ -492,11 +622,26 @@
             // 
             // textBox_ArmaModelo
             // 
-            textBox_ArmaModelo.Location = new System.Drawing.Point(469, 29);
+            textBox_ArmaModelo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_ArmaModelo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_ArmaModelo.BackColor = System.Drawing.Color.White;
+            textBox_ArmaModelo.ErrorColor = System.Drawing.Color.Red;
+            textBox_ArmaModelo.FocusColor = System.Drawing.Color.Blue;
+            textBox_ArmaModelo.Location = new System.Drawing.Point(455, 29);
             textBox_ArmaModelo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_ArmaModelo.MaxLength = 32767;
+            textBox_ArmaModelo.Multiline = false;
             textBox_ArmaModelo.Name = "textBox_ArmaModelo";
-            textBox_ArmaModelo.Size = new System.Drawing.Size(173, 23);
+            textBox_ArmaModelo.PasswordChar = '\0';
+            textBox_ArmaModelo.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ArmaModelo.PlaceholderText = "";
+            textBox_ArmaModelo.ReadOnly = false;
+            textBox_ArmaModelo.SelectionStart = 0;
+            textBox_ArmaModelo.ShowError = false;
+            textBox_ArmaModelo.Size = new System.Drawing.Size(185, 23);
             textBox_ArmaModelo.TabIndex = 145;
+            textBox_ArmaModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_ArmaModelo.TextValue = "";
             // 
             // label_ArmaModelo
             // 
@@ -512,11 +657,26 @@
             // 
             // textBox_ArmaMarca
             // 
+            textBox_ArmaMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_ArmaMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_ArmaMarca.BackColor = System.Drawing.Color.White;
+            textBox_ArmaMarca.ErrorColor = System.Drawing.Color.Red;
+            textBox_ArmaMarca.FocusColor = System.Drawing.Color.Blue;
             textBox_ArmaMarca.Location = new System.Drawing.Point(176, 28);
             textBox_ArmaMarca.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_ArmaMarca.MaxLength = 32767;
+            textBox_ArmaMarca.Multiline = false;
             textBox_ArmaMarca.Name = "textBox_ArmaMarca";
+            textBox_ArmaMarca.PasswordChar = '\0';
+            textBox_ArmaMarca.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ArmaMarca.PlaceholderText = "";
+            textBox_ArmaMarca.ReadOnly = false;
+            textBox_ArmaMarca.SelectionStart = 0;
+            textBox_ArmaMarca.ShowError = false;
             textBox_ArmaMarca.Size = new System.Drawing.Size(192, 23);
             textBox_ArmaMarca.TabIndex = 143;
+            textBox_ArmaMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_ArmaMarca.TextValue = "";
             // 
             // label_ArmaMarca
             // 
@@ -637,12 +797,26 @@
             // 
             // textBox_AntiguedadMeses
             // 
+            textBox_AntiguedadMeses.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_AntiguedadMeses.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_AntiguedadMeses.BackColor = System.Drawing.Color.White;
+            textBox_AntiguedadMeses.ErrorColor = System.Drawing.Color.Red;
+            textBox_AntiguedadMeses.FocusColor = System.Drawing.Color.Blue;
             textBox_AntiguedadMeses.Location = new System.Drawing.Point(532, 95);
             textBox_AntiguedadMeses.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_AntiguedadMeses.MaxLength = 32767;
+            textBox_AntiguedadMeses.Multiline = false;
             textBox_AntiguedadMeses.Name = "textBox_AntiguedadMeses";
+            textBox_AntiguedadMeses.PasswordChar = '\0';
+            textBox_AntiguedadMeses.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_AntiguedadMeses.PlaceholderText = "";
+            textBox_AntiguedadMeses.ReadOnly = false;
+            textBox_AntiguedadMeses.SelectionStart = 0;
+            textBox_AntiguedadMeses.ShowError = false;
             textBox_AntiguedadMeses.Size = new System.Drawing.Size(34, 23);
             textBox_AntiguedadMeses.TabIndex = 129;
             textBox_AntiguedadMeses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_AntiguedadMeses.TextValue = "";
             // 
             // label_Años
             // 
@@ -656,12 +830,26 @@
             // 
             // textBox_AntiguedadAños
             // 
+            textBox_AntiguedadAños.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_AntiguedadAños.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_AntiguedadAños.BackColor = System.Drawing.Color.White;
+            textBox_AntiguedadAños.ErrorColor = System.Drawing.Color.Red;
+            textBox_AntiguedadAños.FocusColor = System.Drawing.Color.Blue;
             textBox_AntiguedadAños.Location = new System.Drawing.Point(448, 95);
             textBox_AntiguedadAños.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_AntiguedadAños.MaxLength = 32767;
+            textBox_AntiguedadAños.Multiline = false;
             textBox_AntiguedadAños.Name = "textBox_AntiguedadAños";
+            textBox_AntiguedadAños.PasswordChar = '\0';
+            textBox_AntiguedadAños.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_AntiguedadAños.PlaceholderText = "";
+            textBox_AntiguedadAños.ReadOnly = false;
+            textBox_AntiguedadAños.SelectionStart = 0;
+            textBox_AntiguedadAños.ShowError = false;
             textBox_AntiguedadAños.Size = new System.Drawing.Size(34, 23);
             textBox_AntiguedadAños.TabIndex = 127;
             textBox_AntiguedadAños.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_AntiguedadAños.TextValue = "";
             // 
             // label_Antiguedad
             // 
@@ -676,11 +864,26 @@
             // 
             // textBox_Funcion
             // 
+            textBox_Funcion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Funcion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Funcion.BackColor = System.Drawing.Color.White;
+            textBox_Funcion.ErrorColor = System.Drawing.Color.Red;
+            textBox_Funcion.FocusColor = System.Drawing.Color.Blue;
             textBox_Funcion.Location = new System.Drawing.Point(149, 123);
             textBox_Funcion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Funcion.MaxLength = 32767;
+            textBox_Funcion.Multiline = false;
             textBox_Funcion.Name = "textBox_Funcion";
+            textBox_Funcion.PasswordChar = '\0';
+            textBox_Funcion.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Funcion.PlaceholderText = "";
+            textBox_Funcion.ReadOnly = false;
+            textBox_Funcion.SelectionStart = 0;
+            textBox_Funcion.ShowError = false;
             textBox_Funcion.Size = new System.Drawing.Size(465, 23);
             textBox_Funcion.TabIndex = 124;
+            textBox_Funcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Funcion.TextValue = "";
             // 
             // label_Funcion
             // 
@@ -695,18 +898,24 @@
             // 
             // dateTimePicker_Antiguedad
             // 
+            dateTimePicker_Antiguedad.AñoMaximo = 2025;
+            dateTimePicker_Antiguedad.AñoMinimo = 1930;
+            dateTimePicker_Antiguedad.BackColor = System.Drawing.Color.Transparent;
             dateTimePicker_Antiguedad.Location = new System.Drawing.Point(149, 91);
             dateTimePicker_Antiguedad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dateTimePicker_Antiguedad.Name = "dateTimePicker_Antiguedad";
-            dateTimePicker_Antiguedad.Size = new System.Drawing.Size(174, 23);
+            dateTimePicker_Antiguedad.Size = new System.Drawing.Size(156, 23);
+            dateTimePicker_Antiguedad.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
+            dateTimePicker_Antiguedad.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             dateTimePicker_Antiguedad.TabIndex = 123;
+            dateTimePicker_Antiguedad.TextoAsociado = null;
             dateTimePicker_Antiguedad.Load += dateTimePicker_Antiguedad_Load;
             // 
             // label_Ingreso
             // 
             label_Ingreso.AutoSize = true;
             label_Ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Ingreso.Location = new System.Drawing.Point(5, 96);
+            label_Ingreso.Location = new System.Drawing.Point(10, 96);
             label_Ingreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Ingreso.Name = "label_Ingreso";
             label_Ingreso.Size = new System.Drawing.Size(125, 15);
@@ -715,20 +924,44 @@
             // 
             // comboBox_Escalafon
             // 
+            comboBox_Escalafon.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.ArrowImage");
+            comboBox_Escalafon.ArrowPictureBox = null;
+            comboBox_Escalafon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Escalafon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Escalafon.BackColor = System.Drawing.Color.White;
+            comboBox_Escalafon.DataSource = null;
+            comboBox_Escalafon.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DefaultImage");
+            comboBox_Escalafon.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DisabledImage");
+            comboBox_Escalafon.DisplayMember = null;
+            comboBox_Escalafon.DropDownHeight = 252;
+            comboBox_Escalafon.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Escalafon.DroppedDown = false;
+            comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
             comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            
-            comboBox_Escalafon.Items.AddRange(new object[] { "" });
+            comboBox_Escalafon.ForeColor = System.Drawing.Color.Gray;
             comboBox_Escalafon.Location = new System.Drawing.Point(149, 29);
             comboBox_Escalafon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Escalafon.MaxDropDownItems = 10;
             comboBox_Escalafon.Name = "comboBox_Escalafon";
+            comboBox_Escalafon.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Escalafon.PlaceholderText = " ";
+            comboBox_Escalafon.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.PressedImage");
+            comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Escalafon.SelectedItem = null;
+            comboBox_Escalafon.SelectedText = "";
+            comboBox_Escalafon.SelectionStart = 0;
+            comboBox_Escalafon.ShowError = false;
             comboBox_Escalafon.Size = new System.Drawing.Size(333, 21);
             comboBox_Escalafon.TabIndex = 121;
+            comboBox_Escalafon.Text = " ";
+            comboBox_Escalafon.TextValue = " ";
             // 
             // label_Subescalafon
             // 
             label_Subescalafon.AutoSize = true;
             label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Subescalafon.Location = new System.Drawing.Point(26, 30);
+            label_Subescalafon.Location = new System.Drawing.Point(28, 29);
             label_Subescalafon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Subescalafon.Name = "label_Subescalafon";
             label_Subescalafon.Size = new System.Drawing.Size(107, 15);
@@ -737,13 +970,38 @@
             // 
             // comboBox_Jerarquia
             // 
+            comboBox_Jerarquia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.ArrowImage");
+            comboBox_Jerarquia.ArrowPictureBox = null;
+            comboBox_Jerarquia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Jerarquia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Jerarquia.BackColor = System.Drawing.Color.White;
+            comboBox_Jerarquia.DataSource = null;
+            comboBox_Jerarquia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DefaultImage");
+            comboBox_Jerarquia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DisabledImage");
+            comboBox_Jerarquia.DisplayMember = null;
+            comboBox_Jerarquia.DropDownHeight = 252;
+            comboBox_Jerarquia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Jerarquia.DroppedDown = false;
+            comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            
+            comboBox_Jerarquia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Jerarquia.Location = new System.Drawing.Point(149, 60);
             comboBox_Jerarquia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Jerarquia.MaxDropDownItems = 10;
             comboBox_Jerarquia.Name = "comboBox_Jerarquia";
+            comboBox_Jerarquia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Jerarquia.PlaceholderText = " ";
+            comboBox_Jerarquia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.PressedImage");
+            comboBox_Jerarquia.SelectedIndex = -1;
+            comboBox_Jerarquia.SelectedItem = null;
+            comboBox_Jerarquia.SelectedText = "";
+            comboBox_Jerarquia.SelectionStart = 0;
+            comboBox_Jerarquia.ShowError = false;
             comboBox_Jerarquia.Size = new System.Drawing.Size(333, 21);
             comboBox_Jerarquia.TabIndex = 119;
+            comboBox_Jerarquia.Text = " ";
+            comboBox_Jerarquia.TextValue = " ";
             // 
             // label_Jerarquia
             // 
@@ -800,11 +1058,11 @@
             // panel_Detalle_Personal
             // 
             panel_Detalle_Personal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel_Detalle_Personal.Controls.Add(numeroTelefonicoControl1);
+            panel_Detalle_Personal.Controls.Add(numeroTelefonicoControl2);
             panel_Detalle_Personal.Controls.Add(btn_AmpliarReducir_DATOSPERSONALES);
             panel_Detalle_Personal.Controls.Add(textBox_Apellido);
             panel_Detalle_Personal.Controls.Add(label_Apellido);
-            panel_Detalle_Personal.Controls.Add(numeroTelefonicoControl2);
-            panel_Detalle_Personal.Controls.Add(numeroTelefonicoControl1);
             panel_Detalle_Personal.Controls.Add(comboBox_EstadoCivil);
             panel_Detalle_Personal.Controls.Add(textBox_PartidoPnal);
             panel_Detalle_Personal.Controls.Add(label_PartidoPnal);
@@ -833,6 +1091,26 @@
             panel_Detalle_Personal.Size = new System.Drawing.Size(692, 289);
             panel_Detalle_Personal.TabIndex = 0;
             // 
+            // numeroTelefonicoControl1
+            // 
+            numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            numeroTelefonicoControl1.ControlWidth = 182;
+            numeroTelefonicoControl1.Location = new System.Drawing.Point(131, 195);
+            numeroTelefonicoControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
+            numeroTelefonicoControl1.Size = new System.Drawing.Size(182, 26);
+            numeroTelefonicoControl1.TabIndex = 178;
+            // 
+            // numeroTelefonicoControl2
+            // 
+            numeroTelefonicoControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            numeroTelefonicoControl2.ControlWidth = 185;
+            numeroTelefonicoControl2.Location = new System.Drawing.Point(455, 195);
+            numeroTelefonicoControl2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numeroTelefonicoControl2.Name = "numeroTelefonicoControl2";
+            numeroTelefonicoControl2.Size = new System.Drawing.Size(185, 26);
+            numeroTelefonicoControl2.TabIndex = 155;
+            // 
             // btn_AmpliarReducir_DATOSPERSONALES
             // 
             btn_AmpliarReducir_DATOSPERSONALES.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -851,11 +1129,26 @@
             // 
             // textBox_Apellido
             // 
-            textBox_Apellido.Location = new System.Drawing.Point(118, 66);
+            textBox_Apellido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Apellido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Apellido.BackColor = System.Drawing.Color.White;
+            textBox_Apellido.ErrorColor = System.Drawing.Color.Red;
+            textBox_Apellido.FocusColor = System.Drawing.Color.Blue;
+            textBox_Apellido.Location = new System.Drawing.Point(104, 66);
             textBox_Apellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Apellido.MaxLength = 32767;
+            textBox_Apellido.Multiline = false;
             textBox_Apellido.Name = "textBox_Apellido";
-            textBox_Apellido.Size = new System.Drawing.Size(523, 23);
+            textBox_Apellido.PasswordChar = '\0';
+            textBox_Apellido.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Apellido.PlaceholderText = "";
+            textBox_Apellido.ReadOnly = false;
+            textBox_Apellido.SelectionStart = 0;
+            textBox_Apellido.ShowError = false;
+            textBox_Apellido.Size = new System.Drawing.Size(537, 23);
             textBox_Apellido.TabIndex = 176;
+            textBox_Apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Apellido.TextValue = "";
             // 
             // label_Apellido
             // 
@@ -868,47 +1161,63 @@
             label_Apellido.TabIndex = 177;
             label_Apellido.Text = "APELLIDO :";
             // 
-            // numeroTelefonicoControl2
-            // 
-            numeroTelefonicoControl2.AutoSize = true;
-            numeroTelefonicoControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            numeroTelefonicoControl2.ControlWidth = 189;
-            numeroTelefonicoControl2.Location = new System.Drawing.Point(455, 195);
-            numeroTelefonicoControl2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            numeroTelefonicoControl2.Name = "numeroTelefonicoControl2";
-            numeroTelefonicoControl2.Size = new System.Drawing.Size(189, 25);
-            numeroTelefonicoControl2.TabIndex = 175;
-            // 
-            // numeroTelefonicoControl1
-            // 
-            numeroTelefonicoControl1.AutoSize = true;
-            numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            numeroTelefonicoControl1.ControlWidth = 189;
-            numeroTelefonicoControl1.Location = new System.Drawing.Point(131, 195);
-            numeroTelefonicoControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            numeroTelefonicoControl1.Size = new System.Drawing.Size(189, 25);
-            numeroTelefonicoControl1.TabIndex = 174;
-            // 
             // comboBox_EstadoCivil
             // 
-            comboBox_EstadoCivil.AutoCompleteCustomSource.AddRange(new string[] { "ARGENTINA", "PARAGUAYA", "BOLIVIANA" });
+            comboBox_EstadoCivil.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_EstadoCivil.ArrowImage");
+            comboBox_EstadoCivil.ArrowPictureBox = null;
+            comboBox_EstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_EstadoCivil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_EstadoCivil.BackColor = System.Drawing.Color.White;
+            comboBox_EstadoCivil.DataSource = null;
+            comboBox_EstadoCivil.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_EstadoCivil.DefaultImage");
+            comboBox_EstadoCivil.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_EstadoCivil.DisabledImage");
+            comboBox_EstadoCivil.DisplayMember = null;
+            comboBox_EstadoCivil.DropDownHeight = 252;
+            comboBox_EstadoCivil.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_EstadoCivil.DroppedDown = false;
+            comboBox_EstadoCivil.ErrorColor = System.Drawing.Color.Red;
+            comboBox_EstadoCivil.FocusColor = System.Drawing.Color.Blue;
             comboBox_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            
-            comboBox_EstadoCivil.Items.AddRange(new object[] { "SOLTERA/O", "CASADA/O", "DIVORCIADA/O", "VIUDA/O" });
-            comboBox_EstadoCivil.Location = new System.Drawing.Point(140, 165);
+            comboBox_EstadoCivil.ForeColor = System.Drawing.Color.Gray;
+            comboBox_EstadoCivil.Location = new System.Drawing.Point(131, 165);
             comboBox_EstadoCivil.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_EstadoCivil.MaxDropDownItems = 10;
             comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
-            comboBox_EstadoCivil.Size = new System.Drawing.Size(173, 21);
+            comboBox_EstadoCivil.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_EstadoCivil.PlaceholderText = " ";
+            comboBox_EstadoCivil.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_EstadoCivil.PressedImage");
+            comboBox_EstadoCivil.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedItem = null;
+            comboBox_EstadoCivil.SelectedText = "";
+            comboBox_EstadoCivil.SelectionStart = 0;
+            comboBox_EstadoCivil.ShowError = false;
+            comboBox_EstadoCivil.Size = new System.Drawing.Size(182, 21);
             comboBox_EstadoCivil.TabIndex = 173;
+            comboBox_EstadoCivil.Text = " ";
+            comboBox_EstadoCivil.TextValue = " ";
             // 
             // textBox_PartidoPnal
             // 
-            textBox_PartidoPnal.Location = new System.Drawing.Point(420, 257);
+            textBox_PartidoPnal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_PartidoPnal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_PartidoPnal.BackColor = System.Drawing.Color.White;
+            textBox_PartidoPnal.ErrorColor = System.Drawing.Color.Red;
+            textBox_PartidoPnal.FocusColor = System.Drawing.Color.Blue;
+            textBox_PartidoPnal.Location = new System.Drawing.Point(408, 257);
             textBox_PartidoPnal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_PartidoPnal.MaxLength = 32767;
+            textBox_PartidoPnal.Multiline = false;
             textBox_PartidoPnal.Name = "textBox_PartidoPnal";
-            textBox_PartidoPnal.Size = new System.Drawing.Size(221, 23);
+            textBox_PartidoPnal.PasswordChar = '\0';
+            textBox_PartidoPnal.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_PartidoPnal.PlaceholderText = "";
+            textBox_PartidoPnal.ReadOnly = false;
+            textBox_PartidoPnal.SelectionStart = 0;
+            textBox_PartidoPnal.ShowError = false;
+            textBox_PartidoPnal.Size = new System.Drawing.Size(233, 23);
             textBox_PartidoPnal.TabIndex = 171;
+            textBox_PartidoPnal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_PartidoPnal.TextValue = "";
             // 
             // label_PartidoPnal
             // 
@@ -946,11 +1255,26 @@
             // 
             // textBox_LocalidadPnal
             // 
+            textBox_LocalidadPnal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_LocalidadPnal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_LocalidadPnal.BackColor = System.Drawing.Color.White;
+            textBox_LocalidadPnal.ErrorColor = System.Drawing.Color.Red;
+            textBox_LocalidadPnal.FocusColor = System.Drawing.Color.Blue;
             textBox_LocalidadPnal.Location = new System.Drawing.Point(131, 257);
             textBox_LocalidadPnal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_LocalidadPnal.MaxLength = 32767;
+            textBox_LocalidadPnal.Multiline = false;
             textBox_LocalidadPnal.Name = "textBox_LocalidadPnal";
+            textBox_LocalidadPnal.PasswordChar = '\0';
+            textBox_LocalidadPnal.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_LocalidadPnal.PlaceholderText = "";
+            textBox_LocalidadPnal.ReadOnly = false;
+            textBox_LocalidadPnal.SelectionStart = 0;
+            textBox_LocalidadPnal.ShowError = false;
             textBox_LocalidadPnal.Size = new System.Drawing.Size(187, 23);
             textBox_LocalidadPnal.TabIndex = 168;
+            textBox_LocalidadPnal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_LocalidadPnal.TextValue = "";
             // 
             // label_LocalidadPnal
             // 
@@ -966,11 +1290,26 @@
             // 
             // textBox_DomicilioPnal
             // 
+            textBox_DomicilioPnal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_DomicilioPnal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_DomicilioPnal.BackColor = System.Drawing.Color.White;
+            textBox_DomicilioPnal.ErrorColor = System.Drawing.Color.Red;
+            textBox_DomicilioPnal.FocusColor = System.Drawing.Color.Blue;
             textBox_DomicilioPnal.Location = new System.Drawing.Point(131, 227);
             textBox_DomicilioPnal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_DomicilioPnal.MaxLength = 32767;
+            textBox_DomicilioPnal.Multiline = false;
             textBox_DomicilioPnal.Name = "textBox_DomicilioPnal";
+            textBox_DomicilioPnal.PasswordChar = '\0';
+            textBox_DomicilioPnal.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_DomicilioPnal.PlaceholderText = "";
+            textBox_DomicilioPnal.ReadOnly = false;
+            textBox_DomicilioPnal.SelectionStart = 0;
+            textBox_DomicilioPnal.ShowError = false;
             textBox_DomicilioPnal.Size = new System.Drawing.Size(510, 23);
             textBox_DomicilioPnal.TabIndex = 166;
+            textBox_DomicilioPnal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_DomicilioPnal.TextValue = "";
             // 
             // label_Domicilio
             // 
@@ -998,20 +1337,41 @@
             // 
             // dateTimePicker_FechaNacimiento
             // 
-            dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(500, 100);
+            dateTimePicker_FechaNacimiento.AñoMaximo = 2025;
+            dateTimePicker_FechaNacimiento.AñoMinimo = 1930;
+            dateTimePicker_FechaNacimiento.BackColor = System.Drawing.Color.Transparent;
+            dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(486, 100);
             dateTimePicker_FechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
-            dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(174, 23);
+            dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(156, 23);
+            dateTimePicker_FechaNacimiento.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
+            dateTimePicker_FechaNacimiento.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             dateTimePicker_FechaNacimiento.TabIndex = 163;
+            dateTimePicker_FechaNacimiento.TextoAsociado = null;
             dateTimePicker_FechaNacimiento.Load += dateTimePicker_FechaNacimiento_Load;
             // 
             // textBox_LugarNacimiento
             // 
-            textBox_LugarNacimiento.Location = new System.Drawing.Point(360, 135);
+            textBox_LugarNacimiento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_LugarNacimiento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_LugarNacimiento.BackColor = System.Drawing.Color.White;
+            textBox_LugarNacimiento.ErrorColor = System.Drawing.Color.Red;
+            textBox_LugarNacimiento.FocusColor = System.Drawing.Color.Blue;
+            textBox_LugarNacimiento.Location = new System.Drawing.Point(338, 135);
             textBox_LugarNacimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_LugarNacimiento.MaxLength = 32767;
+            textBox_LugarNacimiento.Multiline = false;
             textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
-            textBox_LugarNacimiento.Size = new System.Drawing.Size(280, 23);
+            textBox_LugarNacimiento.PasswordChar = '\0';
+            textBox_LugarNacimiento.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_LugarNacimiento.PlaceholderText = "";
+            textBox_LugarNacimiento.ReadOnly = false;
+            textBox_LugarNacimiento.SelectionStart = 0;
+            textBox_LugarNacimiento.ShowError = false;
+            textBox_LugarNacimiento.Size = new System.Drawing.Size(302, 23);
             textBox_LugarNacimiento.TabIndex = 155;
+            textBox_LugarNacimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_LugarNacimiento.TextValue = "";
             // 
             // label_LugarNacimiento
             // 
@@ -1020,26 +1380,49 @@
             label_LugarNacimiento.Location = new System.Drawing.Point(162, 136);
             label_LugarNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_LugarNacimiento.Name = "label_LugarNacimiento";
-            label_LugarNacimiento.Size = new System.Drawing.Size(168, 15);
+            label_LugarNacimiento.Size = new System.Drawing.Size(172, 15);
             label_LugarNacimiento.TabIndex = 162;
-            label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO:";
+            label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO :";
             // 
             // comboBox_Nacionalidad
             // 
-            comboBox_Nacionalidad.AutoCompleteCustomSource.AddRange(new string[] { "ARGENTINA", "PARAGUAYA", "BOLIVIANA" });
-            
-            comboBox_Nacionalidad.Items.AddRange(new object[] { "ARGENTINA", "PARAGUAYA", "BOLIVIANA", "CHILENA", "PERUANA", "URUGUAYA" });
-            comboBox_Nacionalidad.Location = new System.Drawing.Point(468, 165);
+            comboBox_Nacionalidad.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Nacionalidad.ArrowImage");
+            comboBox_Nacionalidad.ArrowPictureBox = null;
+            comboBox_Nacionalidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Nacionalidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Nacionalidad.BackColor = System.Drawing.Color.White;
+            comboBox_Nacionalidad.DataSource = null;
+            comboBox_Nacionalidad.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Nacionalidad.DefaultImage");
+            comboBox_Nacionalidad.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Nacionalidad.DisabledImage");
+            comboBox_Nacionalidad.DisplayMember = null;
+            comboBox_Nacionalidad.DropDownHeight = 252;
+            comboBox_Nacionalidad.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Nacionalidad.DroppedDown = false;
+            comboBox_Nacionalidad.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Nacionalidad.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Nacionalidad.ForeColor = System.Drawing.Color.Gray;
+            comboBox_Nacionalidad.Location = new System.Drawing.Point(455, 165);
             comboBox_Nacionalidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox_Nacionalidad.MaxDropDownItems = 10;
             comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
-            comboBox_Nacionalidad.Size = new System.Drawing.Size(173, 23);
+            comboBox_Nacionalidad.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Nacionalidad.PlaceholderText = " ";
+            comboBox_Nacionalidad.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Nacionalidad.PressedImage");
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_Nacionalidad.SelectedItem = null;
+            comboBox_Nacionalidad.SelectedText = "";
+            comboBox_Nacionalidad.SelectionStart = 0;
+            comboBox_Nacionalidad.ShowError = false;
+            comboBox_Nacionalidad.Size = new System.Drawing.Size(185, 23);
             comboBox_Nacionalidad.TabIndex = 156;
+            comboBox_Nacionalidad.Text = " ";
+            comboBox_Nacionalidad.TextValue = " ";
             // 
             // label_Nacionalidad
             // 
             label_Nacionalidad.AutoSize = true;
             label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Nacionalidad.Location = new System.Drawing.Point(334, 167);
+            label_Nacionalidad.Location = new System.Drawing.Point(336, 167);
             label_Nacionalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Nacionalidad.Name = "label_Nacionalidad";
             label_Nacionalidad.Size = new System.Drawing.Size(114, 15);
@@ -1048,32 +1431,75 @@
             // 
             // textBox_Edad
             // 
+            textBox_Edad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Edad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Edad.BackColor = System.Drawing.Color.White;
+            textBox_Edad.ErrorColor = System.Drawing.Color.Red;
+            textBox_Edad.FocusColor = System.Drawing.Color.Blue;
             textBox_Edad.Location = new System.Drawing.Point(80, 135);
             textBox_Edad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Edad.MaxLength = 32767;
+            textBox_Edad.Multiline = false;
             textBox_Edad.Name = "textBox_Edad";
+            textBox_Edad.PasswordChar = '\0';
+            textBox_Edad.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Edad.PlaceholderText = "";
+            textBox_Edad.ReadOnly = false;
+            textBox_Edad.SelectionStart = 0;
+            textBox_Edad.ShowError = false;
             textBox_Edad.Size = new System.Drawing.Size(69, 23);
             textBox_Edad.TabIndex = 154;
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Edad.TextValue = "";
             textBox_Edad.KeyPress += textBox_Edad_KeyPress;
             // 
             // textBox_Dni
             // 
+            textBox_Dni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Dni.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Dni.BackColor = System.Drawing.Color.White;
+            textBox_Dni.ErrorColor = System.Drawing.Color.Red;
+            textBox_Dni.FocusColor = System.Drawing.Color.Blue;
             textBox_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             textBox_Dni.Location = new System.Drawing.Point(72, 100);
             textBox_Dni.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Dni.MaxLength = 32767;
+            textBox_Dni.Multiline = false;
             textBox_Dni.Name = "textBox_Dni";
+            textBox_Dni.PasswordChar = '\0';
+            textBox_Dni.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Dni.PlaceholderText = "";
+            textBox_Dni.ReadOnly = false;
+            textBox_Dni.SelectionStart = 0;
+            textBox_Dni.ShowError = false;
             textBox_Dni.Size = new System.Drawing.Size(205, 20);
             textBox_Dni.TabIndex = 153;
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Dni.TextValue = "";
             textBox_Dni.KeyPress += textBox_Dni_KeyPress;
             // 
             // textBox_Nombre
             // 
-            textBox_Nombre.Location = new System.Drawing.Point(106, 33);
+            textBox_Nombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Nombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Nombre.BackColor = System.Drawing.Color.White;
+            textBox_Nombre.ErrorColor = System.Drawing.Color.Red;
+            textBox_Nombre.FocusColor = System.Drawing.Color.Blue;
+            textBox_Nombre.Location = new System.Drawing.Point(104, 33);
             textBox_Nombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Nombre.MaxLength = 32767;
+            textBox_Nombre.Multiline = false;
             textBox_Nombre.Name = "textBox_Nombre";
-            textBox_Nombre.Size = new System.Drawing.Size(535, 23);
+            textBox_Nombre.PasswordChar = '\0';
+            textBox_Nombre.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Nombre.PlaceholderText = "";
+            textBox_Nombre.ReadOnly = false;
+            textBox_Nombre.SelectionStart = 0;
+            textBox_Nombre.ShowError = false;
+            textBox_Nombre.Size = new System.Drawing.Size(537, 23);
             textBox_Nombre.TabIndex = 152;
+            textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Nombre.TextValue = "";
             // 
             // label_Edad
             // 
@@ -1090,7 +1516,7 @@
             // 
             label_FechaNacimiento.AutoSize = true;
             label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_FechaNacimiento.Location = new System.Drawing.Point(322, 104);
+            label_FechaNacimiento.Location = new System.Drawing.Point(335, 102);
             label_FechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_FechaNacimiento.Name = "label_FechaNacimiento";
             label_FechaNacimiento.Size = new System.Drawing.Size(147, 15);
@@ -1126,7 +1552,7 @@
             btn_AgregarPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_AgregarPersonal.FlatAppearance.BorderSize = 3;
             btn_AgregarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btn_AgregarPersonal.Location = new System.Drawing.Point(542, 36);
+            btn_AgregarPersonal.Location = new System.Drawing.Point(534, 34);
             btn_AgregarPersonal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btn_AgregarPersonal.Name = "btn_AgregarPersonal";
             btn_AgregarPersonal.Size = new System.Drawing.Size(18, 27);
@@ -1138,13 +1564,27 @@
             // 
             // textBox_NumeroLegajo
             // 
+            textBox_NumeroLegajo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_NumeroLegajo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_NumeroLegajo.BackColor = System.Drawing.Color.White;
+            textBox_NumeroLegajo.ErrorColor = System.Drawing.Color.Red;
+            textBox_NumeroLegajo.FocusColor = System.Drawing.Color.Blue;
             textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            textBox_NumeroLegajo.Location = new System.Drawing.Point(350, 37);
+            textBox_NumeroLegajo.Location = new System.Drawing.Point(342, 37);
             textBox_NumeroLegajo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_NumeroLegajo.MaxLength = 32767;
+            textBox_NumeroLegajo.Multiline = false;
             textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
+            textBox_NumeroLegajo.PasswordChar = '\0';
+            textBox_NumeroLegajo.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_NumeroLegajo.PlaceholderText = "";
+            textBox_NumeroLegajo.ReadOnly = false;
+            textBox_NumeroLegajo.SelectionStart = 0;
+            textBox_NumeroLegajo.ShowError = false;
             textBox_NumeroLegajo.Size = new System.Drawing.Size(190, 20);
             textBox_NumeroLegajo.TabIndex = 34;
             textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_NumeroLegajo.TextValue = "";
             textBox_NumeroLegajo.TextChanged += textBox_NumeroLegajo_TextChanged;
             textBox_NumeroLegajo.KeyPress += textBox_NumeroLegajo_KeyPress;
             // 
@@ -1152,7 +1592,7 @@
             // 
             lbl_Legajo.AutoSize = true;
             lbl_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lbl_Legajo.Location = new System.Drawing.Point(177, 38);
+            lbl_Legajo.Location = new System.Drawing.Point(197, 37);
             lbl_Legajo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Legajo.Name = "lbl_Legajo";
             lbl_Legajo.Size = new System.Drawing.Size(142, 16);
@@ -1190,6 +1630,8 @@
             Text = "REGISTRAR NUEVO PERSONAL";
             HelpButtonClicked += NuevoPersonal_HelpButtonClicked;
             Load += NuevoPersonal_Load;
+            Controls.SetChildIndex(label_TITULO, 0);
+            Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel_ControlesInferiores.ResumeLayout(false);
@@ -1230,8 +1672,6 @@
         private System.Windows.Forms.Panel panel_Detalle_Personal;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Apellido;
         private System.Windows.Forms.Label label_Apellido;
-        private Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl2;
-        private Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl1;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_EstadoCivil;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_PartidoPnal;
         private System.Windows.Forms.Label label_PartidoPnal;
@@ -1307,5 +1747,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Armamento;
         private System.Windows.Forms.PictureBox pictureBox_SituacionRevista;
         private System.Windows.Forms.PictureBox pictureBox_DatosPersonales;
+        private Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl2;
+        private Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl1;
     }
 }
