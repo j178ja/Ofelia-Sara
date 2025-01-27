@@ -21,64 +21,68 @@ namespace Ofelia_Sara.Clases.General.Botones
             {
                 switch (c)
                 {
-                    // Si el control es un TextBox, limpia su contenido
-                    case TextBox textBox:
-                        textBox.Clear();
+                    // Si el control es un CustomTextBox, limpia su contenido
+                    case CustomTextBox textBox:
+                        textBox.Clear(); // Limpia el texto del CustomTextBox
+                        textBox.RestorePlaceholders(); // Restaura los placeholders si es necesario
                         break;
 
-                    // Si el control es un ComboBox, limpia y restablece su estado
-                    case ComboBox comboBox:
+                    // Si el control es un CustomComboBox, limpia pero conserva las imágenes
+                    case CustomComboBox comboBox:
                         LimpiarYRestaurarComboBox(comboBox);
                         break;
 
-                    // Si el control es un DateTimePicker, restablece su valor a la fecha actual o a una fecha actual
+                    // Si el control es un DateTimePicker, restablece su valor a la fecha actual
                     case DateTimePicker dateTimePicker:
                         dateTimePicker.Value = DateTime.Now;
                         break;
 
-                    // si es un checkbox -->limpiar
+                    // Si el control es un CheckBox, desmarca la casilla
                     case CheckBox checkBox:
                         checkBox.Checked = false;
+                        checkBox.Visible = true;
+                        checkBox.BringToFront();
                         break;
 
-                    // si es un radiobutom -->limpiar
+                    // Si el control es un RadioButton, desmarca el botón
                     case RadioButton radioButton:
                         radioButton.Checked = false;
                         break;
 
-                    // Si el control es un PictureBox, limpiar su imagen
-                    case PictureBox pictureBox:
+                    // Si el control es un PictureBox, solo limpia la imagen si no forma parte de un CustomComboBox
+                    case PictureBox pictureBox when !(pictureBox.Parent is CustomComboBox):
                         pictureBox.Image = null;
                         break;
 
-                    // Si el control es FECHA DE NACIMIENTO
+                    // Si el control es un CustomDate, limpia los campos y restaura los placeholders
                     case CustomDate customDateTextBox:
-                        customDateTextBox.ClearDate(); // Limpiar el control personalizado
-                                                       // customDateTextBox.RestorePlaceholders(); // Restaurar los placeholders
+                        customDateTextBox.ClearDate();
+                        customDateTextBox.RestorePlaceholders();
                         break;
 
-                    // Si el control es email 
+                    // Si el control es un EmailControl, limpia los campos y restaura los placeholders
                     case EmailControl customEmailTextBox:
-                        customEmailTextBox.ClearEmailFields(); // Limpiar el control de email
-                        customEmailTextBox.RestorePlaceholders(); // Restaurar los placeholders
+                        customEmailTextBox.ClearEmailFields();
+                        customEmailTextBox.RestorePlaceholders();
                         break;
 
-                    // Si el control es NUMERO TELEFONO
+                    // Si el control es un NumeroTelefonicoControl, limpia los campos y restaura los placeholders
                     case NumeroTelefonicoControl numeroTelefonico:
-                        numeroTelefonico.ClearTelefonoFields(); // Limpiar el control de NumeroTelefonicoControl
-                        numeroTelefonico.RestorePlaceholders(); // Restaurar los placeholders
+                        numeroTelefonico.ClearTelefonoFields();
+                        numeroTelefonico.RestorePlaceholders();
                         break;
 
-                    case Control nestedControl when nestedControl.HasChildren:
-                        Limpiar(nestedControl);
-                        break;
-
+                    // Si el control es un BotonDeslizable, restablece su estado a apagado
                     case BotonDeslizable botonDeslizable:
                         botonDeslizable.IsOn = false;
                         break;
 
+                    // Si el control tiene controles hijos, aplica la limpieza recursivamente
+                    case Control nestedControl when nestedControl.HasChildren:
+                        Limpiar(nestedControl);
+                        break;
 
-                    // Si el control es un tipo específico (NuevaCaratulaControl, NuevaPersonaControl), 
+                    // Si el control es un tipo específico como NuevaCaratulaControl o NuevaPersonaControl, elimina y dispone del control
                     case NuevaCaratulaControl _:
                     case NuevaPersonaControl _:
                         control.Controls.Remove(c);
@@ -88,12 +92,18 @@ namespace Ofelia_Sara.Clases.General.Botones
             }
         }
 
-        // Método para limpiar y restaurar ComboBox
-        private static void LimpiarYRestaurarComboBox(ComboBox comboBox)
+        // Método para limpiar y restaurar un CustomComboBox
+        private static void LimpiarYRestaurarComboBox(CustomComboBox comboBox)
         {
-            // Limpiar el ComboBox
-            comboBox.SelectedIndex = -1;
-            comboBox.Text = string.Empty;
+            comboBox.SelectedIndex = -1; // Deselecciona cualquier elemento
+            comboBox.TextValue = string.Empty; // Limpia el texto si tiene alguno
+            comboBox.RestorePlaceholders(); // Restaura los placeholders si los tiene
+                                            // Aseguramos que las imágenes, si existen, no se eliminen
+            if (comboBox.ArrowPictureBox != null && comboBox.ArrowPictureBox.Image != null)
+            {
+                comboBox.ArrowPictureBox.Image = comboBox.ArrowPictureBox.Image; // Mantiene la imagen actual
+            }
+           
 
             //// Restablecer al valor predeterminado si existe
             if (comboBox.Items.Count > 0)
@@ -113,6 +123,7 @@ namespace Ofelia_Sara.Clases.General.Botones
                 }
             }
         }
+       
 
 
     }

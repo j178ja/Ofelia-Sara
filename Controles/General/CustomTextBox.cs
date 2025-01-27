@@ -17,6 +17,7 @@ namespace Ofelia_Sara.Controles.General
         private Color errorColor = Color.Red;
         private string placeholderText = string.Empty;
         private Color placeholderColor = Color.Gray;
+        private bool isPlaceholderVisible;
         public CustomTextBox()
         {
             // Configuración del TextBox
@@ -304,7 +305,26 @@ namespace Ofelia_Sara.Controles.General
             remove => textBox.KeyPress -= value;
         }
 
+        public void RestorePlaceholders()
+        {
+            if (string.IsNullOrEmpty(this.Text))
+            {
+                this.Text = PlaceholderText;
+                this.ForeColor = PlaceholderColor;
+                isPlaceholderVisible = true;
+            }
+        }
 
+        // Método para quitar el placeholder
+        public void RemovePlaceholder()
+        {
+            if (isPlaceholderVisible)
+            {
+                this.Text = string.Empty;
+                this.ForeColor = Color.Black; // Ajusta el color según sea necesario
+                isPlaceholderVisible = false;
+            }
+        }
 
     }
 }

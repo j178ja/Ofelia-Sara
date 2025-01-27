@@ -34,20 +34,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoSecretario));
             panel1 = new Panel();
             pictureBox_CheckFirmaDigitalizada = new PictureBox();
-            comboBox_Dependencia = new Controles.General.CustomComboBox();
+            comboBox_Dependencia = new CustomComboBox();
             label_Dependencia = new Label();
-            comboBox_Jerarquia = new Controles.General.CustomComboBox();
-            comboBox_Escalafon = new Controles.General.CustomComboBox();
+            comboBox_Jerarquia = new CustomComboBox();
+            comboBox_Escalafon = new CustomComboBox();
             label_Escalafon = new Label();
             label_Jerarquia = new Label();
-            textBox_NumeroLegajo = new Controles.General.CustomTextBox();
+            textBox_NumeroLegajo = new CustomTextBox();
             label_Legajo = new Label();
             pictureBox_FirmaDigitalizada = new PictureBox();
-            textBox_Funcion = new Controles.General.CustomTextBox();
+            textBox_Funcion = new CustomTextBox();
             label_Funcion = new Label();
-            textBox_Apellido = new Controles.General.CustomTextBox();
+            textBox_Apellido = new CustomTextBox();
             label_Apellido = new Label();
-            textBox_Nombre = new Controles.General.CustomTextBox();
+            textBox_Nombre = new CustomTextBox();
             label_Nombre = new Label();
             checkBox_AgregarFirma = new CheckBox();
             label_AgregaFirma = new Label();
@@ -96,7 +96,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_CheckFirmaDigitalizada.Location = new System.Drawing.Point(246, 294);
             pictureBox_CheckFirmaDigitalizada.Margin = new Padding(4, 3, 4, 3);
             pictureBox_CheckFirmaDigitalizada.Name = "pictureBox_CheckFirmaDigitalizada";
-            pictureBox_CheckFirmaDigitalizada.Size = new System.Drawing.Size(30, 32);
+            pictureBox_CheckFirmaDigitalizada.Size = new System.Drawing.Size(27, 32);
             pictureBox_CheckFirmaDigitalizada.TabIndex = 68;
             pictureBox_CheckFirmaDigitalizada.TabStop = false;
             pictureBox_CheckFirmaDigitalizada.Click += PictureBox_CheckFirmaDigitalizada_Click;
@@ -104,6 +104,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // comboBox_Dependencia
             // 
             comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.ArrowPictureBox = null;
             comboBox_Dependencia.AutoCompleteMode = AutoCompleteMode.None;
             comboBox_Dependencia.AutoCompleteSource = AutoCompleteSource.None;
             comboBox_Dependencia.BackColor = System.Drawing.Color.White;
@@ -112,10 +113,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Dependencia.Location = new System.Drawing.Point(154, 211);
             comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
@@ -129,6 +131,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Dependencia.ShowError = false;
             comboBox_Dependencia.Size = new System.Drawing.Size(327, 21);
             comboBox_Dependencia.TabIndex = 64;
+            comboBox_Dependencia.Text = " ";
+            comboBox_Dependencia.TextValue = "";
             // 
             // label_Dependencia
             // 
@@ -143,6 +147,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // comboBox_Jerarquia
             // 
             comboBox_Jerarquia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.ArrowImage");
+            comboBox_Jerarquia.ArrowPictureBox = null;
             comboBox_Jerarquia.AutoCompleteMode = AutoCompleteMode.None;
             comboBox_Jerarquia.AutoCompleteSource = AutoCompleteSource.None;
             comboBox_Jerarquia.BackColor = System.Drawing.Color.White;
@@ -151,11 +156,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Jerarquia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.DisabledImage");
             comboBox_Jerarquia.DisplayMember = null;
             comboBox_Jerarquia.DropDownHeight = 252;
-            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
+            comboBox_Jerarquia.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Jerarquia.DroppedDown = false;
             comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Jerarquia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Jerarquia.Location = new System.Drawing.Point(155, 107);
             comboBox_Jerarquia.Margin = new Padding(0);
             comboBox_Jerarquia.MaxDropDownItems = 10;
@@ -170,10 +176,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Jerarquia.ShowError = false;
             comboBox_Jerarquia.Size = new System.Drawing.Size(326, 23);
             comboBox_Jerarquia.TabIndex = 62;
+            comboBox_Jerarquia.Text = " ";
+            comboBox_Jerarquia.TextValue = "";
             // 
             // comboBox_Escalafon
             // 
             comboBox_Escalafon.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.ArrowImage");
+            comboBox_Escalafon.ArrowPictureBox = null;
             comboBox_Escalafon.AutoCompleteMode = AutoCompleteMode.None;
             comboBox_Escalafon.AutoCompleteSource = AutoCompleteSource.None;
             comboBox_Escalafon.BackColor = System.Drawing.Color.White;
@@ -182,11 +191,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Escalafon.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.DisabledImage");
             comboBox_Escalafon.DisplayMember = null;
             comboBox_Escalafon.DropDownHeight = 252;
-            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDown;
+            comboBox_Escalafon.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Escalafon.DroppedDown = false;
             comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
             comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
             comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Escalafon.ForeColor = System.Drawing.Color.Gray;
             comboBox_Escalafon.Location = new System.Drawing.Point(155, 80);
             comboBox_Escalafon.MaxDropDownItems = 10;
             comboBox_Escalafon.Name = "comboBox_Escalafon";
@@ -200,6 +210,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Escalafon.ShowError = false;
             comboBox_Escalafon.Size = new System.Drawing.Size(326, 21);
             comboBox_Escalafon.TabIndex = 61;
+            comboBox_Escalafon.Text = " ";
+            comboBox_Escalafon.TextValue = "";
             // 
             // label_Escalafon
             // 

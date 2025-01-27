@@ -26,11 +26,15 @@ namespace Ofelia_Sara.Controles.General
         private Image disabledImage = Properties.Resources.flechaG_Roja; // Imagen cuando está deshabilitado
 
         private string placeholderText = " ";//para que no se muestre placeholder y se asigne en cada control especifico
+        
         private Color placeholderColor = Color.Gray;
         private Color defaultTextColor = Color.Black;
         private bool isPlaceholderActive = true;
         private bool isPlaceholderVisible = false; // Bandera para saber si el placeholder está visible
         public event EventHandler SelectedIndexChanged;
+
+     
+        public PictureBox ArrowPictureBox { get; set; } // Asegúrate de asignar esta propiedad
 
         private static CustomComboBox activeComboBox; // para guardar el comboBox activo
         public CustomComboBox()
@@ -898,9 +902,11 @@ namespace Ofelia_Sara.Controles.General
             set
             {
                 placeholderText = value;
-                if (isPlaceholderVisible)
+
+                // Si el texto actual está vacío o igual al placeholder, restáuralo
+                if (string.IsNullOrWhiteSpace(this.Text) || this.Text == placeholderText)
                 {
-                    textBox.Text = placeholderText;
+                    RestorePlaceholders();
                 }
             }
         }
@@ -924,7 +930,23 @@ namespace Ofelia_Sara.Controles.General
             remove => textBox.KeyPress -= value;
         }
 
-     
 
+        public void RestorePlaceholders()
+        {
+            if (string.IsNullOrWhiteSpace(this.Text))
+            {
+                this.Text = placeholderText; // Aplica el placeholder
+                this.ForeColor = Color.Gray; // Cambia el color del texto a gris
+            }
+        }
+
+        public void RemovePlaceholder()
+        {
+            if (this.Text == placeholderText)
+            {
+                this.Text = string.Empty; // Limpia el texto
+                this.ForeColor = Color.Black; // Cambia el color del texto a negro
+            }
+        }
     }
 }

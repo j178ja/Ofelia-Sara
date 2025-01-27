@@ -15,8 +15,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public string TextoNombre
         {
-            get { return textBox_Nombre.Text; }
-            set { textBox_Nombre.Text = value; }
+            get { return textBox_Nombre.TextValue; }
+            set { textBox_Nombre.TextValue = value; }
         }
 
         // Definir el evento personalizado
@@ -263,8 +263,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
             this.textBox_LugarNacimiento.Size = new System.Drawing.Size(199, 20);
             this.textBox_LugarNacimiento.TabIndex = 4;
-            this.textBox_LugarNacimiento.TextChanged += new System.EventHandler(this.textBox_LugarNacimiento_TextChanged);
-            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_LugarNacimiento_KeyPress);
+            this.textBox_LugarNacimiento.TextChanged += new System.EventHandler(this.TextBox_LugarNacimiento_TextChanged);
+            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_LugarNacimiento_KeyPress);
             // 
             // label_LugarNacimiento
             // 
@@ -282,8 +282,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Ocupacion.Name = "textBox_Ocupacion";
             this.textBox_Ocupacion.Size = new System.Drawing.Size(139, 20);
             this.textBox_Ocupacion.TabIndex = 5;
-            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.textBox_Ocupacion_TextChanged);
-            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Ocupacion_KeyPress);
+            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.TextBox_Ocupacion_TextChanged);
+            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Ocupacion_KeyPress);
             // 
             // label_Ocupacion
             // 
@@ -305,7 +305,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
             this.btn_Buscar.TabIndex = 78;
             this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            this.btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // checkBox_Notificacion258
             // 
@@ -349,7 +349,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 12;
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // comboBox_Nacionalidad
             // 
@@ -369,8 +369,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(131, 21);
             this.comboBox_Nacionalidad.TabIndex = 6;
-            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.comboBox_Nacionalidad_TextChanged);
-            this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Nacionalidad_KeyPress);
+            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.ComboBox_Nacionalidad_TextChanged);
+            this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Nacionalidad_KeyPress);
             // 
             // label_Email
             // 
@@ -438,8 +438,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
             this.textBox_Localidad.TabIndex = 8;
-            this.textBox_Localidad.TextChanged += new System.EventHandler(this.textBox_Localidad_TextChanged);
-            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Localidad_KeyPress);
+            this.textBox_Localidad.TextChanged += new System.EventHandler(this.TextBox_Localidad_TextChanged);
+            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Localidad_KeyPress);
             // 
             // textBox_Domicilio
             // 
@@ -447,7 +447,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Domicilio.Name = "textBox_Domicilio";
             this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
             this.textBox_Domicilio.TabIndex = 7;
-            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.textBox_Domicilio_TextChanged);
+            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.TextBox_Domicilio_TextChanged);
             // 
             // textBox_Edad
             // 
@@ -456,8 +456,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
             this.textBox_Edad.TabIndex = 3;
             this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Edad.TextChanged += new System.EventHandler(this.textBox_Edad_TextChanged);
-            this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Edad_KeyPress);
+            this.textBox_Edad.TextChanged += new System.EventHandler(this.TextBox_Edad_TextChanged);
+            this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Edad_KeyPress);
             // 
             // textBox_Dni
             // 
@@ -467,8 +467,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
             this.textBox_Dni.TabIndex = 1;
             this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Dni.TextChanged += new System.EventHandler(this.textBox_Dni_TextChanged);
-            this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Dni_KeyPress);
+            this.textBox_Dni.TextChanged += new System.EventHandler(this.TextBox_Dni_TextChanged);
+            this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Dni_KeyPress);
             // 
             // textBox_Nombre
             // 
@@ -476,7 +476,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(419, 20);
             this.textBox_Nombre.TabIndex = 0;
-            this.textBox_Nombre.TextChanged += new System.EventHandler(this.textBox_Nombre_TextChanged);
+            this.textBox_Nombre.TextChanged += new System.EventHandler(this.TextBox_Nombre_TextChanged);
             // 
             // label_Localidad
             // 
@@ -624,14 +624,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
         //---------BOTON GUARDAR----------------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
         //-------CONTROL DE CARACTERES EN NACIONALIDAD-----------------------
-        private void comboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es una letra
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -640,7 +640,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
         //---METODO PARA CONTROL DE EDAD----------------------
-        private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -657,7 +657,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_Edad_TextChanged(object sender, EventArgs e)
+        private void TextBox_Edad_TextChanged(object sender, EventArgs e)
         {
             // Verificar si el texto actual del TextBox es "0" o "00"
             if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
@@ -668,7 +668,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
         //------CONTROL DE CANTIDAD DE CARACTERES DNI------------------------
-        private void textBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -686,7 +686,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
         //-------METODO PARA MANEJAR EL NUMERO DNI---------------------------
 
-        private void textBox_Dni_TextChanged(object sender, EventArgs e)
+        private void TextBox_Dni_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
 
@@ -819,14 +819,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
         //---- METODOS PARA QUE SE ACTUALICE DEPENDIENDO LO QUE SE INGRESE EN DOMICILIO Y LOCALIDAD-------
-        private void textBox_Domicilio_TextChanged(object sender, EventArgs e)
+        private void TextBox_Domicilio_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPicture();
 
 
         }
 
-        private void textBox_Localidad_TextChanged(object sender, EventArgs e)
+        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPicture();
 
@@ -840,7 +840,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             if (textBox_Localidad.Text != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Localidad.TextChanged -= textBox_Localidad_TextChanged;
+                textBox_Localidad.TextChanged -= TextBox_Localidad_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
                 textBox_Localidad.Text = upperText;
@@ -849,11 +849,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 textBox_Localidad.SelectionStart = upperText.Length;
 
                 // Vuelve a asociar el evento TextChanged
-                textBox_Localidad.TextChanged += textBox_Localidad_TextChanged;
+                textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
             }
         }
 
-        private void btn_Buscar_Click(object sender, EventArgs e)
+        private void Btn_Buscar_Click(object sender, EventArgs e)
         {
             // Crear y mostrar el formulario BuscarPersonal
             BuscarForm buscarForm = new BuscarForm();
@@ -866,7 +866,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             textBox_Nombre.Text = text;
         }
 
-        private void textBox_Nombre_TextChanged(object sender, EventArgs e)
+        private void TextBox_Nombre_TextChanged(object sender, EventArgs e)
         {
             // Asegura que el cursor esté al final del texto
             textBox_Nombre.SelectionStart = textBox_Nombre.Text.Length;
@@ -894,7 +894,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
 
-        private void textBox_Ocupacion_TextChanged(object sender, EventArgs e)
+        private void TextBox_Ocupacion_TextChanged(object sender, EventArgs e)
         {
             // Obtiene el texto actual del TextBox
             string input = textBox_Ocupacion.Text;
@@ -906,7 +906,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             if (textBox_Ocupacion.Text != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Ocupacion.TextChanged -= textBox_Ocupacion_TextChanged;
+                textBox_Ocupacion.TextChanged -= TextBox_Ocupacion_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
                 textBox_Ocupacion.Text = upperText;
@@ -915,12 +915,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 textBox_Ocupacion.SelectionStart = upperText.Length;
 
                 // Vuelve a asociar el evento TextChanged
-                textBox_Ocupacion.TextChanged += textBox_Ocupacion_TextChanged;
+                textBox_Ocupacion.TextChanged += TextBox_Ocupacion_TextChanged;
             }
         }
 
 
-        private void comboBox_Nacionalidad_TextChanged(object sender, EventArgs e)
+        private void ComboBox_Nacionalidad_TextChanged(object sender, EventArgs e)
         {
             // Obtiene el texto actual del TextBox
             string input = comboBox_Nacionalidad.Text;
@@ -939,7 +939,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_Ocupacion_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Ocupacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir teclas de control como Backspace y Enter, así como teclas de navegación
             if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == ' ')
@@ -956,7 +956,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
 
-        private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir teclas de control como Backspace y Enter, así como espacios
             if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
@@ -973,7 +973,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_LugarNacimiento_TextChanged(object sender, EventArgs e)
+        private void TextBox_LugarNacimiento_TextChanged(object sender, EventArgs e)
         {
             // Convierte el texto a mayúsculas
             TextBox textBox = sender as TextBox;
@@ -990,7 +990,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_LugarNacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_LugarNacimiento_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permite letras y espacios
             if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))

@@ -181,14 +181,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void GuardarDatos()
         {
             // Obtener los datos del formulario
-            int numeroIpp = int.Parse(textBox_NumeroIpp.Text);
-            string ufid = comboBox_Fiscalia.Text;
-            string dr = comboBox_AgenteFiscal.Text;
-            string localidad = comboBox_Localidad.Text;
-            string DeptoJudicial = comboBox_DeptoJudicial.Text;
-            string instructor = comboBox_Instructor.Text;
-            string secretario = comboBox_Secretario.Text;
-            string dependencia = comboBox_Dependencia.Text;
+            int numeroIpp = int.Parse(textBox_NumeroIpp.TextValue);
+            string ufid = comboBox_Fiscalia.TextValue;
+            string dr = comboBox_AgenteFiscal.TextValue;
+            string localidad = comboBox_Localidad.TextValue;
+            string DeptoJudicial = comboBox_DeptoJudicial.TextValue;
+            string instructor = comboBox_Instructor.TextValue;
+            string secretario = comboBox_Secretario.TextValue;
+            string dependencia = comboBox_Dependencia.TextValue;
             //string fecha = timePickerPersonalizado1.Value.ToString("yyyy-MM-dd");
 
             // Obtener las listas de víctimas e imputados
@@ -393,6 +393,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        /// <summary>
+        /// METODO PARA HACER QUE SE AUTOCOMPLETE LOS COMBOBOX DE NUMERO IP CON 0 AL PERDER EL FOCO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_Ipp_Leave(object sender, EventArgs e)
         {
             // Verifica si el sender es un CustomComboBox
@@ -427,6 +432,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
             // Verificar si la tecla presionada es Enter
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -547,12 +556,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             var datosFormulario = new Dictionary<string, string>
     {
-        { "caratula", textBox_Caratula.Text },
-        { "victima", textBox_Victima.Text },
-        { "imputado", textBox_Imputado.Text },
-        { "instructor", comboBox_Instructor.Text },
-        { "secretario", comboBox_Secretario.Text },
-        { "DeptoJudicial", comboBox_DeptoJudicial.Text },
+        { "caratula", textBox_Caratula.TextValue },
+        { "victima", textBox_Victima.TextValue },
+        { "imputado", textBox_Imputado.TextValue },
+        { "instructor", comboBox_Instructor.TextValue },
+        { "secretario", comboBox_Secretario.TextValue },
+        { "DeptoJudicial", comboBox_DeptoJudicial.TextValue },
          };
             return datosFormulario;
         }
@@ -572,12 +581,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Establecer el texto inicial en el formulario de destino
-            agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.Text;
+            agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.TextValue;
 
             // Suscribirse al evento TextChanged del TextBox en el formulario de origen
             textBox_Victima.TextChanged += (s, ev) =>
             {
-                agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.Text;
+                agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.TextValue;
             };
 
 
@@ -625,7 +634,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // Método para actualizar el TextBox en inicioCierre
         private void UpdateVictimaTextBox(string text)
         {
-            textBox_Victima.Text = text;
+            textBox_Victima.TextValue = text;
         }
         //------------------------------------------------------------------------------
 
@@ -635,7 +644,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
-            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//habilita el btn_AgregarCausa en caso de tener texto
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//habilita el btn_AgregarCausa en caso de tener texto
             ActualizarEstado();
         }
         //-------------------------------------------------------------------------------
@@ -657,12 +666,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Establecer el texto inicial en el formulario de destino
-            agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.Text;
+            agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.TextValue;
 
             // Suscribirse al evento TextChanged del TextBox en el formulario de origen
             textBox_Imputado.TextChanged += (s, ev) =>
             {
-                agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.Text;
+                agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.TextValue;
             };
 
             // Obtener el formulario original(inicioCierre)
@@ -706,7 +715,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="text"></param>
         private void UpdateImputadoTextBox(string text)
         {
-            textBox_Imputado.Text = text;
+            textBox_Imputado.TextValue = text;
         }
         //---------------------------------------------------------------------
 
@@ -718,14 +727,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void TextBox_Victima_TextChanged(object sender, EventArgs e)
         {
             // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text))
+            if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue))
             {
                 btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
                 ActualizarEstado();
                 if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
                 {
                     // Actualizar el TextBox en el formulario de destino
-                    agregarDatosPersonalesVictima.UpdateVictimaTextBox(textBox_Victima.Text);
+                    agregarDatosPersonalesVictima.UpdateVictimaTextBox(textBox_Victima.TextValue);
                 }
             }
             else
@@ -734,7 +743,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
             // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
-            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
         }
         //----------------------------------------------------------------------------------
         /// <summary>
@@ -746,21 +755,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
             // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text))
+            if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue))
             {
                 btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
                 ActualizarEstado();
                 if (agregarDatosPersonalesImputado != null && !agregarDatosPersonalesImputado.IsDisposed)
                 {
                     // Actualizar el TextBox en el formulario de destino
-                    agregarDatosPersonalesImputado.UpdateImputadoTextBox(textBox_Imputado.Text);
+                    agregarDatosPersonalesImputado.UpdateImputadoTextBox(textBox_Imputado.TextValue);
                 }
             }
             else
             {
                 btn_AgregarDatosImputado.BackColor = Color.Tomato;
             }
-            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);// deshabilita el btn agregarImputado si el textBox no tiene texto
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);// deshabilita el btn agregarImputado si el textBox no tiene texto
 
         }
         //--------------------------------------------------------------------------------------------------------
@@ -1083,8 +1092,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void ComboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
         {
-            comboBox_AgenteFiscal.Text = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.Text);
-            comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.Text.Length;
+            comboBox_AgenteFiscal.TextValue = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.TextValue);
+            comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.TextValue.Length;
         }
 
      
@@ -1094,14 +1103,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void ActualizarEstado()
         {
             // Verifica si cada campo no está vacío ni solo con espacios
-            bool esTextoValidoNumeroIPP = !string.IsNullOrWhiteSpace(textBox_NumeroIpp.Text);
-            bool esTextoValidoCaratula = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);
-            bool esTextoValidoVictima = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
-            bool esTextoValidoImputado = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
-            bool esTextoValidoUfid = !string.IsNullOrWhiteSpace(comboBox_Fiscalia.Text);
-            bool esTextoValidoInstructor = !string.IsNullOrWhiteSpace(comboBox_Instructor.Text);
-            bool esTextoValidoSecretario = !string.IsNullOrWhiteSpace(comboBox_Secretario.Text);
-            bool esTextoValidoDependencia = !string.IsNullOrWhiteSpace(comboBox_Dependencia.Text);
+            bool esTextoValidoNumeroIPP = !string.IsNullOrWhiteSpace(textBox_NumeroIpp.TextValue);
+            bool esTextoValidoCaratula = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);
+            bool esTextoValidoVictima = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
+            bool esTextoValidoImputado = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
+            bool esTextoValidoUfid = !string.IsNullOrWhiteSpace(comboBox_Fiscalia.TextValue);
+            bool esTextoValidoInstructor = !string.IsNullOrWhiteSpace(comboBox_Instructor.TextValue);
+            bool esTextoValidoSecretario = !string.IsNullOrWhiteSpace(comboBox_Secretario.TextValue);
+            bool esTextoValidoDependencia = !string.IsNullOrWhiteSpace(comboBox_Dependencia.TextValue);
 
 
             // Todos los campos deben ser válidos para que esTextoValido sea verdadero
@@ -1165,19 +1174,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Ocultar el CheckBox
                 checkBox_Cargo.Visible = false;
 
-                string Ipp1 = comboBox_Ipp1.Text;
-                string Ipp2 = comboBox_Ipp2.Text;
-                string NumeroIpp = textBox_NumeroIpp.Text;
-                string Ipp4 = comboBox_Ipp4.Text;
-                string Caratula = textBox_Caratula.Text;
-                string Victima = textBox_Victima.Text;
-                string Imputado = textBox_Imputado.Text;
-                string Fiscalia = comboBox_Fiscalia.Text;
-                string AgenteFiscal = comboBox_AgenteFiscal.Text;
-                string Localidad = comboBox_Localidad.Text;
-                string Instructor = comboBox_Instructor.Text;
-                string Secretario = comboBox_Secretario.Text;
-                string Dependencia = comboBox_Dependencia.Text;
+                string Ipp1 = comboBox_Ipp1.TextValue;
+                string Ipp2 = comboBox_Ipp2.TextValue;
+                string NumeroIpp = textBox_NumeroIpp.TextValue;
+                string Ipp4 = comboBox_Ipp4.TextValue;
+                string Caratula = textBox_Caratula.TextValue;
+                string Victima = textBox_Victima.TextValue;
+                string Imputado = textBox_Imputado.TextValue;
+                string Fiscalia = comboBox_Fiscalia.TextValue;
+                string AgenteFiscal = comboBox_AgenteFiscal.TextValue;
+                string Localidad = comboBox_Localidad.TextValue;
+                string Instructor = comboBox_Instructor.TextValue;
+                string Secretario = comboBox_Secretario.TextValue;
+                string Dependencia = comboBox_Dependencia.TextValue;
 
                 // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
                 Cargo cargo = new Cargo(Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,

@@ -23,8 +23,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         // Propiedad pública para establecer el texto del TextBox
         public string TextoNombre
         {
-            get { return textBox_Nombre.Text; }
-            set { textBox_Nombre.Text = value; }
+            get { return textBox_Nombre.TextValue; }
+            set { textBox_Nombre.TextValue = value; }
         }
 
         // Definir el evento personalizado
@@ -126,10 +126,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void AgregarDatosPersonales_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Llamar al método HandleFormClosing en la instancia de CustomDateTextBox
-            if (dateTimePicker_FechaNacimiento != null)
-            {
-                dateTimePicker_FechaNacimiento.HandleFormClosing();
-            }
+            //if (dateTimePicker_FechaNacimiento != null)
+            //{
+            //    dateTimePicker_FechaNacimiento.HandleFormClosing();
+            //}
         }
 
         //-----------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void ActualizarControlesPictureDOM()
         {
             // Verifica si TextoDomicilio y localidad tienen texto
-            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Domicilio.Text) && !string.IsNullOrWhiteSpace(textBox_Localidad.Text);
+            bool esTextoValido = !string.IsNullOrWhiteSpace(textBox_Domicilio.TextValue) && !string.IsNullOrWhiteSpace(textBox_Localidad.TextValue);
 
             // Actualiza el estado de los PictureBox
             ActualizarPictureBox(pictureBox_Geoposicionamiento, esTextoValido);
@@ -263,19 +263,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPictureDOM();
 
             // Obtiene el texto actual del TextBox
-            string input = textBox_Domicilio.Text;
+            string input = textBox_Domicilio.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Domicilio.Text != upperText)
+            if (textBox_Domicilio.TextValue != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
                 textBox_Domicilio.TextChanged -= TextBox_Domicilio_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Domicilio.Text = upperText;
+                textBox_Domicilio.TextValue = upperText;
 
                 // Restaura la posición del cursor al final del texto
                 textBox_Domicilio.SelectionStart = upperText.Length;
@@ -290,19 +290,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPictureDOM();
 
             // Obtiene el texto actual del TextBox
-            string input = textBox_Localidad.Text;
+            string input = textBox_Localidad.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Localidad.Text != upperText)
+            if (textBox_Localidad.TextValue != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
                 textBox_Localidad.TextChanged -= TextBox_Localidad_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Localidad.Text = upperText;
+                textBox_Localidad.TextValue = upperText;
 
                 // Restaura la posición del cursor al final del texto
                 textBox_Localidad.SelectionStart = upperText.Length;
@@ -322,7 +322,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
             // Verificar si el texto actual del TextBox tiene menos de 2 caracteres
-            if (textBox_Edad.Text.Length >= 2 && !char.IsControl(e.KeyChar))
+            if (textBox_Edad.TextValue.Length >= 2 && !char.IsControl(e.KeyChar))
             {
                 // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
@@ -331,7 +331,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void TextBox_Edad_TextChanged(object sender, EventArgs e)
         {
             // Verificar si el texto actual del TextBox es "0" o "00"
-            if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
+            if (/*textBox_Edad.Text == "0" || */textBox_Edad.TextValue == "00")
             {
                 // Mostrar un mensaje de error y limpiar el TextBox
                 MensajeGeneral.Mostrar("El valor no puede ser 0 o 00", MensajeGeneral.TipoMensaje.Error);
@@ -466,8 +466,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void ActualizarEstado()
         {
             // Verifica si textBox_Nombre y textBox_Dni no están vacíos ni solo con espacios
-            bool esTextoValidoNombre = !string.IsNullOrWhiteSpace(textBox_Nombre.Text);
-            bool esTextoValidoDni = !string.IsNullOrWhiteSpace(textBox_Dni.Text);
+            bool esTextoValidoNombre = !string.IsNullOrWhiteSpace(textBox_Nombre.TextValue);
+            bool esTextoValidoDni = !string.IsNullOrWhiteSpace(textBox_Dni.TextValue);
 
             // Ambos textos deben ser válidos para que el estado sea verdadero
             bool esTextoValido = esTextoValidoNombre && esTextoValidoDni;
@@ -484,18 +484,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         // Método para actualizar el textBox2 en tiempo real
         public void UpdateImputadoTextBox(string text)
         {
-            textBox_Nombre.Text = text;
+            textBox_Nombre.TextValue = text;
         }
 
 
         private void TextBox_Nombre_TextChanged(object sender, EventArgs e)
         {
             // Asegura que el cursor esté al final del texto
-            textBox_Nombre.SelectionStart = textBox_Nombre.Text.Length;
+            textBox_Nombre.SelectionStart = textBox_Nombre.TextValue.Length;
 
             if (ImputadoTextChanged != null)
             {
-                ImputadoTextChanged(textBox_Nombre.Text);
+                ImputadoTextChanged(textBox_Nombre.TextValue);
             }
         }
         //________________________________________________________________________________
@@ -504,19 +504,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void TextBox_Ocupacion_TextChanged(object sender, EventArgs e)
         {
             // Obtiene el texto actual del TextBox
-            string input = textBox_Ocupacion.Text;
+            string input = textBox_Ocupacion.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Ocupacion.Text != upperText)
+            if (textBox_Ocupacion.TextValue != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
                 textBox_Ocupacion.TextChanged -= TextBox_Ocupacion_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Ocupacion.Text = upperText;
+                textBox_Ocupacion.TextValue = upperText;
 
                 // Restaura la posición del cursor al final del texto
                 textBox_Ocupacion.SelectionStart = upperText.Length;
@@ -530,16 +530,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void ComboBox_Nacionalidad_TextChanged(object sender, EventArgs e)
         {
             // Obtiene el texto actual del TextBox
-            string input = comboBox_Nacionalidad.Text;
+            string input = comboBox_Nacionalidad.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (comboBox_Nacionalidad.Text != upperText)
+            if (comboBox_Nacionalidad.TextValue != upperText)
             {
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                comboBox_Nacionalidad.Text = upperText;
+                comboBox_Nacionalidad.TextValue = upperText;
 
                 // Mueve el cursor al final del texto
                 comboBox_Nacionalidad.SelectionStart = upperText.Length;
@@ -730,8 +730,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             {
                 // Lógica de validación
                 bool camposIncompletos =
-                    string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
-                    string.IsNullOrWhiteSpace(textBox_Dni.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
+                    string.IsNullOrWhiteSpace(textBox_Dni.TextValue) ||
                         !dateTimePicker_FechaNacimiento.HasValue();
 
                 if (camposIncompletos)

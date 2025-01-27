@@ -660,6 +660,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarCausa.TabIndex = 27;
             btn_AgregarCausa.Text = "+";
             btn_AgregarCausa.UseVisualStyleBackColor = false;
+            btn_AgregarCausa.TextChanged += TextBox_Caratula_TextChanged;
             btn_AgregarCausa.Click += Btn_AgregarCausa_Click;
             // 
             // btn_AgregarVictima

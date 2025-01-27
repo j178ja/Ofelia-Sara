@@ -76,8 +76,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateDIA.TabIndex = 4;
             textBox_DateDIA.TextAlign = HorizontalAlignment.Center;
             textBox_DateDIA.TextValue = "";
-            textBox_DateDIA.TextChanged += TextBox_DateDIA_TextChanged;
-            textBox_DateDIA.KeyPress += TextBox_Date_KeyPress;
+           // textBox_DateDIA.TextChanged += TextBox_DateDIA_TextChanged;
+           // textBox_DateDIA.KeyPress += TextBox_Date_KeyPress;
             // 
             // textBox_DateMES
             // 
@@ -97,12 +97,12 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateMES.ReadOnly = false;
             textBox_DateMES.SelectionStart = 0;
             textBox_DateMES.ShowError = false;
-            textBox_DateMES.Size = new System.Drawing.Size(23, 21);
+            textBox_DateMES.Size = new System.Drawing.Size(23, 20);
             textBox_DateMES.TabIndex = 5;
             textBox_DateMES.TextAlign = HorizontalAlignment.Center;
             textBox_DateMES.TextValue = "";
-            textBox_DateMES.TextChanged += TextBox_DateMES_TextChanged;
-            textBox_DateMES.KeyPress += TextBox_Date_KeyPress;
+        //    textBox_DateMES.TextChanged += TextBox_DateMES_TextChanged;
+         //   textBox_DateMES.KeyPress += TextBox_Date_KeyPress;
             // 
             // textBox_DateAÑO
             // 
@@ -122,13 +122,13 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateAÑO.ReadOnly = false;
             textBox_DateAÑO.SelectionStart = 0;
             textBox_DateAÑO.ShowError = false;
-            textBox_DateAÑO.Size = new System.Drawing.Size(45, 21);
+            textBox_DateAÑO.Size = new System.Drawing.Size(45, 20);
             textBox_DateAÑO.TabIndex = 6;
             textBox_DateAÑO.TextAlign = HorizontalAlignment.Left;
             textBox_DateAÑO.TextValue = "";
-            textBox_DateAÑO.TextChanged += TextBox_DateAÑO_TextChanged;
-            textBox_DateAÑO.KeyPress += TextBox_Date_KeyPress;
-            textBox_DateAÑO.Validating += TextBox_DateAÑO_Validating;
+         //   textBox_DateAÑO.TextChanged += TextBox_DateAÑO_TextChanged;
+         //   textBox_DateAÑO.KeyPress += TextBox_Date_KeyPress;
+         //   textBox_DateAÑO.Validating += TextBox_DateAÑO_Validating;
             // 
             // btn_Calendario
             // 
@@ -140,7 +140,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             btn_Calendario.Cursor = Cursors.Hand;
             btn_Calendario.Location = new System.Drawing.Point(124, 0);
             btn_Calendario.Name = "btn_Calendario";
-            btn_Calendario.Size = new System.Drawing.Size(27, 22);
+            btn_Calendario.Size = new System.Drawing.Size(27, 23);
             btn_Calendario.TabIndex = 7;
             btn_Calendario.UseVisualStyleBackColor = false;
             btn_Calendario.Click += Btn_Calendario_Click;
@@ -155,7 +155,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             panel1.Controls.Add(textBox_DateDIA);
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(118, 23);
+            panel1.Size = new System.Drawing.Size(118, 27);
             panel1.TabIndex = 8;
             // 
             // CustomDate
@@ -164,7 +164,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             Controls.Add(panel1);
             Controls.Add(btn_Calendario);
             Name = "CustomDate";
-            Size = new System.Drawing.Size(151, 25);
+            Size = new System.Drawing.Size(151, 30);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
