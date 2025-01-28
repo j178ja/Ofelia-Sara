@@ -105,20 +105,35 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado la fecha seleccionada. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                // Obtener la posición de la instancia del formulario CALENDARIO en pantalla
+                Point formularioPosicion = this.PointToScreen(Point.Empty);
+                //  FALTA OCULTAR EL CALENDARIO CUANDO SE VISUALIZA EL MENSAJE
+                using (MensajeGeneral mensajeForm = new MensajeGeneral(
+                    "No has guardado la fecha seleccionada. ¿Estás seguro de que deseas cerrar sin guardar?",
+                    MensajeGeneral.TipoMensaje.Advertencia))
                 {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                    // Calcular posición centrada sobre el formulario CALENDARIO
+                    int messageX = formularioPosicion.X + (this.Width / 2) - (mensajeForm.Width / 2);
+                    int messageY = formularioPosicion.Y + (this.Height/4 ) - (mensajeForm.Height /2);
 
-                    DialogResult result = mensaje.ShowDialog();
+                    mensajeForm.StartPosition = FormStartPosition.Manual;
+                    mensajeForm.Location = new Point(messageX, messageY);
+
+                    // Hacer visibles los botones
+                    mensajeForm.MostrarBotonesConfirmacion(true);
+
+                    // Mostrar el formulario como modal y capturar el resultado
+                    DialogResult result = mensajeForm.ShowDialog();
+                   
+                    // Verificar si el usuario seleccionó "No"
                     if (result == DialogResult.No)
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
                     }
-                    //           ToolTipGeneral.DisposeToolTips();
                 }
             }
         }
+
 
         private void Btn_Guardar_MouseHover(object sender, EventArgs e)
         {

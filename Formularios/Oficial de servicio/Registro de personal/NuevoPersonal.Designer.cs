@@ -901,6 +901,7 @@
             dateTimePicker_Antiguedad.AñoMaximo = 2025;
             dateTimePicker_Antiguedad.AñoMinimo = 1930;
             dateTimePicker_Antiguedad.BackColor = System.Drawing.Color.Transparent;
+            dateTimePicker_Antiguedad.ControlInvocador = null;
             dateTimePicker_Antiguedad.Location = new System.Drawing.Point(149, 91);
             dateTimePicker_Antiguedad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dateTimePicker_Antiguedad.Name = "dateTimePicker_Antiguedad";
@@ -1340,6 +1341,7 @@
             dateTimePicker_FechaNacimiento.AñoMaximo = 2025;
             dateTimePicker_FechaNacimiento.AñoMinimo = 1930;
             dateTimePicker_FechaNacimiento.BackColor = System.Drawing.Color.Transparent;
+            dateTimePicker_FechaNacimiento.ControlInvocador = null;
             dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(486, 100);
             dateTimePicker_FechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
@@ -1477,6 +1479,7 @@
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
             textBox_Dni.KeyPress += SoloNumeros_KeyPress;
+            textBox_Dni.Leave += TextBox_Dni_Leave;
             // 
             // textBox_Nombre
             // 

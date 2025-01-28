@@ -28,64 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.icono = new System.Windows.Forms.PictureBox();
-            this.mensaje = new System.Windows.Forms.Label();
-            this.escudo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.icono)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.escudo)).BeginInit();
-            this.SuspendLayout();
+            icono = new System.Windows.Forms.PictureBox();
+            mensaje = new System.Windows.Forms.Label();
+            escudo = new System.Windows.Forms.PictureBox();
+            panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)icono).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)escudo).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // icono
             // 
-            this.icono.BackgroundImage = global::Ofelia_Sara.Properties.Resources.errorProvider_PNG;  // Asegúrate de que esta imagen esté en tus recursos
-            this.icono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.icono.Location = new System.Drawing.Point(0, 1);
-            this.icono.Name = "icono";
-            this.icono.Size = new System.Drawing.Size(18, 18);  // Dimensión de 18px
-            this.icono.TabIndex = 0;
-            this.icono.TabStop = false;
+            icono.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            icono.BackgroundImage = Properties.Resources.errorProvider_PNG;
+            icono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            icono.Location = new System.Drawing.Point(0, 0);
+            icono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            icono.Name = "icono";
+            icono.Size = new System.Drawing.Size(21, 23);
+            icono.TabIndex = 0;
+            icono.TabStop = false;
             // 
             // mensaje
             // 
-            this.mensaje.AutoSize = true;
-            this.mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mensaje.Location = new System.Drawing.Point(24, 3);  // La posición del texto del mensaje
-            this.mensaje.Name = "mensaje";
-            this.mensaje.Size = new System.Drawing.Size(55, 15);
-            this.mensaje.TabIndex = 1;
-            this.mensaje.Text = "Mensaje";
+            mensaje.AutoSize = true;
+            mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            mensaje.ForeColor = System.Drawing.Color.White;
+            mensaje.Location = new System.Drawing.Point(29, 4);
+            mensaje.Margin = new System.Windows.Forms.Padding(4, 0, 10, 0);
+            mensaje.Name = "mensaje";
+            mensaje.Size = new System.Drawing.Size(62, 15);
+            mensaje.TabIndex = 1;
+            mensaje.Text = "Mensaje";
             // 
             // escudo
             // 
-            this.escudo.BackgroundImage = global::Ofelia_Sara.Properties.Resources.EscudoPolicia_PNG;  // Asegúrate de que esta imagen esté en tus recursos
-            this.escudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.escudo.Location = new System.Drawing.Point(120, 1);  // Posición de la imagen final, alejada 10px del Label
-            this.escudo.Name = "escudo";
-            this.escudo.Size = new System.Drawing.Size(18, 18);  // Dimensión de 18px
-            this.escudo.TabIndex = 2;
-            this.escudo.TabStop = false;
+            escudo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            escudo.BackgroundImage = Properties.Resources.EscudoPolicia_PNG;
+            escudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            escudo.Location = new System.Drawing.Point(208, 0);
+            escudo.Margin = new System.Windows.Forms.Padding(10, 3, 4, 3);
+            escudo.Name = "escudo";
+            escudo.Size = new System.Drawing.Size(21, 23);
+            escudo.TabIndex = 2;
+            escudo.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.IndianRed;
+            panel1.Controls.Add(icono);
+            panel1.Controls.Add(escudo);
+            panel1.Controls.Add(mensaje);
+            panel1.Location = new System.Drawing.Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(229, 23);
+            panel1.TabIndex = 3;
             // 
             // TooltipError
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.LightBlue;
-            this.Controls.Add(this.escudo);
-            this.Controls.Add(this.mensaje);
-            this.Controls.Add(this.icono);
-            this.Name = "TooltipError";
-            this.Size = new System.Drawing.Size(150, 20);  // Ajuste el tamaño para que encajen los tres elementos
-            ((System.ComponentModel.ISupportInitialize)(this.icono)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.escudo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            BackColor = System.Drawing.Color.Red;
+            Controls.Add(panel1);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "TooltipError";
+            Size = new System.Drawing.Size(235, 29);
+            ((System.ComponentModel.ISupportInitialize)icono).EndInit();
+            ((System.ComponentModel.ISupportInitialize)escudo).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.PictureBox icono;
         private System.Windows.Forms.Label mensaje;
         private System.Windows.Forms.PictureBox escudo;
+        private System.Windows.Forms.Panel panel1;
     }
     #endregion
 }

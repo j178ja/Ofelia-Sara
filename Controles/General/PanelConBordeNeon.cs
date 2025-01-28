@@ -48,7 +48,7 @@ namespace Ofelia_Sara.Controles.General
         }
 
         // Método auxiliar para generar un path redondeado
-        private GraphicsPath GenerarPathRedondeado(Rectangle rect, int radio, int ajuste)
+        private static GraphicsPath GenerarPathRedondeado(Rectangle rect, int radio, int ajuste)
         {
             GraphicsPath path = new GraphicsPath();
             int ajusteMitad = ajuste / 2;

@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.General;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
@@ -20,21 +21,27 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 {
     public partial class NuevoPersonal : BaseForm
     {
-        private bool panelExpandido_DatosPersonales = true;// Variable para rastrear el estado del panel
-        private bool panelExpandido_Revista = true;// 
-        private bool panelExpandido_Armamento = true;// 
-        private bool panelExpandido_Descripcion = true;// 
-        private bool panelExpandido_Destino = true;// 
+        #region VARIABLES
 
-        // Altura original y contraída del panel
+        // Variables para rastrear el estado de los paneles
+        private bool panelExpandido_DatosPersonales = true;
+        private bool panelExpandido_Revista = true;
+        private bool panelExpandido_Armamento = true;
+        private bool panelExpandido_Destino = true;
+
+        // Altura original y contraída de los paneles (es usado para cuando se reduce y se amplia el panel)
         private int alturaOriginalPanel_DatosPersonales;
         private int alturaOriginalPanel_Revista;
         private int alturaOriginalPanel_Armamento;
-        private int alturaOriginalPanel_Descripcion;
         private int alturaOriginalPanel_Destino;
-        private int alturaContraidaPanel = 30;
+        private int alturaContraidaPanel = 30; //establece altura minima del panel contraido
 
-        private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+        // Estado de los datos
+        private bool datosGuardados = false;//Inicializa en false para despues hacer verificacion y asi mostrar o no formclosed
+
+        #endregion
+
+        #region CONSTRUCTOR
         public NuevoPersonal(string numeroLegajo)
         {
             InitializeComponent();
@@ -43,8 +50,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-
-       
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
 
@@ -57,11 +62,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
             label_Destino.BringToFront();
-            //cargar con picture no visible
-            pictureBox_DatosPersonales.Visible = false;
-            pictureBox_SituacionRevista.Visible = false;
-            pictureBox_Armamento.Visible = false;
-            pictureBox_SituacionRevista.Visible = false;
+            ////cargar con picture no visible --se puede dejar sin efecto y mostrar pickture advertencia mientras haya campos vacios
+            //pictureBox_DatosPersonales.Visible = false;
+            //pictureBox_SituacionRevista.Visible = false;
+            //pictureBox_Armamento.Visible = false;
+            //pictureBox_SituacionRevista.Visible = false;
         }
 
 
@@ -71,9 +76,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         }
         //--FIN CONSTRUCTOR
+        #endregion
 
-
-
+        #region LOAD RECARGA ACTIVA FORMULARIO
         private void NuevoPersonal_Load(object sender, EventArgs e)
         {
             // Llamada para aplicar el estilo de boton de BaseForm
@@ -89,8 +94,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             //para que se despliege la lista en los comboBox ESCALAFON -JERARQUIA
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-              ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
-         
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
@@ -100,17 +105,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             dateTimePicker_Antiguedad.OnCalcularAntiguedad = MostrarAntiguedad;
 
             comboBox_EstadoCivil.DropDownStyle = CustomComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
-          
+
 
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para verificar informaciòn.", "Verificar datos de Legajo Ingresado.");
-            
-                        ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DATOSPERSONALES, "Ampliar/Reducir DATOS PERSONALES.");
-                        ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_REVISTA, "Ampliar/Reducir SITUACIÓN DE REVISTA.");
-                        ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_ARMAMENTO, "Ampliar/Reducir ARMAMENTO.");
-                        ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DESTINO, "Ampliar/Reducir DESTINO LABORAL.");
-            
+
+            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DATOSPERSONALES, "Ampliar/Reducir DATOS PERSONALES.");
+            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_REVISTA, "Ampliar/Reducir SITUACIÓN DE REVISTA.");
+            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_ARMAMENTO, "Ampliar/Reducir ARMAMENTO.");
+            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DESTINO, "Ampliar/Reducir DESTINO LABORAL.");
+            TooltipError.Mostrar(pictureBox_DatosPersonales, "Debe completar los datos solicitados.");
+
+
             //traer label al frent
             label_TITULO.BringToFront();
             label_SituacionRevista.BringToFront();
@@ -127,7 +134,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             //.....................................................
             //...................................................
 
-            //para que se carge el panel INSTRUCION contraido
+            //para que se carge el panel ARMAMENTO contraido
             if (panelExpandido_Armamento)
             {
                 // Contraer el panel
@@ -138,7 +145,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                 // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                 btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
-                btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(645, 1);
+                btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(646, 1);
                 // Ocultar todos los controles excepto el botón de ampliación/reducción
                 foreach (Control control in panel_Detalle_Armamento.Controls)
                 {
@@ -164,60 +171,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             ConfigurarTextoEnControles();//para formato de texto que ingresa
         }
         //--- FIN LOAD----------
+        #endregion
 
-
-        /// <summary>
-        /// METODO PARA QUE TENCA EL FOCO NUMERO DE LEGAJO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Focus_Shown(object sender, EventArgs e)
-        {
-            // Asegura que el cursor esté en textBox
-            textBox_NumeroLegajo.Focus();
-        }
-        //--------------------------------------------------------
-
-
-
-        /// <summary>
-        /// METODO PARA TRAER DE BASE DE DATOS ESCALAFON 
-        /// </summary>
-        /// <param name="comboBox"></param>
-        protected void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
-        {
-            customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
-        }
-
-        /// <summary>
-        /// HELPBUTTON -MENSAJE DE AYUDA
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NuevoPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            MensajeGeneral.Mostrar("Debe completar la totalidad de los campos requeridos." + "Todos ellos serán empleados para completar plantilla de Ratificación policial", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
-        }
-        /// <summary>
-        /// PARA LIMPIAR FORMULARIO Y MODIFICA BASE DE DATOS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_Limpiar_Click(object sender, EventArgs e)
-        {
-            // Limpia el formulario
-            LimpiarFormulario.Limpiar(this);
-            comboBox_Dependencia.SelectedIndex = -1;
-            comboBox_Nacionalidad.SelectedIndex = -1;
-            comboBox_EstadoCivil.SelectedIndex = -1;
-            comboBox_Escalafon.SelectedIndex = -1;
-            comboBox_Jerarquia.SelectedIndex = -1;
-            // Muestra un mensaje de información
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
-        }
+        #region VALIDACIONES
         /// <summary>
         /// VALIDACION PARA NUMERO DE LEGAJO, SOLO NUMEROS
         /// </summary>
@@ -233,6 +189,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
         }
+
 
         /// <summary>
         /// METODO PARA APLICAR FORMATO A TEXTO DE CONTROLES
@@ -291,6 +248,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             CargarDatosDependencia();// Lógica para cargar datos
         }
 
+
+
+        /// <summary>
+        /// METODO PARA TRAER DE BASE DE DATOS ESCALAFON 
+        /// </summary>
+        /// <param name="comboBox"></param>
+        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
+        {
+            customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
+        }
         /// <summary>
         /// VALIDA EL INGRESO DE TEXTO EN CAMPO DEPENDENCIA
         /// </summary>
@@ -361,100 +328,35 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 LimpiarTextBoxes();
             }
         }
-        /// <summary>
-        /// METODO DE LIMPIEZA DE TEXTBOXES
-        /// </summary>
-        private void LimpiarTextBoxes()
-        {
-            textBox_DomicilioDependencia.Clear();
-            textBox_LocalidadDependencia.Clear();
-            textBox_PartidoDependencia.Clear();
 
-            // También puedes habilitar los TextBox si es necesario
-            textBox_DomicilioDependencia.ReadOnly = false;
-            textBox_LocalidadDependencia.ReadOnly = false;
-            textBox_PartidoDependencia.ReadOnly = false;
-        }
         /// <summary>
-        /// METODO PARA MOSTRAR QUE NO SE PUEDE MODIFICAR EL CAMPO DOMICILIO DE DEPENDENCIA
+        /// MARCAR ERROR EN CASO DE NO SE INGRESE LA CANTIDAD DE CARACTERES
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBox_DatosDependencia_Enter(object sender, EventArgs e)
+        private void TextBox_Dni_Leave(object sender, EventArgs e)
         {
-            if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
+            if (sender is CustomTextBox customTextBox)
             {
-                MensajeGeneral.Mostrar("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.", MensajeGeneral.TipoMensaje.Informacion);
-                comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
-            }
-        }
-
-        /// <summary>
-        /// METODO PARA GUARDAR DATOS DE FORMULARIO EN BASE DE DATOS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_Guardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Crear el objeto Personal con los datos del formulario
-                Personal personal = new Personal
+                // Validar si el TextValue tiene exactamente 10 caracteres
+                if (string.IsNullOrWhiteSpace(customTextBox.TextValue) || customTextBox.TextValue.Length != 10)
                 {
-                    // Si el DNI está vacío, asignamos un valor predeterminado o lo dejamos como null
-                    DNI = string.IsNullOrEmpty(textBox_Dni.TextValue) ? null : textBox_Dni.TextValue,
-
-                    // Si el Domicilio está vacío, asignamos un valor predeterminado o lo dejamos como null
-                    Domicilio = string.IsNullOrEmpty(textBox_DomicilioPnal.TextValue) ? null : textBox_DomicilioPnal.TextValue,
-
-                    // Verificamos si el comboBox tiene una selección válida
-                    Nacionalidad = comboBox_Nacionalidad.SelectedItem != null ? comboBox_Nacionalidad.SelectedItem.ToString() : null,
-                    Escalafon = comboBox_Escalafon.SelectedItem != null ? comboBox_Escalafon.SelectedItem.ToString() : null,
-                    Jerarquia = comboBox_Jerarquia.SelectedItem != null ? comboBox_Jerarquia.SelectedItem.ToString() : null,
-
-                    // Si la función está vacía, asignamos un valor predeterminado o lo dejamos como null
-                    Funcion = string.IsNullOrEmpty(textBox_Funcion.TextValue) ? null : textBox_Funcion.TextValue,
-                };
-
-                // Llamar al método UpdatePersonal para actualizar los datos en la base de datos
-                PersonalManager personalManager = new PersonalManager();
-                personalManager.UpdatePersonal(personal);
-
-                // Mostrar mensaje de éxito
-                MensajeGeneral.Mostrar("Datos actualizados correctamente.", MensajeGeneral.TipoMensaje.Exito);
-                datosGuardados = true; // Marcar que los datos fueron guardados
-            }
-            catch (Exception ex)
-            {
-                // Mostrar mensaje de error si ocurre alguna excepción
-                MensajeGeneral.Mostrar("Error al actualizar los datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                datosGuardados = false; // Marcar que los datos no fueron guardados
-            }
-        }
-
-        /// <summary>
-        /// MENSAJE DE ALERTA para verificar si los datos están guardados antes de cerrar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void NuevoPersonal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!datosGuardados) // Si los datos no han sido guardados
-            {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                    // Mostrar error con subrayado rojo
+                    customTextBox.ShowError = true;
                 }
+                else
+                {
+                    // Quitar el error si la validación pasa
+                    customTextBox.ShowError = false;
+                }
+
+                // Forzar el redibujado del control para reflejar el cambio en el subrayado
+                customTextBox.Invalidate();
             }
         }
+
+
+
 
         /// <summary>
         /// METODO QUE HABILITA EL INGRESO DE NUMERO COMO NUMERO DE LEGAJO
@@ -543,6 +445,450 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 }
             }
         }
+
+
+        /// <summary>
+        /// METODO PARA VALIDAR DAROS DE LOS PANELES
+        /// </summary>
+
+        private void ValidarPanelDatosPersonales()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Personal.Controls)
+            {
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_DatosPersonales.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_DatosPersonales.BackColor = Color.Transparent; // Fondo transparente
+                label_DatosPersonales.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_DatosPersonales.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_DatosPersonales.BackColor = Color.Transparent; // Fondo transparente
+                label_DatosPersonales.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_DatosPersonales.Location = new System.Drawing.Point(
+                label_DatosPersonales.Right + 5, // A la derecha del label con un margen de 5 px
+                label_DatosPersonales.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_DatosPersonales.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_DatosPersonales.Visible = true;
+            AjustarTamanoFormulario();
+        }
+
+        //------------------------------------------------------------------------------
+        private void ValidarPanelRevista()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Revista.Controls)
+            {
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_SituacionRevista.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_SituacionRevista.BackColor = Color.Transparent; // Fondo transparente
+                label_SituacionRevista.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_SituacionRevista.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_SituacionRevista.BackColor = Color.Transparent; // Fondo transparente
+                label_SituacionRevista.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_SituacionRevista.Location = new System.Drawing.Point(
+                label_SituacionRevista.Right + 5, // A la derecha del label con un margen de 5 px
+               label_SituacionRevista.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_SituacionRevista.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_SituacionRevista.Visible = true;
+            AjustarTamanoFormulario();
+        }
+
+        //------------------------------------------------------------------------------
+        
+        private void ValidarPanelArmamento()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Armamento.Controls)
+            {
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_Armamento.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_Armamento.BackColor = Color.Transparent; // Fondo transparente
+                label_Armamento.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_Armamento.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_Armamento.BackColor = Color.Transparent; // Fondo transparente
+                label_Armamento.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_Armamento.Location = new System.Drawing.Point(
+                 label_Armamento.Right + 5, // A la derecha del label con un margen de 5 px
+                label_Armamento.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_Armamento.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_Armamento.Visible = true;
+            AjustarTamanoFormulario();
+        }
+        //------------------------------------------------------------------------------
+       
+        private void ValidarPanelDestino()
+        {
+            bool camposValidos = true;
+
+            // Iterar sobre los controles dentro del panel
+            foreach (Control control in panel_Detalle_Destino.Controls)
+            {
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
+                }
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
+                {
+                    camposValidos = false;
+                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
+                }
+            }
+
+            // Actualizar la imagen en pictureBox
+            if (camposValidos)
+            {
+                pictureBox_Destino.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+                pictureBox_Destino.BackColor = Color.Transparent; // Fondo transparente
+                label_Destino.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
+
+            }
+            else
+            {
+                pictureBox_Destino.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+                pictureBox_Destino.BackColor = Color.Transparent; // Fondo transparente
+                label_Destino.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
+
+            }
+
+            // Ajustar la posición del pictureBox al lado del label
+            pictureBox_Destino.Location = new System.Drawing.Point(
+                 label_Destino.Right + 5, // A la derecha del label con un margen de 5 px
+               label_Destino.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
+            );
+
+            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+            pictureBox_Destino.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Asegurarse de que el pictureBox sea visible
+            pictureBox_Destino.Visible = true;
+            AjustarTamanoFormulario();
+        }
+
+        private static bool VerificarCamposEnPanelConBordeNeon(PanelConBordeNeon panelConBordeNeon)
+        {
+            foreach (Control control in panelConBordeNeon.Controls)
+            {
+                // Verificar si el control es un Panel
+                if (control is Panel panel)
+                {
+                    foreach (Control childControl in panel.Controls)
+                    {
+                        // Verificar CustomTextBox
+                        if (childControl is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
+                        {
+                            return false; // Campo CustomTextBox incompleto
+                        }
+
+                        // Verificar CustomComboBox
+                        if (childControl is CustomComboBox customcomboBox &&
+                            (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
+                        {
+                            return false; // Campo CustomComboBox incompleto
+                        }
+
+                        // Verificar RichTextBox
+                        if (childControl is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
+                        {
+                            return false; // Campo RichTextBox incompleto
+                        }
+
+                        // Verificar PictureBox
+                        if (childControl is PictureBox pictureBox)
+                        {
+                            if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
+                            {
+                                return false; // Campo PictureBox sin imagen válida
+                            }
+                        }
+                    }
+                }
+            }
+            return true; // Todos los campos en los paneles están completos
+        }
+
+        #endregion
+
+        #region METODOS GENERALES
+        /// <summary>
+        /// METODO PARA QUE TENCA EL FOCO NUMERO DE LEGAJO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Focus_Shown(object sender, EventArgs e)
+        {
+            // Asegura que el cursor esté en textBox
+            textBox_NumeroLegajo.Focus();
+        }
+        //--------------------------------------------------------
+
+
+
+
+        /// <summary>
+        /// HELPBUTTON -MENSAJE DE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NuevoPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            MensajeGeneral.Mostrar("Debe completar la totalidad de los campos requeridos." + "Todos ellos serán empleados para completar plantilla de Ratificación policial", MensajeGeneral.TipoMensaje.Informacion);
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
+        }
+        /// <summary>
+        /// PARA LIMPIAR FORMULARIO Y MODIFICA BASE DE DATOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            // Limpia el formulario
+            LimpiarFormulario.Limpiar(this);
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedIndex = -1;
+            comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Jerarquia.SelectedIndex = -1;
+            EstadoInicialPaneles();
+            // Muestra un mensaje de información
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+        }
+
+        /// <summary>
+        /// Tamaño inicial de paneles 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void EstadoInicialPaneles()
+        {
+            //para que se carge el panel ARMAMENTO contraido
+            if (panelExpandido_Armamento)
+            {
+                // Contraer el panel
+                panel_Armamento.Height = alturaContraidaPanel;
+                btn_AmpliarReducir_ARMAMENTO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                panelExpandido_Armamento = false; //PANEL CONTRAIDO
+                panel_Armamento.BorderStyle = BorderStyle.FixedSingle;
+
+                // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
+                btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(646, 1);
+                // Ocultar todos los controles excepto el botón de ampliación/reducción
+                foreach (Control control in panel_Detalle_Armamento.Controls)
+                {
+                    if (control == btn_AmpliarReducir_ARMAMENTO)
+                    {
+                        control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+                    }
+                    else
+                    {
+                        control.Visible = false; // Oculta los demás controles
+                        panel_Detalle_Armamento.Visible = false;
+                    }
+                }
+                AjustarTamanoFormulario();
+            }
+
+
+        }
+
+
+
+
+        /// <summary>
+        /// METODO DE LIMPIEZA DE TEXTBOXES
+        /// </summary>
+        private void LimpiarTextBoxes()
+        {
+            textBox_DomicilioDependencia.Clear();
+            textBox_LocalidadDependencia.Clear();
+            textBox_PartidoDependencia.Clear();
+
+            // También puedes habilitar los TextBox si es necesario
+            textBox_DomicilioDependencia.ReadOnly = false;
+            textBox_LocalidadDependencia.ReadOnly = false;
+            textBox_PartidoDependencia.ReadOnly = false;
+        }
+        /// <summary>
+        /// METODO PARA MOSTRAR QUE NO SE PUEDE MODIFICAR EL CAMPO DOMICILIO DE DEPENDENCIA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_DatosDependencia_Enter(object sender, EventArgs e)
+        {
+            if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
+            {
+                MensajeGeneral.Mostrar("Para modificar este elemento debe hacerlo desde el botón Configuracion, en el menu principal.", MensajeGeneral.TipoMensaje.Informacion);
+                comboBox_Dependencia.Focus(); // Vuelve a enfocar el control
+            }
+        }
+
+        /// <summary>
+        /// METODO PARA GUARDAR DATOS DE FORMULARIO EN BASE DE DATOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Guardar_Click(object sender, EventArgs e)
+        {
+            // Validar los campos en los paneles con borde neon
+            if (!VerificarCamposEnPanelConBordeNeon(panel_DatosPersonales) ||
+                !VerificarCamposEnPanelConBordeNeon(panel_Armamento) ||
+                !VerificarCamposEnPanelConBordeNeon(panel_Revista) ||
+                !VerificarCamposEnPanelConBordeNeon(panel_Destino))
+            {
+                MensajeGeneral.Mostrar("Por favor, complete todos los campos obligatorios.", MensajeGeneral.TipoMensaje.Advertencia);
+                return; // Detener el proceso de guardado
+            }
+            try
+            {
+                // Crear el objeto Personal con los datos del formulario
+                Personal personal = new Personal
+                {
+                    // Si el DNI está vacío, asignamos un valor predeterminado o lo dejamos como null
+                    DNI = string.IsNullOrEmpty(textBox_Dni.TextValue) ? null : textBox_Dni.TextValue,
+
+                    // Si el Domicilio está vacío, asignamos un valor predeterminado o lo dejamos como null
+                    Domicilio = string.IsNullOrEmpty(textBox_DomicilioPnal.TextValue) ? null : textBox_DomicilioPnal.TextValue,
+
+                    // Verificamos si el comboBox tiene una selección válida
+                    Nacionalidad = comboBox_Nacionalidad.SelectedItem != null ? comboBox_Nacionalidad.SelectedItem.ToString() : null,
+                    Escalafon = comboBox_Escalafon.SelectedItem != null ? comboBox_Escalafon.SelectedItem.ToString() : null,
+                    Jerarquia = comboBox_Jerarquia.SelectedItem != null ? comboBox_Jerarquia.SelectedItem.ToString() : null,
+
+                    // Si la función está vacía, asignamos un valor predeterminado o lo dejamos como null
+                    Funcion = string.IsNullOrEmpty(textBox_Funcion.TextValue) ? null : textBox_Funcion.TextValue,
+                };
+
+                // Llamar al método UpdatePersonal para actualizar los datos en la base de datos
+                PersonalManager personalManager = new PersonalManager();
+                personalManager.UpdatePersonal(personal);
+
+                // Mostrar mensaje de éxito
+                MensajeGeneral.Mostrar("Datos actualizados correctamente.", MensajeGeneral.TipoMensaje.Exito);
+                datosGuardados = true; // Marcar que los datos fueron guardados
+            }
+            catch (Exception ex)
+            {
+                // Mostrar mensaje de error si ocurre alguna excepción
+                MensajeGeneral.Mostrar("Error al actualizar los datos: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
+                datosGuardados = false; // Marcar que los datos no fueron guardados
+            }
+        }
+
+        /// <summary>
+        /// MENSAJE DE ALERTA para verificar si los datos están guardados antes de cerrar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void NuevoPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                {
+                    // Hacer visibles los botones
+                    mensaje.MostrarBotonesConfirmacion(true);
+
+                    DialogResult result = mensaje.ShowDialog();
+                    if (result == DialogResult.No)
+                    {
+                        e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                }
+            }
+        }
+
+
         /// <summary>
         /// METODO PARA MOSTRAR LA ANTIGUEDAD CALCULADA
         /// </summary>
@@ -554,7 +900,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             textBox_AntiguedadMeses.TextValue = meses.ToString();
         }
 
-        //----------------------------------------------------------------------------------
+        /// <summary>
+        /// CAMBIAR TEXTO SEGUN CONTROL ---A VERIFICAR PARA SU REMOSION SE AGREGO EN .CS DE CALENDARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void DateTimePicker_FechaNacimiento_Load(object sender, EventArgs e)
+        {
+            dateTimePicker_FechaNacimiento.TextoAsociado = "Fecha Nacimiento";
+        }
+        /// <summary>
+        /// CAMBIAR TEXTO SEGUN CONTROL ---A VERIFICAR PARA SU REMOSION SE AGREGO EN .CS DE CALENDARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DateTimePicker_Antiguedad_Load(object sender, EventArgs e)
+        {
+            dateTimePicker_Antiguedad.TextoAsociado = "Fecha Ingreso";
+
+        }
+
+        #endregion
+
+        #region COMPORTAMIENTO DINAMICO
         /// <summary>
         /// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
         /// </summary>
@@ -577,7 +946,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_DatosPersonales;
-                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(646,1);
+                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(646, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -743,7 +1112,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
-                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(645, 1);
+                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(646, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -783,7 +1152,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_ARMAMENTO.Parent = panel_Detalle_Armamento;
-                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(645, 1);
+                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(646, 1);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_Detalle_Armamento.Controls)
@@ -880,247 +1249,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 AjustarTamanoFormulario();
             }
         }
-        private static bool VerificarCamposEnPanel(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                // Verificar TextBox
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    return false; // Campo TextBox incompleto
-                }
-
-                // Verificar ComboBox
-                if (control is CustomComboBox customcomboBox && customcomboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customcomboBox.TextValue))
-                {
-                    return false; // Campo ComboBox incompleto
-                }
-
-                // Verificar RichTextBox
-                if (control is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
-                {
-                    return false; // Campo RichTextBox incompleto
-                }
-
-                // Verificar PictureBox
-                if (control is PictureBox pictureBox)
-                {
-                    // Verificar si no hay imagen o si la imagen es la predeterminada
-                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
-                    {
-                        return false; // Campo PictureBox sin imagen válida
-                    }
-                }
-            }
-            return true; // Todos los campos están completos
-        }
-
-
-        /// <summary>
-        /// METODO PARA VALIDAR DAROS DE LOS PANELES
-        /// </summary>
-
-        private void ValidarPanelDatosPersonales()
-        {
-            bool camposValidos = true;
-
-            // Iterar sobre los controles dentro del panel
-            foreach (Control control in panel_Detalle_Personal.Controls)
-            {
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
-                }
-                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-                }
-            }
-
-            // Actualizar la imagen en pictureBox
-            if (camposValidos)
-            {
-                pictureBox_DatosPersonales.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_DatosPersonales.BackColor = Color.Transparent; // Fondo transparente
-                label_DatosPersonales.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-
-            }
-            else
-            {
-                pictureBox_DatosPersonales.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_DatosPersonales.BackColor = Color.Transparent; // Fondo transparente
-                label_DatosPersonales.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-
-            }
-
-            // Ajustar la posición del pictureBox al lado del label
-            pictureBox_DatosPersonales.Location = new System.Drawing.Point(
-                label_DatosPersonales.Right + 5, // A la derecha del label con un margen de 5 px
-                label_DatosPersonales.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
-            );
-
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-            pictureBox_DatosPersonales.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Asegurarse de que el pictureBox sea visible
-            pictureBox_DatosPersonales.Visible = true;
-            AjustarTamanoFormulario();
-        }
-
-        //------------------------------------------------------------------------------
-        private void ValidarPanelRevista()
-        {
-            bool camposValidos = true;
-
-            // Iterar sobre los controles dentro del panel
-            foreach (Control control in panel_Detalle_Revista.Controls)
-            {
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
-                }
-                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-                }
-            }
-
-            // Actualizar la imagen en pictureBox
-            if (camposValidos)
-            {
-                pictureBox_SituacionRevista.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_SituacionRevista.BackColor = Color.Transparent; // Fondo transparente
-                label_SituacionRevista.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-
-            }
-            else
-            {
-                pictureBox_SituacionRevista.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_SituacionRevista.BackColor = Color.Transparent; // Fondo transparente
-                label_SituacionRevista.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-
-            }
-
-            // Ajustar la posición del pictureBox al lado del label
-            pictureBox_SituacionRevista.Location = new System.Drawing.Point(
-                label_SituacionRevista.Right + 5, // A la derecha del label con un margen de 5 px
-               label_SituacionRevista.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
-            );
-
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-            pictureBox_SituacionRevista.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Asegurarse de que el pictureBox sea visible
-            pictureBox_SituacionRevista.Visible = true;
-            AjustarTamanoFormulario();
-        }
-
-        //------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------
-        private void ValidarPanelArmamento()
-        {
-            bool camposValidos = true;
-
-            // Iterar sobre los controles dentro del panel
-            foreach (Control control in panel_Detalle_Armamento.Controls)
-            {
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
-                }
-                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-                }
-            }
-
-            // Actualizar la imagen en pictureBox
-            if (camposValidos)
-            {
-                pictureBox_Armamento.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_Armamento.BackColor = Color.Transparent; // Fondo transparente
-                label_Armamento.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-
-            }
-            else
-            {
-                pictureBox_Armamento.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_Armamento.BackColor = Color.Transparent; // Fondo transparente
-                label_Armamento.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-
-            }
-
-            // Ajustar la posición del pictureBox al lado del label
-            pictureBox_Armamento.Location = new System.Drawing.Point(
-                 label_Armamento.Right + 5, // A la derecha del label con un margen de 5 px
-                label_Armamento.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
-            );
-
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-            pictureBox_Armamento.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Asegurarse de que el pictureBox sea visible
-            pictureBox_Armamento.Visible = true;
-            AjustarTamanoFormulario();
-        }
-        //------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------
-        private void ValidarPanelDestino()
-        {
-            bool camposValidos = true;
-
-            // Iterar sobre los controles dentro del panel
-            foreach (Control control in panel_Detalle_Destino.Controls)
-            {
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
-                }
-                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-                }
-            }
-
-            // Actualizar la imagen en pictureBox
-            if (camposValidos)
-            {
-                pictureBox_Destino.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_Destino.BackColor = Color.Transparent; // Fondo transparente
-                label_Destino.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-
-            }
-            else
-            {
-                pictureBox_Destino.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_Destino.BackColor = Color.Transparent; // Fondo transparente
-                label_Destino.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-
-            }
-
-            // Ajustar la posición del pictureBox al lado del label
-            pictureBox_Destino.Location = new System.Drawing.Point(
-                 label_Destino.Right + 5, // A la derecha del label con un margen de 5 px
-               label_Destino.Top + (label_DatosPersonales.Height - pictureBox_DatosPersonales.Height) / 2 // Centrado verticalmente
-            );
-
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-            pictureBox_Destino.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Asegurarse de que el pictureBox sea visible
-            pictureBox_Destino.Visible = true;
-            AjustarTamanoFormulario();
-        }
-        //------------------------------------------------------------------------------
-
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
         /// </summary>
@@ -1182,19 +1310,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 this.AutoScroll = false;
             }
         }
-
-        private void DateTimePicker_FechaNacimiento_Load(object sender, EventArgs e)
-        {
-            dateTimePicker_FechaNacimiento.TextoAsociado = "Fecha Nacimiento";
-        }
-
-        private void DateTimePicker_Antiguedad_Load(object sender, EventArgs e)
-        {
-            dateTimePicker_Antiguedad.TextoAsociado = "Fecha Ingreso";
-
-        }
-
-
+        #endregion
 
     }
 }

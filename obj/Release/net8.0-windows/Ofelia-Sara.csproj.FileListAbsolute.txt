@@ -146,3 +146,4 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\refi
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia-Sara.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia-Sara.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\ref\Ofelia-Sara.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Release\net8.0-windows\Ofelia_Sara.Controles.Controles.General.TooltipError.resources

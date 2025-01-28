@@ -124,7 +124,7 @@
             this.textBox_NumeroCargo.Size = new System.Drawing.Size(100, 22);
             this.textBox_NumeroCargo.TabIndex = 1;
             this.textBox_NumeroCargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroCargo_KeyPress);
+            this.textBox_NumeroCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroCargo_KeyPress);
             // 
             // label_Barra
             // 
@@ -218,7 +218,7 @@
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 23;
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // btn_Buscar
             // 
@@ -458,7 +458,7 @@
             this.comboBox_Localidad.Name = "comboBox_Localidad";
             this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
             this.comboBox_Localidad.TabIndex = 81;
-            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Localidad_KeyPress);
+            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Localidad_KeyPress);
             // 
             // comboBox_Secretario
             // 
@@ -608,8 +608,8 @@
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
             this.textBox_NumeroIpp.TabIndex = 5;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
-            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.TextBox_NumeroIpp_TextChanged);
+            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroIpp_KeyPress);
             this.textBox_NumeroIpp.Leave += new System.EventHandler(this.TextBox_NumeroIpp_Leave);
             // 
             // comboBox_Ipp1
@@ -633,7 +633,7 @@
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 3;
             this.comboBox_Ipp1.Text = "03";
-            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
+            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
             // 
             // comboBox_Ipp2
             // 
@@ -654,7 +654,7 @@
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 4;
             this.comboBox_Ipp2.Text = "03";
-            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
+            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
             // 
             // lbl_00
             // 
@@ -677,7 +677,7 @@
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 6;
             this.comboBox_Ipp4.Text = "24";
-            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
+            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
             // 
             // lbl_Ipp
             // 

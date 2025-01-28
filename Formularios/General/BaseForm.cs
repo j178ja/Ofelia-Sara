@@ -188,7 +188,11 @@ namespace Ofelia_Sara.Formularios.General
 
         }
         //----------------------------------------------
-        // Método para cargar el ícono según el modo (diseñador o ejecución)
+      
+
+        /// <summary>
+        ///  Método para cargar el ícono según el modo (diseñador o ejecución)
+        /// </summary>
         private void CargarIconoFormulario()
         {
             try
@@ -238,6 +242,11 @@ namespace Ofelia_Sara.Formularios.General
         //    }
         //}
 
+        /// <summary>
+        /// CARGAR DATOS DE DEPENDENCIA
+        /// </summary>
+        /// <param name="customComboBox"></param>
+        /// <param name="dbManager"></param>
         public void CargarDatosDependencia(CustomComboBox customComboBox, ComisariasManager dbManager)
         {
             try
@@ -280,7 +289,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
+        /// <summary>
+        /// CARGAR DATOS DE INSTRUCTOR
+        /// </summary>
+        /// <param name="customComboBox"></param>
+        /// <param name="dbManager"></param>
 
         public void CargarDatosInstructor(CustomComboBox customComboBox, InstructoresManager dbManager)
         {
@@ -307,8 +320,13 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// CARGAR DATOS DE SECRETARIO
+        /// </summary>
+        /// <param name="customComboBox"></param>
+        /// <param name="dbManager"></param>
 
-        public void CargarDatosSecretario(CustomComboBox customComboBox, SecretariosManager dbManager)
+        public static void CargarDatosSecretario(CustomComboBox customComboBox, SecretariosManager dbManager)
         {
             try
             {
@@ -332,8 +350,12 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
-        public void CargarDatosFiscalia(ComboBox comboBox, FiscaliasManager dbManager)
+        /// <summary>
+        /// CARGAR DATOS DE FISCALIA
+        /// </summary>
+        /// <param name="comboBox"></param>
+        /// <param name="dbManager"></param>
+        public static void CargarDatosFiscalia(ComboBox comboBox, FiscaliasManager dbManager)
         {
             try
             {
@@ -364,8 +386,10 @@ namespace Ofelia_Sara.Formularios.General
             return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
         }
 
-
-        //para traer label titulo siempre al frente
+        /// <summary>
+        /// METODO PARA TRAER LABEL TITULO AL FRENTE ----NO FUNCIONA CORRECTAMENTE
+        /// </summary>
+        
         private void TraerLabelsAlFrente()
         {
             // Itera a través de todos los controles de la forma
@@ -380,7 +404,10 @@ namespace Ofelia_Sara.Formularios.General
 
         }
 
-        //-----METODO PARA MOSTRAR FOOTER-----------------------
+        /// <summary>
+        /// METODO PARA MOSTRAR FOOTER
+        /// </summary>
+       
         private void InitializeFooterLinkLabel()
         {
 
@@ -390,11 +417,12 @@ namespace Ofelia_Sara.Formularios.General
             this.Controls.Add(this.footerLinkLabel);
         }
 
-
-        //------------------------------------------------------------
-        //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
-        //-------BUSCAR----GUARDAR----LIMPIAR---------
-        protected void InicializarEstiloBoton(Button boton)
+        /// <summary>
+        /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES BUSCAR-GUARDAR-LIMPIAR
+        /// </summary>
+        /// <param name="boton"></param>
+  
+        protected static void InicializarEstiloBoton(Button boton)
         {
             Size originalSize = boton.Size;
             Point originalLocation = boton.Location;
@@ -429,10 +457,12 @@ namespace Ofelia_Sara.Formularios.General
             };
         }
 
-        //------------------------------------------------------------
-        //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
-        //-------AGREGAR --->CARATULA-->IMPUTADO--->VICTIMA---------
-        protected void InicializarEstiloBotonAgregar(Button boton)
+        /// <summary>
+        /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES AGREGAR CARATULA/IMPUTADO/VICTIMA
+        /// </summary>
+        /// <param name="boton"></param>
+       
+        protected static void InicializarEstiloBotonAgregar(Button boton)
         {
             Size originalSize = boton.Size;
             Point originalLocation = boton.Location;
@@ -520,7 +550,7 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         /// <param name="comboBox_Escalafon"></param>
         /// <param name="comboBox_Jerarquia"></param>
-        protected void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
+        protected static void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
         {    // Configurar el evento SelectedIndexChanged
             comboBox_Escalafon.SelectedIndexChanged += (sender, e) =>
             {
