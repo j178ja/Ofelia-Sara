@@ -515,8 +515,11 @@ namespace Ofelia_Sara.Formularios.General
             boton.Invalidate();
         }
 
-        //-------------------------------------------------------------------------------
-        //----para cargar lista en comboBox ESCALAFON Y JERARQUIA-------------------
+        /// <summary>
+        /// para cargar lista en comboBox ESCALAFON Y JERARQUIA-
+        /// </summary>
+        /// <param name="comboBox_Escalafon"></param>
+        /// <param name="comboBox_Jerarquia"></param>
         protected void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
         {    // Configurar el evento SelectedIndexChanged
             comboBox_Escalafon.SelectedIndexChanged += (sender, e) =>
@@ -537,7 +540,6 @@ namespace Ofelia_Sara.Formularios.General
             // Configurar el ComboBox_Jerarquia inicialmente como desactivado
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
-
         }
     }
 }

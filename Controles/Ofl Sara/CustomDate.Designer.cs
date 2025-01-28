@@ -18,8 +18,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            toolTip1 = new ToolTip(components);
             label_barra2 = new Label();
             label_barra1 = new Label();
             textBox_DateDIA = new CustomTextBox();
@@ -63,6 +61,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateDIA.AutoCompleteMode = AutoCompleteMode.None;
             textBox_DateDIA.AutoCompleteSource = AutoCompleteSource.None;
             textBox_DateDIA.BackColor = System.Drawing.Color.White;
+            textBox_DateDIA.Cursor = Cursors.Hand;
             textBox_DateDIA.ErrorColor = System.Drawing.Color.Red;
             textBox_DateDIA.FocusColor = System.Drawing.Color.Blue;
             textBox_DateDIA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
@@ -71,13 +70,13 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateDIA.Multiline = false;
             textBox_DateDIA.Name = "textBox_DateDIA";
             textBox_DateDIA.PasswordChar = '\0';
-            textBox_DateDIA.PlaceholderColor = System.Drawing.Color.Transparent;
+            textBox_DateDIA.PlaceholderColor = System.Drawing.Color.LightGray;
             textBox_DateDIA.PlaceholderText = "";
             textBox_DateDIA.ReadOnly = false;
             textBox_DateDIA.SelectionStart = 0;
             textBox_DateDIA.ShowError = false;
             textBox_DateDIA.Size = new System.Drawing.Size(23, 20);
-            textBox_DateDIA.TabIndex = 4;
+            textBox_DateDIA.TabIndex = 0;
             textBox_DateDIA.TextAlign = HorizontalAlignment.Center;
             textBox_DateDIA.TextValue = "";
             // 
@@ -86,6 +85,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateMES.AutoCompleteMode = AutoCompleteMode.None;
             textBox_DateMES.AutoCompleteSource = AutoCompleteSource.None;
             textBox_DateMES.BackColor = System.Drawing.Color.White;
+            textBox_DateMES.Cursor = Cursors.Hand;
             textBox_DateMES.ErrorColor = System.Drawing.Color.Red;
             textBox_DateMES.FocusColor = System.Drawing.Color.Blue;
             textBox_DateMES.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
@@ -100,7 +100,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateMES.SelectionStart = 0;
             textBox_DateMES.ShowError = false;
             textBox_DateMES.Size = new System.Drawing.Size(35, 20);
-            textBox_DateMES.TabIndex = 5;
+            textBox_DateMES.TabIndex = 1;
             textBox_DateMES.TextAlign = HorizontalAlignment.Center;
             textBox_DateMES.TextValue = "";
             // 
@@ -109,6 +109,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateAÑO.AutoCompleteMode = AutoCompleteMode.None;
             textBox_DateAÑO.AutoCompleteSource = AutoCompleteSource.None;
             textBox_DateAÑO.BackColor = System.Drawing.Color.White;
+            textBox_DateAÑO.Cursor = Cursors.Hand;
             textBox_DateAÑO.ErrorColor = System.Drawing.Color.Red;
             textBox_DateAÑO.FocusColor = System.Drawing.Color.Blue;
             textBox_DateAÑO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
@@ -123,7 +124,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateAÑO.SelectionStart = 0;
             textBox_DateAÑO.ShowError = false;
             textBox_DateAÑO.Size = new System.Drawing.Size(41, 20);
-            textBox_DateAÑO.TabIndex = 6;
+            textBox_DateAÑO.TabIndex = 2;
             textBox_DateAÑO.TextAlign = HorizontalAlignment.Left;
             textBox_DateAÑO.TextValue = "";
             // 
@@ -168,7 +169,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             PerformLayout();
         }
 
-        private ToolTip toolTip1;
         private Label label_barra2;
         private Label label_barra1;
         public CustomTextBox textBox_DateDIA;

@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
 
@@ -11,6 +12,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
     {
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public DateTime SelectedDate { get; private set; }
+
+        public Control ControlInvocador { get; set; }
 
         public CALENDARIO()
         {
@@ -27,17 +30,49 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
         }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             SelectedDate = monthCalendar1.SelectionStart; // Obtiene la fecha seleccionada
             datosGuardados = true; // Marcar que los datos fueron guardados
+                  //FALTA AGREGAR PARA QUE SE OCULTE CALENDARIO
             this.DialogResult = DialogResult.OK;
             this.Close();
-            MensajeGeneral.Mostrar("Seleccion guardada.", MensajeGeneral.TipoMensaje.Exito);
 
+            // Obtener el control invocador
+            Control controlInvocador = ObtenerControlInvocador();
+            DateTime selectedDate = monthCalendar1.SelectionStart;
+            string formattedDate = selectedDate.ToString("dd/MM/yyyy");
+
+            if (controlInvocador != null)
+            {
+                // Calcular posición debajo del control invocador
+                Point controlPosition = controlInvocador.PointToScreen(Point.Empty);
+                using (var mensajeForm = new MensajeGeneral($"Selección {formattedDate} guardada.", MensajeGeneral.TipoMensaje.Exito))
+                {
+                    int messageX = controlPosition.X + (controlInvocador.Width / 2) - (mensajeForm.Width / 2);
+                    int messageY = controlPosition.Y + controlInvocador.Height + 3;
+
+                    mensajeForm.StartPosition = FormStartPosition.Manual;
+                    mensajeForm.Location = new Point(messageX, messageY);
+                    mensajeForm.ShowDialog();
+                }
+            }
+            else
+            {
+                // Si no hay control invocador, mostrar en posición por defecto
+                MensajeGeneral.Mostrar($"Selección {formattedDate} guardada.", MensajeGeneral.TipoMensaje.Exito);
+            }
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
+
+        private Control ObtenerControlInvocador()
+        {
+            return this.ControlInvocador; // Devuelve el control que se configuró como invocador
+        }
+
+
+
+        private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
@@ -45,12 +80,25 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void CALENDARIO_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Haga click sobre año, luego mes, y finalice con el dia", MensajeGeneral.TipoMensaje.Informacion);
+            // Obtener la posición de la instancia del formulario CALENDARIO en pantalla
+            Point formularioPosicion = this.PointToScreen(Point.Empty);
 
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            // Mostrar un mensaje de ayuda
+            using (var mensajeForm = new MensajeGeneral("Haga click sobre año, luego mes, y finalice con el día.", MensajeGeneral.TipoMensaje.Informacion))
+            {
+                // Calcular posición centrada sobre el formulario CALENDARIO
+                int messageX = formularioPosicion.X + (this.Width / 2) - (mensajeForm.Width / 2);
+                int messageY = formularioPosicion.Y - mensajeForm.Height - 3; // Posicionar encima del formulario
+
+                mensajeForm.StartPosition = FormStartPosition.Manual;
+                mensajeForm.Location = new Point(messageX, messageY);
+                mensajeForm.ShowDialog();
+
+                // Cancelar el evento para que no se cierre el formulario
+                e.Cancel = true;
+            }
         }
+
 
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void Calendario_FormClosing(object sender, FormClosingEventArgs e)
@@ -72,30 +120,30 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        private void btn_Guardar_MouseHover(object sender, EventArgs e)
+        private void Btn_Guardar_MouseHover(object sender, EventArgs e)
         {
-            btn_Guardar.BackColor = Color.LimeGreen;
+            btn_Guardar.BackColor = System.Drawing.Color.LimeGreen;
             btn_Guardar.Font = new Font(btn_Guardar.Font, FontStyle.Bold);
 
         }
 
-        private void btn_Cancelar_MouseHover(object sender, EventArgs e)
+        private void Btn_Cancelar_MouseHover(object sender, EventArgs e)
         {
-            btn_Cancelar.BackColor = Color.LightCoral;
+            btn_Cancelar.BackColor = System.Drawing.Color.LightCoral;
             btn_Cancelar.Font = new Font(btn_Cancelar.Font, FontStyle.Bold);
 
         }
 
-        private void btn_Guardar_MouseLeave(object sender, EventArgs e)
+        private void Btn_Guardar_MouseLeave(object sender, EventArgs e)
         {
-            btn_Guardar.BackColor = Color.White;
+            btn_Guardar.BackColor = System.Drawing.Color.White;
             btn_Guardar.Font = new Font(btn_Cancelar.Font, FontStyle.Regular);
 
         }
 
-        private void btn_Cancelar_MouseLeave(object sender, EventArgs e)
+        private void Btn_Cancelar_MouseLeave(object sender, EventArgs e)
         {
-            btn_Cancelar.BackColor = Color.White;
+            btn_Cancelar.BackColor = System.Drawing.Color.White;
             btn_Cancelar.Font = new Font(btn_Cancelar.Font, FontStyle.Regular);
 
         }

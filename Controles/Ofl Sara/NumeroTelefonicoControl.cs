@@ -165,7 +165,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
 
                 // Dibuja la línea
-                e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
+                e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth-2/*para que quede mas pegado al masqued*/, endX - startX, lineWidth);
             }
         }
 

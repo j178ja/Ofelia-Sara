@@ -16,7 +16,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private int animationProgress;
         private bool isFocused;
         private bool showError;
-        private Color focusColor = Color.Blue;
+        private Color focusColor = Color.Transparent;//Se coloco transparente para que nos e vea cuando se carga el formulario
         private Color errorColor = Color.Red;
 
         // Propiedades para configurar el rango de años
@@ -263,15 +263,62 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
        {
             return ValidarCampos();
         }
-       
 
+
+        //private void CamposFecha_TextChanged(object sender, EventArgs e)
+        //{
+        //    showError = HasAnyError();
+        //    if (!showError && ValidarCampos())
+        //    {
+        //        CalcularAntiguedad();
+        //    }
+        //    Invalidate();
+        //}
         private void CamposFecha_TextChanged(object sender, EventArgs e)
         {
-            showError = HasAnyError();
-            if (!showError && ValidarCampos())
+            // Validar si los campos están completos
+            if (ValidarCampos())
             {
-                CalcularAntiguedad();
+                // Obtener la fecha seleccionada
+                DateTime? fechaSeleccionada = ObtenerFecha();
+                if (fechaSeleccionada.HasValue)
+                {
+                    // Validar si el nombre del control es de antiguedad o nacimiento"
+                    if (this.Name == "dateTimePicker_Antiguedad"|| this.Name == "dateTimePicker_FechaNacimiento")
+                    {
+                        // Comprobar si la fecha seleccionada es posterior a la fecha actual
+                        if (fechaSeleccionada.Value > DateTime.Now)
+                        {
+                            // Calcular la posición del control actual en la pantalla
+                            Point controlPosition = this.PointToScreen(Point.Empty);
+
+                            // Mostrar mensaje de advertencia
+                            using (var mensajeForm = new MensajeGeneral("La fecha no puede ser posterior a la fecha actual.", MensajeGeneral.TipoMensaje.Advertencia))
+                            {
+                                // Centrar el mensaje con respecto al control
+                                int messageX = controlPosition.X + (this.Width / 2) - (mensajeForm.Width / 2);
+                                int messageY = controlPosition.Y + this.Height + 3; // Posicionar justo debajo del control
+
+                                mensajeForm.StartPosition = FormStartPosition.Manual;
+                                mensajeForm.Location = new Point(messageX, messageY);
+                                mensajeForm.ShowDialog();
+                            }
+
+                            // Limpiar los campos y restaurar los placeholders
+                            ClearDate();
+                            RestorePlaceholders();
+                            return;
+                        }
+
+                    }
+
+                    // Calcular antigüedad si la fecha es válida
+                    CalcularAntiguedad();
+                }
             }
+
+            // Actualizar estado visual del subrayado general
+            showError = HasAnyError();
             Invalidate();
         }
 
@@ -343,8 +390,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
             return null;
         }
+        #endregion
 
-      
         #region Animación y Dibujado
         /// <summary>
         /// TIMER PARA CONTROLAR AVANCE DE SUBRAYADO
@@ -450,6 +497,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             using (var calendarForm = new CALENDARIO())
             {
+                calendarForm.ControlInvocador = this;
                 // Determinar si el botón está dentro de un control llamado "dateTimePicker_Antiguedad"
                 Control currentParent = this;
                 while (currentParent != null)
@@ -511,6 +559,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         public Action<int, int> OnCalcularAntiguedad;
 
+        public Control ControlInvocador { get; set; }
 
         public string TextoAsociado { get; set; }
 
@@ -525,7 +574,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
 
 
-        #endregion Metodos generales
+       
         //---------------------------------------------------------------------------
 
         private void ManejarAutocompletadoYNavegacion(object sender, KeyEventArgs e)

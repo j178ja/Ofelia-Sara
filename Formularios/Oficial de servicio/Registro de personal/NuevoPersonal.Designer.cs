@@ -172,7 +172,7 @@
             btn_Limpiar.Size = new System.Drawing.Size(88, 77);
             btn_Limpiar.TabIndex = 40;
             btn_Limpiar.UseVisualStyleBackColor = false;
-            btn_Limpiar.Click += btn_Limpiar_Click;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
             // btn_Guardar
             // 
@@ -185,7 +185,7 @@
             btn_Guardar.Size = new System.Drawing.Size(88, 77);
             btn_Guardar.TabIndex = 39;
             btn_Guardar.UseVisualStyleBackColor = false;
-            btn_Guardar.Click += btn_Guardar_Click;
+            btn_Guardar.Click += Btn_Guardar_Click;
             // 
             // panel_Destino
             // 
@@ -247,7 +247,7 @@
             btn_AmpliarReducir_DESTINO.Size = new System.Drawing.Size(36, 27);
             btn_AmpliarReducir_DESTINO.TabIndex = 152;
             btn_AmpliarReducir_DESTINO.UseVisualStyleBackColor = false;
-            btn_AmpliarReducir_DESTINO.Click += btn_AmpliarReducir_DESTINO_Click;
+            btn_AmpliarReducir_DESTINO.Click += Btn_AmpliarReducir_DESTINO_Click;
             // 
             // textBox_PartidoDependencia
             // 
@@ -319,7 +319,7 @@
             comboBox_Dependencia.TextValue = " ";
             comboBox_Dependencia.SelectedIndexChanged += ComboBox_Dependencia_SelectedIndexChanged;
             comboBox_Dependencia.TextChanged += ComboBox_Dependencia_TextChanged;
-            comboBox_Dependencia.Enter += textBox_DatosDependencia_Enter;
+            comboBox_Dependencia.Enter += TextBox_DatosDependencia_Enter;
             // 
             // label_Dependencia
             // 
@@ -477,7 +477,7 @@
             btn_AmpliarReducir_ARMAMENTO.Size = new System.Drawing.Size(36, 27);
             btn_AmpliarReducir_ARMAMENTO.TabIndex = 153;
             btn_AmpliarReducir_ARMAMENTO.UseVisualStyleBackColor = false;
-            btn_AmpliarReducir_ARMAMENTO.Click += btn_AmpliarReducir_ARMAMENTO_Click;
+            btn_AmpliarReducir_ARMAMENTO.Click += Btn_AmpliarReducir_ARMAMENTO_Click;
             // 
             // textBox_ChalecoNumero
             // 
@@ -782,7 +782,7 @@
             btn_AmpliarReducir_REVISTA.Size = new System.Drawing.Size(36, 27);
             btn_AmpliarReducir_REVISTA.TabIndex = 154;
             btn_AmpliarReducir_REVISTA.UseVisualStyleBackColor = false;
-            btn_AmpliarReducir_REVISTA.Click += btn_AmpliarReducir_SITUACIONREVISTA_Click;
+            btn_AmpliarReducir_REVISTA.Click += Btn_AmpliarReducir_SITUACIONREVISTA_Click;
             // 
             // label_Meses
             // 
@@ -909,7 +909,7 @@
             dateTimePicker_Antiguedad.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             dateTimePicker_Antiguedad.TabIndex = 123;
             dateTimePicker_Antiguedad.TextoAsociado = null;
-            dateTimePicker_Antiguedad.Load += dateTimePicker_Antiguedad_Load;
+            dateTimePicker_Antiguedad.Load += DateTimePicker_Antiguedad_Load;
             // 
             // label_Ingreso
             // 
@@ -1125,7 +1125,7 @@
             btn_AmpliarReducir_DATOSPERSONALES.Size = new System.Drawing.Size(36, 27);
             btn_AmpliarReducir_DATOSPERSONALES.TabIndex = 155;
             btn_AmpliarReducir_DATOSPERSONALES.UseVisualStyleBackColor = false;
-            btn_AmpliarReducir_DATOSPERSONALES.Click += btn_AmpliarReducir_DATOSPERSONALES_Click;
+            btn_AmpliarReducir_DATOSPERSONALES.Click += Btn_AmpliarReducir_DATOSPERSONALES_Click;
             // 
             // textBox_Apellido
             // 
@@ -1348,7 +1348,7 @@
             dateTimePicker_FechaNacimiento.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             dateTimePicker_FechaNacimiento.TabIndex = 163;
             dateTimePicker_FechaNacimiento.TextoAsociado = null;
-            dateTimePicker_FechaNacimiento.Load += dateTimePicker_FechaNacimiento_Load;
+            dateTimePicker_FechaNacimiento.Load += DateTimePicker_FechaNacimiento_Load;
             // 
             // textBox_LugarNacimiento
             // 
@@ -1451,7 +1451,7 @@
             textBox_Edad.TabIndex = 154;
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
-            textBox_Edad.KeyPress += textBox_Edad_KeyPress;
+            textBox_Edad.KeyPress += SoloNumeros_KeyPress;
             // 
             // textBox_Dni
             // 
@@ -1476,7 +1476,7 @@
             textBox_Dni.TabIndex = 153;
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
-            textBox_Dni.KeyPress += textBox_Dni_KeyPress;
+            textBox_Dni.KeyPress += SoloNumeros_KeyPress;
             // 
             // textBox_Nombre
             // 
@@ -1560,7 +1560,7 @@
             btn_AgregarPersonal.Text = "+";
             toolTip1.SetToolTip(btn_AgregarPersonal, "Buscar por legajo policial");
             btn_AgregarPersonal.UseVisualStyleBackColor = false;
-            btn_AgregarPersonal.Click += btn_AgregarPersonal_Click;
+            btn_AgregarPersonal.Click += Btn_AgregarPersonal_Click;
             // 
             // textBox_NumeroLegajo
             // 
@@ -1585,8 +1585,8 @@
             textBox_NumeroLegajo.TabIndex = 34;
             textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
-            textBox_NumeroLegajo.TextChanged += textBox_NumeroLegajo_TextChanged;
-            textBox_NumeroLegajo.KeyPress += textBox_NumeroLegajo_KeyPress;
+            textBox_NumeroLegajo.TextChanged += TextBox_NumeroLegajo_TextChanged;
+            textBox_NumeroLegajo.KeyPress += TextBox_NumeroLegajo_KeyPress;
             // 
             // lbl_Legajo
             // 

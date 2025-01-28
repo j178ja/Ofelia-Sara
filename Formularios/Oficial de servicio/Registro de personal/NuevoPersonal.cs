@@ -39,12 +39,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             InitializeComponent();
             // Asigna el valor recibido al TextBox correspondiente en NuevoPersonal
-            textBox_NumeroLegajo.Text = numeroLegajo;
+            textBox_NumeroLegajo.TextValue = numeroLegajo;
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            configurarTextoEnControles();//para formato de texto que ingresa
+       
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
 
@@ -83,14 +83,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
             //---Inicializar para desactivar los btn AGREGAR PERSONAL RATIFICACION 
-            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);
 
 
             //para que se despliege la lista en los comboBox ESCALAFON -JERARQUIA
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-            //  ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon.InnerTextBox, comboBox_Jerarquia.InnerTextBox);
-            // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
+              ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+         
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
@@ -102,17 +102,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             comboBox_EstadoCivil.DropDownStyle = CustomComboBoxStyle.DropDownList;//descctivar ingreso de datos en estado civil
           
 
-            //numeroTelefonicoControl1.ControlWidth = 159;
-            //numeroTelefonicoControl2.ControlWidth = 159;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para verificar informaciòn.", "Verificar datos de Legajo Ingresado.");
-            /*
+            
                         ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DATOSPERSONALES, "Ampliar/Reducir DATOS PERSONALES.");
                         ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_REVISTA, "Ampliar/Reducir SITUACIÓN DE REVISTA.");
                         ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_ARMAMENTO, "Ampliar/Reducir ARMAMENTO.");
                         ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DESTINO, "Ampliar/Reducir DESTINO LABORAL.");
-            */
+            
             //traer label al frent
             label_TITULO.BringToFront();
             label_SituacionRevista.BringToFront();
@@ -140,7 +138,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                 // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                 btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
-                btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(552, 1);
+                btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(645, 1);
                 // Ocultar todos los controles excepto el botón de ampliación/reducción
                 foreach (Control control in panel_Detalle_Armamento.Controls)
                 {
@@ -163,6 +161,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             ValidarPanelArmamento();
             ValidarPanelDestino();
             //.........................................................
+            ConfigurarTextoEnControles();//para formato de texto que ingresa
         }
         //--- FIN LOAD----------
 
@@ -207,7 +206,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
@@ -224,7 +223,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite dígitos y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -238,30 +237,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <summary>
         /// METODO PARA APLICAR FORMATO A TEXTO DE CONTROLES
         /// </summary>
-        private void configurarTextoEnControles()
+        private void ConfigurarTextoEnControles()
         {
-            MayusculaSola.AplicarAControl(textBox_Nombre);
-            MayusculaSola.AplicarAControl(textBox_Apellido);
-            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
-            MayusculaSola.AplicarAControl(textBox_LocalidadPnal);
-            MayusculaSola.AplicarAControl(textBox_PartidoPnal);
-            MayusculaSola.AplicarAControl(textBox_Funcion);
-            MayusculaSola.AplicarAControl(textBox_LocalidadDependencia);
-            MayusculaSola.AplicarAControl(textBox_PartidoDependencia);
+            MayusculaSola.AplicarAControl(textBox_Nombre.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_Apellido.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_LugarNacimiento.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_LocalidadPnal.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_PartidoPnal.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_Funcion.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_LocalidadDependencia.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_PartidoDependencia.InnerTextBox);
 
             MayusculaSola.AplicarAControl(comboBox_Nacionalidad.InnerTextBox);
 
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia.InnerTextBox);
 
-            MayusculaYnumeros.AplicarAControl(textBox_DomicilioPnal);
-            MayusculaYnumeros.AplicarAControl(textBox_ArmaMarca);
-            MayusculaYnumeros.AplicarAControl(textBox_ArmaModelo);
-            MayusculaYnumeros.AplicarAControl(textBox_ArmaNumero);
+            MayusculaYnumeros.AplicarAControl(textBox_DomicilioPnal.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(textBox_ArmaMarca.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(textBox_ArmaModelo.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(textBox_ArmaNumero.InnerTextBox);
 
-            MayusculaYnumeros.AplicarAControl(textBox_ChalecoMarca);
-            MayusculaYnumeros.AplicarAControl(textBox_ChalecoModelo);
-            MayusculaYnumeros.AplicarAControl(textBox_ChalecoNumero);
-            MayusculaYnumeros.AplicarAControl(textBox_DomicilioDependencia);
+            MayusculaYnumeros.AplicarAControl(textBox_ChalecoMarca.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(textBox_ChalecoModelo.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(textBox_ChalecoNumero.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(textBox_DomicilioDependencia.InnerTextBox);
 
             ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
             ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
@@ -269,11 +268,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             ClaseNumeros.AplicarFormatoYLimite(textBox_AntiguedadMeses, 2);
         }
         /// <summary>
-        /// VALIDACION PARA NUMERO DE DNI - SOLO NUMEROS
+        /// VALIDACION  SOLO NUMEROS APLICADA A CAMPO DNI Y EDAD
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -282,19 +281,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         }
 
 
-        /// <summary>
-        /// VALIDACION PARA CAMPO EDAD
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
         /// <summary>
         /// CARGA LOS DATOS DE DEPENDENCIA
         /// </summary>
@@ -313,7 +299,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
             // Verifica si el texto del ComboBox está vacío
-            if (string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_Dependencia.TextValue))
             {
                 LimpiarTextBoxes(); // Limpia los TextBox si no hay texto
             }
@@ -347,9 +333,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                             {
                                 if (lector.Read())
                                 {
-                                    textBox_DomicilioDependencia.Text = lector["Direccion"].ToString();
-                                    textBox_LocalidadDependencia.Text = lector["Localidad"].ToString();
-                                    textBox_PartidoDependencia.Text = lector["Partido"].ToString();
+                                    textBox_DomicilioDependencia.TextValue = lector["Direccion"].ToString();
+                                    textBox_LocalidadDependencia.TextValue = lector["Localidad"].ToString();
+                                    textBox_PartidoDependencia.TextValue = lector["Partido"].ToString();
 
                                     // Establecer los TextBox como no editables
                                     textBox_DomicilioDependencia.ReadOnly = true;
@@ -394,7 +380,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_DatosDependencia_Enter(object sender, EventArgs e)
+        private void TextBox_DatosDependencia_Enter(object sender, EventArgs e)
         {
             if (textBox_DomicilioDependencia.ReadOnly) // se dejo con ese textBox ya que no es necesario especificar uno por uno
             {
@@ -408,7 +394,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -416,10 +402,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 Personal personal = new Personal
                 {
                     // Si el DNI está vacío, asignamos un valor predeterminado o lo dejamos como null
-                    DNI = string.IsNullOrEmpty(textBox_Dni.Text) ? null : textBox_Dni.Text,
+                    DNI = string.IsNullOrEmpty(textBox_Dni.TextValue) ? null : textBox_Dni.TextValue,
 
                     // Si el Domicilio está vacío, asignamos un valor predeterminado o lo dejamos como null
-                    Domicilio = string.IsNullOrEmpty(textBox_DomicilioPnal.Text) ? null : textBox_DomicilioPnal.Text,
+                    Domicilio = string.IsNullOrEmpty(textBox_DomicilioPnal.TextValue) ? null : textBox_DomicilioPnal.TextValue,
 
                     // Verificamos si el comboBox tiene una selección válida
                     Nacionalidad = comboBox_Nacionalidad.SelectedItem != null ? comboBox_Nacionalidad.SelectedItem.ToString() : null,
@@ -427,7 +413,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                     Jerarquia = comboBox_Jerarquia.SelectedItem != null ? comboBox_Jerarquia.SelectedItem.ToString() : null,
 
                     // Si la función está vacía, asignamos un valor predeterminado o lo dejamos como null
-                    Funcion = string.IsNullOrEmpty(textBox_Funcion.Text) ? null : textBox_Funcion.Text,
+                    Funcion = string.IsNullOrEmpty(textBox_Funcion.TextValue) ? null : textBox_Funcion.TextValue,
                 };
 
                 // Llamar al método UpdatePersonal para actualizar los datos en la base de datos
@@ -475,9 +461,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
-            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);//habilita el btn_AgregarPersonal en caso de tener texto
         }
 
         /// <summary>
@@ -485,10 +471,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_AgregarPersonal_Click(object sender, EventArgs e)
+        private void Btn_AgregarPersonal_Click(object sender, EventArgs e)
         {
             // Validar que el texto no sea menor a 6 caracteres
-            string textoFormateado = textBox_NumeroLegajo.Text;
+            string textoFormateado = textBox_NumeroLegajo.TextValue;
             if (textoFormateado.Length < 6)
             {
                 MensajeGeneral.Mostrar("El número no corresponde a un número de legajo válido, verifique que el número sea correcto.", MensajeGeneral.TipoMensaje.Advertencia);
@@ -514,14 +500,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                         // Verificar si se obtuvo el DTO correctamente
                         if (personalDTO != null)
                         { // Asignar los valores del DTO a los controles del formulario
-                            textBox_Dni.Text = personalDTO.DNI ?? "00.000.000";
-                            textBox_Nombre.Text = personalDTO.Nombres;
-                            textBox_Apellido.Text = personalDTO.Apellido;
+                            textBox_Dni.TextValue = personalDTO.DNI ?? "00.000.000";
+                            textBox_Nombre.TextValue = personalDTO.Nombres;
+                            textBox_Apellido.TextValue = personalDTO.Apellido;
 
 
-                            textBox_DomicilioPnal.Text = personalDTO.Domicilio ?? "NO ESPECIFICADO";
-                            textBox_LocalidadPnal.Text = personalDTO.Localidad ?? "NO ESPECIFICADO";
-                            textBox_PartidoPnal.Text = personalDTO.Partido ?? "NO ESPECIFICADO";
+                            textBox_DomicilioPnal.TextValue = personalDTO.Domicilio ?? "NO ESPECIFICADO";
+                            textBox_LocalidadPnal.TextValue = personalDTO.Localidad ?? "NO ESPECIFICADO";
+                            textBox_PartidoPnal.TextValue = personalDTO.Partido ?? "NO ESPECIFICADO";
                             comboBox_Nacionalidad.SelectedItem = personalDTO.Nacionalidad ?? "NO ESPECIFICADO";
                             if (comboBox_Nacionalidad.SelectedItem == null && comboBox_Nacionalidad.Items.Count > 0)
                                 comboBox_Nacionalidad.SelectedIndex = 0;  // O establecer un valor específico
@@ -534,14 +520,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                             if (comboBox_Jerarquia.SelectedItem == null && comboBox_Jerarquia.Items.Count > 0)
                                 comboBox_Jerarquia.SelectedIndex = 0;
 
-                            textBox_Funcion.Text = personalDTO.Funcion;
+                            textBox_Funcion.TextValue = personalDTO.Funcion;
                             comboBox_Dependencia.SelectedItem = personalDTO.Dependencia ?? "NO ESPECIFICADO";
                             if (comboBox_Dependencia.SelectedItem == null && comboBox_Dependencia.Items.Count > 0)
                                 comboBox_Dependencia.SelectedIndex = 0;
 
-                            textBox_LocalidadDependencia.Text = personalDTO.LocalidadDependencia;
-                            textBox_DomicilioDependencia.Text = personalDTO.Domicilio_Dependencia ?? "NO ESPECIFICADO";
-                            textBox_PartidoDependencia.Text = personalDTO.Partido_Dependencia ?? "NO ESPECIFICADO";
+                            textBox_LocalidadDependencia.TextValue = personalDTO.LocalidadDependencia;
+                            textBox_DomicilioDependencia.TextValue = personalDTO.Domicilio_Dependencia ?? "NO ESPECIFICADO";
+                            textBox_PartidoDependencia.TextValue = personalDTO.Partido_Dependencia ?? "NO ESPECIFICADO";
 
 
                         }
@@ -564,8 +550,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="meses"></param>
         public void MostrarAntiguedad(int años, int meses)
         {
-            textBox_AntiguedadAños.Text = años.ToString();
-            textBox_AntiguedadMeses.Text = meses.ToString();
+            textBox_AntiguedadAños.TextValue = años.ToString();
+            textBox_AntiguedadMeses.TextValue = meses.ToString();
         }
 
         //----------------------------------------------------------------------------------
@@ -575,7 +561,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void btn_AmpliarReducir_DATOSPERSONALES_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_DATOSPERSONALES_Click(object sender, EventArgs e)
         {
             if (panel_DatosPersonales is PanelConBordeNeon panelConNeon)
             {
@@ -591,7 +577,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_DatosPersonales;
-                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(554, 1);
+                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(646,1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -631,7 +617,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_Detalle_Personal;
-                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(554, 0);
+                    btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(646, 0);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_Detalle_Personal.Controls)
@@ -653,7 +639,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         }
 
-        private void btn_AmpliarReducir_SITUACIONREVISTA_Click(object sender, EventArgs e)
+        /// <summary>
+        /// METODO AMPLIAR O REDUCIR SITUACION DE REVISTA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_AmpliarReducir_SITUACIONREVISTA_Click(object sender, EventArgs e)
         {
             if (panel_Revista is PanelConBordeNeon panelConNeon)
             {
@@ -669,7 +660,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_REVISTA.Parent = panel_Revista;
-                    btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(554, 1);
+                    btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(646, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -709,7 +700,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_REVISTA.Parent = panel_Detalle_Revista;
-                    btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(554, 0);
+                    btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(646, 0);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_Detalle_Revista.Controls)
@@ -731,8 +722,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         }
 
-
-        private void btn_AmpliarReducir_ARMAMENTO_Click(object sender, EventArgs e)
+        /// <summary>
+        /// METODO PARA AMPLIAR O REDUCIR PANEL ARMAMENTO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_AmpliarReducir_ARMAMENTO_Click(object sender, EventArgs e)
         {
             if (panel_Armamento is PanelConBordeNeon panelConNeon)
             {
@@ -748,7 +743,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
-                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(554, 1);
+                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(645, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -788,7 +783,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_ARMAMENTO.Parent = panel_Detalle_Armamento;
-                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(554, 1);
+                    btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(645, 1);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_Detalle_Armamento.Controls)
@@ -809,7 +804,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
         }
 
-        private void btn_AmpliarReducir_DESTINO_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_DESTINO_Click(object sender, EventArgs e)
         {
             if (panel_Destino is PanelConBordeNeon panelConNeon)
             {
@@ -825,7 +820,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Cambiar la posición y el padre del botón al panel
                     btn_AmpliarReducir_DESTINO.Parent = panel_Destino;
-                    btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(554, 1);
+                    btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(646, 1);
 
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
@@ -865,7 +860,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                     // Mover el botón al panel_DatosEspecificos
                     btn_AmpliarReducir_DESTINO.Parent = panel_Detalle_Destino;
-                    btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(554, 1);
+                    btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(646, 1);
 
                     // Mostrar todos los controles
                     foreach (Control control in panel_Detalle_Destino.Controls)
@@ -885,18 +880,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 AjustarTamanoFormulario();
             }
         }
-        private bool VerificarCamposEnPanel(Panel panel)
+        private static bool VerificarCamposEnPanel(Panel panel)
         {
             foreach (Control control in panel.Controls)
             {
                 // Verificar TextBox
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
                 {
                     return false; // Campo TextBox incompleto
                 }
 
                 // Verificar ComboBox
-                if (control is ComboBox comboBox && comboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(comboBox.Text))
+                if (control is CustomComboBox customcomboBox && customcomboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customcomboBox.TextValue))
                 {
                     return false; // Campo ComboBox incompleto
                 }
@@ -929,17 +924,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             bool camposValidos = true;
 
-
-
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_Detalle_Personal.Controls)
             {
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
                 {
                     camposValidos = false;
                     break; // Si encontramos un campo vacío, no es necesario seguir buscando
                 }
-                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
                 {
                     camposValidos = false;
                     break; // Si encontramos un ComboBox sin selección o sin texto, salimos
@@ -984,12 +977,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_Detalle_Revista.Controls)
             {
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
                 {
                     camposValidos = false;
                     break; // Si encontramos un campo vacío, no es necesario seguir buscando
                 }
-                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
                 {
                     camposValidos = false;
                     break; // Si encontramos un ComboBox sin selección o sin texto, salimos
@@ -1035,12 +1028,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_Detalle_Armamento.Controls)
             {
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
                 {
                     camposValidos = false;
                     break; // Si encontramos un campo vacío, no es necesario seguir buscando
                 }
-                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
                 {
                     camposValidos = false;
                     break; // Si encontramos un ComboBox sin selección o sin texto, salimos
@@ -1085,12 +1078,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_Detalle_Destino.Controls)
             {
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
                 {
                     camposValidos = false;
                     break; // Si encontramos un campo vacío, no es necesario seguir buscando
                 }
-                else if (control is ComboBox comboBox && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.Text)))
+                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
                 {
                     camposValidos = false;
                     break; // Si encontramos un ComboBox sin selección o sin texto, salimos
@@ -1169,17 +1162,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
 
             // Ajustar posición de panel_ControlesInferiores
-
             panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, posicionVertical);
             posicionVertical += panel_ControlesInferiores.Height;
-
 
             // Ajustar la altura de panel1 para que se ajuste al contenido visible
             panel1.Height = posicionVertical;
 
             // Ajustar la altura del formulario sumando un margen adicional de 20 px
             this.Height = panel1.Location.Y + panel1.Height + 75;
-
 
 
             // Activar scroll si la altura del formulario supera los 800 píxeles
@@ -1193,20 +1183,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
         }
 
-        private void dateTimePicker_FechaNacimiento_Load(object sender, EventArgs e)
+        private void DateTimePicker_FechaNacimiento_Load(object sender, EventArgs e)
         {
             dateTimePicker_FechaNacimiento.TextoAsociado = "Fecha Nacimiento";
         }
 
-        private void dateTimePicker_Antiguedad_Load(object sender, EventArgs e)
+        private void DateTimePicker_Antiguedad_Load(object sender, EventArgs e)
         {
             dateTimePicker_Antiguedad.TextoAsociado = "Fecha Ingreso";
 
         }
-
-
-
-        //----------------------------------------------------------------------------------
 
 
 

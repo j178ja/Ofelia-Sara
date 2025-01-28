@@ -41,9 +41,9 @@
             btn_Guardar.TabIndex = 1;
             btn_Guardar.Text = "GUARDAR";
             btn_Guardar.UseVisualStyleBackColor = true;
-            btn_Guardar.Click += btn_Guardar_Click;
-            btn_Guardar.MouseLeave += btn_Guardar_MouseLeave;
-            btn_Guardar.MouseHover += btn_Guardar_MouseHover;
+            btn_Guardar.Click += Btn_Guardar_Click;
+            btn_Guardar.MouseLeave += Btn_Guardar_MouseLeave;
+            btn_Guardar.MouseHover += Btn_Guardar_MouseHover;
             // 
             // btn_Cancelar
             // 
@@ -56,9 +56,9 @@
             btn_Cancelar.TabIndex = 2;
             btn_Cancelar.Text = "CANCELAR";
             btn_Cancelar.UseVisualStyleBackColor = true;
-            btn_Cancelar.Click += btn_Cancelar_Click;
-            btn_Cancelar.MouseLeave += btn_Cancelar_MouseLeave;
-            btn_Cancelar.MouseHover += btn_Cancelar_MouseHover;
+            btn_Cancelar.Click += Btn_Cancelar_Click;
+            btn_Cancelar.MouseLeave += Btn_Cancelar_MouseLeave;
+            btn_Cancelar.MouseHover += Btn_Cancelar_MouseHover;
             // 
             // CALENDARIO
             // 
