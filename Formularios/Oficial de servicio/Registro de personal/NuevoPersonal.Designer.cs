@@ -813,7 +813,7 @@
             textBox_AntiguedadMeses.ReadOnly = false;
             textBox_AntiguedadMeses.SelectionStart = 0;
             textBox_AntiguedadMeses.ShowError = false;
-            textBox_AntiguedadMeses.Size = new System.Drawing.Size(34, 23);
+            textBox_AntiguedadMeses.Size = new System.Drawing.Size(34, 21);
             textBox_AntiguedadMeses.TabIndex = 129;
             textBox_AntiguedadMeses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_AntiguedadMeses.TextValue = "";
@@ -846,7 +846,7 @@
             textBox_AntiguedadAños.ReadOnly = false;
             textBox_AntiguedadAños.SelectionStart = 0;
             textBox_AntiguedadAños.ShowError = false;
-            textBox_AntiguedadAños.Size = new System.Drawing.Size(34, 23);
+            textBox_AntiguedadAños.Size = new System.Drawing.Size(34, 21);
             textBox_AntiguedadAños.TabIndex = 127;
             textBox_AntiguedadAños.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_AntiguedadAños.TextValue = "";
@@ -855,7 +855,7 @@
             // 
             label_Antiguedad.AutoSize = true;
             label_Antiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Antiguedad.Location = new System.Drawing.Point(330, 96);
+            label_Antiguedad.Location = new System.Drawing.Point(338, 97);
             label_Antiguedad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Antiguedad.Name = "label_Antiguedad";
             label_Antiguedad.Size = new System.Drawing.Size(102, 15);
@@ -916,7 +916,7 @@
             // 
             label_Ingreso.AutoSize = true;
             label_Ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Ingreso.Location = new System.Drawing.Point(10, 96);
+            label_Ingreso.Location = new System.Drawing.Point(10, 92);
             label_Ingreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Ingreso.Name = "label_Ingreso";
             label_Ingreso.Size = new System.Drawing.Size(125, 15);
@@ -1370,7 +1370,7 @@
             textBox_LugarNacimiento.ReadOnly = false;
             textBox_LugarNacimiento.SelectionStart = 0;
             textBox_LugarNacimiento.ShowError = false;
-            textBox_LugarNacimiento.Size = new System.Drawing.Size(302, 23);
+            textBox_LugarNacimiento.Size = new System.Drawing.Size(302, 21);
             textBox_LugarNacimiento.TabIndex = 155;
             textBox_LugarNacimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_LugarNacimiento.TextValue = "";
@@ -1449,7 +1449,7 @@
             textBox_Edad.ReadOnly = false;
             textBox_Edad.SelectionStart = 0;
             textBox_Edad.ShowError = false;
-            textBox_Edad.Size = new System.Drawing.Size(69, 23);
+            textBox_Edad.Size = new System.Drawing.Size(69, 21);
             textBox_Edad.TabIndex = 154;
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
@@ -1589,7 +1589,7 @@
             textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
             textBox_NumeroLegajo.TextChanged += TextBox_NumeroLegajo_TextChanged;
-            textBox_NumeroLegajo.KeyPress += TextBox_NumeroLegajo_KeyPress;
+            textBox_NumeroLegajo.KeyPress += SoloNumeros_KeyPress;
             // 
             // lbl_Legajo
             // 
