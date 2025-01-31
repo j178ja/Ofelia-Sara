@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Controles.General;
+﻿using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Drawing;
@@ -7,110 +8,111 @@ using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
-{ 
-    public partial class NuevaCaratulaControl : UserControl
 {
-    #region VARIABLES
-    private Label Label_Caratula;
-    public CustomTextBox TextBox_Caratula { get; private set; }
-    public static int ContadorCaratulas { get; set; } = 1; // Inicia en I
-    #endregion
-
-    public NuevaCaratulaControl()
+    public partial class NuevaCaratulaControl : UserControl
     {
-        InitializeComponent();
-        InicializarControles(); // Asegura que Label_Caratula esté inicializado
-    }
+        #region VARIABLES
+        private Label Label_Caratula;
+        public CustomTextBox TextBox_Caratula { get; private set; }
+        public static int ContadorCaratulas { get; set; } = 1; // Inicia en I
+        #endregion
 
-    private void InicializarControles()
-    {
-        Label_Caratula = new Label
+        public NuevaCaratulaControl()
         {
-            AutoSize = true,
-            Font = new Font("Arial", 10, FontStyle.Bold),
-            Location = new Point(10, 5), // Ajusta la ubicación del label
-            Text = "Carátula " + ConvertToRoman(ContadorCaratulas)
-        };
+            InitializeComponent();
+            InicializarControles(); // Asegura que Label_Caratula esté inicializado
 
-        this.Controls.Add(Label_Caratula);
-    }
-
-    public static class NuevaCaratulaControlHelper
-    {
-        public static void AgregarNuevoControl(Panel panel)
-        {
-            NuevaCaratulaControl nuevoControl = new NuevaCaratulaControl();
-
-            int nuevaPosicionY = ObtenerPosicionSiguiente(panel);
-            nuevoControl.Location = new Point(0, nuevaPosicionY);
-
-            // Asignar número romano
-            nuevoControl.ActualizarLabel(ContadorCaratulas);
-            ContadorCaratulas++;
-
-            panel.Controls.Add(nuevoControl);
-            AjustarAlturaPanel(panel);
         }
 
-        private static int ObtenerPosicionSiguiente(Panel panel)
+        private void InicializarControles()
         {
-            if (panel.Controls.Count == 0) return 2;
-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            return ultimoControl.Bottom + 2;
+            Label_Caratula = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                Location = new Point(10, 5), // Ajusta la ubicación del label
+                Text = "Carátula " + ConvertToRoman(ContadorCaratulas)
+            };
+
+            this.Controls.Add(Label_Caratula);
         }
 
-        public static void AjustarAlturaPanel(Panel panel)
+        public static class NuevaCaratulaControlHelper
         {
-            if (panel.Controls.Count == 0) return;
+            public static void AgregarNuevoControl(Panel panel)
+            {
+                NuevaCaratulaControl nuevoControl = new NuevaCaratulaControl();
 
-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];
-            int nuevaAltura = ultimoControl.Bottom + 2;
+                int nuevaPosicionY = ObtenerPosicionSiguiente(panel);
+                nuevoControl.Location = new Point(0, nuevaPosicionY);
 
-            panel.Height = nuevaAltura;
+                // Asignar número romano
+                nuevoControl.ActualizarLabel(ContadorCaratulas);
+                ContadorCaratulas++;
+
+                panel.Controls.Add(nuevoControl);
+                AjustarAlturaPanel(panel);
+            }
+
+            private static int ObtenerPosicionSiguiente(Panel panel)
+            {
+                if (panel.Controls.Count == 0) return 2;
+                var ultimoControl = panel.Controls[panel.Controls.Count - 1];
+                return ultimoControl.Bottom + 2;
+            }
+
+            public static void AjustarAlturaPanel(Panel panel)
+            {
+                if (panel.Controls.Count == 0) return;
+
+                var ultimoControl = panel.Controls[panel.Controls.Count - 1];
+                int nuevaAltura = ultimoControl.Bottom + 2;
+
+                panel.Height = nuevaAltura;
+            }
         }
-    }
 
-    /// <summary>
-    /// Convierte un número a su representación en números romanos.
-    /// </summary>
-    private static string ConvertToRoman(int number)
-    {
-        if (number < 1 || number > 20)
+        /// <summary>
+        /// Convierte un número a su representación en números romanos.
+        /// </summary>
+        private static string ConvertToRoman(int number)
         {
-            MensajeGeneral.Mostrar("El número de carátula se encuentra fuera del rango.", MensajeGeneral.TipoMensaje.Advertencia);
-            return number.ToString();
-        }
+            if (number < 1 || number > 20)
+            {
+                MensajeGeneral.Mostrar("El número de carátula se encuentra fuera del rango.", MensajeGeneral.TipoMensaje.Advertencia);
+                return number.ToString();
+            }
 
-        string[] romanos = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+            string[] romanos = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
                              "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX" };
-        return romanos[number - 1]; // Se ajusta al índice del array
-    }
-
-    /// <summary>
-    /// Método para actualizar los números de los labels en los controles del panel.
-    /// </summary>
-    private static void ActualizarLabels(Panel panel)
-    {
-        var controlesOrdenados = panel.Controls
-            .OfType<NuevaCaratulaControl>()
-            .OrderBy(c => c.Location.Y)
-            .ToList();
-
-        int contador = 1;
-        foreach (var control in controlesOrdenados)
-        {
-            control.ActualizarLabel(contador);
-            contador++;
+            return romanos[number - 1]; // Se ajusta al índice del array
         }
-    }
 
-    public void ActualizarLabel(int nuevoNumero)
-    {
-        if (Label_Caratula != null)
+        /// <summary>
+        /// Método para actualizar los números de los labels en los controles del panel.
+        /// </summary>
+        private static void ActualizarLabels(Panel panel)
         {
-            Label_Caratula.Text = "Carátula " + ConvertToRoman(nuevoNumero);
+            var controlesOrdenados = panel.Controls
+                .OfType<NuevaCaratulaControl>()
+                .OrderBy(c => c.Location.Y)
+                .ToList();
+
+            int contador = 1;
+            foreach (var control in controlesOrdenados)
+            {
+                control.ActualizarLabel(contador);
+                contador++;
+            }
         }
-    }
+
+        public void ActualizarLabel(int nuevoNumero)
+        {
+            if (Label_Caratula != null)
+            {
+                Label_Caratula.Text = "Carátula " + ConvertToRoman(nuevoNumero);
+            }
+        }
 
         /// <summary>
         //        /// BOTON ELIMINAR
@@ -151,6 +153,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
+          //  MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             if (sender is CustomTextBox customTextBox)
             {
                 // Guarda la posición actual del cursor
@@ -179,6 +182,23 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 if (ctrl.Location.Y > posicionY)
                 {
                     ctrl.Location = new Point(ctrl.Location.X, ctrl.Location.Y - this.Height - 2);
+                }
+            }
+        }
+
+        private void TextBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir letras, números, espacios y caracteres de control
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza caracteres no válidos.
+            }
+            else
+            {
+                // Convierte letras a mayúsculas y mantiene números y espacios sin cambios
+                if (char.IsLetter(e.KeyChar))
+                {
+                    e.KeyChar = char.ToUpper(e.KeyChar);
                 }
             }
         }

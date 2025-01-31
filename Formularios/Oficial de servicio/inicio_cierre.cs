@@ -161,6 +161,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+            ConvertirACamelCase.Convertir(comboBox_DeptoJudicial.InnerTextBox.Text);
+
         }
 
         /// <summary>

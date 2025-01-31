@@ -70,6 +70,7 @@
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
             textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;
+            textBox_Caratula.KeyPress += TextBox_Caratula_KeyPress;
             // 
             // btn_EliminarControl
             // 
