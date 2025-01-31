@@ -1,6 +1,7 @@
 ﻿/*ESTA CLASE PERMITE EL INGRESO DE TEXTO, ESPACIOS Y NUMEROS,IGNORANDO CARACTERES ESPECIALES
   SE USARA ESPECIALEMENTE EN FORMULARIOS DE AGREGAR SECRETARIO E INSTRUCTOR*/
 
+using Ofelia_Sara.Controles.General;
 using System;
 using System.Text;
 using System.Windows.Forms;
@@ -14,13 +15,13 @@ namespace Ofelia_Sara.Clases.General.Texto
             if (control == null)
                 throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
 
-            if (control is TextBox textBox)
+            if (control is CustomTextBox customtextBox)
             {
-                ConfigurarTextBox(textBox);
+                ConfigurarTextBox(customtextBox);
             }
-            else if (control is ComboBox comboBox)
+            else if (control is CustomComboBox customComboBox)
             {
-                ConfigurarComboBox(comboBox);
+                ConfigurarComboBox(customComboBox);
             }
             else if (control.HasChildren)
             {
@@ -31,11 +32,11 @@ namespace Ofelia_Sara.Clases.General.Texto
             }
         }
 
-        private static void ConfigurarTextBox(TextBox textBox)
+        private static void ConfigurarTextBox(CustomTextBox customTextBox)
         {
-            textBox.TextChanged += (sender, e) =>
+            customTextBox.TextChanged += (sender, e) =>
             {
-                TextBox tb = sender as TextBox;
+                CustomTextBox tb = sender as CustomTextBox;
                 if (tb != null)
                 {
                     string textoConvertido = ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
@@ -45,9 +46,9 @@ namespace Ofelia_Sara.Clases.General.Texto
             };
         }
 
-        private static void ConfigurarComboBox(ComboBox comboBox)
+        private static void ConfigurarComboBox(CustomComboBox customComboBox)
         {
-            comboBox.KeyPress += (sender, e) =>
+            customComboBox.KeyPress += (sender, e) =>
             {
                 if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
                 {
@@ -60,7 +61,7 @@ namespace Ofelia_Sara.Clases.General.Texto
             };
         }
 
-        private static string ConvertirAMayusculasIgnorandoEspeciales(string input)
+        public static string ConvertirAMayusculasIgnorandoEspeciales(string input)
         {
             if (input == null)
                 throw new ArgumentNullException(nameof(input));

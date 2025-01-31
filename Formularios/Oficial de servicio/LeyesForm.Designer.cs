@@ -61,7 +61,7 @@
             label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(120, -10);
+            label_TITULO.Location = new System.Drawing.Point(124, -16);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
             label_TITULO.Size = new System.Drawing.Size(272, 30);

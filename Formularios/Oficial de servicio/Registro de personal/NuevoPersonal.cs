@@ -13,6 +13,7 @@ using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using static Ofelia_Sara.Controles.General.CustomComboBox;
 
@@ -38,6 +39,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         // Estado de los datos
         private bool datosGuardados = false;//Inicializa en false para despues hacer verificacion y asi mostrar o no formclosed
+        private static string mensajeError;
 
         #endregion
 
@@ -60,11 +62,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
             label_Destino.BringToFront();
-            ////cargar con picture no visible --se puede dejar sin efecto y mostrar pickture advertencia mientras haya campos vacios
-            pictureBox_DatosPersonales.Visible = false;
-            pictureBox_SituacionRevista.Visible = false;
-            pictureBox_Armamento.Visible = false;
-            pictureBox_SituacionRevista.Visible = false;
+           
         }
 
         public NuevoPersonal()
@@ -155,25 +153,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             //para actualizar picture de cada panel y color de borde y label
 
-            ValidarPaneles();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
+            InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
 
-        ConfigurarTextoEnControles();//para formato de texto que ingresa
+            ConfigurarTextoEnControles();//para formato de texto que ingresa
 
             this.FormClosing += NuevoPersonal_FormClosing;
 
             // Configurar eventos para cada panel
-            ConfigurarEventosDeValidacion(panel_DatosPersonales, pictureBox_DatosPersonales, label_DatosPersonales);
-            ConfigurarEventosDeValidacion(panel_Revista, pictureBox_SituacionRevista, label_SituacionRevista);
-            ConfigurarEventosDeValidacion(panel_Armamento, pictureBox_Armamento, label_Armamento);
-            ConfigurarEventosDeValidacion(panel_Destino, pictureBox_Destino, label_Destino);
+            ConfigurarEventosDeValidacion(panel_DatosPersonales, label_DatosPersonales);
+            ConfigurarEventosDeValidacion(panel_Revista,  label_SituacionRevista);
+            ConfigurarEventosDeValidacion(panel_Armamento,  label_Armamento);
+            ConfigurarEventosDeValidacion(panel_Destino,  label_Destino);
 
+        
         }
         #endregion
 
         #region VALIDACIONES
 
-  
-        
         /// <summary>
         /// METODO PARA APLICAR FORMATO A TEXTO DE CONTROLES
         /// </summary>
@@ -429,133 +426,88 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         //-----ACTIVACION DE BORDE Y CAMBIO DE IMAGEN INDICADORA
 
         /// <summary>
-        /// METODO PARA VERIFICAR Y CAMBIAR BORDE E IMAGEN DE PANELES EDEPNDIENDO SI ESTA COMPLETO O NO 
+        /// Método genérico para validar campos dentro de PanelConBordeNeon y actualizar el estado visual.
         /// </summary>
-        private void ValidarPaneles()
+        private static void ValidarPanelConBorde(PanelConBordeNeon panelConBorde, Label label)
         {
-            ValidarPANEL(panel_Detalle_Personal, pictureBox_DatosPersonales, label_DatosPersonales, "DatosPersonales");
-            ValidarPANEL(panel_Detalle_Revista, pictureBox_SituacionRevista, label_SituacionRevista, "SituacionRevista");
-            ValidarPANEL(panel_Detalle_Armamento, pictureBox_Armamento, label_Armamento, "Armamento");
-            ValidarPANEL(panel_Detalle_Destino, pictureBox_Destino, label_Destino, "Destino");
+            bool camposValidos = VerificarCamposEnPanel(panelConBorde);
 
-        }
+            // Obtener o generar dinámicamente el PictureBox
+            PictureBox pictureBox = IndicadorEstadoFormulario(label);
 
-        /// <summary>
-        /// METODO PARA VALIDAR DAROS DE LOS PANELES CAMBIA BORDES-IMAGEN
-        /// </summary>
-
-        private void ValidarPANEL(Panel panel, PictureBox pictureBox, Label label, string panelName)
-        {
-            bool camposValidos = true;
-
-            // Iterar sobre los controles dentro del panel
-            foreach (Control control in panel.Controls)
-            {
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un campo vacío, no es necesario seguir buscando
-                }
-                else if (control is CustomComboBox customcomboBox && (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
-                {
-                    camposValidos = false;
-                    break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-                }
-            }
-
-            // Actualizar la imagen en PictureBox y el color del Label
-            if (camposValidos)
-            {
-                pictureBox.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox.BackColor = Color.Transparent; // Fondo transparente
-                label.BackColor = Color.FromArgb(4, 200, 0); // Verde brillante para campos completos
-            }
-            else
-            {
-                pictureBox.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox.BackColor = Color.Transparent; // Fondo transparente
-                label.BackColor = Color.FromArgb(0, 192, 192); // Verde agua original
-            }
-
-            // Ajustar la posición del PictureBox al lado del Label
-            pictureBox.Location = new System.Drawing.Point(
-                label.Right + 5, // A la derecha del Label con un margen de 5 px
-                label.Top + (label.Height - pictureBox.Height) / 2 - 3 // Centrado verticalmente
-            );
-
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del PictureBox
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Asegurarse de que el PictureBox sea visible
-            pictureBox.Visible = true;
-
-            // Ajustar el tamaño del formulario
-            AjustarTamanoFormulario();
-        }
-
-        /// <summary>
-        /// METODO DE VERIFICACION DE CAMPOS COMPLETOS Y BORDE
-        /// </summary>
-        /// <param name="panelConBordeNeon"></param>
-        /// <param name="pictureBox"></param>
-        /// <param name="label"></param>
-        private void ValidarPanel(PanelConBordeNeon panel , PictureBox pictureBox, Label label)
-        {
-            bool camposValidos = VerificarCamposEnPanel(panel);
-
+            // Asignar imagen según validación
             pictureBox.Image = camposValidos
                 ? Properties.Resources.verificacion_exitosa
                 : Properties.Resources.Advertencia_Faltante;
 
+            //  Actualizar color de fondo del Label
             label.BackColor = camposValidos
                 ? Color.FromArgb(4, 200, 0)  // Verde brillante si todo está correcto
                 : Color.FromArgb(0, 192, 192); // Verde agua si falta algo
 
-            pictureBox.Location = new Point(label.Right + 5, label.Top + (label.Height - pictureBox.Height) / 2 - 3);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.Visible = true;
+            // Cambiar el estado del borde del PanelConBordeNeon
+            panelConBorde.CambiarEstado(panelConBorde.EstaContraido, camposValidos);
         }
 
-        private void ConfigurarEventosDeValidacion(PanelConBordeNeon panel, PictureBox pictureBox, Label label)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                if (control is CustomTextBox || control is CustomComboBox)
-                {
-                    control.Leave += (s, e) => ValidarPanel(panel, pictureBox, label);
-                }
-            }
-        }
         /// <summary>
-        /// METODO DE VERIFICACION DE CAMPOS COMPLETO
+        /// Verifica si todos los CustomTextBox y CustomComboBox dentro de un PanelConBordeNeon están completos.
         /// </summary>
-        /// <param name="panelConBordeNeon"></param>
-        /// <returns></returns>
         private static bool VerificarCamposEnPanel(PanelConBordeNeon panelConBordeNeon)
         {
             foreach (Control control in panelConBordeNeon.Controls)
             {
-                // Verificar si el control es un Panel
+                // Si hay un Panel dentro del PanelConBordeNeon
                 if (control is Panel panel)
                 {
                     foreach (Control childControl in panel.Controls)
                     {
-                        // Verificar CustomTextBox
-                        if (childControl is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                        {
-                            return false; // Campo CustomTextBox incompleto
-                        }
+                        if (childControl is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.TextValue))
+                            return false; // CustomTextBox vacío
 
-                        // Verificar CustomComboBox
-                        if (childControl is CustomComboBox customcomboBox &&
-                            (customcomboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customcomboBox.TextValue)))
+                        if (childControl is CustomComboBox customComboBox &&
+                            (customComboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customComboBox.TextValue)))
+                            return false; // CustomComboBox sin selección
+                    }
+                }
+            }
+            return true; // Todos los campos están completos
+        }
+
+        /// <summary>
+        /// Configura eventos Leave en todos los CustomTextBox y CustomComboBox dentro de un PanelConBordeNeon.
+        /// </summary>
+        private static void ConfigurarEventosDeValidacion(PanelConBordeNeon panel, Label label)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is Panel panelInterno)
+                {
+                    foreach (Control childControl in panelInterno.Controls)
+                    {
+                        if (childControl is CustomTextBox customTextBox)
                         {
-                            return false; // Campo CustomComboBox incompleto
+                            customTextBox.Leave += (s, e) => ValidarPanelConBorde(panel, label);
+                            customTextBox.TextChanged += (s, e) => ValidarPanelConBorde(panel, label);
+                        }
+                        else if (childControl is CustomComboBox customComboBox)
+                        {
+                            customComboBox.Leave += (s, e) => ValidarPanelConBorde(panel, label);
+                            customComboBox.SelectedIndexChanged += (s, e) => ValidarPanelConBorde(panel, label);
                         }
                     }
                 }
             }
-            return true; // Todos los campos en los paneles están completos
+        }
+
+        /// <summary>
+        /// Configura validaciones para todos los PanelConBordeNeon en el formulario.
+        /// </summary>
+        private void InicializarValidaciones()
+        {
+            ConfigurarEventosDeValidacion(panel_DatosPersonales,  label_DatosPersonales);
+            ConfigurarEventosDeValidacion(panel_Revista,  label_SituacionRevista);
+            ConfigurarEventosDeValidacion(panel_Armamento,  label_Armamento);
+            ConfigurarEventosDeValidacion(panel_Destino,  label_Destino);
         }
 
         #endregion
@@ -600,7 +552,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             comboBox_Escalafon.SelectedIndex = -1;
             comboBox_Jerarquia.SelectedIndex = -1;
             EstadoInicialPaneles();
-            ValidarPaneles();//vuelve a colocar imagen y borde rojo
+            InicializarValidaciones();//vuelve a colocar imagen y borde rojo
             // Muestra un mensaje de información
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
@@ -676,7 +628,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="e"></param>
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            ValidarPaneles();// verifica que los paneles esten completos
+            InicializarValidaciones(); // verifica que los paneles esten completos
             
             // Validar los campos en los paneles con borde neon
             if (!VerificarCamposEnPanel(panel_DatosPersonales) ||
@@ -781,333 +733,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         #endregion
 
         #region COMPORTAMIENTO DINAMICO
-        ///// <summary>
-        ///// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-
-        //private void Btn_AmpliarReducir_DATOSPERSONALES_Click(object sender, EventArgs e)
-        //{
-        //    if (panel_DatosPersonales is PanelConBordeNeon panelConNeon)
-        //    {
-        //        if (panelExpandido_DatosPersonales)
-        //        {
-        //            // Contraer el panel
-        //            panel_DatosPersonales.Height = alturaContraidaPanel;
-        //            btn_AmpliarReducir_DATOSPERSONALES.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-        //            panelExpandido_DatosPersonales = false; //PANEL CONTRAIDO
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
-
-        //            // Cambiar la posición y el padre del botón al panel_DatosVehiculo
-        //            btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_DatosPersonales;
-        //            btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(646, 1);
-
-
-        //            // Ocultar todos los controles excepto el botón de ampliación/reducción
-        //            foreach (Control control in panel_Detalle_Personal.Controls)
-        //            {
-        //                if (control == btn_AmpliarReducir_DATOSPERSONALES)
-        //                {
-        //                    control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
-        //                }
-        //                else
-        //                {
-        //                    control.Visible = false; // Oculta los demás controles
-        //                    panel_Detalle_Personal.Visible = false;
-        //                }
-        //            }
-
-        //            // Ocultar controles de error personalizados
-        //            foreach (Control control in panel_Detalle_Personal.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = false; // Ocultar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            // Expandir el panel
-        //            panel_DatosPersonales.Height = alturaOriginalPanel_DatosPersonales;
-        //            panel_DatosPersonales.BorderStyle = BorderStyle.None;
-        //            btn_AmpliarReducir_DATOSPERSONALES.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-        //            panelExpandido_DatosPersonales = true;
-        //            panel_Detalle_Personal.Visible = true;
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
-
-        //            // Mover el botón al panel_DatosEspecificos
-        //            btn_AmpliarReducir_DATOSPERSONALES.Parent = panel_Detalle_Personal;
-        //            btn_AmpliarReducir_DATOSPERSONALES.Location = new System.Drawing.Point(646, 0);
-
-        //            // Mostrar todos los controles
-        //            foreach (Control control in panel_Detalle_Personal.Controls)
-        //            {
-        //                control.Visible = true;
-        //            }
-
-        //            // Asegurarte de que las imágenes de error se muestren si es necesario
-        //            foreach (Control control in panel_Detalle_Personal.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = true; // Mostrar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        AjustarTamanoFormulario();
-        //    }
-
-        //}
-
-        ///// <summary>
-        ///// METODO AMPLIAR O REDUCIR SITUACION DE REVISTA
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void Btn_AmpliarReducir_SITUACIONREVISTA_Click(object sender, EventArgs e)
-        //{
-        //    if (panel_Revista is PanelConBordeNeon panelConNeon)
-        //    {
-        //        if (panelExpandido_Revista)
-        //        {
-        //            // Contraer el panel
-        //            panel_Revista.Height = alturaContraidaPanel;
-        //            btn_AmpliarReducir_REVISTA.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-        //            panelExpandido_Revista = false; //PANEL CONTRAIDO
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
-
-        //            // Cambiar la posición y el padre del botón al panel
-        //            btn_AmpliarReducir_REVISTA.Parent = panel_Revista;
-        //            btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(646, 1);
-
-
-        //            // Ocultar todos los controles excepto el botón de ampliación/reducción
-        //            foreach (Control control in panel_Detalle_Revista.Controls)
-        //            {
-        //                if (control == btn_AmpliarReducir_REVISTA)
-        //                {
-        //                    control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
-        //                }
-        //                else
-        //                {
-        //                    control.Visible = false; // Oculta los demás controles
-        //                    panel_Detalle_Revista.Visible = false;
-        //                }
-        //            }
-
-        //            // Ocultar controles de error personalizados
-        //            foreach (Control control in panel_Detalle_Revista.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = false; // Ocultar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            // Expandir el panel
-        //            panel_Revista.Height = alturaOriginalPanel_Revista;
-        //            panel_Revista.BorderStyle = BorderStyle.None;
-        //            btn_AmpliarReducir_REVISTA.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-        //            panelExpandido_Revista = true;
-        //            panel_Detalle_Revista.Visible = true;
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
-
-        //            // Mover el botón al panel_DatosEspecificos
-        //            btn_AmpliarReducir_REVISTA.Parent = panel_Detalle_Revista;
-        //            btn_AmpliarReducir_REVISTA.Location = new System.Drawing.Point(646, 0);
-
-        //            // Mostrar todos los controles
-        //            foreach (Control control in panel_Detalle_Revista.Controls)
-        //            {
-        //                control.Visible = true;
-        //            }
-
-        //            // Asegurarte de que las imágenes de error se muestren si es necesario
-        //            foreach (Control control in panel_Detalle_Revista.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = true; // Mostrar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        AjustarTamanoFormulario();
-        //    }
-
-        //}
-
-        ///// <summary>
-        ///// METODO PARA AMPLIAR O REDUCIR PANEL ARMAMENTO
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void Btn_AmpliarReducir_ARMAMENTO_Click(object sender, EventArgs e)
-        //{
-        //    if (panel_Armamento is PanelConBordeNeon panelConNeon)
-        //    {
-        //        if (panelExpandido_Armamento)
-        //        {
-        //            // Contraer el panel
-        //            panel_Armamento.Height = alturaContraidaPanel;
-        //            btn_AmpliarReducir_ARMAMENTO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-        //            panelExpandido_Armamento = false; //PANEL CONTRAIDO
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
-
-        //            // Cambiar la posición y el padre del botón al panel
-        //            btn_AmpliarReducir_ARMAMENTO.Parent = panel_Armamento;
-        //            btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(646, 1);
-
-
-        //            // Ocultar todos los controles excepto el botón de ampliación/reducción
-        //            foreach (Control control in panel_Detalle_Armamento.Controls)
-        //            {
-        //                if (control == btn_AmpliarReducir_ARMAMENTO)
-        //                {
-        //                    control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
-        //                }
-        //                else
-        //                {
-        //                    control.Visible = false; // Oculta los demás controles
-        //                    panel_Detalle_Armamento.Visible = false;
-        //                }
-        //            }
-
-        //            // Ocultar controles de error personalizados
-        //            foreach (Control control in panel_Detalle_Armamento.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = false; // Ocultar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            // Expandir el panel
-        //            panel_Armamento.Height = alturaOriginalPanel_Armamento;
-        //            panel_Armamento.BorderStyle = BorderStyle.None;
-        //            btn_AmpliarReducir_ARMAMENTO.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-        //            panelExpandido_Armamento = true;
-        //            panel_Detalle_Armamento.Visible = true;
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
-
-        //            // Mover el botón al panel_DatosEspecificos
-        //            btn_AmpliarReducir_ARMAMENTO.Parent = panel_Detalle_Armamento;
-        //            btn_AmpliarReducir_ARMAMENTO.Location = new System.Drawing.Point(646, 1);
-
-        //            // Mostrar todos los controles
-        //            foreach (Control control in panel_Detalle_Armamento.Controls)
-        //            {
-        //                control.Visible = true;
-        //            }
-
-        //            // Asegurarte de que las imágenes de error se muestren si es necesario
-        //            foreach (Control control in panel_Detalle_Armamento.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = true; // Mostrar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        AjustarTamanoFormulario();
-        //    }
-
-        //}
-
-        //private void Btn_AmpliarReducir_DESTINO_Click(object sender, EventArgs e)
-        //{
-        //    if (panel_Destino is PanelConBordeNeon panelConNeon)
-        //    {
-        //        if (panelExpandido_Destino)
-        //        {
-        //            // Contraer el panel
-        //            panel_Destino.Height = alturaContraidaPanel;
-        //            btn_AmpliarReducir_DESTINO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-        //            panelExpandido_Destino = false; //PANEL CONTRAIDO
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
-
-        //            // Cambiar la posición y el padre del botón al panel
-        //            btn_AmpliarReducir_DESTINO.Parent = panel_Destino;
-        //            btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(646, 1);
-
-
-        //            // Ocultar todos los controles excepto el botón de ampliación/reducción
-        //            foreach (Control control in panel_Detalle_Destino.Controls)
-        //            {
-        //                if (control == btn_AmpliarReducir_DESTINO)
-        //                {
-        //                    control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
-        //                }
-        //                else
-        //                {
-        //                    control.Visible = false; // Oculta los demás controles
-        //                    panel_Detalle_Destino.Visible = false;
-        //                }
-        //            }
-
-        //            // Ocultar controles de error personalizados
-        //            foreach (Control control in panel_Detalle_Destino.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = false; // Ocultar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            // Expandir el panel
-        //            panel_Destino.Height = alturaOriginalPanel_Destino;
-        //            panel_Destino.BorderStyle = BorderStyle.None;
-        //            btn_AmpliarReducir_DESTINO.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-        //            panelExpandido_Destino = true;
-        //            panel_Detalle_Destino.Visible = true;
-
-        //            // Cambiar el estilo del borde
-        //            panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
-
-        //            // Mover el botón al panel_DatosEspecificos
-        //            btn_AmpliarReducir_DESTINO.Parent = panel_Detalle_Destino;
-        //            btn_AmpliarReducir_DESTINO.Location = new System.Drawing.Point(646, 1);
-
-        //            // Mostrar todos los controles
-        //            foreach (Control control in panel_Detalle_Destino.Controls)
-        //            {
-        //                control.Visible = true;
-        //            }
-
-        //            // Asegurarte de que las imágenes de error se muestren si es necesario
-        //            foreach (Control control in panel_Detalle_Destino.Controls)
-        //            {
-        //                if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-        //                {
-        //                    control.Visible = true; // Mostrar imágenes de error
-        //                }
-        //            }
-        //        }
-        //        AjustarTamanoFormulario();
-        //    }
-        //}
-
+        /// <summary>
+        /// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
+        /// </summary>
+        /// <param name="sender"></param>
+        ///<param name="e"></param>
         private void AlternarPanel(PanelConBordeNeon panelConNeon, Panel panelDetalle, ref bool panelExpandido,
                                    Button btnAmpliarReducir, Image imgExpandir, Image imgContraer,
                                    int alturaOriginal, int alturaContraida)
@@ -1117,7 +747,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             if (panelExpandido)
             {
-                // 🔴 CONTRAER EL PANEL
+
+                //  CONTRAER EL PANEL
                 panelConNeon.Height = alturaContraida;
                 btnAmpliarReducir.Image = imgExpandir; // Flecha abajo
                 panelExpandido = false;
@@ -1139,7 +770,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
             else
             {
-                // 🟢 EXPANDIR EL PANEL
+                //  EXPANDIR EL PANEL
                 panelConNeon.Height = alturaOriginal;
                 panelConNeon.BorderStyle = BorderStyle.None;
                 btnAmpliarReducir.Image = imgContraer; // Flecha arriba
@@ -1164,12 +795,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             AjustarTamanoFormulario();
         }
 
-
+        /// <summary>
+        /// EVENTOS PARA AMPLIAR Y REDUCIR CADA PANEL ESPECIFICO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_AmpliarReducir_DATOSPERSONALES_Click(object sender, EventArgs e)
         {
             AlternarPanel(panel_DatosPersonales, panel_Detalle_Personal, ref panelExpandido_DatosPersonales,
                           btn_AmpliarReducir_DATOSPERSONALES, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
                           alturaOriginalPanel_DatosPersonales, alturaContraidaPanel);
+            InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 
         private void Btn_AmpliarReducir_SITUACIONREVISTA_Click(object sender, EventArgs e)
@@ -1177,6 +813,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             AlternarPanel(panel_Revista, panel_Detalle_Revista, ref panelExpandido_Revista,
                           btn_AmpliarReducir_REVISTA, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
                           alturaOriginalPanel_Revista, alturaContraidaPanel);
+            InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no
+          
         }
 
         private void Btn_AmpliarReducir_ARMAMENTO_Click(object sender, EventArgs e)
@@ -1184,6 +822,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             AlternarPanel(panel_Armamento, panel_Detalle_Armamento, ref panelExpandido_Armamento,
                           btn_AmpliarReducir_ARMAMENTO, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
                           alturaOriginalPanel_Armamento, alturaContraidaPanel);
+            InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 
         private void Btn_AmpliarReducir_DESTINO_Click(object sender, EventArgs e)
@@ -1191,9 +830,70 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             AlternarPanel(panel_Destino, panel_Detalle_Destino, ref panelExpandido_Destino,
                           btn_AmpliarReducir_DESTINO, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
                           alturaOriginalPanel_Destino, alturaContraidaPanel);
+            InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 
+        /// <summary>
+        /// CREA UNA INSTANCIA DE PICKTURE PARA EL INDICADOR DE FORMULARIO COMPLETO E INCOMPLETO
+        /// </summary>
+        /// <param name="label"></param>
+        /// <returns></returns>
+        private static PictureBox IndicadorEstadoFormulario(Label label)
+        {
+            PictureBox pictureBox = label.Parent.Controls
+                .OfType<PictureBox>()
+                .FirstOrDefault(pb => pb.Tag != null && pb.Tag.ToString() == label.Name);
 
+            // Si no existe, crearlo dinámicamente
+            if (pictureBox == null)
+            {
+                pictureBox = new PictureBox
+                {
+                    Size = new Size(34, 25),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    BackColor = Color.Transparent,
+                    Tag = label.Name // Identificador único
+                };
+
+                // Agregarlo al mismo contenedor del Label
+                label.Parent.Controls.Add(pictureBox);
+            }
+
+            // Eliminar eventos previos para evitar duplicación
+            pictureBox.MouseEnter -= PictureBox_MouseEnter;
+            pictureBox.MouseEnter += PictureBox_MouseEnter;
+
+            pictureBox.MouseLeave -= PictureBox_MouseLeave;
+            pictureBox.MouseLeave += PictureBox_MouseLeave;
+
+            // Ajustar posición al lado derecho del Label
+            pictureBox.Location = new Point(
+                label.Right + 5,
+                label.Top + (label.Height - pictureBox.Height) / 2 - 3
+            );
+
+            // Asegurar que esté visible
+            pictureBox.Visible = true;
+            pictureBox.BringToFront();
+
+            return pictureBox;
+        }
+
+        // Evento para mostrar el TooltipError cuando el mouse entra
+        private static void PictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is PictureBox pictureBox && pictureBox.Image == Properties.Resources.Advertencia_Faltante)
+            {
+                TooltipError.Mostrar(pictureBox, "El formulario posee campos incompletos.");
+            }
+        }
+
+        // Evento para ocultar el TooltipError cuando el mouse sale
+        private static void PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            TooltipError.Ocultar();
+        }
+   
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
         /// </summary>

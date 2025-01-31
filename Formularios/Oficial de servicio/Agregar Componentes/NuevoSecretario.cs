@@ -1,11 +1,11 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
-//using Ofelia_Sara.Base_de_Datos;
+using Ofelia_Sara.BaseDatos;
 using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
-//using SkiaSharp;//biblioteca para efecto visual
+
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
@@ -19,6 +19,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
+        #region CONSTRUCTOR
     public partial class NuevoSecretario : BaseForm
     {
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
@@ -43,11 +44,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
         }
-        // Implementación del método de la interfaz IFormulario
-        public void Inicializar()
-        {
-            // Lógica de inicialización adicional si es necesario
-        }
+        #endregion
+
+        #region LOAD
         private void NuevoSecretario_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
@@ -75,13 +74,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
         }
-        //-----------------------------------------------------------------------------
+        #endregion
+
+        #region METODOS GENERALES
+        /// <summary>
+        /// METODO PARA QUE TEXTBOX LEGAJO RECIBA EL FOCO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
 
+        /// <summary>
+        /// METODO PARA MOSTRAR MENSAJE DE CONFIRMACION 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevoSecretario_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -99,13 +110,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //-----------------------------------------------------------------
-        protected void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
+    
+        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
         {
             customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
         }
 
-        //-----------BOTON LIMPIAR---------------
+        /// <summary>
+        /// BOTON LIMPIAR -EVENTO CLICK
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
@@ -114,12 +129,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
           
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
-        //______________________________________________________________________________
 
-        //----------------------------------------------------------------------------------
-
-
-        //-------------BOTON GUARDAR--------------------
+        /// <summary>
+        /// BOTON GUARDAR-EVENTO CLICK
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.TextValue) ||
@@ -134,8 +149,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 float legajo = string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue)
                                ? 100000 // valor por defecto
                                : float.Parse(textBox_NumeroLegajo.TextValue);
-
-
 
                 var nuevoSecretario = new Secretario
                 {
@@ -157,9 +170,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 comboBox_Dependencia.SelectedIndex = -1;
             }
         }
-
-        //----------------------------------------------------------------------------
-        //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
+        /// <summary>
+        /// CONTROLAR QUE SEAN MAYUSCULAS
+        /// </summary>
         private void TextoEspecialCampos()
         {
             // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
@@ -188,77 +201,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         }
 
-
-
-        //-------------MENSAJE DE AYUDA BOTON HELP---------
-        private void NuevoSecretario_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
-        }
-
-        //---------------------------------------------------------------------------------
-        //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
-        private void InicializarPictureBox()
-        {
-            // Inicializa el PictureBox con un borde rojo y deshabilitado
-            pictureBox_FirmaDigitalizada.Tag = Color.Tomato;
-            pictureBox_FirmaDigitalizada.Enabled = false;
-            pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
-            pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
-        }
-        private void CheckBox_AgregarFirma_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox checkBox = sender as CheckBox;
-            if (checkBox != null)
-            {
-                if (checkBox.Checked)
-                {
-                    pictureBox_FirmaDigitalizada.Enabled = true;
-                    pictureBox_FirmaDigitalizada.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
-                    pictureBox_FirmaDigitalizada.BackColor = SystemColors.ControlLight;
-                    checkBox_AgregarFirma.Visible = false;
-                    pictureBox_CheckFirmaDigitalizada.Visible = true;
-                }
-                else
-                {
-                    pictureBox_FirmaDigitalizada.Enabled = false;
-                    pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
-                    pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
-                }
-
-                pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
-            }
-        }
-
-        private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
-        {
-            pictureBox_CheckFirmaDigitalizada.Visible = false;
-            checkBox_AgregarFirma.Visible = true;
-            checkBox_AgregarFirma.Checked = false;
-            pictureBox_FirmaDigitalizada.Enabled = false;
-            pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
-            pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
-        }
-
-        private void PictureBox_FirmaDigitalizada_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
-            {
-                Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
-
-                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
-                {
-                    // Dibuja el borde exterior
-                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
-                }
-            }
-        }
-
+        /// <summary>
+        /// PERMITE SOLO NUMEROS EN LEGAJO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite dígitos y teclas de control
@@ -268,6 +215,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
+        /// <summary>
+        /// AGREGA PUNTOS CADA 3 DIGITOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -297,8 +249,101 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        //---------------------------------------------------------------------
-        //Eventos para cargar imagenes en los pictureBox
+        /// <summary>
+        /// MENSAJE DE AYUDA BOTON HELP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NuevoSecretario_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            using (MensajeGeneral mensaje = new MensajeGeneral("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios", MensajeGeneral.TipoMensaje.Informacion))
+            {
+                // Establecer la posición manualmente
+                mensaje.StartPosition = FormStartPosition.Manual;
+                mensaje.Location = new Point(
+                    this.Left + (this.Width - mensaje.Width) / 2,
+                    this.Top + (this.Height - mensaje.Height) / 2
+                );
+
+                // Mostrar el mensaje
+                mensaje.ShowDialog();
+            }
+
+            // Cancelar el evento para que no se cierre el formulario
+            e.Cancel = true;
+        }
+
+        #endregion
+
+        #region CHECK Y PICTURE
+        /// <summary>
+        /// EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX
+        /// </summary>
+        private void InicializarPictureBox()
+        {
+            // Inicializa el PictureBox con un borde rojo y deshabilitado
+            pictureBox_FirmaDigitalizada.Tag = Color.Tomato;
+            pictureBox_FirmaDigitalizada.Enabled = false;
+            pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
+            pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
+        }
+        /// <summary>
+        /// EVENTOS PARA EL CHECK
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_AgregarFirma_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+            if (checkBox != null)
+            {
+                if (checkBox.Checked)
+                {
+                    pictureBox_FirmaDigitalizada.Enabled = true;
+                    pictureBox_FirmaDigitalizada.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
+                    pictureBox_FirmaDigitalizada.BackColor = SystemColors.ControlLight;
+                    checkBox_AgregarFirma.Visible = false;
+                    pictureBox_CheckFirmaDigitalizada.Visible = true;
+                }
+                else
+                {
+                    pictureBox_FirmaDigitalizada.Enabled = false;
+                    pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+                    pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
+                }
+
+                pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
+            }
+        }
+        private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
+        {
+            pictureBox_CheckFirmaDigitalizada.Visible = false;
+            checkBox_AgregarFirma.Visible = true;
+            checkBox_AgregarFirma.Checked = false;
+            pictureBox_FirmaDigitalizada.Enabled = false;
+            pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
+            pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
+        }
+
+        /// <summary>
+        /// MODIFICA ASPECTO PICTURE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBox_FirmaDigitalizada_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
+
+                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
+                {
+                    // Dibuja el borde exterior
+                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
+                }
+            }
+        }  
         private void PictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -321,7 +366,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //----------------------------------------------------
         private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -337,7 +381,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //------------------------------------------------------------
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -361,7 +404,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-
-        
+ 
     }
 }
+#endregion

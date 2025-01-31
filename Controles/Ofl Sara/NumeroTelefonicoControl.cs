@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.Controles.General;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -8,48 +9,63 @@ using static iText.Commons.Utils.PlaceHolderTextUtil;
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
 {
-    [Designer(typeof(ResizableControlDesigner))] // Permitir ajustes en el diseñador
-    public partial class NumeroTelefonicoControl : UserControl
-    {
-        private bool isPlaceholderActive;
-        private Timer animationTimer;
-        private int animationProgress;
-        private bool isFocused;
-        private bool showError;
-        private Color focusColor = Color.Blue;
-        private Color errorColor = Color.Red;
-        public NumeroTelefonicoControl()
+        #region VARIABLES
+        [Designer(typeof(ResizableControlDesigner))] // Permitir ajustes en el diseñador
+        public partial class NumeroTelefonicoControl : UserControl
         {
-            InitializeComponent();
-            animationTimer = new Timer
+            private bool isPlaceholderActive;
+            private Timer animationTimer;
+            private int animationProgress;
+            private bool isFocused;
+            private bool showError;
+            private Color focusColor = Color.Blue;
+            private Color errorColor = Color.Red;
+            #endregion
+        #region CONSTRUCTOR
+            public NumeroTelefonicoControl()
             {
-                Interval = 15 // Intervalo para la animación
-            };
-            animationTimer.Tick += AnimationTimer_Tick;
-            CustomNumeroTelefonicoControl_Load(this, EventArgs.Empty);
-
-            SetStyle(ControlStyles.ResizeRedraw, true); // Habilitar redibujado en redimensionamiento
-        }
-
-        // Sobreescribir el evento OnResize para ajustar el comportamiento al redimensionar
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-            this.Invalidate(); // Forzar redibujado
-        }
-        internal class ResizableControlDesigner : ControlDesigner
-        {
-            public override SelectionRules SelectionRules
-            {
-                get
+                InitializeComponent();
+                animationTimer = new Timer
                 {
-                    // Permitir mover y redimensionar en todas las direcciones
-                    return SelectionRules.Visible | SelectionRules.Moveable | SelectionRules.AllSizeable;
+                    Interval = 15 // Intervalo para la animación
+                };
+                animationTimer.Tick += AnimationTimer_Tick;
+                NumeroTelefonicoControl_Load(this, EventArgs.Empty);
+
+                SetStyle(ControlStyles.ResizeRedraw, true); // Habilitar redibujado en redimensionamiento
+            }
+        #endregion
+        #region LOAD
+        private void NumeroTelefonicoControl_Load(object sender, EventArgs e)
+        {
+            SetPlaceholder(maskedTextBox_Telefono, "02254000000000");
+
+        }
+        #endregion
+        /// <summary>
+        /// Sobreescribir el evento OnResize para ajustar el comportamiento al redimensionar
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnResize(EventArgs e)
+            {
+                base.OnResize(e);
+                this.Invalidate(); // Forzar redibujado
+            }
+        internal class ResizableControlDesigner : ControlDesigner
+            {
+                public override SelectionRules SelectionRules
+                {
+                    get
+                    {
+                        // Permitir mover y redimensionar en todas las direcciones
+                        return SelectionRules.Visible | SelectionRules.Moveable | SelectionRules.AllSizeable;
+                    }
                 }
             }
-        }
-        // Propiedad para ajustar el ancho del control
 
+        /// <summary>
+        /// Propiedad para ajustar el ancho del control
+        /// </summary>
         public int ControlWidth
         {
             get { return this.Width; }
@@ -60,9 +76,21 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        private void CustomNumeroTelefonicoControl_Load(object sender, EventArgs e)
+        #region VALIDACIONES Y METODOS
+        /// <summary>
+        /// VALIDAR CAMPO PARA ASEGURARSE QUE TENGA 10 CARACTERES MINIMOS
+        /// </summary>
+        private void ValidarLongitudCampo(MaskedTextBox maskedTextBox)
         {
-            SetPlaceholder(maskedTextBox_Telefono, "02254000000000");
+            if (maskedTextBox.Text.Length < 10)
+            {
+                showError = true; // Mostrar subrayado rojo
+            }
+            else
+            {
+                showError = false; // Ocultar error
+            }
+            Invalidate(); // Forzar redibujado del control
         }
 
         private void SetPlaceholder(MaskedTextBox maskedTextBox, string placeholder)
@@ -75,71 +103,67 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             {
                 if (isPlaceholderActive)
                 {
-                    maskedTextBox.Text = ""; // Borra el placeholder
-                    maskedTextBox.ForeColor = Color.Black; // Cambia el color del texto
+                    maskedTextBox.Text = "";
+                    maskedTextBox.ForeColor = Color.Black;
                     isPlaceholderActive = false;
                 }
 
-                // Asegura que el cursor esté al inicio
-                maskedTextBox.BeginInvoke(new Action(() =>
-                {
-                    maskedTextBox.SelectionStart = 0;
-                }));
+                // Asegurar cursor al inicio
+                maskedTextBox.BeginInvoke(new Action(() => maskedTextBox.SelectionStart = 0));
 
-                // Cambia el estado al enfocado
+                // Cambiar estado visual
                 isFocused = true;
-                showError = false; // Oculta error al enfocar
-                animationProgress = 0; // Reinicia la animación
+                showError = false;
+                animationProgress = 0;
                 animationTimer.Start();
-                Invalidate(); // Fuerza el redibujado
+                Invalidate();
             };
 
             maskedTextBox.Leave += (sender, e) =>
             {
-                // Configura el formato de texto sin literales para la validación
+                // Excluir literales para obtener solo números
                 maskedTextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                ValidarLongitudCampo(maskedTextBox);
 
+                // Restaurar formato si está vacío
                 if (string.IsNullOrWhiteSpace(maskedTextBox.Text))
                 {
-                    // Reactiva el placeholder si el texto está vacío
                     isPlaceholderActive = true;
-                    maskedTextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // Vuelve a incluir literales
+                    maskedTextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
                     maskedTextBox.Text = placeholder;
                     maskedTextBox.ForeColor = Color.Gray;
-                    showError = true; // Activa el subrayado rojo
-                }
-                else
-                {
-                    // El texto es válido
-                    showError = false;
                 }
 
-                // Cambia el estado a desenfocado
                 isFocused = false;
-                animationProgress = 0; // Reinicia la animación
+                animationProgress = 0;
                 animationTimer.Start();
-                Invalidate(); // Fuerza el redibujado
+                Invalidate();
             };
         }
 
-
-
+        /// <summary>
+        /// RESTAURAR PLACEHOLDER
+        /// </summary>
         public void RestorePlaceholders()
         {
             SetPlaceholder(maskedTextBox_Telefono, "02254000000000");
         }
-
+        /// <summary>
+        /// LIMPIAR CONTROL
+        /// </summary>
         public void ClearTelefonoFields()
         {
             maskedTextBox_Telefono.Clear();
             RestorePlaceholders();
         }
+        #endregion
 
-        private void NumeroTelefonicoControl_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #region ANIMACION SUBRAYADO
+        /// <summary>
+        /// TIMER PARA ANIMACION 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             animationProgress = Math.Min(animationProgress + 5, 100); // Incremento gradual
@@ -150,7 +174,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-
+/// <summary>
+/// MEDO PARA EL SUBRAYADO
+/// </summary>
+/// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -172,3 +199,4 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
     }
 }
+#endregion

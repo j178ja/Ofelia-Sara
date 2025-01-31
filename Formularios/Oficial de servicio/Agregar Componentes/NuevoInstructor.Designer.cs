@@ -231,8 +231,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_NumeroLegajo.TabIndex = 55;
             textBox_NumeroLegajo.TextAlign = HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
-            textBox_NumeroLegajo.TextChanged += textBox_NumeroLegajo_TextChanged;
-            textBox_NumeroLegajo.KeyPress += textBox_NumeroLegajo_KeyPress;
+            textBox_NumeroLegajo.TextChanged += TextBox_NumeroLegajo_TextChanged;
+            textBox_NumeroLegajo.KeyPress += TextBox_NumeroLegajo_KeyPress;
             // 
             // label_Legajo
             // 
@@ -368,7 +368,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
             checkBox_AgregarFirma.TabIndex = 4;
             checkBox_AgregarFirma.UseVisualStyleBackColor = true;
-            checkBox_AgregarFirma.Click += checkBox_AgregarFirma_CheckedChanged;
+            checkBox_AgregarFirma.Click += CheckBox_AgregarFirma_CheckedChanged;
             // 
             // label_AgregaFirma
             // 
@@ -390,7 +390,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 6;
             btn_Limpiar.UseVisualStyleBackColor = false;
-            btn_Limpiar.Click += btn_Limpiar_Click;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
             // btn_Guardar
             // 

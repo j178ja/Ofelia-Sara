@@ -18,7 +18,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private bool showError;
         private Color focusColor = Color.Blue;
         private Color errorColor = Color.Red;
-
+        internal DateTime SelectedDate;
 
         public DateTime FechaSeleccionada
         {

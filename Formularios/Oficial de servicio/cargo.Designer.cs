@@ -194,7 +194,7 @@
             this.btn_Imprimir.Size = new System.Drawing.Size(106, 92);
             this.btn_Imprimir.TabIndex = 24;
             this.btn_Imprimir.UseVisualStyleBackColor = false;
-            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
+            this.btn_Imprimir.Click += new System.EventHandler(this.Btn_Imprimir_Click);
             // 
             // btn_Limpiar
             // 
@@ -206,7 +206,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 25;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -269,7 +269,7 @@
             this.btn_AmpliarReducir_DESCRIPCION.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_DESCRIPCION.TabIndex = 85;
             this.btn_AmpliarReducir_DESCRIPCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.btn_AmpliarReducir_DESCRIPCION_Click);
+            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.Btn_AmpliarReducir_DESCRIPCION_Click);
             // 
             // pictureBox_Descripcion
             // 
@@ -335,7 +335,7 @@
             this.pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 28);
             this.pictureBox_CheckLegajoVehicular.TabIndex = 72;
             this.pictureBox_CheckLegajoVehicular.TabStop = false;
-            this.pictureBox_CheckLegajoVehicular.Click += new System.EventHandler(this.pictureBox_CheckLegajoVehicular_Click);
+            this.pictureBox_CheckLegajoVehicular.Click += new System.EventHandler(this.PictureBox_CheckLegajoVehicular_Click);
             // 
             // checkBox_LegajoVehicular
             // 
@@ -350,7 +350,7 @@
             this.checkBox_LegajoVehicular.TabIndex = 70;
             this.checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
-            this.checkBox_LegajoVehicular.CheckedChanged += new System.EventHandler(this.checkBox_LegajoVehicular_CheckedChanged);
+            this.checkBox_LegajoVehicular.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoVehicular_CheckedChanged);
             // 
             // label_LegajoVehicular
             // 
@@ -434,7 +434,7 @@
             this.btn_AmpliarReducir_INSTRUCCION.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_INSTRUCCION.TabIndex = 83;
             this.btn_AmpliarReducir_INSTRUCCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_INSTRUCCION.Click += new System.EventHandler(this.btn_AmpliarReducir_INSTRUCCION_Click);
+            this.btn_AmpliarReducir_INSTRUCCION.Click += new System.EventHandler(this.Btn_AmpliarReducir_INSTRUCCION_Click);
             // 
             // label_Localidad
             // 
@@ -542,7 +542,7 @@
             this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
             this.Fecha_Instruccion.Location = new System.Drawing.Point(128, 266);
             this.Fecha_Instruccion.Name = "Fecha_Instruccion";
-           // this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
+            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
             this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
             this.Fecha_Instruccion.TabIndex = 70;
             // 

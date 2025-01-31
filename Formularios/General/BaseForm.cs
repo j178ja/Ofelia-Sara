@@ -1,8 +1,5 @@
 ﻿
-using BaseDatos.Adm_BD;
-using BaseDatos.Adm_BD.Manager;
-using BaseDatos.Adm_BD.Modelos;
-using BaseDatos.Entidades;
+
 using Ofelia_Sara.Clases.BaseDatos;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Controles.General;
@@ -16,21 +13,20 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
 {
-    public class BaseForm : BaseFormBase
+    /// <summary>
+    /// SE ESTABLECEN TODAS LAS CARACTERISTICAS ESTETICAS QUE AFECTAN AL PROYECTO
+    /// </summary>
+    public class BaseForm : BaseFormDATOS
     {
-        // Propiedades y campos específicos de BaseForm
+        #region VARIABLES
         private Cursor customHandCursor;
         private Cursor CursorLapizDerecha;
         private Timer errorTimer;
         private DatabaseConnection dbConnection;
         private LinkLabel footerLinkLabel;
-
-        protected ComisariasManager dbManager;
-        protected InstructoresManager instructoresManager;
-        protected SecretariosManager secretariosManager;
-
         private AutocompletarManager autocompletarManager;
-
+        private object panel1;
+        #endregion
         public BaseForm()
         {
             if (IsInDesignMode)
@@ -38,90 +34,53 @@ namespace Ofelia_Sara.Formularios.General
                 // Evita inicializaciones en tiempo de diseño
                 return;
             }
-
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
+            autocompletarManager = new AutocompletarManager("autocompletar.json");
         }
-        //-----INICIALIZAR EN TIEMPO DE EJECUCION-----------
-        protected  void InitializeRuntime()
+
+        /// <summary>
+        /// INICIALIZAR EN TIEMPO DE EJECUCION
+        /// </summary>
+        protected void InitializeRuntime()
         {
-            //    base.InitializeRuntimeMode();
-               CargarIconoFormulario();
-
-            //    // Inicialización específica de BaseForm
-            //    this.AutoScaleMode = AutoScaleMode.Dpi;
-
-            //    InitializeManagers();
-            //    dbManager = new ComisariasManager();
-            //    instructoresManager = new InstructoresManager();
-            //    secretariosManager = new SecretariosManager();
-
-            //    InitializeCustomCursors();
-            TraerLabelsAlFrente();// deberia traer los titulos al frente para que se vean completos
+            CargarIconoFormulario();
+            InitializeCustomCursors();
+            AjustarLabelEnPanel();// deberia traer los titulos al frente para que se vean completos
             InitializeComponent();
             InitializeFooterLinkLabel();
+           
         }
-        //----------------------------------------------------------
-
+        
         /// <summary>
-        /// Inicializa los manejadores necesarios.
+        /// Inicializa cursores personalizados.
         /// </summary>
-        //private void InitializeManagers()
-        //{
-        //    try
-        //    {
-        //        dbManager = new ComisariasManager();
-        //        instructoresManager = new InstructoresManager();
-        //        secretariosManager = new SecretariosManager();
-        //        autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error inicializando managers: {ex.Message}");
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Inicializa cursores personalizados.
-        ///// </summary>
-        //private void InitializeCustomCursors()
-        //{
-        //    try
-        //    {
-        //        using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
-        //        {
-        //            this.Cursor = new Cursor(cursorStream);
-        //        }
-
-        //        using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
-        //        {
-        //            customHandCursor = new Cursor(cursorHand);
-        //        }
-
-        //        using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
-        //        {
-        //            CursorLapizDerecha = new Cursor(cursorStream);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error cargando cursores: {ex.Message}");
-        //    }
-        //}
-
-        /// <summary>
-        /// Configura el autocompletado en los TextBox relevantes.
-        /// </summary>
-        private void ConfigureTextBoxAutoComplete()
+        private void InitializeCustomCursors()
         {
-            foreach (Control control in Controls)
+            try
             {
-                if (control is TextBox textBox && textBox.Name.StartsWith("textBox_Caratula"))
+                using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
                 {
-                    autocompletarManager.ConfigureTextBoxAutoComplete(textBox);
+                    this.Cursor = new Cursor(cursorStream);
+                }
+
+                using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
+                {
+                    customHandCursor = new Cursor(cursorHand);
+                }
+
+                using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
+                {
+                    CursorLapizDerecha = new Cursor(cursorStream);
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error cargando cursores: {ex.Message}");
+            }
         }
+
+     
 
         /// <summary>
         /// Sobrecarga del método OnLoad para inicializar eventos y configuraciones adicionales.
@@ -161,8 +120,13 @@ namespace Ofelia_Sara.Formularios.General
             this.ResumeLayout(false);
         }
 
-        //--------------------------------------------------------------------------
-        private void DibujarFondoDegradado(Graphics g, int width, int height)
+        /// <summary>
+ /// METODO DIBUJAR FONDO DEGRADADO EN FORMULARIOS
+ /// </summary>
+ /// <param name="g"></param>
+ /// <param name="width"></param>
+ /// <param name="height"></param>
+        private static void DibujarFondoDegradado(Graphics g, int width, int height)
         {
             // Definir el centro del área de degradado
             PointF center = new PointF(width / 2f, height / 2f);
@@ -174,8 +138,6 @@ namespace Ofelia_Sara.Formularios.General
             RectangleF gradientRectangle = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
         }
 
-
-
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
             // Obtener las dimensiones del formulario
@@ -184,12 +146,8 @@ namespace Ofelia_Sara.Formularios.General
 
             // Llamar al método que dibuja el fondo degradado
             DibujarFondoDegradado(e.Graphics, width, height);
-
-
         }
-        //----------------------------------------------
-      
-
+       
         /// <summary>
         ///  Método para cargar el ícono según el modo (diseñador o ejecución)
         /// </summary>
@@ -217,200 +175,38 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
-        //--------
-        //public void CargarDatosDependencia(CustomComboBox customComboBox, ComisariasManager dbManager)
-        //{
-        //    try
-        //    {
-        //        // Obtener los datos desde la base de datos
-        //        List<Comisaria> comisarias = dbManager.GetComisarias();
-
-        //        // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
-        //        customComboBox.Items.Clear();
-
-        //        // Recorrer la lista de comisarías y agregar los datos al ComboBox
-        //        foreach (Comisaria comisaria in comisarias)
-        //        {
-        //            string item = $"{comisaria.Nombre}   {comisaria.Localidad}"; // Utiliza las propiedades de la clase Comisaria
-        //            customComboBox.Items.Add(item);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MensajeGeneral.Mostrar($"Error al cargar datos de Dependencias: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-        //    }
-        //}
-
-        /// <summary>
-        /// CARGAR DATOS DE DEPENDENCIA
-        /// </summary>
-        /// <param name="customComboBox"></param>
-        /// <param name="dbManager"></param>
-        public void CargarDatosDependencia(CustomComboBox customComboBox, ComisariasManager dbManager)
-        {
-            try
-            {
-                // Validar que los parámetros no sean nulos
-                if (customComboBox == null)
-                {
-                    throw new ArgumentNullException(nameof(customComboBox), "El ComboBox no puede ser nulo.");
-                }
-
-                if (dbManager == null)
-                {
-                    throw new ArgumentNullException(nameof(dbManager), "El gestor de base de datos no puede ser nulo.");
-                }
-
-                // Obtener los datos desde la base de datos
-                List<Comisaria> comisarias = dbManager.GetComisarias();
-                if (comisarias == null)
-                {
-                    throw new InvalidOperationException("No se pudieron obtener las comisarías desde la base de datos.");
-                }
-
-                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
-                customComboBox.Items.Clear();
-
-                //// Recorrer la lista de comisarías y agregar los datos al ComboBox
-                foreach (Comisaria comisaria in comisarias)
-                {
-                    string item = $"{comisaria.Nombre}   {comisaria.Localidad}"; // Utiliza las propiedades de la clase Comisaria
-                    customComboBox.Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Mostrar un mensaje más detallado con la pila de llamadas
-                MensajeGeneral.Mostrar(
-                    $"Error al cargar datos de Dependencias: {ex.Message}\n{ex.StackTrace}",
-                    MensajeGeneral.TipoMensaje.Error
-                );
-            }
-        }
-
-        /// <summary>
-        /// CARGAR DATOS DE INSTRUCTOR
-        /// </summary>
-        /// <param name="customComboBox"></param>
-        /// <param name="dbManager"></param>
-
-        public void CargarDatosInstructor(CustomComboBox customComboBox, InstructoresManager dbManager)
-        {
-            try
-            {
-                
-                // Obtener los datos desde la base de datos
-                List<Instructor> instructores = dbManager.GetInstructors(); // Asegúrate de usar el método correcto
-
-                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
-                customComboBox.Items.Clear();
-
-                // Recorrer la lista de instructores y agregar los datos al ComboBox
-                foreach (Instructor instructor in instructores)
-                {
-                    // Utiliza las propiedades de la clase Instructor
-                    string item = $"{instructor.Jerarquia} {instructor.Nombre} {instructor.Apellido}";
-                    customComboBox.Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MensajeGeneral.Mostrar($"Error al cargar datos de Instructores: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-            }
-        }
-
-        /// <summary>
-        /// CARGAR DATOS DE SECRETARIO
-        /// </summary>
-        /// <param name="customComboBox"></param>
-        /// <param name="dbManager"></param>
-
-        public static void CargarDatosSecretario(CustomComboBox customComboBox, SecretariosManager dbManager)
-        {
-            try
-            {
-                // Obtener los datos desde la base de datos
-                List<Secretario> secretarios = dbManager.GetSecretarios();
-
-                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
-                customComboBox.Items.Clear();
-
-                // Recorrer la lista de secretarios y agregar los datos al ComboBox
-                foreach (Secretario secretario in secretarios)
-                {
-                    // Utiliza las propiedades de la clase Secretario
-                    string item = $"{secretario.Jerarquia} {secretario.Nombre} {secretario.Apellido}";
-                    customComboBox.Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MensajeGeneral.Mostrar($"Error al cargar datos de Secretarios: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-            }
-        }
-
-        /// <summary>
-        /// CARGAR DATOS DE FISCALIA
-        /// </summary>
-        /// <param name="comboBox"></param>
-        /// <param name="dbManager"></param>
-        public static void CargarDatosFiscalia(ComboBox comboBox, FiscaliasManager dbManager)
-        {
-            try
-            {
-                // Obtener los datos desde la base de datos
-                List<Fiscalia> fiscalias = dbManager.GetFiscalias();
-
-                // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
-                comboBox.Items.Clear();
-
-                // Recorrer la lista de fiscalías y agregar los datos al ComboBox
-                foreach (Fiscalia fiscalia in fiscalias)
-                {
-                    string item = $"{fiscalia.Ufid} - {fiscalia.AgenteFiscal} - {fiscalia.Localidad}"; // Puedes personalizar el formato
-                    comboBox.Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MensajeGeneral.Mostrar($"Error al cargar datos de Fiscalías: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-            }
-        }
-
-
-
-        // Método virtual para ser sobreescrito en los formularios hijos
-        protected virtual ComboBox ObtenerComboBoxDependencia()
-        {
-            return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
-        }
-
         /// <summary>
         /// METODO PARA TRAER LABEL TITULO AL FRENTE ----NO FUNCIONA CORRECTAMENTE
-        /// </summary>
-        
-        private void TraerLabelsAlFrente()
+        /// </summary>   
+        protected void AjustarLabelEnPanel()
         {
-            // Itera a través de todos los controles de la forma
+            Panel panelTitulo = ObtenerPanelTitulo(); // Se obtiene el panel del formulario hijo
+
+            if (panelTitulo == null) return; // Si no hay panel, no hacer nada
+
             foreach (Control control in Controls)
             {
-                // Verifica si el control es un Label y su nombre comienza con "label_TITULO"
                 if (control is Label label && label.Name.StartsWith("label_TITULO"))
                 {
-                    label.BringToFront(); // Trae el label al frente
+                    // Asegurar que `panelTitulo` no sea null y acceder correctamente a `Top`
+                    int nuevoX = panelTitulo.Left + (panelTitulo.Width - label.Width) / 2;
+                    int nuevoY = panelTitulo.Top - (label.Height / 2);
+
+                    label.Location = new Point(nuevoX, nuevoY);
+                    label.BringToFront(); // Asegurar que siempre esté visible
                 }
             }
-
+        }
+        protected virtual Panel ObtenerPanelTitulo()
+        {
+            return null; // Devuelve `null` por defecto, pero los formularios hijos lo sobreescriben
         }
 
         /// <summary>
         /// METODO PARA MOSTRAR FOOTER
-        /// </summary>
-       
+        /// </summary>   
         private void InitializeFooterLinkLabel()
         {
-
             // Llama al método estático de FooterHelper para obtener el footerLabel configurado
             this.footerLinkLabel = FooterHelper.CreateFooterLinkLabel(this);
 
@@ -421,7 +217,6 @@ namespace Ofelia_Sara.Formularios.General
         /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES BUSCAR-GUARDAR-LIMPIAR
         /// </summary>
         /// <param name="boton"></param>
-  
         protected static void InicializarEstiloBoton(Button boton)
         {
             Size originalSize = boton.Size;
@@ -461,7 +256,6 @@ namespace Ofelia_Sara.Formularios.General
         /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES AGREGAR CARATULA/IMPUTADO/VICTIMA
         /// </summary>
         /// <param name="boton"></param>
-       
         protected static void InicializarEstiloBotonAgregar(Button boton)
         {
             Size originalSize = boton.Size;
@@ -545,32 +339,7 @@ namespace Ofelia_Sara.Formularios.General
             boton.Invalidate();
         }
 
-        /// <summary>
-        /// para cargar lista en comboBox ESCALAFON Y JERARQUIA-
-        /// </summary>
-        /// <param name="comboBox_Escalafon"></param>
-        /// <param name="comboBox_Jerarquia"></param>
-        protected static void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
-        {    // Configurar el evento SelectedIndexChanged
-            comboBox_Escalafon.SelectedIndexChanged += (sender, e) =>
-            {
-                if (comboBox_Escalafon.SelectedItem != null)
-                {
-                    string escalafon = comboBox_Escalafon.SelectedItem.ToString();
-                    comboBox_Jerarquia.Enabled = true;
-                    comboBox_Jerarquia.DataSource = JerarquiasManager.ObtenerJerarquias(escalafon);
-                }
-                else
-                {
-                    comboBox_Jerarquia.Enabled = false;
-                    comboBox_Jerarquia.DataSource = null;
-                }
-            };
 
-            // Configurar el ComboBox_Jerarquia inicialmente como desactivado
-            comboBox_Jerarquia.Enabled = false;
-            comboBox_Jerarquia.DataSource = null;
-        }
     }
 }
 

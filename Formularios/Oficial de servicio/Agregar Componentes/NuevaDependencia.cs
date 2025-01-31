@@ -2,6 +2,7 @@
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -13,6 +14,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class NuevaDependencia : BaseForm
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private SellosDependencia sellosDependenciaForm;
 
@@ -28,17 +30,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         // Definición de ComboBoxFilePath como propiedad
         private string ComboBoxFilePath { get; set; }
+        #endregion
+
+        #region CONSTRUCTOR
         public NuevaDependencia()
         {
-
-
             InitializeComponent();
             // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
             this.Load += new EventHandler(NuevaDependencia_Load);
             // Aplica el estilo de botón de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
-            this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
+            //this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
 
             // Inicializa el estado del Label, el CheckBox y los PictureBox al cargar el formulario
             ActualizarEstado();
@@ -54,20 +57,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
 
-
             this.FormClosing += NuevaDependencia_FormClosing;
         }
+        #endregion
 
+        #region LOAD
         private void NuevaDependencia_Load(object sender, EventArgs e)
         {
             MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
             MayusculaSola.AplicarAControl(textBox_Localidad);
 
-
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
-
 
             // Inicializar el formulario SellosDependencia
             sellosDependenciaForm = new SellosDependencia();
@@ -76,22 +78,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             sellosDependenciaForm.DependenciaTextChanged += ActualizarTextoDependencia;
             sellosDependenciaForm.LocalidadTextChanged += ActualizarTextoLocalidad;
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
-
         }
-        //-----------------------------------------------------------------------------
+        #endregion
 
+        #region VALIDACIONES Y METODOS
+        /// <summary>
+        /// INICIA CON FOCO EN DEPENDENCIA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Dependencia.Focus();
         }
-        //___________________________________________________________________________
-        private void NuevaDependencia_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
-
-        //------------------------------------------------------------------------------
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // Convertir el texto del TextBox al Camel Case
@@ -103,8 +103,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 textBox.SelectionStart = textBox.Text.Length;
             }
         }
-
-        //------------BOTON GUARDAR----------------------------------------------------
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Obtener datos desde los TextBox
@@ -116,7 +114,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             if (!string.IsNullOrEmpty(dependencia) && !string.IsNullOrEmpty(localidad))
             {
 
-
                 // Llamada a la base de datos para insertar los datos en la tabla 'Comisarias'
                 try
                 {
@@ -127,7 +124,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     // Limpiar el formulario
                     LimpiarFormulario.Limpiar(this);
                    
-
                 }
                 catch (Exception ex)
                 {
@@ -142,10 +138,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 MensajeGeneral.Mostrar("Por favor ingrese el nombre y localidad  de la nueva Dependencia.", MensajeGeneral.TipoMensaje.Advertencia);
             }
         }
-
-
-        //------------------------------------------------------------------------------
-        //------------BOTON LIMPIAR/ELIMINAR ----------------------------------------------------
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             // Limpia el formulario
@@ -153,21 +145,46 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Muestra un mensaje de información
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
+        private void TextBox_Dependencia_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstado();//habilita check y modifica label
 
-        //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
-        private void ConfigurarTextBoxes(Control parent)
+            //---para actualizar en tiempo real textbox DEPENDENCIA
+            // Asegura que el cursor esté al final del texto
+            textBox_Dependencia.SelectionStart = textBox_Dependencia.TextValue.Length;
+
+            // Dispara el evento si hay suscriptores
+            DependenciaTextChanged?.Invoke(textBox_Dependencia.TextValue);
+        }
+        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstado();//habilita check y modifica label
+
+            //---para actualizar en tiempo real textbox DEPENDENCIA
+            // Asegura que el cursor esté al final del texto
+            textBox_Localidad.SelectionStart = textBox_Localidad.TextValue.Length;
+
+            // Dispara el evento si hay suscriptores
+            LocalidadTextChanged?.Invoke(textBox_Localidad.TextValue);
+        }
+
+        /// <summary>
+        /// CONTROLAR QUE SEAN MAYUSCULAS-
+        /// </summary>
+        /// <param name="parent"></param>
+        private static void ConfigurarTextBoxes(Control parent)
         {
             foreach (Control control in parent.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is CustomTextBox customtextBox)
                 {
-                    textBox.TextChanged += (s, e) =>
+                    customtextBox.TextChanged += (s, e) =>
                     {
-                        TextBox tb = s as TextBox;
+                        CustomTextBox tb = s as CustomTextBox;
                         if (tb != null)
                         {
                             int pos = tb.SelectionStart;
-                            // tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.Text);
+                             tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.TextValue);
                             tb.SelectionStart = pos;
                         }
                     };
@@ -179,17 +196,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
+        /// <summary>
+        /// MENSAJE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevaDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Debe ingresar el nombre de la dependencia tal y como se usa en actuaciones." + "El domicilio será empleado en plantilla de Inspeccion Ocular", MensajeGeneral.TipoMensaje.Informacion);
+            using (MensajeGeneral mensaje = new MensajeGeneral("Debe ingresar el nombre de la dependencia tal y como se usa en actuaciones." + "El domicilio será empleado en plantilla de Inspeccion Ocular", MensajeGeneral.TipoMensaje.Informacion))
+            {
+                // Establecer la posición manualmente
+                mensaje.StartPosition = FormStartPosition.Manual;
+                mensaje.Location = new Point(
+                    this.Left + (this.Width - mensaje.Width) / 2,
+                    this.Top + (this.Height - mensaje.Height) / 2
+                );
+
+                // Mostrar el mensaje
+                mensaje.ShowDialog();
+            }
+
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
-        //_________________________________________________________________________
-        //---ABRIR FORMULARIO SELLOS DESDE CHECK-------------------------
+        
+        /// <summary>
+        /// ABRIR FORMULARIO SELLOS DESDE CHECK
+        /// </summary>
         private Point originalPosition;
-
         private void CheckBox_AgregarSellos_CheckedChanged(object sender, EventArgs e)
         {
             // Verifica si el CheckBox está marcado
@@ -237,14 +271,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 sellosDependenciaForm.ShowDialog();
             }
         }
+
+        /// <summary>
+        /// RESTAURAR POSICION DE FORMULARIOS AL CERRAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SellosDependenciaForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Restaurar la posición original del formulario
             this.Location = originalPosition;
         }
 
-
-
+        /// <summary>
+        /// MENSAJE CONFIRMACION AL CERRAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevaDependencia_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -262,8 +305,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //-------------------------------------------------------------------------
-        //--Para habilitar check y modificar label
+
+        /// <summary>
+        /// HABILITA CHECK Y MODIFICA LABEL 
+        /// </summary>
         private void ActualizarEstado()
         {
             // Verifica si textBox_Dependencia y textBox_Localidad no están vacíos ni contienen solo espacios
@@ -285,35 +330,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             checkBox_AgregarSellos.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
+     
+        #endregion
 
-
-        private void TextBox_Dependencia_TextChanged(object sender, EventArgs e)
-        {
-            ActualizarEstado();//habilita check y modifica label
-
-            //---para actualizar en tiempo real textbox DEPENDENCIA
-            // Asegura que el cursor esté al final del texto
-            textBox_Dependencia.SelectionStart = textBox_Dependencia.TextValue.Length;
-
-            // Dispara el evento si hay suscriptores
-            DependenciaTextChanged?.Invoke(textBox_Dependencia.TextValue);
-        }
-
-
-        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
-        {
-            ActualizarEstado();//habilita check y modifica label
-
-            //---para actualizar en tiempo real textbox DEPENDENCIA
-            // Asegura que el cursor esté al final del texto
-            textBox_Localidad.SelectionStart = textBox_Localidad.TextValue.Length;
-
-            // Dispara el evento si hay suscriptores
-            LocalidadTextChanged?.Invoke(textBox_Localidad.TextValue);
-        }
-        //-----------------------------------------------------------------------------
-        //---para actualizar automaticamente entre form NuevaDependencia y SellosDependencia--
-
+        #region PROPIEDADES
         public string TextoDependencia
         {
             get { return textBox_Dependencia.TextValue; }
@@ -324,8 +344,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             get { return textBox_Localidad.TextValue; }
             set { textBox_Localidad.TextValue = value; }
         }
-
-
         public void ActualizarTextoDependencia(string texto)
         {
             // Solo actualiza el texto si es diferente para evitar un bucle infinito
@@ -342,7 +360,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 textBox_Localidad.TextValue = texto;
             }
         }
-
         public void ActualizarTextoDependenciaDesdeSellosDependencia(string nuevoTexto)
         {
             if (textBox_Dependencia.TextValue != nuevoTexto)
@@ -360,3 +377,4 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
     }
 }
 
+#endregion

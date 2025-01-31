@@ -16,6 +16,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
+        #region CONSTRUCTOR
     public partial class NuevoInstructor : BaseForm
     {
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
@@ -25,11 +26,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             this.Load += new EventHandler(NuevoInstructor_Load);// inicializar Load
 
-
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
-
 
             //para redondear bordes de panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
@@ -38,10 +37,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_CheckFirmaDigitalizada.Visible = false;// ocultar la imagen de reemplazo del check
             this.FormClosing += NuevoInstructor_FormClosing;
         }
+        #endregion
 
-        //-------------------------------------------
-
-
+        #region LOAD
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {
             // Configurar todos los TextBoxes en el formulario
@@ -50,7 +48,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-            // ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
 
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
@@ -68,13 +66,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
         }
-        //-----------------------------------------------------------------------------
+        #endregion
+
+        #region METODOS GENERALES
+        /// <summary>
+        /// METODO PARA QUE EL LEGJO TENGA EL FOCO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
 
+        /// <summary>
+        /// MUESTRA MENSAJE DE CONFIRMACION AL CIERRE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevoInstructor_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -92,14 +102,65 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //-----------------------------------------------------------------
-        protected void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
+
+        /// <summary>
+        /// VALIDA SOLO NUMEROS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite dígitos y teclas de control
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// AGREGA PUNTO CADA 3 DIGITOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            // Guardar la posición actual del cursor antes de actualizar el texto
+            int selectionStart = textBox.SelectionStart;
+            int originalLength = textBox.Text.Length;
+
+            // Formatear el número con puntos
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+
+            // Actualizar el texto en el TextBox
+            textBox.Text = textoFormateado;
+
+            // Calcular la nueva posición del cursor
+            int deltaLength = textoFormateado.Length - originalLength;
+            int newCursorPosition = selectionStart + deltaLength;
+
+            // Ajustar la posición del cursor solo si la nueva posición está dentro del rango
+            if (newCursorPosition >= 0 && newCursorPosition <= textoFormateado.Length)
+            {
+                textBox.SelectionStart = newCursorPosition;
+            }
+            else
+            {
+                textBox.SelectionStart = textoFormateado.Length; // Colocar al final si está fuera de rango
+            }
+        }
+        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
         {
             customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
         }
 
-        //---------------------BOTON LIMPIAR------------------------
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        /// <summary>
+        /// BOTON LIMPIAR-click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
@@ -108,7 +169,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         }
 
-        //---------BOTON GUARDAR---------------------------------------
+        /// <summary>
+        /// BOTON GUARDAR-click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(comboBox_Jerarquia.TextValue) ||
@@ -135,7 +200,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     Funcion = textBox_Funcion.TextValue
                 };
 
-
                 InstructoresManager manager = new InstructoresManager();
                 manager.InsertInstructor(nuevoInstructor.Legajo, nuevoInstructor.Subescalafon, nuevoInstructor.Jerarquia, nuevoInstructor.Nombre, nuevoInstructor.Apellido, nuevoInstructor.Dependencia, nuevoInstructor.Funcion);
                 datosGuardados = true;
@@ -146,10 +210,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-
-
-        //----------------------------------------------------------------------------
-        //-------------------CONTROLAR QUE SEAN MAYUSCULAS------------------
+        /// <summary>
+        /// CONTROLAR QUE SEAN MAYUSCULAS
+        /// </summary>
         private void TextoEspecialCampos()
         {
             // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
@@ -178,18 +241,36 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         }
 
-
+        /// <summary>
+        /// MENSAJE DE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevoInstructor_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor", MensajeGeneral.TipoMensaje.Informacion);
+           using (MensajeGeneral mensaje = new MensajeGeneral("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor", MensajeGeneral.TipoMensaje.Informacion))
+            {
+                // Establecer la posición manualmente
+                mensaje.StartPosition = FormStartPosition.Manual;
+                mensaje.Location = new Point(
+                    this.Left + (this.Width - mensaje.Width) / 2,
+                    this.Top + (this.Height - mensaje.Height) / 2
+                );
+
+                // Mostrar el mensaje
+                mensaje.ShowDialog();
+            }
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
 
-        //---------------------------------------------------------------------------------
-        //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
+        #endregion 
+
+        #region CHECK Y PICKTURE
+        /// <summary>
+        /// EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX
+        /// </summary>
         private void InicializarPictureBox()
         {
             // Inicializa el PictureBox con un borde rojo y deshabilitado
@@ -198,7 +279,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
             pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
         }
-        private void checkBox_AgregarFirma_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_AgregarFirma_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = sender as CheckBox;
             if (checkBox != null)
@@ -221,7 +302,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 pictureBox_FirmaDigitalizada.Invalidate(); // Redibuja el borde
             }
         }
-
         private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
         {
             pictureBox_CheckFirmaDigitalizada.Visible = false;
@@ -231,7 +311,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
             pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
         }
-
         private void PictureBox_FirmaDigitalizada_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -245,8 +324,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
                 }
             }
-        }
-        //----------------------------------------------------
+        }  
         private void PictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -283,8 +361,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     e.Effect = DragDropEffects.None;
                 }
             }
-        }
-        //------------------------------------------------------------
+        }    
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -309,44 +386,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo permite dígitos y teclas de control
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-
-            // Guardar la posición actual del cursor antes de actualizar el texto
-            int selectionStart = textBox.SelectionStart;
-            int originalLength = textBox.Text.Length;
-
-            // Formatear el número con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-            // Actualizar el texto en el TextBox
-            textBox.Text = textoFormateado;
-
-            // Calcular la nueva posición del cursor
-            int deltaLength = textoFormateado.Length - originalLength;
-            int newCursorPosition = selectionStart + deltaLength;
-
-            // Ajustar la posición del cursor solo si la nueva posición está dentro del rango
-            if (newCursorPosition >= 0 && newCursorPosition <= textoFormateado.Length)
-            {
-                textBox.SelectionStart = newCursorPosition;
-            }
-            else
-            {
-                textBox.SelectionStart = textoFormateado.Length; // Colocar al final si está fuera de rango
-            }
-        }
-
-        
     }
 }
+#endregion

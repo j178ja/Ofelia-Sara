@@ -16,10 +16,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class SellosDependencia : BaseForm
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         public event Action<string> DependenciaTextChanged;
         public event Action<string> LocalidadTextChanged;
+        #endregion
 
+        #region CONSTRUCTOR
         public SellosDependencia()
         {
             InitializeComponent();
@@ -30,9 +33,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             textBox_Localidad.Enabled = false;// inicializar en false
         }
+        #endregion
 
-
-
+        #region LOAD
         private void SellosDependencia_Load(object sender, EventArgs e)
         {
             // Llamada para aplicar el estilo de boton de BaseForm
@@ -72,13 +75,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             this.FormClosing += SellosDependencia_FormClosing;
         }
-        //-----------------------------------------------------------------------------
+        #endregion
+
+        #region METODOS GENERALES
+        /// <summary>
+        /// COLOCAR EL FOCO EN DEPENDENCIA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
-            // Asegura que el cursor esté en textBox_Dependencia
+            // Asegura que el cursor esté en Dependencia
             comboBox_Dependencia.Focus();
         }
-        //____________________________________________________________________
+       
+        /// <summary>
+        /// MENSAJE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SellosDependencia_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -88,6 +103,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             e.Cancel = true;
         }
 
+        /// <summary>
+        /// MENSAJE DE CONFIRMACION AL CIERRE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SellosDependencia_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -108,7 +128,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         //--------------------------------------------------------------------------------
         private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
-
             // Actualiza los controles
             ActualizarControles();
 
@@ -144,17 +163,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         }
 
-        //-------------------------------------------------------------------------------
-        //---------------------BOTON LIMPIAR------------------------
+        /// <summary>
+        /// BOTON LIMPIAR-click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Dependencia.SelectedIndex = -1;
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
-        //-------------------------------------------------------------------------------
-        //---------------------BOTON GUARDAR------------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// BOTON GUARDAR-click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Verifica que se haya ingresado texto en el textBox_Dependencia
             if (string.IsNullOrWhiteSpace(comboBox_Dependencia.TextValue))
@@ -180,11 +206,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         }
 
 
-        //---------------------------------------------------------------------------------
-        //-----EVENTOS PARA HABILITAR Y MODIFICAR PICKTUREBOX------------------------------
+        /// <summary>
+        /// habilita localidad en caso de que no se seleccione un item, para ser usado cuando se llama al form individualmente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_Dependencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Si el usuario selecciona un elemento de la lista, deshabilitar la edición
+            if (comboBox_Dependencia.SelectedIndex >= 0)
+            {
+                comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+            }
+            // Deshabilitar el TextBox si se selecciona un ítem del ComboBox
+            if (comboBox_Dependencia.SelectedIndex != -1) // Asegurarse de que hay un ítem seleccionado
+            {
+                textBox_Localidad.Enabled = false;
+                textBox_Localidad.Clear();
+            }
+        }
+        #endregion
 
-
-
+        #region PICKTUREBOX
         private void ActualizarControles()
         {
             // Verifica si TextoDependencia tiene texto
@@ -196,7 +239,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             ActualizarPictureBox(pictureBox_SelloFoliador, esTextoValido);
         }
 
-        private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
+        private static void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
         {
             if (habilitar)
             {
@@ -228,8 +271,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //---------------------------------------------------------------------
-        //Eventos para cargar imagenes en los pictureBox
+        
         private void PictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -252,7 +294,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //----------------------------------------------------
+        
         private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -268,7 +310,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //------------------------------------------------------------
+       
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -292,9 +334,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
-        //---------------------------------------------------------------------
-        //---para actualizar automaticamente entre form nuevaDependencia y sellosDependencia
+        #endregion
 
+        #region PROPIEDADES PUBLICAS
         public string TextoDependencia
         {
             get { return comboBox_Dependencia.TextValue; }
@@ -332,22 +374,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        //habilita localidad en caso de que no se seleccione un item, para ser usado cuando se llama al form individualmente
-        private void ComboBox_Dependencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Si el usuario selecciona un elemento de la lista, deshabilitar la edición
-            if (comboBox_Dependencia.SelectedIndex >= 0)
-            {
-                comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-            }
-            // Deshabilitar el TextBox si se selecciona un ítem del ComboBox
-            if (comboBox_Dependencia.SelectedIndex != -1) // Asegurarse de que hay un ítem seleccionado
-            {
-                textBox_Localidad.Enabled = false;
-                textBox_Localidad.Clear();
-            }
-        }
-
-
     }
 }
+#endregion

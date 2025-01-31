@@ -10,14 +10,20 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
+    /// <summary>
+    /// FORMULARIO QUE MUESTRA LISTADO DE DOCUMENTOS DE CONSULTA
+    /// </summary>
     public partial class LeyesForm : BaseForm
     {
+        #region VARIABLES
         private ListViewItem hoverItem = null; // Ítem actualmente en hover
         private Color hoverColor = Color.LightBlue; // Color de fondo al pasar el cursor
         private Color selectedColor = Color.FromArgb(0, 154, 174); // Color de fondo al hacer clic
         private Color selectedTextColor = Color.White; // Color del texto al hacer clic
         private Color subrayadoColor = Color.Blue; // Color del subrayado
+        #endregion
 
+        #region CONSTRUCTOR
         public LeyesForm()
         {
             InitializeComponent();
@@ -25,7 +31,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Personalizar bordes del panel
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-
+            label_TITULO.BringToFront();
             // Eventos del ListView
             listView_Documentos.Click += ListView_Documentos_Click;
           //  listView_Documentos.SelectedIndexChanged += ListView_Documentos_SelectedIndexChanged;
@@ -34,15 +40,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             listView_Documentos.MouseMove += ListView_Documentos_MouseMove;
             listView_Documentos.MouseLeave += ListView_Documentos_MouseLeave;
         }
+        #endregion
 
+        #region LOAD
         private void LeyesForm_Load(object sender, EventArgs e)
         {
             CargarDocumentosEnListView();
             ConfigurarListView();
             listView_Documentos.SelectedItems.Clear(); // Limpia selección inicial
             listView_Documentos.Invalidate(); // Redibuja el ListView
+            
         }
-
+        #endregion
         private void ConfigurarListView()
         {
             listView_Documentos.Font = new Font(listView_Documentos.Font.FontFamily, 12);
@@ -61,6 +70,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        #region APARIENCIA
+        /// <summary>
+        /// CARGA LISTADO DE DOCUMENTOS PARA EXHIBIR
+        /// </summary>
         private void CargarDocumentosEnListView()
         {
             string carpetaDocumentos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BaseDatos", "Leyes");
@@ -86,6 +99,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 listView_Documentos.Items.Add(item);
             }
         }
+
+        /// <summary>
+        /// CARACTERISTICAS DEL LIST
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListView_Documentos_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             int leftMargin = 10; // Margen izquierdo adicional en píxeles
@@ -230,3 +249,4 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
     }
 }
+#endregion

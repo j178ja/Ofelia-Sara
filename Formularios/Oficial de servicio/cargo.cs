@@ -21,14 +21,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     public partial class Cargo : BaseForm
 
     {
+        #region VARIABLES
         private int alturaOriginalPanel_Descripcion;
         private int alturaOriginalPanel_Instruccion;
         private int alturaContraidaPanel = 30; //altura de panel contraido
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Descripcion = true;// 
-
-
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+        #endregion
+        #region CONSTRUCTOR
         public Cargo()
         {
             InitializeComponent();
@@ -52,9 +53,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             AjustarTamanoFormulario();//para cargar formulario con tamaño ajustado
         }
-        //---FIN CONSTRUCTOR----------------
+        #endregion
 
-        //---sobrecargar para que reciba los datos desde form iniciocierre
+        /// <summary>
+        /// sobrecargar para que reciba los datos desde form iniciocierre
+        /// </summary>
         public Cargo(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
                  string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
                  string instructor, string secretario, string dependencia)
@@ -79,6 +82,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         //-------FIN SOBRECARGA--------------------------------
 
+        #region LOAD
         private void Cargo_Load(object sender, EventArgs e)
         {
             this.FormClosing += BuscarPersonal_FormClosing;
@@ -108,7 +112,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-            // Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
+             Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -116,7 +120,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
 
             pictureBox_CheckLegajoVehicular.Visible = false;// para ocultar el check realizado
-
 
             //.....................................................
             //// Guardar la altura original del panel
@@ -153,8 +156,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
         }
-
-        //-------FIN  LOAD------------------
+        #endregion
+       
         private void BotonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
         {
             try
@@ -254,19 +257,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
-
-        //-----------------------------------------------------
         /// <summary>
         /// METODO PARA DAR FOCO EN NUMERO DE CARGO, AL ABRIR FORMULARIO
         /// </summary>
-
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox
             textBox_NumeroCargo.Focus();
         }
-        //-----------------------------------------------------------------------
+      
         private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
         {
             if (sender is CustomTextBox customtextBox)
@@ -390,7 +389,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
@@ -423,7 +422,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
-
+        /// <summary>
+        /// VALIDA CAMPOS OBLIGATORIOS ANTES DE GUARDAR
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarAntesdeGuardar()
         {
             bool esValido = false;
@@ -442,12 +444,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return esValido;
         }
 
-        private bool ValidarCampo(Control control, string mensajeError)
+        /// <summary>
+        /// VALIDA CAMPO Y COLOCA O BORRA ICONO ERROR
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="mensajeError"></param>
+        /// <returns></returns>
+        private static bool ValidarCampo(Control control, string mensajeError)
         {
             if (string.IsNullOrWhiteSpace(control.Text))
             {
                 // Si el campo está vacío, se establece un error en el control y se muestra el PictureBoxError
-                //SetError(control, mensajeError);
+             //   SetError(control, mensajeError);
                 return false;
             }
 
@@ -456,9 +464,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true;
         }
 
-        //---------------------------------------------------------------------------------
-
-        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        
+        /// <summary>
+        /// MENSAJE CONFIRMACION AL CIERRE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -478,6 +489,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        /// <summary>
+        /// VALIDACION SOLO NUMEROS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_NumeroCargo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -490,8 +506,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// PARA VALIDAR LIMITE DE 2 NUMEROS EN NUMEROS DE IPP
         /// </summary>
-
-
         private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -563,15 +577,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
         /// </summary>
-
         private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
             CompletarConCeros(sender as CustomTextBox);
         }
 
 
-        // Método reutilizable para completar con ceros
-        private void CompletarConCeros(CustomTextBox customtextBox)
+       
+        /// <summary>
+        /// Método reutilizable para completar con ceros
+        /// </summary>
+        /// <param name="customtextBox"></param>
+        private static void CompletarConCeros(CustomTextBox customtextBox)
         {
             if (customtextBox != null)
             {
@@ -588,6 +605,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
+        /// <summary>
+        /// MENSAJE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -596,8 +618,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
-        //--------------------------------------------------------------------------------------
-        //---Validar datos previo impresion 
+
+        
+        /// <summary>
+        /// Validar datos previo impresion 
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarAntesde_IMPRIMIR()
         {
             //Verificar si los campos están completados
@@ -617,7 +643,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 return false; // Detener el proceso si no hay texto válido
             }
 
-
             // validad Descripcion de la muestra
             if (string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text))
             {
@@ -625,7 +650,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 richTextBox_Descripcion.Focus();
                 return false; // Detener el proceso si no hay texto válido
             }
-
 
             // Validar ComboBox FISCALIA
             if (comboBox_Fiscalia.Items.Count == 0 ||
@@ -665,9 +689,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true; // Indica que la validación fue exitosa
         }
 
-        //------------------------------------------------------------------------------------------------
-        //   METODO PARA OBTENER DATOS DEL FORMULARIO
-
+   
+        
+        /// <summary>
+        /// METODO PARA OBTENER DATOS DEL FORMULARIO
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, string> ObtenerDatosFormulario()
         {
             var datosFormulario = new Dictionary<string, string>();
@@ -678,8 +705,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 // Detener la generación de documentos si hay algún error
                 return null;
             }
-
-
 
             // Añadimos los valores de los controles al diccionario
 
@@ -695,16 +720,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-           //  datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
-
-
+             datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
         }
-        //------------------------------------------------------------------------------------
-        private void btn_Imprimir_Click(object sender, EventArgs e)
+     
+        private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
-
             // Llamar al método de validación
             if (!ValidarAntesde_IMPRIMIR())
             {
@@ -759,18 +781,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void pictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
+        private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
         {
-
             // Manejar lógica para pictureBox_CheckRatificacion
             pictureBox_CheckLegajoVehicular.Visible = false;
             checkBox_LegajoVehicular.Visible = true;
             checkBox_LegajoVehicular.Checked = false;
-
-
         }
 
-        private void checkBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
             if (checkBox_LegajoVehicular.Checked)
@@ -788,8 +807,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-        private void btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
         {
             if (panel_Instruccion is PanelConBordeNeon panelConNeon)
             {
@@ -806,7 +824,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
                     btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(422, 0);
-
 
                     // Ocultar todos los controles excepto el botón de ampliación/reducción
                     foreach (Control control in panel_DatosInstruccion.Controls)
@@ -874,13 +891,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// METODO PARA VALIDAR DAROS DE LOS PANELES
         /// </summary>
-
         private void ValidarPanelDatosInstruccion()
         {
             bool camposValidos = true;
-
-
-
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_DatosInstruccion.Controls)
             {
@@ -902,18 +915,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 pictureBox_PanelInstruccion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
                 pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-
             }
             else
             {
                 pictureBox_PanelInstruccion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
                 pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
                 label_DatosInstruccion.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-
             }
 
             // Ajustar la posición del pictureBox al lado del label
-            pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
+                pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
                 label_DatosInstruccion.Right + 5, // A la derecha del label con un margen de 5 px
                 label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_PanelInstruccion.Height) / 2 // Centrado verticalmente
             );
@@ -931,7 +942,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
         {
             // Verificar si el panel es de tipo PanelConBordeNeon
             if (panel_Descripcion is PanelConBordeNeon panelConNeon)
@@ -982,7 +993,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-        private bool VerificarCamposEnPanel(Panel panel)
+        private static bool VerificarCamposEnPanel(Panel panel)
         {
             foreach (Control control in panel.Controls)
             {
@@ -1016,7 +1027,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             return true; // Todos los campos están completos
         }
-        // METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
+
+        
+        /// <summary>
+        /// METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
+        /// </summary>
         private void ValidarPanelDescripcion()
         {
             bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
@@ -1035,9 +1050,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
                 panel_ControlesInferiores.Visible = false;
             }
-
-
-
             // Ajustar la posición del pictureBox al lado del label
             pictureBox_Descripcion.Location = new System.Drawing.Point(
                 label_Descripcion.Right + 5, // A la derecha del label con un margen de 5 px
@@ -1050,9 +1062,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Asegurarse de que el pictureBox sea visible
             pictureBox_Descripcion.Visible = true;
             AjustarTamanoFormulario();
-
         }
 
+        /// <summary>
+        /// AJUSTA ALTURA DE FORMULARIO
+        /// </summary>
         private void AjustarTamanoFormulario()
         {
             int posicionVertical = 70; // Comienza desde la parte superior de panel1
@@ -1072,8 +1086,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             posicionVertical += panel_SeleccionVisu.Height;
             // Agregar separación de 10 píxeles entre panel_SeleccionVisu y panel_Imagenes
             posicionVertical += 10;
-
-
 
             // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
             if (panel_Descripcion.Visible)
@@ -1095,8 +1107,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Ajustar la altura del formulario sumando un margen adicional de 20 px
             this.Height = panel1.Location.Y + panel1.Height + 75;
-
-
 
             // Activar scroll si la altura del formulario supera los 800 píxeles
             if (this.Height > 800)

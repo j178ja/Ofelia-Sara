@@ -35,7 +35,6 @@
             btn_Limpiar = new System.Windows.Forms.Button();
             btn_Guardar = new System.Windows.Forms.Button();
             panel_Destino = new Controles.General.PanelConBordeNeon();
-            pictureBox_Destino = new System.Windows.Forms.PictureBox();
             panel_Detalle_Destino = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_DESTINO = new System.Windows.Forms.Button();
             textBox_PartidoDependencia = new Controles.General.CustomTextBox();
@@ -48,7 +47,6 @@
             label_DomicilioDependencia = new System.Windows.Forms.Label();
             label_Destino = new System.Windows.Forms.Label();
             panel_Armamento = new Controles.General.PanelConBordeNeon();
-            pictureBox_Armamento = new System.Windows.Forms.PictureBox();
             panel_Detalle_Armamento = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_ARMAMENTO = new System.Windows.Forms.Button();
             textBox_ChalecoNumero = new Controles.General.CustomTextBox();
@@ -65,7 +63,6 @@
             label_ArmaMarca = new System.Windows.Forms.Label();
             label_Armamento = new System.Windows.Forms.Label();
             panel_Revista = new Controles.General.PanelConBordeNeon();
-            pictureBox_SituacionRevista = new System.Windows.Forms.PictureBox();
             label_SituacionRevista = new System.Windows.Forms.Label();
             panel_Detalle_Revista = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_REVISTA = new System.Windows.Forms.Button();
@@ -83,7 +80,6 @@
             comboBox_Jerarquia = new Controles.General.CustomComboBox();
             label_Jerarquia = new System.Windows.Forms.Label();
             panel_DatosPersonales = new Controles.General.PanelConBordeNeon();
-            pictureBox_DatosPersonales = new System.Windows.Forms.PictureBox();
             label_DatosPersonales = new System.Windows.Forms.Label();
             panel_Detalle_Personal = new System.Windows.Forms.Panel();
             numeroTelefonicoControl1 = new Controles.Ofl_Sara.NumeroTelefonicoControl();
@@ -121,16 +117,12 @@
             panel1.SuspendLayout();
             panel_ControlesInferiores.SuspendLayout();
             panel_Destino.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_Destino).BeginInit();
             panel_Detalle_Destino.SuspendLayout();
             panel_Armamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_Armamento).BeginInit();
             panel_Detalle_Armamento.SuspendLayout();
             panel_Revista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_SituacionRevista).BeginInit();
             panel_Detalle_Revista.SuspendLayout();
             panel_DatosPersonales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_DatosPersonales).BeginInit();
             panel_Detalle_Personal.SuspendLayout();
             SuspendLayout();
             // 
@@ -191,7 +183,6 @@
             // 
             panel_Destino.BorderRadius = 10;
             panel_Destino.CamposCompletos = false;
-            panel_Destino.Controls.Add(pictureBox_Destino);
             panel_Destino.Controls.Add(panel_Detalle_Destino);
             panel_Destino.Controls.Add(label_Destino);
             panel_Destino.EstaContraido = false;
@@ -203,17 +194,6 @@
             panel_Destino.Size = new System.Drawing.Size(694, 170);
             panel_Destino.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_Destino.TabIndex = 153;
-            // 
-            // pictureBox_Destino
-            // 
-            pictureBox_Destino.BackColor = System.Drawing.Color.Transparent;
-            pictureBox_Destino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox_Destino.Location = new System.Drawing.Point(329, 6);
-            pictureBox_Destino.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_Destino.Name = "pictureBox_Destino";
-            pictureBox_Destino.Size = new System.Drawing.Size(34, 25);
-            pictureBox_Destino.TabIndex = 137;
-            pictureBox_Destino.TabStop = false;
             // 
             // panel_Detalle_Destino
             // 
@@ -417,7 +397,6 @@
             // 
             panel_Armamento.BorderRadius = 10;
             panel_Armamento.CamposCompletos = false;
-            panel_Armamento.Controls.Add(pictureBox_Armamento);
             panel_Armamento.Controls.Add(panel_Detalle_Armamento);
             panel_Armamento.Controls.Add(label_Armamento);
             panel_Armamento.EstaContraido = false;
@@ -429,17 +408,6 @@
             panel_Armamento.Size = new System.Drawing.Size(693, 173);
             panel_Armamento.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_Armamento.TabIndex = 152;
-            // 
-            // pictureBox_Armamento
-            // 
-            pictureBox_Armamento.BackColor = System.Drawing.Color.Transparent;
-            pictureBox_Armamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox_Armamento.Location = new System.Drawing.Point(284, 12);
-            pictureBox_Armamento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_Armamento.Name = "pictureBox_Armamento";
-            pictureBox_Armamento.Size = new System.Drawing.Size(34, 25);
-            pictureBox_Armamento.TabIndex = 112;
-            pictureBox_Armamento.TabStop = false;
             // 
             // panel_Detalle_Armamento
             // 
@@ -708,7 +676,6 @@
             // 
             panel_Revista.BorderRadius = 10;
             panel_Revista.CamposCompletos = false;
-            panel_Revista.Controls.Add(pictureBox_SituacionRevista);
             panel_Revista.Controls.Add(label_SituacionRevista);
             panel_Revista.Controls.Add(panel_Detalle_Revista);
             panel_Revista.EstaContraido = false;
@@ -720,17 +687,6 @@
             panel_Revista.Size = new System.Drawing.Size(693, 179);
             panel_Revista.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_Revista.TabIndex = 151;
-            // 
-            // pictureBox_SituacionRevista
-            // 
-            pictureBox_SituacionRevista.BackColor = System.Drawing.Color.Transparent;
-            pictureBox_SituacionRevista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox_SituacionRevista.Location = new System.Drawing.Point(380, 8);
-            pictureBox_SituacionRevista.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_SituacionRevista.Name = "pictureBox_SituacionRevista";
-            pictureBox_SituacionRevista.Size = new System.Drawing.Size(34, 25);
-            pictureBox_SituacionRevista.TabIndex = 111;
-            pictureBox_SituacionRevista.TabStop = false;
             // 
             // label_SituacionRevista
             // 
@@ -1019,7 +975,6 @@
             // 
             panel_DatosPersonales.BorderRadius = 10;
             panel_DatosPersonales.CamposCompletos = false;
-            panel_DatosPersonales.Controls.Add(pictureBox_DatosPersonales);
             panel_DatosPersonales.Controls.Add(label_DatosPersonales);
             panel_DatosPersonales.Controls.Add(panel_Detalle_Personal);
             panel_DatosPersonales.EstaContraido = false;
@@ -1031,17 +986,6 @@
             panel_DatosPersonales.Size = new System.Drawing.Size(693, 308);
             panel_DatosPersonales.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_DatosPersonales.TabIndex = 150;
-            // 
-            // pictureBox_DatosPersonales
-            // 
-            pictureBox_DatosPersonales.BackColor = System.Drawing.Color.Transparent;
-            pictureBox_DatosPersonales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox_DatosPersonales.Location = new System.Drawing.Point(359, 6);
-            pictureBox_DatosPersonales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_DatosPersonales.Name = "pictureBox_DatosPersonales";
-            pictureBox_DatosPersonales.Size = new System.Drawing.Size(34, 25);
-            pictureBox_DatosPersonales.TabIndex = 110;
-            pictureBox_DatosPersonales.TabStop = false;
             // 
             // label_DatosPersonales
             // 
@@ -1640,22 +1584,18 @@
             panel_ControlesInferiores.ResumeLayout(false);
             panel_Destino.ResumeLayout(false);
             panel_Destino.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_Destino).EndInit();
             panel_Detalle_Destino.ResumeLayout(false);
             panel_Detalle_Destino.PerformLayout();
             panel_Armamento.ResumeLayout(false);
             panel_Armamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_Armamento).EndInit();
             panel_Detalle_Armamento.ResumeLayout(false);
             panel_Detalle_Armamento.PerformLayout();
             panel_Revista.ResumeLayout(false);
             panel_Revista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_SituacionRevista).EndInit();
             panel_Detalle_Revista.ResumeLayout(false);
             panel_Detalle_Revista.PerformLayout();
             panel_DatosPersonales.ResumeLayout(false);
             panel_DatosPersonales.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_DatosPersonales).EndInit();
             panel_Detalle_Personal.ResumeLayout(false);
             panel_Detalle_Personal.PerformLayout();
             ResumeLayout(false);
@@ -1746,10 +1686,6 @@
         private System.Windows.Forms.Button btn_AmpliarReducir_ARMAMENTO;
         private System.Windows.Forms.Button btn_AmpliarReducir_REVISTA;
         private System.Windows.Forms.Button btn_AmpliarReducir_DATOSPERSONALES;
-        private System.Windows.Forms.PictureBox pictureBox_Destino;
-        private System.Windows.Forms.PictureBox pictureBox_Armamento;
-        private System.Windows.Forms.PictureBox pictureBox_SituacionRevista;
-        private System.Windows.Forms.PictureBox pictureBox_DatosPersonales;
         private Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl2;
         private Controles.Ofl_Sara.NumeroTelefonicoControl numeroTelefonicoControl1;
     }

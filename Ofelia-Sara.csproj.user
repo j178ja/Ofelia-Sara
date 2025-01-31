@@ -26,6 +26,9 @@
     <Compile Update="Controles\Ofl Sara\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controles\Ofl Sara\NuevaCaratulaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controles\Ofl Sara\SelectorFecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,9 +68,6 @@
     <Compile Update="Controles\Ofl Sara\EmailControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Controles\Ofl Sara\NuevaCaratulaControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Controles\Ofl Sara\NuevaPersonaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,7 +86,7 @@
     <Compile Update="Formularios\General\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\General\BaseFormBase.cs">
+    <Compile Update="Formularios\General\BaseFormDATOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\General\Contacto.cs">

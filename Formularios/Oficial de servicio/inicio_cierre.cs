@@ -1,4 +1,5 @@
 ﻿using BaseDatos.Entidades;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
@@ -15,14 +16,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
+    /// <summary>
+    /// FORMULARIO PRINCIPAL CARGA IPP
+    /// </summary>
     public partial class InicioCierre : BaseForm
     {
+        #region VARIABLES
 
         private ReposicionarSegunAgregado reposicionador;//para reposicionar paneles
-
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = new List<string>();
         private List<string> imputados = new List<string>();
@@ -33,13 +39,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
         private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
+        #endregion
+
+        #region CONSTRUCTOR
         public InicioCierre()
         {
-            ConsoleHelper.AllocConsole();
-            Console.WriteLine($"INICIO ejecucion");
             InitializeComponent();
 
-            //.......para reposicionar paneles
+            //.para reposicionar paneles
             reposicionador = new ReposicionarSegunAgregado(
             this,
             panel_Ipp,
@@ -49,8 +56,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Instruccion,
             panel_ControlesInferiores
             );
-            //..............................
-
+         
             textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
             textBox_Victima.TextChanged += (s, e) => ActualizarEstado();
@@ -60,6 +66,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
+
+            // Asocia el evento TextChanged al método de validación
+            textBox_Victima.TextChanged += new EventHandler(TextBox_Victima_TextChanged);
+            textBox_Imputado.TextChanged += new EventHandler(TextBox_Imputado_TextChanged);
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -71,89 +81,38 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
-            this.Load += new System.EventHandler(this.InicioCierre_Load);
-
-            // Asocia el evento TextChanged al método de validación
-            textBox_Victima.TextChanged += new EventHandler(TextBox_Victima_TextChanged);
-            textBox_Imputado.TextChanged += new EventHandler(TextBox_Imputado_TextChanged);
-
-            //-----para los botones de agregar datos personales completos------------------
-            // Inicialmente, deshabilita el botón
-            btn_AgregarDatosVictima.Enabled = false;
-            btn_AgregarDatosVictima.BackColor = Color.Tomato;
-
-            // Inicialmente, deshabilita el botón
-            btn_AgregarDatosImputado.Enabled = false;
-            btn_AgregarDatosImputado.BackColor = Color.Tomato;
-
-            comboBox_DeptoJudicial.TextChanged += ComboBox_DeptoJudicial_TextChanged;
-
-            // Ruta completa del archivo JSON
-            string rutaJson = @"C:\Users\Usuario\OneDrive\Escritorio\BaseDatos_Libreria\Json\sugerencias_Caratula.json";
-
-            // Cargar sugerencias desde el archivo JSON
-            sugerencias = AutocompletarCaratula.LeerSugerenciasDesdeJson(rutaJson);
-
-            // Configurar el TextBox para utilizar autocompletar
-            ConfigurarAutocompletar(textBox_Caratula, sugerencias);
+            InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
-
-            fecha_Pericia.Enabled = false;//deshabilitado e invisible para aplicar el tooltip especial e impedir que se vea
-            fecha_Pericia.Visible = false;
+                    
         }
-        //---FIN CONSTRUCTOR----
+        #endregion
 
-        // Propiedad pública para acceder al botón
-        // En InicioCierre, agrega una propiedad pública que devuelva el botón
+        #region PROPIEDADES PUBLICAS
+        /// <summary>
+        /// Propiedad pública para acceder al botón
+        /// </summary>
         public Boton_Contador BtnContadorRatificaciones
-        {
+        {  // En InicioCierre, agrega una propiedad pública que devuelva el botón
             get { return btn_ContadorRatificaciones; } // Asegúrate de que esta instancia esté inicializada en el diseñador
         }
-        //-------------------------------------------------
-
+        #endregion
+       
+        #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
-            pictureBox_CheckRatificacion.Visible = false; //oculata ambos check hasta ques se marque
-            pictureBox_CheckCargo.Visible = false;
+            // Configurar autocompletado para `textBox_Caratula`
+            AutocompletarManager autocompletarManager = new AutocompletarManager("autocompletar.json");                     
+            autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
 
-            // timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+            timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
             textBox_NumeroIpp.MaxLength = 6; //limitar la cantidad de caracteres para numeroz de IPP
 
-            //  tooltip DESCATIVADO-ACTIVADO
-            TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia.", "Marcar para establecer fecha de Pericia");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente.", "Agregar una caratula adicional");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
-            TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
-
-            TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
-
-            ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
-            ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
-            ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
-            //...........................................................................
-            //carcteristicas de texto en controles
-            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
-            MayusculaSola.AplicarAControl(textBox_Victima);
-            MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
-            //.....................................................................
-
-            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
-            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
-            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
-            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
+            ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
+            TextEnControles();//condiciona el tipo de texto en diferentes controles
+            InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
 
@@ -163,21 +122,76 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO,labell btn_not247 y btn_StudRML
-            //............................................................................
-
-            //invisibilizar controles al cargar
-            Btn_Contador247.Visible = false;//invisibiliza el contador hasta que pase a SI btn deslizable
-            fecha_Pericia.Visible = false;  //para ocultar fecha de pericia hasta ques se establesca
-            btn_ContadorRatificaciones.Visible = false;// oculta contador hasta el check
-            Btn_ContadorRML.Visible = false;
-            //..................................................................
-
+         
             Btn_ContadorRML.Text = "0";
 
             fecha_Pericia.ValidatingType = typeof(DateTime); // Configurar tipo de validación
         }
-        // --FIN LOAD
-        //-----------------------------------------------------------------------------
+        #endregion
+
+        #region CONFIGURACIONES
+        private void ConfigurarTooltip()
+        {
+            TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia.", "Marcar para establecer fecha de Pericia");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente.", "Agregar una caratula adicional");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
+            TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
+            TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
+
+            ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
+            ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
+            ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
+        }
+
+        /// <summary>
+        /// ESTABLECE CARACTERISTICAS DE TEXTO EN CONTROLES
+        /// </summary>
+        private void TextEnControles()
+        {
+            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
+            MayusculaSola.AplicarAControl(textBox_Victima);
+            MayusculaSola.AplicarAControl(textBox_Imputado);
+            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
+            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
+            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+        }
+
+        /// <summary>
+        /// INVISIBILIZA Y DESACTIVA CONTROLES 
+        /// </summary>
+        private void InvisibilizarDesactivarControles()
+        {
+            Btn_Contador247.Visible = false;//invisibiliza el contador hasta que pase a SI btn deslizable
+            fecha_Pericia.Visible = false;  //para ocultar fecha de pericia hasta ques se establesca
+            btn_ContadorRatificaciones.Visible = false;// oculta contador hasta el check
+            Btn_ContadorRML.Visible = false;
+
+            fecha_Pericia.Enabled = false;//deshabilitado e invisible para aplicar el tooltip especial e impedir que se vea
+           
+            pictureBox_CheckRatificacion.Visible = false; //oculata ambos check hasta ques se marque
+            pictureBox_CheckCargo.Visible = false;
+
+            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
+            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
+            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
+
+            btn_AgregarDatosImputado.Enabled = false;
+            btn_AgregarDatosVictima.Enabled = false;
+        }
+        #endregion
+
+        #region VALIDACION Y GUARDADO DE DATOS
+        /// <summary>
+        /// TOMA LOS DATOS DE DISTINTOS CONTROLES
+        /// </summary>
         private void GuardarDatos()
         {
             // Obtener los datos del formulario
@@ -211,23 +225,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         /// <summary>
-        /// METODO PARA AUTOCOMPLETAR CARATULA
-        /// </summary>
-        /// <param name="textBox"></param>
-        /// <param name="sugerencias"></param>
-        private void ConfigurarAutocompletar(CustomTextBox textBox, List<string> sugerencias)
-        {
-            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-            autoCompleteCollection.AddRange(sugerencias.ToArray());
-
-            textBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            textBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox.AutoCompleteCustomSource = autoCompleteCollection;
-        }
-        //---------------------------------------------------------------------
-
-        /// <summary>
-        /// LOGICA DE BOTON GUARDAR
+        /// BOTON GUARDAR-click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -247,8 +245,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
 
         }
-        //............................................................
-
+      
         /// <summary>
         /// METODO VALIDAR ANTES DE GUARDAR
         /// </summary>
@@ -264,16 +261,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             return esValido;
         }
-        //.............................................................................
-
+ 
         /// <summary>
         /// METODO PARA MOSTRAR ERROR EN CAMPOS VACIOS
         /// </summary>
         /// <param name="control"></param>
         /// <param name="mensajeError"></param>
         /// <returns></returns>
-
-        private bool ValidarCampo(Control control, string mensajeError)
+        private static bool ValidarCampo(Control control, string mensajeError)
         {
             if (string.IsNullOrWhiteSpace(control.Text))
             {
@@ -286,14 +281,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //ClearError(control);
             return true;
         }
-        //-------------------------------------------------------------------------------
+        #endregion
 
         /// <summary>
-        /// METODO PARA BOTON ELIMINAR
+        /// BOTON ELIMINAR
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
@@ -311,14 +305,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
-        //-------------------------------------------------------------------------------
 
         /// <summary>
         /// METODO PARA LIMITAR LOS CARACTERES A 6
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {
             // Limitar a 6 caracteres
@@ -333,26 +325,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
         }
-        //-------------------------------------------------------------
-
+      
         /// <summary>
         /// LIMITAR A 2 CARACTERES COMBOBOX IPP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-
-        //--------LIMITANDO CANTIDAD DE CARACTERES A 2
         private void ComboBox_Ipp_TextUpdate(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox; // El sender será el InnerTextBox
-            if (textBox != null && textBox.Text.Length > 2)
+            CustomTextBox customTextBox = sender as CustomTextBox; // El sender será el InnerTextBox
+            if (customTextBox != null && customTextBox.TextValue.Length > 2)
             {
-                textBox.Text = textBox.Text.Substring(0, 2); // Limitar a 2 caracteres
-                textBox.SelectionStart = textBox.Text.Length; // Mantener el cursor al final
+                customTextBox.Text = customTextBox.TextValue.Substring(0, 2); // Limitar a 2 caracteres
+                customTextBox.SelectionStart = customTextBox.TextValue.Length; // Mantener el cursor al final
             }
         }
-
 
         /// <summary>
         /// METODO PARA QUE SOLO SE AGREGEN NUMEROS A COMBOBOX IPP
@@ -369,7 +356,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (e.KeyChar == (char)Keys.Enter)
             {
                 // Si el evento viene del InnerTextBox, obtenemos el control padre
-                if (sender is TextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
+                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
                 {
                     // Obtiene el texto actual
                     string currentText = customComboBox.TextValue;
@@ -421,15 +408,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
-
-        //------------------------------------------------------------------
-
         /// <summary>
         /// EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
         /// </summary>
-
-
         private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -440,7 +421,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (e.KeyChar == (char)Keys.Enter)
             {
                 // Si el evento viene del InnerTextBox, obtenemos el control padre
-                if (sender is TextBox innerTextBox && innerTextBox.Parent is CustomTextBox customTextBox)
+                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomTextBox customTextBox)
                 {
                     // Obtiene el texto actual
                     string currentText = customTextBox.TextValue;
@@ -464,12 +445,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
-
-
-
-        //-------------------------------------------------------------------------
-
         /// <summary>
         /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
         /// </summary>
@@ -478,8 +453,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CompletarConCeros(sender as CustomTextBox);
         }
 
-        // Método reutilizable para completar con ceros
-        private void CompletarConCeros(CustomTextBox customtextBox)
+        /// <summary>
+        /// Método reutilizable para completar con ceros
+        /// </summary>
+        /// <param name="customtextBox"></param>
+        private static void CompletarConCeros(CustomTextBox customtextBox)
         {
             if (customtextBox != null)
             {
@@ -497,23 +475,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //--------------------------------------------------------------------------------------------
-
-
         /// <summary>
         /// METODO BOTON IMPRIMIR
         /// </summary>
-
-        // Crea ventana que muestra archivo cargando
-        private void CargarImpresion()
-        {
+        private static void CargarImpresion()
+        {  // Crea ventana que muestra archivo cargando
             using (MensajeCargarImprimir imprimirMessageBox = new MensajeCargarImprimir())
             {
                 imprimirMessageBox.ShowDialog();//showdialog implica "bloquea interaccion con ventana principal hasta que se cierra"
             }
         }
 
-        // Evento Click del botón Imprimir
+        /// <summary>
+        /// BOTON IMPRIMIR-click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
             if (btn_Imprimir.Enabled) //si el boton esta habilitado -->mostrar progreso
@@ -533,25 +510,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //---------------------------------------------------------------------------------
-
         /// <summary>
         /// METODO PARA INICIALIZAR COMBOBOX EN INDICE PREDETERMINADO
         /// </summary>
-        private void InicializarComboBox()
+        private static void InicializarComboBox()
         {
             //comboBox_Ipp1.SelectedIndex = 3;
             //comboBox_Ipp2.SelectedIndex = 3;  //se comento ya que generaba error despues de la migracion
             //comboBox_Ipp4.SelectedIndex = 0;
 
         }
-        //----------------------------------------------------------------------
 
         /// <summary>
         ///  CARGAR DATOS DESDE FORMULARIO INICIO-CIERRE
         /// </summary>
-
-        //--------Diccionario para cargar los datos a los marcadores del documento-------------
         private Dictionary<string, string> ObtenerDatosFormulario()
         {
             var datosFormulario = new Dictionary<string, string>
@@ -564,8 +536,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         { "DeptoJudicial", comboBox_DeptoJudicial.TextValue },
          };
             return datosFormulario;
-        }
-        //----------------------------------------------------------------------
+        } //Diccionario para cargar los datos a los marcadores del documento-------------
+
 
         /// <summary>
         /// METODO PARA VALIDAD Y ABRIR FORMULARIO AGREGAR DATOS VICTIMA
@@ -588,7 +560,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.TextValue;
             };
-
 
             // Obtener el formulario original (inicioCierre)
             Form originalForm = this;
@@ -625,36 +596,50 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             agregarDatosPersonalesVictima.Show();
 
         }
-        //---------------------------------------------------------------------------
 
         /// <summary>
         /// METODO PARA ACTUALIZAR TEXTBOX 'VICTIMA' DESDE FORM AGREGAR DATOS VICTIMA
         /// </summary>
-
-        // Método para actualizar el TextBox en inicioCierre
         private void UpdateVictimaTextBox(string text)
-        {
+        {// Método para actualizar el TextBox en inicioCierre
             textBox_Victima.TextValue = text;
         }
-        //------------------------------------------------------------------------------
-
+      
         /// <summary>
         /// METODO PARA HABILITAR BTN AGREGAR CAUSA
         /// </summary>
-
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//habilita el btn_AgregarCausa en caso de tener texto
             ActualizarEstado();
         }
-        //-------------------------------------------------------------------------------
 
+        /// <summary>
+        /// PERMITE NUMEROS LETRAS Y CONRTOL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir letras, números, espacios y caracteres de control
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Rechaza caracteres no válidos.
+            }
+            else
+            {
+                // Convierte letras a mayúsculas y mantiene números y espacios sin cambios
+                if (char.IsLetter(e.KeyChar))
+                {
+                    e.KeyChar = char.ToUpper(e.KeyChar);
+                }
+            }
+        }
         /// <summary>
         /// EVENTO PARA ABRIR FORMULARIO AGREGAR DATOS IMPUTADO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
             if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
@@ -717,8 +702,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             textBox_Imputado.TextValue = text;
         }
-        //---------------------------------------------------------------------
-
+        
         /// <summary>
         /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE VICTIMA
         /// </summary>
@@ -729,7 +713,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Habilita o deshabilita el botón según si el TextBox tiene texto
             if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue))
             {
-                btn_AgregarDatosVictima.BackColor = Color.GreenYellow;
+                btn_AgregarDatosVictima.BackColor = System.Drawing.Color.GreenYellow;
                 ActualizarEstado();
                 if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
                 {
@@ -739,25 +723,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                btn_AgregarDatosVictima.BackColor = Color.Tomato;
+                btn_AgregarDatosVictima.BackColor = System.Drawing.Color.Tomato;
 
             }
             // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
         }
-        //----------------------------------------------------------------------------------
+
         /// <summary>
         /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE IMPUTADO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
             // Habilita o deshabilita el botón según si el TextBox tiene texto
             if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue))
             {
-                btn_AgregarDatosImputado.BackColor = Color.GreenYellow;
+                btn_AgregarDatosImputado.BackColor = System.Drawing.Color.GreenYellow;
                 ActualizarEstado();
                 if (agregarDatosPersonalesImputado != null && !agregarDatosPersonalesImputado.IsDisposed)
                 {
@@ -767,13 +750,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                btn_AgregarDatosImputado.BackColor = Color.Tomato;
+                btn_AgregarDatosImputado.BackColor = System.Drawing.Color.Tomato;
             }
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);// deshabilita el btn agregarImputado si el textBox no tiene texto
 
         }
-        //--------------------------------------------------------------------------------------------------------
-
+ 
         /// <summary>
         /// EVENTO PARA AGREGAR CONTROL CARATULA
         /// </summary>
@@ -785,13 +767,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
 
         }
-        //---------------------------------------------------------------
+        
         /// <summary>
         /// METODO PARA AGREGAR NUEVO CONTROL VICTIMA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Btn_AgregarVictima_Click(object sender, EventArgs e)
         {
             // Primero, valida todos los controles existentes en el panel
@@ -799,7 +780,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             if (!controlesCompletos)
             {
-
                 // Muestra un mensaje si algún control en el panel está vacío
                 MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", MensajeGeneral.TipoMensaje.Advertencia);
                 return; // Sal de la función para evitar agregar un nuevo control
@@ -817,13 +797,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 //lstVictimas.Items.Add(nuevaVictima);
             }
         }
-        //---------------------------------------------------------------
+        
         /// <summary>
         /// METODO PARA AGREGAR NUEVO CONTROL IMPUTADO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Btn_AgregarImputado_Click(object sender, EventArgs e)
         {
             // Primero, valida todos los controles existentes en el panel
@@ -846,14 +825,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-        //....................................................
+      
         /// <summary>
         /// METODO DE VALIDACION PARA VERIFICAR QUE ESTEN LOS CAMPOS COMPLETOS Y AGREGAR O NO CONTROL
         /// </summary>
         /// <param name="panel"></param>
         /// <returns></returns>
 
-        private bool ValidarControlesExistentes(Panel panel)
+        private static bool ValidarControlesExistentes(Panel panel)
         {
             foreach (Control control in panel.Controls)
             {
@@ -865,14 +844,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             return true; // Todos los controles están completos
         }
-        //-------------------------------------------------------------------------
-
+    
         /// <summary>
         /// METODO PARA AGREGAR PERSONAL A LAS RATIFICACIONES
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void CheckBox_RatificacionTestimonial_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
@@ -944,7 +921,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //...........................................................
         /// <summary>
         /// METODO PARA VOLVER A CHECK VACIO
         /// </summary>
@@ -970,8 +946,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-        //-----------------------------------------------------------------------------
-
+     
         /// <summary>
         /// METODO BOTON BUSCAR
         /// </summary>
@@ -984,8 +959,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             buscarForm.ShowDialog();
         }
-        //------------------------------------------------------------------------------
-
+       
         /// <summary>
         /// INICIALIZAR COMBOX FISCALIA
         /// </summary>
@@ -1007,9 +981,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.SelectedIndex = -1;
             comboBox_Localidad.SelectedIndex = -1;
             comboBox_DeptoJudicial.SelectedIndex = -1;
-        }
-        //.....................................................
-
+        }     
         private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Desactivar los ComboBoxes de detalle mientras se actualizan
@@ -1056,11 +1028,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 comboBox_DeptoJudicial.Enabled = false;
             }
         }
-        //----------------------------------------------------------------
-
-
-
-
         private void ComboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
@@ -1072,34 +1039,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
             }
         }
-
-        private void TextBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir letras, números, espacios y caracteres de control
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true; // Rechaza caracteres no válidos.
-            }
-            else
-            {
-                // Convierte letras a mayúsculas y mantiene números y espacios sin cambios
-                if (char.IsLetter(e.KeyChar))
-                {
-                    e.KeyChar = char.ToUpper(e.KeyChar);
-                }
-            }
-        }
-
+      
         private void ComboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
         {
             comboBox_AgenteFiscal.TextValue = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.TextValue);
             comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.TextValue.Length;
         }
 
-     
-    
-
-        //--Para habilitar check y modificar label
+        /// <summary>
+        /// Para habilitar check y modificar label
+        /// </summary>
         private void ActualizarEstado()
         {
             // Verifica si cada campo no está vacío ni solo con espacios
@@ -1122,15 +1071,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Actualiza el color del label y el estado del checkbox según el estado de validación
             if (esTextoValido)
             {
-                label_Cargo.ForeColor = Color.Black;
-                label_Cargo.BackColor = Color.Transparent;
+                label_Cargo.ForeColor = System.Drawing.Color.Black;
+                label_Cargo.BackColor = System.Drawing.Color.Transparent;
                 checkBox_Cargo.Enabled = true;
-                checkBox_Cargo.BackColor = Color.Transparent;
+                checkBox_Cargo.BackColor = System.Drawing.Color.Transparent;
 
-                label_Not247.ForeColor = Color.Black;
-                label_Not247.BackColor = Color.Transparent;
+                label_Not247.ForeColor = System.Drawing.Color.Black;
+                label_Not247.BackColor = System.Drawing.Color.Transparent;
                 botonDeslizable_Not247.Enabled = true;// habilitar btn 247
-                botonDeslizable_Not247.BackColor = Color.Transparent;
+                botonDeslizable_Not247.BackColor = System.Drawing.Color.Transparent;
 
 
                 Btn_ContadorRML.Visible = true;
@@ -1139,15 +1088,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                label_Cargo.ForeColor = Color.Tomato;
-                label_Cargo.BackColor = Color.FromArgb(211, 211, 211); // Gris claro
+                label_Cargo.ForeColor = System.Drawing.Color.Tomato;
+                label_Cargo.BackColor = System.Drawing.Color.FromArgb(211, 211, 211); // Gris claro
                 checkBox_Cargo.Enabled = false;
-                checkBox_Cargo.BackColor = Color.Tomato;
+                checkBox_Cargo.BackColor = System.Drawing.Color.Tomato;
 
-                label_Not247.ForeColor = Color.Tomato;
-                label_Not247.BackColor = Color.FromArgb(211, 211, 211);
+                label_Not247.ForeColor = System.Drawing.Color.Tomato;
+                label_Not247.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
                 botonDeslizable_Not247.Enabled = false;// deshabilitar btn 247
-                botonDeslizable_Not247.BackColor = Color.FromArgb(211, 211, 211);
+                botonDeslizable_Not247.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
 
                 Btn_ContadorRML.Visible = false;
                 label_StudRML.Visible = false;
@@ -1155,10 +1104,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-        //--------------------------------------------------------------------
-
-
-        //------------------------------------------------------------------
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado
@@ -1246,10 +1191,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-        //________________________________________________________________________________________
-        //---para que permita desbloquear check cargo tambien con texto
-
-        // Este método maneja la lógica común para desmarcar el CheckBox
+        /// <summary>
+        /// Este método maneja la lógica común para desmarcar el CheckBox
+        /// </summary>
         private void DesmarcarCheckBoxConTexto()
         {
             if (checkBox_Cargo.Checked)
@@ -1258,28 +1202,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-
-
-
         private void ComboBox_Dependencia_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
-
         private void ComboBox_Secretario_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
-
         private void ComboBox_Instructor_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();
             DesmarcarCheckBoxConTexto();
         }
-
-
         private void ComboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
@@ -1301,6 +1238,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             ActualizarEstado();
         }
+
+        /// <summary>
+      /// CONFIGURACION DE EVENTOS DESENCADENADOS EN BTN_DESLIZABLE
+      /// </summary>
         private void SetupBotonDeslizable()
         {
             botonDeslizable_Not247.ValidarCampos = () =>
@@ -1356,7 +1297,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     {
                         // En caso de no seleccionar una fecha
                         botonDeslizable_Not247.Location = new Point(botonDeslizable_Not247.Location.X + 10, botonDeslizable_Not247.Location.Y);
-                        panel_Not247.BackColor = Color.Transparent;
+                        panel_Not247.BackColor = System.Drawing.Color.Transparent;
                         fecha_Pericia.Visible = false;
                         fecha_Pericia.Enabled = false;
                         Btn_Contador247.Visible = false;
@@ -1368,8 +1309,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             };
         }
 
-
-        //--Para verificar los controles y habilitar boton
+        /// <summary>
+        /// Para verificar los controles y habilitar boton
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarControlesCompletosEnPaneles()
         {
             // Verificar los paneles uno por uno
@@ -1384,8 +1327,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return !camposIncompletos;// Devuelve verdadero si todos los campos están completos
 
         }
-
-        private bool VerificarPanelCompleto(Panel panel)
+        private static bool VerificarPanelCompleto(Panel panel)
         {
             foreach (Control control in panel.Controls)
             {
@@ -1405,14 +1347,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             return true; // Todos los campos en el panel están completos
         }
-        //---------------------------------------------------------------------------
-
+        
         /// <summary>
         /// para que muestre mensaje de advertencia previo cerrar formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void InicioCierre_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -1430,8 +1370,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-        //--------------------------------------------------------------------
-
         private void Fecha_Audiencia(object sender, EventArgs e)
         {
             if (sender is TimePickerPersonalizado control)
@@ -1448,13 +1386,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
         /// <summary>
         /// METODO PARA CAMBIAR FECHA DE COMPROMISO SELECCIONADA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Fecha_Pericia_Click(object sender, EventArgs e)
         {
 
@@ -1488,11 +1424,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 return;
             }
         }
-
         private void Fecha_Pericia_Enter(object sender, EventArgs e)
         {
-            fecha_Pericia.BackColor = Color.FromArgb(0, 154, 174);
-            fecha_Pericia.ForeColor = Color.White;
+            fecha_Pericia.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            fecha_Pericia.ForeColor = System.Drawing.Color.White;
         }
 
         /// <summary>
@@ -1500,7 +1435,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Fecha_Pericia_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
             if (!e.IsValidInput)
@@ -1511,6 +1445,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 ((MaskedTextBox)sender).Focus();
             }
         }
+
         /// <summary>
         /// VALIDA QUE COUNCIDA CON PARAMETRO DE FECHA INSTRUCCION
         /// </summary>
@@ -1529,19 +1464,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
         }
-
-
         private void Fecha_Pericia_MouseLeave(object sender, EventArgs e)
         {
             fecha_Pericia.BackColor = SystemColors.ActiveCaption; // Cambiar el color de fondo al color de control activo
             fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
 
         }
-
-
-
-
-
 
     }
 }

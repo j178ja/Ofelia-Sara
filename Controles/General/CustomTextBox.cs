@@ -8,6 +8,7 @@ namespace Ofelia_Sara.Controles.General
 {
     public partial class CustomTextBox : Control
     {
+        #region VARIABLES
         private TextBox textBox;
         private Timer animationTimer;
         private int animationProgress;
@@ -18,10 +19,12 @@ namespace Ofelia_Sara.Controles.General
         private string placeholderText = string.Empty;
         private Color placeholderColor = Color.Gray;
         private bool isPlaceholderVisible;
+        #endregion
+
+        #region CONSTRUCTOR
         public CustomTextBox()
         {
             // Configuración del TextBox
-
             textBox = new TextBox
             {
                 Size = new Size(21, this.Height),
@@ -46,10 +49,9 @@ namespace Ofelia_Sara.Controles.General
             this.Width = 200;
             this.BackColor = Color.White;
         }
+        #endregion
 
-        // Propiedad para exponer el TextBox interno
-        public TextBox InnerTextBox => textBox;
-
+        #region VALIDACIONES Y METODOS
         private void TextBox_GotFocus(object sender, EventArgs e)
         {
             isFocused = true;
@@ -59,27 +61,6 @@ namespace Ofelia_Sara.Controles.General
 
             Invalidate(); // Redibuja el control
         }
-
-
-        //private void TextBox_LostFocus(object sender, EventArgs e)
-        //{
-        //    isFocused = false;
-
-        //    // Verifica si el texto está vacío para activar el subrayado rojo
-        //    if (string.IsNullOrWhiteSpace(this.Text))
-        //    {
-        //        showError = true; // Activa el subrayado rojo
-        //    }
-        //    else
-        //    {
-        //        showError = false; // Desactiva el subrayado rojo
-        //    }
-
-        //    animationProgress = 0; // Reinicia la animación
-        //    animationTimer.Start();
-
-        //    Invalidate(); // Redibuja el control para reflejar los cambios
-        //}
         private void TextBox_LostFocus(object sender, EventArgs e)
         {
             isFocused = false;
@@ -99,20 +80,16 @@ namespace Ofelia_Sara.Controles.General
 
             Invalidate(); // Redibuja el control para reflejar los cambios
         }
-
-
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             OnTextChanged(e);
         }
-
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             animationProgress = Math.Min(animationProgress + 5, 100);
             this.Invalidate();
             if (animationProgress == 100) animationTimer.Stop();
         }
-
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -129,7 +106,6 @@ namespace Ofelia_Sara.Controles.General
                 textBoxHeight        // Altura ajustada
             );
         }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -153,12 +129,13 @@ namespace Ofelia_Sara.Controles.General
                 }
             }
         }
+        #endregion
 
+        #region PROPIEDADES PUBLICAS 
         /// <summary>
         /// PROPIEDADES PLACEHOLDER
         /// </summary>
         /// <param name="e"></param>
-
 
         [Category("Custom Properties")]
         [Description("The text displayed as a placeholder.")]
@@ -184,8 +161,14 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
+        /// <summary>
+        /// Propiedad para exponer el TextBox interno
+        /// </summary>
+        public TextBox InnerTextBox => textBox;
 
-        // Propiedades Públicas
+        /// <summary>
+        /// ACCEDE A TEXTO DE TEXBOX INTERNO
+        /// </summary>
         public string TextValue
         {
             get => textBox.Text;
@@ -214,17 +197,18 @@ namespace Ofelia_Sara.Controles.General
             set => errorColor = value;
         }
 
-   
-
-
-        // Propiedad para TextAlign
+        /// <summary>
+        /// PARA ALINEAR
+        /// </summary>
         public HorizontalAlignment TextAlign
         {
             get => textBox.TextAlign;
             set => textBox.TextAlign = value;
         }
 
-        // Propiedad para Multiline
+        /// <summary>
+        /// Propiedad para Multiline
+        /// </summary>
         public bool Multiline
         {
             get => textBox.Multiline;
@@ -238,73 +222,99 @@ namespace Ofelia_Sara.Controles.General
                 }
             }
         }
-        // Propiedad para acceder a SelectionStart
+
+        /// <summary>
+        /// acceder a SelectionStart
+        /// </summary>
         public int SelectionStart
         {
             get => textBox.SelectionStart;
             set => textBox.SelectionStart = value;
         }
 
-        // Método para limpiar el texto
+        /// <summary>
+        /// limpiar el texto
+        /// </summary>
         public void Clear()
         {
             textBox.Clear();
         }
 
-        // Propiedad para ReadOnly
+        /// <summary>
+        /// ReadOnly
+        /// </summary>
         public bool ReadOnly
         {
             get => textBox.ReadOnly;
             set => textBox.ReadOnly = value;
         }
 
-        // Propiedad para PasswordChar
+        /// <summary>
+        ///  Propiedad para PasswordChar
+        /// </summary>
         public char PasswordChar
         {
             get => textBox.PasswordChar;
             set => textBox.PasswordChar = value;
         }
 
-        // Propiedad AutoCompleteSource
+        /// <summary>
+        /// Propiedad AutoCompleteSource
+        /// </summary>
         public AutoCompleteSource AutoCompleteSource
         {
             get => textBox.AutoCompleteSource;
             set => textBox.AutoCompleteSource = value;
         }
 
-        // Propiedad para MaxLength
+        /// <summary>
+        /// Propiedad para MaxLength
+        /// </summary>
         public int MaxLength
         {
             get => textBox.MaxLength;
             set => textBox.MaxLength = value;
         }
 
-        // Propiedad AutoCompleteMode
+        /// <summary>
+        ///  Propiedad AutoCompleteMode
+        /// </summary>
         public AutoCompleteMode AutoCompleteMode
         {
             get => textBox.AutoCompleteMode;
             set => textBox.AutoCompleteMode = value;
         }
 
-        // Propiedad AutoCompleteCustomSource
+        /// <summary>
+        /// Propiedad AutoCompleteCustomSource
+        /// </summary>
         public AutoCompleteStringCollection AutoCompleteCustomSource
         {
             get => textBox.AutoCompleteCustomSource;
             set => textBox.AutoCompleteCustomSource = value;
         }
 
-        // Evento para TextChanged
+        /// <summary>
+        /// Evento para TextChanged
+        /// </summary>
         public new event EventHandler TextChanged
         {
             add => textBox.TextChanged += value;
             remove => textBox.TextChanged -= value;
         }
+
+        /// <summary>
+        /// PROPIEDAD KEYPRESS
+        /// </summary>
         public new event KeyPressEventHandler KeyPress
         {
             add => textBox.KeyPress += value; // textBox es el InnerTextBox
             remove => textBox.KeyPress -= value;
         }
 
+        /// <summary>
+        /// RESTAURA PLACEHOLDER
+        /// </summary>
         public void RestorePlaceholders()
         {
             if (string.IsNullOrEmpty(this.Text))
@@ -315,7 +325,9 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
-        // Método para quitar el placeholder
+        /// <summary>
+        /// Método para quitar el placeholder
+        /// </summary>
         public void RemovePlaceholder()
         {
             if (isPlaceholderVisible)
@@ -325,6 +337,7 @@ namespace Ofelia_Sara.Controles.General
                 isPlaceholderVisible = false;
             }
         }
-
+        
     }
 }
+#endregion

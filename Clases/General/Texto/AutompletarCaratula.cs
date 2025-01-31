@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Texto
 {
@@ -14,20 +15,25 @@ namespace Ofelia_Sara.Clases.General.Texto
         {
             if (File.Exists(rutaJson))
             {
-                // Leer el contenido del archivo JSON
                 string jsonContent = File.ReadAllText(rutaJson);
 
-                // Deserializar el contenido del JSON en un objeto
-                var data = JsonConvert.DeserializeObject<AutocompletarCaratula>(jsonContent);
+                try
+                {
+                    var listaSugerencias = JsonConvert.DeserializeObject<List<string>>(jsonContent);
+                    return listaSugerencias ?? new List<string>();
+                }
+                catch (JsonSerializationException ex)
+                {
+                    MessageBox.Show("Error al deserializar las sugerencias de Carátula. Se usará la lista por defecto.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                // Devolver la lista de sugerencias si existe, o una lista vacía
-                return data?.Sugerencias_Caratula ?? new List<string>();
+                    return new List<string> { "ROBO", "HURTO", "DESOBEDIENCIA", "ESTAFA", "AVERIGUACION DE ILICITO" }; //ABRA QUE AGREGRA MAS CUANDO SE PASE A BD
+                }
             }
             else
             {
-                // Si el archivo no existe, se devuelve una lista de nombres de flores
-                return new List<string> { "Rosa", "Tulipán", "Margarita", "Girasol", "Lirio", "Orquídea", "Lavanda" };
+                return new List<string> { "ROBO", "HURTO", "DESOBEDIENCIA", "ESTAFA", "AVERIGUACION DE ILICITO" };
             }
         }
+
     }
 }

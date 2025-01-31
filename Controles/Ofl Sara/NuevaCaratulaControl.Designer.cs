@@ -28,66 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label_Caratula = new System.Windows.Forms.Label();
-            this.textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.btn_EliminarControl = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label_Caratula = new System.Windows.Forms.Label();
+            textBox_Caratula = new General.CustomTextBox();
+            btn_EliminarControl = new System.Windows.Forms.Button();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            SuspendLayout();
             // 
             // label_Caratula
             // 
-            this.label_Caratula.BackColor = System.Drawing.Color.Transparent;
-            this.label_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Caratula.Location = new System.Drawing.Point(0, 0);
-            this.label_Caratula.Name = "label_Caratula";
-            this.label_Caratula.Size = new System.Drawing.Size(83, 22);
-            this.label_Caratula.TabIndex = 41;
-            this.label_Caratula.Text = "Caratula ";
-            this.label_Caratula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label_Caratula.BackColor = System.Drawing.Color.Transparent;
+            label_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Caratula.Location = new System.Drawing.Point(0, 3);
+            label_Caratula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Caratula.Name = "label_Caratula";
+            label_Caratula.Size = new System.Drawing.Size(97, 21);
+            label_Caratula.TabIndex = 41;
+            label_Caratula.Text = "Caratula ";
+            label_Caratula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox_Caratula
             // 
-            this.textBox_Caratula.Location = new System.Drawing.Point(87, 1);
-            this.textBox_Caratula.Name = "textBox_Caratula";
-            this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Caratula.TabIndex = 42;
-            this.textBox_Caratula.TextChanged += new System.EventHandler(this.TextBox_Caratula_TextChanged);
+            textBox_Caratula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Caratula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Caratula.BackColor = System.Drawing.Color.White;
+            textBox_Caratula.ErrorColor = System.Drawing.Color.Red;
+            textBox_Caratula.FocusColor = System.Drawing.Color.Blue;
+            textBox_Caratula.Location = new System.Drawing.Point(102, 3);
+            textBox_Caratula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Caratula.MaxLength = 32767;
+            textBox_Caratula.Multiline = false;
+            textBox_Caratula.Name = "textBox_Caratula";
+            textBox_Caratula.PasswordChar = '\0';
+            textBox_Caratula.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Caratula.PlaceholderText = "";
+            textBox_Caratula.ReadOnly = false;
+            textBox_Caratula.SelectionStart = 0;
+            textBox_Caratula.ShowError = false;
+            textBox_Caratula.Size = new System.Drawing.Size(334, 21);
+            textBox_Caratula.TabIndex = 42;
+            textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Caratula.TextValue = "";
+            textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;
             // 
             // btn_EliminarControl
             // 
-            this.btn_EliminarControl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EliminarControl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_EliminarControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarControl.ForeColor = System.Drawing.Color.IndianRed;
-            this.btn_EliminarControl.Location = new System.Drawing.Point(376, 0);
-            this.btn_EliminarControl.Name = "btn_EliminarControl";
-            this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
-            this.btn_EliminarControl.TabIndex = 44;
-            this.btn_EliminarControl.Text = "-";
-            this.toolTip1.SetToolTip(this.btn_EliminarControl, "Eliminar");
-            this.btn_EliminarControl.UseVisualStyleBackColor = false;
-            this.btn_EliminarControl.Click += new System.EventHandler(this.Btn_EliminarControl_Click);
+            btn_EliminarControl.BackColor = System.Drawing.Color.WhiteSmoke;
+            btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_EliminarControl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(255, 128, 0);
+            btn_EliminarControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+            btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_EliminarControl.ForeColor = System.Drawing.Color.IndianRed;
+            btn_EliminarControl.Location = new System.Drawing.Point(439, 0);
+            btn_EliminarControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_EliminarControl.Name = "btn_EliminarControl";
+            btn_EliminarControl.Size = new System.Drawing.Size(18, 27);
+            btn_EliminarControl.TabIndex = 44;
+            btn_EliminarControl.Text = "-";
+            toolTip1.SetToolTip(btn_EliminarControl, "Eliminar");
+            btn_EliminarControl.UseVisualStyleBackColor = false;
+            btn_EliminarControl.Click += Btn_EliminarControl_Click;
             // 
             // NuevaCaratulaControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.btn_EliminarControl);
-            this.Controls.Add(this.textBox_Caratula);
-            this.Controls.Add(this.label_Caratula);
-            this.Name = "NuevaCaratulaControl";
-            this.Size = new System.Drawing.Size(394, 26);
-           
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.Transparent;
+            Controls.Add(btn_EliminarControl);
+            Controls.Add(textBox_Caratula);
+            Controls.Add(label_Caratula);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "NuevaCaratulaControl";
+            Size = new System.Drawing.Size(461, 28);
+            ResumeLayout(false);
         }
 
         #endregion
