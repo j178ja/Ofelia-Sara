@@ -15,8 +15,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 {
     public partial class Registro : BaseForm
     {
+        #region VARIABLES
         private Timer capsLockTimer; // Timer para verificar Caps Lock
         private bool capsLockState; // Timer para verificar Caps Lock
+                                   
+       private bool esContraseñaVisible = false; // Define una variable para llevar el control del estado de visibilidad
+        #endregion
+
+        #region CONSTRUCTOR
         public Registro()
         {
             InitializeComponent();
@@ -37,7 +43,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             // Inicia el Timer para seguir verificando el estado
             InicializarCapsLockTimer();
         }
+        #endregion
 
+        #region LOAD
         private void Registro_Load(object sender, EventArgs e)
         {
             InicializarEstiloBoton(btn_Registrarse);
@@ -45,7 +53,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-            //  ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
             // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
@@ -63,13 +71,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             MayusculaSola.AplicarAControl(textBox_Nombre);
             MayusculaSola.AplicarAControl(textBox_Apellido);
         }
-        //-----------------------------------------------------------------
-        protected void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
+        #endregion
+       
+        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
         {
             customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
         }
-        //--------------------------------------------------------------------------
-
+      
         private void Btn_Registrarse_Click(object sender, EventArgs e)
         {
             // Verificar si los campos están completados
@@ -80,27 +88,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
             else
             {
-                // Si todos los campos están completos, mostrar el mensaje de confirmación
-                //Crea ventana con icono especial de confirmacion y titulo confirmacion
-                DialogResult result = MessageBox.Show("Se ha registrado un nuevo Usuario.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //AGREGAR LOGICA PARA ALMACENAR EL NUEVO REGISTRO DE USUARIO
+                 MensajeGeneral.Mostrar("Se ha registrado un nuevo Usuario.", MensajeGeneral.TipoMensaje.Exito);
 
-                // Si el usuario presiona "OK", cerrar el formulario actual
-                if (result == DialogResult.OK)
-                {
-                    this.Close(); // Cierra el formulario actual
-                }
             }
         }
-        private bool ValidarTextBoxes(Control parent)
+
+        /// <summary>
+        /// VERIFICA LOS CAMPOS ANTES DE REGISTRARSE
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <returns></returns>
+        private static bool ValidarTextBoxes(Control parent)
         {
             foreach (Control control in parent.Controls)
             {
                 // Verificar si es un TextBox y está vacío
-                if (control is TextBox && string.IsNullOrWhiteSpace(((TextBox)control).Text))
+                if (control is CustomTextBox && string.IsNullOrWhiteSpace(((CustomTextBox)control).TextValue))
                 {
                     return false;
                 }
-
                 // Si el control tiene controles hijos, aplicar la validación recursivamente
                 if (control.HasChildren)
                 {
@@ -110,12 +117,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
                     }
                 }
             }
-
             return true;
         }
 
-        //----BOTON LIMPIAR/ELIMINAR-----------------------
-
+        /// <summary>
+        /// BOTON LIMPIAR/ELIMINAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
@@ -128,31 +137,46 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Advertencia);//esto muestra una ventana con boton aceptar
         }
 
+        /// <summary>
+        /// MENSAJE DE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
             MensajeGeneral.Mostrar("Complete la totalidad de los campos para poder registrar un nuevo Usuario.", MensajeGeneral.TipoMensaje.Advertencia);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
-        //--------------------------------------------------------------------
-
-        // Define una variable para llevar el control del estado de visibilidad
-        private bool esContraseñaVisible = false;
-
+     
+        /// <summary>
+        /// MUESTRA CONTRASEÑA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '\0'; // Muestra el texto real
             pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña; // Cambia la imagen al icono de "visible"
         }
 
+        /// <summary>
+        /// OCULTA CONTRASEÑA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '*'; // Oculta el texto con asteriscos
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoCerrado; // Cambia la imagen al icono de "oculto"
         }
 
+        /// <summary>
+        /// DESACTIVA IMAGEN SI NO HAY TEXTO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Contraseña_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_Contraseña.InnerTextBox.Text))
@@ -167,6 +191,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// VALIDA QUE SEA NUMERO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -175,7 +204,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
-  
+        /// <summary>
+  /// INICIALIZA VERIFICADOR DE MAYUSCULA
+  /// </summary>
         private void InicializarCapsLockTimer()
         {
             capsLockTimer = new Timer
@@ -186,6 +217,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             capsLockTimer.Start();
         }
 
+        /// <summary>
+        /// VERIFICA ESTADO DE TECLA MAYUSCULA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CapsLockTimer_Tick(object sender, EventArgs e)
         {
             // Verifica si el estado de Caps Lock ha cambiado
@@ -198,6 +234,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// MUESTRA IMAGEN INDICADORA DE MAYUSCULA ACTIVADO
+        /// </summary>
         private void IndicadorMayusculaActivado()
         {
             if (capsLockState)
@@ -211,6 +250,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// DETIENE EVENTOS AL CERRAR EL FORMULARIO
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             // Detener el Timer al cerrar el formulario para evitar fugas de recursos

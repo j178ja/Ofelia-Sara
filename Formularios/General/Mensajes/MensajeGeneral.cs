@@ -15,61 +15,16 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 {
     public partial class MensajeGeneral : Form
     {
+        #region VARIABLES
         public DateTime FechaMinima { get; set; } = DateTime.MinValue;
         public DateTime FechaSeleccionada { get; private set; }
-
         public DateTimePicker SelectFecha_Compromiso { get; private set; }
         public DateTimePicker SelectHora_Compromiso { get; private set; }
-
         private bool datosGuardados = false;
+        private Color originalBackColor; // Para almacenar el color original del botón
 
-
-        //public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje)
-        //{
-        //    InitializeComponent();
-
-        //    // Configura el mensaje y el icono
-        //    label_Texto.Text = mensaje;
-        //    ConfigurarIcono(tipoMensaje);
-
-        //    //Color bordeForm = System.Drawing.Color.DarkGray;
-        //    Color bordeForm = Color.Black;
-        //    Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
-        //    FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
-        //    FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
-
-        //    // Configurar la fecha mínima en el control Fecha_Audiencia
-        //    //     SelectedDate * VALUE
-        //    //SelectFecha_Compromiso.Value = FechaMinima > DateTime.Now ? FechaMinima : DateTime.Now;
-
-        //    // Fecha_Audiencia.SelectedDate = DateTime.Now; //mantener actualizada fecha
-
-        //    // Ajustar altura del Label según el contenido
-        //    AjustarAlturaContenedores();
-        //    PosicionarBotonCerrar();
-
-        //    // Centrar el label inicialmente
-        //    CenterLabelInPanel();
-
-        //    // Asignar el evento Resize de panel1
-        //    panel1.Resize += panel1_Resize;
-
-        //    btn_No.Visible = false;
-        //    btn_Si.Visible = false;
-        //    Fecha_Compromiso.Visible = false;
-
-        //    // Inicializa los controles si no se han inicializado aún
-        //    if (SelectFecha_Compromiso == null)
-        //    {
-        //        SelectFecha_Compromiso = new DateTimePicker();
-        //    }
-
-        //    if (SelectHora_Compromiso == null)
-        //    {
-        //        SelectHora_Compromiso = new DateTimePicker();
-        //    }
-
-        //}
+        #endregion
+      
         public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje, Point? posicion = null)
         {
             InitializeComponent();
@@ -91,7 +46,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             CenterLabelInPanel();
 
             // Asignar el evento Resize de panel1
-            panel1.Resize += panel1_Resize;
+            panel1.Resize += Panel1_Resize;
 
             btn_No.Visible = false;
             btn_Si.Visible = false;
@@ -128,6 +83,10 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             Cancelacion
         }
 
+        /// <summary>
+        /// ESTABLE ICONO PARA CADA TIPO DE MENSAJE
+        /// </summary>
+        /// <param name="tipoMensaje"></param>
         private void ConfigurarIcono(TipoMensaje tipoMensaje)
         {
             switch (tipoMensaje)
@@ -153,6 +112,12 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
+        /// <summary>
+        /// ENCAPSULA LOGICA MENSAJE EMERGENTE
+        /// </summary>
+        /// <param name="mensaje"></param>
+        /// <param name="tipoMensaje"></param>
+        /// <param name="posicion"></param>
         public static void Mostrar(string mensaje, TipoMensaje tipoMensaje = TipoMensaje.Informacion, Point? posicion = null)
         {
             using (var form = new MensajeGeneral(mensaje, tipoMensaje, posicion))
@@ -161,17 +126,9 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
-
-
-        private void Btn_Cerrar_Click(object sender, EventArgs e)
-        {
-
-            this.Close();
-        }
-
-
-
-
+        /// <summary>
+        /// REDIMENSIONA PANEL1 DE ACUERDO A CONTENIDO
+        /// </summary>
         private void AjustarAlturaContenedores()
         {
             // Deshabilita el AutoSize del Label para controlar su tamaño manualmente
@@ -194,21 +151,20 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             this.Height = panel1.Top + panel1.Height + margenFormulario;
         }
 
-        private void PosicionarBotonCerrar()
-        {
-            // Posiciona btn_Cerrar a 4 píxeles del borde inferior del formulario
-            int margenInferior = 4;
-            btn_Cerrar.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
-            btn_Si.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
-            btn_No.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
-        }
-
-        private void panel1_Resize(object sender, EventArgs e)
+        /// <summary>
+        /// CENTRA EL LABEL EN EL PANEL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Panel1_Resize(object sender, EventArgs e)
         {
             // Centra el label en el panel
             CenterLabelInPanel();
         }
 
+        /// <summary>
+        /// CALCULA POSICION PARA CENTRAR EL LABEL
+        /// </summary>
         private void CenterLabelInPanel()
         {
             // Calcula la posición X e Y para centrar el label
@@ -218,36 +174,6 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             // Asigna la nueva posición al label
             label_Texto.Location = new Point(x, y);
         }
-
-
-
-        private void Btn_Si_Click(object sender, EventArgs e)
-        {
-            // this.DialogResult = DialogResult.Yes;
-            btn_Si.DialogResult = DialogResult.OK;
-
-            this.Close();
-        }
-
-        private void Btn_No_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.No;
-
-            this.Close();
-        }
-
-
-        public void MostrarBotonesConfirmacion(bool mostrar)
-        {
-            btn_Si.Visible = mostrar;
-            btn_No.Visible = mostrar;
-            btn_Cerrar.Visible = false;
-            Fecha_Compromiso.Visible = false;
-            btn_No.Focus();
-            btn_No.BackColor = Color.FromArgb(234, 40, 0);
-            btn_No.ForeColor = Color.White;
-        }
-
         public void MensajeCompromiso(string mensaje)
         {
             label_Texto.Text = mensaje; // lbl_Mensaje es el Label que muestra el mensaje en el formulario
@@ -261,7 +187,6 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
             btn_No.Visible = true;
             btn_No.Text = "CANCELAR";
-           // btn_No.BackColor = Color.IndianRed;
             btn_No.BackColor = Color.FromArgb(234, 40, 0);
             btn_No.ForeColor = Color.White;
             btn_No.Click += Btn_No_Cancelar_Click;
@@ -273,7 +198,52 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
         }
 
-        // Manejador para el evento Click del botón "GUARDAR"
+        #region BOTONES
+
+        /// <summary>
+        /// POSICIONA BOTON CENTRAR
+        /// </summary>
+        private void PosicionarBotonCerrar()
+        {
+            // Posiciona btn_Cerrar a 4 píxeles del borde inferior del formulario
+            int margenInferior = 4;
+            btn_Cerrar.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
+            btn_Si.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
+            btn_No.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
+        }
+        private void Btn_Cerrar_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
+        private void Btn_Si_Click(object sender, EventArgs e)
+        {
+            // this.DialogResult = DialogResult.Yes;
+            btn_Si.DialogResult = DialogResult.OK;
+
+            this.Close();
+        }
+        private void Btn_No_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+
+            this.Close();
+        }
+
+        /// <summary>
+        /// MUESTRA BOTONES DE CONFIRMACION
+        /// </summary>
+        /// <param name="mostrar"></param>
+        public void MostrarBotonesConfirmacion(bool mostrar)
+        {
+            btn_Si.Visible = mostrar;
+            btn_No.Visible = mostrar;
+            btn_Cerrar.Visible = false;
+            Fecha_Compromiso.Visible = false;
+            btn_No.Focus();
+            btn_No.BackColor = Color.FromArgb(234, 40, 0);
+            btn_No.ForeColor = Color.White;
+        }
         private void Btn_Si_Guardar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
@@ -299,19 +269,18 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
-
-
-
-
-
-
-        // Manejador para el evento Click del botón "CANCELAR"
+      /// <summary>
+      /// BOTON CANCELAR
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private void Btn_No_Cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;  // Establece el resultado como Cancel
             this.Close();  // Cierra el formulario
         }
 
+        #endregion
 
         public static DateTime? MostrarCompromiso(string mensaje, DateTime fechaMinima)
         {
@@ -336,7 +305,6 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 return null; // En caso de cancelar
             }
         }
-
         public DateTime? ObtenerFechaYHoraSeleccionadas()
         {
             if (SelectFecha_Compromiso.Value != null && SelectHora_Compromiso.Value != null)
@@ -346,13 +314,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             return null; // Devuelve null si no se ha seleccionado una fecha o hora
         }
 
-
-
-        // Variables auxiliares para animación
-       
-
-        private Color originalBackColor; // Para almacenar el color original del botón
-
+        /// <summary>
+        /// MUESTRA SUBRAYADO AL INGRESAR AL CONTROL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_MouseEnter(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -375,6 +341,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
+        /// <summary>
+        /// BORRA SUBRAYADO AL SALIR DEL CONTROL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_MouseLeave(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -390,6 +361,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
+        /// <summary>
+        /// SUBRAYADO ANIMADO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_Paint(object sender, PaintEventArgs e)
         {
             if (sender is Control control)
