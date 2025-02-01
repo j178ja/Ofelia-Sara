@@ -28,871 +28,1112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cargo));
-            this.label_Cargo = new System.Windows.Forms.Label();
-            this.textBox_NumeroCargo = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Barra = new System.Windows.Forms.Label();
-            this.comboBox_Año = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_ControlesInferiores = new Ofelia_Sara.Controles.General.PanelConBordeNeon();
-            this.btn_Imprimir = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.panel_Descripcion = new Ofelia_Sara.Controles.General.PanelConBordeNeon();
-            this.richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
-            this.btn_AmpliarReducir_DESCRIPCION = new System.Windows.Forms.Button();
-            this.pictureBox_Descripcion = new System.Windows.Forms.PictureBox();
-            this.label_Descripcion = new System.Windows.Forms.Label();
-            this.panel_SeleccionVisu = new System.Windows.Forms.Panel();
-            this.botonDeslizable_Visu = new Ofelia_Sara.Controles.General.BotonDeslizable();
-            this.label_Not247 = new System.Windows.Forms.Label();
-            this.pictureBox_CheckLegajoVehicular = new System.Windows.Forms.PictureBox();
-            this.checkBox_LegajoVehicular = new System.Windows.Forms.CheckBox();
-            this.label_LegajoVehicular = new System.Windows.Forms.Label();
-            this.panel_Instruccion = new Ofelia_Sara.Controles.General.PanelConBordeNeon();
-            this.panel_DatosInstruccion = new System.Windows.Forms.Panel();
-            this.comboBox_Instructor = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.btn_AmpliarReducir_INSTRUCCION = new System.Windows.Forms.Button();
-            this.label_Localidad = new System.Windows.Forms.Label();
-            this.comboBox_Localidad = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Secretario = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Dependencia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Fiscalia = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.lbl_Dependencia = new System.Windows.Forms.Label();
-            this.comboBox_AgenteFiscal = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.lbl_Fecha = new System.Windows.Forms.Label();
-            this.Fecha_Instruccion = new Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado();
-            this.lbl_Secretario = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbl_Ufid = new System.Windows.Forms.Label();
-            this.lbl_Dr = new System.Windows.Forms.Label();
-            this.panel_Ipp = new System.Windows.Forms.Panel();
-            this.textBox_NumeroIpp = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.comboBox_Ipp1 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.comboBox_Ipp2 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.lbl_00 = new System.Windows.Forms.Label();
-            this.comboBox_Ipp4 = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.lbl_Ipp = new System.Windows.Forms.Label();
-            this.panel_Caratula = new System.Windows.Forms.Panel();
-            this.textBox_Caratula = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.lbl_Caratula = new System.Windows.Forms.Label();
-            this.btn_AgregarCausa = new System.Windows.Forms.Button();
-            this.panel_Imputado = new System.Windows.Forms.Panel();
-            this.textBox_Imputado = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.lbl_Imputado = new System.Windows.Forms.Label();
-            this.btn_AgregarImputado = new System.Windows.Forms.Button();
-            this.panel_Victima = new System.Windows.Forms.Panel();
-            this.textBox_Victima = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.lbl_Victima = new System.Windows.Forms.Label();
-            this.btn_AgregarVictima = new System.Windows.Forms.Button();
-            this.label_DatosInstruccion = new System.Windows.Forms.Label();
-            this.pictureBox_PanelInstruccion = new System.Windows.Forms.PictureBox();
-            this.label_TITULO = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1.SuspendLayout();
-            this.panel_ControlesInferiores.SuspendLayout();
-            this.panel_Descripcion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Descripcion)).BeginInit();
-            this.panel_SeleccionVisu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckLegajoVehicular)).BeginInit();
-            this.panel_Instruccion.SuspendLayout();
-            this.panel_DatosInstruccion.SuspendLayout();
-            this.panel_Ipp.SuspendLayout();
-            this.panel_Caratula.SuspendLayout();
-            this.panel_Imputado.SuspendLayout();
-            this.panel_Victima.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelInstruccion)).BeginInit();
-            this.SuspendLayout();
+            label_Cargo = new System.Windows.Forms.Label();
+            textBox_NumeroCargo = new Controles.General.CustomTextBox();
+            label_Barra = new System.Windows.Forms.Label();
+            comboBox_Año = new Controles.General.CustomComboBox();
+            panel1 = new System.Windows.Forms.Panel();
+            panel_ControlesInferiores = new Controles.General.PanelConBordeNeon();
+            btn_Imprimir = new System.Windows.Forms.Button();
+            btn_Limpiar = new System.Windows.Forms.Button();
+            btn_Guardar = new System.Windows.Forms.Button();
+            btn_Buscar = new System.Windows.Forms.Button();
+            panel_Descripcion = new Controles.General.PanelConBordeNeon();
+            richTextBox_Descripcion = new System.Windows.Forms.RichTextBox();
+            btn_AmpliarReducir_DESCRIPCION = new System.Windows.Forms.Button();
+            pictureBox_Descripcion = new System.Windows.Forms.PictureBox();
+            label_Descripcion = new System.Windows.Forms.Label();
+            panel_SeleccionVisu = new System.Windows.Forms.Panel();
+            botonDeslizable_Visu = new Controles.General.BotonDeslizable();
+            label_Not247 = new System.Windows.Forms.Label();
+            pictureBox_CheckLegajoVehicular = new System.Windows.Forms.PictureBox();
+            checkBox_LegajoVehicular = new System.Windows.Forms.CheckBox();
+            label_LegajoVehicular = new System.Windows.Forms.Label();
+            panel_Instruccion = new Controles.General.PanelConBordeNeon();
+            panel_DatosInstruccion = new System.Windows.Forms.Panel();
+            comboBox_Instructor = new Controles.General.CustomComboBox();
+            btn_AmpliarReducir_INSTRUCCION = new System.Windows.Forms.Button();
+            label_Localidad = new System.Windows.Forms.Label();
+            comboBox_Localidad = new Controles.General.CustomComboBox();
+            comboBox_Secretario = new Controles.General.CustomComboBox();
+            comboBox_Dependencia = new Controles.General.CustomComboBox();
+            comboBox_Fiscalia = new Controles.General.CustomComboBox();
+            lbl_Dependencia = new System.Windows.Forms.Label();
+            comboBox_AgenteFiscal = new Controles.General.CustomComboBox();
+            lbl_Fecha = new System.Windows.Forms.Label();
+            Fecha_Instruccion = new Controles.Ofl_Sara.TimePickerPersonalizado();
+            lbl_Secretario = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            lbl_Ufid = new System.Windows.Forms.Label();
+            lbl_Dr = new System.Windows.Forms.Label();
+            panel_Ipp = new System.Windows.Forms.Panel();
+            textBox_NumeroIpp = new Controles.General.CustomTextBox();
+            comboBox_Ipp1 = new Controles.General.CustomComboBox();
+            comboBox_Ipp2 = new Controles.General.CustomComboBox();
+            lbl_00 = new System.Windows.Forms.Label();
+            comboBox_Ipp4 = new Controles.General.CustomComboBox();
+            lbl_Ipp = new System.Windows.Forms.Label();
+            panel_Caratula = new System.Windows.Forms.Panel();
+            textBox_Caratula = new Controles.General.CustomTextBox();
+            lbl_Caratula = new System.Windows.Forms.Label();
+            btn_AgregarCausa = new System.Windows.Forms.Button();
+            panel_Imputado = new System.Windows.Forms.Panel();
+            textBox_Imputado = new Controles.General.CustomTextBox();
+            lbl_Imputado = new System.Windows.Forms.Label();
+            btn_AgregarImputado = new System.Windows.Forms.Button();
+            panel_Victima = new System.Windows.Forms.Panel();
+            textBox_Victima = new Controles.General.CustomTextBox();
+            lbl_Victima = new System.Windows.Forms.Label();
+            btn_AgregarVictima = new System.Windows.Forms.Button();
+            label_DatosInstruccion = new System.Windows.Forms.Label();
+            pictureBox_PanelInstruccion = new System.Windows.Forms.PictureBox();
+            label_TITULO = new System.Windows.Forms.Label();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            panel1.SuspendLayout();
+            panel_ControlesInferiores.SuspendLayout();
+            panel_Descripcion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Descripcion).BeginInit();
+            panel_SeleccionVisu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckLegajoVehicular).BeginInit();
+            panel_Instruccion.SuspendLayout();
+            panel_DatosInstruccion.SuspendLayout();
+            panel_Ipp.SuspendLayout();
+            panel_Caratula.SuspendLayout();
+            panel_Imputado.SuspendLayout();
+            panel_Victima.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_PanelInstruccion).BeginInit();
+            SuspendLayout();
             // 
             // label_Cargo
             // 
-            this.label_Cargo.AutoSize = true;
-            this.label_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Cargo.Location = new System.Drawing.Point(105, 23);
-            this.label_Cargo.Name = "label_Cargo";
-            this.label_Cargo.Size = new System.Drawing.Size(80, 16);
-            this.label_Cargo.TabIndex = 0;
-            this.label_Cargo.Text = "CARGO N°";
+            label_Cargo.AutoSize = true;
+            label_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Cargo.Location = new System.Drawing.Point(105, 23);
+            label_Cargo.Name = "label_Cargo";
+            label_Cargo.Size = new System.Drawing.Size(102, 20);
+            label_Cargo.TabIndex = 0;
+            label_Cargo.Text = "CARGO N°";
             // 
             // textBox_NumeroCargo
             // 
-            this.textBox_NumeroCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroCargo.Location = new System.Drawing.Point(189, 22);
-            this.textBox_NumeroCargo.Name = "textBox_NumeroCargo";
-            this.textBox_NumeroCargo.Size = new System.Drawing.Size(100, 22);
-            this.textBox_NumeroCargo.TabIndex = 1;
-            this.textBox_NumeroCargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroCargo_KeyPress);
+            textBox_NumeroCargo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_NumeroCargo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_NumeroCargo.BackColor = System.Drawing.Color.White;
+            textBox_NumeroCargo.ErrorColor = System.Drawing.Color.Red;
+            textBox_NumeroCargo.FocusColor = System.Drawing.Color.Blue;
+            textBox_NumeroCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_NumeroCargo.Location = new System.Drawing.Point(189, 22);
+            textBox_NumeroCargo.MaxLength = 32767;
+            textBox_NumeroCargo.Multiline = false;
+            textBox_NumeroCargo.Name = "textBox_NumeroCargo";
+            textBox_NumeroCargo.PasswordChar = '\0';
+            textBox_NumeroCargo.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_NumeroCargo.PlaceholderText = "";
+            textBox_NumeroCargo.ReadOnly = false;
+            textBox_NumeroCargo.SelectionStart = 0;
+            textBox_NumeroCargo.ShowError = false;
+            textBox_NumeroCargo.Size = new System.Drawing.Size(100, 22);
+            textBox_NumeroCargo.TabIndex = 1;
+            textBox_NumeroCargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_NumeroCargo.TextValue = "";
+            textBox_NumeroCargo.KeyPress += TextBox_NumeroCargo_KeyPress;
             // 
             // label_Barra
             // 
-            this.label_Barra.AutoSize = true;
-            this.label_Barra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Barra.Location = new System.Drawing.Point(295, 25);
-            this.label_Barra.Name = "label_Barra";
-            this.label_Barra.Size = new System.Drawing.Size(11, 16);
-            this.label_Barra.TabIndex = 16;
-            this.label_Barra.Text = "/";
+            label_Barra.AutoSize = true;
+            label_Barra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label_Barra.Location = new System.Drawing.Point(295, 25);
+            label_Barra.Name = "label_Barra";
+            label_Barra.Size = new System.Drawing.Size(14, 20);
+            label_Barra.TabIndex = 16;
+            label_Barra.Text = "/";
             // 
             // comboBox_Año
             // 
-            
-            this.comboBox_Año.Items.AddRange(new object[] {
-            "24",
-            "25",
-            "26"});
-            this.comboBox_Año.Location = new System.Drawing.Point(313, 22);
-            this.comboBox_Año.Name = "comboBox_Año";
-            this.comboBox_Año.Size = new System.Drawing.Size(43, 21);
-            this.comboBox_Año.TabIndex = 2;
-            this.comboBox_Año.Text = "24";
+            comboBox_Año.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Año.ArrowImage");
+            comboBox_Año.ArrowPictureBox = null;
+            comboBox_Año.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Año.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Año.BackColor = System.Drawing.Color.White;
+            comboBox_Año.DataSource = null;
+            comboBox_Año.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Año.DefaultImage");
+            comboBox_Año.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Año.DisabledImage");
+            comboBox_Año.DisplayMember = null;
+            comboBox_Año.DropDownHeight = 96;
+            comboBox_Año.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Año.DroppedDown = false;
+            comboBox_Año.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Año.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Año.Location = new System.Drawing.Point(313, 22);
+            comboBox_Año.MaxDropDownItems = 10;
+            comboBox_Año.Name = "comboBox_Año";
+            comboBox_Año.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Año.PlaceholderText = " ";
+            comboBox_Año.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Año.PressedImage");
+            comboBox_Año.SelectedIndex = -1;
+            comboBox_Año.SelectedItem = null;
+            comboBox_Año.SelectedText = "";
+            comboBox_Año.SelectionStart = 0;
+            comboBox_Año.ShowError = false;
+            comboBox_Año.Size = new System.Drawing.Size(43, 21);
+            comboBox_Año.TabIndex = 2;
+            comboBox_Año.Text = "24";
+            comboBox_Año.TextValue = " ";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.panel_ControlesInferiores);
-            this.panel1.Controls.Add(this.panel_Descripcion);
-            this.panel1.Controls.Add(this.panel_SeleccionVisu);
-            this.panel1.Controls.Add(this.panel_Instruccion);
-            this.panel1.Controls.Add(this.label_Cargo);
-            this.panel1.Controls.Add(this.textBox_NumeroCargo);
-            this.panel1.Controls.Add(this.label_Barra);
-            this.panel1.Controls.Add(this.comboBox_Año);
-            this.panel1.Location = new System.Drawing.Point(15, 20);
-            this.panel1.MinimumSize = new System.Drawing.Size(0, 240);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(483, 685);
-            this.panel1.TabIndex = 33;
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(panel_ControlesInferiores);
+            panel1.Controls.Add(panel_Descripcion);
+            panel1.Controls.Add(panel_SeleccionVisu);
+            panel1.Controls.Add(panel_Instruccion);
+            panel1.Controls.Add(label_Cargo);
+            panel1.Controls.Add(textBox_NumeroCargo);
+            panel1.Controls.Add(label_Barra);
+            panel1.Controls.Add(comboBox_Año);
+            panel1.Location = new System.Drawing.Point(15, 20);
+            panel1.MinimumSize = new System.Drawing.Size(0, 240);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(483, 685);
+            panel1.TabIndex = 33;
             // 
             // panel_ControlesInferiores
             // 
-            this.panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel_ControlesInferiores.BorderRadius = 10;
-            this.panel_ControlesInferiores.CamposCompletos = false;
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Imprimir);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Limpiar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Guardar);
-            this.panel_ControlesInferiores.Controls.Add(this.btn_Buscar);
-            this.panel_ControlesInferiores.EstaContraido = false;
-            this.panel_ControlesInferiores.Location = new System.Drawing.Point(21, 567);
-            this.panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            this.panel_ControlesInferiores.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.panel_ControlesInferiores.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_ControlesInferiores.Size = new System.Drawing.Size(444, 102);
-            this.panel_ControlesInferiores.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.panel_ControlesInferiores.TabIndex = 94;
+            panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            panel_ControlesInferiores.BorderRadius = 10;
+            panel_ControlesInferiores.CamposCompletos = false;
+            panel_ControlesInferiores.Controls.Add(btn_Imprimir);
+            panel_ControlesInferiores.Controls.Add(btn_Limpiar);
+            panel_ControlesInferiores.Controls.Add(btn_Guardar);
+            panel_ControlesInferiores.Controls.Add(btn_Buscar);
+            panel_ControlesInferiores.EstaContraido = false;
+            panel_ControlesInferiores.Location = new System.Drawing.Point(21, 567);
+            panel_ControlesInferiores.Name = "panel_ControlesInferiores";
+            panel_ControlesInferiores.NeonColorCompleto = System.Drawing.Color.FromArgb(0, 255, 0);
+            panel_ControlesInferiores.NeonColorIncompleto = System.Drawing.Color.FromArgb(255, 0, 0);
+            panel_ControlesInferiores.Size = new System.Drawing.Size(444, 102);
+            panel_ControlesInferiores.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
+            panel_ControlesInferiores.TabIndex = 94;
             // 
             // btn_Imprimir
             // 
-            this.btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Imprimir.Image")));
-            this.btn_Imprimir.Location = new System.Drawing.Point(332, 7);
-            this.btn_Imprimir.Name = "btn_Imprimir";
-            this.btn_Imprimir.Size = new System.Drawing.Size(106, 92);
-            this.btn_Imprimir.TabIndex = 24;
-            this.btn_Imprimir.UseVisualStyleBackColor = false;
-            this.btn_Imprimir.Click += new System.EventHandler(this.Btn_Imprimir_Click);
+            btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Imprimir.Image = (System.Drawing.Image)resources.GetObject("btn_Imprimir.Image");
+            btn_Imprimir.Location = new System.Drawing.Point(332, 7);
+            btn_Imprimir.Name = "btn_Imprimir";
+            btn_Imprimir.Size = new System.Drawing.Size(106, 92);
+            btn_Imprimir.TabIndex = 24;
+            btn_Imprimir.UseVisualStyleBackColor = false;
+            btn_Imprimir.Click += Btn_Imprimir_Click;
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(228, 16);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Limpiar.TabIndex = 25;
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
+            btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
+            btn_Limpiar.Location = new System.Drawing.Point(228, 16);
+            btn_Limpiar.Name = "btn_Limpiar";
+            btn_Limpiar.Size = new System.Drawing.Size(75, 67);
+            btn_Limpiar.TabIndex = 25;
+            btn_Limpiar.UseVisualStyleBackColor = false;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(119, 16);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 23;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
+            btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
+            btn_Guardar.Location = new System.Drawing.Point(119, 16);
+            btn_Guardar.Name = "btn_Guardar";
+            btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            btn_Guardar.TabIndex = 23;
+            btn_Guardar.UseVisualStyleBackColor = false;
+            btn_Guardar.Click += Btn_Guardar_Click;
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(10, 16);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Buscar.TabIndex = 26;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
+            btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Buscar.Image = (System.Drawing.Image)resources.GetObject("btn_Buscar.Image");
+            btn_Buscar.Location = new System.Drawing.Point(10, 16);
+            btn_Buscar.Name = "btn_Buscar";
+            btn_Buscar.Size = new System.Drawing.Size(75, 67);
+            btn_Buscar.TabIndex = 26;
+            btn_Buscar.UseVisualStyleBackColor = false;
             // 
             // panel_Descripcion
             // 
-            this.panel_Descripcion.BorderRadius = 10;
-            this.panel_Descripcion.CamposCompletos = false;
-            this.panel_Descripcion.Controls.Add(this.richTextBox_Descripcion);
-            this.panel_Descripcion.Controls.Add(this.btn_AmpliarReducir_DESCRIPCION);
-            this.panel_Descripcion.Controls.Add(this.pictureBox_Descripcion);
-            this.panel_Descripcion.Controls.Add(this.label_Descripcion);
-            this.panel_Descripcion.EstaContraido = false;
-            this.panel_Descripcion.Location = new System.Drawing.Point(9, 410);
-            this.panel_Descripcion.Name = "panel_Descripcion";
-            this.panel_Descripcion.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.panel_Descripcion.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_Descripcion.Size = new System.Drawing.Size(461, 155);
-            this.panel_Descripcion.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.panel_Descripcion.TabIndex = 93;
+            panel_Descripcion.BorderRadius = 10;
+            panel_Descripcion.CamposCompletos = false;
+            panel_Descripcion.Controls.Add(richTextBox_Descripcion);
+            panel_Descripcion.Controls.Add(btn_AmpliarReducir_DESCRIPCION);
+            panel_Descripcion.Controls.Add(pictureBox_Descripcion);
+            panel_Descripcion.Controls.Add(label_Descripcion);
+            panel_Descripcion.EstaContraido = false;
+            panel_Descripcion.Location = new System.Drawing.Point(9, 410);
+            panel_Descripcion.Name = "panel_Descripcion";
+            panel_Descripcion.NeonColorCompleto = System.Drawing.Color.FromArgb(0, 255, 0);
+            panel_Descripcion.NeonColorIncompleto = System.Drawing.Color.FromArgb(255, 0, 0);
+            panel_Descripcion.Size = new System.Drawing.Size(461, 155);
+            panel_Descripcion.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
+            panel_Descripcion.TabIndex = 93;
             // 
             // richTextBox_Descripcion
             // 
-            this.richTextBox_Descripcion.Location = new System.Drawing.Point(1, 32);
-            this.richTextBox_Descripcion.Name = "richTextBox_Descripcion";
-            this.richTextBox_Descripcion.Size = new System.Drawing.Size(458, 117);
-            this.richTextBox_Descripcion.TabIndex = 87;
-            this.richTextBox_Descripcion.Text = "";
+            richTextBox_Descripcion.Location = new System.Drawing.Point(1, 32);
+            richTextBox_Descripcion.Name = "richTextBox_Descripcion";
+            richTextBox_Descripcion.Size = new System.Drawing.Size(458, 117);
+            richTextBox_Descripcion.TabIndex = 87;
+            richTextBox_Descripcion.Text = "";
             // 
             // btn_AmpliarReducir_DESCRIPCION
             // 
-            this.btn_AmpliarReducir_DESCRIPCION.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_AmpliarReducir_DESCRIPCION.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_DESCRIPCION.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
-            this.btn_AmpliarReducir_DESCRIPCION.Location = new System.Drawing.Point(425, 0);
-            this.btn_AmpliarReducir_DESCRIPCION.Name = "btn_AmpliarReducir_DESCRIPCION";
-            this.btn_AmpliarReducir_DESCRIPCION.Size = new System.Drawing.Size(31, 23);
-            this.btn_AmpliarReducir_DESCRIPCION.TabIndex = 85;
-            this.btn_AmpliarReducir_DESCRIPCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.Btn_AmpliarReducir_DESCRIPCION_Click);
+            btn_AmpliarReducir_DESCRIPCION.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btn_AmpliarReducir_DESCRIPCION.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_AmpliarReducir_DESCRIPCION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(255, 128, 128);
+            btn_AmpliarReducir_DESCRIPCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(255, 255, 128);
+            btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaARRIBA;
+            btn_AmpliarReducir_DESCRIPCION.Location = new System.Drawing.Point(425, 0);
+            btn_AmpliarReducir_DESCRIPCION.Name = "btn_AmpliarReducir_DESCRIPCION";
+            btn_AmpliarReducir_DESCRIPCION.Size = new System.Drawing.Size(31, 23);
+            btn_AmpliarReducir_DESCRIPCION.TabIndex = 85;
+            btn_AmpliarReducir_DESCRIPCION.UseVisualStyleBackColor = false;
+            btn_AmpliarReducir_DESCRIPCION.Click += Btn_AmpliarReducir_DESCRIPCION_Click;
             // 
             // pictureBox_Descripcion
             // 
-            this.pictureBox_Descripcion.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Descripcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Descripcion.Location = new System.Drawing.Point(309, 0);
-            this.pictureBox_Descripcion.Name = "pictureBox_Descripcion";
-            this.pictureBox_Descripcion.Size = new System.Drawing.Size(29, 25);
-            this.pictureBox_Descripcion.TabIndex = 86;
-            this.pictureBox_Descripcion.TabStop = false;
+            pictureBox_Descripcion.BackColor = System.Drawing.Color.Transparent;
+            pictureBox_Descripcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pictureBox_Descripcion.Location = new System.Drawing.Point(309, 0);
+            pictureBox_Descripcion.Name = "pictureBox_Descripcion";
+            pictureBox_Descripcion.Size = new System.Drawing.Size(29, 25);
+            pictureBox_Descripcion.TabIndex = 86;
+            pictureBox_Descripcion.TabStop = false;
             // 
             // label_Descripcion
             // 
-            this.label_Descripcion.AutoSize = true;
-            this.label_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_Descripcion.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Descripcion.Location = new System.Drawing.Point(20, 0);
-            this.label_Descripcion.Name = "label_Descripcion";
-            this.label_Descripcion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            this.label_Descripcion.Size = new System.Drawing.Size(283, 25);
-            this.label_Descripcion.TabIndex = 17;
-            this.label_Descripcion.Text = "DESCRIPCION DE LA MUESTRA";
+            label_Descripcion.AutoSize = true;
+            label_Descripcion.BackColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            label_Descripcion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
+            label_Descripcion.Location = new System.Drawing.Point(20, 0);
+            label_Descripcion.Name = "label_Descripcion";
+            label_Descripcion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
+            label_Descripcion.Size = new System.Drawing.Size(346, 30);
+            label_Descripcion.TabIndex = 17;
+            label_Descripcion.Text = "DESCRIPCION DE LA MUESTRA";
             // 
             // panel_SeleccionVisu
             // 
-            this.panel_SeleccionVisu.Controls.Add(this.botonDeslizable_Visu);
-            this.panel_SeleccionVisu.Controls.Add(this.label_Not247);
-            this.panel_SeleccionVisu.Controls.Add(this.pictureBox_CheckLegajoVehicular);
-            this.panel_SeleccionVisu.Controls.Add(this.checkBox_LegajoVehicular);
-            this.panel_SeleccionVisu.Controls.Add(this.label_LegajoVehicular);
-            this.panel_SeleccionVisu.Location = new System.Drawing.Point(26, 373);
-            this.panel_SeleccionVisu.Name = "panel_SeleccionVisu";
-            this.panel_SeleccionVisu.Size = new System.Drawing.Size(442, 31);
-            this.panel_SeleccionVisu.TabIndex = 92;
+            panel_SeleccionVisu.Controls.Add(botonDeslizable_Visu);
+            panel_SeleccionVisu.Controls.Add(label_Not247);
+            panel_SeleccionVisu.Controls.Add(pictureBox_CheckLegajoVehicular);
+            panel_SeleccionVisu.Controls.Add(checkBox_LegajoVehicular);
+            panel_SeleccionVisu.Controls.Add(label_LegajoVehicular);
+            panel_SeleccionVisu.Location = new System.Drawing.Point(26, 373);
+            panel_SeleccionVisu.Name = "panel_SeleccionVisu";
+            panel_SeleccionVisu.Size = new System.Drawing.Size(442, 31);
+            panel_SeleccionVisu.TabIndex = 92;
             // 
             // botonDeslizable_Visu
             // 
-            this.botonDeslizable_Visu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonDeslizable_Visu.IsOn = false;
-            this.botonDeslizable_Visu.Location = new System.Drawing.Point(101, 6);
-            this.botonDeslizable_Visu.Name = "botonDeslizable_Visu";
-            this.botonDeslizable_Visu.Size = new System.Drawing.Size(40, 20);
-            this.botonDeslizable_Visu.TabIndex = 74;
-            this.botonDeslizable_Visu.ValidarCampos = null;
+            botonDeslizable_Visu.Cursor = System.Windows.Forms.Cursors.Hand;
+            botonDeslizable_Visu.IsOn = false;
+            botonDeslizable_Visu.Location = new System.Drawing.Point(101, 6);
+            botonDeslizable_Visu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            botonDeslizable_Visu.Name = "botonDeslizable_Visu";
+            botonDeslizable_Visu.Size = new System.Drawing.Size(40, 20);
+            botonDeslizable_Visu.TabIndex = 74;
+            botonDeslizable_Visu.ValidarCampos = null;
             // 
             // label_Not247
             // 
-            this.label_Not247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Not247.Location = new System.Drawing.Point(4, 6);
-            this.label_Not247.Name = "label_Not247";
-            this.label_Not247.Size = new System.Drawing.Size(137, 20);
-            this.label_Not247.TabIndex = 73;
-            this.label_Not247.Text = "USAR VISU  ";
-            this.label_Not247.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label_Not247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Not247.Location = new System.Drawing.Point(4, 6);
+            label_Not247.Name = "label_Not247";
+            label_Not247.Size = new System.Drawing.Size(137, 20);
+            label_Not247.TabIndex = 73;
+            label_Not247.Text = "USAR VISU  ";
+            label_Not247.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_CheckLegajoVehicular
             // 
-            this.pictureBox_CheckLegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_CheckLegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_CheckLegajoVehicular.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
-            this.pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(205, 3);
-            this.pictureBox_CheckLegajoVehicular.Name = "pictureBox_CheckLegajoVehicular";
-            this.pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 28);
-            this.pictureBox_CheckLegajoVehicular.TabIndex = 72;
-            this.pictureBox_CheckLegajoVehicular.TabStop = false;
-            this.pictureBox_CheckLegajoVehicular.Click += new System.EventHandler(this.PictureBox_CheckLegajoVehicular_Click);
+            pictureBox_CheckLegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            pictureBox_CheckLegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_CheckLegajoVehicular.Image = Properties.Resources.check_Personalizado;
+            pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(205, 3);
+            pictureBox_CheckLegajoVehicular.Name = "pictureBox_CheckLegajoVehicular";
+            pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 28);
+            pictureBox_CheckLegajoVehicular.TabIndex = 72;
+            pictureBox_CheckLegajoVehicular.TabStop = false;
+            pictureBox_CheckLegajoVehicular.Click += PictureBox_CheckLegajoVehicular_Click;
             // 
             // checkBox_LegajoVehicular
             // 
-            this.checkBox_LegajoVehicular.AutoSize = true;
-            this.checkBox_LegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox_LegajoVehicular.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox_LegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox_LegajoVehicular.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
-            this.checkBox_LegajoVehicular.Location = new System.Drawing.Point(409, 10);
-            this.checkBox_LegajoVehicular.Name = "checkBox_LegajoVehicular";
-            this.checkBox_LegajoVehicular.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_LegajoVehicular.TabIndex = 70;
-            this.checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
-            this.checkBox_LegajoVehicular.CheckedChanged += new System.EventHandler(this.CheckBox_LegajoVehicular_CheckedChanged);
+            checkBox_LegajoVehicular.AutoSize = true;
+            checkBox_LegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            checkBox_LegajoVehicular.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            checkBox_LegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
+            checkBox_LegajoVehicular.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
+            checkBox_LegajoVehicular.Location = new System.Drawing.Point(409, 10);
+            checkBox_LegajoVehicular.Name = "checkBox_LegajoVehicular";
+            checkBox_LegajoVehicular.Size = new System.Drawing.Size(18, 17);
+            checkBox_LegajoVehicular.TabIndex = 70;
+            checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
+            checkBox_LegajoVehicular.CheckedChanged += CheckBox_LegajoVehicular_CheckedChanged;
             // 
             // label_LegajoVehicular
             // 
-            this.label_LegajoVehicular.AutoSize = true;
-            this.label_LegajoVehicular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LegajoVehicular.Location = new System.Drawing.Point(237, 8);
-            this.label_LegajoVehicular.Name = "label_LegajoVehicular";
-            this.label_LegajoVehicular.Size = new System.Drawing.Size(166, 16);
-            this.label_LegajoVehicular.TabIndex = 71;
-            this.label_LegajoVehicular.Text = "LEGAJO VEHICULAR   ";
-            this.label_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label_LegajoVehicular.AutoSize = true;
+            label_LegajoVehicular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_LegajoVehicular.Location = new System.Drawing.Point(237, 8);
+            label_LegajoVehicular.Name = "label_LegajoVehicular";
+            label_LegajoVehicular.Size = new System.Drawing.Size(211, 20);
+            label_LegajoVehicular.TabIndex = 71;
+            label_LegajoVehicular.Text = "LEGAJO VEHICULAR   ";
+            label_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel_Instruccion
             // 
-            this.panel_Instruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel_Instruccion.BorderRadius = 10;
-            this.panel_Instruccion.CamposCompletos = false;
-            this.panel_Instruccion.Controls.Add(this.panel_DatosInstruccion);
-            this.panel_Instruccion.Controls.Add(this.label_DatosInstruccion);
-            this.panel_Instruccion.Controls.Add(this.pictureBox_PanelInstruccion);
-            this.panel_Instruccion.EstaContraido = false;
-            this.panel_Instruccion.Location = new System.Drawing.Point(10, 50);
-            this.panel_Instruccion.Name = "panel_Instruccion";
-            this.panel_Instruccion.NeonColorCompleto = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.panel_Instruccion.NeonColorIncompleto = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_Instruccion.Size = new System.Drawing.Size(460, 317);
-            this.panel_Instruccion.SombraColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.panel_Instruccion.TabIndex = 89;
+            panel_Instruccion.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel_Instruccion.BorderRadius = 10;
+            panel_Instruccion.CamposCompletos = false;
+            panel_Instruccion.Controls.Add(panel_DatosInstruccion);
+            panel_Instruccion.Controls.Add(label_DatosInstruccion);
+            panel_Instruccion.Controls.Add(pictureBox_PanelInstruccion);
+            panel_Instruccion.EstaContraido = false;
+            panel_Instruccion.Location = new System.Drawing.Point(10, 50);
+            panel_Instruccion.Name = "panel_Instruccion";
+            panel_Instruccion.NeonColorCompleto = System.Drawing.Color.FromArgb(0, 255, 0);
+            panel_Instruccion.NeonColorIncompleto = System.Drawing.Color.FromArgb(255, 0, 0);
+            panel_Instruccion.Size = new System.Drawing.Size(460, 317);
+            panel_Instruccion.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
+            panel_Instruccion.TabIndex = 89;
             // 
             // panel_DatosInstruccion
             // 
-            this.panel_DatosInstruccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel_DatosInstruccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Instructor);
-            this.panel_DatosInstruccion.Controls.Add(this.btn_AmpliarReducir_INSTRUCCION);
-            this.panel_DatosInstruccion.Controls.Add(this.label_Localidad);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Localidad);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Secretario);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Dependencia);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_Fiscalia);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Dependencia);
-            this.panel_DatosInstruccion.Controls.Add(this.comboBox_AgenteFiscal);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Fecha);
-            this.panel_DatosInstruccion.Controls.Add(this.Fecha_Instruccion);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Secretario);
-            this.panel_DatosInstruccion.Controls.Add(this.label7);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Ufid);
-            this.panel_DatosInstruccion.Controls.Add(this.lbl_Dr);
-            this.panel_DatosInstruccion.Controls.Add(this.panel_Ipp);
-            this.panel_DatosInstruccion.Controls.Add(this.panel_Caratula);
-            this.panel_DatosInstruccion.Controls.Add(this.panel_Imputado);
-            this.panel_DatosInstruccion.Controls.Add(this.panel_Victima);
-            this.panel_DatosInstruccion.Location = new System.Drawing.Point(3, 20);
-            this.panel_DatosInstruccion.Name = "panel_DatosInstruccion";
-            this.panel_DatosInstruccion.Size = new System.Drawing.Size(455, 297);
-            this.panel_DatosInstruccion.TabIndex = 27;
+            panel_DatosInstruccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            panel_DatosInstruccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel_DatosInstruccion.Controls.Add(comboBox_Instructor);
+            panel_DatosInstruccion.Controls.Add(btn_AmpliarReducir_INSTRUCCION);
+            panel_DatosInstruccion.Controls.Add(label_Localidad);
+            panel_DatosInstruccion.Controls.Add(comboBox_Localidad);
+            panel_DatosInstruccion.Controls.Add(comboBox_Secretario);
+            panel_DatosInstruccion.Controls.Add(comboBox_Dependencia);
+            panel_DatosInstruccion.Controls.Add(comboBox_Fiscalia);
+            panel_DatosInstruccion.Controls.Add(lbl_Dependencia);
+            panel_DatosInstruccion.Controls.Add(comboBox_AgenteFiscal);
+            panel_DatosInstruccion.Controls.Add(lbl_Fecha);
+            panel_DatosInstruccion.Controls.Add(Fecha_Instruccion);
+            panel_DatosInstruccion.Controls.Add(lbl_Secretario);
+            panel_DatosInstruccion.Controls.Add(label7);
+            panel_DatosInstruccion.Controls.Add(lbl_Ufid);
+            panel_DatosInstruccion.Controls.Add(lbl_Dr);
+            panel_DatosInstruccion.Controls.Add(panel_Ipp);
+            panel_DatosInstruccion.Controls.Add(panel_Caratula);
+            panel_DatosInstruccion.Controls.Add(panel_Imputado);
+            panel_DatosInstruccion.Controls.Add(panel_Victima);
+            panel_DatosInstruccion.Location = new System.Drawing.Point(3, 20);
+            panel_DatosInstruccion.Name = "panel_DatosInstruccion";
+            panel_DatosInstruccion.Size = new System.Drawing.Size(455, 297);
+            panel_DatosInstruccion.TabIndex = 27;
             // 
             // comboBox_Instructor
             // 
-            this.comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.comboBox_Instructor.Items.AddRange(new object[] {
-            "Comisario Miguel Moreno",
-            "subcomisario Melisa Perea Peña",
-            "Comisario Arias"});
-            this.comboBox_Instructor.Location = new System.Drawing.Point(127, 184);
-            this.comboBox_Instructor.Name = "comboBox_Instructor";
-            this.comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Instructor.TabIndex = 84;
+            comboBox_Instructor.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.ArrowImage");
+            comboBox_Instructor.ArrowPictureBox = null;
+            comboBox_Instructor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Instructor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Instructor.BackColor = System.Drawing.Color.White;
+            comboBox_Instructor.DataSource = null;
+            comboBox_Instructor.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DefaultImage");
+            comboBox_Instructor.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DisabledImage");
+            comboBox_Instructor.DisplayMember = null;
+            comboBox_Instructor.DropDownHeight = 96;
+            comboBox_Instructor.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Instructor.DroppedDown = false;
+            comboBox_Instructor.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Instructor.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Instructor.Location = new System.Drawing.Point(127, 184);
+            comboBox_Instructor.MaxDropDownItems = 10;
+            comboBox_Instructor.Name = "comboBox_Instructor";
+            comboBox_Instructor.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Instructor.PlaceholderText = " ";
+            comboBox_Instructor.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.PressedImage");
+            comboBox_Instructor.SelectedIndex = -1;
+            comboBox_Instructor.SelectedItem = null;
+            comboBox_Instructor.SelectedText = "";
+            comboBox_Instructor.SelectionStart = 0;
+            comboBox_Instructor.ShowError = false;
+            comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
+            comboBox_Instructor.TabIndex = 84;
+            comboBox_Instructor.TextValue = " ";
             // 
             // btn_AmpliarReducir_INSTRUCCION
             // 
-            this.btn_AmpliarReducir_INSTRUCCION.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_AmpliarReducir_INSTRUCCION.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AmpliarReducir_INSTRUCCION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_AmpliarReducir_INSTRUCCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_INSTRUCCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_AmpliarReducir_INSTRUCCION.Image = global::Ofelia_Sara.Properties.Resources.dobleFlechaARRIBA;
-            this.btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(420, -1);
-            this.btn_AmpliarReducir_INSTRUCCION.Name = "btn_AmpliarReducir_INSTRUCCION";
-            this.btn_AmpliarReducir_INSTRUCCION.Size = new System.Drawing.Size(31, 23);
-            this.btn_AmpliarReducir_INSTRUCCION.TabIndex = 83;
-            this.btn_AmpliarReducir_INSTRUCCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_INSTRUCCION.Click += new System.EventHandler(this.Btn_AmpliarReducir_INSTRUCCION_Click);
+            btn_AmpliarReducir_INSTRUCCION.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btn_AmpliarReducir_INSTRUCCION.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_AmpliarReducir_INSTRUCCION.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            btn_AmpliarReducir_INSTRUCCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(255, 128, 128);
+            btn_AmpliarReducir_INSTRUCCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(255, 255, 128);
+            btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA;
+            btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(420, -1);
+            btn_AmpliarReducir_INSTRUCCION.Name = "btn_AmpliarReducir_INSTRUCCION";
+            btn_AmpliarReducir_INSTRUCCION.Size = new System.Drawing.Size(31, 23);
+            btn_AmpliarReducir_INSTRUCCION.TabIndex = 83;
+            btn_AmpliarReducir_INSTRUCCION.UseVisualStyleBackColor = false;
+            btn_AmpliarReducir_INSTRUCCION.Click += Btn_AmpliarReducir_INSTRUCCION_Click;
             // 
             // label_Localidad
             // 
-            this.label_Localidad.AutoSize = true;
-            this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Localidad.Location = new System.Drawing.Point(51, 158);
-            this.label_Localidad.Name = "label_Localidad";
-            this.label_Localidad.Size = new System.Drawing.Size(70, 15);
-            this.label_Localidad.TabIndex = 82;
-            this.label_Localidad.Text = "Localidad";
+            label_Localidad.AutoSize = true;
+            label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Localidad.Location = new System.Drawing.Point(51, 158);
+            label_Localidad.Name = "label_Localidad";
+            label_Localidad.Size = new System.Drawing.Size(80, 18);
+            label_Localidad.TabIndex = 82;
+            label_Localidad.Text = "Localidad";
             // 
             // comboBox_Localidad
             // 
-            this.comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.comboBox_Localidad.Items.AddRange(new object[] {
-            "PINAMAR",
-            "VILLA GESELL",
-            "GRAL. MADARIAGA"});
-            this.comboBox_Localidad.Location = new System.Drawing.Point(128, 157);
-            this.comboBox_Localidad.Name = "comboBox_Localidad";
-            this.comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Localidad.TabIndex = 81;
-            this.comboBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Localidad_KeyPress);
+            comboBox_Localidad.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Localidad.ArrowImage");
+            comboBox_Localidad.ArrowPictureBox = null;
+            comboBox_Localidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Localidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Localidad.BackColor = System.Drawing.Color.White;
+            comboBox_Localidad.DataSource = null;
+            comboBox_Localidad.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Localidad.DefaultImage");
+            comboBox_Localidad.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Localidad.DisabledImage");
+            comboBox_Localidad.DisplayMember = null;
+            comboBox_Localidad.DropDownHeight = 96;
+            comboBox_Localidad.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Localidad.DroppedDown = false;
+            comboBox_Localidad.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Localidad.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Localidad.Location = new System.Drawing.Point(128, 157);
+            comboBox_Localidad.MaxDropDownItems = 10;
+            comboBox_Localidad.Name = "comboBox_Localidad";
+            comboBox_Localidad.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Localidad.PlaceholderText = " ";
+            comboBox_Localidad.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Localidad.PressedImage");
+            comboBox_Localidad.SelectedIndex = -1;
+            comboBox_Localidad.SelectedItem = null;
+            comboBox_Localidad.SelectedText = "";
+            comboBox_Localidad.SelectionStart = 0;
+            comboBox_Localidad.ShowError = false;
+            comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
+            comboBox_Localidad.TabIndex = 81;
+            comboBox_Localidad.TextValue = " ";
+            comboBox_Localidad.KeyPress += ComboBox_Localidad_KeyPress;
             // 
             // comboBox_Secretario
             // 
-            this.comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.comboBox_Secretario.Items.AddRange(new object[] {
-            "Oficial Ayudante Jorge A. Bonato",
-            "Oficial Subayudante Ariel Vasquez",
-            "Oficial Subinspector Martin Ali Bonato",
-            "Sargento Nerea Sandoval",
-            "Sargento Eleana Dirocco"});
-            this.comboBox_Secretario.Location = new System.Drawing.Point(128, 212);
-            this.comboBox_Secretario.Name = "comboBox_Secretario";
-            this.comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Secretario.TabIndex = 68;
+            comboBox_Secretario.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.ArrowImage");
+            comboBox_Secretario.ArrowPictureBox = null;
+            comboBox_Secretario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Secretario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Secretario.BackColor = System.Drawing.Color.White;
+            comboBox_Secretario.DataSource = null;
+            comboBox_Secretario.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DefaultImage");
+            comboBox_Secretario.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DisabledImage");
+            comboBox_Secretario.DisplayMember = null;
+            comboBox_Secretario.DropDownHeight = 96;
+            comboBox_Secretario.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Secretario.DroppedDown = false;
+            comboBox_Secretario.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Secretario.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Secretario.Location = new System.Drawing.Point(128, 212);
+            comboBox_Secretario.MaxDropDownItems = 10;
+            comboBox_Secretario.Name = "comboBox_Secretario";
+            comboBox_Secretario.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Secretario.PlaceholderText = " ";
+            comboBox_Secretario.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.PressedImage");
+            comboBox_Secretario.SelectedIndex = -1;
+            comboBox_Secretario.SelectedItem = null;
+            comboBox_Secretario.SelectedText = "";
+            comboBox_Secretario.SelectionStart = 0;
+            comboBox_Secretario.ShowError = false;
+            comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
+            comboBox_Secretario.TabIndex = 68;
+            comboBox_Secretario.TextValue = " ";
             // 
             // comboBox_Dependencia
             // 
-            
-            this.comboBox_Dependencia.Items.AddRange(new object[] {
-            "EPC I PINAMAR",
-            "EPC II OSTENDE",
-            "EPC III VALERIA DEL MAR",
-            "EPC IV CARILÓ"});
-            this.comboBox_Dependencia.Location = new System.Drawing.Point(128, 239);
-            this.comboBox_Dependencia.Name = "comboBox_Dependencia";
-            this.comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
-            this.comboBox_Dependencia.TabIndex = 69;
+            comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.ArrowPictureBox = null;
+            comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Dependencia.BackColor = System.Drawing.Color.White;
+            comboBox_Dependencia.DataSource = null;
+            comboBox_Dependencia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DefaultImage");
+            comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
+            comboBox_Dependencia.DisplayMember = null;
+            comboBox_Dependencia.DropDownHeight = 96;
+            comboBox_Dependencia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Dependencia.DroppedDown = false;
+            comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Dependencia.Location = new System.Drawing.Point(128, 239);
+            comboBox_Dependencia.MaxDropDownItems = 10;
+            comboBox_Dependencia.Name = "comboBox_Dependencia";
+            comboBox_Dependencia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Dependencia.PlaceholderText = " ";
+            comboBox_Dependencia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.PressedImage");
+            comboBox_Dependencia.SelectedIndex = -1;
+            comboBox_Dependencia.SelectedItem = null;
+            comboBox_Dependencia.SelectedText = "";
+            comboBox_Dependencia.SelectionStart = 0;
+            comboBox_Dependencia.ShowError = false;
+            comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
+            comboBox_Dependencia.TabIndex = 69;
+            comboBox_Dependencia.TextValue = " ";
             // 
             // comboBox_Fiscalia
             // 
-            this.comboBox_Fiscalia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-    
-            this.comboBox_Fiscalia.Items.AddRange(new object[] {
-            "04",
-            "05",
-            "08"});
-            this.comboBox_Fiscalia.Location = new System.Drawing.Point(128, 130);
-            this.comboBox_Fiscalia.Name = "comboBox_Fiscalia";
-            this.comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
-            this.comboBox_Fiscalia.TabIndex = 65;
-            this.comboBox_Fiscalia.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Fiscalia_SelectedIndexChanged);
+            comboBox_Fiscalia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Fiscalia.ArrowImage");
+            comboBox_Fiscalia.ArrowPictureBox = null;
+            comboBox_Fiscalia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Fiscalia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Fiscalia.BackColor = System.Drawing.Color.White;
+            comboBox_Fiscalia.DataSource = null;
+            comboBox_Fiscalia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Fiscalia.DefaultImage");
+            comboBox_Fiscalia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Fiscalia.DisabledImage");
+            comboBox_Fiscalia.DisplayMember = null;
+            comboBox_Fiscalia.DropDownHeight = 96;
+            comboBox_Fiscalia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Fiscalia.DroppedDown = false;
+            comboBox_Fiscalia.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Fiscalia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Fiscalia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Fiscalia.Location = new System.Drawing.Point(128, 130);
+            comboBox_Fiscalia.MaxDropDownItems = 10;
+            comboBox_Fiscalia.Name = "comboBox_Fiscalia";
+            comboBox_Fiscalia.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Fiscalia.PlaceholderText = " ";
+            comboBox_Fiscalia.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Fiscalia.PressedImage");
+            comboBox_Fiscalia.SelectedIndex = -1;
+            comboBox_Fiscalia.SelectedItem = null;
+            comboBox_Fiscalia.SelectedText = "";
+            comboBox_Fiscalia.SelectionStart = 0;
+            comboBox_Fiscalia.ShowError = false;
+            comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
+            comboBox_Fiscalia.TabIndex = 65;
+            comboBox_Fiscalia.TextValue = " ";
+            comboBox_Fiscalia.SelectedIndexChanged += ComboBox_Fiscalia_SelectedIndexChanged;
             // 
             // lbl_Dependencia
             // 
-            this.lbl_Dependencia.AutoSize = true;
-            this.lbl_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dependencia.Location = new System.Drawing.Point(19, 240);
-            this.lbl_Dependencia.Name = "lbl_Dependencia";
-            this.lbl_Dependencia.Size = new System.Drawing.Size(104, 15);
-            this.lbl_Dependencia.TabIndex = 80;
-            this.lbl_Dependencia.Text = "DEPENDENCIA";
+            lbl_Dependencia.AutoSize = true;
+            lbl_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Dependencia.Location = new System.Drawing.Point(19, 240);
+            lbl_Dependencia.Name = "lbl_Dependencia";
+            lbl_Dependencia.Size = new System.Drawing.Size(126, 18);
+            lbl_Dependencia.TabIndex = 80;
+            lbl_Dependencia.Text = "DEPENDENCIA";
             // 
             // comboBox_AgenteFiscal
             // 
-            this.comboBox_AgenteFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.comboBox_AgenteFiscal.Items.AddRange(new object[] {
-            "Calderón Pablo",
-            "Mercuri Walter",
-            "Zamboni Veronica"});
-            this.comboBox_AgenteFiscal.Location = new System.Drawing.Point(252, 130);
-            this.comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
-            this.comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
-            this.comboBox_AgenteFiscal.TabIndex = 66;
+            comboBox_AgenteFiscal.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_AgenteFiscal.ArrowImage");
+            comboBox_AgenteFiscal.ArrowPictureBox = null;
+            comboBox_AgenteFiscal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_AgenteFiscal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_AgenteFiscal.BackColor = System.Drawing.Color.White;
+            comboBox_AgenteFiscal.DataSource = null;
+            comboBox_AgenteFiscal.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_AgenteFiscal.DefaultImage");
+            comboBox_AgenteFiscal.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_AgenteFiscal.DisabledImage");
+            comboBox_AgenteFiscal.DisplayMember = null;
+            comboBox_AgenteFiscal.DropDownHeight = 96;
+            comboBox_AgenteFiscal.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_AgenteFiscal.DroppedDown = false;
+            comboBox_AgenteFiscal.ErrorColor = System.Drawing.Color.Red;
+            comboBox_AgenteFiscal.FocusColor = System.Drawing.Color.Blue;
+            comboBox_AgenteFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_AgenteFiscal.Location = new System.Drawing.Point(252, 130);
+            comboBox_AgenteFiscal.MaxDropDownItems = 10;
+            comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
+            comboBox_AgenteFiscal.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_AgenteFiscal.PlaceholderText = " ";
+            comboBox_AgenteFiscal.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_AgenteFiscal.PressedImage");
+            comboBox_AgenteFiscal.SelectedIndex = -1;
+            comboBox_AgenteFiscal.SelectedItem = null;
+            comboBox_AgenteFiscal.SelectedText = "";
+            comboBox_AgenteFiscal.SelectionStart = 0;
+            comboBox_AgenteFiscal.ShowError = false;
+            comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
+            comboBox_AgenteFiscal.TabIndex = 66;
+            comboBox_AgenteFiscal.TextValue = " ";
             // 
             // lbl_Fecha
             // 
-            this.lbl_Fecha.AutoSize = true;
-            this.lbl_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Fecha.Location = new System.Drawing.Point(70, 266);
-            this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(51, 15);
-            this.lbl_Fecha.TabIndex = 79;
-            this.lbl_Fecha.Text = "FECHA";
+            lbl_Fecha.AutoSize = true;
+            lbl_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Fecha.Location = new System.Drawing.Point(70, 266);
+            lbl_Fecha.Name = "lbl_Fecha";
+            lbl_Fecha.Size = new System.Drawing.Size(63, 18);
+            lbl_Fecha.TabIndex = 79;
+            lbl_Fecha.Text = "FECHA";
             // 
             // Fecha_Instruccion
             // 
-            this.Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
-            this.Fecha_Instruccion.FechaSeleccionada = new System.DateTime(((long)(0)));
-            this.Fecha_Instruccion.Location = new System.Drawing.Point(128, 266);
-            this.Fecha_Instruccion.Name = "Fecha_Instruccion";
-            this.Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 7, 16, 18, 52, 0, 926);
-            this.Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
-            this.Fecha_Instruccion.TabIndex = 70;
+            Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
+            Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
+            Fecha_Instruccion.Location = new System.Drawing.Point(128, 266);
+            Fecha_Instruccion.Name = "Fecha_Instruccion";
+            Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
+            Fecha_Instruccion.TabIndex = 70;
             // 
             // lbl_Secretario
             // 
-            this.lbl_Secretario.AutoSize = true;
-            this.lbl_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Secretario.Location = new System.Drawing.Point(30, 213);
-            this.lbl_Secretario.Name = "lbl_Secretario";
-            this.lbl_Secretario.Size = new System.Drawing.Size(93, 15);
-            this.lbl_Secretario.TabIndex = 78;
-            this.lbl_Secretario.Text = "SECRETARIO";
+            lbl_Secretario.AutoSize = true;
+            lbl_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Secretario.Location = new System.Drawing.Point(30, 213);
+            lbl_Secretario.Name = "lbl_Secretario";
+            lbl_Secretario.Size = new System.Drawing.Size(114, 18);
+            lbl_Secretario.TabIndex = 78;
+            lbl_Secretario.Text = "SECRETARIO";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 184);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 15);
-            this.label7.TabIndex = 77;
-            this.label7.Text = "INSTRUCTOR";
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label7.Location = new System.Drawing.Point(26, 184);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(116, 18);
+            label7.TabIndex = 77;
+            label7.Text = "INSTRUCTOR";
             // 
             // lbl_Ufid
             // 
-            this.lbl_Ufid.AutoSize = true;
-            this.lbl_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Ufid.Location = new System.Drawing.Point(70, 133);
-            this.lbl_Ufid.Name = "lbl_Ufid";
-            this.lbl_Ufid.Size = new System.Drawing.Size(51, 15);
-            this.lbl_Ufid.TabIndex = 76;
-            this.lbl_Ufid.Text = "U.F.I.D";
+            lbl_Ufid.AutoSize = true;
+            lbl_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Ufid.Location = new System.Drawing.Point(70, 133);
+            lbl_Ufid.Name = "lbl_Ufid";
+            lbl_Ufid.Size = new System.Drawing.Size(61, 18);
+            lbl_Ufid.TabIndex = 76;
+            lbl_Ufid.Text = "U.F.I.D";
             // 
             // lbl_Dr
             // 
-            this.lbl_Dr.AutoSize = true;
-            this.lbl_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Dr.Location = new System.Drawing.Point(225, 134);
-            this.lbl_Dr.Name = "lbl_Dr";
-            this.lbl_Dr.Size = new System.Drawing.Size(26, 15);
-            this.lbl_Dr.TabIndex = 75;
-            this.lbl_Dr.Text = "Dr.";
+            lbl_Dr.AutoSize = true;
+            lbl_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Dr.Location = new System.Drawing.Point(225, 134);
+            lbl_Dr.Name = "lbl_Dr";
+            lbl_Dr.Size = new System.Drawing.Size(31, 18);
+            lbl_Dr.TabIndex = 75;
+            lbl_Dr.Text = "Dr.";
             // 
             // panel_Ipp
             // 
-            this.panel_Ipp.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Ipp.Controls.Add(this.textBox_NumeroIpp);
-            this.panel_Ipp.Controls.Add(this.comboBox_Ipp1);
-            this.panel_Ipp.Controls.Add(this.comboBox_Ipp2);
-            this.panel_Ipp.Controls.Add(this.lbl_00);
-            this.panel_Ipp.Controls.Add(this.comboBox_Ipp4);
-            this.panel_Ipp.Controls.Add(this.lbl_Ipp);
-            this.panel_Ipp.Location = new System.Drawing.Point(22, 16);
-            this.panel_Ipp.Name = "panel_Ipp";
-            this.panel_Ipp.Size = new System.Drawing.Size(392, 27);
-            this.panel_Ipp.TabIndex = 74;
+            panel_Ipp.BackColor = System.Drawing.Color.Transparent;
+            panel_Ipp.Controls.Add(textBox_NumeroIpp);
+            panel_Ipp.Controls.Add(comboBox_Ipp1);
+            panel_Ipp.Controls.Add(comboBox_Ipp2);
+            panel_Ipp.Controls.Add(lbl_00);
+            panel_Ipp.Controls.Add(comboBox_Ipp4);
+            panel_Ipp.Controls.Add(lbl_Ipp);
+            panel_Ipp.Location = new System.Drawing.Point(22, 16);
+            panel_Ipp.Name = "panel_Ipp";
+            panel_Ipp.Size = new System.Drawing.Size(392, 27);
+            panel_Ipp.TabIndex = 74;
             // 
             // textBox_NumeroIpp
             // 
-            this.textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_NumeroIpp.Location = new System.Drawing.Point(205, 3);
-            this.textBox_NumeroIpp.Name = "textBox_NumeroIpp";
-            this.textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
-            this.textBox_NumeroIpp.TabIndex = 5;
-            this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.TextBox_NumeroIpp_TextChanged);
-            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroIpp_KeyPress);
-            this.textBox_NumeroIpp.Leave += new System.EventHandler(this.TextBox_NumeroIpp_Leave);
+            textBox_NumeroIpp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_NumeroIpp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_NumeroIpp.BackColor = System.Drawing.Color.White;
+            textBox_NumeroIpp.ErrorColor = System.Drawing.Color.Red;
+            textBox_NumeroIpp.FocusColor = System.Drawing.Color.Blue;
+            textBox_NumeroIpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_NumeroIpp.Location = new System.Drawing.Point(205, 3);
+            textBox_NumeroIpp.MaxLength = 32767;
+            textBox_NumeroIpp.Multiline = false;
+            textBox_NumeroIpp.Name = "textBox_NumeroIpp";
+            textBox_NumeroIpp.PasswordChar = '\0';
+            textBox_NumeroIpp.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_NumeroIpp.PlaceholderText = "";
+            textBox_NumeroIpp.ReadOnly = false;
+            textBox_NumeroIpp.SelectionStart = 0;
+            textBox_NumeroIpp.ShowError = false;
+            textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
+            textBox_NumeroIpp.TabIndex = 5;
+            textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_NumeroIpp.TextValue = "";
+            textBox_NumeroIpp.TextChanged += TextBox_NumeroIpp_TextChanged;
+            textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
+            textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
             // 
             // comboBox_Ipp1
             // 
-            
-            this.comboBox_Ipp1.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09"});
-            this.comboBox_Ipp1.Location = new System.Drawing.Point(106, 2);
-            this.comboBox_Ipp1.MaxDropDownItems = 10;
-            this.comboBox_Ipp1.InnerTextBox.MaxLength = 2;
-            this.comboBox_Ipp1.Name = "comboBox_Ipp1";
-            this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
-            this.comboBox_Ipp1.TabIndex = 3;
-            this.comboBox_Ipp1.Text = "03";
-            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
+            comboBox_Ipp1.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.ArrowImage");
+            comboBox_Ipp1.ArrowPictureBox = null;
+            comboBox_Ipp1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp1.BackColor = System.Drawing.Color.White;
+            comboBox_Ipp1.DataSource = null;
+            comboBox_Ipp1.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.DefaultImage");
+            comboBox_Ipp1.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.DisabledImage");
+            comboBox_Ipp1.DisplayMember = null;
+            comboBox_Ipp1.DropDownHeight = 252;
+            comboBox_Ipp1.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Ipp1.DroppedDown = false;
+            comboBox_Ipp1.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Ipp1.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp1.Location = new System.Drawing.Point(106, 2);
+            comboBox_Ipp1.MaxDropDownItems = 10;
+            comboBox_Ipp1.Name = "comboBox_Ipp1";
+            comboBox_Ipp1.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Ipp1.PlaceholderText = " ";
+            comboBox_Ipp1.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.PressedImage");
+            comboBox_Ipp1.SelectedIndex = -1;
+            comboBox_Ipp1.SelectedItem = null;
+            comboBox_Ipp1.SelectedText = "";
+            comboBox_Ipp1.SelectionStart = 0;
+            comboBox_Ipp1.ShowError = false;
+            comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
+            comboBox_Ipp1.TabIndex = 3;
+            comboBox_Ipp1.Text = "03";
+            comboBox_Ipp1.TextValue = " ";
+            comboBox_Ipp1.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // comboBox_Ipp2
             // 
-            
-            this.comboBox_Ipp2.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09"});
-            this.comboBox_Ipp2.Location = new System.Drawing.Point(155, 2);
-            this.comboBox_Ipp2.Name = "comboBox_Ipp2";
-            this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
-            this.comboBox_Ipp2.TabIndex = 4;
-            this.comboBox_Ipp2.Text = "03";
-            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
+            comboBox_Ipp2.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.ArrowImage");
+            comboBox_Ipp2.ArrowPictureBox = null;
+            comboBox_Ipp2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp2.BackColor = System.Drawing.Color.White;
+            comboBox_Ipp2.DataSource = null;
+            comboBox_Ipp2.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DefaultImage");
+            comboBox_Ipp2.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
+            comboBox_Ipp2.DisplayMember = null;
+            comboBox_Ipp2.DropDownHeight = 96;
+            comboBox_Ipp2.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Ipp2.DroppedDown = false;
+            comboBox_Ipp2.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Ipp2.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp2.Location = new System.Drawing.Point(155, 2);
+            comboBox_Ipp2.MaxDropDownItems = 10;
+            comboBox_Ipp2.Name = "comboBox_Ipp2";
+            comboBox_Ipp2.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Ipp2.PlaceholderText = " ";
+            comboBox_Ipp2.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.PressedImage");
+            comboBox_Ipp2.SelectedIndex = -1;
+            comboBox_Ipp2.SelectedItem = null;
+            comboBox_Ipp2.SelectedText = "";
+            comboBox_Ipp2.SelectionStart = 0;
+            comboBox_Ipp2.ShowError = false;
+            comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
+            comboBox_Ipp2.TabIndex = 4;
+            comboBox_Ipp2.Text = "03";
+            comboBox_Ipp2.TextValue = " ";
+            comboBox_Ipp2.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // lbl_00
             // 
-            this.lbl_00.AutoSize = true;
-            this.lbl_00.Location = new System.Drawing.Point(361, 7);
-            this.lbl_00.Name = "lbl_00";
-            this.lbl_00.Size = new System.Drawing.Size(24, 13);
-            this.lbl_00.TabIndex = 26;
-            this.lbl_00.Text = "/00";
+            lbl_00.AutoSize = true;
+            lbl_00.Location = new System.Drawing.Point(361, 7);
+            lbl_00.Name = "lbl_00";
+            lbl_00.Size = new System.Drawing.Size(31, 20);
+            lbl_00.TabIndex = 26;
+            lbl_00.Text = "/00";
             // 
             // comboBox_Ipp4
             // 
-            
-            this.comboBox_Ipp4.Items.AddRange(new object[] {
-            "24",
-            "25",
-            "26"});
-            this.comboBox_Ipp4.Location = new System.Drawing.Point(307, 2);
-            this.comboBox_Ipp4.Name = "comboBox_Ipp4";
-            this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
-            this.comboBox_Ipp4.TabIndex = 6;
-            this.comboBox_Ipp4.Text = "24";
-            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
+            comboBox_Ipp4.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.ArrowImage");
+            comboBox_Ipp4.ArrowPictureBox = null;
+            comboBox_Ipp4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_Ipp4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_Ipp4.BackColor = System.Drawing.Color.White;
+            comboBox_Ipp4.DataSource = null;
+            comboBox_Ipp4.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DefaultImage");
+            comboBox_Ipp4.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
+            comboBox_Ipp4.DisplayMember = null;
+            comboBox_Ipp4.DropDownHeight = 96;
+            comboBox_Ipp4.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Ipp4.DroppedDown = false;
+            comboBox_Ipp4.ErrorColor = System.Drawing.Color.Red;
+            comboBox_Ipp4.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp4.Location = new System.Drawing.Point(307, 2);
+            comboBox_Ipp4.MaxDropDownItems = 10;
+            comboBox_Ipp4.Name = "comboBox_Ipp4";
+            comboBox_Ipp4.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_Ipp4.PlaceholderText = " ";
+            comboBox_Ipp4.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.PressedImage");
+            comboBox_Ipp4.SelectedIndex = -1;
+            comboBox_Ipp4.SelectedItem = null;
+            comboBox_Ipp4.SelectedText = "";
+            comboBox_Ipp4.SelectionStart = 0;
+            comboBox_Ipp4.ShowError = false;
+            comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
+            comboBox_Ipp4.TabIndex = 6;
+            comboBox_Ipp4.Text = "24";
+            comboBox_Ipp4.TextValue = " ";
+            comboBox_Ipp4.KeyPress += ComboBox_Ipp_KeyPress;
             // 
             // lbl_Ipp
             // 
-            this.lbl_Ipp.AutoSize = true;
-            this.lbl_Ipp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Ipp.Location = new System.Drawing.Point(59, 5);
-            this.lbl_Ipp.Name = "lbl_Ipp";
-            this.lbl_Ipp.Size = new System.Drawing.Size(41, 15);
-            this.lbl_Ipp.TabIndex = 3;
-            this.lbl_Ipp.Text = "l.P.P.";
+            lbl_Ipp.AutoSize = true;
+            lbl_Ipp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Ipp.Location = new System.Drawing.Point(59, 5);
+            lbl_Ipp.Name = "lbl_Ipp";
+            lbl_Ipp.Size = new System.Drawing.Size(49, 18);
+            lbl_Ipp.TabIndex = 3;
+            lbl_Ipp.Text = "l.P.P.";
             // 
             // panel_Caratula
             // 
-            this.panel_Caratula.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Caratula.Controls.Add(this.textBox_Caratula);
-            this.panel_Caratula.Controls.Add(this.lbl_Caratula);
-            this.panel_Caratula.Controls.Add(this.btn_AgregarCausa);
-            this.panel_Caratula.Location = new System.Drawing.Point(41, 45);
-            this.panel_Caratula.Name = "panel_Caratula";
-            this.panel_Caratula.Size = new System.Drawing.Size(407, 26);
-            this.panel_Caratula.TabIndex = 73;
+            panel_Caratula.BackColor = System.Drawing.Color.Transparent;
+            panel_Caratula.Controls.Add(textBox_Caratula);
+            panel_Caratula.Controls.Add(lbl_Caratula);
+            panel_Caratula.Controls.Add(btn_AgregarCausa);
+            panel_Caratula.Location = new System.Drawing.Point(41, 45);
+            panel_Caratula.Name = "panel_Caratula";
+            panel_Caratula.Size = new System.Drawing.Size(407, 26);
+            panel_Caratula.TabIndex = 73;
             // 
             // textBox_Caratula
             // 
-            this.textBox_Caratula.Location = new System.Drawing.Point(87, 2);
-            this.textBox_Caratula.Multiline = true;
-            this.textBox_Caratula.Name = "textBox_Caratula";
-            this.textBox_Caratula.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Caratula.TabIndex = 7;
+            textBox_Caratula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Caratula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Caratula.BackColor = System.Drawing.Color.White;
+            textBox_Caratula.ErrorColor = System.Drawing.Color.Red;
+            textBox_Caratula.FocusColor = System.Drawing.Color.Blue;
+            textBox_Caratula.Location = new System.Drawing.Point(87, 2);
+            textBox_Caratula.MaxLength = 32767;
+            textBox_Caratula.Multiline = true;
+            textBox_Caratula.Name = "textBox_Caratula";
+            textBox_Caratula.PasswordChar = '\0';
+            textBox_Caratula.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Caratula.PlaceholderText = "";
+            textBox_Caratula.ReadOnly = false;
+            textBox_Caratula.SelectionStart = 0;
+            textBox_Caratula.ShowError = false;
+            textBox_Caratula.Size = new System.Drawing.Size(286, 20);
+            textBox_Caratula.TabIndex = 7;
+            textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Caratula.TextValue = "";
             // 
             // lbl_Caratula
             // 
-            this.lbl_Caratula.AutoSize = true;
-            this.lbl_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Caratula.Location = new System.Drawing.Point(7, 4);
-            this.lbl_Caratula.Name = "lbl_Caratula";
-            this.lbl_Caratula.Size = new System.Drawing.Size(76, 15);
-            this.lbl_Caratula.TabIndex = 4;
-            this.lbl_Caratula.Text = "CARATULA";
+            lbl_Caratula.AutoSize = true;
+            lbl_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Caratula.Location = new System.Drawing.Point(7, 4);
+            lbl_Caratula.Name = "lbl_Caratula";
+            lbl_Caratula.Size = new System.Drawing.Size(93, 18);
+            lbl_Caratula.TabIndex = 4;
+            lbl_Caratula.Text = "CARATULA";
             // 
             // btn_AgregarCausa
             // 
-            this.btn_AgregarCausa.BackColor = System.Drawing.Color.White;
-            this.btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AgregarCausa.FlatAppearance.BorderSize = 3;
-            this.btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarCausa.Location = new System.Drawing.Point(377, 1);
-            this.btn_AgregarCausa.Name = "btn_AgregarCausa";
-            this.btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
-            this.btn_AgregarCausa.TabIndex = 27;
-            this.btn_AgregarCausa.Text = "+";
-            this.btn_AgregarCausa.UseVisualStyleBackColor = false;
+            btn_AgregarCausa.BackColor = System.Drawing.Color.White;
+            btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_AgregarCausa.FlatAppearance.BorderSize = 3;
+            btn_AgregarCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_AgregarCausa.Location = new System.Drawing.Point(377, 1);
+            btn_AgregarCausa.Name = "btn_AgregarCausa";
+            btn_AgregarCausa.Size = new System.Drawing.Size(15, 23);
+            btn_AgregarCausa.TabIndex = 27;
+            btn_AgregarCausa.Text = "+";
+            btn_AgregarCausa.UseVisualStyleBackColor = false;
             // 
             // panel_Imputado
             // 
-            this.panel_Imputado.AutoSize = true;
-            this.panel_Imputado.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Imputado.Controls.Add(this.textBox_Imputado);
-            this.panel_Imputado.Controls.Add(this.lbl_Imputado);
-            this.panel_Imputado.Controls.Add(this.btn_AgregarImputado);
-            this.panel_Imputado.Location = new System.Drawing.Point(2, 101);
-            this.panel_Imputado.Name = "panel_Imputado";
-            this.panel_Imputado.Size = new System.Drawing.Size(445, 28);
-            this.panel_Imputado.TabIndex = 72;
+            panel_Imputado.AutoSize = true;
+            panel_Imputado.BackColor = System.Drawing.Color.Transparent;
+            panel_Imputado.Controls.Add(textBox_Imputado);
+            panel_Imputado.Controls.Add(lbl_Imputado);
+            panel_Imputado.Controls.Add(btn_AgregarImputado);
+            panel_Imputado.Location = new System.Drawing.Point(2, 101);
+            panel_Imputado.Name = "panel_Imputado";
+            panel_Imputado.Size = new System.Drawing.Size(445, 28);
+            panel_Imputado.TabIndex = 72;
             // 
             // textBox_Imputado
             // 
-            this.textBox_Imputado.Location = new System.Drawing.Point(126, 3);
-            this.textBox_Imputado.Name = "textBox_Imputado";
-            this.textBox_Imputado.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Imputado.TabIndex = 9;
+            textBox_Imputado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Imputado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Imputado.BackColor = System.Drawing.Color.White;
+            textBox_Imputado.ErrorColor = System.Drawing.Color.Red;
+            textBox_Imputado.FocusColor = System.Drawing.Color.Blue;
+            textBox_Imputado.Location = new System.Drawing.Point(126, 3);
+            textBox_Imputado.MaxLength = 32767;
+            textBox_Imputado.Multiline = false;
+            textBox_Imputado.Name = "textBox_Imputado";
+            textBox_Imputado.PasswordChar = '\0';
+            textBox_Imputado.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Imputado.PlaceholderText = "";
+            textBox_Imputado.ReadOnly = false;
+            textBox_Imputado.SelectionStart = 0;
+            textBox_Imputado.ShowError = false;
+            textBox_Imputado.Size = new System.Drawing.Size(286, 20);
+            textBox_Imputado.TabIndex = 9;
+            textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Imputado.TextValue = "";
             // 
             // lbl_Imputado
             // 
-            this.lbl_Imputado.AutoSize = true;
-            this.lbl_Imputado.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Imputado.Location = new System.Drawing.Point(42, 4);
-            this.lbl_Imputado.Name = "lbl_Imputado";
-            this.lbl_Imputado.Size = new System.Drawing.Size(78, 15);
-            this.lbl_Imputado.TabIndex = 6;
-            this.lbl_Imputado.Text = "lMPUTADO";
+            lbl_Imputado.AutoSize = true;
+            lbl_Imputado.BackColor = System.Drawing.Color.Transparent;
+            lbl_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Imputado.Location = new System.Drawing.Point(42, 4);
+            lbl_Imputado.Name = "lbl_Imputado";
+            lbl_Imputado.Size = new System.Drawing.Size(94, 18);
+            lbl_Imputado.TabIndex = 6;
+            lbl_Imputado.Text = "lMPUTADO";
             // 
             // btn_AgregarImputado
             // 
-            this.btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarImputado.Location = new System.Drawing.Point(416, 2);
-            this.btn_AgregarImputado.Name = "btn_AgregarImputado";
-            this.btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
-            this.btn_AgregarImputado.TabIndex = 29;
-            this.btn_AgregarImputado.Text = "+";
-            this.btn_AgregarImputado.UseVisualStyleBackColor = true;
+            btn_AgregarImputado.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_AgregarImputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_AgregarImputado.Location = new System.Drawing.Point(416, 2);
+            btn_AgregarImputado.Name = "btn_AgregarImputado";
+            btn_AgregarImputado.Size = new System.Drawing.Size(15, 23);
+            btn_AgregarImputado.TabIndex = 29;
+            btn_AgregarImputado.Text = "+";
+            btn_AgregarImputado.UseVisualStyleBackColor = true;
             // 
             // panel_Victima
             // 
-            this.panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Victima.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Victima.Controls.Add(this.textBox_Victima);
-            this.panel_Victima.Controls.Add(this.lbl_Victima);
-            this.panel_Victima.Controls.Add(this.btn_AgregarVictima);
-            this.panel_Victima.Location = new System.Drawing.Point(2, 72);
-            this.panel_Victima.Name = "panel_Victima";
-            this.panel_Victima.Size = new System.Drawing.Size(446, 28);
-            this.panel_Victima.TabIndex = 71;
+            panel_Victima.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            panel_Victima.BackColor = System.Drawing.Color.Transparent;
+            panel_Victima.Controls.Add(textBox_Victima);
+            panel_Victima.Controls.Add(lbl_Victima);
+            panel_Victima.Controls.Add(btn_AgregarVictima);
+            panel_Victima.Location = new System.Drawing.Point(2, 72);
+            panel_Victima.Name = "panel_Victima";
+            panel_Victima.Size = new System.Drawing.Size(446, 28);
+            panel_Victima.TabIndex = 71;
             // 
             // textBox_Victima
             // 
-            this.textBox_Victima.Location = new System.Drawing.Point(126, 3);
-            this.textBox_Victima.Name = "textBox_Victima";
-            this.textBox_Victima.Size = new System.Drawing.Size(286, 20);
-            this.textBox_Victima.TabIndex = 8;
+            textBox_Victima.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Victima.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Victima.BackColor = System.Drawing.Color.White;
+            textBox_Victima.ErrorColor = System.Drawing.Color.Red;
+            textBox_Victima.FocusColor = System.Drawing.Color.Blue;
+            textBox_Victima.Location = new System.Drawing.Point(126, 3);
+            textBox_Victima.MaxLength = 32767;
+            textBox_Victima.Multiline = false;
+            textBox_Victima.Name = "textBox_Victima";
+            textBox_Victima.PasswordChar = '\0';
+            textBox_Victima.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Victima.PlaceholderText = "";
+            textBox_Victima.ReadOnly = false;
+            textBox_Victima.SelectionStart = 0;
+            textBox_Victima.ShowError = false;
+            textBox_Victima.Size = new System.Drawing.Size(286, 20);
+            textBox_Victima.TabIndex = 8;
+            textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Victima.TextValue = "";
             // 
             // lbl_Victima
             // 
-            this.lbl_Victima.AutoSize = true;
-            this.lbl_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Victima.Location = new System.Drawing.Point(61, 4);
-            this.lbl_Victima.Name = "lbl_Victima";
-            this.lbl_Victima.Size = new System.Drawing.Size(60, 15);
-            this.lbl_Victima.TabIndex = 5;
-            this.lbl_Victima.Text = "VICTIMA";
+            lbl_Victima.AutoSize = true;
+            lbl_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lbl_Victima.Location = new System.Drawing.Point(61, 4);
+            lbl_Victima.Name = "lbl_Victima";
+            lbl_Victima.Size = new System.Drawing.Size(72, 18);
+            lbl_Victima.TabIndex = 5;
+            lbl_Victima.Text = "VICTIMA";
             // 
             // btn_AgregarVictima
             // 
-            this.btn_AgregarVictima.BackColor = System.Drawing.Color.White;
-            this.btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AgregarVictima.FlatAppearance.BorderSize = 0;
-            this.btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AgregarVictima.Location = new System.Drawing.Point(416, 2);
-            this.btn_AgregarVictima.Name = "btn_AgregarVictima";
-            this.btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
-            this.btn_AgregarVictima.TabIndex = 28;
-            this.btn_AgregarVictima.Text = "+";
-            this.btn_AgregarVictima.UseVisualStyleBackColor = false;
+            btn_AgregarVictima.BackColor = System.Drawing.Color.White;
+            btn_AgregarVictima.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_AgregarVictima.FlatAppearance.BorderSize = 0;
+            btn_AgregarVictima.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_AgregarVictima.Location = new System.Drawing.Point(416, 2);
+            btn_AgregarVictima.Name = "btn_AgregarVictima";
+            btn_AgregarVictima.Size = new System.Drawing.Size(15, 23);
+            btn_AgregarVictima.TabIndex = 28;
+            btn_AgregarVictima.Text = "+";
+            btn_AgregarVictima.UseVisualStyleBackColor = false;
             // 
             // label_DatosInstruccion
             // 
-            this.label_DatosInstruccion.AutoSize = true;
-            this.label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_DatosInstruccion.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DatosInstruccion.Location = new System.Drawing.Point(23, 1);
-            this.label_DatosInstruccion.Name = "label_DatosInstruccion";
-            this.label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            this.label_DatosInstruccion.Size = new System.Drawing.Size(260, 25);
-            this.label_DatosInstruccion.TabIndex = 32;
-            this.label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCIÓN";
+            label_DatosInstruccion.AutoSize = true;
+            label_DatosInstruccion.BackColor = System.Drawing.Color.FromArgb(0, 192, 192);
+            label_DatosInstruccion.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
+            label_DatosInstruccion.Location = new System.Drawing.Point(23, 1);
+            label_DatosInstruccion.Name = "label_DatosInstruccion";
+            label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
+            label_DatosInstruccion.Size = new System.Drawing.Size(317, 30);
+            label_DatosInstruccion.TabIndex = 32;
+            label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCIÓN";
             // 
             // pictureBox_PanelInstruccion
             // 
-            this.pictureBox_PanelInstruccion.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_PanelInstruccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_PanelInstruccion.Location = new System.Drawing.Point(273, 1);
-            this.pictureBox_PanelInstruccion.Name = "pictureBox_PanelInstruccion";
-            this.pictureBox_PanelInstruccion.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox_PanelInstruccion.TabIndex = 33;
-            this.pictureBox_PanelInstruccion.TabStop = false;
+            pictureBox_PanelInstruccion.BackColor = System.Drawing.Color.Transparent;
+            pictureBox_PanelInstruccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pictureBox_PanelInstruccion.Location = new System.Drawing.Point(273, 1);
+            pictureBox_PanelInstruccion.Name = "pictureBox_PanelInstruccion";
+            pictureBox_PanelInstruccion.Size = new System.Drawing.Size(29, 22);
+            pictureBox_PanelInstruccion.TabIndex = 33;
+            pictureBox_PanelInstruccion.TabStop = false;
             // 
             // label_TITULO
             // 
-            this.label_TITULO.AutoSize = true;
-            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_TITULO.Location = new System.Drawing.Point(98, 9);
-            this.label_TITULO.Name = "label_TITULO";
-            this.label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label_TITULO.Size = new System.Drawing.Size(299, 24);
-            this.label_TITULO.TabIndex = 34;
-            this.label_TITULO.Text = "CARGOS PARA SECUESTROS";
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(73, 0);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            label_TITULO.Size = new System.Drawing.Size(376, 29);
+            label_TITULO.TabIndex = 34;
+            label_TITULO.Text = "CARGOS PARA SECUESTROS";
             // 
             // Cargo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 737);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label_TITULO);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(528, 260);
-            this.Name = "Cargo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CARGO ";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Cargo_HelpButtonClicked);
-            this.Load += new System.EventHandler(this.Cargo_Load);
-            this.Controls.SetChildIndex(this.label_TITULO, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel_ControlesInferiores.ResumeLayout(false);
-            this.panel_Descripcion.ResumeLayout(false);
-            this.panel_Descripcion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Descripcion)).EndInit();
-            this.panel_SeleccionVisu.ResumeLayout(false);
-            this.panel_SeleccionVisu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckLegajoVehicular)).EndInit();
-            this.panel_Instruccion.ResumeLayout(false);
-            this.panel_Instruccion.PerformLayout();
-            this.panel_DatosInstruccion.ResumeLayout(false);
-            this.panel_DatosInstruccion.PerformLayout();
-            this.panel_Ipp.ResumeLayout(false);
-            this.panel_Ipp.PerformLayout();
-            this.panel_Caratula.ResumeLayout(false);
-            this.panel_Caratula.PerformLayout();
-            this.panel_Imputado.ResumeLayout(false);
-            this.panel_Imputado.PerformLayout();
-            this.panel_Victima.ResumeLayout(false);
-            this.panel_Victima.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PanelInstruccion)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(512, 737);
+            Controls.Add(label_TITULO);
+            Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            HelpButton = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new System.Drawing.Size(528, 260);
+            Name = "Cargo";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "CARGO ";
+            HelpButtonClicked += Cargo_HelpButtonClicked;
+            Load += Cargo_Load;
+            Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(label_TITULO, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel_ControlesInferiores.ResumeLayout(false);
+            panel_Descripcion.ResumeLayout(false);
+            panel_Descripcion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Descripcion).EndInit();
+            panel_SeleccionVisu.ResumeLayout(false);
+            panel_SeleccionVisu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckLegajoVehicular).EndInit();
+            panel_Instruccion.ResumeLayout(false);
+            panel_Instruccion.PerformLayout();
+            panel_DatosInstruccion.ResumeLayout(false);
+            panel_DatosInstruccion.PerformLayout();
+            panel_Ipp.ResumeLayout(false);
+            panel_Ipp.PerformLayout();
+            panel_Caratula.ResumeLayout(false);
+            panel_Caratula.PerformLayout();
+            panel_Imputado.ResumeLayout(false);
+            panel_Imputado.PerformLayout();
+            panel_Victima.ResumeLayout(false);
+            panel_Victima.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_PanelInstruccion).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -29,6 +29,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool panelExpandido_Descripcion = true;// 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         #endregion
+
         #region CONSTRUCTOR
         public Cargo()
         {
@@ -258,7 +259,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         /// <summary>
-        /// METODO PARA DAR FOCO EN NUMERO DE CARGO, AL ABRIR FORMULARIO
+        /// DAR FOCO EN NUMERO DE CARGO, AL ABRIR FORMULARIO
         /// </summary>
         private void Focus_Shown(object sender, EventArgs e)
         {
@@ -290,7 +291,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //----------------------------------------------------------------------------------
+
         private void InicializarComboBoxFISCALIA()
         {
 
@@ -351,7 +352,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-        //----------------------------------------------------------------
+      
         private void InicializarComboBoxSECRETARIO()
         {
             List<SecretarioJson> secretarios = SecretarioManager.ObtenerSecretarios();
@@ -359,7 +360,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.DisplayMember = "DescripcionCompleta";
             comboBox_Secretario.SelectedIndex = -1;
         }
-        //---------------------------------------------------------------------
+
         private void InicializarComboBoxINSTRUCTOR()
         {
             List<InstructorJson> instructores = InstructorManager.ObtenerInstructores();
@@ -367,7 +368,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.DisplayMember = "DescripcionCompleta";
             comboBox_Instructor.SelectedIndex = -1;
         }
-        //------------------------------------------------------------------------
+      
         private void InicializarComboBoxDEPENDENCIAS()
         {
             List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
@@ -400,11 +401,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
 
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); ;
-
-
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); 
         }
-        //-----------------------------------------------------------------------------------
+     
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -516,7 +515,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         /// <summary>
-        /// PARA LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
+        /// LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -532,12 +531,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (e.KeyChar == (char)Keys.Enter)
             {
                 // Obtiene el TextBox que disparó el evento
-                Ofelia_Sara.Controles.General.CustomTextBox textBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
+                Ofelia_Sara.Controles.General.CustomTextBox customTextBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
 
-                if (textBox != null)
+                if (customTextBox != null)
                 {
                     // Obtiene el texto actual del TextBox
-                    string currentText = textBox.Text;
+                    string currentText = customTextBox.TextValue;
 
                     // Verifica si el texto es numérico
                     if (int.TryParse(currentText, out _))
@@ -546,10 +545,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         string completedText = currentText.PadLeft(6, '0');
 
                         // Actualiza el texto del TextBox
-                        textBox.Text = completedText;
+                        customTextBox.TextValue = completedText;
 
                         // Posiciona el cursor al final del texto
-                        textBox.SelectionStart = textBox.Text.Length;
+                        customTextBox.SelectionStart = customTextBox.TextValue.Length;
 
                         // Cancelar el manejo predeterminado de la tecla Enter
                         e.Handled = true;
@@ -575,7 +574,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         /// <summary>
-        /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
+        /// AUTOCOMPLETAR CUANDO PIERDE EL FOCO
         /// </summary>
         private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
@@ -605,6 +604,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
+
         /// <summary>
         /// MENSAJE AYUDA
         /// </summary>

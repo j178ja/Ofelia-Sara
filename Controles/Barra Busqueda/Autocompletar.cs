@@ -5,14 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Ofelia_Sara.Controles.General;
-
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
-using Newtonsoft.Json;
 using Ofelia_Sara.Clases.General.Texto;
 
 public class AutocompletarManager

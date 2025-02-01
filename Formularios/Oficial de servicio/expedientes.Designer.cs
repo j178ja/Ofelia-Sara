@@ -32,11 +32,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expedientes));
             panel1 = new System.Windows.Forms.Panel();
-            textBox_NumeroIpp = new Controles.General.CustomTextBox();
-            comboBox_Ipp1 = new Controles.General.CustomComboBox();
-            comboBox_Ipp2 = new Controles.General.CustomComboBox();
+            textBox_NumeroIpp = new CustomTextBox();
+            comboBox_Ipp1 = new CustomComboBox();
+            comboBox_Ipp2 = new CustomComboBox();
             lbl_00 = new System.Windows.Forms.Label();
-            comboBox_Ipp4 = new Controles.General.CustomComboBox();
+            comboBox_Ipp4 = new CustomComboBox();
             label_Ipp = new System.Windows.Forms.Label();
             panel_ConversorDocumentos = new System.Windows.Forms.Panel();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
@@ -63,16 +63,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Fecha_Instruccion = new Controles.Ofl_Sara.TimePickerPersonalizado();
             label_Fecha = new System.Windows.Forms.Label();
             label_Dependencia = new System.Windows.Forms.Label();
-            comboBox_Dependencia = new Controles.General.CustomComboBox();
-            comboBox_Instructor = new Controles.General.CustomComboBox();
-            comboBox_Secretario = new Controles.General.CustomComboBox();
+            comboBox_Dependencia = new CustomComboBox();
+            comboBox_Instructor = new CustomComboBox();
+            comboBox_Secretario = new CustomComboBox();
             groupBox_SeleccionadorProcedencia = new System.Windows.Forms.GroupBox();
             radioButton_Juzgado = new System.Windows.Forms.RadioButton();
             radioButton_Fiscalia = new System.Windows.Forms.RadioButton();
             label_DatosActuacion = new System.Windows.Forms.Label();
-            textBox_Caratula = new Controles.General.CustomTextBox();
+            textBox_Caratula = new CustomTextBox();
             label_Caratula = new System.Windows.Forms.Label();
-            textBox_Causante = new Controles.General.CustomTextBox();
+            textBox_Causante = new CustomTextBox();
             label_Victima = new System.Windows.Forms.Label();
             label_TITULO = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
@@ -129,6 +129,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // comboBox_Ipp1
             // 
             comboBox_Ipp1.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.ArrowImage");
+            comboBox_Ipp1.ArrowPictureBox = null;
             comboBox_Ipp1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Ipp1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Ipp1.BackColor = System.Drawing.Color.White;
@@ -137,10 +138,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp1.DisabledImage");
             comboBox_Ipp1.DisplayMember = null;
             comboBox_Ipp1.DropDownHeight = 252;
-            comboBox_Ipp1.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp1.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp1.DroppedDown = false;
             comboBox_Ipp1.ErrorColor = System.Drawing.Color.Red;
             comboBox_Ipp1.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp1.ForeColor = System.Drawing.Color.Gray;
             resources.ApplyResources(comboBox_Ipp1, "comboBox_Ipp1");
             comboBox_Ipp1.MaxDropDownItems = 10;
             comboBox_Ipp1.Name = "comboBox_Ipp1";
@@ -152,10 +154,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.SelectedText = "";
             comboBox_Ipp1.SelectionStart = 0;
             comboBox_Ipp1.ShowError = false;
+            comboBox_Ipp1.TextValue = "";
             // 
             // comboBox_Ipp2
             // 
             comboBox_Ipp2.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.ArrowImage");
+            comboBox_Ipp2.ArrowPictureBox = null;
             comboBox_Ipp2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Ipp2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Ipp2.BackColor = System.Drawing.Color.White;
@@ -164,10 +168,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
             comboBox_Ipp2.DisplayMember = null;
             comboBox_Ipp2.DropDownHeight = 252;
-            comboBox_Ipp2.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp2.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp2.DroppedDown = false;
             comboBox_Ipp2.ErrorColor = System.Drawing.Color.Red;
             comboBox_Ipp2.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp2.ForeColor = System.Drawing.Color.Gray;
             resources.ApplyResources(comboBox_Ipp2, "comboBox_Ipp2");
             comboBox_Ipp2.MaxDropDownItems = 10;
             comboBox_Ipp2.Name = "comboBox_Ipp2";
@@ -179,6 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.SelectedText = "";
             comboBox_Ipp2.SelectionStart = 0;
             comboBox_Ipp2.ShowError = false;
+            comboBox_Ipp2.TextValue = "";
             // 
             // lbl_00
             // 
@@ -188,6 +194,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // comboBox_Ipp4
             // 
             comboBox_Ipp4.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.ArrowImage");
+            comboBox_Ipp4.ArrowPictureBox = null;
             comboBox_Ipp4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Ipp4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Ipp4.BackColor = System.Drawing.Color.White;
@@ -196,10 +203,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
             comboBox_Ipp4.DisplayMember = null;
             comboBox_Ipp4.DropDownHeight = 252;
-            comboBox_Ipp4.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Ipp4.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp4.DroppedDown = false;
             comboBox_Ipp4.ErrorColor = System.Drawing.Color.Red;
             comboBox_Ipp4.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp4.ForeColor = System.Drawing.Color.Gray;
             resources.ApplyResources(comboBox_Ipp4, "comboBox_Ipp4");
             comboBox_Ipp4.MaxDropDownItems = 10;
             comboBox_Ipp4.Name = "comboBox_Ipp4";
@@ -211,6 +219,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.SelectedText = "";
             comboBox_Ipp4.SelectionStart = 0;
             comboBox_Ipp4.ShowError = false;
+            comboBox_Ipp4.TextValue = "";
             // 
             // label_Ipp
             // 
@@ -429,6 +438,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // comboBox_Dependencia
             // 
             comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.ArrowPictureBox = null;
             comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Dependencia.BackColor = System.Drawing.Color.White;
@@ -437,10 +447,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
             resources.ApplyResources(comboBox_Dependencia, "comboBox_Dependencia");
             comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
@@ -452,10 +463,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.SelectedText = "";
             comboBox_Dependencia.SelectionStart = 0;
             comboBox_Dependencia.ShowError = false;
+            comboBox_Dependencia.TextValue = "";
             // 
             // comboBox_Instructor
             // 
             comboBox_Instructor.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.ArrowImage");
+            comboBox_Instructor.ArrowPictureBox = null;
             comboBox_Instructor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Instructor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Instructor.BackColor = System.Drawing.Color.White;
@@ -464,11 +477,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DisabledImage");
             comboBox_Instructor.DisplayMember = null;
             comboBox_Instructor.DropDownHeight = 252;
-            comboBox_Instructor.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Instructor.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Instructor.DroppedDown = false;
             comboBox_Instructor.ErrorColor = System.Drawing.Color.Red;
             comboBox_Instructor.FocusColor = System.Drawing.Color.Blue;
             resources.ApplyResources(comboBox_Instructor, "comboBox_Instructor");
+            comboBox_Instructor.ForeColor = System.Drawing.Color.Gray;
             comboBox_Instructor.MaxDropDownItems = 10;
             comboBox_Instructor.Name = "comboBox_Instructor";
             comboBox_Instructor.PlaceholderColor = System.Drawing.Color.Gray;
@@ -479,10 +493,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.SelectedText = "";
             comboBox_Instructor.SelectionStart = 0;
             comboBox_Instructor.ShowError = false;
+            comboBox_Instructor.TextValue = "";
             // 
             // comboBox_Secretario
             // 
             comboBox_Secretario.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.ArrowImage");
+            comboBox_Secretario.ArrowPictureBox = null;
             comboBox_Secretario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Secretario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Secretario.BackColor = System.Drawing.Color.White;
@@ -491,11 +507,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DisabledImage");
             comboBox_Secretario.DisplayMember = null;
             comboBox_Secretario.DropDownHeight = 252;
-            comboBox_Secretario.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Secretario.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Secretario.DroppedDown = false;
             comboBox_Secretario.ErrorColor = System.Drawing.Color.Red;
             comboBox_Secretario.FocusColor = System.Drawing.Color.Blue;
             resources.ApplyResources(comboBox_Secretario, "comboBox_Secretario");
+            comboBox_Secretario.ForeColor = System.Drawing.Color.Gray;
             comboBox_Secretario.MaxDropDownItems = 10;
             comboBox_Secretario.Name = "comboBox_Secretario";
             comboBox_Secretario.PlaceholderColor = System.Drawing.Color.Gray;
@@ -506,6 +523,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.SelectedText = "";
             comboBox_Secretario.SelectionStart = 0;
             comboBox_Secretario.ShowError = false;
+            comboBox_Secretario.TextValue = "";
             // 
             // groupBox_SeleccionadorProcedencia
             // 
@@ -602,8 +620,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
-            Controls.Add(panel1);
             Controls.Add(label_TITULO);
+            Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             HelpButton = true;
             MaximizeBox = false;
@@ -611,8 +629,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Name = "Expedientes";
             HelpButtonClicked += Expedientes_HelpButtonClicked;
             Load += Expedientes_Load;
-            Controls.SetChildIndex(label_TITULO, 0);
             Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(label_TITULO, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel_ConversorDocumentos.ResumeLayout(false);

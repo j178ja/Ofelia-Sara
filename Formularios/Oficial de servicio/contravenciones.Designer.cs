@@ -43,20 +43,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Localidad = new System.Windows.Forms.Label();
             label_Nacionalidad = new System.Windows.Forms.Label();
             label_Edad = new System.Windows.Forms.Label();
-            textBox_ArtInfraccion = new Controles.General.CustomTextBox();
-            textBox_Nombre = new Controles.General.CustomTextBox();
-            textBox_Dni = new Controles.General.CustomTextBox();
-            textBox_Edad = new Controles.General.CustomTextBox();
-            textBox_Localidad = new Controles.General.CustomTextBox();
-            textBox_Domicilio = new Controles.General.CustomTextBox();
+            textBox_ArtInfraccion = new CustomTextBox();
+            textBox_Nombre = new CustomTextBox();
+            textBox_Dni = new CustomTextBox();
+            textBox_Edad = new CustomTextBox();
+            textBox_Localidad = new CustomTextBox();
+            textBox_Domicilio = new CustomTextBox();
             label_DatosInstruccion = new System.Windows.Forms.Label();
             label_Secretario = new System.Windows.Forms.Label();
             label_Instructor = new System.Windows.Forms.Label();
             label_Dependencia = new System.Windows.Forms.Label();
             label_Fecha = new System.Windows.Forms.Label();
-            comboBox_Secretario = new Controles.General.CustomComboBox();
-            comboBox_Instructor = new Controles.General.CustomComboBox();
-            comboBox_Dependencia = new Controles.General.CustomComboBox();
+            comboBox_Secretario = new CustomComboBox();
+            comboBox_Instructor = new CustomComboBox();
+            comboBox_Dependencia = new CustomComboBox();
             btn_AgregarArtContravencion = new System.Windows.Forms.Button();
             btn_Buscar = new System.Windows.Forms.Button();
             btn_Guardar = new System.Windows.Forms.Button();
@@ -65,9 +65,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1 = new System.Windows.Forms.Panel();
             Fecha_Instruccion = new Controles.Ofl_Sara.TimePickerPersonalizado();
             FechaAudiencia = new Controles.Ofl_Sara.DateCompromiso_Control();
-            botonDeslizable_StarPlana = new Controles.General.BotonDeslizable();
+            botonDeslizable_StarPlana = new BotonDeslizable();
             label_StarPlana = new System.Windows.Forms.Label();
-            comboBox_Nacionalidad = new Controles.General.CustomComboBox();
+            comboBox_Nacionalidad = new CustomComboBox();
             Fecha_Nacimiento = new Controles.Ofl_Sara.CustomDate();
             label_TITULO = new System.Windows.Forms.Label();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
@@ -82,7 +82,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosInfraccion.Location = new System.Drawing.Point(116, 33);
             label_DatosInfraccion.Name = "label_DatosInfraccion";
             label_DatosInfraccion.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label_DatosInfraccion.Size = new System.Drawing.Size(282, 28);
+            label_DatosInfraccion.Size = new System.Drawing.Size(336, 34);
             label_DatosInfraccion.TabIndex = 0;
             label_DatosInfraccion.Text = "DATOS DE LA INFRACCION";
             // 
@@ -94,7 +94,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label2.Location = new System.Drawing.Point(116, 160);
             label2.Name = "label2";
             label2.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label2.Size = new System.Drawing.Size(261, 28);
+            label2.Size = new System.Drawing.Size(309, 34);
             label2.TabIndex = 1;
             label2.Text = "DATOS DEL INFRACTOR";
             // 
@@ -104,7 +104,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_ArtInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_ArtInfraccion.Location = new System.Drawing.Point(43, 78);
             label_ArtInfraccion.Name = "label_ArtInfraccion";
-            label_ArtInfraccion.Size = new System.Drawing.Size(37, 15);
+            label_ArtInfraccion.Size = new System.Drawing.Size(45, 18);
             label_ArtInfraccion.TabIndex = 2;
             label_ArtInfraccion.Text = "ART.";
             // 
@@ -114,7 +114,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_FechaAudiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_FechaAudiencia.Location = new System.Drawing.Point(43, 110);
             label_FechaAudiencia.Name = "label_FechaAudiencia";
-            label_FechaAudiencia.Size = new System.Drawing.Size(154, 15);
+            label_FechaAudiencia.Size = new System.Drawing.Size(188, 18);
             label_FechaAudiencia.TabIndex = 3;
             label_FechaAudiencia.Text = "FECHA DE AUDIENCIA:";
             // 
@@ -124,7 +124,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nombre.Location = new System.Drawing.Point(41, 203);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new System.Drawing.Size(67, 15);
+            label_Nombre.Size = new System.Drawing.Size(81, 18);
             label_Nombre.TabIndex = 4;
             label_Nombre.Text = "NOMBRE";
             // 
@@ -134,7 +134,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dni.Location = new System.Drawing.Point(41, 231);
             label_Dni.Name = "label_Dni";
-            label_Dni.Size = new System.Drawing.Size(43, 15);
+            label_Dni.Size = new System.Drawing.Size(51, 18);
             label_Dni.TabIndex = 6;
             label_Dni.Text = "D.N.I.";
             // 
@@ -144,7 +144,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_FechaNacimiento.Location = new System.Drawing.Point(41, 257);
             label_FechaNacimiento.Name = "label_FechaNacimiento";
-            label_FechaNacimiento.Size = new System.Drawing.Size(139, 15);
+            label_FechaNacimiento.Size = new System.Drawing.Size(170, 18);
             label_FechaNacimiento.TabIndex = 7;
             label_FechaNacimiento.Text = "FECHA NACIMIENTO";
             // 
@@ -154,7 +154,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Domicilio.Location = new System.Drawing.Point(41, 281);
             label_Domicilio.Name = "label_Domicilio";
-            label_Domicilio.Size = new System.Drawing.Size(78, 15);
+            label_Domicilio.Size = new System.Drawing.Size(93, 18);
             label_Domicilio.TabIndex = 9;
             label_Domicilio.Text = "DOMICILIO";
             // 
@@ -164,7 +164,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(396, 287);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(82, 15);
+            label_Localidad.Size = new System.Drawing.Size(99, 18);
             label_Localidad.TabIndex = 10;
             label_Localidad.Text = "LOCALIDAD";
             // 
@@ -174,7 +174,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nacionalidad.Location = new System.Drawing.Point(372, 260);
             label_Nacionalidad.Name = "label_Nacionalidad";
-            label_Nacionalidad.Size = new System.Drawing.Size(106, 15);
+            label_Nacionalidad.Size = new System.Drawing.Size(128, 18);
             label_Nacionalidad.TabIndex = 11;
             label_Nacionalidad.Text = "NACIONALIDAD";
             // 
@@ -184,7 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Edad.Location = new System.Drawing.Point(434, 231);
             label_Edad.Name = "label_Edad";
-            label_Edad.Size = new System.Drawing.Size(44, 15);
+            label_Edad.Size = new System.Drawing.Size(53, 18);
             label_Edad.TabIndex = 12;
             label_Edad.Text = "EDAD";
             // 
@@ -200,6 +200,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_ArtInfraccion.Multiline = false;
             textBox_ArtInfraccion.Name = "textBox_ArtInfraccion";
             textBox_ArtInfraccion.PasswordChar = '\0';
+            textBox_ArtInfraccion.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_ArtInfraccion.PlaceholderText = "";
             textBox_ArtInfraccion.ReadOnly = false;
             textBox_ArtInfraccion.SelectionStart = 0;
             textBox_ArtInfraccion.ShowError = false;
@@ -220,6 +222,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Nombre.Multiline = false;
             textBox_Nombre.Name = "textBox_Nombre";
             textBox_Nombre.PasswordChar = '\0';
+            textBox_Nombre.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Nombre.PlaceholderText = "";
             textBox_Nombre.ReadOnly = false;
             textBox_Nombre.SelectionStart = 0;
             textBox_Nombre.ShowError = false;
@@ -240,6 +244,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Dni.Multiline = false;
             textBox_Dni.Name = "textBox_Dni";
             textBox_Dni.PasswordChar = '\0';
+            textBox_Dni.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Dni.PlaceholderText = "";
             textBox_Dni.ReadOnly = false;
             textBox_Dni.SelectionStart = 0;
             textBox_Dni.ShowError = false;
@@ -262,6 +268,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Edad.Multiline = false;
             textBox_Edad.Name = "textBox_Edad";
             textBox_Edad.PasswordChar = '\0';
+            textBox_Edad.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Edad.PlaceholderText = "";
             textBox_Edad.ReadOnly = false;
             textBox_Edad.SelectionStart = 0;
             textBox_Edad.ShowError = false;
@@ -284,6 +292,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Localidad.Multiline = false;
             textBox_Localidad.Name = "textBox_Localidad";
             textBox_Localidad.PasswordChar = '\0';
+            textBox_Localidad.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Localidad.PlaceholderText = "";
             textBox_Localidad.ReadOnly = false;
             textBox_Localidad.SelectionStart = 0;
             textBox_Localidad.ShowError = false;
@@ -305,6 +315,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Domicilio.Multiline = false;
             textBox_Domicilio.Name = "textBox_Domicilio";
             textBox_Domicilio.PasswordChar = '\0';
+            textBox_Domicilio.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Domicilio.PlaceholderText = "";
             textBox_Domicilio.ReadOnly = false;
             textBox_Domicilio.SelectionStart = 0;
             textBox_Domicilio.ShowError = false;
@@ -321,7 +333,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosInstruccion.Location = new System.Drawing.Point(116, 352);
             label_DatosInstruccion.Name = "label_DatosInstruccion";
             label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label_DatosInstruccion.Size = new System.Drawing.Size(295, 28);
+            label_DatosInstruccion.Size = new System.Drawing.Size(349, 34);
             label_DatosInstruccion.TabIndex = 30;
             label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCION";
             // 
@@ -331,7 +343,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Secretario.Location = new System.Drawing.Point(43, 397);
             label_Secretario.Name = "label_Secretario";
-            label_Secretario.Size = new System.Drawing.Size(93, 15);
+            label_Secretario.Size = new System.Drawing.Size(114, 18);
             label_Secretario.TabIndex = 31;
             label_Secretario.Text = "SECRETARIO";
             // 
@@ -341,7 +353,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Instructor.Location = new System.Drawing.Point(43, 424);
             label_Instructor.Name = "label_Instructor";
-            label_Instructor.Size = new System.Drawing.Size(95, 15);
+            label_Instructor.Size = new System.Drawing.Size(116, 18);
             label_Instructor.TabIndex = 32;
             label_Instructor.Text = "INSTRUCTOR";
             // 
@@ -351,7 +363,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dependencia.Location = new System.Drawing.Point(43, 451);
             label_Dependencia.Name = "label_Dependencia";
-            label_Dependencia.Size = new System.Drawing.Size(104, 15);
+            label_Dependencia.Size = new System.Drawing.Size(126, 18);
             label_Dependencia.TabIndex = 33;
             label_Dependencia.Text = "DEPENDENCIA";
             // 
@@ -361,13 +373,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Fecha.Location = new System.Drawing.Point(43, 478);
             label_Fecha.Name = "label_Fecha";
-            label_Fecha.Size = new System.Drawing.Size(51, 15);
+            label_Fecha.Size = new System.Drawing.Size(63, 18);
             label_Fecha.TabIndex = 34;
             label_Fecha.Text = "FECHA";
             // 
             // comboBox_Secretario
             // 
             comboBox_Secretario.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.ArrowImage");
+            comboBox_Secretario.ArrowPictureBox = null;
             comboBox_Secretario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Secretario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Secretario.BackColor = System.Drawing.Color.White;
@@ -376,10 +389,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DisabledImage");
             comboBox_Secretario.DisplayMember = null;
             comboBox_Secretario.DropDownHeight = 252;
-            comboBox_Secretario.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Secretario.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Secretario.DroppedDown = false;
             comboBox_Secretario.ErrorColor = System.Drawing.Color.Red;
             comboBox_Secretario.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Secretario.ForeColor = System.Drawing.Color.Gray;
             comboBox_Secretario.Location = new System.Drawing.Point(153, 394);
             comboBox_Secretario.MaxDropDownItems = 10;
             comboBox_Secretario.Name = "comboBox_Secretario";
@@ -393,10 +407,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.ShowError = false;
             comboBox_Secretario.Size = new System.Drawing.Size(296, 21);
             comboBox_Secretario.TabIndex = 13;
+            comboBox_Secretario.Text = " ";
+            comboBox_Secretario.TextValue = "";
             // 
             // comboBox_Instructor
             // 
             comboBox_Instructor.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.ArrowImage");
+            comboBox_Instructor.ArrowPictureBox = null;
             comboBox_Instructor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Instructor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Instructor.BackColor = System.Drawing.Color.White;
@@ -405,10 +422,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DisabledImage");
             comboBox_Instructor.DisplayMember = null;
             comboBox_Instructor.DropDownHeight = 252;
-            comboBox_Instructor.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Instructor.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Instructor.DroppedDown = false;
             comboBox_Instructor.ErrorColor = System.Drawing.Color.Red;
             comboBox_Instructor.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Instructor.ForeColor = System.Drawing.Color.Gray;
             comboBox_Instructor.Location = new System.Drawing.Point(153, 421);
             comboBox_Instructor.MaxDropDownItems = 10;
             comboBox_Instructor.Name = "comboBox_Instructor";
@@ -422,10 +440,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.ShowError = false;
             comboBox_Instructor.Size = new System.Drawing.Size(296, 21);
             comboBox_Instructor.TabIndex = 14;
+            comboBox_Instructor.Text = " ";
+            comboBox_Instructor.TextValue = "";
             // 
             // comboBox_Dependencia
             // 
             comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
+            comboBox_Dependencia.ArrowPictureBox = null;
             comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Dependencia.BackColor = System.Drawing.Color.White;
@@ -434,10 +455,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
             comboBox_Dependencia.DropDownHeight = 252;
-            comboBox_Dependencia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Dependencia.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Dependencia.Location = new System.Drawing.Point(153, 448);
             comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
@@ -451,6 +473,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.ShowError = false;
             comboBox_Dependencia.Size = new System.Drawing.Size(296, 21);
             comboBox_Dependencia.TabIndex = 15;
+            comboBox_Dependencia.Text = " ";
+            comboBox_Dependencia.TextValue = "";
             // 
             // btn_AgregarArtContravencion
             // 
@@ -560,18 +584,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
             Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
             Fecha_Instruccion.Name = "Fecha_Instruccion";
-         //   Fecha_Instruccion.SelectedDate = new System.DateTime(2024, 12, 5, 23, 23, 53, 67);
             Fecha_Instruccion.Size = new System.Drawing.Size(296, 21);
             Fecha_Instruccion.TabIndex = 103;
             // 
             // FechaAudiencia
             // 
             FechaAudiencia.AutoSize = true;
+            FechaAudiencia.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             FechaAudiencia.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             FechaAudiencia.Location = new System.Drawing.Point(203, 108);
             FechaAudiencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             FechaAudiencia.Name = "FechaAudiencia";
-            FechaAudiencia.Size = new System.Drawing.Size(394, 27);
+            FechaAudiencia.Size = new System.Drawing.Size(436, 32);
             FechaAudiencia.TabIndex = 102;
             // 
             // botonDeslizable_StarPlana
@@ -591,13 +615,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_StarPlana.Location = new System.Drawing.Point(43, 305);
             label_StarPlana.Name = "label_StarPlana";
-            label_StarPlana.Size = new System.Drawing.Size(83, 16);
+            label_StarPlana.Size = new System.Drawing.Size(102, 20);
             label_StarPlana.TabIndex = 100;
             label_StarPlana.Text = "Star. Plana";
             // 
             // comboBox_Nacionalidad
             // 
             comboBox_Nacionalidad.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Nacionalidad.ArrowImage");
+            comboBox_Nacionalidad.ArrowPictureBox = null;
             comboBox_Nacionalidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Nacionalidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Nacionalidad.BackColor = System.Drawing.Color.White;
@@ -606,10 +631,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Nacionalidad.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Nacionalidad.DisabledImage");
             comboBox_Nacionalidad.DisplayMember = null;
             comboBox_Nacionalidad.DropDownHeight = 252;
-            comboBox_Nacionalidad.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox_Nacionalidad.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Nacionalidad.DroppedDown = false;
             comboBox_Nacionalidad.ErrorColor = System.Drawing.Color.Red;
             comboBox_Nacionalidad.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Nacionalidad.ForeColor = System.Drawing.Color.Gray;
             comboBox_Nacionalidad.Location = new System.Drawing.Point(484, 259);
             comboBox_Nacionalidad.MaxDropDownItems = 10;
             comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
@@ -623,12 +649,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Nacionalidad.ShowError = false;
             comboBox_Nacionalidad.Size = new System.Drawing.Size(163, 21);
             comboBox_Nacionalidad.TabIndex = 93;
+            comboBox_Nacionalidad.Text = " ";
+            comboBox_Nacionalidad.TextValue = "";
             // 
             // Fecha_Nacimiento
             // 
+            Fecha_Nacimiento.AñoMaximo = 2025;
+            Fecha_Nacimiento.AñoMinimo = 1930;
+            Fecha_Nacimiento.BackColor = System.Drawing.Color.Transparent;
+            Fecha_Nacimiento.ControlInvocador = null;
             Fecha_Nacimiento.Location = new System.Drawing.Point(195, 254);
             Fecha_Nacimiento.Name = "Fecha_Nacimiento";
             Fecha_Nacimiento.Size = new System.Drawing.Size(149, 21);
+            Fecha_Nacimiento.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
+            Fecha_Nacimiento.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             Fecha_Nacimiento.TabIndex = 91;
             Fecha_Nacimiento.TextoAsociado = null;
             // 
@@ -638,21 +672,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(224, 9);
+            label_TITULO.Location = new System.Drawing.Point(184, 9);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            label_TITULO.Size = new System.Drawing.Size(282, 25);
+            label_TITULO.Size = new System.Drawing.Size(351, 31);
             label_TITULO.TabIndex = 49;
             label_TITULO.Text = "CONTRAVENCIONES";
             // 
             // Contravenciones
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             ClientSize = new System.Drawing.Size(722, 675);
-            Controls.Add(panel1);
             Controls.Add(label_TITULO);
+            Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             HelpButton = true;
             MaximizeBox = false;
@@ -662,8 +696,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Text = "ACTUACIONES CONTRAVENCIONALES                               ";
             HelpButtonClicked += Contravenciones_HelpButtonClicked;
             Load += Contravenciones_Load;
-            Controls.SetChildIndex(label_TITULO, 0);
             Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(label_TITULO, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ofelia-Sara")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee85a94ee2fef5a8b8e6b3f385b3e6243ca842ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0807f1c40e6a4dacea00716c84409fa7308aa472")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ofelia-Sara")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ofelia-Sara")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

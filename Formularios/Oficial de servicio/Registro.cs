@@ -104,6 +104,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
+        private void label_Registro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

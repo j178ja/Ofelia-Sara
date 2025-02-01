@@ -38,8 +38,8 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
-            panel1.Controls.Add(listView_Documentos);
             panel1.Controls.Add(label_TITULO);
+            panel1.Controls.Add(listView_Documentos);
             panel1.Location = new System.Drawing.Point(20, 15);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(529, 272);
@@ -61,16 +61,16 @@
             label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(124, -16);
+            label_TITULO.Location = new System.Drawing.Point(102, -16);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(272, 30);
+            label_TITULO.Size = new System.Drawing.Size(328, 35);
             label_TITULO.TabIndex = 1;
             label_TITULO.Text = "LEYES Y DECRETOS";
             // 
             // LeyesForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(571, 321);
             Controls.Add(panel1);
