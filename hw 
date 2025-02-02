@@ -1,0 +1,453 @@
+[33mcommit 0807f1c40e6a4dacea00716c84409fa7308aa472[m
+Author: JAB <jbestudiosycapacitaciones@gmail.com>
+Date:   Fri Jan 31 17:07:56 2025 -0300
+
+    correccion camelcase dpto jud
+
+[1mdiff --git a/.vs/Ofelia-Sara/v17/.suo b/.vs/Ofelia-Sara/v17/.suo[m
+[1mindex 3222aa1..0a0530c 100644[m
+Binary files a/.vs/Ofelia-Sara/v17/.suo and b/.vs/Ofelia-Sara/v17/.suo differ
+[1mdiff --git a/.vs/Ofelia-Sara/v17/DocumentLayout.json b/.vs/Ofelia-Sara/v17/DocumentLayout.json[m
+[1mindex c09025e..3e58c91 100644[m
+[1m--- a/.vs/Ofelia-Sara/v17/DocumentLayout.json[m
+[1m+++ b/.vs/Ofelia-Sara/v17/DocumentLayout.json[m
+[36m@@ -3,24 +3,12 @@[m
+   "WorkspaceRootPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\",[m
+   "Documents": [[m
+     {[m
+[31m-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[31m-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+[32m+[m[32m      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[32m+[m[32m      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+     },[m
+     {[m
+[31m-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",[m
+[31m-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\leyesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"[m
+[31m-    },[m
+[31m-    {[m
+[31m-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",[m
+[32m+[m[32m      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",[m
+       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\inicio_cierre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"[m
+[31m-    },[m
+[31m-    {[m
+[31m-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[31m-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+[31m-    },[m
+[31m-    {[m
+[31m-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\usuario\\onedrive\\escritorio\\ofelia-sara\\formularios\\general\\baseformdatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[31m-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\baseformdatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+     }[m
+   ],[m
+   "DocumentGroupContainers": [[m
+[36m@@ -47,31 +35,19 @@[m
+             {[m
+               "$type": "Document",[m
+               "DocumentIndex": 0,[m
+[31m-              "Title": "LeyesForm.cs",[m
+[31m-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs",[m
+[31m-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\LeyesForm.cs",[m
+[31m-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs*",[m
+[31m-              "RelativeToolTip": "Formularios\\Oficial de servicio\\LeyesForm.cs*",[m
+[31m-              "ViewState": "AgIAAAQAAAAAAAAAAAAiwCEAAAAoAAAAAAAAAA==",[m
+[32m+[m[32m              "Title": "inicio_cierre.cs",[m
+[32m+[m[32m              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",[m
+[32m+[m[32m              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",[m
+[32m+[m[32m              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",[m
+[32m+[m[32m              "RelativeToolTip": "Formularios\\Oficial de servicio\\inicio_cierre.cs",[m
+[32m+[m[32m              "ViewState": "AgIAAB4CAAAAAAAAAAAhwG8CAABSAAAAAAAAAA==",[m
+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[31m-              "WhenOpened": "2025-01-31T13:27:01.709Z",[m
+[32m+[m[32m              "WhenOpened": "2025-01-31T18:34:26.378Z",[m
+               "EditorCaption": ""[m
+             },[m
+             {[m
+               "$type": "Document",[m
+               "DocumentIndex": 1,[m
+[31m-              "Title": "LeyesForm.cs [Dise\u00F1o]",[m
+[31m-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs",[m
+[31m-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\LeyesForm.cs",[m
+[31m-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\LeyesForm.cs [Dise\u00F1o]*",[m
+[31m-              "RelativeToolTip": "Formularios\\Oficial de servicio\\LeyesForm.cs [Dise\u00F1o]*",[m
+[31m-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[31m-              "WhenOpened": "2025-01-31T13:26:06.044Z",[m
+[31m-              "EditorCaption": " [Dise\u00F1o]"[m
+[31m-            },[m
+[31m-            {[m
+[31m-              "$type": "Document",[m
+[31m-              "DocumentIndex": 2,[m
+               "Title": "inicio_cierre.cs [Dise\u00F1o]",[m
+               "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\Oficial de servicio\\inicio_cierre.cs",[m
+               "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\inicio_cierre.cs",[m
+[36m@@ -80,32 +56,6 @@[m
+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+               "WhenOpened": "2025-01-31T13:23:33.652Z",[m
+               "EditorCaption": " [Dise\u00F1o]"[m
+[31m-            },[m
+[31m-            {[m
+[31m-              "$type": "Document",[m
+[31m-              "DocumentIndex": 3,[m
+[31m-              "Title": "BaseForm.cs",[m
+[31m-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\BaseForm.cs",[m
+[31m-              "RelativeDocumentMoniker": "Formularios\\General\\BaseForm.cs",[m
+[31m-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\BaseForm.cs",[m
+[31m-              "RelativeToolTip": "Formularios\\General\\BaseForm.cs",[m
+[31m-              "ViewState": "AgIAAJkAAAAAAAAAAAAqwMYAAAAJAAAAAAAAAA==",[m
+[31m-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[31m-              "WhenOpened": "2025-01-31T13:10:26.07Z",[m
+[31m-              "EditorCaption": ""[m
+[31m-            },[m
+[31m-            {[m
+[31m-              "$type": "Document",[m
+[31m-              "DocumentIndex": 4,[m
+[31m-              "Title": "BaseFormDATOS.cs",[m
+[31m-              "DocumentMoniker": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\BaseFormDATOS.cs",[m
+[31m-              "RelativeDocumentMoniker": "Formularios\\General\\BaseFormDATOS.cs",[m
+[31m-              "ToolTip": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\Formularios\\General\\BaseFormDATOS.cs",[m
+[31m-              "RelativeToolTip": "Formularios\\General\\BaseFormDATOS.cs",[m
+[31m-              "ViewState": "AgIAABQAAAAAAAAAAAAmwCYBAAAAAAAAAAAAAA==",[m
+[31m-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[31m-              "WhenOpened": "2025-01-30T22:38:10.612Z",[m
+[31m-              "EditorCaption": ""[m
+             }[m
+           ][m
+         }[m
+[1mdiff --git a/Controles/Ofl Sara/NuevaCaratulaControl.Designer.cs b/Controles/Ofl Sara/NuevaCaratulaControl.Designer.cs[m
+[1mindex 9f290c3..afa35d7 100644[m
+[1m--- a/Controles/Ofl Sara/NuevaCaratulaControl.Designer.cs[m	
+[1m+++ b/Controles/Ofl Sara/NuevaCaratulaControl.Designer.cs[m	
+[36m@@ -70,6 +70,7 @@[m
+             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;[m
+             textBox_Caratula.TextValue = "";[m
+             textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;[m
+[32m+[m[32m            textBox_Caratula.KeyPress += TextBox_Caratula_KeyPress;[m
+             // [m
+             // btn_EliminarControl[m
+             // [m
+[1mdiff --git a/Controles/Ofl Sara/NuevaCaratulaControl.cs b/Controles/Ofl Sara/NuevaCaratulaControl.cs[m
+[1mindex 21ecdee..7356053 100644[m
+[1m--- a/Controles/Ofl Sara/NuevaCaratulaControl.cs[m	
+[1m+++ b/Controles/Ofl Sara/NuevaCaratulaControl.cs[m	
+[36m@@ -1,4 +1,5 @@[m
+[31m-﻿using Ofelia_Sara.Controles.General;[m
+[32m+[m[32m﻿using Ofelia_Sara.Clases.General.Texto;[m
+[32m+[m[32musing Ofelia_Sara.Controles.General;[m
+ using Ofelia_Sara.Formularios.General.Mensajes;[m
+ using System;[m
+ using System.Drawing;[m
+[36m@@ -7,110 +8,111 @@[m [musing System.Windows.Forms;[m
+ [m
+ [m
+ namespace Ofelia_Sara.Controles.Ofl_Sara[m
+[31m-{ [m
+[31m-    public partial class NuevaCaratulaControl : UserControl[m
+ {[m
+[31m-    #region VARIABLES[m
+[31m-    private Label Label_Caratula;[m
+[31m-    public CustomTextBox TextBox_Caratula { get; private set; }[m
+[31m-    public static int ContadorCaratulas { get; set; } = 1; // Inicia en I[m
+[31m-    #endregion[m
+[31m-[m
+[31m-    public NuevaCaratulaControl()[m
+[32m+[m[32m    public partial class NuevaCaratulaControl : UserControl[m
+     {[m
+[31m-        InitializeComponent();[m
+[31m-        InicializarControles(); // Asegura que Label_Caratula esté inicializado[m
+[31m-    }[m
+[32m+[m[32m        #region VARIABLES[m
+[32m+[m[32m        private Label Label_Caratula;[m
+[32m+[m[32m        public CustomTextBox TextBox_Caratula { get; private set; }[m
+[32m+[m[32m        public static int ContadorCaratulas { get; set; } = 1; // Inicia en I[m
+[32m+[m[32m        #endregion[m
+ [m
+[31m-    private void InicializarControles()[m
+[31m-    {[m
+[31m-        Label_Caratula = new Label[m
+[32m+[m[32m        public NuevaCaratulaControl()[m
+         {[m
+[31m-            AutoSize = true,[m
+[31m-            Font = new Font("Arial", 10, FontStyle.Bold),[m
+[31m-            Location = new Point(10, 5), // Ajusta la ubicación del label[m
+[31m-            Text = "Carátula " + ConvertToRoman(ContadorCaratulas)[m
+[31m-        };[m
+[32m+[m[32m            InitializeComponent();[m
+[32m+[m[32m            InicializarControles(); // Asegura que Label_Caratula esté inicializado[m
+ [m
+[31m-        this.Controls.Add(Label_Caratula);[m
+[31m-    }[m
+[32m+[m[32m        }[m
+ [m
+[31m-    public static class NuevaCaratulaControlHelper[m
+[31m-    {[m
+[31m-        public static void AgregarNuevoControl(Panel panel)[m
+[32m+[m[32m        private void InicializarControles()[m
+         {[m
+[31m-            NuevaCaratulaControl nuevoControl = new NuevaCaratulaControl();[m
+[31m-[m
+[31m-            int nuevaPosicionY = ObtenerPosicionSiguiente(panel);[m
+[31m-            nuevoControl.Location = new Point(0, nuevaPosicionY);[m
+[31m-[m
+[31m-            // Asignar número romano[m
+[31m-            nuevoControl.ActualizarLabel(ContadorCaratulas);[m
+[31m-            ContadorCaratulas++;[m
+[32m+[m[32m            Label_Caratula = new Label[m
+[32m+[m[32m            {[m
+[32m+[m[32m                AutoSize = true,[m
+[32m+[m[32m                Font = new Font("Arial", 10, FontStyle.Bold),[m
+[32m+[m[32m                Location = new Point(10, 5), // Ajusta la ubicación del label[m
+[32m+[m[32m                Text = "Carátula " + ConvertToRoman(ContadorCaratulas)[m
+[32m+[m[32m            };[m
+ [m
+[31m-            panel.Controls.Add(nuevoControl);[m
+[31m-            AjustarAlturaPanel(panel);[m
+[32m+[m[32m            this.Controls.Add(Label_Caratula);[m
+         }[m
+ [m
+[31m-        private static int ObtenerPosicionSiguiente(Panel panel)[m
+[32m+[m[32m        public static class NuevaCaratulaControlHelper[m
+         {[m
+[31m-            if (panel.Controls.Count == 0) return 2;[m
+[31m-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];[m
+[31m-            return ultimoControl.Bottom + 2;[m
+[31m-        }[m
+[32m+[m[32m            public static void AgregarNuevoControl(Panel panel)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                NuevaCaratulaControl nuevoControl = new NuevaCaratulaControl();[m
+ [m
+[31m-        public static void AjustarAlturaPanel(Panel panel)[m
+[31m-        {[m
+[31m-            if (panel.Controls.Count == 0) return;[m
+[32m+[m[32m                int nuevaPosicionY = ObtenerPosicionSiguiente(panel);[m
+[32m+[m[32m                nuevoControl.Location = new Point(0, nuevaPosicionY);[m
+[32m+[m
+[32m+[m[32m                // Asignar número romano[m
+[32m+[m[32m                nuevoControl.ActualizarLabel(ContadorCaratulas);[m
+[32m+[m[32m                ContadorCaratulas++;[m
+ [m
+[31m-            var ultimoControl = panel.Controls[panel.Controls.Count - 1];[m
+[31m-            int nuevaAltura = ultimoControl.Bottom + 2;[m
+[32m+[m[32m                panel.Controls.Add(nuevoControl);[m
+[32m+[m[32m                AjustarAlturaPanel(panel);[m
+[32m+[m[32m            }[m
+ [m
+[31m-            panel.Height = nuevaAltura;[m
+[32m+[m[32m            private static int ObtenerPosicionSiguiente(Panel panel)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                if (panel.Controls.Count == 0) return 2;[m
+[32m+[m[32m                var ultimoControl = panel.Controls[panel.Controls.Count - 1];[m
+[32m+[m[32m                return ultimoControl.Bottom + 2;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            public static void AjustarAlturaPanel(Panel panel)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                if (panel.Controls.Count == 0) return;[m
+[32m+[m
+[32m+[m[32m                var ultimoControl = panel.Controls[panel.Controls.Count - 1];[m
+[32m+[m[32m                int nuevaAltura = ultimoControl.Bottom + 2;[m
+[32m+[m
+[32m+[m[32m                panel.Height = nuevaAltura;[m
+[32m+[m[32m            }[m
+         }[m
+[31m-    }[m
+ [m
+[31m-    /// <summary>[m
+[31m-    /// Convierte un número a su representación en números romanos.[m
+[31m-    /// </summary>[m
+[31m-    private static string ConvertToRoman(int number)[m
+[31m-    {[m
+[31m-        if (number < 1 || number > 20)[m
+[32m+[m[32m        /// <summary>[m
+[32m+[m[32m        /// Convierte un número a su representación en números romanos.[m
+[32m+[m[32m        /// </summary>[m
+[32m+[m[32m        private static string ConvertToRoman(int number)[m
+         {[m
+[31m-            MensajeGeneral.Mostrar("El número de carátula se encuentra fuera del rango.", MensajeGeneral.TipoMensaje.Advertencia);[m
+[31m-            return number.ToString();[m
+[31m-        }[m
+[32m+[m[32m            if (number < 1 || number > 20)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                MensajeGeneral.Mostrar("El número de carátula se encuentra fuera del rango.", MensajeGeneral.TipoMensaje.Advertencia);[m
+[32m+[m[32m                return number.ToString();[m
+[32m+[m[32m            }[m
+ [m
+[31m-        string[] romanos = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",[m
+[32m+[m[32m            string[] romanos = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",[m
+                              "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX" };[m
+[31m-        return romanos[number - 1]; // Se ajusta al índice del array[m
+[31m-    }[m
+[31m-[m
+[31m-    /// <summary>[m
+[31m-    /// Método para actualizar los números de los labels en los controles del panel.[m
+[31m-    /// </summary>[m
+[31m-    private static void ActualizarLabels(Panel panel)[m
+[31m-    {[m
+[31m-        var controlesOrdenados = panel.Controls[m
+[31m-            .OfType<NuevaCaratulaControl>()[m
+[31m-            .OrderBy(c => c.Location.Y)[m
+[31m-            .ToList();[m
+[32m+[m[32m            return romanos[number - 1]; // Se ajusta al índice del array[m
+[32m+[m[32m        }[m
+ [m
+[31m-        int contador = 1;[m
+[31m-        foreach (var control in controlesOrdenados)[m
+[32m+[m[32m        /// <summary>[m
+[32m+[m[32m        /// Método para actualizar los números de los labels en los controles del panel.[m
+[32m+[m[32m        /// </summary>[m
+[32m+[m[32m        private static void ActualizarLabels(Panel panel)[m
+         {[m
+[31m-            control.ActualizarLabel(contador);[m
+[31m-            contador++;[m
+[32m+[m[32m            var controlesOrdenados = panel.Controls[m
+[32m+[m[32m                .OfType<NuevaCaratulaControl>()[m
+[32m+[m[32m                .OrderBy(c => c.Location.Y)[m
+[32m+[m[32m                .ToList();[m
+[32m+[m
+[32m+[m[32m            int contador = 1;[m
+[32m+[m[32m            foreach (var control in controlesOrdenados)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                control.ActualizarLabel(contador);[m
+[32m+[m[32m                contador++;[m
+[32m+[m[32m            }[m
+         }[m
+[31m-    }[m
+ [m
+[31m-    public void ActualizarLabel(int nuevoNumero)[m
+[31m-    {[m
+[31m-        if (Label_Caratula != null)[m
+[32m+[m[32m        public void ActualizarLabel(int nuevoNumero)[m
+         {[m
+[31m-            Label_Caratula.Text = "Carátula " + ConvertToRoman(nuevoNumero);[m
+[32m+[m[32m            if (Label_Caratula != null)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                Label_Caratula.Text = "Carátula " + ConvertToRoman(nuevoNumero);[m
+[32m+[m[32m            }[m
+         }[m
+[31m-    }[m
+ [m
+         /// <summary>[m
+         //        /// BOTON ELIMINAR[m
+[36m@@ -151,6 +153,7 @@[m [mnamespace Ofelia_Sara.Controles.Ofl_Sara[m
+ [m
+         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)[m
+         {[m
+[32m+[m[32m          //  MayusculaYnumeros.AplicarAControl(textBox_Caratula);[m
+             if (sender is CustomTextBox customTextBox)[m
+             {[m
+                 // Guarda la posición actual del cursor[m
+[36m@@ -182,6 +185,23 @@[m [mnamespace Ofelia_Sara.Controles.Ofl_Sara[m
+                 }[m
+             }[m
+         }[m
+[32m+[m
+[32m+[m[32m        private void TextBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            // Permitir letras, números, espacios y caracteres de control[m
+[32m+[m[32m            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')[m
+[32m+[m[32m            {[m
+[32m+[m[32m                e.Handled = true; // Rechaza caracteres no válidos.[m
+[32m+[m[32m            }[m
+[32m+[m[32m            else[m
+[32m+[m[32m            {[m
+[32m+[m[32m                // Convierte letras a mayúsculas y mantiene números y espacios sin cambios[m
+[32m+[m[32m                if (char.IsLetter(e.KeyChar))[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    e.KeyChar = char.ToUpper(e.KeyChar);[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+ //{[m
+[1mdiff --git a/Formularios/Oficial de servicio/LeyesForm.cs b/Formularios/Oficial de servicio/LeyesForm.cs[m
+[1mindex 02e1ef8..973ce71 100644[m
+[1m--- a/Formularios/Oficial de servicio/LeyesForm.cs[m	
+[1m+++ b/Formularios/Oficial de servicio/LeyesForm.cs[m	
+[36m@@ -31,7 +31,6 @@[m [mnamespace Ofelia_Sara.Formularios.Oficial_de_servicio[m
+             // Personalizar bordes del panel[m
+             Color customBorderColor = Color.FromArgb(0, 154, 174);[m
+             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);[m
+[31m-            label_TITULO.BringToFront();[m
+             // Eventos del ListView[m
+             listView_Documentos.Click += ListView_Documentos_Click;[m
+           //  listView_Documentos.SelectedIndexChanged += ListView_Documentos_SelectedIndexChanged;[m
+[1mdiff --git a/Formularios/Oficial de servicio/inicio_cierre.cs b/Formularios/Oficial de servicio/inicio_cierre.cs[m
+[1mindex 7672a00..c4da4c0 100644[m
+[1m--- a/Formularios/Oficial de servicio/inicio_cierre.cs[m	
+[1m+++ b/Formularios/Oficial de servicio/inicio_cierre.cs[m	
+[36m@@ -161,6 +161,8 @@[m [mnamespace Ofelia_Sara.Formularios.Oficial_de_servicio[m
+             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);[m
+             MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);[m
+             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);[m
+[32m+[m[32m            ConvertirACamelCase.Convertir(comboBox_DeptoJudicial.InnerTextBox.Text);[m
+[32m+[m
+         }[m
+ [m
+         /// <summary>[m
+[1mdiff --git a/bin/Release/net8.0-windows/Ofelia-Sara.dll b/bin/Release/net8.0-windows/Ofelia-Sara.dll[m
+[1mindex bb4684e..270ce44 100644[m
+Binary files a/bin/Release/net8.0-windows/Ofelia-Sara.dll and b/bin/Release/net8.0-windows/Ofelia-Sara.dll differ
+[1mdiff --git a/bin/Release/net8.0-windows/Ofelia-Sara.exe b/bin/Release/net8.0-windows/Ofelia-Sara.exe[m
+[1mindex 5a20310..1aeb508 100644[m
+Binary files a/bin/Release/net8.0-windows/Ofelia-Sara.exe and b/bin/Release/net8.0-windows/Ofelia-Sara.exe differ
+[1mdiff --git a/bin/Release/net8.0-windows/Ofelia-Sara.pdb b/bin/Release/net8.0-windows/Ofelia-Sara.pdb[m
+[1mindex 2e7e42e..0cd53bd 100644[m
+Binary files a/bin/Release/net8.0-windows/Ofelia-Sara.pdb and b/bin/Release/net8.0-windows/Ofelia-Sara.pdb differ
+[1mdiff --git a/bin/Release/net8.0-windows/autocompletar.json b/bin/Release/net8.0-windows/autocompletar.json[m
+[1mindex b9f899d..57b2d29 100644[m
+[1m--- a/bin/Release/net8.0-windows/autocompletar.json[m
+[1m+++ b/bin/Release/net8.0-windows/autocompletar.json[m
+[36m@@ -1,4 +1,8 @@[m
+ [[m
+[32m+[m[32m  "G",[m
+[32m+[m[32m  "F4 ",[m
+[32m+[m[32m  "R",[m
+[32m+[m[32m  "HFG",[m
+   "F4",[m
+   "H",[m
+   "D",[m
+[1mdiff --git a/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfo.cs b/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfo.cs[m
+[1mindex f5833fb..d7dafed 100644[m
+[1m--- a/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfo.cs[m
+[1m+++ b/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfo.cs[m
+[36m@@ -14,7 +14,7 @@[m [musing System.Reflection;[m
+ [assembly: System.Reflection.AssemblyCompanyAttribute("Ofelia-Sara")][m
+ [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")][m
+ [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")][m
+[31m-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4335411f990ece6760dd74d2838bea79c0c245d5")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f4bc13c806c633e49fbe29456f6b9a4333db720")][m
+ [assembly: System.Reflection.AssemblyProductAttribute("Ofelia-Sara")][m
+ [assembly: System.Reflection.AssemblyTitleAttribute("Ofelia-Sara")][m
+ [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")][m
+[1mdiff --git a/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfoInputs.cache b/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfoInputs.cache[m
+[1mindex 6d26a69..cd20b5f 100644[m
+[1m--- a/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfoInputs.cache[m
+[1m+++ b/obj/Release/net8.0-windows/Ofelia-Sara.AssemblyInfoInputs.cache[m
+[36m@@ -1 +1 @@[m
+[31m-b7f12df89eba2d4405cad7e0bc0df472d01bbb74103c8b6a99b1ca2cba9d9012[m
+[32m+[m[32mc29f8d18befd04a52329d62e281564052e980f04b805c3d913dd28a7fb68afe5[m
+[1mdiff --git a/obj/Release/net8.0-windows/Ofelia-Sara.csproj.GenerateResource.cache b/obj/Release/net8.0-windows/Ofelia-Sara.csproj.GenerateResource.cache[m
+[1mindex 3ee2e63..a0a4bac 100644[m
+Binary files a/obj/Release/net8.0-windows/Ofelia-Sara.csproj.GenerateResource.cache and b/obj/Release/net8.0-windows/Ofelia-Sara.csproj.GenerateResource.cache differ
+[1mdiff --git a/obj/Release/net8.0-windows/Ofelia-Sara.dll b/obj/Release/net8.0-windows/Ofelia-Sara.dll[m
+[1mindex bb4684e..270ce44 100644[m
+Binary files a/obj/Release/net8.0-windows/Ofelia-Sara.dll and b/obj/Release/net8.0-windows/Ofelia-Sara.dll differ
+[1mdiff --git a/obj/Release/net8.0-windows/Ofelia-Sara.pdb b/obj/Release/net8.0-windows/Ofelia-Sara.pdb[m
+[1mindex 2e7e42e..0cd53bd 100644[m
+Binary files a/obj/Release/net8.0-windows/Ofelia-Sara.pdb and b/obj/Release/net8.0-windows/Ofelia-Sara.pdb differ
+[1mdiff --git a/obj/Release/net8.0-windows/Ofelia-Sara.sourcelink.json b/obj/Release/net8.0-windows/Ofelia-Sara.sourcelink.json[m
+[1mindex f4ca40d..266d352 100644[m
+[1m--- a/obj/Release/net8.0-windows/Ofelia-Sara.sourcelink.json[m
+[1m+++ b/obj/Release/net8.0-windows/Ofelia-Sara.sourcelink.json[m
+[36m@@ -1 +1 @@[m
+[31m-{"documents":{"C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\*":"https://raw.githubusercontent.com/j178ja/Ofelia-Sara/4335411f990ece6760dd74d2838bea79c0c245d5/*"}}[m
+\ No newline at end of file[m
+[32m+[m[32m{"documents":{"C:\\Users\\Usuario\\OneDrive\\Escritorio\\Ofelia-Sara\\*":"https://raw.githubusercontent.com/j178ja/Ofelia-Sara/8f4bc13c806c633e49fbe29456f6b9a4333db720/*"}}[m
+\ No newline at end of file[m
+[1mdiff --git a/obj/Release/net8.0-windows/apphost.exe b/obj/Release/net8.0-windows/apphost.exe[m
+[1mindex 5a20310..1aeb508 100644[m
+Binary files a/obj/Release/net8.0-windows/apphost.exe and b/obj/Release/net8.0-windows/apphost.exe differ
+[1mdiff --git a/obj/Release/net8.0-windows/ref/Ofelia-Sara.dll b/obj/Release/net8.0-windows/ref/Ofelia-Sara.dll[m
+[1mindex 02c0800..8d3c1f7 100644[m
+Binary files a/obj/Release/net8.0-windows/ref/Ofelia-Sara.dll and b/obj/Release/net8.0-windows/ref/Ofelia-Sara.dll differ
+[1mdiff --git a/obj/Release/net8.0-windows/refint/Ofelia-Sara.dll b/obj/Release/net8.0-windows/refint/Ofelia-Sara.dll[m
+[1mindex 02c0800..8d3c1f7 100644[m
+Binary files a/obj/Release/net8.0-windows/refint/Ofelia-Sara.dll and b/obj/Release/net8.0-windows/refint/Ofelia-Sara.dll differ
