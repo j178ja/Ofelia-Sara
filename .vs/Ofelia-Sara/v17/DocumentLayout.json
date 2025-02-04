@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\formularios\\oficial de servicio\\acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\acceso usuarios\\modificareliminar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\controles\\general\\customtextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\general\\customtextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Formularios\\Oficial de servicio\\Visu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,29 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CustomTextBox.cs",
-              "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Controles\\General\\CustomTextBox.cs",
-              "RelativeDocumentMoniker": "Controles\\General\\CustomTextBox.cs",
-              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Controles\\General\\CustomTextBox.cs",
-              "RelativeToolTip": "Controles\\General\\CustomTextBox.cs",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAcwFcBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T02:33:49.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ModificarEliminar.cs",
-              "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Acceso Usuarios\\ModificarEliminar.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\Acceso Usuarios\\ModificarEliminar.cs",
-              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Acceso Usuarios\\ModificarEliminar.cs",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\Acceso Usuarios\\ModificarEliminar.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwIMBAAASAAAAAAAAAA==",
+              "Title": "Visu.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\Visu.cs",
+              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\Visu.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T02:06:55.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T02:22:27.553Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

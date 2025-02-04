@@ -19,34 +19,31 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     public partial class Visu : BaseForm
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-
         private List<string> victimas = new List<string>(); // Listas para almacenar víctimas e imputados
         private List<string> imputados = new List<string>(); // Listas para almacenar víctimas e imputados
-
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Imagenes = true;// 
         private bool panelExpandido_Vehiculo = true;// 
         private bool panelExpandido_Descripcion = true;// 
-
         // Altura original y contraída del panel
         private int alturaOriginalPanel_Instruccion;
         private int alturaOriginalPanel_Imagenes;
         private int alturaOriginalPanel_Vehiculo;
         private int alturaOriginalPanel_Descripcion;
         private int alturaContraidaPanel = 30;
-
         private Label labelImagenes;// Para la imagen de carga completa en panel imagenes
+        #endregion
 
-
-
+        #region CONSTRUCTOR
         public Visu()
         {
             InitializeComponent();
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-            //..............................
+            
             // Asignación de eventos
             comboBox_Marca.TextChanged += (s, e) => ValidarPanelVehiculo();
             comboBox_Marca.SelectedIndexChanged += (s, e) => ValidarPanelVehiculo();
@@ -60,7 +57,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Validar panel al cargar
             this.Load += (s, e) => ValidarPanelVehiculo();
-            //..............................
+         
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarCausa);
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
@@ -75,16 +72,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.Visible = false;// inicialice no visible
             panel_Descripcion.Visible = true;
 
-            //.........................................................
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
-
-
-
         }
-        //---FIN CONSTRUCTOR
-        //-----------------------------------------------------------
-        //SOBRECARGA PARA RECIBIR DATOS DE VARGO
-        //---sobrecargar para que reciba los datos desde form iniciocierre
+        #endregion
+
+        /// <summary>
+        /// SOBRECARGA PARA RECIBIR DATOS DE CARGO
+        /// </summary>
         public Visu(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
                  string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
                  string instructor, string secretario, string dependencia)
@@ -92,43 +86,29 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InitializeComponent();
 
             // Asignar los valores a los controles específicos del formulario
-            comboBox_Ipp1.Text = ipp1;
-            comboBox_Ipp2.Text = ipp2;
-            textBox_NumeroIpp.Text = numeroIpp;
-            comboBox_Ipp4.Text = ipp4;
-            textBox_Caratula.Text = caratula;
-            textBox_Victima.Text = victima;
-            textBox_Imputado.Text = imputado;
-            comboBox_Fiscalia.Text = fiscalia;  // Asignación al control
-            comboBox_AgenteFiscal.Text = agenteFiscal;
-            comboBox_Localidad.Text = localidad;
-            comboBox_Instructor.Text = instructor;
-            comboBox_Secretario.Text = secretario;
-            comboBox_Dependencia.Text = dependencia;
+            comboBox_Ipp1.TextValue = ipp1;
+            comboBox_Ipp2.TextValue = ipp2;
+            textBox_NumeroIpp.TextValue = numeroIpp;
+            comboBox_Ipp4.TextValue = ipp4;
+            textBox_Caratula.TextValue = caratula;
+            textBox_Victima.TextValue = victima;
+            textBox_Imputado.TextValue = imputado;
+            comboBox_Fiscalia.TextValue = fiscalia;  // Asignación al control
+            comboBox_AgenteFiscal.TextValue = agenteFiscal;
+            comboBox_Localidad.TextValue = localidad;
+            comboBox_Instructor.TextValue = instructor;
+            comboBox_Secretario.TextValue = secretario;
+            comboBox_Dependencia.TextValue = dependencia;
 
         }
-        //---fin sobrecarga
-        //-------------------------------------------------
 
+        #region LOAD
         private void Visu_Load(object sender, EventArgs e)
         {
             pictureBox_PanelImagenes.Visible = true;
-
-            //  estilo de letras en panel instructor
-            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
-            MayusculaSola.AplicarAControl(textBox_Victima);
-            MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
-            //......................................................
-            // estilo de letras en panel datos vehiculo
-            MayusculaYnumeros.AplicarAControl(textBox_Dominio);
-            MayusculaYnumeros.AplicarAControl(textBox_Motor);
-            MayusculaYnumeros.AplicarAControl(textBox_Chasis);
-            //......................................................
+            FormatoTexto();
+         
+          
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.Text);//inicializacion de deshabilitacion de btn_agregarVictima
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.Text);
@@ -152,17 +132,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosVehiculo.BringToFront();
             label_SeleccionVisu.BringToFront();
 
-            //.....................................................
-            //  Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+              Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
-            //.....................................................
+           
             //// Guardar la altura original del panel
             alturaOriginalPanel_Instruccion = panel_Instruccion.Height;
             alturaOriginalPanel_Imagenes = panel_Imagenes.Height;
             alturaOriginalPanel_Vehiculo = panel_DatosVehiculo.Height;
             alturaOriginalPanel_Descripcion = panel_Descripcion.Height;
 
-            //.....................................................
+            
             //validar datos de los paneles y mostras picture de completo-impleto y error
             ValidarPanelDatosInstruccion();
             ValidarPanelDescripcion();
@@ -172,8 +151,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 ValidarPanelImagenes();
             }
-
-            //...................................................
 
             //para que se carge el panel INSTRUCION contraido
             if (panelExpandido_Instruccion)
@@ -208,25 +185,45 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_ControlesInferiores.Visible = false;
             }
 
-            //.........................................................
+            
             //Para cambiar el borde del PANEL SELECCIONAR TIPO VISU segun este seleccionado o no un radiobutom
             foreach (Control ctrl in panel_TipoExamenVisu.Controls)
             {
                 if (ctrl is RadioButton radioButton)
                 {
-                    radioButton.CheckedChanged += radioButton_CheckedChanged;
+                    radioButton.CheckedChanged += RadioButton_CheckedChanged;
                 }
             }
-
-            //.........................................................
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
-
-
         }
-        //-------FIN LOAD    
+        #endregion
 
-        //------------------------------------------------------------------------------------------------
-        //   METODO PARA OBTENER DATOS DEL FORMULARIO
+        /// <summary>
+        /// ASIGNAR FORMATO DE TEXTO A CONTROLES
+        /// </summary>
+      private void FormatoTexto()
+        {
+            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
+            MayusculaSola.AplicarAControl(textBox_Victima);
+            MayusculaSola.AplicarAControl(textBox_Imputado);
+            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
+            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
+            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
+            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
+            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+           
+            // estilo de letras en panel datos vehiculo
+            MayusculaYnumeros.AplicarAControl(textBox_Dominio);
+            MayusculaYnumeros.AplicarAControl(textBox_Motor);
+            MayusculaYnumeros.AplicarAControl(textBox_Chasis);
+            
+        }
+
+      
+        /// <summary>
+        /// OBTENER DATOS DEL FORMULARIO
+        /// </summary>
+        /// <returns></returns>
 
         public Dictionary<string, string> ObtenerDatosFormulario()
         {
@@ -241,26 +238,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Añadimos los valores de los controles al diccionario
 
-            datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.Text);
-            datosFormulario.Add("Caratula", textBox_Caratula.Text);
-            datosFormulario.Add("Victima", textBox_Victima.Text);
-            datosFormulario.Add("Imputado", textBox_Imputado.Text);
+            datosFormulario.Add("NumeroIpp", textBox_NumeroIpp.TextValue);
+            datosFormulario.Add("Caratula", textBox_Caratula.TextValue);
+            datosFormulario.Add("Victima", textBox_Victima.TextValue);
+            datosFormulario.Add("Imputado", textBox_Imputado.TextValue);
 
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-            //   datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+    
 
             return datosFormulario;
         }
-        //-------------------------------------------------------------------
+     
 
         /// <summary>
         /// PARA LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -272,12 +269,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (e.KeyChar == (char)Keys.Enter)
             {
                 // Obtiene el TextBox que disparó el evento
-                Ofelia_Sara.Controles.General.CustomTextBox textBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
+                Ofelia_Sara.Controles.General.CustomTextBox customTextBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
 
-                if (textBox != null)
+                if (customTextBox != null)
                 {
                     // Obtiene el texto actual del TextBox
-                    string currentText = textBox.Text;
+                    string currentText = customTextBox.TextValue;
 
                     // Verifica si el texto es numérico
                     if (int.TryParse(currentText, out _))
@@ -286,10 +283,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         string completedText = currentText.PadLeft(6, '0');
 
                         // Actualiza el texto del TextBox
-                        textBox.Text = completedText;
+                        customTextBox.TextValue = completedText;
 
                         // Posiciona el cursor al final del texto
-                        textBox.SelectionStart = textBox.Text.Length;
+                        customTextBox.SelectionStart = customTextBox.TextValue.Length;
 
                         // Cancelar el manejo predeterminado de la tecla Enter
                         e.Handled = true;
@@ -300,7 +297,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        private void textBox_NumeroIpp_TextChanged(object sender, EventArgs e)
+        private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
         {
             // Limitar a 6 caracteres
             if (textBox_NumeroIpp.Text.Length > 6)
@@ -318,8 +315,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// PARA VALIDAR LIMITE DE 2 NUMEROS EN NUMEROS DE IPP
         /// </summary>
-
-        private void comboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
+        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -331,23 +327,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         ///  HABILITAR BTN AGREGAR CAUSA-IMPUTADO-VICTIMA DESDE EVENTO TEXTCHANGED
         /// </summary>
-
         private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
         {
-            if (sender is TextBox textBox)
+            if (sender is CustomTextBox customTextBox)
             {
-                switch (textBox.Name)
+                switch (customTextBox.Name)
                 {
                     case "textBox_Caratula":
-                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(customTextBox.TextValue);
                         break;
 
                     case "textBox_Victima":
-                        btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(customTextBox.TextValue);
                         break;
 
                     case "textBox_Imputado":
-                        btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox.Text);
+                        btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(customTextBox.TextValue);
                         break;
 
                     default:
@@ -355,39 +350,44 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
+
         /// <summary>
         /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
         /// </summary>
-
         private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
-            CompletarConCeros(sender as TextBox);
+            CompletarConCeros(sender as CustomTextBox);
         }
 
 
-        // Método reutilizable para completar con ceros
-        private void CompletarConCeros(TextBox textBox)
+      
+        /// <summary>
+        /// Método reutilizable para completar con ceros
+        /// </summary>
+        /// <param name="textBox"></param>
+        private static void CompletarConCeros(CustomTextBox custoTextBox)
         {
-            if (textBox != null)
+            if (custoTextBox != null)
             {
                 // Obtiene el texto actual del TextBox
-                string currentText = textBox.Text;
+                string currentText = custoTextBox.TextValue;
 
                 // Verifica si el texto es numérico y no está vacío
                 if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
                 {
                     // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                    textBox.Text = currentText.PadLeft(6, '0');
+                    custoTextBox.TextValue = currentText.PadLeft(6, '0');
 
-                    textBox.SelectionStart = textBox.Text.Length; // Posiciona el cursor al final del texto (opcional)
+                    custoTextBox.SelectionStart = custoTextBox.TextValue.Length; // Posiciona el cursor al final del texto (opcional)
                 }
             }
         }
-        //----------------------------------------------------------------------------------
-        //-----para inicializar los COMBOBOX FISCALIA----------------
+      
+        /// <summary>
+        /// INICIALIZA COMBOBOX FISCALIA
+        /// </summary>
         private void InicializarComboBoxFISCALIA()
         {
-
             // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
             List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
             List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
@@ -447,7 +447,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-        //----------------------------------------------------------------
+       
         //-------------------BOTON AGREGAR CAUSA---------------------
         private void Btn_AgregarCausa_Click(object sender, EventArgs e)
         {
@@ -506,8 +506,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-        // ---METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL
-        private bool ValidarControlesExistentes(Panel panel)
+     
+        /// <summary>
+        /// METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <returns></returns>
+        private static bool ValidarControlesExistentes(Panel panel)
         {
             foreach (Control control in panel.Controls)
             {
@@ -519,7 +524,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             return true; // Todos los controles están completos
         }
-        //---------------------------------------------------------------------------
+     
+
+        /// <summary>
+        /// MENSAJE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Visu_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -528,13 +539,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
-        //---------------------------------------------------------------------------
+ 
 
         /// <summary>
         /// metodo para destacar seleccion de VISU
         /// </summary>
 
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si algún RadioButton en el grupo está seleccionado
             bool isChecked = panel_TipoExamenVisu.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
@@ -551,8 +562,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Forzar el repintado del GroupBox
             panel_TipoExamenVisu.Invalidate();
-            //............................
-            // Asegúrate de que el sender es un RadioButton
+          
             if (sender is RadioButton radioButton)
             {
                 // Verifica qué RadioButton fue marcado y aplica el estilo correspondiente
@@ -614,8 +624,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-        // Método para aplicar el estilo personalizado (negrita y subrayado)
-        private void ApplyCustomFontStyle(RadioButton radioButton)
+        
+
+        /// <summary>
+        /// Método para aplicar el estilo personalizado (negrita y subrayado)
+        /// </summary>
+        /// <param name="radioButton"></param>
+        private static void ApplyCustomFontStyle(RadioButton radioButton)
         {
             // Crea una fuente con negrita y subrayado
             System.Drawing.Font customFont = new System.Drawing.Font(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Bold);
@@ -628,9 +643,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Redibuja el RadioButton para reflejar el cambio
             radioButton.Invalidate();
         }
-        //----------------------------------------------------------------------------------------------------
-        // METODOS PARA CAMBIAR EL COLOR DE BORDE DEL GROUP SEGUN ESTE SELECCIONADO O NO 
-
+        
+        /// <summary>
+        /// METODOS PARA CAMBIAR EL COLOR DE BORDE DEL GROUP SEGUN ESTE SELECCIONADO O NO 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Panel_TipoExamenVisu_Paint_Activated(object sender, PaintEventArgs e)
         {
             using (Pen pen = new Pen(Color.Green, 2)) // Borde verde cuando algún CheckBox está seleccionado
@@ -647,13 +665,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //---------------------------------------------------------------------------------
-
+     
         /// <summary>
         /// METODO PARA AGREGAR IMAGENES
         /// </summary>
-
-        private void pictureBox_AgregarImagen_Click(object sender, EventArgs e)
+        private void PictureBox_AgregarImagen_Click(object sender, EventArgs e)
         {
             foreach (Control ctrl in panel_AgregarImagenes.Controls)
             {
@@ -662,20 +678,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     if (imagenControl.Image == null || imagenControl.Image == Properties.Resources.agregar_imagen)
                     {
-                        MessageBox.Show("Control sin imagen o imagen predeterminada detectada.");
-                        MessageBox.Show("Todos los controles deben contener una imagen antes de agregar una nueva.");
+                        MensajeGeneral.Mostrar("No ha asignado una imagen.", MensajeGeneral.TipoMensaje.Error);
+                        MensajeGeneral.Mostrar("Todos los controles deben contener una imagen antes de agregar una nueva.", MensajeGeneral.TipoMensaje.Advertencia);
                         return; // No agregar una nueva imagen si alguna no tiene una imagen cargada o tiene la imagen predeterminada
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"El control {ctrl.Name} no es de tipo NuevaImagen.");
+                    MensajeGeneral.Mostrar($"El control {ctrl.Name} no es de tipo NuevaImagen.",MensajeGeneral.TipoMensaje.Advertencia);
                 }
             }
-
-
-
-            // Si llegamos aquí, significa que todos los controles tienen una imagen válida
             // Verificar el límite de 5 controles
             if (panel_AgregarImagenes.Controls.Count >= 5)
             {
@@ -718,8 +730,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// METODO PARA QUITAR IMAGENES
         /// </summary>
-
-        private void pictureBox_QuitarImagen_Click(object sender, EventArgs e)
+        private void PictureBox_QuitarImagen_Click(object sender, EventArgs e)
         {
             // Verifica que haya más de un control en el panel
             if (panel_AgregarImagenes.Controls.Count > 1)
@@ -792,6 +803,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             path.CloseFigure();
             return path;
         }
+
         private void ApplyRoundedCorners(Control control, int radius,
                                          bool roundTopLeft, bool roundTopRight,
                                          bool roundBottomRight, bool roundBottomLeft)
@@ -806,7 +818,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 control.Region = new Region(path);
             }
         }
-        //------------------------------------------------------------------------------
+
 
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
@@ -880,20 +892,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
-
-        //----------------------------------------------------------------------------------
-
-
-
-        //----------------------------------------------------------------------------------
         /// <summary>
         /// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
         {
             if (panel_Instruccion is PanelConBordeNeon panelConNeon)
             {
@@ -973,7 +978,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        private void btn_AmpliarReducir_IMAGENES_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_IMAGENES_Click(object sender, EventArgs e)
         {
             if (panel_Imagenes is PanelConBordeNeon panelConNeon)
             {
@@ -1038,7 +1043,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 AjustarTamanoFormulario();
             }
         }
-        private void btn_AmpliarReducir_VEHICULO_Click(object sender, EventArgs e)
+        private void Btn_AmpliarReducir_VEHICULO_Click(object sender, EventArgs e)
         {
             if (panel_DatosVehiculo is PanelConBordeNeon panelConNeon)
             {
@@ -1125,8 +1130,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //---------------------------------------------------------------------
-        private void btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
+       
+        private void Btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
         {
             // Verificar si el panel es de tipo PanelConBordeNeon
             if (panel_Descripcion is PanelConBordeNeon panelConNeon)
@@ -1178,18 +1183,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        private bool VerificarCamposEnPanel(Panel panel)
+        private static bool VerificarCamposEnPanel(Panel panel)
         {
             foreach (Control control in panel.Controls)
             {
                 // Verificar TextBox
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.TextValue))
                 {
                     return false; // Campo TextBox incompleto
                 }
 
                 // Verificar ComboBox
-                if (control is ComboBox comboBox && comboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(comboBox.Text))
+                if (control is CustomComboBox customComboBox && customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue))
                 {
                     return false; // Campo ComboBox incompleto
                 }
@@ -1222,12 +1227,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             bool camposValidos = true;
 
-
-
             // Iterar sobre los controles dentro del panel
             foreach (Control control in panel_DatosInstruccion.Controls)
             {
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                if (control is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.TextValue))
                 {
                     camposValidos = false;
                     break; // Si encontramos un campo vacío, no es necesario seguir buscando
@@ -1272,7 +1275,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        // METODO PARA VALIDAR DATOS EN PANEL DATOS VEHICULO
+        
+        /// <summary>
+        /// METODO PARA VALIDAR DATOS EN PANEL DATOS VEHICULO
+        /// </summary>
         private void ValidarPanelVehiculo()
         {
             bool camposValidos = VerificarCamposEnPanel(panel_DatosEspecificos);
@@ -1297,9 +1303,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-
-        //----------------------------------------------------------------------------------------------
-        // METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
+        
+        /// <summary>
+        /// METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
+        /// </summary>
         private void ValidarPanelDescripcion()
         {
             bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
@@ -1319,10 +1326,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 panel_ControlesInferiores.Visible = false;
             }
 
-
-
             // Ajustar la posición del pictureBox al lado del label
-            pictureBox_Descripcion.Location = new System.Drawing.Point(
+                pictureBox_Descripcion.Location = new System.Drawing.Point(
                 label_Descripcion.Right + 5, // A la derecha del label con un margen de 5 px
                 label_Descripcion.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2 // Centrado verticalmente
             );
@@ -1335,8 +1340,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             AjustarTamanoFormulario();
 
         }
-        //----------------------------------------------------------------------------------------------
-        // METODO PARA VALIDAR DATOS EN PANEL IMAGEES
+
+        
+        /// <summary>
+        /// METODO PARA VALIDAR DATOS EN PANEL IMAGEES
+        /// </summary>
         private void ValidarPanelImagenes()
         {
             bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
@@ -1363,8 +1371,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_PanelImagenes.Visible = true;
         }
 
-        //-----------------------------------------------------------------------------------
-        //--para que muestre mensaje de advertencia previo cerrar formulario
+        
+        /// <summary>
+        /// MENSAJE CONFIRMACION AL CERRAR FORMULARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Visu_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -1383,8 +1395,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        //---------BOTON GUARDAR--------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+      
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Verificar si los campos básicos están completos
             if (!ValidarAntesdeGuardar()) // Verificación usando ErrorProvider
@@ -1413,7 +1425,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return esValido;
         }
 
-        private bool ValidarCampo(Control control, string mensajeError)
+        private static bool ValidarCampo(Control control, string mensajeError)
         {
             if (string.IsNullOrWhiteSpace(control.Text))
             {
@@ -1428,7 +1440,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 

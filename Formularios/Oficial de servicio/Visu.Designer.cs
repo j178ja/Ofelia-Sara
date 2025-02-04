@@ -180,7 +180,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 21;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Buscar
             // 
@@ -203,7 +203,7 @@
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 19;
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // btn_Imprimir
             // 
@@ -286,7 +286,7 @@
             this.btn_AmpliarReducir_INSTRUCCION.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_INSTRUCCION.TabIndex = 83;
             this.btn_AmpliarReducir_INSTRUCCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_INSTRUCCION.Click += new System.EventHandler(this.btn_AmpliarReducir_INSTRUCCION_Click);
+            this.btn_AmpliarReducir_INSTRUCCION.Click += new System.EventHandler(this.Btn_AmpliarReducir_INSTRUCCION_Click);
             // 
             // label_Localidad
             // 
@@ -459,8 +459,8 @@
             this.textBox_NumeroIpp.Size = new System.Drawing.Size(96, 20);
             this.textBox_NumeroIpp.TabIndex = 5;
             this.textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.textBox_NumeroIpp_TextChanged);
-            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NumeroIpp_KeyPress);
+            this.textBox_NumeroIpp.TextChanged += new System.EventHandler(this.TextBox_NumeroIpp_TextChanged);
+            this.textBox_NumeroIpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_NumeroIpp_KeyPress);
             this.textBox_NumeroIpp.Leave += new System.EventHandler(this.TextBox_NumeroIpp_Leave);
             // 
             // comboBox_Ipp1
@@ -484,7 +484,7 @@
             this.comboBox_Ipp1.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp1.TabIndex = 3;
             this.comboBox_Ipp1.Text = "03";
-            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
+            this.comboBox_Ipp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
             // 
             // comboBox_Ipp2
             // 
@@ -505,7 +505,7 @@
             this.comboBox_Ipp2.Size = new System.Drawing.Size(45, 21);
             this.comboBox_Ipp2.TabIndex = 4;
             this.comboBox_Ipp2.Text = "03";
-            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
+            this.comboBox_Ipp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
             // 
             // lbl_00
             // 
@@ -528,7 +528,7 @@
             this.comboBox_Ipp4.Size = new System.Drawing.Size(51, 21);
             this.comboBox_Ipp4.TabIndex = 6;
             this.comboBox_Ipp4.Text = "24";
-            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Ipp_KeyPress);
+            this.comboBox_Ipp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Ipp_KeyPress);
             // 
             // lbl_Ipp
             // 
@@ -791,7 +791,7 @@
             this.btn_AmpliarReducir_VEHICULO.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_VEHICULO.TabIndex = 86;
             this.btn_AmpliarReducir_VEHICULO.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_VEHICULO.Click += new System.EventHandler(this.btn_AmpliarReducir_VEHICULO_Click);
+            this.btn_AmpliarReducir_VEHICULO.Click += new System.EventHandler(this.Btn_AmpliarReducir_VEHICULO_Click);
             // 
             // comboBox_Modelo
             // 
@@ -942,7 +942,7 @@
             this.btn_AmpliarReducir_IMAGENES.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_IMAGENES.TabIndex = 85;
             this.btn_AmpliarReducir_IMAGENES.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_IMAGENES.Click += new System.EventHandler(this.btn_AmpliarReducir_IMAGENES_Click);
+            this.btn_AmpliarReducir_IMAGENES.Click += new System.EventHandler(this.Btn_AmpliarReducir_IMAGENES_Click);
             // 
             // panel_AgregarImagenes
             // 
@@ -1000,7 +1000,7 @@
             this.pictureBox_QuitarImagen.Size = new System.Drawing.Size(45, 31);
             this.pictureBox_QuitarImagen.TabIndex = 45;
             this.pictureBox_QuitarImagen.TabStop = false;
-            this.pictureBox_QuitarImagen.Click += new System.EventHandler(this.pictureBox_QuitarImagen_Click);
+            this.pictureBox_QuitarImagen.Click += new System.EventHandler(this.PictureBox_QuitarImagen_Click);
             // 
             // pictureBox_AgregarImagen
             // 
@@ -1013,7 +1013,7 @@
             this.pictureBox_AgregarImagen.Size = new System.Drawing.Size(45, 31);
             this.pictureBox_AgregarImagen.TabIndex = 44;
             this.pictureBox_AgregarImagen.TabStop = false;
-            this.pictureBox_AgregarImagen.Click += new System.EventHandler(this.pictureBox_AgregarImagen_Click);
+            this.pictureBox_AgregarImagen.Click += new System.EventHandler(this.PictureBox_AgregarImagen_Click);
             // 
             // panel_Descripcion
             // 
@@ -1063,7 +1063,7 @@
             this.btn_AmpliarReducir_DESCRIPCION.Size = new System.Drawing.Size(31, 23);
             this.btn_AmpliarReducir_DESCRIPCION.TabIndex = 84;
             this.btn_AmpliarReducir_DESCRIPCION.UseVisualStyleBackColor = false;
-            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.btn_AmpliarReducir_DESCRIPCION_Click);
+            this.btn_AmpliarReducir_DESCRIPCION.Click += new System.EventHandler(this.Btn_AmpliarReducir_DESCRIPCION_Click);
             // 
             // label_Descripcion
             // 
@@ -1126,7 +1126,7 @@
             this.radioButton_Motovehiculo.TabStop = true;
             this.radioButton_Motovehiculo.Text = "MOTOVEHICULO";
             this.radioButton_Motovehiculo.UseVisualStyleBackColor = true;
-            this.radioButton_Motovehiculo.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.radioButton_Motovehiculo.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // radioButton_Objeto
             // 
@@ -1139,7 +1139,7 @@
             this.radioButton_Objeto.TabStop = true;
             this.radioButton_Objeto.Text = "OBJETO";
             this.radioButton_Objeto.UseVisualStyleBackColor = true;
-            this.radioButton_Objeto.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.radioButton_Objeto.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // pictureBox_Automovil
             // 
@@ -1172,7 +1172,7 @@
             this.radioButton_Automovil.TabStop = true;
             this.radioButton_Automovil.Text = "AUTOMOVIL";
             this.radioButton_Automovil.UseVisualStyleBackColor = true;
-            this.radioButton_Automovil.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.radioButton_Automovil.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // label_SeleccionVisu
             // 

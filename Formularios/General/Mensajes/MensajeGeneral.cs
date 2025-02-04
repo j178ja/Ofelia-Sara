@@ -8,6 +8,7 @@
 
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 
@@ -15,6 +16,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 {
     public partial class MensajeGeneral : Form
     {
+     
+      
         #region VARIABLES
         public DateTime FechaMinima { get; set; } = DateTime.MinValue;
         public DateTime FechaSeleccionada { get; private set; }
@@ -24,7 +27,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         private Color originalBackColor; // Para almacenar el color original del botón
 
         #endregion
-      
+
         public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje, Point? posicion = null)
         {
             InitializeComponent();
@@ -269,11 +272,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
-      /// <summary>
-      /// BOTON CANCELAR
-      /// </summary>
-      /// <param name="sender"></param>
-      /// <param name="e"></param>
+        /// <summary>
+        /// BOTON CANCELAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_No_Cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;  // Establece el resultado como Cancel
@@ -375,7 +378,9 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
+        private void MensajeGeneral_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
