@@ -8,3 +8,5 @@ en formulario INSTRUCTIVO DIGITAL  hay que modificar, para usar rutas relativas
  }
 
  posicionar label_TITULO en BASEFORM no funciona
+
+ el centrado del mensajeAyuda helpbuton , aplicado desde baseForm no se aplica

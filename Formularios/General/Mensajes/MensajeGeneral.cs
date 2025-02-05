@@ -382,5 +382,10 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         {
 
         }
+
+        internal void SetTexto(string mensaje)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

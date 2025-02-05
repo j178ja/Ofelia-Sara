@@ -30,7 +30,7 @@ namespace Ofelia_Sara
            // Application.Run(new MenuPrincipal());
             // Application.Run(new NuevoPersonal());
            //  Application.Run(new Cargo());
-           Application.Run(new Visu());
+          Application.Run(new Visu());
 
 
         }

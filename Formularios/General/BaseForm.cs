@@ -339,6 +339,38 @@ namespace Ofelia_Sara.Formularios.General
             boton.Invalidate();
         }
 
+        protected void MostrarMensajeAyuda(string mensaje)
+        {
+            if (this.ParentForm != null)
+            {
+                // Obtener el formulario que activó el HelpButton
+                Form formularioActivo = this.FindForm();
+                if (formularioActivo == null) return;
+
+                // Crear la instancia del mensaje
+                MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
+
+  
+                // Calcular la posición centrada respecto al formulario activo
+                int x = formularioActivo.Left + (formularioActivo.Width - mensajeAyuda.Width) / 2;
+                int y = formularioActivo.Top + (formularioActivo.Height - mensajeAyuda.Height) / 2;
+
+                // Establecer la posición centrada
+                mensajeAyuda.Location = new Point(x, y);
+
+                // Mostrar el mensaje
+                mensajeAyuda.ShowDialog(formularioActivo);
+            }
+            else
+            {
+                // Si no hay un ParentForm, usar un tamaño y posición por defecto
+                MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
+             
+                mensajeAyuda.ShowDialog();
+            }
+        }
+
+
 
     }
 }
