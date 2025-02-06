@@ -6,6 +6,7 @@ using Ofelia_Sara.Controles.Ofl_Sara;
 using System;
 using System.Windows.Forms;
 
+
 namespace Ofelia_Sara.Clases.General.Botones
 
 {
@@ -89,6 +90,10 @@ namespace Ofelia_Sara.Clases.General.Botones
                     case NuevaPersonaControl _:
                         control.Controls.Remove(c);
                         c.Dispose();
+                        break;
+
+                    case NuevaImagen nuevaImagen:
+                        nuevaImagen.RestaurarImagenPredeterminada(); // Restaurar la imagen predeterminada
                         break;
 
                     case RichTextBox richTextBox:

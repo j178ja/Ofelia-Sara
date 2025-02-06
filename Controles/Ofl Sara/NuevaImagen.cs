@@ -19,7 +19,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             this.BackColor = SystemColors.ControlLight;
             this.AllowDrop = true; // Permitir arrastrar y soltar
             this.Size = new Size(97, 116);
-
+            this.Cursor = Cursors.Hand;
 
             // Establecer una imagen predeterminada
             this.Image = Properties.Resources.agregar_imagen; // Imagen predeterminada
@@ -35,13 +35,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
         // Propiedad para establecer la imagen de hover desde el exterior
+      
         public Image HoverImage
         {
             get => hoverImage;
             set => hoverImage = value;
         }
 
-        // Evento MouseHover
+      /// <summary>
+      /// CAMBIAR DE COLOR AL POSICIONAR EL CURSOR
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
         private void NuevaImagen_MouseHover(object sender, EventArgs e)
         {
             if (this.Image != null)
@@ -65,7 +70,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        // Evento para manejar el arrastre de archivos
+       /// <summary>
+       /// ARRASTRAR NUEVA IMAGEN 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void NuevaImagen_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -86,7 +95,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        // Evento para manejar el archivo soltado
+        /// <summary>
+        /// SOLTAR UNA NUEVA IMAGEN
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevaImagen_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -96,7 +109,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        // Evento para manejar el clic
+     /// <summary>
+     /// EVENTO CLICK SOBRE IMAGEN PARA CARGAR NUEVA IMAGEN
+     /// </summary>
+     /// <param name="sender"></param>
+     /// <param name="e"></param>
         private void NuevaImagen_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -109,15 +126,23 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        // Método para verificar si el archivo es una imagen
-        private bool IsImageFile(string filePath)
+      
+        /// <summary>
+        /// verificar si el archivo es una imagen
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        private static bool IsImageFile(string filePath)
         {
             string extension = Path.GetExtension(filePath)?.ToLower();
             return extension == ".jpg" || extension == ".jpeg" || extension == ".png" ||
                    extension == ".bmp" || extension == ".gif";
         }
 
-        // Método para cargar la imagen
+        /// <summary>
+        /// CARGAR LA IMAGEN
+        /// </summary>
+        /// <param name="filePath"></param>
         private void LoadImage(string filePath)
         {
             try
@@ -137,5 +162,16 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 MensajeGeneral.Mostrar($"No se pudo cargar la imagen: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
+
+        /// <summary>
+        /// RESTAURAR IMAGEN PREDETERMINADA
+        /// </summary>
+        public void RestaurarImagenPredeterminada()
+        {
+            this.Image = Properties.Resources.agregar_imagen; // Restaurar la imagen predeterminada
+            originalImage = this.Image; // Actualizar la imagen original
+            this.SizeMode = PictureBoxSizeMode.CenterImage; // Volver al modo de escalado original
+        }
+
     }
 }
