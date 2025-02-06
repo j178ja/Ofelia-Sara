@@ -1437,6 +1437,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             richTextBox_Descripcion.Size = new System.Drawing.Size(590, 96);
             richTextBox_Descripcion.TabIndex = 2;
             richTextBox_Descripcion.Text = "";
+            richTextBox_Descripcion.TextChanged += RichTextBox_Descripcion_TextChanged;
             // 
             // btn_AmpliarReducir_DESCRIPCION
             // 

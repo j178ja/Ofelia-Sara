@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -1417,7 +1418,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-      
+
 
         private void comboBox_AñoVehiculo_Validated(object sender, EventArgs e)
         {
@@ -1447,9 +1448,55 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
                 }
-                
+
             }
         }
+        /// <summary>
+        /// COLOCA MAYUSCULA AL INICIO Y DESPUES DE PUNTO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void RichTextBox_Descripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is RichTextBox rtb && !string.IsNullOrWhiteSpace(rtb.Text))
+            {
+                int cursorPos = rtb.SelectionStart; // Guardar la posición del cursor
+
+                // Convertir a mayúscula el primer carácter y después de un punto "."
+                string texto = rtb.Text;
+                StringBuilder textoFormateado = new StringBuilder();
+
+                bool convertirSiguiente = true; // Indica si la siguiente letra debe ser mayúscula
+
+                foreach (char c in texto)
+                {
+                    if (convertirSiguiente && char.IsLetter(c))
+                    {
+                        textoFormateado.Append(char.ToUpper(c));
+                        convertirSiguiente = false;
+                    }
+                    else
+                    {
+                        textoFormateado.Append(c);
+                    }
+
+                    // Si el carácter es un punto, la siguiente letra debe ser mayúscula
+                    if (c == '.')
+                    {
+                        convertirSiguiente = true;
+                    }
+                }
+
+                // Evitar bucle infinito y restaurar la posición del cursor
+                if (rtb.Text != textoFormateado.ToString())
+                {
+                    rtb.Text = textoFormateado.ToString();
+                    rtb.SelectionStart = Math.Min(cursorPos, rtb.Text.Length); // Restaurar la posición del cursor
+                }
+            }
+        }
+
     }
 
 }

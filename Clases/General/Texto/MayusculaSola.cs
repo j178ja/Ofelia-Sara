@@ -4,7 +4,13 @@ using System.Text;
 using System.Windows.Forms;
 public static class MayusculaSola
 {
-    // Método para aplicar la lógica de conversión a mayúsculas a cualquier control de texto.
+    
+    /// <summary>
+    /// Método para aplicar la lógica de conversión a mayúsculas a cualquier control de texto.
+    /// </summary>
+    /// <param name="control"></param>
+    /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="ArgumentException"></exception>
     public static void AplicarAControl(Control control)
     {
         if (control == null)
@@ -31,7 +37,11 @@ public static class MayusculaSola
 
 
 
-    // Configurar eventos para controles TextBox o RichTextBox
+    
+    /// <summary>
+    /// Configurar eventos para controles TextBox o RichTextBox
+    /// </summary>
+    /// <param name="textBox"></param>
     private static void ConfigurarEventosTextBox(TextBoxBase textBox)
     {
         textBox.KeyPress += (sender, e) =>
@@ -60,7 +70,11 @@ public static class MayusculaSola
         };
     }
 
-    // Configurar eventos para ComboBox
+    
+    /// <summary>
+    /// Configurar eventos para ComboBox
+    /// </summary>
+    /// <param name="CustomComboBox"></param>
     private static void ConfigurarEventosComboBox(CustomComboBox CustomComboBox)
     {
         CustomComboBox.KeyPress += (sender, e) =>
