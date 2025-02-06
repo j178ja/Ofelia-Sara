@@ -1,4 +1,6 @@
-﻿namespace Ofelia_Sara.Formularios.Oficial_de_servicio
+﻿using System;
+
+namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     partial class Visu
     {
@@ -512,7 +514,7 @@
             // Fecha_Instruccion
             // 
             Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
-            Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
+            Fecha_Instruccion.FechaSeleccionada = new DateTime(0L);
             Fecha_Instruccion.Location = new System.Drawing.Point(184, 265);
             Fecha_Instruccion.Name = "Fecha_Instruccion";
             Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
@@ -1006,6 +1008,7 @@
             comboBox_AñoVehiculo.TabIndex = 89;
             comboBox_AñoVehiculo.Text = " ";
             comboBox_AñoVehiculo.TextValue = " ";
+            comboBox_AñoVehiculo.Validated += comboBox_AñoVehiculo_Validated;
             // 
             // label1
             // 
@@ -1638,6 +1641,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
         #endregion
 

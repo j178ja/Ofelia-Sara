@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-            
+
             // Asignación de eventos
             comboBox_Marca.TextChanged += (s, e) => ValidarPanelVehiculo();
             comboBox_Marca.SelectedIndexChanged += (s, e) => ValidarPanelVehiculo();
@@ -124,8 +124,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.InnerTextBox.MaxLength = 2;
             comboBox_AñoVehiculo.InnerTextBox.MaxLength = 4;
 
-          
-          
+
+
             //.......................................................................
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
 
@@ -145,16 +145,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosVehiculo.BringToFront();
             label_SeleccionVisu.BringToFront();
 
-              Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+            Fecha_Instruccion.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
-           
+
             //// Guardar la altura original del panel
             alturaOriginalPanel_Instruccion = panel_Instruccion.Height;
             alturaOriginalPanel_Imagenes = panel_Imagenes.Height;
             alturaOriginalPanel_Vehiculo = panel_DatosVehiculo.Height;
             alturaOriginalPanel_Descripcion = panel_Descripcion.Height;
 
-            
+
             //validar datos de los paneles y mostras picture de completo-impleto y error
             ValidarPanelDatosInstruccion();
             ValidarPanelDescripcion();
@@ -225,11 +225,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
-           
+
             // estilo de letras en panel datos vehiculo
             MayusculaYnumeros.AplicarAControl(textBox_Dominio);
             MayusculaYnumeros.AplicarAControl(textBox_Motor);
             MayusculaYnumeros.AplicarAControl(textBox_Chasis);
+            MayusculaSola.AplicarAControl(comboBox_Marca);
+            MayusculaSola.AplicarAControl(comboBox_Modelo);
+            MayusculaSola.AplicarAControl(comboBox_Color);
 
             ClaseNumeros.SoloNumeros(comboBox_AñoVehiculo);
         }
@@ -259,11 +262,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-    
+
 
             return datosFormulario;
         }
-     
+
         /// <summary>
         /// PARA LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
         /// </summary>
@@ -319,7 +322,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-    
+
 
         /// <summary>
         /// LIMITAR A 2 CARACTERES COMBOBOX IPP
@@ -460,7 +463,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-      
+
         /// <summary>
         /// INICIALIZA COMBOBOX FISCALIA
         /// </summary>
@@ -772,7 +775,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     btn_AmpliarReducir_VEHICULO.Parent = panel_DatosVehiculo;
                     btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(561, 1);
 
-                
+
                     panel_DatosEspecificos.Visible = false;
                 }
                 else
@@ -868,7 +871,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-           
+
             // Verificar si algún RadioButton en el grupo está seleccionado
             bool isChecked = panel_TipoExamenVisu.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
 
@@ -884,7 +887,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Forzar el repintado del GroupBox
             panel_TipoExamenVisu.Invalidate();
-          
+
             if (sender is RadioButton radioButton)
             {
                 // Verifica qué RadioButton fue marcado y aplica el estilo correspondiente
@@ -954,7 +957,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_Objeto.BackColor = Color.FromArgb(178, 213, 230);
 
         }
-    
+
         /// <summary>
         /// Método para aplicar el estilo personalizado (negrita y subrayado)
         /// </summary>
@@ -972,7 +975,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Redibuja el RadioButton para reflejar el cambio
             radioButton.Invalidate();
         }
-        
+
         /// <summary>
         /// METODOS PARA CAMBIAR EL COLOR DE BORDE DEL GROUP SEGUN ESTE SELECCIONADO O NO 
         /// </summary>
@@ -994,7 +997,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-     
+
         /// <summary>
         /// METODO PARA AGREGAR IMAGENES
         /// </summary>
@@ -1014,7 +1017,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
                 else
                 {
-                    MensajeGeneral.Mostrar($"El control {ctrl.Name} no es de tipo NuevaImagen.",MensajeGeneral.TipoMensaje.Advertencia);
+                    MensajeGeneral.Mostrar($"El control {ctrl.Name} no es de tipo NuevaImagen.", MensajeGeneral.TipoMensaje.Advertencia);
                 }
             }
             // Verificar el límite de 5 controles
@@ -1331,7 +1334,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-      
+
         private bool ValidarAntesdeGuardar()
         {
             bool esValido = false;
@@ -1414,8 +1417,39 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+      
+
+        private void comboBox_AñoVehiculo_Validated(object sender, EventArgs e)
+        {
+            if (sender is CustomComboBox comboBox)
+            {
+                // Obtener el texto ingresado
+                string input = comboBox.TextValue.Trim();
+
+                // Obtener el año actual
+                int añoActual = DateTime.Now.Year;
+
+                // Validar si es un número de 4 dígitos y menor o igual al año actual
+                if (!int.TryParse(input, out int año) || año < 1900 || año > añoActual)
+                {
+                    // Obtener la posición del control para centrar el mensaje debajo
+                    Point posicionComboBox = comboBox.Parent.PointToScreen(comboBox.Location);
+                    int x = posicionComboBox.X + (comboBox.Width / 2);
+                    int y = posicionComboBox.Y + comboBox.Height + 5; // Posicionar justo debajo con un margen de 5px
+
+                    // Mostrar el mensaje en la posición calculada
+                    MensajeGeneral.MostrarEnPosicion("El año del vehículo no puede ser posterior al año en curso.",
+                                                      MensajeGeneral.TipoMensaje.Advertencia, x, y);
+
+                    // Limpiar el contenido del ComboBox
+                    comboBox.Text = string.Empty;
+                    comboBox.SelectedIndex = -1;
 
 
+                }
+                
+            }
+        }
     }
 
 }

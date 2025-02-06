@@ -387,5 +387,14 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         {
             throw new NotImplementedException();
         }
+
+        public static void MostrarEnPosicion(string mensaje, TipoMensaje tipo, int x, int y)
+        {
+            MensajeGeneral mensajeForm = new MensajeGeneral(mensaje, tipo);
+            mensajeForm.StartPosition = FormStartPosition.Manual;
+            mensajeForm.Location = new Point(x - (mensajeForm.Width / 2), y);
+            mensajeForm.Show();
+        }
+
     }
 }

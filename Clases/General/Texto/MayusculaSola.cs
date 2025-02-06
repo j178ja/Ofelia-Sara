@@ -11,7 +11,7 @@ public static class MayusculaSola
             throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
 
         // Verificar si el control es compatible
-        if (!(control is TextBoxBase || control is ComboBox || control is CustomTextBox))
+        if (!(control is TextBoxBase || control is CustomComboBox || control is CustomTextBox))
             throw new ArgumentException("El control no es compatible. Solo se admiten TextBox, ComboBox y controles personalizados derivados.");
 
         // Configurar eventos para convertir texto a mayúsculas y filtrar caracteres
@@ -19,15 +19,17 @@ public static class MayusculaSola
         {
             ConfigurarEventosTextBox(textBox);
         }
-        else if (control is ComboBox comboBox)
+        else if (control is CustomComboBox customComboBox)
         {
-            ConfigurarEventosComboBox(comboBox);
+            ConfigurarEventosComboBox(customComboBox);
         }
         else if (control is CustomTextBox customTextBox)
         {
             ConfigurarEventosCustomTextBox(customTextBox);
         }
     }
+
+
 
     // Configurar eventos para controles TextBox o RichTextBox
     private static void ConfigurarEventosTextBox(TextBoxBase textBox)
@@ -59,9 +61,9 @@ public static class MayusculaSola
     }
 
     // Configurar eventos para ComboBox
-    private static void ConfigurarEventosComboBox(ComboBox comboBox)
+    private static void ConfigurarEventosComboBox(CustomComboBox CustomComboBox)
     {
-        comboBox.KeyPress += (sender, e) =>
+        CustomComboBox.KeyPress += (sender, e) =>
         {
             // Permite letras, espacios y caracteres de control
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
