@@ -1008,7 +1008,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AñoVehiculo.TabIndex = 89;
             comboBox_AñoVehiculo.Text = " ";
             comboBox_AñoVehiculo.TextValue = " ";
-            comboBox_AñoVehiculo.Validated += comboBox_AñoVehiculo_Validated;
+            comboBox_AñoVehiculo.Validated += ComboBox_AñoVehiculo_Validated;
             // 
             // label1
             // 

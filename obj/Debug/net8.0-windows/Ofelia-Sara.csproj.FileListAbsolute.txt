@@ -20,7 +20,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Ofl_Sara.Verificador_ACTUACION.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Redactador.AudioVisualizerControl.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.BaseForm.resources
-C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.BaseFormBase.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.Contacto.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.IMPRESION.resources
 C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.Mensajes.MensajeCargarImprimir.resources
@@ -295,3 +294,5 @@ C:\Users\jbest\Source\Repos\Ofelia-Sara\obj\Debug\net8.0-windows\refint\Ofelia-S
 C:\Users\jbest\Source\Repos\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia-Sara.pdb
 C:\Users\jbest\Source\Repos\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia-Sara.genruntimeconfig.cache
 C:\Users\jbest\Source\Repos\Ofelia-Sara\obj\Debug\net8.0-windows\ref\Ofelia-Sara.dll
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Controles.Controles.General.TooltipError.resources
+C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\obj\Debug\net8.0-windows\Ofelia_Sara.Formularios.General.BaseFormDATOS.resources

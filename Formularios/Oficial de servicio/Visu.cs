@@ -1209,16 +1209,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         /// <summary>
-        /// METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
+        /// VERIFICA MINIMO DE TEXTO EN DESCRIPCION
         /// </summary>
         private void ValidarPanelDescripcion()
         {
-            ValidarPanel(richTextBox_Descripcion, pictureBox_Descripcion, label_Descripcion, () =>
-                !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text));
+            int minimoCaracteres = 20; // Define el mínimo de caracteres requeridos
+            bool descripcionValida = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text)
+                                     && richTextBox_Descripcion.Text.Trim().Length >= minimoCaracteres;
 
-            panel_ControlesInferiores.Visible = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
+            // Aplicar validación con la nueva condición
+            ValidarPanel(richTextBox_Descripcion, pictureBox_Descripcion, label_Descripcion, () => descripcionValida);
+
+            // Ocultar controles inferiores si la descripción es insuficiente
+            panel_ControlesInferiores.Visible = descripcionValida;
+
+            // Ajustar el tamaño del formulario solo si es necesario
             AjustarTamanoFormulario();
         }
+
 
         /// <summary>
         /// METODO PARA VALIDAR DATOS EN PANEL IMAGEES
@@ -1260,7 +1268,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     if (string.IsNullOrWhiteSpace(customTextBox.TextValue)) // Usa TextValue si es la propiedad correcta
                     {
-                        Console.WriteLine($"CustomTextBox vacío: {customTextBox.Name}");
                         return false;
                     }
                 }
@@ -1270,19 +1277,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
                     {
-                        Console.WriteLine($"CustomComboBox vacío: {customComboBox.Name}");
                         return false;
                     }
                 }
 
                 // Verificar RichTextBox
-                if (control is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
+                if (control is RichTextBox richTextBox)
                 {
-                    return false; // Campo RichTextBox incompleto
+                    int minimoCaracteres = 20; // Define el mínimo de caracteres requeridos
+                    string textoIngresado = richTextBox.Text.Trim(); // Eliminar espacios en blanco iniciales y finales
+
+                    if (string.IsNullOrWhiteSpace(textoIngresado) || textoIngresado.Length < minimoCaracteres)
+                    {
+                        return false;
+                    }
                 }
 
-                // Verificar PictureBox
-                if (control is PictureBox pictureBox)
+                    // Verificar PictureBox
+                    if (control is PictureBox pictureBox)
                 {
                     // Verificar si no hay imagen o si la imagen es la predeterminada
                     if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
@@ -1435,7 +1447,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        private void comboBox_AñoVehiculo_Validated(object sender, EventArgs e)
+        private void ComboBox_AñoVehiculo_Validated(object sender, EventArgs e)
         {
             if (sender is CustomComboBox comboBox)
             {
