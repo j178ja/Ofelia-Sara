@@ -769,7 +769,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     panelExpandido_Vehiculo = false;
 
                     // Aplicar borde neón para el estado contraído
-                    bool camposCompletos = VerificarCamposEnPanel(panelConNeon); // Método personalizado para verificar campos
+                    bool camposCompletos = VerificarCamposEnPanel(panel_DatosEspecificos); // Método personalizado para verificar campos
                     panelConNeon.CambiarEstado(true, camposCompletos);
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
@@ -1243,20 +1243,36 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true;
         }
 
-        private static bool VerificarCamposEnPanel(Panel panel)
+        private static bool VerificarCamposEnPanel(Control parentControl)
         {
-            foreach (Control control in panel.Controls)
+            foreach (Control control in parentControl.Controls)
             {
-                // Verificar TextBox
-                if (control is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.InnerTextBox.Text))
+                // Si el control es un Panel, llamamos recursivamente al método
+                if (control is Panel || control is GroupBox)
                 {
-                    return false; // Campo TextBox incompleto
+                    if (!VerificarCamposEnPanel(control)) // Recursión
+                    {
+                        return false;
+                    }
+                }
+                // Verificar CustomTextBox
+                if (control is CustomTextBox customTextBox)
+                {
+                    if (string.IsNullOrWhiteSpace(customTextBox.TextValue)) // Usa TextValue si es la propiedad correcta
+                    {
+                        Console.WriteLine($"CustomTextBox vacío: {customTextBox.Name}");
+                        return false;
+                    }
                 }
 
-                // Verificar ComboBox
-                if (control is CustomComboBox customComboBox && customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.InnerTextBox.Text))
+                // Verificar CustomComboBox
+                if (control is CustomComboBox customComboBox)
                 {
-                    return false; // Campo ComboBox incompleto
+                    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
+                    {
+                        Console.WriteLine($"CustomComboBox vacío: {customComboBox.Name}");
+                        return false;
+                    }
                 }
 
                 // Verificar RichTextBox
@@ -1419,7 +1435,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-
         private void comboBox_AñoVehiculo_Validated(object sender, EventArgs e)
         {
             if (sender is CustomComboBox comboBox)
@@ -1438,25 +1453,27 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     int x = posicionComboBox.X + (comboBox.Width / 2);
                     int y = posicionComboBox.Y + comboBox.Height + 5; // Posicionar justo debajo con un margen de 5px
 
-                    // Mostrar el mensaje en la posición calculada
-                    MensajeGeneral.MostrarEnPosicion("El año del vehículo no puede ser posterior al año en curso.",
-                                                      MensajeGeneral.TipoMensaje.Advertencia, x, y);
+                    // Crear y mostrar el mensaje como ventana modal (ShowDialog)
+                    using (MensajeGeneral mensajeForm = new MensajeGeneral("El año del vehículo no puede ser posterior al año en curso.",
+                                                                            MensajeGeneral.TipoMensaje.Advertencia))
+                    {
+                        mensajeForm.StartPosition = FormStartPosition.Manual;
+                        mensajeForm.Location = new Point(x - (mensajeForm.Width / 2), y);
+                        mensajeForm.ShowDialog(); // Mostrar como modal
+                    }
 
                     // Limpiar el contenido del ComboBox
                     comboBox.Text = string.Empty;
                     comboBox.SelectedIndex = -1;
-
-
                 }
-
             }
         }
+
         /// <summary>
         /// COLOCA MAYUSCULA AL INICIO Y DESPUES DE PUNTO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void RichTextBox_Descripcion_TextChanged(object sender, EventArgs e)
         {
             if (sender is RichTextBox rtb && !string.IsNullOrWhiteSpace(rtb.Text))

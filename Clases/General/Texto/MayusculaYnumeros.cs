@@ -203,7 +203,15 @@ public class MayusculaYnumeros
         int x = posicionControl.X + (control.Width / 2);
         int y = posicionControl.Y + control.Height + 5; // Posicionar justo debajo con un margen de 5px
 
-        // Mostrar el mensaje en la posición calculada
-        MensajeGeneral.MostrarEnPosicion(mensaje, MensajeGeneral.TipoMensaje.Advertencia, x, y);
+        // Crear y configurar el mensaje como una ventana modal
+        using (MensajeGeneral mensajeForm = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Advertencia))
+        {
+            mensajeForm.StartPosition = FormStartPosition.Manual;
+            mensajeForm.Location = new Point(x - (mensajeForm.Width / 2), y);
+
+            // Mostrarlo como ventana modal
+            mensajeForm.ShowDialog();
+        }
     }
+
 }
