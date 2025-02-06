@@ -11,9 +11,11 @@ namespace Ofelia_Sara.Clases.General.Botones
 {
     public static class LimpiarFormulario
     {
-
-        // Método estático para limpiar todos los controles dentro del formulario
-        // Itera a través de todos los controles dentro del control proporcionado (form o panel)
+        /// <summary>
+        /// // Método estático para limpiar todos los controles dentro del formulario
+        /// Itera a través de todos los controles dentro del control proporcionado (form o panel)
+        /// </summary>
+        /// <param name="control"></param>
 
         public static void Limpiar(Control control)
         {
@@ -88,6 +90,11 @@ namespace Ofelia_Sara.Clases.General.Botones
                         control.Controls.Remove(c);
                         c.Dispose();
                         break;
+
+                    case RichTextBox richTextBox:
+                        richTextBox.Clear();
+                        break;
+
                 }
             }
         }

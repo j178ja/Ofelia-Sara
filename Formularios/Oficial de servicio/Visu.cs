@@ -847,6 +847,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
+           
             // Verificar si algún RadioButton en el grupo está seleccionado
             bool isChecked = panel_TipoExamenVisu.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
 
@@ -881,6 +882,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Cambia la imagen y el color de fondo del PictureBox correspondiente
                     if (radioButton == radioButton_Automovil)
                     {
+                        LimpiarFormulario.Limpiar(panel_AgregarImagenes);
+                        LimpiarFormulario.Limpiar(panel_DatosEspecificos);
+                        LimpiarFormulario.Limpiar(panel_Descripcion);
                         ApplyRoundedCorners(pictureBox_Automovil, 6, true, false, false, true); // Solo esquinas izquierdas
                         ResetPictureBoxStyles(); // Restaura los estilos por defecto de los PictureBox
                         pictureBox_Automovil.BackColor = Color.FromArgb(4, 234, 0);
@@ -888,6 +892,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else if (radioButton == radioButton_Motovehiculo)
                     {
+                        LimpiarFormulario.Limpiar(panel_AgregarImagenes);
+                        LimpiarFormulario.Limpiar(panel_DatosEspecificos);
+                        LimpiarFormulario.Limpiar(panel_Descripcion);
                         ApplyRoundedCorners(pictureBox_Motovehiculo, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Motovehiculo.BackColor = Color.FromArgb(4, 234, 0);
@@ -895,6 +902,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else if (radioButton == radioButton_Objeto)
                     {
+                        LimpiarFormulario.Limpiar(panel_AgregarImagenes);
+                        LimpiarFormulario.Limpiar(panel_DatosEspecificos);
+                        LimpiarFormulario.Limpiar(panel_Descripcion);
                         ApplyRoundedCorners(pictureBox_Objeto, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Objeto.BackColor = Color.FromArgb(4, 234, 0);
