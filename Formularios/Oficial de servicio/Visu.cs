@@ -122,6 +122,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.InnerTextBox.MaxLength = 2;
             textBox_NumeroIpp.InnerTextBox.MaxLength = 6;
             comboBox_Ipp4.InnerTextBox.MaxLength = 2;
+            comboBox_AñoVehiculo.InnerTextBox.MaxLength = 4;
+
           
           
             //.......................................................................
@@ -228,7 +230,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(textBox_Dominio);
             MayusculaYnumeros.AplicarAControl(textBox_Motor);
             MayusculaYnumeros.AplicarAControl(textBox_Chasis);
-            
+
+            ClaseNumeros.SoloNumeros(comboBox_AñoVehiculo);
         }
 
         /// <summary>
@@ -313,7 +316,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                 // Mover el cursor al final del texto
                 textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
-
             }
         }
 
@@ -400,8 +402,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-
-
 
 
         /// <summary>
@@ -506,9 +506,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     // Si no se encuentra la fiscalía, limpiar los ComboBoxes
                     comboBox_AgenteFiscal.DataSource = null;
                     comboBox_Localidad.DataSource = null;
-
                 }
-
                 // Reactivar los ComboBoxes de detalle
                 comboBox_AgenteFiscal.Enabled = true;
                 comboBox_Localidad.Enabled = true;
@@ -766,44 +764,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
                     panelExpandido_Vehiculo = false;
 
-                    // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
+                    // Aplicar borde neón para el estado contraído
+                    bool camposCompletos = VerificarCamposEnPanel(panelConNeon); // Método personalizado para verificar campos
+                    panelConNeon.CambiarEstado(true, camposCompletos);
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_VEHICULO.Parent = panel_DatosVehiculo;
                     btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(561, 1);
 
-                    // Crear y agregar el Label "DATOS DEL VEHICULO"
-                    Label labelVehiculo = new Label
-                    {
-                        Name = "labelVehiculo", // Asegúrate de asignar un nombre único al Label
-                        BackColor = Color.FromArgb(0, 192, 192),
-                        Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline),
-                        ForeColor = SystemColors.ControlText,
-                        Padding = new Padding(20, 3, 20, 5),
-                        Text = "DATOS DEL VEHICULO",
-                        AutoSize = true,
-                        Location = new System.Drawing.Point(23, 1)
-                    };
-
-                    // Asegurarse de que el Label esté visible en el frente
-                    labelVehiculo.BringToFront();
-
-                    // Agregar el Label al panel
-                    panel_DatosVehiculo.Controls.Add(labelVehiculo);
-
-                    // Ocultar otros controles excepto el botón y el Label
-                    foreach (Control control in panel_DatosVehiculo.Controls)
-                    {
-                        if (control == btn_AmpliarReducir_VEHICULO || control == labelVehiculo || control == pictureBox_DatosVehiculo)
-                        {
-                            control.Visible = true; // Mantener visible
-                        }
-                        else
-                        {
-                            control.Visible = false; // Ocultar los demás controles
-                        }
-                    }
+                
+                    panel_DatosEspecificos.Visible = false;
                 }
                 else
                 {
@@ -887,14 +857,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
                 AjustarTamanoFormulario();
             }
-
         }
+
         #endregion
 
         #region PANEL IMAGENES
 
         /// <summary>
-        /// metodo para destacar seleccion de VISU
+        /// SELECCION DE RADIOBUTON Y VISUALIZACION DE PANELES
         /// </summary>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -1274,13 +1244,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             foreach (Control control in panel.Controls)
             {
                 // Verificar TextBox
-                if (control is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.TextValue))
+                if (control is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.InnerTextBox.Text))
                 {
                     return false; // Campo TextBox incompleto
                 }
 
                 // Verificar ComboBox
-                if (control is CustomComboBox customComboBox && customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue))
+                if (control is CustomComboBox customComboBox && customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.InnerTextBox.Text))
                 {
                     return false; // Campo ComboBox incompleto
                 }

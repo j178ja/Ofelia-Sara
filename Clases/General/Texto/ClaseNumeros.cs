@@ -1,5 +1,7 @@
 ﻿using Ofelia_Sara.Controles.General;
 using System;
+using System.Windows.Controls;
+using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Clases.General.Texto
@@ -51,6 +53,38 @@ namespace Ofelia_Sara.Clases.General.Texto
                 }
             };
         }
+        /// <summary>
+        /// Aplica la restricción de solo números a CustomTextBox y CustomComboBox.
+        /// </summary>
+        public static void SoloNumeros(System.Windows.Forms.Control control)
+        {
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
 
+            if (control is CustomTextBox customTextBox)
+            {
+                customTextBox.KeyPress += Control_KeyPress;
+            }
+            else if (control is CustomComboBox customComboBox)
+            {
+                customComboBox.KeyPress += Control_KeyPress;
+            }
+            else
+            {
+                throw new ArgumentException("El control no admite restricciones de solo números.", nameof(control));
+            }
+        }
+
+        /// <summary>
+        /// Método KeyPress común para restringir a solo números.
+        /// </summary>
+        private static void Control_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y teclas de control (como backspace y suprimir)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear entrada
+            }
+        }
     }
 }

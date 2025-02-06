@@ -75,7 +75,7 @@
             pictureBox_PanelInstruccion = new System.Windows.Forms.PictureBox();
             panel_DatosVehiculo = new Controles.General.PanelConBordeNeon();
             panel_DatosEspecificos = new Controles.General.PanelConBordeNeon();
-            comboBox1 = new Controles.General.CustomComboBox();
+            comboBox_AñoVehiculo = new Controles.General.CustomComboBox();
             label1 = new System.Windows.Forms.Label();
             textBox_Chasis = new Controles.General.CustomTextBox();
             comboBox_Marca = new Controles.General.CustomComboBox();
@@ -950,7 +950,7 @@
             panel_DatosEspecificos.BorderRadius = 10;
             panel_DatosEspecificos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel_DatosEspecificos.CamposCompletos = false;
-            panel_DatosEspecificos.Controls.Add(comboBox1);
+            panel_DatosEspecificos.Controls.Add(comboBox_AñoVehiculo);
             panel_DatosEspecificos.Controls.Add(label1);
             panel_DatosEspecificos.Controls.Add(textBox_Chasis);
             panel_DatosEspecificos.Controls.Add(comboBox_Marca);
@@ -974,38 +974,38 @@
             panel_DatosEspecificos.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_DatosEspecificos.TabIndex = 86;
             // 
-            // comboBox1
+            // comboBox_AñoVehiculo
             // 
-            comboBox1.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox1.ArrowImage");
-            comboBox1.ArrowPictureBox = null;
-            comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            comboBox1.BackColor = System.Drawing.Color.White;
-            comboBox1.DataSource = null;
-            comboBox1.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox1.DefaultImage");
-            comboBox1.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox1.DisabledImage");
-            comboBox1.DisplayMember = null;
-            comboBox1.DropDownHeight = 252;
-            comboBox1.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
-            comboBox1.DroppedDown = false;
-            comboBox1.ErrorColor = System.Drawing.Color.Red;
-            comboBox1.FocusColor = System.Drawing.Color.Blue;
-            comboBox1.ForeColor = System.Drawing.Color.Gray;
-            comboBox1.Location = new System.Drawing.Point(106, 93);
-            comboBox1.MaxDropDownItems = 10;
-            comboBox1.Name = "comboBox1";
-            comboBox1.PlaceholderColor = System.Drawing.Color.Gray;
-            comboBox1.PlaceholderText = " ";
-            comboBox1.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox1.PressedImage");
-            comboBox1.SelectedIndex = -1;
-            comboBox1.SelectedItem = null;
-            comboBox1.SelectedText = "";
-            comboBox1.SelectionStart = 0;
-            comboBox1.ShowError = false;
-            comboBox1.Size = new System.Drawing.Size(94, 21);
-            comboBox1.TabIndex = 89;
-            comboBox1.Text = " ";
-            comboBox1.TextValue = " ";
+            comboBox_AñoVehiculo.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_AñoVehiculo.ArrowImage");
+            comboBox_AñoVehiculo.ArrowPictureBox = null;
+            comboBox_AñoVehiculo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            comboBox_AñoVehiculo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            comboBox_AñoVehiculo.BackColor = System.Drawing.Color.White;
+            comboBox_AñoVehiculo.DataSource = null;
+            comboBox_AñoVehiculo.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_AñoVehiculo.DefaultImage");
+            comboBox_AñoVehiculo.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_AñoVehiculo.DisabledImage");
+            comboBox_AñoVehiculo.DisplayMember = null;
+            comboBox_AñoVehiculo.DropDownHeight = 252;
+            comboBox_AñoVehiculo.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_AñoVehiculo.DroppedDown = false;
+            comboBox_AñoVehiculo.ErrorColor = System.Drawing.Color.Red;
+            comboBox_AñoVehiculo.FocusColor = System.Drawing.Color.Blue;
+            comboBox_AñoVehiculo.ForeColor = System.Drawing.Color.Gray;
+            comboBox_AñoVehiculo.Location = new System.Drawing.Point(106, 93);
+            comboBox_AñoVehiculo.MaxDropDownItems = 10;
+            comboBox_AñoVehiculo.Name = "comboBox_AñoVehiculo";
+            comboBox_AñoVehiculo.PlaceholderColor = System.Drawing.Color.Gray;
+            comboBox_AñoVehiculo.PlaceholderText = " ";
+            comboBox_AñoVehiculo.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_AñoVehiculo.PressedImage");
+            comboBox_AñoVehiculo.SelectedIndex = -1;
+            comboBox_AñoVehiculo.SelectedItem = null;
+            comboBox_AñoVehiculo.SelectedText = "";
+            comboBox_AñoVehiculo.SelectionStart = 0;
+            comboBox_AñoVehiculo.ShowError = false;
+            comboBox_AñoVehiculo.Size = new System.Drawing.Size(94, 21);
+            comboBox_AñoVehiculo.TabIndex = 89;
+            comboBox_AñoVehiculo.Text = " ";
+            comboBox_AñoVehiculo.TextValue = " ";
             // 
             // label1
             // 
@@ -1277,8 +1277,8 @@
             label_DatosVehiculo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, 0);
             label_DatosVehiculo.Location = new System.Drawing.Point(29, 3);
             label_DatosVehiculo.Name = "label_DatosVehiculo";
-            label_DatosVehiculo.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            label_DatosVehiculo.Size = new System.Drawing.Size(219, 25);
+            label_DatosVehiculo.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            label_DatosVehiculo.Size = new System.Drawing.Size(219, 23);
             label_DatosVehiculo.TabIndex = 24;
             label_DatosVehiculo.Text = "DATOS DEL VEHICULO";
             // 
@@ -1727,7 +1727,7 @@
         private Ofelia_Sara.Controles.General.PanelConBordeNeon panel_Instruccion;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Instructor;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
-        private Ofelia_Sara.Controles.General.CustomComboBox comboBox1;
+        private Ofelia_Sara.Controles.General.CustomComboBox comboBox_AñoVehiculo;
         private System.Windows.Forms.Label label1;
     }
 }

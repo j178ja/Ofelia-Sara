@@ -47,7 +47,14 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
-        // Método auxiliar para generar un path redondeado
+
+        /// <summary>
+        /// Método auxiliar para generar un path redondeado
+        /// </summary>
+        /// <param name="rect"></param>
+        /// <param name="radio"></param>
+        /// <param name="ajuste"></param>
+        /// <returns></returns>
         private static GraphicsPath GenerarPathRedondeado(Rectangle rect, int radio, int ajuste)
         {
             GraphicsPath path = new GraphicsPath();
@@ -63,7 +70,12 @@ namespace Ofelia_Sara.Controles.General
             return path;
         }
 
-        // Método para cambiar el estado del panel y redibujar
+       
+        /// <summary>
+        /// Método para cambiar el estado del panel y redibujar
+        /// </summary>
+        /// <param name="estaContraido"></param>
+        /// <param name="camposCompletos"></param>
         public void CambiarEstado(bool estaContraido, bool camposCompletos)
         {
             EstaContraido = estaContraido;
