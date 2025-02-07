@@ -906,8 +906,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     //        AjustarTamanoFormulario();
                    
                     LimpiarFormulario.Limpiar(panel_Descripcion);
-                    LimpiarFormulario.Limpiar(panel_DatosVehiculo);
-                    LimpiarFormulario.Limpiar(panel_Imagenes);
+                   
                    
 
                     // Cambia la imagen y el color de fondo del PictureBox correspondiente
