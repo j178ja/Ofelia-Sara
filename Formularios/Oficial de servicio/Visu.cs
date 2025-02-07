@@ -904,12 +904,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     panel_DatosVehiculo.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
                     panel_DatosEspecificos.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
                     //        AjustarTamanoFormulario();
+                   
+                    LimpiarFormulario.Limpiar(panel_Descripcion);
+                    LimpiarFormulario.Limpiar(panel_DatosVehiculo);
+                    LimpiarFormulario.Limpiar(panel_Imagenes);
+                   
+
                     // Cambia la imagen y el color de fondo del PictureBox correspondiente
                     if (radioButton == radioButton_Automovil)
                     {
-                        //LimpiarFormulario.Limpiar(panel_AgregarImagenes);
-                        //LimpiarFormulario.Limpiar(panel_DatosEspecificos);
-                        //LimpiarFormulario.Limpiar(panel_Descripcion);
+                        
                         ApplyRoundedCorners(pictureBox_Automovil, 6, true, false, false, true); // Solo esquinas izquierdas
                         ResetPictureBoxStyles(); // Restaura los estilos por defecto de los PictureBox
                         pictureBox_Automovil.BackColor = Color.FromArgb(4, 234, 0);
@@ -917,9 +921,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else if (radioButton == radioButton_Motovehiculo)
                     {
-                        //LimpiarFormulario.Limpiar(panel_AgregarImagenes);
-                        //LimpiarFormulario.Limpiar(panel_DatosEspecificos);
-                        //LimpiarFormulario.Limpiar(panel_Descripcion);
+                        
                         ApplyRoundedCorners(pictureBox_Motovehiculo, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Motovehiculo.BackColor = Color.FromArgb(4, 234, 0);
@@ -927,9 +929,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else if (radioButton == radioButton_Objeto)
                     {
-                        //LimpiarFormulario.Limpiar(panel_AgregarImagenes);
-                        //LimpiarFormulario.Limpiar(panel_DatosEspecificos);
-                        //LimpiarFormulario.Limpiar(panel_Descripcion);
+                        
                         ApplyRoundedCorners(pictureBox_Objeto, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Objeto.BackColor = Color.FromArgb(4, 234, 0);
