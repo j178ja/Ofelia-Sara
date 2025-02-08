@@ -112,7 +112,7 @@
             label_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Cargo.Location = new System.Drawing.Point(105, 23);
             label_Cargo.Name = "label_Cargo";
-            label_Cargo.Size = new System.Drawing.Size(102, 20);
+            label_Cargo.Size = new System.Drawing.Size(80, 16);
             label_Cargo.TabIndex = 0;
             label_Cargo.Text = "CARGO N°";
             // 
@@ -138,6 +138,7 @@
             textBox_NumeroCargo.TabIndex = 1;
             textBox_NumeroCargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroCargo.TextValue = "";
+            textBox_NumeroCargo.Whidth = 0;
             textBox_NumeroCargo.KeyPress += TextBox_NumeroCargo_KeyPress;
             // 
             // label_Barra
@@ -146,7 +147,7 @@
             label_Barra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label_Barra.Location = new System.Drawing.Point(295, 25);
             label_Barra.Name = "label_Barra";
-            label_Barra.Size = new System.Drawing.Size(14, 20);
+            label_Barra.Size = new System.Drawing.Size(11, 16);
             label_Barra.TabIndex = 16;
             label_Barra.Text = "/";
             // 
@@ -161,11 +162,12 @@
             comboBox_Año.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Año.DefaultImage");
             comboBox_Año.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Año.DisabledImage");
             comboBox_Año.DisplayMember = null;
-            comboBox_Año.DropDownHeight = 96;
+            comboBox_Año.DropDownHeight = 252;
             comboBox_Año.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Año.DroppedDown = false;
             comboBox_Año.ErrorColor = System.Drawing.Color.Red;
             comboBox_Año.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Año.ForeColor = System.Drawing.Color.Gray;
             comboBox_Año.Location = new System.Drawing.Point(313, 22);
             comboBox_Año.MaxDropDownItems = 10;
             comboBox_Año.Name = "comboBox_Año";
@@ -288,6 +290,7 @@
             richTextBox_Descripcion.Size = new System.Drawing.Size(458, 117);
             richTextBox_Descripcion.TabIndex = 87;
             richTextBox_Descripcion.Text = "";
+            richTextBox_Descripcion.TextChanged += RichTextBox_Descripcion_TextChanged;
             // 
             // btn_AmpliarReducir_DESCRIPCION
             // 
@@ -322,7 +325,7 @@
             label_Descripcion.Location = new System.Drawing.Point(20, 0);
             label_Descripcion.Name = "label_Descripcion";
             label_Descripcion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            label_Descripcion.Size = new System.Drawing.Size(346, 30);
+            label_Descripcion.Size = new System.Drawing.Size(283, 25);
             label_Descripcion.TabIndex = 17;
             label_Descripcion.Text = "DESCRIPCION DE LA MUESTRA";
             // 
@@ -342,12 +345,13 @@
             // 
             botonDeslizable_Visu.Cursor = System.Windows.Forms.Cursors.Hand;
             botonDeslizable_Visu.IsOn = false;
-            botonDeslizable_Visu.Location = new System.Drawing.Point(101, 6);
-            botonDeslizable_Visu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            botonDeslizable_Visu.Location = new System.Drawing.Point(101, 5);
+            botonDeslizable_Visu.Margin = new System.Windows.Forms.Padding(0);
             botonDeslizable_Visu.Name = "botonDeslizable_Visu";
-            botonDeslizable_Visu.Size = new System.Drawing.Size(40, 20);
+            botonDeslizable_Visu.Size = new System.Drawing.Size(47, 22);
             botonDeslizable_Visu.TabIndex = 74;
             botonDeslizable_Visu.ValidarCampos = null;
+           
             // 
             // label_Not247
             // 
@@ -380,7 +384,7 @@
             checkBox_LegajoVehicular.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
             checkBox_LegajoVehicular.Location = new System.Drawing.Point(409, 10);
             checkBox_LegajoVehicular.Name = "checkBox_LegajoVehicular";
-            checkBox_LegajoVehicular.Size = new System.Drawing.Size(18, 17);
+            checkBox_LegajoVehicular.Size = new System.Drawing.Size(15, 14);
             checkBox_LegajoVehicular.TabIndex = 70;
             checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
@@ -392,7 +396,7 @@
             label_LegajoVehicular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_LegajoVehicular.Location = new System.Drawing.Point(237, 8);
             label_LegajoVehicular.Name = "label_LegajoVehicular";
-            label_LegajoVehicular.Size = new System.Drawing.Size(211, 20);
+            label_LegajoVehicular.Size = new System.Drawing.Size(166, 16);
             label_LegajoVehicular.TabIndex = 71;
             label_LegajoVehicular.Text = "LEGAJO VEHICULAR   ";
             label_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,12 +457,13 @@
             comboBox_Instructor.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DefaultImage");
             comboBox_Instructor.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Instructor.DisabledImage");
             comboBox_Instructor.DisplayMember = null;
-            comboBox_Instructor.DropDownHeight = 96;
+            comboBox_Instructor.DropDownHeight = 252;
             comboBox_Instructor.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Instructor.DroppedDown = false;
             comboBox_Instructor.ErrorColor = System.Drawing.Color.Red;
             comboBox_Instructor.FocusColor = System.Drawing.Color.Blue;
             comboBox_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Instructor.ForeColor = System.Drawing.Color.Gray;
             comboBox_Instructor.Location = new System.Drawing.Point(127, 184);
             comboBox_Instructor.MaxDropDownItems = 10;
             comboBox_Instructor.Name = "comboBox_Instructor";
@@ -472,6 +477,7 @@
             comboBox_Instructor.ShowError = false;
             comboBox_Instructor.Size = new System.Drawing.Size(286, 21);
             comboBox_Instructor.TabIndex = 84;
+            comboBox_Instructor.Text = " ";
             comboBox_Instructor.TextValue = " ";
             // 
             // btn_AmpliarReducir_INSTRUCCION
@@ -495,7 +501,7 @@
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(51, 158);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(80, 18);
+            label_Localidad.Size = new System.Drawing.Size(70, 15);
             label_Localidad.TabIndex = 82;
             label_Localidad.Text = "Localidad";
             // 
@@ -510,12 +516,13 @@
             comboBox_Localidad.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Localidad.DefaultImage");
             comboBox_Localidad.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Localidad.DisabledImage");
             comboBox_Localidad.DisplayMember = null;
-            comboBox_Localidad.DropDownHeight = 96;
+            comboBox_Localidad.DropDownHeight = 252;
             comboBox_Localidad.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Localidad.DroppedDown = false;
             comboBox_Localidad.ErrorColor = System.Drawing.Color.Red;
             comboBox_Localidad.FocusColor = System.Drawing.Color.Blue;
             comboBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Localidad.ForeColor = System.Drawing.Color.Gray;
             comboBox_Localidad.Location = new System.Drawing.Point(128, 157);
             comboBox_Localidad.MaxDropDownItems = 10;
             comboBox_Localidad.Name = "comboBox_Localidad";
@@ -529,6 +536,7 @@
             comboBox_Localidad.ShowError = false;
             comboBox_Localidad.Size = new System.Drawing.Size(286, 21);
             comboBox_Localidad.TabIndex = 81;
+            comboBox_Localidad.Text = " ";
             comboBox_Localidad.TextValue = " ";
             comboBox_Localidad.KeyPress += ComboBox_Localidad_KeyPress;
             // 
@@ -543,12 +551,13 @@
             comboBox_Secretario.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DefaultImage");
             comboBox_Secretario.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Secretario.DisabledImage");
             comboBox_Secretario.DisplayMember = null;
-            comboBox_Secretario.DropDownHeight = 96;
+            comboBox_Secretario.DropDownHeight = 252;
             comboBox_Secretario.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Secretario.DroppedDown = false;
             comboBox_Secretario.ErrorColor = System.Drawing.Color.Red;
             comboBox_Secretario.FocusColor = System.Drawing.Color.Blue;
             comboBox_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Secretario.ForeColor = System.Drawing.Color.Gray;
             comboBox_Secretario.Location = new System.Drawing.Point(128, 212);
             comboBox_Secretario.MaxDropDownItems = 10;
             comboBox_Secretario.Name = "comboBox_Secretario";
@@ -562,6 +571,7 @@
             comboBox_Secretario.ShowError = false;
             comboBox_Secretario.Size = new System.Drawing.Size(286, 21);
             comboBox_Secretario.TabIndex = 68;
+            comboBox_Secretario.Text = " ";
             comboBox_Secretario.TextValue = " ";
             // 
             // comboBox_Dependencia
@@ -575,11 +585,12 @@
             comboBox_Dependencia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DefaultImage");
             comboBox_Dependencia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.DisabledImage");
             comboBox_Dependencia.DisplayMember = null;
-            comboBox_Dependencia.DropDownHeight = 96;
+            comboBox_Dependencia.DropDownHeight = 252;
             comboBox_Dependencia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Dependencia.DroppedDown = false;
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Dependencia.Location = new System.Drawing.Point(128, 239);
             comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
@@ -593,6 +604,7 @@
             comboBox_Dependencia.ShowError = false;
             comboBox_Dependencia.Size = new System.Drawing.Size(286, 21);
             comboBox_Dependencia.TabIndex = 69;
+            comboBox_Dependencia.Text = " ";
             comboBox_Dependencia.TextValue = " ";
             // 
             // comboBox_Fiscalia
@@ -606,12 +618,13 @@
             comboBox_Fiscalia.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Fiscalia.DefaultImage");
             comboBox_Fiscalia.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Fiscalia.DisabledImage");
             comboBox_Fiscalia.DisplayMember = null;
-            comboBox_Fiscalia.DropDownHeight = 96;
+            comboBox_Fiscalia.DropDownHeight = 252;
             comboBox_Fiscalia.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Fiscalia.DroppedDown = false;
             comboBox_Fiscalia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Fiscalia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Fiscalia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Fiscalia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Fiscalia.Location = new System.Drawing.Point(128, 130);
             comboBox_Fiscalia.MaxDropDownItems = 10;
             comboBox_Fiscalia.Name = "comboBox_Fiscalia";
@@ -625,6 +638,7 @@
             comboBox_Fiscalia.ShowError = false;
             comboBox_Fiscalia.Size = new System.Drawing.Size(91, 21);
             comboBox_Fiscalia.TabIndex = 65;
+            comboBox_Fiscalia.Text = " ";
             comboBox_Fiscalia.TextValue = " ";
             comboBox_Fiscalia.SelectedIndexChanged += ComboBox_Fiscalia_SelectedIndexChanged;
             // 
@@ -634,7 +648,7 @@
             lbl_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Dependencia.Location = new System.Drawing.Point(19, 240);
             lbl_Dependencia.Name = "lbl_Dependencia";
-            lbl_Dependencia.Size = new System.Drawing.Size(126, 18);
+            lbl_Dependencia.Size = new System.Drawing.Size(104, 15);
             lbl_Dependencia.TabIndex = 80;
             lbl_Dependencia.Text = "DEPENDENCIA";
             // 
@@ -649,12 +663,13 @@
             comboBox_AgenteFiscal.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_AgenteFiscal.DefaultImage");
             comboBox_AgenteFiscal.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_AgenteFiscal.DisabledImage");
             comboBox_AgenteFiscal.DisplayMember = null;
-            comboBox_AgenteFiscal.DropDownHeight = 96;
+            comboBox_AgenteFiscal.DropDownHeight = 252;
             comboBox_AgenteFiscal.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_AgenteFiscal.DroppedDown = false;
             comboBox_AgenteFiscal.ErrorColor = System.Drawing.Color.Red;
             comboBox_AgenteFiscal.FocusColor = System.Drawing.Color.Blue;
             comboBox_AgenteFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_AgenteFiscal.ForeColor = System.Drawing.Color.Gray;
             comboBox_AgenteFiscal.Location = new System.Drawing.Point(252, 130);
             comboBox_AgenteFiscal.MaxDropDownItems = 10;
             comboBox_AgenteFiscal.Name = "comboBox_AgenteFiscal";
@@ -668,6 +683,7 @@
             comboBox_AgenteFiscal.ShowError = false;
             comboBox_AgenteFiscal.Size = new System.Drawing.Size(162, 21);
             comboBox_AgenteFiscal.TabIndex = 66;
+            comboBox_AgenteFiscal.Text = " ";
             comboBox_AgenteFiscal.TextValue = " ";
             // 
             // lbl_Fecha
@@ -676,7 +692,7 @@
             lbl_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Fecha.Location = new System.Drawing.Point(70, 266);
             lbl_Fecha.Name = "lbl_Fecha";
-            lbl_Fecha.Size = new System.Drawing.Size(63, 18);
+            lbl_Fecha.Size = new System.Drawing.Size(51, 15);
             lbl_Fecha.TabIndex = 79;
             lbl_Fecha.Text = "FECHA";
             // 
@@ -695,7 +711,7 @@
             lbl_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Secretario.Location = new System.Drawing.Point(30, 213);
             lbl_Secretario.Name = "lbl_Secretario";
-            lbl_Secretario.Size = new System.Drawing.Size(114, 18);
+            lbl_Secretario.Size = new System.Drawing.Size(93, 15);
             lbl_Secretario.TabIndex = 78;
             lbl_Secretario.Text = "SECRETARIO";
             // 
@@ -705,7 +721,7 @@
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label7.Location = new System.Drawing.Point(26, 184);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(116, 18);
+            label7.Size = new System.Drawing.Size(95, 15);
             label7.TabIndex = 77;
             label7.Text = "INSTRUCTOR";
             // 
@@ -715,7 +731,7 @@
             lbl_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Ufid.Location = new System.Drawing.Point(70, 133);
             lbl_Ufid.Name = "lbl_Ufid";
-            lbl_Ufid.Size = new System.Drawing.Size(61, 18);
+            lbl_Ufid.Size = new System.Drawing.Size(51, 15);
             lbl_Ufid.TabIndex = 76;
             lbl_Ufid.Text = "U.F.I.D";
             // 
@@ -725,7 +741,7 @@
             lbl_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Dr.Location = new System.Drawing.Point(225, 134);
             lbl_Dr.Name = "lbl_Dr";
-            lbl_Dr.Size = new System.Drawing.Size(31, 18);
+            lbl_Dr.Size = new System.Drawing.Size(26, 15);
             lbl_Dr.TabIndex = 75;
             lbl_Dr.Text = "Dr.";
             // 
@@ -765,6 +781,7 @@
             textBox_NumeroIpp.TabIndex = 5;
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
+            textBox_NumeroIpp.Whidth = 0;
             textBox_NumeroIpp.TextChanged += TextBox_NumeroIpp_TextChanged;
             textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
             textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
@@ -785,6 +802,7 @@
             comboBox_Ipp1.DroppedDown = false;
             comboBox_Ipp1.ErrorColor = System.Drawing.Color.Red;
             comboBox_Ipp1.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp1.ForeColor = System.Drawing.Color.Gray;
             comboBox_Ipp1.Location = new System.Drawing.Point(106, 2);
             comboBox_Ipp1.MaxDropDownItems = 10;
             comboBox_Ipp1.Name = "comboBox_Ipp1";
@@ -813,11 +831,12 @@
             comboBox_Ipp2.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DefaultImage");
             comboBox_Ipp2.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp2.DisabledImage");
             comboBox_Ipp2.DisplayMember = null;
-            comboBox_Ipp2.DropDownHeight = 96;
+            comboBox_Ipp2.DropDownHeight = 252;
             comboBox_Ipp2.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp2.DroppedDown = false;
             comboBox_Ipp2.ErrorColor = System.Drawing.Color.Red;
             comboBox_Ipp2.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp2.ForeColor = System.Drawing.Color.Gray;
             comboBox_Ipp2.Location = new System.Drawing.Point(155, 2);
             comboBox_Ipp2.MaxDropDownItems = 10;
             comboBox_Ipp2.Name = "comboBox_Ipp2";
@@ -840,7 +859,7 @@
             lbl_00.AutoSize = true;
             lbl_00.Location = new System.Drawing.Point(361, 7);
             lbl_00.Name = "lbl_00";
-            lbl_00.Size = new System.Drawing.Size(31, 20);
+            lbl_00.Size = new System.Drawing.Size(24, 15);
             lbl_00.TabIndex = 26;
             lbl_00.Text = "/00";
             // 
@@ -855,11 +874,12 @@
             comboBox_Ipp4.DefaultImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DefaultImage");
             comboBox_Ipp4.DisabledImage = (System.Drawing.Image)resources.GetObject("comboBox_Ipp4.DisabledImage");
             comboBox_Ipp4.DisplayMember = null;
-            comboBox_Ipp4.DropDownHeight = 96;
+            comboBox_Ipp4.DropDownHeight = 252;
             comboBox_Ipp4.DropDownStyle = Controles.General.CustomComboBox.CustomComboBoxStyle.DropDown;
             comboBox_Ipp4.DroppedDown = false;
             comboBox_Ipp4.ErrorColor = System.Drawing.Color.Red;
             comboBox_Ipp4.FocusColor = System.Drawing.Color.Blue;
+            comboBox_Ipp4.ForeColor = System.Drawing.Color.Gray;
             comboBox_Ipp4.Location = new System.Drawing.Point(307, 2);
             comboBox_Ipp4.MaxDropDownItems = 10;
             comboBox_Ipp4.Name = "comboBox_Ipp4";
@@ -883,7 +903,7 @@
             lbl_Ipp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Ipp.Location = new System.Drawing.Point(59, 5);
             lbl_Ipp.Name = "lbl_Ipp";
-            lbl_Ipp.Size = new System.Drawing.Size(49, 18);
+            lbl_Ipp.Size = new System.Drawing.Size(41, 15);
             lbl_Ipp.TabIndex = 3;
             lbl_Ipp.Text = "l.P.P.";
             // 
@@ -919,6 +939,7 @@
             textBox_Caratula.TabIndex = 7;
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
+            textBox_Caratula.Whidth = 0;
             // 
             // lbl_Caratula
             // 
@@ -926,7 +947,7 @@
             lbl_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Caratula.Location = new System.Drawing.Point(7, 4);
             lbl_Caratula.Name = "lbl_Caratula";
-            lbl_Caratula.Size = new System.Drawing.Size(93, 18);
+            lbl_Caratula.Size = new System.Drawing.Size(76, 15);
             lbl_Caratula.TabIndex = 4;
             lbl_Caratula.Text = "CARATULA";
             // 
@@ -976,6 +997,7 @@
             textBox_Imputado.TabIndex = 9;
             textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Imputado.TextValue = "";
+            textBox_Imputado.Whidth = 0;
             // 
             // lbl_Imputado
             // 
@@ -984,7 +1006,7 @@
             lbl_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Imputado.Location = new System.Drawing.Point(42, 4);
             lbl_Imputado.Name = "lbl_Imputado";
-            lbl_Imputado.Size = new System.Drawing.Size(94, 18);
+            lbl_Imputado.Size = new System.Drawing.Size(78, 15);
             lbl_Imputado.TabIndex = 6;
             lbl_Imputado.Text = "lMPUTADO";
             // 
@@ -1032,6 +1054,7 @@
             textBox_Victima.TabIndex = 8;
             textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Victima.TextValue = "";
+            textBox_Victima.Whidth = 0;
             // 
             // lbl_Victima
             // 
@@ -1039,7 +1062,7 @@
             lbl_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Victima.Location = new System.Drawing.Point(61, 4);
             lbl_Victima.Name = "lbl_Victima";
-            lbl_Victima.Size = new System.Drawing.Size(72, 18);
+            lbl_Victima.Size = new System.Drawing.Size(60, 15);
             lbl_Victima.TabIndex = 5;
             lbl_Victima.Text = "VICTIMA";
             // 
@@ -1064,7 +1087,7 @@
             label_DatosInstruccion.Location = new System.Drawing.Point(23, 1);
             label_DatosInstruccion.Name = "label_DatosInstruccion";
             label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            label_DatosInstruccion.Size = new System.Drawing.Size(317, 30);
+            label_DatosInstruccion.Size = new System.Drawing.Size(260, 25);
             label_DatosInstruccion.TabIndex = 32;
             label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCIÓN";
             // 
@@ -1087,13 +1110,13 @@
             label_TITULO.Location = new System.Drawing.Point(73, 0);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            label_TITULO.Size = new System.Drawing.Size(376, 29);
+            label_TITULO.Size = new System.Drawing.Size(299, 24);
             label_TITULO.TabIndex = 34;
             label_TITULO.Text = "CARGOS PARA SECUESTROS";
             // 
             // Cargo
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(512, 737);
             Controls.Add(label_TITULO);

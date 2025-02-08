@@ -5,18 +5,23 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.General
 {
-
     public partial class BotonDeslizable : UserControl
     {
+        #region VARIABLES
         private bool isOn = false;
         private RectangleF sliderRect;
         private int sliderPadding = 4;
         private int cornerRadius = 3; // Ajuste de radio para bordes redondeados
+        #endregion
 
-        // Delegado para validar los campos antes de cambiar el estado
+        /// <summary>
+        /// Delegado para validar los campos antes de cambiar el estado
+        /// </summary>
         public Func<bool> ValidarCampos { get; set; }
 
-        // Evento para notificar cambios en el estado de IsOn
+        /// <summary>
+        /// Evento para notificar cambios en el estado de IsOn
+        /// </summary>
         public event EventHandler IsOnChanged;
 
         public BotonDeslizable()
@@ -58,11 +63,48 @@ namespace Ofelia_Sara.Controles.General
                 e.Graphics.FillPath(backgroundBrush, path);
             }
 
+            //// Dibujar el botón deslizable redondeado
+            //using (SolidBrush sliderBrush = new SolidBrush(Color.LightGray))
+            //{
+            //    e.Graphics.FillEllipse(sliderBrush, sliderRect);
+            //}
+
+            //// Si IsOn es true, dibujar un círculo azul dentro del slider
+            //if (isOn)
+            //{
+            //    float innerCircleSize = sliderRect.Width * 0.65f; // Tamaño del círculo interior
+            //    float innerX = sliderRect.X + (sliderRect.Width - innerCircleSize) / 2;
+            //    float innerY = sliderRect.Y + (sliderRect.Height - innerCircleSize) / 2;
+
+            //     using (SolidBrush innerBrush = new SolidBrush(System.Drawing.SystemColors.Highlight)) 
+
+            //    {
+            //        e.Graphics.FillEllipse(innerBrush, innerX, innerY, innerCircleSize, innerCircleSize);
+            //    }
+            //}
             // Dibujar el botón deslizable redondeado
-            using (SolidBrush sliderBrush = new SolidBrush(Color.LightGray))
+            using (SolidBrush sliderBrush = new SolidBrush(isOn ? Color.White : Color.LightGray))
             {
                 e.Graphics.FillEllipse(sliderBrush, sliderRect);
             }
+
+            // Si IsOn es true, dibujar un círculo azul dentro del deslizador
+            if (isOn)
+            {
+                int innerPadding = 2; // Ajuste de tamaño para el círculo interno
+                RectangleF innerCircle = new RectangleF(
+                    sliderRect.X + innerPadding,
+                    sliderRect.Y + innerPadding,
+                    sliderRect.Width - innerPadding * 2,
+                    sliderRect.Height - innerPadding * 2
+                );
+
+                using (SolidBrush innerBrush = new SolidBrush(System.Drawing.SystemColors.Highlight))
+                {
+                    e.Graphics.FillEllipse(innerBrush, innerCircle);
+                }
+            }
+
 
             // Configurar la posición del texto
             Rectangle textRect;

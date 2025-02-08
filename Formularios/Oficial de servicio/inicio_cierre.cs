@@ -156,12 +156,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(textBox_Caratula);
             MayusculaSola.AplicarAControl(textBox_Victima);
             MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
+            MayusculaSola.AplicarAControl(comboBox_Localidad);
             MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
-            ConvertirACamelCase.Convertir(comboBox_DeptoJudicial.InnerTextBox.Text);
+
+            CargarAño(comboBox_Ipp4);
+
+
 
         }
 
@@ -1114,10 +1117,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 pictureBox_CheckCargo.Visible = true;
 
-                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
+                // Ajustar la posición del PictureBox para que quede sobre el chech, antes habia que desplazarlo, al momento no es necesario
                 pictureBox_CheckCargo.Location = new Point(
                     checkBox_Cargo.Location.X,
-                    checkBox_Cargo.Location.Y - 5
+                    checkBox_Cargo.Location.Y 
                 );
                 // Ocultar el CheckBox
                 checkBox_Cargo.Visible = false;
@@ -1222,23 +1225,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         private void ComboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
         {
-            ComboBox comboBox = sender as ComboBox;
-
-            if (comboBox != null)
-            {
-                // Guarda la posición actual del cursor para evitar perderla
-                int cursorPosition = comboBox.SelectionStart;
-
-                // Convierte el texto a camelCase
-                string textoConvertido = ConvertirACamelCase.Convertir(comboBox.Text);
-
-                // Actualiza el texto del ComboBox
-                comboBox.Text = textoConvertido;
-
-                // Mueve el cursor al final del texto
-                comboBox.SelectionStart = comboBox.Text.Length;
-                comboBox.SelectionLength = 0; // Opcional, para asegurarse de que no haya selección activa
-            }
+            comboBox_DeptoJudicial.TextValue = ConvertirACamelCase.Convertir(comboBox_DeptoJudicial.TextValue);
+            comboBox_DeptoJudicial.SelectionStart = comboBox_DeptoJudicial.TextValue.Length;
             ActualizarEstado();
         }
 
@@ -1250,8 +1238,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             botonDeslizable_Not247.ValidarCampos = () =>
             {
                 // Validar campos completos
-                if (!ValidarControlesCompletosEnPaneles())
-                {
+                if (!ValidarControlesCompletosEnPaneles()) //verifica que esten los campos de datos instruccion completos 
+                {                                          // pero como el btn solo se desbloquea si estan completos, no se usa
                     // No están completos: mostrar mensaje de advertencia
                     MensajeGeneral.Mostrar(
                         "Debe completar la totalidad de los campos para crear la NOTIFICACIÓN de Art. 247 C.P.P.",
@@ -1321,35 +1309,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar los paneles uno por uno
             bool camposIncompletos = false;
 
-            camposIncompletos |= !VerificarPanelCompleto(panel_Ipp);
-            camposIncompletos |= !VerificarPanelCompleto(panel_Caratula);
-            camposIncompletos |= !VerificarPanelCompleto(panel_Victima);
-            camposIncompletos |= !VerificarPanelCompleto(panel_Imputado);
-            camposIncompletos |= !VerificarPanelCompleto(panel_Instruccion);
+            camposIncompletos |= !VerificarCamposEnPanel(panel_Ipp);
+            camposIncompletos |= !VerificarCamposEnPanel(panel_Caratula);
+            camposIncompletos |= !VerificarCamposEnPanel(panel_Victima);
+            camposIncompletos |= !VerificarCamposEnPanel(panel_Imputado);
+            camposIncompletos |= !VerificarCamposEnPanel(panel_Instruccion);
             botonDeslizable_Not247.IsOn = true;
             return !camposIncompletos;// Devuelve verdadero si todos los campos están completos
 
         }
-        private static bool VerificarPanelCompleto(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                // Verificar si el control es un TextBox y está vacío
-                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    return false; // Campo incompleto
-                }
-
-                // Verificar si el control es un ComboBox y no tiene un elemento seleccionado
-                if (control is ComboBox comboBox && string.IsNullOrWhiteSpace(comboBox.Text))
-                {
-                    return false; // Campo incompleto si el texto está vacío
-                }
-
-
-            }
-            return true; // Todos los campos en el panel están completos
-        }
+      
         
         /// <summary>
         /// para que muestre mensaje de advertencia previo cerrar formulario
@@ -1373,6 +1342,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
+
+        #region CONTROL FECHA AUDIENCIA/PERICIA
         private void Fecha_Audiencia(object sender, EventArgs e)
         {
             if (sender is TimePickerPersonalizado control)
@@ -1473,6 +1444,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
 
         }
+
+        #endregion
+
+
 
     }
 }

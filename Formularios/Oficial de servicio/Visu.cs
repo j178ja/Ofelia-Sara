@@ -905,7 +905,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     panel_DatosEspecificos.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
                     //        AjustarTamanoFormulario();
                    
-                    LimpiarFormulario.Limpiar(panel_Descripcion);
+                    LimpiarFormulario.Limpiar(panel_Descripcion); //limpia la descripcion de la imagen
+                    LimpiarFormulario.Limpiar(panel_DatosEspecificos); //limpias los conrtoles de datos de vehiculo
                    
                    
 
@@ -1154,29 +1155,29 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
         #region VALIDAR PANELES Y CONTROLES
-        private static void ValidarPanel(Control panel, PictureBox pictureBox, Label label, Func<bool> validarCampos)
-        {
-            bool camposValidos = validarCampos();
+        //private static void ValidarPanel(Control panel, PictureBox pictureBox, Label label, Func<bool> validarCampos)
+        //{
+        //    bool camposValidos = validarCampos();
 
-            if (camposValidos)
-            {
-                pictureBox.Image = Properties.Resources.verificacion_exitosa;
-                label.BackColor = Color.FromArgb(4, 200, 0);
-            }
-            else
-            {
-                pictureBox.Image = Properties.Resources.Advertencia_Faltante;
-                label.BackColor = Color.FromArgb(0, 192, 192);
-            }
+        //    if (camposValidos)
+        //    {
+        //        pictureBox.Image = Properties.Resources.verificacion_exitosa;
+        //        label.BackColor = Color.FromArgb(4, 200, 0);
+        //    }
+        //    else|
+        //    {
+        //        pictureBox.Image = Properties.Resources.Advertencia_Faltante;
+        //        label.BackColor = Color.FromArgb(0, 192, 192);
+        //    }
 
-            pictureBox.Location = new System.Drawing.Point(
-                label.Right + 5,
-                label.Top + (label.Height - pictureBox.Height) / 2
-            );
+        //    pictureBox.Location = new System.Drawing.Point(
+        //        label.Right + 5,
+        //        label.Top + (label.Height - pictureBox.Height) / 2
+        //    );
 
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.Visible = true;
-        }
+        //    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        //    pictureBox.Visible = true;
+        //}
 
         /// <summary>
         /// METODO PARA VALIDAR DATOS DE LOS PANELES
@@ -1250,60 +1251,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true;
         }
 
-        private static bool VerificarCamposEnPanel(Control parentControl)
-        {
-            foreach (Control control in parentControl.Controls)
-            {
-                // Si el control es un Panel, llamamos recursivamente al método
-                if (control is Panel || control is GroupBox)
-                {
-                    if (!VerificarCamposEnPanel(control)) // Recursión
-                    {
-                        return false;
-                    }
-                }
-                // Verificar CustomTextBox
-                if (control is CustomTextBox customTextBox)
-                {
-                    if (string.IsNullOrWhiteSpace(customTextBox.TextValue)) // Usa TextValue si es la propiedad correcta
-                    {
-                        return false;
-                    }
-                }
-
-                // Verificar CustomComboBox
-                if (control is CustomComboBox customComboBox)
-                {
-                    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
-                    {
-                        return false;
-                    }
-                }
-
-                // Verificar RichTextBox
-                if (control is RichTextBox richTextBox)
-                {
-                    int minimoCaracteres = 20; // Define el mínimo de caracteres requeridos
-                    string textoIngresado = richTextBox.Text.Trim(); // Eliminar espacios en blanco iniciales y finales
-
-                    if (string.IsNullOrWhiteSpace(textoIngresado) || textoIngresado.Length < minimoCaracteres)
-                    {
-                        return false;
-                    }
-                }
-
-                    // Verificar PictureBox
-                    if (control is PictureBox pictureBox)
-                {
-                    // Verificar si no hay imagen o si la imagen es la predeterminada
-                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
-                    {
-                        return false; // Campo PictureBox sin imagen válida
-                    }
-                }
-            }
-            return true; // Todos los campos están completos
-        }
+    
 
         /// <summary>
         /// METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL

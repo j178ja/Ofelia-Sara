@@ -1093,7 +1093,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_CheckCargo.Location = new Point(456, 44);
             pictureBox_CheckCargo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox_CheckCargo.Name = "pictureBox_CheckCargo";
-            pictureBox_CheckCargo.Size = new Size(30, 32);
+            pictureBox_CheckCargo.Size = new Size(30, 30);
             pictureBox_CheckCargo.TabIndex = 44;
             pictureBox_CheckCargo.TabStop = false;
             pictureBox_CheckCargo.Click += CheckPickture_Click;

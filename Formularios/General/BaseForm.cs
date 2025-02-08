@@ -371,7 +371,120 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
+        #region DATOS IPP
 
+        /// <summary>
+        /// CARGAR UN LISTADO DE AÑOS DESDE EL ACTUAL
+        /// </summary>
+        /// <param name="customComboBox"></param>
+        public static void CargarAño(CustomComboBox customComboBox)
+        {
+            customComboBox.Items.Clear(); // Limpia la lista antes de agregar nuevos valores
+            int anioActual = DateTime.Now.Year;
+
+            for (int i = 0; i <= 5; i++) // Desde el año actual hasta los últimos 5 años
+            {
+                int ultimosDosDigitos = (anioActual - i) % 100;
+                customComboBox.Items.Add(ultimosDosDigitos.ToString("D2")); // Agrega con dos dígitos
+            }
+        }
+        #endregion
+
+        #region VERIFICACION EN PANEL
+
+        /// <summary>
+        /// VERIFICA QUE TODOS LOS CAMPOS CONTENGAN ELEMENTOS
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <returns></returns>
+        public static bool VerificarCamposEnPanel(Control parentControl)
+        {
+            foreach (Control control in parentControl.Controls)
+            {
+                // Si el control es un Panel, llamamos recursivamente al método
+                if (control is Panel || control is GroupBox)
+                {
+                    if (!VerificarCamposEnPanel(control)) // Recursión
+                    {
+                        return false;
+                    }
+                }
+                // Verificar CustomTextBox
+                if (control is CustomTextBox customTextBox)
+                {
+                    if (string.IsNullOrWhiteSpace(customTextBox.TextValue)) // Usa TextValue si es la propiedad correcta
+                    {
+                        return false;
+                    }
+                }
+
+                // Verificar CustomComboBox
+                if (control is CustomComboBox customComboBox)
+                {
+                    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
+                    {
+                        return false;
+                    }
+                }
+
+                // Verificar RichTextBox
+                if (control is RichTextBox richTextBox)
+                {
+                    int minimoCaracteres = 20; // Define el mínimo de caracteres requeridos
+                    string textoIngresado = richTextBox.Text.Trim(); // Eliminar espacios en blanco iniciales y finales
+
+                    if (string.IsNullOrWhiteSpace(textoIngresado) || textoIngresado.Length < minimoCaracteres)
+                    {
+                        return false;
+                    }
+                }
+
+                // Verificar PictureBox
+                if (control is PictureBox pictureBox)
+                {
+                    // Verificar si no hay imagen o si la imagen es la predeterminada
+                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
+                    {
+                        return false; // Campo PictureBox sin imagen válida
+                    }
+                }
+            }
+            return true; // Todos los campos están completos
+        }
+
+
+
+        /// <summary>
+        /// CAMBIA IMAGEN DE CONFIRMACION Y COLOR DE LABEL
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="pictureBox"></param>
+        /// <param name="label"></param>
+        /// <param name="validarCampos"></param>
+        public static void ValidarPanel(Control panel, PictureBox pictureBox, Label label, Func<bool> validarCampos)
+        {
+            bool camposValidos = validarCampos();
+
+            if (camposValidos)
+            {
+                pictureBox.Image = Properties.Resources.verificacion_exitosa;
+                label.BackColor = Color.FromArgb(4, 200, 0);
+            }
+            else
+            {
+                pictureBox.Image = Properties.Resources.Advertencia_Faltante;
+                label.BackColor = Color.FromArgb(0, 192, 192);
+            }
+
+            pictureBox.Location = new System.Drawing.Point(
+                label.Right + 5,
+                label.Top + (label.Height - pictureBox.Height) / 2
+            );
+
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Visible = true;
+        }
+        #endregion
     }
 }
 

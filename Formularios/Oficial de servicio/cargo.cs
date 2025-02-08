@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 
@@ -53,6 +54,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Descripcion.Visible = true;
 
             AjustarTamanoFormulario();//para cargar formulario con tamaño ajustado
+
+
         }
         #endregion
 
@@ -70,6 +73,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.TextValue = ipp2;
             textBox_NumeroIpp.TextValue = numeroIpp;
             comboBox_Ipp4.TextValue = ipp4;
+            comboBox_Año.TextValue = ipp4;
             textBox_Caratula.TextValue = caratula;
             textBox_Victima.TextValue = victima;
             textBox_Imputado.TextValue = imputado;
@@ -81,7 +85,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.TextValue = dependencia;
 
         }
-        //-------FIN SOBRECARGA--------------------------------
+
 
         #region LOAD
         private void Cargo_Load(object sender, EventArgs e)
@@ -113,7 +117,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
             MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-             Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
+            CargarAño(comboBox_Ipp4);
+            CargarAño(comboBox_Año);
+
+            Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -158,7 +165,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
         }
         #endregion
-       
+
         private void BotonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
         {
             try
@@ -266,7 +273,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Asegura que el cursor esté en textBox
             textBox_NumeroCargo.Focus();
         }
-      
+
         private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
         {
             if (sender is CustomTextBox customtextBox)
@@ -352,7 +359,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
-      
+
         private void InicializarComboBoxSECRETARIO()
         {
             List<SecretarioJson> secretarios = SecretarioManager.ObtenerSecretarios();
@@ -368,7 +375,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Instructor.DisplayMember = "DescripcionCompleta";
             comboBox_Instructor.SelectedIndex = -1;
         }
-      
+
         private void InicializarComboBoxDEPENDENCIAS()
         {
             List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
@@ -401,9 +408,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();
 
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); 
+            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
-     
+
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -454,7 +461,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (string.IsNullOrWhiteSpace(control.Text))
             {
                 // Si el campo está vacío, se establece un error en el control y se muestra el PictureBoxError
-             //   SetError(control, mensajeError);
+                //   SetError(control, mensajeError);
                 return false;
             }
 
@@ -463,7 +470,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true;
         }
 
-        
+
         /// <summary>
         /// MENSAJE CONFIRMACION AL CIERRE
         /// </summary>
@@ -582,7 +589,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-       
+
         /// <summary>
         /// Método reutilizable para completar con ceros
         /// </summary>
@@ -619,7 +626,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             e.Cancel = true;
         }
 
-        
+
         /// <summary>
         /// Validar datos previo impresion 
         /// </summary>
@@ -689,8 +696,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true; // Indica que la validación fue exitosa
         }
 
-   
-        
+
+
         /// <summary>
         /// METODO PARA OBTENER DATOS DEL FORMULARIO
         /// </summary>
@@ -720,11 +727,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
             datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
-             datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
+            datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
         }
-     
+
         private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
             // Llamar al método de validación
@@ -819,7 +826,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     panelExpandido_Instruccion = false; //PANEL CONTRAIDO
 
                     // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
+                    // Aplicar borde neón para el estado contraído
+                    bool camposCompletos = VerificarCamposEnPanel(panel_DatosInstruccion); // Método personalizado para verificar campos
+                    panelConNeon.CambiarEstado(true, camposCompletos);
 
                     // Cambiar la posición y el padre del botón al panel_DatosVehiculo
                     btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
@@ -924,10 +933,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Ajustar la posición del pictureBox al lado del label
-                pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
-                label_DatosInstruccion.Right + 5, // A la derecha del label con un margen de 5 px
-                label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_PanelInstruccion.Height) / 2 // Centrado verticalmente
-            );
+            pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
+            label_DatosInstruccion.Right + 5, // A la derecha del label con un margen de 5 px
+            label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_PanelInstruccion.Height) / 2 // Centrado verticalmente
+        );
 
             // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
             pictureBox_PanelInstruccion.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -955,7 +964,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     panelExpandido_Descripcion = false;
 
                     // Aplicar borde neón para el estado contraído
-                    bool camposCompletos = VerificarCamposEnPanel(panelConNeon); // Método personalizado para verificar campos
+                    bool camposCompletos = VerificarCamposEnPanel(panel_Descripcion); // Método personalizado para verificar campos
                     panelConNeon.CambiarEstado(true, camposCompletos);
 
                     foreach (Control control in panelConNeon.Controls)
@@ -993,74 +1002,60 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         }
 
-        private static bool VerificarCamposEnPanel(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                // Verificar TextBox
-                if (control is CustomTextBox customtextBox && string.IsNullOrWhiteSpace(customtextBox.TextValue))
-                {
-                    return false; // Campo TextBox incompleto
-                }
 
-                // Verificar ComboBox
-                if (control is CustomComboBox customcomboBox && customcomboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customcomboBox.TextValue))
-                {
-                    return false; // Campo ComboBox incompleto
-                }
 
-                // Verificar RichTextBox
-                if (control is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
-                {
-                    return false; // Campo RichTextBox incompleto
-                }
 
-                // Verificar PictureBox
-                if (control is PictureBox pictureBox)
-                {
-                    // Verificar si no hay imagen o si la imagen es la predeterminada
-                    if (pictureBox.Image == null || pictureBox.Image == Properties.Resources.agregar_imagen)
-                    {
-                        return false; // Campo PictureBox sin imagen válida
-                    }
-                }
-            }
-            return true; // Todos los campos están completos
-        }
-
-        
         /// <summary>
         /// METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
         /// </summary>
+        //private void ValidarPanelDescripcion()
+        //{
+        //    bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
+
+        //    if (camposValidos)
+        //    {
+        //        pictureBox_Descripcion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
+        //        pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo transparente
+        //        label_Descripcion.BackColor = Color.FromArgb(4, 200, 0); // Resalta con color verde más brillante que el original
+        //        panel_ControlesInferiores.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        pictureBox_Descripcion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
+        //        pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo de imagen transparente
+        //        label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
+        //        panel_ControlesInferiores.Visible = false;
+        //    }
+        //    // Ajustar la posición del pictureBox al lado del label
+        //    pictureBox_Descripcion.Location = new System.Drawing.Point(
+        //        label_Descripcion.Right + 5, // A la derecha del label con un margen de 5 px
+        //        label_Descripcion.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2 // Centrado verticalmente
+        //    );
+
+        //    // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
+        //    pictureBox_Descripcion.SizeMode = PictureBoxSizeMode.StretchImage;
+
+        //    // Asegurarse de que el pictureBox sea visible
+        //    pictureBox_Descripcion.Visible = true;
+        //    AjustarTamanoFormulario();
+        //}
+
+        /// <summary>
+        /// VERIFICA MINIMO DE TEXTO EN DESCRIPCION
+        /// </summary>
         private void ValidarPanelDescripcion()
         {
-            bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
+            int minimoCaracteres = 20; // Define el mínimo de caracteres requeridos
+            bool descripcionValida = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text)
+                                     && richTextBox_Descripcion.Text.Trim().Length >= minimoCaracteres;
 
-            if (camposValidos)
-            {
-                pictureBox_Descripcion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-                pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo transparente
-                label_Descripcion.BackColor = Color.FromArgb(4, 200, 0); // Resalta con color verde más brillante que el original
-                panel_ControlesInferiores.Visible = true;
-            }
-            else
-            {
-                pictureBox_Descripcion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-                pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo de imagen transparente
-                label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
-                panel_ControlesInferiores.Visible = false;
-            }
-            // Ajustar la posición del pictureBox al lado del label
-            pictureBox_Descripcion.Location = new System.Drawing.Point(
-                label_Descripcion.Right + 5, // A la derecha del label con un margen de 5 px
-                label_Descripcion.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2 // Centrado verticalmente
-            );
+            // Aplicar validación con la nueva condición
+            ValidarPanel(richTextBox_Descripcion, pictureBox_Descripcion, label_Descripcion, () => descripcionValida);
 
-            // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-            pictureBox_Descripcion.SizeMode = PictureBoxSizeMode.StretchImage;
+            // Ocultar controles inferiores si la descripción es insuficiente
+            panel_ControlesInferiores.Visible = descripcionValida;
 
-            // Asegurarse de que el pictureBox sea visible
-            pictureBox_Descripcion.Visible = true;
+            // Ajustar el tamaño del formulario solo si es necesario
             AjustarTamanoFormulario();
         }
 
@@ -1120,5 +1115,51 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
+        /// <summary>
+        /// COLOCA MAYUSCULA AL INICIO Y DESPUES DE PUNTO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RichTextBox_Descripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is RichTextBox rtb && !string.IsNullOrWhiteSpace(rtb.Text))
+            {
+                int cursorPos = rtb.SelectionStart; // Guardar la posición del cursor
+
+                // Convertir a mayúscula el primer carácter y después de un punto "."
+                string texto = rtb.Text;
+                StringBuilder textoFormateado = new StringBuilder();
+
+                bool convertirSiguiente = true; // Indica si la siguiente letra debe ser mayúscula
+
+                foreach (char c in texto)
+                {
+                    if (convertirSiguiente && char.IsLetter(c))
+                    {
+                        textoFormateado.Append(char.ToUpper(c));
+                        convertirSiguiente = false;
+                    }
+                    else
+                    {
+                        textoFormateado.Append(c);
+                    }
+
+                    // Si el carácter es un punto, la siguiente letra debe ser mayúscula
+                    if (c == '.')
+                    {
+                        convertirSiguiente = true;
+                    }
+                }
+
+                // Evitar bucle infinito y restaurar la posición del cursor
+                if (rtb.Text != textoFormateado.ToString())
+                {
+                    rtb.Text = textoFormateado.ToString();
+                    rtb.SelectionStart = Math.Min(cursorPos, rtb.Text.Length); // Restaurar la posición del cursor
+                }
+            }
+        }
+
+        
     }
 }
