@@ -29,8 +29,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Descripcion = true;// 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-
-
+       
         #endregion
 
         #region CONSTRUCTOR
@@ -1161,6 +1160,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     rtb.Text = textoFormateado.ToString();
                     rtb.SelectionStart = Math.Min(cursorPos, rtb.Text.Length); // Restaurar la posición del cursor
+                    CompartirTexto.Descripcion = richTextBox_Descripcion.Text;
                 }
             }
         }

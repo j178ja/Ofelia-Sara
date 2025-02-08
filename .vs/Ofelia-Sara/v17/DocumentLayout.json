@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\formularios\\oficial de servicio\\visu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\formularios\\oficial de servicio\\visu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\visu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -15,12 +11,20 @@
       "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\visu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\controles\\general\\botondeslizable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\general\\botondeslizable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\oficial de servicio\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\formularios\\general\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:formularios\\general\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|c:\\users\\jbest\\source\\repos\\ofelia-sara\\controles\\general\\botondeslizable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6248F15D-288E-4295-8CBD-334E114E5C60}|Ofelia-Sara.csproj|solutionrelative:controles\\general\\botondeslizable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Visu.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs",
+              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\Visu.cs",
+              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\Visu.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T13:19:16.687Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BaseForm.cs",
+              "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\General\\BaseForm.cs",
+              "RelativeDocumentMoniker": "Formularios\\General\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\General\\BaseForm.cs",
+              "RelativeToolTip": "Formularios\\General\\BaseForm.cs",
+              "ViewState": "AgIAAGkBAAAAAAAAAAAYwOwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T12:57:57.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "BotonDeslizable.cs",
               "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Controles\\General\\BotonDeslizable.cs",
               "RelativeDocumentMoniker": "Controles\\General\\BotonDeslizable.cs",
@@ -54,30 +83,29 @@
               "RelativeToolTip": "Controles\\General\\BotonDeslizable.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T03:19:03.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-08T03:19:03.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "cargo.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs",
               "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\cargo.cs",
-              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\cargo.cs [Dise\u00F1o]*",
+              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\cargo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T03:08:33.996Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "cargo.cs",
               "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs",
               "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\cargo.cs",
-              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\cargo.cs*",
-              "ViewState": "AgIAAGAEAAAAAAAAAAAAAJMEAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\cargo.cs",
+              "RelativeToolTip": "Formularios\\Oficial de servicio\\cargo.cs",
+              "ViewState": "AgIAABMDAAAAAAAAAADgvyIDAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T02:21:55.835Z",
               "EditorCaption": ""
@@ -85,24 +113,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Visu.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs",
-              "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\Visu.cs",
-              "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Formularios\\Oficial de servicio\\Visu.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:39.344Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Visu.cs",
               "DocumentMoniker": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs",
               "RelativeDocumentMoniker": "Formularios\\Oficial de servicio\\Visu.cs",
               "ToolTip": "C:\\Users\\jbest\\source\\repos\\Ofelia-Sara\\Formularios\\Oficial de servicio\\Visu.cs*",
               "RelativeToolTip": "Formularios\\Oficial de servicio\\Visu.cs*",
-              "ViewState": "AgIAABsFAAAAAAAAAAAkwCkFAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANAFAAAAAAAAAAAAAOEFAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-04T02:34:26.248Z",
               "EditorCaption": ""

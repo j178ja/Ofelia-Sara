@@ -86,6 +86,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Descripcion.Visible = true;
 
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
+
+            pictureBox_CheckLegajoVehicular.Visible = false;
         }
         #endregion
 
@@ -908,16 +910,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     panel_DatosVehiculo.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
                     panel_DatosEspecificos.Visible = radioButton_Automovil.Checked || radioButton_Motovehiculo.Checked;
                     //        AjustarTamanoFormulario();
-                   
+
                     LimpiarFormulario.Limpiar(panel_Descripcion); //limpia la descripcion de la imagen
                     LimpiarFormulario.Limpiar(panel_DatosEspecificos); //limpias los conrtoles de datos de vehiculo
-                   
-                   
+
+
 
                     // Cambia la imagen y el color de fondo del PictureBox correspondiente
                     if (radioButton == radioButton_Automovil)
                     {
-                        
+
                         ApplyRoundedCorners(pictureBox_Automovil, 6, true, false, false, true); // Solo esquinas izquierdas
                         ResetPictureBoxStyles(); // Restaura los estilos por defecto de los PictureBox
                         pictureBox_Automovil.BackColor = Color.FromArgb(4, 234, 0);
@@ -925,7 +927,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else if (radioButton == radioButton_Motovehiculo)
                     {
-                        
+
                         ApplyRoundedCorners(pictureBox_Motovehiculo, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Motovehiculo.BackColor = Color.FromArgb(4, 234, 0);
@@ -933,7 +935,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     }
                     else if (radioButton == radioButton_Objeto)
                     {
-                        
+
                         ApplyRoundedCorners(pictureBox_Objeto, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Objeto.BackColor = Color.FromArgb(4, 234, 0);
@@ -1255,7 +1257,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return true;
         }
 
-    
+
 
         /// <summary>
         /// METODO PARA VALIDAR LOS CONTROLES DENTRO DE UN PANEL
@@ -1311,7 +1313,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
                     }
-                    else 
+                    else
                     {
                         // En Visu.cs, dentro del código donde accedes a Cargo
                         if (formularioCargo != null)
@@ -1483,10 +1485,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 {
                     rtb.Text = textoFormateado.ToString();
                     rtb.SelectionStart = Math.Min(cursorPos, rtb.Text.Length); // Restaurar la posición del cursor
+                    CompartirTexto.Descripcion = richTextBox_Descripcion.Text;
                 }
             }
         }
 
+
+        private void CheckBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verificar si el CheckBox está marcado
+            if (checkBox_LegajoVehicular.Checked)
+            {
+               
+                pictureBox_CheckLegajoVehicular.Visible = true;
+                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
+                    pictureBox_CheckLegajoVehicular.Location = new Point(
+                    checkBox_LegajoVehicular.Location.X,
+                    checkBox_LegajoVehicular.Location.Y - 8);
+                checkBox_LegajoVehicular.Visible = false;
+                pictureBox_CheckLegajoVehicular.BringToFront();
+            }
+
+        }
+
+      
     }
 
 }

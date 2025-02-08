@@ -485,6 +485,13 @@ namespace Ofelia_Sara.Formularios.General
             pictureBox.Visible = true;
         }
         #endregion
+
+        public static class CompartirTexto
+        {
+            public static string Descripcion { get; set; }
+        }
+
+
     }
 }
 
