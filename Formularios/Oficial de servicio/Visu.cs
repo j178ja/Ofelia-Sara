@@ -35,6 +35,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private int alturaOriginalPanel_Descripcion;
         private int alturaContraidaPanel = 30;
         private Label labelImagenes;// Para la imagen de carga completa en panel imagenes
+        private Cargo formularioCargo; //para cambiar el estado de btn deslizable en cargo
+
         #endregion
 
         #region CONSTRUCTOR
@@ -88,13 +90,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
         /// <summary>
-        /// SOBRECARGA PARA RECIBIR DATOS DE CARGO
+        /// SOBRECARGA PARA RECIBIR DATOS DE CARGO Y REFERENCIA AL FORMULARIO PADRE
         /// </summary>
-        public Visu(string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
-                 string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
-                 string instructor, string secretario, string dependencia)
+        public Visu(Cargo cargoReferencia, string ipp1, string ipp2, string numeroIpp, string ipp4, string caratula,
+                    string victima, string imputado, string fiscalia, string agenteFiscal, string localidad,
+                    string instructor, string secretario, string dependencia)
         {
             InitializeComponent();
+
+            // Guardar la referencia al formulario Cargo
+            formularioCargo = cargoReferencia;
 
             // Asignar los valores a los controles específicos del formulario
             comboBox_Ipp1.TextValue = ipp1;
@@ -104,13 +109,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.TextValue = caratula;
             textBox_Victima.TextValue = victima;
             textBox_Imputado.TextValue = imputado;
-            comboBox_Fiscalia.TextValue = fiscalia;  // Asignación al control
+            comboBox_Fiscalia.TextValue = fiscalia;
             comboBox_AgenteFiscal.TextValue = agenteFiscal;
             comboBox_Localidad.TextValue = localidad;
             comboBox_Instructor.TextValue = instructor;
             comboBox_Secretario.TextValue = secretario;
             comboBox_Dependencia.TextValue = dependencia;
-
         }
 
         #region LOAD
@@ -1306,6 +1310,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     if (result == DialogResult.No)
                     {
                         e.Cancel = true; // Cancelar el cierre del formulario
+                    }
+                    else 
+                    {
+                        // En Visu.cs, dentro del código donde accedes a Cargo
+                        if (formularioCargo != null)
+                        {
+                            // Cambiar el estado del botón
+                            formularioCargo.CambiarEstadoBotonDeslizable(false); // O true, según sea necesario
+                        }
+
                     }
                 }
             }

@@ -29,6 +29,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Descripcion = true;// 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+
+
         #endregion
 
         #region CONSTRUCTOR
@@ -43,7 +45,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
-            botonDeslizable_Visu.IsOnChanged += BotonDeslizable_Visu_IsOnChanged;
+           
 
             label_Descripcion.BringToFront();
             pictureBox_Descripcion.BringToFront();
@@ -90,6 +92,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void Cargo_Load(object sender, EventArgs e)
         {
+            botonDeslizable_Visu.IsOnChanged -= BotonDeslizable_Visu_IsOnChanged; 
+            botonDeslizable_Visu.IsOnChanged += BotonDeslizable_Visu_IsOnChanged; 
+
             this.FormClosing += BuscarPersonal_FormClosing;
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
@@ -166,7 +171,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         #endregion
 
-        private void BotonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
+        public void BotonDeslizable_Visu_IsOnChanged(object sender, EventArgs e)
         {
             try
             {
@@ -188,7 +193,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     string dependencia = comboBox_Dependencia.TextValue;
 
                     // Crear el formulario Visu con los datos recolectados
-                    Visu visu = new Visu(ipp1, ipp2, numeroIpp, ipp4, caratula, victima, imputado,
+                    Visu visu = new Visu(this, ipp1, ipp2, numeroIpp, ipp4, caratula, victima, imputado,
                                          fiscalia, agenteFiscal, localidad, instructor, secretario, dependencia);
 
                     // Guardar el formulario actual (Cargo) y su posición original
@@ -1160,6 +1165,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        
+
+        // Declaración privada del control
+        private BotonDeslizable botonDeslizable_VisuControl; // Renombrado para evitar conflicto
+
+
+        public void CambiarEstadoBotonDeslizable(bool estado)
+        {
+            botonDeslizable_Visu.IsOn = estado;
+            botonDeslizable_Visu.Invalidate();
+        }
+
+
+        public void SetBotonDeslizableVisu(BotonDeslizable control)
+        {
+            botonDeslizable_Visu = control;
+        }
+
+
     }
 }

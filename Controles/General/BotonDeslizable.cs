@@ -41,6 +41,7 @@ namespace Ofelia_Sara.Controles.General
                 {
                     isOn = value;
                     IsOnChanged?.Invoke(this, EventArgs.Empty); // Invocar evento de cambio
+                    if (isOn) IsOnChanged?.Invoke(this, EventArgs.Empty); // Dispara el evento solo cuando se activa
                     UpdateSliderRect();
                     Invalidate(); // Redibuja el control para reflejar el nuevo estado
                 }
@@ -63,25 +64,7 @@ namespace Ofelia_Sara.Controles.General
                 e.Graphics.FillPath(backgroundBrush, path);
             }
 
-            //// Dibujar el botón deslizable redondeado
-            //using (SolidBrush sliderBrush = new SolidBrush(Color.LightGray))
-            //{
-            //    e.Graphics.FillEllipse(sliderBrush, sliderRect);
-            //}
-
-            //// Si IsOn es true, dibujar un círculo azul dentro del slider
-            //if (isOn)
-            //{
-            //    float innerCircleSize = sliderRect.Width * 0.65f; // Tamaño del círculo interior
-            //    float innerX = sliderRect.X + (sliderRect.Width - innerCircleSize) / 2;
-            //    float innerY = sliderRect.Y + (sliderRect.Height - innerCircleSize) / 2;
-
-            //     using (SolidBrush innerBrush = new SolidBrush(System.Drawing.SystemColors.Highlight)) 
-
-            //    {
-            //        e.Graphics.FillEllipse(innerBrush, innerX, innerY, innerCircleSize, innerCircleSize);
-            //    }
-            //}
+          
             // Dibujar el botón deslizable redondeado
             using (SolidBrush sliderBrush = new SolidBrush(isOn ? Color.White : Color.LightGray))
             {
