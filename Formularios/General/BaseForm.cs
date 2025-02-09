@@ -50,7 +50,7 @@ namespace Ofelia_Sara.Formularios.General
             AjustarLabelEnPanel();// deberia traer los titulos al frente para que se vean completos
             InitializeComponent();
             InitializeFooterLinkLabel();
-            ConfigurarCheckBoxesConImagen();
+            //ConfigurarCheckBoxesConImagen();
         }
 
         /// <summary>
@@ -496,61 +496,61 @@ namespace Ofelia_Sara.Formularios.General
 
 
         #region CHECKBOX
-        protected void ConfigurarCheckBoxesConImagen()
-        {
-            foreach (var control in GetAllControls(this).OfType<CheckBox>())
-            {
-                AgregarImagenCheckBox(control);
-            }
-        }
+        //protected void ConfigurarCheckBoxesConImagen()
+        //{
+        //    foreach (var control in GetAllControls(this).OfType<CheckBox>())
+        //    {
+        //        AgregarImagenCheckBox(control);
+        //    }
+        //}
 
-        private void AgregarImagenCheckBox(CheckBox checkBox)
-        {
-            PictureBox pbCheck = new PictureBox
-            {
-                Size = new Size(24, 25),
-                Image = Properties.Resources.check_Personalizado,
-                SizeMode = PictureBoxSizeMode.Zoom,
-                Visible = false
-            };
+        //private void AgregarImagenCheckBox(CheckBox checkBox)
+        //{
+        //    PictureBox pbCheck = new PictureBox
+        //    {
+        //        Size = new Size(24, 25),
+        //        Image = Properties.Resources.check_Personalizado,
+        //        SizeMode = PictureBoxSizeMode.Zoom,
+        //        Visible = false
+        //    };
 
-            checkBox.Parent.Controls.Add(pbCheck);
+        //    checkBox.Parent.Controls.Add(pbCheck);
 
-            // Ajustar la posición al centro del CheckBox
-            pbCheck.Location = new Point(
-                checkBox.Left + (checkBox.Width - pbCheck.Width) / 2,
-                checkBox.Top + (checkBox.Height - pbCheck.Height) / 2
-            );
+        //    // Ajustar la posición al centro del CheckBox
+        //    pbCheck.Location = new Point(
+        //        checkBox.Left + (checkBox.Width - pbCheck.Width) / 2,
+        //        checkBox.Top + (checkBox.Height - pbCheck.Height) / 2
+        //    );
 
-            checkBox.CheckedChanged += (s, e) =>
-            {
-                pbCheck.Visible = checkBox.Checked;
-            };
+        //    checkBox.CheckedChanged += (s, e) =>
+        //    {
+        //        pbCheck.Visible = checkBox.Checked;
+        //    };
 
-            pbCheck.Click += (s, e) =>
-            {
-                pbCheck.Visible = false;
-                checkBox.Checked = false;
-            };
-        }
+        //    pbCheck.Click += (s, e) =>
+        //    {
+        //        pbCheck.Visible = false;
+        //        checkBox.Checked = false;
+        //    };
+        //}
 
-        private IEnumerable<Control> GetAllControls(Control parent)
-        {
-            foreach (Control control in parent.Controls)
-            {
-                yield return control;
-                foreach (var child in GetAllControls(control))
-                {
-                    yield return child;
-                }
-            }
-        }
+        //private IEnumerable<Control> GetAllControls(Control parent)
+        //{
+        //    foreach (Control control in parent.Controls)
+        //    {
+        //        yield return control;
+        //        foreach (var child in GetAllControls(control))
+        //        {
+        //            yield return child;
+        //        }
+        //    }
+        //}
 
         #endregion
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-            ConfigurarCheckBoxesConImagen();
+            //ConfigurarCheckBoxesConImagen();
         }
     }
 }

@@ -61,6 +61,12 @@ namespace Ofelia_Sara.Controles.General
 
             Invalidate(); // Redibuja el control
         }
+
+        /// <summary>
+        /// COMPORTAMIENTO CUANDO PIERDE EL FOCO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_LostFocus(object sender, EventArgs e)
         {
             isFocused = false;
@@ -129,6 +135,8 @@ namespace Ofelia_Sara.Controles.General
                 }
             }
         }
+
+
         #endregion
 
         #region PROPIEDADES PUBLICAS 
@@ -175,6 +183,9 @@ namespace Ofelia_Sara.Controles.General
             set => textBox.Text = value;
         }
 
+        /// <summary>
+        /// propiedad para indicar error/subrayado rojo
+        /// </summary>
         public bool ShowError
         {
             get => showError;
@@ -185,12 +196,18 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
+        /// <summary>
+        /// dar foco y activar subrayado azul
+        /// </summary>
         public Color FocusColor
         {
             get => focusColor;
             set => focusColor = value;
         }
 
+        /// <summary>
+        /// subrayado rojo
+        /// </summary>
         public Color ErrorColor
         {
             get => errorColor;
