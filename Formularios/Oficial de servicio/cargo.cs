@@ -91,6 +91,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void Cargo_Load(object sender, EventArgs e)
         {
+            textBox_Caratula.TextChanged += HabilitaBTN_Agregar_TextChanged;
+            textBox_Victima.TextChanged += HabilitaBTN_Agregar_TextChanged;
+            textBox_Imputado.TextChanged += HabilitaBTN_Agregar_TextChanged;
+
             botonDeslizable_Visu.IsOnChanged -= BotonDeslizable_Visu_IsOnChanged; 
             botonDeslizable_Visu.IsOnChanged += BotonDeslizable_Visu_IsOnChanged; 
 
@@ -285,7 +289,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 switch (customtextBox.Name)
                 {
                     case "textBox_Caratula":
-                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(customtextBox.TextValue);
+                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(customtextBox.InnerTextBox.Text);
                         break;
 
                     case "textBox_Victima":
@@ -792,6 +796,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        /// <summary>
+        /// DESELECCIONAR LEGAJO VEHICULAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
         {
             // Manejar lógica para pictureBox_CheckRatificacion
@@ -800,6 +809,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             checkBox_LegajoVehicular.Checked = false;
         }
 
+        /// <summary>
+        /// SELECCIONAR LEGAJO VEHICULAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
         {
             // Verificar si el CheckBox está marcado

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
@@ -49,9 +50,9 @@ namespace Ofelia_Sara.Formularios.General
             AjustarLabelEnPanel();// deberia traer los titulos al frente para que se vean completos
             InitializeComponent();
             InitializeFooterLinkLabel();
-           
+            ConfigurarCheckBoxesConImagen();
         }
-        
+
         /// <summary>
         /// Inicializa cursores personalizados.
         /// </summary>
@@ -80,7 +81,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-     
+
 
         /// <summary>
         /// Sobrecarga del método OnLoad para inicializar eventos y configuraciones adicionales.
@@ -111,21 +112,23 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // BaseForm
             // 
-            this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Name = "BaseForm";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            ClientSize = new Size(800, 600);
+            Name = "BaseForm";
+            Load += BaseForm_Load;
+            ResumeLayout(false);
         }
 
         /// <summary>
- /// METODO DIBUJAR FONDO DEGRADADO EN FORMULARIOS
- /// </summary>
- /// <param name="g"></param>
- /// <param name="width"></param>
- /// <param name="height"></param>
+        /// METODO DIBUJAR FONDO DEGRADADO EN FORMULARIOS
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         private static void DibujarFondoDegradado(Graphics g, int width, int height)
         {
             // Definir el centro del área de degradado
@@ -147,7 +150,7 @@ namespace Ofelia_Sara.Formularios.General
             // Llamar al método que dibuja el fondo degradado
             DibujarFondoDegradado(e.Graphics, width, height);
         }
-       
+
         /// <summary>
         ///  Método para cargar el ícono según el modo (diseñador o ejecución)
         /// </summary>
@@ -350,7 +353,7 @@ namespace Ofelia_Sara.Formularios.General
                 // Crear la instancia del mensaje
                 MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
 
-  
+
                 // Calcular la posición centrada respecto al formulario activo
                 int x = formularioActivo.Left + (formularioActivo.Width - mensajeAyuda.Width) / 2;
                 int y = formularioActivo.Top + (formularioActivo.Height - mensajeAyuda.Height) / 2;
@@ -365,7 +368,7 @@ namespace Ofelia_Sara.Formularios.General
             {
                 // Si no hay un ParentForm, usar un tamaño y posición por defecto
                 MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
-             
+
                 mensajeAyuda.ShowDialog();
             }
         }
@@ -492,6 +495,63 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
+        #region CHECKBOX
+        protected void ConfigurarCheckBoxesConImagen()
+        {
+            foreach (var control in GetAllControls(this).OfType<CheckBox>())
+            {
+                AgregarImagenCheckBox(control);
+            }
+        }
+
+        private void AgregarImagenCheckBox(CheckBox checkBox)
+        {
+            PictureBox pbCheck = new PictureBox
+            {
+                Size = new Size(24, 25),
+                Image = Properties.Resources.check_Personalizado,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Visible = false
+            };
+
+            checkBox.Parent.Controls.Add(pbCheck);
+
+            // Ajustar la posición al centro del CheckBox
+            pbCheck.Location = new Point(
+                checkBox.Left + (checkBox.Width - pbCheck.Width) / 2,
+                checkBox.Top + (checkBox.Height - pbCheck.Height) / 2
+            );
+
+            checkBox.CheckedChanged += (s, e) =>
+            {
+                pbCheck.Visible = checkBox.Checked;
+            };
+
+            pbCheck.Click += (s, e) =>
+            {
+                pbCheck.Visible = false;
+                checkBox.Checked = false;
+            };
+        }
+
+        private IEnumerable<Control> GetAllControls(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                yield return control;
+                foreach (var child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+        }
+
+        #endregion
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            ConfigurarCheckBoxesConImagen();
+        }
     }
 }
 

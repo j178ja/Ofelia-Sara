@@ -351,7 +351,6 @@
             botonDeslizable_Visu.Size = new System.Drawing.Size(47, 22);
             botonDeslizable_Visu.TabIndex = 74;
             botonDeslizable_Visu.ValidarCampos = null;
-           
             // 
             // label_Not247
             // 
@@ -368,7 +367,7 @@
             pictureBox_CheckLegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             pictureBox_CheckLegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox_CheckLegajoVehicular.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(205, 3);
+            pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(409, 3);
             pictureBox_CheckLegajoVehicular.Name = "pictureBox_CheckLegajoVehicular";
             pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 28);
             pictureBox_CheckLegajoVehicular.TabIndex = 72;

@@ -321,7 +321,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(107, 157);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(80, 18);
+            label_Localidad.Size = new System.Drawing.Size(70, 15);
             label_Localidad.TabIndex = 82;
             label_Localidad.Text = "Localidad";
             // 
@@ -467,7 +467,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Dependencia.Location = new System.Drawing.Point(75, 239);
             lbl_Dependencia.Name = "lbl_Dependencia";
-            lbl_Dependencia.Size = new System.Drawing.Size(126, 18);
+            lbl_Dependencia.Size = new System.Drawing.Size(104, 15);
             lbl_Dependencia.TabIndex = 80;
             lbl_Dependencia.Text = "DEPENDENCIA";
             // 
@@ -511,7 +511,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Fecha.Location = new System.Drawing.Point(126, 265);
             lbl_Fecha.Name = "lbl_Fecha";
-            lbl_Fecha.Size = new System.Drawing.Size(63, 18);
+            lbl_Fecha.Size = new System.Drawing.Size(51, 15);
             lbl_Fecha.TabIndex = 79;
             lbl_Fecha.Text = "FECHA";
             // 
@@ -530,7 +530,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Secretario.Location = new System.Drawing.Point(86, 212);
             lbl_Secretario.Name = "lbl_Secretario";
-            lbl_Secretario.Size = new System.Drawing.Size(114, 18);
+            lbl_Secretario.Size = new System.Drawing.Size(93, 15);
             lbl_Secretario.TabIndex = 78;
             lbl_Secretario.Text = "SECRETARIO";
             // 
@@ -540,7 +540,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label7.Location = new System.Drawing.Point(82, 183);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(116, 18);
+            label7.Size = new System.Drawing.Size(95, 15);
             label7.TabIndex = 77;
             label7.Text = "INSTRUCTOR";
             // 
@@ -550,7 +550,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Ufid.Location = new System.Drawing.Point(126, 132);
             lbl_Ufid.Name = "lbl_Ufid";
-            lbl_Ufid.Size = new System.Drawing.Size(61, 18);
+            lbl_Ufid.Size = new System.Drawing.Size(51, 15);
             lbl_Ufid.TabIndex = 76;
             lbl_Ufid.Text = "U.F.I.D";
             // 
@@ -560,7 +560,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Dr.Location = new System.Drawing.Point(281, 133);
             lbl_Dr.Name = "lbl_Dr";
-            lbl_Dr.Size = new System.Drawing.Size(31, 18);
+            lbl_Dr.Size = new System.Drawing.Size(26, 15);
             lbl_Dr.TabIndex = 75;
             lbl_Dr.Text = "Dr.";
             // 
@@ -682,7 +682,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_00.AutoSize = true;
             lbl_00.Location = new System.Drawing.Point(361, 7);
             lbl_00.Name = "lbl_00";
-            lbl_00.Size = new System.Drawing.Size(31, 20);
+            lbl_00.Size = new System.Drawing.Size(24, 15);
             lbl_00.TabIndex = 26;
             lbl_00.Text = "/00";
             // 
@@ -728,7 +728,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Ipp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Ipp.Location = new System.Drawing.Point(59, 5);
             lbl_Ipp.Name = "lbl_Ipp";
-            lbl_Ipp.Size = new System.Drawing.Size(49, 18);
+            lbl_Ipp.Size = new System.Drawing.Size(41, 15);
             lbl_Ipp.TabIndex = 3;
             lbl_Ipp.Text = "l.P.P.";
             // 
@@ -773,7 +773,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Caratula.Location = new System.Drawing.Point(7, 4);
             lbl_Caratula.Name = "lbl_Caratula";
-            lbl_Caratula.Size = new System.Drawing.Size(93, 18);
+            lbl_Caratula.Size = new System.Drawing.Size(76, 15);
             lbl_Caratula.TabIndex = 4;
             lbl_Caratula.Text = "CARATULA";
             // 
@@ -835,7 +835,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Imputado.Location = new System.Drawing.Point(42, 4);
             lbl_Imputado.Name = "lbl_Imputado";
-            lbl_Imputado.Size = new System.Drawing.Size(94, 18);
+            lbl_Imputado.Size = new System.Drawing.Size(78, 15);
             lbl_Imputado.TabIndex = 6;
             lbl_Imputado.Text = "lMPUTADO";
             // 
@@ -894,7 +894,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Victima.Location = new System.Drawing.Point(61, 4);
             lbl_Victima.Name = "lbl_Victima";
-            lbl_Victima.Size = new System.Drawing.Size(72, 18);
+            lbl_Victima.Size = new System.Drawing.Size(60, 15);
             lbl_Victima.TabIndex = 5;
             lbl_Victima.Text = "VICTIMA";
             // 
@@ -921,7 +921,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosInstruccion.Location = new System.Drawing.Point(23, 1);
             label_DatosInstruccion.Name = "label_DatosInstruccion";
             label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            label_DatosInstruccion.Size = new System.Drawing.Size(317, 30);
+            label_DatosInstruccion.Size = new System.Drawing.Size(260, 25);
             label_DatosInstruccion.TabIndex = 32;
             label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCIÓN";
             // 
@@ -982,17 +982,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_DatosEspecificos.Size = new System.Drawing.Size(596, 120);
             panel_DatosEspecificos.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_DatosEspecificos.TabIndex = 86;
+            panel_DatosEspecificos.Click += PictureBox_CheckLegajoVehicular_Click;
             // 
             // pictureBox_CheckLegajoVehicular
             // 
+            pictureBox_CheckLegajoVehicular.BackgroundImage = Properties.Resources.check_Personalizado;
             pictureBox_CheckLegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             pictureBox_CheckLegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox_CheckLegajoVehicular.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(525, 91);
+            pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(536, 91);
             pictureBox_CheckLegajoVehicular.Name = "pictureBox_CheckLegajoVehicular";
-            pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 25);
+            pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(24, 25);
             pictureBox_CheckLegajoVehicular.TabIndex = 93;
             pictureBox_CheckLegajoVehicular.TabStop = false;
+            pictureBox_CheckLegajoVehicular.Visible = false;
+            pictureBox_CheckLegajoVehicular.Click += PictureBox_CheckLegajoVehicular_Click;
             // 
             // checkBox_LegajoVehicular
             // 
@@ -1001,10 +1004,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             checkBox_LegajoVehicular.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             checkBox_LegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
             checkBox_LegajoVehicular.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
-            checkBox_LegajoVehicular.Location = new System.Drawing.Point(533, 97);
+            checkBox_LegajoVehicular.Location = new System.Drawing.Point(536, 100);
             checkBox_LegajoVehicular.Name = "checkBox_LegajoVehicular";
-            checkBox_LegajoVehicular.Size = new System.Drawing.Size(18, 17);
-            checkBox_LegajoVehicular.TabIndex = 92;
+            checkBox_LegajoVehicular.Size = new System.Drawing.Size(15, 14);
+            checkBox_LegajoVehicular.TabIndex = 91;
             checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
             checkBox_LegajoVehicular.CheckedChanged += CheckBox_LegajoVehicular_CheckedChanged;
@@ -1013,10 +1016,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             label_LegajoVehicular.AutoSize = true;
             label_LegajoVehicular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_LegajoVehicular.Location = new System.Drawing.Point(316, 94);
+            label_LegajoVehicular.Location = new System.Drawing.Point(364, 98);
             label_LegajoVehicular.Name = "label_LegajoVehicular";
-            label_LegajoVehicular.Size = new System.Drawing.Size(211, 20);
-            label_LegajoVehicular.TabIndex = 91;
+            label_LegajoVehicular.Size = new System.Drawing.Size(166, 16);
+            label_LegajoVehicular.TabIndex = 92;
             label_LegajoVehicular.Text = "LEGAJO VEHICULAR   ";
             label_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1060,7 +1063,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.Location = new System.Drawing.Point(60, 93);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(53, 18);
+            label1.Size = new System.Drawing.Size(43, 15);
             label1.TabIndex = 90;
             label1.Text = "AÑO :";
             // 
@@ -1197,7 +1200,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Marca.Location = new System.Drawing.Point(42, 18);
             label_Marca.Name = "label_Marca";
-            label_Marca.Size = new System.Drawing.Size(76, 18);
+            label_Marca.Size = new System.Drawing.Size(62, 15);
             label_Marca.TabIndex = 9;
             label_Marca.Text = "MARCA :";
             // 
@@ -1230,7 +1233,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Modelo.Location = new System.Drawing.Point(302, 18);
             label_Modelo.Name = "label_Modelo";
-            label_Modelo.Size = new System.Drawing.Size(90, 18);
+            label_Modelo.Size = new System.Drawing.Size(74, 15);
             label_Modelo.TabIndex = 25;
             label_Modelo.Text = "MODELO :";
             // 
@@ -1240,7 +1243,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Color.Location = new System.Drawing.Point(316, 67);
             label_Color.Name = "label_Color";
-            label_Color.Size = new System.Drawing.Size(77, 18);
+            label_Color.Size = new System.Drawing.Size(62, 15);
             label_Color.TabIndex = 30;
             label_Color.Text = "COLOR :";
             // 
@@ -1250,7 +1253,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Motor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Motor.Location = new System.Drawing.Point(19, 42);
             label_Motor.Name = "label_Motor";
-            label_Motor.Size = new System.Drawing.Size(104, 18);
+            label_Motor.Size = new System.Drawing.Size(85, 15);
             label_Motor.TabIndex = 26;
             label_Motor.Text = "N° MOTOR :";
             // 
@@ -1293,7 +1296,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Chasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Chasis.Location = new System.Drawing.Point(291, 43);
             label_Chasis.Name = "label_Chasis";
-            label_Chasis.Size = new System.Drawing.Size(102, 18);
+            label_Chasis.Size = new System.Drawing.Size(84, 15);
             label_Chasis.TabIndex = 27;
             label_Chasis.Text = "N° CHASIS :";
             // 
@@ -1303,7 +1306,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Dominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dominio.Location = new System.Drawing.Point(29, 68);
             label_Dominio.Name = "label_Dominio";
-            label_Dominio.Size = new System.Drawing.Size(90, 18);
+            label_Dominio.Size = new System.Drawing.Size(75, 15);
             label_Dominio.TabIndex = 28;
             label_Dominio.Text = "DOMINIO :";
             // 
@@ -1325,7 +1328,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosVehiculo.Location = new System.Drawing.Point(29, 3);
             label_DatosVehiculo.Name = "label_DatosVehiculo";
             label_DatosVehiculo.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            label_DatosVehiculo.Size = new System.Drawing.Size(264, 28);
+            label_DatosVehiculo.Size = new System.Drawing.Size(219, 23);
             label_DatosVehiculo.TabIndex = 24;
             label_DatosVehiculo.Text = "DATOS DEL VEHICULO";
             // 
@@ -1404,7 +1407,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DescripcionConIA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label_DescripcionConIA.Location = new System.Drawing.Point(194, 5);
             label_DescripcionConIA.Name = "label_DescripcionConIA";
-            label_DescripcionConIA.Size = new System.Drawing.Size(222, 20);
+            label_DescripcionConIA.Size = new System.Drawing.Size(176, 16);
             label_DescripcionConIA.TabIndex = 19;
             label_DescripcionConIA.Text = "Realizar descripción con I.A.";
             // 
@@ -1416,7 +1419,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             botonDeslizable_Descripcion_IA.Location = new System.Drawing.Point(378, 3);
             botonDeslizable_Descripcion_IA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             botonDeslizable_Descripcion_IA.Name = "botonDeslizable_Descripcion_IA";
-            botonDeslizable_Descripcion_IA.Size = new System.Drawing.Size(40, 22);
+            botonDeslizable_Descripcion_IA.Size = new System.Drawing.Size(47, 22);
             botonDeslizable_Descripcion_IA.TabIndex = 43;
             botonDeslizable_Descripcion_IA.ValidarCampos = null;
             // 
@@ -1627,13 +1630,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.Location = new System.Drawing.Point(238, 9);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            label_TITULO.Size = new System.Drawing.Size(248, 29);
+            label_TITULO.Size = new System.Drawing.Size(205, 24);
             label_TITULO.TabIndex = 32;
             label_TITULO.Text = "EXAMEN DE VISU";
             // 
             // Visu
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(672, 1005);
             Controls.Add(label_TITULO);
@@ -1780,8 +1783,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Panel panel_ControlesInferiores;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_AñoVehiculo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label_LegajoVehicular;
         private System.Windows.Forms.CheckBox checkBox_LegajoVehicular;
+        private System.Windows.Forms.Label label_LegajoVehicular;
         private System.Windows.Forms.PictureBox pictureBox_CheckLegajoVehicular;
     }
 }

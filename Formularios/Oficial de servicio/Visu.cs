@@ -86,8 +86,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Descripcion.Visible = true;
 
             AjustarTamanoFormulario();// para que carge con altura de formulario ajustada
-
-            pictureBox_CheckLegajoVehicular.Visible = false;
+           
+            //pictureBox_CheckLegajoVehicular.Visible = false;
         }
         #endregion
 
@@ -1496,19 +1496,27 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar si el CheckBox está marcado
             if (checkBox_LegajoVehicular.Checked)
             {
-               
+
                 pictureBox_CheckLegajoVehicular.Visible = true;
                 // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
-                    pictureBox_CheckLegajoVehicular.Location = new Point(
-                    checkBox_LegajoVehicular.Location.X,
-                    checkBox_LegajoVehicular.Location.Y - 8);
-                checkBox_LegajoVehicular.Visible = false;
+                //pictureBox_CheckLegajoVehicular.Location = new Point(
+                //checkBox_LegajoVehicular.Location.X,
+                //checkBox_LegajoVehicular.Location.Y - 8);
+                 checkBox_LegajoVehicular.Visible = false;
                 pictureBox_CheckLegajoVehicular.BringToFront();
             }
 
         }
 
-      
+        private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
+        {
+            pictureBox_CheckLegajoVehicular.Visible = false;
+            checkBox_LegajoVehicular.Visible = true; //lo hace visible 
+            checkBox_LegajoVehicular.Checked = false;// lo mantien
+
+        }
+
+       
     }
 
 }
