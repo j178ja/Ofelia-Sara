@@ -2,6 +2,9 @@
 
 namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
+    /// <summary>
+    /// CLASE PARA CALCULAR ANTIGUEDAD (AÑOS , MESES) DEPENDIENDO DE FECHA INGRESADA EN CONTROL ESPECIFICO
+    /// </summary>
     public class CalcularAntiguedad
     {
         public static void Calcular(DateTime fechaInicio, out int años, out int meses)

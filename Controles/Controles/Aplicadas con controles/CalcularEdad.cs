@@ -4,6 +4,9 @@ using System;
 
 namespace Ofelia_Sara.Controles.Controles.Aplicadas_con_controles
 {
+    /// <summary>
+    /// CLASE PARA CALCULAR EDAD DEPENDIENDO DE FECHA INGRESADA EN CONTROL ESPECIFICO
+    /// </summary>
     public static class CalcularEdad
     {
         private static CustomDate customDateTextBox;

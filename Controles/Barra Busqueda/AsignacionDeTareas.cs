@@ -20,13 +20,21 @@ namespace Ofelia_Sara.Controles.Barra_Busqueda
             de tareas al listado json ------*/
         }
 
-        // Método para obtener todas las tareas
+        
+        /// <summary>
+        /// Método para obtener todas las tareas
+        /// </summary>
+        /// <returns></returns>
         public List<string> ObtenerTareas()
         {
             return tareas;
         }
 
-        // Método para agregar una tarea a la lista
+        
+        /// <summary>
+        /// Método para agregar una tarea a la lista
+        /// </summary>
+        /// <param name="tarea"></param>
         public void AgregarTarea(string tarea)
         {
             if (!tareas.Contains(tarea))
@@ -35,7 +43,12 @@ namespace Ofelia_Sara.Controles.Barra_Busqueda
             }
         }
 
-        // Método para filtrar tareas basadas en un texto de búsqueda
+        
+        /// <summary>
+        /// Método para filtrar tareas basadas en un texto de búsqueda
+        /// </summary>
+        /// <param name="filtro"></param>
+        /// <returns></returns>
         public List<string> FiltrarTareas(string filtro)
         {
             return tareas.FindAll(t => t.IndexOf(filtro, StringComparison.OrdinalIgnoreCase) >= 0);

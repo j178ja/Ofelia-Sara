@@ -2,7 +2,7 @@
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones.btn_Configuracion;
 using Ofelia_Sara.Controles.Barra_Busqueda;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;

@@ -1,5 +1,4 @@
-﻿
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+﻿using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;

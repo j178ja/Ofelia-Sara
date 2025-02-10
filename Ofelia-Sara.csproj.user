@@ -50,9 +50,6 @@
     <Compile Update="Controles\General\PanelConBordePersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controles\General\TooltipError.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Controles\Ofl Sara\AgregarFiscaliaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

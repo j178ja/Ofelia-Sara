@@ -1,9 +1,9 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Clases.General.Texto;
-using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;

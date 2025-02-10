@@ -4,7 +4,10 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.General
-{
+{ 
+    /// <summary>
+    /// BOTON DESLIZABLE CAMBIA TEXTO Y COLOR
+    /// </summary>
     public partial class BotonDeslizable : UserControl
     {
         #region VARIABLES

@@ -1,4 +1,4 @@
-﻿using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+﻿using Ofelia_Sara.Controles.Controles.Tooltip;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;

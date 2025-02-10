@@ -6,15 +6,19 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.General
 {
+    /// <summary>
+    /// PANEL QUE CAMBIA EL VORDE DE ACUERDO A SI ESTA COMPLETO O NO
+    /// </summary>
     public class PanelConBordeNeon : Panel
     {
+        #region PROPIEDADES PUBLICAS
         public int BorderRadius { get; set; } = 10; // Radio del borde
         public bool EstaContraido { get; set; } = false; // Estado del panel
         public bool CamposCompletos { get; set; } = false; // Indica si los campos están completos
         public Color NeonColorCompleto { get; set; } = Color.FromArgb(0, 255, 0); // Verde para campos completos
         public Color NeonColorIncompleto { get; set; } = Color.FromArgb(255, 0, 0); // Rojo para campos incompletos
         public Color SombraColor { get; set; } = Color.FromArgb(200, 0, 198, 255); // Sombra más oscura y transparente
-
+        #endregion
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

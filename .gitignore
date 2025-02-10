@@ -1,7 +1,25 @@
-.vs/
-# Ignorar archivos de Visual Studio
+# Ignorar archivos y carpetas de Visual Studio
 .vs/
 *.suo
 *.user
 *.userprefs
-q
+
+# Ignorar carpetas de compilación y salida
+bin/
+obj/
+
+# Ignorar configuraciones específicas de la solución
+*.csproj.user
+*.csproj.userprefs
+*.csproj.vspscc
+*.sln.docstates
+
+# Ignorar archivos temporales
+*.tmp
+*.log
+*.cache
+*.pdb
+
+# Ignorar archivos generados automáticamente
+*.dbmdl
+*.jfm

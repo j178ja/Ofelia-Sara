@@ -8,6 +8,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Controles.General;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales

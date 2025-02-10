@@ -7,7 +7,7 @@ private void Label_TextoMesAño_Paint(object sender, PaintEventArgs e)
 {
     SubrayadoAnimado.Aplicar(label_TextoMesAño, e.Graphics, ref lineWidth, isAnimating, SystemColors.Highlight);
 
-    // Asegúrate de manejar la animación con un Timer o lógica personalizada
+  
 }
 */
 
@@ -18,6 +18,9 @@ using System.Windows.Forms;
 
 public static class SubrayadoAnimado
 {
+    /// <summary>
+    /// CLASE PARA SUBRAYAR ANIMADAMENTE LABELS
+    /// </summary>
     private static readonly Dictionary<object, (Timer Timer, int LineWidth, bool IsAnimating)> Estados = new();
 
     public static void Aplicar(object target, Graphics g, Color color, int grosor = 3)

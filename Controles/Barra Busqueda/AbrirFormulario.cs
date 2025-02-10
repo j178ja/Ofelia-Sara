@@ -1,12 +1,15 @@
-﻿using System.Windows.Forms;
+﻿using Ofelia_Sara.Formularios.General.Mensajes;
+using System.Windows.Forms;
 //using Ofelia_Sara.Agregar_Componentes;
 
 namespace Ofelia_Sara.Controles.Barra_Busqueda
 
-{
+{/// <summary>
+/// CLASE PARA CREAR INSTANCIAS DE FORMULARIOS DESDE BARRA DE BUSQUEDA DE MENU PRINCIPAL
+/// </summary>
     public class AbrirFormularios_BarraBusqueda
     {
-        public void AbrirFormulario(string nombreFormulario)
+        public static void AbrirFormulario(string nombreFormulario)
         {
             Form formulario = null;
 
@@ -50,7 +53,7 @@ namespace Ofelia_Sara.Controles.Barra_Busqueda
                     break;
 
                 default:
-                    MessageBox.Show("No se encontró el formulario correspondiente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeGeneral.Mostrar("No se encontró el formulario correspondiente.", MensajeGeneral.TipoMensaje.Error);
                     return;
             }
 
