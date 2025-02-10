@@ -409,7 +409,7 @@ namespace Ofelia_Sara.Formularios.General
                 if (formularioSeleccionado != null)
                 {
                     var abrirFormulario = new AbrirFormularios_BarraBusqueda();
-                    abrirFormulario.AbrirFormulario(formularioSeleccionado);
+                   // abrirFormulario.AbrirFormulario(formularioSeleccionado);
                 }
                 else
                 {

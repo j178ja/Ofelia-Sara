@@ -885,14 +885,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             if (sender is PictureBox pictureBox && pictureBox.Image == Properties.Resources.Advertencia_Faltante)
             {
-                TooltipError.Mostrar(pictureBox, "El formulario posee campos incompletos.");
+               // TooltipError.Mostrar(pictureBox, "El formulario posee campos incompletos.");
             }
         }
 
         // Evento para ocultar el TooltipError cuando el mouse sale
         private static void PictureBox_MouseLeave(object sender, EventArgs e)
         {
-            TooltipError.Ocultar();
+           // TooltipError.Ocultar();
         }
    
         /// <summary>
