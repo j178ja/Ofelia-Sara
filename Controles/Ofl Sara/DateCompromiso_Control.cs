@@ -11,13 +11,16 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 {
     public partial class DateCompromiso_Control : UserControl
     {
+        #region VARIABLES
         private Timer animationTimer;
         private int animationProgress;
         private bool isFocused;
         private bool showError;
         private Color focusColor = Color.Blue;
         private Color errorColor = Color.Red;
+        #endregion
 
+        #region CONSTRUCTOR
         public DateCompromiso_Control()
         {
             InitializeComponent();
@@ -41,6 +44,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
             this.Paint += OnCustomPaint;
         }
+        #endregion
+
 
         private void FocusControl(Control control)
         {
