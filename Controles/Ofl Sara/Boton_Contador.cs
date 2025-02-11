@@ -11,48 +11,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private Button btnContador;
         private ContextMenuStrip listaDesplegable;
 
-        public Boton_Contador()
-        {
-            CrearControles();
-            ActualizarTamañoYColor();
-
-        }
-
-        // Propiedad 'Text' para establecer el texto del botón
-        private string texto;
-        public override string Text
-        {
-            get => texto;
-            set
-            {
-                texto = value;
-                btnContador.Text = value;
-                ActualizarTamañoYColor();
-            }
-        }
-
-        // Propiedad 'Visible'
-        public new bool Visible
-        {
-            get => base.Visible;
-            set
-            {
-                base.Visible = value;
-                btnContador.Visible = value;
-            }
-        }
-
-        // Propiedad 'Enabled'
-        public new bool Enabled
-        {
-            get => base.Enabled;
-            set
-            {
-                base.Enabled = value;
-                btnContador.Enabled = value;
-            }
-        }
-
+        #region CONSTRUCTOR
         private void CrearControles()
         {
             btnContador = new Button
@@ -72,6 +31,67 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 Renderer = new CustomRenderer()
             };
         }
+        #endregion
+
+        #region LOAD
+        private void Boton_Contador_Load(object sender, EventArgs e)
+        {
+            // Lógica de inicialización
+            ActualizarTamañoYColor();
+        }
+        #endregion
+
+        #region PROPIEDADES PUBLICAS
+        public Boton_Contador()
+        {
+            CrearControles();
+            ActualizarTamañoYColor();
+
+        }
+
+        
+        /// <summary>
+        /// Propiedad 'Text' para establecer el texto del botón
+        /// </summary>
+        private string texto;
+        public override string Text
+        {
+            get => texto;
+            set
+            {
+                texto = value;
+                btnContador.Text = value;
+                ActualizarTamañoYColor();
+            }
+        }
+
+     
+        /// <summary>
+        /// Propiedad 'Visible'
+        /// </summary>
+        public new bool Visible
+        {
+            get => base.Visible;
+            set
+            {
+                base.Visible = value;
+                btnContador.Visible = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad 'Enabled'
+        /// </summary>
+        public new bool Enabled
+        {
+            get => base.Enabled;
+            set
+            {
+                base.Enabled = value;
+                btnContador.Enabled = value;
+            }
+        }
+        #endregion
 
         public void CargarElementos(List<string> elementos)
         {
@@ -104,6 +124,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             return menuItem;
         }
 
+        /// <summary>
+        /// MENSAJE CONFIRMACION PA ELIMINAR UN ELEMENTO
+        /// </summary>
+        /// <param name="menuItem"></param>
+        /// <param name="item"></param>
         private void MostrarMensajeEliminacion(ToolStripMenuItem menuItem, string item)
         {
             using (var mensaje = new MensajeGeneral(
@@ -119,11 +144,19 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
+        /// <summary>
+        /// EVENTO CLICK MUESTRA LISTADO DE ELEMENTOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnContador_Click(object sender, EventArgs e)
         {
             listaDesplegable.Show(btnContador, new Point(0, btnContador.Height));
         }
 
+        /// <summary>
+        /// ACTUALIZA COLOR PARA CUANDO NO TIENE ELEMENTOS Y PARA CUANDO SI
+        /// </summary>
         private void ActualizarTamañoYColor()
         {
             if (btnContador.Text == "0")
@@ -154,12 +187,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             ActualizarTamañoYColor();
         }
 
-
-        private void Boton_Contador_Load(object sender, EventArgs e)
-        {
-            // Lógica de inicialización
-            ActualizarTamañoYColor();
-        }
+      
     }
 }
 

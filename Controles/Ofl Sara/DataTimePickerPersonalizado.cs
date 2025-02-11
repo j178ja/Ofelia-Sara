@@ -9,9 +9,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
     public partial class TimePickerPersonalizado : UserControl
     {
+        #region VARIABLES
         private Button Btn_Calendario; // Botón para abrir el formulario de calendario
         private DateTime fechaSeleccionada;
-
         private Timer animationTimer;
         private int animationProgress;
         private bool isFocused;
@@ -19,17 +19,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private Color focusColor = Color.Blue;
         private Color errorColor = Color.Red;
         internal DateTime SelectedDate;
+        #endregion
+     
 
-        public DateTime FechaSeleccionada
-        {
-            get => fechaSeleccionada;
-            set
-            {
-                fechaSeleccionada = value;
-                ActualizarCamposFecha();
-            }
-        }
-
+        #region CONSTRUCTOR
         public TimePickerPersonalizado()
         {
             InitializeComponent();
@@ -52,7 +45,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             // Inicializar con la fecha actual
             FechaSeleccionada = DateTime.Now;
         }
-
+        #endregion
         private void MostrarSelectorFecha()
         {
             FocusControl();
@@ -161,6 +154,16 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             isFocused = true;
             showError = false;
             StartAnimation();
+        }
+
+        public DateTime FechaSeleccionada
+        {
+            get => fechaSeleccionada;
+            set
+            {
+                fechaSeleccionada = value;
+                ActualizarCamposFecha();
+            }
         }
     }
 }

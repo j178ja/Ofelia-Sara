@@ -12,22 +12,24 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 {
     public partial class CustomDate : UserControl
     {
+        #region VARIABLES
         private Timer animationTimer;
         private int animationProgress;
         private bool isFocused;
         private bool showError;
         private Color focusColor = Color.Transparent;//Se coloco transparente para que nos e vea cuando se carga el formulario
         private Color errorColor = Color.Red;
+        #endregion
 
+        #region PROPIEDADES PUBLICAS
         // Propiedades para configurar el rango de años
         public int AñoMinimo { get; set; } = 1930;
         public int AñoMaximo { get; set; } = DateTime.Now.Year;
-
         public Color SubrayadoGeneralFocusColor { get; set; } = Color.Blue;
         public Color SubrayadoGeneralErrorColor { get; set; } = Color.Red;
-       
+        #endregion
 
-        #region Inicialización
+        #region CONSTRUCTOR
         public CustomDate()
         {
             InitializeComponent();
@@ -44,7 +46,12 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
             RestorePlaceholders(); // Forzar los placeholders visibles inicialmente
         }
+        #endregion
 
+        #region CONFIGURACIONES GENERALES
+        /// <summary>
+        /// CONFIGURAR PROPIEDADES DE TEXTBOX
+        /// </summary>
         private void ConfigurarTextBoxes()
         {
             // Limitar la cantidad de caracteres en los TextBoxes
@@ -104,11 +111,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             ToolTipGeneral.ShowToolTip(textBox_DateMES, "Ingrese MES.");
             ToolTipGeneral.ShowToolTip(textBox_DateAÑO, "Ingrese AÑO.");
         }
-        #endregion Inicialización
-        //---------------------------------------------------------------------------------------------
+        #endregion 
+     
         #region autocompletado
-
-
 
         /// <summary>
         /// METODO PARA AUTOCOMPLETAR DIA Y MES
@@ -242,8 +247,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             Invalidate();
         }
         #endregion autocompletado
-        //--------------------------------------------------------------------------------
-
+       
         #region validaciones
 
         /// <summary>
@@ -485,8 +489,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             Invalidate();
         }
         #endregion Animación y Dibujado
-        //---------------------------------------------------------------------------------------
-
+      
         #region Metodos generales
         /// <summary>
         /// MUESTRA FORMULARIO DE SELECCION

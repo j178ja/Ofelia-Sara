@@ -44,6 +44,21 @@ namespace Ofelia_Sara.Formularios.General
         private Point originalLocationMecanografia;
         // Definir el texto del placeholder
         private string placeholderText = "Buscar tipo de actuación...";
+        // Variables auxiliares para animación
+        private int lineWidth = 0;
+        private bool isAnimating = false;
+        private Form videoInstructivo; // Variable para almacenar la instancia del formulario
+        private Form formularioSecundarioAbierto = null;
+        private Form leyesForm = null; // Variable para almacenar la referencia del formulario
+
+        //eventos para abrir aplicacion mecanografia
+        private Form mecanografia = null; // Variable para almacenar la referencia del formulario
+
+        // Diccionarios para almacenar el tamaño y la ubicación originales de cada botón
+        private Dictionary<System.Windows.Forms.Button, Size> originalSizes = new Dictionary<System.Windows.Forms.Button, Size>();
+        private Dictionary<System.Windows.Forms.Button, Point> originalLocations = new Dictionary<System.Windows.Forms.Button, Point>();
+        private List<Form> redactadorForms = new List<Form>(); // Lista para almacenar las instancias de los formularios
+     
         #endregion
 
         #region CONSTRUCTOR
@@ -69,6 +84,9 @@ namespace Ofelia_Sara.Formularios.General
             timerMinimizarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
             timerCerrarForm.Tick += TimerCerrar_Tick;
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
+
+            comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
+            comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus;
 
             //para reducir el btn_Mecanografia
             originalSizeMecanografia = btn_Mecanografia.Size;
@@ -138,6 +156,7 @@ namespace Ofelia_Sara.Formularios.General
             comboBox_Buscar.PlaceholderColor = Color.LightGray;
         }
         #endregion
+
        /// <summary>
        /// AGRUPACION DE TOOLTIPS 
        /// </summary>
@@ -157,7 +176,6 @@ namespace Ofelia_Sara.Formularios.General
         /// <summary>
         /// metodos aplicados a btn_Configurar
         /// </summary>
-
 
         private void Btn_Configurar_Click(object sender, EventArgs e)
         {
@@ -181,8 +199,6 @@ namespace Ofelia_Sara.Formularios.General
             );
         }
 
-       
-
         private void Btn_InicioCierre_Click(object sender, EventArgs e)
         {
 
@@ -202,9 +218,11 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-        //----------------BTON LEYES------------------------------
-        private Form leyesForm = null; // Variable para almacenar la referencia del formulario
-
+        /// <summary>
+        /// ABRIR LISTADO DE LEYES Y DECRETOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Leyes_Click(object sender, EventArgs e)
         {
             // Verifica si el formulario ya está abierto y no está cerrado o eliminado
@@ -235,7 +253,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
+        /// <summary>
+        /// BOTN DEL BUSCADOR PARA BUSCAR LA TAREA INGRESADA O SELECCIONADA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_BuscarTarea_Click(object sender, EventArgs e)
         {
             // Verificar si se ha seleccionado un formulario
@@ -272,6 +294,11 @@ namespace Ofelia_Sara.Formularios.General
 
         }
 
+        /// <summary>
+        /// BOTON CREADO PARA CERRAR FORMULARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
@@ -280,6 +307,12 @@ namespace Ofelia_Sara.Formularios.General
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
             timerCerrarForm.Start();
         }
+
+        /// <summary>
+        /// CAMBIAR BORDE Y COLOR DEL BTN CERRAR AL PASAR CURSOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.Lavender;
@@ -287,6 +320,11 @@ namespace Ofelia_Sara.Formularios.General
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
         }
 
+        /// <summary>
+        /// CAMBIAR BORDE Y COLOR DEL BTN CERRAR AL SALIR CURSOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Cerrar_MouseLeave(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = SystemColors.ButtonFace;
@@ -295,13 +333,22 @@ namespace Ofelia_Sara.Formularios.General
             btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
         }
 
-
+        /// <summary>
+        /// CAMBIAR BORDE Y COLOR DEL BTN MINIMIZAR AL ENTRAR CURSOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Minimizar_MouseHover(object sender, EventArgs e)
         {
             btn_Minimizar.BackColor = Color.Lavender;
             btn_Minimizar.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
         }
 
+        /// <summary>
+        /// CAMBIAR BORDE Y COLOR DEL BTN MINIMIZAR AL SALIR CURSOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Minimizar_MouseLeave(object sender, EventArgs e)
         {
             btn_Minimizar.BackColor = SystemColors.ButtonFace;
@@ -310,6 +357,11 @@ namespace Ofelia_Sara.Formularios.General
             btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
         }
 
+        /// <summary>
+        /// MINIMIZAR FORMULARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
             btn_Minimizar.BackColor = SystemColors.ActiveCaption;
@@ -320,7 +372,9 @@ namespace Ofelia_Sara.Formularios.General
 
         }
 
-        // Método para configurar los valores originales al cargar el formulario
+        /// <summary>
+        /// Método para configurar los valores originales al cargar el formulario
+        /// </summary>
         private void ConfigurarBotones()
         {
             // Almacena el tamaño y la ubicación originales de cada botón
@@ -331,7 +385,12 @@ namespace Ofelia_Sara.Formularios.General
             originalLocations[btn_Redactador] = btn_Redactador.Location;
         }
 
-        // Método MouseDown para simular animación de "clic"
+     
+        /// <summary>
+        /// Método MouseDown para simular animación de "clic"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Btn_MouseDown(object sender, MouseEventArgs e)
         {
@@ -349,7 +408,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        // Método MouseUp para restaurar tamaño y ubicación originales
+        /// <summary>
+        /// Método MouseUp para restaurar tamaño y ubicación originales
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_MouseUp(object sender, MouseEventArgs e)
         {
             if (sender is System.Windows.Forms.Button boton && originalSizes.ContainsKey(boton) && originalLocations.ContainsKey(boton))
@@ -360,8 +423,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
-        // Método MouseHover para cambiar borde
+        /// <summary>
+        /// Método MouseHover para cambiar borde
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_MouseHover(object sender, EventArgs e)
         {
             if (sender is System.Windows.Forms.Button boton)
@@ -371,7 +437,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        // Método MouseLeave para restaurar borde y tamaño originales
+        /// <summary>
+        ///  Método MouseLeave para restaurar borde y tamaño originales
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_MouseLeave(object sender, EventArgs e)
         {
             if (sender is System.Windows.Forms.Button boton && originalSizes.ContainsKey(boton))
@@ -399,6 +469,12 @@ namespace Ofelia_Sara.Formularios.General
 
             }
         }
+
+        /// <summary>
+        /// ABRIR FUNCION REDACTADOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Redactador_Click(object sender, EventArgs e)
         {
             // Crear una nueva instancia del formulario Redactador
@@ -496,10 +572,11 @@ namespace Ofelia_Sara.Formularios.General
             };
         }
 
-
-
-
-
+        /// <summary>
+        /// ACCEDER A BOLETIN OFICIAL POLICIA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_BoletinOficial_Click(object sender, EventArgs e)
         {
             string url = "https://boletin.mseg.gba.gov.ar/";
@@ -517,6 +594,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// ABRIR FUNCION MECANOGRAFIA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Mecanografia_Click(object sender, EventArgs e)
         {
             // Verifica si el formulario ya está abierto y no está cerrado o eliminado
@@ -555,7 +637,36 @@ namespace Ofelia_Sara.Formularios.General
                 mecanografia.BringToFront();
             }
         }
+
+        /// <summary>
+        /// TIMER PARA BTN CERRAR FORMULARIO MENU PRINCIPAL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimerCerrar_Tick(object sender, EventArgs e)
+        {
+            timerCerrarForm.Stop();
+            Application.Exit();
+        }
+
+        /// <summary>
+        /// TIMER PARA BTN MINIMIZAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimerMinimizar_Tick(object sender, EventArgs e)
+        {
+            timerMinimizarForm.Stop();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         #endregion
+
+        /// <summary>
+        /// RESTABLECE LA POSICION ORIGINAL DEL FORMULARIO MENUPRINCIPAL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Restablecer_MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             formularioSecundarioAbierto = null;
@@ -565,7 +676,58 @@ namespace Ofelia_Sara.Formularios.General
             this.WindowState = FormWindowState.Normal;
         }
 
-        // Sobrescribir el evento Resize del formulario principal para ocultarlo si se intenta restaurar
+
+        /// <summary>
+        /// ABRIR Y POSICIONAR FORMULARIO SECUNDARIO
+        /// </summary>
+        /// <param name="formulario"></param>
+        private void AbrirFormularioSecundario(Form formulario)
+        {
+            // Si ya hay un formulario secundario abierto
+            if (formularioSecundarioAbierto != null)
+            {
+                // Si el formulario que se intenta abrir ya está abierto, solo restaurarlo
+                if (formularioSecundarioAbierto.GetType() == formulario.GetType())
+                {
+                    formularioSecundarioAbierto.WindowState = FormWindowState.Normal;
+                    formularioSecundarioAbierto.BringToFront();
+                    return;
+                }
+
+                // Cerrar el formulario secundario actual
+                formularioSecundarioAbierto.Close();
+            }
+
+            // Configurar y abrir el nuevo formulario secundario
+            formularioSecundarioAbierto = formulario;
+            formularioSecundarioAbierto.FormClosed += Restablecer_MenuPrincipal_FormClosed;
+            formularioSecundarioAbierto.Show();
+
+            // Minimizar el formulario principal
+            this.Hide();
+        }
+
+
+        /// <summary>
+        /// para poder arrastrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+      
+      
+        /// <summary>
+        /// Sobrescribir el evento Resize del formulario principal para ocultarlo si se intenta restaurar
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -578,7 +740,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-        //------------- BOTON BUSCAR--------------------------
+        #region BUSCADOR
         private BindingSource bindingSource;
 
         private void ConfigureComboBox(CustomComboBox customComboBox)
@@ -650,119 +812,6 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private Form formularioSecundarioAbierto = null;
-
-        private void AbrirFormularioSecundario(Form formulario)
-        {
-            // Si ya hay un formulario secundario abierto
-            if (formularioSecundarioAbierto != null)
-            {
-                // Si el formulario que se intenta abrir ya está abierto, solo restaurarlo
-                if (formularioSecundarioAbierto.GetType() == formulario.GetType())
-                {
-                    formularioSecundarioAbierto.WindowState = FormWindowState.Normal;
-                    formularioSecundarioAbierto.BringToFront();
-                    return;
-                }
-
-                // Cerrar el formulario secundario actual
-                formularioSecundarioAbierto.Close();
-            }
-
-            // Configurar y abrir el nuevo formulario secundario
-            formularioSecundarioAbierto = formulario;
-            formularioSecundarioAbierto.FormClosed += Restablecer_MenuPrincipal_FormClosed;
-            formularioSecundarioAbierto.Show();
-
-            // Minimizar el formulario principal
-            this.Hide();
-        }
-
-        //private void ComboBox_Buscar_GotFocus(object sender, EventArgs e)
-        //{
-        //    if (comboBox_Buscar.Text == placeholderText)
-        //    {
-        //        comboBox_Buscar.Text = "";
-        //        comboBox_Buscar.ForeColor = Color.Black;
-        //    }
-        //}
-
-
-        //private void ComboBox_Buscar_LostFocus(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
-        //    {
-        //        MostrarPlaceholder();
-        //    }
-        //}
-
-
-        private void ComboBox_Buscar_MouseHover(object sender, EventArgs e)
-        {
-            MostrarPlaceholder();
-        }
-        private void MostrarPlaceholder()
-        {
-            // Establecer el texto del placeholder y cambiar el color a gris
-            comboBox_Buscar.Text = placeholderText;
-            comboBox_Buscar.ForeColor = Color.LightGray;
-        }
-
-        //_________________________________________________________________________________
-        
-        //-------------------------------------------------------------------------------------
-        //eventos para la barra menu
-
-      
-        private void TimerCerrar_Tick(object sender, EventArgs e)
-        {
-            timerCerrarForm.Stop();
-            Application.Exit();
-        }
-
-     
-        //-------------------------------------------------------------------------
-        private void TimerMinimizar_Tick(object sender, EventArgs e)
-        {
-            timerMinimizarForm.Stop();
-            this.WindowState = FormWindowState.Minimized;
-        }
-      
-
-        //--------------------------------------------------------------------------------
-        //eventos para abrir aplicacion mecanografia
-        private Form mecanografia = null; // Variable para almacenar la referencia del formulario
-      
-
-
-        // Diccionarios para almacenar el tamaño y la ubicación originales de cada botón
-        private Dictionary<System.Windows.Forms.Button, Size> originalSizes = new Dictionary<System.Windows.Forms.Button, Size>();
-        private Dictionary<System.Windows.Forms.Button, Point> originalLocations = new Dictionary<System.Windows.Forms.Button, Point>();
-
-     
-
-        //-----------------------------------------------------------------------------------
-
-        //para poder arrastrar el formulario
-        private void Panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
-            }
-        }
-
-
-        /// <summary>
-        /// EVENTO PARA ABRIR FUNCION REDACTADOR
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private List<Form> redactadorForms = new List<Form>(); // Lista para almacenar las instancias de los formularios
-
- 
-
         private void ComboBox_Buscar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_Buscar.SelectedIndex > 0 || !string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
@@ -773,43 +822,55 @@ namespace Ofelia_Sara.Formularios.General
             {
                 btn_BuscarTarea.Enabled = false;
             }
-
         }
-        //--------------------------------------------------------------------------------
-        //private Form videoInstructivo; // Variable para almacenar la instancia del formulario
-        //private void Label_OfeliaSara_Click(object sender, EventArgs e)
-        //{
-        //    label_OfeliaSara.ForeColor = Color.Coral;
-        //    label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);//para subrayar
 
-        //    if (videoInstructivo == null || videoInstructivo.IsDisposed) // Verifica si no está abierto
-        //    {
-        //        // Crear e inicializar el formulario para mostrar el video
-        //        InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.InicioCierre);
-        //    }
-        //    // Suscribirse al evento FormClosed para restaurar el Label
-        //    videoInstructivo.FormClosed += (s, args) =>
-        //    {
-        //        label_OfeliaSara.ForeColor = SystemColors.ControlText;
-        //        label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Eliminar subrayado
-        //    };
+        private void ComboBox_Buscar_GotFocus(object sender, EventArgs e)
+        {
+            if (comboBox_Buscar.Text == placeholderText)
+            {
+                comboBox_Buscar.Text = "";
+                comboBox_Buscar.ForeColor = Color.Black;
+            }
+        }
 
-        //    // Obtener la ubicación y tamaño del formulario principal
-        //    Point menuPrincipalLocation = this.Location;
-        //    Size menuPrincipalSize = this.Size;
 
-        //    // Calcular la nueva ubicación para el formulario DocumentosForm
-        //    int x = menuPrincipalLocation.X - 6; // Mantener la misma posición horizontal
-        //    int y = menuPrincipalLocation.Y + menuPrincipalSize.Height + 10; // Colocar justo debajo
+        private void ComboBox_Buscar_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
+            {
+                MostrarPlaceholder();
+            }
+        }
 
-        //    // Ajustar la ubicación del formulario DocumentosForm
-        //    videoInstructivo.StartPosition = FormStartPosition.Manual;
-        //    videoInstructivo.Location = new Point(x, y);
+        /// <summary>
+        /// MOSTRAR PLACEHOLDER AL ENTRAR AL BUSCADOR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_Buscar_MouseHover(object sender, EventArgs e)
+        {
+            MostrarPlaceholder();
+        }
 
-        //    videoInstructivo.Show();
-        //}
-        private Form videoInstructivo; // Variable para almacenar la instancia del formulario
+        #endregion
 
+        /// <summary>
+        /// CONFIGURAR PLACEHOLDER
+        /// </summary>
+        private void MostrarPlaceholder()
+        {
+            // Establecer el texto del placeholder y cambiar el color a gris
+            comboBox_Buscar.Text = placeholderText;
+            comboBox_Buscar.ForeColor = Color.LightGray;
+        }
+
+        #region LABEL CENTRAL
+
+        /// <summary>
+        /// ABRIR FORMULARIO VIDEO INSTRUCTIVO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
             // Cambiar estilo del Label
@@ -848,11 +909,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
-        // Variables auxiliares para animación
-        private int lineWidth = 0;
-        private bool isAnimating = false;
-
+        /// <summary>
+        /// DIBUJAR SUBRAYADO AL INGRESAR AL CONTROL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_MouseEnter(object sender, EventArgs e)
         {
 
@@ -863,6 +924,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// QUITAR SUBRAYADO AL SALIR DEL CONTROL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_MouseLeave(object sender, EventArgs e)
         {
             if (sender is Control control)
@@ -872,6 +938,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// DIBUJAR EL SUBRAYADO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_Paint(object sender, PaintEventArgs e)
         {
             if (videoInstructivo == null || videoInstructivo.IsDisposed) // Aplica subrayado solo si el formulario no está abierto
@@ -884,9 +955,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
-    
-
+        #endregion
 
     }
 }

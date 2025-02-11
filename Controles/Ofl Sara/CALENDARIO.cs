@@ -10,11 +10,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 {
     public partial class CALENDARIO : Form
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-        public DateTime SelectedDate { get; private set; }
 
+        #endregion
+
+        #region PROPIEDADES PUBLICAS
+        public DateTime SelectedDate { get; private set; }
         public Control ControlInvocador { get; set; }
 
+        #endregion
+
+        #region CONSTRUCTOR
         public CALENDARIO()
         {
             InitializeComponent();
@@ -22,13 +29,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             SelectedDate = DateTime.Now; // Inicializa con la fecha actual
             monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
         }
+        #endregion
 
+        #region LOAD
         private void CalendarForm_Load(object sender, EventArgs e)
         {
             // No es necesario establecer SelectionMode
             SelectedDate = DateTime.Now; // Inicializa con la fecha actual
             monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
         }
+        #endregion
+
+        #region BOTONES
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -63,14 +75,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 MensajeGeneral.Mostrar($"Selección {formattedDate} guardada.", MensajeGeneral.TipoMensaje.Exito);
             }
         }
-
-
         private Control ObtenerControlInvocador()
         {
             return this.ControlInvocador; // Devuelve el control que se configuró como invocador
         }
-
-
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
@@ -78,6 +86,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             this.Close();
         }
 
+        /// <summary>
+        /// MUESTRA MENSAJE DE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CALENDARIO_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Obtener la posición de la instancia del formulario CALENDARIO en pantalla
@@ -100,7 +113,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
 
 
-        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        /// <summary>
+        /// MENSAJE DE CONFIRMACION ANTES DE CERRAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Calendario_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
@@ -163,7 +180,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         }
 
-
+        #endregion
 
     }
 }
