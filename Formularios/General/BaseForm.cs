@@ -1,6 +1,6 @@
 ﻿
 
-using Ofelia_Sara.Clases.BaseDatos;
+using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;

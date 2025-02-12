@@ -1,10 +1,10 @@
 ﻿using BaseDatos.Adm_BD.Modelos;
-using MySql.Data.MySqlClient;
-using Ofelia_Sara.BaseDatos.Adm_BD.Manager;
-using Ofelia_Sara.Clases.BaseDatos;
+using System.Data.SQLite;
+using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace BaseDatos.Adm_BD.Manager
 {
@@ -15,10 +15,13 @@ namespace BaseDatos.Adm_BD.Manager
         // Constructor que inicializa DatabaseConnection y evita ejecución en tiempo de diseño
         public PersonalManager()
         {
-            dbConnection = BloqueadorTiempoDiseño.GetDatabaseConnection();
+            dbConnection = new DatabaseConnection();  // Obtiene la instancia de la conexión SQL
         }
 
-        // Método para insertar un nuevo registro en Personal
+        /// <summary>
+        /// insertar un nuevo registro en Personal
+        /// </summary>
+        /// <param name="personal"></param>
         public void InsertPersonal(Personal personal)
         {
             string query = @"INSERT INTO Personal 
@@ -27,7 +30,7 @@ namespace BaseDatos.Adm_BD.Manager
                             (@Jerarquia, @Escalafon, @Legajo,@DNI, @Apellido, @Nombres, @Funcion,@Dependencia,@Domicilio_Dependencia, @LocalidadDependencia, @Partido_Dependencia, @Domicilio, @Localidad, @Partido, @Edad, @Fecha_Nacimiento, @Nacionalidad, @Telefono1, @Telefono2, @Correo, @Fecha_Ingreso, @Posicion_Puesto, @Armamento, @Arma_Numeracion, @Chaleco, @Chaleco_Numeracion)";
 
             dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
                 // Agregar parámetros
                 command.Parameters.AddWithValue("@Jerarquia", personal.Jerarquia.Trim());
@@ -73,14 +76,17 @@ namespace BaseDatos.Adm_BD.Manager
             }
         }
 
-        // Método para obtener todos los registros de Personal
+        /// <summary>
+        /// obtener todos los registros de Personal
+        /// </summary>
+        /// <returns></returns>
         public List<Personal> GetPersonal()
         {
             List<Personal> personalList = new List<Personal>();
             string query = "SELECT * FROM Personal";
 
             dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
                 using (var reader = command.ExecuteReader())
                 {
@@ -88,33 +94,34 @@ namespace BaseDatos.Adm_BD.Manager
                     {
                         personalList.Add(new Personal
                         {
-                            ID = reader.GetInt32("ID"),
-                            Jerarquia = reader.GetString("Jerarquia"),
-                            Escalafon = reader.GetString("Escalafon"),
-                            Legajo = reader.GetDecimal("Legajo"),
-                            DNI = reader.GetString("DNI"),
-                            Apellido = reader.GetString("Apellido"),
-                            Nombres = reader.GetString("Nombres"),
-                            Funcion = reader.GetString("Funcion"),
-                            Dependencia = reader.GetString("Dependencia"),
-                            Domicilio_Dependencia = reader.GetString("Domicilio_Dependencia"),
-                            LocalidadDependencia = reader.GetString("LocalidadDependencia"),
-                            Partido_Dependencia = reader.GetString("Partido_Dependencia"),
-                            Domicilio = reader.GetString("Domicilio"),
-                            Localidad = reader.GetString("Localidad"),
-                            Partido = reader.GetString("Partido"),
-                            Edad = reader.GetInt32("Edad"),
-                            Fecha_Nacimiento = reader.GetDateTime("Fecha_Nacimiento"),
-                            Nacionalidad = reader.GetString("Nacionalidad"),
-                            Telefono1 = reader.GetString("Telefono1"),
-                            Telefono2 = reader.GetString("Telefono2"),
-                            Correo = reader.GetString("Correo"),
-                            Fecha_Ingreso = reader.GetDateTime("Fecha_Ingreso"),
-                            Posicion_Puesto = reader.GetString("Posicion_Puesto"),
-                            Armamento = reader.GetString("Armamento"),
-                            Arma_Numeracion = reader.GetString("Arma_Numeracion"),
-                            Chaleco = reader.GetString("Chaleco"),
-                            Chaleco_Numeracion = reader.GetString("Chaleco_Numeracion")
+                            ID = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32("ID"),
+                            Jerarquia = reader.IsDBNull(reader.GetOrdinal("Jerarquia")) ? string.Empty : reader.GetString("Jerarquia"),
+                            Escalafon = reader.IsDBNull(reader.GetOrdinal("Escalafon")) ? string.Empty : reader.GetString("Escalafon"),
+                            Legajo = reader.IsDBNull(reader.GetOrdinal("Legajo")) ? 0 : reader.GetDecimal("Legajo"),
+                            DNI = reader.IsDBNull(reader.GetOrdinal("DNI")) ? string.Empty : reader.GetString("DNI"),
+                            Apellido = reader.IsDBNull(reader.GetOrdinal("Apellido")) ? string.Empty : reader.GetString("Apellido"),
+                            Nombres = reader.IsDBNull(reader.GetOrdinal("Nombres")) ? string.Empty : reader.GetString("Nombres"),
+                            Funcion = reader.IsDBNull(reader.GetOrdinal("Funcion")) ? string.Empty : reader.GetString("Funcion"),
+                            Dependencia = reader.IsDBNull(reader.GetOrdinal("Dependencia")) ? string.Empty : reader.GetString("Dependencia"),
+                            Domicilio_Dependencia = reader.IsDBNull(reader.GetOrdinal("Domicilio_Dependencia")) ? string.Empty : reader.GetString("Domicilio_Dependencia"),
+                            LocalidadDependencia = reader.IsDBNull(reader.GetOrdinal("LocalidadDependencia")) ? string.Empty : reader.GetString("LocalidadDependencia"),
+                            Partido_Dependencia = reader.IsDBNull(reader.GetOrdinal("Partido_Dependencia")) ? string.Empty : reader.GetString("Partido_Dependencia"),
+                            Domicilio = reader.IsDBNull(reader.GetOrdinal("Domicilio")) ? string.Empty : reader.GetString("Domicilio"),
+                            Localidad = reader.IsDBNull(reader.GetOrdinal("Localidad")) ? string.Empty : reader.GetString("Localidad"),
+                            Partido = reader.IsDBNull(reader.GetOrdinal("Partido")) ? string.Empty : reader.GetString("Partido"),
+                            Edad = reader.IsDBNull(reader.GetOrdinal("Edad")) ? 0 : reader.GetInt32("Edad"),
+                            Fecha_Nacimiento = reader.IsDBNull(reader.GetOrdinal("Fecha_Nacimiento")) ? DateTime.MinValue : reader.GetDateTime("Fecha_Nacimiento"),
+                            Nacionalidad = reader.IsDBNull(reader.GetOrdinal("Nacionalidad")) ? string.Empty : reader.GetString("Nacionalidad"),
+                            Telefono1 = reader.IsDBNull(reader.GetOrdinal("Telefono1")) ? string.Empty : reader.GetString("Telefono1"),
+                            Telefono2 = reader.IsDBNull(reader.GetOrdinal("Telefono2")) ? string.Empty : reader.GetString("Telefono2"),
+                            Correo = reader.IsDBNull(reader.GetOrdinal("Correo")) ? string.Empty : reader.GetString("Correo"),
+                            Fecha_Ingreso = reader.IsDBNull(reader.GetOrdinal("Fecha_Ingreso")) ? DateTime.MinValue : reader.GetDateTime("Fecha_Ingreso"),
+                            Posicion_Puesto = reader.IsDBNull(reader.GetOrdinal("Posicion_Puesto")) ? string.Empty : reader.GetString("Posicion_Puesto"),
+                            Armamento = reader.IsDBNull(reader.GetOrdinal("Armamento")) ? string.Empty : reader.GetString("Armamento"),
+                            Arma_Numeracion = reader.IsDBNull(reader.GetOrdinal("Arma_Numeracion")) ? string.Empty : reader.GetString("Arma_Numeracion"),
+                            Chaleco = reader.IsDBNull(reader.GetOrdinal("Chaleco")) ? string.Empty : reader.GetString("Chaleco"),
+                            Chaleco_Numeracion = reader.IsDBNull(reader.GetOrdinal("Chaleco_Numeracion")) ? string.Empty : reader.GetString("Chaleco_Numeracion")
+
                         });
                     }
                 }
@@ -122,10 +129,11 @@ namespace BaseDatos.Adm_BD.Manager
             dbConnection.CloseConnection();
             return personalList;
         }
-        //-----------------------------------------------------------------------------------------------
 
-        //-----------------------------------------------------------------------------------------------
-        // Método para actualizar un registro existente en Personal
+        /// <summary>
+        /// actualizar un registro existente en Personal
+        /// </summary>
+        /// <param name="personal"></param>
         public void UpdatePersonal(Personal personal)
         {
             string query = @"UPDATE Personal SET 
@@ -159,7 +167,7 @@ namespace BaseDatos.Adm_BD.Manager
                             WHERE ID = @ID";
 
             dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
                 // Agregar parámetros
                 command.Parameters.AddWithValue("@Jerarquia", personal.Jerarquia.Trim());
@@ -207,13 +215,17 @@ namespace BaseDatos.Adm_BD.Manager
             }
         }
 
-        // Método para eliminar un registro de Personal
+       
+        /// <summary>
+        /// eliminar un registro de Personal
+        /// </summary>
+        /// <param name="id"></param>
         public void DeletePersonal(int id)
         {
             string query = "DELETE FROM Personal WHERE ID = @ID";
 
             dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
                 command.Parameters.AddWithValue("@ID", id);
 
@@ -233,13 +245,18 @@ namespace BaseDatos.Adm_BD.Manager
             }
         }
 
-        // Método para verificar si un legajo existe
+        
+        /// <summary>
+        /// verificar si un legajo existe
+        /// </summary>
+        /// <param name="legajo"></param>
+        /// <returns></returns>
         public bool ExisteLegajo(string legajo)
         {
             string query = "SELECT COUNT(*) FROM Personal WHERE Legajo = @Legajo";
 
             dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
                 command.Parameters.AddWithValue("@Legajo", legajo);
                 int count = Convert.ToInt32(command.ExecuteScalar());
@@ -264,7 +281,7 @@ namespace BaseDatos.Adm_BD.Manager
                             Chaleco, Chaleco_Numeracion
                          FROM Personal WHERE Legajo = @Legajo";
 
-                using (var command = new MySqlCommand(query, databaseConnection.Connection))
+                using (var command = new SQLiteCommand(query, databaseConnection.Connection))
                 {
                     command.Parameters.AddWithValue("@Legajo", legajo);
 

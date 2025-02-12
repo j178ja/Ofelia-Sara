@@ -57,6 +57,7 @@
     <PackageReference Include="Spire.Doc" Version="12.12.12" />
     <PackageReference Include="Spire.PDF" Version="11.1.0" />
     <PackageReference Include="Spire.XLS" Version="13.8.9" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
     <PackageReference Include="Vlc.DotNet.Forms" Version="3.1.0" />
   </ItemGroup>
@@ -101,6 +102,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BaseDatos\BD_SQLITE\" />
+    <Folder Include="BaseDatos\Descargable_SQLITE\" />
+    <Folder Include="BaseDatos\Ofelia_DB_Sqlite\" />
   </ItemGroup>
 </Project>

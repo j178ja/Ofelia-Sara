@@ -1,32 +1,40 @@
-﻿using MySql.Data.MySqlClient;
+﻿
 using System;
 using System.ComponentModel;
-using System.Configuration;
+using System.Data.SQLite;
+using System.IO;
 
-namespace Ofelia_Sara.Clases.BaseDatos
+namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
 {
     public class DatabaseConnection
     {
-        public string connectionString;
-        private MySqlConnection connection;
+        private SQLiteConnection connection;
+        private readonly string databasePath;
 
         public DatabaseConnection()
         {
-
             if (IsInDesignMode())
             {
                 Console.WriteLine("Modo diseño detectado, omitiendo inicialización de DatabaseConnection.");
                 return;
             }
 
+            // Ruta donde se almacenará la base de datos SQLite
+            databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database.sqlite");
+
             InitializeConnection();
         }
 
-
         private void InitializeConnection()
         {
+            // Verifica si la base de datos existe; si no, la crea
+            if (!File.Exists(databasePath))
+            {
+                SQLiteConnection.CreateFile(databasePath);
+            }
 
-            connection = new MySqlConnection(connectionString);
+            // Define la cadena de conexión
+            connection = new SQLiteConnection($"Data Source={databasePath};Version=3;");
         }
 
         private static bool IsInDesignMode()
@@ -35,13 +43,13 @@ namespace Ofelia_Sara.Clases.BaseDatos
                    AppDomain.CurrentDomain.FriendlyName.Contains("DefaultDomain");
         }
 
-        public MySqlConnection Connection
+        public SQLiteConnection Connection
         {
             get
             {
                 if (connection == null)
                 {
-                    connection = new MySqlConnection(connectionString);
+                    connection = new SQLiteConnection($"Data Source={databasePath};Version=3;");
                 }
                 return connection;
             }

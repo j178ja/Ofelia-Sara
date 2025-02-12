@@ -1,10 +1,11 @@
 ﻿using BaseDatos.Adm_BD.Modelos;
-using MySql.Data.MySqlClient;
-using Ofelia_Sara.BaseDatos.Adm_BD.Manager;
-using Ofelia_Sara.Clases.BaseDatos;
+using System.Data.SQLite;
+using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using System.Data;
 
 namespace BaseDatos.Adm_BD.Manager
 {
@@ -14,53 +15,58 @@ namespace BaseDatos.Adm_BD.Manager
 
         public InstructoresManager()
         {
-            dbConnection = BloqueadorTiempoDiseño.GetDatabaseConnection();
+            dbConnection = new DatabaseConnection();  // Obtiene la instancia de la conexión SQLite
         }
 
-        // Método para insertar un nuevo instructor en la base de datos
+        /// <summary>
+        /// Insertar un nuevo instructor en la base de datos
+        /// </summary>
         public void InsertInstructor(float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
             string query = "INSERT INTO Instructor (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@legajo, @subescalafon, @jerarquia, @nombre, @apellido, @dependencia, @funcion)";
 
-            dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            using (var connection = dbConnection.Connection)  // Utiliza la propiedad Connection de DatabaseConnection
             {
-                // Usar DBNull.Value si legajo es null
-                command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
-                command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
-                command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
-                command.Parameters.AddWithValue("@nombre", nombre.Trim());
-                command.Parameters.AddWithValue("@apellido", apellido.Trim());
-                command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
-                command.Parameters.AddWithValue("@funcion", funcion.Trim());
+                dbConnection.OpenConnection();  // Abre la conexión
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    // Usar DBNull.Value si legajo es null
+                    command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
+                    command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
+                    command.Parameters.AddWithValue("@nombre", nombre.Trim());
+                    command.Parameters.AddWithValue("@apellido", apellido.Trim());
+                    command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
+                    command.Parameters.AddWithValue("@funcion", funcion.Trim());
 
-                try
-                {
-                    int rowsAffected = command.ExecuteNonQuery();
-                    //  MensajeGeneral.Mostrar($"{rowsAffected} fila(s) insertada(s) en la base de datos.", MensajeGeneral.TipoMensaje.Error);
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al insertar instructor: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
+                    try
+                    {
+                        command.ExecuteNonQuery();  // Ejecutar la consulta
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar($"Error al insertar instructor: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+                    }
+                    finally
+                    {
+                        dbConnection.CloseConnection();  // Cerrar la conexión
+                    }
                 }
             }
         }
 
-
-        // Método para obtener todos los instructores desde la base de datos
+        /// <summary>
+        /// Obtener todos los instructores desde la base de datos
+        /// </summary>
         public List<Instructor> GetInstructors()
         {
             List<Instructor> instructores = new List<Instructor>();
             string query = "SELECT * FROM Instructor";
 
-            dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            dbConnection.OpenConnection();  // Abrir la conexión
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))  // Utilizar SQLiteCommand
             {
-                using (var reader = command.ExecuteReader())
+                using (var reader = command.ExecuteReader())  // Ejecutar la consulta
                 {
                     while (reader.Read())
                     {
@@ -78,17 +84,19 @@ namespace BaseDatos.Adm_BD.Manager
                     }
                 }
             }
-            dbConnection.CloseConnection();
+            dbConnection.CloseConnection();  // Cerrar la conexión
             return instructores;
         }
 
-        // Método para actualizar un instructor existente
+        /// <summary>
+        /// Actualizar un instructor existente
+        /// </summary>
         public void UpdateInstructor(int id, float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
             string query = "UPDATE Instructor SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
 
-            dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            dbConnection.OpenConnection();  // Abrir la conexión
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))  // Utilizar SQLiteCommand
             {
                 // Usar DBNull.Value si legajo es null
                 command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
@@ -100,7 +108,7 @@ namespace BaseDatos.Adm_BD.Manager
                 command.Parameters.AddWithValue("@funcion", funcion.Trim());
                 try
                 {
-                    command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();  // Ejecutar la consulta
                 }
                 catch (Exception ex)
                 {
@@ -108,24 +116,26 @@ namespace BaseDatos.Adm_BD.Manager
                 }
                 finally
                 {
-                    dbConnection.CloseConnection();
+                    dbConnection.CloseConnection();  // Cerrar la conexión
                 }
             }
         }
 
-        // Método para eliminar un instructor
+        /// <summary>
+        /// Eliminar un instructor
+        /// </summary>
         public void DeleteInstructor(int id)
         {
             string query = "DELETE FROM Instructor WHERE ID = @id";
 
-            dbConnection.OpenConnection();
-            using (var command = new MySqlCommand(query, dbConnection.Connection))
+            dbConnection.OpenConnection();  // Abrir la conexión
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))  // Utilizar SQLiteCommand
             {
                 command.Parameters.AddWithValue("@id", id);
 
                 try
                 {
-                    command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();  // Ejecutar la consulta
                 }
                 catch (Exception ex)
                 {
@@ -133,7 +143,7 @@ namespace BaseDatos.Adm_BD.Manager
                 }
                 finally
                 {
-                    dbConnection.CloseConnection();
+                    dbConnection.CloseConnection();  // Cerrar la conexión
                 }
             }
         }

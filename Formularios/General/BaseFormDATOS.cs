@@ -1,5 +1,5 @@
 ﻿using BaseDatos.Adm_BD.Manager;
-using Ofelia_Sara.Clases.BaseDatos;
+using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using System;
 using System.IO;
 using System.Windows.Forms;
