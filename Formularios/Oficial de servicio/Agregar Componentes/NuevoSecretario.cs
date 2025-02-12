@@ -1,7 +1,7 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
 using BaseDatos.Adm_BD.Modelos;
-using Ofelia_Sara.BaseDatos;
+using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;

@@ -93,6 +93,7 @@ namespace Ofelia_Sara.Formularios.General
 
             // Lógica adicional al cargar el formulario
             ConfigureFormAppearance();
+         
         }
 
         /// <summary>
@@ -552,6 +553,9 @@ namespace Ofelia_Sara.Formularios.General
         {
             //ConfigurarCheckBoxesConImagen();
         }
+
+
+
     }
 }
 
