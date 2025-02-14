@@ -18,10 +18,8 @@ public class CustomMenuStripRenderer : ToolStripProfessionalRenderer
 
     protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
     {
-        // Si deseas personalizar el fondo del menú completo
-        using (SolidBrush brush = new SolidBrush(Color.FromArgb(230, 240, 255))) // Color claro para el fondo general
-        {
-            e.Graphics.FillRectangle(brush, e.AffectedBounds);
-        }
+
+        using SolidBrush brush = new SolidBrush(Color.FromArgb(230, 240, 255)); // Color claro para el fondo general
+        e.Graphics.FillRectangle(brush, e.AffectedBounds);
     }
 }

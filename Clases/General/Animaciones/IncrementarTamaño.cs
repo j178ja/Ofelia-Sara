@@ -1,16 +1,14 @@
-﻿/*ESTA CLASE ES UNA CLASE GENERICAR QUE PERMITE INCREMENTAR EL TAMAÑO DE BOTONES E IMAGENES,
- * SIN PERDER EL POSICIONAMIENTO*/
+﻿
 
+// se lo utiliza-- IncrementarTamaño.Incrementar(btn_xxx);
 
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-
-
-
-
-
-
+/// <summary>
+/// ESTA CLASE ES UNA CLASE GENERICAR QUE PERMITE INCREMENTAR EL TAMAÑO DE BOTONES E IMAGENES,SIN PERDER EL POSICIONAMIENTO
+/// </summary>
 public static class IncrementarTamaño
 {
     public static void Incrementar(System.Windows.Forms.Button boton)

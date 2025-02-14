@@ -35,9 +35,6 @@
     <Compile Update="Controles\Redactador\PictureBoxCircular.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controles\Barra Busqueda\PlaceholderComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controles\Ofl Sara\NuevaImagen.cs">
       <SubType>Component</SubType>
     </Compile>

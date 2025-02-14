@@ -11,7 +11,9 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Apariencia
 {
-
+    /// <summary>
+    /// Aplica bordes redondeados a panel, se le da parametro de radio y color
+    /// </summary>
     public static class PanelExtensions
     {
         // Método para aplicar bordes redondeados a un panel específico

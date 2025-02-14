@@ -1,6 +1,9 @@
 ﻿using Ofelia_Sara.Formularios.General.Mensajes;
 using System.Windows.Forms;
-//using Ofelia_Sara.Agregar_Componentes;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
+using Ofelia_Sara.Formularios.Oficial_de_servicio;
+
 
 namespace Ofelia_Sara.Controles.Barra_Busqueda
 
@@ -17,39 +20,39 @@ namespace Ofelia_Sara.Controles.Barra_Busqueda
             switch (nombreFormulario)
             {
                 case "Agregar Instructor":
-                    //  formulario = new NuevoInstructor();
+                      formulario = new NuevoInstructor();
                     break;
 
                 case "Agregar Secretario":
-                    //   formulario = new NuevoSecretario();
+                       formulario = new NuevoSecretario();
                     break;
 
                 case "Agregar Dependencia":
-                    //  formulario = new NuevaDependencia();
+                      formulario = new NuevaDependencia();
                     break;
 
                 case "Agregar Sellos":
-                    //  formulario = new NuevoPersonal();
+                    formulario = new SellosDependencia();
                     break;
 
                 case "Agregar Personal Policial":
-                    //   formulario = new NombreDelFormulario2();
+                       formulario = new NuevoPersonal();
                     break;
 
                 case "Actuaciones sumariales IPP":
-                    // formulario = new Inicio_cierre();
+                     formulario = new InicioCierre();
                     break;
 
                 case "Contravensiones":
-                    //  formulario = new Contravenciones();
+                      formulario = new Contravenciones();
                     break;
 
                 case "Expedientes":
-                    //  formulario = new Expedientes();
+                      formulario = new Expedientes();
                     break;
 
                 case "Leyes y decretos":
-                    // formulario = new LeyesForm();
+                     formulario = new LeyesForm();
                     break;
 
                 default:

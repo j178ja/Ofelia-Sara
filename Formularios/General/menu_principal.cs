@@ -17,9 +17,6 @@ using System.Windows.Forms;
 using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
 
-
-
-
 namespace Ofelia_Sara.Formularios.General
 {
 
@@ -96,31 +93,6 @@ namespace Ofelia_Sara.Formularios.General
         }
         #endregion
 
-      /// <summary>
-      /// POSICIONAR MENU EN PANTALLA
-      /// </summary>
-        private void PosicionarMenu()
-        {
-            // Obtener las dimensiones de la pantalla
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-
-            // Calcular la posición en X (centrado)
-            int formX = (screenWidth - this.Width) / 2;
-
-            // Calcular la posición en Y (20% desde el borde superior)
-            int formY = (int)(screenHeight * 0.15);
-
-            // Establecer la ubicación del formulario
-            this.Location = new Point(formX, formY);
-        }
-        private void OpenFormBelowMenuPrincipal(Form formToOpen)
-        {
-            formToOpen.StartPosition = FormStartPosition.Manual;
-            formToOpen.Location = new Point(this.Location.X, this.Location.Y + this.Height);
-            formToOpen.Show();
-        }
-    
         #region LOAD
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -135,13 +107,13 @@ namespace Ofelia_Sara.Formularios.General
             IncrementarTamaño.Incrementar(btn_BoletinOficial);
             Tooltips();
 
-            //  comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            // comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+           // comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
-            //comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
+           // comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
             //
-            //comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
+           // comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
 
             ConfigurarBotones();
             MostrarPlaceholder();
@@ -153,24 +125,9 @@ namespace Ofelia_Sara.Formularios.General
                                              Properties.Resources.engranajeOriginal);   // Imagen original
 
             comboBox_Buscar.PlaceholderText = "Buscar tipo de actuación...";
-            comboBox_Buscar.PlaceholderColor = Color.LightGray;
+            comboBox_Buscar.PlaceholderColor = Color.Gray;
         }
         #endregion
-
-       /// <summary>
-       /// AGRUPACION DE TOOLTIPS 
-       /// </summary>
-        private  void Tooltips()
-        {
-            ToolTipGeneral.ShowToolTip(btn_Configurar, "Configuración de elementos.");
-            ToolTipGeneral.ShowToolTip(btn_Leyes, "Leyes y decretos útiles.");
-            ToolTipGeneral.ShowToolTip(btn_Mecanografia, "MECANOGRAFIA");
-            ToolTipGeneral.ShowToolTip(btn_Redactador, "REDACTAR POR VOZ");
-            ToolTipGeneral.ShowToolTip(label_OfeliaSara, "Instructivo de la aplicación.");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
-            ToolTipGeneral.ShowToolTip(comboBox_Buscar, " Ingrese que tarea desea realizar.");
-            ToolTipGeneral.ShowToolTip(btn_BoletinOficial, "Boletín Informativo.");
-        }
 
         #region BOTONES
         /// <summary>
@@ -662,6 +619,48 @@ namespace Ofelia_Sara.Formularios.General
 
         #endregion
 
+        #region METODOS GENERALES
+
+        /// <summary>
+        /// AGRUPACION DE TOOLTIPS 
+        /// </summary>
+        private void Tooltips()
+        {
+            ToolTipGeneral.ShowToolTip(btn_Configurar, "Configuración de elementos.");
+            ToolTipGeneral.ShowToolTip(btn_Leyes, "Leyes y decretos útiles.");
+            ToolTipGeneral.ShowToolTip(btn_Mecanografia, "MECANOGRAFIA");
+            ToolTipGeneral.ShowToolTip(btn_Redactador, "REDACTAR POR VOZ");
+            ToolTipGeneral.ShowToolTip(label_OfeliaSara, "Instructivo de la aplicación.");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
+            ToolTipGeneral.ShowToolTip(comboBox_Buscar, " Ingrese que tarea desea realizar.");
+            ToolTipGeneral.ShowToolTip(btn_BoletinOficial, "Boletín Informativo.");
+        }
+
+        /// <summary>
+        /// POSICIONAR MENU EN PANTALLA
+        /// </summary>
+        private void PosicionarMenu()
+        {
+            // Obtener las dimensiones de la pantalla
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            // Calcular la posición en X (centrado)
+            int formX = (screenWidth - this.Width) / 2;
+
+            // Calcular la posición en Y (20% desde el borde superior)
+            int formY = (int)(screenHeight * 0.15);
+
+            // Establecer la ubicación del formulario
+            this.Location = new Point(formX, formY);
+        }
+        private void OpenFormBelowMenuPrincipal(Form formToOpen)
+        {
+            formToOpen.StartPosition = FormStartPosition.Manual;
+            formToOpen.Location = new Point(this.Location.X, this.Location.Y + this.Height);
+            formToOpen.Show();
+        }
+
         /// <summary>
         /// RESTABLECE LA POSICION ORIGINAL DEL FORMULARIO MENUPRINCIPAL
         /// </summary>
@@ -723,7 +722,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
       
-      
+
         /// <summary>
         /// Sobrescribir el evento Resize del formulario principal para ocultarlo si se intenta restaurar
         /// </summary>
@@ -738,7 +737,7 @@ namespace Ofelia_Sara.Formularios.General
                 this.WindowState = FormWindowState.Minimized;
             }
         }
-
+        #endregion
 
         #region BUSCADOR
         private BindingSource bindingSource;
@@ -852,8 +851,6 @@ namespace Ofelia_Sara.Formularios.General
             MostrarPlaceholder();
         }
 
-        #endregion
-
         /// <summary>
         /// CONFIGURAR PLACEHOLDER
         /// </summary>
@@ -863,6 +860,8 @@ namespace Ofelia_Sara.Formularios.General
             comboBox_Buscar.Text = placeholderText;
             comboBox_Buscar.ForeColor = Color.LightGray;
         }
+
+        #endregion
 
         #region LABEL CENTRAL
 

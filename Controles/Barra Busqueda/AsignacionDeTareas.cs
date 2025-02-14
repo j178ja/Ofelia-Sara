@@ -5,7 +5,9 @@ namespace Ofelia_Sara.Controles.Barra_Busqueda
 {
     public class TareasManager
     {
-        // Lista interna de tareas
+        /// <summary>
+        /// Proporciona listado de tareas a mostrar en comboBox_Buscar
+        /// </summary>
         private List<string> tareas;
 
         public TareasManager()

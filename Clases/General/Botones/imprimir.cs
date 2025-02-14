@@ -42,7 +42,12 @@ namespace Ofelia_Sara.Clases.General.Botones
                 btn_Imprimir.BackColor = Color.FromArgb(211, 47, 47); // Rojo
             }
         }
-        // Método que unifica la validación y actualización del estado del botón
+       
+        /// <summary>
+        /// unifica la validación y actualización del estado del botón
+        /// </summary>
+        /// <param name="btn_Imprimir"></param>
+        /// <param name="controls"></param>
         public static void VerificarYActualizarBotonImprimir(Button btn_Imprimir, Control.ControlCollection controls)
         {
             ActualizarEstadoBoton(btn_Imprimir, controls);

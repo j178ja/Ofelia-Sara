@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Animaciones
 {
+    /// <summary>
+    /// Aplica efecto de rotacion a imagen de engranaje
+    /// </summary>
     public static class Rotacion
     {
         public static void Aplicar(Button boton, Image imagenAnimada, Image imagenOriginal, int intervalo = 20)
@@ -65,7 +68,12 @@ namespace Ofelia_Sara.Clases.General.Animaciones
             }
         }
 
-        // Método para rotar la imagen
+        /// <summary>
+        /// para rotar la imagen
+        /// </summary>
+        /// <param name="imagen"></param>
+        /// <param name="angulo"></param>
+        /// <returns></returns>
         private static Image RotarImagen(Image imagen, float angulo)
         {
             Bitmap bmp = new Bitmap(imagen.Width, imagen.Height);

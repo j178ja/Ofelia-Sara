@@ -11,17 +11,17 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         public static ContextMenuStrip CrearMenu()
         {
             // Crear el menú contextual
-            ContextMenuStrip menu_Configurar = new ContextMenuStrip();
+            ContextMenuStrip menu_Configurar = new();
 
             // Crear ítems para el menú
-            ToolStripMenuItem item_Agregar = new ToolStripMenuItem("AGREGAR");
-            ToolStripMenuItem item_Buscar = new ToolStripMenuItem("BUSCAR ...");
-            ToolStripMenuItem item_Remover = new ToolStripMenuItem("REMOVER");
-            ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
+            ToolStripMenuItem item_Agregar = new ("AGREGAR");
+            ToolStripMenuItem item_Buscar = new ("BUSCAR ...");
+            ToolStripMenuItem item_Remover = new ("REMOVER");
+            ToolStripMenuItem item_Salir = new ("SALIR");
 
             // Crear subítems para "AGREGAR"
-            ToolStripMenuItem subItem_Agregar_Secretario = new ToolStripMenuItem("SECRETARIO");
-            ToolStripMenuItem subItem_Agregar_Instructor = new ToolStripMenuItem("INSTRUCTOR");
+            ToolStripMenuItem subItem_Agregar_Secretario = new("SECRETARIO");
+            ToolStripMenuItem subItem_Agregar_Instructor = new ("INSTRUCTOR");
 
             // Agregar subítems al ítem "AGREGAR"
             item_Agregar.DropDownItems.Add(subItem_Agregar_Secretario);

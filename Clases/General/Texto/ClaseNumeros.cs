@@ -8,6 +8,11 @@ namespace Ofelia_Sara.Clases.General.Texto
 {
     public class ClaseNumeros
     {
+        /// <summary>
+        /// metodo para darle formato a numero de legajo y dni 
+        /// </summary>
+        /// <param name="texto"></param>
+        /// <returns></returns>
         public static string FormatearNumeroConPuntos(string texto)
         {
             // Limitar el texto a 10 caracteres (si quieres mantenerlo igual)

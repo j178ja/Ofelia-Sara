@@ -1,6 +1,4 @@
-﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
-  QUE PERMITE INTRODUCIR 
-  ---------------DESARROLLADOR Y VERSION ---------------------------*/
+﻿
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System.Collections.Generic;
@@ -12,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Apariencia
 {
+    /// <summary>
+    /// ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS QUE PERMITE INTRODUCIR DESARROLLADOR Y VERSION
+    /// </summary>
     public static class FooterHelper
     {
         public static LinkLabel CreateFooterLinkLabel(Form form)

@@ -1,4 +1,5 @@
 ﻿using Clases.Reposicon_paneles;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes;
@@ -24,7 +25,7 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
 
             _menuPrincipal = menuPrincipal;
         }
-
+        #region CONSTRUCTOR 
         public ContextMenuStrip CrearMenuConfigurar()
         {
             // Crear un nuevo ContextMenuStrip
@@ -82,8 +83,9 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             return menu_Configurar;
         }
 
+        #endregion
 
-
+        #region MENU
         private ToolStripMenuItem CrearMenuItem(string texto, EventHandler onClick)
         {
             var menuItem = new ToolStripMenuItem(texto);
@@ -156,8 +158,15 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             return menuItem;
         }
 
+        #endregion
 
-
+        #region SUBMENU
+        /// <summary>
+        /// AGREGA ITEM AL SUBMENU
+        /// </summary>
+        /// <param name="texto"></param>
+        /// <param name="onClick"></param>
+        /// <returns></returns>
         private ToolStripMenuItem CrearSubMenuItem(string texto, EventHandler onClick)
         {
             var subMenuItem = new ToolStripMenuItem(texto);
@@ -210,11 +219,13 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             return subMenuItem;
         }
 
+        #endregion
 
-
-
-        //para aplicar el fondo a los items y a los subitems
-        private void AplicarEstiloItem(ToolStripItem item)
+        /// <summary>
+        /// para aplicar el fondo a los items y a los subitems
+        /// </summary>
+        /// <param name="item"></param>
+        private static void AplicarEstiloItem(ToolStripItem item)
         {
             // Aplicamos el estilo al item principal
             item.BackColor = Color.FromArgb(178, 213, 230); // Fondo predeterminado
@@ -233,6 +244,10 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             }
         }
 
+        /// <summary>
+        /// agrega subitem al item agregar
+        /// </summary>
+        /// <param name="item_Agregar"></param>
 
         private void AgregarSubItemsAgregar(ToolStripMenuItem item_Agregar)
         {
@@ -257,10 +272,12 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             subItem_Agregar_UFID.Image = Properties.Resources.agregar_Dependencia;
             subItem_Agregar_AgenteFiscal.Image = Properties.Resources.agregar_Usuario;
 
-
-
         }
 
+        /// <summary>
+        /// agrega los subitem al item buscar
+        /// </summary>
+        /// <param name="item_Buscar"></param>
         private void AgregarSubItemsBuscar(ToolStripMenuItem item_Buscar)
         {
             // Crear y agregar subítems al ítem "BUSCAR"
@@ -295,6 +312,10 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
 
         }
 
+        /// <summary>
+        /// Agrega lossubitem al item sellos
+        /// </summary>
+        /// <param name="SubItem_Agregar_Sellos"></param>
         private void AgregarSubItemsSellos(ToolStripMenuItem SubItem_Agregar_Sellos)
         {
             // Crear los subítems y asociar la función correspondiente
@@ -319,12 +340,12 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         // Crear el ítem "SALIR"
         ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
 
+        #region ABRIR INSTANCIAS DE FORMULARIOS
+        /// <summary>
+        /// MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU
+        /// </summary>
 
-
-        // ----MANEJAR EVENTOS CLICK DE ELEMENTOS DE MENU-----
-
-
-        // Métodos para abrir formularios
+ 
         //--------para abrir formulario agregar secretario
         private void Agregar_Secretario()
         {
@@ -425,9 +446,14 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             AbrirFormulario<UsuarioForm>();
         }
 
+        #endregion
 
-        //--------------------------------------------------------------------------------
-        // Método para abrir formularios sin pasar parámetros (básico)
+
+        /// <summary>
+        /// Método para abrir formularios sin pasar parámetros (básico)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="controlName"></param>
         private void AbrirFormulario<T>(string controlName = null) where T : Form, new()
         {
             Form form = Application.OpenForms.OfType<T>().FirstOrDefault();
@@ -455,7 +481,12 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             }
         }
 
-        private void AbrirConDemora(Action accion, int delayMilliseconds = 100)
+        /// <summary>
+        /// Diley adl abrir form para que se vea el efecto de cambio
+        /// </summary>
+        /// <param name="accion"></param>
+        /// <param name="delayMilliseconds"></param>
+        private static void AbrirConDemora(Action accion, int delayMilliseconds = 100)
         {
             var timer = new Timer { Interval = delayMilliseconds };
             timer.Tick += (sender, e) =>
@@ -467,16 +498,19 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             timer.Start();
         }
 
-
+        /// <summary>
+        /// posiciona cursor en  control especifico al abrir el fomulario
+        /// </summary>
+        /// <param name="control"></param>
         public void PosicionarCursorEnTextBox(Control control)
         {
-            if (control is TextBox textBox)
+            if (control is CustomTextBox textBox || control is CustomComboBox)
             {
-                textBox.Focus();
-                textBox.SelectAll(); // Selecciona todo el texto
+               // _=textBox.Focus();
+              //  textBox.SelectAll(); // Selecciona todo el texto
             }
         }
-        //-----------------------------------------------------------------------
+       
 
 
 

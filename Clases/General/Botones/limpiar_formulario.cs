@@ -104,7 +104,11 @@ namespace Ofelia_Sara.Clases.General.Botones
             }
         }
 
-        // Método para limpiar y restaurar un CustomComboBox
+        
+        /// <summary>
+        /// para limpiar y restaurar un CustomComboBox
+        /// </summary>
+        /// <param name="comboBox"></param>
         private static void LimpiarYRestaurarComboBox(CustomComboBox comboBox)
         {
             comboBox.SelectedIndex = -1; // Deselecciona cualquier elemento

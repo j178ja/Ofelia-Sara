@@ -18,7 +18,7 @@ namespace Ofelia_Sara.Clases.General.Texto
             if (string.IsNullOrWhiteSpace(input))
                 return string.Empty;
 
-            StringBuilder resultado = new StringBuilder(input.Length);
+            StringBuilder resultado = new(input.Length);
             bool proximaMayuscula = true;
 
             foreach (char c in input)

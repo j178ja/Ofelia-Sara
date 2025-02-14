@@ -88,23 +88,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         #endregion
 
-        #region PROPIEDADES PUBLICAS
-        /// <summary>
-        /// Propiedad pública para acceder al botón
-        /// </summary>
-        public Boton_Contador BtnContadorRatificaciones
-        {  // En InicioCierre, agrega una propiedad pública que devuelva el botón
-            get { return btn_ContadorRatificaciones; } // Asegúrate de que esta instancia esté inicializada en el diseñador
-        }
-        #endregion
-       
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
             // Configurar autocompletado para `textBox_Caratula`
-            AutocompletarManager autocompletarManager = new AutocompletarManager("autocompletar.json");                     
+            AutocompletarManager autocompletarManager = new AutocompletarManager("autocompletar.json");
             autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
@@ -122,12 +112,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
 
             ActualizarEstado();//PARA LABEL Y CHECK CARGO,labell btn_not247 y btn_StudRML
-         
+
             Btn_ContadorRML.Text = "0";
 
             fecha_Pericia.ValidatingType = typeof(DateTime); // Configurar tipo de validación
         }
         #endregion
+
+
+        #region PROPIEDADES PUBLICAS
+        /// <summary>
+        /// Propiedad pública para acceder al botón
+        /// </summary>
+        public Boton_Contador BtnContadorRatificaciones
+        {  // En InicioCierre, agrega una propiedad pública que devuelva el botón
+            get { return btn_ContadorRatificaciones; } // Asegúrate de que esta instancia esté inicializada en el diseñador
+        }
+        #endregion
+       
 
         #region CONFIGURACIONES
         private void ConfigurarTooltip()
@@ -1045,7 +1047,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
             }
         }
-      
         private void ComboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
         {
             comboBox_AgenteFiscal.TextValue = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.TextValue);
@@ -1318,8 +1319,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return !camposIncompletos;// Devuelve verdadero si todos los campos están completos
 
         }
-      
-        
+
         /// <summary>
         /// para que muestre mensaje de advertencia previo cerrar formulario
         /// </summary>
