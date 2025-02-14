@@ -242,7 +242,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             if (capsLockState)
             {
                 pictureBox_MayusculaActivada.Visible = true; // Mostrar el indicador visual
-                ToolTipGeneral.ShowToolTip(pictureBox_MayusculaActivada, "Mayúsculas activadas.");
+                ToolTipGeneral.Mostrar(pictureBox_MayusculaActivada, "Mayúsculas activadas.");
             }
             else
             {

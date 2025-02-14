@@ -30,8 +30,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
 
         // Listas para almacenar víctimas e imputados
-        private List<string> victimas = new List<string>();
-        private List<string> imputados = new List<string>();
+        private  List<string> victimas = [];
+        private  List<string> imputados = [];
 
         //Lista para autocompletar caratula
         private List<string> sugerencias;
@@ -145,9 +145,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
 
-            ToolTipGeneral.ShowToolTip(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
-            ToolTipGeneral.ShowToolTip(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
-            ToolTipGeneral.ShowToolTip(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
+            ToolTipGeneral.Mostrar(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
+            ToolTipGeneral.Mostrar(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
+            ToolTipGeneral.Mostrar(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
         }
 
         /// <summary>

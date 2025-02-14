@@ -10,6 +10,7 @@
     <AssemblyName>Ofelia-Sara</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\imagenes\General\EscudoPolicia_ICO.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>

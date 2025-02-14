@@ -1,4 +1,4 @@
-﻿// se aplica asi-->ToolTipGeneral.ShowToolTip(this, btn_Imprimir, "Guardar e IMPRIMIR."); 
+﻿// se aplica asi-->ToolTipGeneral.Mostrar(this, btn_Imprimir, "Guardar e IMPRIMIR."); 
 
 
 using Ofelia_Sara.Formularios.General.Mensajes;
@@ -9,18 +9,27 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.Controles.Tooltip
 {
+    /// <summary>
+    /// tooltip multiproposito personalizado
+    /// </summary>
     public static class ToolTipGeneral
     {
-        private static Timer timer;
-        private static readonly Dictionary<Control, ToolTip> toolTips = new();
+        #region VARIABLES
+        private static readonly Dictionary<Control, ToolTip> toolTips = [];
         private static readonly Bitmap DefaultImage = Properties.Resources.EscudoPolicia_PNG;
+        private static readonly char[] separator = ['\n'];
+        #endregion
 
-        public static void ShowToolTip(Control control, string toolTipText)
+        /// <summary>
+        /// PARA MOSTRAR EL TOOLTIP PERSONALIZADO
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="toolTipText"></param>
+        public static void Mostrar(Control control, string toolTipText)
         {
             try
             {
-                if (control == null)
-                    throw new ArgumentNullException(nameof(control));
+                ArgumentNullException.ThrowIfNull(control);
 
                 // Crear un ToolTip específico para el control si no existe
                 if (!toolTips.TryGetValue(control, out var customToolTip))
@@ -61,8 +70,8 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
                 Color backgroundColor = control.Enabled ? Color.FromArgb(0, 154, 174) : Color.Gray;
                 e.Graphics.FillRectangle(new SolidBrush(backgroundColor), e.Bounds);
 
-                string[] lines = text.Split(new[] { '\n' }, StringSplitOptions.None);
-                using (Font font = new Font("Arial", 10))
+                string[] lines = text.Split(separator, StringSplitOptions.None);
+                using (Font font = new ("Arial", 10))
                 {
                     float lineHeight = font.GetHeight(e.Graphics) + 6;
                     float textY = e.Bounds.Y + 4;
@@ -97,7 +106,7 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
             try
             {
                 using Graphics g = Graphics.FromHwnd(nint.Zero);
-                using Font font = new Font("Arial", 10);
+                using Font font = new("Arial", 10);
                 string[] lines = text.Split(new[] { '\n' }, StringSplitOptions.None);
 
                 float maxWidth = 0;

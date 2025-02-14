@@ -1,4 +1,4 @@
-﻿/*ESTA CLASE LE DA FORMATO REDONDEADO A LOS PANELES DE LOS DEDOS*/
+﻿
 
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -6,9 +6,18 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.Mecanografia
 {
+    /// <summary>
+    /// DA FORMATO REDONDEADO A LOS PANELES DE LOS DEDOS
+    /// </summary>
     public static class RedondearPanel
     {
-        // Método para aplicar bordes redondeados a los paneles con radios diferentes para cada borde
+        
+        /// <summary>
+        /// aplicar bordes redondeados a los paneles con radios diferentes para cada borde
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="radioSuperior"></param>
+        /// <param name="radioInferior"></param>
         public static void AplicarBordesRedondeados(Panel panel, int radioSuperior, int radioInferior)
         {
             // Asignar el evento Paint del panel

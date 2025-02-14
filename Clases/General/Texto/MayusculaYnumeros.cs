@@ -139,7 +139,7 @@ public class MayusculaYnumeros
         if (input == null)
             return string.Empty;
 
-        StringBuilder resultado = new StringBuilder(input.Length);
+        StringBuilder resultado = new (input.Length);
 
         foreach (char c in input)
         {
@@ -164,7 +164,7 @@ public class MayusculaYnumeros
         if (input == null)
             return string.Empty;
 
-        StringBuilder resultado = new StringBuilder(input.Length);
+        StringBuilder resultado = new (input.Length);
 
         foreach (char c in input)
         {

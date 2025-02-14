@@ -26,7 +26,7 @@ public static class ToolTipError
             };
 
             // Asignar eventos de hover
-            pictureBoxError.MouseHover += (sender, e) => ShowToolTip(pictureBoxError, toolTipText);
+            pictureBoxError.MouseHover += (sender, e) => Mostrar(pictureBoxError, toolTipText);
             pictureBoxError.MouseLeave += (sender, e) => HideToolTip();
         }
     }
@@ -36,7 +36,7 @@ public static class ToolTipError
     /// </summary>
     /// <param name="control">Control sobre el que se pasa el mouse.</param>
     /// <param name="toolTipText">Texto a mostrar.</param>
-    public static void ShowToolTip(Control control, string toolTipText)
+    public static void Mostrar(Control control, string toolTipText)
     {
         if (control == null || string.IsNullOrEmpty(toolTipText))
             return;

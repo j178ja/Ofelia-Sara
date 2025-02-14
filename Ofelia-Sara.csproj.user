@@ -11,6 +11,9 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Clases\Mecanografia\Texto_TipearPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Controles\General\CustomComboBox.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -508,7 +508,7 @@ namespace Ofelia_Sara.Controles.General
         
 
         public int Whidth { get; set; }
-        public int Height { get; set; }
+        public new int Height { get; set; }
 
       
     }

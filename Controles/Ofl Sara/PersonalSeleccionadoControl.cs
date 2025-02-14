@@ -28,8 +28,8 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
             InitializeComponent();
             _personalManager = new PersonalManager();
             /*      
-                ToolTipGeneral.ShowToolTip( btn_ModificarPersonal, "MODIFICAR personal");
-                ToolTipGeneral.ShowToolTip( btn_EliminarControl, "ELIMINAR personal");
+                ToolTipGeneral.Mostrar( btn_ModificarPersonal, "MODIFICAR personal");
+                ToolTipGeneral.Mostrar( btn_EliminarControl, "ELIMINAR personal");
             */
         }
 

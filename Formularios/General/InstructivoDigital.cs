@@ -231,12 +231,12 @@ namespace Ofelia_Sara.Formularios.General
             }
 
             axWindowsMediaPlayer_Videos.URL = rutaVideo;
-            axWindowsMediaPlayer_Videos.Ctlcontrols.play();
+           // axWindowsMediaPlayer_Videos.Ctlcontrols.play();
         }
 
         private void DetenerVideo()
         {
-            axWindowsMediaPlayer_Videos.Ctlcontrols.stop();
+          //  axWindowsMediaPlayer_Videos.Ctlcontrols.stop();
             panel2.Visible = false;
             panel1.Height = 240; // Restaurar tamaño original de panel1
             //this.Height = panel1.Height + 90; // Restaurar altura del formulario

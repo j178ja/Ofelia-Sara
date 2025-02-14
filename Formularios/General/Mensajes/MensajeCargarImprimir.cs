@@ -32,7 +32,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             innerPanel.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Tick += new EventHandler(Timer1_Tick);
             Load += new EventHandler(MensajeCargarImprimir_Load);
         }
 
@@ -47,11 +47,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
             else
             {
-                MessageBox.Show("Error: progressBar1 no se ha inicializado correctamente.", "Error de inicialización", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGeneral.Mostrar("El indicador de progreso no se ha inicializado correctamente.", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if (progressBar.Value < progressBar.Maximum)
             {
@@ -71,10 +71,10 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            MessageBox.Show("Operación Cancelada", "Confirmación Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Operación Cancelada", MensajeGeneral.TipoMensaje.Informacion);
             Close();
         }
 
@@ -166,7 +166,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             btn_CancelarImpresion.TabIndex = 1;
             btn_CancelarImpresion.Text = "CANCELAR";
             btn_CancelarImpresion.UseVisualStyleBackColor = false;
-            btn_CancelarImpresion.Click += new EventHandler(btnCancel_Click);
+            btn_CancelarImpresion.Click += new EventHandler(BtnCancel_Click);
             // 
             // label1
             // 

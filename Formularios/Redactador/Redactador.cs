@@ -35,6 +35,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         [DllImport("user32.dll")]
         private static extern bool HideCaret(IntPtr hWnd);
         //-----------------------------------------------------------
+        #region VARIABLES
         //AMPLIAR FORMULARIO
         private bool isResizing = false;
         private Point lastMousePosition;
@@ -44,9 +45,17 @@ namespace Ofelia_Sara.Formularios.Redactador
         private string outputFile = "mic_recording.wav";
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private Button botonAlineacionSeleccionado = null; //para saber con que formato de texto se esta trabajando
+                                                           // Bandera para activar o desactivar el subrayado personalizado
+        private bool mostrarSubrayado = false;
+        //para hacer que se extienda 
+        private int lineWidth = 0;
+        private bool isAnimating = false;
+        private Timer animationTimer;
+        private readonly Timer timerCerrarForm = new();
+        private readonly Timer timerMinimizarForm = new();
+        #endregion
 
-        Timer timerCerrarForm = new Timer();
-        Timer timerMinimizarForm = new Timer();
+        #region CONSTRUCTOR
         public Redactador()
         {
             InitializeComponent();
@@ -58,10 +67,13 @@ namespace Ofelia_Sara.Formularios.Redactador
             timer_Barras.Tick += timer_Barras_Tick;
 
         }
+        #endregion
+
+        #region LOAD
         private void Redactador_Load(object sender, EventArgs e)
         {
             audioVisualizerControl.Visible = false;
-            ToolTipGeneral.ShowToolTip(btn_Microfono, "ACTIVAR micrófono");
+            ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
@@ -79,24 +91,23 @@ namespace Ofelia_Sara.Formularios.Redactador
             timerCerrarForm.Tick += TimerCerrar_Tick;
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
 
-            ToolTipGeneral.ShowToolTip(btn_Guardar, "CREAR DOCUMENTO WORD");
-            ToolTipGeneral.ShowToolTip(btn_Limpiar, "ELIMINAR");
-            ToolTipGeneral.ShowToolTip(btn_Negrita, "NEGRITA");
-            ToolTipGeneral.ShowToolTip(btn_Cursiva, "CURSIVA");
-            ToolTipGeneral.ShowToolTip(btn_Subrayado, "SUBRAYAR");
-            ToolTipGeneral.ShowToolTip(btn_AumentarTamaño, "Aumentar tamaño");
-            ToolTipGeneral.ShowToolTip(btn_ReducirTamaño, "Reducir tamaño");
-            ToolTipGeneral.ShowToolTip(btn_MayusculaMinuscula, "MAYUSCULA/minuscula");
-            ToolTipGeneral.ShowToolTip(btn_AlinearIzquierda, "Alinear a la Izquierda");
-            ToolTipGeneral.ShowToolTip(btn_Centrar, "CENTRAR");
-            ToolTipGeneral.ShowToolTip(btn_AlinearDerecha, "Alinear a la Derecha");
-            ToolTipGeneral.ShowToolTip(btn_Justificar, "JUSTIFICAR");
-            ToolTipGeneral.ShowToolTip(label_OfeliaSara, "Instructivo de la aplicación");
+            ToolTipGeneral.Mostrar(btn_Guardar, "CREAR DOCUMENTO WORD");
+            ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR");
+            ToolTipGeneral.Mostrar(btn_Negrita, "NEGRITA");
+            ToolTipGeneral.Mostrar(btn_Cursiva, "CURSIVA");
+            ToolTipGeneral.Mostrar(btn_Subrayado, "SUBRAYAR");
+            ToolTipGeneral.Mostrar(btn_AumentarTamaño, "Aumentar tamaño");
+            ToolTipGeneral.Mostrar(btn_ReducirTamaño, "Reducir tamaño");
+            ToolTipGeneral.Mostrar(btn_MayusculaMinuscula, "MAYUSCULA/minuscula");
+            ToolTipGeneral.Mostrar(btn_AlinearIzquierda, "Alinear a la Izquierda");
+            ToolTipGeneral.Mostrar(btn_Centrar, "CENTRAR");
+            ToolTipGeneral.Mostrar(btn_AlinearDerecha, "Alinear a la Derecha");
+            ToolTipGeneral.Mostrar(btn_Justificar, "JUSTIFICAR");
+            ToolTipGeneral.Mostrar(label_OfeliaSara, "Instructivo de la aplicación");
 
             richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
         }
-        //---------------------------------------------------------------------------------
-        //----BARRA SUPERIOR-----
+        #endregion
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
@@ -128,7 +139,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Cerrar.FlatAppearance.BorderSize = 1;
             btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
         }
-        //-------------------------------------------------------------------------
+   
         private void TimerMinimizar_Tick(object sender, EventArgs e)
         {
             // Detener el timer
@@ -203,13 +214,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
 
-        //--------------------------------------------------------------------------------
-        // Bandera para activar o desactivar el subrayado personalizado
-        private bool mostrarSubrayado = false;
-        //para hacer que se extienda 
-        private int lineWidth = 0;
-        private bool isAnimating = false;
-        private Timer animationTimer;
+    
 
         // Método para activar el subrayado en MouseHover
         private void Label_OfeliaSara_MouseHover(object sender, EventArgs e)
@@ -239,7 +244,12 @@ namespace Ofelia_Sara.Formularios.Redactador
             animationTimer.Start(); // Inicia el Timer para la animación
         }
 
-        // Método para desactivar el subrayado en MouseLeave
+       
+        /// <summary>
+        /// para desactivar el subrayado en MouseLeave
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_OfeliaSara_MouseLeave(object sender, EventArgs e)
         {
             isAnimating = false;
@@ -249,23 +259,24 @@ namespace Ofelia_Sara.Formularios.Redactador
         }
 
 
-        // Método Paint para dibujar el subrayado personalizado
 
-
+        /// <summary>
+        /// Método Paint para dibujar el subrayado personalizado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_OfeliaSara_Paint(object sender, PaintEventArgs e)
         {
             if (isAnimating)
             {
                 // Define el color y grosor de la línea
-                using (Pen pen = new Pen(SystemColors.Highlight, 3))
-                {
-                    // Centro del Label
-                    int centerX = label_OfeliaSara.Width / 2;
-                    int y = label_OfeliaSara.Font.Height; // Posición 3 píxeles debajo del texto
+                using Pen pen = new Pen(SystemColors.Highlight, 3);
+                // Centro del Label
+                int centerX = label_OfeliaSara.Width / 2;
+                int y = label_OfeliaSara.Font.Height; // Posición 3 píxeles debajo del texto
 
-                    // Dibuja la línea desde el centro hacia los extremos
-                    e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
-                }
+                // Dibuja la línea desde el centro hacia los extremos
+                e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
             }
         }
 
@@ -349,14 +360,11 @@ namespace Ofelia_Sara.Formularios.Redactador
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
-        //----------------------------------------------------------------------------------
+       
 
+        private ToolTip toolTip = new ();
 
-        // private ToolTip toolTip = new ToolTip();
-
-        private ToolTip toolTip = new ToolTip();
-
-        private void btn_Microfono_Click(object sender, EventArgs e)
+        private void Btn_Microfono_Click(object sender, EventArgs e)
         {
             // Verificar si hay dispositivos de entrada (micrófono)
             if (WaveIn.DeviceCount == 0)
@@ -378,7 +386,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.Focus();
 
                 // Mostrar ToolTip para activar el micrófono
-                //    ToolTipGeneral.ShowToolTip( btn_Microfono, "ACTIVAR micrófono");
+              ToolTipGeneral.Mostrar( btn_Microfono, "ACTIVAR micrófono");
             }
             else // Activar micrófono
             {
@@ -387,7 +395,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.Focus();
 
                 // Mostrar ToolTip para desactivar el micrófono
-                ToolTipGeneral.ShowToolTip(btn_Microfono, "DESACTIVAR micrófono");
+                ToolTipGeneral.Mostrar(btn_Microfono, "DESACTIVAR micrófono");
 
                 StartRecording();
                 timer_Barras.Start(); // Inicia el temporizador para actualizar las barras de visualización
@@ -428,7 +436,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         private void timer_Barras_Tick(object sender, EventArgs e)
         {
             // Generar amplitudes de ejemplo o basadas en datos de audio
-            Random random = new Random();
+            Random random = new ();
             int[] amplitudes = new int[audioVisualizerControl.Controls.Count];
             for (int i = 0; i < amplitudes.Length; i++)
             {
@@ -439,7 +447,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             audioVisualizerControl.UpdateVisualization(amplitudes);
         }
         //----------- FUNCIONALIDAD DE TECLAS-------------------------------
-        private void btn_Negrita_Click(object sender, EventArgs e)
+        private void Btn_Negrita_Click(object sender, EventArgs e)
         {
             if (btn_Negrita.BackColor == Color.White)
             {
@@ -471,7 +479,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
 
         }
-        private void btn_Subrayado_Click(object sender, EventArgs e)
+        private void Btn_Subrayado_Click(object sender, EventArgs e)
         {
 
             if (btn_Subrayado.BackColor == Color.White)
@@ -506,7 +514,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
         //--------------BOTONES AUMENTAR Y DISMINUIR TAMAÑO----------------
-        private void btn_AumentarTamaño_Click(object sender, EventArgs e)
+        private void Btn_AumentarTamaño_Click(object sender, EventArgs e)
         {
             CambiarTamañoFuente(2);  // Aumentar el tamaño de la fuente en 2 puntos
             richTextBox_Redactor.Focus();
@@ -544,7 +552,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         // Variable para almacenar si la escritura actual está en mayúsculas o minúsculas
         private bool escribirEnMayusculas = false;
 
-        private void btn_MayusculaMiniscula_Click(object sender, EventArgs e)
+        private void Btn_MayusculaMiniscula_Click(object sender, EventArgs e)
         {
             // Verificar si hay texto seleccionado
             if (richTextBox_Redactor.SelectionLength > 0)
@@ -632,7 +640,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
 
         // Evento que se activa cada vez que el contenido del RichTextBox cambia
-        private void richTextBox_Redactor_TextChanged(object sender, EventArgs e)
+        private void RichTextBox_Redactor_TextChanged(object sender, EventArgs e)
         {
             // Ocultar el caret
             HideCaret(richTextBox_Redactor.Handle);// oculta caret
@@ -652,7 +660,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 }
             }
         }
-        private void btn_MouseDown(object sender, MouseEventArgs e)
+        private void Btn_MouseDown(object sender, MouseEventArgs e)
         {
             Button boton = sender as Button; // Convertir el sender a tipo Button
             if (boton != null)
@@ -661,7 +669,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
 
-        private void btn_MouseUp(object sender, MouseEventArgs e)
+        private void Btn_MouseUp(object sender, MouseEventArgs e)
         {
             Button boton = sender as Button; // Convertir el sender a tipo Button
             if (boton != null)
@@ -670,25 +678,25 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
         //-------------------------------------
-        private void btn_AlinearIzquierda_Click(object sender, EventArgs e)
+        private void Btn_AlinearIzquierda_Click(object sender, EventArgs e)
         {
             CambiarAlineacion(btn_AlinearIzquierda, HorizontalAlignment.Left);
             richTextBox_Redactor.Focus();
         }
 
-        private void btn_AlinearDerecha_Click(object sender, EventArgs e)
+        private void Btn_AlinearDerecha_Click(object sender, EventArgs e)
         {
             CambiarAlineacion(btn_AlinearDerecha, HorizontalAlignment.Right);
             richTextBox_Redactor.Focus();
         }
 
-        private void btn_Centrar_Click(object sender, EventArgs e)
+        private void Btn_Centrar_Click(object sender, EventArgs e)
         {
             CambiarAlineacion(btn_Centrar, HorizontalAlignment.Center);
             richTextBox_Redactor.Focus();
         }
 
-        private void btn_Justificar_Click(object sender, EventArgs e)
+        private void Btn_Justificar_Click(object sender, EventArgs e)
         {
             CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left); // Usa Center ya que Justify no es soportado directamente
             richTextBox_Redactor.Focus();
@@ -714,7 +722,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
 
         //------------------------------------
-        private void btn_Eliminar_Click(object sender, EventArgs e)
+        private void Btn_Eliminar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this);
             CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left);// para que inicie en justificado
@@ -725,27 +733,24 @@ namespace Ofelia_Sara.Formularios.Redactador
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
 
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancelar el cierre del formulario
                 }
             }
         }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
         }
 
-        //-------------------------------------------
-        protected void InicializarEstiloBoton(Button boton)
+        protected new static void InicializarEstiloBoton(Button boton)
         {
             // Variables para almacenar el tamaño y la posición original solo al entrar en el botón
             Size originalSize = boton.Size;
@@ -787,7 +792,6 @@ namespace Ofelia_Sara.Formularios.Redactador
         }
 
 
-        //---------------------------------------------------------------
 
         private void Redactador_MouseDown(object sender, MouseEventArgs e)
         {

@@ -30,9 +30,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void Verificador_ACTUACION_Load(object sender, EventArgs e)
         {
             // Configuración de ToolTips para los controles
-            // ToolTipGeneral.ShowToolTip(Remover_Control, "ELIMINAR del listado de actuaciones.");
-            // ToolTipGeneral.ShowToolTip(linkLabel_Actuacion, "REDIRIGIR a formulario.");
-            //ToolTipGeneral.ShowToolTip(pictureBox_PrevisualizadorDocumento, "VISUALIZAR documento.");
+            // ToolTipGeneral.Mostrar(Remover_Control, "ELIMINAR del listado de actuaciones.");
+            // ToolTipGeneral.Mostrar(linkLabel_Actuacion, "REDIRIGIR a formulario.");
+            //ToolTipGeneral.Mostrar(pictureBox_PrevisualizadorDocumento, "VISUALIZAR documento.");
         }
         public bool IsImagenVisible
         {

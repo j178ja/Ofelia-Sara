@@ -37,10 +37,10 @@ namespace Ofelia_Sara.Clases.General.Texto
         private void Form_KeyDown(object sender, KeyEventArgs e)
         {
             // Verifica si la tecla presionada está en el diccionario _keyActions
-            if (_keyActions.ContainsKey(e.KeyCode))
+            if (_keyActions.TryGetValue(e.KeyCode, out Func<bool> value))
             {
                 // Ejecuta la función asociada a la tecla y obtiene el resultado (true o false)
-                bool handled = _keyActions[e.KeyCode]();
+                bool handled = value();
 
                 // Si la acción fue manejada (handled es true), suprime la pulsación de tecla
                 if (handled)

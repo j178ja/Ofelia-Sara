@@ -18,18 +18,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private SellosDependencia sellosDependenciaForm;
 
-        private ComisariasManager dbManager;
+        private new ComisariasManager dbManager;
 
         public event Action<string> DependenciaTextChanged;//para  actualizar en tiempo real con form SellosDependencia
         public event Action<string> LocalidadTextChanged;//para  actualizar en tiempo real con form SellosDependencia
 
         // Define un delegado para el evento ItemAgregado
         public delegate void ItemAgregadoEventHandler(object sender, string nuevoItem);
-        // Evento que se dispara cuando se agrega un nuevo ítem
-        public event ItemAgregadoEventHandler ItemAgregado;
-
-        // Definición de ComboBoxFilePath como propiedad
-        private string ComboBoxFilePath { get; set; }
+     
         #endregion
 
         #region CONSTRUCTOR

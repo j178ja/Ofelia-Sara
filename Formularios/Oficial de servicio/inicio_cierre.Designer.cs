@@ -1279,6 +1279,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_Not247;
         private System.Windows.Forms.Label label_Not247;
         private CustomTextBox textBox_Caratula;
-        private CustomTextBox customTextBox1;
+      
     }
 }

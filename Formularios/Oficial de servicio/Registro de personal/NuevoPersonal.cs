@@ -107,10 +107,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para verificar informaciòn.", "Verificar datos de Legajo Ingresado.");
 
-            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DATOSPERSONALES, "Ampliar/Reducir DATOS PERSONALES.");
-            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_REVISTA, "Ampliar/Reducir SITUACIÓN DE REVISTA.");
-            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_ARMAMENTO, "Ampliar/Reducir ARMAMENTO.");
-            ToolTipGeneral.ShowToolTip(btn_AmpliarReducir_DESTINO, "Ampliar/Reducir DESTINO LABORAL.");
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_DATOSPERSONALES, "Ampliar/Reducir DATOS PERSONALES.");
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_REVISTA, "Ampliar/Reducir SITUACIÓN DE REVISTA.");
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_ARMAMENTO, "Ampliar/Reducir ARMAMENTO.");
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_DESTINO, "Ampliar/Reducir DESTINO LABORAL.");
 
             //traer label al frent
             label_TITULO.BringToFront();

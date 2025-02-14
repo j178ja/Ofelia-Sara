@@ -106,7 +106,7 @@
             this.pictureBox_Github.TabIndex = 7;
             this.pictureBox_Github.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox_Github, "Github");
-            this.pictureBox_Github.Click += new System.EventHandler(this.pictureBox_Github_Click);
+            this.pictureBox_Github.Click += new System.EventHandler(this.PictureBox_Github_Click);
             // 
             // pictureBox_Linkedin
             // 
@@ -119,7 +119,7 @@
             this.pictureBox_Linkedin.TabIndex = 6;
             this.pictureBox_Linkedin.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox_Linkedin, "Linkedin");
-            this.pictureBox_Linkedin.Click += new System.EventHandler(this.pictureBox_Linkedin_Click);
+            this.pictureBox_Linkedin.Click += new System.EventHandler(this.PictureBox_Linkedin_Click);
             // 
             // pictureBox_Y
             // 
@@ -143,7 +143,7 @@
             this.pictureBox_Correo.TabIndex = 4;
             this.pictureBox_Correo.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox_Correo, "Email");
-            this.pictureBox_Correo.Click += new System.EventHandler(this.pictureBox_Correo_Click);
+            this.pictureBox_Correo.Click += new System.EventHandler(this.PictureBox_Correo_Click);
             // 
             // pictureBox_Wpp
             // 
@@ -156,7 +156,7 @@
             this.pictureBox_Wpp.TabIndex = 3;
             this.pictureBox_Wpp.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox_Wpp, "Whatsapp");
-            this.pictureBox_Wpp.Click += new System.EventHandler(this.pictureBox_Wpp_Click);
+            this.pictureBox_Wpp.Click += new System.EventHandler(this.PictureBox_Wpp_Click);
             // 
             // linkLabel2
             // 
@@ -169,7 +169,7 @@
             this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "+54223-6971880";
-            this.linkLabel2.Click += new System.EventHandler(this.pictureBox_Wpp_Click);
+            this.linkLabel2.Click += new System.EventHandler(this.PictureBox_Wpp_Click);
             // 
             // linkLabel_Correo
             // 
@@ -183,7 +183,7 @@
             this.linkLabel_Correo.TabIndex = 1;
             this.linkLabel_Correo.TabStop = true;
             this.linkLabel_Correo.Text = "jbestudiosycapacitaciones@gmail.com";
-            this.linkLabel_Correo.Click += new System.EventHandler(this.pictureBox_Correo_Click);
+            this.linkLabel_Correo.Click += new System.EventHandler(this.PictureBox_Correo_Click);
             // 
             // label_TITULO
             // 

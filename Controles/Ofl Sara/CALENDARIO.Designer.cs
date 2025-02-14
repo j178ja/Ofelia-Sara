@@ -34,13 +34,14 @@
             // 
             btn_Guardar.AutoSize = true;
             btn_Guardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            btn_Guardar.BackColor = System.Drawing.Color.White;
             btn_Guardar.DialogResult = System.Windows.Forms.DialogResult.OK;
             btn_Guardar.Location = new System.Drawing.Point(170, 186);
             btn_Guardar.Name = "btn_Guardar";
-            btn_Guardar.Size = new System.Drawing.Size(69, 23);
+            btn_Guardar.Size = new System.Drawing.Size(83, 29);
             btn_Guardar.TabIndex = 1;
             btn_Guardar.Text = "GUARDAR";
-            btn_Guardar.UseVisualStyleBackColor = true;
+            btn_Guardar.UseVisualStyleBackColor = false;
             btn_Guardar.Click += Btn_Guardar_Click;
             btn_Guardar.MouseLeave += Btn_Guardar_MouseLeave;
             btn_Guardar.MouseHover += Btn_Guardar_MouseHover;
@@ -52,7 +53,7 @@
             btn_Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             btn_Cancelar.Location = new System.Drawing.Point(12, 186);
             btn_Cancelar.Name = "btn_Cancelar";
-            btn_Cancelar.Size = new System.Drawing.Size(71, 23);
+            btn_Cancelar.Size = new System.Drawing.Size(87, 29);
             btn_Cancelar.TabIndex = 2;
             btn_Cancelar.Text = "CANCELAR";
             btn_Cancelar.UseVisualStyleBackColor = true;

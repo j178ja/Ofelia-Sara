@@ -60,17 +60,17 @@ namespace Ofelia_Sara.Formularios.General
         {
             try
             {
-                using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.cursorFlecha))
+                using (MemoryStream cursorStream = new(Properties.Resources.cursorFlecha))
                 {
                     this.Cursor = new Cursor(cursorStream);
                 }
 
-                using (MemoryStream cursorHand = new MemoryStream(Properties.Resources.hand))
+                using (MemoryStream cursorHand = new(Properties.Resources.hand))
                 {
                     customHandCursor = new Cursor(cursorHand);
                 }
 
-                using (MemoryStream cursorStream = new MemoryStream(Properties.Resources.CursorlapizDerecha))
+                using (MemoryStream cursorStream = new(Properties.Resources.CursorlapizDerecha))
                 {
                     CursorLapizDerecha = new Cursor(cursorStream);
                 }
@@ -1176,7 +1176,7 @@ namespace Ofelia_Sara.Formularios.General
                 if (button != null)
                 {
                     // Aplicar el ToolTip
-                    //  ToolTipGeneral.ShowToolTip(button, entry.Value);
+                    //  ToolTipGeneral.Mostrar(button, entry.Value);
                 }
             }
         }

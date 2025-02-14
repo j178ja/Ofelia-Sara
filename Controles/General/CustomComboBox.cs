@@ -691,7 +691,7 @@ namespace Ofelia_Sara.Controles.General
         }
 
         // Evento para TextChanged
-        public event EventHandler TextChanged
+        public new event EventHandler TextChanged
         {
             add => textBox.TextChanged += value;
             remove => textBox.TextChanged -= value;

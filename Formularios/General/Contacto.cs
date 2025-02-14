@@ -20,11 +20,16 @@ namespace Ofelia_Sara.Formularios.General
 
         private void Contacto_Load(object sender, EventArgs e)
         {
-            txt_Curriculum();
+            Txt_Curriculum();
+
+            IncrementarTamaño.Incrementar(pictureBox_Linkedin);
+            IncrementarTamaño.Incrementar(pictureBox_Github);
+            IncrementarTamaño.Incrementar(pictureBox_Wpp);
+            IncrementarTamaño.Incrementar(pictureBox_Correo);
         }
 
 
-        private void AbrirUrl(string url)
+        private static void AbrirUrl(string url)
         {
             try
             {
@@ -41,7 +46,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private void pictureBox_Correo_Click(object sender, EventArgs e)
+        private void PictureBox_Correo_Click(object sender, EventArgs e)
         {
             // Define el destinatario, el asunto y el cuerpo del mensaje (opcional)
             string to = "jbestudiosycapacitaciones@gmail.com";
@@ -62,7 +67,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private void pictureBox_Wpp_Click(object sender, EventArgs e)
+        private void PictureBox_Wpp_Click(object sender, EventArgs e)
         {
             // Define el número de teléfono en formato internacional (sin + ni espacios)
             string phoneNumber = "+542236971880"; // Reemplaza con el número deseado
@@ -84,7 +89,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private void pictureBox_Linkedin_Click(object sender, EventArgs e)
+        private void PictureBox_Linkedin_Click(object sender, EventArgs e)
         {
 
             // Abre la URL en el navegador predeterminado
@@ -100,7 +105,7 @@ namespace Ofelia_Sara.Formularios.General
 
         }
 
-        private void pictureBox_Github_Click(object sender, EventArgs e)
+        private void PictureBox_Github_Click(object sender, EventArgs e)
         {
 
 
@@ -117,7 +122,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-        private void txt_Curriculum()
+        private void Txt_Curriculum()
         {
 
             // Establecer el texto del TextBox

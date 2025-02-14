@@ -29,7 +29,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Descripcion = true;// 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-       
+        // Declaración privada del control
+        private readonly BotonDeslizable botonDeslizable_VisuControl; // Renombrado para evitar conflicto
         #endregion
 
         #region CONSTRUCTOR
@@ -1180,8 +1181,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-        // Declaración privada del control
-        private BotonDeslizable botonDeslizable_VisuControl; // Renombrado para evitar conflicto
+       
 
 
         public void CambiarEstadoBotonDeslizable(bool estado)

@@ -22,7 +22,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
     {
         #region VARIABLES
         private CustomTextBox textBox_Dependencia;
-        private CustomComboBox comboBox_Dependencia;
+        private readonly CustomComboBox comboBox_Dependencia;
         private CustomTextBox textBox_Domicilio;
         private CustomTextBox textBox_Localidad;
         private CustomTextBox textBox_Partido;
@@ -31,15 +31,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private Label label_Localidad;
         private Label label_Partido;
         private Panel panel_Detalles;
-        private Panel panel_DetallesFiscalia;
-        private CustomComboBox comboBox_Escalafon;
-        private CustomComboBox comboBox_Jerarquia;
-        private CustomTextBox textBox_NumeroLegajo;
-        private CustomTextBox textBox_Nombre;
-        private CustomTextBox textBox_Apellido;
-        private CustomComboBox comboBox_Instructor;
-        private CustomTextBox textBox_Funcion;
-        private SecretariosManager secretariosManager;
+        private readonly Panel panel_DetallesFiscalia;
+        private readonly CustomComboBox comboBox_Escalafon;
+        private readonly CustomComboBox comboBox_Jerarquia;
+        private readonly CustomTextBox textBox_NumeroLegajo;
+        private readonly CustomTextBox textBox_Nombre;
+        private readonly CustomTextBox textBox_Apellido;
+        private readonly CustomComboBox comboBox_Instructor;
+        private readonly CustomTextBox textBox_Funcion;
+        private new SecretariosManager secretariosManager;
         #endregion
 
         #region CONSTRUCTOR
@@ -104,7 +104,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Editar, "Seleccione los campos requeridos para poder EDITAR.", "EDITAR");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", "ELIMINAR");
-            ToolTipGeneral.ShowToolTip(btn_Cancelar, "CANCELAR");
+            ToolTipGeneral.Mostrar(btn_Cancelar, "CANCELAR");
         }
 
         /// <summary>

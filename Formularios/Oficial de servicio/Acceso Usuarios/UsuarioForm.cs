@@ -12,7 +12,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 {
     public partial class UsuarioForm : BaseForm
     {
+        #region VARIABLES
         private Timer capsLockTimer; // Timer para verificar Caps Lock
+
+        // Define una variable para llevar el control del estado de visibilidad
+        private readonly bool esContraseñaVisible = false;
+        // Variables auxiliares para animación
+        private readonly int lineWidth = 0;
+        private readonly bool isAnimating = false;
+        private bool capsLockState = false; // Almacena el estado actual de Caps Lock (MAYUSCULA ACTIVADO)
+        #endregion
+
+        #region CONSTRUCTOR
         public UsuarioForm()
         {
             InitializeComponent();
@@ -35,6 +46,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             InicializarCapsLockTimer();
         }
 
+        #endregion CONSTRUCTOR
+
+        #region LOAD
         private void Usuario_Load(object sender, EventArgs e)
         {
             InicializarEstiloBoton(btn_Registrarse);
@@ -45,10 +59,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             this.Shown += Focus_Shown;//para que haga foco en un textBox
         }
-        //-----------------------------------------------------------------------------
+        #endregion
+
+        /// <summary>
+        /// asegura posicionamiento de foco en usuario al cargar form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Focus_Shown(object sender, EventArgs e)
         {
-            // Asegura que el cursor esté en textBox_Dependencia
             textBox_Usuario.Focus();
         }
 
@@ -73,7 +92,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             registroForm.ShowDialog();
         }
 
-
+        /// <summary>
+        /// MENSAJE DE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UsuarioForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
 
@@ -83,21 +106,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             e.Cancel = true;
         }
 
-        // Define una variable para llevar el control del estado de visibilidad
-        private bool esContraseñaVisible = false;
-
+       
+        /// <summary>
+        /// MOSTRAR CONTRASEÑA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_OjoContraseña_MouseDown(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '\0'; // Muestra el texto real
             pictureBox_OjoContraseña.Image = Properties.Resources.ojo_Contraseña; // Cambia la imagen al icono de "visible"
         }
 
+        /// <summary>
+        /// OCULTAR CONTRASEÑA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_OjoContraseña_MouseUp(object sender, MouseEventArgs e)
         {
             textBox_Contraseña.PasswordChar = '*'; // Oculta el texto con asteriscos
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoCerrado; // Cambia la imagen al icono de "oculto"
         }
 
+        /// <summary>
+        /// activa/desactiva visualizador de contraseña
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Contraseña_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_Contraseña.TextValue))
@@ -153,14 +189,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
         }
 
-        // Método de ejemplo para la validación
+        
+        /// <summary>
+        /// Método de ejemplo para la validación
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarUsuario()
         {
             // Lógica de validación (e.g., comparación de contraseñas, etc.)
             return true; // Retornar true si la validación es correcta
         }
-        private bool capsLockState = false; // Almacena el estado actual de Caps Lock
-
+      
+        /// <summary>
+        ///  iniciar timer para verificar activacion de mayuscula
+        /// </summary>
         private void InicializarCapsLockTimer()
         {
             capsLockTimer = new Timer
@@ -171,6 +213,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             capsLockTimer.Start();
         }
 
+        /// <summary>
+        /// temporizador para verificar mayuscula activado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CapsLockTimer_Tick(object sender, EventArgs e)
         {
             // Verifica si el estado de Caps Lock ha cambiado
@@ -183,12 +230,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// Indicador de mayuscula activado
+        /// </summary>
         private void IndicadorMayusculaActivado()
         {
             if (capsLockState)
             {
                 pictureBox_MayusculaActivada.Visible = true; // Mostrar el indicador visual
-                ToolTipGeneral.ShowToolTip(pictureBox_MayusculaActivada, "Mayúsculas activadas.");
+                ToolTipGeneral.Mostrar(pictureBox_MayusculaActivada, "Mayúsculas activadas.");
             }
             else
             {
@@ -196,6 +246,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// cierre de recursos al cerrar formulario
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             // Detener el Timer al cerrar el formulario para evitar fugas de recursos
@@ -205,10 +259,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         }
 
 
-        // Variables auxiliares para animación
-        private int lineWidth = 0;
-        private bool isAnimating = false;
-
+       
+        /// <summary>
+        /// Llama a que se active subrayado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_MouseEnter(object sender, EventArgs e)
         {
 
@@ -219,6 +275,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// Llama a que se desactive subrayado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_MouseLeave(object sender, EventArgs e)
         {
             if (sender is Control control)
@@ -228,6 +289,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
+        /// <summary>
+        /// dibuja subrayado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Subrayado_Paint(object sender, PaintEventArgs e)
         {
             

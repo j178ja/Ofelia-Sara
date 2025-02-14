@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ofelia_Sara.Formularios.General.Mensajes;
+using System;
 using System.Collections.Generic;
 using System.IO; // Para operaciones de archivo
 using System.Windows.Forms;//(usandolo se elimina error de que no reconosca menssageBox)
@@ -35,11 +36,11 @@ namespace Ofelia_Sara.Clases.GenerarDocumentos
             }
             catch (System.Runtime.InteropServices.COMException comEx)
             {
-                MessageBox.Show("Error al comunicarse con Word: " + comEx.Message);
+                MensajeGeneral.Mostrar("Error al comunicarse con Word: " + comEx.Message, MensajeGeneral.TipoMensaje.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al generar el documento: " + ex.Message);
+                MensajeGeneral.Mostrar("Error al generar el documento: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
             }
             finally
             {
@@ -52,7 +53,7 @@ namespace Ofelia_Sara.Clases.GenerarDocumentos
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cerrar el documento: " + ex.Message);
+                        MensajeGeneral.Mostrar("Error al cerrar el documento: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                     finally
                     {
@@ -68,7 +69,7 @@ namespace Ofelia_Sara.Clases.GenerarDocumentos
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cerrar la aplicación de Word: " + ex.Message);
+                        MensajeGeneral.Mostrar("Error al cerrar la aplicación de Word: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                     finally
                     {
@@ -96,7 +97,7 @@ namespace Ofelia_Sara.Clases.GenerarDocumentos
             }
             else
             {
-                MessageBox.Show($"La plantilla {nombrePlantilla} no se encuentra en la ruta especificada.");
+                MensajeGeneral.Mostrar($"La plantilla {nombrePlantilla} no se encuentra en la ruta especificada.", MensajeGeneral.TipoMensaje.Error);
             }
         }
     }

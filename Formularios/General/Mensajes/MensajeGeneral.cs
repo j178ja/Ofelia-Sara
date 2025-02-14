@@ -28,6 +28,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
         #endregion
 
+        #region CONSTRUCTOR
         public MensajeGeneral(string mensaje, TipoMensaje tipoMensaje, Point? posicion = null)
         {
             InitializeComponent();
@@ -60,10 +61,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 SelectFecha_Compromiso = new DateTimePicker();
             }
 
-            if (SelectHora_Compromiso == null)
-            {
-                SelectHora_Compromiso = new DateTimePicker();
-            }
+            SelectHora_Compromiso ??= new DateTimePicker();
 
             // Configura la posición del formulario si se especificó
             if (posicion.HasValue)
@@ -76,7 +74,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 StartPosition = FormStartPosition.CenterScreen; // Por defecto al centro
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Propiedad publica para establecer tipo de mensaje
+        /// </summary>
         public enum TipoMensaje
         {
             Informacion,
@@ -123,10 +125,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         /// <param name="posicion"></param>
         public static void Mostrar(string mensaje, TipoMensaje tipoMensaje = TipoMensaje.Informacion, Point? posicion = null)
         {
-            using (var form = new MensajeGeneral(mensaje, tipoMensaje, posicion))
-            {
-                form.ShowDialog(); // Muestra el formulario como modal
-            }
+            using var form = new MensajeGeneral(mensaje, tipoMensaje, posicion);
+            form.ShowDialog(); // Muestra el formulario como modal
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         private void PosicionarBotonCerrar()
         {
             // Posiciona btn_Cerrar a 4 píxeles del borde inferior del formulario
-            int margenInferior = 4;
+            int margenInferior = 8;
             btn_Cerrar.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
             btn_Si.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
             btn_No.Top = this.ClientSize.Height - btn_Cerrar.Height - margenInferior;
@@ -380,7 +380,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
         private void MensajeGeneral_Load(object sender, EventArgs e)
         {
-
+            IncrementarTamaño.Incrementar(btn_Cerrar);
+            IncrementarTamaño.Incrementar(btn_No);
         }
 
         internal void SetTexto(string mensaje)
@@ -390,8 +391,10 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
         public static void MostrarEnPosicion(string mensaje, TipoMensaje tipo, int x, int y)
         {
-            MensajeGeneral mensajeForm = new MensajeGeneral(mensaje, tipo);
-            mensajeForm.StartPosition = FormStartPosition.Manual;
+            MensajeGeneral mensajeForm = new(mensaje, tipo)
+            {
+                StartPosition = FormStartPosition.Manual
+            };
             mensajeForm.Location = new Point(x - (mensajeForm.Width / 2), y);
             mensajeForm.Show();
         }

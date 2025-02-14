@@ -118,11 +118,11 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
 
             timer.Start();
         }
-        //-------
+       
 
         public static void DesactivarToolTipsEnControlesDesactivados(Control parentControl)
         {
-            ToolTip sharedToolTip = new ToolTip
+            ToolTip sharedToolTip = new ()
             {
                 Active = false
             };

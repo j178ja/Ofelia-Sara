@@ -105,6 +105,11 @@ namespace Ofelia_Sara.Formularios.General
             IncrementarTamaño.Incrementar(btn_Configurar);
             IncrementarTamaño.Incrementar(btn_Leyes);
             IncrementarTamaño.Incrementar(btn_BoletinOficial);
+            IncrementarTamaño.Incrementar(btn_InicioCierre);
+            IncrementarTamaño.Incrementar(btn_Contravenciones);
+            IncrementarTamaño.Incrementar(btn_Expedientes);
+
+
             Tooltips();
 
             comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -626,14 +631,14 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         private void Tooltips()
         {
-            ToolTipGeneral.ShowToolTip(btn_Configurar, "Configuración de elementos.");
-            ToolTipGeneral.ShowToolTip(btn_Leyes, "Leyes y decretos útiles.");
-            ToolTipGeneral.ShowToolTip(btn_Mecanografia, "MECANOGRAFIA");
-            ToolTipGeneral.ShowToolTip(btn_Redactador, "REDACTAR POR VOZ");
-            ToolTipGeneral.ShowToolTip(label_OfeliaSara, "Instructivo de la aplicación.");
+            ToolTipGeneral.Mostrar(btn_Configurar, "Configuración de elementos.");
+            ToolTipGeneral.Mostrar(btn_Leyes, "Leyes y decretos útiles.");
+            ToolTipGeneral.Mostrar(btn_Mecanografia, "MECANOGRAFIA");
+            ToolTipGeneral.Mostrar(btn_Redactador, "REDACTAR POR VOZ");
+            ToolTipGeneral.Mostrar(label_OfeliaSara, "Instructivo de la aplicación.");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
-            ToolTipGeneral.ShowToolTip(comboBox_Buscar, " Ingrese que tarea desea realizar.");
-            ToolTipGeneral.ShowToolTip(btn_BoletinOficial, "Boletín Informativo.");
+            ToolTipGeneral.Mostrar(comboBox_Buscar, " Ingrese que tarea desea realizar.");
+            ToolTipGeneral.Mostrar(btn_BoletinOficial, "Boletín Informativo.");
         }
 
         /// <summary>

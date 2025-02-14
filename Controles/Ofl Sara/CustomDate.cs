@@ -106,10 +106,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// </summary>
         private void ConfigurarTooltips()
         {
-            ToolTipGeneral.ShowToolTip(btn_Calendario, "Seleccione fecha.");
-            ToolTipGeneral.ShowToolTip(textBox_DateDIA, "Ingrese DÍA.");
-            ToolTipGeneral.ShowToolTip(textBox_DateMES, "Ingrese MES.");
-            ToolTipGeneral.ShowToolTip(textBox_DateAÑO, "Ingrese AÑO.");
+            ToolTipGeneral.Mostrar(btn_Calendario, "Seleccione fecha.");
+            ToolTipGeneral.Mostrar(textBox_DateDIA, "Ingrese DÍA.");
+            ToolTipGeneral.Mostrar(textBox_DateMES, "Ingrese MES.");
+            ToolTipGeneral.Mostrar(textBox_DateAÑO, "Ingrese AÑO.");
         }
         #endregion 
      

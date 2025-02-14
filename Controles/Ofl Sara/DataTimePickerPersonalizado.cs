@@ -27,14 +27,14 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             InitializeComponent();
 
-            ToolTipGeneral.ShowToolTip(Btn_Calendario, " Seleccionar fecha.");
-            ToolTipGeneral.ShowToolTip(textBox_DIA, " Seleccionar DIA.");
-            ToolTipGeneral.ShowToolTip(textBox_MES, " Seleccionar MES.");
-            ToolTipGeneral.ShowToolTip(textBox_AÑO, " Seleccionar AÑO.");
+            ToolTipGeneral.Mostrar(Btn_Calendario, " Seleccionar fecha.");
+            //ToolTipGeneral.Mostrar(textBox_DIA, " Seleccionar DIA.");
+            //ToolTipGeneral.Mostrar(textBox_MES, " Seleccionar MES.");
+            //ToolTipGeneral.Mostrar(textBox_AÑO, " Seleccionar AÑO.");
 
-            textBox_DIA.Click += (s, e) => MostrarSelectorFecha();
-            textBox_MES.Click += (s, e) => MostrarSelectorFecha();
-            textBox_AÑO.Click += (s, e) => MostrarSelectorFecha();
+            //textBox_DIA.Click += (s, e) => MostrarSelectorFecha();
+            //textBox_MES.Click += (s, e) => MostrarSelectorFecha();
+            //textBox_AÑO.Click += (s, e) => MostrarSelectorFecha();
             Btn_Calendario.Click += (s, e) => MostrarSelectorFecha();
 
             textBox_DIA.Leave += (s, e) => RemoveFocus();

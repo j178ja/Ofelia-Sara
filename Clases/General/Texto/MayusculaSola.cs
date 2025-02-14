@@ -120,13 +120,18 @@ public static class MayusculaSola
         };
     }
 
-    // Método para filtrar el texto permitiendo solo letras y espacios en blanco
+
+    /// <summary>
+    /// filtrar el texto permitiendo solo letras y espacios en blanco
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     private static string FiltrarYConvertirAMayusculas(string input)
     {
         if (string.IsNullOrEmpty(input))
             return string.Empty;
 
-        StringBuilder filteredText = new StringBuilder();
+        StringBuilder filteredText = new ();
         foreach (char c in input)
         {
             if (char.IsLetter(c) || char.IsWhiteSpace(c))

@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using Ofelia_Sara.Clases.General.Apariencia;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios.General.Mensajes;
 
 namespace Ofelia_Sara.Formularios.Mecanografia
 
@@ -15,6 +17,7 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
     public partial class Mecanografia : BaseForm
     {
+        #region VARIABLES
         private Label alertaLabel; // Variable para el Label de alerta
         private Label label_Tiempo; // Label para mostrar el tiempo transcurrido
         // Diccionario para mapear letras a paneles
@@ -22,8 +25,19 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         // Variable para almacenar el último panel resaltado
         private PanelesResaltados panelResaltadoAnterior = null;
 
-        private Timer timer;
+        private readonly Timer timer;
         private int secondsElapsed = 0; // Para llevar la cuenta de los segundos transcurridos
+        private int currentPosition = 0; // Para llevar seguimiento de la posición actual
+        private bool mecanografiaActiva = true;
+        private int indiceCaracterResaltadoAnterior = -1; // Para llevar el seguimiento del último carácter resaltado
+        private string archivoSeleccionado;
+        // Variables para almacenar los últimos paneles resaltados
+        private readonly Panel panelResaltadoAnteriorMano = null;
+        private readonly Panel panelResaltadoAnteriorTeclado = null;// Variable para almacenar el último panel resaltado
+
+        #endregion
+
+        #region CONSTRUCTOR
         public Mecanografia()
         {
             InitializeComponent();
@@ -129,17 +143,16 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
 };
         }
+        #endregion
 
-
+        #region LOAD
         private void Mecanografia_Load(object sender, EventArgs e)
         {
             Texto_Tipear.ReadOnly = true;// richtextbox de solo lectura
             CargarTextoYColorear();// remarca la letra que se debe presionar
 
         }
-        private int currentPosition = 0; // Para llevar seguimiento de la posición actual
-        private bool mecanografiaActiva = true;
-        private int indiceCaracterResaltadoAnterior = -1; // Para llevar el seguimiento del último carácter resaltado
+     
 
         private void Mecanografia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -206,7 +219,7 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
             timer.Stop();
         }
-
+        #endregion
 
 
 
@@ -234,24 +247,20 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
             // Dibujar el borde
             System.Windows.Forms.Control pictureBox = sender as System.Windows.Forms.Control;
-            using (Pen pen = new Pen(borderColor, borderWidth))
+            using Pen pen = new Pen(borderColor, borderWidth);
+            pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Outset;
             {
-                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Outset;
-                {
-                }
-                // Alinear el borde dentro del control
-                e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, pictureBox.Width, pictureBox.Height));
             }
+            // Alinear el borde dentro del control
+            e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, pictureBox.Width, pictureBox.Height));
         }
 
 
-        private string archivoSeleccionado;
+      
         private void PictureBox_SelectArchivo_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-
             // Verifica que el PictureBox esté habilitado
-            if (pictureBox != null && pictureBox.Enabled)
+            if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
@@ -281,7 +290,7 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
                             // Usar la clase ContadorArchivo para contar palabras y caracteres
                             ContadorArchivo contador = new ContadorArchivo();
-                            (int cantidadPalabras, int cantidadCaracteres) = contador.ContarPalabrasYCaracteresDocx(openFileDialog.FileName);
+                            (int cantidadPalabras, int cantidadCaracteres) = ContadorArchivo.ContarPalabrasYCaracteresDocx(openFileDialog.FileName);
 
                             // Crear un array con los valores a mostrar
                             string[] valores = {
@@ -322,39 +331,44 @@ namespace Ofelia_Sara.Formularios.Mecanografia
                             }
 
                             // Leer el contenido del archivo Word
-                            using (WordprocessingDocument doc = WordprocessingDocument.Open(openFileDialog.FileName, false))
-                            {
-                                string contenido = doc.MainDocumentPart.Document.Body.InnerText;
+                            using WordprocessingDocument doc = WordprocessingDocument.Open(openFileDialog.FileName, false);
+                            string contenido = doc.MainDocumentPart.Document.Body.InnerText;
 
-                                // Mostrar el contenido en el RichTextBox
-                                Texto_Tipear.Text = contenido;
+                            // Mostrar el contenido en el RichTextBox
+                            Texto_Tipear.Text = contenido;
 
 
-                                // *** ASIGNAR EL NOMBRE DEL ARCHIVO SELECCIONADO ***
-                                archivoSeleccionado = openFileDialog.FileName;
+                            // *** ASIGNAR EL NOMBRE DEL ARCHIVO SELECCIONADO ***
+                            archivoSeleccionado = openFileDialog.FileName;
 
-                                // Llamar a la validación de botones
-                                ValidarSeleccionArchivo();
-                            }
+                            // Llamar a la validación de botones
+                            ValidarSeleccionArchivo();
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo cambiar la imagen del PictureBox: " + ex.Message);
+                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " , MensajeGeneral.TipoMensaje.Error);
                         }
                     }
                 }
             }
         }
-        //para que se active btn iniciar solo despues de cargar archivo
+        
+        /// <summary>
+        /// para que se active btn iniciar solo despues de cargar archivo
+        /// </summary>
         private void ValidarSeleccionArchivo()
         {
             // Habilitar el botón btn_Iniciar si hay un archivo seleccionado
             btn_Iniciar.Enabled = !string.IsNullOrEmpty(archivoSeleccionado);
         }
 
-        //----------------------------------------------------------------
 
-        //para que no puedad editar el rich sin que se atenue
+     
+        /// <summary>
+        /// para que no puedad editar el rich sin que se atenue
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Texto_Tipear_Click(object sender, EventArgs e)
         {
             // Evitar que el usuario haga clic en el RichTextBox
@@ -366,9 +380,6 @@ namespace Ofelia_Sara.Formularios.Mecanografia
             // Evitar que el RichTextBox reciba el foco
             this.ActiveControl = null; // Establecer el control activo en null
         }
-
-
-        //----------------------------------------------------------------
 
 
         private void Btn_Iniciar_Click(object sender, EventArgs e)
@@ -407,7 +418,7 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         }
 
 
-        //-------------------------------------------------------------------
+       
         private void Btn_Detener_Click(object sender, EventArgs e)
         {
             timer.Stop();
@@ -437,8 +448,6 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
             }
         }
-
-        //-------------------------------------------------------------------------------------
         private void Btn_Elegir_Click(object sender, EventArgs e)
         {
             // Mostrar el menú en la ubicación del botón
@@ -513,8 +522,12 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         }
 
 
-        //----------------------------------------------------------------------
-        //ajustar tamaño y posicion principal de elementos en el formulario
+       
+        /// <summary>
+        /// ajustar tamaño y posicion principal de elementos en el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjustarTamañoForm(object sender, EventArgs e)
         {
             // Posicionar el panel_Teclado en la ubicación deseada
@@ -541,22 +554,21 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         private void CrearLabelAlerta()
         {
             // Inicializamos el Label de alerta
-            alertaLabel = new Label();
-            alertaLabel.ForeColor = System.Drawing.Color.Red; // Color rojo para el texto
-            alertaLabel.Font = new System.Drawing.Font("Arial", 14);
-            alertaLabel.Location = new Point(265, 95); // Posición dentro del panel
-            alertaLabel.AutoSize = true; // Ajusta el tamaño automáticamente
-            alertaLabel.Visible = false; // Inicialmente invisible
+            alertaLabel = new Label
+            {
+                ForeColor = System.Drawing.Color.Red, // Color rojo para el texto
+                Font = new System.Drawing.Font("Arial", 14),
+                Location = new Point(265, 95), // Posición dentro del panel
+                AutoSize = true, // Ajusta el tamaño automáticamente
+                Visible = false // Inicialmente invisible
+            };
             panel_Especificaciones.Controls.Add(alertaLabel); // Añadir al panel
         }
-        //---------------------------------------------------------------------
-        // Variables para almacenar los últimos paneles resaltados
-        private Panel panelResaltadoAnteriorMano = null;
-        private Panel panelResaltadoAnteriorTeclado = null;
+       
+    
 
 
-
-        // Variable para almacenar el último panel resaltado
+        
         private void ResaltarPanelPorLetra(char letra)
         {
             // Restablecer el color del panel anterior y el color del Label, si existe

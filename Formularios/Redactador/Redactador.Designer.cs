@@ -123,7 +123,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Guardar.Size = new System.Drawing.Size(64, 58);
             this.btn_Guardar.TabIndex = 3;
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // btn_Limpiar
             // 
@@ -137,7 +137,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Limpiar.Size = new System.Drawing.Size(64, 58);
             this.btn_Limpiar.TabIndex = 2;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Eliminar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
             // 
             // panel_Botones
             // 
@@ -172,8 +172,8 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_ReducirTamaño.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ReducirTamaño.UseVisualStyleBackColor = false;
             this.btn_ReducirTamaño.Click += new System.EventHandler(this.btn_DisminuirTamaño_Click);
-            this.btn_ReducirTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
-            this.btn_ReducirTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
+            this.btn_ReducirTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.btn_ReducirTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_AumentarTamaño
             // 
@@ -187,9 +187,9 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_AumentarTamaño.Text = "A";
             this.btn_AumentarTamaño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_AumentarTamaño.UseVisualStyleBackColor = false;
-            this.btn_AumentarTamaño.Click += new System.EventHandler(this.btn_AumentarTamaño_Click);
-            this.btn_AumentarTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
-            this.btn_AumentarTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
+            this.btn_AumentarTamaño.Click += new System.EventHandler(this.Btn_AumentarTamaño_Click);
+            this.btn_AumentarTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.btn_AumentarTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_MayusculaMinuscula
             // 
@@ -202,9 +202,9 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_MayusculaMinuscula.TabIndex = 7;
             this.btn_MayusculaMinuscula.Text = "Aa";
             this.btn_MayusculaMinuscula.UseVisualStyleBackColor = false;
-            this.btn_MayusculaMinuscula.Click += new System.EventHandler(this.btn_MayusculaMiniscula_Click);
-            this.btn_MayusculaMinuscula.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown);
-            this.btn_MayusculaMinuscula.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp);
+            this.btn_MayusculaMinuscula.Click += new System.EventHandler(this.Btn_MayusculaMiniscula_Click);
+            this.btn_MayusculaMinuscula.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.btn_MayusculaMinuscula.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 
             // btn_Justificar
             // 
@@ -217,7 +217,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Justificar.Size = new System.Drawing.Size(21, 22);
             this.btn_Justificar.TabIndex = 6;
             this.btn_Justificar.UseVisualStyleBackColor = false;
-            this.btn_Justificar.Click += new System.EventHandler(this.btn_Justificar_Click);
+            this.btn_Justificar.Click += new System.EventHandler(this.Btn_Justificar_Click);
             // 
             // btn_AlinearDerecha
             // 
@@ -230,7 +230,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_AlinearDerecha.Size = new System.Drawing.Size(21, 22);
             this.btn_AlinearDerecha.TabIndex = 5;
             this.btn_AlinearDerecha.UseVisualStyleBackColor = false;
-            this.btn_AlinearDerecha.Click += new System.EventHandler(this.btn_AlinearDerecha_Click);
+            this.btn_AlinearDerecha.Click += new System.EventHandler(this.Btn_AlinearDerecha_Click);
             // 
             // btn_Centrar
             // 
@@ -243,7 +243,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Centrar.Size = new System.Drawing.Size(21, 22);
             this.btn_Centrar.TabIndex = 4;
             this.btn_Centrar.UseVisualStyleBackColor = false;
-            this.btn_Centrar.Click += new System.EventHandler(this.btn_Centrar_Click);
+            this.btn_Centrar.Click += new System.EventHandler(this.Btn_Centrar_Click);
             // 
             // btn_AlinearIzquierda
             // 
@@ -256,7 +256,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_AlinearIzquierda.Size = new System.Drawing.Size(21, 22);
             this.btn_AlinearIzquierda.TabIndex = 3;
             this.btn_AlinearIzquierda.UseVisualStyleBackColor = false;
-            this.btn_AlinearIzquierda.Click += new System.EventHandler(this.btn_AlinearIzquierda_Click);
+            this.btn_AlinearIzquierda.Click += new System.EventHandler(this.Btn_AlinearIzquierda_Click);
             // 
             // btn_Subrayado
             // 
@@ -269,7 +269,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Subrayado.TabIndex = 2;
             this.btn_Subrayado.Text = "S";
             this.btn_Subrayado.UseVisualStyleBackColor = false;
-            this.btn_Subrayado.Click += new System.EventHandler(this.btn_Subrayado_Click);
+            this.btn_Subrayado.Click += new System.EventHandler(this.Btn_Subrayado_Click);
             // 
             // btn_Cursiva
             // 
@@ -295,7 +295,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Negrita.TabIndex = 0;
             this.btn_Negrita.Text = "N";
             this.btn_Negrita.UseVisualStyleBackColor = false;
-            this.btn_Negrita.Click += new System.EventHandler(this.btn_Negrita_Click);
+            this.btn_Negrita.Click += new System.EventHandler(this.Btn_Negrita_Click);
             // 
             // richTextBox_Redactor
             // 
@@ -307,7 +307,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.richTextBox_Redactor.Size = new System.Drawing.Size(527, 201);
             this.richTextBox_Redactor.TabIndex = 0;
             this.richTextBox_Redactor.Text = "";
-            this.richTextBox_Redactor.TextChanged += new System.EventHandler(this.richTextBox_Redactor_TextChanged);
+            this.richTextBox_Redactor.TextChanged += new System.EventHandler(this.RichTextBox_Redactor_TextChanged);
             this.richTextBox_Redactor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_Redactor_MouseMove);
             // 
             // btn_Minimizar
@@ -471,7 +471,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_Microfono.Size = new System.Drawing.Size(44, 45);
             this.btn_Microfono.TabIndex = 10;
             this.btn_Microfono.UseVisualStyleBackColor = false;
-            this.btn_Microfono.Click += new System.EventHandler(this.btn_Microfono_Click);
+            this.btn_Microfono.Click += new System.EventHandler(this.Btn_Microfono_Click);
             // 
             // Redactador
             // 

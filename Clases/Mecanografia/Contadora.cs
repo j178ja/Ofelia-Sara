@@ -1,5 +1,4 @@
 ﻿
-/*ESTA CLASE CUENTA LAS PALABRAS Y LOS CARACTERES DE UN ARCHIVO SELECCIONADO*/
 
 using DocumentFormat.OpenXml.Packaging;
 using System;
@@ -7,9 +6,12 @@ using System.IO;
 
 namespace Ofelia_Sara.Clases.Mecanografia
 {
+    /// <summary>
+    /// CUENTA LAS PALABRAS Y LOS CARACTERES DE UN ARCHIVO SELECCIONADO
+    /// </summary>
     public class ContadorArchivo
     {
-        public (int cantidadPalabras, int cantidadCaracteres) ContarPalabrasYCaracteresDocx(string rutaArchivo)
+        public static (int cantidadPalabras, int cantidadCaracteres) ContarPalabrasYCaracteresDocx(string rutaArchivo)
         {
             if (!File.Exists(rutaArchivo))
                 throw new FileNotFoundException("El archivo no existe.");
