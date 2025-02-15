@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Formularios.General.Mensajes;
+﻿using Ofelia_Sara.Clases.General.ActualizarElementos;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -32,6 +33,17 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             {
                 Renderer = new CustomRenderer()
             };
+            //llama a evento para actualizar contador escuchando los cambios en formularios
+            EventBus.Suscribirse("ActualizarContadorRML", (datos) =>
+            {
+                if (datos is List<string> elementos)
+                {
+                    CargarElementos(elementos);
+                    this.Text = elementos.Count.ToString();
+                    ActualizarTamañoYColor();
+                }
+            });
+
         }
         #endregion
 

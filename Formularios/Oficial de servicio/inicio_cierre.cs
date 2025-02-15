@@ -1,5 +1,6 @@
 ﻿using BaseDatos.Entidades;
 using DocumentFormat.OpenXml.Office2010.Excel;
+using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
@@ -116,6 +117,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Btn_ContadorRML.Text = "0";
 
             fecha_Pericia.ValidatingType = typeof(DateTime); // Configurar tipo de validación
+
+          
+
         }
         #endregion
 
