@@ -8,8 +8,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 {
     public partial class Boton_Contador : Control
     {
+        #region VARIABLES
         private Button btnContador;
         private ContextMenuStrip listaDesplegable;
+        #endregion
 
         #region CONSTRUCTOR
         private void CrearControles()
