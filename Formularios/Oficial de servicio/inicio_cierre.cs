@@ -584,7 +584,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
-            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//habilita el btn_AgregarCausa en caso de tener texto
+            // Filtra los espacios en blanco y cuenta los caracteres reales
+            int caracteresReales = textBox_Caratula.TextValue.Count(c => !char.IsWhiteSpace(c));
+
+            // Habilita el botón solo si hay al menos 3 caracteres no blancos
+            btn_AgregarCausa.Enabled = caracteresReales >= 3;
+
             ActualizarEstado();
         }
 
@@ -620,7 +625,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             textBox_Imputado.TextValue = text;
         }
-        
+
         /// <summary>
         /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE VICTIMA
         /// </summary>
@@ -628,11 +633,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void TextBox_Victima_TextChanged(object sender, EventArgs e)
         {
-            // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue))
+            // Contar los caracteres reales (ignorando espacios)
+            int caracteresReales = textBox_Victima.TextValue.Count(c => !char.IsWhiteSpace(c));
+
+            // Habilita los botones solo si hay al menos 3 caracteres no blancos
+            bool habilitar = caracteresReales >= 5;
+
+            btn_AgregarDatosVictima.Enabled = habilitar;
+            btn_AgregarVictima.Enabled = habilitar;
+
+            if (habilitar)
             {
                 btn_AgregarDatosVictima.BackColor = System.Drawing.Color.GreenYellow;
                 ActualizarEstado();
+
                 if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
                 {
                     // Actualizar el TextBox en el formulario de destino
@@ -642,11 +656,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             else
             {
                 btn_AgregarDatosVictima.BackColor = System.Drawing.Color.Tomato;
-
             }
-            // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
-            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
         }
+
 
         /// <summary>
         /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE IMPUTADO
@@ -655,11 +667,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
-            // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue))
+            // Contar los caracteres reales (ignorando espacios)
+            int caracteresReales = textBox_Imputado.TextValue.Count(c => !char.IsWhiteSpace(c));
+
+            // Habilita los botones solo si hay al menos 3 caracteres no blancos
+            bool habilitar = caracteresReales >= 5;
+
+            btn_AgregarDatosImputado.Enabled = habilitar;
+            btn_AgregarImputado.Enabled = habilitar;
+
+            if (habilitar)
             {
                 btn_AgregarDatosImputado.BackColor = System.Drawing.Color.GreenYellow;
                 ActualizarEstado();
+
                 if (agregarDatosPersonalesImputado != null && !agregarDatosPersonalesImputado.IsDisposed)
                 {
                     // Actualizar el TextBox en el formulario de destino
@@ -670,9 +691,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 btn_AgregarDatosImputado.BackColor = System.Drawing.Color.Tomato;
             }
-            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);// deshabilita el btn agregarImputado si el textBox no tiene texto
-
         }
+
 
 
         /// <summary>

@@ -42,7 +42,6 @@
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Guardar;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckBox checkBox_Notificacion258;
         private System.Windows.Forms.Label label_Notificacion258;
         private System.Windows.Forms.Button btn_Buscar;
