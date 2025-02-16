@@ -172,5 +172,16 @@ namespace Ofelia_Sara.Controles.General
             }
         }
 
+        private void DesactivarBoton()
+        {
+            List<string> elementos = ObtenerNombresDesdeTextBox();
+
+            // Remover el elemento de la lista antes de publicar el evento
+            elementos.Remove(this.Text);
+
+            // Publicar el evento con la nueva lista de nombres
+            EventBus.Publicar("ActualizarContadorRML", elementos);
+        }
+
     }
 }

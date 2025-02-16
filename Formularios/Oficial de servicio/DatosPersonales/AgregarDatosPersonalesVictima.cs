@@ -62,539 +62,692 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.botonDeslizable_StudRML = new Ofelia_Sara.Controles.General.BotonDeslizable();
-            this.label_StudRML = new System.Windows.Forms.Label();
-            this.comboBox_EstadoCivil = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.label_EstadoCivil = new System.Windows.Forms.Label();
-            this.emailControl1 = new Ofelia_Sara.Controles.Ofl_Sara.EmailControl();
-            this.numeroTelefonicoControl1 = new Ofelia_Sara.Controles.Ofl_Sara.NumeroTelefonicoControl();
-            this.dateTimePicker_FechaNacimiento = new Ofelia_Sara.Controles.Ofl_Sara.CustomDate();
-            this.label_agrGeo2 = new System.Windows.Forms.Label();
-            this.label_agrGeo = new System.Windows.Forms.Label();
-            this.label_AgregarDomicilio = new System.Windows.Forms.Label();
-            this.textBox_LugarNacimiento = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_LugarNacimiento = new System.Windows.Forms.Label();
-            this.textBox_Ocupacion = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Ocupacion = new System.Windows.Forms.Label();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.checkBox_Notificacion258 = new System.Windows.Forms.CheckBox();
-            this.label_Notificacion258 = new System.Windows.Forms.Label();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.comboBox_Nacionalidad = new Ofelia_Sara.Controles.General.CustomComboBox();
-            this.label_Email = new System.Windows.Forms.Label();
-            this.label_Telefono = new System.Windows.Forms.Label();
-            this.pictureBox_Geoposicionamiento = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Domicilio = new System.Windows.Forms.PictureBox();
-            this.label_Nacionalidad = new System.Windows.Forms.Label();
-            this.textBox_Localidad = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.textBox_Domicilio = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.textBox_Edad = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.textBox_Dni = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.textBox_Nombre = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.label_Localidad = new System.Windows.Forms.Label();
-            this.label_Domicilio = new System.Windows.Forms.Label();
-            this.label_Edad = new System.Windows.Forms.Label();
-            this.label_FechaNacimiento = new System.Windows.Forms.Label();
-            this.label_Dni = new System.Windows.Forms.Label();
-            this.label_Nombre = new System.Windows.Forms.Label();
-            this.label_CircunstanciasPersonales = new System.Windows.Forms.Label();
-            this.label_Titulo = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox_CheckNotificacion258 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckNotificacion258)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            pictureBox_CheckNotificacion258 = new PictureBox();
+            botonDeslizable_StudRML = new BotonDeslizable();
+            label_StudRML = new Label();
+            comboBox_EstadoCivil = new CustomComboBox();
+            label_EstadoCivil = new Label();
+            emailControl1 = new Controles.Ofl_Sara.EmailControl();
+            numeroTelefonicoControl1 = new Controles.Ofl_Sara.NumeroTelefonicoControl();
+            dateTimePicker_FechaNacimiento = new Controles.Ofl_Sara.CustomDate();
+            label_agrGeo2 = new Label();
+            label_agrGeo = new Label();
+            label_AgregarDomicilio = new Label();
+            textBox_LugarNacimiento = new CustomTextBox();
+            label_LugarNacimiento = new Label();
+            textBox_Ocupacion = new CustomTextBox();
+            label_Ocupacion = new Label();
+            btn_Buscar = new Button();
+            checkBox_Notificacion258 = new CheckBox();
+            label_Notificacion258 = new Label();
+            btn_Limpiar = new Button();
+            btn_Guardar = new Button();
+            comboBox_Nacionalidad = new CustomComboBox();
+            label_Email = new Label();
+            label_Telefono = new Label();
+            pictureBox_Geoposicionamiento = new PictureBox();
+            pictureBox_Domicilio = new PictureBox();
+            label_Nacionalidad = new Label();
+            textBox_Localidad = new CustomTextBox();
+            textBox_Domicilio = new CustomTextBox();
+            textBox_Edad = new CustomTextBox();
+            textBox_Dni = new CustomTextBox();
+            textBox_Nombre = new CustomTextBox();
+            label_Localidad = new Label();
+            label_Domicilio = new Label();
+            label_Edad = new Label();
+            label_FechaNacimiento = new Label();
+            label_Dni = new Label();
+            label_Nombre = new Label();
+            label_CircunstanciasPersonales = new Label();
+            label_Titulo = new Label();
+            toolTip1 = new ToolTip(components);
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckNotificacion258).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Geoposicionamiento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Domicilio).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.pictureBox_CheckNotificacion258);
-            this.panel1.Controls.Add(this.botonDeslizable_StudRML);
-            this.panel1.Controls.Add(this.label_StudRML);
-            this.panel1.Controls.Add(this.comboBox_EstadoCivil);
-            this.panel1.Controls.Add(this.label_EstadoCivil);
-            this.panel1.Controls.Add(this.emailControl1);
-            this.panel1.Controls.Add(this.numeroTelefonicoControl1);
-            this.panel1.Controls.Add(this.dateTimePicker_FechaNacimiento);
-            this.panel1.Controls.Add(this.label_agrGeo2);
-            this.panel1.Controls.Add(this.label_agrGeo);
-            this.panel1.Controls.Add(this.label_AgregarDomicilio);
-            this.panel1.Controls.Add(this.textBox_LugarNacimiento);
-            this.panel1.Controls.Add(this.label_LugarNacimiento);
-            this.panel1.Controls.Add(this.textBox_Ocupacion);
-            this.panel1.Controls.Add(this.label_Ocupacion);
-            this.panel1.Controls.Add(this.btn_Buscar);
-            this.panel1.Controls.Add(this.checkBox_Notificacion258);
-            this.panel1.Controls.Add(this.label_Notificacion258);
-            this.panel1.Controls.Add(this.btn_Limpiar);
-            this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.comboBox_Nacionalidad);
-            this.panel1.Controls.Add(this.label_Email);
-            this.panel1.Controls.Add(this.label_Telefono);
-            this.panel1.Controls.Add(this.pictureBox_Geoposicionamiento);
-            this.panel1.Controls.Add(this.pictureBox_Domicilio);
-            this.panel1.Controls.Add(this.label_Nacionalidad);
-            this.panel1.Controls.Add(this.textBox_Localidad);
-            this.panel1.Controls.Add(this.textBox_Domicilio);
-            this.panel1.Controls.Add(this.textBox_Edad);
-            this.panel1.Controls.Add(this.textBox_Dni);
-            this.panel1.Controls.Add(this.textBox_Nombre);
-            this.panel1.Controls.Add(this.label_Localidad);
-            this.panel1.Controls.Add(this.label_Domicilio);
-            this.panel1.Controls.Add(this.label_Edad);
-            this.panel1.Controls.Add(this.label_FechaNacimiento);
-            this.panel1.Controls.Add(this.label_Dni);
-            this.panel1.Controls.Add(this.label_Nombre);
-            this.panel1.Controls.Add(this.label_CircunstanciasPersonales);
-            this.panel1.Controls.Add(this.label_Titulo);
-            this.panel1.Location = new System.Drawing.Point(24, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 587);
-            this.panel1.TabIndex = 2;
-            // 
-            // botonDeslizable_StudRML
-            // 
-            this.botonDeslizable_StudRML.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonDeslizable_StudRML.IsOn = false;
-            this.botonDeslizable_StudRML.Location = new System.Drawing.Point(475, 469);
-            this.botonDeslizable_StudRML.Name = "botonDeslizable_StudRML";
-            this.botonDeslizable_StudRML.Size = new System.Drawing.Size(40, 20);
-            this.botonDeslizable_StudRML.TabIndex = 100;
-            this.botonDeslizable_StudRML.ValidarCampos = null;
-            // 
-            // label_StudRML
-            // 
-            this.label_StudRML.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_StudRML.Location = new System.Drawing.Point(381, 469);
-            this.label_StudRML.Name = "label_StudRML";
-            this.label_StudRML.Size = new System.Drawing.Size(135, 20);
-            this.label_StudRML.TabIndex = 99;
-            this.label_StudRML.Text = "Stud. R.M.L   ";
-            this.label_StudRML.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboBox_EstadoCivil
-            // 
-
-            this.comboBox_EstadoCivil.Items.AddRange(new object[] {
-            "SOLTERO/A",
-            "CASADO/A",
-            "VIUDO/A",
-            "CONCUBINO/A",
-            ""});
-            this.comboBox_EstadoCivil.Location = new System.Drawing.Point(400, 166);
-            this.comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
-            this.comboBox_EstadoCivil.Size = new System.Drawing.Size(120, 21);
-            this.comboBox_EstadoCivil.TabIndex = 98;
-            // 
-            // label_EstadoCivil
-            // 
-            this.label_EstadoCivil.AutoSize = true;
-            this.label_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_EstadoCivil.Location = new System.Drawing.Point(309, 168);
-            this.label_EstadoCivil.Name = "label_EstadoCivil";
-            this.label_EstadoCivil.Size = new System.Drawing.Size(88, 15);
-            this.label_EstadoCivil.TabIndex = 97;
-            this.label_EstadoCivil.Text = "Estado civil :";
-            // 
-            // emailControl1
-            // 
-            this.emailControl1.Location = new System.Drawing.Point(111, 431);
-            this.emailControl1.Name = "emailControl1";
-            this.emailControl1.Size = new System.Drawing.Size(329, 20);
-            this.emailControl1.TabIndex = 93;
-            // 
-            // numeroTelefonicoControl1
-            // 
-            this.numeroTelefonicoControl1.AutoSize = true;
-            this.numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.numeroTelefonicoControl1.ControlWidth = 162;
-            this.numeroTelefonicoControl1.Location = new System.Drawing.Point(111, 400);
-            this.numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            this.numeroTelefonicoControl1.Size = new System.Drawing.Size(162, 25);
-            this.numeroTelefonicoControl1.TabIndex = 92;
-            // 
-            // dateTimePicker_FechaNacimiento
-            // 
-            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(399, 111);
-            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
-            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePicker_FechaNacimiento.TabIndex = 91;
-            this.toolTip1.SetToolTip(this.dateTimePicker_FechaNacimiento, "Seleccione la fecha");
-            // 
-            // label_agrGeo2
-            // 
-            this.label_agrGeo2.AutoSize = true;
-            this.label_agrGeo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_agrGeo2.Location = new System.Drawing.Point(67, 302);
-            this.label_agrGeo2.Name = "label_agrGeo2";
-            this.label_agrGeo2.Size = new System.Drawing.Size(94, 15);
-            this.label_agrGeo2.TabIndex = 84;
-            this.label_agrGeo2.Text = "de domicilio :";
-            // 
-            // label_agrGeo
-            // 
-            this.label_agrGeo.AutoSize = true;
-            this.label_agrGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_agrGeo.Location = new System.Drawing.Point(23, 283);
-            this.label_agrGeo.Name = "label_agrGeo";
-            this.label_agrGeo.Size = new System.Drawing.Size(195, 15);
-            this.label_agrGeo.TabIndex = 83;
-            this.label_agrGeo.Text = "Agregar geoposicionamiento ";
-            // 
-            // label_AgregarDomicilio
-            // 
-            this.label_AgregarDomicilio.AutoSize = true;
-            this.label_AgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AgregarDomicilio.Location = new System.Drawing.Point(18, 351);
-            this.label_AgregarDomicilio.Name = "label_AgregarDomicilio";
-            this.label_AgregarDomicilio.Size = new System.Drawing.Size(200, 15);
-            this.label_AgregarDomicilio.TabIndex = 82;
-            this.label_AgregarDomicilio.Text = "Agregar imagen de domicilio :";
-            // 
-            // textBox_LugarNacimiento
-            // 
-            this.textBox_LugarNacimiento.Location = new System.Drawing.Point(199, 189);
-            this.textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
-            this.textBox_LugarNacimiento.Size = new System.Drawing.Size(199, 20);
-            this.textBox_LugarNacimiento.TabIndex = 4;
-            this.textBox_LugarNacimiento.TextChanged += new System.EventHandler(this.TextBox_LugarNacimiento_TextChanged);
-            this.textBox_LugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_LugarNacimiento_KeyPress);
-            // 
-            // label_LugarNacimiento
-            // 
-            this.label_LugarNacimiento.AutoSize = true;
-            this.label_LugarNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LugarNacimiento.Location = new System.Drawing.Point(25, 190);
-            this.label_LugarNacimiento.Name = "label_LugarNacimiento";
-            this.label_LugarNacimiento.Size = new System.Drawing.Size(172, 15);
-            this.label_LugarNacimiento.TabIndex = 81;
-            this.label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO :";
-            // 
-            // textBox_Ocupacion
-            // 
-            this.textBox_Ocupacion.Location = new System.Drawing.Point(117, 163);
-            this.textBox_Ocupacion.Name = "textBox_Ocupacion";
-            this.textBox_Ocupacion.Size = new System.Drawing.Size(139, 20);
-            this.textBox_Ocupacion.TabIndex = 5;
-            this.textBox_Ocupacion.TextChanged += new System.EventHandler(this.TextBox_Ocupacion_TextChanged);
-            this.textBox_Ocupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Ocupacion_KeyPress);
-            // 
-            // label_Ocupacion
-            // 
-            this.label_Ocupacion.AutoSize = true;
-            this.label_Ocupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Ocupacion.Location = new System.Drawing.Point(25, 164);
-            this.label_Ocupacion.Name = "label_Ocupacion";
-            this.label_Ocupacion.Size = new System.Drawing.Size(94, 15);
-            this.label_Ocupacion.TabIndex = 79;
-            this.label_Ocupacion.Text = "OCUPACION :";
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.Image")));
-            this.btn_Buscar.Location = new System.Drawing.Point(64, 507);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Buscar.TabIndex = 78;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
-            // 
-            // checkBox_Notificacion258
-            // 
-            this.checkBox_Notificacion258.AutoSize = true;
-            this.checkBox_Notificacion258.Location = new System.Drawing.Point(215, 476);
-            this.checkBox_Notificacion258.Name = "checkBox_Notificacion258";
-            this.checkBox_Notificacion258.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_Notificacion258.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.checkBox_Notificacion258, "Marcar si requiere notificacion de pericia");
-            this.checkBox_Notificacion258.UseVisualStyleBackColor = true;
-            // 
-            // label_Notificacion258
-            // 
-            this.label_Notificacion258.AutoSize = true;
-            this.label_Notificacion258.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Notificacion258.Location = new System.Drawing.Point(20, 474);
-            this.label_Notificacion258.Name = "label_Notificacion258";
-            this.label_Notificacion258.Size = new System.Drawing.Size(175, 15);
-            this.label_Notificacion258.TabIndex = 76;
-            this.label_Notificacion258.Text = "Notificacion Art 258 C.P.P.";
-            // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
-            this.btn_Limpiar.Location = new System.Drawing.Point(234, 507);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Limpiar.TabIndex = 13;
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(399, 507);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 12;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
-            // 
-            // comboBox_Nacionalidad
-            // 
-            this.comboBox_Nacionalidad.AutoCompleteCustomSource.AddRange(new string[] {
-            "ARGENTINA",
-            "PARAGUAYA",
-            "BOLIVIANA"});
-
-            this.comboBox_Nacionalidad.Items.AddRange(new object[] {
-            "ARGENTINA",
-            "PARAGUAYA",
-            "BOLIVIANA",
-            "CHILENA",
-            "PERUANA",
-            "URUGUAYA"});
-            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(389, 139);
-            this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
-            this.comboBox_Nacionalidad.Size = new System.Drawing.Size(131, 21);
-            this.comboBox_Nacionalidad.TabIndex = 6;
-            this.comboBox_Nacionalidad.TextChanged += new System.EventHandler(this.ComboBox_Nacionalidad_TextChanged);
-            this.comboBox_Nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_Nacionalidad_KeyPress);
-            // 
-            // label_Email
-            // 
-            this.label_Email.AutoSize = true;
-            this.label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Email.Location = new System.Drawing.Point(20, 429);
-            this.label_Email.Name = "label_Email";
-            this.label_Email.Size = new System.Drawing.Size(56, 15);
-            this.label_Email.TabIndex = 73;
-            this.label_Email.Text = "EMAIL :";
-            // 
-            // label_Telefono
-            // 
-            this.label_Telefono.AutoSize = true;
-            this.label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Telefono.Location = new System.Drawing.Point(20, 404);
-            this.label_Telefono.Name = "label_Telefono";
-            this.label_Telefono.Size = new System.Drawing.Size(87, 15);
-            this.label_Telefono.TabIndex = 71;
-            this.label_Telefono.Text = "TELEFONO :";
-            // 
-            // pictureBox_Geoposicionamiento
-            // 
-            this.pictureBox_Geoposicionamiento.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox_Geoposicionamiento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Geoposicionamiento.BackgroundImage")));
-            this.pictureBox_Geoposicionamiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Geoposicionamiento.Location = new System.Drawing.Point(221, 271);
-            this.pictureBox_Geoposicionamiento.Name = "pictureBox_Geoposicionamiento";
-            this.pictureBox_Geoposicionamiento.Size = new System.Drawing.Size(295, 55);
-            this.pictureBox_Geoposicionamiento.TabIndex = 70;
-            this.pictureBox_Geoposicionamiento.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Geoposicionamiento, "Arrastrar imagen aqui");
-            this.pictureBox_Geoposicionamiento.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Geoposicionamiento.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
-            this.pictureBox_Geoposicionamiento.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
-            // 
-            // pictureBox_Domicilio
-            // 
-            this.pictureBox_Domicilio.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox_Domicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Domicilio.BackgroundImage")));
-            this.pictureBox_Domicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_Domicilio.Location = new System.Drawing.Point(221, 332);
-            this.pictureBox_Domicilio.Name = "pictureBox_Domicilio";
-            this.pictureBox_Domicilio.Size = new System.Drawing.Size(295, 55);
-            this.pictureBox_Domicilio.TabIndex = 69;
-            this.pictureBox_Domicilio.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Domicilio, "Arrastrar imagen aqui");
-            this.pictureBox_Domicilio.Click += new System.EventHandler(this.PictureBox_Click);
-            this.pictureBox_Domicilio.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
-            this.pictureBox_Domicilio.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
-            // 
-            // label_Nacionalidad
-            // 
-            this.label_Nacionalidad.AutoSize = true;
-            this.label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nacionalidad.Location = new System.Drawing.Point(277, 141);
-            this.label_Nacionalidad.Name = "label_Nacionalidad";
-            this.label_Nacionalidad.Size = new System.Drawing.Size(114, 15);
-            this.label_Nacionalidad.TabIndex = 66;
-            this.label_Nacionalidad.Text = "NACIONALIDAD :";
-            // 
-            // textBox_Localidad
-            // 
-            this.textBox_Localidad.Location = new System.Drawing.Point(117, 243);
-            this.textBox_Localidad.Name = "textBox_Localidad";
-            this.textBox_Localidad.Size = new System.Drawing.Size(399, 20);
-            this.textBox_Localidad.TabIndex = 8;
-            this.textBox_Localidad.TextChanged += new System.EventHandler(this.TextBox_Localidad_TextChanged);
-            this.textBox_Localidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Localidad_KeyPress);
-            // 
-            // textBox_Domicilio
-            // 
-            this.textBox_Domicilio.Location = new System.Drawing.Point(117, 217);
-            this.textBox_Domicilio.Name = "textBox_Domicilio";
-            this.textBox_Domicilio.Size = new System.Drawing.Size(399, 20);
-            this.textBox_Domicilio.TabIndex = 7;
-            this.textBox_Domicilio.TextChanged += new System.EventHandler(this.TextBox_Domicilio_TextChanged);
-            // 
-            // textBox_Edad
-            // 
-            this.textBox_Edad.Location = new System.Drawing.Point(88, 137);
-            this.textBox_Edad.Name = "textBox_Edad";
-            this.textBox_Edad.Size = new System.Drawing.Size(60, 20);
-            this.textBox_Edad.TabIndex = 3;
-            this.textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Edad.TextChanged += new System.EventHandler(this.TextBox_Edad_TextChanged);
-            this.textBox_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Edad_KeyPress);
-            // 
-            // textBox_Dni
-            // 
-            this.textBox_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Dni.Location = new System.Drawing.Point(69, 111);
-            this.textBox_Dni.Name = "textBox_Dni";
-            this.textBox_Dni.Size = new System.Drawing.Size(181, 20);
-            this.textBox_Dni.TabIndex = 1;
-            this.textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Dni.TextChanged += new System.EventHandler(this.TextBox_Dni_TextChanged);
-            this.textBox_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_Dni_KeyPress);
-            // 
-            // textBox_Nombre
-            // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(101, 81);
-            this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(419, 20);
-            this.textBox_Nombre.TabIndex = 0;
-            this.textBox_Nombre.TextChanged += new System.EventHandler(this.TextBox_Nombre_TextChanged);
-            // 
-            // label_Localidad
-            // 
-            this.label_Localidad.AutoSize = true;
-            this.label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Localidad.Location = new System.Drawing.Point(25, 244);
-            this.label_Localidad.Name = "label_Localidad";
-            this.label_Localidad.Size = new System.Drawing.Size(90, 15);
-            this.label_Localidad.TabIndex = 65;
-            this.label_Localidad.Text = "LOCALIDAD :";
-            // 
-            // label_Domicilio
-            // 
-            this.label_Domicilio.AutoSize = true;
-            this.label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Domicilio.Location = new System.Drawing.Point(25, 218);
-            this.label_Domicilio.Name = "label_Domicilio";
-            this.label_Domicilio.Size = new System.Drawing.Size(86, 15);
-            this.label_Domicilio.TabIndex = 62;
-            this.label_Domicilio.Text = "DOMICILIO :";
-            // 
-            // label_Edad
-            // 
-            this.label_Edad.AutoSize = true;
-            this.label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Edad.Location = new System.Drawing.Point(30, 139);
-            this.label_Edad.Name = "label_Edad";
-            this.label_Edad.Size = new System.Drawing.Size(52, 15);
-            this.label_Edad.TabIndex = 61;
-            this.label_Edad.Text = "EDAD :";
-            // 
-            // label_FechaNacimiento
-            // 
-            this.label_FechaNacimiento.AutoSize = true;
-            this.label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_FechaNacimiento.Location = new System.Drawing.Point(253, 113);
-            this.label_FechaNacimiento.Name = "label_FechaNacimiento";
-            this.label_FechaNacimiento.Size = new System.Drawing.Size(147, 15);
-            this.label_FechaNacimiento.TabIndex = 58;
-            this.label_FechaNacimiento.Text = "FECHA NACIMIENTO :";
-            // 
-            // label_Dni
-            // 
-            this.label_Dni.AutoSize = true;
-            this.label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Dni.Location = new System.Drawing.Point(28, 112);
-            this.label_Dni.Name = "label_Dni";
-            this.label_Dni.Size = new System.Drawing.Size(39, 15);
-            this.label_Dni.TabIndex = 56;
-            this.label_Dni.Text = "DNI :";
-            // 
-            // label_Nombre
-            // 
-            this.label_Nombre.AutoSize = true;
-            this.label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nombre.Location = new System.Drawing.Point(27, 82);
-            this.label_Nombre.Name = "label_Nombre";
-            this.label_Nombre.Size = new System.Drawing.Size(75, 15);
-            this.label_Nombre.TabIndex = 54;
-            this.label_Nombre.Text = "NOMBRE :";
-            // 
-            // label_CircunstanciasPersonales
-            // 
-            this.label_CircunstanciasPersonales.AutoSize = true;
-            this.label_CircunstanciasPersonales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label_CircunstanciasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CircunstanciasPersonales.Location = new System.Drawing.Point(107, 39);
-            this.label_CircunstanciasPersonales.Name = "label_CircunstanciasPersonales";
-            this.label_CircunstanciasPersonales.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            this.label_CircunstanciasPersonales.Size = new System.Drawing.Size(349, 30);
-            this.label_CircunstanciasPersonales.TabIndex = 52;
-            this.label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
-            // 
-            // label_Titulo
-            // 
-            this.label_Titulo.AutoSize = true;
-            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(184, 0);
-            this.label_Titulo.Name = "label_Titulo";
-            this.label_Titulo.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label_Titulo.Size = new System.Drawing.Size(194, 25);
-            this.label_Titulo.TabIndex = 51;
-            this.label_Titulo.Text = "DATOS VICTIMA";
+            panel1.BackColor = Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(pictureBox_CheckNotificacion258);
+            panel1.Controls.Add(botonDeslizable_StudRML);
+            panel1.Controls.Add(label_StudRML);
+            panel1.Controls.Add(comboBox_EstadoCivil);
+            panel1.Controls.Add(label_EstadoCivil);
+            panel1.Controls.Add(emailControl1);
+            panel1.Controls.Add(numeroTelefonicoControl1);
+            panel1.Controls.Add(dateTimePicker_FechaNacimiento);
+            panel1.Controls.Add(label_agrGeo2);
+            panel1.Controls.Add(label_agrGeo);
+            panel1.Controls.Add(label_AgregarDomicilio);
+            panel1.Controls.Add(textBox_LugarNacimiento);
+            panel1.Controls.Add(label_LugarNacimiento);
+            panel1.Controls.Add(textBox_Ocupacion);
+            panel1.Controls.Add(label_Ocupacion);
+            panel1.Controls.Add(btn_Buscar);
+            panel1.Controls.Add(checkBox_Notificacion258);
+            panel1.Controls.Add(label_Notificacion258);
+            panel1.Controls.Add(btn_Limpiar);
+            panel1.Controls.Add(btn_Guardar);
+            panel1.Controls.Add(comboBox_Nacionalidad);
+            panel1.Controls.Add(label_Email);
+            panel1.Controls.Add(label_Telefono);
+            panel1.Controls.Add(pictureBox_Geoposicionamiento);
+            panel1.Controls.Add(pictureBox_Domicilio);
+            panel1.Controls.Add(label_Nacionalidad);
+            panel1.Controls.Add(textBox_Localidad);
+            panel1.Controls.Add(textBox_Domicilio);
+            panel1.Controls.Add(textBox_Edad);
+            panel1.Controls.Add(textBox_Dni);
+            panel1.Controls.Add(textBox_Nombre);
+            panel1.Controls.Add(label_Localidad);
+            panel1.Controls.Add(label_Domicilio);
+            panel1.Controls.Add(label_Edad);
+            panel1.Controls.Add(label_FechaNacimiento);
+            panel1.Controls.Add(label_Dni);
+            panel1.Controls.Add(label_Nombre);
+            panel1.Controls.Add(label_CircunstanciasPersonales);
+            panel1.Controls.Add(label_Titulo);
+            panel1.Location = new Point(24, 26);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(562, 587);
+            panel1.TabIndex = 2;
             // 
             // pictureBox_CheckNotificacion258
             // 
-            this.pictureBox_CheckNotificacion258.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_CheckNotificacion258.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_CheckNotificacion258.Image = global::Ofelia_Sara.Properties.Resources.check_Personalizado;
-            this.pictureBox_CheckNotificacion258.Location = new System.Drawing.Point(236, 469);
-            this.pictureBox_CheckNotificacion258.Name = "pictureBox_CheckNotificacion258";
-            this.pictureBox_CheckNotificacion258.Size = new System.Drawing.Size(26, 28);
-            this.pictureBox_CheckNotificacion258.TabIndex = 101;
-            this.pictureBox_CheckNotificacion258.TabStop = false;
+            pictureBox_CheckNotificacion258.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox_CheckNotificacion258.Cursor = Cursors.Hand;
+            pictureBox_CheckNotificacion258.Image = Properties.Resources.check_Personalizado;
+            pictureBox_CheckNotificacion258.Location = new Point(236, 469);
+            pictureBox_CheckNotificacion258.Name = "pictureBox_CheckNotificacion258";
+            pictureBox_CheckNotificacion258.Size = new Size(26, 28);
+            pictureBox_CheckNotificacion258.TabIndex = 101;
+            pictureBox_CheckNotificacion258.TabStop = false;
+            // 
+            // botonDeslizable_StudRML
+            // 
+            botonDeslizable_StudRML.Cursor = Cursors.Hand;
+            botonDeslizable_StudRML.IsOn = false;
+            botonDeslizable_StudRML.Location = new Point(475, 469);
+            botonDeslizable_StudRML.Margin = new Padding(4, 5, 4, 5);
+            botonDeslizable_StudRML.Name = "botonDeslizable_StudRML";
+            botonDeslizable_StudRML.Size = new Size(40, 20);
+            botonDeslizable_StudRML.TabIndex = 100;
+            botonDeslizable_StudRML.ValidarCampos = null;
+            // 
+            // label_StudRML
+            // 
+            label_StudRML.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_StudRML.Location = new Point(381, 469);
+            label_StudRML.Name = "label_StudRML";
+            label_StudRML.Size = new Size(135, 20);
+            label_StudRML.TabIndex = 99;
+            label_StudRML.Text = "Stud. R.M.L   ";
+            label_StudRML.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // comboBox_EstadoCivil
+            // 
+            comboBox_EstadoCivil.ArrowImage = (Image)resources.GetObject("comboBox_EstadoCivil.ArrowImage");
+            comboBox_EstadoCivil.ArrowPictureBox = null;
+            comboBox_EstadoCivil.AutoCompleteMode = AutoCompleteMode.None;
+            comboBox_EstadoCivil.AutoCompleteSource = AutoCompleteSource.None;
+            comboBox_EstadoCivil.BackColor = Color.White;
+            comboBox_EstadoCivil.DataSource = null;
+            comboBox_EstadoCivil.DefaultImage = (Image)resources.GetObject("comboBox_EstadoCivil.DefaultImage");
+            comboBox_EstadoCivil.DisabledImage = (Image)resources.GetObject("comboBox_EstadoCivil.DisabledImage");
+            comboBox_EstadoCivil.DisplayMember = null;
+            comboBox_EstadoCivil.DropDownHeight = 252;
+            comboBox_EstadoCivil.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_EstadoCivil.DroppedDown = false;
+            comboBox_EstadoCivil.ErrorColor = Color.Red;
+            comboBox_EstadoCivil.FocusColor = Color.Blue;
+            comboBox_EstadoCivil.ForeColor = Color.Gray;
+            comboBox_EstadoCivil.Location = new Point(400, 166);
+            comboBox_EstadoCivil.MaxDropDownItems = 10;
+            comboBox_EstadoCivil.Name = "comboBox_EstadoCivil";
+            comboBox_EstadoCivil.PlaceholderColor = Color.Gray;
+            comboBox_EstadoCivil.PlaceholderText = " ";
+            comboBox_EstadoCivil.PressedImage = (Image)resources.GetObject("comboBox_EstadoCivil.PressedImage");
+            comboBox_EstadoCivil.SelectedIndex = -1;
+            comboBox_EstadoCivil.SelectedItem = null;
+            comboBox_EstadoCivil.SelectedText = "";
+            comboBox_EstadoCivil.SelectionStart = 0;
+            comboBox_EstadoCivil.ShowError = false;
+            comboBox_EstadoCivil.Size = new Size(120, 21);
+            comboBox_EstadoCivil.TabIndex = 98;
+            comboBox_EstadoCivil.Text = " ";
+            comboBox_EstadoCivil.TextValue = " ";
+            // 
+            // label_EstadoCivil
+            // 
+            label_EstadoCivil.AutoSize = true;
+            label_EstadoCivil.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_EstadoCivil.Location = new Point(309, 168);
+            label_EstadoCivil.Name = "label_EstadoCivil";
+            label_EstadoCivil.Size = new Size(105, 18);
+            label_EstadoCivil.TabIndex = 97;
+            label_EstadoCivil.Text = "Estado civil :";
+            // 
+            // emailControl1
+            // 
+            emailControl1.Location = new Point(111, 429);
+            emailControl1.Margin = new Padding(5, 4, 5, 4);
+            emailControl1.Name = "emailControl1";
+            emailControl1.Size = new Size(404, 31);
+            emailControl1.TabIndex = 93;
+            // 
+            // numeroTelefonicoControl1
+            // 
+            numeroTelefonicoControl1.AutoSize = true;
+            numeroTelefonicoControl1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            numeroTelefonicoControl1.ControlWidth = 226;
+            numeroTelefonicoControl1.Location = new Point(111, 400);
+            numeroTelefonicoControl1.Margin = new Padding(5, 4, 5, 4);
+            numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
+            numeroTelefonicoControl1.Size = new Size(226, 33);
+            numeroTelefonicoControl1.TabIndex = 92;
+            // 
+            // dateTimePicker_FechaNacimiento
+            // 
+            dateTimePicker_FechaNacimiento.AñoMaximo = 2025;
+            dateTimePicker_FechaNacimiento.AñoMinimo = 1930;
+            dateTimePicker_FechaNacimiento.BackColor = Color.Transparent;
+            dateTimePicker_FechaNacimiento.ControlInvocador = null;
+            dateTimePicker_FechaNacimiento.Location = new Point(399, 111);
+            dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
+            dateTimePicker_FechaNacimiento.Size = new Size(149, 20);
+            dateTimePicker_FechaNacimiento.SubrayadoGeneralErrorColor = Color.Red;
+            dateTimePicker_FechaNacimiento.SubrayadoGeneralFocusColor = Color.Blue;
+            dateTimePicker_FechaNacimiento.TabIndex = 91;
+            dateTimePicker_FechaNacimiento.TextoAsociado = null;
+            toolTip1.SetToolTip(dateTimePicker_FechaNacimiento, "Seleccione la fecha");
+            // 
+            // label_agrGeo2
+            // 
+            label_agrGeo2.AutoSize = true;
+            label_agrGeo2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_agrGeo2.Location = new Point(67, 302);
+            label_agrGeo2.Name = "label_agrGeo2";
+            label_agrGeo2.Size = new Size(109, 18);
+            label_agrGeo2.TabIndex = 84;
+            label_agrGeo2.Text = "de domicilio :";
+            // 
+            // label_agrGeo
+            // 
+            label_agrGeo.AutoSize = true;
+            label_agrGeo.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_agrGeo.Location = new Point(23, 283);
+            label_agrGeo.Name = "label_agrGeo";
+            label_agrGeo.Size = new Size(228, 18);
+            label_agrGeo.TabIndex = 83;
+            label_agrGeo.Text = "Agregar geoposicionamiento ";
+            // 
+            // label_AgregarDomicilio
+            // 
+            label_AgregarDomicilio.AutoSize = true;
+            label_AgregarDomicilio.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_AgregarDomicilio.Location = new Point(18, 351);
+            label_AgregarDomicilio.Name = "label_AgregarDomicilio";
+            label_AgregarDomicilio.Size = new Size(231, 18);
+            label_AgregarDomicilio.TabIndex = 82;
+            label_AgregarDomicilio.Text = "Agregar imagen de domicilio :";
+            // 
+            // textBox_LugarNacimiento
+            // 
+            textBox_LugarNacimiento.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_LugarNacimiento.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_LugarNacimiento.BackColor = Color.White;
+            textBox_LugarNacimiento.ErrorColor = Color.Red;
+            textBox_LugarNacimiento.FocusColor = Color.Blue;
+            textBox_LugarNacimiento.Location = new Point(199, 189);
+            textBox_LugarNacimiento.MaxLength = 32767;
+            textBox_LugarNacimiento.Multiline = false;
+            textBox_LugarNacimiento.Name = "textBox_LugarNacimiento";
+            textBox_LugarNacimiento.PasswordChar = '\0';
+            textBox_LugarNacimiento.PlaceholderColor = Color.Gray;
+            textBox_LugarNacimiento.PlaceholderText = "";
+            textBox_LugarNacimiento.ReadOnly = false;
+            textBox_LugarNacimiento.SelectionStart = 0;
+            textBox_LugarNacimiento.ShowError = false;
+            textBox_LugarNacimiento.Size = new Size(199, 20);
+            textBox_LugarNacimiento.TabIndex = 4;
+            textBox_LugarNacimiento.TextAlign = HorizontalAlignment.Center;
+            textBox_LugarNacimiento.TextValue = "";
+            textBox_LugarNacimiento.Whidth = 0;
+            textBox_LugarNacimiento.TextChanged += TextBox_LugarNacimiento_TextChanged;
+            textBox_LugarNacimiento.KeyPress += TextBox_LugarNacimiento_KeyPress;
+            // 
+            // label_LugarNacimiento
+            // 
+            label_LugarNacimiento.AutoSize = true;
+            label_LugarNacimiento.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_LugarNacimiento.Location = new Point(25, 190);
+            label_LugarNacimiento.Name = "label_LugarNacimiento";
+            label_LugarNacimiento.Size = new Size(209, 18);
+            label_LugarNacimiento.TabIndex = 81;
+            label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO :";
+            // 
+            // textBox_Ocupacion
+            // 
+            textBox_Ocupacion.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Ocupacion.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Ocupacion.BackColor = Color.White;
+            textBox_Ocupacion.ErrorColor = Color.Red;
+            textBox_Ocupacion.FocusColor = Color.Blue;
+            textBox_Ocupacion.Location = new Point(117, 163);
+            textBox_Ocupacion.MaxLength = 32767;
+            textBox_Ocupacion.Multiline = false;
+            textBox_Ocupacion.Name = "textBox_Ocupacion";
+            textBox_Ocupacion.PasswordChar = '\0';
+            textBox_Ocupacion.PlaceholderColor = Color.Gray;
+            textBox_Ocupacion.PlaceholderText = "";
+            textBox_Ocupacion.ReadOnly = false;
+            textBox_Ocupacion.SelectionStart = 0;
+            textBox_Ocupacion.ShowError = false;
+            textBox_Ocupacion.Size = new Size(139, 20);
+            textBox_Ocupacion.TabIndex = 5;
+            textBox_Ocupacion.TextAlign = HorizontalAlignment.Center;
+            textBox_Ocupacion.TextValue = "";
+            textBox_Ocupacion.Whidth = 0;
+            textBox_Ocupacion.TextChanged += TextBox_Ocupacion_TextChanged;
+            textBox_Ocupacion.KeyPress += TextBox_Ocupacion_KeyPress;
+            // 
+            // label_Ocupacion
+            // 
+            label_Ocupacion.AutoSize = true;
+            label_Ocupacion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Ocupacion.Location = new Point(25, 164);
+            label_Ocupacion.Name = "label_Ocupacion";
+            label_Ocupacion.Size = new Size(117, 18);
+            label_Ocupacion.TabIndex = 79;
+            label_Ocupacion.Text = "OCUPACION :";
+            // 
+            // btn_Buscar
+            // 
+            btn_Buscar.BackColor = Color.SkyBlue;
+            btn_Buscar.Cursor = Cursors.Hand;
+            btn_Buscar.Image = (Image)resources.GetObject("btn_Buscar.Image");
+            btn_Buscar.Location = new Point(64, 507);
+            btn_Buscar.Name = "btn_Buscar";
+            btn_Buscar.Size = new Size(75, 67);
+            btn_Buscar.TabIndex = 78;
+            btn_Buscar.UseVisualStyleBackColor = false;
+            btn_Buscar.Click += Btn_Buscar_Click;
+            // 
+            // checkBox_Notificacion258
+            // 
+            checkBox_Notificacion258.AutoSize = true;
+            checkBox_Notificacion258.Location = new Point(215, 476);
+            checkBox_Notificacion258.Name = "checkBox_Notificacion258";
+            checkBox_Notificacion258.Size = new Size(18, 17);
+            checkBox_Notificacion258.TabIndex = 11;
+            toolTip1.SetToolTip(checkBox_Notificacion258, "Marcar si requiere notificacion de pericia");
+            checkBox_Notificacion258.UseVisualStyleBackColor = true;
+            // 
+            // label_Notificacion258
+            // 
+            label_Notificacion258.AutoSize = true;
+            label_Notificacion258.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Notificacion258.Location = new Point(20, 474);
+            label_Notificacion258.Name = "label_Notificacion258";
+            label_Notificacion258.Size = new Size(210, 18);
+            label_Notificacion258.TabIndex = 76;
+            label_Notificacion258.Text = "Notificacion Art 258 C.P.P.";
+            // 
+            // btn_Limpiar
+            // 
+            btn_Limpiar.BackColor = Color.SkyBlue;
+            btn_Limpiar.Cursor = Cursors.Hand;
+            btn_Limpiar.Image = (Image)resources.GetObject("btn_Limpiar.Image");
+            btn_Limpiar.Location = new Point(234, 507);
+            btn_Limpiar.Name = "btn_Limpiar";
+            btn_Limpiar.Size = new Size(75, 67);
+            btn_Limpiar.TabIndex = 13;
+            btn_Limpiar.UseVisualStyleBackColor = false;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
+            // 
+            // btn_Guardar
+            // 
+            btn_Guardar.BackColor = Color.SkyBlue;
+            btn_Guardar.Cursor = Cursors.Hand;
+            btn_Guardar.Image = (Image)resources.GetObject("btn_Guardar.Image");
+            btn_Guardar.Location = new Point(399, 507);
+            btn_Guardar.Name = "btn_Guardar";
+            btn_Guardar.Size = new Size(75, 67);
+            btn_Guardar.TabIndex = 12;
+            btn_Guardar.UseVisualStyleBackColor = false;
+            btn_Guardar.Click += Btn_Guardar_Click;
+            // 
+            // comboBox_Nacionalidad
+            // 
+            comboBox_Nacionalidad.ArrowImage = (Image)resources.GetObject("comboBox_Nacionalidad.ArrowImage");
+            comboBox_Nacionalidad.ArrowPictureBox = null;
+            comboBox_Nacionalidad.AutoCompleteMode = AutoCompleteMode.None;
+            comboBox_Nacionalidad.AutoCompleteSource = AutoCompleteSource.None;
+            comboBox_Nacionalidad.BackColor = Color.White;
+            comboBox_Nacionalidad.DataSource = null;
+            comboBox_Nacionalidad.DefaultImage = (Image)resources.GetObject("comboBox_Nacionalidad.DefaultImage");
+            comboBox_Nacionalidad.DisabledImage = (Image)resources.GetObject("comboBox_Nacionalidad.DisabledImage");
+            comboBox_Nacionalidad.DisplayMember = null;
+            comboBox_Nacionalidad.DropDownHeight = 252;
+            comboBox_Nacionalidad.DropDownStyle = CustomComboBox.CustomComboBoxStyle.DropDown;
+            comboBox_Nacionalidad.DroppedDown = false;
+            comboBox_Nacionalidad.ErrorColor = Color.Red;
+            comboBox_Nacionalidad.FocusColor = Color.Blue;
+            comboBox_Nacionalidad.ForeColor = Color.Gray;
+            comboBox_Nacionalidad.Location = new Point(389, 139);
+            comboBox_Nacionalidad.MaxDropDownItems = 10;
+            comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
+            comboBox_Nacionalidad.PlaceholderColor = Color.Gray;
+            comboBox_Nacionalidad.PlaceholderText = " ";
+            comboBox_Nacionalidad.PressedImage = (Image)resources.GetObject("comboBox_Nacionalidad.PressedImage");
+            comboBox_Nacionalidad.SelectedIndex = -1;
+            comboBox_Nacionalidad.SelectedItem = null;
+            comboBox_Nacionalidad.SelectedText = "";
+            comboBox_Nacionalidad.SelectionStart = 0;
+            comboBox_Nacionalidad.ShowError = false;
+            comboBox_Nacionalidad.Size = new Size(131, 21);
+            comboBox_Nacionalidad.TabIndex = 6;
+            comboBox_Nacionalidad.Text = " ";
+            comboBox_Nacionalidad.TextValue = " ";
+            comboBox_Nacionalidad.TextChanged += ComboBox_Nacionalidad_TextChanged;
+            comboBox_Nacionalidad.KeyPress += ComboBox_Nacionalidad_KeyPress;
+            // 
+            // label_Email
+            // 
+            label_Email.AutoSize = true;
+            label_Email.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Email.Location = new Point(20, 429);
+            label_Email.Name = "label_Email";
+            label_Email.Size = new Size(66, 18);
+            label_Email.TabIndex = 73;
+            label_Email.Text = "EMAIL :";
+            // 
+            // label_Telefono
+            // 
+            label_Telefono.AutoSize = true;
+            label_Telefono.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Telefono.Location = new Point(20, 404);
+            label_Telefono.Name = "label_Telefono";
+            label_Telefono.Size = new Size(107, 18);
+            label_Telefono.TabIndex = 71;
+            label_Telefono.Text = "TELEFONO :";
+            // 
+            // pictureBox_Geoposicionamiento
+            // 
+            pictureBox_Geoposicionamiento.BackColor = SystemColors.ButtonFace;
+            pictureBox_Geoposicionamiento.BackgroundImage = (Image)resources.GetObject("pictureBox_Geoposicionamiento.BackgroundImage");
+            pictureBox_Geoposicionamiento.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox_Geoposicionamiento.Location = new Point(221, 271);
+            pictureBox_Geoposicionamiento.Name = "pictureBox_Geoposicionamiento";
+            pictureBox_Geoposicionamiento.Size = new Size(295, 55);
+            pictureBox_Geoposicionamiento.TabIndex = 70;
+            pictureBox_Geoposicionamiento.TabStop = false;
+            toolTip1.SetToolTip(pictureBox_Geoposicionamiento, "Arrastrar imagen aqui");
+            pictureBox_Geoposicionamiento.Click += PictureBox_Click;
+            pictureBox_Geoposicionamiento.DragDrop += PictureBox_DragDrop;
+            pictureBox_Geoposicionamiento.DragEnter += PictureBox_DragEnter;
+            // 
+            // pictureBox_Domicilio
+            // 
+            pictureBox_Domicilio.BackColor = SystemColors.ButtonFace;
+            pictureBox_Domicilio.BackgroundImage = (Image)resources.GetObject("pictureBox_Domicilio.BackgroundImage");
+            pictureBox_Domicilio.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox_Domicilio.Location = new Point(221, 332);
+            pictureBox_Domicilio.Name = "pictureBox_Domicilio";
+            pictureBox_Domicilio.Size = new Size(295, 55);
+            pictureBox_Domicilio.TabIndex = 69;
+            pictureBox_Domicilio.TabStop = false;
+            toolTip1.SetToolTip(pictureBox_Domicilio, "Arrastrar imagen aqui");
+            pictureBox_Domicilio.Click += PictureBox_Click;
+            pictureBox_Domicilio.DragDrop += PictureBox_DragDrop;
+            pictureBox_Domicilio.DragEnter += PictureBox_DragEnter;
+            // 
+            // label_Nacionalidad
+            // 
+            label_Nacionalidad.AutoSize = true;
+            label_Nacionalidad.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Nacionalidad.Location = new Point(277, 141);
+            label_Nacionalidad.Name = "label_Nacionalidad";
+            label_Nacionalidad.Size = new Size(138, 18);
+            label_Nacionalidad.TabIndex = 66;
+            label_Nacionalidad.Text = "NACIONALIDAD :";
+            // 
+            // textBox_Localidad
+            // 
+            textBox_Localidad.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Localidad.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Localidad.BackColor = Color.White;
+            textBox_Localidad.ErrorColor = Color.Red;
+            textBox_Localidad.FocusColor = Color.Blue;
+            textBox_Localidad.Location = new Point(117, 243);
+            textBox_Localidad.MaxLength = 32767;
+            textBox_Localidad.Multiline = false;
+            textBox_Localidad.Name = "textBox_Localidad";
+            textBox_Localidad.PasswordChar = '\0';
+            textBox_Localidad.PlaceholderColor = Color.Gray;
+            textBox_Localidad.PlaceholderText = "";
+            textBox_Localidad.ReadOnly = false;
+            textBox_Localidad.SelectionStart = 0;
+            textBox_Localidad.ShowError = false;
+            textBox_Localidad.Size = new Size(399, 20);
+            textBox_Localidad.TabIndex = 8;
+            textBox_Localidad.TextAlign = HorizontalAlignment.Center;
+            textBox_Localidad.TextValue = "";
+            textBox_Localidad.Whidth = 0;
+            textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
+            textBox_Localidad.KeyPress += TextBox_Localidad_KeyPress;
+            // 
+            // textBox_Domicilio
+            // 
+            textBox_Domicilio.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Domicilio.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Domicilio.BackColor = Color.White;
+            textBox_Domicilio.ErrorColor = Color.Red;
+            textBox_Domicilio.FocusColor = Color.Blue;
+            textBox_Domicilio.Location = new Point(117, 217);
+            textBox_Domicilio.MaxLength = 32767;
+            textBox_Domicilio.Multiline = false;
+            textBox_Domicilio.Name = "textBox_Domicilio";
+            textBox_Domicilio.PasswordChar = '\0';
+            textBox_Domicilio.PlaceholderColor = Color.Gray;
+            textBox_Domicilio.PlaceholderText = "";
+            textBox_Domicilio.ReadOnly = false;
+            textBox_Domicilio.SelectionStart = 0;
+            textBox_Domicilio.ShowError = false;
+            textBox_Domicilio.Size = new Size(399, 20);
+            textBox_Domicilio.TabIndex = 7;
+            textBox_Domicilio.TextAlign = HorizontalAlignment.Center;
+            textBox_Domicilio.TextValue = "";
+            textBox_Domicilio.Whidth = 0;
+            textBox_Domicilio.TextChanged += TextBox_Domicilio_TextChanged;
+            // 
+            // textBox_Edad
+            // 
+            textBox_Edad.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Edad.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Edad.BackColor = Color.White;
+            textBox_Edad.ErrorColor = Color.Red;
+            textBox_Edad.FocusColor = Color.Blue;
+            textBox_Edad.Location = new Point(88, 137);
+            textBox_Edad.MaxLength = 32767;
+            textBox_Edad.Multiline = false;
+            textBox_Edad.Name = "textBox_Edad";
+            textBox_Edad.PasswordChar = '\0';
+            textBox_Edad.PlaceholderColor = Color.Gray;
+            textBox_Edad.PlaceholderText = "";
+            textBox_Edad.ReadOnly = false;
+            textBox_Edad.SelectionStart = 0;
+            textBox_Edad.ShowError = false;
+            textBox_Edad.Size = new Size(60, 20);
+            textBox_Edad.TabIndex = 3;
+            textBox_Edad.TextAlign = HorizontalAlignment.Center;
+            textBox_Edad.TextValue = "";
+            textBox_Edad.Whidth = 0;
+            textBox_Edad.TextChanged += TextBox_Edad_TextChanged;
+            textBox_Edad.KeyPress += TextBox_Edad_KeyPress;
+            // 
+            // textBox_Dni
+            // 
+            textBox_Dni.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Dni.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Dni.BackColor = Color.White;
+            textBox_Dni.ErrorColor = Color.Red;
+            textBox_Dni.FocusColor = Color.Blue;
+            textBox_Dni.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox_Dni.Location = new Point(69, 111);
+            textBox_Dni.MaxLength = 32767;
+            textBox_Dni.Multiline = false;
+            textBox_Dni.Name = "textBox_Dni";
+            textBox_Dni.PasswordChar = '\0';
+            textBox_Dni.PlaceholderColor = Color.Gray;
+            textBox_Dni.PlaceholderText = "";
+            textBox_Dni.ReadOnly = false;
+            textBox_Dni.SelectionStart = 0;
+            textBox_Dni.ShowError = false;
+            textBox_Dni.Size = new Size(181, 20);
+            textBox_Dni.TabIndex = 1;
+            textBox_Dni.TextAlign = HorizontalAlignment.Center;
+            textBox_Dni.TextValue = "";
+            textBox_Dni.Whidth = 0;
+            textBox_Dni.TextChanged += TextBox_Dni_TextChanged;
+            textBox_Dni.KeyPress += TextBox_Dni_KeyPress;
+            // 
+            // textBox_Nombre
+            // 
+            textBox_Nombre.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Nombre.AutoCompleteSource = AutoCompleteSource.None;
+            textBox_Nombre.BackColor = Color.White;
+            textBox_Nombre.ErrorColor = Color.Red;
+            textBox_Nombre.FocusColor = Color.Blue;
+            textBox_Nombre.Location = new Point(101, 81);
+            textBox_Nombre.MaxLength = 32767;
+            textBox_Nombre.Multiline = false;
+            textBox_Nombre.Name = "textBox_Nombre";
+            textBox_Nombre.PasswordChar = '\0';
+            textBox_Nombre.PlaceholderColor = Color.Gray;
+            textBox_Nombre.PlaceholderText = "";
+            textBox_Nombre.ReadOnly = false;
+            textBox_Nombre.SelectionStart = 0;
+            textBox_Nombre.ShowError = false;
+            textBox_Nombre.Size = new Size(419, 20);
+            textBox_Nombre.TabIndex = 0;
+            textBox_Nombre.TextAlign = HorizontalAlignment.Center;
+            textBox_Nombre.TextValue = "";
+            textBox_Nombre.Whidth = 0;
+            textBox_Nombre.TextChanged += TextBox_Nombre_TextChanged;
+            // 
+            // label_Localidad
+            // 
+            label_Localidad.AutoSize = true;
+            label_Localidad.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Localidad.Location = new Point(25, 244);
+            label_Localidad.Name = "label_Localidad";
+            label_Localidad.Size = new Size(109, 18);
+            label_Localidad.TabIndex = 65;
+            label_Localidad.Text = "LOCALIDAD :";
+            // 
+            // label_Domicilio
+            // 
+            label_Domicilio.AutoSize = true;
+            label_Domicilio.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Domicilio.Location = new Point(25, 218);
+            label_Domicilio.Name = "label_Domicilio";
+            label_Domicilio.Size = new Size(103, 18);
+            label_Domicilio.TabIndex = 62;
+            label_Domicilio.Text = "DOMICILIO :";
+            // 
+            // label_Edad
+            // 
+            label_Edad.AutoSize = true;
+            label_Edad.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Edad.Location = new Point(30, 139);
+            label_Edad.Name = "label_Edad";
+            label_Edad.Size = new Size(63, 18);
+            label_Edad.TabIndex = 61;
+            label_Edad.Text = "EDAD :";
+            // 
+            // label_FechaNacimiento
+            // 
+            label_FechaNacimiento.AutoSize = true;
+            label_FechaNacimiento.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_FechaNacimiento.Location = new Point(253, 113);
+            label_FechaNacimiento.Name = "label_FechaNacimiento";
+            label_FechaNacimiento.Size = new Size(180, 18);
+            label_FechaNacimiento.TabIndex = 58;
+            label_FechaNacimiento.Text = "FECHA NACIMIENTO :";
+            // 
+            // label_Dni
+            // 
+            label_Dni.AutoSize = true;
+            label_Dni.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Dni.Location = new Point(28, 112);
+            label_Dni.Name = "label_Dni";
+            label_Dni.Size = new Size(46, 18);
+            label_Dni.TabIndex = 56;
+            label_Dni.Text = "DNI :";
+            // 
+            // label_Nombre
+            // 
+            label_Nombre.AutoSize = true;
+            label_Nombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Nombre.Location = new Point(27, 82);
+            label_Nombre.Name = "label_Nombre";
+            label_Nombre.Size = new Size(91, 18);
+            label_Nombre.TabIndex = 54;
+            label_Nombre.Text = "NOMBRE :";
+            // 
+            // label_CircunstanciasPersonales
+            // 
+            label_CircunstanciasPersonales.AutoSize = true;
+            label_CircunstanciasPersonales.BackColor = Color.FromArgb(0, 192, 192);
+            label_CircunstanciasPersonales.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label_CircunstanciasPersonales.Location = new Point(107, 39);
+            label_CircunstanciasPersonales.Name = "label_CircunstanciasPersonales";
+            label_CircunstanciasPersonales.Padding = new Padding(30, 5, 30, 5);
+            label_CircunstanciasPersonales.Size = new Size(416, 35);
+            label_CircunstanciasPersonales.TabIndex = 52;
+            label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
+            // 
+            // label_Titulo
+            // 
+            label_Titulo.AutoSize = true;
+            label_Titulo.BackColor = Color.FromArgb(0, 154, 174);
+            label_Titulo.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_Titulo.ForeColor = SystemColors.ControlLightLight;
+            label_Titulo.Location = new Point(184, 0);
+            label_Titulo.Name = "label_Titulo";
+            label_Titulo.Padding = new Padding(10, 0, 10, 0);
+            label_Titulo.Size = new Size(246, 31);
+            label_Titulo.TabIndex = 51;
+            label_Titulo.Text = "DATOS VICTIMA";
             // 
             // AgregarDatosPersonalesVictima
             // 
-            this.ClientSize = new System.Drawing.Size(608, 648);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(624, 581);
-            this.Name = "AgregarDatosPersonalesVictima";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CIRCUNSTANCIAS PERSONALES VICTIMA";
-            this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load_1);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Geoposicionamiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Domicilio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CheckNotificacion258)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            ClientSize = new Size(608, 648);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(624, 581);
+            Name = "AgregarDatosPersonalesVictima";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "CIRCUNSTANCIAS PERSONALES VICTIMA";
+            Load += AgregarDatosPersonalesVictima_Load_1;
+            Controls.SetChildIndex(panel1, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckNotificacion258).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Geoposicionamiento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Domicilio).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private void AgregarDatosPersonalesVictima_Load_1(object sender, EventArgs e)
@@ -612,8 +765,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
 
-        //---------BOTON LIMPIAR----------------------------
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        #region BTN PANEL INFERIOR
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1;
@@ -623,12 +776,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         }
 
-        //---------BOTON GUARDAR----------------------------
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
+        private void Btn_Buscar_Click(object sender, EventArgs e)
+        {
+            // Crear y mostrar el formulario BuscarPersonal
+            BuscarForm buscarForm = new();
+
+            buscarForm.ShowDialog();
+        }
+        #endregion
 
         //-------CONTROL DE CARACTERES EN NACIONALIDAD-----------------------
         private void ComboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -650,7 +810,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
             // Verificar si el texto actual del TextBox tiene menos de 2 caracteres
-            if (textBox_Edad.Text.Length >= 2 && !char.IsControl(e.KeyChar))
+            if (textBox_Edad.TextValue.Length >= 2 && !char.IsControl(e.KeyChar))
             {
                 // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
@@ -667,7 +827,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 textBox_Edad.Clear();
             }
         }
-        //------CONTROL DE CANTIDAD DE CARACTERES DNI------------------------
+
+        /// <summary>
+        /// CONTROL DE CANTIDAD DE CARACTERES DNI
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -678,34 +843,39 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
             // Verificar si el texto actual del TextBox tiene  10 caracteres
-            if (textBox_Dni.Text.Length >= 10 && !char.IsControl(e.KeyChar))
+            if (textBox_Dni.TextValue.Length >= 10 && !char.IsControl(e.KeyChar))
             {
                 // Si ya tiene 10 caracteres y no es una tecla de control, cancelar el evento
                 e.Handled = true;
             }
         }
-        //-------METODO PARA MANEJAR EL NUMERO DNI---------------------------
-
+     
+        /// <summary>
+        /// METODO PARA MANEJAR EL NUMERO DNI
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Dni_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
+            CustomTextBox textBox = sender as CustomTextBox;
 
             // Obtener la posición del cursor antes del formateo
             int cursorPosition = textBox.SelectionStart;
 
             // Usar la clase separada para formatear el texto con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.TextValue);
 
             // Actualizar el texto en el TextBox
-            textBox.Text = textoFormateado;
+            textBox.TextValue = textoFormateado;
 
             // Asegurarse de que el cursor se posicione al final del texto
-            textBox.SelectionStart = textBox.Text.Length;
+            textBox.SelectionStart = textBox.TextValue.Length;
         }
 
-        //------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------
-        //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
+     
+        /// <summary>
+        /// PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX
+        /// </summary>
         private void ActualizarControlesPicture()
         {
             // Verifica si TextoDomicilio y localidad tienen texto
@@ -738,10 +908,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox.Invalidate(); // Redibuja el borde
         }
 
+        #region EVENTOS PICTURE
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
+            if (sender is PictureBox pictureBox)
             {
                 Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
 
@@ -752,8 +922,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
             }
         }
-        //---------------------------------------------------------------------
-        //Eventos para cargar imagenes en los pictureBox
+
+        
+        /// <summary>
+        /// Eventos para cargar imagenes en los pictureBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -776,7 +951,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
             }
         }
-        //----------------------------------------------------
+   
         private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -792,7 +967,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
             }
         }
-        //------------------------------------------------------------
+        
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -816,9 +991,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
             }
         }
+        #endregion
 
-
-        //---- METODOS PARA QUE SE ACTUALICE DEPENDIENDO LO QUE SE INGRESE EN DOMICILIO Y LOCALIDAD-------
+      
+        /// <summary>
+        /// PARA QUE SE ACTUALICE DEPENDIENDO LO QUE SE INGRESE EN DOMICILIO Y LOCALIDAD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Domicilio_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPicture();
@@ -831,19 +1011,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPicture();
 
             // Obtiene el texto actual del TextBox
-            string input = textBox_Localidad.Text;
+            string input = textBox_Localidad.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Localidad.Text != upperText)
+            if (textBox_Localidad.TextValue != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
                 textBox_Localidad.TextChanged -= TextBox_Localidad_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Localidad.Text = upperText;
+                textBox_Localidad.TextValue = upperText;
 
                 // Restaura la posición del cursor al final del texto
                 textBox_Localidad.SelectionStart = upperText.Length;
@@ -853,39 +1033,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void Btn_Buscar_Click(object sender, EventArgs e)
-        {
-            // Crear y mostrar el formulario BuscarPersonal
-            BuscarForm buscarForm = new BuscarForm();
 
-            buscarForm.ShowDialog();
-        }
-        // Método para actualizar el textBox2 en tiempo real
+       
+        /// <summary>
+        /// Método para actualizar el textBox2 en tiempo real
+        /// </summary>
+        /// <param name="text"></param>
         public void UpdateVictimaTextBox(string text)
         {
-            textBox_Nombre.Text = text;
+            textBox_Nombre.TextValue = text;
         }
 
         private void TextBox_Nombre_TextChanged(object sender, EventArgs e)
         {
             // Asegura que el cursor esté al final del texto
-            textBox_Nombre.SelectionStart = textBox_Nombre.Text.Length;
+            textBox_Nombre.SelectionStart = textBox_Nombre.TextValue.Length;
 
-            if (VictimaTextChanged != null)
-            {
-                VictimaTextChanged(textBox_Nombre.Text);
-            }
+            VictimaTextChanged?.Invoke(textBox_Nombre.TextValue);
             // Obtiene el texto actual del TextBox
-            string input = textBox_Nombre.Text;
+            string input = textBox_Nombre.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Nombre.Text != upperText)
+            if (textBox_Nombre.TextValue != upperText)
             {
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Nombre.Text = upperText;
+                textBox_Nombre.TextValue = upperText;
 
                 // Mueve el cursor al final del texto
                 textBox_Nombre.SelectionStart = upperText.Length;
@@ -897,19 +1072,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void TextBox_Ocupacion_TextChanged(object sender, EventArgs e)
         {
             // Obtiene el texto actual del TextBox
-            string input = textBox_Ocupacion.Text;
+            string input = textBox_Ocupacion.TextValue;
 
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
             // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Ocupacion.Text != upperText)
+            if (textBox_Ocupacion.TextValue != upperText)
             {
                 // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
                 textBox_Ocupacion.TextChanged -= TextBox_Ocupacion_TextChanged;
 
                 // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Ocupacion.Text = upperText;
+                textBox_Ocupacion.TextValue = upperText;
 
                 // Restaura la posición del cursor al final del texto
                 textBox_Ocupacion.SelectionStart = upperText.Length;
@@ -976,14 +1151,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void TextBox_LugarNacimiento_TextChanged(object sender, EventArgs e)
         {
             // Convierte el texto a mayúsculas
-            TextBox textBox = sender as TextBox;
+            CustomTextBox textBox = sender as CustomTextBox;
             if (textBox != null)
             {
                 // Guarda la posición del cursor
                 int cursorPosition = textBox.SelectionStart;
 
                 // Convierte el texto a mayúsculas
-                textBox.Text = textBox.Text.ToUpper();
+                textBox.TextValue = textBox.TextValue.ToUpper();
 
                 // Restaura la posición del cursor
                 textBox.SelectionStart = cursorPosition;
@@ -1005,23 +1180,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        //--------------------------------------------------------------------
-        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+       
+        /// <summary>
+        /// verificar si los datos están guardados antes de cerrar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgregarDatosPersonalesVictima_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del Victima. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                using MensajeGeneral mensaje = new("No has guardado los datos del Victima. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
+
+
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
                 {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                    e.Cancel = true; // Cancelar el cierre del formulario
                 }
             }
         }
