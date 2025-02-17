@@ -28,78 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaPersonaControl));
-            this.btn_AgregarDatosPersona = new System.Windows.Forms.Button();
-            this.label_Persona = new System.Windows.Forms.Label();
-            this.textBox_Persona = new Ofelia_Sara.Controles.General.CustomTextBox();
-            this.btn_EliminarControl = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.SuspendLayout();
+            btn_AgregarDatosPersona = new System.Windows.Forms.Button();
+            label_Persona = new System.Windows.Forms.Label();
+            textBox_Persona = new General.CustomTextBox();
+            btn_EliminarControl = new System.Windows.Forms.Button();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            SuspendLayout();
             // 
             // btn_AgregarDatosPersona
             // 
-            this.btn_AgregarDatosPersona.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AgregarDatosPersona.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarDatosPersona.Image")));
-            this.btn_AgregarDatosPersona.Location = new System.Drawing.Point(2, 1);
-            this.btn_AgregarDatosPersona.Name = "btn_AgregarDatosPersona";
-            this.btn_AgregarDatosPersona.Size = new System.Drawing.Size(27, 23);
-            this.btn_AgregarDatosPersona.TabIndex = 42;
-            this.btn_AgregarDatosPersona.Text = "+";
-            this.toolTip1.SetToolTip(this.btn_AgregarDatosPersona, "Agregar circunstancias personales");
-            this.btn_AgregarDatosPersona.UseVisualStyleBackColor = true;
-            this.btn_AgregarDatosPersona.Click += new System.EventHandler(this.btn_AgregarDatosPersona_Click);
+            btn_AgregarDatosPersona.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_AgregarDatosPersona.Image = (System.Drawing.Image)resources.GetObject("btn_AgregarDatosPersona.Image");
+            btn_AgregarDatosPersona.Location = new System.Drawing.Point(2, 1);
+            btn_AgregarDatosPersona.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_AgregarDatosPersona.Name = "btn_AgregarDatosPersona";
+            btn_AgregarDatosPersona.Size = new System.Drawing.Size(31, 27);
+            btn_AgregarDatosPersona.TabIndex = 42;
+            btn_AgregarDatosPersona.Text = "+";
+            toolTip1.SetToolTip(btn_AgregarDatosPersona, "Agregar circunstancias personales");
+            btn_AgregarDatosPersona.UseVisualStyleBackColor = true;
+            btn_AgregarDatosPersona.Click += Btn_AgregarDatosPersona_Click;
             // 
             // label_Persona
             // 
-            this.label_Persona.BackColor = System.Drawing.Color.Transparent;
-            this.label_Persona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_Persona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Persona.Location = new System.Drawing.Point(37, 3);
-            this.label_Persona.Name = "label_Persona";
-            this.label_Persona.Size = new System.Drawing.Size(90, 20);
-            this.label_Persona.TabIndex = 40;
-            this.label_Persona.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label_Persona.BackColor = System.Drawing.Color.Transparent;
+            label_Persona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label_Persona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Persona.Location = new System.Drawing.Point(43, 3);
+            label_Persona.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_Persona.Name = "label_Persona";
+            label_Persona.Size = new System.Drawing.Size(105, 23);
+            label_Persona.TabIndex = 40;
+            label_Persona.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_Persona
             // 
-            this.textBox_Persona.Location = new System.Drawing.Point(125, 2);
-            this.textBox_Persona.Name = "textBox_Persona";
-            this.textBox_Persona.Size = new System.Drawing.Size(287, 20);
-            this.textBox_Persona.TabIndex = 41;
-            this.textBox_Persona.TextChanged += new System.EventHandler(this.textBox_Persona_TextChanged);
+            textBox_Persona.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Persona.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Persona.BackColor = System.Drawing.Color.White;
+            textBox_Persona.ErrorColor = System.Drawing.Color.Red;
+            textBox_Persona.FocusColor = System.Drawing.Color.Blue;
+            textBox_Persona.Location = new System.Drawing.Point(146, 2);
+            textBox_Persona.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBox_Persona.MaxLength = 32767;
+            textBox_Persona.Multiline = false;
+            textBox_Persona.Name = "textBox_Persona";
+            textBox_Persona.PasswordChar = '\0';
+            textBox_Persona.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Persona.PlaceholderText = "";
+            textBox_Persona.ReadOnly = false;
+            textBox_Persona.SelectionStart = 0;
+            textBox_Persona.ShowError = false;
+            textBox_Persona.Size = new System.Drawing.Size(335, 23);
+            textBox_Persona.TabIndex = 41;
+            textBox_Persona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Persona.TextValue = "";
+            textBox_Persona.Whidth = 0;
+            textBox_Persona.TextChanged += TextBox_Persona_TextChanged;
             // 
             // btn_EliminarControl
             // 
-            this.btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EliminarControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EliminarControl.Location = new System.Drawing.Point(415, 0);
-            this.btn_EliminarControl.Name = "btn_EliminarControl";
-            this.btn_EliminarControl.Size = new System.Drawing.Size(15, 23);
-            this.btn_EliminarControl.TabIndex = 43;
-            this.btn_EliminarControl.Text = "-";
-            this.toolTip1.SetToolTip(this.btn_EliminarControl, "Eliminar ");
-            this.btn_EliminarControl.UseVisualStyleBackColor = true;
-            this.btn_EliminarControl.Click += new System.EventHandler(this.Btn_EliminarControl_Click);
+            btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_EliminarControl.Location = new System.Drawing.Point(484, 0);
+            btn_EliminarControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_EliminarControl.Name = "btn_EliminarControl";
+            btn_EliminarControl.Size = new System.Drawing.Size(18, 27);
+            btn_EliminarControl.TabIndex = 43;
+            btn_EliminarControl.Text = "-";
+            toolTip1.SetToolTip(btn_EliminarControl, "Eliminar ");
+            btn_EliminarControl.UseVisualStyleBackColor = true;
+            btn_EliminarControl.Click += Btn_EliminarControl_Click;
+            btn_EliminarControl.MouseHover += Btn_EliminarControl_MouseHover;
             // 
             // NuevaPersonaControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.btn_EliminarControl);
-            this.Controls.Add(this.btn_AgregarDatosPersona);
-            this.Controls.Add(this.label_Persona);
-            this.Controls.Add(this.textBox_Persona);
-            this.Name = "NuevaPersonaControl";
-            this.Size = new System.Drawing.Size(433, 27);
-            this.Load += new System.EventHandler(this.NuevaPersonaControl_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            BackColor = System.Drawing.Color.Transparent;
+            Controls.Add(btn_EliminarControl);
+            Controls.Add(btn_AgregarDatosPersona);
+            Controls.Add(label_Persona);
+            Controls.Add(textBox_Persona);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "NuevaPersonaControl";
+            Size = new System.Drawing.Size(506, 31);
+            Load += NuevaPersonaControl_Load;
+            ResumeLayout(false);
         }
 
         #endregion

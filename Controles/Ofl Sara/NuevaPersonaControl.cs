@@ -1,22 +1,30 @@
 ﻿
 using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 
 namespace Ofelia_Sara.Controles.Ofl_Sara
 {
+    /// <summary>
+    /// CONTROL PARA AGREGAR NUEVAS VICTIMAS E IMPUTADOS
+    /// </summary>
     public partial class NuevaPersonaControl : UserControl
     {
+        #region VARIABLES
         public string TipoPersona { get; private set; }
         public static int ContadorVictimas { get; set; } = 2; // Inicia en 2 para Victimas
         public static int ContadorImputados { get; set; } = 2; // Inicia en 2 para Imputados
         private string tipoControl;
 
         public TextBox TextBox_Persona { get; private set; }
+        #endregion
 
+        #region CONSTRUCTOR
         public NuevaPersonaControl(string tipo)
         {
             InitializeComponent();
@@ -25,7 +33,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             TipoPersona = tipo;
 
             // Asocia el evento TextChanged al método de validación
-            textBox_Persona.TextChanged += new EventHandler(textBox_Persona_TextChanged);
+            textBox_Persona.TextChanged += new EventHandler(TextBox_Persona_TextChanged);
 
             //-----para los botones de agregar datos personales completos------------------
             // Inicialmente, deshabilita el botón
@@ -34,12 +42,12 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
         }
-
+        #endregion
         public static class NuevaPersonaControlHelper
         {
             public static void AgregarNuevoControl(Panel panel, string tipoPersona)
             {
-                NuevaPersonaControl nuevoControl = new NuevaPersonaControl(tipoPersona);
+                NuevaPersonaControl nuevoControl = new(tipoPersona);
 
                 int nuevaPosicionY = ObtenerPosicionSiguiente(panel);
                 nuevoControl.Location = new Point(0, nuevaPosicionY);
@@ -91,77 +99,72 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         }
 
-        private void textBox_Persona_TextChanged(object sender, EventArgs e)
+        private void TextBox_Persona_TextChanged(object sender, EventArgs e)
         {
-            // Habilita o deshabilita el botón según si el TextBox tiene texto
-            if (btn_AgregarDatosPersona.Enabled = !string.IsNullOrWhiteSpace(textBox_Persona.Text))
+            // Filtra y convierte el texto
+            string textoConvertido = ConvertirTexto(textBox_Persona.TextValue);
+
+            // Evita ciclos infinitos al actualizar solo si el texto cambia
+            if (textBox_Persona.TextValue != textoConvertido)
             {
-                btn_AgregarDatosPersona.BackColor = Color.GreenYellow;
-
+                textBox_Persona.TextValue = textoConvertido;
+                textBox_Persona.SelectionStart = textBox_Persona.TextValue.Length; // Mantiene el cursor al final
             }
-            else
-            {
-                btn_AgregarDatosPersona.BackColor = Color.Tomato;
 
-            }
-            // Habilita o deshabilita btn_AgregarVictima según si el TextBox tiene texto
-            btn_AgregarDatosPersona.Enabled = !string.IsNullOrWhiteSpace(textBox_Persona.Text);
+            // Contar los caracteres reales (ignorando espacios)
+            int caracteresReales = textoConvertido.Count(c => !char.IsWhiteSpace(c));
 
+            // Habilita el botón solo si hay al menos 3 caracteres no blancos
+            bool habilitar = caracteresReales >= 3;
 
+            btn_AgregarDatosPersona.Enabled = habilitar;
+
+            // Cambiar color del botón según estado
+            btn_AgregarDatosPersona.BackColor = habilitar ? Color.GreenYellow : Color.Tomato;
         }
 
-        private string ConvertirTexto(string texto)
+
+
+        private static string ConvertirTexto(string texto)
         {
             var textoFiltrado = new string(texto.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
             return textoFiltrado.ToUpper();
         }
-        //__________________________________________________________________________________________
+        /// <summary>
+        /// METODO PARA QUE ABRA FORMULARIO AGREGAR DATOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-        //-------METODO PARA QUE ABRA FORMULARIO AGREGAR DATOS ------------------------------------
-        private void btn_AgregarDatosPersona_Click(object sender, EventArgs e)
+        private void Btn_AgregarDatosPersona_Click(object sender, EventArgs e)
         {
-            string nombreFormulario = string.Empty;
+            Form formulario = null;
 
-            // Dependiendo del tipo, seleccionar el nombre del formulario a cargar
+            // Dependiendo del tipo, instanciar el formulario correspondiente
             if (TipoPersona == "Victima")
             {
-                nombreFormulario = "OfeliaSara.Formularios.DatosPersonales.AgregarDatosPersonalesVictima";
+                formulario = new AgregarDatosPersonalesVictima();
             }
             else if (TipoPersona == "Imputado")
             {
-                nombreFormulario = "OfeliaSara.Formularios.DatosPersonales.AgregarDatosPersonalesImputado";
+                formulario = new AgregarDatosPersonalesImputado();
             }
 
-            if (!string.IsNullOrEmpty(nombreFormulario))
+            if (formulario != null)
             {
-                // Cargar el ensamblado dinámicamente
-                try
-                {
-                    // Suponiendo que el ensamblado está cargado o en la misma carpeta que tu ejecutable
-                    var assembly = System.Reflection.Assembly.LoadFrom("Ruta_Al_Proyecto_Otro.dll");
-
-                    // Obtener el tipo del formulario
-                    var formType = assembly.GetType(nombreFormulario);
-
-                    if (formType != null)
-                    {
-                        // Crear una instancia del formulario
-                        Form formulario = (Form)Activator.CreateInstance(formType);
-
-                        // Mostrar el formulario
-                        formulario.ShowDialog();
-                    }
-                    else
-                    {
-                        MensajeGeneral.Mostrar("No se pudo encontrar el formulario especificado.", MensajeGeneral.TipoMensaje.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar("Error al cargar el formulario: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                }
+                formulario.ShowDialog();
+            }
+            else
+            {
+                MensajeGeneral.Mostrar("No se pudo determinar el formulario a abrir.", MensajeGeneral.TipoMensaje.Error);
             }
         }
 
+        private void Btn_EliminarControl_MouseHover(object sender, EventArgs e)
+        {
+            btn_EliminarControl.BackColor = Color.Red;
+            btn_EliminarControl.ForeColor = Color.White;
+         
+        }
     }
 }
