@@ -6,6 +6,8 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
 {
     public partial class TooltipEnControlDesactivado
     {
+        private static string tooltipDesactivado;
+        private static string tooltipActivado;
         public static void ConfigurarToolTip(Form form, Control control, string toolTipTextDisabled, string toolTipTextEnabled)
         {
             ToolTip customToolTip = new ToolTip
@@ -249,6 +251,26 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
             };
 
             timer.Start();
+        }
+        // Método para obtener el tooltip actual
+        public static string ObtenerToolTipActual(Control control)
+        {
+            // Dependiendo del estado, devuelve el tooltip correcto
+            if (control.Enabled) // Si el control está activado, devuelve el tooltip de activado
+            {
+                return tooltipActivado;
+            }
+            else // Si el control está desactivado, devuelve el tooltip de desactivado
+            {
+                return tooltipDesactivado;
+            }
+        }
+
+        // Método para remover el tooltip cuando sea necesario
+        public static void RemoverToolTip(Control control)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(control, string.Empty); // Eliminar el tooltip actual
         }
 
     }

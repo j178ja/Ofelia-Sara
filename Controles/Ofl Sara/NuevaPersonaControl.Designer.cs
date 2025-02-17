@@ -46,7 +46,6 @@
             btn_AgregarDatosPersona.Name = "btn_AgregarDatosPersona";
             btn_AgregarDatosPersona.Size = new System.Drawing.Size(31, 27);
             btn_AgregarDatosPersona.TabIndex = 42;
-            btn_AgregarDatosPersona.Text = "+";
             toolTip1.SetToolTip(btn_AgregarDatosPersona, "Agregar circunstancias personales");
             btn_AgregarDatosPersona.UseVisualStyleBackColor = true;
             btn_AgregarDatosPersona.Click += Btn_AgregarDatosPersona_Click;
@@ -75,22 +74,25 @@
             textBox_Persona.MaxLength = 32767;
             textBox_Persona.Multiline = false;
             textBox_Persona.Name = "textBox_Persona";
+            textBox_Persona.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             textBox_Persona.PasswordChar = '\0';
             textBox_Persona.PlaceholderColor = System.Drawing.Color.Gray;
             textBox_Persona.PlaceholderText = "";
             textBox_Persona.ReadOnly = false;
             textBox_Persona.SelectionStart = 0;
-            textBox_Persona.ShowError = false;
+            textBox_Persona.ShowError = true;
             textBox_Persona.Size = new System.Drawing.Size(335, 23);
             textBox_Persona.TabIndex = 41;
-            textBox_Persona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Persona.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Persona.TextValue = "";
             textBox_Persona.Whidth = 0;
             textBox_Persona.TextChanged += TextBox_Persona_TextChanged;
             // 
             // btn_EliminarControl
             // 
+            btn_EliminarControl.BackColor = System.Drawing.Color.Tomato;
             btn_EliminarControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_EliminarControl.FlatAppearance.BorderSize = 0;
             btn_EliminarControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btn_EliminarControl.Location = new System.Drawing.Point(484, 0);
             btn_EliminarControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -99,8 +101,9 @@
             btn_EliminarControl.TabIndex = 43;
             btn_EliminarControl.Text = "-";
             toolTip1.SetToolTip(btn_EliminarControl, "Eliminar ");
-            btn_EliminarControl.UseVisualStyleBackColor = true;
+            btn_EliminarControl.UseVisualStyleBackColor = false;
             btn_EliminarControl.Click += Btn_EliminarControl_Click;
+            btn_EliminarControl.MouseLeave += Btn_EliminarControl_MouseLeave;
             btn_EliminarControl.MouseHover += Btn_EliminarControl_MouseHover;
             // 
             // NuevaPersonaControl

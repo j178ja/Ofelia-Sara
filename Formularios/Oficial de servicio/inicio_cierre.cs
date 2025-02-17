@@ -95,7 +95,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
             // Configurar autocompletado para `textBox_Caratula`
-            AutocompletarManager autocompletarManager = new AutocompletarManager("autocompletar.json");
+            AutocompletarManager autocompletarManager = new("autocompletar.json");
             autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
@@ -703,17 +703,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private static bool ValidarControlesExistentes(Panel panel)
         {
+            string tipoPersona = panel.Name.IndexOf("Victima", StringComparison.OrdinalIgnoreCase) >= 0 ? "VICTIMA" :
+                                 panel.Name.IndexOf("Imputado", StringComparison.OrdinalIgnoreCase) >= 0 ? "IMPUTADO" : "PERSONA";
+
             foreach (Control control in panel.Controls)
             {
-                var personaControl = control as NuevaPersonaControl;
-                if (personaControl != null && string.IsNullOrWhiteSpace(personaControl.TextBox_Persona.Text))
+                if (control is NuevaPersonaControl personaControl)
                 {
-                    return false; // Retorna false si se encuentra un control vacío
+                    // Removemos espacios en blanco para contar solo caracteres significativos
+                    string texto = personaControl.TextBox_Persona.Text.Trim();
+
+                    if (texto.Length < 5) // Validar al menos 5 caracteres no vacíos
+                    {
+                        MensajeGeneral.Mostrar($"Complete todos los campos con al menos 5 caracteres para agregar una nueva {tipoPersona}",
+                                               MensajeGeneral.TipoMensaje.Advertencia);
+                        return false; // Retorna false si hay un control con texto inválido
+                    }
                 }
             }
-            return true; // Todos los controles están completos
+            return true; // Todos los controles cumplen con la validación
         }
-    
+
+
         /// <summary>
         /// METODO PARA AGREGAR PERSONAL A LAS RATIFICACIONES
         /// </summary>
