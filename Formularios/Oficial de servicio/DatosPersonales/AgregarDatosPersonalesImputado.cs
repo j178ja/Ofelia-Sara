@@ -51,7 +51,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             textBox_Dni.TextChanged += (sender, e) => ActualizarEstado();
 
 
-            this.FormClosing += AgregarDatosPersonalesConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
+            this.FormClosing += AgregarDatosPersonalesImputado_FormClosing;//para mensaje de alerta en caso de no guardar datos
 
             this.textBox_Email = new Ofelia_Sara.Controles.General.CustomTextBox();// Configuración del textBox_Email
 
@@ -412,7 +412,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             textBox.SelectionStart = textBox.Text.Length;
         }
 
-        //________________________________________________________________________________
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
@@ -444,9 +443,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        //------------------------------------------------------------------------------------
-        //------------EVENTO PARA QUE EL COMBOBOX ESPECIFICO DE NACIONALIDAD ACEPTE SOLO LETRAS
-
+        /// <summary>
+        /// EVENTO PARA QUE EL COMBOBOX ESPECIFICO DE NACIONALIDAD ACEPTE SOLO LETRAS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permite letras y espacios
@@ -755,20 +756,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AgregarDatosPersonalesConcubina_FormClosing(object sender, FormClosingEventArgs e)
+        private void AgregarDatosPersonalesImputado_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del IMPUTADO. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                // Hacer visibles los botones
-                mensaje.MostrarBotonesConfirmacion(true);
+                MostrarMensajeCierre(e, "No has guardado los datos del IMPUTADO. ¿Estás seguro de que deseas cerrar sin guardar?");
+                //using MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del IMPUTADaa. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                //// Hacer visibles los botones
+                //mensaje.MostrarBotonesConfirmacion(true);
 
 
-                DialogResult result = mensaje.ShowDialog();
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true; // Cancelar el cierre del formulario
-                }
+                //DialogResult result = mensaje.ShowDialog();
+                //if (result == DialogResult.No)
+                //{
+                //    e.Cancel = true; // Cancelar el cierre del formulario
+                //}
             }
         }
 

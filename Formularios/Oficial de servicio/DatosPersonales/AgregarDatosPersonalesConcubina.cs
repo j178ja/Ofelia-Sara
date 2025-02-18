@@ -136,17 +136,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos de esta persona. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                MostrarMensajeCierre(e, "No has guardado los datos de esta persona. ¿Estás seguro de que deseas cerrar sin guardar?");
 
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-                }
+                //using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos de esta persona. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                //{
+                //    // Hacer visibles los botones
+                //    mensaje.MostrarBotonesConfirmacion(true);
+
+                //    DialogResult result = mensaje.ShowDialog();
+                //    if (result == DialogResult.No)
+                //    {
+                //        e.Cancel = true; // Cancelar el cierre del formulario
+                //    }
+                //}
             }
         }
 

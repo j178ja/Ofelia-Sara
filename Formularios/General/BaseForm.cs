@@ -364,6 +364,10 @@ namespace Ofelia_Sara.Formularios.General
             boton.Invalidate();
         }
 
+        /// <summary>
+        /// para centrar el mensaje de ayuda en el formulario que se va a cerrar
+        /// </summary>
+        /// <param name="mensaje"></param>
         protected void MostrarMensajeAyuda(string mensaje)
         {
             if (this.ParentForm != null)
@@ -394,6 +398,44 @@ namespace Ofelia_Sara.Formularios.General
                 mensajeAyuda.ShowDialog();
             }
         }
+
+        /// <summary>
+        /// para centrar el mensaje al centro del formulario que se va a cerrar
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="mensaje"></param>
+        protected void MostrarMensajeCierre(FormClosingEventArgs e, string mensaje)
+        {
+            Form formularioActivo = this.FindForm();
+            if (formularioActivo == null) return;
+
+            using (MensajeGeneral mensajeCierre = new(mensaje, MensajeGeneral.TipoMensaje.Advertencia, null))
+            {
+                // Hacer visibles los botones de confirmación
+                mensajeCierre.MostrarBotonesConfirmacion(true);
+
+                // Asegurar que el mensaje se posiciona manualmente
+                mensajeCierre.StartPosition = FormStartPosition.Manual;
+
+                // Verificar si el formulario aún está visible antes de calcular la posición
+                if (formularioActivo.Visible)
+                {
+                    int x = formularioActivo.Left + (formularioActivo.Width - mensajeCierre.Width) / 2;
+                    int y = formularioActivo.Top + (formularioActivo.Height - mensajeCierre.Height) / 2;
+                    mensajeCierre.Location = new Point(x, y);
+                }
+
+                // Mostrar el mensaje y capturar la respuesta
+                DialogResult resultado = mensajeCierre.ShowDialog(formularioActivo);
+
+                // Si el usuario elige "No", cancelar el cierre del formulario
+                if (resultado == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
 
 
         #region DATOS IPP
