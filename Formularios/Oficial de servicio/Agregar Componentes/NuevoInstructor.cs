@@ -89,17 +89,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-                }
+                MostrarMensajeCierre(e,"No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
+         
             }
         }
 
@@ -248,21 +239,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         /// <param name="e"></param>
         private void NuevoInstructor_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-           using (MensajeGeneral mensaje = new MensajeGeneral("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor", MensajeGeneral.TipoMensaje.Informacion))
-            {
-                // Establecer la posición manualmente
-                mensaje.StartPosition = FormStartPosition.Manual;
-                mensaje.Location = new Point(
-                    this.Left + (this.Width - mensaje.Width) / 2,
-                    this.Top + (this.Height - mensaje.Height) / 2
-                );
-
-                // Mostrar el mensaje
-                mensaje.ShowDialog();
-            }
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            MostrarMensajeAyuda("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable de instructor");
+            
+              
         }
 
         #endregion 

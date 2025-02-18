@@ -79,12 +79,11 @@
             panel1.Controls.Add(textBox_Nombre);
             panel1.Controls.Add(label_Nombre);
             panel1.Controls.Add(label_Jerarquia);
-            panel1.Controls.Add(label_Registro);
             panel1.Controls.Add(textBox_Contraseña);
             panel1.Controls.Add(textBox_Usuario);
             panel1.Controls.Add(label_Contraseña);
             panel1.Controls.Add(label_Usuario);
-            panel1.Location = new System.Drawing.Point(20, 15);
+            panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(527, 409);
             panel1.TabIndex = 4;
@@ -104,11 +103,11 @@
             // 
             numeroTelefonicoControl1.AutoSize = true;
             numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            numeroTelefonicoControl1.ControlWidth = 189;
+            numeroTelefonicoControl1.ControlWidth = 198;
             numeroTelefonicoControl1.Location = new System.Drawing.Point(225, 274);
             numeroTelefonicoControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            numeroTelefonicoControl1.Size = new System.Drawing.Size(189, 25);
+            numeroTelefonicoControl1.Size = new System.Drawing.Size(198, 25);
             numeroTelefonicoControl1.TabIndex = 31;
             // 
             // label_TelValidacion2
@@ -146,6 +145,7 @@
             // comboBox_Jerarquia
             // 
             comboBox_Jerarquia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.ArrowImage");
+            comboBox_Jerarquia.ArrowPictureBox = null;
             comboBox_Jerarquia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Jerarquia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Jerarquia.BackColor = System.Drawing.Color.White;
@@ -159,6 +159,7 @@
             comboBox_Jerarquia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Jerarquia.ForeColor = System.Drawing.Color.Gray;
             comboBox_Jerarquia.Location = new System.Drawing.Point(191, 68);
             comboBox_Jerarquia.MaxDropDownItems = 10;
             comboBox_Jerarquia.Name = "comboBox_Jerarquia";
@@ -172,11 +173,13 @@
             comboBox_Jerarquia.ShowError = false;
             comboBox_Jerarquia.Size = new System.Drawing.Size(232, 24);
             comboBox_Jerarquia.TabIndex = 26;
+            comboBox_Jerarquia.Text = " ";
             comboBox_Jerarquia.TextValue = " ";
             // 
             // comboBox_Escalafon
             // 
             comboBox_Escalafon.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.ArrowImage");
+            comboBox_Escalafon.ArrowPictureBox = null;
             comboBox_Escalafon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             comboBox_Escalafon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             comboBox_Escalafon.BackColor = System.Drawing.Color.White;
@@ -190,6 +193,7 @@
             comboBox_Escalafon.ErrorColor = System.Drawing.Color.Red;
             comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
             comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            comboBox_Escalafon.ForeColor = System.Drawing.Color.Gray;
             comboBox_Escalafon.Location = new System.Drawing.Point(191, 38);
             comboBox_Escalafon.MaxDropDownItems = 10;
             comboBox_Escalafon.Name = "comboBox_Escalafon";
@@ -203,6 +207,7 @@
             comboBox_Escalafon.ShowError = false;
             comboBox_Escalafon.Size = new System.Drawing.Size(232, 24);
             comboBox_Escalafon.TabIndex = 25;
+            comboBox_Escalafon.Text = " ";
             comboBox_Escalafon.TextValue = " ";
             // 
             // label_Subescalafon
@@ -271,6 +276,7 @@
             textBox_Legajo.TabIndex = 20;
             textBox_Legajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Legajo.TextValue = "";
+            textBox_Legajo.Whidth = 0;
             textBox_Legajo.KeyPress += TextBox_Legajo_KeyPress;
             // 
             // label_Apellido
@@ -305,6 +311,7 @@
             textBox_Apellido.TabIndex = 18;
             textBox_Apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Apellido.TextValue = "";
+            textBox_Apellido.Whidth = 0;
             // 
             // textBox_Nombre
             // 
@@ -328,6 +335,7 @@
             textBox_Nombre.TabIndex = 17;
             textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Nombre.TextValue = "";
+            textBox_Nombre.Whidth = 0;
             // 
             // label_Nombre
             // 
@@ -355,7 +363,7 @@
             label_Registro.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_Registro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Registro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_Registro.Location = new System.Drawing.Point(75, 0);
+            label_Registro.Location = new System.Drawing.Point(95, 12);
             label_Registro.Name = "label_Registro";
             label_Registro.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
             label_Registro.Size = new System.Drawing.Size(370, 26);
@@ -384,6 +392,7 @@
             textBox_Contraseña.TabIndex = 10;
             textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Contraseña.TextValue = "";
+            textBox_Contraseña.Whidth = 0;
             textBox_Contraseña.TextChanged += TextBox_Contraseña_TextChanged;
             // 
             // textBox_Usuario
@@ -408,6 +417,7 @@
             textBox_Usuario.TabIndex = 9;
             textBox_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Usuario.TextValue = "";
+            textBox_Usuario.Whidth = 0;
             // 
             // label_Contraseña
             // 
@@ -433,8 +443,9 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(569, 455);
+            ClientSize = new System.Drawing.Size(569, 468);
             Controls.Add(panel1);
+            Controls.Add(label_Registro);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             HelpButton = true;
             MaximizeBox = false;
@@ -444,6 +455,7 @@
             Text = "REGISTRAR NUEVO USUARIO";
             HelpButtonClicked += Registro_HelpButtonClicked;
             Load += Registro_Load;
+            Controls.SetChildIndex(label_Registro, 0);
             Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

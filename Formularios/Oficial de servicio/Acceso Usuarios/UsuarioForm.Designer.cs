@@ -37,7 +37,7 @@
             textBox_Usuario = new Controles.General.CustomTextBox();
             label_Contraseña = new System.Windows.Forms.Label();
             label_Usuario = new System.Windows.Forms.Label();
-            label_Validacion = new System.Windows.Forms.Label();
+            label_TITULO = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_MayusculaActivada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_OjoContraseña).BeginInit();
@@ -54,8 +54,7 @@
             panel1.Controls.Add(textBox_Usuario);
             panel1.Controls.Add(label_Contraseña);
             panel1.Controls.Add(label_Usuario);
-            panel1.Controls.Add(label_Validacion);
-            panel1.Location = new System.Drawing.Point(20, 15);
+            panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(526, 179);
             panel1.TabIndex = 3;
@@ -141,6 +140,7 @@
             textBox_Contraseña.TabIndex = 4;
             textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Contraseña.TextValue = "";
+            textBox_Contraseña.Whidth = 0;
             textBox_Contraseña.TextChanged += TextBox_Contraseña_TextChanged;
             // 
             // textBox_Usuario
@@ -165,6 +165,7 @@
             textBox_Usuario.TabIndex = 3;
             textBox_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Usuario.TextValue = "";
+            textBox_Usuario.Whidth = 0;
             // 
             // label_Contraseña
             // 
@@ -186,18 +187,18 @@
             label_Usuario.TabIndex = 1;
             label_Usuario.Text = "USUARIO :";
             // 
-            // label_Validacion
+            // label_TITULO
             // 
-            label_Validacion.AutoSize = true;
-            label_Validacion.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
-            label_Validacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Validacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_Validacion.Location = new System.Drawing.Point(115, 0);
-            label_Validacion.Name = "label_Validacion";
-            label_Validacion.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_Validacion.Size = new System.Drawing.Size(306, 26);
-            label_Validacion.TabIndex = 0;
-            label_Validacion.Text = "VALIDACION DE USUARIOS";
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(135, 12);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            label_TITULO.Size = new System.Drawing.Size(306, 26);
+            label_TITULO.TabIndex = 0;
+            label_TITULO.Text = "VALIDACION DE USUARIOS";
             // 
             // UsuarioForm
             // 
@@ -205,6 +206,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(569, 232);
             Controls.Add(panel1);
+            Controls.Add(label_TITULO);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             HelpButton = true;
             MaximizeBox = false;
@@ -214,6 +216,7 @@
             Text = "VALIDACION DE PERMISOS";
             HelpButtonClicked += UsuarioForm_HelpButtonClicked;
             Load += Usuario_Load;
+            Controls.SetChildIndex(label_TITULO, 0);
             Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -227,7 +230,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Usuario;
-        private System.Windows.Forms.Label label_Validacion;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Button btn_Ingresar;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Contraseña;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Usuario;

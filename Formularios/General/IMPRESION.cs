@@ -7,13 +7,17 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
 {
+    /// <summary>
+    /// Formulario para mostrar listado de documentos creados
+    /// </summary>
     public partial class IMPRESION : BaseForm
     {
+        #region CONSTRUCTOR
         public IMPRESION()
         {
 
             InitializeComponent();
-
+            label_TITULO.BringToFront();
 
 
             Color customBorderColor = Color.FromArgb(0, 154, 174);
@@ -23,11 +27,12 @@ namespace Ofelia_Sara.Formularios.General
             Verificador_ACTUACION verificador = new Verificador_ACTUACION(this);// amodo de prueba
             ContenedorActuaciones.Controls.Add(verificador);
         }
+        #endregion
 
-
+        #region LOAD
         private void IMPRESION_Load(object sender, EventArgs e)
         {
-
+           
 
             // Suscribirse a los eventos de imagen visible solo una vez
             foreach (Control control in ContenedorActuaciones.Controls)
@@ -42,6 +47,7 @@ namespace Ofelia_Sara.Formularios.General
             ActualizarContadores();
             RedondearBordes.Aplicar(panel_informacionSeleccion, 16);//Redondea los bordes de panel superior e inferior
         }
+        #endregion
 
         public void ActualizarContadores()
         {
@@ -70,23 +76,16 @@ namespace Ofelia_Sara.Formularios.General
 
         private void Verificador_ImagenVisibleChanged(object sender, EventArgs e)
         {
-            Verificador_ACTUACION verificador = sender as Verificador_ACTUACION;
-            if (verificador != null && verificador.IsImagenVisible)
+            if (sender is Verificador_ACTUACION verificador && verificador.IsImagenVisible)
             {
                 // Lógica para actualizar los contadores o realizar acciones
                 ActualizarContadores();
             }
         }
 
-        private void ContenedorActuaciones_Paint(object sender, PaintEventArgs e)
-        {
+    
 
-        }
-
-        private void comboBoxIMG1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
 
 

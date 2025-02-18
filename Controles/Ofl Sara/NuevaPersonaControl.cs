@@ -22,11 +22,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         public static int ContadorVictimas { get; set; } = 2; // Inicia en 2 para Victimas
         public static int ContadorImputados { get; set; } = 2; // Inicia en 2 para Imputados
         private string tipoControl;
-
+        private string tipoPersona;
         public TextBox TextBox_Persona { get; private set; }
         #endregion
 
-        private string tipoPersona;
+  
   
 
         public string TipoPersona
@@ -61,24 +61,104 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         #endregion
         public static class NuevaPersonaControlHelper
         {
-            public static void AgregarNuevoControl(Panel panel, string tipoPersona)
+
+            public static void AgregarNuevoControl(Panel panel, string tipoPersona, string origen = "")
             {
+                // Verificar si ya hay 10 o más controles en el panel
+                if (panel.Controls.OfType<NuevaPersonaControl>().Count() >= 10)
+                {
+                    string mensaje = "";
+
+                    // Personalizar el mensaje dependiendo del tipo de origen
+                    if (origen == "Causa")
+                    {
+                        mensaje = "Se ha establecido un máximo de 10 CARÁTULAS por I.P.P.";
+                    }
+                    else if (origen == "Victima")
+                    {
+                        mensaje = "Se ha establecido un máximo de 10 VÍCTIMAS por I.P.P.";
+                    }
+                    else if (origen == "Imputado")
+                    {
+                        mensaje = "Se ha establecido un máximo de 10 IMPUTADOS por I.P.P.";
+                    }
+                    else
+                    {
+                        mensaje = "No se pueden agregar más de 10 ITEMS.";
+                    }
+
+                    // Mostrar el mensaje correspondiente
+                    MensajeGeneral.Mostrar(mensaje, MensajeGeneral.TipoMensaje.Advertencia);
+                    return; // Salir del método y no agregar el nuevo control
+                
+               
+                }
+                // Obtener el número de iteración basado en la cantidad de controles existentes
+                int iteracion = panel.Controls.OfType<NuevaPersonaControl>().Count() + 1;
+
+                // Crear la instancia del control
                 NuevaPersonaControl nuevoControl = new(tipoPersona);
 
-                int nuevaPosicionY = ObtenerPosicionSiguiente(panel);
-                nuevoControl.Location = new Point(0, nuevaPosicionY);
+                // Calcular la nueva posición en X y Y antes de modificar el control
+                Point nuevaPosicion = ObtenerPosicionSiguiente(panel, origen);  // Ahora devuelve un Point con X y Y
 
+                // Si el origen es "Causa", aplicar las modificaciones específicas
+                if (origen == "Causa")
+                {
+                    // Convertir la iteración a números romanos
+                    string numeroRomano = ConvertToRoman(iteracion);
+
+                    // Ocultar el botón btn_AgregarDatosPersona dentro del control
+                    nuevoControl.btn_AgregarDatosPersona.Visible = false;
+
+                    // Asignar el texto del Label con "Carátula" + número en romano
+                    nuevoControl.label_Persona.Text = $"CARÁTULA  {numeroRomano}";
+
+                    // Centrar el texto del CustomTextBox
+                    nuevoControl.textBox_Persona.TextAlign = HorizontalAlignment.Center;
+                }
+
+                // Asignar la nueva posición calculada
+                nuevoControl.Location = nuevaPosicion;
+
+                // Agregar el control al panel
                 panel.Controls.Add(nuevoControl);
 
+                // Ajustar la altura del panel después de agregar el nuevo control
                 AjustarAlturaPanel(panel);
             }
 
-            private static int ObtenerPosicionSiguiente(Panel panel)
+
+
+
+            private static Point ObtenerPosicionSiguiente(Panel panel, string origen = "")
             {
-                if (panel.Controls.Count == 0) return 2;
+                if (panel.Controls.Count == 0)
+                {
+                    return new Point(10, 2);  // El primer control se posiciona en (10, 2) para el origen "Causa"
+                }
+
                 var ultimoControl = panel.Controls[panel.Controls.Count - 1];
-                return ultimoControl.Bottom + 2;
+
+                // Si el origen es "Causa", le damos un padding izquierdo de 10
+                if (origen == "Causa")
+                {
+                    // Calculamos la posición X con padding de 10
+                    int nuevaPosicionX = 0;
+
+                    // La posición en Y será la siguiente, debajo del último control
+                    int nuevaPosicionY = ultimoControl.Bottom + 2;
+
+                    return new Point(nuevaPosicionX, nuevaPosicionY);
+                }
+
+                // Si no es "Causa", mantenemos la lógica de la posición Y normal
+                return new Point(0, ultimoControl.Bottom + 2);
             }
+
+
+
+
 
             public static void AjustarAlturaPanel(Panel panel)
             {
@@ -89,12 +169,23 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
                 panel.Height = nuevaAltura;
             }
+
+            private static string ConvertToRoman(int number)
+            {
+                if (number < 1 || number >10)
+                {
+                    MensajeGeneral.Mostrar("Se ha establecido un máximo de 10 carátulas por I.P.P.", MensajeGeneral.TipoMensaje.Advertencia);
+                    return number.ToString();
+                }
+
+                string[] romanos = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
+                return romanos[number - 1]; // Se ajusta al índice del array
+            }
         }
 
         private void Btn_EliminarControl_Click(object sender, EventArgs e)
         {
-            Panel panel = this.Parent as Panel;
-            if (panel != null)
+            if (this.Parent is Panel panel)
             {
                 int posicionY = this.Location.Y;
                 panel.Controls.Remove(this);
@@ -110,17 +201,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
             // metodo reposiconamiento
         }
-
-
         private void NuevaPersonaControl_Load(object sender, EventArgs e)
         {
             ConfigurarTooltipAgregarDatos();
-
-
             ToolTipEliminar.Mostrar(btn_EliminarControl, "Eliminar este elemento");
         }
-
-
         private void TextBox_Persona_TextChanged(object sender, EventArgs e)
         {
             // Filtra y convierte el texto
@@ -148,9 +233,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             // Actualizar el tooltip al cambiar el texto
             ConfigurarTooltipAgregarDatos();
         }
-
-
-
         private static string ConvertirTexto(string texto)
         {
             var textoFiltrado = new string(texto.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
@@ -162,7 +244,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void Btn_AgregarDatosPersona_Click(object sender, EventArgs e)
         {
             Form formulario = null;
@@ -237,9 +318,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 MensajeGeneral.Mostrar("No se pudo determinar el formulario a abrir.", MensajeGeneral.TipoMensaje.Error);
             }
         }
-
-
-
         private string ObtenerNumeroIteracion()
         {
             if (TipoPersona == "Victima")
@@ -252,7 +330,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
             return "0"; // Si no es Victima ni Imputado, retornar 0
         }
-
         private void ConfigurarTooltipAgregarDatos()
         {
             if (string.IsNullOrWhiteSpace(TipoPersona))
@@ -270,25 +347,28 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
             if (formularioPadre != null)
             {
-                // **1. Remover cualquier tooltip previo en el botón antes de agregar uno nuevo**
+                //  Remover cualquier tooltip previo en el botón antes de agregar uno nuevo**
                 TooltipEnControlDesactivado.RemoverToolTip(btn_AgregarDatosPersona);
 
-                // **2. Asignar el tooltip con los mensajes correctos**
+                //  Asignar el tooltip con los mensajes correctos
                 TooltipEnControlDesactivado.ConfigurarToolTip(
                     formularioPadre, btn_AgregarDatosPersona, mensajeDesactivado, mensajeActivado
                 );
 
-                // **3. Asegurar que el evento de entrada del mouse actualiza correctamente el tooltip**
+                //  Asegurar que el evento de entrada del mouse actualiza correctamente el tooltip**
                 btn_AgregarDatosPersona.MouseEnter -= Btn_AgregarDatosPersona_MouseEnter;
                 btn_AgregarDatosPersona.MouseEnter += Btn_AgregarDatosPersona_MouseEnter;
 
-                // **4. Forzar la actualización visual del tooltip**
+                //  Forzar la actualización visual del tooltip
                 toolTip1.Hide(btn_AgregarDatosPersona);  // Oculta cualquier tooltip visible
                 toolTip1.Show(mensajeDesactivado, btn_AgregarDatosPersona, btn_AgregarDatosPersona.Width / 2, btn_AgregarDatosPersona.Height, 2000);
             }
         }
-
-        // Evento para manejar el tooltip cuando el mouse entra al botón
+        /// <summary>
+        /// Evento para manejar el tooltip cuando el mouse entra al botón
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_AgregarDatosPersona_MouseEnter(object sender, EventArgs e)
         {
             toolTip1.Hide(btn_AgregarDatosPersona);  // Oculta tooltips previos
@@ -298,21 +378,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                           btn_AgregarDatosPersona.Height,
                           2000);
         }
-
-
-
-
         private void Btn_EliminarControl_MouseHover(object sender, EventArgs e)
         {
             btn_EliminarControl.BackColor = Color.Red;
             btn_EliminarControl.ForeColor = Color.White;
 
         }
-
         private void Btn_EliminarControl_MouseLeave(object sender, EventArgs e)
         {
             btn_EliminarControl.BackColor = Color.Tomato;
             btn_EliminarControl.ForeColor = Color.Black;
         }
+
+     
     }
 }

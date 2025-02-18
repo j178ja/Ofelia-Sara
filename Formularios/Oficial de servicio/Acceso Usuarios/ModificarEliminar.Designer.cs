@@ -28,193 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarEliminar));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_Superior = new System.Windows.Forms.Panel();
-            this.listBox_Seleccion = new System.Windows.Forms.ListBox();
-            this.label_Seleccion = new System.Windows.Forms.Label();
-            this.listBox_Datos = new System.Windows.Forms.ListBox();
-            this.panel_Botones = new System.Windows.Forms.Panel();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.btn_Editar = new System.Windows.Forms.Button();
-            this.btn_Eliminar = new System.Windows.Forms.Button();
-            this.label_Titulo = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1.SuspendLayout();
-            this.panel_Superior.SuspendLayout();
-            this.panel_Botones.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            panel_Superior = new System.Windows.Forms.Panel();
+            listBox_Seleccion = new System.Windows.Forms.ListBox();
+            label_Seleccion = new System.Windows.Forms.Label();
+            listBox_Datos = new System.Windows.Forms.ListBox();
+            panel_Botones = new System.Windows.Forms.Panel();
+            btn_Guardar = new System.Windows.Forms.Button();
+            btn_Cancelar = new System.Windows.Forms.Button();
+            btn_Editar = new System.Windows.Forms.Button();
+            btn_Eliminar = new System.Windows.Forms.Button();
+            label_TITULO = new System.Windows.Forms.Label();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            panel1.SuspendLayout();
+            panel_Superior.SuspendLayout();
+            panel_Botones.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.panel_Superior);
-            this.panel1.Controls.Add(this.panel_Botones);
-            this.panel1.Controls.Add(this.label_Titulo);
-            this.panel1.Location = new System.Drawing.Point(15, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(541, 209);
-            this.panel1.TabIndex = 2;
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(panel_Superior);
+            panel1.Controls.Add(panel_Botones);
+            panel1.Location = new System.Drawing.Point(15, 25);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(541, 209);
+            panel1.TabIndex = 2;
             // 
             // panel_Superior
             // 
-            this.panel_Superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel_Superior.Controls.Add(this.listBox_Seleccion);
-            this.panel_Superior.Controls.Add(this.label_Seleccion);
-            this.panel_Superior.Controls.Add(this.listBox_Datos);
-            this.panel_Superior.Location = new System.Drawing.Point(12, 37);
-            this.panel_Superior.Name = "panel_Superior";
-            this.panel_Superior.Size = new System.Drawing.Size(514, 72);
-            this.panel_Superior.TabIndex = 35;
+            panel_Superior.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel_Superior.Controls.Add(listBox_Seleccion);
+            panel_Superior.Controls.Add(label_Seleccion);
+            panel_Superior.Controls.Add(listBox_Datos);
+            panel_Superior.Location = new System.Drawing.Point(12, 37);
+            panel_Superior.Name = "panel_Superior";
+            panel_Superior.Size = new System.Drawing.Size(514, 72);
+            panel_Superior.TabIndex = 35;
             // 
             // listBox_Seleccion
             // 
-            this.listBox_Seleccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listBox_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox_Seleccion.FormattingEnabled = true;
-            this.listBox_Seleccion.ItemHeight = 16;
-            this.listBox_Seleccion.Items.AddRange(new object[] {
-            "FISCALIA",
-            "INSTRUCTOR",
-            "SECRETARIO",
-            "DEDPENDENCIA",
-            "PERSONAL "});
-            this.listBox_Seleccion.Location = new System.Drawing.Point(260, 10);
-            this.listBox_Seleccion.Name = "listBox_Seleccion";
-            this.listBox_Seleccion.Size = new System.Drawing.Size(198, 20);
-            this.listBox_Seleccion.TabIndex = 29;
-            this.listBox_Seleccion.SelectedIndexChanged += new System.EventHandler(this.ListBox_Seleccion_SelectedIndexChanged);
+            listBox_Seleccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            listBox_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            listBox_Seleccion.FormattingEnabled = true;
+            listBox_Seleccion.Items.AddRange(new object[] { "FISCALIA", "INSTRUCTOR", "SECRETARIO", "DEDPENDENCIA", "PERSONAL " });
+            listBox_Seleccion.Location = new System.Drawing.Point(260, 10);
+            listBox_Seleccion.Name = "listBox_Seleccion";
+            listBox_Seleccion.Size = new System.Drawing.Size(198, 20);
+            listBox_Seleccion.TabIndex = 29;
+            listBox_Seleccion.SelectedIndexChanged += ListBox_Seleccion_SelectedIndexChanged;
             // 
             // label_Seleccion
             // 
-            this.label_Seleccion.AutoSize = true;
-            this.label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Seleccion.Location = new System.Drawing.Point(38, 14);
-            this.label_Seleccion.Name = "label_Seleccion";
-            this.label_Seleccion.Size = new System.Drawing.Size(216, 16);
-            this.label_Seleccion.TabIndex = 26;
-            this.label_Seleccion.Text = "SELECCION DE ELEMENTOS:";
+            label_Seleccion.AutoSize = true;
+            label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Seleccion.Location = new System.Drawing.Point(38, 14);
+            label_Seleccion.Name = "label_Seleccion";
+            label_Seleccion.Size = new System.Drawing.Size(216, 16);
+            label_Seleccion.TabIndex = 26;
+            label_Seleccion.Text = "SELECCION DE ELEMENTOS:";
             // 
             // listBox_Datos
             // 
-            this.listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox_Datos.FormattingEnabled = true;
-            this.listBox_Datos.ItemHeight = 20;
-            this.listBox_Datos.Location = new System.Drawing.Point(61, 45);
-            this.listBox_Datos.Name = "listBox_Datos";
-            this.listBox_Datos.Size = new System.Drawing.Size(397, 24);
-            this.listBox_Datos.TabIndex = 30;
-            this.listBox_Datos.SelectedIndexChanged += new System.EventHandler(this.ListBox_Datos_SelectedIndexChanged);
+            listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            listBox_Datos.FormattingEnabled = true;
+            listBox_Datos.ItemHeight = 20;
+            listBox_Datos.Location = new System.Drawing.Point(61, 45);
+            listBox_Datos.Name = "listBox_Datos";
+            listBox_Datos.Size = new System.Drawing.Size(397, 24);
+            listBox_Datos.TabIndex = 30;
+            listBox_Datos.SelectedIndexChanged += ListBox_Datos_SelectedIndexChanged;
             // 
             // panel_Botones
             // 
-            this.panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_Botones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel_Botones.Controls.Add(this.btn_Guardar);
-            this.panel_Botones.Controls.Add(this.btn_Cancelar);
-            this.panel_Botones.Controls.Add(this.btn_Editar);
-            this.panel_Botones.Controls.Add(this.btn_Eliminar);
-            this.panel_Botones.Location = new System.Drawing.Point(12, 112);
-            this.panel_Botones.Name = "panel_Botones";
-            this.panel_Botones.Size = new System.Drawing.Size(514, 91);
-            this.panel_Botones.TabIndex = 34;
+            panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            panel_Botones.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel_Botones.Controls.Add(btn_Guardar);
+            panel_Botones.Controls.Add(btn_Cancelar);
+            panel_Botones.Controls.Add(btn_Editar);
+            panel_Botones.Controls.Add(btn_Eliminar);
+            panel_Botones.Location = new System.Drawing.Point(12, 112);
+            panel_Botones.Name = "panel_Botones";
+            panel_Botones.Size = new System.Drawing.Size(514, 91);
+            panel_Botones.TabIndex = 34;
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(382, 13);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Guardar.TabIndex = 31;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
+            btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
+            btn_Guardar.Location = new System.Drawing.Point(382, 13);
+            btn_Guardar.Name = "btn_Guardar";
+            btn_Guardar.Size = new System.Drawing.Size(75, 67);
+            btn_Guardar.TabIndex = 31;
+            btn_Guardar.UseVisualStyleBackColor = false;
+            btn_Guardar.Click += Btn_Guardar_Click;
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancelar.BackgroundImage")));
-            this.btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Cancelar.Location = new System.Drawing.Point(61, 12);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(69, 68);
-            this.btn_Cancelar.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.btn_Cancelar, "CANCELAR");
-            this.btn_Cancelar.UseVisualStyleBackColor = false;
-            this.btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
+            btn_Cancelar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Cancelar.BackgroundImage = (System.Drawing.Image)resources.GetObject("btn_Cancelar.BackgroundImage");
+            btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btn_Cancelar.Location = new System.Drawing.Point(61, 12);
+            btn_Cancelar.Name = "btn_Cancelar";
+            btn_Cancelar.Size = new System.Drawing.Size(69, 68);
+            btn_Cancelar.TabIndex = 15;
+            toolTip1.SetToolTip(btn_Cancelar, "CANCELAR");
+            btn_Cancelar.UseVisualStyleBackColor = false;
+            btn_Cancelar.Click += Btn_Cancelar_Click;
             // 
             // btn_Editar
             // 
-            this.btn_Editar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Editar.BackgroundImage")));
-            this.btn_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Editar.Location = new System.Drawing.Point(275, 13);
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(75, 66);
-            this.btn_Editar.TabIndex = 17;
-            this.btn_Editar.UseVisualStyleBackColor = false;
-            this.btn_Editar.Click += new System.EventHandler(this.Btn_Editar_Click);
+            btn_Editar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Editar.BackgroundImage = (System.Drawing.Image)resources.GetObject("btn_Editar.BackgroundImage");
+            btn_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btn_Editar.Location = new System.Drawing.Point(275, 13);
+            btn_Editar.Name = "btn_Editar";
+            btn_Editar.Size = new System.Drawing.Size(75, 66);
+            btn_Editar.TabIndex = 17;
+            btn_Editar.UseVisualStyleBackColor = false;
+            btn_Editar.Click += Btn_Editar_Click;
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.Image")));
-            this.btn_Eliminar.Location = new System.Drawing.Point(163, 12);
-            this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(75, 67);
-            this.btn_Eliminar.TabIndex = 32;
-            this.btn_Eliminar.UseVisualStyleBackColor = false;
-            this.btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
+            btn_Eliminar.BackColor = System.Drawing.Color.SkyBlue;
+            btn_Eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Eliminar.Image = (System.Drawing.Image)resources.GetObject("btn_Eliminar.Image");
+            btn_Eliminar.Location = new System.Drawing.Point(163, 12);
+            btn_Eliminar.Name = "btn_Eliminar";
+            btn_Eliminar.Size = new System.Drawing.Size(75, 67);
+            btn_Eliminar.TabIndex = 32;
+            btn_Eliminar.UseVisualStyleBackColor = false;
+            btn_Eliminar.Click += Btn_Eliminar_Click;
             // 
-            // label_Titulo
+            // label_TITULO
             // 
-            this.label_Titulo.AutoSize = true;
-            this.label_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Titulo.Location = new System.Drawing.Point(91, 0);
-            this.label_Titulo.Name = "label_Titulo";
-            this.label_Titulo.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.label_Titulo.Size = new System.Drawing.Size(360, 26);
-            this.label_Titulo.TabIndex = 14;
-            this.label_Titulo.Text = "ADMINISTRADOR DE ELEMENTOS";
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(111, 12);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            label_TITULO.Size = new System.Drawing.Size(360, 26);
+            label_TITULO.TabIndex = 14;
+            label_TITULO.Text = "ADMINISTRADOR DE ELEMENTOS";
             // 
             // ModificarEliminar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(573, 252);
-            this.Controls.Add(this.panel1);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(589, 291);
-            this.Name = "ModificarEliminar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ADMINISTRADOR DE ELEMENTOS";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Registro_HelpButtonClicked);
-            this.Load += new System.EventHandler(this.ModificarEliminar_Load);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel_Superior.ResumeLayout(false);
-            this.panel_Superior.PerformLayout();
-            this.panel_Botones.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            ClientSize = new System.Drawing.Size(573, 262);
+            Controls.Add(panel1);
+            Controls.Add(label_TITULO);
+            HelpButton = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new System.Drawing.Size(589, 291);
+            Name = "ModificarEliminar";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "ADMINISTRADOR DE ELEMENTOS";
+            HelpButtonClicked += Registro_HelpButtonClicked;
+            Load += ModificarEliminar_Load;
+            Controls.SetChildIndex(label_TITULO, 0);
+            Controls.SetChildIndex(panel1, 0);
+            panel1.ResumeLayout(false);
+            panel_Superior.ResumeLayout(false);
+            panel_Superior.PerformLayout();
+            panel_Botones.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_Titulo;
+        private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label label_Seleccion;

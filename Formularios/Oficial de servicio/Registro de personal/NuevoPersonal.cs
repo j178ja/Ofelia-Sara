@@ -63,7 +63,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
             label_Destino.BringToFront();
-           
+
         }
 
         public NuevoPersonal()
@@ -71,13 +71,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             InitializeComponent();
 
         }
-      
+
         #endregion
 
         #region LOAD RECARGA ACTIVA FORMULARIO
         private void NuevoPersonal_Load(object sender, EventArgs e)
         {
-        
+           
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Limpiar);
@@ -162,11 +162,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             // Configurar eventos para cada panel
             ConfigurarEventosDeValidacion(panel_DatosPersonales, label_DatosPersonales);
-            ConfigurarEventosDeValidacion(panel_Revista,  label_SituacionRevista);
-            ConfigurarEventosDeValidacion(panel_Armamento,  label_Armamento);
-            ConfigurarEventosDeValidacion(panel_Destino,  label_Destino);
+            ConfigurarEventosDeValidacion(panel_Revista, label_SituacionRevista);
+            ConfigurarEventosDeValidacion(panel_Armamento, label_Armamento);
+            ConfigurarEventosDeValidacion(panel_Destino, label_Destino);
 
-        
+
         }
         #endregion
 
@@ -268,34 +268,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
                 try
                 {
-                    using (var conexion = new MySqlConnection(connectionString))
+                    using var conexion = new MySqlConnection(connectionString);
+                    conexion.Open();
+                    string consulta = "SELECT Direccion, Localidad, Partido FROM Comisarias WHERE Nombre = @nombreDependencia";
+
+                    using var comando = new MySqlCommand(consulta, conexion);
+                    comando.Parameters.AddWithValue("@nombreDependencia", dependenciaSeleccionada);
+
+                    using var lector = comando.ExecuteReader();
+                    if (lector.Read())
                     {
-                        conexion.Open();
-                        string consulta = "SELECT Direccion, Localidad, Partido FROM Comisarias WHERE Nombre = @nombreDependencia";
+                        textBox_DomicilioDependencia.TextValue = lector["Direccion"].ToString();
+                        textBox_LocalidadDependencia.TextValue = lector["Localidad"].ToString();
+                        textBox_PartidoDependencia.TextValue = lector["Partido"].ToString();
 
-                        using (var comando = new MySqlCommand(consulta, conexion))
-                        {
-                            comando.Parameters.AddWithValue("@nombreDependencia", dependenciaSeleccionada);
-
-                            using (var lector = comando.ExecuteReader())
-                            {
-                                if (lector.Read())
-                                {
-                                    textBox_DomicilioDependencia.TextValue = lector["Direccion"].ToString();
-                                    textBox_LocalidadDependencia.TextValue = lector["Localidad"].ToString();
-                                    textBox_PartidoDependencia.TextValue = lector["Partido"].ToString();
-
-                                    // Establecer los TextBox como no editables
-                                    textBox_DomicilioDependencia.ReadOnly = true;
-                                    textBox_LocalidadDependencia.ReadOnly = true;
-                                    textBox_PartidoDependencia.ReadOnly = true;
-                                }
-                                else
-                                {
-                                    MensajeGeneral.Mostrar("No se encontraron datos para la dependencia seleccionada.", MensajeGeneral.TipoMensaje.Advertencia);
-                                }
-                            }
-                        }
+                        // Establecer los TextBox como no editables
+                        textBox_DomicilioDependencia.ReadOnly = true;
+                        textBox_LocalidadDependencia.ReadOnly = true;
+                        textBox_PartidoDependencia.ReadOnly = true;
+                    }
+                    else
+                    {
+                        MensajeGeneral.Mostrar("No se encontraron datos para la dependencia seleccionada.", MensajeGeneral.TipoMensaje.Advertencia);
                     }
                 }
                 catch (Exception ex)
@@ -364,7 +358,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 try
                 {
                     // Crear una instancia de PersonalManager para interactuar con la base de datos
-                    PersonalManager personalManager = new PersonalManager();
+                    PersonalManager personalManager = new();
 
                     // Verificar si el número de legajo existe en la base de datos
                     if (!personalManager.ExisteLegajo(textoFormateado))
@@ -505,10 +499,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         private void InicializarValidaciones()
         {
-            ConfigurarEventosDeValidacion(panel_DatosPersonales,  label_DatosPersonales);
-            ConfigurarEventosDeValidacion(panel_Revista,  label_SituacionRevista);
-            ConfigurarEventosDeValidacion(panel_Armamento,  label_Armamento);
-            ConfigurarEventosDeValidacion(panel_Destino,  label_Destino);
+            ConfigurarEventosDeValidacion(panel_DatosPersonales, label_DatosPersonales);
+            ConfigurarEventosDeValidacion(panel_Revista, label_SituacionRevista);
+            ConfigurarEventosDeValidacion(panel_Armamento, label_Armamento);
+            ConfigurarEventosDeValidacion(panel_Destino, label_Destino);
         }
 
         #endregion
@@ -524,7 +518,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Asegura que el cursor esté en textBox
             textBox_NumeroLegajo.Focus();
         }
-        
+
         /// <summary>
         /// HELPBUTTON -MENSAJE DE AYUDA
         /// </summary>
@@ -630,7 +624,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             InicializarValidaciones(); // verifica que los paneles esten completos
-            
+
             // Validar los campos en los paneles con borde neon
             if (!VerificarCamposEnPanel(panel_DatosPersonales) ||
                 !VerificarCamposEnPanel(panel_Armamento) ||
@@ -643,7 +637,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             try
             {
                 // Crear el objeto Personal con los datos del formulario
-                Personal personal = new Personal
+                Personal personal = new()
                 {
                     // Si el DNI está vacío, asignamos un valor predeterminado o lo dejamos como null
                     DNI = string.IsNullOrEmpty(textBox_Dni.TextValue) ? null : textBox_Dni.TextValue,
@@ -661,7 +655,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 };
 
                 // Llamar al método UpdatePersonal para actualizar los datos en la base de datos
-                PersonalManager personalManager = new PersonalManager();
+                PersonalManager personalManager = new();
                 personalManager.UpdatePersonal(personal);
 
                 // Mostrar mensaje de éxito
@@ -685,16 +679,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
 
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancelar el cierre del formulario
                 }
             }
         }
@@ -815,7 +807,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                           btn_AmpliarReducir_REVISTA, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
                           alturaOriginalPanel_Revista, alturaContraidaPanel);
             InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no
-          
+
         }
 
         private void Btn_AmpliarReducir_ARMAMENTO_Click(object sender, EventArgs e)
@@ -885,16 +877,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             if (sender is PictureBox pictureBox && pictureBox.Image == Properties.Resources.Advertencia_Faltante)
             {
-               // TooltipError.Mostrar(pictureBox, "El formulario posee campos incompletos.");
+                // TooltipError.Mostrar(pictureBox, "El formulario posee campos incompletos.");
             }
         }
 
         // Evento para ocultar el TooltipError cuando el mouse sale
         private static void PictureBox_MouseLeave(object sender, EventArgs e)
         {
-           // TooltipError.Ocultar();
+            // TooltipError.Ocultar();
         }
-   
+
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
         /// </summary>
@@ -958,5 +950,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         }
         #endregion
 
+       
     }
 }

@@ -28,199 +28,199 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contacto));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label_Capacitaciones = new System.Windows.Forms.Label();
-            this.textBox_Curriculum = new System.Windows.Forms.TextBox();
-            this.pictureBox_Github = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Linkedin = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Y = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Correo = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Wpp = new System.Windows.Forms.PictureBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel_Correo = new System.Windows.Forms.LinkLabel();
-            this.label_TITULO = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Github)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Linkedin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Correo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Wpp)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            label_Capacitaciones = new System.Windows.Forms.Label();
+            textBox_Curriculum = new System.Windows.Forms.TextBox();
+            pictureBox_Github = new System.Windows.Forms.PictureBox();
+            pictureBox_Linkedin = new System.Windows.Forms.PictureBox();
+            pictureBox_Y = new System.Windows.Forms.PictureBox();
+            pictureBox_Correo = new System.Windows.Forms.PictureBox();
+            pictureBox_Wpp = new System.Windows.Forms.PictureBox();
+            linkLabel2 = new System.Windows.Forms.LinkLabel();
+            linkLabel_Correo = new System.Windows.Forms.LinkLabel();
+            label_TITULO = new System.Windows.Forms.Label();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Github).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Linkedin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Y).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Correo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Wpp).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.label_Capacitaciones);
-            this.panel1.Controls.Add(this.textBox_Curriculum);
-            this.panel1.Controls.Add(this.pictureBox_Github);
-            this.panel1.Controls.Add(this.pictureBox_Linkedin);
-            this.panel1.Controls.Add(this.pictureBox_Y);
-            this.panel1.Controls.Add(this.pictureBox_Correo);
-            this.panel1.Controls.Add(this.pictureBox_Wpp);
-            this.panel1.Controls.Add(this.linkLabel2);
-            this.panel1.Controls.Add(this.linkLabel_Correo);
-            this.panel1.Controls.Add(this.label_TITULO);
-            this.panel1.Location = new System.Drawing.Point(26, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 462);
-            this.panel1.TabIndex = 2;
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(label_Capacitaciones);
+            panel1.Controls.Add(textBox_Curriculum);
+            panel1.Controls.Add(pictureBox_Github);
+            panel1.Controls.Add(pictureBox_Linkedin);
+            panel1.Controls.Add(pictureBox_Y);
+            panel1.Controls.Add(pictureBox_Correo);
+            panel1.Controls.Add(pictureBox_Wpp);
+            panel1.Controls.Add(linkLabel2);
+            panel1.Controls.Add(linkLabel_Correo);
+            panel1.Location = new System.Drawing.Point(26, 25);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(745, 462);
+            panel1.TabIndex = 2;
             // 
             // label_Capacitaciones
             // 
-            this.label_Capacitaciones.AutoSize = true;
-            this.label_Capacitaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_Capacitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Capacitaciones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Capacitaciones.Location = new System.Drawing.Point(140, 71);
-            this.label_Capacitaciones.Name = "label_Capacitaciones";
-            this.label_Capacitaciones.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.label_Capacitaciones.Size = new System.Drawing.Size(210, 24);
-            this.label_Capacitaciones.TabIndex = 9;
-            this.label_Capacitaciones.Text = "CAPACITACIONES";
+            label_Capacitaciones.AutoSize = true;
+            label_Capacitaciones.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_Capacitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Capacitaciones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_Capacitaciones.Location = new System.Drawing.Point(140, 71);
+            label_Capacitaciones.Name = "label_Capacitaciones";
+            label_Capacitaciones.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            label_Capacitaciones.Size = new System.Drawing.Size(210, 24);
+            label_Capacitaciones.TabIndex = 9;
+            label_Capacitaciones.Text = "CAPACITACIONES";
             // 
             // textBox_Curriculum
             // 
-            this.textBox_Curriculum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.textBox_Curriculum.BorderStyle= System.Windows.Forms.BorderStyle.None;
-            this.textBox_Curriculum.Enabled = false;
-            this.textBox_Curriculum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Curriculum.Location = new System.Drawing.Point(22, 114);
-            this.textBox_Curriculum.Multiline = true;
-            this.textBox_Curriculum.Name = "textBox_Curriculum";
-            this.textBox_Curriculum.ReadOnly = true;
-            this.textBox_Curriculum.Size = new System.Drawing.Size(439, 232);
-            this.textBox_Curriculum.TabIndex = 8;
-            this.textBox_Curriculum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Curriculum.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            textBox_Curriculum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBox_Curriculum.Enabled = false;
+            textBox_Curriculum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            textBox_Curriculum.Location = new System.Drawing.Point(22, 114);
+            textBox_Curriculum.Multiline = true;
+            textBox_Curriculum.Name = "textBox_Curriculum";
+            textBox_Curriculum.ReadOnly = true;
+            textBox_Curriculum.Size = new System.Drawing.Size(439, 232);
+            textBox_Curriculum.TabIndex = 8;
+            textBox_Curriculum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox_Github
             // 
-            this.pictureBox_Github.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Github.BackgroundImage")));
-            this.pictureBox_Github.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_Github.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Github.Location = new System.Drawing.Point(685, 227);
-            this.pictureBox_Github.Name = "pictureBox_Github";
-            this.pictureBox_Github.Size = new System.Drawing.Size(47, 36);
-            this.pictureBox_Github.TabIndex = 7;
-            this.pictureBox_Github.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Github, "Github");
-            this.pictureBox_Github.Click += new System.EventHandler(this.PictureBox_Github_Click);
+            pictureBox_Github.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_Github.BackgroundImage");
+            pictureBox_Github.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_Github.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_Github.Location = new System.Drawing.Point(685, 227);
+            pictureBox_Github.Name = "pictureBox_Github";
+            pictureBox_Github.Size = new System.Drawing.Size(47, 36);
+            pictureBox_Github.TabIndex = 7;
+            pictureBox_Github.TabStop = false;
+            toolTip1.SetToolTip(pictureBox_Github, "Github");
+            pictureBox_Github.Click += PictureBox_Github_Click;
             // 
             // pictureBox_Linkedin
             // 
-            this.pictureBox_Linkedin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Linkedin.BackgroundImage")));
-            this.pictureBox_Linkedin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_Linkedin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Linkedin.Location = new System.Drawing.Point(489, 227);
-            this.pictureBox_Linkedin.Name = "pictureBox_Linkedin";
-            this.pictureBox_Linkedin.Size = new System.Drawing.Size(48, 39);
-            this.pictureBox_Linkedin.TabIndex = 6;
-            this.pictureBox_Linkedin.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Linkedin, "Linkedin");
-            this.pictureBox_Linkedin.Click += new System.EventHandler(this.PictureBox_Linkedin_Click);
+            pictureBox_Linkedin.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_Linkedin.BackgroundImage");
+            pictureBox_Linkedin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_Linkedin.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_Linkedin.Location = new System.Drawing.Point(489, 227);
+            pictureBox_Linkedin.Name = "pictureBox_Linkedin";
+            pictureBox_Linkedin.Size = new System.Drawing.Size(48, 39);
+            pictureBox_Linkedin.TabIndex = 6;
+            pictureBox_Linkedin.TabStop = false;
+            toolTip1.SetToolTip(pictureBox_Linkedin, "Linkedin");
+            pictureBox_Linkedin.Click += PictureBox_Linkedin_Click;
             // 
             // pictureBox_Y
             // 
-            this.pictureBox_Y.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Y.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Y.BackgroundImage")));
-            this.pictureBox_Y.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_Y.Location = new System.Drawing.Point(489, 39);
-            this.pictureBox_Y.Name = "pictureBox_Y";
-            this.pictureBox_Y.Size = new System.Drawing.Size(243, 189);
-            this.pictureBox_Y.TabIndex = 5;
-            this.pictureBox_Y.TabStop = false;
+            pictureBox_Y.BackColor = System.Drawing.Color.Transparent;
+            pictureBox_Y.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_Y.BackgroundImage");
+            pictureBox_Y.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_Y.Location = new System.Drawing.Point(489, 39);
+            pictureBox_Y.Name = "pictureBox_Y";
+            pictureBox_Y.Size = new System.Drawing.Size(243, 189);
+            pictureBox_Y.TabIndex = 5;
+            pictureBox_Y.TabStop = false;
             // 
             // pictureBox_Correo
             // 
-            this.pictureBox_Correo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Correo.BackgroundImage")));
-            this.pictureBox_Correo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_Correo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Correo.Location = new System.Drawing.Point(34, 378);
-            this.pictureBox_Correo.Name = "pictureBox_Correo";
-            this.pictureBox_Correo.Size = new System.Drawing.Size(54, 48);
-            this.pictureBox_Correo.TabIndex = 4;
-            this.pictureBox_Correo.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Correo, "Email");
-            this.pictureBox_Correo.Click += new System.EventHandler(this.PictureBox_Correo_Click);
+            pictureBox_Correo.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_Correo.BackgroundImage");
+            pictureBox_Correo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_Correo.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_Correo.Location = new System.Drawing.Point(34, 378);
+            pictureBox_Correo.Name = "pictureBox_Correo";
+            pictureBox_Correo.Size = new System.Drawing.Size(54, 48);
+            pictureBox_Correo.TabIndex = 4;
+            pictureBox_Correo.TabStop = false;
+            toolTip1.SetToolTip(pictureBox_Correo, "Email");
+            pictureBox_Correo.Click += PictureBox_Correo_Click;
             // 
             // pictureBox_Wpp
             // 
-            this.pictureBox_Wpp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_Wpp.BackgroundImage")));
-            this.pictureBox_Wpp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_Wpp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Wpp.Location = new System.Drawing.Point(507, 378);
-            this.pictureBox_Wpp.Name = "pictureBox_Wpp";
-            this.pictureBox_Wpp.Size = new System.Drawing.Size(54, 48);
-            this.pictureBox_Wpp.TabIndex = 3;
-            this.pictureBox_Wpp.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox_Wpp, "Whatsapp");
-            this.pictureBox_Wpp.Click += new System.EventHandler(this.PictureBox_Wpp_Click);
+            pictureBox_Wpp.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_Wpp.BackgroundImage");
+            pictureBox_Wpp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox_Wpp.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox_Wpp.Location = new System.Drawing.Point(507, 378);
+            pictureBox_Wpp.Name = "pictureBox_Wpp";
+            pictureBox_Wpp.Size = new System.Drawing.Size(54, 48);
+            pictureBox_Wpp.TabIndex = 3;
+            pictureBox_Wpp.TabStop = false;
+            toolTip1.SetToolTip(pictureBox_Wpp, "Whatsapp");
+            pictureBox_Wpp.Click += PictureBox_Wpp_Click;
             // 
             // linkLabel2
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(582, 389);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(131, 20);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "+54223-6971880";
-            this.linkLabel2.Click += new System.EventHandler(this.PictureBox_Wpp_Click);
+            linkLabel2.AutoSize = true;
+            linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            linkLabel2.LinkColor = System.Drawing.Color.Black;
+            linkLabel2.Location = new System.Drawing.Point(582, 389);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new System.Drawing.Size(131, 20);
+            linkLabel2.TabIndex = 2;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "+54223-6971880";
+            linkLabel2.Click += PictureBox_Wpp_Click;
             // 
             // linkLabel_Correo
             // 
-            this.linkLabel_Correo.AutoSize = true;
-            this.linkLabel_Correo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel_Correo.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel_Correo.Location = new System.Drawing.Point(106, 389);
-            this.linkLabel_Correo.Name = "linkLabel_Correo";
-            this.linkLabel_Correo.Size = new System.Drawing.Size(316, 20);
-            this.linkLabel_Correo.TabIndex = 1;
-            this.linkLabel_Correo.TabStop = true;
-            this.linkLabel_Correo.Text = "jbestudiosycapacitaciones@gmail.com";
-            this.linkLabel_Correo.Click += new System.EventHandler(this.PictureBox_Correo_Click);
+            linkLabel_Correo.AutoSize = true;
+            linkLabel_Correo.Cursor = System.Windows.Forms.Cursors.Hand;
+            linkLabel_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            linkLabel_Correo.LinkColor = System.Drawing.Color.Black;
+            linkLabel_Correo.Location = new System.Drawing.Point(106, 389);
+            linkLabel_Correo.Name = "linkLabel_Correo";
+            linkLabel_Correo.Size = new System.Drawing.Size(316, 20);
+            linkLabel_Correo.TabIndex = 1;
+            linkLabel_Correo.TabStop = true;
+            linkLabel_Correo.Text = "jbestudiosycapacitaciones@gmail.com";
+            linkLabel_Correo.Click += PictureBox_Correo_Click;
             // 
             // label_TITULO
             // 
-            this.label_TITULO.AutoSize = true;
-            this.label_TITULO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_TITULO.Location = new System.Drawing.Point(211, -16);
-            this.label_TITULO.Name = "label_TITULO";
-            this.label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 5);
-            this.label_TITULO.Size = new System.Drawing.Size(338, 36);
-            this.label_TITULO.TabIndex = 0;
-            this.label_TITULO.Text = "JORGE A. BONATO";
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(225, 9);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 5);
+            label_TITULO.Size = new System.Drawing.Size(338, 36);
+            label_TITULO.TabIndex = 0;
+            label_TITULO.Text = "JORGE A. BONATO";
             // 
             // Contacto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 531);
-            this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Contacto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FORMULARIO DE CONTACTO";
-            this.Load += new System.EventHandler(this.Contacto_Load);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Github)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Linkedin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Correo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Wpp)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 531);
+            Controls.Add(panel1);
+            Controls.Add(label_TITULO);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Contacto";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "FORMULARIO DE CONTACTO";
+            Load += Contacto_Load;
+            Controls.SetChildIndex(label_TITULO, 0);
+            Controls.SetChildIndex(panel1, 0);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Github).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Linkedin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Y).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Correo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Wpp).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

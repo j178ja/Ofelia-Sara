@@ -13,7 +13,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
     public partial class AgregarDatosPersonalesConcubina : BaseForm
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+        private Point originalPosition;
+        #endregion
+
+        #region CONSTRUCTOR
         public AgregarDatosPersonalesConcubina()
         {
             InitializeComponent();
@@ -21,13 +26,33 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            this.FormClosing += AgregarDatos_FormClosing;//para mensaje de alerta en caso de no guardar datos
-        }
+            this.FormClosing += AgregarDatosConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
 
+            label_TITULO.BringToFront();// Se agreggo formulario por formulario ya que  elcentrado desde baseform no se aplica
+        }
+        #endregion
+
+        #region LOAD
         private void AgregarDatosPersonalesConcubina_Load(object sender, EventArgs e)
         {
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
 
+            FormatoTexto();
+
+            btn_AgregarConcubina.Enabled = false;
+            InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
+
+            comboBox_EstadoCivil.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
+
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
+        }
+        #endregion
+
+        /// <summary>
+        /// aplica formato de texto a dziferentes campos
+        /// </summary>
+        private void FormatoTexto()
+        {
             MayusculaSola.AplicarAControl(comboBox_Parentesco.InnerTextBox);
             MayusculaSola.AplicarAControl(textBox_Nombre);
             MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
@@ -38,16 +63,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
             ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
             ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
-
-            btn_AgregarConcubina.Enabled = false;
-            InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
-
-            comboBox_EstadoCivil.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
-
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
         }
 
-        private void comboBox_EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Habilitar el botón cuando se seleccione un ítem en el ComboBox
             if (comboBox_EstadoCivil.SelectedIndex >= 0)
@@ -61,10 +79,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
         }
-        //-------------------------------------------------------------------
-        // Variable para almacenar la posición original
-        private Point originalPosition;
-        private void btn_AgregarConcubina_Click(object sender, EventArgs e)
+
+  
+        /// <summary>
+        /// Variable para almacenar la posición original
+        /// </summary>
+      
+        private void Btn_AgregarConcubina_Click(object sender, EventArgs e)
         {
             // Crear una instancia del formulario AgregarDatosPersonalesConcubina
             Form agregarDatosPersonalesConcubina = new AgregarDatosPersonalesConcubina();
@@ -95,13 +116,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             agregarDatosPersonalesConcubina.Show();
 
         }
+
+        /// <summary>
+        /// restaurar posicion de formulario una vez cerrado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgregarDatosPersonalesConcubina_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Restaurar la posición original del formulario
             this.Location = originalPosition;
         }
 
-        private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -110,7 +137,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void textBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -119,7 +146,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1;
@@ -130,29 +157,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
 
-        //--------------------------------------------------------------------
-        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
-        private void AgregarDatos_FormClosing(object sender, FormClosingEventArgs e)
+      
+        /// <summary>
+        /// Evento FormClosing para verificar si los datos están guardados antes de cerrar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AgregarDatosConcubina_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
                 MostrarMensajeCierre(e, "No has guardado los datos de esta persona. ¿Estás seguro de que deseas cerrar sin guardar?");
 
-                //using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos de esta persona. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                //{
-                //    // Hacer visibles los botones
-                //    mensaje.MostrarBotonesConfirmacion(true);
-
-                //    DialogResult result = mensaje.ShowDialog();
-                //    if (result == DialogResult.No)
-                //    {
-                //        e.Cancel = true; // Cancelar el cierre del formulario
-                //    }
-                //}
+        
             }
         }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
         }

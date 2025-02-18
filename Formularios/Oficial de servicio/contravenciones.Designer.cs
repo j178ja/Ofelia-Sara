@@ -82,7 +82,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosInfraccion.Location = new System.Drawing.Point(116, 33);
             label_DatosInfraccion.Name = "label_DatosInfraccion";
             label_DatosInfraccion.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label_DatosInfraccion.Size = new System.Drawing.Size(336, 34);
+            label_DatosInfraccion.Size = new System.Drawing.Size(282, 28);
             label_DatosInfraccion.TabIndex = 0;
             label_DatosInfraccion.Text = "DATOS DE LA INFRACCION";
             // 
@@ -94,7 +94,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label2.Location = new System.Drawing.Point(116, 160);
             label2.Name = "label2";
             label2.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label2.Size = new System.Drawing.Size(309, 34);
+            label2.Size = new System.Drawing.Size(261, 28);
             label2.TabIndex = 1;
             label2.Text = "DATOS DEL INFRACTOR";
             // 
@@ -104,7 +104,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_ArtInfraccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_ArtInfraccion.Location = new System.Drawing.Point(43, 78);
             label_ArtInfraccion.Name = "label_ArtInfraccion";
-            label_ArtInfraccion.Size = new System.Drawing.Size(45, 18);
+            label_ArtInfraccion.Size = new System.Drawing.Size(37, 15);
             label_ArtInfraccion.TabIndex = 2;
             label_ArtInfraccion.Text = "ART.";
             // 
@@ -114,7 +114,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_FechaAudiencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_FechaAudiencia.Location = new System.Drawing.Point(43, 110);
             label_FechaAudiencia.Name = "label_FechaAudiencia";
-            label_FechaAudiencia.Size = new System.Drawing.Size(188, 18);
+            label_FechaAudiencia.Size = new System.Drawing.Size(154, 15);
             label_FechaAudiencia.TabIndex = 3;
             label_FechaAudiencia.Text = "FECHA DE AUDIENCIA:";
             // 
@@ -124,7 +124,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nombre.Location = new System.Drawing.Point(41, 203);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new System.Drawing.Size(81, 18);
+            label_Nombre.Size = new System.Drawing.Size(67, 15);
             label_Nombre.TabIndex = 4;
             label_Nombre.Text = "NOMBRE";
             // 
@@ -134,7 +134,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dni.Location = new System.Drawing.Point(41, 231);
             label_Dni.Name = "label_Dni";
-            label_Dni.Size = new System.Drawing.Size(51, 18);
+            label_Dni.Size = new System.Drawing.Size(43, 15);
             label_Dni.TabIndex = 6;
             label_Dni.Text = "D.N.I.";
             // 
@@ -144,7 +144,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_FechaNacimiento.Location = new System.Drawing.Point(41, 257);
             label_FechaNacimiento.Name = "label_FechaNacimiento";
-            label_FechaNacimiento.Size = new System.Drawing.Size(170, 18);
+            label_FechaNacimiento.Size = new System.Drawing.Size(139, 15);
             label_FechaNacimiento.TabIndex = 7;
             label_FechaNacimiento.Text = "FECHA NACIMIENTO";
             // 
@@ -154,7 +154,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Domicilio.Location = new System.Drawing.Point(41, 281);
             label_Domicilio.Name = "label_Domicilio";
-            label_Domicilio.Size = new System.Drawing.Size(93, 18);
+            label_Domicilio.Size = new System.Drawing.Size(78, 15);
             label_Domicilio.TabIndex = 9;
             label_Domicilio.Text = "DOMICILIO";
             // 
@@ -164,7 +164,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(396, 287);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(99, 18);
+            label_Localidad.Size = new System.Drawing.Size(82, 15);
             label_Localidad.TabIndex = 10;
             label_Localidad.Text = "LOCALIDAD";
             // 
@@ -174,7 +174,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nacionalidad.Location = new System.Drawing.Point(372, 260);
             label_Nacionalidad.Name = "label_Nacionalidad";
-            label_Nacionalidad.Size = new System.Drawing.Size(128, 18);
+            label_Nacionalidad.Size = new System.Drawing.Size(106, 15);
             label_Nacionalidad.TabIndex = 11;
             label_Nacionalidad.Text = "NACIONALIDAD";
             // 
@@ -184,7 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Edad.Location = new System.Drawing.Point(434, 231);
             label_Edad.Name = "label_Edad";
-            label_Edad.Size = new System.Drawing.Size(53, 18);
+            label_Edad.Size = new System.Drawing.Size(44, 15);
             label_Edad.TabIndex = 12;
             label_Edad.Text = "EDAD";
             // 
@@ -209,6 +209,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_ArtInfraccion.TabIndex = 1;
             textBox_ArtInfraccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_ArtInfraccion.TextValue = "";
+            textBox_ArtInfraccion.Whidth = 0;
             // 
             // textBox_Nombre
             // 
@@ -231,6 +232,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Nombre.TabIndex = 5;
             textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Nombre.TextValue = "";
+            textBox_Nombre.Whidth = 0;
             // 
             // textBox_Dni
             // 
@@ -253,6 +255,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Dni.TabIndex = 7;
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
+            textBox_Dni.Whidth = 0;
             textBox_Dni.TextChanged += textBox_Dni_TextChanged;
             textBox_Dni.KeyPress += textBox_Dni_KeyPress;
             // 
@@ -277,6 +280,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Edad.TabIndex = 8;
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
+            textBox_Edad.Whidth = 0;
             textBox_Edad.TextChanged += textBox_Edad_TextChanged;
             textBox_Edad.KeyPress += textBox_Edad_KeyPress;
             // 
@@ -301,6 +305,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Localidad.TabIndex = 12;
             textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Localidad.TextValue = "";
+            textBox_Localidad.Whidth = 0;
             textBox_Localidad.KeyPress += textBox_Localidad_KeyPress;
             // 
             // textBox_Domicilio
@@ -324,6 +329,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Domicilio.TabIndex = 11;
             textBox_Domicilio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Domicilio.TextValue = "";
+            textBox_Domicilio.Whidth = 0;
             // 
             // label_DatosInstruccion
             // 
@@ -333,7 +339,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosInstruccion.Location = new System.Drawing.Point(116, 352);
             label_DatosInstruccion.Name = "label_DatosInstruccion";
             label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label_DatosInstruccion.Size = new System.Drawing.Size(349, 34);
+            label_DatosInstruccion.Size = new System.Drawing.Size(295, 28);
             label_DatosInstruccion.TabIndex = 30;
             label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCION";
             // 
@@ -343,7 +349,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Secretario.Location = new System.Drawing.Point(43, 397);
             label_Secretario.Name = "label_Secretario";
-            label_Secretario.Size = new System.Drawing.Size(114, 18);
+            label_Secretario.Size = new System.Drawing.Size(93, 15);
             label_Secretario.TabIndex = 31;
             label_Secretario.Text = "SECRETARIO";
             // 
@@ -353,7 +359,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Instructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Instructor.Location = new System.Drawing.Point(43, 424);
             label_Instructor.Name = "label_Instructor";
-            label_Instructor.Size = new System.Drawing.Size(116, 18);
+            label_Instructor.Size = new System.Drawing.Size(95, 15);
             label_Instructor.TabIndex = 32;
             label_Instructor.Text = "INSTRUCTOR";
             // 
@@ -363,7 +369,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dependencia.Location = new System.Drawing.Point(43, 451);
             label_Dependencia.Name = "label_Dependencia";
-            label_Dependencia.Size = new System.Drawing.Size(126, 18);
+            label_Dependencia.Size = new System.Drawing.Size(104, 15);
             label_Dependencia.TabIndex = 33;
             label_Dependencia.Text = "DEPENDENCIA";
             // 
@@ -373,7 +379,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Fecha.Location = new System.Drawing.Point(43, 478);
             label_Fecha.Name = "label_Fecha";
-            label_Fecha.Size = new System.Drawing.Size(63, 18);
+            label_Fecha.Size = new System.Drawing.Size(51, 15);
             label_Fecha.TabIndex = 34;
             label_Fecha.Text = "FECHA";
             // 
@@ -595,7 +601,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             FechaAudiencia.Location = new System.Drawing.Point(203, 108);
             FechaAudiencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             FechaAudiencia.Name = "FechaAudiencia";
-            FechaAudiencia.Size = new System.Drawing.Size(436, 32);
+            FechaAudiencia.Size = new System.Drawing.Size(381, 24);
             FechaAudiencia.TabIndex = 102;
             // 
             // botonDeslizable_StarPlana
@@ -615,7 +621,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_StarPlana.Location = new System.Drawing.Point(43, 305);
             label_StarPlana.Name = "label_StarPlana";
-            label_StarPlana.Size = new System.Drawing.Size(102, 20);
+            label_StarPlana.Size = new System.Drawing.Size(83, 16);
             label_StarPlana.TabIndex = 100;
             label_StarPlana.Text = "Star. Plana";
             // 
@@ -672,16 +678,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(184, 9);
+            label_TITULO.Location = new System.Drawing.Point(224, 9);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            label_TITULO.Size = new System.Drawing.Size(351, 31);
+            label_TITULO.Size = new System.Drawing.Size(282, 25);
             label_TITULO.TabIndex = 49;
             label_TITULO.Text = "CONTRAVENCIONES";
             // 
             // Contravenciones
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             ClientSize = new System.Drawing.Size(722, 675);

@@ -1305,8 +1305,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AgregarCausa_Click(object sender, EventArgs e)
         {
-            // Llamar al método en el UserControl para agregar el control
-            NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
+            NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Caratula, "CARATULA ", "Causa");
 
         }
 
@@ -1329,14 +1328,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             else
             {
                 // Llamar al método en el UserControl para agregar el control
-                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
+                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima,"VICTIMA ","Victima");
 
                 // Agregar la nueva víctima a la lista
                 string nuevaVictima = "Nombre de la nueva víctima";
                 victimas.Add(nuevaVictima);
 
-                // Actualizar la lista visual en el formulario, si corresponde
-                //lstVictimas.Items.Add(nuevaVictima);
+                
             }
         }
 
@@ -1359,10 +1357,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             else
             {
                 // Llamar al método en el UserControl para agregar el control
-                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
+                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado,"IMPUTADO ", "Imputado");
 
                 // Agregar el nuevo imputado a la lista
-                string nuevoImputado = "Nombre del nuevo imputado"; // Aquí deberías obtener el nombre del imputado del nuevo control agregado
+                string nuevoImputado = "Nombre del nuevo imputado"; 
                 imputados.Add(nuevoImputado);
 
             }

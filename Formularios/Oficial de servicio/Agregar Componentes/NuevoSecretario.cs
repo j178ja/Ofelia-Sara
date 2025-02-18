@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
-        #region CONSTRUCTOR
+    #region CONSTRUCTOR
     public partial class NuevoSecretario : BaseForm
     {
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
@@ -36,7 +36,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-          
+
 
             this.FormClosing += NuevoSecretario_FormClosing;
 
@@ -56,7 +56,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
             // Configurar el comportamiento de los ComboBox
-             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
 
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.SelectedIndex = -1; // No selecciona ningún ítem
@@ -97,20 +97,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-                }
+                MostrarMensajeCierre(e,"No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
+ 
             }
         }
-    
+
         protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
         {
             customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
@@ -126,7 +117,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Escalafon.SelectedIndex = -1;
             comboBox_Jerarquia.SelectedIndex = -1;
-          
+
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
@@ -256,21 +247,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         /// <param name="e"></param>
         private void NuevoSecretario_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            using (MensajeGeneral mensaje = new MensajeGeneral("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios", MensajeGeneral.TipoMensaje.Informacion))
-            {
-                // Establecer la posición manualmente
-                mensaje.StartPosition = FormStartPosition.Manual;
-                mensaje.Location = new Point(
-                    this.Left + (this.Width - mensaje.Width) / 2,
-                    this.Top + (this.Height - mensaje.Height) / 2
-                );
-
-                // Mostrar el mensaje
-                mensaje.ShowDialog();
-            }
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            MostrarMensajeAyuda("Debe ingresar los datos conforme se solicitan. Será incorporado a la lista de secretarios en los formularios");
         }
 
         #endregion
@@ -303,7 +280,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     pictureBox_FirmaDigitalizada.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
                     pictureBox_FirmaDigitalizada.BackColor = SystemColors.ControlLight;
                     checkBox_AgregarFirma.Visible = false;
-                    
+
                 }
                 else
                 {
@@ -317,7 +294,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         }
         private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
         {
-         
+
             checkBox_AgregarFirma.Visible = true;
             checkBox_AgregarFirma.Checked = false;
             pictureBox_FirmaDigitalizada.Enabled = false;
@@ -343,7 +320,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
                 }
             }
-        }  
+        }
         private void PictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -404,7 +381,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 }
             }
         }
- 
+
+      
     }
 }
 #endregion

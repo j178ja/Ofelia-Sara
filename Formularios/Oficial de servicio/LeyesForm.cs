@@ -38,7 +38,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             listView_Documentos.DrawItem += ListView_Documentos_DrawItem;
             listView_Documentos.MouseMove += ListView_Documentos_MouseMove;
             listView_Documentos.MouseLeave += ListView_Documentos_MouseLeave;
+
+    
         }
+
         #endregion
 
         #region LOAD
@@ -48,7 +51,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ConfigurarListView();
             listView_Documentos.SelectedItems.Clear(); // Limpia selección inicial
             listView_Documentos.Invalidate(); // Redibuja el ListView
-            
+
         }
         #endregion
         private void ConfigurarListView()

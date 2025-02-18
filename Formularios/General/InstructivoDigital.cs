@@ -11,17 +11,23 @@ namespace Ofelia_Sara.Formularios.General
 {
     public partial class InstructivoDigital : BaseForm
     {
+        #region VARIABLES
         private List<(string VideoRuta, string ImagenMiniatura)> listaVideos; // Almacén de videos con miniaturas
         private int indiceInicio;         // Índice del primer video visible
         private int videosPorPagina = 3;  // Número de videos visibles en el carrusel
 
         private readonly Dictionary<ModuloOrigen, List<(string VideoRuta, string ImagenMiniatura)>> videosPorModulo;
-        public ModuloOrigen ModuloActual { get; set; }
+        #endregion
 
+        #region PROPIEDADES PUBLICAS
+        public ModuloOrigen ModuloActual { get; set; }
+        #endregion
+
+        #region CONSTRUCTOR
         public InstructivoDigital(ModuloOrigen moduloOrigen)
         {
             InitializeComponent();
-
+            
             RedondearBordes.Aplicar(panel1, 16);
             RedondearBordes.Aplicar(panel2, 16);
 
@@ -29,7 +35,7 @@ namespace Ofelia_Sara.Formularios.General
             this.MinimumSize = new Size(this.Width, panel1.Height + 90);
 
 
-            axWindowsMediaPlayer_Preview.Visible = false;
+           // axWindowsMediaPlayer_Preview.Visible = false;
             // Inicializa las listas de videos para cada módulo
             videosPorModulo = new Dictionary<ModuloOrigen, List<(string VideoRuta, string ImagenMiniatura)>>
             {
@@ -71,7 +77,7 @@ namespace Ofelia_Sara.Formularios.General
             // Carga los videos correspondientes
             CargarVideos();
         }
-
+        #endregion
         private void CargarVideos()
         {
             // Obtén la lista de videos para el módulo actual
@@ -203,13 +209,13 @@ namespace Ofelia_Sara.Formularios.General
             Mecanografia,
             Redactador
         }
+        #region LOAD
         private void InstructivoDigital_Load(object sender, EventArgs e)
         {
             panel2.Visible = false; // Ocultar panel2 inicialmente
             ValidarPanel2();
         }
-
-
+        #endregion
 
         private string ObtenerRutaRelativa(string rutaArchivo)
         {
@@ -261,7 +267,7 @@ namespace Ofelia_Sara.Formularios.General
                     break;
             }
         }
-        //--------------------------------------------------------------------
+       
         private void ValidarPanel2()
         {
             if (panel2.Visible)
@@ -284,7 +290,6 @@ namespace Ofelia_Sara.Formularios.General
 
 
 
-        //----------------------------------------------------------------------
         /// <summary>
         /// EVENTOS CAMBIO DE IMAGEN EN BOTON, POSTERIORMENTE SE DEBE CREAR UN MEJOR BOTON CON ANIMACION
         /// </summary>

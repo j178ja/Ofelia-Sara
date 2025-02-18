@@ -62,6 +62,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
+
+            label_TITULO.BringToFront();
         }
         #endregion
 
@@ -135,19 +137,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         #endregion
 
       
-        /// <summary>
-        /// METODO BANDERA PARA QUE NO SE MUESTRE MENSAJE DE ADVERTENCIA CUANDO SE LIMPIA TEXTBOX AÑO DE FECHA DE NACIEMIENTO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AgregarDatosPersonales_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Llamar al método HandleFormClosing en la instancia de CustomDateTextBox
-            //if (dateTimePicker_FechaNacimiento != null)
-            //{
-            //    dateTimePicker_FechaNacimiento.HandleFormClosing();
-            //}
-        }
+       
 
        
         /// <summary>
@@ -187,16 +177,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
+            if (sender is PictureBox pictureBox)
             {
-                Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
+                Color borderColor = pictureBox.Tag is Color color ? color : Color.Transparent;
 
-                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
-                {
-                    // Dibuja el borde exterior
-                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
-                }
+                using Pen pen = new(borderColor, 3); // Grosor del borde
+                                                     // Dibuja el borde exterior
+                e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
             }
         }
      
@@ -209,7 +196,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
-                using OpenFileDialog openFileDialog = new OpenFileDialog();
+                using OpenFileDialog openFileDialog = new();
                 openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -397,19 +384,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
         private void TextBox_Dni_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
+            CustomTextBox textBox = sender as CustomTextBox;
 
             // Obtener la posición del cursor antes del formateo
             int cursorPosition = textBox.SelectionStart;
 
             // Usar la clase separada para formatear el texto con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.TextValue);
 
             // Actualizar el texto en el TextBox
-            textBox.Text = textoFormateado;
+            textBox.TextValue = textoFormateado;
 
             // Asegurarse de que el cursor se posicione al final del texto
-            textBox.SelectionStart = textBox.Text.Length;
+            textBox.SelectionStart = textBox.TextValue.Length;
         }
 
 
@@ -429,15 +416,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         }
         // Método para restablecer el placeholder
-        private void ClearTextBoxPlaceholder(TextBox textBox)
+        private static void ClearTextBoxPlaceholder(CustomTextBox textBox)
         {
             if (textBox != null)
             {
                 textBox.Text = "";
                 // Asegurarse de que el placeholder se restablezca si es necesario
-                if (string.IsNullOrWhiteSpace(textBox.Text))
+                if (string.IsNullOrWhiteSpace(textBox.TextValue))
                 {
-                    textBox.Text = "Enter your email";
+                    textBox.TextValue = "Ingrese email";
                     textBox.ForeColor = Color.Gray;
                 }
             }
@@ -643,33 +630,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void ComboBox_Nacionalidad_TextChanged_1(object sender, EventArgs e)
-        {
-            // Convierte el texto a mayúsculas
-            ComboBox comboBox = sender as ComboBox;
-            if (comboBox != null)
-            {
-                // Guarda la posición del cursor
-                int cursorPosition = comboBox.SelectionStart;
-
-                // Convierte el texto a mayúsculas
-                comboBox.Text = comboBox.Text.ToUpper();
-
-                // Restaura la posición del cursor
-                comboBox.SelectionStart = cursorPosition;
-            }
-        }
+ 
 
         private void TextBox_Apodo_TextChanged(object sender, EventArgs e)
         {
             // Convierte el texto a mayúsculas
-            if (sender is TextBox textBox)
+            if (sender is CustomTextBox textBox)
             {
                 // Guarda la posición del cursor
                 int cursorPosition = textBox.SelectionStart;
 
                 // Convierte el texto a mayúsculas
-                textBox.Text = textBox.Text.ToUpper();
+                textBox.Text = textBox.TextValue.ToUpper();
 
                 // Restaura la posición del cursor
                 textBox.SelectionStart = cursorPosition;
@@ -761,45 +733,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             if (!datosGuardados) // Si los datos no han sido guardados
             {
                 MostrarMensajeCierre(e, "No has guardado los datos del IMPUTADO. ¿Estás seguro de que deseas cerrar sin guardar?");
-                //using MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del IMPUTADaa. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                //// Hacer visibles los botones
-                //mensaje.MostrarBotonesConfirmacion(true);
-
-
-                //DialogResult result = mensaje.ShowDialog();
-                //if (result == DialogResult.No)
-                //{
-                //    e.Cancel = true; // Cancelar el cierre del formulario
-                //}
+               
             }
         }
 
-        //private void SetupBotonDeslizable()
-        //{
-        //    // Configurar el delegado de validación en el control BotonDeslizable
-        //    botonDeslizable_StarPlana.ValidarCampos = () =>
-        //    {
-        //        // Lógica de validación
-        //        bool camposIncompletos =
-        //            string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
-        //            string.IsNullOrWhiteSpace(textBox_Dni.TextValue) ||
-        //                !dateTimePicker_FechaNacimiento.HasValue();
-
-        //        if (camposIncompletos)
-        //        {
-        //            // Mostrar mensaje de advertencia si los campos están incompletos
-        //            MensajeGeneral.Mostrar("Debe completar los campos NOMBRE, DNI y FECHA DE NACIMIENTO para poder solicitar plana del ciudadano", MensajeGeneral.TipoMensaje.Advertencia);
-        //            return false; // Retorna false si los campos están incompletos
-        //        }
-        //        else
-        //        {
-        //            // Mostrar mensaje de éxito si los campos están completos
-        //            MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario IPP se enviara automaticamente la solicitud de plana" +
-        //                "", MensajeGeneral.TipoMensaje.Exito);
-        //            return true; // Retorna true si los campos están completos
-        //        }
-        //    };
-        //}
+      
         private void SetupBotonDeslizable()
         {
             // Configurar el delegado de validación en el control BotonDeslizable

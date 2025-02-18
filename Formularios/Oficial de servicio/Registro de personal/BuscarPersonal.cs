@@ -18,18 +18,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 {
     public partial class BuscarPersonal : BaseForm
     {
+        #region VARIABLES
         private int borderRadius = 15;
         private int borderSize = 7;
         private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
         private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+        #endregion
+
+        #region CONSTRUCTOR
         public BuscarPersonal()
         {
             InitializeComponent();
             this.FormClosing += BuscarPersonal_FormClosing;
         }
-        //---FIN CONSTRUCTOR
+        #endregion
+
+        #region LOAD
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
         {
@@ -60,7 +66,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
 
         }
-        // FIN LOAD------------------
+        #endregion
 
         /// <summary>
         /// METODO PARA REDIBUJAR BORDES REDONDEADOS
@@ -70,28 +76,24 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="borderSize"></param>
         /// <param name="borderColor"></param>
 
-        private void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
+        private static void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
         {
-            using (GraphicsPath path = new GraphicsPath())
-            {
-                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-                path.AddArc(panel.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-                path.AddArc(panel.Width - borderRadius, panel.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-                path.AddArc(0, panel.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-                path.CloseAllFigures();
+            using GraphicsPath path = new();
+            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+            path.AddArc(panel.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+            path.AddArc(panel.Width - borderRadius, panel.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+            path.AddArc(0, panel.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+            path.CloseAllFigures();
 
-                using (Pen pen = new Pen(borderColor, borderSize))
-                {
-                    panel.CreateGraphics().DrawPath(pen, path);
-                }
-            }
+            using Pen pen = new(borderColor, borderSize);
+            panel.CreateGraphics().DrawPath(pen, path);
         }
-        //....................
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
         }
-        //-----------------------------------------------------------------------------
+ 
 
         /// <summary>
         /// METODO PARA CARGAR CON FOCO EN NUMERO DE LEGAJO
@@ -103,7 +105,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_NumeroLegajo.Focus();
         }
-        //________________________________________________________________________________
+
 
         /// <summary>
         /// METODO PARA REGISTRAR UNA NUEVA RATIFICACION TESTIMONIAL
@@ -111,16 +113,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void btn_Registrar_Click(object sender, EventArgs e)
+        private void Btn_Registrar_Click(object sender, EventArgs e)
         {
             // Obtener el texto del TextBox_NumeroLegajo en BuscarPersonal
             string numeroLegajo = textBox_NumeroLegajo.Text;
 
             // Crear y mostrar el formulario NuevoPersonal, pasando el número de legajo
-            NuevoPersonal nuevoPersonalForm = new NuevoPersonal(numeroLegajo);
+            NuevoPersonal nuevoPersonalForm = new(numeroLegajo);
             nuevoPersonalForm.ShowDialog();
         }
-        //-------------------------------------------------------------------
+        
 
         /// <summary>
         /// METODO DE VALIDACION DE NUMERO DE LEGAJO
@@ -128,7 +130,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void textBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite dígitos y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -144,7 +146,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             }
         }
-        //_________________________________________________________________________________________
+    
 
         /// <summary>
         /// VALIDACION ACTIVACION BTN_AGREGAR PERSONAL
@@ -152,11 +154,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void textBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
+        private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
         }
-        //--------------------------------------------------------------------
+       
 
         /// <summary>
         /// METODO PARA VERIFICAR NUMERO DE LEGAJO EN BASE DE DATOS Y AGREGAR RATIFICACION 
@@ -164,7 +166,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void btn_AgregarPersonal_Click(object sender, EventArgs e)
+        private void Btn_AgregarPersonal_Click(object sender, EventArgs e)
         {
             // Validar que el texto no sea menor a 6 caracteres
             string textoFormateado = textBox_NumeroLegajo.Text;
@@ -178,7 +180,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 ActualizarContadorRatificaciones();
             }
         }
-        //---------------------------------------------------------------------------
+     
 
         /// <summary>
         /// Este método manejará el evento cuando el botón Modificar Personal sea clicado
@@ -190,10 +192,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void PersonalSeleccionadoControl_ModificarPersonalClicked(object sender, EventArgs e)
         {
             // Abrir el formulario NuevoPersonal
-            NuevoPersonal nuevoPersonalForm = new NuevoPersonal();
+            NuevoPersonal nuevoPersonalForm = new();
             nuevoPersonalForm.ShowDialog();
         }
-        //---------------------------------------------------------------------------------------------------------------------
+    
 
         /// <summary>
         /// MENSAJE DE AYUDA EN FORMULARIO 
@@ -209,14 +211,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;
         }
-        //-------------------------------------------------------------------------------------------
+       
 
         /// <summary>
         /// EVENTO PARA GUARDAR LAS RATIFICACIONES TESTIMONIALES
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Verificar si se han agregado controles del tipo PersonalSeleccionadoControl al panel
             var controlesAgregados = panel_PersonalSeleccionado.Controls.OfType<PersonalSeleccionadoControl>().Count();
@@ -240,7 +242,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
 
         }
-        //-------------------------------------------------------------------------------------------
+       
 
         /// <summary>
         /// Evento FormClosing para verificar si los datos están guardados antes de cerrar
@@ -253,20 +255,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                using MensajeGeneral mensaje = new("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
 
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancelar el cierre del formulario
                 }
             }
         }
-        //------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Método para verificar que el personal seleccionado no haya sido previamente agregado
@@ -287,7 +287,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 AgregarPersonalSeleccionado(); //verifica si existe en base de datos  y lo agrega 
             }
         }
-        //------------------------------------------------------------------------------------------
+        
 
         /// <summary>
         ///  Método auxiliar para buscar si el legajo ya está agregado en los controles existentes
@@ -314,7 +314,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
             return false; // Retorna false si no encuentra coincidencias
         }
-        //----------------------------------------------------------------------------------
+       
 
         /// <summary>
         ///  Método para agregar un nuevo control de personal seleccionado al panel
@@ -323,7 +323,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             try
             {
-                PersonalManager personalManager = new PersonalManager();
+                PersonalManager personalManager = new();
                 string textoFormateado = textBox_NumeroLegajo.Text;
 
                 // Verificar si el número de legajo existe en la base de datos
@@ -334,12 +334,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 }
 
                 // Crear y configurar el nuevo control de personal seleccionado
-                PersonalSeleccionadoControl nuevoControl = new PersonalSeleccionadoControl();
+                PersonalSeleccionadoControl nuevoControl = new();
                 nuevoControl.ModificarPersonalClicked += PersonalSeleccionadoControl_ModificarPersonalClicked;
                 nuevoControl.ActualizarDatosPorLegajo(textoFormateado);
 
                 // Agregar el nuevo control al panel
-                AgregarPersonal agregarPersonal = new AgregarPersonal();
+                AgregarPersonal agregarPersonal = new();
                 agregarPersonal.AgregarControlAlPanel(
                     nuevoControl,
                     panel_PersonalSeleccionado,
@@ -362,7 +362,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 ActualizarContadorRatificaciones();
             }
         }
-        //-----------------------------------------------
+
 
         /// <summary>
         /// METODO PARA ACTUALIZAR CONTADOR DE RATIFICACIONES EN FORM INCIO CIERRE

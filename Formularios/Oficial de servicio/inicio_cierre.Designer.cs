@@ -110,7 +110,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Dr.Location = new Point(245, 8);
             lbl_Dr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Dr.Name = "lbl_Dr";
-            lbl_Dr.Size = new Size(31, 18);
+            lbl_Dr.Size = new Size(26, 15);
             lbl_Dr.TabIndex = 0;
             lbl_Dr.Text = "Dr.";
             // 
@@ -149,7 +149,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Ipp.Location = new Point(75, 10);
             lbl_Ipp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Ipp.Name = "lbl_Ipp";
-            lbl_Ipp.Size = new Size(49, 18);
+            lbl_Ipp.Size = new Size(41, 15);
             lbl_Ipp.TabIndex = 3;
             lbl_Ipp.Text = "l.P.P.";
             // 
@@ -157,10 +157,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             lbl_Caratula.AutoSize = true;
             lbl_Caratula.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_Caratula.Location = new Point(13, 6);
+            lbl_Caratula.Location = new Point(58, 7);
             lbl_Caratula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Caratula.Name = "lbl_Caratula";
-            lbl_Caratula.Size = new Size(93, 18);
+            lbl_Caratula.Size = new Size(76, 15);
             lbl_Caratula.TabIndex = 4;
             lbl_Caratula.Text = "CARATULA";
             // 
@@ -171,7 +171,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Victima.Location = new Point(75, 5);
             lbl_Victima.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Victima.Name = "lbl_Victima";
-            lbl_Victima.Size = new Size(72, 18);
+            lbl_Victima.Size = new Size(60, 15);
             lbl_Victima.TabIndex = 5;
             lbl_Victima.Text = "VICTIMA";
             // 
@@ -183,7 +183,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Imputado.Location = new Point(56, 6);
             lbl_Imputado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Imputado.Name = "lbl_Imputado";
-            lbl_Imputado.Size = new Size(94, 18);
+            lbl_Imputado.Size = new Size(78, 15);
             lbl_Imputado.TabIndex = 6;
             lbl_Imputado.Text = "lMPUTADO";
             // 
@@ -194,7 +194,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Ufid.Location = new Point(68, 9);
             lbl_Ufid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Ufid.Name = "lbl_Ufid";
-            lbl_Ufid.Size = new Size(61, 18);
+            lbl_Ufid.Size = new Size(51, 15);
             lbl_Ufid.TabIndex = 7;
             lbl_Ufid.Text = "U.F.I.D";
             // 
@@ -205,7 +205,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Instructor.Location = new Point(24, 84);
             lbl_Instructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Instructor.Name = "lbl_Instructor";
-            lbl_Instructor.Size = new Size(116, 18);
+            lbl_Instructor.Size = new Size(95, 15);
             lbl_Instructor.TabIndex = 8;
             lbl_Instructor.Text = "INSTRUCTOR";
             // 
@@ -216,7 +216,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Secretario.Location = new Point(26, 111);
             lbl_Secretario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Secretario.Name = "lbl_Secretario";
-            lbl_Secretario.Size = new Size(114, 18);
+            lbl_Secretario.Size = new Size(93, 15);
             lbl_Secretario.TabIndex = 9;
             lbl_Secretario.Text = "SECRETARIO";
             // 
@@ -227,7 +227,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Fecha.Location = new Point(68, 166);
             lbl_Fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Fecha.Name = "lbl_Fecha";
-            lbl_Fecha.Size = new Size(63, 18);
+            lbl_Fecha.Size = new Size(51, 15);
             lbl_Fecha.TabIndex = 10;
             lbl_Fecha.Text = "FECHA";
             // 
@@ -238,7 +238,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Dependencia.Location = new Point(14, 142);
             lbl_Dependencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Dependencia.Name = "lbl_Dependencia";
-            lbl_Dependencia.Size = new Size(126, 18);
+            lbl_Dependencia.Size = new Size(104, 15);
             lbl_Dependencia.TabIndex = 11;
             lbl_Dependencia.Text = "DEPENDENCIA";
             // 
@@ -551,7 +551,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_00.Location = new Point(427, 13);
             lbl_00.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_00.Name = "lbl_00";
-            lbl_00.Size = new Size(31, 20);
+            lbl_00.Size = new Size(24, 15);
             lbl_00.TabIndex = 26;
             lbl_00.Text = "/00";
             // 
@@ -650,7 +650,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarCausa.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_AgregarCausa.FlatAppearance.BorderSize = 3;
             btn_AgregarCausa.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_AgregarCausa.Location = new Point(440, 1);
+            btn_AgregarCausa.Location = new Point(485, 2);
             btn_AgregarCausa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btn_AgregarCausa.Name = "btn_AgregarCausa";
             btn_AgregarCausa.Size = new Size(18, 27);
@@ -702,7 +702,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             checkBox_RatificacionTestimonial.Location = new Point(241, 52);
             checkBox_RatificacionTestimonial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             checkBox_RatificacionTestimonial.Name = "checkBox_RatificacionTestimonial";
-            checkBox_RatificacionTestimonial.Size = new Size(18, 17);
+            checkBox_RatificacionTestimonial.Size = new Size(15, 14);
             checkBox_RatificacionTestimonial.TabIndex = 8;
             checkBox_RatificacionTestimonial.TextAlign = ContentAlignment.BottomCenter;
             checkBox_RatificacionTestimonial.UseVisualStyleBackColor = true;
@@ -844,7 +844,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_Localida.Location = new Point(49, 30);
             lbl_Localida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_Localida.Name = "lbl_Localida";
-            lbl_Localida.Size = new Size(80, 18);
+            lbl_Localida.Size = new Size(70, 15);
             lbl_Localida.TabIndex = 37;
             lbl_Localida.Text = "Localidad";
             // 
@@ -855,7 +855,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             lbl_DeptoJudicial.Location = new Point(16, 57);
             lbl_DeptoJudicial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbl_DeptoJudicial.Name = "lbl_DeptoJudicial";
-            lbl_DeptoJudicial.Size = new Size(120, 18);
+            lbl_DeptoJudicial.Size = new Size(103, 15);
             lbl_DeptoJudicial.TabIndex = 35;
             lbl_DeptoJudicial.Text = "Depto. Judicial";
             // 
@@ -916,10 +916,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Caratula.Controls.Add(textBox_Caratula);
             panel_Caratula.Controls.Add(lbl_Caratula);
             panel_Caratula.Controls.Add(btn_AgregarCausa);
-            panel_Caratula.Location = new Point(54, 63);
+            panel_Caratula.Location = new Point(9, 63);
             panel_Caratula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel_Caratula.Name = "panel_Caratula";
-            panel_Caratula.Size = new Size(475, 29);
+            panel_Caratula.Size = new Size(520, 29);
             panel_Caratula.TabIndex = 43;
             // 
             // textBox_Caratula
@@ -929,7 +929,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.BackColor = Color.White;
             textBox_Caratula.ErrorColor = Color.Red;
             textBox_Caratula.FocusColor = Color.Blue;
-            textBox_Caratula.Location = new Point(101, 4);
+            textBox_Caratula.Location = new Point(146, 5);
             textBox_Caratula.MaxLength = 32767;
             textBox_Caratula.Multiline = false;
             textBox_Caratula.Name = "textBox_Caratula";
@@ -1007,7 +1007,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             fecha_Pericia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             fecha_Pericia.Mask = "00/00/0000 00:00";
             fecha_Pericia.Name = "fecha_Pericia";
-            fecha_Pericia.Size = new Size(127, 23);
+            fecha_Pericia.Size = new Size(127, 20);
             fecha_Pericia.TabIndex = 55;
             fecha_Pericia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             fecha_Pericia.ValidatingType = typeof(System.DateTime);
@@ -1135,17 +1135,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.AutoSize = true;
             label_TITULO.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = SystemColors.ControlLightLight;
-            label_TITULO.Location = new Point(104, 9);
+            label_TITULO.Location = new Point(142, 9);
             label_TITULO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            label_TITULO.Size = new Size(378, 29);
+            label_TITULO.Size = new Size(305, 24);
             label_TITULO.TabIndex = 31;
             label_TITULO.Text = "ESTRUCTURA BASICA I.P.P.";
             // 
             // InicioCierre
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 154, 174);
             ClientSize = new Size(579, 602);

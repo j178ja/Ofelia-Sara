@@ -20,7 +20,7 @@ namespace Ofelia_Sara.Clases.General.Apariencia
         {
             if (control == null || radio <= 0) return;
 
-            GraphicsPath path = new GraphicsPath();
+            GraphicsPath path = new();
 
             // Crear bordes redondeados
             path.AddArc(0, 0, radio, radio, 180, 90); // Esquina superior izquierda

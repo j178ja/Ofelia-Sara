@@ -32,6 +32,8 @@ namespace Ofelia_Sara
             // Application.Run(new NuevoPersonal());
             // Application.Run(new Cargo());
             // Application.Run(new Visu());
+            // Application.Run(new NuevoPersonal());
+          //   Application.Run(new BuscarPersonal());
 
 
         }

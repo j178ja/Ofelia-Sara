@@ -32,7 +32,6 @@
             panel1 = new System.Windows.Forms.Panel();
             btn_Anterior = new System.Windows.Forms.PictureBox();
             btn_Siguiente = new System.Windows.Forms.PictureBox();
-            axWindowsMediaPlayer_Preview = new AxWMPLib.AxWindowsMediaPlayer();
             tableLayoutPanel_Videos = new System.Windows.Forms.TableLayoutPanel();
             pictureBox_Izquierda = new System.Windows.Forms.PictureBox();
             pictureBox_Central = new System.Windows.Forms.PictureBox();
@@ -42,7 +41,6 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btn_Anterior).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_Siguiente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer_Preview).BeginInit();
             tableLayoutPanel_Videos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Izquierda).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Central).BeginInit();
@@ -57,7 +55,6 @@
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(btn_Anterior);
             panel1.Controls.Add(btn_Siguiente);
-            panel1.Controls.Add(axWindowsMediaPlayer_Preview);
             panel1.Controls.Add(tableLayoutPanel_Videos);
             panel1.Location = new System.Drawing.Point(23, 12);
             panel1.Name = "panel1";
@@ -95,15 +92,6 @@
             btn_Siguiente.MouseDown += Btn_Siguiente_MouseDown;
             btn_Siguiente.MouseLeave += Btn_Siguiente_MouseLeave;
             btn_Siguiente.MouseUp += Btn_Siguiente_MouseUp;
-            // 
-            // axWindowsMediaPlayer_Preview
-            // 
-            axWindowsMediaPlayer_Preview.Enabled = true;
-            axWindowsMediaPlayer_Preview.Location = new System.Drawing.Point(128, 8);
-            axWindowsMediaPlayer_Preview.Name = "axWindowsMediaPlayer_Preview";
-            axWindowsMediaPlayer_Preview.OcxState = (System.Windows.Forms.AxHost.State)resources.GetObject("axWindowsMediaPlayer_Preview.OcxState");
-            axWindowsMediaPlayer_Preview.Size = new System.Drawing.Size(75, 10);
-            axWindowsMediaPlayer_Preview.TabIndex = 3;
             // 
             // tableLayoutPanel_Videos
             // 
@@ -208,7 +196,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btn_Anterior).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_Siguiente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer_Preview).EndInit();
             tableLayoutPanel_Videos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox_Izquierda).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Central).EndInit();
@@ -228,7 +215,6 @@
         private System.Windows.Forms.PictureBox pictureBox_Central;
         private System.Windows.Forms.Panel panel2;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer_Videos;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer_Preview;
         private System.Windows.Forms.PictureBox btn_Siguiente;
         private System.Windows.Forms.PictureBox btn_Anterior;
     }

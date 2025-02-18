@@ -33,6 +33,7 @@
             panel1 = new System.Windows.Forms.Panel();
             botonDeslizable_StarPlana = new Controles.General.BotonDeslizable();
             label_StarPlana = new System.Windows.Forms.Label();
+            label_TITULO = new System.Windows.Forms.Label();
             btn_AgregarConcubina = new System.Windows.Forms.Button();
             comboBox_EstadoCivil = new Controles.General.CustomComboBox();
             label_EstadoCivil = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             label_Apodo = new System.Windows.Forms.Label();
             label_Telefono = new System.Windows.Forms.Label();
             btn_Buscar = new System.Windows.Forms.Button();
-            label_TITULO = new System.Windows.Forms.Label();
             checkBox_LegajoDetenido = new System.Windows.Forms.CheckBox();
             checkBox_NotArt60 = new System.Windows.Forms.CheckBox();
             label_LegajoDetenido = new System.Windows.Forms.Label();
@@ -119,7 +119,6 @@
             panel1.Controls.Add(label_Apodo);
             panel1.Controls.Add(label_Telefono);
             panel1.Controls.Add(btn_Buscar);
-            panel1.Controls.Add(label_TITULO);
             panel1.Controls.Add(checkBox_LegajoDetenido);
             panel1.Controls.Add(checkBox_NotArt60);
             panel1.Controls.Add(label_LegajoDetenido);
@@ -148,7 +147,7 @@
             panel1.Controls.Add(label_Dni);
             panel1.Controls.Add(label_Nombre);
             panel1.Controls.Add(label_CircunstanciasPersonales);
-            panel1.Location = new System.Drawing.Point(25, 27);
+            panel1.Location = new System.Drawing.Point(25, 25);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(564, 781);
             panel1.TabIndex = 0;
@@ -170,9 +169,23 @@
             label_StarPlana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_StarPlana.Location = new System.Drawing.Point(23, 454);
             label_StarPlana.Name = "label_StarPlana";
-            label_StarPlana.Size = new System.Drawing.Size(102, 20);
+            label_StarPlana.Size = new System.Drawing.Size(83, 16);
             label_StarPlana.TabIndex = 98;
             label_StarPlana.Text = "Star. Plana";
+            // 
+            // label_TITULO
+            // 
+            label_TITULO.AutoEllipsis = true;
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(200, 12);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            label_TITULO.Size = new System.Drawing.Size(220, 25);
+            label_TITULO.TabIndex = 50;
+            label_TITULO.Text = "DATOS IMPUTADO";
             // 
             // btn_AgregarConcubina
             // 
@@ -227,7 +240,7 @@
             label_EstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_EstadoCivil.Location = new System.Drawing.Point(307, 160);
             label_EstadoCivil.Name = "label_EstadoCivil";
-            label_EstadoCivil.Size = new System.Drawing.Size(105, 18);
+            label_EstadoCivil.Size = new System.Drawing.Size(88, 15);
             label_EstadoCivil.TabIndex = 95;
             label_EstadoCivil.Text = "Estado civil :";
             // 
@@ -261,7 +274,7 @@
             label_LugarNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_LugarNacimiento.Location = new System.Drawing.Point(27, 159);
             label_LugarNacimiento.Name = "label_LugarNacimiento";
-            label_LugarNacimiento.Size = new System.Drawing.Size(147, 18);
+            label_LugarNacimiento.Size = new System.Drawing.Size(127, 15);
             label_LugarNacimiento.TabIndex = 93;
             label_LugarNacimiento.Text = "Lugar nacimiento :";
             // 
@@ -272,18 +285,18 @@
             emailControl1.Location = new System.Drawing.Point(117, 418);
             emailControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             emailControl1.Name = "emailControl1";
-            emailControl1.Size = new System.Drawing.Size(444, 36);
+            emailControl1.Size = new System.Drawing.Size(388, 27);
             emailControl1.TabIndex = 92;
             // 
             // numeroTelefonicoControl
             // 
             numeroTelefonicoControl.AutoSize = true;
             numeroTelefonicoControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            numeroTelefonicoControl.ControlWidth = 226;
+            numeroTelefonicoControl.ControlWidth = 198;
             numeroTelefonicoControl.Location = new System.Drawing.Point(117, 391);
             numeroTelefonicoControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             numeroTelefonicoControl.Name = "numeroTelefonicoControl";
-            numeroTelefonicoControl.Size = new System.Drawing.Size(226, 33);
+            numeroTelefonicoControl.Size = new System.Drawing.Size(198, 25);
             numeroTelefonicoControl.TabIndex = 91;
             // 
             // dateTimePicker_FechaNacimiento
@@ -307,7 +320,7 @@
             label_agrGeo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_agrGeo2.Location = new System.Drawing.Point(70, 291);
             label_agrGeo2.Name = "label_agrGeo2";
-            label_agrGeo2.Size = new System.Drawing.Size(109, 18);
+            label_agrGeo2.Size = new System.Drawing.Size(94, 15);
             label_agrGeo2.TabIndex = 89;
             label_agrGeo2.Text = "de domicilio :";
             // 
@@ -317,7 +330,7 @@
             label_agrGeo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_agrGeo.Location = new System.Drawing.Point(26, 274);
             label_agrGeo.Name = "label_agrGeo";
-            label_agrGeo.Size = new System.Drawing.Size(228, 18);
+            label_agrGeo.Size = new System.Drawing.Size(195, 15);
             label_agrGeo.TabIndex = 88;
             label_agrGeo.Text = "Agregar geoposicionamiento ";
             // 
@@ -327,7 +340,7 @@
             label_AgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_AgregarDomicilio.Location = new System.Drawing.Point(21, 343);
             label_AgregarDomicilio.Name = "label_AgregarDomicilio";
-            label_AgregarDomicilio.Size = new System.Drawing.Size(231, 18);
+            label_AgregarDomicilio.Size = new System.Drawing.Size(200, 15);
             label_AgregarDomicilio.TabIndex = 87;
             label_AgregarDomicilio.Text = "Agregar imagen de domicilio :";
             // 
@@ -367,7 +380,7 @@
             label_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Email.Location = new System.Drawing.Point(24, 418);
             label_Email.Name = "label_Email";
-            label_Email.Size = new System.Drawing.Size(66, 18);
+            label_Email.Size = new System.Drawing.Size(56, 15);
             label_Email.TabIndex = 79;
             label_Email.Text = "EMAIL :";
             // 
@@ -403,7 +416,7 @@
             comboBox_Nacionalidad.TabIndex = 77;
             comboBox_Nacionalidad.Text = " ";
             comboBox_Nacionalidad.TextValue = " ";
-            comboBox_Nacionalidad.TextChanged += ComboBox_Nacionalidad_TextChanged_1;
+            comboBox_Nacionalidad.TextChanged += ComboBox_Nacionalidad_TextChanged;
             comboBox_Nacionalidad.KeyPress += ComboBox_Nacionalidad_KeyPress;
             // 
             // textBox_Ocupacion
@@ -437,7 +450,7 @@
             label_Ocupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Ocupacion.Location = new System.Drawing.Point(26, 186);
             label_Ocupacion.Name = "label_Ocupacion";
-            label_Ocupacion.Size = new System.Drawing.Size(117, 18);
+            label_Ocupacion.Size = new System.Drawing.Size(94, 15);
             label_Ocupacion.TabIndex = 76;
             label_Ocupacion.Text = "OCUPACION :";
             // 
@@ -472,7 +485,7 @@
             label_Apodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Apodo.Location = new System.Drawing.Point(308, 186);
             label_Apodo.Name = "label_Apodo";
-            label_Apodo.Size = new System.Drawing.Size(77, 18);
+            label_Apodo.Size = new System.Drawing.Size(62, 15);
             label_Apodo.TabIndex = 74;
             label_Apodo.Text = "APODO :";
             // 
@@ -482,7 +495,7 @@
             label_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Telefono.Location = new System.Drawing.Point(24, 392);
             label_Telefono.Name = "label_Telefono";
-            label_Telefono.Size = new System.Drawing.Size(107, 18);
+            label_Telefono.Size = new System.Drawing.Size(87, 15);
             label_Telefono.TabIndex = 73;
             label_Telefono.Text = "TELEFONO :";
             // 
@@ -497,25 +510,12 @@
             btn_Buscar.TabIndex = 51;
             btn_Buscar.UseVisualStyleBackColor = false;
             // 
-            // label_TITULO
-            // 
-            label_TITULO.AutoSize = true;
-            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
-            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(180, -10);
-            label_TITULO.Name = "label_TITULO";
-            label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            label_TITULO.Size = new System.Drawing.Size(279, 31);
-            label_TITULO.TabIndex = 50;
-            label_TITULO.Text = "DATOS IMPUTADO";
-            // 
             // checkBox_LegajoDetenido
             // 
             checkBox_LegajoDetenido.AutoSize = true;
             checkBox_LegajoDetenido.Location = new System.Drawing.Point(527, 457);
             checkBox_LegajoDetenido.Name = "checkBox_LegajoDetenido";
-            checkBox_LegajoDetenido.Size = new System.Drawing.Size(18, 17);
+            checkBox_LegajoDetenido.Size = new System.Drawing.Size(15, 14);
             checkBox_LegajoDetenido.TabIndex = 11;
             toolTip1.SetToolTip(checkBox_LegajoDetenido, "Marcar si requiere legajo");
             checkBox_LegajoDetenido.UseVisualStyleBackColor = true;
@@ -526,7 +526,7 @@
             checkBox_NotArt60.AutoSize = true;
             checkBox_NotArt60.Location = new System.Drawing.Point(349, 457);
             checkBox_NotArt60.Name = "checkBox_NotArt60";
-            checkBox_NotArt60.Size = new System.Drawing.Size(18, 17);
+            checkBox_NotArt60.Size = new System.Drawing.Size(15, 14);
             checkBox_NotArt60.TabIndex = 10;
             toolTip1.SetToolTip(checkBox_NotArt60, "Marcar si requiere notificacion");
             checkBox_NotArt60.UseVisualStyleBackColor = true;
@@ -547,7 +547,7 @@
             label_NotArt60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_NotArt60.Location = new System.Drawing.Point(161, 454);
             label_NotArt60.Name = "label_NotArt60";
-            label_NotArt60.Size = new System.Drawing.Size(229, 20);
+            label_NotArt60.Size = new System.Drawing.Size(182, 16);
             label_NotArt60.TabIndex = 30;
             label_NotArt60.Text = "Notificación Art. 60 C.P.P.";
             // 
@@ -580,7 +580,7 @@
             label_CuerpoEntero.AutoSize = true;
             label_CuerpoEntero.Location = new System.Drawing.Point(449, 665);
             label_CuerpoEntero.Name = "label_CuerpoEntero";
-            label_CuerpoEntero.Size = new System.Drawing.Size(123, 20);
+            label_CuerpoEntero.Size = new System.Drawing.Size(98, 15);
             label_CuerpoEntero.TabIndex = 12;
             label_CuerpoEntero.Text = "CUERPO ENTERO";
             // 
@@ -589,7 +589,7 @@
             label_PerfilIzquierdo.AutoSize = true;
             label_PerfilIzquierdo.Location = new System.Drawing.Point(310, 665);
             label_PerfilIzquierdo.Name = "label_PerfilIzquierdo";
-            label_PerfilIzquierdo.Size = new System.Drawing.Size(133, 20);
+            label_PerfilIzquierdo.Size = new System.Drawing.Size(105, 15);
             label_PerfilIzquierdo.TabIndex = 11;
             label_PerfilIzquierdo.Text = "PERFIL IZQUIERDO";
             // 
@@ -598,7 +598,7 @@
             label1_PerfilDerecho.AutoSize = true;
             label1_PerfilDerecho.Location = new System.Drawing.Point(171, 665);
             label1_PerfilDerecho.Name = "label1_PerfilDerecho";
-            label1_PerfilDerecho.Size = new System.Drawing.Size(123, 20);
+            label1_PerfilDerecho.Size = new System.Drawing.Size(98, 15);
             label1_PerfilDerecho.TabIndex = 10;
             label1_PerfilDerecho.Text = "PERFIL DERECHO";
             // 
@@ -607,7 +607,7 @@
             label_Frente.AutoSize = true;
             label_Frente.Location = new System.Drawing.Point(54, 665);
             label_Frente.Name = "label_Frente";
-            label_Frente.Size = new System.Drawing.Size(60, 20);
+            label_Frente.Size = new System.Drawing.Size(47, 15);
             label_Frente.TabIndex = 9;
             label_Frente.Text = "FRENTE";
             // 
@@ -676,7 +676,7 @@
             label_ParaLegajoImputado.Location = new System.Drawing.Point(127, 491);
             label_ParaLegajoImputado.Name = "label_ParaLegajoImputado";
             label_ParaLegajoImputado.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label_ParaLegajoImputado.Size = new System.Drawing.Size(377, 35);
+            label_ParaLegajoImputado.Size = new System.Drawing.Size(319, 30);
             label_ParaLegajoImputado.TabIndex = 16;
             label_ParaLegajoImputado.Text = "PARA LEGAJO DE IMPUTADO";
             // 
@@ -686,7 +686,7 @@
             label_Nacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nacionalidad.Location = new System.Drawing.Point(247, 138);
             label_Nacionalidad.Name = "label_Nacionalidad";
-            label_Nacionalidad.Size = new System.Drawing.Size(138, 18);
+            label_Nacionalidad.Size = new System.Drawing.Size(114, 15);
             label_Nacionalidad.TabIndex = 14;
             label_Nacionalidad.Text = "NACIONALIDAD :";
             // 
@@ -819,7 +819,7 @@
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(28, 238);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(109, 18);
+            label_Localidad.Size = new System.Drawing.Size(90, 15);
             label_Localidad.TabIndex = 7;
             label_Localidad.Text = "LOCALIDAD :";
             // 
@@ -829,7 +829,7 @@
             label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Domicilio.Location = new System.Drawing.Point(29, 212);
             label_Domicilio.Name = "label_Domicilio";
-            label_Domicilio.Size = new System.Drawing.Size(103, 18);
+            label_Domicilio.Size = new System.Drawing.Size(86, 15);
             label_Domicilio.TabIndex = 5;
             label_Domicilio.Text = "DOMICILIO :";
             // 
@@ -839,7 +839,7 @@
             label_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Edad.Location = new System.Drawing.Point(26, 134);
             label_Edad.Name = "label_Edad";
-            label_Edad.Size = new System.Drawing.Size(63, 18);
+            label_Edad.Size = new System.Drawing.Size(52, 15);
             label_Edad.TabIndex = 4;
             label_Edad.Text = "EDAD :";
             // 
@@ -849,7 +849,7 @@
             label_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_FechaNacimiento.Location = new System.Drawing.Point(237, 108);
             label_FechaNacimiento.Name = "label_FechaNacimiento";
-            label_FechaNacimiento.Size = new System.Drawing.Size(180, 18);
+            label_FechaNacimiento.Size = new System.Drawing.Size(147, 15);
             label_FechaNacimiento.TabIndex = 3;
             label_FechaNacimiento.Text = "FECHA NACIMIENTO :";
             // 
@@ -859,7 +859,7 @@
             label_Dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dni.Location = new System.Drawing.Point(28, 108);
             label_Dni.Name = "label_Dni";
-            label_Dni.Size = new System.Drawing.Size(46, 18);
+            label_Dni.Size = new System.Drawing.Size(39, 15);
             label_Dni.TabIndex = 2;
             label_Dni.Text = "DNI :";
             // 
@@ -869,7 +869,7 @@
             label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nombre.Location = new System.Drawing.Point(27, 78);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new System.Drawing.Size(91, 18);
+            label_Nombre.Size = new System.Drawing.Size(75, 15);
             label_Nombre.TabIndex = 1;
             label_Nombre.Text = "NOMBRE :";
             // 
@@ -881,16 +881,17 @@
             label_CircunstanciasPersonales.Location = new System.Drawing.Point(97, 30);
             label_CircunstanciasPersonales.Name = "label_CircunstanciasPersonales";
             label_CircunstanciasPersonales.Padding = new System.Windows.Forms.Padding(30, 5, 30, 5);
-            label_CircunstanciasPersonales.Size = new System.Drawing.Size(416, 35);
+            label_CircunstanciasPersonales.Size = new System.Drawing.Size(349, 30);
             label_CircunstanciasPersonales.TabIndex = 0;
             label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
             // 
             // AgregarDatosPersonalesImputado
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(616, 844);
             Controls.Add(panel1);
+            Controls.Add(label_TITULO);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             KeyPreview = true;
             MaximizeBox = false;
@@ -900,6 +901,7 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "CIRCUNSTANCIAS PERSONALES  IMPUTADO";
             Load += AgregarDatosPersonales_Load;
+            Controls.SetChildIndex(label_TITULO, 0);
             Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

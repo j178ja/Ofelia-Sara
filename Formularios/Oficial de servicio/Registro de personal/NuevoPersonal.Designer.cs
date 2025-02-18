@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoPersonal));
             panel1 = new System.Windows.Forms.Panel();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
             btn_Limpiar = new System.Windows.Forms.Button();
             btn_Guardar = new System.Windows.Forms.Button();
+            label_TITULO = new System.Windows.Forms.Label();
             panel_Destino = new Controles.General.PanelConBordeNeon();
             panel_Detalle_Destino = new System.Windows.Forms.Panel();
             btn_AmpliarReducir_DESTINO = new System.Windows.Forms.Button();
@@ -112,8 +112,6 @@
             btn_AgregarPersonal = new System.Windows.Forms.Button();
             textBox_NumeroLegajo = new Controles.General.CustomTextBox();
             lbl_Legajo = new System.Windows.Forms.Label();
-            label_TITULO = new System.Windows.Forms.Label();
-            toolTip1 = new System.Windows.Forms.ToolTip(components);
             panel1.SuspendLayout();
             panel_ControlesInferiores.SuspendLayout();
             panel_Destino.SuspendLayout();
@@ -137,7 +135,7 @@
             panel1.Controls.Add(btn_AgregarPersonal);
             panel1.Controls.Add(textBox_NumeroLegajo);
             panel1.Controls.Add(lbl_Legajo);
-            panel1.Location = new System.Drawing.Point(23, 17);
+            panel1.Location = new System.Drawing.Point(23, 25);
             panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(722, 1010);
@@ -178,6 +176,21 @@
             btn_Guardar.TabIndex = 39;
             btn_Guardar.UseVisualStyleBackColor = false;
             btn_Guardar.Click += Btn_Guardar_Click;
+            // 
+            // label_TITULO
+            // 
+            label_TITULO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(188, 13);
+            label_TITULO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(35, 0, 35, 0);
+            label_TITULO.Size = new System.Drawing.Size(391, 24);
+            label_TITULO.TabIndex = 32;
+            label_TITULO.Text = "REGISTRAR NUEVO PERSONAL";
             // 
             // panel_Destino
             // 
@@ -251,6 +264,7 @@
             textBox_PartidoDependencia.TabIndex = 150;
             textBox_PartidoDependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_PartidoDependencia.TextValue = "";
+            textBox_PartidoDependencia.Whidth = 0;
             // 
             // label_Partido
             // 
@@ -334,6 +348,7 @@
             textBox_LocalidadDependencia.TabIndex = 145;
             textBox_LocalidadDependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_LocalidadDependencia.TextValue = "";
+            textBox_LocalidadDependencia.Whidth = 0;
             // 
             // textBox_DomicilioDependencia
             // 
@@ -357,6 +372,7 @@
             textBox_DomicilioDependencia.TabIndex = 144;
             textBox_DomicilioDependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_DomicilioDependencia.TextValue = "";
+            textBox_DomicilioDependencia.Whidth = 0;
             // 
             // label_Localidad
             // 
@@ -469,6 +485,7 @@
             textBox_ChalecoNumero.TabIndex = 153;
             textBox_ChalecoNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ChalecoNumero.TextValue = "";
+            textBox_ChalecoNumero.Whidth = 0;
             // 
             // label_ChalecoNumero
             // 
@@ -504,6 +521,7 @@
             textBox_ChalecoModelo.TabIndex = 151;
             textBox_ChalecoModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ChalecoModelo.TextValue = "";
+            textBox_ChalecoModelo.Whidth = 0;
             // 
             // label_ChalecoModelo
             // 
@@ -539,6 +557,7 @@
             textBox_ChalecoMarca.TabIndex = 149;
             textBox_ChalecoMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ChalecoMarca.TextValue = "";
+            textBox_ChalecoMarca.Whidth = 0;
             // 
             // label_ChalecoMarca
             // 
@@ -575,6 +594,7 @@
             textBox_ArmaNumero.TabIndex = 147;
             textBox_ArmaNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ArmaNumero.TextValue = "";
+            textBox_ArmaNumero.Whidth = 0;
             // 
             // label_ArmaNumero
             // 
@@ -610,6 +630,7 @@
             textBox_ArmaModelo.TabIndex = 145;
             textBox_ArmaModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ArmaModelo.TextValue = "";
+            textBox_ArmaModelo.Whidth = 0;
             // 
             // label_ArmaModelo
             // 
@@ -645,6 +666,7 @@
             textBox_ArmaMarca.TabIndex = 143;
             textBox_ArmaMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ArmaMarca.TextValue = "";
+            textBox_ArmaMarca.Whidth = 0;
             // 
             // label_ArmaMarca
             // 
@@ -773,6 +795,7 @@
             textBox_AntiguedadMeses.TabIndex = 129;
             textBox_AntiguedadMeses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_AntiguedadMeses.TextValue = "";
+            textBox_AntiguedadMeses.Whidth = 0;
             // 
             // label_Años
             // 
@@ -806,6 +829,7 @@
             textBox_AntiguedadAños.TabIndex = 127;
             textBox_AntiguedadAños.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_AntiguedadAños.TextValue = "";
+            textBox_AntiguedadAños.Whidth = 0;
             // 
             // label_Antiguedad
             // 
@@ -840,6 +864,7 @@
             textBox_Funcion.TabIndex = 124;
             textBox_Funcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Funcion.TextValue = "";
+            textBox_Funcion.Whidth = 0;
             // 
             // label_Funcion
             // 
@@ -1094,6 +1119,7 @@
             textBox_Apellido.TabIndex = 176;
             textBox_Apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Apellido.TextValue = "";
+            textBox_Apellido.Whidth = 0;
             // 
             // label_Apellido
             // 
@@ -1163,6 +1189,7 @@
             textBox_PartidoPnal.TabIndex = 171;
             textBox_PartidoPnal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_PartidoPnal.TextValue = "";
+            textBox_PartidoPnal.Whidth = 0;
             // 
             // label_PartidoPnal
             // 
@@ -1220,6 +1247,7 @@
             textBox_LocalidadPnal.TabIndex = 168;
             textBox_LocalidadPnal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_LocalidadPnal.TextValue = "";
+            textBox_LocalidadPnal.Whidth = 0;
             // 
             // label_LocalidadPnal
             // 
@@ -1255,6 +1283,7 @@
             textBox_DomicilioPnal.TabIndex = 166;
             textBox_DomicilioPnal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_DomicilioPnal.TextValue = "";
+            textBox_DomicilioPnal.Whidth = 0;
             // 
             // label_Domicilio
             // 
@@ -1318,6 +1347,7 @@
             textBox_LugarNacimiento.TabIndex = 155;
             textBox_LugarNacimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_LugarNacimiento.TextValue = "";
+            textBox_LugarNacimiento.Whidth = 0;
             // 
             // label_LugarNacimiento
             // 
@@ -1397,6 +1427,7 @@
             textBox_Edad.TabIndex = 154;
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
+            textBox_Edad.Whidth = 0;
             textBox_Edad.KeyPress += SoloNumeros_KeyPress;
             // 
             // textBox_Dni
@@ -1422,6 +1453,7 @@
             textBox_Dni.TabIndex = 153;
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
+            textBox_Dni.Whidth = 0;
             textBox_Dni.KeyPress += SoloNumeros_KeyPress;
             textBox_Dni.Leave += TextBox_Dni_Leave;
             // 
@@ -1447,6 +1479,7 @@
             textBox_Nombre.TabIndex = 152;
             textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Nombre.TextValue = "";
+            textBox_Nombre.Whidth = 0;
             // 
             // label_Edad
             // 
@@ -1505,7 +1538,6 @@
             btn_AgregarPersonal.Size = new System.Drawing.Size(18, 27);
             btn_AgregarPersonal.TabIndex = 149;
             btn_AgregarPersonal.Text = "+";
-            toolTip1.SetToolTip(btn_AgregarPersonal, "Buscar por legajo policial");
             btn_AgregarPersonal.UseVisualStyleBackColor = false;
             btn_AgregarPersonal.Click += Btn_AgregarPersonal_Click;
             // 
@@ -1532,6 +1564,7 @@
             textBox_NumeroLegajo.TabIndex = 34;
             textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
+            textBox_NumeroLegajo.Whidth = 0;
             textBox_NumeroLegajo.TextChanged += TextBox_NumeroLegajo_TextChanged;
             textBox_NumeroLegajo.KeyPress += SoloNumeros_KeyPress;
             // 
@@ -1545,21 +1578,6 @@
             lbl_Legajo.Size = new System.Drawing.Size(142, 16);
             lbl_Legajo.TabIndex = 33;
             lbl_Legajo.Text = "LEGAJO POLICIAL :";
-            // 
-            // label_TITULO
-            // 
-            label_TITULO.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            label_TITULO.AutoSize = true;
-            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
-            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(168, 6);
-            label_TITULO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label_TITULO.Name = "label_TITULO";
-            label_TITULO.Padding = new System.Windows.Forms.Padding(35, 0, 35, 0);
-            label_TITULO.Size = new System.Drawing.Size(391, 24);
-            label_TITULO.TabIndex = 32;
-            label_TITULO.Text = "REGISTRAR NUEVO PERSONAL";
             // 
             // NuevoPersonal
             // 
@@ -1608,7 +1626,6 @@
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_NumeroLegajo;
         private System.Windows.Forms.Label lbl_Legajo;
         private System.Windows.Forms.Label label_TITULO;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btn_AgregarPersonal;
         private Ofelia_Sara.Controles.General.PanelConBordeNeon panel_DatosPersonales;
         private System.Windows.Forms.Label label_DatosPersonales;
