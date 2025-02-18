@@ -498,39 +498,37 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// <param name="e"></param>
         private void Btn_Calendario_Click(object sender, EventArgs e)
         {
-            using (var calendarForm = new CALENDARIO())
+            using var calendarForm = new CALENDARIO();
+            calendarForm.ControlInvocador = this;
+            // Determinar si el botón está dentro de un control llamado "dateTimePicker_Antiguedad"
+            Control currentParent = this;
+            while (currentParent != null)
             {
-                calendarForm.ControlInvocador = this;
-                // Determinar si el botón está dentro de un control llamado "dateTimePicker_Antiguedad"
-                Control currentParent = this;
-                while (currentParent != null)
+                // Verificar si el padre es el control deseado
+                if (currentParent.Name == "dateTimePicker_Antiguedad")
                 {
-                    // Verificar si el padre es el control deseado
-                    if (currentParent.Name == "dateTimePicker_Antiguedad")
-                    {
-                        calendarForm.Text = "FECHA DE INGRESO"; // Cambiar el título
-                        break;
-                    }
-                    currentParent = currentParent.Parent; // Subir en la jerarquía
+                    calendarForm.Text = "FECHA DE INGRESO"; // Cambiar el título
+                    break;
                 }
+                currentParent = currentParent.Parent; // Subir en la jerarquía
+            }
 
-                // Posicionar el formulario debajo del control
-                Point parentPosition = this.Parent.PointToScreen(this.Location);
-                int formX = parentPosition.X + (this.Width / 2) - (calendarForm.Width / 2);
-                int formY = parentPosition.Y + this.Height + 3;
+            // Posicionar el formulario debajo del control
+            Point parentPosition = this.Parent.PointToScreen(this.Location);
+            int formX = parentPosition.X + (this.Width / 2) - (calendarForm.Width / 2);
+            int formY = parentPosition.Y + this.Height + 3;
 
-                calendarForm.StartPosition = FormStartPosition.Manual;
-                calendarForm.Location = new Point(formX, formY);
+            calendarForm.StartPosition = FormStartPosition.Manual;
+            calendarForm.Location = new Point(formX, formY);
 
-                // Mostrar el formulario y manejar la selección
-                if (calendarForm.ShowDialog() == DialogResult.OK)
-                {
-                    DateTime selectedDate = calendarForm.SelectedDate;
+            // Mostrar el formulario y manejar la selección
+            if (calendarForm.ShowDialog() == DialogResult.OK)
+            {
+                DateTime selectedDate = calendarForm.SelectedDate;
 
-                    textBox_DateDIA.TextValue = selectedDate.Day.ToString("00");
-                    textBox_DateMES.TextValue = selectedDate.Month.ToString("00");
-                    textBox_DateAÑO.TextValue = selectedDate.Year.ToString();
-                }
+                textBox_DateDIA.TextValue = selectedDate.Day.ToString("00");
+                textBox_DateMES.TextValue = selectedDate.Month.ToString("00");
+                textBox_DateAÑO.TextValue = selectedDate.Year.ToString();
             }
         }
 
@@ -577,8 +575,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
 
 
-       
-        //---------------------------------------------------------------------------
+   
 
         private void ManejarAutocompletadoYNavegacion(object sender, KeyEventArgs e)
         {

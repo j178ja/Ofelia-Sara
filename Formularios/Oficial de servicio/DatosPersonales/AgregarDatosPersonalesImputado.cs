@@ -14,13 +14,20 @@ using Ofelia_Sara.Controles.Controles.Tooltip;
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 {
-
+    /// <summary>
+    /// formulario para agregar circunstancias personales de imputados y familiares, asi como tamb imagenes
+    /// </summary>
     public partial class AgregarDatosPersonalesImputado : BaseForm
     {
-
+        #region VARIABLES
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Email;
+        // Variable para almacenar la posición original
+        private Point originalPosition;
+        #endregion
+
+        #region PROPIEDADES PUBLICAS
         // Propiedad pública para establecer el texto del TextBox
         public string TextoNombre
         {
@@ -30,7 +37,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         // Definir el evento personalizado
         public event Action<string> ImputadoTextChanged;
-        //-------------------------------------------------------------------
+        #endregion
+
+        #region CONSTRUCTOR
         public AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
@@ -54,7 +63,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
         }
-        //-------------------------------------------------------------------------------
+        #endregion
+
+        #region LOAD
         private void AgregarDatosPersonales_Load(object sender, EventArgs e)
         {
 
@@ -121,9 +132,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
         }
+        #endregion
 
-        //-------------------------------------------------------------------------------------
-        //-----METODO BANDERA PARA QUE NO SE MUESTRE MENSAJE DE ADVERTENCIA CUANDO SE LIMPIA TEXTBOX AÑO DE FECHA DE NACIEMIENTO
+      
+        /// <summary>
+        /// METODO BANDERA PARA QUE NO SE MUESTRE MENSAJE DE ADVERTENCIA CUANDO SE LIMPIA TEXTBOX AÑO DE FECHA DE NACIEMIENTO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgregarDatosPersonales_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Llamar al método HandleFormClosing en la instancia de CustomDateTextBox
@@ -133,8 +149,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             //}
         }
 
-        //-----------------------------------------------------------------------------------
-        //----PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX-------------
+       
+        /// <summary>
+        /// PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX
+        /// </summary>
         private void ActualizarControlesPictureDOM()
         {
             // Verifica si TextoDomicilio y localidad tienen texto
@@ -149,7 +167,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         }
 
-        private void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
+        private static void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
         {
             if (habilitar)
             {
@@ -181,34 +199,37 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 }
             }
         }
-        //---------------------------------------------------------------------
-        //Eventos para cargar imagenes en los pictureBox
+     
+        /// <summary>
+        /// Eventos para cargar imagenes en los pictureBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null && pictureBox.Enabled)
+            if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                using OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    try
                     {
-                        try
-                        {
-                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
-                        }
-                        catch (Exception ex)
-                        {
-                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                        }
+                        pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
             }
         }
-        //----------------------------------------------------
 
-        //-----------------------------------------------------------------------------
-        //-------ARRASTRAR IMAGEN A CADA PICKTUREBOX--------------------------------
+        /// <summary>
+        /// ARRASTRAR IMAGEN A CADA PICKTUREBOX
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
             // Verifica si el archivo arrastrado es una imagen
@@ -223,8 +244,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Effect = DragDropEffects.None;
             }
         }
-        //-----------------------------------------------------------------------------
-        //-------EVENTO SOLTAR IMAGEN EN CADA PICKTUREBOX--------------------------------
+     
+        /// <summary>
+        /// EVENTO SOLTAR IMAGEN EN CADA PICKTUREBOX
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             // Obtiene el PictureBox que disparó el evento
@@ -257,8 +282,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 pictureBox.Image = imagen;
             }
         }
-        //---------------------------------------------------------------------
-        //evento para que si se completa control domicilio y localidad se habiliten los pickture
+       
+        /// <summary>
+        /// evento para que si se completa control domicilio y localidad se habiliten los pickture
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Domicilio_TextChanged(object sender, EventArgs e)
         {
             ActualizarControlesPictureDOM();
@@ -312,7 +341,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
             }
         }
-        //------------limitar textBox_Edad a 2 digitos--------------------------
+       
+        /// <summary>
+        /// limitar textBox_Edad a 2 digitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -339,8 +373,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 textBox_Edad.Clear();
             }
         }
-        //---------------------------------------------------------------------
-        //------------limitar textBox_Dni a 8 digitos--------------------------
+       
+        /// <summary>
+        /// limitar textBox_Dni a 8 digitos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
@@ -424,7 +462,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        //-----METODO PARA HABILITAR FOTOS DEL LEGAJO---------------
+       
+        /// <summary>
+        /// METODO PARA HABILITAR FOTOS DEL LEGAJO
+        /// </summary>
         // Método para asociar los eventos Paint
         private void AsociarEventosPaint()
         {
@@ -434,7 +475,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_CuerpoEntero.Paint += PictureBox_Paint;
         }
 
-        // Método para actualizar el estado de los PictureBox
+        
+        /// <summary>
+        /// actualizar el estado de los PictureBox
+        /// </summary>
         private void ActualizarControlesPicture()
         {
             pictureBox_Frente.Enabled = false;
@@ -462,8 +506,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarPictureBox(pictureBox_CuerpoEntero, isChecked);
         }
 
-        //-------------------------------------------------------------------------
-        //--Para habilitar check y modificar label
+     
+        /// <summary>
+        /// Para habilitar check y modificar label
+        /// </summary>
         private void ActualizarEstado()
         {
             // Verifica si textBox_Nombre y textBox_Dni no están vacíos ni solo con espacios
@@ -482,7 +528,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             checkBox_LegajoDetenido.Enabled = esTextoValido;
             checkBox_LegajoDetenido.BackColor = esTextoValido ? Color.Transparent : Color.Tomato;
         }
-        // Método para actualizar el textBox2 en tiempo real
+       
+        /// <summary>
+        /// para actualizar el textBox2 en tiempo real
+        /// </summary>
+        /// <param name="text"></param>
         public void UpdateImputadoTextBox(string text)
         {
             textBox_Nombre.TextValue = text;
@@ -494,12 +544,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Asegura que el cursor esté al final del texto
             textBox_Nombre.SelectionStart = textBox_Nombre.TextValue.Length;
 
-            if (ImputadoTextChanged != null)
-            {
-                ImputadoTextChanged(textBox_Nombre.TextValue);
-            }
+            ImputadoTextChanged?.Invoke(textBox_Nombre.TextValue);
         }
-        //________________________________________________________________________________
+    
 
 
         private void TextBox_Ocupacion_TextChanged(object sender, EventArgs e)
@@ -615,8 +662,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         private void TextBox_Apodo_TextChanged(object sender, EventArgs e)
         {
             // Convierte el texto a mayúsculas
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
+            if (sender is TextBox textBox)
             {
                 // Guarda la posición del cursor
                 int cursorPosition = textBox.SelectionStart;
@@ -662,9 +708,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
 
         }
-        //______________________________________________________________
-        // Variable para almacenar la posición original
-        private Point originalPosition;
+      
+       
         private void Btn_AgregarConcubina_Click(object sender, EventArgs e)
         {
 
@@ -703,27 +748,56 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Restaurar la posición original del formulario
             this.Location = originalPosition;
         }
-        //--------------------------------------------------------------------
-        // Evento FormClosing para verificar si los datos están guardados antes de cerrar
+
+       
+        /// <summary>
+        /// para verificar si los datos están guardados antes de cerrar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgregarDatosPersonalesConcubina_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del IMPUTADO. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                using MensajeGeneral mensaje = new MensajeGeneral("No has guardado los datos del IMPUTADO. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
+
+
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
                 {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                    e.Cancel = true; // Cancelar el cierre del formulario
                 }
             }
         }
 
+        //private void SetupBotonDeslizable()
+        //{
+        //    // Configurar el delegado de validación en el control BotonDeslizable
+        //    botonDeslizable_StarPlana.ValidarCampos = () =>
+        //    {
+        //        // Lógica de validación
+        //        bool camposIncompletos =
+        //            string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
+        //            string.IsNullOrWhiteSpace(textBox_Dni.TextValue) ||
+        //                !dateTimePicker_FechaNacimiento.HasValue();
+
+        //        if (camposIncompletos)
+        //        {
+        //            // Mostrar mensaje de advertencia si los campos están incompletos
+        //            MensajeGeneral.Mostrar("Debe completar los campos NOMBRE, DNI y FECHA DE NACIMIENTO para poder solicitar plana del ciudadano", MensajeGeneral.TipoMensaje.Advertencia);
+        //            return false; // Retorna false si los campos están incompletos
+        //        }
+        //        else
+        //        {
+        //            // Mostrar mensaje de éxito si los campos están completos
+        //            MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario IPP se enviara automaticamente la solicitud de plana" +
+        //                "", MensajeGeneral.TipoMensaje.Exito);
+        //            return true; // Retorna true si los campos están completos
+        //        }
+        //    };
+        //}
         private void SetupBotonDeslizable()
         {
             // Configurar el delegado de validación en el control BotonDeslizable
@@ -733,19 +807,40 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 bool camposIncompletos =
                     string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
                     string.IsNullOrWhiteSpace(textBox_Dni.TextValue) ||
-                        !dateTimePicker_FechaNacimiento.HasValue();
+                    !dateTimePicker_FechaNacimiento.HasValue();
 
                 if (camposIncompletos)
                 {
-                    // Mostrar mensaje de advertencia si los campos están incompletos
-                    MensajeGeneral.Mostrar("Debe completar los campos NOMBRE, DNI y FECHA DE NACIMIENTO para poder solicitar plana del ciudadano", MensajeGeneral.TipoMensaje.Advertencia);
+                    // Obtener el control invocador (en este caso, el control que activó la validación)
+                    Control controlInvocador = botonDeslizable_StarPlana; // Aquí puedes usar el control específico que desees
+
+                    // Calcular la posición debajo del control invocador
+                    Point controlPosition = controlInvocador.PointToScreen(Point.Empty);
+                    using var mensajeForm = new MensajeGeneral("Debe completar los campos NOMBRE, DNI y FECHA DE NACIMIENTO para poder solicitar plana del ciudadano", MensajeGeneral.TipoMensaje.Advertencia);
+                    int messageX = controlPosition.X + (controlInvocador.Width / 2) - (mensajeForm.Width / 2);
+                    int messageY = controlPosition.Y + controlInvocador.Height + 5; // 5px debajo del control
+
+                    mensajeForm.StartPosition = FormStartPosition.Manual;
+                    mensajeForm.Location = new Point(messageX, messageY);
+                    mensajeForm.ShowDialog();
+
                     return false; // Retorna false si los campos están incompletos
                 }
                 else
                 {
-                    // Mostrar mensaje de éxito si los campos están completos
-                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario IPP se enviara automaticamente la solicitud de plana" +
-                        "", MensajeGeneral.TipoMensaje.Exito);
+                    // Obtener el control invocador para mostrar el mensaje
+                    Control controlInvocador = botonDeslizable_StarPlana;
+
+                    // Calcular la posición debajo del control invocador
+                    Point controlPosition = controlInvocador.PointToScreen(Point.Empty);
+                    using var mensajeForm = new MensajeGeneral("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario IPP se enviará automáticamente la solicitud de plana", MensajeGeneral.TipoMensaje.Exito);
+                    int messageX = controlPosition.X + (controlInvocador.Width / 2) - (mensajeForm.Width / 2);
+                    int messageY = controlPosition.Y + controlInvocador.Height + 5; // 5px debajo del control
+
+                    mensajeForm.StartPosition = FormStartPosition.Manual;
+                    mensajeForm.Location = new Point(messageX, messageY);
+                    mensajeForm.ShowDialog();
+
                     return true; // Retorna true si los campos están completos
                 }
             };
