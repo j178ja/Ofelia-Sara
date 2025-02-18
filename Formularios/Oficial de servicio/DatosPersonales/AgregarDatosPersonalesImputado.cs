@@ -34,7 +34,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
-
+           
             // Asigna el evento TextChanged de textBox_Nombre a ActualizarEstado
             textBox_Nombre.TextChanged += (sender, e) => ActualizarEstado();
 

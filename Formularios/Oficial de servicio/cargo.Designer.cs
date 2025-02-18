@@ -48,7 +48,6 @@
             panel_SeleccionVisu = new System.Windows.Forms.Panel();
             botonDeslizable_Visu = new Controles.General.BotonDeslizable();
             label_Not247 = new System.Windows.Forms.Label();
-            pictureBox_CheckLegajoVehicular = new System.Windows.Forms.PictureBox();
             checkBox_LegajoVehicular = new System.Windows.Forms.CheckBox();
             label_LegajoVehicular = new System.Windows.Forms.Label();
             panel_Instruccion = new Controles.General.PanelConBordeNeon();
@@ -96,7 +95,6 @@
             panel_Descripcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Descripcion).BeginInit();
             panel_SeleccionVisu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckLegajoVehicular).BeginInit();
             panel_Instruccion.SuspendLayout();
             panel_DatosInstruccion.SuspendLayout();
             panel_Ipp.SuspendLayout();
@@ -112,7 +110,7 @@
             label_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Cargo.Location = new System.Drawing.Point(105, 23);
             label_Cargo.Name = "label_Cargo";
-            label_Cargo.Size = new System.Drawing.Size(80, 16);
+            label_Cargo.Size = new System.Drawing.Size(102, 20);
             label_Cargo.TabIndex = 0;
             label_Cargo.Text = "CARGO N°";
             // 
@@ -147,7 +145,7 @@
             label_Barra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label_Barra.Location = new System.Drawing.Point(295, 25);
             label_Barra.Name = "label_Barra";
-            label_Barra.Size = new System.Drawing.Size(11, 16);
+            label_Barra.Size = new System.Drawing.Size(14, 20);
             label_Barra.TabIndex = 16;
             label_Barra.Text = "/";
             // 
@@ -325,7 +323,7 @@
             label_Descripcion.Location = new System.Drawing.Point(20, 0);
             label_Descripcion.Name = "label_Descripcion";
             label_Descripcion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            label_Descripcion.Size = new System.Drawing.Size(283, 25);
+            label_Descripcion.Size = new System.Drawing.Size(346, 30);
             label_Descripcion.TabIndex = 17;
             label_Descripcion.Text = "DESCRIPCION DE LA MUESTRA";
             // 
@@ -333,7 +331,6 @@
             // 
             panel_SeleccionVisu.Controls.Add(botonDeslizable_Visu);
             panel_SeleccionVisu.Controls.Add(label_Not247);
-            panel_SeleccionVisu.Controls.Add(pictureBox_CheckLegajoVehicular);
             panel_SeleccionVisu.Controls.Add(checkBox_LegajoVehicular);
             panel_SeleccionVisu.Controls.Add(label_LegajoVehicular);
             panel_SeleccionVisu.Location = new System.Drawing.Point(26, 373);
@@ -362,18 +359,6 @@
             label_Not247.Text = "USAR VISU  ";
             label_Not247.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox_CheckLegajoVehicular
-            // 
-            pictureBox_CheckLegajoVehicular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_CheckLegajoVehicular.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox_CheckLegajoVehicular.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckLegajoVehicular.Location = new System.Drawing.Point(409, 3);
-            pictureBox_CheckLegajoVehicular.Name = "pictureBox_CheckLegajoVehicular";
-            pictureBox_CheckLegajoVehicular.Size = new System.Drawing.Size(26, 28);
-            pictureBox_CheckLegajoVehicular.TabIndex = 72;
-            pictureBox_CheckLegajoVehicular.TabStop = false;
-            pictureBox_CheckLegajoVehicular.Click += PictureBox_CheckLegajoVehicular_Click;
-            // 
             // checkBox_LegajoVehicular
             // 
             checkBox_LegajoVehicular.AutoSize = true;
@@ -383,7 +368,7 @@
             checkBox_LegajoVehicular.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
             checkBox_LegajoVehicular.Location = new System.Drawing.Point(409, 10);
             checkBox_LegajoVehicular.Name = "checkBox_LegajoVehicular";
-            checkBox_LegajoVehicular.Size = new System.Drawing.Size(15, 14);
+            checkBox_LegajoVehicular.Size = new System.Drawing.Size(18, 17);
             checkBox_LegajoVehicular.TabIndex = 70;
             checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
@@ -395,7 +380,7 @@
             label_LegajoVehicular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_LegajoVehicular.Location = new System.Drawing.Point(237, 8);
             label_LegajoVehicular.Name = "label_LegajoVehicular";
-            label_LegajoVehicular.Size = new System.Drawing.Size(166, 16);
+            label_LegajoVehicular.Size = new System.Drawing.Size(211, 20);
             label_LegajoVehicular.TabIndex = 71;
             label_LegajoVehicular.Text = "LEGAJO VEHICULAR   ";
             label_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -500,7 +485,7 @@
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(51, 158);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(70, 15);
+            label_Localidad.Size = new System.Drawing.Size(80, 18);
             label_Localidad.TabIndex = 82;
             label_Localidad.Text = "Localidad";
             // 
@@ -647,7 +632,7 @@
             lbl_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Dependencia.Location = new System.Drawing.Point(19, 240);
             lbl_Dependencia.Name = "lbl_Dependencia";
-            lbl_Dependencia.Size = new System.Drawing.Size(104, 15);
+            lbl_Dependencia.Size = new System.Drawing.Size(126, 18);
             lbl_Dependencia.TabIndex = 80;
             lbl_Dependencia.Text = "DEPENDENCIA";
             // 
@@ -691,7 +676,7 @@
             lbl_Fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Fecha.Location = new System.Drawing.Point(70, 266);
             lbl_Fecha.Name = "lbl_Fecha";
-            lbl_Fecha.Size = new System.Drawing.Size(51, 15);
+            lbl_Fecha.Size = new System.Drawing.Size(63, 18);
             lbl_Fecha.TabIndex = 79;
             lbl_Fecha.Text = "FECHA";
             // 
@@ -710,7 +695,7 @@
             lbl_Secretario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Secretario.Location = new System.Drawing.Point(30, 213);
             lbl_Secretario.Name = "lbl_Secretario";
-            lbl_Secretario.Size = new System.Drawing.Size(93, 15);
+            lbl_Secretario.Size = new System.Drawing.Size(114, 18);
             lbl_Secretario.TabIndex = 78;
             lbl_Secretario.Text = "SECRETARIO";
             // 
@@ -720,7 +705,7 @@
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label7.Location = new System.Drawing.Point(26, 184);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(95, 15);
+            label7.Size = new System.Drawing.Size(116, 18);
             label7.TabIndex = 77;
             label7.Text = "INSTRUCTOR";
             // 
@@ -730,7 +715,7 @@
             lbl_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Ufid.Location = new System.Drawing.Point(70, 133);
             lbl_Ufid.Name = "lbl_Ufid";
-            lbl_Ufid.Size = new System.Drawing.Size(51, 15);
+            lbl_Ufid.Size = new System.Drawing.Size(61, 18);
             lbl_Ufid.TabIndex = 76;
             lbl_Ufid.Text = "U.F.I.D";
             // 
@@ -740,7 +725,7 @@
             lbl_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Dr.Location = new System.Drawing.Point(225, 134);
             lbl_Dr.Name = "lbl_Dr";
-            lbl_Dr.Size = new System.Drawing.Size(26, 15);
+            lbl_Dr.Size = new System.Drawing.Size(31, 18);
             lbl_Dr.TabIndex = 75;
             lbl_Dr.Text = "Dr.";
             // 
@@ -858,7 +843,7 @@
             lbl_00.AutoSize = true;
             lbl_00.Location = new System.Drawing.Point(361, 7);
             lbl_00.Name = "lbl_00";
-            lbl_00.Size = new System.Drawing.Size(24, 15);
+            lbl_00.Size = new System.Drawing.Size(31, 20);
             lbl_00.TabIndex = 26;
             lbl_00.Text = "/00";
             // 
@@ -902,7 +887,7 @@
             lbl_Ipp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Ipp.Location = new System.Drawing.Point(59, 5);
             lbl_Ipp.Name = "lbl_Ipp";
-            lbl_Ipp.Size = new System.Drawing.Size(41, 15);
+            lbl_Ipp.Size = new System.Drawing.Size(49, 18);
             lbl_Ipp.TabIndex = 3;
             lbl_Ipp.Text = "l.P.P.";
             // 
@@ -946,7 +931,7 @@
             lbl_Caratula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Caratula.Location = new System.Drawing.Point(7, 4);
             lbl_Caratula.Name = "lbl_Caratula";
-            lbl_Caratula.Size = new System.Drawing.Size(76, 15);
+            lbl_Caratula.Size = new System.Drawing.Size(93, 18);
             lbl_Caratula.TabIndex = 4;
             lbl_Caratula.Text = "CARATULA";
             // 
@@ -1005,7 +990,7 @@
             lbl_Imputado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Imputado.Location = new System.Drawing.Point(42, 4);
             lbl_Imputado.Name = "lbl_Imputado";
-            lbl_Imputado.Size = new System.Drawing.Size(78, 15);
+            lbl_Imputado.Size = new System.Drawing.Size(94, 18);
             lbl_Imputado.TabIndex = 6;
             lbl_Imputado.Text = "lMPUTADO";
             // 
@@ -1061,7 +1046,7 @@
             lbl_Victima.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             lbl_Victima.Location = new System.Drawing.Point(61, 4);
             lbl_Victima.Name = "lbl_Victima";
-            lbl_Victima.Size = new System.Drawing.Size(60, 15);
+            lbl_Victima.Size = new System.Drawing.Size(72, 18);
             lbl_Victima.TabIndex = 5;
             lbl_Victima.Text = "VICTIMA";
             // 
@@ -1086,7 +1071,7 @@
             label_DatosInstruccion.Location = new System.Drawing.Point(23, 1);
             label_DatosInstruccion.Name = "label_DatosInstruccion";
             label_DatosInstruccion.Padding = new System.Windows.Forms.Padding(20, 3, 20, 5);
-            label_DatosInstruccion.Size = new System.Drawing.Size(260, 25);
+            label_DatosInstruccion.Size = new System.Drawing.Size(317, 30);
             label_DatosInstruccion.TabIndex = 32;
             label_DatosInstruccion.Text = "DATOS DE LA INSTRUCCIÓN";
             // 
@@ -1109,13 +1094,13 @@
             label_TITULO.Location = new System.Drawing.Point(73, 0);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            label_TITULO.Size = new System.Drawing.Size(299, 24);
+            label_TITULO.Size = new System.Drawing.Size(376, 29);
             label_TITULO.TabIndex = 34;
             label_TITULO.Text = "CARGOS PARA SECUESTROS";
             // 
             // Cargo
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(512, 737);
             Controls.Add(label_TITULO);
@@ -1140,7 +1125,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox_Descripcion).EndInit();
             panel_SeleccionVisu.ResumeLayout(false);
             panel_SeleccionVisu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckLegajoVehicular).EndInit();
             panel_Instruccion.ResumeLayout(false);
             panel_Instruccion.PerformLayout();
             panel_DatosInstruccion.ResumeLayout(false);
@@ -1208,7 +1192,6 @@
         private System.Windows.Forms.Panel panel_SeleccionVisu;
         private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_Visu;
         private System.Windows.Forms.Label label_Not247;
-        private System.Windows.Forms.PictureBox pictureBox_CheckLegajoVehicular;
         private System.Windows.Forms.CheckBox checkBox_LegajoVehicular;
         private System.Windows.Forms.Label label_LegajoVehicular;
         private Ofelia_Sara.Controles.General.PanelConBordeNeon panel_Descripcion;

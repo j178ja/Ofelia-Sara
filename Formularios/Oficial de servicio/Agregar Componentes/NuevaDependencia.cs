@@ -49,7 +49,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            pictureBox_CheckAgregarSellos.Visible = false;
+            
 
             dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
 
@@ -225,7 +225,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Verifica si el CheckBox está marcado
             if (checkBox_AgregarSellos.Checked)
             {
-                pictureBox_CheckAgregarSellos.Visible = true;
+                
                 // Guarda la posición actual del formulario principal
                 originalPosition = this.Location;
 

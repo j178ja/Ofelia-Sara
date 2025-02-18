@@ -136,7 +136,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
 
-            pictureBox_CheckLegajoVehicular.Visible = false;// para ocultar el check realizado
+           
 
             //.....................................................
             //// Guardar la altura original del panel
@@ -805,7 +805,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
         {
             // Manejar lógica para pictureBox_CheckRatificacion
-            pictureBox_CheckLegajoVehicular.Visible = false;
+        
             checkBox_LegajoVehicular.Visible = true;
             checkBox_LegajoVehicular.Checked = false;
         }
@@ -820,11 +820,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar si el CheckBox está marcado
             if (checkBox_LegajoVehicular.Checked)
             {
-                pictureBox_CheckLegajoVehicular.Visible = true;
-                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
-                pictureBox_CheckLegajoVehicular.Location = new Point(
-                    checkBox_LegajoVehicular.Location.X,
-                    checkBox_LegajoVehicular.Location.Y - 8);
+               ///
             }
         }
 

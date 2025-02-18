@@ -59,6 +59,5 @@
         private System.Windows.Forms.Label label_EstadoCivil;
         private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_StudRML;
         private System.Windows.Forms.Label label_StudRML;
-        private System.Windows.Forms.PictureBox pictureBox_CheckNotificacion258;
     }
 }

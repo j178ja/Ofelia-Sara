@@ -32,6 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesVictima()
         {
             InitializeComponent();
+            
             this.AutoScaleMode = AutoScaleMode.None;
 
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load);
@@ -85,7 +86,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDatosPersonalesVictima));
             panel1 = new Panel();
-            pictureBox_CheckNotificacion258 = new PictureBox();
             botonDeslizable_StudRML = new BotonDeslizable();
             label_StudRML = new Label();
             comboBox_EstadoCivil = new CustomComboBox();
@@ -125,7 +125,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_CircunstanciasPersonales = new Label();
             label_Titulo = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckNotificacion258).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Geoposicionamiento).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Domicilio).BeginInit();
             SuspendLayout();
@@ -133,7 +132,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(178, 213, 230);
-            panel1.Controls.Add(pictureBox_CheckNotificacion258);
             panel1.Controls.Add(botonDeslizable_StudRML);
             panel1.Controls.Add(label_StudRML);
             panel1.Controls.Add(comboBox_EstadoCivil);
@@ -177,18 +175,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             panel1.Name = "panel1";
             panel1.Size = new Size(460, 470);
             panel1.TabIndex = 2;
-            // 
-            // pictureBox_CheckNotificacion258
-            // 
-            pictureBox_CheckNotificacion258.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox_CheckNotificacion258.Cursor = Cursors.Hand;
-            pictureBox_CheckNotificacion258.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckNotificacion258.Location = new Point(189, 375);
-            pictureBox_CheckNotificacion258.Margin = new Padding(2);
-            pictureBox_CheckNotificacion258.Name = "pictureBox_CheckNotificacion258";
-            pictureBox_CheckNotificacion258.Size = new Size(21, 22);
-            pictureBox_CheckNotificacion258.TabIndex = 101;
-            pictureBox_CheckNotificacion258.TabStop = false;
             // 
             // botonDeslizable_StudRML
             // 
@@ -253,7 +239,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_EstadoCivil.Location = new Point(247, 134);
             label_EstadoCivil.Margin = new Padding(2, 0, 2, 0);
             label_EstadoCivil.Name = "label_EstadoCivil";
-            label_EstadoCivil.Size = new Size(88, 15);
+            label_EstadoCivil.Size = new Size(105, 18);
             label_EstadoCivil.TabIndex = 97;
             label_EstadoCivil.Text = "Estado civil :";
             // 
@@ -269,11 +255,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // 
             numeroTelefonicoControl1.AutoSize = true;
             numeroTelefonicoControl1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            numeroTelefonicoControl1.ControlWidth = 198;
+            numeroTelefonicoControl1.ControlWidth = 226;
             numeroTelefonicoControl1.Location = new Point(89, 320);
             numeroTelefonicoControl1.Margin = new Padding(4, 3, 4, 3);
             numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            numeroTelefonicoControl1.Size = new Size(198, 25);
+            numeroTelefonicoControl1.Size = new Size(226, 33);
             numeroTelefonicoControl1.TabIndex = 92;
             // 
             // dateTimePicker_FechaNacimiento
@@ -298,7 +284,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_agrGeo2.Location = new Point(54, 242);
             label_agrGeo2.Margin = new Padding(2, 0, 2, 0);
             label_agrGeo2.Name = "label_agrGeo2";
-            label_agrGeo2.Size = new Size(94, 15);
+            label_agrGeo2.Size = new Size(109, 18);
             label_agrGeo2.TabIndex = 84;
             label_agrGeo2.Text = "de domicilio :";
             // 
@@ -309,7 +295,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_agrGeo.Location = new Point(18, 226);
             label_agrGeo.Margin = new Padding(2, 0, 2, 0);
             label_agrGeo.Name = "label_agrGeo";
-            label_agrGeo.Size = new Size(195, 15);
+            label_agrGeo.Size = new Size(228, 18);
             label_agrGeo.TabIndex = 83;
             label_agrGeo.Text = "Agregar geoposicionamiento ";
             // 
@@ -320,7 +306,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_AgregarDomicilio.Location = new Point(14, 281);
             label_AgregarDomicilio.Margin = new Padding(2, 0, 2, 0);
             label_AgregarDomicilio.Name = "label_AgregarDomicilio";
-            label_AgregarDomicilio.Size = new Size(200, 15);
+            label_AgregarDomicilio.Size = new Size(231, 18);
             label_AgregarDomicilio.TabIndex = 82;
             label_AgregarDomicilio.Text = "Agregar imagen de domicilio :";
             // 
@@ -357,7 +343,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_LugarNacimiento.Location = new Point(20, 152);
             label_LugarNacimiento.Margin = new Padding(2, 0, 2, 0);
             label_LugarNacimiento.Name = "label_LugarNacimiento";
-            label_LugarNacimiento.Size = new Size(172, 15);
+            label_LugarNacimiento.Size = new Size(209, 18);
             label_LugarNacimiento.TabIndex = 81;
             label_LugarNacimiento.Text = "LUGAR DE NACIMIENTO :";
             // 
@@ -394,7 +380,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Ocupacion.Location = new Point(20, 131);
             label_Ocupacion.Margin = new Padding(2, 0, 2, 0);
             label_Ocupacion.Name = "label_Ocupacion";
-            label_Ocupacion.Size = new Size(94, 15);
+            label_Ocupacion.Size = new Size(117, 18);
             label_Ocupacion.TabIndex = 79;
             label_Ocupacion.Text = "OCUPACION :";
             // 
@@ -417,7 +403,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             checkBox_Notificacion258.Location = new Point(172, 381);
             checkBox_Notificacion258.Margin = new Padding(2);
             checkBox_Notificacion258.Name = "checkBox_Notificacion258";
-            checkBox_Notificacion258.Size = new Size(15, 14);
+            checkBox_Notificacion258.Size = new Size(18, 17);
             checkBox_Notificacion258.TabIndex = 11;
             checkBox_Notificacion258.UseVisualStyleBackColor = true;
             // 
@@ -428,7 +414,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Notificacion258.Location = new Point(16, 379);
             label_Notificacion258.Margin = new Padding(2, 0, 2, 0);
             label_Notificacion258.Name = "label_Notificacion258";
-            label_Notificacion258.Size = new Size(175, 15);
+            label_Notificacion258.Size = new Size(210, 18);
             label_Notificacion258.TabIndex = 76;
             label_Notificacion258.Text = "Notificacion Art 258 C.P.P.";
             // 
@@ -501,7 +487,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Email.Location = new Point(16, 343);
             label_Email.Margin = new Padding(2, 0, 2, 0);
             label_Email.Name = "label_Email";
-            label_Email.Size = new Size(56, 15);
+            label_Email.Size = new Size(66, 18);
             label_Email.TabIndex = 73;
             label_Email.Text = "EMAIL :";
             // 
@@ -512,7 +498,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Telefono.Location = new Point(16, 323);
             label_Telefono.Margin = new Padding(2, 0, 2, 0);
             label_Telefono.Name = "label_Telefono";
-            label_Telefono.Size = new Size(87, 15);
+            label_Telefono.Size = new Size(107, 18);
             label_Telefono.TabIndex = 71;
             label_Telefono.Text = "TELEFONO :";
             // 
@@ -553,7 +539,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Nacionalidad.Location = new Point(222, 113);
             label_Nacionalidad.Margin = new Padding(2, 0, 2, 0);
             label_Nacionalidad.Name = "label_Nacionalidad";
-            label_Nacionalidad.Size = new Size(114, 15);
+            label_Nacionalidad.Size = new Size(138, 18);
             label_Nacionalidad.TabIndex = 66;
             label_Nacionalidad.Text = "NACIONALIDAD :";
             // 
@@ -693,7 +679,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Localidad.Location = new Point(20, 195);
             label_Localidad.Margin = new Padding(2, 0, 2, 0);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new Size(90, 15);
+            label_Localidad.Size = new Size(109, 18);
             label_Localidad.TabIndex = 65;
             label_Localidad.Text = "LOCALIDAD :";
             // 
@@ -704,7 +690,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Domicilio.Location = new Point(20, 174);
             label_Domicilio.Margin = new Padding(2, 0, 2, 0);
             label_Domicilio.Name = "label_Domicilio";
-            label_Domicilio.Size = new Size(86, 15);
+            label_Domicilio.Size = new Size(103, 18);
             label_Domicilio.TabIndex = 62;
             label_Domicilio.Text = "DOMICILIO :";
             // 
@@ -715,7 +701,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Edad.Location = new Point(24, 111);
             label_Edad.Margin = new Padding(2, 0, 2, 0);
             label_Edad.Name = "label_Edad";
-            label_Edad.Size = new Size(52, 15);
+            label_Edad.Size = new Size(63, 18);
             label_Edad.TabIndex = 61;
             label_Edad.Text = "EDAD :";
             // 
@@ -726,7 +712,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_FechaNacimiento.Location = new Point(202, 90);
             label_FechaNacimiento.Margin = new Padding(2, 0, 2, 0);
             label_FechaNacimiento.Name = "label_FechaNacimiento";
-            label_FechaNacimiento.Size = new Size(147, 15);
+            label_FechaNacimiento.Size = new Size(180, 18);
             label_FechaNacimiento.TabIndex = 58;
             label_FechaNacimiento.Text = "FECHA NACIMIENTO :";
             // 
@@ -737,7 +723,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Dni.Location = new Point(22, 90);
             label_Dni.Margin = new Padding(2, 0, 2, 0);
             label_Dni.Name = "label_Dni";
-            label_Dni.Size = new Size(39, 15);
+            label_Dni.Size = new Size(46, 18);
             label_Dni.TabIndex = 56;
             label_Dni.Text = "DNI :";
             // 
@@ -748,7 +734,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Nombre.Location = new Point(22, 66);
             label_Nombre.Margin = new Padding(2, 0, 2, 0);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new Size(75, 15);
+            label_Nombre.Size = new Size(91, 18);
             label_Nombre.TabIndex = 54;
             label_Nombre.Text = "NOMBRE :";
             // 
@@ -761,7 +747,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_CircunstanciasPersonales.Margin = new Padding(2, 0, 2, 0);
             label_CircunstanciasPersonales.Name = "label_CircunstanciasPersonales";
             label_CircunstanciasPersonales.Padding = new Padding(24, 4, 24, 4);
-            label_CircunstanciasPersonales.Size = new Size(337, 28);
+            label_CircunstanciasPersonales.Size = new Size(404, 33);
             label_CircunstanciasPersonales.TabIndex = 52;
             label_CircunstanciasPersonales.Text = "CIRCUNSTANCIAS PERSONALES";
             // 
@@ -775,7 +761,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             label_Titulo.Margin = new Padding(2, 0, 2, 0);
             label_Titulo.Name = "label_Titulo";
             label_Titulo.Padding = new Padding(8, 0, 8, 0);
-            label_Titulo.Size = new Size(190, 25);
+            label_Titulo.Size = new Size(242, 31);
             label_Titulo.TabIndex = 51;
             label_Titulo.Text = "DATOS VICTIMA";
             // 
@@ -796,7 +782,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckNotificacion258).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Geoposicionamiento).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Domicilio).EndInit();
             ResumeLayout(false);

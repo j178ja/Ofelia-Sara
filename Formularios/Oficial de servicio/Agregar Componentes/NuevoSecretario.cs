@@ -36,7 +36,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             Color customBorderColor = Color.FromArgb(0, 154, 174);
             panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
 
-            pictureBox_CheckFirmaDigitalizada.Visible = false;
+          
 
             this.FormClosing += NuevoSecretario_FormClosing;
 
@@ -303,7 +303,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     pictureBox_FirmaDigitalizada.Tag = Color.LimeGreen; // Color del borde cuando está habilitado
                     pictureBox_FirmaDigitalizada.BackColor = SystemColors.ControlLight;
                     checkBox_AgregarFirma.Visible = false;
-                    pictureBox_CheckFirmaDigitalizada.Visible = true;
+                    
                 }
                 else
                 {
@@ -317,7 +317,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         }
         private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
         {
-            pictureBox_CheckFirmaDigitalizada.Visible = false;
+         
             checkBox_AgregarFirma.Visible = true;
             checkBox_AgregarFirma.Checked = false;
             pictureBox_FirmaDigitalizada.Enabled = false;

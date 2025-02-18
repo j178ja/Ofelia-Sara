@@ -50,9 +50,19 @@ namespace Ofelia_Sara.Formularios.General
             AjustarLabelEnPanel();// deberia traer los titulos al frente para que se vean completos
             InitializeComponent();
             InitializeFooterLinkLabel();
-            //ConfigurarCheckBoxesConImagen();
+            
         }
 
+        #region LOAD
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            ConfigurarCheckBoxesConImagen();
+            InitializeCustomCursors();
+         
+        }
+        #endregion
+
+        #region CURSORES
         /// <summary>
         /// Inicializa cursores personalizados.
         /// </summary>
@@ -80,7 +90,7 @@ namespace Ofelia_Sara.Formularios.General
                 Console.WriteLine($"Error cargando cursores: {ex.Message}");
             }
         }
-
+        #endregion
 
 
         /// <summary>
@@ -179,32 +189,43 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        #region CENTRAR TITULO
+
         /// <summary>
         /// METODO PARA TRAER LABEL TITULO AL FRENTE ----NO FUNCIONA CORRECTAMENTE
         /// </summary>   
         protected void AjustarLabelEnPanel()
         {
-            Panel panelTitulo = ObtenerPanelTitulo(); // Se obtiene el panel del formulario hijo
+            Panel panel1 = ObtenerPanelTitulo(); // Se obtiene el panel del formulario hijo
 
-            if (panelTitulo == null) return; // Si no hay panel, no hacer nada
+            if (panel1 == null) return; // Si no hay panel, no hacer nada
 
-            foreach (Control control in Controls)
+            // Buscar todos los Labels que contengan "TITULO" en su nombre, sin importar en qué contenedor estén
+            foreach (Control control in GetAllControls(this).OfType<Label>().Where(lbl => lbl.Name.Contains("TITULO")))
             {
-                if (control is Label label && label.Name.StartsWith("label_TITULO"))
-                {
-                    // Asegurar que `panelTitulo` no sea null y acceder correctamente a `Top`
-                    int nuevoX = panelTitulo.Left + (panelTitulo.Width - label.Width) / 2;
-                    int nuevoY = panelTitulo.Top - (label.Height / 2);
+                // Calcular la nueva posición centrada dentro de panel1
+                int nuevoX = panel1.Left + (panel1.Width - control.Width) / 2;
+                int nuevoY = panel1.Top + (panel1.Height - control.Height) / 2;
 
-                    label.Location = new Point(nuevoX, nuevoY);
-                    label.BringToFront(); // Asegurar que siempre esté visible
-                }
+                control.Location = new Point(nuevoX, nuevoY);
+                control.BringToFront(); // Asegurar que siempre esté visible
             }
         }
+
         protected virtual Panel ObtenerPanelTitulo()
         {
-            return null; // Devuelve `null` por defecto, pero los formularios hijos lo sobreescriben
+            return (Panel)panel1; // Devuelve `panel1`, que es el panel del formulario principal
         }
+
+    
+
+
+
+
+
+
+
+        #endregion
 
         /// <summary>
         /// METODO PARA MOSTRAR FOOTER
@@ -547,6 +568,15 @@ namespace Ofelia_Sara.Formularios.General
             };
         }
 
+
+
+        #endregion
+
+        /// <summary>
+        /// metodo recursivo para buscar entre controles
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <returns></returns>
         private static IEnumerable<Control> GetAllControls(Control parent)
         {
             foreach (Control control in parent.Controls)
@@ -558,14 +588,6 @@ namespace Ofelia_Sara.Formularios.General
                 }
             }
         }
-
-        #endregion
-
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-            ConfigurarCheckBoxesConImagen();
-        }
-
 
 
     }
@@ -781,33 +803,10 @@ namespace Ofelia_Sara.Formularios.General
 
             
         }
-        //--------------------------------------------------------------------------
-        private void DibujarFondoDegradado(Graphics g, int width, int height)
-        {
-            // Definir el centro del área de degradado
-            PointF center = new PointF(width / 2f, height / 2f);
-
-            // Ajustar el radio máximo del degradado para que se ajuste al tamaño del formulario
-            float maxRadius = Math.Max(width, height) * 0.75f; // Ajusta el valor según sea necesario
-
-            // Crear un rectángulo que envuelve el área del degradado
-            RectangleF gradientRectangle = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
-        }
+     
 
 
 
-        private void BaseForm_Paint(object sender, PaintEventArgs e)
-        {
-            // Obtener las dimensiones del formulario
-            int width = this.ClientSize.Width;
-            int height = this.ClientSize.Height;
-
-            // Llamar al método que dibuja el fondo degradado
-            DibujarFondoDegradado(e.Graphics, width, height);
-
-        
-        }
-        //----------------------------------------------
         // Método para cargar el ícono según el modo (diseñador o ejecución)
         private void CargarIconoFormulario()
         {
@@ -897,141 +896,11 @@ namespace Ofelia_Sara.Formularios.General
 
 
 
-        //-----METODO PARA MOSTRAR FOOTER-----------------------
-        private void InitializeFooterLinkLabel()
-        {
+   
 
-            // Llama al método estático de FooterHelper para obtener el footerLabel configurado
-            this.footerLinkLabel = FooterHelper.CreateFooterLinkLabel(this);
+      
 
-            this.Controls.Add(this.footerLinkLabel);
-        }
-
-
-        //------------------------------------------------------------
-        //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
-        //-------BUSCAR----GUARDAR----LIMPIAR---------
-        protected void InicializarEstiloBoton(Button boton)
-        {
-            Size originalSize = boton.Size;
-            Point originalLocation = boton.Location;
-
-            // Evento MouseEnter: Cambia el tamaño desde el centro y el color de fondo
-            boton.MouseEnter += (sender, e) =>
-            {
-                // Calcula el incremento para centrar el cambio de tamaño
-                int incremento = 12;
-                int nuevoAncho = originalSize.Width + incremento;
-                int nuevoAlto = originalSize.Height + incremento;
-                int deltaX = (nuevoAncho - originalSize.Width) / 2;
-                int deltaY = (nuevoAlto - originalSize.Height) / 2;
-
-                boton.Size = new Size(nuevoAncho, nuevoAlto);
-                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
-                boton.BackColor = Color.FromArgb(51, 174, 189);
-            };
-
-            // Evento MouseHover: Cambia solo el color de fondo
-            boton.MouseHover += (sender, e) =>
-            {
-                boton.BackColor = Color.FromArgb(51, 174, 189); //20% MAS CLARO QUE EL COLOR OFICIAL Y DE FONDO
-            };
-
-            // Evento MouseLeave: Restaura el tamaño y la posición original, y el color de fondo original
-            boton.MouseLeave += (sender, e) =>
-            {
-                boton.Size = originalSize;
-                boton.Location = originalLocation;
-                boton.BackColor = Color.SkyBlue;
-            };
-        }
-
-        //------------------------------------------------------------
-        //-----METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES-------
-        //-------AGREGAR --->CARATULA-->IMPUTADO--->VICTIMA---------
-        protected void InicializarEstiloBotonAgregar(Button boton)
-        {
-            Size originalSize = boton.Size;
-            Point originalLocation = boton.Location;
-
-            // Evento Paint: Dibuja un borde redondeado y aplica el color del texto solo si el botón está habilitado
-            boton.Paint += (sender, e) =>
-            {
-                int bordeGrosor;
-                int bordeRadio;
-                Color bordeColor;
-                Color textoColor;
-
-                if (boton.Enabled)
-                {
-                    bordeGrosor = 3;
-                    bordeRadio = 4;
-                    bordeColor = Color.LightGreen;
-                    textoColor = Color.Green; // Color del texto cuando el botón está habilitado
-                }
-                else
-                {
-                    bordeGrosor = 2;
-                    bordeRadio = 8;
-                    bordeColor = Color.Tomato;
-                    textoColor = Color.Red;// Color del texto cuando el botón está deshabilitado //NO FUNCIONA!!
-                }
-
-                using (GraphicsPath path = new GraphicsPath())
-                {
-                    // Define el rectángulo con el radio especificado
-                    path.AddArc(new Rectangle(0, 0, bordeRadio, bordeRadio), 180, 90);
-                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, 0, bordeRadio, bordeRadio), 270, 90);
-                    path.AddArc(new Rectangle(boton.Width - bordeRadio - 1, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 0, 90);
-                    path.AddArc(new Rectangle(0, boton.Height - bordeRadio - 1, bordeRadio, bordeRadio), 90, 90);
-                    path.CloseAllFigures();
-
-                    // Dibuja el borde con el color especificado
-                    e.Graphics.DrawPath(new Pen(bordeColor, bordeGrosor), path);
-                }
-
-                // Establece el color del texto
-                boton.ForeColor = textoColor;
-            };
-
-            // Evento MouseEnter: Cambia el tamaño desde el centro y el color del texto
-            boton.MouseEnter += (sender, e) =>
-            {
-                int incremento = 5;
-                int nuevoAncho = originalSize.Width + incremento;
-                int nuevoAlto = originalSize.Height + incremento;
-                int deltaX = (nuevoAncho - originalSize.Width) / 2;
-                int deltaY = (nuevoAlto - originalSize.Height) / 2;
-
-                boton.Size = new Size(nuevoAncho, nuevoAlto);
-                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
-
-                boton.ForeColor = Color.Green; // Cambia el color del texto a verde
-                boton.Invalidate(); // Redibuja el botón para aplicar el borde
-            };
-
-            // Evento MouseHover: Cambia solo el color de fondo
-            boton.MouseHover += (sender, e) =>
-            {
-                boton.BackColor = Color.FromArgb(15, 209, 29);
-                boton.ForeColor = Color.White; // Cambia el color del texto a blanco
-            };
-
-            // Evento MouseLeave: Restaura el tamaño, la posición y el color del texto original
-            boton.MouseLeave += (sender, e) =>
-            {
-                boton.Size = originalSize;
-                boton.Location = originalLocation;
-                boton.BackColor = Color.White;
-                boton.ForeColor = Color.Green; // Mantiene el color del texto en verde
-                boton.Invalidate(); // Redibuja el botón para aplicar el borde
-            };
-
-            // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
-            boton.Invalidate();
-        }
-        //--------------------------------------------------------------------------------------------------------
-
+      
         private void InitializeComponent()
         {
             this.SuspendLayout();

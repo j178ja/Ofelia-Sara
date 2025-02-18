@@ -32,31 +32,28 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaDependencia));
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Panel();
             textBox_Partido = new Controles.General.CustomTextBox();
             textBox_Localidad = new Controles.General.CustomTextBox();
-            label_Partido = new System.Windows.Forms.Label();
-            label_Localidad = new System.Windows.Forms.Label();
-            checkBox_AgregarSellos = new System.Windows.Forms.CheckBox();
-            label_AgregarSellos = new System.Windows.Forms.Label();
-            btn_Limpiar = new System.Windows.Forms.Button();
-            btn_Guardar = new System.Windows.Forms.Button();
+            label_Partido = new Label();
+            label_Localidad = new Label();
+            checkBox_AgregarSellos = new CheckBox();
+            label_AgregarSellos = new Label();
+            btn_Limpiar = new Button();
+            btn_Guardar = new Button();
             textBox_Domicilio = new Controles.General.CustomTextBox();
             textBox_Dependencia = new Controles.General.CustomTextBox();
-            label_Domicilio = new System.Windows.Forms.Label();
-            label_Dependencia = new System.Windows.Forms.Label();
-            label_NuevaDep = new System.Windows.Forms.Label();
-            toolTip1 = new System.Windows.Forms.ToolTip(components);
-            help_NuevaDependencia = new System.Windows.Forms.HelpProvider();
-            pictureBox_CheckAgregarSellos = new System.Windows.Forms.PictureBox();
+            label_Domicilio = new Label();
+            label_Dependencia = new Label();
+            label_NuevaDep = new Label();
+            toolTip1 = new ToolTip(components);
+            help_NuevaDependencia = new HelpProvider();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckAgregarSellos).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
-            panel1.Controls.Add(pictureBox_CheckAgregarSellos);
             panel1.Controls.Add(textBox_Partido);
             panel1.Controls.Add(textBox_Localidad);
             panel1.Controls.Add(label_Partido);
@@ -77,8 +74,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             // textBox_Partido
             // 
-            textBox_Partido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            textBox_Partido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Partido.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Partido.AutoCompleteSource = AutoCompleteSource.None;
             textBox_Partido.BackColor = System.Drawing.Color.White;
             textBox_Partido.ErrorColor = System.Drawing.Color.Red;
             textBox_Partido.FocusColor = System.Drawing.Color.Blue;
@@ -95,14 +92,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Partido.ShowError = false;
             textBox_Partido.Size = new System.Drawing.Size(326, 21);
             textBox_Partido.TabIndex = 24;
-            textBox_Partido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Partido.TextAlign = HorizontalAlignment.Center;
             textBox_Partido.TextValue = "";
+            textBox_Partido.Whidth = 0;
             textBox_Partido.TextChanged += TextBox_TextChanged;
             // 
             // textBox_Localidad
             // 
-            textBox_Localidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            textBox_Localidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Localidad.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Localidad.AutoCompleteSource = AutoCompleteSource.None;
             textBox_Localidad.BackColor = System.Drawing.Color.White;
             textBox_Localidad.ErrorColor = System.Drawing.Color.Red;
             textBox_Localidad.FocusColor = System.Drawing.Color.Blue;
@@ -119,8 +117,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Localidad.ShowError = false;
             textBox_Localidad.Size = new System.Drawing.Size(326, 21);
             textBox_Localidad.TabIndex = 23;
-            textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Localidad.TextAlign = HorizontalAlignment.Center;
             textBox_Localidad.TextValue = "";
+            textBox_Localidad.Whidth = 0;
             textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
             // 
             // label_Partido
@@ -129,7 +128,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             label_Partido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Partido.Location = new System.Drawing.Point(56, 157);
             label_Partido.Name = "label_Partido";
-            label_Partido.Size = new System.Drawing.Size(82, 16);
+            label_Partido.Size = new System.Drawing.Size(102, 20);
             label_Partido.TabIndex = 22;
             label_Partido.Text = "PARTIDO :";
             // 
@@ -139,7 +138,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(40, 127);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(98, 16);
+            label_Localidad.Size = new System.Drawing.Size(127, 20);
             label_Localidad.TabIndex = 21;
             label_Localidad.Text = "LOCALIDAD :";
             // 
@@ -150,7 +149,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             checkBox_AgregarSellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             checkBox_AgregarSellos.Location = new System.Drawing.Point(186, 205);
             checkBox_AgregarSellos.Name = "checkBox_AgregarSellos";
-            checkBox_AgregarSellos.Size = new System.Drawing.Size(15, 14);
+            checkBox_AgregarSellos.Size = new System.Drawing.Size(18, 17);
             checkBox_AgregarSellos.TabIndex = 2;
             checkBox_AgregarSellos.UseVisualStyleBackColor = true;
             checkBox_AgregarSellos.CheckedChanged += CheckBox_AgregarSellos_CheckedChanged;
@@ -168,7 +167,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // btn_Limpiar
             // 
             btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Limpiar.Cursor = Cursors.Hand;
             btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
             btn_Limpiar.Location = new System.Drawing.Point(144, 239);
             btn_Limpiar.Name = "btn_Limpiar";
@@ -180,7 +179,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // btn_Guardar
             // 
             btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btn_Guardar.Cursor = Cursors.Hand;
             btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
             btn_Guardar.Location = new System.Drawing.Point(395, 239);
             btn_Guardar.Name = "btn_Guardar";
@@ -191,8 +190,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             // textBox_Domicilio
             // 
-            textBox_Domicilio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            textBox_Domicilio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Domicilio.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Domicilio.AutoCompleteSource = AutoCompleteSource.None;
             textBox_Domicilio.BackColor = System.Drawing.Color.White;
             textBox_Domicilio.ErrorColor = System.Drawing.Color.Red;
             textBox_Domicilio.FocusColor = System.Drawing.Color.Blue;
@@ -209,13 +208,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Domicilio.ShowError = false;
             textBox_Domicilio.Size = new System.Drawing.Size(326, 21);
             textBox_Domicilio.TabIndex = 1;
-            textBox_Domicilio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Domicilio.TextAlign = HorizontalAlignment.Center;
             textBox_Domicilio.TextValue = "";
+            textBox_Domicilio.Whidth = 0;
             // 
             // textBox_Dependencia
             // 
-            textBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            textBox_Dependencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Dependencia.AutoCompleteMode = AutoCompleteMode.None;
+            textBox_Dependencia.AutoCompleteSource = AutoCompleteSource.None;
             textBox_Dependencia.BackColor = System.Drawing.Color.White;
             textBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             textBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
@@ -232,8 +232,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Dependencia.ShowError = false;
             textBox_Dependencia.Size = new System.Drawing.Size(326, 21);
             textBox_Dependencia.TabIndex = 0;
-            textBox_Dependencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Dependencia.TextAlign = HorizontalAlignment.Center;
             textBox_Dependencia.TextValue = "";
+            textBox_Dependencia.Whidth = 0;
             textBox_Dependencia.TextChanged += TextBox_Dependencia_TextChanged;
             // 
             // label_Domicilio
@@ -242,7 +243,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Domicilio.Location = new System.Drawing.Point(48, 97);
             label_Domicilio.Name = "label_Domicilio";
-            label_Domicilio.Size = new System.Drawing.Size(90, 16);
+            label_Domicilio.Size = new System.Drawing.Size(117, 20);
             label_Domicilio.TabIndex = 2;
             label_Domicilio.Text = "DOMICILIO :";
             // 
@@ -252,7 +253,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dependencia.Location = new System.Drawing.Point(15, 61);
             label_Dependencia.Name = "label_Dependencia";
-            label_Dependencia.Size = new System.Drawing.Size(123, 16);
+            label_Dependencia.Size = new System.Drawing.Size(153, 20);
             label_Dependencia.TabIndex = 1;
             label_Dependencia.Text = "DEPENDENCIA :";
             // 
@@ -264,43 +265,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             label_NuevaDep.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             label_NuevaDep.Location = new System.Drawing.Point(140, 0);
             label_NuevaDep.Name = "label_NuevaDep";
-            label_NuevaDep.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            label_NuevaDep.Size = new System.Drawing.Size(253, 24);
+            label_NuevaDep.Padding = new Padding(10, 0, 10, 0);
+            label_NuevaDep.Size = new System.Drawing.Size(309, 29);
             label_NuevaDep.TabIndex = 0;
             label_NuevaDep.Text = "NUEVA DEPENDENCIA";
             // 
-            // pictureBox_CheckAgregarSellos
-            // 
-            pictureBox_CheckAgregarSellos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_CheckAgregarSellos.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox_CheckAgregarSellos.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckAgregarSellos.Location = new System.Drawing.Point(186, 200);
-            pictureBox_CheckAgregarSellos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_CheckAgregarSellos.Name = "pictureBox_CheckAgregarSellos";
-            pictureBox_CheckAgregarSellos.Size = new System.Drawing.Size(30, 32);
-            pictureBox_CheckAgregarSellos.TabIndex = 68;
-            pictureBox_CheckAgregarSellos.TabStop = false;
-            // 
             // NuevaDependencia
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(569, 376);
             Controls.Add(panel1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             HelpButton = true;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "NuevaDependencia";
-            SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.Manual;
             Text = "AGREGAR NUEVA DEPENDENCIA";
             HelpButtonClicked += NuevaDependencia_HelpButtonClicked;
             Load += NuevaDependencia_Load;
             Controls.SetChildIndex(panel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckAgregarSellos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -323,6 +311,5 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Localidad;
         private System.Windows.Forms.Label label_Partido;
         private System.Windows.Forms.Label label_Localidad;
-        private System.Windows.Forms.PictureBox pictureBox_CheckAgregarSellos;
     }
 }

@@ -58,9 +58,8 @@ namespace Ofelia_Sara.Formularios.General
         {
             InitializeComponent(); // Llama primero para inicializar los controles
             this.AutoScaleMode = AutoScaleMode.Dpi;
-            dbManager = new ComisariasManager();
-            instructoresManager = new InstructoresManager();
-            secretariosManager = new SecretariosManager();
+         
+          
             InitializeManagers();
             ConfigurarAutocompletado(); // CARGA AUTOCOMPLETADO "HOY JSON-MAÑANA DB"
         }
@@ -105,11 +104,7 @@ namespace Ofelia_Sara.Formularios.General
                 }
 
                 // Obtener los datos desde la base de datos
-                List<Comisarias> comisarias = dbManager.GetComisarias();
-                if (comisarias == null)
-                {
-                    throw new InvalidOperationException("No se pudieron obtener las comisarías desde la base de datos.");
-                }
+                List<Comisarias> comisarias = dbManager.GetComisarias() ?? throw new InvalidOperationException("No se pudieron obtener las comisarías desde la base de datos.");
 
                 // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
                 customComboBox.Items.Clear();

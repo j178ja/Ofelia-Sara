@@ -270,35 +270,69 @@ namespace Ofelia_Sara.Controles.General
 
             // Rectángulo del control con esquinas redondeadas
             int radius = 10; // Radio para las esquinas redondeadas
-            Rectangle rect = new Rectangle(0, 0, dropdownList.Width - 1, dropdownList.Height - 1);
-            using (GraphicsPath path = CreateRoundedRectanglePath(rect, radius))
+            Rectangle rect = new(0, 0, dropdownList.Width - 1, dropdownList.Height - 1);
+            using GraphicsPath path = CreateRoundedRectanglePath(rect, radius);
+            // Dibujar sombra
+            using (Brush shadowBrush = new SolidBrush(Color.FromArgb(50, 0, 0, 0)))
             {
-                // Dibujar sombra
-                using (Brush shadowBrush = new SolidBrush(Color.FromArgb(50, 0, 0, 0)))
-                {
-                    Rectangle shadowRect = new Rectangle(rect.X + 2, rect.Y + 2, rect.Width, rect.Height);
-                    g.FillPath(shadowBrush, CreateRoundedRectanglePath(shadowRect, radius));
-                }
-
-                // Dibujar fondo
-                using (Brush backgroundBrush = new SolidBrush(dropdownList.BackColor))
-                {
-                    g.FillPath(backgroundBrush, path);
-                }
-
-                // Dibujar borde de color
-                using (Pen borderPen = new Pen(Color.FromArgb(0, 154, 174), 4))
-                {
-                    g.DrawPath(borderPen, path);
-                }
+                Rectangle shadowRect = new(rect.X + 2, rect.Y + 2, rect.Width, rect.Height);
+                g.FillPath(shadowBrush, CreateRoundedRectanglePath(shadowRect, radius));
             }
+
+            // Dibujar fondo
+            using (Brush backgroundBrush = new SolidBrush(dropdownList.BackColor))
+            {
+                g.FillPath(backgroundBrush, path);
+            }
+
+            // Dibujar borde de color
+            using Pen borderPen = new(Color.FromArgb(0, 154, 174), 4);
+            g.DrawPath(borderPen, path);
         }
+        //private void AjustarAlturaDesplegable()
+        //{
+        //    // Ajustar la altura del ListBox para mostrar el número deseado de ítems
+        //    int itemHeight = dropdownList.ItemHeight;
+        //    dropdownList.Height = itemHeight * maxDropDownItems + 2; // +2 para el borde
+        //}
         private void AjustarAlturaDesplegable()
         {
-            // Ajustar la altura del ListBox para mostrar el número deseado de ítems
             int itemHeight = dropdownList.ItemHeight;
-            dropdownList.Height = itemHeight * maxDropDownItems + 2; // +2 para el borde
+            int itemCount = dropdownList.Items.Count;
+            int maxVisibleItems = maxDropDownItems;
+
+            if (itemCount == 0)
+            {
+                dropdownList.Visible = false;
+                return;
+            }
+
+            dropdownList.Visible = true;
+            dropdownList.IntegralHeight = false; // Permitir alturas personalizadas
+
+            if (itemCount <= maxVisibleItems)
+            {
+                dropdownList.Height = Math.Max(10, (itemHeight * itemCount) + 4);
+                dropdownList.ScrollAlwaysVisible = false;
+            }
+            else
+            {
+                dropdownList.Height = (itemHeight * maxVisibleItems) + 4;
+                dropdownList.ScrollAlwaysVisible = true;
+            }
+
+            dropdownList.Parent = this.Parent;
+            dropdownList.Top = this.Bottom;
+            dropdownList.Left = this.Left;
+            dropdownList.BringToFront();
+            dropdownList.Invalidate();
+
+            // Depuración: Verificar valores
+            Console.WriteLine($"Items: {itemCount}, Altura: {dropdownList.Height}, Scroll: {dropdownList.ScrollAlwaysVisible}");
         }
+
+
+
 
         #endregion
 
@@ -346,8 +380,6 @@ namespace Ofelia_Sara.Controles.General
                 animationProgress = 100;
                 animationTimer.Stop();
             }
-          
-
             Invalidate(); // Redibujar
         }
         private void TextBox_TextChanged(object sender, EventArgs e)
@@ -756,7 +788,7 @@ namespace Ofelia_Sara.Controles.General
             }
         }
   
-        private int maxDropDownItems = 10;
+        private int maxDropDownItems = 5;
         public int MaxDropDownItems
         {
             get => maxDropDownItems;

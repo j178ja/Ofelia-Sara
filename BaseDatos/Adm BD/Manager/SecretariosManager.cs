@@ -32,30 +32,28 @@ namespace BaseDatos.Adm_BD.Manager
             string query = "INSERT INTO Secretario (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@legajo, @subescalafon, @jerarquia, @nombre, @apellido, @dependencia, @funcion)";
 
             dbConnection.OpenConnection();
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))
-            {
-                // Usar DBNull.Value si legajo es null
-                command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
-                command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
-                command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
-                command.Parameters.AddWithValue("@nombre", nombre.Trim());
-                command.Parameters.AddWithValue("@apellido", apellido.Trim());
-                command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
-                command.Parameters.AddWithValue("@funcion", funcion.Trim());
+            using var command = new SQLiteCommand(query, dbConnection.Connection);
+            // Usar DBNull.Value si legajo es null
+            command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
+            command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
+            command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
+            command.Parameters.AddWithValue("@nombre", nombre.Trim());
+            command.Parameters.AddWithValue("@apellido", apellido.Trim());
+            command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
+            command.Parameters.AddWithValue("@funcion", funcion.Trim());
 
-                try
-                {
-                    int rowsAffected = command.ExecuteNonQuery();
-                    // MensajeGeneral.Mostrar($"{rowsAffected} fila(s) insertada(s) en la base de datos.", MensajeGeneral.TipoMensaje.Exito);
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al insertar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
-                }
+            try
+            {
+                int rowsAffected = command.ExecuteNonQuery();
+                // MensajeGeneral.Mostrar($"{rowsAffected} fila(s) insertada(s) en la base de datos.", MensajeGeneral.TipoMensaje.Exito);
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al insertar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
             }
         }
 
@@ -66,31 +64,29 @@ namespace BaseDatos.Adm_BD.Manager
         /// <returns></returns>
         public List<Secretarios> GetSecretarios()
         {
-            List<Secretarios> secretarios = new List<Secretarios>();
-            string query = "SELECT * FROM Secretario";
+            List<Secretarios> secretarios = [];
+            string query = "SELECT * FROM Secretarios";
 
             dbConnection.OpenConnection();
             using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
-                using (var reader = command.ExecuteReader())
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    var secretario = new Secretarios()
                     {
-                        var secretario = new Secretarios()
-                        {
-                            Id = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32(reader.GetOrdinal("ID")),
+                        Id = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32(reader.GetOrdinal("ID")),
 
-                            Legajo = reader.IsDBNull(reader.GetOrdinal("legajo")) ? 0 : reader.GetInt32(reader.GetOrdinal("legajo")),// Manejo de nulos
-                            Subescalafon = reader.IsDBNull(reader.GetOrdinal("subescalafon")) ? string.Empty : reader.GetString(reader.GetOrdinal("subescalafon")),
-                            Jerarquia = reader.IsDBNull(reader.GetOrdinal("jerarquia")) ? string.Empty : reader.GetString(reader.GetOrdinal("jerarquia")),
-                            Nombre = reader.IsDBNull(reader.GetOrdinal("nombre")) ? string.Empty : reader.GetString(reader.GetOrdinal("nombre")),
-                            Apellido = reader.IsDBNull(reader.GetOrdinal("apellido")) ? string.Empty : reader.GetString(reader.GetOrdinal("apellido")),
-                            Dependencia = reader.IsDBNull(reader.GetOrdinal("dependencia")) ? string.Empty : reader.GetString(reader.GetOrdinal("dependencia")),
-                            Funcion = reader.IsDBNull(reader.GetOrdinal("funcion")) ? string.Empty : reader.GetString(reader.GetOrdinal("funcion"))
+                        Legajo = reader.IsDBNull(reader.GetOrdinal("legajo")) ? 0 : reader.GetInt32(reader.GetOrdinal("legajo")),// Manejo de nulos
+                        Subescalafon = reader.IsDBNull(reader.GetOrdinal("subescalafon")) ? string.Empty : reader.GetString(reader.GetOrdinal("subescalafon")),
+                        Jerarquia = reader.IsDBNull(reader.GetOrdinal("jerarquia")) ? string.Empty : reader.GetString(reader.GetOrdinal("jerarquia")),
+                        Nombre = reader.IsDBNull(reader.GetOrdinal("nombre")) ? string.Empty : reader.GetString(reader.GetOrdinal("nombre")),
+                        Apellido = reader.IsDBNull(reader.GetOrdinal("apellido")) ? string.Empty : reader.GetString(reader.GetOrdinal("apellido")),
+                        Dependencia = reader.IsDBNull(reader.GetOrdinal("dependencia")) ? string.Empty : reader.GetString(reader.GetOrdinal("dependencia")),
+                        Funcion = reader.IsDBNull(reader.GetOrdinal("funcion")) ? string.Empty : reader.GetString(reader.GetOrdinal("funcion"))
 
-                        };
-                        secretarios.Add(secretario);
-                    }
+                    };
+                    secretarios.Add(secretario);
                 }
             }
             dbConnection.CloseConnection();
@@ -117,31 +113,29 @@ namespace BaseDatos.Adm_BD.Manager
             string query = "UPDATE Secretario SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
 
             dbConnection.OpenConnection();
-            using (var command = new  SQLiteCommand(query, dbConnection.Connection))
+            using var command = new SQLiteCommand(query, dbConnection.Connection);
+            command.Parameters.AddWithValue("@id", id);
+
+            // Usar DBNull.Value si legajo es null
+            command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
+            command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
+            command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
+            command.Parameters.AddWithValue("@nombre", nombre.Trim());
+            command.Parameters.AddWithValue("@apellido", apellido.Trim());
+            command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
+            command.Parameters.AddWithValue("@funcion", funcion.Trim());
+
+            try
             {
-                command.Parameters.AddWithValue("@id", id);
-
-                // Usar DBNull.Value si legajo es null
-                command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
-                command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
-                command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
-                command.Parameters.AddWithValue("@nombre", nombre.Trim());
-                command.Parameters.AddWithValue("@apellido", apellido.Trim());
-                command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
-                command.Parameters.AddWithValue("@funcion", funcion.Trim());
-
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al actualizar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
-                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al actualizar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
             }
         }
 
@@ -155,22 +149,20 @@ namespace BaseDatos.Adm_BD.Manager
             string query = "DELETE FROM Secretario WHERE ID = @id";
 
             dbConnection.OpenConnection();
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))
-            {
-                command.Parameters.AddWithValue("@id", id);
+            using var command = new SQLiteCommand(query, dbConnection.Connection);
+            command.Parameters.AddWithValue("@id", id);
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al eliminar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
-                }
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al eliminar secretario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
             }
         }
     }

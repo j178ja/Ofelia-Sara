@@ -184,8 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             fecha_Pericia.Enabled = false;//deshabilitado e invisible para aplicar el tooltip especial e impedir que se vea
            
-            pictureBox_CheckRatificacion.Visible = false; //oculata ambos check hasta ques se marque
-            pictureBox_CheckCargo.Visible = false;
+          
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
@@ -703,8 +702,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private static bool ValidarControlesExistentes(Panel panel)
         {
-            string tipoPersona = panel.Name.IndexOf("Victima", StringComparison.OrdinalIgnoreCase) >= 0 ? "VICTIMA" :
-                                 panel.Name.IndexOf("Imputado", StringComparison.OrdinalIgnoreCase) >= 0 ? "IMPUTADO" : "PERSONA";
+            string tipoPersona = panel.Name.Contains("Victima", StringComparison.OrdinalIgnoreCase) ? "VICTIMA" :
+                                 panel.Name.Contains("Imputado", StringComparison.OrdinalIgnoreCase) ? "IMPUTADO" : "PERSONA";
 
             foreach (Control control in panel.Controls)
             {
@@ -737,13 +736,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 btn_ContadorRatificaciones.Text = "0";
                 btn_ContadorRatificaciones.Visible = true;
-                pictureBox_CheckRatificacion.Visible = true;
-
-                // Ajustar la posición del PictureBox con un desplazamiento de -5 en el eje Y
-                pictureBox_CheckRatificacion.Location = new Point(
-                    checkBox_RatificacionTestimonial.Location.X,
-                    checkBox_RatificacionTestimonial.Location.Y - 8
-                );
+              
 
                 // Ocultar el CheckBox
                 checkBox_RatificacionTestimonial.Visible = false;
@@ -781,12 +774,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         checkBox_RatificacionTestimonial.Visible = true;
                         checkBox_RatificacionTestimonial.Checked = false;
                         btn_ContadorRatificaciones.Visible = false;
-                        pictureBox_CheckRatificacion.Visible = false;
+                       
                     }
                     else if (buscarPersonalForm.DialogResult == DialogResult.Yes)
                     {
                         checkBox_RatificacionTestimonial.Visible = false;
-                        pictureBox_CheckRatificacion.Visible = true;
+                       
                     }
 
                     // Calcular la nueva posición para centrar el formulario original
@@ -813,14 +806,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 if (clickedPictureBox.Name == "pictureBox_CheckRatificacion")
                 {
                     // Manejar lógica para pictureBox_CheckRatificacion
-                    pictureBox_CheckRatificacion.Visible = false;
+                  
                     checkBox_RatificacionTestimonial.Visible = true;
                     checkBox_RatificacionTestimonial.Checked = false;
                 }
                 else if (clickedPictureBox.Name == "pictureBox_CheckCargo")
                 {
                     // Manejar lógica para pictureBox_CheckCargo
-                    pictureBox_CheckCargo.Visible = false;
+                   
                     checkBox_Cargo.Visible = true;
                     checkBox_Cargo.Checked = false;
                 }
@@ -919,13 +912,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Verificar si el CheckBox está marcado
             if (checkBox_Cargo.Checked)
             {
-                pictureBox_CheckCargo.Visible = true;
-
-                // Ajustar la posición del PictureBox para que quede sobre el chech, antes habia que desplazarlo, al momento no es necesario
-                pictureBox_CheckCargo.Location = new Point(
-                    checkBox_Cargo.Location.X,
-                    checkBox_Cargo.Location.Y 
-                );
+               
                 // Ocultar el CheckBox
                 checkBox_Cargo.Visible = false;
 
@@ -977,12 +964,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                         // Acciones si el resultado del diálogo es "Sí"
                         checkBox_Cargo.Visible = true;
                         checkBox_Cargo.Checked = false;
-                        pictureBox_CheckCargo.Visible = false;
+                        
                     }
                     else
                     {
                         checkBox_Cargo.Visible = false;
-                        pictureBox_CheckCargo.Visible = true;
+                       
                     }
                     // Calcular la nueva posición para centrar el formulario original
                     int centerX = (screenWidth - originalForm.Width) / 2;

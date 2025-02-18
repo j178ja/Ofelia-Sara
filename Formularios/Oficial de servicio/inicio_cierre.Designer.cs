@@ -88,8 +88,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Btn_ContadorRML = new Controles.Ofl_Sara.Boton_Contador();
             btn_ContadorRatificaciones = new Controles.Ofl_Sara.Boton_Contador();
             label_StudRML = new System.Windows.Forms.Label();
-            pictureBox_CheckCargo = new System.Windows.Forms.PictureBox();
-            pictureBox_CheckRatificacion = new System.Windows.Forms.PictureBox();
             label_Cargo = new System.Windows.Forms.Label();
             label_RatificacionPersonal = new System.Windows.Forms.Label();
             panel_Imputado = new System.Windows.Forms.Panel();
@@ -101,8 +99,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Caratula.SuspendLayout();
             panel_ControlesInferiores.SuspendLayout();
             panel_Not247.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckCargo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckRatificacion).BeginInit();
             panel_Imputado.SuspendLayout();
             panel_Victima.SuspendLayout();
             SuspendLayout();
@@ -960,8 +956,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.Controls.Add(Btn_ContadorRML);
             panel_ControlesInferiores.Controls.Add(btn_ContadorRatificaciones);
             panel_ControlesInferiores.Controls.Add(label_StudRML);
-            panel_ControlesInferiores.Controls.Add(pictureBox_CheckCargo);
-            panel_ControlesInferiores.Controls.Add(pictureBox_CheckRatificacion);
             panel_ControlesInferiores.Controls.Add(checkBox_Cargo);
             panel_ControlesInferiores.Controls.Add(label_Cargo);
             panel_ControlesInferiores.Controls.Add(checkBox_RatificacionTestimonial);
@@ -1085,32 +1079,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_StudRML.Text = "Stud. R.M.L   ";
             label_StudRML.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // pictureBox_CheckCargo
-            // 
-            pictureBox_CheckCargo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_CheckCargo.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox_CheckCargo.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckCargo.Location = new Point(456, 44);
-            pictureBox_CheckCargo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_CheckCargo.Name = "pictureBox_CheckCargo";
-            pictureBox_CheckCargo.Size = new Size(30, 30);
-            pictureBox_CheckCargo.TabIndex = 44;
-            pictureBox_CheckCargo.TabStop = false;
-            pictureBox_CheckCargo.Click += CheckPickture_Click;
-            // 
-            // pictureBox_CheckRatificacion
-            // 
-            pictureBox_CheckRatificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_CheckRatificacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox_CheckRatificacion.Image = Properties.Resources.check_Personalizado;
-            pictureBox_CheckRatificacion.Location = new Point(241, 44);
-            pictureBox_CheckRatificacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            pictureBox_CheckRatificacion.Name = "pictureBox_CheckRatificacion";
-            pictureBox_CheckRatificacion.Size = new Size(30, 32);
-            pictureBox_CheckRatificacion.TabIndex = 43;
-            pictureBox_CheckRatificacion.TabStop = false;
-            pictureBox_CheckRatificacion.Click += CheckPickture_Click;
-            // 
             // label_Cargo
             // 
             label_Cargo.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -1207,8 +1175,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.PerformLayout();
             panel_Not247.ResumeLayout(false);
             panel_Not247.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckCargo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_CheckRatificacion).EndInit();
             panel_Imputado.ResumeLayout(false);
             panel_Imputado.PerformLayout();
             panel_Victima.ResumeLayout(false);
@@ -1267,8 +1233,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Label label_Cargo;
         private System.Windows.Forms.CheckBox checkBox_Cargo;
         private System.Windows.Forms.Panel panel_Instruccion;
-        private System.Windows.Forms.PictureBox pictureBox_CheckRatificacion;
-        private System.Windows.Forms.PictureBox pictureBox_CheckCargo;
         private System.Windows.Forms.Label label_StudRML;
         private Ofelia_Sara.Controles.Ofl_Sara.Boton_Contador Btn_ContadorRML;
         private Ofelia_Sara.Controles.Ofl_Sara.Boton_Contador btn_ContadorRatificaciones;
@@ -1279,6 +1243,5 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_Not247;
         private System.Windows.Forms.Label label_Not247;
         private CustomTextBox textBox_Caratula;
-      
     }
 }

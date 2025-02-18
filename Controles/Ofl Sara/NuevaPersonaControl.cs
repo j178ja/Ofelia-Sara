@@ -167,6 +167,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             Form formulario = null;
 
+            // Obtener el texto del customTextBox_Nombre
+            string nombreIngresado = textBox_Persona.TextValue;
+
             // Dependiendo del tipo, instanciar el formulario correspondiente
             if (TipoPersona == "Victima")
             {
@@ -179,15 +182,25 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
             if (formulario != null)
             {
-                // Cerrar formulario anterior si está abierto
-                if (formulario.IsDisposed)
+                // Establecer el texto en el formulario recién creado usando la propiedad TextoNombre
+                if (formulario is AgregarDatosPersonalesVictima victimaForm)
                 {
-                    formulario = null;
+                    victimaForm.TextoNombre = nombreIngresado;
+                }
+                else if (formulario is AgregarDatosPersonalesImputado imputadoForm)
+                {
+                    imputadoForm.TextoNombre = nombreIngresado;
                 }
 
-                //obtiene posicion del formulario origen
-                Form originalForm = this.FindForm();
+                // Asignar el número de iteración al título del formulario
+                Label labelTitulo = formulario.Controls.Find("label_TITULO", true).FirstOrDefault() as Label;
+                if (labelTitulo != null)
+                {
+                    labelTitulo.Text += $" N° {ObtenerNumeroIteracion()}"; // Usar ObtenerNumeroIteracion en lugar de contadorInstancias
+                }
 
+                // Obtener el formulario original
+                Form originalForm = this.FindForm();
 
                 // Obtener dimensiones de ambos formularios
                 int totalWidth = originalForm.Width + formulario.Width;
@@ -224,6 +237,22 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 MensajeGeneral.Mostrar("No se pudo determinar el formulario a abrir.", MensajeGeneral.TipoMensaje.Error);
             }
         }
+
+
+
+        private string ObtenerNumeroIteracion()
+        {
+            if (TipoPersona == "Victima")
+            {
+                return (ContadorVictimas - 1).ToString(); // Devuelve el número de iteración para Victima
+            }
+            else if (TipoPersona == "Imputado")
+            {
+                return (ContadorImputados - 1).ToString(); // Devuelve el número de iteración para Imputado
+            }
+            return "0"; // Si no es Victima ni Imputado, retornar 0
+        }
+
         private void ConfigurarTooltipAgregarDatos()
         {
             if (string.IsNullOrWhiteSpace(TipoPersona))
@@ -272,18 +301,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
 
-        private string ObtenerNumeroIteracion()
-        {
-            if (TipoPersona == "Victima")
-            {
-                return (ContadorVictimas -1).ToString(); // Devuelve el número de iteración para Victima
-            }
-            else if (TipoPersona == "Imputado")
-            {
-                return (ContadorImputados -1).ToString(); // Devuelve el número de iteración para Imputado
-            }
-            return "0"; // Si no es Victima ni Imputado, retornar 0
-        }
 
         private void Btn_EliminarControl_MouseHover(object sender, EventArgs e)
         {
