@@ -133,7 +133,7 @@ namespace Ofelia_Sara.Formularios.General
         private static void DibujarFondoDegradado(Graphics g, int width, int height)
         {
             // Definir el centro del área de degradado
-            PointF center = new PointF(width / 2f, height / 2f);
+            PointF center = new(width / 2f, height / 2f);
 
             // Ajustar el radio máximo del degradado para que se ajuste al tamaño del formulario
             float maxRadius = Math.Max(width, height) * 0.75f; // Ajusta el valor según sea necesario
@@ -352,7 +352,7 @@ namespace Ofelia_Sara.Formularios.General
                 if (formularioActivo == null) return;
 
                 // Crear la instancia del mensaje
-                MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
+                MensajeGeneral mensajeAyuda = new(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
 
 
                 // Calcular la posición centrada respecto al formulario activo
@@ -368,7 +368,7 @@ namespace Ofelia_Sara.Formularios.General
             else
             {
                 // Si no hay un ParentForm, usar un tamaño y posición por defecto
-                MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
+                MensajeGeneral mensajeAyuda = new(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
 
                 mensajeAyuda.ShowDialog();
             }
@@ -497,61 +497,73 @@ namespace Ofelia_Sara.Formularios.General
 
 
         #region CHECKBOX
-        //protected void ConfigurarCheckBoxesConImagen()
-        //{
-        //    foreach (var control in GetAllControls(this).OfType<CheckBox>())
-        //    {
-        //        AgregarImagenCheckBox(control);
-        //    }
-        //}
+        protected void ConfigurarCheckBoxesConImagen()
+        {
+            foreach (var checkBox in GetAllControls(this).OfType<CheckBox>())
+            {
+                AgregarImagenCheckBox(checkBox);
+            }
+        }
 
-        //private void AgregarImagenCheckBox(CheckBox checkBox)
-        //{
-        //    PictureBox pbCheck = new PictureBox
-        //    {
-        //        Size = new Size(24, 25),
-        //        Image = Properties.Resources.check_Personalizado,
-        //        SizeMode = PictureBoxSizeMode.Zoom,
-        //        Visible = false
-        //    };
+        private static void AgregarImagenCheckBox(CheckBox checkBox)
+        {
+            checkBox.Cursor = Cursors.Hand;
+            PictureBox pbCheck = new()
+            {
+                Size = new Size(24, 25),
+                Image = Properties.Resources.check_Personalizado,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Visible = false, // Inicialmente oculto
+                Anchor = checkBox.Anchor, // Mantiene su posición en caso de redimensionamiento
+                Cursor = Cursors.Hand
+            };
 
-        //    checkBox.Parent.Controls.Add(pbCheck);
+            checkBox.Parent.Controls.Add(pbCheck);
 
-        //    // Ajustar la posición al centro del CheckBox
-        //    pbCheck.Location = new Point(
-        //        checkBox.Left + (checkBox.Width - pbCheck.Width) / 2,
-        //        checkBox.Top + (checkBox.Height - pbCheck.Height) / 2
-        //    );
+            // Ajustar la posición al centro del CheckBox
+            pbCheck.Location = new Point(
+                checkBox.Left + (checkBox.Width - pbCheck.Width) / 2,
+                checkBox.Top + (checkBox.Height - pbCheck.Height) / 2
+            );
 
-        //    checkBox.CheckedChanged += (s, e) =>
-        //    {
-        //        pbCheck.Visible = checkBox.Checked;
-        //    };
+            // Guardar la referencia al PictureBox en el Tag del CheckBox
+            checkBox.Tag = pbCheck;
 
-        //    pbCheck.Click += (s, e) =>
-        //    {
-        //        pbCheck.Visible = false;
-        //        checkBox.Checked = false;
-        //    };
-        //}
+            checkBox.CheckedChanged += (s, e) =>
+            {
+                if (checkBox.Checked)
+                {
+                    pbCheck.Visible = true;
+                    checkBox.Visible = false;
+                    pbCheck.BringToFront(); // Asegura que la imagen esté por encima
+                }
+            };
 
-        //private IEnumerable<Control> GetAllControls(Control parent)
-        //{
-        //    foreach (Control control in parent.Controls)
-        //    {
-        //        yield return control;
-        //        foreach (var child in GetAllControls(control))
-        //        {
-        //            yield return child;
-        //        }
-        //    }
-        //}
+            pbCheck.Click += (s, e) =>
+            {
+                pbCheck.Visible = false;
+                checkBox.Visible = true;
+                checkBox.Checked = false;
+            };
+        }
+
+        private static IEnumerable<Control> GetAllControls(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                yield return control;
+                foreach (var child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+        }
 
         #endregion
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-            //ConfigurarCheckBoxesConImagen();
+            ConfigurarCheckBoxesConImagen();
         }
 
 
