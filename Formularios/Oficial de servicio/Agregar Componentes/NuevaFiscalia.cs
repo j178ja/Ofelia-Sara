@@ -3,6 +3,7 @@ using BaseDatos.Adm_BD.Modelos;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -14,7 +15,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 {
     public partial class NuevaFiscalia : BaseForm
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+        #endregion
+
+        #region CONSTRUCTOR
         public NuevaFiscalia()
         {
             InitializeComponent();
@@ -28,7 +33,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             MayusculaSola.AplicarAControl(textBox_Localidad);
             this.FormClosing += NuevaFiscalia_FormClosing;
         }
+        #endregion
 
+        #region LOAD
         private void Fiscalia_Load(object sender, EventArgs e)
         {
             InicializarTextBoxes();
@@ -38,31 +45,39 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InicializarEstiloBoton(btn_Guardar);
             this.Shown += Focus_Shown;//para que haga foco en un textBox
         }
-        //-----------------------------------------------------------------------------
+        #endregion
         private void Focus_Shown(object sender, EventArgs e)
         {
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Fiscalia.Focus();
         }
 
+        /// <summary>
+        /// Mensaje de advertencia al cierre del formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NuevaFiscalia_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
 
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancelar el cierre del formulario
                 }
             }
         }
 
+        /// <summary>
+        /// mensaje de ayuda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
@@ -72,7 +87,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             e.Cancel = true;
         }
 
-        //------------------------------------------------------------------------------
+
         private void InicializarTextBoxes()
         {
             // Suscribirse al evento TextChanged sin conflicto de nombres
@@ -84,26 +99,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
 
         }
-        ////--------------------------------------------------------------------
-        
 
-
-        //--------------------------------------------------------------------
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // Convertir el texto del TextBox al Camel Case
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
+            if (sender is CustomTextBox textBox)
             {
-                textBox.Text = ConvertirACamelCase.Convertir(textBox.Text);
+                textBox.TextValue = ConvertirACamelCase.Convertir(textBox.TextValue);
                 // Mover el cursor al final del texto para evitar que el cursor se mueva al inicio
-                textBox.SelectionStart = textBox.Text.Length;
+                textBox.SelectionStart = textBox.TextValue.Length;
             }
         }
         private void TextBox_Fiscalia_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
+            if (sender is CustomTextBox textBox)
             {
                 MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
                 // Mover el cursor al final del texto después de la conversión
@@ -114,7 +123,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
 
         //---------------------BOTON LIMPIAR------------------------
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
@@ -123,7 +132,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //---------BOTON GUARDAR---------------------------------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             if
               (string.IsNullOrWhiteSpace(textBox_Fiscalia.TextValue) ||
@@ -131,13 +140,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                string.IsNullOrWhiteSpace(textBox_Localidad.TextValue) ||
                string.IsNullOrWhiteSpace(textBox_DeptoJudicial.TextValue))
             {
-                MessageBox.Show("Debe completar la totalidad de campos.", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar la totalidad de campos.", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
 
                 // Crear una instancia de Fiscalia con los datos del formulario
-                var nuevaFiscalia = new Fiscalia
+                var nuevaFiscalia = new Fiscalias
                 {
                     Ufid = textBox_Fiscalia.TextValue,
                     AgenteFiscal = textBox_AgenteFiscal.TextValue,

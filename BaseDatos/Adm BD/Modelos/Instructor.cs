@@ -1,6 +1,6 @@
 ﻿namespace BaseDatos.Adm_BD.Modelos
 {
-    public class Instructor
+    public class Instructores
     {
         public int Id { get; set; }
         public float? Legajo { get; set; }

@@ -12,11 +12,12 @@ namespace Ofelia_Sara
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
+
         static void Main()
         {
 
             // Llamar al método para encriptar la cadena de conexión
-          //  ConfigEncryptor.EncryptConnectionString();
+            //  ConfigEncryptor.EncryptConnectionString();
 
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
@@ -30,9 +31,9 @@ namespace Ofelia_Sara
             Application.Run(new MenuPrincipal());
             // Application.Run(new NuevoPersonal());
             // Application.Run(new Cargo());
-        // Application.Run(new Visu());
+            // Application.Run(new Visu());
 
 
         }
     }
-}
+    }

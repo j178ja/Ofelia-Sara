@@ -105,7 +105,7 @@ namespace Ofelia_Sara.Formularios.General
                 }
 
                 // Obtener los datos desde la base de datos
-                List<Comisaria> comisarias = dbManager.GetComisarias();
+                List<Comisarias> comisarias = dbManager.GetComisarias();
                 if (comisarias == null)
                 {
                     throw new InvalidOperationException("No se pudieron obtener las comisarías desde la base de datos.");
@@ -115,7 +115,7 @@ namespace Ofelia_Sara.Formularios.General
                 customComboBox.Items.Clear();
 
                 //// Recorrer la lista de comisarías y agregar los datos al ComboBox
-                foreach (Comisaria comisaria in comisarias)
+                foreach (Comisarias comisaria in comisarias)
                 {
                     string item = $"{comisaria.Nombre}   {comisaria.Localidad}"; // Utiliza las propiedades de la clase Comisaria
                     customComboBox.Items.Add(item);
@@ -141,13 +141,13 @@ namespace Ofelia_Sara.Formularios.General
             try
             {
                 // Obtener los datos desde la base de datos
-                List<Instructor> instructores = dbManager.GetInstructors(); // Asegúrate de usar el método correcto
+                List<Instructores> instructores = dbManager.GetInstructors(); // Asegúrate de usar el método correcto
 
                 // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
                 customComboBox.Items.Clear();
 
                 // Recorrer la lista de instructores y agregar los datos al ComboBox
-                foreach (Instructor instructor in instructores)
+                foreach (Instructores instructor in instructores)
                 {
                     // Utiliza las propiedades de la clase Instructor
                     string item = $"{instructor.Jerarquia} {instructor.Nombre} {instructor.Apellido}";
@@ -170,13 +170,13 @@ namespace Ofelia_Sara.Formularios.General
             try
             {
                 // Obtener los datos desde la base de datos
-                List<Secretario> secretarios = dbManager.GetSecretarios();
+                List<Secretarios> secretarios = dbManager.GetSecretarios();
 
                 // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
                 customComboBox.Items.Clear();
 
                 // Recorrer la lista de secretarios y agregar los datos al ComboBox
-                foreach (Secretario secretario in secretarios)
+                foreach (Secretarios secretario in secretarios)
                 {
                     // Utiliza las propiedades de la clase Secretario
                     string item = $"{secretario.Jerarquia} {secretario.Nombre} {secretario.Apellido}";
@@ -194,18 +194,18 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         /// <param name="comboBox"></param>
         /// <param name="dbManager"></param>
-        public static void CargarDatosFiscalia(ComboBox comboBox, FiscaliasManager dbManager)
+        public static void CargarDatosFiscalia(CustomComboBox comboBox, FiscaliasManager dbManager)
         {
             try
             {
                 // Obtener los datos desde la base de datos
-                List<Fiscalia> fiscalias = dbManager.GetFiscalias();
+                List<Fiscalias> fiscalias = dbManager.GetFiscalias();
 
                 // Limpiar los ítems existentes en el ComboBox antes de añadir nuevos
                 comboBox.Items.Clear();
 
                 // Recorrer la lista de fiscalías y agregar los datos al ComboBox
-                foreach (Fiscalia fiscalia in fiscalias)
+                foreach (Fiscalias fiscalia in fiscalias)
                 {
                     string item = $"{fiscalia.Ufid} - {fiscalia.AgenteFiscal} - {fiscalia.Localidad}"; // Puedes personalizar el formato
                     comboBox.Items.Add(item);
@@ -222,7 +222,7 @@ namespace Ofelia_Sara.Formularios.General
         /// Método virtual para ser sobreescrito en los formularios hijos
         /// </summary>
         /// <returns></returns>
-        protected virtual ComboBox ObtenerComboBoxDependencia()
+        protected virtual CustomComboBox ObtenerComboBoxDependencia()
         {
             return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
         }

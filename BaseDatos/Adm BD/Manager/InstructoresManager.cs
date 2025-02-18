@@ -23,7 +23,7 @@ namespace BaseDatos.Adm_BD.Manager
         /// </summary>
         public void InsertInstructor(float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
-            string query = "INSERT INTO Instructor (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@legajo, @subescalafon, @jerarquia, @nombre, @apellido, @dependencia, @funcion)";
+            string query = "INSERT INTO Instructores (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@legajo, @subescalafon, @jerarquia, @nombre, @apellido, @dependencia, @funcion)";
 
             using (var connection = dbConnection.Connection)  // Utiliza la propiedad Connection de DatabaseConnection
             {
@@ -58,30 +58,28 @@ namespace BaseDatos.Adm_BD.Manager
         /// <summary>
         /// Obtener todos los instructores desde la base de datos
         /// </summary>
-        public List<Instructor> GetInstructors()
+        public List<Instructores> GetInstructors()
         {
-            List<Instructor> instructores = new List<Instructor>();
-            string query = "SELECT * FROM Instructor";
+            List<Instructores> instructores = [];
+            string query = "SELECT * FROM Instructores";
 
             dbConnection.OpenConnection();  // Abrir la conexión
             using (var command = new SQLiteCommand(query, dbConnection.Connection))  // Utilizar SQLiteCommand
             {
-                using (var reader = command.ExecuteReader())  // Ejecutar la consulta
+                using var reader = command.ExecuteReader();  // Ejecutar la consulta
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    instructores.Add(new Instructores
                     {
-                        instructores.Add(new Instructor
-                        {
-                            Id = reader.GetInt32("ID"),
-                            Legajo = reader.GetInt32("legajo"),
-                            Subescalafon = reader.GetString("subescalafon"),
-                            Jerarquia = reader.GetString("jerarquia"),
-                            Nombre = reader.GetString("nombre"),
-                            Apellido = reader.GetString("apellido"),
-                            Dependencia = reader.GetString("dependencia"),
-                            Funcion = reader.GetString("funcion")
-                        });
-                    }
+                        Id = reader.GetInt32("ID"),
+                        Legajo = reader.GetInt32("legajo"),
+                        Subescalafon = reader.GetString("subescalafon"),
+                        Jerarquia = reader.GetString("jerarquia"),
+                        Nombre = reader.GetString("nombre"),
+                        Apellido = reader.GetString("apellido"),
+                        Dependencia = reader.GetString("dependencia"),
+                        Funcion = reader.GetString("funcion")
+                    });
                 }
             }
             dbConnection.CloseConnection();  // Cerrar la conexión
@@ -93,31 +91,29 @@ namespace BaseDatos.Adm_BD.Manager
         /// </summary>
         public void UpdateInstructor(int id, float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
-            string query = "UPDATE Instructor SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
+            string query = "UPDATE Instructores SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
 
             dbConnection.OpenConnection();  // Abrir la conexión
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))  // Utilizar SQLiteCommand
+            using var command = new SQLiteCommand(query, dbConnection.Connection);  // Utilizar SQLiteCommand
+                                                                                    // Usar DBNull.Value si legajo es null
+            command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
+            command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
+            command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
+            command.Parameters.AddWithValue("@nombre", nombre.Trim());
+            command.Parameters.AddWithValue("@apellido", apellido.Trim());
+            command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
+            command.Parameters.AddWithValue("@funcion", funcion.Trim());
+            try
             {
-                // Usar DBNull.Value si legajo es null
-                command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
-                command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
-                command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
-                command.Parameters.AddWithValue("@nombre", nombre.Trim());
-                command.Parameters.AddWithValue("@apellido", apellido.Trim());
-                command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
-                command.Parameters.AddWithValue("@funcion", funcion.Trim());
-                try
-                {
-                    command.ExecuteNonQuery();  // Ejecutar la consulta
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al actualizar instructor: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();  // Cerrar la conexión
-                }
+                command.ExecuteNonQuery();  // Ejecutar la consulta
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al actualizar instructor: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();  // Cerrar la conexión
             }
         }
 
@@ -126,25 +122,23 @@ namespace BaseDatos.Adm_BD.Manager
         /// </summary>
         public void DeleteInstructor(int id)
         {
-            string query = "DELETE FROM Instructor WHERE ID = @id";
+            string query = "DELETE FROM Instructores WHERE ID = @id";
 
             dbConnection.OpenConnection();  // Abrir la conexión
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))  // Utilizar SQLiteCommand
-            {
-                command.Parameters.AddWithValue("@id", id);
+            using var command = new SQLiteCommand(query, dbConnection.Connection);  // Utilizar SQLiteCommand
+            command.Parameters.AddWithValue("@id", id);
 
-                try
-                {
-                    command.ExecuteNonQuery();  // Ejecutar la consulta
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al eliminar instructor: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();  // Cerrar la conexión
-                }
+            try
+            {
+                command.ExecuteNonQuery();  // Ejecutar la consulta
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al eliminar instructor: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();  // Cerrar la conexión
             }
         }
     }

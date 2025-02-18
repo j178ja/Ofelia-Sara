@@ -74,7 +74,7 @@
             this.btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             this.btn_Limpiar.TabIndex = 30;
             this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Limpiar_Click);
             // 
             // btn_Guardar
             // 
@@ -86,7 +86,7 @@
             this.btn_Guardar.Size = new System.Drawing.Size(75, 67);
             this.btn_Guardar.TabIndex = 29;
             this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
             // textBox_DeptoJudicial
             // 

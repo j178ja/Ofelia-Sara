@@ -67,28 +67,26 @@ namespace BaseDatos.Adm_BD.Manager
         ///  obtener todas las comisarías desde la base de datos
         /// </summary>
         /// <returns></returns>
-        public List<Comisaria> GetComisarias()
+        public List<Comisarias> GetComisarias()
         {
-            List<Comisaria> comisarias = new List<Comisaria>();
+            List<Comisarias> comisarias = [];
             string query = "SELECT * FROM Comisarias";
 
             dbConnection.OpenConnection();
             using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
-                using (var reader = command.ExecuteReader())
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    comisarias.Add(new Comisarias
                     {
-                        comisarias.Add(new Comisaria
-                        {
-                            Id = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32("ID"),
-                            Nombre = reader.IsDBNull(reader.GetOrdinal("nombre")) ? string.Empty : reader.GetString("nombre"),
-                            Direccion = reader.IsDBNull(reader.GetOrdinal("direccion")) ? string.Empty : reader.GetString("direccion"),
-                            Localidad = reader.IsDBNull(reader.GetOrdinal("Localidad")) ? string.Empty : reader.GetString("Localidad"),
-                            Partido = reader.IsDBNull(reader.GetOrdinal("Partido")) ? string.Empty : reader.GetString("Partido")
+                        Id = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32("ID"),
+                        Nombre = reader.IsDBNull(reader.GetOrdinal("nombre")) ? string.Empty : reader.GetString("nombre"),
+                        Direccion = reader.IsDBNull(reader.GetOrdinal("direccion")) ? string.Empty : reader.GetString("direccion"),
+                        Localidad = reader.IsDBNull(reader.GetOrdinal("Localidad")) ? string.Empty : reader.GetString("Localidad"),
+                        Partido = reader.IsDBNull(reader.GetOrdinal("Partido")) ? string.Empty : reader.GetString("Partido")
 
-                        });
-                    }
+                    });
                 }
             }
             dbConnection.CloseConnection();
@@ -108,26 +106,24 @@ namespace BaseDatos.Adm_BD.Manager
             string query = "UPDATE Comisarias SET nombre = @nombre, direccion = @direccion, Localidad = @localidad, Partido = @partido WHERE ID = @id";
 
             dbConnection.OpenConnection();
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))
-            {
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@nombre", nombre.Trim());
-                command.Parameters.AddWithValue("@direccion", direccion.Trim());
-                command.Parameters.AddWithValue("@localidad", localidad.Trim());
-                command.Parameters.AddWithValue("@partido", partido.Trim());
+            using var command = new SQLiteCommand(query, dbConnection.Connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@nombre", nombre.Trim());
+            command.Parameters.AddWithValue("@direccion", direccion.Trim());
+            command.Parameters.AddWithValue("@localidad", localidad.Trim());
+            command.Parameters.AddWithValue("@partido", partido.Trim());
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al actualizar comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
-                }
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al actualizar comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
             }
         }
 
@@ -140,22 +136,20 @@ namespace BaseDatos.Adm_BD.Manager
             string query = "DELETE FROM Comisarias WHERE ID = @id";
 
             dbConnection.OpenConnection();
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))
-            {
-                command.Parameters.AddWithValue("@id", id);
+            using var command = new SQLiteCommand(query, dbConnection.Connection);
+            command.Parameters.AddWithValue("@id", id);
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al eliminar comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
-                }
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al eliminar comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
             }
         }
     }

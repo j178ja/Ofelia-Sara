@@ -209,7 +209,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             try
             {
                 listBox_Datos.DataSource = null;
-                List<Instructor> instructores = instructoresManager.GetInstructors();
+                List<Instructores> instructores = instructoresManager.GetInstructors();
 
                 if (instructores.Count == 0)
                 {
@@ -240,7 +240,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             try
             {
                 listBox_Datos.DataSource = null; // Elimina el DataSource para evitar conflictos
-                List<Secretario> secretarios = secretariosManager.GetSecretarios(); // Usar la instancia
+                List<Secretarios> secretarios = secretariosManager.GetSecretarios(); // Usar la instancia
 
                 if (secretarios.Count == 0)
                 {
@@ -275,7 +275,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
                 listBox_Datos.Items.Clear(); // Limpia los elementos actuales
 
                 ComisariasManager comisariasManager = new ComisariasManager();
-                List<Comisaria> comisarias = comisariasManager.GetComisarias();
+                List<Comisarias> comisarias = comisariasManager.GetComisarias();
 
                 listBox_Datos.DataSource = comisarias;
                 listBox_Datos.DisplayMember = "NombreYLocalidad";  //trae nombre y localidad con metodo de comisaria.cs
@@ -744,15 +744,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private void CargarDatosSeleccionados()
 
         {
-            if (listBox_Datos.SelectedItem is Comisaria selectedComisaria)
+            if (listBox_Datos.SelectedItem is Comisarias selectedComisaria)
             {
                 CargarDatosComisaria(selectedComisaria);
             }
-            else if (listBox_Datos.SelectedItem is Instructor selectedInstructor)
+            else if (listBox_Datos.SelectedItem is Instructores selectedInstructor)
             {
                 CargarDatosInstructor(selectedInstructor);
             }
-            else if (listBox_Datos.SelectedItem is Secretario selectedSecretario)
+            else if (listBox_Datos.SelectedItem is Secretarios selectedSecretario)
             {
                 CargarDatosSecretario(selectedSecretario);
             }
@@ -762,7 +762,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// CARGA EN CADA CAMPO LOS DATOS DE COMISARIA
         /// </summary>
         /// <param name="selectedComisaria"></param>
-        private void CargarDatosComisaria(Comisaria selectedComisaria)
+        private void CargarDatosComisaria(Comisarias selectedComisaria)
         {
             //  Carga datos de Comisaría
             textBox_Dependencia.TextValue = selectedComisaria.Nombre;
@@ -779,7 +779,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// CARGA EN CADA CAMPO LOS DATOS DEL INSTRUCTOR
         /// </summary>
         /// <param name="selectedInstructor"></param>
-        private void CargarDatosInstructor(Instructor selectedInstructor)
+        private void CargarDatosInstructor(Instructores selectedInstructor)
         {
             try
             {
@@ -807,7 +807,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// CARGA EN CADA CAMPO LOS DATOS DE SECRETARIO
         /// </summary>
         /// <param name="selectedSecretario"></param>
-        private void CargarDatosSecretario(Secretario selectedSecretario)
+        private void CargarDatosSecretario(Secretarios selectedSecretario)
         {
             try
             {
@@ -986,19 +986,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
 
             // Verificar el tipo de objeto y eliminarlo de la base de datos
-            if (selectedItem is Comisaria selectedComisaria)
+            if (selectedItem is Comisarias selectedComisaria)
             {
                 var dbManager = new ComisariasManager();
                 dbManager.DeleteComisaria(selectedComisaria.Id);
                 EliminarElementoDeLista(selectedComisaria);
             }
-            else if (selectedItem is Instructor selectedInstructor)
+            else if (selectedItem is Instructores selectedInstructor)
             {
                 var instructorManager = new InstructoresManager();
                 instructorManager.DeleteInstructor(selectedInstructor.Id);
                 EliminarElementoDeLista(selectedInstructor);
             }
-            else if (selectedItem is Secretario selectedSecretario)
+            else if (selectedItem is Secretarios selectedSecretario)
             {
                 var secretarioManager = new SecretariosManager();
                 secretarioManager.DeleteSecretario(selectedSecretario.Id);
@@ -1046,25 +1046,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             try
             {
                 // Verifica qué tipo de dependencia se está editando
-                if (listBox_Datos.SelectedItem is Comisaria)
+                if (listBox_Datos.SelectedItem is Comisarias)
                 {
                     // Lógica para guardar cambios de Comisaria
                     GuardarCambiosDependencia();
                     FinalizarEdicion();
                 }
-                else if (listBox_Datos.SelectedItem is Instructor)
+                else if (listBox_Datos.SelectedItem is Instructores)
                 {
                     // Lógica para guardar cambios de Instructor
                     GuardarCambiosInstructor();
                     FinalizarEdicion();
                 }
-                else if (listBox_Datos.SelectedItem is Secretario)
+                else if (listBox_Datos.SelectedItem is Secretarios)
                 {
                     // Lógica para guardar cambios de Secretario
                     GuardarCambiosSecretario();
                     FinalizarEdicion();
                 }
-                else if (listBox_Datos.SelectedItem is Fiscalia)
+                else if (listBox_Datos.SelectedItem is Fiscalias)
                 {
                     // Lógica para guardar cambios de Fiscalía
                     GuardarCambiosFiscalia();
@@ -1090,7 +1090,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private void GuardarCambiosDependencia()
         {
             // Verifica que un elemento esté seleccionado y que sea del tipo correcto
-            if (listBox_Datos.SelectedItem is Comisaria selectedComisaria)
+            if (listBox_Datos.SelectedItem is Comisarias selectedComisaria)
             {
                 // Realiza las asignaciones de datos desde los TextBox
                 selectedComisaria.Nombre = textBox_Dependencia.TextValue.Trim();
@@ -1140,7 +1140,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             int instructorId = ObtenerIdDelInstructorSeleccionado(); // Método para obtener el ID del instructor seleccionado
 
             // Crear el objeto Instructor con los datos editados
-            var instructorEditado = new Instructor
+            var instructorEditado = new Instructores
             {
                 Legajo = float.Parse(textBox_NumeroLegajo.TextValue),
                 Subescalafon = comboBox_Escalafon.TextValue,
@@ -1174,7 +1174,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             if (comboBox_Instructor.SelectedItem != null)
             {
                 // Obtener el instructor seleccionado
-                Instructor instructorSeleccionado = (Instructor)comboBox_Instructor.SelectedItem;
+                Instructores instructorSeleccionado = (Instructores)comboBox_Instructor.SelectedItem;
 
                 // Retornar el ID del instructor
                 return instructorSeleccionado.Id; // Asegúrate de que la clase Instructor tenga una propiedad Id

@@ -1,6 +1,6 @@
 ﻿namespace BaseDatos.Adm_BD.Modelos
 {
-    public class Fiscalia
+    public class Fiscalias
     {
         public int Id { get; set; }
 

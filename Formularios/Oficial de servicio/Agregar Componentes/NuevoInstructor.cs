@@ -189,7 +189,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                                ? 100000 // valor por defecto
                                : float.Parse(textBox_NumeroLegajo.TextValue);
 
-                var nuevoInstructor = new Instructor
+                var nuevoInstructor = new Instructores
                 {
                     Legajo = legajo,
                     Subescalafon = comboBox_Escalafon.TextValue,

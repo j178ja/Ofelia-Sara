@@ -8,23 +8,17 @@ using System.Data;
 
 namespace BaseDatos.Adm_BD
 {
-    public class FiscaliasManager
+    public class FiscaliasManager(SQLiteConnection connection = null)
     {
-        private readonly SQLiteConnection dbConnection;
-
-        public FiscaliasManager(SQLiteConnection connection = null)
-        {
-            // Si no se pasa una conexión externa, se inicializa una nueva conexión de SQLite
-            dbConnection = connection ?? new SQLiteConnection("Data Source=your_database_file_path;Version=3;");
-        }
+        private readonly SQLiteConnection dbConnection = connection ?? new SQLiteConnection("Data Source=baseSqlite.db;Version=3;");
 
         /// <summary>
         /// obtener todas las fiscalías
         /// </summary>
         /// <returns></returns>
-        public List<Fiscalia> GetFiscalias()
+        public List<Fiscalias> GetFiscalias()
         {
-            List<Fiscalia> fiscalias = new List<Fiscalia>();
+            List<Fiscalias> fiscalias = [];
             string query = "SELECT Id, Ufid, AgenteFiscal, Localidad, DeptoJudicial FROM Fiscalia";
 
             dbConnection.Open();
@@ -34,7 +28,7 @@ namespace BaseDatos.Adm_BD
                 {
                     while (reader.Read())
                     {
-                        Fiscalia fiscalia = new Fiscalia
+                        Fiscalias fiscalia = new()
                         {
                             Id = reader.IsDBNull(reader.GetOrdinal("Id")) ? 0 : reader.GetInt32("Id"),
                             Ufid = reader.IsDBNull(reader.GetOrdinal("Ufid")) ? string.Empty : reader.GetString("Ufid"),
@@ -56,7 +50,7 @@ namespace BaseDatos.Adm_BD
         /// insertar una nueva fiscalía
         /// </summary>
         /// <param name="fiscalia"></param>
-        public void InsertFiscalia(Fiscalia fiscalia)
+        public void InsertFiscalia(Fiscalias fiscalia)
         {
             string query = "INSERT INTO Fiscalia (Ufid, AgenteFiscal, Localidad, DeptoJudicial) VALUES (@Ufid, @AgenteFiscal, @Localidad, @DeptoJudicial)";
 
@@ -88,7 +82,7 @@ namespace BaseDatos.Adm_BD
         /// actualizar una fiscalía existente
         /// </summary>
         /// <param name="fiscalia"></param>
-        public void UpdateFiscalia(Fiscalia fiscalia)
+        public void UpdateFiscalia(Fiscalias fiscalia)
         {
             string query = "UPDATE Fiscalia SET Ufid = @Ufid, AgenteFiscal = @AgenteFiscal, Localidad = @Localidad, DeptoJudicial = @DeptoJudicial WHERE Id = @Id";
 

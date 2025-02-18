@@ -26,7 +26,7 @@ public class DataManager<T>
         try
         {
             dbConnection.OpenConnection(); // Asegura que la conexión esté abierta
-            using (SQLiteCommand cmd = new SQLiteCommand(query, dbConnection.Connection))
+            using (SQLiteCommand cmd = new(query, dbConnection.Connection))
             {
                 if (parameters != null)
                 {
@@ -48,13 +48,13 @@ public class DataManager<T>
 
     public DataTable Read(string query, params SQLiteParameter[] parameters)
     {
-        DataTable dt = new DataTable();
+        DataTable dt = new();
 
         try
         {
             dbConnection.OpenConnection();
 
-            using (SQLiteCommand cmd = new SQLiteCommand(query, dbConnection.Connection))
+            using (SQLiteCommand cmd = new(query, dbConnection.Connection))
             {
                 if (parameters != null)
                 {
@@ -85,7 +85,7 @@ public class DataManager<T>
         {
             dbConnection.OpenConnection();
 
-            using (SQLiteCommand cmd = new SQLiteCommand(query, dbConnection.Connection))
+            using (SQLiteCommand cmd = new(query, dbConnection.Connection))
             {
                 if (parameters != null)
                 {
@@ -111,7 +111,7 @@ public class DataManager<T>
         {
             dbConnection.OpenConnection();
 
-            using (SQLiteCommand cmd = new SQLiteCommand(query, dbConnection.Connection))
+            using (SQLiteCommand cmd = new(query, dbConnection.Connection))
             {
                 if (parameters != null)
                 {

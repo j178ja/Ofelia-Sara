@@ -20,7 +20,8 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
 
             // Ruta donde se almacenará la base de datos SQLite
-            databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database.sqlite");
+            databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BaseDatos", "baseSqlite.db");
+
 
             InitializeConnection();
         }
@@ -55,6 +56,9 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
         }
 
+        /// <summary>
+        /// abrir conexion
+        /// </summary>
         public void OpenConnection()
         {
             if (connection?.State == System.Data.ConnectionState.Closed)
@@ -63,6 +67,9 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
         }
 
+        /// <summary>
+        /// cerrar conexion
+        /// </summary>
         public void CloseConnection()
         {
             if (connection?.State == System.Data.ConnectionState.Open)

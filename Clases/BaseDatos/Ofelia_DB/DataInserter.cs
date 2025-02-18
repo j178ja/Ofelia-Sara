@@ -9,14 +9,9 @@ using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 
 namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
     {
-        public class DataInserter
-        {
-            protected readonly DataManager<DatabaseConnection> dbManager; // Usar DataManager con tipo DatabaseConnection
-
-            public DataInserter(DataManager<DatabaseConnection> dbManager)
-            {
-                this.dbManager = dbManager;
-            }
+        public class DataInserter(DataManager<DatabaseConnection> dbManager)
+    {
+            protected readonly DataManager<DatabaseConnection> dbManager = dbManager; // Usar DataManager con tipo DatabaseConnection
 
         public void InsertarUsuario(string jerarquia, string escalafon, string nombre, string apellido, double legajo, string nombreUsuario, string contrasena)
             {
@@ -28,13 +23,13 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
 
                     var parameters = new SQLiteParameter[]
                     {
-                    new SQLiteParameter("@Jerarquia", jerarquia),
-                    new SQLiteParameter("@Escalafon", escalafon),
-                    new SQLiteParameter("@Nombre", nombre),
-                    new SQLiteParameter("@Apellido", apellido),
-                    new SQLiteParameter("@Legajo", legajo),
-                    new SQLiteParameter("@Nombre_Usuario", nombreUsuario),
-                    new SQLiteParameter("@Contrasena", contrasena)
+                    new("@Jerarquia", jerarquia),
+                    new("@Escalafon", escalafon),
+                    new("@Nombre", nombre),
+                    new("@Apellido", apellido),
+                    new("@Legajo", legajo),
+                    new("@Nombre_Usuario", nombreUsuario),
+                    new("@Contrasena", contrasena)
                     };
 
                     dbManager.Create(query, parameters); // Usar el método Create de DataManager
@@ -55,12 +50,12 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
 
                     var parameters = new SQLiteParameter[]
                     {
-                    new SQLiteParameter("@Jerarquia", jerarquia),
-                    new SQLiteParameter("@Escalafon", escalafon),
-                    new SQLiteParameter("@Nombre", nombre),
-                    new SQLiteParameter("@Apellido", apellido),
-                    new SQLiteParameter("@Legajo", legajo),
-                    new SQLiteParameter("@Firma_Digitalizada", firmaDigitalizada)
+                    new("@Jerarquia", jerarquia),
+                    new("@Escalafon", escalafon),
+                    new("@Nombre", nombre),
+                    new("@Apellido", apellido),
+                    new("@Legajo", legajo),
+                    new("@Firma_Digitalizada", firmaDigitalizada)
                     };
 
                     dbManager.Create(query, parameters); // Usar el método Create de DataManager
@@ -72,30 +67,28 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
 
 
-        public void GuardarSecretario(string jerarquia, string escalafon, string nombre, string apellido, double legajo, string funcion, byte[] firmaDigitalizada)
+        public static void GuardarSecretario(string jerarquia, string escalafon, string nombre, string apellido, double legajo, string funcion, byte[] firmaDigitalizada)
         {
             try
             {
                 var dbManager = new DatabaseConnection();
 
                 // Usamos dbManager.Connection para obtener la conexión
-                using (var connection = dbManager.Connection)
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandText = @"
+                using var connection = dbManager.Connection;
+                using var command = connection.CreateCommand();
+                command.CommandText = @"
                 INSERT INTO Secretario (Jerarquia, Escalafon, Nombre, Apellido, Legajo, Funcion, FirmaDigitalizada)
                 VALUES (@Jerarquia, @Escalafon, @Nombre, @Apellido, @Legajo, @Funcion, @FirmaDigitalizada)";
 
-                    command.Parameters.AddWithValue("@Jerarquia", jerarquia);
-                    command.Parameters.AddWithValue("@Escalafon", escalafon);
-                    command.Parameters.AddWithValue("@Nombre", nombre);
-                    command.Parameters.AddWithValue("@Apellido", apellido);
-                    command.Parameters.AddWithValue("@Legajo", legajo);
-                    command.Parameters.AddWithValue("@Funcion", funcion);
-                    command.Parameters.AddWithValue("@FirmaDigitalizada", firmaDigitalizada ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Jerarquia", jerarquia);
+                command.Parameters.AddWithValue("@Escalafon", escalafon);
+                command.Parameters.AddWithValue("@Nombre", nombre);
+                command.Parameters.AddWithValue("@Apellido", apellido);
+                command.Parameters.AddWithValue("@Legajo", legajo);
+                command.Parameters.AddWithValue("@Funcion", funcion);
+                command.Parameters.AddWithValue("@FirmaDigitalizada", firmaDigitalizada ?? (object)DBNull.Value);
 
-                    command.ExecuteNonQuery();
-                }
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -103,27 +96,25 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
         }
 
-        public void GuardarFiscalia(string ufid, string agenteFiscal, string localidad, string deptoJudicial)
+        public static void GuardarFiscalia(string ufid, string agenteFiscal, string localidad, string deptoJudicial)
         {
             try
             {
                 var dbManager = new DatabaseConnection();
 
                 // Usamos dbManager.Connection para obtener la conexión
-                using (var connection = dbManager.Connection)
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandText = @"
+                using var connection = dbManager.Connection;
+                using var command = connection.CreateCommand();
+                command.CommandText = @"
                 INSERT INTO Fiscalia (Ufid, Agente_Fiscal, Localidad, DeptoJudicial)
                 VALUES (@Ufid, @Agente_Fiscal, @Localidad, @DeptoJudicial)";
 
-                    command.Parameters.AddWithValue("@Ufid", ufid);
-                    command.Parameters.AddWithValue("@Agente_Fiscal", agenteFiscal);
-                    command.Parameters.AddWithValue("@Localidad", localidad);
-                    command.Parameters.AddWithValue("@DeptoJudicial", deptoJudicial);
+                command.Parameters.AddWithValue("@Ufid", ufid);
+                command.Parameters.AddWithValue("@Agente_Fiscal", agenteFiscal);
+                command.Parameters.AddWithValue("@Localidad", localidad);
+                command.Parameters.AddWithValue("@DeptoJudicial", deptoJudicial);
 
-                    command.ExecuteNonQuery();
-                }
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -131,7 +122,7 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
         }
 
-        public void GuardarIPP(int numeroIpp, string ufid, string dr, string localidad, string deptoJudicial, string instructor, string secretario, string dependencia, string fecha, List<string> victimas, List<string> imputados)
+        public static void GuardarIPP(int numeroIpp, string ufid, string dr, string localidad, string deptoJudicial, string instructor, string secretario, string dependencia, string fecha, List<string> victimas, List<string> imputados)
         {
             try
             {

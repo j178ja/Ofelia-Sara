@@ -1,7 +1,7 @@
 ﻿namespace BaseDatos.Adm_BD.Modelos
 {
 
-    public class Comisaria
+    public class Comisarias
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

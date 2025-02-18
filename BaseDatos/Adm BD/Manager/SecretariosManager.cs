@@ -64,9 +64,9 @@ namespace BaseDatos.Adm_BD.Manager
         /// acceder a los datos de tabla SECRETARIO
         /// </summary>
         /// <returns></returns>
-        public List<Secretario> GetSecretarios()
+        public List<Secretarios> GetSecretarios()
         {
-            List<Secretario> secretarios = new List<Secretario>();
+            List<Secretarios> secretarios = new List<Secretarios>();
             string query = "SELECT * FROM Secretario";
 
             dbConnection.OpenConnection();
@@ -76,7 +76,7 @@ namespace BaseDatos.Adm_BD.Manager
                 {
                     while (reader.Read())
                     {
-                        var secretario = new Secretario()
+                        var secretario = new Secretarios()
                         {
                             Id = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32(reader.GetOrdinal("ID")),
 
