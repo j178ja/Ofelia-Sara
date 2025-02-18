@@ -6,16 +6,16 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
 {
     public partial class TooltipEnControlDesactivado
     {
-        private static string tooltipDesactivado;
-        private static string tooltipActivado;
+        private static readonly string tooltipDesactivado;
+        private static readonly string tooltipActivado;
         public static void ConfigurarToolTip(Form form, Control control, string toolTipTextDisabled, string toolTipTextEnabled)
         {
-            ToolTip customToolTip = new ToolTip
+            ToolTip customToolTip = new()
             {
                 OwnerDraw = true // Habilitar dibujo personalizado
             };
 
-            Timer timer = new Timer { Interval = 100 };
+            Timer timer = new() { Interval = 100 };
             bool isCustomToolTipVisible = false;
 
             // Manejar el evento Draw para personalizar el ToolTip
@@ -36,8 +36,8 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
                 e.Graphics.DrawIcon(icon, new Rectangle(iconX, iconY, 16, 16));
 
                 // Dividir el texto en líneas
-                string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
-                using (Font font = new Font("Arial", 10))
+                string[] lines = toolTipText.Split(['\n'], StringSplitOptions.None);
+                using Font font = new("Arial", 10);
                 {
                     float lineHeight = font.GetHeight(e.Graphics) + 6;
                     float textY = e.Bounds.Y + 4;
@@ -56,29 +56,25 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
             // Configurar tamaño dinámico del ToolTip
             customToolTip.Popup += (sender, e) =>
             {
-                using (Graphics g = Graphics.FromHwnd(nint.Zero))
+                using Graphics g = Graphics.FromHwnd(nint.Zero);
+                using Font font = new("Arial", 10);
+                string toolTipText = control.Enabled ? toolTipTextEnabled : toolTipTextDisabled;
+                string[] lines = toolTipText.Split(['\n'], StringSplitOptions.None);
+                float maxWidth = 0;
+                float totalHeight = 0;
+
+                foreach (string line in lines)
                 {
-                    using (Font font = new Font("Arial", 10))
-                    {
-                        string toolTipText = control.Enabled ? toolTipTextEnabled : toolTipTextDisabled;
-                        string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
-                        float maxWidth = 0;
-                        float totalHeight = 0;
-
-                        foreach (string line in lines)
-                        {
-                            SizeF textSize = g.MeasureString(line, font);
-                            maxWidth = Math.Max(maxWidth, textSize.Width);
-                            totalHeight += textSize.Height;
-                        }
-
-                        int leftMargin = 7 + 16 + 10; // Margen izquierdo
-                        int rightMargin = 10; // Margen derecho
-                        int width = (int)(maxWidth + leftMargin + rightMargin);
-                        int height = (int)(totalHeight + 8);
-                        e.ToolTipSize = new Size(width, height);
-                    }
+                    SizeF textSize = g.MeasureString(line, font);
+                    maxWidth = Math.Max(maxWidth, textSize.Width);
+                    totalHeight += textSize.Height;
                 }
+
+                int leftMargin = 7 + 16 + 10; // Margen izquierdo
+                int rightMargin = 10; // Margen derecho
+                int width = (int)(maxWidth + leftMargin + rightMargin);
+                int height = (int)(totalHeight + 8);
+                e.ToolTipSize = new Size(width, height);
             };
 
             timer.Tick += (sender, e) =>
@@ -151,12 +147,12 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
                 return; // No mostrar el ToolTip si el control está deshabilitado o no es visible
             }
 
-            ToolTip customToolTip = new ToolTip
+            ToolTip customToolTip = new()
             {
                 OwnerDraw = true // Habilitar dibujo personalizado
             };
 
-            Timer timer = new Timer { Interval = 100 };
+            Timer timer = new() { Interval = 100 };
             bool isCustomToolTipVisible = false;
 
             // Manejar el evento Draw para personalizar el ToolTip
@@ -172,7 +168,7 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
                 e.Graphics.DrawIcon(infoIcon, new Rectangle(iconX, iconY, 16, 16));
 
                 // Dividir el texto en líneas
-                string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
+                string[] lines = toolTipText.Split(['\n'], StringSplitOptions.None);
                 using (Font font = new Font("Arial", 10))
                 {
                     float lineHeight = font.GetHeight(e.Graphics) + 6;
@@ -194,9 +190,9 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
             {
                 using (Graphics g = Graphics.FromHwnd(nint.Zero))
                 {
-                    using (Font font = new Font("Arial", 10))
+                    using (Font font = new("Arial", 10))
                     {
-                        string[] lines = toolTipText.Split(new[] { '\n' }, StringSplitOptions.None);
+                        string[] lines = toolTipText.Split(['\n'], StringSplitOptions.None);
                         float maxWidth = 0;
                         float totalHeight = 0;
 
@@ -252,7 +248,13 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
 
             timer.Start();
         }
-        // Método para obtener el tooltip actual
+
+        
+        /// <summary>
+        /// Método para obtener el tooltip actual
+        /// </summary>
+        /// <param name="control"></param>
+        /// <returns></returns>
         public static string ObtenerToolTipActual(Control control)
         {
             // Dependiendo del estado, devuelve el tooltip correcto
@@ -266,10 +268,14 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
             }
         }
 
-        // Método para remover el tooltip cuando sea necesario
+        
+        /// <summary>
+        ///  Método para remover el tooltip cuando sea necesario
+        /// </summary>
+        /// <param name="control"></param>
         public static void RemoverToolTip(Control control)
         {
-            ToolTip toolTip = new ToolTip();
+            ToolTip toolTip = new();
             toolTip.SetToolTip(control, string.Empty); // Eliminar el tooltip actual
         }
 

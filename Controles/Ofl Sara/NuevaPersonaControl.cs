@@ -1,5 +1,6 @@
 ﻿
 using Ofelia_Sara.Controles.Controles.Tooltip;
+
 using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System;
@@ -26,6 +27,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         #endregion
 
         private string tipoPersona;
+  
+
         public string TipoPersona
         {
             get => tipoPersona;
@@ -112,7 +115,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void NuevaPersonaControl_Load(object sender, EventArgs e)
         {
             ConfigurarTooltipAgregarDatos();
+
+
+            ToolTipEliminar.Mostrar(btn_EliminarControl, "Eliminar este elemento");
         }
+
 
         private void TextBox_Persona_TextChanged(object sender, EventArgs e)
         {
