@@ -29,9 +29,6 @@
     <Compile Update="Controles\Ofl Sara\DataTimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Controles\Ofl Sara\NuevaCaratulaControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Controles\Ofl Sara\SelectorFecha.cs">
       <SubType>Form</SubType>
     </Compile>
