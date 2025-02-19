@@ -1,5 +1,6 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
+using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Ofl_Sara;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.Buscar_Personal;
@@ -19,10 +20,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
     public partial class BuscarPersonal : BaseForm
     {
         #region VARIABLES
-        private int borderRadius = 15;
-        private int borderSize = 7;
-        private Color borderColor = Color.FromArgb(0, 154, 174); // Color del borde
-        private Color panelColor = Color.FromArgb(178, 213, 230); // Color de fondo del panel
+       
+   
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         #endregion
@@ -53,9 +52,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             this.BackColor = Color.FromArgb(0, 154, 174); // Color de fondo del formulario
 
-            // Configurar el panel
-            panel1.BackColor = panelColor; // Color de fondo del panel
-            panel1.Paint += panel1_Paint;
+          
+            RedondearBordes.Aplicar(panel1, 12);
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para agregar ratificafciòn.", "Agregar nueva ratificacion");
             //..........................
@@ -68,31 +66,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         }
         #endregion
 
-        /// <summary>
-        /// METODO PARA REDIBUJAR BORDES REDONDEADOS
-        /// </summary>
-        /// <param name="panel"></param>
-        /// <param name="borderRadius"></param>
-        /// <param name="borderSize"></param>
-        /// <param name="borderColor"></param>
-
-        private static void DrawRoundedBorder(Panel panel, int borderRadius, int borderSize, Color borderColor)
-        {
-            using GraphicsPath path = new();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(panel.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(panel.Width - borderRadius, panel.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, panel.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseAllFigures();
-
-            using Pen pen = new(borderColor, borderSize);
-            panel.CreateGraphics().DrawPath(pen, path);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            DrawRoundedBorder(panel1, borderRadius, borderSize, borderColor);
-        }
  
 
         /// <summary>
@@ -156,7 +129,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
-            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);//habilita el btn_AgregarPersonal en caso de tener texto
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);//habilita el btn_AgregarPersonal en caso de tener texto
         }
        
 
@@ -169,7 +142,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void Btn_AgregarPersonal_Click(object sender, EventArgs e)
         {
             // Validar que el texto no sea menor a 6 caracteres
-            string textoFormateado = textBox_NumeroLegajo.Text;
+            string textoFormateado = textBox_NumeroLegajo.TextValue;
             if (textoFormateado.Length < 6)
             {
                 MensajeGeneral.Mostrar("El número no corresponde a un número de legajo válido, verifique que el número sea correcto.", MensajeGeneral.TipoMensaje.Advertencia);
@@ -205,11 +178,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void BuscarPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Ingresando número de legajo, al guardar se generará las ratificaciones testimoniales del personal seleccionado", MensajeGeneral.TipoMensaje.Informacion);
 
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            MostrarMensajeAyuda("Ingresando número de legajo, al guardar se generará las ratificaciones testimoniales del personal seleccionado");
         }
        
 
@@ -253,18 +223,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            if (!datosGuardados) // Si los datos no han sido guardados
-            {
-                using MensajeGeneral mensaje = new("No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                // Hacer visibles los botones
-                mensaje.MostrarBotonesConfirmacion(true);
-
-                DialogResult result = mensaje.ShowDialog();
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true; // Cancelar el cierre del formulario
-                }
-            }
+            MostrarMensajeCierre(e, "No has guardado las ratificaciones testimoniales agregadas. ¿Estás seguro de que deseas cerrar sin guardar?");
         }
 
 
@@ -274,7 +233,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void VerificarNumeroLegajo()
         {
-            string numeroIngresado = textBox_NumeroLegajo.Text;
+            string numeroIngresado = textBox_NumeroLegajo.TextValue;
 
             // Verificar si el legajo ya existe en el panel antes de agregar un nuevo control
             if (EsLegajoYaAgregado(numeroIngresado))
@@ -324,7 +283,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             try
             {
                 PersonalManager personalManager = new();
-                string textoFormateado = textBox_NumeroLegajo.Text;
+                string textoFormateado = textBox_NumeroLegajo.TextValue;
 
                 // Verificar si el número de legajo existe en la base de datos
                 if (!personalManager.ExisteLegajo(textoFormateado))
@@ -357,7 +316,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             finally
             {
                 // Limpiar el contenido del TextBox independientemente del resultado
-                textBox_NumeroLegajo.Text = string.Empty;
+                textBox_NumeroLegajo.TextValue = string.Empty;
                 textBox_NumeroLegajo.Focus();
                 ActualizarContadorRatificaciones();
             }
