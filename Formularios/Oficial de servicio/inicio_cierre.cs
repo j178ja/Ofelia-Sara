@@ -57,7 +57,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Instruccion,
             panel_ControlesInferiores
             );
-         
+           
             textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
             textBox_Victima.TextChanged += (s, e) => ActualizarEstado();
@@ -94,11 +94,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
+
+      
+
             // Configurar autocompletado para `textBox_Caratula`
             AutocompletarManager autocompletarManager = new("autocompletar.json");
             autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
+
             textBox_NumeroIpp.MaxLength = 6; //limitar la cantidad de caracteres para numeroz de IPP
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
@@ -398,7 +402,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // El sender será el InnerTextBox
             if (sender is CustomTextBox customTextBox && customTextBox.TextValue.Length > 2)
             {
-                customTextBox.Text = customTextBox.TextValue.Substring(0, 2); // Limitar a 2 caracteres
+                customTextBox.TextValue = customTextBox.TextValue[..2]; // Limitar a 2 caracteres
                 customTextBox.SelectionStart = customTextBox.TextValue.Length; // Mantener el cursor al final
             }
         }
@@ -536,8 +540,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
             }
         }
-
-    
 
         /// <summary>
         /// METODO PARA INICIALIZAR COMBOBOX EN INDICE PREDETERMINADO
@@ -739,10 +741,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
               
 
                 // Ocultar el CheckBox
-                checkBox_RatificacionTestimonial.Visible = false;
+              //  checkBox_RatificacionTestimonial.Visible = false;
 
                 // Crear y mostrar el formulario BuscarPersonal
-                BuscarPersonal buscarPersonalForm = new BuscarPersonal();
+                BuscarPersonal buscarPersonalForm = new();
 
                 // Obtener el formulario original (inicioCierre)
                 Form originalForm = this;
@@ -801,23 +803,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void CheckPickture_Click(object sender, EventArgs e)
         {
-            if (sender is PictureBox clickedPictureBox)
-            {
-                if (clickedPictureBox.Name == "pictureBox_CheckRatificacion")
-                {
-                    // Manejar lógica para pictureBox_CheckRatificacion
+            //if (sender is PictureBox clickedPictureBox)
+            //{
+            //    if (clickedPictureBox.Name == "pictureBox_CheckRatificacion")
+            //    {
+            //        // Manejar lógica para pictureBox_CheckRatificacion
                   
-                    checkBox_RatificacionTestimonial.Visible = true;
-                    checkBox_RatificacionTestimonial.Checked = false;
-                }
-                else if (clickedPictureBox.Name == "pictureBox_CheckCargo")
-                {
-                    // Manejar lógica para pictureBox_CheckCargo
+            //        checkBox_RatificacionTestimonial.Visible = true;
+            //        checkBox_RatificacionTestimonial.Checked = false;
+            //    }
+            //    else if (clickedPictureBox.Name == "pictureBox_CheckCargo")
+            //    {
+            //        // Manejar lógica para pictureBox_CheckCargo
                    
-                    checkBox_Cargo.Visible = true;
-                    checkBox_Cargo.Checked = false;
-                }
-            }
+            //        checkBox_Cargo.Visible = true;
+            //        checkBox_Cargo.Checked = false;
+            //    }
+            //}
         }
      
        

@@ -79,6 +79,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateDIA.TabIndex = 0;
             textBox_DateDIA.TextAlign = HorizontalAlignment.Center;
             textBox_DateDIA.TextValue = "";
+            textBox_DateDIA.Whidth = 0;
             // 
             // textBox_DateMES
             // 
@@ -103,6 +104,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateMES.TabIndex = 1;
             textBox_DateMES.TextAlign = HorizontalAlignment.Center;
             textBox_DateMES.TextValue = "";
+            textBox_DateMES.Whidth = 0;
             // 
             // textBox_DateAÑO
             // 
@@ -127,10 +129,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DateAÑO.TabIndex = 2;
             textBox_DateAÑO.TextAlign = HorizontalAlignment.Left;
             textBox_DateAÑO.TextValue = "";
+            textBox_DateAÑO.Whidth = 0;
             // 
             // btn_Calendario
             // 
-            btn_Calendario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btn_Calendario.AutoSize = true;
             btn_Calendario.BackColor = System.Drawing.SystemColors.Window;
             btn_Calendario.BackgroundImage = Properties.Resources.Calendario;
@@ -138,7 +140,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             btn_Calendario.Cursor = Cursors.Hand;
             btn_Calendario.Location = new System.Drawing.Point(128, 0);
             btn_Calendario.Name = "btn_Calendario";
-            btn_Calendario.Size = new System.Drawing.Size(27, 23);
+            btn_Calendario.Size = new System.Drawing.Size(27, 22);
             btn_Calendario.TabIndex = 7;
             btn_Calendario.UseVisualStyleBackColor = false;
             btn_Calendario.Click += Btn_Calendario_Click;

@@ -85,8 +85,7 @@ namespace Ofelia_Sara.Clases.General.Botones
                         Limpiar(nestedControl);
                         break;
 
-                    // Si el control es un tipo específico como NuevaCaratulaControl o NuevaPersonaControl, elimina y dispone del control
-                    case NuevaCaratulaControl _:
+                   
                     case NuevaPersonaControl _:
                         control.Controls.Remove(c);
                         c.Dispose();

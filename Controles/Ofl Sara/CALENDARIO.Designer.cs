@@ -36,9 +36,9 @@
             btn_Guardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             btn_Guardar.BackColor = System.Drawing.Color.White;
             btn_Guardar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btn_Guardar.Location = new System.Drawing.Point(170, 186);
+            btn_Guardar.Location = new System.Drawing.Point(191, 186);
             btn_Guardar.Name = "btn_Guardar";
-            btn_Guardar.Size = new System.Drawing.Size(83, 29);
+            btn_Guardar.Size = new System.Drawing.Size(69, 23);
             btn_Guardar.TabIndex = 1;
             btn_Guardar.Text = "GUARDAR";
             btn_Guardar.UseVisualStyleBackColor = false;
@@ -53,7 +53,7 @@
             btn_Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             btn_Cancelar.Location = new System.Drawing.Point(12, 186);
             btn_Cancelar.Name = "btn_Cancelar";
-            btn_Cancelar.Size = new System.Drawing.Size(87, 29);
+            btn_Cancelar.Size = new System.Drawing.Size(71, 23);
             btn_Cancelar.TabIndex = 2;
             btn_Cancelar.Text = "CANCELAR";
             btn_Cancelar.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             AcceptButton = btn_Guardar;
             BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             CancelButton = btn_Cancelar;
-            ClientSize = new System.Drawing.Size(250, 218);
+            ClientSize = new System.Drawing.Size(272, 218);
             Controls.Add(btn_Cancelar);
             Controls.Add(btn_Guardar);
             Controls.Add(monthCalendar1);

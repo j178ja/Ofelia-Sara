@@ -249,7 +249,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Victima.BackColor = Color.White;
             textBox_Victima.ErrorColor = Color.Red;
             textBox_Victima.FocusColor = Color.Blue;
-            textBox_Victima.Location = new Point(147, 3);
+            textBox_Victima.Location = new Point(147, 4);
             textBox_Victima.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             textBox_Victima.MaxLength = 32767;
             textBox_Victima.Multiline = false;

@@ -539,7 +539,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Btn_AgregarCausa_Click(object sender, EventArgs e)
         {
             // Llamar al método en el UserControl para agregar el control
-            NuevaCaratulaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
+            //NuevaPersonaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
 
         }
         private void Btn_AgregarVictima_Click(object sender, EventArgs e)
