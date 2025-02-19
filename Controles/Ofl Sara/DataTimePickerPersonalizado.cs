@@ -1,6 +1,7 @@
 ﻿using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
+using Spire.Xls.Core;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -445,22 +446,26 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void TextBox_MES_Click(object sender, EventArgs e)
         {
-            if (sender is Control ctrl)
+            if (sender is TextBox textBoxMes)
             {
                 // Crear una instancia del formulario SelectorCalendario
-                SelectorCalendario selector = new SelectorCalendario();
+                SelectorCalendario selector = new(textBoxMes);
 
-                // Calcular la posición relativa del control dentro del formulario padre
-                Point screenPoint = ctrl.PointToScreen(Point.Empty);
+                // Calcular la posición del control en la pantalla
+                Point screenPoint = textBoxMes.PointToScreen(Point.Empty);
 
                 // Ajustar la posición del formulario SelectorCalendario
                 selector.StartPosition = FormStartPosition.Manual;
-                selector.Location = new Point(screenPoint.X, screenPoint.Y + ctrl.Height);
+                selector.Location = new Point(
+                    screenPoint.X + (textBoxMes.Width - selector.Width) / 2, // Centrar horizontalmente
+                    screenPoint.Y - selector.Height - 3 // 3px por encima del control
+                );
 
                 // Mostrar el formulario
                 selector.Show();
             }
         }
+
 
     }
 }

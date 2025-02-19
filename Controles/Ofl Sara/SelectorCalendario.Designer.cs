@@ -192,7 +192,7 @@
             label_Febrero.Location = new System.Drawing.Point(110, 0);
             label_Febrero.Name = "label_Febrero";
             label_Febrero.Size = new System.Drawing.Size(101, 19);
-            label_Febrero.TabIndex = 2;
+            label_Febrero.TabIndex = 1;
             label_Febrero.Text = "FEBRERO";
             label_Febrero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -203,7 +203,7 @@
             label_Enero.Location = new System.Drawing.Point(3, 0);
             label_Enero.Name = "label_Enero";
             label_Enero.Size = new System.Drawing.Size(101, 19);
-            label_Enero.TabIndex = 1;
+            label_Enero.TabIndex = 0;
             label_Enero.Text = "ENERO";
             label_Enero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             label_Enero.MouseEnter += Mes_MouseEnter;
@@ -215,7 +215,7 @@
             label_Marzo.Location = new System.Drawing.Point(217, 0);
             label_Marzo.Name = "label_Marzo";
             label_Marzo.Size = new System.Drawing.Size(101, 19);
-            label_Marzo.TabIndex = 0;
+            label_Marzo.TabIndex = 2;
             label_Marzo.Text = "MARZO";
             label_Marzo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
