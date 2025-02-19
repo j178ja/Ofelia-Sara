@@ -101,7 +101,7 @@
             this.btn_ModificarPersonal.Size = new System.Drawing.Size(22, 25);
             this.btn_ModificarPersonal.TabIndex = 36;
             this.btn_ModificarPersonal.UseVisualStyleBackColor = false;
-            this.btn_ModificarPersonal.Click += new System.EventHandler(this.btn_ModificarPersonal_Click);
+            this.btn_ModificarPersonal.Click += new System.EventHandler(this.Btn_ModificarPersonal_Click);
             // 
             // btn_EliminarControl
             // 

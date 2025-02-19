@@ -38,11 +38,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         #region LOAD
         private void SelectorCalendario_Load(object sender, EventArgs e)
         {
-            labels = new List<Label>();
+            labels = [];
             int mesActual = DateTime.Now.Month;
 
             // Crear lista temporal para ordenar por posición
-            List<(Label label, int fila, int columna)> listaTemporal = new List<(Label, int, int)>();
+            List<(Label label, int fila, int columna)> listaTemporal = [];
 
             foreach (Control ctrl in DistribuidorMeses.Controls)
             {
@@ -129,6 +129,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 lbl.BackColor = Color.FromArgb(0, 154, 174);
                 lbl.ForeColor = Color.White;
                 lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+
+                // Remover el foco del label en curso para que no haya dos label resaltado
+                this.ActiveControl = null;
+
                 lbl.Invalidate();
             }
         }

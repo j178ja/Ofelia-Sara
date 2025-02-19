@@ -17,10 +17,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             InitializeComponent();
 
-
-
-            // Configuración inicial
-            pictureBox_CheckSeleccionado.Visible = false;
             //checkBox_Selecionar.Visible = false;
 
             // Suscripción al evento Load del formulario
@@ -36,7 +32,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         public bool IsImagenVisible
         {
-            get { return pictureBox_CheckSeleccionado.Visible; }
+            get { return true /*pictureBox_CheckSeleccionado.Visible*/; } //true para que no marque error tras eliminar el picture
         }
 
 
@@ -100,22 +96,22 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         public void CambiarVisibilidad()
         {
-            // Cambiar la visibilidad
-            pictureBox_CheckSeleccionado.Visible = !pictureBox_CheckSeleccionado.Visible;
+            //// Cambiar la visibilidad
+            //pictureBox_CheckSeleccionado.Visible = !pictureBox_CheckSeleccionado.Visible;
 
-            // Disparar el evento si la imagen se hizo visible
-            if (pictureBox_CheckSeleccionado.Visible)
-            {
-                ImagenVisibleChanged?.Invoke(this, EventArgs.Empty);
-                //ActualizarContadores();
-            }
+            //// Disparar el evento si la imagen se hizo visible
+            //if (pictureBox_CheckSeleccionado.Visible)
+            //{
+            //    ImagenVisibleChanged?.Invoke(this, EventArgs.Empty);
+            //    //ActualizarContadores();
+            //}
         }
 
 
         private void pictureBox_CheckSeleccionado_Click(object sender, EventArgs e)
         {
             checkBox_Selecionar.Checked = false;
-            pictureBox_CheckSeleccionado.Visible = false;
+          //  pictureBox_CheckSeleccionado.Visible = false;
 
 
 

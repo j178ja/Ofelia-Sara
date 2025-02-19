@@ -32,9 +32,6 @@
     <Compile Update="Controles\Ofl Sara\SelectorCalendario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controles\Ofl Sara\SelectorFecha.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Controles\Redactador\PictureBoxCircular.cs">
       <SubType>Component</SubType>
     </Compile>

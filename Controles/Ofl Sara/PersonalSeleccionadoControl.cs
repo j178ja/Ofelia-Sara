@@ -1,6 +1,7 @@
 ﻿
 using BaseDatos.Adm_BD.Manager;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.Buscar_Personal;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
@@ -27,10 +28,10 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
         {
             InitializeComponent();
             _personalManager = new PersonalManager();
-            /*      
+                 
                 ToolTipGeneral.Mostrar( btn_ModificarPersonal, "MODIFICAR personal");
                 ToolTipGeneral.Mostrar( btn_EliminarControl, "ELIMINAR personal");
-            */
+            
         }
 
         public void ActualizarDatosPorLegajo(string numeroLegajo)
@@ -81,9 +82,8 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
         }
 
 
-        //------------------------------------------------------------------------------------------
 
-        private void btn_ModificarPersonal_Click(object sender, EventArgs e)
+        private void Btn_ModificarPersonal_Click(object sender, EventArgs e)
         {
             // Mostrar el formulario de usuario para la validación previa
             using (UsuarioForm usuarioForm = new UsuarioForm())
@@ -96,7 +96,7 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
                     string numeroLegajo = label_NumeroLegajo.Text;
 
                     // Crear una instancia del formulario NuevoPersonal, pasando el número de legajo si es necesario
-                    NuevoPersonal formularioEdicion = new NuevoPersonal(numeroLegajo); // Asegúrate de que el constructor acepte un string
+                    NuevoPersonal formularioEdicion = new(numeroLegajo); // Asegúrate de que el constructor acepte un string
 
                     // Mostrar el formulario de edición
                     formularioEdicion.ShowDialog();

@@ -37,7 +37,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             // No es necesario establecer SelectionMode
             SelectedDate = DateTime.Now; // Inicializa con la fecha actual
             monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
-           // IncrementarTamaño.Incrementar(btn_Guardar);
+            //IncrementarTamaño.Incrementar(btn_Guardar); comentado porque se desplaza
         }
         #endregion
 

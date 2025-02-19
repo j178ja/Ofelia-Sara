@@ -31,13 +31,17 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         public TimePickerPersonalizado()
         {
             InitializeComponent();
+            this.Load += TimePickerPersonalizado_Load;
 
-            // Inicializar con la fecha actual
-            FechaSeleccionada = DateTime.Now;
             ConfigurarTooltips();
             ConfigurarTextBoxes();
+            CargarFechaActual();
         }
         #endregion
+        private void TimePickerPersonalizado_Load(object sender, EventArgs e)
+        {
+            CargarFechaActual();
+        }
 
         #region PROPIEDADES PUBLICAS
         // Propiedades para configurar el rango de años
@@ -60,24 +64,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         #endregion
 
-        private void MostrarSelectorFecha()
-        {
-            FocusControl();
-            var controlPos = this.PointToScreen(Point.Empty); // Obtiene la posición del control en la pantalla
 
-            using var selectorFecha = new SelectorFecha(SelectorFecha.TipoSeleccion.Dias);
-            selectorFecha.StartPosition = FormStartPosition.Manual;
-            selectorFecha.Location = new Point(
-             controlPos.X + (this.Width / 2) - (selectorFecha.Width / 2),
-             controlPos.Y + (this.Height / 2) - (selectorFecha.Height / 2)
-         );
-
-
-            if (selectorFecha.ShowDialog() == DialogResult.OK)
-            {
-                FechaSeleccionada = selectorFecha.FechaSeleccionada;
-            }
-        }
 
         /// <summary>
         /// ABRIR CALENDARIO PARA SELECCIONAR FECHA
@@ -210,7 +197,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_AÑO.KeyDown += ManejarAutocompletadoYNavegacion;
 
 
-            Btn_Calendario.Click += (s, e) => MostrarSelectorFecha();
+
 
             textBox_DIA.Leave += (s, e) => RemoveFocus();
             textBox_MES.Leave += (s, e) => RemoveFocus();
@@ -225,6 +212,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// <param name="e"></param>
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -310,6 +298,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void CamposFecha_TextChanged(object sender, EventArgs e)
         {
+
             // Validar si los campos están completos
             if (ValidarCampos())
             {
@@ -465,7 +454,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 selector.Show();
             }
         }
+        private void CargarFechaActual()
+        {
+            DateTime fechaActual = DateTime.Now;
 
+            textBox_DIA.Text = fechaActual.Day.ToString("00"); // Día con dos dígitos
+            textBox_MES.Text = fechaActual.ToString("MMMM").ToUpper(); // Nombre del mes en mayúsculas
+            textBox_AÑO.Text = fechaActual.Year.ToString();
+        }
 
+        private void TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            FocusControl();
+        }
     }
 }
