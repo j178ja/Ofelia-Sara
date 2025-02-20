@@ -2,6 +2,7 @@
 
 using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -93,30 +94,9 @@ namespace Ofelia_Sara.Formularios.General
         #endregion
 
 
-        /// <summary>
-        /// Sobrecarga del método OnLoad para inicializar eventos y configuraciones adicionales.
-        /// </summary>
-        /// <param name="e">Argumentos del evento.</param>
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
+        
 
-            // Lógica adicional al cargar el formulario
-            ConfigureFormAppearance();
-         
-        }
-
-        /// <summary>
-        /// Configura la apariencia general del formulario.
-        /// </summary>
-        private void ConfigureFormAppearance()
-        {
-            // Cambiar el color de fondo
-            Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado
-            this.BackColor = customColor;
-
-
-        }
+       
 
         /// <summary>
         /// Método generado por el diseñador para inicializar componentes.
@@ -132,6 +112,51 @@ namespace Ofelia_Sara.Formularios.General
             Name = "BaseForm";
             Load += BaseForm_Load;
             ResumeLayout(false);
+        }
+
+        /// <summary>
+        /// Configura la apariencia general del formulario, aplicando el redondeo a los paneles.
+        /// </summary>
+        protected virtual void ConfigureFormAppearance()
+        {
+            // Cambiar el color de fondo
+            Color customColor = Color.FromArgb(0, 154, 174); // Color personalizado
+            this.BackColor = customColor;
+
+            // Aplicar el redondeo de bordes a todos los paneles
+            foreach (Control control in this.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    RedondearBordes.Aplicar(panel, 15);
+                }
+
+                // Si hay paneles anidados, aplicar la configuración recursivamente
+                if (control.HasChildren)
+                {
+                    ApplyRoundBordersToChildPanels(control);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Aplica redondeo de bordes a los paneles anidados.
+        /// </summary>
+        private void ApplyRoundBordersToChildPanels(Control parentControl)
+        {
+            foreach (Control control in parentControl.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    RedondearBordes.Aplicar(panel, 15);
+                }
+
+                // Aplicar recursivamente si el control tiene hijos
+                if (control.HasChildren)
+                {
+                    ApplyRoundBordersToChildPanels(control);
+                }
+            }
         }
 
         /// <summary>
@@ -499,86 +524,41 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
-        {
-            // Verifica si el sender es un CustomComboBox
-            if (sender is CustomComboBox customComboBox)
-            {
-                // Obtiene el texto actual
-                string currentText = customComboBox.TextValue;
-
-                // Verifica si es un número válido
-                if (int.TryParse(currentText, out _))
-                {
-                    // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                    string completedText = currentText.PadLeft(2, '0');
-
-                    // Actualiza el texto en el CustomComboBox
-                    customComboBox.TextValue = completedText;
-
-                    // Posiciona el cursor al final del texto
-                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
-                }
-            }
-        }
 
         //---------------------------------------------------
-        public void ConfigurarControlesIPP()
-        {
-            ConfigurarMaxLengthIpp();
-        }
+
         //-------------------------------------------------------------------
-        /// <summary>
-        /// llamar en load de cada form para establecer cantidad de caracteres
-        /// </summary>
-        protected virtual void ConfigurarMaxLengthIpp()
-        {
-            foreach (Control control in this.Controls)
-            {
-                AplicarConfiguracionIpp(control);
+        ///// <summary>
+        ///// llamar en load de cada form para establecer cantidad de caracteres
+        ///// </summary>
+        //protected virtual void ConfigurarMaxLengthIpp()
+        //{
+        //    foreach (Control control in this.Controls)
+        //    {
+        //        AplicarConfiguracionIpp(control);
 
-                // Si hay paneles o controles anidados, recorrerlos también
-                if (control.HasChildren)
-                {
-                    RecorrerControlesAnidados(control);
-                }
-            }
-        }
+        //        // Si hay paneles o controles anidados, recorrerlos también
+        //        if (control.HasChildren)
+        //        {
+        //            RecorrerControlesAnidados(control);
+        //        }
+        //    }
+        //}
 
-        private void RecorrerControlesAnidados(Control parent)
-        {
-            foreach (Control control in parent.Controls)
-            {
-                AplicarConfiguracionIpp(control);
+        //private void RecorrerControlesAnidados(Control parent)
+        //{
+        //    foreach (Control control in parent.Controls)
+        //    {
+        //        AplicarConfiguracionIpp(control);
 
-                if (control.HasChildren)
-                {
-                    RecorrerControlesAnidados(control);
-                }
-            }
-        }
+        //        if (control.HasChildren)
+        //        {
+        //            RecorrerControlesAnidados(control);
+        //        }
+        //    }
+        //}
 
-        private void AplicarConfiguracionIpp(Control control)
-        {
-            if (control is CustomTextBox textBox && textBox.Name == "textBox_NumeroIpp")
-            {
-                textBox.MaxLength = 6;
-            }
-
-            if (control is CustomComboBox customComboBox)
-            {
-                if (customComboBox.Name == "comboBox_Ipp1" || customComboBox.Name == "comboBox_Ipp2")
-                {
-                    customComboBox.InnerTextBox.MaxLength = 2;
-                    ConfigurarItemsComboBox(customComboBox);
-                }
-
-                if (customComboBox.Name == "comboBox_Ipp4")
-                {
-                    customComboBox.InnerTextBox.MaxLength = 2;
-                }
-            }
-        }
+  
 
         /// <summary>
         /// agrega 10 items al list del comboBox
@@ -591,6 +571,265 @@ namespace Ofelia_Sara.Formularios.General
             for (int i = 0; i <= 10; i++)
             {
                 comboBox.Items.Add(i.ToString("D2")); // "00", "01", "02", ..., "10"
+            }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            ConfigurarTextoEnControles();
+            InicializarComboBoxIpp();
+            ConfigurarMaxLengthIpp();
+            ConfigurarEventosIpp();
+            ConfigureFormAppearance();
+        }
+        /// <summary>
+        /// llamar en load de cada form para establecer cantidad de caracteres
+        /// </summary>
+        protected virtual void ConfigurarMaxLengthIpp()
+        {
+            foreach (Control control in this.Controls)
+            {
+                AplicarConfiguracionIpp(control);
+
+                // Si hay controles anidados, recorrerlos también
+                if (control.HasChildren)
+                {
+                    RecorrerControlesAnidados(control);
+                }
+            }
+        }
+        private void AplicarConfiguracionIpp(Control control)
+        {
+            if (control is CustomComboBox customComboBox)
+            {
+                switch (customComboBox.Name)
+                {
+                    case "comboBox_Ipp1":
+                    case "comboBox_Ipp2":
+                    case "comboBox_Ipp4":
+                        customComboBox.InnerTextBox.MaxLength = 2;
+                        break;
+                }
+            }
+            else if (control is TextBox textBox)
+            {
+                if (textBox.Name == "textBox_NumeroIpp")
+                {
+                    textBox.MaxLength = 6;
+                }
+            }
+        }
+        /// <summary>
+        /// ESTABLECE CARACTERÍSTICAS DE TEXTO EN CONTROLES
+        /// </summary>
+        private void ConfigurarTextoEnControles()
+        {
+            foreach (Control control in this.Controls)
+            {
+                AplicarFormatoTexto(control);
+
+                if (control.HasChildren)
+                {
+                    RecorrerControlesAnidados(control);
+                }
+            }
+        }
+
+        private void RecorrerControlesAnidados(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                AplicarFormatoTexto(control);
+
+                if (control.HasChildren)
+                {
+                    RecorrerControlesAnidados(control);
+                }
+            }
+        }
+
+        private void AplicarFormatoTexto(Control control)
+        {
+            if (control is TextBox textBox)
+            {
+                switch (textBox.Name)
+                {
+                    case "textBox_Caratula":
+                        MayusculaYnumeros.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Victima":
+                    case "textBox_Imputado":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+                }
+            }
+            else if (control is CustomComboBox comboBox)
+            {
+                switch (comboBox.Name)
+                {
+                    case "comboBox_Fiscalia":
+                        MayusculaYnumeros.AplicarAControl(comboBox);
+                        break;
+                    case "comboBox_AgenteFiscal":
+                    case "comboBox_DeptoJudicial":
+                        ConvertirACamelCase.AplicarAControl(comboBox);
+                        break;
+                    case "comboBox_Localidad":
+                        MayusculaSola.AplicarAControl(comboBox);
+                        break;
+                    case "comboBox_Instructor":
+                    case "comboBox_Secretario":
+                    case "comboBox_Dependencia":
+                        MayusculaYnumeros.AplicarAControl(comboBox);
+                        break;
+                }
+
+                // Aplicar restricción de solo números a los IPP
+                if (comboBox.Name == "comboBox_Ipp1" || comboBox.Name == "comboBox_Ipp2" || comboBox.Name == "comboBox_Ipp4")
+                {
+                    ClaseNumeros.SoloNumeros(comboBox);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Inicializa valores por defecto en los ComboBox IPP
+        /// </summary>
+        private void InicializarComboBoxIpp()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is CustomComboBox comboBox)
+                {
+                    switch (comboBox.Name)
+                    {
+                        case "comboBox_Ipp1":
+                        case "comboBox_Ipp2":
+                            comboBox.SelectedIndex = 3; // Posición predeterminada
+                            break;
+                        case "comboBox_Ipp4":
+                            CargarAño(comboBox);
+                            break;
+                    }
+                }
+
+                if (control.HasChildren)
+                {
+                    InicializarComboBoxIppEnAnidados(control);
+                }
+            }
+        }
+
+        private void InicializarComboBoxIppEnAnidados(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is CustomComboBox comboBox)
+                {
+                    switch (comboBox.Name)
+                    {
+                        case "comboBox_Ipp1":
+                        case "comboBox_Ipp2":
+                            comboBox.SelectedIndex = 3;
+                            break;
+                        case "comboBox_Ipp4":
+                            CargarAño(comboBox);
+                            break;
+                    }
+                }
+
+                if (control.HasChildren)
+                {
+                    InicializarComboBoxIppEnAnidados(control);
+                }
+            }
+        }
+        // Evento Leave para completar con ceros los ComboBox IPP
+        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
+        {
+            if (sender is CustomComboBox customComboBox)
+            {
+                if (int.TryParse(customComboBox.TextValue, out _))
+                {
+                    customComboBox.TextValue = customComboBox.TextValue.PadLeft(2, '0');
+                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
+                }
+            }
+        }
+
+        // Evento KeyPress para solo permitir números en los TextBox IPP
+        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                CompletarConCeros(sender as CustomTextBox);
+                e.Handled = true; // Evitar que se procese Enter
+            }
+        }
+
+        // Evento Leave para completar con ceros los TextBox IPP
+        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
+        {
+            CompletarConCeros(sender as CustomTextBox);
+        }
+
+        // Método reutilizable para completar con ceros
+        private static void CompletarConCeros(CustomTextBox customTextBox)
+        {
+            if (customTextBox != null && int.TryParse(customTextBox.TextValue, out _))
+            {
+                customTextBox.TextValue = customTextBox.TextValue.PadLeft(6, '0');
+                customTextBox.SelectionStart = customTextBox.TextValue.Length;
+            }
+        }
+
+        protected virtual void ConfigurarEventosIpp()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is CustomComboBox customComboBox)
+                {
+                    customComboBox.Leave += ComboBox_Ipp_Leave;
+                }
+                else if (control is CustomTextBox customTextBox)
+                {
+                    customTextBox.Leave += TextBox_NumeroIpp_Leave;
+                    customTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
+                }
+
+                // Si hay paneles o controles anidados, recorrerlos también
+                if (control.HasChildren)
+                {
+                    ConfigurarEventosEnHijos(control);
+                }
+            }
+        }
+
+        private void ConfigurarEventosEnHijos(Control parentControl)
+        {
+            foreach (Control control in parentControl.Controls)
+            {
+                if (control is CustomComboBox customComboBox)
+                {
+                    customComboBox.Leave += ComboBox_Ipp_Leave;
+                }
+                else if (control is CustomTextBox customTextBox)
+                {
+                    customTextBox.Leave += TextBox_NumeroIpp_Leave;
+                    customTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
+                }
+
+                // Si el control tiene más hijos, aplicar recursivamente
+                if (control.HasChildren)
+                {
+                    ConfigurarEventosEnHijos(control);
+                }
             }
         }
 

@@ -93,23 +93,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
-            InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
+            
 
-            ConfigurarControlesIPP();
-
-            comboBox_Ipp1.SelectedIndex = 3;
-            comboBox_Ipp2.SelectedIndex = 3;
-
+           
             // Configurar autocompletado para `textBox_Caratula`
             AutocompletarManager autocompletarManager = new("autocompletar.json");
             autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
-            textBox_NumeroIpp.MaxLength = 6; //limitar la cantidad de caracteres para numeroz de IPP
+       
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
-            TextEnControles();//condiciona el tipo de texto en diferentes controles
+
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
             InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
@@ -159,25 +155,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ToolTipGeneral.Mostrar(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
         }
 
-        /// <summary>
-        /// ESTABLECE CARACTERISTICAS DE TEXTO EN CONTROLES
-        /// </summary>
-        private void TextEnControles()
-        {
-            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
-            MayusculaSola.AplicarAControl(textBox_Victima);
-            MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad);
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
 
-            CargarAño(comboBox_Ipp4);
-
-
-
-        }
 
         /// <summary>
         /// INVISIBILIZA Y DESACTIVA CONTROLES 
@@ -375,80 +353,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         #region METODOS GENERALES
 
-        /// <summary>
-        /// METODO PARA LIMITAR LOS CARACTERES A 6
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
-        {
-            // Limitar a 6 caracteres
-            if (textBox_NumeroIpp.TextValue.Length > 6)
-            {
-                // Si el texto excede los 6 caracteres, cortar el exceso
-                textBox_NumeroIpp.TextValue = textBox_NumeroIpp.TextValue.Substring(0, 6);
 
-                // Mover el cursor al final del texto
-                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.TextValue.Length;
-                ActualizarEstado();
-            }
 
-        }
-      
-        /// <summary>
-        /// LIMITAR A 2 CARACTERES COMBOBOX IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_TextUpdate(object sender, EventArgs e)
-        {
-            // El sender será el InnerTextBox
-            if (sender is CustomTextBox customTextBox && customTextBox.TextValue.Length > 2)
-            {
-                customTextBox.TextValue = customTextBox.TextValue[..2]; // Limitar a 2 caracteres
-                customTextBox.SelectionStart = customTextBox.TextValue.Length; // Mantener el cursor al final
-            }
-        }
-
-        /// <summary>
-        /// METODO PARA QUE SOLO SE AGREGEN NUMEROS A COMBOBOX IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo acepta dígitos
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Si el evento viene del InnerTextBox, obtenemos el control padre
-                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
-                {
-                    // Obtiene el texto actual
-                    string currentText = customComboBox.TextValue;
-
-                    // Verifica si es un número válido
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                        string completedText = currentText.PadLeft(2, '0');
-
-                        // Actualiza el texto en el CustomTextBox
-                        customComboBox.TextValue = completedText;
-
-                        // Posiciona el cursor al final del texto
-                        customComboBox.SelectionStart = customComboBox.TextValue.Length;
-
-                        // Cancela el manejo predeterminado de la tecla Enter
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
+     
         /// <summary>
         /// METODO PARA HACER QUE SE AUTOCOMPLETE LOS COMBOBOX DE NUMERO IP CON 0 AL PERDER EL FOCO
         /// </summary>
@@ -544,16 +451,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        /// <summary>
-        /// METODO PARA INICIALIZAR COMBOBOX EN INDICE PREDETERMINADO
-        /// </summary>
-        private static void InicializarComboBox()
-        {
-            //comboBox_Ipp1.SelectedIndex = 3;
-            //comboBox_Ipp2.SelectedIndex = 3;  //se comento ya que generaba error despues de la migracion
-            //comboBox_Ipp4.SelectedIndex = 0;
-
-        }
+       
 
         /// <summary>
         ///  CARGAR DATOS DESDE FORMULARIO INICIO-CIERRE

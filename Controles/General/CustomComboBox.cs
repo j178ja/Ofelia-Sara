@@ -695,7 +695,7 @@ namespace Ofelia_Sara.Controles.General
             get => dropdownList.SelectedIndex;
             set
             {
-                dropdownList.SelectedIndex = value;
+          //      dropdownList.SelectedIndex = value;
                 textBox.Text = dropdownList.SelectedItem?.ToString();
             }
         }
