@@ -82,6 +82,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
              controlPos.X + (this.Width / 2) - (calendarForm.Width / 2),
              controlPos.Y + (this.Height / 2) - (calendarForm.Height / 2)
              );
+
             if (calendarForm.ShowDialog() == DialogResult.OK)
             {
                 _ = calendarForm.SelectedDate;

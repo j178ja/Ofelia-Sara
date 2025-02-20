@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.General;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -143,36 +144,40 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            SelectedDate = monthCalendar1.SelectionStart; // Obtiene la fecha seleccionada
+            SelectedDate = monthCalendar1.SelectionStart; // Obtener la fecha seleccionada
             datosGuardados = true; // Marcar que los datos fueron guardados
-                                   //FALTA AGREGAR PARA QUE SE OCULTE CALENDARIO
-            this.DialogResult = DialogResult.OK;
-            this.Close();
 
             // Obtener el control invocador
             Control controlInvocador = ObtenerControlInvocador();
             DateTime selectedDate = monthCalendar1.SelectionStart;
             string formattedDate = selectedDate.ToString("dd/MM/yyyy");
 
-            if (controlInvocador != null)
-            {
-                // Calcular posición debajo del control invocador
-                Point controlPosition = controlInvocador.PointToScreen(Point.Empty);
-                using var mensajeForm = new MensajeGeneral($"Selección {formattedDate} guardada.", MensajeGeneral.TipoMensaje.Exito);
-                int messageX = controlPosition.X + (controlInvocador.Width / 2) - (mensajeForm.Width / 2);
-                int messageY = controlPosition.Y + controlInvocador.Height + 3;
+            // Ocultar visualmente el formulario CALENDARIO sin afectar el formulario principal
+            this.Opacity = 0;
 
-                mensajeForm.StartPosition = FormStartPosition.Manual;
-                mensajeForm.Location = new Point(messageX, messageY);
-                mensajeForm.ShowDialog();
-            }
-            else
+            // Crear el mensaje
+            using var mensajeForm = new MensajeGeneral($"Selección {formattedDate} guardada.", MensajeGeneral.TipoMensaje.Exito)
             {
-                // Si no hay control invocador, mostrar en posición por defecto
-                MensajeGeneral.Mostrar($"Selección {formattedDate} guardada.", MensajeGeneral.TipoMensaje.Exito);
-            }
+                StartPosition = FormStartPosition.Manual
+            };
+
+            // Determinar posición centrada con respecto a CALENDARIO
+            int messageX = this.Location.X + (this.Width / 2) - (mensajeForm.Width / 2);
+            int messageY = this.Location.Y + (this.Height / 2) - (mensajeForm.Height / 2);
+
+            mensajeForm.Location = new Point(messageX, messageY);
+
+            // Mostrar el mensaje centrado en CALENDARIO
+            mensajeForm.ShowDialog();
+
+            // Cerrar CALENDARIO después de que se cierre el mensaje
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
-     
+
+
+
+
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
