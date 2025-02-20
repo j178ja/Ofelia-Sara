@@ -23,6 +23,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private readonly Color focusColor = Color.Blue;
         private readonly Color errorColor = Color.Red;
         internal DateTime SelectedDate;
+        // Propiedad para acceder al control del TimePicker
 
         #endregion
 
@@ -36,11 +37,13 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             ConfigurarTooltips();
             ConfigurarTextBoxes();
             CargarFechaActual();
+            
         }
         #endregion
         private void TimePickerPersonalizado_Load(object sender, EventArgs e)
         {
-            CargarFechaActual();
+           
+            
         }
 
         #region PROPIEDADES PUBLICAS
@@ -64,8 +67,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         #endregion
 
-
-
         /// <summary>
         /// ABRIR CALENDARIO PARA SELECCIONAR FECHA
         /// </summary>
@@ -77,16 +78,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
             var controlPos = this.PointToScreen(Point.Empty); // Obtiene la posición del control en la pantalla
             using var calendarForm = new CALENDARIO();
+            calendarForm.Text = "SELECCIONE FECHA"; //cambia el indicador del formulario a mostrar al usuario
             calendarForm.StartPosition = FormStartPosition.Manual;
             calendarForm.Location = new Point(
              controlPos.X + (this.Width / 2) - (calendarForm.Width / 2),
              controlPos.Y + (this.Height / 2) - (calendarForm.Height / 2)
              );
-
+            // Mostrar el formulario y manejar la selección
             if (calendarForm.ShowDialog() == DialogResult.OK)
             {
-                _ = calendarForm.SelectedDate;
+                DateTime selectedDate = calendarForm.SelectedDate;
 
+                ActualizarConFecha(selectedDate);
             }
         }
         private void RemoveFocus()
@@ -119,7 +122,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                     }
                 };
             }
-
             animationTimer.Start();
         }
 
@@ -164,8 +166,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.TabIndex = 1;
             textBox_AÑO.TabIndex = 2;
 
-
-
             // Asociar eventos de cambio de texto para cálculos (como antigüedad o validación)
             textBox_DIA.TextChanged += CamposFecha_TextChanged;
             textBox_MES.TextChanged += CamposFecha_TextChanged;
@@ -191,14 +191,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
             textBox_AÑO.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
 
-
             // Asociar el evento KeyDown para autocompletar y navegación
             textBox_DIA.KeyDown += ManejarAutocompletadoYNavegacion;
             textBox_MES.KeyDown += ManejarAutocompletadoYNavegacion;
             textBox_AÑO.KeyDown += ManejarAutocompletadoYNavegacion;
-
-
-
 
             textBox_DIA.Leave += (s, e) => RemoveFocus();
             textBox_MES.Leave += (s, e) => RemoveFocus();
@@ -219,6 +215,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 e.Handled = true;
             }
         }
+
         /// <summary>
         /// evento PARA CUANDO SE PRESIONA TECLA ENTER O TAB
         /// </summary>
@@ -251,7 +248,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void TextBox_Autocompletar(TextBox textBox)
         {
             if (textBox == textBox_DIA || textBox == textBox_MES)
@@ -299,7 +295,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void CamposFecha_TextChanged(object sender, EventArgs e)
         {
-
             // Validar si los campos están completos
             if (ValidarCampos())
             {
@@ -317,25 +312,17 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                             Point controlPosition = this.PointToScreen(Point.Empty);
 
                             // Mostrar mensaje de advertencia
-                            using (var mensajeForm = new MensajeGeneral("La fecha no puede ser posterior a la fecha actual.", MensajeGeneral.TipoMensaje.Advertencia))
-                            {
-                                // Centrar el mensaje con respecto al control
-                                int messageX = controlPosition.X + (this.Width / 2) - (mensajeForm.Width / 2);
-                                int messageY = controlPosition.Y + this.Height + 3; // Posicionar justo debajo del control
+                            using var mensajeForm = new MensajeGeneral("La fecha no puede ser posterior a la fecha actual.", MensajeGeneral.TipoMensaje.Advertencia);
+                            // Centrar el mensaje con respecto al control
+                            int messageX = controlPosition.X + (this.Width / 2) - (mensajeForm.Width / 2);
+                            int messageY = controlPosition.Y + this.Height + 3; // Posicionar justo debajo del control
 
-                                mensajeForm.StartPosition = FormStartPosition.Manual;
-                                mensajeForm.Location = new Point(messageX, messageY);
-                                mensajeForm.ShowDialog();
-                            }
-
-
-
+                            mensajeForm.StartPosition = FormStartPosition.Manual;
+                            mensajeForm.Location = new Point(messageX, messageY);
+                            mensajeForm.ShowDialog();
                             return;
                         }
-
                     }
-
-
                 }
             }
 
@@ -399,8 +386,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
                 if (sender is TextBox textBox)
                 {
-
-
                     // Navegar entre los campos del CustomDate
                     if (textBox == textBox_DIA)
                     {
@@ -418,13 +403,14 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 }
             }
         }
+
         /// <summary>
         /// OBTIENE FECHA SELECCIONADA EN FORMULARIO Y LA MUESTRA EN LOS CAMPOS
         /// </summary>
         /// <returns></returns>
         public DateTime? ObtenerFecha()
         {
-            if (ValidarCampos() &&
+            if (ValidarCampos() && 
                 int.TryParse(textBox_DIA.Text, out int dia) &&
                 int.TryParse(textBox_MES.Text, out int mes) &&
                 int.TryParse(textBox_AÑO.Text, out int año))
@@ -434,6 +420,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             return null;
         }
 
+        /// <summary>
+        /// crea una instancia de formulario SelectorCalendario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_MES_Click(object sender, EventArgs e)
         {
             if (sender is TextBox textBoxMes)
@@ -442,7 +433,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 SelectorCalendario selector = new(textBoxMes);
 
                 // Calcular la posición del control en la pantalla
-                Point screenPoint = textBoxMes.PointToScreen(Point.Empty);
+                Point screenPoint = textBoxMes.PointToScreen(Point.Empty);  
 
                 // Ajustar la posición del formulario SelectorCalendario
                 selector.StartPosition = FormStartPosition.Manual;
@@ -450,9 +441,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                     screenPoint.X + (textBoxMes.Width - selector.Width) / 2, // Centrar horizontalmente
                     screenPoint.Y - selector.Height - 3 // 3px por encima del control
                 );
-
+             
                 // Mostrar el formulario
-                selector.Show();
+                selector.ShowDialog();
             }
         }
         private void CargarFechaActual()
@@ -463,10 +454,47 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.Text = fechaActual.ToString("MMMM").ToUpper(); // Nombre del mes en mayúsculas
             textBox_AÑO.Text = fechaActual.Year.ToString();
         }
+        
+        /// <summary>
+        /// Método para actualizar los TextBox con la fecha seleccionada
+        /// </summary>
+        /// <param name="selectedDate"></param>
+        public void ActualizarConFecha(DateTime selectedDate)
+        {
+            // Asignar la fecha al DateTimePicker
+            FechaSeleccionada = selectedDate;
 
+            // Actualizar los TextBox con la fecha
+            textBox_DIA.Text = selectedDate.Day.ToString("00"); // Día con dos dígitos (por ejemplo, 01)
+            textBox_MES.Text = selectedDate.ToString("MMMM").ToUpper(); // Mes en nombre completo y en mayúsculas (por ejemplo, "FEBRERO")
+            textBox_AÑO.Text = selectedDate.Year.ToString(); // Año
+        }
+
+
+        /// <summary>
+        /// hacer que el control dateTimePicker tenga el foco
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_MouseClick(object sender, MouseEventArgs e)
         {
             FocusControl();
         }
+
+        /// <summary>
+        /// hace que no se pueda editar la seleccion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_MES_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // Bloquea cualquier tecla presionada
+        }
+
+
+
+
+
+
     }
 }

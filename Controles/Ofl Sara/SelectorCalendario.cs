@@ -234,20 +234,45 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             if (lbl == null) return;
 
+            // Cambiar estilo del label seleccionado
             lbl.BackColor = SystemColors.Highlight;
             lbl.ForeColor = Color.White;
             lbl.Font = new Font(lbl.Font, FontStyle.Bold);
-            lbl.Invalidate();
+            lbl.Invalidate();  // Fuerza el redibujo del label
 
             // Asignar el texto del label seleccionado al TextBox
             if (textBoxDestino != null)
             {
                 textBoxDestino.Text = lbl.Text;
+
+                // Mover el cursor al final del texto, sin seleccionar nada
+                textBoxDestino.SelectionStart = textBoxDestino.Text.Length;
+                textBoxDestino.SelectionLength = 0;
+            
+
+                // Asegurarse de que textBox_AÑO reciba el foco después de un pequeño retardo
+                await Task.Delay(50); // Retardo pequeño para asegurar que el foco se pase correctamente
+
+                // Asegurarse de que el formulario padre esté cargado y podamos encontrar textBox_AÑO
+                Control formularioPadre = textBoxDestino.FindForm();
+                if (formularioPadre != null)
+                {
+                    // Buscar textBox_AÑO en el formulario y darle foco
+                    if (this.Controls.Find("textBox_AÑO", true).FirstOrDefault() is TextBox textBoxAño)
+                    {
+                        textBoxAño.Focus();
+                    }
+
+                }
             }
 
-            await Task.Delay(200); // Pequeño delay  antes de cerrar
+            // Añadir un pequeño retraso antes de cerrar el formulario o control
+            await Task.Delay(200);  // El retraso es opcional, puedes probar sin él
+
+            // Cerrar el formulario o el control actual
             this.Close();
         }
+
 
         /// <summary>
         /// clase publica que permite que los label reciban el foco

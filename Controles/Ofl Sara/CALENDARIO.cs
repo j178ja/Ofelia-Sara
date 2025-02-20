@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
+
 namespace Ofelia_Sara.Controles.Ofl_Sara
 
 {
@@ -38,7 +39,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             // No es necesario establecer SelectionMode
             SelectedDate = DateTime.Now; // Inicializa con la fecha actual
             monthCalendar1.SelectionStart = SelectedDate; // Sincroniza con el calendario
-            //IncrementarTamaño.Incrementar(btn_Guardar); comentado porque se desplaza
+      
         }
         #endregion
 
@@ -88,7 +89,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             {
                 // Obtener la posición de la instancia del formulario CALENDARIO en pantalla
                 Point formularioPosicion = this.PointToScreen(Point.Empty);
-                //  FALTA OCULTAR EL CALENDARIO CUANDO SE VISUALIZA EL MENSAJE
+                // Ocultar visualmente el formulario CALENDARIO sin afectar el formulario principal
+                this.Opacity = 0;
                 using MensajeGeneral mensajeForm = new(
                     "No has guardado la fecha seleccionada. ¿Estás seguro de que deseas cerrar sin guardar?",
                     MensajeGeneral.TipoMensaje.Advertencia);
@@ -142,15 +144,26 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             btn_Cancelar.Font = new Font(btn_Cancelar.Font, FontStyle.Regular);
 
         }
+        /// <summary>
+        /// guardar y mostrar mensaje de fecha seleccionada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             SelectedDate = monthCalendar1.SelectionStart; // Obtener la fecha seleccionada
             datosGuardados = true; // Marcar que los datos fueron guardados
 
             // Obtener el control invocador
-            Control controlInvocador = ObtenerControlInvocador();
-            DateTime selectedDate = monthCalendar1.SelectionStart;
-            string formattedDate = selectedDate.ToString("dd/MM/yyyy");
+            _ = ObtenerControlInvocador();
+            DateTime selectedDate = monthCalendar1.SelectionStart; // guarda dla fecha seleccionada
+
+            // Si tienes una instancia de TimePickerPersonalizado en tu formulario
+
+           
+
+           
+            string formattedDate = selectedDate.ToString("dd/MM/yyyy"); //especifica el formato de fecha guardandoolo en la variable formattedDate
 
             // Ocultar visualmente el formulario CALENDARIO sin afectar el formulario principal
             this.Opacity = 0;
@@ -180,6 +193,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
+
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }

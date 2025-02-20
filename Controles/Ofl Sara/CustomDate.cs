@@ -43,7 +43,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             ConfigurarTextBoxes();
             ConfigurarTooltips();
             ConfigurarPlaceholders();
-
             RestorePlaceholders(); // Forzar los placeholders visibles inicialmente
         }
         #endregion
@@ -346,7 +345,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        private bool ValidarCampo(string campo, string valorTexto, int min, int max, CustomTextBox textBox)
+        private static bool ValidarCampo(string campo, string valorTexto, int min, int max, CustomTextBox textBox)
         {
             if (int.TryParse(valorTexto, out int valor))
             {
@@ -490,7 +489,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         }
         #endregion Animación y Dibujado
       
-        #region Metodos generales
+        #region METODOS GENERALES
         /// <summary>
         /// MUESTRA FORMULARIO DE SELECCION
         /// </summary>
@@ -576,7 +575,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
    
-
+        /// <summary>
+        /// Pasa al control siguiente y da el foco
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManejarAutocompletadoYNavegacion(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)

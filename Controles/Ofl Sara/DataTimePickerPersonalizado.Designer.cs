@@ -44,7 +44,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DIA.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox_DIA.Location = new Point(24, 4);
             textBox_DIA.Name = "textBox_DIA";
-            textBox_DIA.Size = new Size(33, 13);
+            textBox_DIA.Size = new Size(33, 16);
             textBox_DIA.TabIndex = 2;
             textBox_DIA.TextAlign = HorizontalAlignment.Center;
             textBox_DIA.MouseClick += TextBox_MouseClick;
@@ -55,7 +55,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             label_DE1.BackColor = Color.Transparent;
             label_DE1.Location = new Point(58, 0);
             label_DE1.Name = "label_DE1";
-            label_DE1.Size = new Size(21, 15);
+            label_DE1.Size = new Size(28, 20);
             label_DE1.TabIndex = 3;
             label_DE1.Text = "DE";
             label_DE1.TextAlign = ContentAlignment.MiddleCenter;
@@ -66,7 +66,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             label_DE2.BackColor = Color.Transparent;
             label_DE2.Location = new Point(160, 0);
             label_DE2.Name = "label_DE2";
-            label_DE2.Size = new Size(21, 15);
+            label_DE2.Size = new Size(28, 20);
             label_DE2.TabIndex = 4;
             label_DE2.Text = "DE";
             label_DE2.TextAlign = ContentAlignment.MiddleCenter;
@@ -78,11 +78,12 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox_MES.Location = new Point(80, 4);
             textBox_MES.Name = "textBox_MES";
-            textBox_MES.Size = new Size(79, 13);
+            textBox_MES.Size = new Size(79, 16);
             textBox_MES.TabIndex = 5;
             textBox_MES.TextAlign = HorizontalAlignment.Center;
             textBox_MES.Click += TextBox_MES_Click;
             textBox_MES.MouseClick += TextBox_MouseClick;
+            textBox_MES.KeyPress += TextBox_MES_KeyPress;
             // 
             // textBox_AÑO
             // 
@@ -91,7 +92,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_AÑO.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox_AÑO.Location = new Point(188, 4);
             textBox_AÑO.Name = "textBox_AÑO";
-            textBox_AÑO.Size = new Size(55, 13);
+            textBox_AÑO.Size = new Size(55, 16);
             textBox_AÑO.TabIndex = 6;
             textBox_AÑO.MouseClick += TextBox_MouseClick;
             // 
