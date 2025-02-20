@@ -52,9 +52,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             InicializarEstiloBotonPropio(btn_Guardar);
             InicializarEstiloBotonPropio(btn_Editar);
 
-            //para redondear bordes panel
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(panel1, borderRadius: 12, borderSize: 7, borderColor: customBorderColor);
+            RedondearBordes.Aplicar(panel1, 15);
         }
         #endregion
 

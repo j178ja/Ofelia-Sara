@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Clases.General.Botones;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Formularios.General;
 using System;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public Registro()
         {
             InitializeComponent();
-
+            RedondearBordes.Aplicar(panel1, 15);
         }
 
         private void Registro_Load(object sender, EventArgs e)

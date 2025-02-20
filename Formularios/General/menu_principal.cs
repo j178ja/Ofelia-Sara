@@ -67,8 +67,8 @@ namespace Ofelia_Sara.Formularios.General
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);
             PosicionarMenu();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            RedondearBordes.Aplicar(panel1, 15);
+            RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
 
             accionesManager = new AccionesManager("acciones.json");
             ConfigureComboBox(comboBox_Buscar);
@@ -89,7 +89,7 @@ namespace Ofelia_Sara.Formularios.General
             originalSizeMecanografia = btn_Mecanografia.Size;
             originalLocationMecanografia = btn_Mecanografia.Location;
 
-            RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
+      
         }
         #endregion
 

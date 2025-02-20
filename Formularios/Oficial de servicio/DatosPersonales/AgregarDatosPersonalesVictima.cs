@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ofelia_Sara.Controles.General;
+using Ofelia_Sara.Clases.General.Apariencia;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 {
@@ -32,13 +33,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesVictima()
         {
             InitializeComponent();
+            RedondearBordes.Aplicar(panel1, 15);
 
-            this.AutoScaleMode = AutoScaleMode.None;
 
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load);
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+          
 
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
 

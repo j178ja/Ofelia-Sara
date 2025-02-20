@@ -2,6 +2,7 @@
 using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
 using MySql.Data.MySqlClient;
+using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
@@ -51,8 +52,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Asigna el valor recibido al TextBox correspondiente en NuevoPersonal
             textBox_NumeroLegajo.TextValue = numeroLegajo;
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            RedondearBordes.Aplicar(panel1, 15);
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
 
@@ -74,7 +74,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         #endregion
 
-        #region LOAD RECARGA ACTIVA FORMULARIO
+        #region LOAD 
         private void NuevoPersonal_Load(object sender, EventArgs e)
         {
            

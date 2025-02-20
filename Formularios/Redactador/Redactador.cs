@@ -59,11 +59,14 @@ namespace Ofelia_Sara.Formularios.Redactador
         public Redactador()
         {
             InitializeComponent();
-            // Coloca el panel encima del AudioVisualizerControl
-            panel_Botones.BringToFront();
+            RedondearBordes.Aplicar(panel1, 15);
+          
+            panel_Botones.BringToFront();  // Coloca el panel encima del AudioVisualizerControl
 
-            timer_Barras = new Timer();
-            timer_Barras.Interval = 100; // Ajusta el intervalo
+            timer_Barras = new Timer
+            {
+                Interval = 100 // Ajusta el intervalo
+            };
             timer_Barras.Tick += timer_Barras_Tick;
 
         }
@@ -74,8 +77,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         {
             audioVisualizerControl.Visible = false;
             ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(panel1, borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+          
 
 
             this.FormClosing += Redactador_FormClosing;// para mensaje previo a cerrar
@@ -91,6 +93,17 @@ namespace Ofelia_Sara.Formularios.Redactador
             timerCerrarForm.Tick += TimerCerrar_Tick;
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
 
+            ConfigurarTooltips();
+
+            richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
+        }
+        #endregion
+
+        /// <summary>
+        /// agrupa los toltips 
+        /// </summary>
+        private void ConfigurarTooltips()
+        {
             ToolTipGeneral.Mostrar(btn_Guardar, "CREAR DOCUMENTO WORD");
             ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR");
             ToolTipGeneral.Mostrar(btn_Negrita, "NEGRITA");
@@ -104,10 +117,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             ToolTipGeneral.Mostrar(btn_AlinearDerecha, "Alinear a la Derecha");
             ToolTipGeneral.Mostrar(btn_Justificar, "JUSTIFICAR");
             ToolTipGeneral.Mostrar(label_OfeliaSara, "Instructivo de la aplicación");
-
-            richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
         }
-        #endregion
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
@@ -214,9 +224,14 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
 
-    
 
-        // Método para activar el subrayado en MouseHover
+
+        
+        /// <summary>
+        /// Método para activar el subrayado en MouseHover
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_OfeliaSara_MouseHover(object sender, EventArgs e)
         {
             isAnimating = true;
@@ -343,7 +358,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             // Mostrar VideoInstructivo como diálogo modal
             videoInstructivo.ShowDialog();
         }
-    
 
 
 
@@ -351,7 +365,13 @@ namespace Ofelia_Sara.Formularios.Redactador
 
 
 
-        //para poder arrastrar el formulario
+
+       
+        /// <summary>
+        /// para poder arrastrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -446,7 +466,8 @@ namespace Ofelia_Sara.Formularios.Redactador
             // Llamar al método de actualización de visualización en el control de visualización
             audioVisualizerControl.UpdateVisualization(amplitudes);
         }
-        //----------- FUNCIONALIDAD DE TECLAS-------------------------------
+      
+        #region FUNCIONALIDAD DE TECLAS
         private void Btn_Negrita_Click(object sender, EventArgs e)
         {
             if (btn_Negrita.BackColor == Color.White)
@@ -495,7 +516,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.Focus();
             }
         }
-
+        #endregion
 
 
         private void AplicarFormato(FontStyle estilo)
@@ -520,7 +541,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             richTextBox_Redactor.Focus();
         }
 
-        private void btn_DisminuirTamaño_Click(object sender, EventArgs e)
+        private void Btn_DisminuirTamaño_Click(object sender, EventArgs e)
         {
             CambiarTamañoFuente(-2);  // Disminuir el tamaño de la fuente en 2 puntos
             richTextBox_Redactor.Focus();

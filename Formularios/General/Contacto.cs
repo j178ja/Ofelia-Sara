@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Formularios.General.Mensajes;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -12,16 +13,15 @@ namespace Ofelia_Sara.Formularios.General
         {
             InitializeComponent();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            RedondearBordes.Aplicar(panel1, 15);
         }
 
 
 
         private void Contacto_Load(object sender, EventArgs e)
         {
-            Txt_Curriculum();
-
+            Txt_Curriculum(); //carga el texto
+            //incrementar imagen de los picture en el hover
             IncrementarTamaño.Incrementar(pictureBox_Linkedin);
             IncrementarTamaño.Incrementar(pictureBox_Github);
             IncrementarTamaño.Incrementar(pictureBox_Wpp);
@@ -46,6 +46,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// abre correo electronico y genera mensaje
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_Correo_Click(object sender, EventArgs e)
         {
             // Define el destinatario, el asunto y el cuerpo del mensaje (opcional)
@@ -67,13 +72,17 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// abre wpp y  genera mensaje predeterminado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_Wpp_Click(object sender, EventArgs e)
         {
             // Define el número de teléfono en formato internacional (sin + ni espacios)
             string phoneNumber = "+542236971880"; // Reemplaza con el número deseado
                                                   // Define el mensaje (opcional)
             string message = "Hola, ¿cómo estás?";
-
 
 
             // Abre la URL en el navegador predeterminado
@@ -89,6 +98,11 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// abre linkedin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_Linkedin_Click(object sender, EventArgs e)
         {
 
@@ -105,9 +119,13 @@ namespace Ofelia_Sara.Formularios.General
 
         }
 
+        /// <summary>
+        /// abre github
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox_Github_Click(object sender, EventArgs e)
         {
-
 
             // Abre la URL en el navegador predeterminado
             try
@@ -121,7 +139,9 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
+        /// <summary>
+        /// contiene el texto que se mostrara 
+        /// </summary>
         private void Txt_Curriculum()
         {
 

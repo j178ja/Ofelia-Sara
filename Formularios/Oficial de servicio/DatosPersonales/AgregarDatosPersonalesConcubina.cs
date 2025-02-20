@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Clases.General.Botones;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Controles.Controles.Tooltip;
@@ -23,8 +24,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             InitializeComponent();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            RedondearBordes.Aplicar(panel1, 15);
 
             this.FormClosing += AgregarDatosConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
 

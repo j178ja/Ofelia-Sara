@@ -1,6 +1,7 @@
 ﻿using BaseDatos.Entidades;
 using DocumentFormat.OpenXml.Office2010.Excel;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
+using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
@@ -46,7 +47,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public InicioCierre()
         {
             InitializeComponent();
-
+            RedondearBordes.Aplicar(panel1, 15);
             //.para reposicionar paneles
             reposicionador = new ReposicionarSegunAgregado(
             this,
@@ -94,8 +95,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InicializarComboBox(); //para que se inicialicen los indices predeterminados de comboBox
 
+            ConfigurarControlesIPP();
 
-      
+            comboBox_Ipp1.SelectedIndex = 3;
+            comboBox_Ipp2.SelectedIndex = 3;
 
             // Configurar autocompletado para `textBox_Caratula`
             AutocompletarManager autocompletarManager = new("autocompletar.json");

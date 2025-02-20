@@ -171,7 +171,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             this.btn_ReducirTamaño.Text = "A";
             this.btn_ReducirTamaño.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ReducirTamaño.UseVisualStyleBackColor = false;
-            this.btn_ReducirTamaño.Click += new System.EventHandler(this.btn_DisminuirTamaño_Click);
+            this.btn_ReducirTamaño.Click += new System.EventHandler(this.Btn_DisminuirTamaño_Click);
             this.btn_ReducirTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
             this.btn_ReducirTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
             // 

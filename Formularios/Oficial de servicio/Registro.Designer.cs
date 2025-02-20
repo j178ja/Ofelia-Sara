@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
-            panel4 = new System.Windows.Forms.Panel();
+            panel1 = new System.Windows.Forms.Panel();
             btn_Limpiar = new System.Windows.Forms.Button();
             btn_Registrarse = new System.Windows.Forms.Button();
             label_Legajo = new System.Windows.Forms.Label();
@@ -47,30 +47,30 @@
             label_Usuario = new System.Windows.Forms.Label();
             label_TITULO = new System.Windows.Forms.Label();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
-            panel4.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // panel4
+            // panel1
             // 
-            panel4.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
-            panel4.Controls.Add(btn_Limpiar);
-            panel4.Controls.Add(btn_Registrarse);
-            panel4.Controls.Add(label_Legajo);
-            panel4.Controls.Add(textBox_Legajo);
-            panel4.Controls.Add(label_Apellido);
-            panel4.Controls.Add(textBox_Apellido);
-            panel4.Controls.Add(textBox_Nombre);
-            panel4.Controls.Add(textBox_Jerarquia);
-            panel4.Controls.Add(label_Nombre);
-            panel4.Controls.Add(label_Jerarquia);
-            panel4.Controls.Add(textBox_Contraseña);
-            panel4.Controls.Add(textBox_Usuario);
-            panel4.Controls.Add(label_Contraseña);
-            panel4.Controls.Add(label_Usuario);
-            panel4.Location = new System.Drawing.Point(18, 23);
-            panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(469, 368);
-            panel4.TabIndex = 4;
+            panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(btn_Limpiar);
+            panel1.Controls.Add(btn_Registrarse);
+            panel1.Controls.Add(label_Legajo);
+            panel1.Controls.Add(textBox_Legajo);
+            panel1.Controls.Add(label_Apellido);
+            panel1.Controls.Add(textBox_Apellido);
+            panel1.Controls.Add(textBox_Nombre);
+            panel1.Controls.Add(textBox_Jerarquia);
+            panel1.Controls.Add(label_Nombre);
+            panel1.Controls.Add(label_Jerarquia);
+            panel1.Controls.Add(textBox_Contraseña);
+            panel1.Controls.Add(textBox_Usuario);
+            panel1.Controls.Add(label_Contraseña);
+            panel1.Controls.Add(label_Usuario);
+            panel1.Location = new System.Drawing.Point(18, 23);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(469, 368);
+            panel1.TabIndex = 4;
             // 
             // btn_Limpiar
             // 
@@ -104,7 +104,7 @@
             label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Legajo.Location = new System.Drawing.Point(90, 134);
             label_Legajo.Name = "label_Legajo";
-            label_Legajo.Size = new System.Drawing.Size(73, 16);
+            label_Legajo.Size = new System.Drawing.Size(94, 20);
             label_Legajo.TabIndex = 21;
             label_Legajo.Text = "LEGAJO :";
             // 
@@ -139,7 +139,7 @@
             label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Apellido.Location = new System.Drawing.Point(76, 104);
             label_Apellido.Name = "label_Apellido";
-            label_Apellido.Size = new System.Drawing.Size(87, 16);
+            label_Apellido.Size = new System.Drawing.Size(112, 20);
             label_Apellido.TabIndex = 19;
             label_Apellido.Text = "APELLIDO :";
             // 
@@ -224,7 +224,7 @@
             label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nombre.Location = new System.Drawing.Point(83, 71);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new System.Drawing.Size(80, 16);
+            label_Nombre.Size = new System.Drawing.Size(101, 20);
             label_Nombre.TabIndex = 15;
             label_Nombre.Text = "NOMBRE :";
             // 
@@ -234,7 +234,7 @@
             label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Jerarquia.Location = new System.Drawing.Point(62, 37);
             label_Jerarquia.Name = "label_Jerarquia";
-            label_Jerarquia.Size = new System.Drawing.Size(101, 16);
+            label_Jerarquia.Size = new System.Drawing.Size(125, 20);
             label_Jerarquia.TabIndex = 14;
             label_Jerarquia.Text = "JERARQUIA :";
             // 
@@ -292,7 +292,7 @@
             label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Contraseña.Location = new System.Drawing.Point(44, 223);
             label_Contraseña.Name = "label_Contraseña";
-            label_Contraseña.Size = new System.Drawing.Size(119, 16);
+            label_Contraseña.Size = new System.Drawing.Size(146, 20);
             label_Contraseña.TabIndex = 8;
             label_Contraseña.Text = "CONTRASEÑA :";
             // 
@@ -302,7 +302,7 @@
             label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Usuario.Location = new System.Drawing.Point(80, 189);
             label_Usuario.Name = "label_Usuario";
-            label_Usuario.Size = new System.Drawing.Size(83, 16);
+            label_Usuario.Size = new System.Drawing.Size(103, 20);
             label_Usuario.TabIndex = 7;
             label_Usuario.Text = "USUARIO :";
             // 
@@ -315,18 +315,18 @@
             label_TITULO.Location = new System.Drawing.Point(108, 9);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(291, 26);
+            label_TITULO.Size = new System.Drawing.Size(335, 31);
             label_TITULO.TabIndex = 13;
             label_TITULO.Text = "REGISTRO DE USUARIOS";
             label_TITULO.Click += label_Registro_Click;
             // 
             // Registro
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(510, 435);
             Controls.Add(label_TITULO);
-            Controls.Add(panel4);
+            Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             HelpButton = true;
             MaximizeBox = false;
@@ -336,16 +336,16 @@
             Text = "Registro";
             HelpButtonClicked += Registro_HelpButtonClicked;
             Load += Registro_Load;
-            Controls.SetChildIndex(panel4, 0);
+            Controls.SetChildIndex(panel1, 0);
             Controls.SetChildIndex(label_TITULO, 0);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Contraseña;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Usuario;
         private System.Windows.Forms.Label label_Contraseña;

@@ -41,12 +41,11 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         public Mecanografia()
         {
             InitializeComponent();
-            System.Drawing.Color customBorderColor = System.Drawing.Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(panel1, borderRadius: 25, borderSize: 15, borderColor: customBorderColor);
+            
+            RedondearBordes.Aplicar(panel1,15);
+            RedondearBordes.Aplicar(panel_TecladoBase, 25);
 
-            System.Drawing.Color BorderColorTeclado = System.Drawing.Color.FromArgb(178, 213, 230);
-            panel_TecladoBase.ApplyRoundedCorners(panel_TecladoBase, borderRadius: 25, borderSize: 10, borderColor: BorderColorTeclado);
-
+           
             this.Load += AjustarTamañoForm;//para ajustar el tamaño del formulario
 
             panel_Especificaciones.Visible = false;
@@ -624,7 +623,12 @@ namespace Ofelia_Sara.Formularios.Mecanografia
 
 
 
-        // Evento que maneja el cambio de selección en el RichTextBox
+ 
+        /// <summary>
+        /// Evento que maneja el cambio de selección en el RichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Texto_Tipear_SelectionChanged(object sender, EventArgs e)
         {
             // Verificar si hay una selección y obtener el carácter seleccionado

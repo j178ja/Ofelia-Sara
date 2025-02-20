@@ -35,8 +35,7 @@ namespace Ofelia_Sara.Clases.General.Texto
 
         public static void AplicarFormatoYLimite(CustomTextBox customTextBox, int maxLength)
         {
-            if (customTextBox == null)
-                throw new ArgumentNullException(nameof(customTextBox));
+            ArgumentNullException.ThrowIfNull(customTextBox);
 
             // Establecer la longitud máxima
             customTextBox.MaxLength = maxLength;

@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
-           
+            RedondearBordes.Aplicar(panel1, 15);
             // Asigna el evento TextChanged de textBox_Nombre a ActualizarEstado
             textBox_Nombre.TextChanged += (sender, e) => ActualizarEstado();
 
@@ -56,10 +56,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.textBox_Email = new Ofelia_Sara.Controles.General.CustomTextBox();// Configuración del textBox_Email
 
             comboBox_EstadoCivil.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;//deshabilita ingreso de datos del usuario en comboBox estado civil
-
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
-
+         
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
 
@@ -72,9 +69,64 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
 
             btn_AgregarConcubina.Enabled = false;
-            InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
+            InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton, borde rojo cuando esta desactivado
 
 
+            FormatoTexto();//establece mayuscula, numeros  etc
+
+            PropiedadesPicture();
+
+
+            // Llamada para aplicar el estilo de boton de BaseForm
+            InicializarEstiloBoton(btn_Limpiar);
+            InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Buscar);
+
+            ActualizarControlesPictureDOM();
+
+      
+
+            // Inicializa los PictureBox como deshabilitados
+            ActualizarControlesPicture();
+
+            // Actualiza el estado de los PictureBox basado en el estado del CheckBox
+            ActualizarCheckBox();
+
+            
+            ActualizarEstado();      /// Para habilitar check y modificar label
+
+            CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
+
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
+        }
+        #endregion
+
+        /// <summary>
+        /// establece propiedades de mayuscula minuscula y numeros en los controles
+        /// </summary>
+        private void FormatoTexto()
+        {
+            MayusculaSola.AplicarAControl(comboBox_EstadoCivil.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_Nombre);
+            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
+            MayusculaSola.AplicarAControl(comboBox_Nacionalidad.InnerTextBox);
+            MayusculaSola.AplicarAControl(textBox_Ocupacion);
+            MayusculaSola.AplicarAControl(textBox_Apodo);
+            MayusculaSola.AplicarAControl(textBox_Localidad);
+            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
+            ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
+            ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
+
+            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
+            MayusculaSola.AplicarAControl(textBox_Ocupacion);
+            MayusculaSola.AplicarAControl(textBox_Domicilio);
+        }
+
+        /// <summary>
+        /// acumula las propiedades de los picture para cargarlos en load
+        /// </summary>
+        private void PropiedadesPicture()
+        {
             //-----INICIALIZAR EVENTOS PICKTUREBOX-------------
             //-----Del domicilio------------------
             pictureBox_Domicilio.AllowDrop = true;
@@ -89,7 +141,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Ajusta el SizeMode de cada PictureBox
             pictureBox_Domicilio.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
-            //----------------------------------------------------
+
 
             //----------PARA IMAGENES DEL LEGAJO----------------------
             pictureBox_Frente.AllowDrop = true;//permite que pictureBox reciba imagenes
@@ -103,43 +155,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             pictureBox_PerfilIzquierdo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_CuerpoEntero.SizeMode = PictureBoxSizeMode.StretchImage;
 
-
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
-
-            ActualizarControlesPictureDOM();
-
-            // Asocia los eventos Paint
-            AsociarEventosPaint();
-
-            // Inicializa los PictureBox como deshabilitados
-            ActualizarControlesPicture();
-
-            // Actualiza el estado de los PictureBox basado en el estado del CheckBox
-            ActualizarCheckBox();
-
             // Inicializa los PictureBox como deshabilitados
             pictureBox_Frente.Enabled = true;
             pictureBox_PerfilDerecho.Enabled = true;
             pictureBox_PerfilIzquierdo.Enabled = true;
             pictureBox_CuerpoEntero.Enabled = true;
-            //-------------------------------------------------------------------------------
 
-            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
-            ActualizarEstado();
-
-            CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
-
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarConcubina, "Seleccione ESTADO CIVIL para agregar un nuevo vinculo.", "Seleccione para agregar nuevo familiar");
+            pictureBox_Frente.Paint += PictureBox_Paint;
+            pictureBox_PerfilDerecho.Paint += PictureBox_Paint;
+            pictureBox_PerfilIzquierdo.Paint += PictureBox_Paint;
+            pictureBox_CuerpoEntero.Paint += PictureBox_Paint;
         }
-        #endregion
 
-      
-       
-
-       
         /// <summary>
         /// PARA RECUADRO VERDE Y ROJO DEL PICKTUREBOX
         /// </summary>
@@ -157,6 +184,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         }
 
+        /// <summary>
+        /// cambia el aspecto estetico de los picture dependiendo si esta habilitado o no
+        /// </summary>
+        /// <param name="pictureBox"></param>
+        /// <param name="habilitar"></param>
         private static void ActualizarPictureBox(PictureBox pictureBox, bool habilitar)
         {
             if (habilitar)
@@ -382,40 +414,39 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
                 e.Handled = true;
             }
         }
-        private void TextBox_Dni_TextChanged(object sender, EventArgs e)
-        {
-            CustomTextBox textBox = sender as CustomTextBox;
-
-            // Obtener la posición del cursor antes del formateo
-            int cursorPosition = textBox.SelectionStart;
-
-            // Usar la clase separada para formatear el texto con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.TextValue);
-
-            // Actualizar el texto en el TextBox
-            textBox.TextValue = textoFormateado;
-
-            // Asegurarse de que el cursor se posicione al final del texto
-            textBox.SelectionStart = textBox.TextValue.Length;
-        }
 
 
+
+        /// <summary>
+        /// eventos del boton guardar,
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
 
+        /// <summary>
+        /// eliminar contenido de controles
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1;
             comboBox_EstadoCivil.SelectedIndex = -1;
-            //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
+          
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
 
         }
-        // Método para restablecer el placeholder
+        
+        /// <summary>
+        ///  Método para restablecer el placeholder
+        /// </summary>
+        /// <param name="textBox"></param>
         private static void ClearTextBoxPlaceholder(CustomTextBox textBox)
         {
             if (textBox != null)
@@ -451,17 +482,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
        
-        /// <summary>
-        /// METODO PARA HABILITAR FOTOS DEL LEGAJO
-        /// </summary>
-        // Método para asociar los eventos Paint
-        private void AsociarEventosPaint()
-        {
-            pictureBox_Frente.Paint += PictureBox_Paint;
-            pictureBox_PerfilDerecho.Paint += PictureBox_Paint;
-            pictureBox_PerfilIzquierdo.Paint += PictureBox_Paint;
-            pictureBox_CuerpoEntero.Paint += PictureBox_Paint;
-        }
+      
 
         
         /// <summary>
@@ -537,50 +558,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
     
 
 
-        private void TextBox_Ocupacion_TextChanged(object sender, EventArgs e)
-        {
-            // Obtiene el texto actual del TextBox
-            string input = textBox_Ocupacion.TextValue;
+    
 
-            // Convierte el texto a mayúsculas
-            string upperText = input.ToUpper();
-
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Ocupacion.TextValue != upperText)
-            {
-                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Ocupacion.TextChanged -= TextBox_Ocupacion_TextChanged;
-
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Ocupacion.TextValue = upperText;
-
-                // Restaura la posición del cursor al final del texto
-                textBox_Ocupacion.SelectionStart = upperText.Length;
-
-                // Vuelve a asociar el evento TextChanged
-                textBox_Ocupacion.TextChanged += TextBox_Ocupacion_TextChanged;
-            }
-        }
-
-
-        private void ComboBox_Nacionalidad_TextChanged(object sender, EventArgs e)
-        {
-            // Obtiene el texto actual del TextBox
-            string input = comboBox_Nacionalidad.TextValue;
-
-            // Convierte el texto a mayúsculas
-            string upperText = input.ToUpper();
-
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (comboBox_Nacionalidad.TextValue != upperText)
-            {
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                comboBox_Nacionalidad.TextValue = upperText;
-
-                // Mueve el cursor al final del texto
-                comboBox_Nacionalidad.SelectionStart = upperText.Length;
-            }
-        }
 
         private void TextBox_Ocupacion_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -632,21 +611,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
  
 
-        private void TextBox_Apodo_TextChanged(object sender, EventArgs e)
-        {
-            // Convierte el texto a mayúsculas
-            if (sender is CustomTextBox textBox)
-            {
-                // Guarda la posición del cursor
-                int cursorPosition = textBox.SelectionStart;
-
-                // Convierte el texto a mayúsculas
-                textBox.Text = textBox.TextValue.ToUpper();
-
-                // Restaura la posición del cursor
-                textBox.SelectionStart = cursorPosition;
-            }
-        }
+    
 
 
 
@@ -682,7 +647,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         }
       
-       
+       /// <summary>
+       /// abre y posiciona formulario concuvina
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void Btn_AgregarConcubina_Click(object sender, EventArgs e)
         {
 
@@ -716,6 +685,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         }
 
+        /// <summary>
+        /// restaura posicion de formulario al cerrarse el de concuvina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgregarDatosPersonalesConcubina_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Restaurar la posición original del formulario
@@ -737,7 +711,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-      
+      /// <summary>
+      /// funcionalidades derivadas de Btn_SolicitarPlana
+      /// </summary>
         private void SetupBotonDeslizable()
         {
             // Configurar el delegado de validación en el control BotonDeslizable

@@ -31,6 +31,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             InitializeComponent();
             this.FormClosing += BuscarPersonal_FormClosing;
+            RedondearBordes.Aplicar(panel1, 15);
         }
         #endregion
 
@@ -45,15 +46,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
             //---Inicializar para desactivar los btn AGREGAR PERSONAL 
-            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.Text);
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);
 
             textBox_NumeroLegajo.MaxLength = 7;
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
-            this.BackColor = Color.FromArgb(0, 154, 174); // Color de fondo del formulario
+          
 
           
-            RedondearBordes.Aplicar(panel1, 12);
+        
 
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para agregar ratificafciòn.", "Agregar nueva ratificacion");
             //..........................

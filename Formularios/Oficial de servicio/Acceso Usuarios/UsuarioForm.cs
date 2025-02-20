@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Controles.Controles.Tooltip;
+﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -28,8 +29,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             InitializeComponent();
 
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+            RedondearBordes.Aplicar(panel1, 15);
 
             pictureBox_OjoContraseña.Enabled = false;
         

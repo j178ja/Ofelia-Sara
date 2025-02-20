@@ -1,5 +1,6 @@
 ﻿using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
 using System;
 using System.Windows.Forms;
@@ -28,13 +29,8 @@ namespace Ofelia_Sara
             //}
 
             //// Después de cerrar Presentacion, abrir MenuPrincipal
-           Application.Run(new MenuPrincipal());
-          //  Application.Run(new InicioCierre());
-            // Application.Run(new NuevoPersonal());
-            // Application.Run(new Cargo());
-            // Application.Run(new Visu());
-            // Application.Run(new NuevoPersonal());
-          //   Application.Run(new BuscarPersonal());
+              Application.Run(new MenuPrincipal());
+         
 
 
         }

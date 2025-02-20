@@ -59,9 +59,12 @@ namespace Ofelia_Sara.Formularios.General
         private const int ACCENT_ENABLE_BLURBEHIND = 3;
 
         //---------------------------------------------------------
-
+        #region VARIABLES
         private int inicioAncho;
         private int inicioAlto;
+        #endregion
+
+        #region CONSTRUCTOR
         public Presentacion()
         {
             InitializeComponent();
@@ -109,22 +112,23 @@ namespace Ofelia_Sara.Formularios.General
 
 
         }
-        //---finalizacion de constructor-----
-        //--------------------------------------------------------------------
+        #endregion
 
+        #region LOAD
         private void Presentacion_Load(object sender, EventArgs e)
         {
             aparecerTimer.Start(); // Iniciar el efecto de aparición al cargar el formulario
             AplicarBlurEfecto(); // Llamar al efecto blur
             InicializarBufferedGraphics();
-
         }
+        #endregion
+
         private void InicializarBufferedGraphics()
         {
             BufferedGraphicsContext context = BufferedGraphicsManager.Current;
             bufferedGraphics = context.Allocate(this.CreateGraphics(), this.ClientRectangle);
         }
-        //--------------------------------------------------------------------------------
+      
         /// <summary>
         /// inicia secuencia de efecto blur
         /// </summary>
@@ -211,8 +215,10 @@ namespace Ofelia_Sara.Formularios.General
             Marshal.FreeHGlobal(accentPtr);
         }
 
-        //----------------------------
-        // ANIMACION IMAGEN DE FONDO
+        
+        /// <summary>
+        /// genera animacion de fondo con icono de escudo
+        /// </summary>
         private void IniciarAnimacionFondo()
         {
             if (this.Size == destino.Size)

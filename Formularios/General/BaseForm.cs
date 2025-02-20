@@ -455,6 +455,146 @@ namespace Ofelia_Sara.Formularios.General
                 customComboBox.Items.Add(ultimosDosDigitos.ToString("D2")); // Agrega con dos dígitos
             }
         }
+
+        /// <summary>
+        /// METODO PARA QUE SOLO SE AGREGEN NUMEROS A COMBOBOX IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo acepta dígitos
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Si el evento viene del InnerTextBox, obtenemos el control padre
+                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
+                {
+                    // Obtiene el texto actual
+                    string currentText = customComboBox.TextValue;
+
+                    // Verifica si es un número válido
+                    if (int.TryParse(currentText, out _))
+                    {
+                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
+                        string completedText = currentText.PadLeft(2, '0');
+
+                        // Actualiza el texto en el CustomTextBox
+                        customComboBox.TextValue = completedText;
+
+                        // Posiciona el cursor al final del texto
+                        customComboBox.SelectionStart = customComboBox.TextValue.Length;
+
+                        // Cancela el manejo predeterminado de la tecla Enter
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// METODO PARA HACER QUE SE AUTOCOMPLETE LOS COMBOBOX DE NUMERO IP CON 0 AL PERDER EL FOCO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
+        {
+            // Verifica si el sender es un CustomComboBox
+            if (sender is CustomComboBox customComboBox)
+            {
+                // Obtiene el texto actual
+                string currentText = customComboBox.TextValue;
+
+                // Verifica si es un número válido
+                if (int.TryParse(currentText, out _))
+                {
+                    // Completa el texto con ceros a la izquierda hasta 6 caracteres
+                    string completedText = currentText.PadLeft(2, '0');
+
+                    // Actualiza el texto en el CustomComboBox
+                    customComboBox.TextValue = completedText;
+
+                    // Posiciona el cursor al final del texto
+                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
+                }
+            }
+        }
+
+        //---------------------------------------------------
+        public void ConfigurarControlesIPP()
+        {
+            ConfigurarMaxLengthIpp();
+        }
+        //-------------------------------------------------------------------
+        /// <summary>
+        /// llamar en load de cada form para establecer cantidad de caracteres
+        /// </summary>
+        protected virtual void ConfigurarMaxLengthIpp()
+        {
+            foreach (Control control in this.Controls)
+            {
+                AplicarConfiguracionIpp(control);
+
+                // Si hay paneles o controles anidados, recorrerlos también
+                if (control.HasChildren)
+                {
+                    RecorrerControlesAnidados(control);
+                }
+            }
+        }
+
+        private void RecorrerControlesAnidados(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                AplicarConfiguracionIpp(control);
+
+                if (control.HasChildren)
+                {
+                    RecorrerControlesAnidados(control);
+                }
+            }
+        }
+
+        private void AplicarConfiguracionIpp(Control control)
+        {
+            if (control is CustomTextBox textBox && textBox.Name == "textBox_NumeroIpp")
+            {
+                textBox.MaxLength = 6;
+            }
+
+            if (control is CustomComboBox customComboBox)
+            {
+                if (customComboBox.Name == "comboBox_Ipp1" || customComboBox.Name == "comboBox_Ipp2")
+                {
+                    customComboBox.InnerTextBox.MaxLength = 2;
+                    ConfigurarItemsComboBox(customComboBox);
+                }
+
+                if (customComboBox.Name == "comboBox_Ipp4")
+                {
+                    customComboBox.InnerTextBox.MaxLength = 2;
+                }
+            }
+        }
+
+        /// <summary>
+        /// agrega 10 items al list del comboBox
+        /// </summary>
+        /// <param name="comboBox"></param>
+        private void ConfigurarItemsComboBox(CustomComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+
+            for (int i = 0; i <= 10; i++)
+            {
+                comboBox.Items.Add(i.ToString("D2")); // "00", "01", "02", ..., "10"
+            }
+        }
+
+
         #endregion
 
         #region VERIFICACION EN PANEL
