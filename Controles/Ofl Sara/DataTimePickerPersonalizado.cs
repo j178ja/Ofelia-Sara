@@ -15,7 +15,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
     {
         #region VARIABLES
         private Button Btn_Calendario; // Botón para abrir el formulario de calendario
-        private DateTime fechaSeleccionada;
+        private DateTime fechaSeleccionada; //toma la fecha seleccionada en CALENDARIO
         private Timer animationTimer;
         private int animationProgress;
         private bool isFocused;
@@ -23,7 +23,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private readonly Color focusColor = Color.Blue;
         private readonly Color errorColor = Color.Red;
         internal DateTime SelectedDate;
-        // Propiedad para acceder al control del TimePicker
+        
 
         #endregion
 
@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void TimePickerPersonalizado_Load(object sender, EventArgs e)
         {
            
-            
+           
         }
 
         #region PROPIEDADES PUBLICAS
@@ -61,10 +61,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-        public bool HasValue()
-        {
-            return ValidarCampos();
-        }
+    
         #endregion
 
         /// <summary>
@@ -90,6 +87,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 DateTime selectedDate = calendarForm.SelectedDate;
 
                 ActualizarConFecha(selectedDate);
+                // Hacer que el control pierda el foco
+                this.ActiveControl = null;
+                RemoveFocus();
+                // Devolver el foco al formulario principal
+                this.Focus();
             }
         }
         private void RemoveFocus()
@@ -102,7 +104,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 showError = true;
             }
 
-            this.Invalidate(); // Redibuja el control si es necesario
+            this.Invalidate(); // Redibuja el control 
         }
 
 
@@ -211,9 +213,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// <param name="e"></param>
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab) && sender is TextBox textBox)
+            if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab) && sender is TextBox)
             {
-              
+                //ValidarCampos();
+                Validar_AÑO();
                 ManejarAutocompletadoYNavegacion(sender, e); // Manejar navegación
             }
         }
@@ -232,14 +235,15 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
                 // Validar campos
                 ValidarCampos();
-
+                Validar_AÑO();
                 // Si el TextBox está vacío, cambiar el fondo a rojo y devolver el foco
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    textBox.BackColor = Color.Red;
+                    
                     textBox.Focus();
                 }
             }
+            RemoveFocus();
         }
 
 
@@ -334,7 +338,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
      
 
         /// <summary>
-        /// METODO PARA VALIDAR PARAMETROS DE CAMPOS
+        /// VALIDA SEGUN LOS PARAMETROS DADOS EN VALIDAR CAMPOS
         /// </summary>
         /// <param name="campo"></param>
         /// <param name="valorTexto"></param>
@@ -522,6 +526,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
         private void TextBox_AÑO_TextChanged(object sender, EventArgs e)
+        
+            {
+            Validar_AÑO();
+        }
+        private void Validar_AÑO()
         {
             // Validar solo después de 2 dígitos
             if (textBox_AÑO.Text.Length == 4)
