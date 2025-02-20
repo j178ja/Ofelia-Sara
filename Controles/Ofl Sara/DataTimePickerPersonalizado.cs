@@ -95,9 +95,16 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void RemoveFocus()
         {
             isFocused = false;
-            showError = false;
-            this.Invalidate();
+
+            // Validar campos y actualizar showError si hay un error
+            if (!ValidarCampos())
+            {
+                showError = true;
+            }
+
+            this.Invalidate(); // Redibuja el control si es necesario
         }
+
 
         /// <summary>
         /// INICIAR ANIMACION DE SUBRAYADO
@@ -158,7 +165,6 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             // Limitar la cantidad de caracteres en los TextBoxes
             textBox_DIA.MaxLength = 2;
-            textBox_MES.MaxLength = 2;
             textBox_AÑO.MaxLength = 4;
 
             //indices para la recorrida de tab
@@ -166,36 +172,17 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.TabIndex = 1;
             textBox_AÑO.TabIndex = 2;
 
-            // Asociar eventos de cambio de texto para cálculos (como antigüedad o validación)
-            textBox_DIA.TextChanged += CamposFecha_TextChanged;
-            textBox_MES.TextChanged += CamposFecha_TextChanged;
-            textBox_AÑO.TextChanged += CamposFecha_TextChanged;
-
-            // Validar que solo se permitan números
-            textBox_DIA.KeyPress += TextBox_KeyPress;
-            textBox_MES.KeyPress += TextBox_KeyPress;
-            textBox_AÑO.KeyPress += TextBox_KeyPress;
-
-            //autocompleta y pasa al textbox siguiente
-            textBox_DIA.KeyDown += TextBox_KeyDown;
-            textBox_MES.KeyDown += TextBox_KeyDown;
-            textBox_AÑO.KeyDown += TextBox_KeyDown;
-
-            //autocompleta al perder el foco
-            textBox_DIA.KeyPress += TextBox_Leave;
-            textBox_MES.KeyPress += TextBox_Leave;
-            textBox_AÑO.KeyPress += TextBox_Leave;
-
-            // Asociar el evento Leave para el autocompletado al perder el foco
-            textBox_DIA.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
-            textBox_MES.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
-            textBox_AÑO.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
+            //// Asociar el evento Leave para el autocompletado al perder el foco
+            //textBox_DIA.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
+            //textBox_MES.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
+            //textBox_AÑO.Leave += (s, e) => TextBox_Autocompletar(s as TextBox);
 
             // Asociar el evento KeyDown para autocompletar y navegación
             textBox_DIA.KeyDown += ManejarAutocompletadoYNavegacion;
             textBox_MES.KeyDown += ManejarAutocompletadoYNavegacion;
             textBox_AÑO.KeyDown += ManejarAutocompletadoYNavegacion;
 
+            //para remover el foco al salir del control
             textBox_DIA.Leave += (s, e) => RemoveFocus();
             textBox_MES.Leave += (s, e) => RemoveFocus();
             textBox_AÑO.Leave += (s, e) => RemoveFocus();
@@ -214,6 +201,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             {
                 e.Handled = true;
             }
+         
         }
 
         /// <summary>
@@ -225,7 +213,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab) && sender is TextBox textBox)
             {
-                TextBox_Autocompletar(textBox); // Llamar al método de autocompletado
+              
                 ManejarAutocompletadoYNavegacion(sender, e); // Manejar navegación
             }
         }
@@ -239,8 +227,31 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         {
             if (sender is TextBox textBox)
             {
-                TextBox_Autocompletar(textBox); // Llamar al método de autocompletado al perder foco
+                // Llamar al método de autocompletado al perder foco
+                TextBox_Autocompletar(textBox);
+
+                // Validar campos
+                ValidarCampos();
+
+                // Si el TextBox está vacío, cambiar el fondo a rojo y devolver el foco
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.BackColor = Color.Red;
+                    textBox.Focus();
+                }
             }
+        }
+
+
+
+
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            // Cuando el TextBox recibe el foco, cambia el color de fondo a blanco
+            textBox.BackColor = Color.White;
         }
 
         /// <summary>
@@ -250,13 +261,27 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// <param name="e"></param>
         private void TextBox_Autocompletar(TextBox textBox)
         {
-            if (textBox == textBox_DIA || textBox == textBox_MES)
+            if (textBox == textBox_DIA)
             {
-                if (textBox.Text.Length == 1)
+                // Verificar si el texto tiene un solo carácter y no es "0"
+                if (textBox.Text.Length == 1 && textBox.Text != "0")
                 {
                     textBox.Text = "0" + textBox.Text; // Agrega un 0 a la izquierda
                 }
+
+                // Si el contenido es "0" o "00"
+                if (textBox.Text == "0" || textBox.Text == "00")
+                {
+                    // Llama a la función de validación antes de limpiar el campo
+                    ValidarCampos();
+
+                    // Limpia el TextBox y vuelve a darle foco
+                    textBox.Clear();
+                    textBox.Focus();
+                }
             }
+
+            //autocompletar año o mostrar mensaje en caso de que no se pueda autocompletar
             else if (textBox == textBox_AÑO)
             {
                 if (textBox.Text.Length == 2)
@@ -273,11 +298,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                         textBox.Text = "19" + textBox.Text; // Completa con "19" a la izquierda
                     }
                 }
-                else if (textBox.Text.Length == 1)
+                else if (textBox.Text.Length == 1 || textBox.Text.Length == 3)
                 {
-                    ValidarCampo("Año", textBox_AÑO.Text, AñoMinimo, AñoMaximo, textBox_AÑO);
-
-                    textBox.Focus();
+                    ValidarCampos();
                 }
             }
         }
@@ -286,50 +309,29 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         /// PARAMETROS DE VALIDACION 
         /// </summary>
         /// <returns></returns>
+      
         private bool ValidarCampos()
         {
-            return ValidarCampo("Día", textBox_DIA.Text, 1, 31, textBox_DIA) &&
-                   ValidarCampo("Mes", textBox_MES.Text, 1, 12, textBox_MES) &&
-                   ValidarCampo("Año", textBox_AÑO.Text, AñoMinimo, AñoMaximo, textBox_AÑO);
+            bool isValid = true;
+
+            // Validar cada campo y actualizar el estado de isValid
+            if (!ValidarCampo("Día", textBox_DIA.Text, 1, 31, textBox_DIA))
+                isValid = false;
+
+            if (!ValidarCampo("Mes", textBox_MES.Text, 1, 12, textBox_MES))
+                isValid = false;
+
+            if (!ValidarCampo("Año", textBox_AÑO.Text, AñoMinimo, AñoMaximo, textBox_AÑO))
+                isValid = false;
+
+            // Si algún campo es inválido, marcar showError como true
+            showError = !isValid;
+            this.Invalidate();// forzar redibujado
+            return isValid;
+          
         }
 
-        private void CamposFecha_TextChanged(object sender, EventArgs e)
-        {
-            // Validar si los campos están completos
-            if (ValidarCampos())
-            {
-                // Obtener la fecha seleccionada
-                DateTime? fechaSeleccionada = ObtenerFecha();
-                if (fechaSeleccionada.HasValue)
-                {
-                    // Validar si el nombre del control es de antiguedad o nacimiento"
-                    if (this.Name == "dateTimePicker_Antiguedad" || this.Name == "dateTimePicker_FechaNacimiento")
-                    {
-                        // Comprobar si la fecha seleccionada es posterior a la fecha actual
-                        if (fechaSeleccionada.Value > DateTime.Now)
-                        {
-                            // Calcular la posición del control actual en la pantalla
-                            Point controlPosition = this.PointToScreen(Point.Empty);
-
-                            // Mostrar mensaje de advertencia
-                            using var mensajeForm = new MensajeGeneral("La fecha no puede ser posterior a la fecha actual.", MensajeGeneral.TipoMensaje.Advertencia);
-                            // Centrar el mensaje con respecto al control
-                            int messageX = controlPosition.X + (this.Width / 2) - (mensajeForm.Width / 2);
-                            int messageY = controlPosition.Y + this.Height + 3; // Posicionar justo debajo del control
-
-                            mensajeForm.StartPosition = FormStartPosition.Manual;
-                            mensajeForm.Location = new Point(messageX, messageY);
-                            mensajeForm.ShowDialog();
-                            return;
-                        }
-                    }
-                }
-            }
-
-            // Actualizar estado visual del subrayado general
-            // showError = HasAnyError();
-            Invalidate();
-        }
+     
 
         /// <summary>
         /// METODO PARA VALIDAR PARAMETROS DE CAMPOS
@@ -446,6 +448,15 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 selector.ShowDialog();
             }
         }
+        /// <summary>
+        /// hace que no se pueda editar la seleccion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_MES_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // Bloquea cualquier tecla presionada
+        }
         private void CargarFechaActual()
         {
             DateTime fechaActual = DateTime.Now;
@@ -481,18 +492,59 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             FocusControl();
         }
 
-        /// <summary>
-        /// hace que no se pueda editar la seleccion
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_MES_KeyPress(object sender, KeyPressEventArgs e)
+       
+
+
+
+
+        private void TextBox_DIA_TextChanged(object sender, EventArgs e)
         {
-            e.Handled = true; // Bloquea cualquier tecla presionada
+            // Validar solo después de 2 dígitos
+            if (textBox_DIA.Text.Length == 2)
+            {
+                // Realiza la validación para asegurar que el día esté dentro del rango válido (1-31)
+                if (int.TryParse(textBox_DIA.Text, out int diaValido) && (diaValido < 1 || diaValido > 31))
+                {
+                    textBox_DIA.BackColor = Color.Red;  // Color de error si está fuera de rango
+                    textBox_DIA.ForeColor = Color.White;
+                     ValidarCampos();
+                 
+                }
+                else
+                {
+                    textBox_DIA.BackColor = Color.White; // Color normal si es válido
+                    textBox_DIA.ForeColor = Color.Black;
+                    ValidarCampos();
+                    showError = false;
+                    isFocused = true;
+                    this.Invalidate();
+                }
+            }
         }
+        private void TextBox_AÑO_TextChanged(object sender, EventArgs e)
+        {
+            // Validar solo después de 2 dígitos
+            if (textBox_AÑO.Text.Length == 4)
+            {
+                // Realiza la validación para asegurar que el día esté dentro del rango válido (1-31)
+                if (int.TryParse(textBox_AÑO.Text, out int añoValido) && (añoValido < AñoMinimo || añoValido > AñoMaximo))
+                {
+                    textBox_AÑO.BackColor = Color.Red;  // Color de error si está fuera de rango
+                    textBox_AÑO.ForeColor = Color.White;
+                    ValidarCampos();
 
-
-
+                }
+                else
+                {
+                    textBox_AÑO.BackColor = Color.White; // Color normal si es válido
+                    textBox_AÑO.ForeColor = Color.Black;
+                    ValidarCampos();
+                    showError = false;
+                    isFocused = true;
+                    this.Invalidate();
+                }
+            }
+        }
 
 
 

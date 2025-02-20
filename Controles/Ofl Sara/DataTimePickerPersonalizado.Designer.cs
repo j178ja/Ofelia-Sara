@@ -48,6 +48,11 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_DIA.TabIndex = 2;
             textBox_DIA.TextAlign = HorizontalAlignment.Center;
             textBox_DIA.MouseClick += TextBox_MouseClick;
+            textBox_DIA.TextChanged += TextBox_DIA_TextChanged;
+            textBox_DIA.Enter += TextBox_Enter;
+            textBox_DIA.KeyDown += TextBox_KeyDown;
+            textBox_DIA.KeyPress += TextBox_KeyPress;
+            textBox_DIA.Leave += TextBox_Leave;
             // 
             // label_DE1
             // 
@@ -83,6 +88,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_MES.TextAlign = HorizontalAlignment.Center;
             textBox_MES.Click += TextBox_MES_Click;
             textBox_MES.MouseClick += TextBox_MouseClick;
+            textBox_MES.KeyDown += TextBox_KeyDown;
             textBox_MES.KeyPress += TextBox_MES_KeyPress;
             // 
             // textBox_AÑO
@@ -94,7 +100,13 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             textBox_AÑO.Name = "textBox_AÑO";
             textBox_AÑO.Size = new Size(55, 16);
             textBox_AÑO.TabIndex = 6;
+            textBox_AÑO.TextAlign = HorizontalAlignment.Center;
             textBox_AÑO.MouseClick += TextBox_MouseClick;
+            textBox_AÑO.TextChanged += TextBox_AÑO_TextChanged;
+            textBox_AÑO.Enter += TextBox_Enter;
+            textBox_AÑO.KeyDown += TextBox_KeyDown;
+            textBox_AÑO.KeyPress += TextBox_KeyPress;
+            textBox_AÑO.Leave += TextBox_Leave;
             // 
             // TimePickerPersonalizado
             // 
