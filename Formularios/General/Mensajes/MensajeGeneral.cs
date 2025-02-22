@@ -6,6 +6,7 @@
 
 
 
+using Ofelia_Sara.Clases.General.Apariencia;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -40,7 +41,9 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             Color bordeForm = Color.Black;
             Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
             FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
-            FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
+           FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
+          //  RedondearBordes.Aplicar(panel1, 15);
+           // RedondearBordes.Aplicar(this, 24);
 
             // Ajustar altura del Label según el contenido
             AjustarAlturaContenedores();

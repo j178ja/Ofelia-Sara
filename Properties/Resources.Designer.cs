@@ -933,6 +933,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap persona {
+            get {
+                object obj = ResourceManager.GetObject("persona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap portapapeles {
             get {
                 object obj = ResourceManager.GetObject("portapapeles", resourceCulture);
@@ -966,6 +976,16 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap quitar_usuario16 {
             get {
                 object obj = ResourceManager.GetObject("quitar_usuario16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rueda {
+            get {
+                object obj = ResourceManager.GetObject("rueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

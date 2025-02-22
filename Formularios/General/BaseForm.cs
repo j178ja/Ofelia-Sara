@@ -174,7 +174,7 @@ namespace Ofelia_Sara.Formularios.General
             float maxRadius = Math.Max(width, height) * 0.75f; // Ajusta el valor según sea necesario
 
             // Crear un rectángulo que envuelve el área del degradado
-            RectangleF gradientRectangle = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
+            _ = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
         }
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
@@ -528,60 +528,20 @@ namespace Ofelia_Sara.Formularios.General
         //---------------------------------------------------
 
         //-------------------------------------------------------------------
-        ///// <summary>
-        ///// llamar en load de cada form para establecer cantidad de caracteres
-        ///// </summary>
-        //protected virtual void ConfigurarMaxLengthIpp()
-        //{
-        //    foreach (Control control in this.Controls)
-        //    {
-        //        AplicarConfiguracionIpp(control);
 
-        //        // Si hay paneles o controles anidados, recorrerlos también
-        //        if (control.HasChildren)
-        //        {
-        //            RecorrerControlesAnidados(control);
-        //        }
-        //    }
-        //}
 
-        //private void RecorrerControlesAnidados(Control parent)
-        //{
-        //    foreach (Control control in parent.Controls)
-        //    {
-        //        AplicarConfiguracionIpp(control);
 
-        //        if (control.HasChildren)
-        //        {
-        //            RecorrerControlesAnidados(control);
-        //        }
-        //    }
-        //}
-
-  
-
-        /// <summary>
-        /// agrega 10 items al list del comboBox
-        /// </summary>
-        /// <param name="comboBox"></param>
-        private void ConfigurarItemsComboBox(CustomComboBox comboBox)
-        {
-            comboBox.Items.Clear();
-
-            for (int i = 0; i <= 10; i++)
-            {
-                comboBox.Items.Add(i.ToString("D2")); // "00", "01", "02", ..., "10"
-            }
-        }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             ConfigurarTextoEnControles();
-            InicializarComboBoxIpp();
+            InicializarComboBoxIpp(this);
             ConfigurarMaxLengthIpp();
             ConfigurarEventosIpp();
             ConfigureFormAppearance();
+            AjustarLabelEnPanel();
+
         }
         /// <summary>
         /// llamar en load de cada form para establecer cantidad de caracteres
@@ -599,6 +559,27 @@ namespace Ofelia_Sara.Formularios.General
                 }
             }
         }
+
+
+        /// <summary>
+        /// agrega 10 items al list del comboBox
+        /// </summary>
+        /// <param name="comboBox"></param>
+        private void ConfigurarItemsComboBox(CustomComboBox comboBox)
+        {
+            comboBox.DataSource = null; // Desvincula la lista de datos
+            comboBox.Items.Clear();
+
+            for (int i = 0; i <= 10; i++)
+            {
+                comboBox.Items.Add(i.ToString("D2")); // "00", "01", "02", ..., "10"
+            }
+        }
+
+        ///// <summary>
+        ///// llamar en load de cada form para establecer cantidad de caracteres
+        ///// </summary>
+
         private void AplicarConfiguracionIpp(Control control)
         {
             if (control is CustomComboBox customComboBox)
@@ -649,7 +630,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        private void AplicarFormatoTexto(Control control)
+        private static void AplicarFormatoTexto(Control control)
         {
             if (control is TextBox textBox)
             {
@@ -696,32 +677,7 @@ namespace Ofelia_Sara.Formularios.General
         /// <summary>
         /// Inicializa valores por defecto en los ComboBox IPP
         /// </summary>
-        private void InicializarComboBoxIpp()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is CustomComboBox comboBox)
-                {
-                    switch (comboBox.Name)
-                    {
-                        case "comboBox_Ipp1":
-                        case "comboBox_Ipp2":
-                            comboBox.SelectedIndex = 3; // Posición predeterminada
-                            break;
-                        case "comboBox_Ipp4":
-                            CargarAño(comboBox);
-                            break;
-                    }
-                }
-
-                if (control.HasChildren)
-                {
-                    InicializarComboBoxIppEnAnidados(control);
-                }
-            }
-        }
-
-        private void InicializarComboBoxIppEnAnidados(Control parent)
+        private void InicializarComboBoxIpp(Control parent)
         {
             foreach (Control control in parent.Controls)
             {
@@ -731,7 +687,10 @@ namespace Ofelia_Sara.Formularios.General
                     {
                         case "comboBox_Ipp1":
                         case "comboBox_Ipp2":
-                            comboBox.SelectedIndex = 3;
+                            ConfigurarItemsComboBox(comboBox);
+                            comboBox.SelectedIndex = 3; // Posición predeterminada
+
+
                             break;
                         case "comboBox_Ipp4":
                             CargarAño(comboBox);
@@ -739,13 +698,22 @@ namespace Ofelia_Sara.Formularios.General
                     }
                 }
 
+                // Si el control tiene hijos, llamar recursivamente al método
                 if (control.HasChildren)
                 {
-                    InicializarComboBoxIppEnAnidados(control);
+                    InicializarComboBoxIpp(control);
                 }
             }
         }
-        // Evento Leave para completar con ceros los ComboBox IPP
+
+
+
+
+        /// <summary>
+        /// Evento Leave para completar con ceros los ComboBox IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_Ipp_Leave(object sender, EventArgs e)
         {
             if (sender is CustomComboBox customComboBox)
@@ -758,7 +726,12 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        // Evento KeyPress para solo permitir números en los TextBox IPP
+    
+        /// <summary>
+        /// Evento KeyPress para solo permitir números en los TextBox IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -773,13 +746,22 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        // Evento Leave para completar con ceros los TextBox IPP
+      
+        /// <summary>
+        /// Evento Leave para completar con ceros los TextBox IPP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
             CompletarConCeros(sender as CustomTextBox);
         }
 
-        // Método reutilizable para completar con ceros
+       
+        /// <summary>
+        ///  Método reutilizable para completar con ceros
+        /// </summary>
+        /// <param name="customTextBox"></param>
         private static void CompletarConCeros(CustomTextBox customTextBox)
         {
             if (customTextBox != null && int.TryParse(customTextBox.TextValue, out _))
@@ -789,6 +771,9 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+        /// <summary>
+        /// agerga eventos leave y keypress a ComboBoxIPP
+        /// </summary>
         protected virtual void ConfigurarEventosIpp()
         {
             foreach (Control control in this.Controls)
@@ -1010,9 +995,48 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
+        //fin baseform
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

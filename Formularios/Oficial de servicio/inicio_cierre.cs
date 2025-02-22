@@ -47,7 +47,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public InicioCierre()
         {
             InitializeComponent();
-            RedondearBordes.Aplicar(panel1, 15);
+            RedondearBordes.Aplicar(label_TITULO, 6);
             //.para reposicionar paneles
             reposicionador = new ReposicionarSegunAgregado(
             this,
