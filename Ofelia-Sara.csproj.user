@@ -92,7 +92,7 @@
     <Compile Update="Formularios\General\InstructivoDigital.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\General\Mensajes\MensajeEnviarEmail.cs">
+    <Compile Update="Formularios\General\Mensajes\MensajeEmail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\General\Mensajes\MensajeGeneral.cs">

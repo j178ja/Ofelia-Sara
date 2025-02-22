@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General.Mensajes
 {
-    public partial class MensajeEnviarEmail :BaseForm
+    public partial class MensajeEmail : BaseForm
     {
-        public MensajeEnviarEmail()
+        public MensajeEmail()
         {
             InitializeComponent();
         }
 
         private void MensajeEnviarEmail_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelConBordeNeon1_Paint(object sender, PaintEventArgs e)
         {
 
         }
