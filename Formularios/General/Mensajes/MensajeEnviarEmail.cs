@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General.Mensajes
 {
-    public partial class MensajeEnviarEmail : Form
+    public partial class MensajeEnviarEmail :BaseForm
     {
         public MensajeEnviarEmail()
         {
             InitializeComponent();
+        }
+
+        private void MensajeEnviarEmail_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

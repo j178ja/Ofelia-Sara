@@ -93,6 +93,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Imputado = new System.Windows.Forms.Panel();
             panel_Victima = new System.Windows.Forms.Panel();
             label_TITULO = new System.Windows.Forms.Label();
+            botonDeslizable_StarPlana = new BotonDeslizable();
+            label1 = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             panel_Instruccion.SuspendLayout();
             panel_Ipp.SuspendLayout();
@@ -101,6 +104,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Not247.SuspendLayout();
             panel_Imputado.SuspendLayout();
             panel_Victima.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_Dr
@@ -138,7 +142,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.Whidth = 0;
- 
             textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
             textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
             // 
@@ -504,7 +507,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.TabIndex = 0;
             comboBox_Ipp1.Text = " ";
             comboBox_Ipp1.TextValue = "";
-            
             comboBox_Ipp1.Leave += ComboBox_Ipp_Leave;
             // 
             // comboBox_Ipp2
@@ -540,7 +542,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.TabIndex = 1;
             comboBox_Ipp2.Text = " ";
             comboBox_Ipp2.TextValue = "";
-           
             comboBox_Ipp2.Leave += ComboBox_Ipp_Leave;
             // 
             // lbl_00
@@ -586,7 +587,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.TabIndex = 3;
             comboBox_Ipp4.Text = " ";
             comboBox_Ipp4.TextValue = "";
-           
             comboBox_Ipp4.Leave += ComboBox_Ipp_Leave;
             // 
             // btn_Buscar
@@ -696,7 +696,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             checkBox_RatificacionTestimonial.CheckAlign = ContentAlignment.BottomCenter;
             checkBox_RatificacionTestimonial.Cursor = System.Windows.Forms.Cursors.Hand;
             checkBox_RatificacionTestimonial.FlatAppearance.CheckedBackColor = SystemColors.ControlLight;
-            checkBox_RatificacionTestimonial.Location = new Point(241, 52);
+            checkBox_RatificacionTestimonial.Location = new Point(220, 53);
             checkBox_RatificacionTestimonial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             checkBox_RatificacionTestimonial.Name = "checkBox_RatificacionTestimonial";
             checkBox_RatificacionTestimonial.Size = new Size(15, 14);
@@ -733,14 +733,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // checkBox_Cargo
             // 
+            checkBox_Cargo.AutoSize = true;
             checkBox_Cargo.BackColor = Color.Transparent;
             checkBox_Cargo.CheckAlign = ContentAlignment.BottomCenter;
             checkBox_Cargo.Cursor = System.Windows.Forms.Cursors.Hand;
-            checkBox_Cargo.Location = new Point(456, 44);
+            checkBox_Cargo.Location = new Point(306, 52);
             checkBox_Cargo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             checkBox_Cargo.Name = "checkBox_Cargo";
-            checkBox_Cargo.Size = new Size(21, 20);
+            checkBox_Cargo.Size = new Size(15, 14);
             checkBox_Cargo.TabIndex = 9;
+            checkBox_Cargo.TextAlign = ContentAlignment.MiddleCenter;
             checkBox_Cargo.UseVisualStyleBackColor = false;
             checkBox_Cargo.CheckedChanged += CheckBox_Cargo_CheckedChanged;
             // 
@@ -790,12 +792,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // timePickerPersonalizado1
             // 
+            timePickerPersonalizado1.AñoMaximo = 2025;
+            timePickerPersonalizado1.AñoMinimo = 1930;
             timePickerPersonalizado1.BackColor = SystemColors.Window;
             timePickerPersonalizado1.FechaSeleccionada = new System.DateTime(0L);
             timePickerPersonalizado1.Location = new Point(132, 166);
             timePickerPersonalizado1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             timePickerPersonalizado1.Name = "timePickerPersonalizado1";
             timePickerPersonalizado1.Size = new Size(333, 21);
+            timePickerPersonalizado1.SubrayadoGeneralErrorColor = Color.Red;
+            timePickerPersonalizado1.SubrayadoGeneralFocusColor = Color.Blue;
             timePickerPersonalizado1.TabIndex = 38;
             // 
             // comboBox_DeptoJudicial
@@ -949,6 +955,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             panel_ControlesInferiores.BackColor = Color.Transparent;
+            panel_ControlesInferiores.Controls.Add(panel2);
             panel_ControlesInferiores.Controls.Add(panel_Not247);
             panel_ControlesInferiores.Controls.Add(Btn_ContadorRML);
             panel_ControlesInferiores.Controls.Add(btn_ContadorRatificaciones);
@@ -964,7 +971,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.Location = new Point(4, 350);
             panel_ControlesInferiores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel_ControlesInferiores.Name = "panel_ControlesInferiores";
-            panel_ControlesInferiores.Size = new Size(514, 190);
+            panel_ControlesInferiores.Size = new Size(524, 190);
             panel_ControlesInferiores.TabIndex = 42;
             // 
             // panel_Not247
@@ -1068,10 +1075,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // label_StudRML
             // 
             label_StudRML.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_StudRML.Location = new Point(383, 13);
+            label_StudRML.Location = new Point(389, 13);
             label_StudRML.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_StudRML.Name = "label_StudRML";
-            label_StudRML.Size = new Size(132, 23);
+            label_StudRML.Size = new Size(121, 23);
             label_StudRML.TabIndex = 45;
             label_StudRML.Text = "Stud. R.M.L   ";
             label_StudRML.TextAlign = ContentAlignment.MiddleLeft;
@@ -1079,10 +1086,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // label_Cargo
             // 
             label_Cargo.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Cargo.Location = new Point(379, 44);
+            label_Cargo.Location = new Point(239, 47);
             label_Cargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Cargo.Name = "label_Cargo";
-            label_Cargo.Size = new Size(98, 22);
+            label_Cargo.Size = new Size(85, 22);
             label_Cargo.TabIndex = 40;
             label_Cargo.Text = "   Cargo   ";
             label_Cargo.TextAlign = ContentAlignment.MiddleLeft;
@@ -1140,6 +1147,37 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.TabIndex = 31;
             label_TITULO.Text = "ESTRUCTURA BASICA I.P.P.";
             // 
+            // botonDeslizable_StarPlana
+            // 
+            botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
+            botonDeslizable_StarPlana.IsOn = false;
+            botonDeslizable_StarPlana.Location = new Point(136, 4);
+            botonDeslizable_StarPlana.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
+            botonDeslizable_StarPlana.Size = new Size(47, 20);
+            botonDeslizable_StarPlana.TabIndex = 101;
+            botonDeslizable_StarPlana.ValidarCampos = null;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(3, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(133, 16);
+            label1.TabIndex = 100;
+            label1.Text = "Insertar Secuestro";
+            label1.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(botonDeslizable_StarPlana);
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(331, 44);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(183, 27);
+            panel2.TabIndex = 102;
+            // 
             // InicioCierre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1176,6 +1214,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Imputado.PerformLayout();
             panel_Victima.ResumeLayout(false);
             panel_Victima.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1240,5 +1280,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_Not247;
         private System.Windows.Forms.Label label_Not247;
         private CustomTextBox textBox_Caratula;
+        private BotonDeslizable botonDeslizable_StarPlana;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
