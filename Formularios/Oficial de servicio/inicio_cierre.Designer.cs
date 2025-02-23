@@ -80,6 +80,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Caratula = new System.Windows.Forms.Panel();
             textBox_Caratula = new CustomTextBox();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
+            panel2 = new System.Windows.Forms.Panel();
+            botonDeslizable_StarPlana = new BotonDeslizable();
+            label1 = new System.Windows.Forms.Label();
             panel_Not247 = new System.Windows.Forms.Panel();
             Btn_Contador247 = new Controles.Ofl_Sara.Boton_Contador();
             fecha_Pericia = new System.Windows.Forms.MaskedTextBox();
@@ -93,18 +96,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Imputado = new System.Windows.Forms.Panel();
             panel_Victima = new System.Windows.Forms.Panel();
             label_TITULO = new System.Windows.Forms.Label();
-            botonDeslizable_StarPlana = new BotonDeslizable();
-            label1 = new System.Windows.Forms.Label();
-            panel2 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             panel_Instruccion.SuspendLayout();
             panel_Ipp.SuspendLayout();
             panel_Caratula.SuspendLayout();
             panel_ControlesInferiores.SuspendLayout();
+            panel2.SuspendLayout();
             panel_Not247.SuspendLayout();
             panel_Imputado.SuspendLayout();
             panel_Victima.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_Dr
@@ -974,6 +974,37 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.Size = new Size(524, 190);
             panel_ControlesInferiores.TabIndex = 42;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(botonDeslizable_StarPlana);
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(331, 44);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(183, 27);
+            panel2.TabIndex = 102;
+            // 
+            // botonDeslizable_StarPlana
+            // 
+            botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
+            botonDeslizable_StarPlana.IsOn = false;
+            botonDeslizable_StarPlana.Location = new Point(136, 4);
+            botonDeslizable_StarPlana.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
+            botonDeslizable_StarPlana.Size = new Size(47, 20);
+            botonDeslizable_StarPlana.TabIndex = 101;
+            botonDeslizable_StarPlana.ValidarCampos = null;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(3, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(133, 16);
+            label1.TabIndex = 100;
+            label1.Text = "Insertar Secuestro";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel_Not247
             // 
             panel_Not247.BackColor = Color.Transparent;
@@ -1147,37 +1178,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.TabIndex = 31;
             label_TITULO.Text = "ESTRUCTURA BASICA I.P.P.";
             // 
-            // botonDeslizable_StarPlana
-            // 
-            botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
-            botonDeslizable_StarPlana.IsOn = false;
-            botonDeslizable_StarPlana.Location = new Point(136, 4);
-            botonDeslizable_StarPlana.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
-            botonDeslizable_StarPlana.Size = new Size(47, 20);
-            botonDeslizable_StarPlana.TabIndex = 101;
-            botonDeslizable_StarPlana.ValidarCampos = null;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(133, 16);
-            label1.TabIndex = 100;
-            label1.Text = "Insertar Secuestro";
-            label1.TextAlign = ContentAlignment.BottomCenter;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(botonDeslizable_StarPlana);
-            panel2.Controls.Add(label1);
-            panel2.Location = new Point(331, 44);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(183, 27);
-            panel2.TabIndex = 102;
-            // 
             // InicioCierre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1208,14 +1208,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Caratula.PerformLayout();
             panel_ControlesInferiores.ResumeLayout(false);
             panel_ControlesInferiores.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel_Not247.ResumeLayout(false);
             panel_Not247.PerformLayout();
             panel_Imputado.ResumeLayout(false);
             panel_Imputado.PerformLayout();
             panel_Victima.ResumeLayout(false);
             panel_Victima.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

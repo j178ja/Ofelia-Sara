@@ -599,9 +599,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.Whidth = 0;
-            textBox_NumeroIpp.TextChanged += TextBox_NumeroIpp_TextChanged;
-            textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
-            textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
+           
             // 
             // comboBox_Ipp1
             // 
@@ -635,9 +633,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.TabIndex = 3;
             comboBox_Ipp1.Text = "03";
             comboBox_Ipp1.TextValue = " ";
-            comboBox_Ipp1.TextChanged += ComboBox_Ipp_TextUpdate;
-            comboBox_Ipp1.KeyPress += ComboBox_Ipp_KeyPress;
-            comboBox_Ipp1.Leave += ComboBox_Ipp_Leave;
+          
             // 
             // comboBox_Ipp2
             // 
@@ -671,9 +667,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.TabIndex = 4;
             comboBox_Ipp2.Text = "03";
             comboBox_Ipp2.TextValue = " ";
-            comboBox_Ipp2.TextChanged += ComboBox_Ipp_TextUpdate;
-            comboBox_Ipp2.KeyPress += ComboBox_Ipp_KeyPress;
-            comboBox_Ipp2.Leave += ComboBox_Ipp_Leave;
+          
             // 
             // lbl_00
             // 
@@ -716,9 +710,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.TabIndex = 6;
             comboBox_Ipp4.Text = "24";
             comboBox_Ipp4.TextValue = " ";
-            comboBox_Ipp4.TextChanged += TextBox_NumeroIpp_TextChanged;
-            comboBox_Ipp4.KeyPress += ComboBox_Ipp_KeyPress;
-            comboBox_Ipp4.Leave += ComboBox_Ipp_Leave;
+     
             // 
             // lbl_Ipp
             // 

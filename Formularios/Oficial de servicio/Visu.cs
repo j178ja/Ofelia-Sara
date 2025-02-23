@@ -124,10 +124,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             pictureBox_PanelImagenes.Visible = true;
             FormatoTexto();
 
-            comboBox_Ipp1.InnerTextBox.MaxLength = 2;
-            comboBox_Ipp2.InnerTextBox.MaxLength = 2;
-            textBox_NumeroIpp.InnerTextBox.MaxLength = 6;
-            comboBox_Ipp4.InnerTextBox.MaxLength = 2;
+          
             comboBox_AñoVehiculo.InnerTextBox.MaxLength = 4;
 
 
@@ -223,15 +220,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void FormatoTexto()
         {
-            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
-            MayusculaSola.AplicarAControl(textBox_Victima);
-            MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Fiscalia);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
-
+       
             // estilo de letras en panel datos vehiculo
             MayusculaYnumeros.AplicarAControl(textBox_Dominio);
             MayusculaYnumeros.AplicarAControl(textBox_Motor);
@@ -273,144 +262,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return datosFormulario;
         }
 
-        /// <summary>
-        /// PARA LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
 
-            // Verifica si la tecla presionada es Enter
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Obtiene el TextBox que disparó el evento
-                Ofelia_Sara.Controles.General.CustomTextBox customTextBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
-
-                if (customTextBox != null)
-                {
-                    // Obtiene el texto actual del TextBox
-                    string currentText = customTextBox.TextValue;
-
-                    // Verifica si el texto es numérico
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                        string completedText = currentText.PadLeft(6, '0');
-
-                        // Actualiza el texto del TextBox
-                        customTextBox.TextValue = completedText;
-
-                        // Posiciona el cursor al final del texto
-                        customTextBox.SelectionStart = customTextBox.TextValue.Length;
-
-                        // Cancelar el manejo predeterminado de la tecla Enter
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-        private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
-        {
-            // Limitar a 6 caracteres
-            if (textBox_NumeroIpp.Text.Length > 6)
-            {
-                // Si el texto excede los 6 caracteres, cortar el exceso
-                textBox_NumeroIpp.Text = textBox_NumeroIpp.Text.Substring(0, 6);
-
-                // Mover el cursor al final del texto
-                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.Text.Length;
-            }
-        }
+  
 
 
+
+      
 
         /// <summary>
-        /// LIMITAR A 2 CARACTERES COMBOBOX IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_TextUpdate(object sender, EventArgs e)
-        {
-            CustomTextBox customTextBox = sender as CustomTextBox; // El sender será el InnerTextBox
-            if (customTextBox != null && customTextBox.TextValue.Length > 2)
-            {
-                customTextBox.Text = customTextBox.TextValue.Substring(0, 2); // Limitar a 2 caracteres
-                customTextBox.SelectionStart = customTextBox.TextValue.Length; // Mantener el cursor al final
-            }
-        }
+ 
 
-        /// <summary>
-        /// METODO PARA QUE SOLO SE AGREGEN NUMEROS A COMBOBOX IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo acepta dígitos
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Si el evento viene del InnerTextBox, obtenemos el control padre
-                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
-                {
-                    // Obtiene el texto actual
-                    string currentText = customComboBox.TextValue;
-
-                    // Verifica si es un número válido
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                        string completedText = currentText.PadLeft(2, '0');
-
-                        // Actualiza el texto en el CustomTextBox
-                        customComboBox.TextValue = completedText;
-
-                        // Posiciona el cursor al final del texto
-                        customComboBox.SelectionStart = customComboBox.TextValue.Length;
-
-                        // Cancela el manejo predeterminado de la tecla Enter
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// METODO PARA HACER QUE SE AUTOCOMPLETE LOS COMBOBOX DE NUMERO IP CON 0 AL PERDER EL FOCO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
-        {
-            // Verifica si el sender es un CustomComboBox
-            if (sender is CustomComboBox customComboBox)
-            {
-                // Obtiene el texto actual
-                string currentText = customComboBox.TextValue;
-
-                // Verifica si es un número válido
-                if (int.TryParse(currentText, out _))
-                {
-                    // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                    string completedText = currentText.PadLeft(2, '0');
-
-                    // Actualiza el texto en el CustomComboBox
-                    customComboBox.TextValue = completedText;
-
-                    // Posiciona el cursor al final del texto
-                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
-                }
-            }
-        }
 
 
         /// <summary>
@@ -440,35 +301,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        /// <summary>
-        /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
-        /// </summary>
-        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
-        {
-            CompletarConCeros(sender as CustomTextBox);
-        }
+    
 
-        /// <summary>
-        /// Método reutilizable para completar con ceros
-        /// </summary>
-        /// <param name="textBox"></param>
-        private static void CompletarConCeros(CustomTextBox custoTextBox)
-        {
-            if (custoTextBox != null)
-            {
-                // Obtiene el texto actual del TextBox
-                string currentText = custoTextBox.TextValue;
-
-                // Verifica si el texto es numérico y no está vacío
-                if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
-                {
-                    // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                    custoTextBox.TextValue = currentText.PadLeft(6, '0');
-
-                    custoTextBox.SelectionStart = custoTextBox.TextValue.Length; // Posiciona el cursor al final del texto (opcional)
-                }
-            }
-        }
 
         /// <summary>
         /// INICIALIZA COMBOBOX FISCALIA
@@ -1011,8 +845,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             foreach (Control ctrl in panel_AgregarImagenes.Controls)
             {
-                NuevaImagen imagenControl = ctrl as NuevaImagen;
-                if (imagenControl != null) // Si es de tipo NuevaImagen
+                if (ctrl is NuevaImagen imagenControl) // Si es de tipo NuevaImagen
                 {
                     if (imagenControl.Image == null || imagenControl.Image == Properties.Resources.agregar_imagen)
                     {
@@ -1034,7 +867,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // Crear una instancia del control NuevaImagen
-            NuevaImagen nuevoControlImagen = new NuevaImagen();
+            NuevaImagen nuevoControlImagen = new();
 
             // Establecer la posición de la nueva imagen
             int nuevaPosicionX = (panel_AgregarImagenes.Controls.Count > 0) ?
@@ -1285,11 +1118,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Visu_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Completando los datos requeridos se creara documento de examen de VISU y se agregarán las imagenes.", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            MostrarMensajeAyuda("Completando los datos requeridos se creara documento de examen de VISU y se agregarán las imagenes.");
 
         }
 
@@ -1408,8 +1237,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
-        private void ComboBox_AñoVehiculo_Validated(object sender, EventArgs e)
+        /// <summary>
+        /// valida para que no se ingrease un año de vehiculo posterior al año en  curso
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ComboBox_AñoVehiculo_Validated(object sender, EventArgs e)
         {
             if (sender is CustomComboBox comboBox)
             {
@@ -1428,7 +1261,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     int y = posicionComboBox.Y + comboBox.Height + 5; // Posicionar justo debajo con un margen de 5px
 
                     // Crear y mostrar el mensaje como ventana modal (ShowDialog)
-                    using (MensajeGeneral mensajeForm = new MensajeGeneral("El año del vehículo no puede ser posterior al año en curso.",
+                    using (MensajeGeneral mensajeForm = new("El año del vehículo no puede ser posterior al año en curso.",
                                                                             MensajeGeneral.TipoMensaje.Advertencia))
                     {
                         mensajeForm.StartPosition = FormStartPosition.Manual;
@@ -1492,22 +1325,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void CheckBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
         {
-            // Verificar si el CheckBox está marcado
-            if (checkBox_LegajoVehicular.Checked)
-            {
-
-              
-                 checkBox_LegajoVehicular.Visible = false;
-              
-            }
+            
 
         }
 
         private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
         {
            
-            checkBox_LegajoVehicular.Visible = true; //lo hace visible 
-            checkBox_LegajoVehicular.Checked = false;// lo mantien
+           
 
         }
 
