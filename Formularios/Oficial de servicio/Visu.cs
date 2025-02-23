@@ -22,8 +22,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     {
         #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-        private List<string> victimas = new List<string>(); // Listas para almacenar víctimas e imputados
-        private List<string> imputados = new List<string>(); // Listas para almacenar víctimas e imputados
+        private List<string> victimas = []; // Listas para almacenar víctimas e imputados
+        private List<string> imputados = []; // Listas para almacenar víctimas e imputados
         private bool panelExpandido_Instruccion = true;// Variable para rastrear el estado del panel
         private bool panelExpandido_Imagenes = true;// 
         private bool panelExpandido_Vehiculo = true;// 
@@ -823,18 +823,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Panel_TipoExamenVisu_Paint_Activated(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.Green, 2)) // Borde verde cuando algún CheckBox está seleccionado
-            {
-                e.Graphics.DrawRectangle(pen, panel_TipoExamenVisu.ClientRectangle);
-            }
+            using Pen pen = new(Color.Green, 2); // Borde verde cuando algún CheckBox está seleccionado
+            e.Graphics.DrawRectangle(pen, panel_TipoExamenVisu.ClientRectangle);
         }
 
         private void Panel_TipoExamenVisu_Paint_Default(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.Black, 1)) // Borde negro por defecto
-            {
-                e.Graphics.DrawRectangle(pen, panel_TipoExamenVisu.ClientRectangle);
-            }
+            using Pen pen = new(Color.Black, 1); // Borde negro por defecto
+            e.Graphics.DrawRectangle(pen, panel_TipoExamenVisu.ClientRectangle);
         }
 
 
@@ -1131,26 +1127,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
+                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
+                // Hacer visibles los botones
+                mensaje.MostrarBotonesConfirmacion(true);
+
+                DialogResult result = mensaje.ShowDialog();
+                if (result == DialogResult.No)
                 {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
+                    e.Cancel = true; // Cancelar el cierre del formulario
+                }
+                else
+                {
+                    // En Visu.cs, dentro del código donde accedes a Cargo
+                    // Cambiar el estado del botón
+                    formularioCargo?.CambiarEstadoBotonDeslizable(false); // O true, según sea necesario
 
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-                    else
-                    {
-                        // En Visu.cs, dentro del código donde accedes a Cargo
-                        if (formularioCargo != null)
-                        {
-                            // Cambiar el estado del botón
-                            formularioCargo.CambiarEstadoBotonDeslizable(false); // O true, según sea necesario
-                        }
-
-                    }
                 }
             }
         }

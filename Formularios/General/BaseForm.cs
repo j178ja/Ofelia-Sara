@@ -126,38 +126,38 @@ namespace Ofelia_Sara.Formularios.General
             // Aplicar el redondeo de bordes a todos los paneles
             foreach (Control control in this.Controls)
             {
-                if (control is Panel panel)
+                if (control is Panel panel1)
                 {
-                    RedondearBordes.Aplicar(panel, 15);
+                    RedondearBordes.Aplicar(panel1, 15);
                 }
 
-                // Si hay paneles anidados, aplicar la configuración recursivamente
-                if (control.HasChildren)
-                {
-                    ApplyRoundBordersToChildPanels(control);
-                }
+                //// Si hay paneles anidados, aplicar la configuración recursivamente
+                //if (control.HasChildren)
+                //{
+                //    ApplyRoundBordersToChildPanels(control);
+                //}
             }
         }
 
         /// <summary>
         /// Aplica redondeo de bordes a los paneles anidados.
         /// </summary>
-        private void ApplyRoundBordersToChildPanels(Control parentControl)
-        {
-            foreach (Control control in parentControl.Controls)
-            {
-                if (control is Panel panel)
-                {
-                    RedondearBordes.Aplicar(panel, 15);
-                }
+        //private void ApplyRoundBordersToChildPanels(Control parentControl)
+        //{
+        //    foreach (Control control in parentControl.Controls)
+        //    {
+        //        if (control is Panel panel)
+        //        {
+        //            RedondearBordes.Aplicar(panel, 15);
+        //        }
 
-                // Aplicar recursivamente si el control tiene hijos
-                if (control.HasChildren)
-                {
-                    ApplyRoundBordersToChildPanels(control);
-                }
-            }
-        }
+        //        // Aplicar recursivamente si el control tiene hijos
+        //        if (control.HasChildren)
+        //        {
+        //            ApplyRoundBordersToChildPanels(control);
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// METODO DIBUJAR FONDO DEGRADADO EN FORMULARIOS
@@ -242,7 +242,7 @@ namespace Ofelia_Sara.Formularios.General
             return (Panel)panel1; // Devuelve `panel1`, que es el panel del formulario principal
         }
 
-    
+
 
 
 
@@ -251,6 +251,8 @@ namespace Ofelia_Sara.Formularios.General
 
 
         #endregion
+
+        #region FOOTER
 
         /// <summary>
         /// METODO PARA MOSTRAR FOOTER
@@ -262,6 +264,8 @@ namespace Ofelia_Sara.Formularios.General
 
             this.Controls.Add(this.footerLinkLabel);
         }
+
+        #endregion
 
         /// <summary>
         /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES BUSCAR-GUARDAR-LIMPIAR
@@ -389,6 +393,7 @@ namespace Ofelia_Sara.Formularios.General
             boton.Invalidate();
         }
 
+        #region MENSAJE HELP
         /// <summary>
         /// para centrar el mensaje de ayuda en el formulario que se va a cerrar
         /// </summary>
@@ -423,7 +428,9 @@ namespace Ofelia_Sara.Formularios.General
                 mensajeAyuda.ShowDialog();
             }
         }
+        #endregion
 
+        #region MENSAJE FORM CLOSING
         /// <summary>
         /// para centrar el mensaje al centro del formulario que se va a cerrar
         /// </summary>
@@ -434,33 +441,31 @@ namespace Ofelia_Sara.Formularios.General
             Form formularioActivo = this.FindForm();
             if (formularioActivo == null) return;
 
-            using (MensajeGeneral mensajeCierre = new(mensaje, MensajeGeneral.TipoMensaje.Advertencia, null))
+            using MensajeGeneral mensajeCierre = new(mensaje, MensajeGeneral.TipoMensaje.Advertencia, null);
+            // Hacer visibles los botones de confirmación
+            mensajeCierre.MostrarBotonesConfirmacion(true);
+
+            // Asegurar que el mensaje se posiciona manualmente
+            mensajeCierre.StartPosition = FormStartPosition.Manual;
+
+            // Verificar si el formulario aún está visible antes de calcular la posición
+            if (formularioActivo.Visible)
             {
-                // Hacer visibles los botones de confirmación
-                mensajeCierre.MostrarBotonesConfirmacion(true);
+                int x = formularioActivo.Left + (formularioActivo.Width - mensajeCierre.Width) / 2;
+                int y = formularioActivo.Top + (formularioActivo.Height - mensajeCierre.Height) / 2;
+                mensajeCierre.Location = new Point(x, y);
+            }
 
-                // Asegurar que el mensaje se posiciona manualmente
-                mensajeCierre.StartPosition = FormStartPosition.Manual;
+            // Mostrar el mensaje y capturar la respuesta
+            DialogResult resultado = mensajeCierre.ShowDialog(formularioActivo);
 
-                // Verificar si el formulario aún está visible antes de calcular la posición
-                if (formularioActivo.Visible)
-                {
-                    int x = formularioActivo.Left + (formularioActivo.Width - mensajeCierre.Width) / 2;
-                    int y = formularioActivo.Top + (formularioActivo.Height - mensajeCierre.Height) / 2;
-                    mensajeCierre.Location = new Point(x, y);
-                }
-
-                // Mostrar el mensaje y capturar la respuesta
-                DialogResult resultado = mensajeCierre.ShowDialog(formularioActivo);
-
-                // Si el usuario elige "No", cancelar el cierre del formulario
-                if (resultado == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
+            // Si el usuario elige "No", cancelar el cierre del formulario
+            if (resultado == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
-
+        #endregion
 
 
         #region DATOS IPP

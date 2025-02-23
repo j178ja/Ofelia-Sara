@@ -19,17 +19,19 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
     {
         #region VARIABLES
 
-
+        //altura original de los paneles
         private int alturaOriginalPanel_Vehiculo;
         private int alturaOriginalPanel_DatosVictima;
         private int alturaOriginalPanel_DatosHecho;
         private int alturaOriginalPanel_Instruccion;
 
+        //almacena el estado de panel
         private bool panelExpandido_Vehiculo = true;
-        private bool panelExpandido_DatosVictima = true;
+        private bool panelExpandido_DatosVictima = false;
         private bool panelExpandido_DatosHecho = true;
-        private bool panelExpandido_Instruccion = true;
+        private bool panelExpandido_Instruccion = false;
 
+        
         private int alturaContraidaPanel = 30;
 
         private object mensajeEmail;
@@ -64,7 +66,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
 
 
-            //si es cargado para insertar secuestro
+            //si es cargado para insertar secuestro muestra los paneles de insertar secuestro
             panel_DatosVehiculo.Visible = true;
             panel_DatosInstruccion.Visible = true;
             panel_DatosHecho.Visible = true;
@@ -72,7 +74,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             panel_DatosVictima.Visible = true;
             panel_PlanaPersona.Visible = false;
 
-            label_Texto.Text = "Solicitar INSERCTE SECUESTRO de vehiculo.";
+            label_Texto.Text = "Solicitar INSERCTE SECUESTRO de vehiculo.";// inicializa como que el fomrulario se crea para insertar secuestro
         }
         #endregion
 
@@ -89,11 +91,11 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             // Cambiar el color del borde del GroupBox según el estado de los RadioButton
             if (isChecked)
             {
-                panel_TipoSolicitud.Paint += panel_TipoSolicitud_Paint_Activated;
+                panel_TipoSolicitud.Paint += Panel_TipoSolicitud_Paint_Activated;
             }
             else
             {
-                panel_TipoSolicitud.Paint += panel_TipoSolicitud_Paint_Default;
+                panel_TipoSolicitud.Paint += Panel_TipoSolicitud_Paint_Default;
             }
 
             // Forzar el repintado del GroupBox
@@ -112,7 +114,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                     //// Controla la visibilidad del panel de datos del vehículo
                     //panel_DatosVehiculo.Visible = radioButton_Vehiculo.Checked || radioButton_Persona.Checked;
                     //panel_DatosEspecificos.Visible = radioButton_Vehiculo.Checked || radioButton_Persona.Checked;
-                    ////        AjustarTamanoFormulario();
+                           AjustarTamanoFormulario();
 
                     //LimpiarFormulario.Limpiar(panel_DatosEspecificos); //limpias los conrtoles de datos de vehiculo
 
@@ -145,7 +147,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                     radioButton.ForeColor = SystemColors.ControlText;
                     radioButton.BackColor = Color.FromArgb(178, 213, 230);
                 }
-                //  AjustarTamanoFormulario();
+                  AjustarTamanoFormulario();
             }
         }
 
@@ -167,7 +169,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         private static void ApplyCustomFontStyle(RadioButton radioButton)
         {
             // Crea una fuente con negrita y subrayado
-            System.Drawing.Font customFont = new System.Drawing.Font(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Bold);
+            System.Drawing.Font customFont = new(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Bold);
 
             // Cambia la fuente del RadioButton
             radioButton.Font = customFont;
@@ -181,53 +183,31 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         /// <summary>
         /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
         /// </summary>
+
+
         private void AjustarTamanoFormulario()
         {
-            int posicionVertical = 35; // Comienza desde la parte superior de panel1
+            int nuevaPosY = panel_TipoSolicitud.Bottom + 5; // Corregido "Buttom" → "Bottom"
 
-            // Ajustar posición de panel_Instruccion (se contrae y expande)
-            if (panel_Instruccion.Visible)
-            {
-                panel_Instruccion.Location = new System.Drawing.Point(panel_Instruccion.Location.X, posicionVertical);
-                posicionVertical += panel_Instruccion.Height;
-                // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
-                posicionVertical += 10;
-            }
+            panel_DatosVehiculo.Top = nuevaPosY;
+            nuevaPosY += panel_DatosVehiculo.Visible ? alturaOriginalPanel_Vehiculo : alturaContraidaPanel;
 
-            // Ajustar posición de panel_SeleccionVisu (tamaño fijo)
-            panel_TipoSolicitud.Location = new System.Drawing.Point(panel_TipoSolicitud.Location.X, posicionVertical);
-            posicionVertical += panel_TipoSolicitud.Height;
-            // Agregar separación de 10 píxeles entre panel_SeleccionVisu y panel_Imagenes
-            posicionVertical += 10;
+            panel_DatosVictima.Top = nuevaPosY;
+            nuevaPosY += panel_DatosVictima.Visible ? alturaOriginalPanel_DatosVictima : alturaContraidaPanel;
 
+            panel_DatosHecho.Top = nuevaPosY;
+            nuevaPosY += panel_DatosHecho.Visible ? alturaOriginalPanel_DatosHecho : alturaContraidaPanel;
 
+            panel_Instruccion.Top = nuevaPosY;
+            nuevaPosY += panel_Instruccion.Visible ? alturaOriginalPanel_Instruccion : alturaContraidaPanel;
 
-            // Ajustar posición de panel_DatosVehiculo(se contrae y expande)
-            if (panel_DatosVehiculo.Visible)
-            {
-                panel_DatosVehiculo.Location = new System.Drawing.Point(panel_DatosVehiculo.Location.X, posicionVertical);
-                posicionVertical += panel_DatosVehiculo.Height;
-                posicionVertical += 10;
-            }
-
-
-
-            // Ajustar la altura de panel1 para que se ajuste al contenido visible
-            panel1.Height = posicionVertical;
-
-            // Ajustar la altura del formulario sumando un margen adicional de 20 px
-            this.Height = panel1.Location.Y + panel1.Height + 75;
+            // Ajustar la altura del formulario dinámicamente
+            this.Height = nuevaPosY + 50; // Se añade un margen para evitar recortes visuales
 
             // Activar scroll si la altura del formulario supera los 800 píxeles
-            if (this.Height > 800)
-            {
-                this.AutoScroll = true;
-            }
-            else
-            {
-                this.AutoScroll = false;
-            }
+            this.AutoScroll = this.Height > 800;
         }
+
 
         /// <summary>
         /// METODO ESPECIFICO PARA REDONDEAR PICTURE Y RADIOBUTON
@@ -272,15 +252,12 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                                          bool roundTopLeft, bool roundTopRight,
                                          bool roundBottomRight, bool roundBottomLeft)
         {
-            if (control.Region != null)
-                control.Region.Dispose();
+            control.Region?.Dispose();
 
-            using (GraphicsPath path = GetRoundedRectanglePath(control.ClientRectangle, radius,
+            using GraphicsPath path = GetRoundedRectanglePath(control.ClientRectangle, radius,
                                                                roundTopLeft, roundTopRight,
-                                                               roundBottomRight, roundBottomLeft))
-            {
-                control.Region = new Region(path);
-            }
+                                                               roundBottomRight, roundBottomLeft);
+            control.Region = new Region(path);
         }
 
         /// <summary>
@@ -288,15 +265,13 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void panel_TipoSolicitud_Paint_Activated(object sender, PaintEventArgs e)
+        private void Panel_TipoSolicitud_Paint_Activated(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.Green, 2)) // Borde verde cuando algún CheckBox está seleccionado
-            {
-                e.Graphics.DrawRectangle(pen, panel_TipoSolicitud.ClientRectangle);
-            }
+            using Pen pen = new(Color.Green, 2); // Borde verde cuando algún CheckBox está seleccionado
+            e.Graphics.DrawRectangle(pen, panel_TipoSolicitud.ClientRectangle);
         }
 
-        private void panel_TipoSolicitud_Paint_Default(object sender, PaintEventArgs e)
+        private void Panel_TipoSolicitud_Paint_Default(object sender, PaintEventArgs e)
         {
             using (Pen pen = new Pen(Color.Black, 1)) // Borde negro por defecto
             {
@@ -345,6 +320,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             panel_DatosHecho.Visible = false;
             panel_Instruccion.Visible = false;
             panel_PlanaPersona.Visible = false;
+            AjustarTamanoFormulario();
 
         }
 
@@ -356,6 +332,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             panel_DatosHecho.Visible = false;
             panel_Instruccion.Visible = false;
             panel_PlanaPersona.Visible = true;
+            AjustarTamanoFormulario();
 
         }
 
@@ -372,12 +349,14 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
         }
 
-        private void btn_AgregarSolicitud_Click(object sender, EventArgs e)
+        private void Btn_AgregarSolicitud_Click(object sender, EventArgs e)
         {
+
             radioButton_Persona.Checked = false;
             radioButton_Vehiculo.Checked = false;
             ResetPictureBoxStyles();
             label_Texto.Text = "Seleccione que tipo de solicitud desea realizar.";
+            AjustarTamanoFormulario();
         }
 
         /// <summary>
@@ -459,7 +438,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                         }
                     }
                 }
-                //  AjustarTamanoFormulario();
+                 AjustarTamanoFormulario();
             }
 
         }
@@ -519,7 +498,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 }
 
                 // Ajustar el tamaño del formulario si es necesario
-                // AjustarTamanoFormulario();
+                 AjustarTamanoFormulario();
             }
         }
 
@@ -562,7 +541,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                     btn_AmpliarReducir_HECHO.Parent = panel_DetalleHecho;
                     btn_AmpliarReducir_HECHO.Location = new System.Drawing.Point(558, 1);
 
-                    
+
 
                     // Mostrar los demás controles del panel
                     foreach (Control control in panel_DatosHecho.Controls)
@@ -572,8 +551,65 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 }
 
                 // Ajustar el tamaño del formulario si es necesario
-                // AjustarTamanoFormulario();
+                 AjustarTamanoFormulario();
             }
+        }
+
+        private void Btn_AmpliarReducir_VICTIMA_Click(object sender, EventArgs e)
+        {
+            if (panel_DatosVictima is PanelConBordeNeon panelConNeon)
+            {
+
+                if (panelExpandido_DatosVictima)
+                {
+                    // Contraer el panel
+                    panel_DatosVictima.Height = alturaContraidaPanel;
+                    panel_DatosVictima.BorderStyle = BorderStyle.None;
+
+                    btn_AmpliarReducir_VICTIMA.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+                    panelExpandido_DatosVictima = false;
+
+                    // Aplicar borde neón para el estado contraído
+                    bool camposCompletos = VerificarCamposEnPanel(panel_DetalleVictima); // Método personalizado para verificar campos
+                    panelConNeon.CambiarEstado(true, camposCompletos);
+
+                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+                    btn_AmpliarReducir_VICTIMA.Parent = panel_DatosVictima;
+                    btn_AmpliarReducir_VICTIMA.Location = new System.Drawing.Point(561, 1);
+
+
+                    panel_DetalleVictima.Visible = false;
+                }
+                else
+                {
+                    // Expandir el panel
+                    panel_DatosVictima.Height = alturaOriginalPanel_DatosVictima;
+                    btn_AmpliarReducir_VICTIMA.Image = Properties.Resources.dobleFlechaARRIBA;
+                    panelExpandido_DatosVictima = true;
+                    panel_DatosVictima.BorderStyle = BorderStyle.None;
+
+                    // Cambiar el estilo del borde
+                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+
+                    // Mover el botón al panel_DatosEspecificos
+                    btn_AmpliarReducir_VICTIMA.Parent = panel_DetalleVictima;
+                    btn_AmpliarReducir_VICTIMA.Location = new System.Drawing.Point(558, 1);
+
+
+
+                    // Mostrar los demás controles del panel
+                    foreach (Control control in panel_DatosVictima.Controls)
+                    {
+                        control.Visible = true;
+                    }
+                }
+
+                // Ajustar el tamaño del formulario si es necesario
+                 AjustarTamanoFormulario();
+            }
+
+
+
         }
     }
 }
