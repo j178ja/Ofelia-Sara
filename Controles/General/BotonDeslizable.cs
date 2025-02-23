@@ -33,7 +33,7 @@ namespace Ofelia_Sara.Controles.General
         {
             InitializeComponent();
             this.Cursor = Cursors.Hand;
-            this.Size = new Size(40, 20); // Tamaño del control ajustado
+            this.Size = new Size(47, 23); // Tamaño del control ajustado
             UpdateSliderRect();
         }
 
@@ -126,12 +126,7 @@ namespace Ofelia_Sara.Controles.General
 
             IsOn = !IsOn; // Cambiar el estado usando la propiedad
 
-            // Si el botón es "botonDeslizable_StudRML" y se activó, publicar en EventBus
-            if (IsOn && this.Name == "botonDeslizable_StudRML")
-            {
-                List<string> nombres = ObtenerNombresDesdeTextBox();
-                EventBus.Publicar("ActualizarContadorRML", nombres);
-            }
+
         }
 
         private void UpdateSliderRect()
@@ -141,47 +136,9 @@ namespace Ofelia_Sara.Controles.General
             sliderRect = new RectangleF(xPosition, sliderPadding, sliderSize, sliderSize);
         }
 
-        private List<string> ObtenerNombresDesdeTextBox()
-        {
-            List<string> nombres = new List<string>();
+      
 
-            Form parentForm = this.FindForm(); // 🔍 Obtener el formulario padre
-            if (parentForm != null)
-            {
-                BuscarTextBoxEnControles(parentForm.Controls, nombres);
-            }
-
-            return nombres;
-        }
-
-        /// <summary>
-        /// Método recursivo para buscar los CustomTextBox dentro de cualquier control anidado
-        /// </summary>
-        private static void BuscarTextBoxEnControles(Control.ControlCollection controls, List<string> nombres)
-        {
-            foreach (Control control in controls)
-            {
-                if (control is CustomTextBox customTextBox && control.Name == "textBox_Nombre")
-                {
-                    nombres.Add(customTextBox.Text);
-                }
-                else if (control.HasChildren) //  Si el control tiene hijos, seguir buscando
-                {
-                    BuscarTextBoxEnControles(control.Controls, nombres);
-                }
-            }
-        }
-
-        private void DesactivarBoton()
-        {
-            List<string> elementos = ObtenerNombresDesdeTextBox();
-
-            // Remover el elemento de la lista antes de publicar el evento
-            elementos.Remove(this.Text);
-
-            // Publicar el evento con la nueva lista de nombres
-            EventBus.Publicar("ActualizarContadorRML", elementos);
-        }
+       
 
     }
 }

@@ -71,37 +71,23 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             /// <param name="panel"></param>
             /// <param name="tipoPersona"></param>
             /// <param name="origen"></param>
-            public static void AgregarNuevoControl(Panel panel, string tipoPersona, string origen = "")
+            public static NuevaPersonaControl AgregarNuevoControl(Panel panel, string tipoPersona, string origen = "")
             {
                 // Verificar si ya hay 10 o más controles en el panel
                 if (panel.Controls.OfType<NuevaPersonaControl>().Count() >= 10)
                 {
-                    string mensaje = "";
+                    string mensaje = origen switch
+                    {
+                        "Causa" => "Se ha establecido un máximo de 10 CARÁTULAS por I.P.P.",
+                        "Victima" => "Se ha establecido un máximo de 10 VÍCTIMAS por I.P.P.",
+                        "Imputado" => "Se ha establecido un máximo de 10 IMPUTADOS por I.P.P.",
+                        _ => "No se pueden agregar más de 10 ITEMS."
+                    };
 
-                    // Personalizar el mensaje dependiendo del tipo de origen
-                    if (origen == "Causa")
-                    {
-                        mensaje = "Se ha establecido un máximo de 10 CARÁTULAS por I.P.P.";
-                    }
-                    else if (origen == "Victima")
-                    {
-                        mensaje = "Se ha establecido un máximo de 10 VÍCTIMAS por I.P.P.";
-                    }
-                    else if (origen == "Imputado")
-                    {
-                        mensaje = "Se ha establecido un máximo de 10 IMPUTADOS por I.P.P.";
-                    }
-                    else
-                    {
-                        mensaje = "No se pueden agregar más de 10 ITEMS.";
-                    }
-
-                    // Mostrar el mensaje correspondiente
                     MensajeGeneral.Mostrar(mensaje, MensajeGeneral.TipoMensaje.Advertencia);
-                    return; // Salir del método y no agregar el nuevo control
-
-
+                    return null; // Retorna null si no se puede agregar más controles
                 }
+
                 // Obtener el número de iteración basado en la cantidad de controles existentes
                 int iteracion = panel.Controls.OfType<NuevaPersonaControl>().Count() + 1;
 
@@ -109,21 +95,14 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
                 NuevaPersonaControl nuevoControl = new(tipoPersona);
 
                 // Calcular la nueva posición en X y Y antes de modificar el control
-                Point nuevaPosicion = ObtenerPosicionSiguiente(panel, origen);  // Ahora devuelve un Point con X y Y
+                Point nuevaPosicion = ObtenerPosicionSiguiente(panel, origen);
 
                 // Si el origen es "Causa", aplicar las modificaciones específicas
                 if (origen == "Causa")
                 {
-                    // Convertir la iteración a números romanos
                     string numeroRomano = ConvertToRoman(iteracion);
-
-                    // Ocultar el botón btn_AgregarDatosPersona dentro del control
                     nuevoControl.btn_AgregarDatosPersona.Visible = false;
-
-                    // Asignar el texto del Label con "Carátula" + número en romano
-                    nuevoControl.label_Persona.Text = $"CARÁTULA  {numeroRomano}";
-
-                    // Centrar el texto del CustomTextBox
+                    nuevoControl.label_Persona.Text = $"CARÁTULA {numeroRomano}";
                     nuevoControl.textBox_Persona.TextAlign = HorizontalAlignment.Center;
                 }
 
@@ -135,7 +114,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
                 // Ajustar la altura del panel después de agregar el nuevo control
                 AjustarAlturaPanel(panel);
+
+                return nuevoControl; // Retornar el control agregado
             }
+
 
             /// <summary>
             /// posiciona cada control uno debajo del otro
@@ -406,4 +388,5 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
 
         }
+
     }

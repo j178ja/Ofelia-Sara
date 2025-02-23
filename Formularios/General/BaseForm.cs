@@ -114,6 +114,7 @@ namespace Ofelia_Sara.Formularios.General
             ResumeLayout(false);
         }
 
+        #region BORDES PANEL 1
         /// <summary>
         /// Configura la apariencia general del formulario, aplicando el redondeo a los paneles.
         /// </summary>
@@ -130,35 +131,11 @@ namespace Ofelia_Sara.Formularios.General
                 {
                     RedondearBordes.Aplicar(panel1, 15);
                 }
-
-                //// Si hay paneles anidados, aplicar la configuración recursivamente
-                //if (control.HasChildren)
-                //{
-                //    ApplyRoundBordersToChildPanels(control);
-                //}
             }
         }
+        #endregion
 
-        /// <summary>
-        /// Aplica redondeo de bordes a los paneles anidados.
-        /// </summary>
-        //private void ApplyRoundBordersToChildPanels(Control parentControl)
-        //{
-        //    foreach (Control control in parentControl.Controls)
-        //    {
-        //        if (control is Panel panel)
-        //        {
-        //            RedondearBordes.Aplicar(panel, 15);
-        //        }
-
-        //        // Aplicar recursivamente si el control tiene hijos
-        //        if (control.HasChildren)
-        //        {
-        //            ApplyRoundBordersToChildPanels(control);
-        //        }
-        //    }
-        //}
-
+        #region FONDO DEGRADE
         /// <summary>
         /// METODO DIBUJAR FONDO DEGRADADO EN FORMULARIOS
         /// </summary>
@@ -186,7 +163,9 @@ namespace Ofelia_Sara.Formularios.General
             // Llamar al método que dibuja el fondo degradado
             DibujarFondoDegradado(e.Graphics, width, height);
         }
+        #endregion
 
+        #region ICONO PRINCIPAL
         /// <summary>
         ///  Método para cargar el ícono según el modo (diseñador o ejecución)
         /// </summary>
@@ -213,6 +192,7 @@ namespace Ofelia_Sara.Formularios.General
                 MensajeGeneral.Mostrar($"Error al cargar el ícono del formulario: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
+        #endregion
 
         #region CENTRAR TITULO
 

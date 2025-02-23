@@ -80,8 +80,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Caratula = new System.Windows.Forms.Panel();
             textBox_Caratula = new CustomTextBox();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
-            panel2 = new System.Windows.Forms.Panel();
-            botonDeslizable_StarPlana = new BotonDeslizable();
+            panel_InsertarSecuestro = new System.Windows.Forms.Panel();
+            botonDeslizable_InsertarSecuestro = new BotonDeslizable();
             label1 = new System.Windows.Forms.Label();
             panel_Not247 = new System.Windows.Forms.Panel();
             Btn_Contador247 = new Controles.Ofl_Sara.Boton_Contador();
@@ -101,7 +101,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Ipp.SuspendLayout();
             panel_Caratula.SuspendLayout();
             panel_ControlesInferiores.SuspendLayout();
-            panel2.SuspendLayout();
+            panel_InsertarSecuestro.SuspendLayout();
             panel_Not247.SuspendLayout();
             panel_Imputado.SuspendLayout();
             panel_Victima.SuspendLayout();
@@ -955,7 +955,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             panel_ControlesInferiores.Anchor = System.Windows.Forms.AnchorStyles.Left;
             panel_ControlesInferiores.BackColor = Color.Transparent;
-            panel_ControlesInferiores.Controls.Add(panel2);
+            panel_ControlesInferiores.Controls.Add(panel_InsertarSecuestro);
             panel_ControlesInferiores.Controls.Add(panel_Not247);
             panel_ControlesInferiores.Controls.Add(Btn_ContadorRML);
             panel_ControlesInferiores.Controls.Add(btn_ContadorRatificaciones);
@@ -974,25 +974,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_ControlesInferiores.Size = new Size(524, 190);
             panel_ControlesInferiores.TabIndex = 42;
             // 
-            // panel2
+            // panel_InsertarSecuestro
             // 
-            panel2.Controls.Add(botonDeslizable_StarPlana);
-            panel2.Controls.Add(label1);
-            panel2.Location = new Point(331, 44);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(183, 27);
-            panel2.TabIndex = 102;
+            panel_InsertarSecuestro.Controls.Add(botonDeslizable_InsertarSecuestro);
+            panel_InsertarSecuestro.Controls.Add(label1);
+            panel_InsertarSecuestro.Location = new Point(331, 44);
+            panel_InsertarSecuestro.Name = "panel_InsertarSecuestro";
+            panel_InsertarSecuestro.Size = new Size(183, 33);
+            panel_InsertarSecuestro.TabIndex = 102;
             // 
-            // botonDeslizable_StarPlana
+            // botonDeslizable_InsertarSecuestro
             // 
-            botonDeslizable_StarPlana.Cursor = System.Windows.Forms.Cursors.Hand;
-            botonDeslizable_StarPlana.IsOn = false;
-            botonDeslizable_StarPlana.Location = new Point(136, 4);
-            botonDeslizable_StarPlana.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
-            botonDeslizable_StarPlana.Size = new Size(47, 20);
-            botonDeslizable_StarPlana.TabIndex = 101;
-            botonDeslizable_StarPlana.ValidarCampos = null;
+            botonDeslizable_InsertarSecuestro.Cursor = System.Windows.Forms.Cursors.Hand;
+            botonDeslizable_InsertarSecuestro.IsOn = false;
+            botonDeslizable_InsertarSecuestro.Location = new Point(136, 4);
+            botonDeslizable_InsertarSecuestro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            botonDeslizable_InsertarSecuestro.Name = "botonDeslizable_InsertarSecuestro";
+            botonDeslizable_InsertarSecuestro.Size = new Size(47, 23);
+            botonDeslizable_InsertarSecuestro.TabIndex = 101;
+            botonDeslizable_InsertarSecuestro.ValidarCampos = null;
+      
             // 
             // label1
             // 
@@ -1208,8 +1209,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Caratula.PerformLayout();
             panel_ControlesInferiores.ResumeLayout(false);
             panel_ControlesInferiores.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel_InsertarSecuestro.ResumeLayout(false);
+            panel_InsertarSecuestro.PerformLayout();
             panel_Not247.ResumeLayout(false);
             panel_Not247.PerformLayout();
             panel_Imputado.ResumeLayout(false);
@@ -1280,8 +1281,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private Ofelia_Sara.Controles.General.BotonDeslizable botonDeslizable_Not247;
         private System.Windows.Forms.Label label_Not247;
         private CustomTextBox textBox_Caratula;
-        private BotonDeslizable botonDeslizable_StarPlana;
+        private BotonDeslizable botonDeslizable_InsertarSecuestro;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_InsertarSecuestro;
     }
 }
