@@ -942,7 +942,7 @@ namespace Ofelia_Sara.Formularios.General
             }
 
             // Cambiar el color de fondo del botonPrincipal
-            botonPrincipal.BackColor = habilitar ? System.Drawing.Color.GreenYellow : System.Drawing.Color.Tomato;
+        //    botonPrincipal.BackColor = habilitar ? System.Drawing.Color.GreenYellow : System.Drawing.Color.Tomato;
         }
 
         #endregion

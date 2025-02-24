@@ -509,8 +509,7 @@ namespace Ofelia_Sara.Controles.General
 
         public int Whidth { get; set; }
         public new int Height { get; set; }
-
-      
+        public bool ShortcutsEnabled { get; internal set; }
     }
 }
 #endregion

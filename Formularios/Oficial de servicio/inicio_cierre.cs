@@ -436,7 +436,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
                 // Ocultar el CheckBox
-                //  checkBox_RatificacionTestimonial.Visible = false;
+                  checkBox_RatificacionTestimonial.Visible = false;
 
                 // Crear y mostrar el formulario BuscarPersonal
                 BuscarPersonal buscarPersonalForm = new();

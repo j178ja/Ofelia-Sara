@@ -1,6 +1,7 @@
 ﻿
 using Ofelia_Sara.Controles.Controles.Tooltip;
-
+using Ofelia_Sara.Controles.General;
+using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using System;
@@ -24,6 +25,10 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private string tipoControl;
         private string tipoPersona;
         public TextBox TextBox_Persona { get; private set; }
+
+        public event Action<CustomTextBox> ValidarYHabilitarBotonEvent;
+
+
         #endregion
 
         public string TipoPersona
@@ -52,7 +57,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             btn_AgregarDatosPersona.Enabled = false;
             btn_AgregarDatosPersona.BackColor = Color.Tomato;
 
-
+            MayusculaYnumeros.AplicarAControl(textBox_Persona);
         }
         #endregion
 
@@ -179,28 +184,8 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 
         private void TextBox_Persona_TextChanged(object sender, EventArgs e)
         {
-            // Filtra y convierte el texto
-            string textoConvertido = ConvertirTexto(textBox_Persona.TextValue);
-
-            // Evita ciclos infinitos al actualizar solo si el texto cambia
-            if (textBox_Persona.TextValue != textoConvertido)
-            {
-                textBox_Persona.TextValue = textoConvertido;
-                textBox_Persona.SelectionStart = textBox_Persona.TextValue.Length; // Mantiene el cursor al final
-            }
-
-            // Contar los caracteres reales (ignorando espacios)
-            int caracteresReales = textoConvertido.Count(c => !char.IsWhiteSpace(c));
-
-            // Habilita el botón solo si hay al menos 3 caracteres no blancos
-            bool habilitar = caracteresReales >= 3;
-
-            btn_AgregarDatosPersona.Enabled = habilitar;
-
-            // Cambiar color del botón según estado
-            btn_AgregarDatosPersona.BackColor = habilitar ? Color.GreenYellow : Color.Tomato;
-
-
+               // Disparar el evento cuando el texto cambie
+              ValidarYHabilitarBotonEvent?.Invoke(textBox_Persona);
             // Actualizar el tooltip al cambiar el texto
             ConfigurarTooltipAgregarDatos();
         }

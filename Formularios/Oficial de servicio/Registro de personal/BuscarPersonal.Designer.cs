@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarPersonal));
             panel1 = new System.Windows.Forms.Panel();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
@@ -39,7 +38,6 @@
             textBox_NumeroLegajo = new Controles.General.CustomTextBox();
             lbl_Legajo = new System.Windows.Forms.Label();
             label_TITULO = new System.Windows.Forms.Label();
-            toolTip1 = new System.Windows.Forms.ToolTip(components);
             panel1.SuspendLayout();
             panel_ControlesInferiores.SuspendLayout();
             SuspendLayout();
@@ -84,7 +82,6 @@
             btn_Registrar.Size = new System.Drawing.Size(116, 62);
             btn_Registrar.TabIndex = 36;
             btn_Registrar.Text = "REGISTRAR  EDITAR PERSONAL";
-            toolTip1.SetToolTip(btn_Registrar, "Registrar un nuevo personal");
             btn_Registrar.UseVisualStyleBackColor = false;
             btn_Registrar.Click += Btn_Registrar_Click;
             // 
@@ -121,7 +118,6 @@
             btn_AgregarPersonal.Size = new System.Drawing.Size(15, 23);
             btn_AgregarPersonal.TabIndex = 35;
             btn_AgregarPersonal.Text = "+";
-            toolTip1.SetToolTip(btn_AgregarPersonal, "Agregar nueva ratificacion");
             btn_AgregarPersonal.UseVisualStyleBackColor = false;
             btn_AgregarPersonal.Click += Btn_AgregarPersonal_Click;
             // 
@@ -212,7 +208,6 @@
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Panel panel_PersonalSeleccionado;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel_ControlesInferiores;
     }
 }

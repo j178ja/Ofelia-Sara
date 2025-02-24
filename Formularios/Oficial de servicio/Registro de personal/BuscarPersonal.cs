@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
@@ -20,8 +21,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
     public partial class BuscarPersonal : BaseForm
     {
         #region VARIABLES
-       
-   
+
+
 
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
         #endregion
@@ -31,7 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             InitializeComponent();
             this.FormClosing += BuscarPersonal_FormClosing;
-            RedondearBordes.Aplicar(panel1, 15);
+            textBox_NumeroLegajo.ShortcutsEnabled = false; // Desactiva atajos como Ctrl+V
         }
         #endregion
 
@@ -45,17 +46,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
-            //---Inicializar para desactivar los btn AGREGAR PERSONAL 
-            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);
+        
+            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue); //inicializa desactivado si no tiene numero
 
-            textBox_NumeroLegajo.MaxLength = 7;
+            textBox_NumeroLegajo.MaxLength = 7;//6 para numero legajo +1 por el "punto"
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
-          
 
-          
-        
 
+
+
+            ToolTipGeneral.Mostrar(btn_Registrar, " Registrar o modificar PERSONAL.");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarPersonal, "Ingrese un numero de LEGAJO vàlido para agregar ratificafciòn.", "Agregar nueva ratificacion");
             //..........................
             //Suscribir eventos para controles existentes en el panel al cargar el formulario
@@ -67,7 +68,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         }
         #endregion
 
- 
+
 
         /// <summary>
         /// METODO PARA CARGAR CON FOCO EN NUMERO DE LEGAJO
@@ -96,8 +97,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             NuevoPersonal nuevoPersonalForm = new(numeroLegajo);
             nuevoPersonalForm.ShowDialog();
         }
-        
 
+        #region CONFUGURACION TEXTBOX NUMERO LEGAJO
         /// <summary>
         /// METODO DE VALIDACION DE NUMERO DE LEGAJO
         /// </summary>
@@ -106,21 +107,76 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Solo permite dígitos y teclas de control
+            // Solo permite números y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
-
-            // Si el carácter es dígito, continúa con el procesamiento
-            if (char.IsDigit(e.KeyChar))
-            {
-                // Aplicar formato y longitud máxima al textBox_NumeroLegajo
-                ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
-
-            }
         }
-    
+
+        /// <summary>
+        /// Intercepta comandos de teclado (Ctrl+V, Shift+Insert) y los bloquea si el contenido no es numérico
+        /// </summary>
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if ((e.Control && e.KeyCode == Keys.V) || (e.Shift && e.KeyCode == Keys.Insert))
+            {
+                if (Clipboard.ContainsText() && !Regex.IsMatch(Clipboard.GetText(), @"^\d+$"))
+                {
+                    e.SuppressKeyPress = true; // Bloquea la acción de pegado si hay caracteres no numéricos
+                }
+            }
+            base.OnKeyDown(e);
+        }
+
+        /// <summary>
+        /// Intercepta el pegado desde el menú contextual y solo permite números
+        /// </summary>
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_PASTE = 0x0302;
+            const int WM_CONTEXTMENU = 0x007B;
+
+            if (m.Msg == WM_PASTE)
+            {
+                if (Clipboard.ContainsText())
+                {
+                    string clipboardText = Clipboard.GetText();
+                    string soloNumeros = new string(clipboardText.Where(char.IsDigit).ToArray());
+
+                    if (clipboardText != soloNumeros) // Si el texto pegado tenía caracteres inválidos
+                    {
+                        int cursorPos = textBox_NumeroLegajo.SelectionStart; // Guardar la posición del cursor
+                        textBox_NumeroLegajo.TextValue = soloNumeros; // Reemplazar con solo los números
+                        textBox_NumeroLegajo.SelectionStart = Math.Min(cursorPos, textBox_NumeroLegajo.TextValue.Length); // Restaurar posición del cursor
+                    }
+                }
+                return; // Evita que el pegado original de Windows ocurra
+            }
+
+            if (m.Msg == WM_CONTEXTMENU) // Bloquear menú contextual
+            {
+                return;
+            }
+
+            base.WndProc(ref m);
+        }
+
+        /// <summary>
+        /// Borra automáticamente caracteres no numéricos si logran colarse
+        /// </summary>
+        protected override void OnTextChanged(EventArgs e)
+        {
+            string newText = Regex.Replace(textBox_NumeroLegajo.TextValue, "[^0-9]", ""); // Solo permite números
+            if (textBox_NumeroLegajo.TextValue != newText)
+            {
+                int cursorPos = textBox_NumeroLegajo.SelectionStart - 1; // Guardar posición del cursor
+                textBox_NumeroLegajo.TextValue = newText;
+                textBox_NumeroLegajo.SelectionStart = Math.Max(0, cursorPos); // Restaurar posición del cursor
+            }
+            base.OnTextChanged(e);
+        }
+
 
         /// <summary>
         /// VALIDACION ACTIVACION BTN_AGREGAR PERSONAL
@@ -130,10 +186,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
-            btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);//habilita el btn_AgregarPersonal en caso de tener texto
+            
+            ValidarYHabilitarBoton(textBox_NumeroLegajo, btn_AgregarPersonal, null, 6);//habilita el btn_AgregarPersonal en caso de tener (5 caracteres)
         }
-       
 
+        #endregion
         /// <summary>
         /// METODO PARA VERIFICAR NUMERO DE LEGAJO EN BASE DE DATOS Y AGREGAR RATIFICACION 
         /// </summary>
@@ -154,7 +211,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 ActualizarContadorRatificaciones();
             }
         }
-     
+
 
         /// <summary>
         /// Este método manejará el evento cuando el botón Modificar Personal sea clicado
@@ -169,7 +226,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             NuevoPersonal nuevoPersonalForm = new();
             nuevoPersonalForm.ShowDialog();
         }
-    
+
 
         /// <summary>
         /// MENSAJE DE AYUDA EN FORMULARIO 
@@ -182,7 +239,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             MostrarMensajeAyuda("Ingresando número de legajo, al guardar se generará las ratificaciones testimoniales del personal seleccionado");
         }
-       
+
 
         /// <summary>
         /// EVENTO PARA GUARDAR LAS RATIFICACIONES TESTIMONIALES
@@ -213,7 +270,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
 
         }
-       
+
 
         /// <summary>
         /// Evento FormClosing para verificar si los datos están guardados antes de cerrar
@@ -247,7 +304,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                 AgregarPersonalSeleccionado(); //verifica si existe en base de datos  y lo agrega 
             }
         }
-        
+
 
         /// <summary>
         ///  Método auxiliar para buscar si el legajo ya está agregado en los controles existentes
@@ -274,7 +331,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             }
             return false; // Retorna false si no encuentra coincidencias
         }
-       
+
 
         /// <summary>
         ///  Método para agregar un nuevo control de personal seleccionado al panel
@@ -345,7 +402,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
                     btnContadorControl.Text = numeroControles.ToString();
 
                     // Llamar al método para actualizar el color del botón
-                    // btnContadorControl.ActualizarTamañoYColor();
+                     btnContadorControl.ActualizarTamañoYColor();
                 }
             }
         }
@@ -363,7 +420,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             ActualizarContadorRatificaciones();
         }
 
-
+        
     }
 
 }
