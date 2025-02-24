@@ -142,8 +142,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.Whidth = 0;
-            textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
-            textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
+   
             // 
             // lbl_Ipp
             // 
@@ -472,7 +471,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AgenteFiscal.TabIndex = 1;
             comboBox_AgenteFiscal.Text = " ";
             comboBox_AgenteFiscal.TextValue = "";
-            comboBox_AgenteFiscal.TextChanged += ComboBox_AgenteFiscal_TextChanged;
+       
             // 
             // comboBox_Ipp1
             // 
@@ -507,7 +506,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.TabIndex = 0;
             comboBox_Ipp1.Text = " ";
             comboBox_Ipp1.TextValue = "";
-            comboBox_Ipp1.Leave += ComboBox_Ipp_Leave;
+   
             // 
             // comboBox_Ipp2
             // 
@@ -542,7 +541,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.TabIndex = 1;
             comboBox_Ipp2.Text = " ";
             comboBox_Ipp2.TextValue = "";
-            comboBox_Ipp2.Leave += ComboBox_Ipp_Leave;
+
             // 
             // lbl_00
             // 
@@ -587,7 +586,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.TabIndex = 3;
             comboBox_Ipp4.Text = " ";
             comboBox_Ipp4.TextValue = "";
-            comboBox_Ipp4.Leave += ComboBox_Ipp_Leave;
+
             // 
             // btn_Buscar
             // 
@@ -896,7 +895,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Localidad.TabIndex = 2;
             comboBox_Localidad.Text = " ";
             comboBox_Localidad.TextValue = "";
-            comboBox_Localidad.KeyPress += ComboBox_Localidad_KeyPress;
+
             // 
             // panel_Ipp
             // 
@@ -949,7 +948,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.TextValue = "";
             textBox_Caratula.Whidth = 0;
             textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;
-            textBox_Caratula.KeyPress += TextBox_Caratula_KeyPress;
+
             // 
             // panel_ControlesInferiores
             // 

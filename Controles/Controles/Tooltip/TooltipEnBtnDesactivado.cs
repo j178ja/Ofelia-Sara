@@ -79,6 +79,7 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
 
             timer.Tick += (sender, e) =>
             {
+                
                 // Verificar si el mouse está sobre el control
                 if (control.ClientRectangle.Contains(control.PointToClient(Control.MousePosition)))
                 {

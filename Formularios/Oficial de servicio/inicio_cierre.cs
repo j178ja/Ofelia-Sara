@@ -147,13 +147,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void ConfigurarTooltip()
         {
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia.", "Marcar para establecer fecha de Pericia");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente.", "Agregar una caratula adicional");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
 
@@ -362,104 +357,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-
-        /// <summary>
-        /// METODO PARA HACER QUE SE AUTOCOMPLETE LOS COMBOBOX DE NUMERO IP CON 0 AL PERDER EL FOCO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
-        {
-            // Verifica si el sender es un CustomComboBox
-            if (sender is CustomComboBox customComboBox)
-            {
-                // Obtiene el texto actual
-                string currentText = customComboBox.TextValue;
-
-                // Verifica si es un número válido
-                if (int.TryParse(currentText, out _))
-                {
-                    // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                    string completedText = currentText.PadLeft(2, '0');
-
-                    // Actualiza el texto en el CustomComboBox
-                    customComboBox.TextValue = completedText;
-
-                    // Posiciona el cursor al final del texto
-                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
-                }
-            }
-        }
-
-        /// <summary>
-        /// EVENTO PARA COMPLETAR CON "0" LOS CARACTERES FALTANTE EN NUMERO IPP------
-        /// </summary>
-        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            // Verificar si la tecla presionada es Enter
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Si el evento viene del InnerTextBox, obtenemos el control padre
-                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomTextBox customTextBox)
-                {
-                    // Obtiene el texto actual
-                    string currentText = customTextBox.TextValue;
-
-                    // Verifica si es un número válido
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                        string completedText = currentText.PadLeft(6, '0');
-
-                        // Actualiza el texto en el CustomTextBox
-                        customTextBox.TextValue = completedText;
-
-                        // Posiciona el cursor al final del texto
-                        customTextBox.SelectionStart = customTextBox.TextValue.Length;
-
-                        // Cancela el manejo predeterminado de la tecla Enter
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// EVENTO PARA AUTOCOMPLETAR CUANDO PIERDE EL FOCO
-        /// </summary>
-        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
-        {
-            CompletarConCeros(sender as CustomTextBox);
-        }
-
-        /// <summary>
-        /// Método reutilizable para completar con ceros
-        /// </summary>
-        /// <param name="customtextBox"></param>
-        private static void CompletarConCeros(CustomTextBox customtextBox)
-        {
-            if (customtextBox != null)
-            {
-                // Obtiene el texto actual del TextBox
-                string currentText = customtextBox.TextValue;
-
-                // Verifica si el texto es numérico y no está vacío
-                if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
-                {
-                    // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                    customtextBox.TextValue = currentText.PadLeft(6, '0');
-
-                    customtextBox.SelectionStart = customtextBox.TextValue.Length; // Posiciona el cursor al final del texto (opcional)
-                }
-            }
-        }
-
-
-
         /// <summary>
         ///  CARGAR DATOS DESDE FORMULARIO INICIO-CIERRE
         /// </summary>
@@ -480,60 +377,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        /// <summary>
-        /// METODO PARA ACTUALIZAR TEXTBOX 'VICTIMA' DESDE FORM AGREGAR DATOS VICTIMA
-        /// </summary>
-        private void UpdateVictimaTextBox(string text)
-        {// Método para actualizar el TextBox en inicioCierre
-            textBox_Victima.TextValue = text;
-        }
 
         /// <summary>
         /// METODO PARA HABILITAR BTN AGREGAR CAUSA
         /// </summary>
         private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
         {
-            // Filtra los espacios en blanco y cuenta los caracteres reales
-            int caracteresReales = textBox_Caratula.TextValue.Count(c => !char.IsWhiteSpace(c));
-
-            // Habilita el botón solo si hay al menos 3 caracteres no blancos
-            btn_AgregarCausa.Enabled = caracteresReales >= 3;
-
+            ValidarYHabilitarBoton(textBox_Caratula, btn_AgregarCausa, null, 3);
             ActualizarEstado();
         }
 
-        /// <summary>
-        /// PERMITE NUMEROS LETRAS Y CONRTOL
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Caratula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir letras, números, espacios y caracteres de control
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true; // Rechaza caracteres no válidos.
-            }
-            else
-            {
-                // Convierte letras a mayúsculas y mantiene números y espacios sin cambios
-                if (char.IsLetter(e.KeyChar))
-                {
-                    e.KeyChar = char.ToUpper(e.KeyChar);
-                }
-            }
-        }
+       
 
 
-
-        /// <summary>
-        /// METODO PARA QUE SE ACTUALICE EL NOMBRE DEL IMPUTADO EN INICIOCIERRE DESDE EL FORM DATOS IMPUTADO
-        /// </summary>
-        /// <param name="text"></param>
-        private void UpdateImputadoTextBox(string text)
-        {
-            textBox_Imputado.TextValue = text;
-        }
+       
 
         /// <summary>
         /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE VICTIMA
@@ -542,31 +399,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void TextBox_Victima_TextChanged(object sender, EventArgs e)
         {
-            // Contar los caracteres reales (ignorando espacios)
-            int caracteresReales = textBox_Victima.TextValue.Count(c => !char.IsWhiteSpace(c));
-
-            // Habilita los botones solo si hay al menos 3 caracteres no blancos
-            bool habilitar = caracteresReales >= 5;
-
-            btn_AgregarDatosVictima.Enabled = habilitar;
-            btn_AgregarVictima.Enabled = habilitar;
-
-            if (habilitar)
-            {
-                btn_AgregarDatosVictima.BackColor = System.Drawing.Color.GreenYellow;
-                ActualizarEstado();
-
-                if (agregarDatosPersonalesVictima != null && !agregarDatosPersonalesVictima.IsDisposed)
-                {
-                    // Actualizar el TextBox en el formulario de destino
-                    agregarDatosPersonalesVictima.UpdateVictimaTextBox(textBox_Victima.TextValue);
-                }
-            }
-            else
-            {
-                btn_AgregarDatosVictima.BackColor = System.Drawing.Color.Tomato;
-            }
+            ValidarYHabilitarBoton(textBox_Victima, btn_AgregarDatosVictima, btn_AgregarVictima,3);
+            ActualizarEstado();
         }
+   
 
 
         /// <summary>
@@ -576,62 +412,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
         {
-            // Contar los caracteres reales (ignorando espacios)
-            int caracteresReales = textBox_Imputado.TextValue.Count(c => !char.IsWhiteSpace(c));
-
-            // Habilita los botones solo si hay al menos 3 caracteres no blancos
-            bool habilitar = caracteresReales >= 5;
-
-            btn_AgregarDatosImputado.Enabled = habilitar;
-            btn_AgregarImputado.Enabled = habilitar;
-
-            if (habilitar)
-            {
-                btn_AgregarDatosImputado.BackColor = System.Drawing.Color.GreenYellow;
-                ActualizarEstado();
-
-                if (agregarDatosPersonalesImputado != null && !agregarDatosPersonalesImputado.IsDisposed)
-                {
-                    // Actualizar el TextBox en el formulario de destino
-                    agregarDatosPersonalesImputado.UpdateImputadoTextBox(textBox_Imputado.TextValue);
-                }
-            }
-            else
-            {
-                btn_AgregarDatosImputado.BackColor = System.Drawing.Color.Tomato;
-            }
+            ValidarYHabilitarBoton(textBox_Imputado, btn_AgregarDatosImputado, btn_AgregarImputado,3);
+            ActualizarEstado();
         }
 
 
 
-        /// <summary>
-        /// METODO DE VALIDACION PARA VERIFICAR QUE ESTEN LOS CAMPOS COMPLETOS Y AGREGAR O NO CONTROL
-        /// </summary>
-        /// <param name="panel"></param>
-        /// <returns></returns>
-
-        private static bool ValidarControlesExistentes(Panel panel)
-        {
-            string tipoPersona = panel.Name.Contains("Victima", StringComparison.OrdinalIgnoreCase) ? "VICTIMA" :
-                                 panel.Name.Contains("Imputado", StringComparison.OrdinalIgnoreCase) ? "IMPUTADO" : "PERSONA";
-
-            foreach (Control control in panel.Controls)
-            {
-                if (control is NuevaPersonaControl personaControl)
-                {
-                    // Removemos espacios en blanco para contar solo caracteres significativos
-                    string texto = personaControl.TextBox_Persona.Text.Trim();
-
-                    if (texto.Length < 5) // Validar al menos 5 caracteres no vacíos
-                    {
-                        MensajeGeneral.Mostrar($"Complete todos los campos con al menos 5 caracteres para agregar una nueva {tipoPersona}",
-                                               MensajeGeneral.TipoMensaje.Advertencia);
-                        return false; // Retorna false si hay un control con texto inválido
-                    }
-                }
-            }
-            return true; // Todos los controles cumplen con la validación
-        }
+    
 
 
         /// <summary>
@@ -704,31 +491,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        /// <summary>
-        /// METODO PARA VOLVER A CHECK VACIO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CheckPickture_Click(object sender, EventArgs e)
-        {
-            //if (sender is PictureBox clickedPictureBox)
-            //{
-            //    if (clickedPictureBox.Name == "pictureBox_CheckRatificacion")
-            //    {
-            //        // Manejar lógica para pictureBox_CheckRatificacion
 
-            //        checkBox_RatificacionTestimonial.Visible = true;
-            //        checkBox_RatificacionTestimonial.Checked = false;
-            //    }
-            //    else if (clickedPictureBox.Name == "pictureBox_CheckCargo")
-            //    {
-            //        // Manejar lógica para pictureBox_CheckCargo
-
-            //        checkBox_Cargo.Visible = true;
-            //        checkBox_Cargo.Checked = false;
-            //    }
-            //}
-        }
 
 
 
@@ -800,22 +563,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 comboBox_DeptoJudicial.Enabled = false;
             }
         }
-        private void ComboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true; // Rechaza caracteres no válidos.
-            }
-            else
-            {
-                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
-            }
-        }
-        private void ComboBox_AgenteFiscal_TextChanged(object sender, EventArgs e)
-        {
-            comboBox_AgenteFiscal.TextValue = ConvertirACamelCase.Convertir(comboBox_AgenteFiscal.TextValue);
-            comboBox_AgenteFiscal.SelectionStart = comboBox_AgenteFiscal.TextValue.Length;
-        }
+       
+       
 
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
         {
@@ -926,8 +675,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         private void ComboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
         {
-            comboBox_DeptoJudicial.TextValue = ConvertirACamelCase.Convertir(comboBox_DeptoJudicial.TextValue);
-            comboBox_DeptoJudicial.SelectionStart = comboBox_DeptoJudicial.TextValue.Length;
+            
             ActualizarEstado();
         }
 
@@ -1001,11 +749,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             };
         }
 
-
         /// <summary>
         /// Para habilitar check y modificar label
         /// </summary>
-        private void ActualizarEstado()
+        public void ActualizarEstado()
         {
             // Verifica si cada campo no está vacío ni solo con espacios
             bool esTextoValidoNumeroIPP = !string.IsNullOrWhiteSpace(textBox_NumeroIpp.TextValue);
@@ -1060,6 +807,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             }
         }
+
 
         /// <summary>
         /// Para verificar los controles y habilitar boton
@@ -1299,12 +1047,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AgregarCausa_Click(object sender, EventArgs e)
         {
-            var nuevoControl = NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Caratula, "CARATULA", "Causa");
-
-            if (nuevoControl != null)
-            {
-                AsignarEventosCustomTextBox(nuevoControl);
-            }
+            AgregarNuevoControl(panel_Caratula, "CARATULA", "Causa");
 
         }
 
@@ -1315,27 +1058,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AgregarVictima_Click(object sender, EventArgs e)
         {
-            // Primero, valida todos los controles existentes en el panel
-            bool controlesCompletos = ValidarControlesExistentes(panel_Victima);
-
-            if (!controlesCompletos)
-            {
-                // Muestra un mensaje si algún control en el panel está vacío
-                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", MensajeGeneral.TipoMensaje.Advertencia);
-                return; // Sal de la función para evitar agregar un nuevo control
+           
+                AgregarNuevoControl(panel_Victima, "VICTIMA", "Victima", victimas, "Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.");
             }
-            else
-            {
-                // Llamar al método en el UserControl para agregar el control
-                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "VICTIMA ", "Victima");
-
-                // Agregar la nueva víctima a la lista
-                string nuevaVictima = "Nombre de la nueva víctima";
-                victimas.Add(nuevaVictima);
-
-
-            }
-        }
 
         /// <summary>
         /// METODO PARA AGREGAR NUEVO CONTROL IMPUTADO
@@ -1344,26 +1069,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AgregarImputado_Click(object sender, EventArgs e)
         {
-            // Primero, valida todos los controles existentes en el panel
-            bool controlesCompletos = ValidarControlesExistentes(panel_Imputado);
+            AgregarNuevoControl(panel_Victima, "IMPUTADO", "Imputado", imputados, "Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.");
 
-            if (!controlesCompletos)
-            {
-                // Muestra un mensaje si algún control en el panel está vacío
-                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.", MensajeGeneral.TipoMensaje.Advertencia);
-                return; // Sal de la función para evitar agregar un nuevo control
-            }
-            else
-            {
-                // Llamar al método en el UserControl para agregar el control
-                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "IMPUTADO ", "Imputado");
-
-                // Agregar el nuevo imputado a la lista
-                string nuevoImputado = "Nombre del nuevo imputado";
-                imputados.Add(nuevoImputado);
-
-            }
+           
         }
+
+
         #endregion
 
         #region BTN AGREGAR DATOS PERSONALES
@@ -1375,56 +1086,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            if (agregarDatosPersonalesImputado == null || agregarDatosPersonalesImputado.IsDisposed)
-            {
-                agregarDatosPersonalesImputado = new AgregarDatosPersonalesImputado();
-
-                // Suscribirse al evento personalizado del formulario de destino
-                agregarDatosPersonalesImputado.ImputadoTextChanged += UpdateImputadoTextBox;
-            }
-
-            // Establecer el texto inicial en el formulario de destino
-            agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.TextValue;
-
-            // Suscribirse al evento TextChanged del TextBox en el formulario de origen
-            textBox_Imputado.TextChanged += (s, ev) =>
-            {
-                agregarDatosPersonalesImputado.TextoNombre = textBox_Imputado.TextValue;
-            };
-
-            // Obtener el formulario original(inicioCierre)
-            Form originalForm = this;
-
-            // Obtener el tamaño de ambos formularios
-            int totalWidth = originalForm.Width + agregarDatosPersonalesImputado.Width;
-            int height = Math.Max(originalForm.Height, agregarDatosPersonalesImputado.Height);
-
-            // Calcular la posición para centrar ambos formularios en la pantalla
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int startX = (screenWidth - totalWidth) / 2;
-            int startY = (screenHeight - height) / 2;
-
-            // Posicionar el formulario agregarDatosPersonales a la izquierda del original
-            agregarDatosPersonalesImputado.StartPosition = FormStartPosition.Manual;
-            agregarDatosPersonalesImputado.Location = new Point(startX, startY);
-
-            // Posicionar el formulario original a la derecha del agregarDatosPersonales
-            originalForm.Location = new Point(startX + agregarDatosPersonalesImputado.Width, startY);
-
-            // Suscribirse al evento FormClosed del formulario Cargo
-            agregarDatosPersonalesImputado.FormClosed += (s, args) =>
-            {
-                // Calcular la nueva posición para centrar el formulario original
-                int centerX = (screenWidth - originalForm.Width) / 2;
-                int centerY = (screenHeight - originalForm.Height) / 2;
-
-                // Reposicionar el formulario original en el centro de la pantalla
-                originalForm.Location = new Point(centerX, centerY);
-            };
-
-            agregarDatosPersonalesImputado.Show();
+            AbrirFormularioSecundario(ref agregarDatosPersonalesImputado, textBox_Imputado, "TextoNombre");
         }
 
         /// <summary>
@@ -1432,56 +1094,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void Btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
-            if (agregarDatosPersonalesVictima == null || agregarDatosPersonalesVictima.IsDisposed)
-            {
-                agregarDatosPersonalesVictima = new AgregarDatosPersonalesVictima();
-
-                // Suscribirse al evento personalizado del formulario de destino
-                agregarDatosPersonalesVictima.VictimaTextChanged += UpdateVictimaTextBox;
-            }
-
-            // Establecer el texto inicial en el formulario de destino
-            agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.TextValue;
-
-            // Suscribirse al evento TextChanged del TextBox en el formulario de origen
-            textBox_Victima.TextChanged += (s, ev) =>
-            {
-                agregarDatosPersonalesVictima.TextoNombre = textBox_Victima.TextValue;
-            };
-
-            // Obtener el formulario original (inicioCierre)
-            Form originalForm = this;
-
-            // Obtener el tamaño de ambos formularios
-            int totalWidth = originalForm.Width + agregarDatosPersonalesVictima.Width;
-            int height = Math.Max(originalForm.Height, agregarDatosPersonalesVictima.Height);
-
-            // Calcular la posición para centrar ambos formularios en la pantalla
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int startX = (screenWidth - totalWidth) / 2;
-            int startY = (screenHeight - height) / 2;
-
-            // Posicionar el formulario agregarDatosPersonales a la izquierda del original
-            agregarDatosPersonalesVictima.StartPosition = FormStartPosition.Manual;
-            agregarDatosPersonalesVictima.Location = new Point(startX, startY);
-
-            // Posicionar el formulario original a la derecha del agregarDatosPersonales
-            originalForm.Location = new Point(startX + agregarDatosPersonalesVictima.Width, startY);
-
-            // Suscribirse al evento FormClosed del formulario Cargo
-            agregarDatosPersonalesVictima.FormClosed += (s, args) =>
-            {
-                // Calcular la nueva posición para centrar el formulario original
-                int centerX = (screenWidth - originalForm.Width) / 2;
-                int centerY = (screenHeight - originalForm.Height) / 2;
-
-                // Reposicionar el formulario original en el centro de la pantalla
-                originalForm.Location = new Point(centerX, centerY);
-            };
-
-            agregarDatosPersonalesVictima.Show();
+            AbrirFormularioSecundario(ref agregarDatosPersonalesVictima, textBox_Victima, "TextoNombre");
 
         }
 
