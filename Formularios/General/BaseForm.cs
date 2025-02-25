@@ -23,6 +23,7 @@ namespace Ofelia_Sara.Formularios.General
     public class BaseForm : BaseFormDATOS
     {
         #region VARIABLES
+        private Cursor cursorFlecha;
         private Cursor customHandCursor;
         private Cursor CursorLapizDerecha;
         private Timer errorTimer;
@@ -51,7 +52,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             CargarIconoFormulario();
             InitializeCustomCursors();
-            AjustarLabelEnPanel();// deberia traer los titulos al frente para que se vean completos
+            AjustarLabelEnPanel();
             InitializeComponent();
             InitializeFooterLinkLabel();
            Load +=BaseForm_Load;
@@ -60,13 +61,21 @@ namespace Ofelia_Sara.Formularios.General
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            ConfigurarTextoEnControles();
-            InicializarComboBoxIpp(this);
+            ConfigurarTextoEnControles();//carga items especificos a comboBox especificos
+            InicializarComboBoxIpp(this);//inicializa valores predeterminados en combobox ipp
       
             BordePanel1();// redondea los bordes unicamente de panel 1
-            AjustarLabelEnPanel();
-
+            AjustarLabelEnPanel(); //centra unicamente Label_TITULO
+            ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
+                                      // Escuchar cuando se agreguen nuevos controles en tiempo de ejecución
+            this.ControlAdded += (s, e) => AplicarCursorEnControl(e.Control);
         }
+        protected override void OnControlAdded(ControlEventArgs e)
+        {
+            base.OnControlAdded(e);
+            AplicarCursorEnControl(e.Control);
+        }
+
 
         #region LOAD
         private void BaseForm_Load(object sender, EventArgs e)
@@ -87,26 +96,55 @@ namespace Ofelia_Sara.Formularios.General
         {
             try
             {
-                using (MemoryStream cursorStream = new(Properties.Resources.cursorFlecha))
-                {
-                    this.Cursor = new Cursor(cursorStream);
-                }
+                cursorFlecha = new Cursor(new MemoryStream(Properties.Resources.cursorFlecha));
+                customHandCursor = new Cursor(new MemoryStream(Properties.Resources.hand));
+                CursorLapizDerecha = new Cursor(new MemoryStream(Properties.Resources.CursorlapizDerecha));
 
-                using (MemoryStream cursorHand = new(Properties.Resources.hand))
-                {
-                    customHandCursor = new Cursor(cursorHand);
-                }
-
-                using (MemoryStream cursorStream = new(Properties.Resources.CursorlapizDerecha))
-                {
-                    CursorLapizDerecha = new Cursor(cursorStream);
-                }
+                this.Cursor = cursorFlecha; // Aplicar un cursor base si es necesario
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error cargando cursores: {ex.Message}");
             }
         }
+
+        private void ReemplazarCursores(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                // Si el control tiene Cursor = Cursors.Hand, lo reemplazamos
+                if (ctrl.Cursor == Cursors.Hand)
+                {
+                    ctrl.Cursor = customHandCursor;
+                }
+
+                // Si el control tiene más subcontroles (paneles, usercontrols, etc.), recorrerlos recursivamente
+                if (ctrl.HasChildren)
+                {
+                    ReemplazarCursores(ctrl);
+                }
+            }
+        }
+        private void AplicarCursorEnControl(Control control)
+        {
+            if (control.Cursor == Cursors.Hand)
+            {
+                control.Cursor = customHandCursor;
+            }
+
+            // Si el control tiene más subcontroles, aplicarlo recursivamente
+            if (control.HasChildren)
+            {
+                foreach (Control subcontrol in control.Controls)
+                {
+                    AplicarCursorEnControl(subcontrol);
+                }
+            }
+
+            // Escuchar futuros controles agregados a este control
+            control.ControlAdded += (s, e) => AplicarCursorEnControl(e.Control);
+        }
+
         #endregion
 
         #region TOOLTIPS
