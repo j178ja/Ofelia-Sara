@@ -24,11 +24,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
 
             this.FormClosing += AgregarDatosConcubina_FormClosing;//para mensaje de alerta en caso de no guardar datos
 
-            label_TITULO.BringToFront();// Se agreggo formulario por formulario ya que  elcentrado desde baseform no se aplica
         }
         #endregion
 
@@ -128,23 +126,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.Location = originalPosition;
         }
 
-        private void TextBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
-        {
+    
 
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
-
-        private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
+      
 
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {

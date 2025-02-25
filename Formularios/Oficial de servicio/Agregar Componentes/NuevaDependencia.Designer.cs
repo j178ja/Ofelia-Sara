@@ -94,7 +94,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Partido.TextAlign = HorizontalAlignment.Center;
             textBox_Partido.TextValue = "";
             textBox_Partido.Whidth = 0;
-            textBox_Partido.TextChanged += TextBox_TextChanged;
+            
             // 
             // textBox_Localidad
             // 

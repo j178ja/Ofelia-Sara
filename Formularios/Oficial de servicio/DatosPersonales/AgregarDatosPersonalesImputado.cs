@@ -43,7 +43,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesImputado()
         {
             InitializeComponent();
-            RedondearBordes.Aplicar(panel1, 15);
+          
             // Asigna el evento TextChanged de textBox_Nombre a ActualizarEstado
             textBox_Nombre.TextChanged += (sender, e) => ActualizarEstado();
 
@@ -60,7 +60,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
 
-            label_TITULO.BringToFront();
         }
         #endregion
 
@@ -334,86 +333,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
-        {
-            ActualizarControlesPictureDOM();
-
-            // Obtiene el texto actual del TextBox
-            string input = textBox_Localidad.TextValue;
-
-            // Convierte el texto a mayúsculas
-            string upperText = input.ToUpper();
-
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Localidad.TextValue != upperText)
-            {
-                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Localidad.TextChanged -= TextBox_Localidad_TextChanged;
-
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Localidad.TextValue = upperText;
-
-                // Restaura la posición del cursor al final del texto
-                textBox_Localidad.SelectionStart = upperText.Length;
-
-                // Vuelve a asociar el evento TextChanged
-                textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
-            }
-        }
        
-        /// <summary>
-        /// limitar textBox_Edad a 2 digitos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Si no es un dígito ni una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-
-            // Verificar si el texto actual del TextBox tiene menos de 2 caracteres
-            if (textBox_Edad.TextValue.Length >= 2 && !char.IsControl(e.KeyChar))
-            {
-                // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-        }
-        private void TextBox_Edad_TextChanged(object sender, EventArgs e)
-        {
-            // Verificar si el texto actual del TextBox es "0" o "00"
-            if (/*textBox_Edad.Text == "0" || */textBox_Edad.TextValue == "00")
-            {
-                // Mostrar un mensaje de error y limpiar el TextBox
-                MensajeGeneral.Mostrar("El valor no puede ser 0 o 00", MensajeGeneral.TipoMensaje.Error);
-                textBox_Edad.Clear();
-            }
-        }
-       
-        /// <summary>
-        /// limitar textBox_Dni a 8 digitos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Si no es un dígito ni una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-
-            // Verificar si el texto actual del TextBox tiene  10 caracteres
-            if (textBox_Dni.Text.Length >= 10 && !char.IsControl(e.KeyChar))
-            {
-                // Si ya tiene 10 caracteres y no es una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-        }
+        
 
 
 
@@ -577,22 +498,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
 
 
-        private void TextBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir teclas de control como Backspace y Enter, así como espacios
-            if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else if (char.IsLetter(e.KeyChar)) // Permitir letras
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else
-            {
-                e.Handled = true; // Ignorar caracteres especiales
-            }
-        }
 
         private void TextBox_Apodo_KeyPress(object sender, KeyPressEventArgs e)
         {

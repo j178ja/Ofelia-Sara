@@ -26,10 +26,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             this.Load += new EventHandler(Fiscalia_Load);// inicializar Load
 
-            //para redondear bordes de panel
-            RedondearBordes.Aplicar(panel1, 15);
-
-            MayusculaSola.AplicarAControl(textBox_Localidad);
+      
             this.FormClosing += NuevaFiscalia_FormClosing;
         }
         #endregion
@@ -37,7 +34,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void Fiscalia_Load(object sender, EventArgs e)
         {
-            InicializarTextBoxes();
+          
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -60,15 +57,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                // Hacer visibles los botones
-                mensaje.MostrarBotonesConfirmacion(true);
-
-                DialogResult result = mensaje.ShowDialog();
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true; // Cancelar el cierre del formulario
-                }
+               MostrarMensajeCierre(e,"No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
+               
+               
             }
         }
 
@@ -80,44 +71,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void FISCALIA_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable en los formularios", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
-        }
-
-
-        private void InicializarTextBoxes()
-        {
-            // Suscribirse al evento TextChanged sin conflicto de nombres
-            textBox_AgenteFiscal.TextChanged += TextBox_TextChanged;
-            textBox_DeptoJudicial.TextChanged += TextBox_TextChanged;
-
-            MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
-            MayusculaSola.AplicarAControl(textBox_Localidad);
-
+            MostrarMensajeAyuda("Debe ingresar los datos conforme se solicitan. Seran agregados a la lista desplegable en los formularios");
 
         }
 
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Convertir el texto del TextBox al Camel Case
-            if (sender is CustomTextBox textBox)
-            {
-                textBox.TextValue = ConvertirACamelCase.Convertir(textBox.TextValue);
-                // Mover el cursor al final del texto para evitar que el cursor se mueva al inicio
-                textBox.SelectionStart = textBox.TextValue.Length;
-            }
-        }
-        private void TextBox_Fiscalia_TextChanged(object sender, EventArgs e)
-        {
-            if (sender is CustomTextBox textBox)
-            {
-                MayusculaYnumeros.AplicarAControl(textBox_Fiscalia);
-                // Mover el cursor al final del texto después de la conversión
-                textBox.SelectionStart = textBox.Text.Length;
-            }
-        }
+
+       
+
+       
 
 
 

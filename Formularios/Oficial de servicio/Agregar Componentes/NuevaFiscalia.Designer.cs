@@ -178,7 +178,7 @@
             textBox_Fiscalia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Fiscalia.TextValue = "";
             textBox_Fiscalia.Whidth = 0;
-            textBox_Fiscalia.TextChanged += TextBox_Fiscalia_TextChanged;
+           
             // 
             // label_DptoJudicial
             // 

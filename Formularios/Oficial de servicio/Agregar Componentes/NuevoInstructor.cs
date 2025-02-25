@@ -30,9 +30,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
-            //para redondear bordes de panel
-            RedondearBordes.Aplicar(panel1, 15);
-
+            
 
             this.FormClosing += NuevoInstructor_FormClosing;
         }
@@ -114,14 +112,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         /// <param name="e"></param>
         private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
+            CustomTextBox textBox = sender as CustomTextBox;
 
             // Guardar la posición actual del cursor antes de actualizar el texto
             int selectionStart = textBox.SelectionStart;
-            int originalLength = textBox.Text.Length;
+            int originalLength = textBox.TextValue.Length;
 
             // Formatear el número con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
+            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.TextValue);
 
             // Actualizar el texto en el TextBox
             textBox.Text = textoFormateado;

@@ -32,10 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
-            //para redondear bordes de panel
-            RedondearBordes.Aplicar(panel1, 15);
-
-
+ 
 
             this.FormClosing += NuevoSecretario_FormClosing;
 
@@ -191,19 +188,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         }
 
-        /// <summary>
-        /// PERMITE SOLO NUMEROS EN LEGAJO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo permite dígitos y teclas de control
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+        
 
         /// <summary>
         /// AGREGA PUNTOS CADA 3 DIGITOS
@@ -212,7 +197,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         /// <param name="e"></param>
         private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
+            CustomTextBox textBox = sender as CustomTextBox;
 
             // Guardar la posición actual del cursor antes de actualizar el texto
             int selectionStart = textBox.SelectionStart;

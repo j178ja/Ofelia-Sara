@@ -45,8 +45,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Asocia el evento TextChanged del TextBox
             textBox_Dependencia.TextChanged += TextBox_Dependencia_TextChanged;
 
-            //para redondear bordes panel
-            RedondearBordes.Aplicar(panel1, 15);
+          
 
 
             dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
@@ -58,9 +57,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void NuevaDependencia_Load(object sender, EventArgs e)
         {
-            MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
-            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
-            MayusculaSola.AplicarAControl(textBox_Localidad);
+            
 
             // Configurar todos los TextBoxes en el formulario
             ConfigurarTextBoxes(this);
@@ -86,17 +83,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Asegura que el cursor esté en textBox_Dependencia
             textBox_Dependencia.Focus();
         }
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Convertir el texto del TextBox al Camel Case
-            TextBox textBox = sender as TextBox;
-            if (textBox != null)
-            {
-                textBox.Text = ConvertirACamelCase.Convertir(textBox.Text);
-                // Mover el cursor al final del texto para evitar que el cursor se mueva al inicio
-                textBox.SelectionStart = textBox.Text.Length;
-            }
-        }
+      
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Obtener datos desde los TextBox
@@ -143,9 +130,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             ActualizarEstado();//habilita check y modifica label
 
-            //---para actualizar en tiempo real textbox DEPENDENCIA
-            // Asegura que el cursor esté al final del texto
-            textBox_Dependencia.SelectionStart = textBox_Dependencia.TextValue.Length;
 
             // Dispara el evento si hay suscriptores
             DependenciaTextChanged?.Invoke(textBox_Dependencia.TextValue);
@@ -154,9 +138,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             ActualizarEstado();//habilita check y modifica label
 
-            //---para actualizar en tiempo real textbox DEPENDENCIA
-            // Asegura que el cursor esté al final del texto
-            textBox_Localidad.SelectionStart = textBox_Localidad.TextValue.Length;
+           
 
             // Dispara el evento si hay suscriptores
             LocalidadTextChanged?.Invoke(textBox_Localidad.TextValue);

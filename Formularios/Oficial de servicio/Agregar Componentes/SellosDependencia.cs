@@ -27,8 +27,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             InitializeComponent();
 
-            //para redondear bordes de panel
-            RedondearBordes.Aplicar(panel1, 15);
+        
 
             textBox_Localidad.Enabled = false;// inicializar en false
         }
@@ -41,8 +40,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
-            MayusculaSola.AplicarAControl(textBox_Localidad);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+      
 
             ActualizarControles();//Inicializa  el estado de los controles pictureBox
 
@@ -143,9 +141,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Actualiza los controles
             ActualizarControles();
 
-            //----para actualizar textbox entre formularios
-            // Asegura que el cursor esté al final del texto
-            textBox_Localidad.SelectionStart = textBox_Localidad.TextValue.Length;
+            
             // Disparar el evento si hay suscriptores
             LocalidadTextChanged?.Invoke(textBox_Localidad.TextValue);
 
@@ -262,22 +258,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null && pictureBox.Enabled)
+            if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                using OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    try
                     {
-                        try
-                        {
-                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
-                        }
-                        catch (Exception ex)
-                        {
-                            MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                        }
+                        pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
             }

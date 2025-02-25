@@ -33,7 +33,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         public AgregarDatosPersonalesVictima()
         {
             InitializeComponent();
-            RedondearBordes.Aplicar(panel1, 15);
+          
 
 
             this.Load += new System.EventHandler(this.AgregarDatosPersonalesVictima_Load);
@@ -566,8 +566,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             textBox_Localidad.TextAlign = HorizontalAlignment.Center;
             textBox_Localidad.TextValue = "";
             textBox_Localidad.Whidth = 0;
-            textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
-            textBox_Localidad.KeyPress += TextBox_Localidad_KeyPress;
+        
             // 
             // textBox_Domicilio
             // 
@@ -618,7 +617,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             textBox_Edad.TextValue = "";
             textBox_Edad.Whidth = 0;
             textBox_Edad.TextChanged += TextBox_Edad_TextChanged;
-            textBox_Edad.KeyPress += TextBox_Edad_KeyPress;
+          
             // 
             // textBox_Dni
             // 
@@ -644,8 +643,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             textBox_Dni.TextAlign = HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
             textBox_Dni.Whidth = 0;
-            textBox_Dni.TextChanged += TextBox_Dni_TextChanged;
-            textBox_Dni.KeyPress += TextBox_Dni_KeyPress;
+        
             // 
             // textBox_Nombre
             // 
@@ -830,22 +828,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        private void TextBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Si no es un dígito ni una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-
-            // Verificar si el texto actual del TextBox tiene menos de 2 caracteres
-            if (textBox_Edad.TextValue.Length >= 2 && !char.IsControl(e.KeyChar))
-            {
-                // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-        }
+     
 
         private void TextBox_Edad_TextChanged(object sender, EventArgs e)
         {
@@ -858,49 +841,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        /// <summary>
-        /// CONTROL DE CANTIDAD DE CARACTERES DNI
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Si no es un dígito ni una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
+      
 
-            // Verificar si el texto actual del TextBox tiene  10 caracteres
-            if (textBox_Dni.TextValue.Length >= 10 && !char.IsControl(e.KeyChar))
-            {
-                // Si ya tiene 10 caracteres y no es una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-        }
-
-        /// <summary>
-        /// METODO PARA MANEJAR EL NUMERO DNI
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Dni_TextChanged(object sender, EventArgs e)
-        {
-            CustomTextBox textBox = sender as CustomTextBox;
-
-            // Obtener la posición del cursor antes del formateo
-            int cursorPosition = textBox.SelectionStart;
-
-            // Usar la clase separada para formatear el texto con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.TextValue);
-
-            // Actualizar el texto en el TextBox
-            textBox.TextValue = textoFormateado;
-
-            // Asegurarse de que el cursor se posicione al final del texto
-            textBox.SelectionStart = textBox.TextValue.Length;
-        }
+        
 
 
         /// <summary>
@@ -1034,33 +977,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             ActualizarControlesPicture();
         }
 
-        private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
-        {
-            ActualizarControlesPicture();
-
-            // Obtiene el texto actual del TextBox
-            string input = textBox_Localidad.TextValue;
-
-            // Convierte el texto a mayúsculas
-            string upperText = input.ToUpper();
-
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Localidad.TextValue != upperText)
-            {
-                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Localidad.TextChanged -= TextBox_Localidad_TextChanged;
-
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Localidad.TextValue = upperText;
-
-                // Restaura la posición del cursor al final del texto
-                textBox_Localidad.SelectionStart = upperText.Length;
-
-                // Vuelve a asociar el evento TextChanged
-                textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
-            }
-        }
-
+        
 
 
         /// <summary>
@@ -1074,8 +991,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
         private void TextBox_Nombre_TextChanged(object sender, EventArgs e)
         {
-            // Asegura que el cursor esté al final del texto
-            textBox_Nombre.SelectionStart = textBox_Nombre.TextValue.Length;
+           
 
             VictimaTextChanged?.Invoke(textBox_Nombre.TextValue);
             // Obtiene el texto actual del TextBox
@@ -1084,15 +1000,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Convierte el texto a mayúsculas
             string upperText = input.ToUpper();
 
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Nombre.TextValue != upperText)
-            {
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Nombre.TextValue = upperText;
-
-                // Mueve el cursor al final del texto
-                textBox_Nombre.SelectionStart = upperText.Length;
-            }
+          
         }
 
 
@@ -1159,22 +1067,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
 
 
-        private void TextBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir teclas de control como Backspace y Enter, así como espacios
-            if (char.IsControl(e.KeyChar) || e.KeyChar == ' ')
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else if (char.IsLetter(e.KeyChar)) // Permitir letras
-            {
-                e.Handled = false; // Permitir la tecla
-            }
-            else
-            {
-                e.Handled = true; // Ignorar caracteres especiales
-            }
-        }
+     
 
         private void TextBox_LugarNacimiento_TextChanged(object sender, EventArgs e)
         {

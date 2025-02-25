@@ -690,8 +690,7 @@
             textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Localidad.TextValue = "";
             textBox_Localidad.Whidth = 0;
-            textBox_Localidad.TextChanged += TextBox_Localidad_TextChanged;
-            textBox_Localidad.KeyPress += TextBox_Localidad_KeyPress;
+        
             // 
             // textBox_Domicilio
             // 
@@ -739,8 +738,7 @@
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
             textBox_Edad.Whidth = 0;
-            textBox_Edad.TextChanged += TextBox_Edad_TextChanged;
-            textBox_Edad.KeyPress += TextBox_Edad_KeyPress;
+            
             // 
             // textBox_Dni
             // 
@@ -764,8 +762,7 @@
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
             textBox_Dni.Whidth = 0;
-           
-            textBox_Dni.KeyPress += TextBox_Dni_KeyPress;
+      
             // 
             // textBox_Nombre
             // 

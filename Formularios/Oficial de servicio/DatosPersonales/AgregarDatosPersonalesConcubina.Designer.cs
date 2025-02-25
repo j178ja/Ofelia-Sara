@@ -503,7 +503,7 @@
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
             textBox_Edad.Whidth = 0;
-            textBox_Edad.KeyPress += TextBox_Edad_KeyPress;
+         
             // 
             // textBox_Dni
             // 
@@ -527,7 +527,7 @@
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
             textBox_Dni.Whidth = 0;
-            textBox_Dni.KeyPress += TextBox_Dni_KeyPress;
+           
             // 
             // textBox_Nombre
             // 

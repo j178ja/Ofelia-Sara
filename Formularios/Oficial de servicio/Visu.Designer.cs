@@ -1595,7 +1595,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.AutoSize = true;
             label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(358, 4);
+            label_TITULO.Location = new System.Drawing.Point(224, 4);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             label_TITULO.Size = new System.Drawing.Size(248, 29);
