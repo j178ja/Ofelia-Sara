@@ -61,7 +61,9 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             }
         }
 
-    
+        public object Value { get; internal set; }
+
+
         #endregion
 
         /// <summary>

@@ -267,7 +267,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Victima.TextValue = "";
             textBox_Victima.Whidth = 0;
-            textBox_Victima.TextChanged += TextBox_Victima_TextChanged;
+            textBox_Victima.TextChanged += TextBox_HabilitaBTN_TextChanged;
             // 
             // textBox_Imputado
             // 
@@ -292,7 +292,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Imputado.TextValue = "";
             textBox_Imputado.Whidth = 0;
-            textBox_Imputado.TextChanged += TextBox_Imputado_TextChanged;
+            textBox_Imputado.TextChanged += TextBox_HabilitaBTN_TextChanged;
             // 
             // comboBox_Fiscalia
             // 
@@ -653,8 +653,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarCausa.TabIndex = 27;
             btn_AgregarCausa.Text = "+";
             btn_AgregarCausa.UseVisualStyleBackColor = false;
-            btn_AgregarCausa.TextChanged += TextBox_Caratula_TextChanged;
-            btn_AgregarCausa.Click += Btn_AgregarCausa_Click;
+          
+
             // 
             // btn_AgregarVictima
             // 
@@ -669,7 +669,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarVictima.TabIndex = 28;
             btn_AgregarVictima.Text = "+";
             btn_AgregarVictima.UseVisualStyleBackColor = false;
-            btn_AgregarVictima.Click += Btn_AgregarVictima_Click;
+           
             // 
             // btn_AgregarImputado
             // 
@@ -682,7 +682,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarImputado.TabIndex = 29;
             btn_AgregarImputado.Text = "+";
             btn_AgregarImputado.UseVisualStyleBackColor = true;
-            btn_AgregarImputado.Click += Btn_AgregarImputado_Click;
+
             // 
             // toolTip
             // 
@@ -947,7 +947,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
             textBox_Caratula.Whidth = 0;
-            textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;
+            textBox_Caratula.TextChanged += TextBox_HabilitaBTN_TextChanged;
 
             // 
             // panel_ControlesInferiores

@@ -101,10 +101,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             this.FormClosing += BuscarPersonal_FormClosing;
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
-            textBox_NumeroIpp.MaxLength = 6;
-            comboBox_Ipp1.InnerTextBox.MaxLength = 2;
-            comboBox_Ipp2.InnerTextBox.MaxLength = 2;
-            comboBox_Ipp4.InnerTextBox.MaxLength = 2;
+         
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -196,7 +193,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     string dependencia = comboBox_Dependencia.TextValue;
 
                     // Crear el formulario Visu con los datos recolectados
-                    Visu visu = new Visu(this, ipp1, ipp2, numeroIpp, ipp4, caratula, victima, imputado,
+                    Visu visu = new(this, ipp1, ipp2, numeroIpp, ipp4, caratula, victima, imputado,
                                          fiscalia, agenteFiscal, localidad, instructor, secretario, dependencia);
 
                     // Guardar el formulario actual (Cargo) y su posición original
@@ -284,26 +281,29 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
         {
-            if (sender is CustomTextBox customtextBox)
-            {
-                switch (customtextBox.Name)
-                {
-                    case "textBox_Caratula":
-                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(customtextBox.InnerTextBox.Text);
-                        break;
+            //if (sender is CustomTextBox customtextBox)
+            //{
+            //    switch (customtextBox.Name)
+            //    {
+            //        case "textBox_Caratula":
+            //            btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(customtextBox.InnerTextBox.Text);
+            //            break;
 
-                    case "textBox_Victima":
-                        btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(customtextBox.TextValue);
-                        break;
+            //        case "textBox_Victima":
+            //            btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(customtextBox.TextValue);
+            //            break;
 
-                    case "textBox_Imputado":
-                        btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(customtextBox.TextValue);
-                        break;
+            //        case "textBox_Imputado":
+            //            btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(customtextBox.TextValue);
+            //            break;
 
-                    default:
-                        break;
-                }
-            }
+            //        default:
+            //            break;
+            //    }
+            //}
+            ValidarYHabilitarBoton(textBox_Caratula, btn_AgregarCausa, null, 3);
+            ValidarYHabilitarBoton(textBox_Victima,  btn_AgregarVictima,null, 3);
+            ValidarYHabilitarBoton(textBox_Imputado,  btn_AgregarImputado,null, 3);
         }
 
 

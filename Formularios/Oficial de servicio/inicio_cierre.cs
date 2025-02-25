@@ -34,7 +34,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = [];
         private List<string> imputados = [];
-
+        
         //Lista para autocompletar caratula
         private List<string> sugerencias;
 
@@ -70,8 +70,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
             // Asocia el evento TextChanged al método de validación
-            textBox_Victima.TextChanged += new EventHandler(TextBox_Victima_TextChanged);
-            textBox_Imputado.TextChanged += new EventHandler(TextBox_Imputado_TextChanged);
+          //  textBox_Victima.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
+           // textBox_Imputado.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -104,7 +104,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
-
+            RegistrarBotonesAgregar(victimas, imputados);//otorga validacion para los botones agregar, agregando un control especifico en panel correspondiente
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
 
@@ -198,11 +198,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             string instructor = comboBox_Instructor.TextValue;
             string secretario = comboBox_Secretario.TextValue;
             string dependencia = comboBox_Dependencia.TextValue;
-            //string fecha = timePickerPersonalizado1.Value.ToString("yyyy-MM-dd");
+           // string fecha = timePickerPersonalizado1.Value.ToString("yyyy-MM-dd");
 
             // Obtener las listas de víctimas e imputados
-            List<string> victimas = new List<string>();
-            List<string> imputados = new List<string>();
+            List<string> victimas = [];
+            List<string> imputados = [];
 
             //foreach (var item in lstVictimas.Items)
             //{
@@ -378,47 +378,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        /// <summary>
-        /// METODO PARA HABILITAR BTN AGREGAR CAUSA
-        /// </summary>
-        private void TextBox_Caratula_TextChanged(object sender, EventArgs e)
-        {
-            ValidarYHabilitarBoton(textBox_Caratula, btn_AgregarCausa, null, 3);
-            ActualizarEstado();
-        }
-
-       
-
-
-       
-
-        /// <summary>
-        /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE VICTIMA
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Victima_TextChanged(object sender, EventArgs e)
-        {
-            ValidarYHabilitarBoton(textBox_Victima, btn_AgregarDatosVictima, btn_AgregarVictima,3);
-            ActualizarEstado();
-        }
-   
-
-
-        /// <summary>
-        /// METODOS PARA VALIDAR Y HABILITAR BOTON DESDE IMPUTADO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Imputado_TextChanged(object sender, EventArgs e)
-        {
-            ValidarYHabilitarBoton(textBox_Imputado, btn_AgregarDatosImputado, btn_AgregarImputado,3);
-            ActualizarEstado();
-        }
-
-
-
+        ///// <summary>
+        ///// METODOS PARA VALIDAR Y HABILITAR BOTON AGREGAR CAUSA IMP VMA
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
     
+
+        private void TextBox_HabilitaBTN_TextChanged(object sender, EventArgs e)
+        {
+            
+                    ActualizarEstado();
+            
+        }
+
+
 
 
         /// <summary>
@@ -922,7 +896,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
                 // Crear una nueva instancia del formulario MensajeEmail
-                MensajeEmail mensajeEmail = new MensajeEmail();
+                MensajeEmail mensajeEmail = new();
 
                 // Mostrar el formulario como un cuadro de diálogo o de forma normal
                 mensajeEmail.ShowDialog();
@@ -1040,39 +1014,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
         #region BTN AGREGAR CAUSA/VMA/IMP
-        /// <summary>
-        /// EVENTO PARA AGREGAR CONTROL CARATULA
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_AgregarCausa_Click(object sender, EventArgs e)
-        {
-            AgregarNuevoControl(panel_Caratula, "CARATULA", "Causa");
-
-        }
-
-        /// <summary>
-        /// METODO PARA AGREGAR NUEVO CONTROL VICTIMA
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_AgregarVictima_Click(object sender, EventArgs e)
-        {
-           
-                AgregarNuevoControl(panel_Victima, "VICTIMA", "Victima", victimas, "Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.");
-            }
-
-        /// <summary>
-        /// METODO PARA AGREGAR NUEVO CONTROL IMPUTADO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_AgregarImputado_Click(object sender, EventArgs e)
-        {
-            AgregarNuevoControl(panel_Victima, "IMPUTADO", "Imputado", imputados, "Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.");
-
-           
-        }
+    
 
 
         #endregion

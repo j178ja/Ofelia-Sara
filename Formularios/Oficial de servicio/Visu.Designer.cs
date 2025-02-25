@@ -515,11 +515,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // Fecha_Instruccion
             // 
+            Fecha_Instruccion.AñoMaximo = 2025;
+            Fecha_Instruccion.AñoMinimo = 1930;
             Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
             Fecha_Instruccion.FechaSeleccionada = new DateTime(0L);
             Fecha_Instruccion.Location = new System.Drawing.Point(184, 265);
             Fecha_Instruccion.Name = "Fecha_Instruccion";
             Fecha_Instruccion.Size = new System.Drawing.Size(286, 21);
+            Fecha_Instruccion.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
+            Fecha_Instruccion.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             Fecha_Instruccion.TabIndex = 70;
             // 
             // lbl_Secretario
@@ -599,7 +603,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.Whidth = 0;
-           
             // 
             // comboBox_Ipp1
             // 
@@ -633,7 +636,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp1.TabIndex = 3;
             comboBox_Ipp1.Text = "03";
             comboBox_Ipp1.TextValue = " ";
-          
             // 
             // comboBox_Ipp2
             // 
@@ -667,7 +669,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp2.TabIndex = 4;
             comboBox_Ipp2.Text = "03";
             comboBox_Ipp2.TextValue = " ";
-          
             // 
             // lbl_00
             // 
@@ -710,7 +711,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Ipp4.TabIndex = 6;
             comboBox_Ipp4.Text = "24";
             comboBox_Ipp4.TextValue = " ";
-     
             // 
             // lbl_Ipp
             // 
@@ -755,7 +755,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
             textBox_Caratula.Whidth = 0;
-            textBox_Caratula.TextChanged += HabilitaBTN_Agregar_TextChanged;
             // 
             // lbl_Caratula
             // 
@@ -779,7 +778,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarCausa.TabIndex = 27;
             btn_AgregarCausa.Text = "+";
             btn_AgregarCausa.UseVisualStyleBackColor = false;
-            btn_AgregarCausa.TextChanged += HabilitaBTN_Agregar_TextChanged;
             btn_AgregarCausa.Click += Btn_AgregarCausa_Click;
             // 
             // panel_Imputado
@@ -816,7 +814,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Imputado.TextValue = "";
             textBox_Imputado.Whidth = 0;
-            textBox_Imputado.TextChanged += HabilitaBTN_Agregar_TextChanged;
             // 
             // lbl_Imputado
             // 
@@ -839,7 +836,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarImputado.TabIndex = 29;
             btn_AgregarImputado.Text = "+";
             btn_AgregarImputado.UseVisualStyleBackColor = true;
-            btn_AgregarImputado.TextChanged += HabilitaBTN_Agregar_TextChanged;
             btn_AgregarImputado.Click += Btn_AgregarImputado_Click;
             // 
             // panel_Victima
@@ -876,7 +872,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Victima.TextValue = "";
             textBox_Victima.Whidth = 0;
-            textBox_Victima.TextChanged += HabilitaBTN_Agregar_TextChanged;
             // 
             // lbl_Victima
             // 
@@ -900,7 +895,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarVictima.TabIndex = 28;
             btn_AgregarVictima.Text = "+";
             btn_AgregarVictima.UseVisualStyleBackColor = false;
-            btn_AgregarVictima.TextChanged += HabilitaBTN_Agregar_TextChanged;
             btn_AgregarVictima.Click += Btn_AgregarVictima_Click;
             // 
             // label_DatosInstruccion
@@ -971,7 +965,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_DatosEspecificos.Size = new System.Drawing.Size(596, 120);
             panel_DatosEspecificos.SombraColor = System.Drawing.Color.FromArgb(200, 0, 198, 255);
             panel_DatosEspecificos.TabIndex = 86;
-            panel_DatosEspecificos.Click += PictureBox_CheckLegajoVehicular_Click;
             // 
             // checkBox_LegajoVehicular
             // 
@@ -986,7 +979,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             checkBox_LegajoVehicular.TabIndex = 91;
             checkBox_LegajoVehicular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             checkBox_LegajoVehicular.UseVisualStyleBackColor = true;
-            checkBox_LegajoVehicular.CheckedChanged += CheckBox_LegajoVehicular_CheckedChanged;
             // 
             // label_LegajoVehicular
             // 
@@ -1603,7 +1595,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.AutoSize = true;
             label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(238, 9);
+            label_TITULO.Location = new System.Drawing.Point(358, 4);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             label_TITULO.Size = new System.Drawing.Size(248, 29);

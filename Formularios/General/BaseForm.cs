@@ -223,33 +223,40 @@ namespace Ofelia_Sara.Formularios.General
 
         #region CENTRAR TITULO
 
-        /// <summary>
-        /// METODO PARA TRAER LABEL TITULO AL FRENTE ----NO FUNCIONA CORRECTAMENTE
-        /// </summary>   
         protected void AjustarLabelEnPanel()
         {
-            Panel panel1 = ObtenerPanelTitulo(); // Se obtiene el panel del formulario hijo
+            Panel panel1 = ObtenerPanelTitulo();
+            if (panel1 == null) return;
 
-            if (panel1 == null) return; // Si no hay panel, no hacer nada
-
-            // Buscar todos los Labels que contengan "TITULO" en su nombre, sin importar en qué contenedor estén
-            foreach (Control control in GetAllControls(this).OfType<Label>().Where(lbl => lbl.Name.Contains("TITULO")))
+            foreach (Label label in GetAllControls(this).OfType<Label>().Where(lbl => lbl.Name.Contains("TITULO")))
             {
-                // Calcular la nueva posición centrada dentro de panel1
-                int nuevoX = panel1.Left + (panel1.Width - control.Width) / 2;
-                int nuevoY = panel1.Top + (panel1.Height - control.Height) / 2;
+                if (label.Parent != this) // Lo movemos al formulario
+                {
+                    label.Parent = this;
+                }
 
-                control.Location = new Point(nuevoX, nuevoY);
-                control.BringToFront(); // Asegurar que siempre esté visible
+                // Aplicar estilos personalizados
+                label.Height = 30;
+                label.BackColor = Color.FromArgb(0, 154, 174);
+                label.ForeColor = SystemColors.ControlLightLight;
+                label.TextAlign = ContentAlignment.MiddleCenter;
+
+                // Centrar horizontalmente con respecto a panel1
+                int nuevoX = panel1.Left + (panel1.Width - label.Width) / 2;
+
+                // 15px deben superponerse con panel1
+                int nuevoY = panel1.Top - 15;
+
+                label.Location = new Point(nuevoX, nuevoY);
+                label.BringToFront();
             }
         }
 
+
         protected virtual Panel ObtenerPanelTitulo()
         {
-            return (Panel)panel1; // Devuelve `panel1`, que es el panel del formulario principal
+            return this.Controls.OfType<Panel>().FirstOrDefault(p => p.Name == "panel1");
         }
-
-
 
 
 
@@ -944,6 +951,53 @@ namespace Ofelia_Sara.Formularios.General
             // Cambiar el color de fondo del botonPrincipal
         //    botonPrincipal.BackColor = habilitar ? System.Drawing.Color.GreenYellow : System.Drawing.Color.Tomato;
         }
+
+        protected void RegistrarBotonesAgregar(List<string> victimas, List<string> imputados)
+        {
+            // Definir la configuración de botones una sola vez (Nombres de los controles)
+            ConfiguracionesBotones = new()
+    {
+        { "btn_AgregarCausa", ("panel_Caratula", "CARATULA", "Causa", null, null) },
+        { "btn_AgregarVictima", ("panel_Victima", "VICTIMA", "Victima", victimas,
+            "Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.") },
+        { "btn_AgregarImputado", ("panel_Victima", "IMPUTADO", "Imputado", imputados,
+            "Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.") }
+    };
+
+            // Buscar y asignar eventos a los botones en tiempo de ejecución
+            foreach (var (nombreBoton, config) in ConfiguracionesBotones)
+            {
+                // Buscar los controles en el formulario hijo
+                Button boton = this.Controls.Find(nombreBoton, true).FirstOrDefault() as Button;
+                Panel panel = this.Controls.Find(config.Item1, true).FirstOrDefault() as Panel;
+
+                if (boton != null && panel != null)
+                {
+                    // Guardar la configuración asociada
+                    BotonesConfigurados[boton] = (panel, config.Item2, config.Item3, config.Item4, config.Item5);
+
+                    // Evitar múltiples suscripciones
+                    boton.Click -= Btn_Agregar_Click;
+                    boton.Click += Btn_Agregar_Click;
+                }
+            }
+        }
+
+        private Dictionary<string, (string, string, string, List<string>?, string?)> ConfiguracionesBotones;
+        private Dictionary<Button, (Panel, string, string, List<string>?, string?)> BotonesConfigurados = new();
+
+        private void Btn_Agregar_Click(object sender, EventArgs e)
+        {
+            if (sender is Button boton && BotonesConfigurados.TryGetValue(boton, out var config))
+            {
+                AgregarNuevoControl(config.Item1, config.Item2, config.Item3, config.Item4, config.Item5);
+            }
+        }
+
+
+        
+
+
 
         #endregion
 

@@ -44,7 +44,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
 
             // Asignación de eventos
             comboBox_Marca.TextChanged += (s, e) => ValidarPanelVehiculo();
@@ -60,16 +59,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Validar panel al cargar
             this.Load += (s, e) => ValidarPanelVehiculo();
 
-            ////---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
-            //btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.InnerTextBox.Text);//inicializacion de deshabilitacion de btn_agregarVictima
-            //btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
-            //btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.Text);
-
-            // Llamar al método para validar el estado inicial de los botones
-            HabilitaBTN_Agregar_TextChanged(textBox_Caratula, EventArgs.Empty);
-            HabilitaBTN_Agregar_TextChanged(textBox_Victima, EventArgs.Empty);
-            HabilitaBTN_Agregar_TextChanged(textBox_Imputado, EventArgs.Empty);
-
+           
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarCausa);
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
@@ -274,32 +264,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        /// <summary>
-        ///  HABILITAR BTN AGREGAR CAUSA-IMPUTADO-VICTIMA DESDE EVENTO TEXTCHANGED
-        /// </summary>
-        private void HabilitaBTN_Agregar_TextChanged(object sender, EventArgs e)
-        {
-            if (sender is CustomTextBox customTextBox)
-            {
-                switch (customTextBox.Name)
-                {
-                    case "textBox_Caratula":
-                        btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(customTextBox.Text);
-                        break;
-
-                    case "textBox_Victima":
-                        btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(customTextBox.Text);
-                        break;
-
-                    case "textBox_Imputado":
-                        btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(customTextBox.Text);
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        }
 
     
 
@@ -1125,25 +1089,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Visu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!datosGuardados) // Si los datos no han sido guardados
-            {
-                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                // Hacer visibles los botones
-                mensaje.MostrarBotonesConfirmacion(true);
-
-                DialogResult result = mensaje.ShowDialog();
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true; // Cancelar el cierre del formulario
-                }
-                else
-                {
-                    // En Visu.cs, dentro del código donde accedes a Cargo
+                MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
                     // Cambiar el estado del botón
                     formularioCargo?.CambiarEstadoBotonDeslizable(false); // O true, según sea necesario
-
-                }
-            }
         }
 
         private bool ValidarAntesdeGuardar()
@@ -1313,171 +1261,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-
-        private void CheckBox_LegajoVehicular_CheckedChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
-        {
-           
-           
-
-        }
-
        
     }
 
 }
 
 
-
-
-
-/// <summary>
-/// METODO PARA VALIDAR DAROS DE LOS PANELES
-/// </summary>
-//private void ValidarPanelDatosInstruccion()
-//{
-//    bool camposValidos = true;
-
-//    // Iterar sobre los controles dentro del panel
-//    foreach (Control control in panel_DatosInstruccion.Controls)
-//    {
-//        if (control is CustomTextBox customTextBox && string.IsNullOrWhiteSpace(customTextBox.TextValue))
-//        {
-//            camposValidos = false;
-//            break; // Si encontramos un campo vacío, no es necesario seguir buscando
-//        }
-//        else if (control is CustomComboBox customComboBox && (customComboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(customComboBox.TextValue)))
-//        {
-//            camposValidos = false;
-//            break; // Si encontramos un ComboBox sin selección o sin texto, salimos
-//        }
-//    }
-
-//    // Actualizar la imagen en pictureBox
-//    if (camposValidos)
-//    {
-//        pictureBox_PanelInstruccion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-//        pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
-//        label_DatosInstruccion.BackColor = Color.FromArgb(4, 200, 0); // resalta con color verde más brillante que el original
-
-//    }
-//    else
-//    {
-//        pictureBox_PanelInstruccion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-//        pictureBox_PanelInstruccion.BackColor = Color.Transparent; // Fondo transparente
-//        label_DatosInstruccion.BackColor = Color.FromArgb(0, 192, 192); // retoma color original verde agua
-
-//    }
-
-//    // Ajustar la posición del pictureBox al lado del label
-//    pictureBox_PanelInstruccion.Location = new System.Drawing.Point(
-//        label_DatosInstruccion.Right + 5, // A la derecha del label con un margen de 5 px
-//        label_DatosInstruccion.Top + (label_DatosInstruccion.Height - pictureBox_PanelInstruccion.Height) / 2 // Centrado verticalmente
-//    );
-
-//    // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-//    pictureBox_PanelInstruccion.SizeMode = PictureBoxSizeMode.StretchImage;
-
-//    // Asegurarse de que el pictureBox sea visible
-//    pictureBox_PanelInstruccion.Visible = true;
-//    AjustarTamanoFormulario();
-//}
-
-///// <summary>
-///// METODO PARA VALIDAR DATOS EN PANEL DATOS VEHICULO
-///// </summary>
-//private void ValidarPanelVehiculo()
-//{
-//    bool camposValidos = VerificarCamposEnPanel(panel_DatosEspecificos);
-
-//    if (camposValidos)
-//    {
-//        pictureBox_DatosVehiculo.Image = Properties.Resources.verificacion_exitosa;
-//        label_DatosVehiculo.BackColor = Color.FromArgb(4, 200, 0);
-//    }
-//    else
-//    {
-//        pictureBox_DatosVehiculo.Image = Properties.Resources.Advertencia_Faltante;
-//        label_DatosVehiculo.BackColor = Color.FromArgb(0, 192, 192);
-//    }
-
-//    pictureBox_DatosVehiculo.Location = new System.Drawing.Point(
-//        label_DatosVehiculo.Right + 5,
-//        label_DatosVehiculo.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2
-//    );
-//    pictureBox_DatosVehiculo.SizeMode = PictureBoxSizeMode.StretchImage;
-//    pictureBox_DatosVehiculo.Visible = true;
-//}
-
-///// <summary>
-///// METODO PARA VALIDAR DATOS EN PANEL DESCRIPCION
-///// </summary>
-//private void ValidarPanelDescripcion()
-//{
-//    bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
-
-//    if (camposValidos)
-//    {
-//        pictureBox_Descripcion.Image = Properties.Resources.verificacion_exitosa; // Imagen personalizada para validación correcta
-//        pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo transparente
-//        label_Descripcion.BackColor = Color.FromArgb(4, 200, 0); // Resalta con color verde más brillante que el original
-//        panel_ControlesInferiores.Visible = true;
-//    }
-//    else
-//    {
-//        pictureBox_Descripcion.Image = Properties.Resources.Advertencia_Faltante; // Imagen para error
-//        pictureBox_Descripcion.BackColor = Color.Transparent; // Fondo de imagen transparente
-//        label_Descripcion.BackColor = Color.FromArgb(0, 192, 192); // Retoma color original verde agua
-//        panel_ControlesInferiores.Visible = false;
-//    }
-
-//    // Ajustar la posición del pictureBox al lado del label
-//        pictureBox_Descripcion.Location = new System.Drawing.Point(
-//        label_Descripcion.Right + 5, // A la derecha del label con un margen de 5 px
-//        label_Descripcion.Top + (label_Descripcion.Height - pictureBox_Descripcion.Height) / 2 // Centrado verticalmente
-//    );
-
-//    // Configurar el tamaño de la imagen para que abarque todo el contenedor del pictureBox
-//    pictureBox_Descripcion.SizeMode = PictureBoxSizeMode.StretchImage;
-
-//    // Asegurarse de que el pictureBox sea visible
-//    pictureBox_Descripcion.Visible = true;
-//    AjustarTamanoFormulario();
-
-//}
-
-///// <summary>
-///// METODO PARA VALIDAR DATOS EN PANEL IMAGEES
-///// </summary>
-//private void ValidarPanelImagenes()
-//{
-//    bool camposValidos = !string.IsNullOrWhiteSpace(richTextBox_Descripcion.Text);
-
-//    if (camposValidos)
-//    {
-//        pictureBox_PanelImagenes.Image = Properties.Resources.verificacion_exitosa;
-//        pictureBox_PanelImagenes.BackColor = Color.Transparent;
-//        labelImagenes.BackColor = Color.FromArgb(4, 200, 0);
-//    }
-//    else
-//    {
-//        pictureBox_PanelImagenes.Image = Properties.Resources.Advertencia_Faltante;
-//        pictureBox_PanelImagenes.BackColor = Color.Transparent;
-//        labelImagenes.BackColor = Color.FromArgb(0, 192, 192);
-//    }
-
-//    pictureBox_PanelImagenes.Location = new System.Drawing.Point(
-//        labelImagenes.Right + 5,
-//        labelImagenes.Top + (labelImagenes.Height - pictureBox_PanelImagenes.Height) / 2
-//    );
-
-//    pictureBox_PanelImagenes.SizeMode = PictureBoxSizeMode.StretchImage;
-//    pictureBox_PanelImagenes.Visible = true;
-//}
 
 
