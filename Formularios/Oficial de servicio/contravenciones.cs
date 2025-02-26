@@ -25,9 +25,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
-
-
+         
         }
 
         private void Contravenciones_Load(object sender, EventArgs e)
@@ -39,9 +37,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Buscar);
 
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+          
             MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
             MayusculaYnumeros.AplicarAControl(textBox_Localidad);
             MayusculaSola.AplicarAControl(textBox_Nombre);

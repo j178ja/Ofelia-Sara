@@ -38,8 +38,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
-
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
             CargarDatosInstructor(comboBox_Instructor, instructoresManager);
             CargarDatosSecretario(comboBox_Secretario, secretariosManager);
@@ -113,14 +111,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBotonAgregar(btn_AgregarVictima);
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
-            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
-            MayusculaSola.AplicarAControl(textBox_Victima);
-            MayusculaSola.AplicarAControl(textBox_Imputado);
-            MayusculaSola.AplicarAControl(comboBox_Localidad.InnerTextBox);
-
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+  
 
             CargarAño(comboBox_Ipp4);
             CargarAño(comboBox_Año);

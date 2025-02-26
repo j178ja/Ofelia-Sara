@@ -27,7 +27,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
             pictureBox_OjoContraseña.Enabled = false;
             textBox_Contraseña.InnerTextBox.GotFocus += (s, e) => IndicadorMayusculaActivado();
             textBox_Contraseña.InnerTextBox.KeyPress += (s, e) => IndicadorMayusculaActivado();

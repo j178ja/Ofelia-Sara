@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contacto));
             panel1 = new System.Windows.Forms.Panel();
             label_Capacitaciones = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             linkLabel2 = new System.Windows.Forms.LinkLabel();
             linkLabel_Correo = new System.Windows.Forms.LinkLabel();
             label_TITULO = new System.Windows.Forms.Label();
-            toolTip1 = new System.Windows.Forms.ToolTip(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Github).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Linkedin).BeginInit();
@@ -76,7 +74,7 @@
             label_Capacitaciones.Location = new System.Drawing.Point(140, 71);
             label_Capacitaciones.Name = "label_Capacitaciones";
             label_Capacitaciones.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_Capacitaciones.Size = new System.Drawing.Size(210, 24);
+            label_Capacitaciones.Size = new System.Drawing.Size(248, 30);
             label_Capacitaciones.TabIndex = 9;
             label_Capacitaciones.Text = "CAPACITACIONES";
             // 
@@ -104,7 +102,6 @@
             pictureBox_Github.Size = new System.Drawing.Size(47, 36);
             pictureBox_Github.TabIndex = 7;
             pictureBox_Github.TabStop = false;
-            toolTip1.SetToolTip(pictureBox_Github, "Github");
             pictureBox_Github.Click += PictureBox_Github_Click;
             // 
             // pictureBox_Linkedin
@@ -117,7 +114,6 @@
             pictureBox_Linkedin.Size = new System.Drawing.Size(48, 39);
             pictureBox_Linkedin.TabIndex = 6;
             pictureBox_Linkedin.TabStop = false;
-            toolTip1.SetToolTip(pictureBox_Linkedin, "Linkedin");
             pictureBox_Linkedin.Click += PictureBox_Linkedin_Click;
             // 
             // pictureBox_Y
@@ -141,7 +137,6 @@
             pictureBox_Correo.Size = new System.Drawing.Size(54, 48);
             pictureBox_Correo.TabIndex = 4;
             pictureBox_Correo.TabStop = false;
-            toolTip1.SetToolTip(pictureBox_Correo, "Email");
             pictureBox_Correo.Click += PictureBox_Correo_Click;
             // 
             // pictureBox_Wpp
@@ -154,7 +149,6 @@
             pictureBox_Wpp.Size = new System.Drawing.Size(54, 48);
             pictureBox_Wpp.TabIndex = 3;
             pictureBox_Wpp.TabStop = false;
-            toolTip1.SetToolTip(pictureBox_Wpp, "Whatsapp");
             pictureBox_Wpp.Click += PictureBox_Wpp_Click;
             // 
             // linkLabel2
@@ -164,7 +158,7 @@
             linkLabel2.LinkColor = System.Drawing.Color.Black;
             linkLabel2.Location = new System.Drawing.Point(582, 389);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new System.Drawing.Size(131, 20);
+            linkLabel2.Size = new System.Drawing.Size(163, 25);
             linkLabel2.TabIndex = 2;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "+54223-6971880";
@@ -178,7 +172,7 @@
             linkLabel_Correo.LinkColor = System.Drawing.Color.Black;
             linkLabel_Correo.Location = new System.Drawing.Point(106, 389);
             linkLabel_Correo.Name = "linkLabel_Correo";
-            linkLabel_Correo.Size = new System.Drawing.Size(316, 20);
+            linkLabel_Correo.Size = new System.Drawing.Size(383, 25);
             linkLabel_Correo.TabIndex = 1;
             linkLabel_Correo.TabStop = true;
             linkLabel_Correo.Text = "jbestudiosycapacitaciones@gmail.com";
@@ -193,13 +187,13 @@
             label_TITULO.Location = new System.Drawing.Point(225, 9);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 0, 30, 5);
-            label_TITULO.Size = new System.Drawing.Size(338, 36);
+            label_TITULO.Size = new System.Drawing.Size(403, 44);
             label_TITULO.TabIndex = 0;
             label_TITULO.Text = "JORGE A. BONATO";
             // 
             // Contacto
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 531);
             Controls.Add(panel1);
@@ -234,7 +228,6 @@
         private System.Windows.Forms.PictureBox pictureBox_Linkedin;
         private System.Windows.Forms.PictureBox pictureBox_Y;
         private System.Windows.Forms.PictureBox pictureBox_Github;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox textBox_Curriculum;
         private System.Windows.Forms.Label label_Capacitaciones;
     }

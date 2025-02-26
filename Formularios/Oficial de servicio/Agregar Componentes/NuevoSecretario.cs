@@ -203,6 +203,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             int selectionStart = textBox.SelectionStart;
             int originalLength = textBox.Text.Length;
 
+
             // Formatear el número con puntos
             string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
 

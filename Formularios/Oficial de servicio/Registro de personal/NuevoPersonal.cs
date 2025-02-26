@@ -52,7 +52,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             // Asigna el valor recibido al TextBox correspondiente en NuevoPersonal
             textBox_NumeroLegajo.TextValue = numeroLegajo;
 
-            RedondearBordes.Aplicar(panel1, 15);
+      
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
 

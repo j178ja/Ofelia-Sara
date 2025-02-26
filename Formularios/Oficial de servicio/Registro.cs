@@ -1,6 +1,8 @@
 ﻿using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -12,7 +14,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public Registro()
         {
             InitializeComponent();
-            RedondearBordes.Aplicar(panel1, 15);
+           
         }
 
         private void Registro_Load(object sender, EventArgs e)
@@ -36,14 +38,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
+            CustomTextBox textBox = sender as CustomTextBox;
             if (textBox != null)
             {
                 // Convertir el texto a mayúsculas ignorando caracteres especiales
-                // textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.Text);
+                 textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.TextValue);
 
                 // Para mantener el cursor al final del texto
-                textBox.SelectionStart = textBox.Text.Length;
+                textBox.SelectionStart = textBox.TextValue.Length;
             }
         }
 
@@ -93,13 +95,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MessageBox.Show("Formulario eliminado.", "Información  Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Informacion);
         }
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             // Mostrar un mensaje de ayuda
-            MessageBox.Show("Vomplete la totalidad de los campos para poder registrar un nuevo Usuario.", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MensajeGeneral.Mostrar("Vomplete la totalidad de los campos para poder registrar un nuevo Usuario.", MensajeGeneral.TipoMensaje.Informacion);
 
             // Cancelar el evento para que no se cierre el formulario
             e.Cancel = true;

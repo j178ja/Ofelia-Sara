@@ -148,15 +148,57 @@ namespace Ofelia_Sara.Formularios.General
         #endregion
 
         #region TOOLTIPS
+        /// <summary>
+        /// establece los tooltip para botones que se repiten en varios formularios
+        /// </summary>
         protected void ConfigurarToolTips()
         {
-        //    // Tooltip de panel INSTRUCCION 
-        //    TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima, "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
-        //    TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado, "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
-        //    TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa, "Ingrese una caratula antes de anexar la siguiente.", "Agregar una caratula adicional");
-        //    TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima, "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
-        //    TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado, "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
+            // Buscando los controles por nombre en el formulario actual
+            var btn_AgregarDatosVictima = this.Controls.Find("btn_AgregarDatosVictima", true).FirstOrDefault() as Button;
+            var btn_AgregarDatosImputado = this.Controls.Find("btn_AgregarDatosImputado", true).FirstOrDefault() as Button;
+            var btn_AgregarCausa = this.Controls.Find("btn_AgregarCausa", true).FirstOrDefault() as Button;
+            var btn_AgregarVictima = this.Controls.Find("btn_AgregarVictima", true).FirstOrDefault() as Button;
+            var btn_AgregarImputado = this.Controls.Find("btn_AgregarImputado", true).FirstOrDefault() as Button;
+
+            // Verificamos que los botones existan y configuramos los tooltips
+            if (btn_AgregarDatosVictima != null)
+            {
+                TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosVictima,
+                    "Completar nombre de VICTIMA para ingresar más datos.", "Agregar datos personales de Victima");
+            }
+            if (btn_AgregarDatosImputado != null)
+            {
+                TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarDatosImputado,
+                    "Completar nombre de IMPUTADO para ingresar más datos.", "Agregar datos personales de Imputado");
+            }
+            if (btn_AgregarCausa != null)
+            {
+                TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarCausa,
+                    "Ingrese una caratula antes de anexar la siguiente.", "Agregar una caratula adicional");
+            }
+            if (btn_AgregarVictima != null)
+            {
+                TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarVictima,
+                    "Ingrese una VICTIMA/DENUNCIANTE antes de anexar la siguiente.", "Agregar Victima");
+            }
+            if (btn_AgregarImputado != null)
+            {
+                TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarImputado,
+                    "Ingrese un IMPUTADO antes de anexar el siguiente.", "Agregar Imputado");
+            }
+
+            // Para los botones del panel inferior
+            var btn_Buscar = this.Controls.Find("btn_Buscar", true).FirstOrDefault() as Button;
+            var btn_Guardar = this.Controls.Find("btn_Guardar", true).FirstOrDefault() as Button;
+            var btn_Limpiar = this.Controls.Find("btn_Limpiar", true).FirstOrDefault() as Button;
+            var btn_Imprimir = this.Controls.Find("btn_Imprimir", true).FirstOrDefault() as Button;
+
+            if (btn_Buscar != null) ToolTipGeneral.Mostrar(btn_Buscar, "BUSCAR archivos creados, estadísticas y antecedentes");
+            if (btn_Guardar != null) ToolTipGeneral.Mostrar(btn_Guardar, "GUARDAR datos ingresados y documentos generados");
+            if (btn_Limpiar != null) ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR los datos ingresados en este formulario");
+            if (btn_Imprimir != null) ToolTipGeneral.Mostrar(btn_Imprimir, "IMPRIMIR este documento específico");
         }
+
         #endregion
 
 

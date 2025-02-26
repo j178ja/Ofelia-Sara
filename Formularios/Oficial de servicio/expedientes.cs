@@ -29,7 +29,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
+           
 
             panel_ControlesInferiores.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             groupBox_TextosConvertidos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -52,11 +52,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBoton(btn_Guardar);
             InicializarEstiloBoton(btn_Limpiar);
 
-            MayusculaYnumeros.AplicarAControl(textBox_Caratula);
+          
             MayusculaSola.AplicarAControl(textBox_Causante);
-            MayusculaYnumeros.AplicarAControl(comboBox_Instructor);
-            MayusculaYnumeros.AplicarAControl(comboBox_Secretario);
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia);
+         
 
             pictureBox_APdf.AllowDrop = true;
             pictureBox_AWord.AllowDrop = true;
