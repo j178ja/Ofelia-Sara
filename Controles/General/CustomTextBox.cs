@@ -176,13 +176,11 @@ namespace Ofelia_Sara.Controles.General
             animationTimer = new Timer { Interval = 15 };
             animationTimer.Tick += AnimationTimer_Tick;
 
-            this.Height = 30;
+            this.Height = 21;
             this.Width = 200;
             this.BackColor = Color.White;
         }
         #endregion
-
-
 
         #region EVENTOS
         private void TextBox_GotFocus(object sender, EventArgs e)
@@ -224,20 +222,20 @@ namespace Ofelia_Sara.Controles.General
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 showError = true;
-                isValidText = false;
+               // isValidText = false;
             }
             else
             {
                 showError = false;
-                isValidText = EsTextoValido(textBox.Text);
+                //isValidText = EsTextoValido(textBox.Text);
             }
         }
 
-        private bool EsTextoValido(string texto)
-        {
-            // Ejemplo de validación: acepta solo letras y espacios, y debe tener al menos 3 caracteres
-            return System.Text.RegularExpressions.Regex.IsMatch(texto, @"^[a-zA-Z\s]{3,}$");
-        }
+        //private bool EsTextoValido(string texto)
+        //{
+        //    // Ejemplo de validación: acepta solo letras y espacios, y debe tener al menos 3 caracteres
+        //    return System.Text.RegularExpressions.Regex.IsMatch(texto, @"^[a-zA-Z\s]{3,}$");
+        //}
         #endregion
 
         #region DIBUJADO
@@ -248,7 +246,7 @@ namespace Ofelia_Sara.Controles.General
 
             Color underlineColor = isFocused ? focusColor :
                                    showError ? errorColor :
-                                   isValidText ? validColor :
+                                  // isValidText ? validColor :
                                    this.BackColor;
 
             using (Brush brush = new SolidBrush(underlineColor))
@@ -263,10 +261,8 @@ namespace Ofelia_Sara.Controles.General
            // Placeholder
             if (string.IsNullOrEmpty(textBox.Text) && !textBox.Focused && !string.IsNullOrEmpty(PlaceholderText))
             {
-                using (Brush brush = new SolidBrush(PlaceholderColor))
-                {
-                    e.Graphics.DrawString(PlaceholderText, this.Font, brush, new PointF(5, 5));
-                }
+                using Brush brush = new SolidBrush(PlaceholderColor);
+                e.Graphics.DrawString(PlaceholderText, this.Font, brush, new PointF(5, 5));
             }
         }
 
@@ -287,8 +283,6 @@ namespace Ofelia_Sara.Controles.General
             );
         }
         #endregion
-
-
 
         #region PROPIEDADES PUBLICAS 
         /// <summary>
