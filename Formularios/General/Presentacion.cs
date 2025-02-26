@@ -68,6 +68,8 @@ namespace Ofelia_Sara.Formularios.General
         public Presentacion()
         {
             InitializeComponent();
+
+         
             //----presentacion
             // Definir la posición de inicio y el destino
             origen = ObtenerCoordenadasIcono(); // Obtiene las coordenadas del ícono 
@@ -151,7 +153,7 @@ namespace Ofelia_Sara.Formularios.General
             if (this.Opacity < 1)
             {
                 this.Opacity += 0.05; // Incrementar la opacidad gradualmente
-                RedondearBordes.Aplicar(this, 36);//Redondea los bordes de panel superior e inferior
+           
             }
             else
             {
