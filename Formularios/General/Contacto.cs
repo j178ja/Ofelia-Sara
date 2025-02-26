@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Diagnostics;
@@ -26,6 +27,10 @@ namespace Ofelia_Sara.Formularios.General
             IncrementarTamaño.Incrementar(pictureBox_Github);
             IncrementarTamaño.Incrementar(pictureBox_Wpp);
             IncrementarTamaño.Incrementar(pictureBox_Correo);
+            ToolTipGeneral.Mostrar(pictureBox_Linkedin, " Revise perfil de trajo.");
+            ToolTipGeneral.Mostrar(pictureBox_Github, " Explore portafolio de proyectos.");
+            ToolTipGeneral.Mostrar(pictureBox_Wpp, " Comuniquese mediante mensaje WhatsApp.");
+            ToolTipGeneral.Mostrar(pictureBox_Correo, " Envíe un correo electronico.");
         }
 
 
