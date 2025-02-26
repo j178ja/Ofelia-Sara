@@ -279,8 +279,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void PictureBox_CheckFirmaDigitalizada_Click(object sender, EventArgs e)
         {
 
-            checkBox_AgregarFirma.Visible = true;
-            checkBox_AgregarFirma.Checked = false;
             pictureBox_FirmaDigitalizada.Enabled = false;
             pictureBox_FirmaDigitalizada.Tag = Color.Tomato; // Color del borde cuando está deshabilitado
             pictureBox_FirmaDigitalizada.BackColor = Color.DarkGray;
@@ -293,36 +291,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         /// <param name="e"></param>
         private void PictureBox_FirmaDigitalizada_Paint(object sender, PaintEventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
+            if (sender is PictureBox pictureBox)
             {
                 Color borderColor = pictureBox.Tag is Color ? (Color)pictureBox.Tag : Color.Transparent;
 
-                using (Pen pen = new Pen(borderColor, 3)) // Grosor del borde
-                {
-                    // Dibuja el borde exterior
-                    e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
-                }
+                using Pen pen = new Pen(borderColor, 3); // Grosor del borde
+                                                         // Dibuja el borde exterior
+                e.Graphics.DrawRectangle(pen, 0, 0, pictureBox.Width - 1, pictureBox.Height - 1);
             }
         }
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null && pictureBox.Enabled)
+            if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                using OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    try
                     {
-                        try
-                        {
-                            pictureBox.Image = Image.FromFile(openFileDialog.FileName);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se pudo cargar la imagen: " + ex.Message);
-                        }
+                        pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar("No se pudo cargar la imagen: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
             }

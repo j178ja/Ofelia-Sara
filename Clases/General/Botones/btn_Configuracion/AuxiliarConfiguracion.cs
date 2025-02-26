@@ -235,11 +235,16 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             // Si el item tiene subitems, aplicamos el estilo a cada uno de ellos
             if (item is ToolStripMenuItem menuItem)
             {
+
+                // Asignar el cursor al contenedor del menú             // Cargar el cursor desde los recursos
+                Cursor cursorPersonalizado = CursorHelper.ObtenerCursorDesdeRecursos(Properties.Resources.hand);
+
                 foreach (ToolStripItem subItem in menuItem.DropDownItems)
                 {
                     subItem.BackColor = Color.FromArgb(186, 223, 249); // Fondo predeterminado
                     subItem.ForeColor = Color.Black; // Color de texto predeterminado
                     subItem.Font = new Font(subItem.Font.FontFamily, subItem.Font.Size, FontStyle.Regular); // Fuente predeterminada
+                    menuItem.DropDown.Cursor = cursorPersonalizado; // Aplica el cursor personalizado a los subitems
                 }
             }
         }
@@ -506,8 +511,8 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         {
             if (control is CustomTextBox textBox || control is CustomComboBox)
             {
-               // _=textBox.Focus();
-              //  textBox.SelectAll(); // Selecciona todo el texto
+                _=control.Focus();
+               // control.SelectAll(); // Selecciona todo el texto
             }
         }
        
