@@ -318,7 +318,7 @@
             label_TITULO.Size = new System.Drawing.Size(335, 31);
             label_TITULO.TabIndex = 13;
             label_TITULO.Text = "REGISTRO DE USUARIOS";
-            label_TITULO.Click += label_Registro_Click;
+         
             // 
             // Registro
             // 

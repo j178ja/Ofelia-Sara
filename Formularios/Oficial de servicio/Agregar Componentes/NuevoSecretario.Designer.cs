@@ -239,7 +239,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_NumeroLegajo.TextAlign = HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
             textBox_NumeroLegajo.Whidth = 0;
-            textBox_NumeroLegajo.TextChanged += TextBox_NumeroLegajo_TextChanged;
+    
             // 
             // label_Legajo
             // 

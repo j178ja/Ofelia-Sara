@@ -41,8 +41,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CustomTextBox textBox = sender as CustomTextBox;
             if (textBox != null)
             {
-                // Convertir el texto a mayúsculas ignorando caracteres especiales
-                 textBox.Text = MayusculaSimple.ConvertirAMayusculasIgnorandoEspeciales(textBox.TextValue);
+
 
                 // Para mantener el cursor al final del texto
                 textBox.SelectionStart = textBox.TextValue.Length;
@@ -56,13 +55,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
-                MessageBox.Show("Debe completar la totalidad de campos", "Advertencia   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MensajeGeneral.Mostrar("Debe completar la totalidad de campos", MensajeGeneral.TipoMensaje.Advertencia);
             }
             else
             {
                 // Si todos los campos están completos, mostrar el mensaje de confirmación
                 //Crea ventana con icono especial de confirmacion y titulo confirmacion
-                MessageBox.Show("Se ha registrado un nuevo Usuario.", "Confirmación   Ofelia-Sara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MensajeGeneral.Mostrar("Se ha registrado un nuevo Usuario.", MensajeGeneral.TipoMensaje.Exito);
             }
         }
         private bool ValidarTextBoxes(Control parent)
@@ -70,7 +69,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             foreach (Control control in parent.Controls)
             {
                 // Verificar si es un TextBox y está vacío
-                if (control is TextBox && string.IsNullOrWhiteSpace(((TextBox)control).Text))
+                if (control is CustomTextBox && string.IsNullOrWhiteSpace(((CustomTextBox)control).TextValue))
                 {
                     return false;
                 }
@@ -95,22 +94,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
                                              // Mensaje para confirmar la limpieza
                                              //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Informacion);
+            MensajeGeneral.Mostrar("Formulario eliminado.",MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Vomplete la totalidad de los campos para poder registrar un nuevo Usuario.", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+             MostrarMensajeAyuda("Vomplete la totalidad de los campos para poder registrar un nuevo Usuario.");
         }
 
-        private void label_Registro_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 
 }

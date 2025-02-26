@@ -70,8 +70,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
             // Asocia el evento TextChanged al método de validación
-          //  textBox_Victima.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
-           // textBox_Imputado.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
+            textBox_Victima.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
+            textBox_Imputado.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);

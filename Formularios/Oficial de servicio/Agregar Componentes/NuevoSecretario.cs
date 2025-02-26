@@ -190,40 +190,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
         
 
-        /// <summary>
-        /// AGREGA PUNTOS CADA 3 DIGITOS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
-        {
-            CustomTextBox textBox = sender as CustomTextBox;
-
-            // Guardar la posición actual del cursor antes de actualizar el texto
-            int selectionStart = textBox.SelectionStart;
-            int originalLength = textBox.Text.Length;
-
-
-            // Formatear el número con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-            // Actualizar el texto en el TextBox
-            textBox.Text = textoFormateado;
-
-            // Calcular la nueva posición del cursor
-            int deltaLength = textoFormateado.Length - originalLength;
-            int newCursorPosition = selectionStart + deltaLength;
-
-            // Ajustar la posición del cursor solo si la nueva posición está dentro del rango
-            if (newCursorPosition >= 0 && newCursorPosition <= textoFormateado.Length)
-            {
-                textBox.SelectionStart = newCursorPosition;
-            }
-            else
-            {
-                textBox.SelectionStart = textoFormateado.Length; // Colocar al final si está fuera de rango
-            }
-        }
+       
 
         /// <summary>
         /// MENSAJE DE AYUDA BOTON HELP

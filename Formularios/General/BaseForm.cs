@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.General
@@ -43,6 +44,8 @@ namespace Ofelia_Sara.Formularios.General
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
             autocompletarManager = new AutocompletarManager("autocompletar.json");
+  
+
         }
 
         /// <summary>
@@ -75,7 +78,7 @@ namespace Ofelia_Sara.Formularios.General
             base.OnControlAdded(e);
             AplicarCursorEnControl(e.Control);
         }
-
+       
 
         #region LOAD
         private void BaseForm_Load(object sender, EventArgs e)
@@ -492,6 +495,7 @@ namespace Ofelia_Sara.Formularios.General
         /// para centrar el mensaje de ayuda en el formulario que se va a cerrar
         /// </summary>
         /// <param name="mensaje"></param>
+
         protected void MostrarMensajeAyuda(string mensaje)
         {
             if (this.ParentForm != null)
@@ -503,12 +507,12 @@ namespace Ofelia_Sara.Formularios.General
                 // Crear la instancia del mensaje
                 MensajeGeneral mensajeAyuda = new(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
 
-
                 // Calcular la posición centrada respecto al formulario activo
                 int x = formularioActivo.Left + (formularioActivo.Width - mensajeAyuda.Width) / 2;
                 int y = formularioActivo.Top + (formularioActivo.Height - mensajeAyuda.Height) / 2;
 
                 // Establecer la posición centrada
+                mensajeAyuda.StartPosition = FormStartPosition.Manual; // Establecer la posición manualmente
                 mensajeAyuda.Location = new Point(x, y);
 
                 // Mostrar el mensaje
@@ -518,10 +522,11 @@ namespace Ofelia_Sara.Formularios.General
             {
                 // Si no hay un ParentForm, usar un tamaño y posición por defecto
                 MensajeGeneral mensajeAyuda = new(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
-
+                mensajeAyuda.StartPosition = FormStartPosition.CenterScreen; // Usar CenterScreen si no hay ParentForm
                 mensajeAyuda.ShowDialog();
             }
         }
+
         #endregion
 
         #region MENSAJE FORM CLOSING
@@ -673,9 +678,17 @@ namespace Ofelia_Sara.Formularios.General
             }
             else if (control is CustomTextBox textBox)
             {
-                if (textBox.Name == "textBox_NumeroIpp")
+                switch (textBox.Name )
                 {
-                    textBox.MaxLength = 6;
+                    case "textBox_NumeroIpp":
+                        textBox.MaxLength = 6;
+                        break;
+                    case "textBox_NumeroLegajo":
+                        textBox.MaxLength = 7;
+                        break;
+                    case "textBox_Dni":
+                        textBox.MaxLength = 10;
+                        break;
                 }
             }
         }
@@ -721,6 +734,22 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_Imputado":
                         MayusculaSola.AplicarAControl(textBox);
                         break;
+                    case "textBox_Edad":
+                        ClaseNumeros.SoloNumeros(textBox);
+                        break;
+                    case "textBox_Dni":
+                        ClaseNumeros.AplicarFormatoYLimite(textBox, 10);
+                        break;
+                    case "textBox_NumeroLegajo":
+                        ClaseNumeros.AplicarFormatoYLimite(textBox, 7);
+                        break;
+                    case "textBox_Nombre":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Apellido":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+
                 }
             }
             else if (control is CustomComboBox comboBox)
