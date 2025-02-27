@@ -62,6 +62,7 @@ namespace Ofelia_Sara.Formularios.General
           
             InitializeManagers();
             ConfigurarAutocompletado(); // CARGA AUTOCOMPLETADO "HOY JSON-MAÑANA DB"
+            ConfigurarComboBoxesEnFormulario(this);
         }
 
         /// <summary>
@@ -222,13 +223,59 @@ namespace Ofelia_Sara.Formularios.General
             return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
         }
 
-        /// <summary>
-        /// para cargar lista en comboBox ESCALAFON Y JERARQUIA-
-        /// </summary>
-        /// <param name="comboBox_Escalafon"></param>
-        /// <param name="comboBox_Jerarquia"></param>
+
+        private void ConfigurarComboBoxesEnFormulario(Control parent)
+        {
+            CustomComboBox comboBox_Escalafon = null;
+            CustomComboBox comboBox_Jerarquia = null;
+
+            foreach (Control control in parent.Controls)
+            {
+                if (control is CustomComboBox customComboBox)
+                {
+                    // 🔹 Aplicar DropDownList automáticamente
+                    customComboBox.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+
+                    // Detectar comboBox_Escalafon
+                    if (customComboBox.Name == "comboBox_Escalafon")
+                    {
+                        comboBox_Escalafon = customComboBox;
+                        ConfigurarComboBoxEscalafon(customComboBox);
+                    }
+
+                    // Detectar comboBox_Jerarquia
+                    if (customComboBox.Name == "comboBox_Jerarquia")
+                    {
+                        comboBox_Jerarquia = customComboBox;
+                    }
+                }
+
+                // Si el control tiene hijos, los recorremos también
+                if (control.Controls.Count > 0)
+                {
+                    ConfigurarComboBoxesEnFormulario(control);
+                }
+            }
+
+            // Si ambos ComboBoxes existen, configuramos la dependencia
+            if (comboBox_Escalafon != null && comboBox_Jerarquia != null)
+            {
+                ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
+            }
+        }
+
+
+        // Configura el ComboBox Escalafón con su DataSource
+        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
+        {
+            customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
+            customComboBox.SelectedIndex = -1; // No seleccionar automáticamente el primer ítem
+        }
+
+        // Configura el ComboBox_Jerarquia dependiente de ComboBox_Escalafon
         protected static void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
-        {    // Configurar el evento SelectedIndexChanged
+        {
+            // Configurar el evento SelectedIndexChanged
             comboBox_Escalafon.SelectedIndexChanged += (sender, e) =>
             {
                 if (comboBox_Escalafon.SelectedItem != null)
@@ -236,6 +283,7 @@ namespace Ofelia_Sara.Formularios.General
                     string escalafon = comboBox_Escalafon.SelectedItem.ToString();
                     comboBox_Jerarquia.Enabled = true;
                     comboBox_Jerarquia.DataSource = JerarquiasManager.ObtenerJerarquias(escalafon);
+                    comboBox_Jerarquia.SelectedIndex = -1; // Para que no seleccione el primer valor automáticamente
                 }
                 else
                 {

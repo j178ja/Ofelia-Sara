@@ -1,5 +1,6 @@
 ﻿
 
+using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;
@@ -36,6 +37,7 @@ namespace Ofelia_Sara.Formularios.General
         private object panel1;
         public Instruccion _instruccion;// llama a clase que contiene todo el coportamiento de panel_Instruccion
         private SaltoDeImput _saltoDeImput;
+        #endregion
         public BaseForm()
         {
             if (IsInDesignMode)
@@ -62,7 +64,9 @@ namespace Ofelia_Sara.Formularios.General
             InitializeFooterLinkLabel();
             AplicarFormatoTexto(this);
             MaxLengthControl(this);
-            Load +=BaseForm_Load;
+          
+
+            Load += BaseForm_Load;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -73,6 +77,10 @@ namespace Ofelia_Sara.Formularios.General
             AjustarLabelEnPanel(); //centra unicamente Label_TITULO
             ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
                                       // Escuchar cuando se agreguen nuevos controles en tiempo de ejecución
+            AplicarFormatoTexto(this);
+            MaxLengthControl(this);
+          
+
             this.ControlAdded += (s, e) => AplicarCursorEnControl(e.Control);
         }
         protected override void OnControlAdded(ControlEventArgs e)
@@ -241,7 +249,7 @@ namespace Ofelia_Sara.Formularios.General
             {
                 if (control is Panel panel1)
                 {
-                    RedondearBordes.Aplicar(panel1, 15);
+                    RedondearBordes.Aplicar(panel1, 8);
                 }
             }
         }
@@ -437,7 +445,7 @@ namespace Ofelia_Sara.Formularios.General
                     textoColor = Color.Red;// Color del texto cuando el botón está deshabilitado //NO FUNCIONA!!
                 }
 
-                using (GraphicsPath path = new GraphicsPath())
+                using (GraphicsPath path = new())
                 {
                     // Define el rectángulo con el radio especificado
                     path.AddArc(new Rectangle(0, 0, bordeRadio, bordeRadio), 180, 90);
@@ -708,6 +716,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
         #endregion
+
         #region COMPORTAMIENTO FISCALIA
         /// <summary>
         /// Método para inicializar los ComboBox de fiscalía desde cualquier formulario que herede de BaseForm.
@@ -900,14 +909,8 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        /// <summary>
-        /// METODO DE VALIDACION PARA VERIFICAR QUE ESTEN LOS CAMPOS COMPLETOS Y AGREGAR O NO CONTROL
-        /// </summary>
-        /// <param name="panel"></param>
-        /// <returns></returns>
 
-
-        #endregion
+      
 
     }
 }

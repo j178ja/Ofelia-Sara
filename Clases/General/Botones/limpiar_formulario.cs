@@ -1,10 +1,12 @@
 ﻿/* ESTE ARCHIVO CONTIENE LA CLASE APLICABLE A TODOS LOS FORMULARIOS
   QUE PERMITE QUE AL HACER CLICK EN LA IMAGEN DE LIMPIAR
 ------SE BORRE EL CONTENIDO DEL FORMULARIO SEA CUAL SEA EN EL PROYECTO----*/
+
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Controles.Ofl_Sara;
 using System;
 using System.Windows.Forms;
+using Control = System.Windows.Forms.Control;
 
 
 namespace Ofelia_Sara.Clases.General.Botones
@@ -27,11 +29,13 @@ namespace Ofelia_Sara.Clases.General.Botones
                     // Si el control es un CustomTextBox, limpia su contenido
                     case CustomTextBox textBox:
                         textBox.Clear(); // Limpia el texto del CustomTextBox
+                        textBox.ShowError = false;
                         textBox.RestorePlaceholders(); // Restaura los placeholders si es necesario
                         break;
 
                     // Si el control es un CustomComboBox, limpia pero conserva las imágenes
                     case CustomComboBox comboBox:
+                        comboBox.ShowError = false;
                         LimpiarYRestaurarComboBox(comboBox);
                         break;
 
@@ -118,27 +122,27 @@ namespace Ofelia_Sara.Clases.General.Botones
             {
                 comboBox.ArrowPictureBox.Image = comboBox.ArrowPictureBox.Image; // Mantiene la imagen actual
             }
-           
 
-            //// Restablecer al valor predeterminado si existe
+
+            // Restablecer al valor predeterminado si existen elementos en el ComboBox
             if (comboBox.Items.Count > 0)
             {
-                // Ejemplo: Establecer diferentes índices predeterminados según el ComboBox
-                if (comboBox.Name == "comboBox_Ipp1")
+                switch (comboBox.Name)
                 {
-                    comboBox.SelectedIndex = 3;
-                }
-                else if (comboBox.Name == "comboBox_Ipp2")
-                {
-                    comboBox.SelectedIndex = 3;
-                }
-                else
-                {
-                    comboBox.SelectedIndex = 0; // Establece el primer índice por defecto para otros ComboBoxes
+                    case "comboBox_Ipp1":
+                    case "comboBox_Ipp2":
+                    case "comboBox_Ipp4":
+                        comboBox.SelectedIndex = 3;
+                        break;
+
+                    default:
+                        comboBox.SelectedIndex = -1; // Establece el primer índice por defecto para otros ComboBoxes
+                        break;
                 }
             }
+
         }
-       
+
 
 
     }

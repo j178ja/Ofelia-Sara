@@ -343,7 +343,7 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
 
 
         // Crear el ítem "SALIR"
-        ToolStripMenuItem item_Salir = new ToolStripMenuItem("SALIR");
+        ToolStripMenuItem item_Salir = new("SALIR");
 
         #region ABRIR INSTANCIAS DE FORMULARIOS
         /// <summary>

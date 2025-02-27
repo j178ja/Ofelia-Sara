@@ -15,6 +15,7 @@ using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -36,7 +37,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // Listas para almacenar víctimas e imputados
         private List<string> victimas = [];
         private List<string> imputados = [];
-        
+
         //Lista para autocompletar caratula
         private List<string> sugerencias;
 
@@ -71,7 +72,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
-           
+
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -95,6 +96,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
+            IncrementarTamaño.Incrementar(btn_SDA);
 
 
 
@@ -104,13 +106,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
-           // RegistrarBotonesAgregar(victimas, imputados);//otorga validacion para los botones agregar, agregando un control especifico en panel correspondiente
+            // RegistrarBotonesAgregar(victimas, imputados);//otorga validacion para los botones agregar, agregando un control especifico en panel correspondiente
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
 
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
-           
+
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
@@ -151,7 +153,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
-
+            ToolTipGeneral.Mostrar(btn_SDA, "Redirige a página SDA para carga de actuaciones");
             ToolTipGeneral.Mostrar(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
             ToolTipGeneral.Mostrar(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
             ToolTipGeneral.Mostrar(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
@@ -198,7 +200,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             string instructor = comboBox_Instructor.TextValue;
             string secretario = comboBox_Secretario.TextValue;
             string dependencia = comboBox_Dependencia.TextValue;
-           // string fecha = timePickerPersonalizado1.Value.ToString("yyyy-MM-dd");
+            // string fecha = timePickerPersonalizado1.Value.ToString("yyyy-MM-dd");
 
             // Obtener las listas de víctimas e imputados
             List<string> victimas = [];
@@ -269,7 +271,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-          
+
 
             comboBox_Dependencia.SelectedIndex = -1;
             comboBox_Instructor.SelectedIndex = -1;
@@ -378,7 +380,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-     
+
 
 
 
@@ -398,7 +400,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
                 // Ocultar el CheckBox
-                  checkBox_RatificacionTestimonial.Visible = false;
+                checkBox_RatificacionTestimonial.Visible = false;
 
                 // Crear y mostrar el formulario BuscarPersonal
                 BuscarPersonal buscarPersonalForm = new();
@@ -455,7 +457,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-       
+
 
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
         {
@@ -566,7 +568,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         private void ComboBox_DeptoJudicial_TextChanged(object sender, EventArgs e)
         {
-            
+
             ActualizarEstado();
         }
 
@@ -877,7 +879,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                return ;
+                return;
             }
         }
         private void Fecha_Pericia_Enter(object sender, EventArgs e)
@@ -931,7 +933,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
         #region BTN AGREGAR CAUSA/VMA/IMP
-    
+
 
 
         #endregion
@@ -953,12 +955,58 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void Btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
-          //  AbrirFormularioSecundario(ref agregarDatosPersonalesVictima, textBox_Victima, "TextoNombre");
+            //  AbrirFormularioSecundario(ref agregarDatosPersonalesVictima, textBox_Victima, "TextoNombre");
 
         }
 
         #endregion
 
-        
+
+        private void Btn_SDA_Click(object sender, EventArgs e)
+        {
+            string url = "https://www.google.com";
+
+            if (CheckInternetConnection(url))
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = url,
+                        UseShellExecute = true
+                    });
+
+                    // Minimiza la aplicación al abrir la web
+                    this.WindowState = FormWindowState.Minimized;
+                }
+                catch (Exception ex)
+                {
+                    MensajeGeneral.Mostrar($"Error al abrir la página web:\n{ex.Message}", MensajeGeneral.TipoMensaje.Error);
+                }
+            }
+            else
+            {
+                MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.Error);
+            }
+        }
+
+        // Método para verificar conexión a internet
+        private bool CheckInternetConnection(string url)
+        {
+            try
+            {
+                using (var client = new System.Net.WebClient())
+                using (client.OpenRead(url)) // Intenta hacer una petición al sitio
+                {
+                    return true; // Conexión exitosa
+                }
+            }
+            catch
+            {
+                return false; // No hay conexión
+            }
+        }
+
+
     }
 }

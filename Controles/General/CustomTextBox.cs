@@ -153,8 +153,11 @@ namespace Ofelia_Sara.Controles.General
         private Color validColor = Color.LightGreen; // Nuevo color para texto válido
         private string placeholderText = string.Empty;
         private Color placeholderColor = Color.Gray;
-        
         private bool isPlaceholderVisible;
+
+    
+
+     
         #endregion
 
         #region CONSTRUCTOR
@@ -319,6 +322,11 @@ namespace Ofelia_Sara.Controles.General
         /// </summary>
         public TextBox InnerTextBox => textBox;
 
+        // Propiedad pública para acceder al TextBox
+        public TextBox TextBoxControl
+        {
+            get { return textBox; }
+        }
         /// <summary>
         /// ACCEDE A TEXTO DE TEXBOX INTERNO
         /// </summary>

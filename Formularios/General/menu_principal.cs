@@ -55,7 +55,7 @@ namespace Ofelia_Sara.Formularios.General
         private Dictionary<System.Windows.Forms.Button, Size> originalSizes = new Dictionary<System.Windows.Forms.Button, Size>();
         private Dictionary<System.Windows.Forms.Button, Point> originalLocations = new Dictionary<System.Windows.Forms.Button, Point>();
         private List<Form> redactadorForms = new List<Form>(); // Lista para almacenar las instancias de los formularios
-     
+
         #endregion
 
         #region CONSTRUCTOR
@@ -67,8 +67,12 @@ namespace Ofelia_Sara.Formularios.General
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);
             PosicionarMenu();
 
-            RedondearBordes.Aplicar(panel1, 15);
-            RedondearBordes.Aplicar(this, 16);//Redondea los bordes de panel superior e inferior
+             RedondearBordes.Aplicar(this, 12);  // Redondea los bordes del formulario
+             RedondearBordes.Aplicar(panel_MenuSuperior, 12, true, true, false, false);  // Redondea solo los bordes superiores del panel
+
+           
+
+
 
             accionesManager = new AccionesManager("acciones.json");
             ConfigureComboBox(comboBox_Buscar);
@@ -89,7 +93,8 @@ namespace Ofelia_Sara.Formularios.General
             originalSizeMecanografia = btn_Mecanografia.Size;
             originalLocationMecanografia = btn_Mecanografia.Location;
 
-      
+         
+
         }
         #endregion
 
@@ -112,19 +117,19 @@ namespace Ofelia_Sara.Formularios.General
 
             Tooltips();
 
-            comboBox_Buscar.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-           // comboBox_Buscar.AutoCompleteSource = AutoCompleteSource.ListItems;
+         
+
 
             // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
-           // comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
-            //
-           // comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
+            comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
+
+            comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
 
             ConfigurarBotones();
             MostrarPlaceholder();
 
 
-           
+
 
             Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
                                              Properties.Resources.engranajeOriginal);   // Imagen original
@@ -265,7 +270,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
             btn_Cerrar.ForeColor = SystemColors.Control;
-            btn_Cerrar.FlatAppearance.BorderSize = 1;
+            btn_Cerrar.FlatAppearance.BorderSize = 2;
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
             timerCerrarForm.Start();
         }
@@ -278,7 +283,7 @@ namespace Ofelia_Sara.Formularios.General
         private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.Lavender;
-            btn_Cerrar.FlatAppearance.BorderSize = 1;
+            btn_Cerrar.FlatAppearance.BorderSize = 2;
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
         }
 
@@ -315,7 +320,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             btn_Minimizar.BackColor = SystemColors.ButtonFace;
             btn_Minimizar.ForeColor = SystemColors.ControlDarkDark;
-            btn_Minimizar.FlatAppearance.BorderSize = 1;
+            btn_Minimizar.FlatAppearance.BorderSize = 2;
             btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
         }
 
@@ -347,7 +352,7 @@ namespace Ofelia_Sara.Formularios.General
             originalLocations[btn_Redactador] = btn_Redactador.Location;
         }
 
-     
+
         /// <summary>
         /// Método MouseDown para simular animación de "clic"
         /// </summary>
@@ -726,7 +731,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-      
+
 
         /// <summary>
         /// Sobrescribir el evento Resize del formulario principal para ocultarlo si se intenta restaurar
@@ -809,7 +814,7 @@ namespace Ofelia_Sara.Formularios.General
 
         private void ComboBox_Buscar_Validating(object sender, CancelEventArgs e)
         {
-            if (!accionesManager.Acciones.Contains(comboBox_Buscar.Text))
+            if (!accionesManager.Acciones.Contains(comboBox_Buscar.TextValue))
             {
                 MensajeGeneral.Mostrar("La tarea que quiere realizar no se encuentra disponible.", MensajeGeneral.TipoMensaje.Advertencia);
                 e.Cancel = true; // Cancela la acción si la entrada no es válida
@@ -818,7 +823,7 @@ namespace Ofelia_Sara.Formularios.General
 
         private void ComboBox_Buscar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox_Buscar.SelectedIndex > 0 || !string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
+            if (comboBox_Buscar.SelectedIndex > 0 || !string.IsNullOrWhiteSpace(comboBox_Buscar.TextValue))
             {
                 btn_BuscarTarea.Enabled = true;
             }
@@ -830,9 +835,9 @@ namespace Ofelia_Sara.Formularios.General
 
         private void ComboBox_Buscar_GotFocus(object sender, EventArgs e)
         {
-            if (comboBox_Buscar.Text == placeholderText)
+            if (comboBox_Buscar.InnerTextBox.Text == placeholderText)
             {
-                comboBox_Buscar.Text = "";
+                comboBox_Buscar.InnerTextBox.Text = "";
                 comboBox_Buscar.ForeColor = Color.Black;
             }
         }
@@ -840,7 +845,7 @@ namespace Ofelia_Sara.Formularios.General
 
         private void ComboBox_Buscar_LostFocus(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(comboBox_Buscar.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_Buscar.InnerTextBox.Text))
             {
                 MostrarPlaceholder();
             }
@@ -863,7 +868,8 @@ namespace Ofelia_Sara.Formularios.General
         {
             // Establecer el texto del placeholder y cambiar el color a gris
             comboBox_Buscar.Text = placeholderText;
-            comboBox_Buscar.ForeColor = Color.LightGray;
+           // comboBox_Buscar.ForeColor = Color.LightGray;
+            comboBox_Buscar.ForeColor = Color.Red;
         }
 
         #endregion
@@ -961,5 +967,6 @@ namespace Ofelia_Sara.Formularios.General
 
         #endregion
 
+       
     }
 }

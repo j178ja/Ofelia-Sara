@@ -32,7 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             textBox_Contraseña.InnerTextBox.KeyPress += (s, e) => IndicadorMayusculaActivado();
             textBox_Contraseña.InnerTextBox.LostFocus += (s, e) => pictureBox_MayusculaActivada.Visible = false;
             InicializarCapsLockTimer(); // Inicializar el Timer
-
+        
             // Inicializa el estado de Caps Lock al cargar el formulario
             capsLockState = Control.IsKeyLocked(Keys.CapsLock);
             IndicadorMayusculaActivado(); // Muestra u oculta el indicador inicial
@@ -48,16 +48,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             InicializarEstiloBoton(btn_Registrarse);
             InicializarEstiloBoton(btn_Limpiar);
 
-            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
+          
             // Configurar el comportamiento de los ComboBox
-             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
-            // Asegúrate de que no haya selección y el ComboBox_Jerarquia esté desactivado
-            comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
+           
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
 
             //sobre ojo
-            pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
+            pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;//inicializa con la imagen predeterminada de inicio
             //pictureBox_OjoContraseña.Enabled = false;
 
             //  deshabilitar la edición del ComboBox_Escalafon
@@ -67,10 +65,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         }
         #endregion
        
-        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
-        {
-            customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
-        }
+      
       
         private void Btn_Registrarse_Click(object sender, EventArgs e)
         {
@@ -123,7 +118,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            comboBox_Escalafon.SelectedIndex = -1;
+            comboBox_Escalafon.SelectedIndex = -1; //deberia dejar el comboBox vacio y por ende jerarquia tamb queda vacio
             //sobre ojo
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
             pictureBox_OjoContraseña.Enabled = false;
@@ -173,6 +168,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             if (string.IsNullOrEmpty(textBox_Contraseña.InnerTextBox.Text))
             {
+                pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
                 // Desactiva la imagen si no hay texto
                 pictureBox_OjoContraseña.Enabled = false;
             }

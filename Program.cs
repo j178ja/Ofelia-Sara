@@ -1,5 +1,6 @@
 ﻿using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
@@ -30,11 +31,12 @@ namespace Ofelia_Sara
             //}
 
             // Después de cerrar Presentacion, abrir MenuPrincipal
-           // Application.Run(new MenuPrincipal());
+           
+           Application.Run(new MenuPrincipal());
             //  Application.Run(new MensajeEmail());
-            //   Application.Run(new Visu());
+             //  Application.Run(new Visu());
             //  Application.Run(new InicioCierre());
-             Application.Run(new Registro());
+           //  Application.Run(new Registro());
 
 
 
