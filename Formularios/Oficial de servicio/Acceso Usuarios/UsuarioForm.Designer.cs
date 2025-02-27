@@ -92,7 +92,7 @@
             btn_Registrarse.Margin = new System.Windows.Forms.Padding(0);
             btn_Registrarse.Name = "btn_Registrarse";
             btn_Registrarse.Size = new System.Drawing.Size(116, 33);
-            btn_Registrarse.TabIndex = 6;
+            btn_Registrarse.TabIndex = 3;
             btn_Registrarse.Text = "REGISTRARSE";
             btn_Registrarse.UseVisualStyleBackColor = false;
             btn_Registrarse.Click += Btn_Registrarse_Click;
@@ -110,7 +110,7 @@
             btn_Ingresar.Location = new System.Drawing.Point(333, 129);
             btn_Ingresar.Name = "btn_Ingresar";
             btn_Ingresar.Size = new System.Drawing.Size(88, 33);
-            btn_Ingresar.TabIndex = 5;
+            btn_Ingresar.TabIndex = 2;
             btn_Ingresar.Text = "INGRESAR";
             btn_Ingresar.UseVisualStyleBackColor = false;
             btn_Ingresar.Click += Btn_Ingresar_Click;
@@ -137,7 +137,7 @@
             textBox_Contraseña.SelectionStart = 0;
             textBox_Contraseña.ShowError = false;
             textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
-            textBox_Contraseña.TabIndex = 4;
+            textBox_Contraseña.TabIndex = 1;
             textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Contraseña.TextValue = "";
             textBox_Contraseña.Whidth = 0;
@@ -162,7 +162,7 @@
             textBox_Usuario.SelectionStart = 0;
             textBox_Usuario.ShowError = false;
             textBox_Usuario.Size = new System.Drawing.Size(232, 24);
-            textBox_Usuario.TabIndex = 3;
+            textBox_Usuario.TabIndex = 0;
             textBox_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Usuario.TextValue = "";
             textBox_Usuario.Whidth = 0;
@@ -173,8 +173,8 @@
             label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Contraseña.Location = new System.Drawing.Point(53, 85);
             label_Contraseña.Name = "label_Contraseña";
-            label_Contraseña.Size = new System.Drawing.Size(119, 16);
-            label_Contraseña.TabIndex = 2;
+            label_Contraseña.Size = new System.Drawing.Size(146, 20);
+            label_Contraseña.TabIndex = 102;
             label_Contraseña.Text = "CONTRASEÑA :";
             // 
             // label_Usuario
@@ -183,8 +183,8 @@
             label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Usuario.Location = new System.Drawing.Point(89, 51);
             label_Usuario.Name = "label_Usuario";
-            label_Usuario.Size = new System.Drawing.Size(83, 16);
-            label_Usuario.TabIndex = 1;
+            label_Usuario.Size = new System.Drawing.Size(103, 20);
+            label_Usuario.TabIndex = 101;
             label_Usuario.Text = "USUARIO :";
             // 
             // label_TITULO
@@ -196,13 +196,13 @@
             label_TITULO.Location = new System.Drawing.Point(135, 12);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(306, 26);
-            label_TITULO.TabIndex = 0;
+            label_TITULO.Size = new System.Drawing.Size(357, 31);
+            label_TITULO.TabIndex = 100;
             label_TITULO.Text = "VALIDACION DE USUARIOS";
             // 
             // UsuarioForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(569, 232);
             Controls.Add(panel1);

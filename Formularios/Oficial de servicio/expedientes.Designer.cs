@@ -72,7 +72,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_DatosActuacion = new System.Windows.Forms.Label();
             textBox_Caratula = new CustomTextBox();
             label_Caratula = new System.Windows.Forms.Label();
-            textBox_Causante = new CustomTextBox();
+            textBox_Nombre = new CustomTextBox();
             label_Victima = new System.Windows.Forms.Label();
             label_TITULO = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
@@ -102,7 +102,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1.Controls.Add(label_DatosActuacion);
             panel1.Controls.Add(textBox_Caratula);
             panel1.Controls.Add(label_Caratula);
-            panel1.Controls.Add(textBox_Causante);
+            panel1.Controls.Add(textBox_Nombre);
             panel1.Controls.Add(label_Victima);
             panel1.Name = "panel1";
             // 
@@ -125,6 +125,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_NumeroIpp.ShowError = false;
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
+            textBox_NumeroIpp.Whidth = 0;
             // 
             // comboBox_Ipp1
             // 
@@ -255,7 +256,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             resources.ApplyResources(btn_Imprimir, "btn_Imprimir");
             btn_Imprimir.Name = "btn_Imprimir";
             btn_Imprimir.UseVisualStyleBackColor = false;
-            btn_Imprimir.Click += btn_Imprimir_Click;
+            btn_Imprimir.Click += Btn_Imprimir_Click;
             // 
             // btn_Guardar
             // 
@@ -280,7 +281,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             resources.ApplyResources(btn_Limpiar, "btn_Limpiar");
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.UseVisualStyleBackColor = false;
-            btn_Limpiar.Click += btn_Limpiar_Click;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
             // groupBox_TextosConvertidos
             // 
@@ -321,7 +322,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             resources.ApplyResources(btn_EliminarArchivo, "btn_EliminarArchivo");
             btn_EliminarArchivo.Name = "btn_EliminarArchivo";
             btn_EliminarArchivo.UseVisualStyleBackColor = true;
-            btn_EliminarArchivo.Click += btn_EliminarArchivo_Click;
+            btn_EliminarArchivo.Click += Btn_EliminarArchivo_Click;
             // 
             // radioButton_Word
             // 
@@ -330,7 +331,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             radioButton_Word.Name = "radioButton_Word";
             radioButton_Word.TabStop = true;
             radioButton_Word.UseVisualStyleBackColor = true;
-            radioButton_Word.CheckedChanged += radioButton_Word_CheckedChanged;
+            radioButton_Word.CheckedChanged += RadioButton_Word_CheckedChanged;
             // 
             // radioButton_Pdf
             // 
@@ -420,10 +421,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // Fecha_Instruccion
             // 
+            Fecha_Instruccion.AñoMaximo = 2025;
+            Fecha_Instruccion.AñoMinimo = 1930;
             Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
             Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
             resources.ApplyResources(Fecha_Instruccion, "Fecha_Instruccion");
             Fecha_Instruccion.Name = "Fecha_Instruccion";
+            Fecha_Instruccion.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
+            Fecha_Instruccion.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             // 
             // label_Fecha
             // 
@@ -542,7 +547,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             radioButton_Juzgado.Name = "radioButton_Juzgado";
             radioButton_Juzgado.TabStop = true;
             radioButton_Juzgado.UseVisualStyleBackColor = true;
-            radioButton_Juzgado.CheckedChanged += radioButton_Juzgado_CheckedChanged;
+            radioButton_Juzgado.CheckedChanged += RadioButton_Juzgado_CheckedChanged;
             // 
             // radioButton_Fiscalia
             // 
@@ -550,7 +555,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             radioButton_Fiscalia.Name = "radioButton_Fiscalia";
             radioButton_Fiscalia.TabStop = true;
             radioButton_Fiscalia.UseVisualStyleBackColor = true;
-            radioButton_Fiscalia.CheckedChanged += radioButton_Fiscalia_CheckedChanged;
+            radioButton_Fiscalia.CheckedChanged += RadioButton_Fiscalia_CheckedChanged;
             // 
             // label_DatosActuacion
             // 
@@ -577,31 +582,33 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.ShowError = false;
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
+            textBox_Caratula.Whidth = 0;
             // 
             // label_Caratula
             // 
             resources.ApplyResources(label_Caratula, "label_Caratula");
             label_Caratula.Name = "label_Caratula";
             // 
-            // textBox_Causante
+            // textBox_Nombre
             // 
-            textBox_Causante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            textBox_Causante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            textBox_Causante.BackColor = System.Drawing.Color.White;
-            textBox_Causante.ErrorColor = System.Drawing.Color.Red;
-            textBox_Causante.FocusColor = System.Drawing.Color.Blue;
-            resources.ApplyResources(textBox_Causante, "textBox_Causante");
-            textBox_Causante.MaxLength = 32767;
-            textBox_Causante.Multiline = false;
-            textBox_Causante.Name = "textBox_Causante";
-            textBox_Causante.PasswordChar = '\0';
-            textBox_Causante.PlaceholderColor = System.Drawing.Color.Gray;
-            textBox_Causante.PlaceholderText = "";
-            textBox_Causante.ReadOnly = false;
-            textBox_Causante.SelectionStart = 0;
-            textBox_Causante.ShowError = false;
-            textBox_Causante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            textBox_Causante.TextValue = "";
+            textBox_Nombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            textBox_Nombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            textBox_Nombre.BackColor = System.Drawing.Color.White;
+            textBox_Nombre.ErrorColor = System.Drawing.Color.Red;
+            textBox_Nombre.FocusColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(textBox_Nombre, "textBox_Nombre");
+            textBox_Nombre.MaxLength = 32767;
+            textBox_Nombre.Multiline = false;
+            textBox_Nombre.Name = "textBox_Nombre";
+            textBox_Nombre.PasswordChar = '\0';
+            textBox_Nombre.PlaceholderColor = System.Drawing.Color.Gray;
+            textBox_Nombre.PlaceholderText = "";
+            textBox_Nombre.ReadOnly = false;
+            textBox_Nombre.SelectionStart = 0;
+            textBox_Nombre.ShowError = false;
+            textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Nombre.TextValue = "";
+            textBox_Nombre.Whidth = 0;
             // 
             // label_Victima
             // 
@@ -662,7 +669,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Label label_Instructor;
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_Caratula;
         private System.Windows.Forms.Label label_Caratula;
-        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Causante;
+        private Ofelia_Sara.Controles.General.CustomTextBox textBox_Nombre;
         private System.Windows.Forms.Label label_Victima;
         private System.Windows.Forms.Label label_DatosInstruccion;
         private System.Windows.Forms.GroupBox groupBox_ConversorDocumentos;

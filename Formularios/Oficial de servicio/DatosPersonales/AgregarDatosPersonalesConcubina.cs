@@ -36,8 +36,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             CalcularEdad.Inicializar(dateTimePicker_FechaNacimiento, textBox_Edad);//para automatizar edad
 
-            FormatoTexto();
-
             btn_AgregarConcubina.Enabled = false;
             InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton
 
@@ -47,22 +45,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
         #endregion
 
-        /// <summary>
-        /// aplica formato de texto a dziferentes campos
-        /// </summary>
-        private void FormatoTexto()
-        {
-            MayusculaSola.AplicarAControl(comboBox_Parentesco.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_Nombre);
-            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
-            MayusculaSola.AplicarAControl(comboBox_Nacionalidad.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_Ocupacion);
-            MayusculaSola.AplicarAControl(textBox_Apodo);
-            MayusculaSola.AplicarAControl(textBox_Localidad);
-            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
-        }
+   
 
         private void ComboBox_EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -127,9 +110,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             this.Location = originalPosition;
         }
 
-    
-
-      
+   
 
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {

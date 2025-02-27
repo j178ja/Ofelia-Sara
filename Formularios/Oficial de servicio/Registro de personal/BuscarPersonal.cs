@@ -187,7 +187,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void TextBox_NumeroLegajo_TextChanged(object sender, EventArgs e)
         {
             
-            ValidarYHabilitarBoton(textBox_NumeroLegajo, btn_AgregarPersonal, null, 6);//habilita el btn_AgregarPersonal en caso de tener (5 caracteres)
+          //  ValidarYHabilitarBoton(textBox_NumeroLegajo, btn_AgregarPersonal, null, 6);//habilita el btn_AgregarPersonal en caso de tener (5 caracteres)
         }
 
         #endregion

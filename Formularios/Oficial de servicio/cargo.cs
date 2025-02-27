@@ -3,6 +3,7 @@ using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
+using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General;
@@ -113,8 +114,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
   
 
-            CargarAño(comboBox_Ipp4);
-            CargarAño(comboBox_Año);
+            //CargarAño(comboBox_Ipp4);
+            //CargarAño(comboBox_Año);
 
             Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
@@ -292,72 +293,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //            break;
             //    }
             //}
-            ValidarYHabilitarBoton(textBox_Caratula, btn_AgregarCausa, null, 3);
-            ValidarYHabilitarBoton(textBox_Victima,  btn_AgregarVictima,null, 3);
-            ValidarYHabilitarBoton(textBox_Imputado,  btn_AgregarImputado,null, 3);
+            //ValidarYHabilitarBoton(textBox_Caratula, btn_AgregarCausa, null, 3);
+            //ValidarYHabilitarBoton(textBox_Victima,  btn_AgregarVictima,null, 3);
+            //ValidarYHabilitarBoton(textBox_Imputado,  btn_AgregarImputado,null, 3);
         }
 
 
-        private void InicializarComboBoxFISCALIA()
-        {
-
-            // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
-            List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
-            List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
-            List<string> localidades = FiscaliaManager.ObtenerLocalidades().Distinct().ToList();
-
-            // Asignar las listas a los ComboBoxes correspondientes
-            comboBox_Fiscalia.DataSource = nombresFiscalias;
-            comboBox_AgenteFiscal.DataSource = agentesFiscales;
-            comboBox_Localidad.DataSource = localidades;
-
-            comboBox_Fiscalia.SelectedIndex = -1;
-            comboBox_AgenteFiscal.SelectedIndex = -1;
-            comboBox_Localidad.SelectedIndex = -1;
-        }
-
-        private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Desactivar los ComboBoxes de detalle mientras se actualizan
-            comboBox_AgenteFiscal.Enabled = false;
-            comboBox_Localidad.Enabled = false;
-
-            // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
-            if (comboBox_Fiscalia.SelectedItem != null)
-            {
-                string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
-                Fiscaliajson fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
-
-                if (fiscalia != null)
-                {
-                    // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
-                    comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
-                    comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
-
-                }
-                else
-                {
-                    // Si no se encuentra la fiscalía, limpiar los ComboBoxes
-                    comboBox_AgenteFiscal.DataSource = null;
-                    comboBox_Localidad.DataSource = null;
-
-                }
-
-                // Reactivar los ComboBoxes de detalle
-                comboBox_AgenteFiscal.Enabled = true;
-                comboBox_Localidad.Enabled = true;
-            }
-            else
-            {
-                // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
-                comboBox_AgenteFiscal.DataSource = null;
-                comboBox_Localidad.DataSource = null;
-
-                comboBox_AgenteFiscal.Enabled = false;
-                comboBox_Localidad.Enabled = false;
-
-            }
-        }
 
         private void InicializarComboBoxSECRETARIO()
         {
@@ -402,7 +343,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             checkBox_LegajoVehicular.Visible = true;
 
-            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
             InicializarComboBoxINSTRUCTOR();
             InicializarComboBoxDEPENDENCIAS();

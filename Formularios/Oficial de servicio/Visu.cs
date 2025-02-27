@@ -120,7 +120,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
             //.......................................................................
-            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+   
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
@@ -258,77 +258,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
       
-
-        /// <summary>
- 
-
-
-
-
-    
-
-
-        /// <summary>
-        /// INICIALIZA COMBOBOX FISCALIA
-        /// </summary>
-        private void InicializarComboBoxFISCALIA()
-        {
-            // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
-            List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
-            List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
-            List<string> localidades = FiscaliaManager.ObtenerLocalidades().Distinct().ToList();
-            List<string> deptosJudiciales = FiscaliaManager.ObtenerDeptosJudiciales().Distinct().ToList();
-
-            // Asignar las listas a los ComboBoxes correspondientes
-            comboBox_Fiscalia.DataSource = nombresFiscalias;
-            comboBox_AgenteFiscal.DataSource = agentesFiscales;
-            comboBox_Localidad.DataSource = localidades;
-
-            comboBox_Fiscalia.SelectedIndex = -1;
-            comboBox_AgenteFiscal.SelectedIndex = -1;
-            comboBox_Localidad.SelectedIndex = -1;
-
-        }
-        private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Desactivar los ComboBoxes de detalle mientras se actualizan
-            comboBox_AgenteFiscal.Enabled = false;
-            comboBox_Localidad.Enabled = false;
-
-            // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
-            if (comboBox_Fiscalia.SelectedItem != null)
-            {
-                string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
-                Fiscaliajson fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
-
-                if (fiscalia != null)
-                {
-                    // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
-                    comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
-                    comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
-
-                }
-                else
-                {
-                    // Si no se encuentra la fiscalía, limpiar los ComboBoxes
-                    comboBox_AgenteFiscal.DataSource = null;
-                    comboBox_Localidad.DataSource = null;
-                }
-                // Reactivar los ComboBoxes de detalle
-                comboBox_AgenteFiscal.Enabled = true;
-                comboBox_Localidad.Enabled = true;
-            }
-            else
-            {
-                // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
-                comboBox_AgenteFiscal.DataSource = null;
-                comboBox_Localidad.DataSource = null;
-
-                comboBox_AgenteFiscal.Enabled = false;
-                comboBox_Localidad.Enabled = false;
-
-            }
-        }
 
         #endregion
 
@@ -717,26 +646,26 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     if (radioButton == radioButton_Automovil)
                     {
 
-                        ApplyRoundedCorners(pictureBox_Automovil, 6, true, false, false, true); // Solo esquinas izquierdas
+                        RedondearBordes.Aplicar(pictureBox_Automovil, 6, true, false, false, true); // Solo esquinas izquierdas
                         ResetPictureBoxStyles(); // Restaura los estilos por defecto de los PictureBox
                         pictureBox_Automovil.BackColor = Color.FromArgb(4, 234, 0);
-                        ApplyRoundedCorners(radioButton, 6, false, true, true, false); // Solo esquinas derechas
+                        RedondearBordes.Aplicar(radioButton, 6, false, true, true, false); // Solo esquinas derechas
                     }
                     else if (radioButton == radioButton_Motovehiculo)
                     {
 
-                        ApplyRoundedCorners(pictureBox_Motovehiculo, 6, true, false, false, true);
+                        RedondearBordes.Aplicar(pictureBox_Motovehiculo, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Motovehiculo.BackColor = Color.FromArgb(4, 234, 0);
-                        ApplyRoundedCorners(radioButton, 6, false, true, true, false);
+                        RedondearBordes.Aplicar(radioButton, 6, false, true, true, false);
                     }
                     else if (radioButton == radioButton_Objeto)
                     {
 
-                        ApplyRoundedCorners(pictureBox_Objeto, 6, true, false, false, true);
+                        RedondearBordes.Aplicar(pictureBox_Objeto, 6, true, false, false, true);
                         ResetPictureBoxStyles();
                         pictureBox_Objeto.BackColor = Color.FromArgb(4, 234, 0);
-                        ApplyRoundedCorners(radioButton, 6, false, true, true, false);
+                        RedondearBordes.Aplicar(radioButton, 6, false, true, true, false);
                     }
 
                 }
@@ -769,7 +698,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private static void ApplyCustomFontStyle(RadioButton radioButton)
         {
             // Crea una fuente con negrita y subrayado
-            System.Drawing.Font customFont = new System.Drawing.Font(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Bold);
+            System.Drawing.Font customFont = new(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Bold);
 
             // Cambia la fuente del RadioButton
             radioButton.Font = customFont;
@@ -896,59 +825,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        /// <summary>
-        /// METODO ESPECIFICO PARA REDONDEAR PICTURE Y RADIOBUTON
-        /// </summary>
-
-        private GraphicsPath GetRoundedRectanglePath(System.Drawing.Rectangle bounds, int radius,
-                                             bool roundTopLeft, bool roundTopRight,
-                                             bool roundBottomRight, bool roundBottomLeft)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int diameter = radius * 2;
-
-            // Esquina superior izquierda
-            if (roundTopLeft)
-                path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
-            else
-                path.AddLine(bounds.X, bounds.Y, bounds.X + radius, bounds.Y);
-
-            // Esquina superior derecha
-            if (roundTopRight)
-                path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
-            else
-                path.AddLine(bounds.Right - radius, bounds.Y, bounds.Right, bounds.Y);
-
-            // Esquina inferior derecha
-            if (roundBottomRight)
-                path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
-            else
-                path.AddLine(bounds.Right, bounds.Bottom - radius, bounds.Right, bounds.Bottom);
-
-            // Esquina inferior izquierda
-            if (roundBottomLeft)
-                path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
-            else
-                path.AddLine(bounds.X + radius, bounds.Bottom, bounds.X, bounds.Bottom);
-
-            path.CloseFigure();
-            return path;
-        }
-
-        private void ApplyRoundedCorners(Control control, int radius,
-                                         bool roundTopLeft, bool roundTopRight,
-                                         bool roundBottomRight, bool roundBottomLeft)
-        {
-            if (control.Region != null)
-                control.Region.Dispose();
-
-            using (GraphicsPath path = GetRoundedRectanglePath(control.ClientRectangle, radius,
-                                                               roundTopLeft, roundTopRight,
-                                                               roundBottomRight, roundBottomLeft))
-            {
-                control.Region = new Region(path);
-            }
-        }
 
         #endregion
 

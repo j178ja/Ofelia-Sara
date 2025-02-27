@@ -1,6 +1,7 @@
 ﻿
 
 using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
+using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Tooltip;
@@ -23,6 +24,7 @@ namespace Ofelia_Sara.Formularios.General
     /// </summary>
     public class BaseForm : BaseFormDATOS
     {
+
         #region VARIABLES
         private Cursor cursorFlecha;
         private Cursor customHandCursor;
@@ -32,8 +34,8 @@ namespace Ofelia_Sara.Formularios.General
         private LinkLabel footerLinkLabel;
         private AutocompletarManager autocompletarManager;
         private object panel1;
-
-      
+        public Instruccion _instruccion;// llama a clase que contiene todo el coportamiento de panel_Instruccion
+        private SaltoDeImput _saltoDeImput;
         public BaseForm()
         {
             if (IsInDesignMode)
@@ -44,8 +46,8 @@ namespace Ofelia_Sara.Formularios.General
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
             autocompletarManager = new AutocompletarManager("autocompletar.json");
-  
-
+            _instruccion = new Instruccion(this);
+            _saltoDeImput = new SaltoDeImput(this);
         }
 
         /// <summary>
@@ -58,15 +60,15 @@ namespace Ofelia_Sara.Formularios.General
             AjustarLabelEnPanel();
             InitializeComponent();
             InitializeFooterLinkLabel();
-           Load +=BaseForm_Load;
+            AplicarFormatoTexto(this);
+            MaxLengthControl(this);
+            Load +=BaseForm_Load;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            ConfigurarTextoEnControles();//carga items especificos a comboBox especificos
-            InicializarComboBoxIpp(this);//inicializa valores predeterminados en combobox ipp
-      
+          
             BordePanel1();// redondea los bordes unicamente de panel 1
             AjustarLabelEnPanel(); //centra unicamente Label_TITULO
             ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
@@ -85,9 +87,9 @@ namespace Ofelia_Sara.Formularios.General
         {
             ConfigurarCheckBoxesConImagen();
             InitializeCustomCursors();
-            ConfigurarMaxLengthIpp();
             ConfigurarToolTips();
-            ConfigurarEventosIpp();
+            AplicarFormatoTexto(this);
+            MaxLengthControl(this);
         }
         #endregion
 
@@ -567,161 +569,13 @@ namespace Ofelia_Sara.Formularios.General
         #endregion
 
 
-        #region DATOS IPP
+        #region FORMATO TEXTO
 
         /// <summary>
-        /// CARGAR UN LISTADO DE AÑOS DESDE EL ACTUAL
+        /// Formato de texto de campos especificos
         /// </summary>
-        /// <param name="customComboBox"></param>
-        public static void CargarAño(CustomComboBox customComboBox)
-        {
-            customComboBox.Items.Clear(); // Limpia la lista antes de agregar nuevos valores
-            int anioActual = DateTime.Now.Year;
-
-            for (int i = 0; i <= 5; i++) // Desde el año actual hasta los últimos 5 años
-            {
-                int ultimosDosDigitos = (anioActual - i) % 100;
-                customComboBox.Items.Add(ultimosDosDigitos.ToString("D2")); // Agrega con dos dígitos
-            }
-        }
-
-        /// <summary>
-        /// METODO PARA QUE SOLO SE AGREGEN NUMEROS A COMBOBOX IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo acepta dígitos
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Si el evento viene del InnerTextBox, obtenemos el control padre
-                if (sender is CustomTextBox innerTextBox && innerTextBox.Parent is CustomComboBox customComboBox)
-                {
-                    // Obtiene el texto actual
-                    string currentText = customComboBox.TextValue;
-
-                    // Verifica si es un número válido
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta 6 caracteres
-                        string completedText = currentText.PadLeft(2, '0');
-
-                        // Actualiza el texto en el CustomTextBox
-                        customComboBox.TextValue = completedText;
-
-                        // Posiciona el cursor al final del texto
-                        customComboBox.SelectionStart = customComboBox.TextValue.Length;
-
-                        // Cancela el manejo predeterminado de la tecla Enter
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-
-
-        /// <summary>
-        /// llamar en load de cada form para establecer cantidad de caracteres
-        /// </summary>
-        protected virtual void ConfigurarMaxLengthIpp()
-        {
-            foreach (Control control in this.Controls)
-            {
-                AplicarConfiguracionIpp(control);
-
-                // Si hay controles anidados, recorrerlos también
-                if (control.HasChildren)
-                {
-                    RecorrerControlesAnidados(control);
-                }
-            }
-        }
-
-
-        /// <summary>
-        /// agrega 10 items al list del comboBox
-        /// </summary>
-        /// <param name="comboBox"></param>
-        private static void ConfigurarItemsComboBox(CustomComboBox comboBox)
-        {
-            comboBox.DataSource = null; // Desvincula la lista de datos
-            comboBox.Items.Clear();
-
-            for (int i = 0; i <= 10; i++)
-            {
-                comboBox.Items.Add(i.ToString("D2")); // "00", "01", "02", ..., "10"
-            }
-        }
-
-        ///// <summary>
-        ///// llamar en load de cada form para establecer cantidad de caracteres
-        ///// </summary>
-
-        private static void AplicarConfiguracionIpp(Control control)
-        {
-            if (control is CustomComboBox customComboBox)
-            {
-                switch (customComboBox.Name)
-                {
-                    case "comboBox_Ipp1":
-                    case "comboBox_Ipp2":
-                    case "comboBox_Ipp4":
-                        customComboBox.InnerTextBox.MaxLength = 2;
-                        break;
-                }
-            }
-            else if (control is CustomTextBox textBox)
-            {
-                switch (textBox.Name )
-                {
-                    case "textBox_NumeroIpp":
-                        textBox.MaxLength = 6;
-                        break;
-                    case "textBox_NumeroLegajo":
-                        textBox.MaxLength = 7;
-                        break;
-                    case "textBox_Dni":
-                        textBox.MaxLength = 10;
-                        break;
-                }
-            }
-        }
-        /// <summary>
-        /// ESTABLECE CARACTERÍSTICAS DE TEXTO EN CONTROLES
-        /// </summary>
-        private void ConfigurarTextoEnControles()
-        {
-            foreach (Control control in this.Controls)
-            {
-                AplicarFormatoTexto(control);
-
-                if (control.HasChildren)
-                {
-                    RecorrerControlesAnidados(control);
-                }
-            }
-        }
-
-        private static void RecorrerControlesAnidados(Control parent)
-        {
-            foreach (Control control in parent.Controls)
-            {
-                AplicarFormatoTexto(control);
-
-                if (control.HasChildren)
-                {
-                    RecorrerControlesAnidados(control);
-                }
-            }
-        }
-
-        private static void AplicarFormatoTexto(Control control)
+        /// <param name="control"></param>
+        protected static  void AplicarFormatoTexto(Control control)
         {
             if (control is CustomTextBox textBox)
             {
@@ -749,6 +603,36 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_Apellido":
                         MayusculaSola.AplicarAControl(textBox);
                         break;
+                    case "textBox_Domicilio":
+                        MayusculaYnumeros.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Localidad":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Partido":
+                        ConvertirACamelCase.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Fiscalia":
+                        MayusculaYnumeros.AplicarAControl(textBox);
+                        break;
+                    case "textBox_AgenteFiscal":
+                        ConvertirACamelCase.AplicarAControl(textBox);
+                        break;
+                    case "textBox_DeptoJudicial":
+                        ConvertirACamelCase.AplicarAControl(textBox);
+                        break;
+                    case "textBox_LugarNacimiento":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Ocupacion":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+                    case "textBox_Apodo":
+                        MayusculaSola.AplicarAControl(textBox);
+                        break;
+                    case "textBox_ArtInfraccion":
+                        ClaseNumeros.SoloNumeros(textBox);
+                        break;
 
                 }
             }
@@ -764,6 +648,11 @@ namespace Ofelia_Sara.Formularios.General
                         ConvertirACamelCase.AplicarAControl(comboBox);
                         break;
                     case "comboBox_Localidad":
+                    case "comboBox_Escalafon":
+                    case "comboBox_Jerarquia":
+                    case "comboBox_Funcion":
+                    case "comboBox_Parentesco":
+                    case "comboBox_Nacionalidad":
                         MayusculaSola.AplicarAControl(comboBox);
                         break;
                     case "comboBox_Instructor":
@@ -781,337 +670,61 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        /// <summary>
-        /// Inicializa valores por defecto en los ComboBox IPP
-        /// </summary>
-        private static void InicializarComboBoxIpp(Control parent)
+
+        private static void MaxLengthControl(Control control)
         {
-            foreach (Control control in parent.Controls)
+            if (control is CustomComboBox customComboBox)
             {
-                if (control is CustomComboBox comboBox)
+                switch (customComboBox.Name)
                 {
-                    switch (comboBox.Name)
-                    {
-                        case "comboBox_Ipp1":
-                        case "comboBox_Ipp2":
-                            ConfigurarItemsComboBox(comboBox);
-                            comboBox.SelectedIndex = 3; // Posición predeterminada
-
-
-                            break;
-                        case "comboBox_Ipp4":
-                            CargarAño(comboBox);
-                            break;
-                    }
-                }
-
-                // Si el control tiene hijos, llamar recursivamente al método
-                if (control.HasChildren)
-                {
-                    InicializarComboBoxIpp(control);
+                    case "comboBox_Ipp1":
+                    case "comboBox_Ipp2":
+                    case "comboBox_Ipp4":
+                        customComboBox.InnerTextBox.MaxLength = 2;
+                        break;
                 }
             }
-        }
-
-
-
-
-        /// <summary>
-        /// Evento Leave para completar con ceros los ComboBox IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
-        {
-            if (sender is CustomComboBox customComboBox)
+            else if (control is CustomTextBox textBox)
             {
-                if (int.TryParse(customComboBox.TextValue, out _))
+                switch (textBox.Name)
                 {
-                    customComboBox.TextValue = customComboBox.TextValue.PadLeft(2, '0');
-                    customComboBox.SelectionStart = customComboBox.TextValue.Length;
+                    case "textBox_NumeroIpp":
+                        textBox.MaxLength = 6;
+                        break;
+                    case "textBox_NumeroLegajo":
+                        textBox.MaxLength = 7;// tiene en cuenta el punto
+                        break;
+                    case "textBox_Dni":
+                        textBox.MaxLength = 10;
+                        break;
+                    case "textBox_Edad":
+                        textBox.MaxLength = 2;
+                        break;
+                    case "textBox_ArtInfraccion":// corresponde a art infraccion contravenciona
+                        textBox.MaxLength = 3;
+                        break;
                 }
             }
         }
-
-    
-        /// <summary>
-        /// Evento KeyPress para solo permitir números en los TextBox IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                CompletarConCeros(sender as CustomTextBox);
-                e.Handled = true; // Evitar que se procese Enter
-            }
-        }
-
-      
-        /// <summary>
-        /// Evento Leave para completar con ceros los TextBox IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
-        {
-            CompletarConCeros(sender as CustomTextBox);
-        }
-
-       
-        /// <summary>
-        ///  Método reutilizable para completar con ceros
-        /// </summary>
-        /// <param name="customTextBox"></param>
-        private static void CompletarConCeros(CustomTextBox customTextBox)
-        {
-            if (customTextBox != null && int.TryParse(customTextBox.TextValue, out _))
-            {
-                customTextBox.TextValue = customTextBox.TextValue.PadLeft(6, '0');
-                customTextBox.SelectionStart = customTextBox.TextValue.Length;
-            }
-        }
-
-        /// <summary>
-        /// agerga eventos leave y keypress a ComboBoxIPP
-        /// </summary>
-        protected virtual void ConfigurarEventosIpp()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is CustomComboBox customComboBox)
-                {
-                    customComboBox.Leave += ComboBox_Ipp_Leave;
-                }
-                else if (control is CustomTextBox customTextBox)
-                {
-                    customTextBox.Leave += TextBox_NumeroIpp_Leave;
-                    customTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
-                }
-
-                // Si hay paneles o controles anidados, recorrerlos también
-                if (control.HasChildren)
-                {
-                    ConfigurarEventosEnHijos(control);
-                }
-            }
-        }
-
-        private void ConfigurarEventosEnHijos(Control parentControl)
-        {
-            foreach (Control control in parentControl.Controls)
-            {
-                if (control is CustomComboBox customComboBox)
-                {
-                    customComboBox.Leave += ComboBox_Ipp_Leave;
-                }
-                else if (control is CustomTextBox customTextBox)
-                {
-                    customTextBox.Leave += TextBox_NumeroIpp_Leave;
-                    customTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
-                }
-
-                // Si el control tiene más hijos, aplicar recursivamente
-                if (control.HasChildren)
-                {
-                    ConfigurarEventosEnHijos(control);
-                }
-            }
-        }
-
-        /// <summary>
-        /// ABRE LOS FORMULARIOS DATOS VICTIMA E IMPUTADO
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="formularioSecundario"></param>
-        /// <param name="textBoxOrigen"></param>
-        /// <param name="propiedadTexto"></param>
-        protected void AbrirFormularioSecundario<T>(ref T formularioSecundario, CustomTextBox textBoxOrigen, string propiedadTexto) where T : Form, new()
-        {
-            if (formularioSecundario == null || formularioSecundario.IsDisposed)
-            {
-                formularioSecundario = new T();
-
-                // Si el formulario secundario tiene un evento personalizado, suscribirse
-                if (formularioSecundario is IFormularioConTexto formularioConTexto)
-                {
-                    formularioConTexto.TextoCambiado += (s, e) =>
-                    {
-                        textBoxOrigen.TextValue = formularioConTexto.TextoNombre;
-                    };
-                }
-            }
-
-            // Copia local para evitar el problema con "ref" en la lambda
-            T formulario = formularioSecundario;
-
-            // Establecer el texto inicial
-            var propiedad = formulario.GetType().GetProperty(propiedadTexto);
-            if (propiedad != null)
-            {
-                propiedad.SetValue(formulario, textBoxOrigen.TextValue);
-            }
-
-            // Suscribirse al evento TextChanged del TextBox en el formulario de origen
-            textBoxOrigen.TextChanged += (s, ev) =>
-            {
-                if (propiedad != null)
-                {
-                    propiedad.SetValue(formulario, textBoxOrigen.TextValue);
-                }
-            };
-
-            // Obtener el formulario original
-            Form originalForm = this;
-
-            // Obtener el tamaño de ambos formularios
-            int totalWidth = originalForm.Width + formulario.Width;
-            int height = Math.Max(originalForm.Height, formulario.Height);
-
-            // Calcular la posición para centrar ambos formularios en la pantalla
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int startX = (screenWidth - totalWidth) / 2;
-            int startY = (screenHeight - height) / 2;
-
-            // Posicionar el formulario secundario a la izquierda del original
-            formulario.StartPosition = FormStartPosition.Manual;
-            formulario.Location = new Point(startX, startY);
-
-            // Posicionar el formulario original a la derecha
-            originalForm.Location = new Point(startX + formulario.Width, startY);
-
-            // Suscribirse al evento FormClosed usando la copia local
-            formulario.FormClosed += (s, args) =>
-            {
-                int centerX = (screenWidth - originalForm.Width) / 2;
-                int centerY = (screenHeight - originalForm.Height) / 2;
-                originalForm.Location = new Point(centerX, centerY);
-            };
-
-            formulario.Show();
-        }
-
-        public interface IFormularioConTexto
-        {
-            event EventHandler TextoCambiado;
-            string TextoNombre { get; set; }
-        }
-
-
-
-        /// <summary>
-        /// generico para botones agregar causa,imputado y victima
-        /// </summary>
-        /// <param name="panelDestino"></param>
-        /// <param name="tipoControl"></param>
-        /// <param name="etiqueta"></param>
-        /// <param name="lista"></param>
-        /// <param name="mensajeValidacion"></param>
-        protected void AgregarNuevoControl(Panel panelDestino, string tipoControl, string etiqueta, List<string> lista = null, string mensajeValidacion = null)
-        {
-            // Si se proporciona un mensaje de validación, validar los controles existentes antes de agregar uno nuevo
-            if (!string.IsNullOrEmpty(mensajeValidacion) && !ValidarControlesExistentes(panelDestino))
-            {
-                MensajeGeneral.Mostrar(mensajeValidacion, MensajeGeneral.TipoMensaje.Advertencia);
-                return;
-            }
-
-            // Agregar un nuevo control al panel especificado
-            var nuevoControl = NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panelDestino, tipoControl, etiqueta);
-
-            // Si la lista no es nula, agregar el nuevo valor a la lista correspondiente
-            if (lista != null && nuevoControl != null)
-            {
-                lista.Add("Nombre de la nueva " + etiqueta);
-            }
-
-            // Si el control es un CustomTextBox, asignar eventos
-            if (nuevoControl != null)
-            {
-                AsignarEventosCustomTextBox(nuevoControl);
-            }
-        }
-
-
-        protected void ValidarYHabilitarBoton(CustomTextBox textBox, Button botonPrincipal, Button? botonSecundario, int caracteresMinimos = 5)
-        {
-            // Contar los caracteres reales (ignorando espacios)
-            int caracteresReales = textBox.TextValue.Count(c => !char.IsWhiteSpace(c));
-
-            // Habilita los botones solo si hay al menos 'caracteresMinimos' caracteres no blancos
-            bool habilitar = caracteresReales >= caracteresMinimos;
-
-            botonPrincipal.Enabled = habilitar;
-
-            // Si botonSecundario no es null, se habilita
-            if (botonSecundario != null)
-            {
-                botonSecundario.Enabled = habilitar;
-            }
-
-            // Cambiar el color de fondo del botonPrincipal
-        //    botonPrincipal.BackColor = habilitar ? System.Drawing.Color.GreenYellow : System.Drawing.Color.Tomato;
-        }
-
-        protected void RegistrarBotonesAgregar(List<string> victimas, List<string> imputados)
-        {
-            // Definir la configuración de botones una sola vez (Nombres de los controles)
-            ConfiguracionesBotones = new()
-    {
-        { "btn_AgregarCausa", ("panel_Caratula", "CARATULA", "Causa", null, null) },
-        { "btn_AgregarVictima", ("panel_Victima", "VICTIMA", "Victima", victimas,
-            "Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.") },
-        { "btn_AgregarImputado", ("panel_Victima", "IMPUTADO", "Imputado", imputados,
-            "Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.") }
-    };
-
-            // Buscar y asignar eventos a los botones en tiempo de ejecución
-            foreach (var (nombreBoton, config) in ConfiguracionesBotones)
-            {
-                // Buscar los controles en el formulario hijo
-                Button boton = this.Controls.Find(nombreBoton, true).FirstOrDefault() as Button;
-                Panel panel = this.Controls.Find(config.Item1, true).FirstOrDefault() as Panel;
-
-                if (boton != null && panel != null)
-                {
-                    // Guardar la configuración asociada
-                    BotonesConfigurados[boton] = (panel, config.Item2, config.Item3, config.Item4, config.Item5);
-
-                    // Evitar múltiples suscripciones
-                    boton.Click -= Btn_Agregar_Click;
-                    boton.Click += Btn_Agregar_Click;
-                }
-            }
-        }
-
-        private Dictionary<string, (string, string, string, List<string>?, string?)> ConfiguracionesBotones;
-        private Dictionary<Button, (Panel, string, string, List<string>?, string?)> BotonesConfigurados = new();
-
-        private void Btn_Agregar_Click(object sender, EventArgs e)
-        {
-            if (sender is Button boton && BotonesConfigurados.TryGetValue(boton, out var config))
-            {
-                AgregarNuevoControl(config.Item1, config.Item2, config.Item3, config.Item4, config.Item5);
-            }
-        }
-
-
-        
-
-
 
         #endregion
+        #region COMPORTAMIENTO FISCALIA
+        /// <summary>
+        /// Método para inicializar los ComboBox de fiscalía desde cualquier formulario que herede de BaseForm.
+        /// </summary>
+        protected void InicializarComboBoxFiscalia(ComboBox comboFiscalia, ComboBox comboAgente, ComboBox comboLocalidad, ComboBox comboDepto)
+        {
+            _instruccion.InicializarComboBoxFiscalia(comboFiscalia, comboAgente, comboLocalidad, comboDepto);
+        }
 
-
-
+        /// <summary>
+        /// Método para actualizar los ComboBox cuando cambia la selección de fiscalía.
+        /// </summary>
+        protected void ActualizarComboBoxFiscalia(string nombreFiscalia, ComboBox comboAgente, ComboBox comboLocalidad, ComboBox comboDepto)
+        {
+            _instruccion.ActualizarComboBoxFiscalia(nombreFiscalia, comboAgente, comboLocalidad, comboDepto);
+        }
+        #endregion
 
         #region VERIFICACION EN PANEL
 
@@ -1293,40 +906,6 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="panel"></param>
         /// <returns></returns>
 
-
-        protected bool ValidarControlesExistentes(Panel panel)
-        {
-            string tipoPersona = panel.Name.Contains("Victima", StringComparison.OrdinalIgnoreCase) ? "VICTIMA" :
-                                 panel.Name.Contains("Imputado", StringComparison.OrdinalIgnoreCase) ? "IMPUTADO" : "PERSONA";
-
-            foreach (Control control in panel.Controls)
-            {
-                if (control is NuevaPersonaControl personaControl)
-                {
-                    // Removemos espacios en blanco para contar solo caracteres significativos
-                    string texto = personaControl.TextBox_Persona.Text.Trim();
-
-                    if (texto.Length < 3) // Validar al menos 5 caracteres no vacíos
-                    {
-                        MensajeGeneral.Mostrar($"Complete todos los campos con al menos 3 caracteres para agregar una nueva {tipoPersona}",
-                                               MensajeGeneral.TipoMensaje.Advertencia);
-                        return false; // Retorna false si hay un control con texto inválido
-                    }
-                }
-            }
-            return true; // Todos los controles cumplen con la validación
-        }
-
-        protected void AsignarEventosCustomTextBox(Control nuevoControl)
-        {
-            if (nuevoControl is CustomTextBox customTextBox)
-            {
-                customTextBox.TextChanged += (s, e) =>
-                {
-                   
-                };
-            }
-        }
 
         #endregion
 

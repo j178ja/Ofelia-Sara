@@ -53,7 +53,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBoton(btn_Limpiar);
 
           
-            MayusculaSola.AplicarAControl(textBox_Causante);
          
 
             pictureBox_APdf.AllowDrop = true;
@@ -87,37 +86,33 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //---´PARA QUE CONVIERTA ARCHIVOS PDF A WORD-----
         private void PictureBox_AWord_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-
             // Verifica que el PictureBox esté habilitado
-            if (pictureBox != null && pictureBox.Enabled)
+            if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                using OpenFileDialog openFileDialog = new OpenFileDialog();
+                // Configurar el filtro para permitir solo archivos PDF
+                openFileDialog.Filter = "Archivos Word (*.pdf)|*.pdf";
+                openFileDialog.Title = "Selecciona un archivo PDF";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Configurar el filtro para permitir solo archivos PDF
-                    openFileDialog.Filter = "Archivos Word (*.pdf)|*.pdf";
-                    openFileDialog.Title = "Selecciona un archivo PDF";
-
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    try
                     {
-                        try
-                        {
-                            // Guardar la ruta del archivo en la variable correspondiente
-                            rutaArchivoWord = openFileDialog.FileName;
+                        // Guardar la ruta del archivo en la variable correspondiente
+                        rutaArchivoWord = openFileDialog.FileName;
 
-                            // Cambiar la imagen del PictureBox para indicar que el archivo fue cargado
-                            pictureBox.Image = Properties.Resources.pdf; // Asegúrate de tener la imagen pdf en los recursos
-                            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                        // Cambiar la imagen del PictureBox para indicar que el archivo fue cargado
+                        pictureBox.Image = Properties.Resources.pdf; // Asegúrate de tener la imagen pdf en los recursos
+                        pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
-                            // Opcional: Cambiar el color de fondo del PictureBox
-                            pictureBox.BackColor = Color.LightGreen;
+                        // Opcional: Cambiar el color de fondo del PictureBox
+                        pictureBox.BackColor = Color.LightGreen;
 
 
-                        }
-                        catch (Exception ex)
-                        {
-                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
             }
@@ -125,20 +120,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void CargarArchivoEnPictureBox(PictureBox pictureBox, ref string rutaArchivo, string filtro, Bitmap icono)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = filtro;
+            openFileDialog.Title = "Selecciona un archivo";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                openFileDialog.Filter = filtro;
-                openFileDialog.Title = "Selecciona un archivo";
+                rutaArchivo = openFileDialog.FileName; // Guarda la ruta del archivo
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    rutaArchivo = openFileDialog.FileName; // Guarda la ruta del archivo
-
-                    // Cargar la imagen de recurso para indicar que el archivo fue cargado
-                    pictureBox.Image = icono;
-                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox.BackColor = Color.LightGreen; // Color de confirmación
-                }
+                // Cargar la imagen de recurso para indicar que el archivo fue cargado
+                pictureBox.Image = icono;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.BackColor = Color.LightGreen; // Color de confirmación
             }
         }
 
@@ -148,36 +141,32 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //---´PARA QUE CONVIERTA ARCHIVOS PDF A WORD-----
         private void PictureBox_APdf_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-
             // Verifica que el PictureBox esté habilitado
-            if (pictureBox != null && pictureBox.Enabled)
+            if (sender is PictureBox pictureBox && pictureBox.Enabled)
             {
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                using OpenFileDialog openFileDialog = new OpenFileDialog();
+                // Configurar el filtro para permitir solo archivos PDF
+                openFileDialog.Filter = "Archivos PDF (*.docx)|*.docx";
+                openFileDialog.Title = "Selecciona un archivo WORD";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Configurar el filtro para permitir solo archivos PDF
-                    openFileDialog.Filter = "Archivos PDF (*.docx)|*.docx";
-                    openFileDialog.Title = "Selecciona un archivo WORD";
-
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    try
                     {
-                        try
-                        {
-                            // Guardar la ruta del archivo en la variable correspondiente
-                            rutaArchivoPdf = openFileDialog.FileName;
+                        // Guardar la ruta del archivo en la variable correspondiente
+                        rutaArchivoPdf = openFileDialog.FileName;
 
-                            // Cambiar la imagen del PictureBox para indicar que el archivo fue cargado
-                            pictureBox.Image = Properties.Resources.doc; // Asegúrate de tener la imagen doc en los recursos
-                            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                        // Cambiar la imagen del PictureBox para indicar que el archivo fue cargado
+                        pictureBox.Image = Properties.Resources.doc; // Asegúrate de tener la imagen doc en los recursos
+                        pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
-                            // Cambiar el color de fondo del PictureBox
-                            pictureBox.BackColor = Color.LightGreen;
+                        // Cambiar el color de fondo del PictureBox
+                        pictureBox.BackColor = Color.LightGreen;
 
-                        }
-                        catch (Exception ex)
-                        {
-                            MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MensajeGeneral.Mostrar("No se pudo cambiar la imagen del PictureBox: " + ex.Message, MensajeGeneral.TipoMensaje.Error);
                     }
                 }
             }
@@ -221,8 +210,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void PictureBox_APdf_DragDrop(object sender, DragEventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
+            if (sender is PictureBox pictureBox)
             {
                 try
                 {
@@ -249,8 +237,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //_________________________________________________________________________________
         private void PictureBox_AWord_DragDrop(object sender, DragEventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
+            if (sender is PictureBox pictureBox)
             {
                 try
                 {
@@ -336,7 +323,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void radioButton_Word_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_Word_CheckedChanged(object sender, EventArgs e)
         {
             ActualizarControles();
             if (radioButton_Word.Checked)
@@ -506,7 +493,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         //____________________________________________________________________________________
         //-----btn para eliminar archivo en pickturebox
 
-        private void btn_EliminarArchivo_Click(object sender, EventArgs e)
+        private void Btn_EliminarArchivo_Click(object sender, EventArgs e)
         {
             radioButton_Pdf.Checked = false; // Desmarcar el CheckBox
             radioButton_Word.Checked = false; // Desmarcar el CheckBox
@@ -544,9 +531,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 AjustarTamañoFormulario(alturaControlRemovido, eliminar: true);
             }
         }
-
+        
         // Evento que se dispara cuando el RadioButton_Juzgado cambia su estado
-        private void radioButton_Juzgado_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_Juzgado_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton_Juzgado.Checked)
             {
@@ -574,7 +561,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void radioButton_Fiscalia_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_Fiscalia_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton_Fiscalia.Checked)
             {
@@ -605,7 +592,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             // Llama al método estático Limpiar de la clase LimpiarFormulario
             LimpiarFormulario.Limpiar(this);
@@ -770,14 +757,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 throw new ArgumentNullException(nameof(rutaArchivo), "La ruta de acceso no puede ser nula o vacía.");
             }
 
-            using (var md5 = System.Security.Cryptography.MD5.Create())
-            {
-                using (var stream = File.OpenRead(rutaArchivo))
-                {
-                    byte[] hash = md5.ComputeHash(stream);
-                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-                }
-            }
+            using var md5 = System.Security.Cryptography.MD5.Create();
+            using var stream = File.OpenRead(rutaArchivo);
+            byte[] hash = md5.ComputeHash(stream);
+            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
         }
         private void AgregarRadioButtonALosPaneles()
         {
@@ -798,13 +781,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 if (control is Panel panel)
                 {
-                    // Crea un nuevo RadioButton
+
                     RadioButton radioButton = new RadioButton
                     {
                         Location = new System.Drawing.Point(panel.Width - 45, 6),
                         AutoSize = true
                     };
-                    // Asigna el manejador de eventos CheckedChanged
+
                     radioButton.CheckedChanged += RadioButton_Convertido_CheckedChanged;
                     panel.Controls.Add(radioButton);
                 }
@@ -888,8 +871,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Evento para abrir el archivo cuando se hace clic en el link
             linkArchivo.LinkClicked += (s, ev) =>
             {
-                LinkLabel link = s as LinkLabel;
-                if (link != null && !string.IsNullOrEmpty(link.Tag as string))
+                if (s is LinkLabel link && !string.IsNullOrEmpty(link.Tag as string))
                 {
                     try
                     {
@@ -911,8 +893,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Habilitar el desplazamiento (scroll) si el texto es más largo que el ancho del LinkLabel
             linkArchivo.MouseWheel += (s, e) =>
             {
-                LinkLabel link = s as LinkLabel;
-                if (link != null)
+                if (s is LinkLabel link)
                 {
                     // Desplazar el texto horizontalmente usando la rueda del mouse
                     link.Left += (e.Delta > 0) ? 10 : -10; // Mueve el texto a la izquierda o derecha
@@ -964,18 +945,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (iconoBorrar != null)
             {
                 // Obtén el panel que contiene el PictureBox
-                Panel panelContenedor = iconoBorrar.Parent as Panel;
 
-                if (panelContenedor != null)
+                if (iconoBorrar.Parent is Panel panelContenedor)
                 {
                     // Confirmar antes de eliminar el panel
-                    var resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este archivo?",
-                                                     "Confirmar eliminación",
-                                                     MessageBoxButtons.YesNo,
-                                                     MessageBoxIcon.Question);
+                    using MensajeGeneral resultado = new("¿Estás seguro de que deseas eliminar este archivo?",
+                                                    MensajeGeneral.TipoMensaje.Advertencia);
+                    resultado.MostrarBotonesConfirmacion(true);
 
-                    if (resultado == DialogResult.Yes)
+                    DialogResult result = resultado.ShowDialog();
+                    if (result == DialogResult.Yes)
                     {
+
                         // Obtener la altura del panel antes de eliminarlo
                         int alturaPanelRemovido = panelContenedor.Height;
 
@@ -1046,8 +1027,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         // Manejador de eventos para el hover (cuando el cursor sale del PictureBox)
         private void IconoBorrar_MouseLeave(object sender, EventArgs e)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox != null)
+            if (sender is PictureBox pictureBox)
             {
                 pictureBox.Width -= 3; // Reduce el ancho en 10 píxeles
                 pictureBox.Height -= 3; // Reduce la altura en 10 píxeles
@@ -1152,14 +1132,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         public Dictionary<string, string> ObtenerDatosFormulario()
         {
-            var datosFormulario = new Dictionary<string, string>();
-
-            // Añadimos los valores de los controles al diccionario
-            datosFormulario.Add("Nombre", textBox_Caratula.Text);  // "Nombre" es el marcador en Word
-            datosFormulario.Add("Apellido", textBox_Causante.Text);
-            datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());  // Ajusté los nombres de las claves para ser únicos
-            datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
-            datosFormulario.Add("Dependencia", comboBox_Dependencia.SelectedItem.ToString());
+            var datosFormulario = new Dictionary<string, string>
+            {
+                // Añadimos los valores de los controles al diccionario
+                { "Nombre", textBox_Caratula.Text },  // "Nombre" es el marcador en Word
+                { "Apellido", textBox_Nombre.Text },
+                { "Instructor", comboBox_Instructor.SelectedItem.ToString() },  // Ajusté los nombres de las claves para ser únicos
+                { "Secretario", comboBox_Secretario.SelectedItem.ToString() },
+                { "Dependencia", comboBox_Dependencia.SelectedItem.ToString() }
+            };
             // datosFormulario.Add("Fecha_Instruccion", Fecha_Instruccion.SelectedDate.ToString("dd/MM/yyyy"));
 
             return datosFormulario;
@@ -1168,7 +1149,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool ValidarDatosFormulario()
         {
             // Verificar si los campos están completos
-            if (string.IsNullOrWhiteSpace(textBox_Causante.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
                 comboBox_Instructor.SelectedItem == null ||
                 comboBox_Secretario.SelectedItem == null ||
                 comboBox_Dependencia.SelectedItem == null)// ||
@@ -1184,7 +1165,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         //------------------------------------------------------------------------------------
         // Método para manejar el evento de impresión
-        private void btn_Imprimir_Click(object sender, EventArgs e)
+        private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
             // Llamar al método de validación
             if (!ValidarDatosFormulario())
@@ -1203,7 +1184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                     string rutaCarpetaSalida = folderBrowserDialog.SelectedPath;
 
                     // Obtener el texto de textBox_Causante y formar el nombre de la carpeta
-                    string nombreCarpeta = $"Exp {textBox_Causante.Text}";
+                    string nombreCarpeta = $"Exp {textBox_Nombre.Text}";
                     string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida, nombreCarpeta);
 
                     // Crear la carpeta si no existe
@@ -1238,7 +1219,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             datosGuardados = true; // Marcar que los datos fueron guardados
         }
@@ -1248,17 +1229,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-                }
+               
+                MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
 

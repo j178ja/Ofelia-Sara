@@ -624,7 +624,7 @@
             comboBox_Fiscalia.TabIndex = 65;
             comboBox_Fiscalia.Text = " ";
             comboBox_Fiscalia.TextValue = " ";
-            comboBox_Fiscalia.SelectedIndexChanged += ComboBox_Fiscalia_SelectedIndexChanged;
+           
             // 
             // lbl_Dependencia
             // 

@@ -138,10 +138,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <param name="e"></param>
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MensajeGeneral.Mostrar("Complete la totalidad de los campos para poder registrar un nuevo Usuario.", MensajeGeneral.TipoMensaje.Advertencia);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+        
+            MostrarMensajeAyuda("Complete la totalidad de los campos para poder registrar un nuevo Usuario.");
         }
      
         /// <summary>
@@ -185,18 +183,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
-        /// <summary>
-        /// VALIDA QUE SEA NUMERO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_Legajo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
+    
 
         /// <summary>
   /// INICIALIZA VERIFICADOR DE MAYUSCULA

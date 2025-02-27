@@ -19,6 +19,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+
+
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
     /// <summary>
@@ -69,9 +71,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
-            // Asocia el evento TextChanged al método de validación
-            textBox_Victima.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
-            textBox_Imputado.TextChanged += new EventHandler(TextBox_HabilitaBTN_TextChanged);
+           
 
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBoton(btn_Limpiar);
@@ -104,13 +104,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha
 
-            RegistrarBotonesAgregar(victimas, imputados);//otorga validacion para los botones agregar, agregando un control especifico en panel correspondiente
+           // RegistrarBotonesAgregar(victimas, imputados);//otorga validacion para los botones agregar, agregando un control especifico en panel correspondiente
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
 
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
-            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+           
 
             //cargar desde base de datos
             CargarDatosDependencia(comboBox_Dependencia, dbManager);
@@ -269,7 +269,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            InicializarComboBoxFISCALIA(); // INICIALIZA LAS FISCALIAS DE ACUERDO A ARCHIVO JSON
+          
 
             comboBox_Dependencia.SelectedIndex = -1;
             comboBox_Instructor.SelectedIndex = -1;
@@ -378,19 +378,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        ///// <summary>
-        ///// METODOS PARA VALIDAR Y HABILITAR BOTON AGREGAR CAUSA IMP VMA
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-    
-
-        private void TextBox_HabilitaBTN_TextChanged(object sender, EventArgs e)
-        {
-            
-                    ActualizarEstado();
-            
-        }
+     
 
 
 
@@ -467,77 +455,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-
-
-        /// <summary>
-        /// INICIALIZAR COMBOX FISCALIA
-        /// </summary>
-        private void InicializarComboBoxFISCALIA()
-        {
-            // Obtener las listas de fiscalías, agentes fiscales, localidades y departamentos judiciales
-            List<string> nombresFiscalias = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
-            List<string> agentesFiscales = FiscaliaManager.ObtenerAgentesFiscales().Distinct().ToList();
-            List<string> localidades = FiscaliaManager.ObtenerLocalidades().Distinct().ToList();
-            List<string> deptosJudiciales = FiscaliaManager.ObtenerDeptosJudiciales().Distinct().ToList();
-
-            // Asignar las listas a los ComboBoxes correspondientes
-            comboBox_Fiscalia.DataSource = nombresFiscalias;
-            comboBox_AgenteFiscal.DataSource = agentesFiscales;
-            comboBox_Localidad.DataSource = localidades;
-            comboBox_DeptoJudicial.DataSource = deptosJudiciales;
-
-            comboBox_Fiscalia.SelectedIndex = -1;
-            comboBox_AgenteFiscal.SelectedIndex = -1;
-            comboBox_Localidad.SelectedIndex = -1;
-            comboBox_DeptoJudicial.SelectedIndex = -1;
-        }
-        private void ComboBox_Fiscalia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Desactivar los ComboBoxes de detalle mientras se actualizan
-            comboBox_AgenteFiscal.Enabled = false;
-            comboBox_Localidad.Enabled = false;
-            comboBox_DeptoJudicial.Enabled = false;
-
-            // Verificar si hay un ítem seleccionado en el comboBox_Fiscalia
-            if (comboBox_Fiscalia.SelectedItem != null)
-            {
-                string nombreFiscalia = comboBox_Fiscalia.SelectedItem.ToString();
-                Fiscaliajson fiscalia = FiscaliaManager.ObtenerFiscaliaPorNombre(nombreFiscalia);
-
-                if (fiscalia != null)
-                {
-                    // Asignar los valores de la fiscalía a los ComboBoxes correspondientes
-                    comboBox_AgenteFiscal.DataSource = new List<string> { fiscalia.AgenteFiscal }.Distinct().ToList();
-                    comboBox_Localidad.DataSource = new List<string> { fiscalia.Localidad }.Distinct().ToList();
-                    comboBox_DeptoJudicial.DataSource = new List<string> { fiscalia.DeptoJudicial }.Distinct().ToList();
-                    ActualizarEstado();
-                }
-                else
-                {
-                    // Si no se encuentra la fiscalía, limpiar los ComboBoxes
-                    comboBox_AgenteFiscal.DataSource = null;
-                    comboBox_Localidad.DataSource = null;
-                    comboBox_DeptoJudicial.DataSource = null;
-                }
-
-                // Reactivar los ComboBoxes de detalle
-                comboBox_AgenteFiscal.Enabled = true;
-                comboBox_Localidad.Enabled = true;
-                comboBox_DeptoJudicial.Enabled = true;
-            }
-            else
-            {
-                // Si no hay selección, limpiar y desactivar los ComboBoxes de detalle
-                comboBox_AgenteFiscal.DataSource = null;
-                comboBox_Localidad.DataSource = null;
-                comboBox_DeptoJudicial.DataSource = null;
-
-                comboBox_AgenteFiscal.Enabled = false;
-                comboBox_Localidad.Enabled = false;
-                comboBox_DeptoJudicial.Enabled = false;
-            }
-        }
-       
        
 
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
@@ -564,7 +481,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 string Dependencia = comboBox_Dependencia.TextValue;
 
                 // Crear y mostrar el formulario CARGO, pasando los valores obtenidos
-                Cargo cargo = new Cargo(Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
+                Cargo cargo = new(Ipp1, Ipp2, NumeroIpp, Ipp4, Caratula, Victima, Imputado,
                                         Fiscalia, AgenteFiscal, Localidad, Instructor, Secretario, Dependencia);
 
 
@@ -1028,7 +945,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AgregarDatosImputado_Click(object sender, EventArgs e)
         {
-            AbrirFormularioSecundario(ref agregarDatosPersonalesImputado, textBox_Imputado, "TextoNombre");
+            //AbrirFormularioSecundario(ref agregarDatosPersonalesImputado, textBox_Imputado, "TextoNombre");
         }
 
         /// <summary>
@@ -1036,7 +953,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void Btn_AgregarDatosVictima_Click(object sender, EventArgs e)
         {
-            AbrirFormularioSecundario(ref agregarDatosPersonalesVictima, textBox_Victima, "TextoNombre");
+          //  AbrirFormularioSecundario(ref agregarDatosPersonalesVictima, textBox_Victima, "TextoNombre");
 
         }
 

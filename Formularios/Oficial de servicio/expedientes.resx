@@ -384,8 +384,528 @@
   <data name="panel_ConversorDocumentos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.Name" xml:space="preserve">
+    <value>panel_ControlesInferiores</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.Name" xml:space="preserve">
+    <value>groupBox_TextosConvertidos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_TextosConvertidos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_Convertir.Name" xml:space="preserve">
+    <value>btn_Convertir</value>
+  </data>
+  <data name="&gt;&gt;btn_Convertir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Convertir.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;btn_Convertir.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.Name" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_ConversorDocumentos.Name" xml:space="preserve">
+    <value>label_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;label_ConversorDocumentos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ConversorDocumentos.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;label_ConversorDocumentos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 247</value>
+  </data>
+  <data name="panel_ConversorDocumentos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>829, 477</value>
+  </data>
+  <data name="panel_ConversorDocumentos.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;panel_ConversorDocumentos.Name" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;panel_ConversorDocumentos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ConversorDocumentos.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel_ConversorDocumentos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel_Control.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 227</value>
+  </data>
+  <data name="panel_Control.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 14</value>
+  </data>
+  <data name="panel_Control.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="&gt;&gt;panel_Control.Name" xml:space="preserve">
+    <value>panel_Control</value>
+  </data>
+  <data name="&gt;&gt;panel_Control.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Control.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel_Control.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="panel_DatosInstruccion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;label_DatosInstruccion.Name" xml:space="preserve">
+    <value>label_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;label_DatosInstruccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_DatosInstruccion.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;label_DatosInstruccion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_Instructor.Name" xml:space="preserve">
+    <value>label_Instructor</value>
+  </data>
+  <data name="&gt;&gt;label_Instructor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Instructor.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;label_Instructor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_Secretario.Name" xml:space="preserve">
+    <value>label_Secretario</value>
+  </data>
+  <data name="&gt;&gt;label_Secretario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Secretario.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;label_Secretario.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Fecha_Instruccion.Name" xml:space="preserve">
+    <value>Fecha_Instruccion</value>
+  </data>
+  <data name="&gt;&gt;Fecha_Instruccion.Type" xml:space="preserve">
+    <value>Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Fecha_Instruccion.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;Fecha_Instruccion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_Fecha.Name" xml:space="preserve">
+    <value>label_Fecha</value>
+  </data>
+  <data name="&gt;&gt;label_Fecha.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Fecha.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;label_Fecha.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label_Dependencia.Name" xml:space="preserve">
+    <value>label_Dependencia</value>
+  </data>
+  <data name="&gt;&gt;label_Dependencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Dependencia.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;label_Dependencia.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Dependencia.Name" xml:space="preserve">
+    <value>comboBox_Dependencia</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Dependencia.Type" xml:space="preserve">
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Dependencia.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Dependencia.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Instructor.Name" xml:space="preserve">
+    <value>comboBox_Instructor</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Instructor.Type" xml:space="preserve">
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Instructor.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Instructor.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Secretario.Name" xml:space="preserve">
+    <value>comboBox_Secretario</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Secretario.Type" xml:space="preserve">
+    <value>Ofelia_Sara.Controles.General.CustomComboBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Secretario.Parent" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Secretario.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="panel_DatosInstruccion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>433, 39</value>
+  </data>
+  <data name="panel_DatosInstruccion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>430, 158</value>
+  </data>
+  <data name="panel_DatosInstruccion.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="&gt;&gt;panel_DatosInstruccion.Name" xml:space="preserve">
+    <value>panel_DatosInstruccion</value>
+  </data>
+  <data name="&gt;&gt;panel_DatosInstruccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_DatosInstruccion.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel_DatosInstruccion.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Juzgado.Name" xml:space="preserve">
+    <value>radioButton_Juzgado</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Juzgado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Juzgado.Parent" xml:space="preserve">
+    <value>groupBox_SeleccionadorProcedencia</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Juzgado.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Fiscalia.Name" xml:space="preserve">
+    <value>radioButton_Fiscalia</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Fiscalia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Fiscalia.Parent" xml:space="preserve">
+    <value>groupBox_SeleccionadorProcedencia</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Fiscalia.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_SeleccionadorProcedencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold, Italic, Underline</value>
+  </data>
+  <data name="groupBox_SeleccionadorProcedencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 170</value>
+  </data>
+  <data name="groupBox_SeleccionadorProcedencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 51</value>
+  </data>
+  <data name="groupBox_SeleccionadorProcedencia.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="groupBox_SeleccionadorProcedencia.Text" xml:space="preserve">
+    <value>Proveniente de</value>
+  </data>
+  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Name" xml:space="preserve">
+    <value>groupBox_SeleccionadorProcedencia</value>
+  </data>
+  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_DatosActuacion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_DatosActuacion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold, Underline</value>
+  </data>
+  <data name="label_DatosActuacion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_DatosActuacion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 39</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_DatosActuacion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 5, 30, 5</value>
+  </data>
+  <data name="label_DatosActuacion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 34</value>
+  </data>
+  <data name="label_DatosActuacion.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="label_DatosActuacion.Text" xml:space="preserve">
+    <value>DATOS DE LA ACTUACIÓN</value>
+  </data>
+  <data name="&gt;&gt;label_DatosActuacion.Name" xml:space="preserve">
+    <value>label_DatosActuacion</value>
+  </data>
+  <data name="&gt;&gt;label_DatosActuacion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_DatosActuacion.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label_DatosActuacion.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="textBox_Caratula.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 83</value>
+  </data>
+  <data name="textBox_Caratula.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 21</value>
+  </data>
+  <data name="textBox_Caratula.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox_Caratula.Name" xml:space="preserve">
+    <value>textBox_Caratula</value>
+  </data>
+  <data name="&gt;&gt;textBox_Caratula.Type" xml:space="preserve">
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;textBox_Caratula.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Caratula.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_Caratula.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Caratula.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="label_Caratula.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_Caratula.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 86</value>
+  </data>
+  <data name="label_Caratula.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 18</value>
+  </data>
+  <data name="label_Caratula.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_Caratula.Text" xml:space="preserve">
+    <value>CARATULA</value>
+  </data>
+  <data name="&gt;&gt;label_Caratula.Name" xml:space="preserve">
+    <value>label_Caratula</value>
+  </data>
+  <data name="&gt;&gt;label_Caratula.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Caratula.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label_Caratula.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="textBox_Nombre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 138</value>
+  </data>
+  <data name="textBox_Nombre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 20</value>
+  </data>
+  <data name="textBox_Nombre.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;textBox_Nombre.Name" xml:space="preserve">
+    <value>textBox_Nombre</value>
+  </data>
+  <data name="&gt;&gt;textBox_Nombre.Type" xml:space="preserve">
+    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;textBox_Nombre.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_Nombre.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label_Victima.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Victima.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="label_Victima.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_Victima.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 139</value>
+  </data>
+  <data name="label_Victima.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 18</value>
+  </data>
+  <data name="label_Victima.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_Victima.Text" xml:space="preserve">
+    <value>CAUSANTE</value>
+  </data>
+  <data name="&gt;&gt;label_Victima.Name" xml:space="preserve">
+    <value>label_Victima</value>
+  </data>
+  <data name="&gt;&gt;label_Victima.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Victima.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label_Victima.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 19</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>886, 727</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="panel_ControlesInferiores.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="&gt;&gt;btn_Imprimir.Name" xml:space="preserve">
+    <value>btn_Imprimir</value>
+  </data>
+  <data name="&gt;&gt;btn_Imprimir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Imprimir.Parent" xml:space="preserve">
+    <value>panel_ControlesInferiores</value>
+  </data>
+  <data name="&gt;&gt;btn_Imprimir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btn_Guardar.Name" xml:space="preserve">
+    <value>btn_Guardar</value>
+  </data>
+  <data name="&gt;&gt;btn_Guardar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Guardar.Parent" xml:space="preserve">
+    <value>panel_ControlesInferiores</value>
+  </data>
+  <data name="&gt;&gt;btn_Guardar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.Name" xml:space="preserve">
+    <value>btn_Buscar</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.Parent" xml:space="preserve">
+    <value>panel_ControlesInferiores</value>
+  </data>
+  <data name="&gt;&gt;btn_Buscar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_Limpiar.Name" xml:space="preserve">
+    <value>btn_Limpiar</value>
+  </data>
+  <data name="&gt;&gt;btn_Limpiar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Limpiar.Parent" xml:space="preserve">
+    <value>panel_ControlesInferiores</value>
+  </data>
+  <data name="&gt;&gt;btn_Limpiar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel_ControlesInferiores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 359</value>
+  </data>
+  <data name="panel_ControlesInferiores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 115</value>
+  </data>
+  <data name="panel_ControlesInferiores.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.Name" xml:space="preserve">
+    <value>panel_ControlesInferiores</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;panel_ControlesInferiores.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btn_Imprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -809,27 +1329,6 @@
   <data name="&gt;&gt;btn_Limpiar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panel_ControlesInferiores.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 359</value>
-  </data>
-  <data name="panel_ControlesInferiores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>758, 115</value>
-  </data>
-  <data name="panel_ControlesInferiores.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="&gt;&gt;panel_ControlesInferiores.Name" xml:space="preserve">
-    <value>panel_ControlesInferiores</value>
-  </data>
-  <data name="&gt;&gt;panel_ControlesInferiores.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_ControlesInferiores.Parent" xml:space="preserve">
-    <value>panel_ConversorDocumentos</value>
-  </data>
-  <data name="&gt;&gt;panel_ControlesInferiores.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="groupBox_TextosConvertidos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt, style=Bold, Italic</value>
   </data>
@@ -889,6 +1388,111 @@
   </data>
   <data name="groupBox_ConversorDocumentos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="&gt;&gt;btn_EliminarArchivo.Name" xml:space="preserve">
+    <value>btn_EliminarArchivo</value>
+  </data>
+  <data name="&gt;&gt;btn_EliminarArchivo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_EliminarArchivo.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;btn_EliminarArchivo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Word.Name" xml:space="preserve">
+    <value>radioButton_Word</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Word.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Word.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Word.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Pdf.Name" xml:space="preserve">
+    <value>radioButton_Pdf</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Pdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Pdf.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Pdf.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_AWord.Name" xml:space="preserve">
+    <value>pictureBox_AWord</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_AWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_AWord.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_AWord.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_APdf.Name" xml:space="preserve">
+    <value>pictureBox_APdf</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_APdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_APdf.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_APdf.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAWord.Name" xml:space="preserve">
+    <value>label_ConvertirAWord</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAWord.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAWord.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAPdf.Name" xml:space="preserve">
+    <value>label_ConvertirAPdf</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAPdf.Parent" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;label_ConvertirAPdf.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="groupBox_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>205, 43</value>
+  </data>
+  <data name="groupBox_ConversorDocumentos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>422, 262</value>
+  </data>
+  <data name="groupBox_ConversorDocumentos.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.Name" xml:space="preserve">
+    <value>groupBox_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.Parent" xml:space="preserve">
+    <value>panel_ConversorDocumentos</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ConversorDocumentos.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btn_EliminarArchivo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -1088,27 +1692,6 @@
   <data name="&gt;&gt;label_ConvertirAPdf.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="groupBox_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 43</value>
-  </data>
-  <data name="groupBox_ConversorDocumentos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 262</value>
-  </data>
-  <data name="groupBox_ConversorDocumentos.TabIndex" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="&gt;&gt;groupBox_ConversorDocumentos.Name" xml:space="preserve">
-    <value>groupBox_ConversorDocumentos</value>
-  </data>
-  <data name="&gt;&gt;groupBox_ConversorDocumentos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_ConversorDocumentos.Parent" xml:space="preserve">
-    <value>panel_ConversorDocumentos</value>
-  </data>
-  <data name="&gt;&gt;groupBox_ConversorDocumentos.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="label_ConversorDocumentos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1121,7 +1704,6 @@
   <data name="label_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
     <value>251, 5</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label_ConversorDocumentos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>30, 5, 30, 5</value>
   </data>
@@ -1145,51 +1727,6 @@
   </data>
   <data name="&gt;&gt;label_ConversorDocumentos.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="panel_ConversorDocumentos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 247</value>
-  </data>
-  <data name="panel_ConversorDocumentos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>829, 477</value>
-  </data>
-  <data name="panel_ConversorDocumentos.TabIndex" type="System.Int32, mscorlib">
-    <value>91</value>
-  </data>
-  <data name="&gt;&gt;panel_ConversorDocumentos.Name" xml:space="preserve">
-    <value>panel_ConversorDocumentos</value>
-  </data>
-  <data name="&gt;&gt;panel_ConversorDocumentos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_ConversorDocumentos.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel_ConversorDocumentos.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="panel_Control.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 227</value>
-  </data>
-  <data name="panel_Control.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 14</value>
-  </data>
-  <data name="panel_Control.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="&gt;&gt;panel_Control.Name" xml:space="preserve">
-    <value>panel_Control</value>
-  </data>
-  <data name="&gt;&gt;panel_Control.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_Control.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel_Control.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="panel_DatosInstruccion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="label_DatosInstruccion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1557,27 +2094,6 @@
   <data name="&gt;&gt;comboBox_Secretario.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="panel_DatosInstruccion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 39</value>
-  </data>
-  <data name="panel_DatosInstruccion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 158</value>
-  </data>
-  <data name="panel_DatosInstruccion.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="&gt;&gt;panel_DatosInstruccion.Name" xml:space="preserve">
-    <value>panel_DatosInstruccion</value>
-  </data>
-  <data name="&gt;&gt;panel_DatosInstruccion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_DatosInstruccion.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel_DatosInstruccion.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="radioButton_Juzgado.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1642,198 +2158,6 @@
     <value>groupBox_SeleccionadorProcedencia</value>
   </data>
   <data name="&gt;&gt;radioButton_Fiscalia.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox_SeleccionadorProcedencia.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt, style=Bold, Italic, Underline</value>
-  </data>
-  <data name="groupBox_SeleccionadorProcedencia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 170</value>
-  </data>
-  <data name="groupBox_SeleccionadorProcedencia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 51</value>
-  </data>
-  <data name="groupBox_SeleccionadorProcedencia.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="groupBox_SeleccionadorProcedencia.Text" xml:space="preserve">
-    <value>Proveniente de</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Name" xml:space="preserve">
-    <value>groupBox_SeleccionadorProcedencia</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SeleccionadorProcedencia.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label_DatosActuacion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_DatosActuacion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold, Underline</value>
-  </data>
-  <data name="label_DatosActuacion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label_DatosActuacion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 39</value>
-  </data>
-  <data name="label_DatosActuacion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 5, 30, 5</value>
-  </data>
-  <data name="label_DatosActuacion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>330, 34</value>
-  </data>
-  <data name="label_DatosActuacion.TabIndex" type="System.Int32, mscorlib">
-    <value>81</value>
-  </data>
-  <data name="label_DatosActuacion.Text" xml:space="preserve">
-    <value>DATOS DE LA ACTUACIÓN</value>
-  </data>
-  <data name="&gt;&gt;label_DatosActuacion.Name" xml:space="preserve">
-    <value>label_DatosActuacion</value>
-  </data>
-  <data name="&gt;&gt;label_DatosActuacion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_DatosActuacion.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label_DatosActuacion.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="textBox_Caratula.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 83</value>
-  </data>
-  <data name="textBox_Caratula.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 21</value>
-  </data>
-  <data name="textBox_Caratula.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;textBox_Caratula.Name" xml:space="preserve">
-    <value>textBox_Caratula</value>
-  </data>
-  <data name="&gt;&gt;textBox_Caratula.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBox_Caratula.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;textBox_Caratula.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="label_Caratula.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_Caratula.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
-  </data>
-  <data name="label_Caratula.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label_Caratula.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 86</value>
-  </data>
-  <data name="label_Caratula.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 18</value>
-  </data>
-  <data name="label_Caratula.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label_Caratula.Text" xml:space="preserve">
-    <value>CARATULA</value>
-  </data>
-  <data name="&gt;&gt;label_Caratula.Name" xml:space="preserve">
-    <value>label_Caratula</value>
-  </data>
-  <data name="&gt;&gt;label_Caratula.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_Caratula.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label_Caratula.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="textBox_Causante.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 138</value>
-  </data>
-  <data name="textBox_Causante.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 20</value>
-  </data>
-  <data name="textBox_Causante.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;textBox_Causante.Name" xml:space="preserve">
-    <value>textBox_Causante</value>
-  </data>
-  <data name="&gt;&gt;textBox_Causante.Type" xml:space="preserve">
-    <value>Ofelia_Sara.Controles.General.CustomTextBox, Ofelia-Sara, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;textBox_Causante.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;textBox_Causante.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="label_Victima.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_Victima.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
-  </data>
-  <data name="label_Victima.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label_Victima.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 139</value>
-  </data>
-  <data name="label_Victima.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 18</value>
-  </data>
-  <data name="label_Victima.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label_Victima.Text" xml:space="preserve">
-    <value>CAUSANTE</value>
-  </data>
-  <data name="&gt;&gt;label_Victima.Name" xml:space="preserve">
-    <value>label_Victima</value>
-  </data>
-  <data name="&gt;&gt;label_Victima.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_Victima.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label_Victima.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 21</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>886, 727</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label_TITULO.AutoSize" type="System.Boolean, mscorlib">
@@ -2964,11 +3288,8 @@
         xhscrAxtalEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>154697, 7216, 154697, 7216</value>
+    <value>2320455, 43296, 2320455, 43296</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>18, 47</value>

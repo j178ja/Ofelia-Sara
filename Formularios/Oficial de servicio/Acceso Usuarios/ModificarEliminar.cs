@@ -52,7 +52,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             InicializarEstiloBotonPropio(btn_Guardar);
             InicializarEstiloBotonPropio(btn_Editar);
 
-            RedondearBordes.Aplicar(panel1, 15);
+    
         }
         #endregion
 
@@ -112,11 +112,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <param name="e"></param>
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MensajeGeneral.Mostrar("Seleccione qué tipo de elemento desea modificar y posteriormente seleccione cuál elemento desea modificar o eliminar."
-                , MensajeGeneral.TipoMensaje.Informacion);
-
-            e.Cancel = true; // Cancelar el evento para que no se cierre el formulario
+        
+            MostrarMensajeAyuda("Seleccione qué tipo de elemento desea modificar y posteriormente seleccione cuál " +
+                "elemento desea modificar o eliminar.");
         }
+
 
         private void ListBox_Seleccion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -408,16 +408,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             };
 
             // Inicializa los controles para mostrar los detalles
-            CustomTextBox textBox_NombreFiscalia = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomTextBox textBox_AgenteFiscal = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomTextBox textBox_Localidad = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomTextBox textBox_DeptoJudicial = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
+            CustomTextBox textBox_NombreFiscalia = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_AgenteFiscal = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_Localidad = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_DeptoJudicial = new() { ReadOnly = true, Width = 295, Height = 21 };
 
             // Inicializa los Label para los nombres de los campos
-            Label label_NombreFiscalia = new Label { Text = "FISCALIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_AgenteFiscal = new Label { Text = "DR. :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Localidad = new Label { Text = "Localidad :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_DeptoJudicial = new Label { Text = "Depto. Judicial :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_NombreFiscalia = new() { Text = "FISCALIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_AgenteFiscal = new() { Text = "DR. :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Localidad = new() { Text = "Localidad :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_DeptoJudicial = new() { Text = "Depto. Judicial :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
 
             // Añade los controles al panel
             panel_Detalles.Controls.Add(label_NombreFiscalia);
@@ -481,22 +481,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             };
 
             // Inicializa los controles para mostrar los detalles
-            CustomTextBox textBox_Legajo = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomComboBox comboBox_Escalafon = new CustomComboBox { Width = 295, Height = 20, Enabled = false };
-            CustomComboBox comboBox_Jerarquia = new CustomComboBox { Width = 295, Height = 20, Enabled = false };
-            CustomTextBox textBox_Nombre = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomTextBox textBox_Apellido = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomComboBox comboBox_Dependencia = new CustomComboBox { Width = 295, Height = 20, Enabled = false };
-            CustomTextBox textBox_Funcion = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
+            CustomTextBox textBox_Legajo = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomComboBox comboBox_Escalafon = new() { Width = 295, Height = 20, Enabled = false };
+            CustomComboBox comboBox_Jerarquia = new() { Width = 295, Height = 20, Enabled = false };
+            CustomTextBox textBox_Nombre = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_Apellido = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomComboBox comboBox_Dependencia = new() { Width = 295, Height = 20, Enabled = false };
+            CustomTextBox textBox_Funcion = new() { ReadOnly = true, Width = 295, Height = 21 };
 
             // Inicializa los Label para los nombres de los campos
-            Label label_Legajo = new Label { Text = "LEGAJO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Escalafon = new Label { Text = "ESCALAFON :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Jerarquia = new Label { Text = "JERARQUIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Nombre = new Label { Text = "NOMBRE :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Apellido = new Label { Text = "APELLIDO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Dependencia = new Label { Text = "DEPENDENCIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Funcion = new Label { Text = "FUNCION :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Legajo = new() { Text = "LEGAJO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Escalafon = new() { Text = "ESCALAFON :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Jerarquia = new() { Text = "JERARQUIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Nombre = new() { Text = "NOMBRE :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Apellido = new() { Text = "APELLIDO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Dependencia = new() { Text = "DEPENDENCIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Funcion = new() { Text = "FUNCION :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
 
             // Añade los controles al panel
             panel_Detalles.Controls.Add(label_Legajo);
@@ -567,22 +567,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             //LimpiarControlesInstructor();
 
             // Inicializa los controles para mostrar los detalles
-            CustomTextBox textBox_Legajo = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomComboBox comboBox_Escalafon = new CustomComboBox { Width = 295, Height = 20, Enabled = false };
-            CustomComboBox comboBox_Jerarquia = new CustomComboBox { Width = 295, Height = 20, Enabled = false };
-            CustomTextBox textBox_Nombre = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomTextBox textBox_Apellido = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
-            CustomComboBox comboBox_Dependencia = new CustomComboBox { Width = 295, Height = 20, Enabled = false };
-            CustomTextBox textBox_Funcion = new CustomTextBox { ReadOnly = true, Width = 295, Height = 20 };
+            CustomTextBox textBox_Legajo = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomComboBox comboBox_Escalafon = new() { Width = 295, Height = 20, Enabled = false };
+            CustomComboBox comboBox_Jerarquia = new() { Width = 295, Height = 20, Enabled = false };
+            CustomTextBox textBox_Nombre = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_Apellido = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomComboBox comboBox_Dependencia = new() { Width = 295, Height = 20, Enabled = false };
+            CustomTextBox textBox_Funcion = new() { ReadOnly = true, Width = 295, Height = 21 };
 
             // Inicializa los Label para los nombres de los campos
-            Label label_Legajo = new Label { Text = "LEGAJO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Escalafon = new Label { Text = "ESCALAFON :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Jerarquia = new Label { Text = "JERARQUIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Nombre = new Label { Text = "NOMBRE :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Apellido = new Label { Text = "APELLIDO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Dependencia = new Label { Text = "DEPENDENCIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
-            Label label_Funcion = new Label { Text = "FUNCION :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Legajo = new() { Text = "LEGAJO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Escalafon = new() { Text = "ESCALAFON :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Jerarquia = new() { Text = "JERARQUIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Nombre = new() { Text = "NOMBRE :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Apellido = new() { Text = "APELLIDO :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Dependencia = new() { Text = "DEPENDENCIA :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
+            Label label_Funcion = new() { Text = "FUNCION :", AutoSize = true, Font = new Font("Arial", 12, FontStyle.Bold) };
 
             // Añade los controles al panel
             panel_Detalles.Controls.Add(label_Legajo);
@@ -1107,7 +1107,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
                 try
                 {
                     // Llama a tu manager para guardar en la base de datos
-                    ComisariasManager comisariasManager = new ComisariasManager();
+                    ComisariasManager comisariasManager = new();
                     comisariasManager.UpdateComisaria(selectedComisaria.Id, selectedComisaria.Nombre, selectedComisaria.Direccion, selectedComisaria.Localidad, selectedComisaria.Partido);
 
                     MensajeGeneral.Mostrar("Los cambios han sido guardados exitosamente.", MensajeGeneral.TipoMensaje.Exito);
@@ -1150,7 +1150,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             };
 
             // Crear instancia del manager y llamar al método de actualización
-            InstructoresManager manager = new InstructoresManager();
+            InstructoresManager manager = new();
             manager.UpdateInstructor(instructorId, instructorEditado.Legajo, instructorEditado.Subescalafon, instructorEditado.Jerarquia, instructorEditado.Nombre, instructorEditado.Apellido, instructorEditado.Dependencia, instructorEditado.Funcion);
 
             // Mostrar mensaje de confirmación
@@ -1166,8 +1166,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         }
         private int ObtenerIdDelInstructorSeleccionado()
         {
-            // Asumiendo que tienes un ComboBox llamado comboBox_Instructor
-            // que contiene objetos Instructor o una representación adecuada.
+            
 
             if (comboBox_Instructor.SelectedItem != null)
             {

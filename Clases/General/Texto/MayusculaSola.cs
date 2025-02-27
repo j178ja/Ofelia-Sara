@@ -13,13 +13,7 @@ public static class MayusculaSola
     /// <exception cref="ArgumentException"></exception>
     public static void AplicarAControl(Control control)
     {
-        if (control == null)
-            throw new ArgumentNullException(nameof(control), "El control no puede ser nulo.");
-
-        // Verificar si el control es compatible
-        if (!(control is TextBoxBase || control is CustomComboBox || control is CustomTextBox))
-            throw new ArgumentException("El control no es compatible. Solo se admiten TextBox, ComboBox y controles personalizados derivados.");
-
+      
         // Configurar eventos para convertir texto a mayúsculas y filtrar caracteres
         if (control is TextBoxBase textBox)
         {

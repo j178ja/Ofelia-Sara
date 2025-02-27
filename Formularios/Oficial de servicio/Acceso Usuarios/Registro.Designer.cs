@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             panel1 = new System.Windows.Forms.Panel();
             pictureBox_MayusculaActivada = new System.Windows.Forms.PictureBox();
@@ -53,7 +52,6 @@
             label_Contraseña = new System.Windows.Forms.Label();
             label_Usuario = new System.Windows.Forms.Label();
             label_Registro = new System.Windows.Forms.Label();
-            toolTip1 = new System.Windows.Forms.ToolTip(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_MayusculaActivada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_OjoContraseña).BeginInit();
@@ -86,7 +84,7 @@
             panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(527, 409);
-            panel1.TabIndex = 4;
+            panel1.TabIndex = 110;
             // 
             // pictureBox_MayusculaActivada
             // 
@@ -108,7 +106,7 @@
             numeroTelefonicoControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
             numeroTelefonicoControl1.Size = new System.Drawing.Size(226, 33);
-            numeroTelefonicoControl1.TabIndex = 31;
+            numeroTelefonicoControl1.TabIndex = 8;
             // 
             // label_TelValidacion2
             // 
@@ -117,7 +115,7 @@
             label_TelValidacion2.Location = new System.Drawing.Point(60, 289);
             label_TelValidacion2.Name = "label_TelValidacion2";
             label_TelValidacion2.Size = new System.Drawing.Size(154, 20);
-            label_TelValidacion2.TabIndex = 30;
+            label_TelValidacion2.TabIndex = 110;
             label_TelValidacion2.Text = "RECUPERACION";
             // 
             // label_TelValidacion
@@ -127,7 +125,7 @@
             label_TelValidacion.Location = new System.Drawing.Point(78, 272);
             label_TelValidacion.Name = "label_TelValidacion";
             label_TelValidacion.Size = new System.Drawing.Size(107, 20);
-            label_TelValidacion.TabIndex = 28;
+            label_TelValidacion.TabIndex = 109;
             label_TelValidacion.Text = "TELEFONO";
             // 
             // pictureBox_OjoContraseña
@@ -171,8 +169,8 @@
             comboBox_Jerarquia.SelectedText = "";
             comboBox_Jerarquia.SelectionStart = 0;
             comboBox_Jerarquia.ShowError = false;
-            comboBox_Jerarquia.Size = new System.Drawing.Size(232, 24);
-            comboBox_Jerarquia.TabIndex = 26;
+            comboBox_Jerarquia.Size = new System.Drawing.Size(232, 21);
+            comboBox_Jerarquia.TabIndex = 1;
             comboBox_Jerarquia.Text = " ";
             comboBox_Jerarquia.TextValue = " ";
             // 
@@ -205,8 +203,8 @@
             comboBox_Escalafon.SelectedText = "";
             comboBox_Escalafon.SelectionStart = 0;
             comboBox_Escalafon.ShowError = false;
-            comboBox_Escalafon.Size = new System.Drawing.Size(232, 24);
-            comboBox_Escalafon.TabIndex = 25;
+            comboBox_Escalafon.Size = new System.Drawing.Size(232, 21);
+            comboBox_Escalafon.TabIndex = 0;
             comboBox_Escalafon.Text = " ";
             comboBox_Escalafon.TextValue = " ";
             // 
@@ -217,7 +215,7 @@
             label_Subescalafon.Location = new System.Drawing.Point(50, 41);
             label_Subescalafon.Name = "label_Subescalafon";
             label_Subescalafon.Size = new System.Drawing.Size(169, 20);
-            label_Subescalafon.TabIndex = 24;
+            label_Subescalafon.TabIndex = 101;
             label_Subescalafon.Text = "SUBESCALAFON :";
             // 
             // btn_Limpiar
@@ -228,7 +226,7 @@
             btn_Limpiar.Location = new System.Drawing.Point(129, 322);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
-            btn_Limpiar.TabIndex = 23;
+            btn_Limpiar.TabIndex = 10;
             btn_Limpiar.UseVisualStyleBackColor = false;
             btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
@@ -240,7 +238,7 @@
             btn_Registrarse.Location = new System.Drawing.Point(370, 322);
             btn_Registrarse.Name = "btn_Registrarse";
             btn_Registrarse.Size = new System.Drawing.Size(75, 67);
-            btn_Registrarse.TabIndex = 22;
+            btn_Registrarse.TabIndex = 9;
             btn_Registrarse.UseVisualStyleBackColor = false;
             btn_Registrarse.Click += Btn_Registrarse_Click;
             // 
@@ -251,7 +249,7 @@
             label_Legajo.Location = new System.Drawing.Point(112, 170);
             label_Legajo.Name = "label_Legajo";
             label_Legajo.Size = new System.Drawing.Size(94, 20);
-            label_Legajo.TabIndex = 21;
+            label_Legajo.TabIndex = 105;
             label_Legajo.Text = "LEGAJO :";
             // 
             // textBox_NumeroLegajo
@@ -272,12 +270,11 @@
             textBox_NumeroLegajo.ReadOnly = false;
             textBox_NumeroLegajo.SelectionStart = 0;
             textBox_NumeroLegajo.ShowError = false;
-            textBox_NumeroLegajo.Size = new System.Drawing.Size(232, 24);
-            textBox_NumeroLegajo.TabIndex = 20;
+            textBox_NumeroLegajo.Size = new System.Drawing.Size(232, 21);
+            textBox_NumeroLegajo.TabIndex = 5;
             textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
             textBox_NumeroLegajo.Whidth = 0;
-            textBox_NumeroLegajo.KeyPress += TextBox_Legajo_KeyPress;
             // 
             // label_Apellido
             // 
@@ -286,7 +283,7 @@
             label_Apellido.Location = new System.Drawing.Point(98, 142);
             label_Apellido.Name = "label_Apellido";
             label_Apellido.Size = new System.Drawing.Size(112, 20);
-            label_Apellido.TabIndex = 19;
+            label_Apellido.TabIndex = 104;
             label_Apellido.Text = "APELLIDO :";
             // 
             // textBox_Apellido
@@ -307,8 +304,8 @@
             textBox_Apellido.ReadOnly = false;
             textBox_Apellido.SelectionStart = 0;
             textBox_Apellido.ShowError = false;
-            textBox_Apellido.Size = new System.Drawing.Size(232, 24);
-            textBox_Apellido.TabIndex = 18;
+            textBox_Apellido.Size = new System.Drawing.Size(232, 21);
+            textBox_Apellido.TabIndex = 4;
             textBox_Apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Apellido.TextValue = "";
             textBox_Apellido.Whidth = 0;
@@ -331,8 +328,8 @@
             textBox_Nombre.ReadOnly = false;
             textBox_Nombre.SelectionStart = 0;
             textBox_Nombre.ShowError = false;
-            textBox_Nombre.Size = new System.Drawing.Size(232, 24);
-            textBox_Nombre.TabIndex = 17;
+            textBox_Nombre.Size = new System.Drawing.Size(232, 21);
+            textBox_Nombre.TabIndex = 2;
             textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Nombre.TextValue = "";
             textBox_Nombre.Whidth = 0;
@@ -344,7 +341,7 @@
             label_Nombre.Location = new System.Drawing.Point(105, 112);
             label_Nombre.Name = "label_Nombre";
             label_Nombre.Size = new System.Drawing.Size(101, 20);
-            label_Nombre.TabIndex = 15;
+            label_Nombre.TabIndex = 103;
             label_Nombre.Text = "NOMBRE :";
             // 
             // label_Jerarquia
@@ -354,7 +351,7 @@
             label_Jerarquia.Location = new System.Drawing.Point(84, 71);
             label_Jerarquia.Name = "label_Jerarquia";
             label_Jerarquia.Size = new System.Drawing.Size(125, 20);
-            label_Jerarquia.TabIndex = 14;
+            label_Jerarquia.TabIndex = 102;
             label_Jerarquia.Text = "JERARQUIA :";
             // 
             // textBox_Contraseña
@@ -375,8 +372,8 @@
             textBox_Contraseña.ReadOnly = false;
             textBox_Contraseña.SelectionStart = 0;
             textBox_Contraseña.ShowError = false;
-            textBox_Contraseña.Size = new System.Drawing.Size(232, 24);
-            textBox_Contraseña.TabIndex = 10;
+            textBox_Contraseña.Size = new System.Drawing.Size(232, 21);
+            textBox_Contraseña.TabIndex = 7;
             textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Contraseña.TextValue = "";
             textBox_Contraseña.Whidth = 0;
@@ -400,8 +397,8 @@
             textBox_Usuario.ReadOnly = false;
             textBox_Usuario.SelectionStart = 0;
             textBox_Usuario.ShowError = false;
-            textBox_Usuario.Size = new System.Drawing.Size(232, 24);
-            textBox_Usuario.TabIndex = 9;
+            textBox_Usuario.Size = new System.Drawing.Size(232, 21);
+            textBox_Usuario.TabIndex = 6;
             textBox_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Usuario.TextValue = "";
             textBox_Usuario.Whidth = 0;
@@ -413,7 +410,7 @@
             label_Contraseña.Location = new System.Drawing.Point(66, 242);
             label_Contraseña.Name = "label_Contraseña";
             label_Contraseña.Size = new System.Drawing.Size(146, 20);
-            label_Contraseña.TabIndex = 8;
+            label_Contraseña.TabIndex = 107;
             label_Contraseña.Text = "CONTRASEÑA :";
             // 
             // label_Usuario
@@ -423,7 +420,7 @@
             label_Usuario.Location = new System.Drawing.Point(102, 212);
             label_Usuario.Name = "label_Usuario";
             label_Usuario.Size = new System.Drawing.Size(103, 20);
-            label_Usuario.TabIndex = 7;
+            label_Usuario.TabIndex = 106;
             label_Usuario.Text = "USUARIO :";
             // 
             // label_Registro
@@ -436,7 +433,7 @@
             label_Registro.Name = "label_Registro";
             label_Registro.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
             label_Registro.Size = new System.Drawing.Size(432, 31);
-            label_Registro.TabIndex = 13;
+            label_Registro.TabIndex = 100;
             label_Registro.Text = "REGISTRO DE NUEVOS USUARIOS";
             // 
             // Registro
@@ -481,7 +478,6 @@
         private Ofelia_Sara.Controles.General.CustomTextBox textBox_NumeroLegajo;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button btn_Registrarse;
-        private System.Windows.Forms.ToolTip toolTip1;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Jerarquia;
         private Ofelia_Sara.Controles.General.CustomComboBox comboBox_Escalafon;
         private System.Windows.Forms.Label label_Subescalafon;

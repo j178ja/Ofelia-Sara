@@ -32,6 +32,7 @@
             panel1 = new System.Windows.Forms.Panel();
             btn_Limpiar = new System.Windows.Forms.Button();
             btn_Guardar = new System.Windows.Forms.Button();
+            label_TITULO = new System.Windows.Forms.Label();
             textBox_DeptoJudicial = new Controles.General.CustomTextBox();
             textBox_Localidad = new Controles.General.CustomTextBox();
             textBox_AgenteFiscal = new Controles.General.CustomTextBox();
@@ -40,7 +41,6 @@
             label_Localidad = new System.Windows.Forms.Label();
             label_Dr = new System.Windows.Forms.Label();
             label_Ufid = new System.Windows.Forms.Label();
-            label_TITULO = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,6 +87,19 @@
             btn_Guardar.UseVisualStyleBackColor = false;
             btn_Guardar.Click += Btn_Guardar_Click;
             // 
+            // label_TITULO
+            // 
+            label_TITULO.AutoSize = true;
+            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
+            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label_TITULO.Location = new System.Drawing.Point(159, -16);
+            label_TITULO.Name = "label_TITULO";
+            label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            label_TITULO.Size = new System.Drawing.Size(279, 35);
+            label_TITULO.TabIndex = 0;
+            label_TITULO.Text = "DATOS FISCALIA";
+            // 
             // textBox_DeptoJudicial
             // 
             textBox_DeptoJudicial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -105,7 +118,7 @@
             textBox_DeptoJudicial.SelectionStart = 0;
             textBox_DeptoJudicial.ShowError = false;
             textBox_DeptoJudicial.Size = new System.Drawing.Size(295, 20);
-            textBox_DeptoJudicial.TabIndex = 8;
+            textBox_DeptoJudicial.TabIndex = 3;
             textBox_DeptoJudicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_DeptoJudicial.TextValue = "";
             textBox_DeptoJudicial.Whidth = 0;
@@ -128,7 +141,7 @@
             textBox_Localidad.SelectionStart = 0;
             textBox_Localidad.ShowError = false;
             textBox_Localidad.Size = new System.Drawing.Size(295, 20);
-            textBox_Localidad.TabIndex = 7;
+            textBox_Localidad.TabIndex = 2;
             textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Localidad.TextValue = "";
             textBox_Localidad.Whidth = 0;
@@ -151,7 +164,7 @@
             textBox_AgenteFiscal.SelectionStart = 0;
             textBox_AgenteFiscal.ShowError = false;
             textBox_AgenteFiscal.Size = new System.Drawing.Size(295, 20);
-            textBox_AgenteFiscal.TabIndex = 6;
+            textBox_AgenteFiscal.TabIndex = 1;
             textBox_AgenteFiscal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_AgenteFiscal.TextValue = "";
             textBox_AgenteFiscal.Whidth = 0;
@@ -178,7 +191,6 @@
             textBox_Fiscalia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Fiscalia.TextValue = "";
             textBox_Fiscalia.Whidth = 0;
-           
             // 
             // label_DptoJudicial
             // 
@@ -186,7 +198,7 @@
             label_DptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_DptoJudicial.Location = new System.Drawing.Point(31, 125);
             label_DptoJudicial.Name = "label_DptoJudicial";
-            label_DptoJudicial.Size = new System.Drawing.Size(110, 16);
+            label_DptoJudicial.Size = new System.Drawing.Size(137, 20);
             label_DptoJudicial.TabIndex = 4;
             label_DptoJudicial.Text = "Dpto. Judicial :";
             // 
@@ -196,7 +208,7 @@
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Localidad.Location = new System.Drawing.Point(43, 99);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(98, 16);
+            label_Localidad.Size = new System.Drawing.Size(127, 20);
             label_Localidad.TabIndex = 3;
             label_Localidad.Text = "LOCALIDAD :";
             // 
@@ -206,7 +218,7 @@
             label_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Dr.Location = new System.Drawing.Point(106, 72);
             label_Dr.Name = "label_Dr";
-            label_Dr.Size = new System.Drawing.Size(35, 16);
+            label_Dr.Size = new System.Drawing.Size(47, 20);
             label_Dr.TabIndex = 2;
             label_Dr.Text = "Dr. :";
             // 
@@ -216,26 +228,13 @@
             label_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Ufid.Location = new System.Drawing.Point(79, 46);
             label_Ufid.Name = "label_Ufid";
-            label_Ufid.Size = new System.Drawing.Size(62, 16);
+            label_Ufid.Size = new System.Drawing.Size(78, 20);
             label_Ufid.TabIndex = 1;
             label_Ufid.Text = "U.F.I.D.:";
             // 
-            // label_TITULO
-            // 
-            label_TITULO.AutoSize = true;
-            label_TITULO.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
-            label_TITULO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_TITULO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label_TITULO.Location = new System.Drawing.Point(159, -16);
-            label_TITULO.Name = "label_TITULO";
-            label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(235, 30);
-            label_TITULO.TabIndex = 0;
-            label_TITULO.Text = "DATOS FISCALIA";
-            // 
             // NuevaFiscalia
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(569, 306);
             Controls.Add(panel1);

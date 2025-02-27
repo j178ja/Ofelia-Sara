@@ -179,8 +179,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         { "comboBox_Escalafon", false } // Configuración según la opción seleccionada
     };
 
-            // Aplicar la lógica a los controles del formulario
-            TextoEnMayuscula.AplicarAControles(this, textBoxExcepciones, comboBoxExcepciones);
 
             //  deshabilitar la edición del ComboBox_Escalafon
             comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;

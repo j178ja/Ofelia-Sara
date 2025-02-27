@@ -267,7 +267,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Victima.TextValue = "";
             textBox_Victima.Whidth = 0;
-            textBox_Victima.TextChanged += TextBox_HabilitaBTN_TextChanged;
+          
             // 
             // textBox_Imputado
             // 
@@ -292,7 +292,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Imputado.TextValue = "";
             textBox_Imputado.Whidth = 0;
-            textBox_Imputado.TextChanged += TextBox_HabilitaBTN_TextChanged;
+        
             // 
             // comboBox_Fiscalia
             // 
@@ -328,7 +328,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Fiscalia.TabIndex = 0;
             comboBox_Fiscalia.Text = " ";
             comboBox_Fiscalia.TextValue = "";
-            comboBox_Fiscalia.SelectedIndexChanged += ComboBox_Fiscalia_SelectedIndexChanged;
+            
             // 
             // comboBox_Instructor
             // 
@@ -947,7 +947,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
             textBox_Caratula.Whidth = 0;
-            textBox_Caratula.TextChanged += TextBox_HabilitaBTN_TextChanged;
+         
 
             // 
             // panel_ControlesInferiores

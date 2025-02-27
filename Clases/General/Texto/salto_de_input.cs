@@ -3,88 +3,89 @@
 ------------PASE AL SIGUIENTE ELEMENTO A COMPLETAR-----------------------*/
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Clases.General.Texto
 {
-    public class SaltoDeImput
-    {
-        private Form _form;
-        private Dictionary<Keys, Func<bool>> _keyActions;
-
-        public SaltoDeImput(Form form)
+    
+        public class SaltoDeImput
         {
-            _form = form;
+            private Form _form;
+            private List<Control> _controlsList;
 
-            // Inicialización del diccionario _keyActions que mapea teclas a funciones booleanas
-            _keyActions = new Dictionary<Keys, Func<bool>>
+            public SaltoDeImput(Form form)
             {
-                { Keys.Enter, MoveNextControl },   // Al presionar Enter, mueve al siguiente control
-                { Keys.Tab, MoveNextControl },     // Al presionar Tab, mueve al siguiente control
-                { Keys.Right, MoveNextControl },   // Al presionar Flecha Derecha, mueve al siguiente control
-                { Keys.Down, MoveNextControl },    // Al presionar Flecha Abajo, mueve al siguiente control
-                { Keys.Left, MovePreviousControl },// Al presionar Flecha Izquierda, mueve al control anterior
-                { Keys.Up, MovePreviousControl }   // Al presionar Flecha Arriba, mueve al control anterior
-            };
+                _form = form;
+                _form.KeyPreview = true;
+                _form.KeyDown += Form_KeyDown;
 
-            // Configura el formulario para recibir eventos de teclado antes de que los controles los manejen
-            _form.KeyPreview = true;
+                ActualizarListaControles();
+            }
 
-            // Suscribe el método Form_KeyDown al evento KeyDown del formulario _form
-            _form.KeyDown += Form_KeyDown;
-        }
-
-        private void Form_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Verifica si la tecla presionada está en el diccionario _keyActions
-            if (_keyActions.TryGetValue(e.KeyCode, out Func<bool> value))
+            private void Form_KeyDown(object sender, KeyEventArgs e)
             {
-                // Ejecuta la función asociada a la tecla y obtiene el resultado (true o false)
-                bool handled = value();
-
-                // Si la acción fue manejada (handled es true), suprime la pulsación de tecla
-                if (handled)
+                switch (e.KeyCode)
                 {
-                    e.Handled = true;
-                    e.SuppressKeyPress = true; // Suprime la tecla para que no se propague el evento
+                    case Keys.Enter:
+                    case Keys.Tab:
+                    case Keys.Right:
+                    case Keys.Down:
+                        if (MoveNextControl()) e.Handled = e.SuppressKeyPress = true;
+                        break;
+
+                    case Keys.Left:
+                    case Keys.Up:
+                        if (MovePreviousControl()) e.Handled = e.SuppressKeyPress = true;
+                        break;
                 }
             }
-        }
 
-        private bool MoveNextControl()
-        {
-            Control currentControl = _form.ActiveControl; // Obtiene el control activo actual
-            if (currentControl != null)
+            public void ActualizarListaControles()
             {
-                int currentIndex = _form.Controls.IndexOf(currentControl); // Obtiene el índice del control actual en la colección de controles
-
-                // Si hay un siguiente control en la colección, lo enfoca y retorna true indicando que la acción fue manejada
-                if (currentIndex < _form.Controls.Count - 1)
-                {
-                    Control nextControl = _form.Controls[currentIndex + 1];
-                    nextControl.Focus(); // Enfoca el siguiente control
-                    return true; // Indica que la acción fue manejada correctamente
-                }
+                _controlsList = GetAllControls(_form)
+                    .Where(c => c.TabStop && c.Enabled && c.Visible)
+                    .OrderBy(c => c.TabIndex)
+                    .ToList();
             }
-            return false; // Indica que no se manejó la acción porque no hay siguiente control o no se pudo enfocar
-        }
 
-        private bool MovePreviousControl()
-        {
-            Control currentControl = _form.ActiveControl; // Obtiene el control activo actual
-            if (currentControl != null)
+            private bool MoveNextControl()
             {
-                int currentIndex = _form.Controls.IndexOf(currentControl); // Obtiene el índice del control actual en la colección de controles
+                Control current = _form.ActiveControl;
+                if (current == null) return false;
 
-                // Si hay un control anterior en la colección, lo enfoca y retorna true indicando que la acción fue manejada
-                if (currentIndex > 0)
+                int index = _controlsList.IndexOf(current);
+                if (index >= 0 && index < _controlsList.Count - 1)
                 {
-                    Control previousControl = _form.Controls[currentIndex - 1];
-                    previousControl.Focus(); // Enfoca el control anterior
-                    return true; // Indica que la acción fue manejada correctamente
+                    _controlsList[index + 1].Focus();
+                    return true;
                 }
+                return false;
             }
-            return false; // Indica que no se manejó la acción porque no hay control anterior o no se pudo enfocar
+
+            private bool MovePreviousControl()
+            {
+                Control current = _form.ActiveControl;
+                if (current == null) return false;
+
+                int index = _controlsList.IndexOf(current);
+                if (index > 0)
+                {
+                    _controlsList[index - 1].Focus();
+                    return true;
+                }
+                return false;
+            }
+
+            private List<Control> GetAllControls(Control parent)
+            {
+                List<Control> controls = new List<Control>();
+                foreach (Control c in parent.Controls)
+                {
+                    controls.Add(c);
+                    if (c.HasChildren) controls.AddRange(GetAllControls(c));
+                }
+                return controls;
+            }
         }
     }
-}
