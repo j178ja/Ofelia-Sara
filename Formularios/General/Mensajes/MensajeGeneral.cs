@@ -41,9 +41,12 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             Color bordeForm = Color.Black;
             Color colorBorde = Color.FromArgb(0, 154, 174); // Color del borde
             FormUtils.AplicarBordesRedondeados(this, radioEsquinas: 16, grosorBorde: 2, bordeForm); // Para el formulario
-           FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
-          //  RedondearBordes.Aplicar(panel1, 15);
-           // RedondearBordes.Aplicar(this, 24);
+            FormUtils.AplicarBordesRedondeados(panel1, radioEsquinas: 12, grosorBorde: 3, colorBorde); // Para el panel
+
+            // por algun motivo al aplicar REDONDEAR BORDES QUEDA HORRIBLE EL ASPECTO Y MODIFICA EL COMPORTAMIENTO
+             //RedondearBordes.Aplicar(panel1, 12);
+            //RedondearBordes.Aplicar(this, 16);
+
 
             // Ajustar altura del Label según el contenido
             AjustarAlturaContenedores();
@@ -88,7 +91,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             Advertencia,
             Error,
             Exito,
-            Cancelacion
+            Cancelacion,
+            ErrorConexion
         }
 
         /// <summary>
@@ -113,6 +117,9 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                     break;
                 case TipoMensaje.Cancelacion:
                     pictureBox_Icono.Image = Properties.Resources.IconoCancelacion;
+                    break;
+                case TipoMensaje.ErrorConexion:
+                    pictureBox_Icono.Image = Properties.Resources.no_wifi;
                     break;
                 default:
                     pictureBox_Icono.Image = null;

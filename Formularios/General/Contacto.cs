@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
@@ -38,6 +39,14 @@ namespace Ofelia_Sara.Formularios.General
         {
             try
             {
+                // Verifica si la URL requiere conexión a Internet
+                if (!url.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) &&
+                    !ConexionInternet.CheckInternetConnection())
+                {
+                    MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.ErrorConexion);
+                    return;
+                }
+
                 var processInfo = new ProcessStartInfo
                 {
                     FileName = url,

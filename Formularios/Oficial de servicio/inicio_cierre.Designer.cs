@@ -775,13 +775,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // btn_CrearDenuncia
             // 
-            btn_CrearDenuncia.BackgroundImage = Properties.Resources.iconoEscribiendo;
+            btn_CrearDenuncia.BackgroundImage = (Image)resources.GetObject("btn_CrearDenuncia.BackgroundImage");
             btn_CrearDenuncia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btn_CrearDenuncia.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_CrearDenuncia.Location = new Point(489, 3);
             btn_CrearDenuncia.Name = "btn_CrearDenuncia";
             btn_CrearDenuncia.Size = new Size(38, 38);
             btn_CrearDenuncia.TabIndex = 40;
             btn_CrearDenuncia.UseVisualStyleBackColor = true;
+            btn_CrearDenuncia.Click += Btn_CrearDenuncia_Click;
             // 
             // panel_Ipp
             // 
@@ -801,7 +803,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // btn_SDA
             // 
-            btn_SDA.BackgroundImage = Properties.Resources.SDA;
+            btn_SDA.BackgroundImage = (Image)resources.GetObject("btn_SDA.BackgroundImage");
             btn_SDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_SDA.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_SDA.Location = new Point(5, 11);

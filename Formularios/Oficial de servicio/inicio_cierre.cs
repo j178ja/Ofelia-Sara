@@ -96,7 +96,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
-          
+
             IncrementarTamaño.Incrementar(btn_SDA);
             IncrementarTamaño.Incrementar(btn_CrearDenuncia);
 
@@ -156,6 +156,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
             ToolTipGeneral.Mostrar(btn_SDA, "Redirige a página SDA para carga de actuaciones");
+            ToolTipGeneral.Mostrar(btn_CrearDenuncia, "Crear DENUNCIA/ACTA");
             ToolTipGeneral.Mostrar(Btn_ContadorRML, " Mostrar listado de solicitudes RML.");
             ToolTipGeneral.Mostrar(btn_ContadorRatificaciones, " Mostrar listado de RATIFICACIONES TESTIMONIALES.");
             ToolTipGeneral.Mostrar(Btn_Contador247, " Mostrar listado de NOTIFCACIONES Pericia.");
@@ -968,7 +969,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             string url = "https://www.google.com";
 
-            if (CheckInternetConnection(url))
+            if (ConexionInternet.CheckInternetConnection(url))
             {
                 try
                 {
@@ -988,27 +989,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             else
             {
-                MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.Error);
+                MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.ErrorConexion);
             }
         }
 
-        // Método para verificar conexión a internet
-        private bool CheckInternetConnection(string url)
+        private void Btn_CrearDenuncia_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (var client = new System.Net.WebClient())
-                using (client.OpenRead(url)) // Intenta hacer una petición al sitio
-                {
-                    return true; // Conexión exitosa
-                }
-            }
-            catch
-            {
-                return false; // No hay conexión
-            }
+             ActaDenuncia actaDenunciaForm  = new();
+            actaDenunciaForm.ShowDialog();
         }
-
-
     }
 }

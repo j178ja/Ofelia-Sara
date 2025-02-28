@@ -523,6 +523,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap esposas {
+            get {
+                object obj = ResourceManager.GetObject("esposas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Flecha_Triangulo {
             get {
                 object obj = ResourceManager.GetObject("Flecha_Triangulo", resourceCulture);
@@ -876,6 +886,16 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap moto {
             get {
                 object obj = ResourceManager.GetObject("moto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_wifi {
+            get {
+                object obj = ResourceManager.GetObject("no_wifi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
