@@ -238,9 +238,6 @@
   <data name="casa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\casa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="denuncia_penal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\denuncia-penal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="portapapeles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\portapapeles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,9 +267,6 @@
   </data>
   <data name="agregar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\agregar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SDA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ojoAbierto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\ojoAbierto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -345,9 +339,6 @@
   </data>
   <data name="subir_documentos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\subir_documentos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sello_de_goma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\sello-de-goma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -442,10 +433,13 @@
   <data name="letra_mayuscula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\letra-mayuscula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="denuncia-penal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\denuncia-penal1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="denuncia_penal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\ofl-sara\denuncia-penal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="no_wifi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\no-wifi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\imagenes\General\no-wifi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\ofl-sara\rueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

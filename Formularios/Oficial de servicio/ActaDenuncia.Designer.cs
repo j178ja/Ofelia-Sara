@@ -77,10 +77,10 @@
             radioButton_Acta.Location = new System.Drawing.Point(103, 15);
             radioButton_Acta.Name = "radioButton_Acta";
             radioButton_Acta.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            radioButton_Acta.Size = new System.Drawing.Size(224, 39);
+            radioButton_Acta.Size = new System.Drawing.Size(200, 39);
             radioButton_Acta.TabIndex = 36;
             radioButton_Acta.TabStop = true;
-            radioButton_Acta.Text = "ACTA DE PROCEDIMIENTO";
+            radioButton_Acta.Text = "   ACTA DE PROCEDIMIENTO";
             radioButton_Acta.UseVisualStyleBackColor = true;
             radioButton_Acta.CheckedChanged += RadioButton_CheckedChanged;
             // 
@@ -90,17 +90,18 @@
             radioButton_Denuncia.Location = new System.Drawing.Point(469, 15);
             radioButton_Denuncia.Name = "radioButton_Denuncia";
             radioButton_Denuncia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            radioButton_Denuncia.Size = new System.Drawing.Size(188, 39);
+            radioButton_Denuncia.Size = new System.Drawing.Size(159, 39);
             radioButton_Denuncia.TabIndex = 35;
             radioButton_Denuncia.TabStop = true;
-            radioButton_Denuncia.Text = "DENUNCIA PENAL";
+            radioButton_Denuncia.Text = "   DENUNCIA PENAL";
             radioButton_Denuncia.UseVisualStyleBackColor = true;
             radioButton_Denuncia.CheckedChanged += RadioButton_CheckedChanged;
             // 
             // pictureBox_Acta
             // 
-            pictureBox_Acta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_Acta.Location = new System.Drawing.Point(61, 15);
+            pictureBox_Acta.BackgroundImage = Properties.Resources.esposas;
+            pictureBox_Acta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pictureBox_Acta.Location = new System.Drawing.Point(61, 16);
             pictureBox_Acta.Name = "pictureBox_Acta";
             pictureBox_Acta.Size = new System.Drawing.Size(40, 39);
             pictureBox_Acta.TabIndex = 37;
@@ -108,6 +109,7 @@
             // 
             // pictureBox_Denuncia
             // 
+            pictureBox_Denuncia.BackgroundImage = Properties.Resources.denuncia_penal;
             pictureBox_Denuncia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             pictureBox_Denuncia.Location = new System.Drawing.Point(427, 15);
             pictureBox_Denuncia.Name = "pictureBox_Denuncia";
@@ -168,10 +170,11 @@
             radioButton_ActuacionEstandar.Cursor = System.Windows.Forms.Cursors.Hand;
             radioButton_ActuacionEstandar.Location = new System.Drawing.Point(346, 22);
             radioButton_ActuacionEstandar.Name = "radioButton_ActuacionEstandar";
-            radioButton_ActuacionEstandar.Size = new System.Drawing.Size(183, 24);
+            radioButton_ActuacionEstandar.Size = new System.Drawing.Size(144, 19);
             radioButton_ActuacionEstandar.TabIndex = 1;
             radioButton_ActuacionEstandar.TabStop = true;
             radioButton_ActuacionEstandar.Text = "Actuación ESTANDAR";
+            radioButton_ActuacionEstandar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             radioButton_ActuacionEstandar.UseVisualStyleBackColor = true;
             radioButton_ActuacionEstandar.CheckedChanged += RadioButton_ActuacionEstandar_CheckedChanged;
             // 
@@ -181,10 +184,11 @@
             radioButton_ModeloActuacion.Cursor = System.Windows.Forms.Cursors.Hand;
             radioButton_ModeloActuacion.Location = new System.Drawing.Point(87, 22);
             radioButton_ModeloActuacion.Name = "radioButton_ModeloActuacion";
-            radioButton_ModeloActuacion.Size = new System.Drawing.Size(193, 24);
+            radioButton_ModeloActuacion.Size = new System.Drawing.Size(155, 19);
             radioButton_ModeloActuacion.TabIndex = 0;
             radioButton_ModeloActuacion.TabStop = true;
             radioButton_ModeloActuacion.Text = "MODELOS de actuación";
+            radioButton_ModeloActuacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             radioButton_ModeloActuacion.UseVisualStyleBackColor = true;
             radioButton_ModeloActuacion.CheckedChanged += RadioButton_ModeloActuacion_CheckedChanged;
             // 
@@ -231,13 +235,13 @@
             label_TITULO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            label_TITULO.Size = new System.Drawing.Size(296, 29);
+            label_TITULO.Size = new System.Drawing.Size(240, 24);
             label_TITULO.TabIndex = 32;
             label_TITULO.Text = "TIPO DE ACTUACION";
             // 
             // ActaDenuncia
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 254);
             Controls.Add(label_TITULO);

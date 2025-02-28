@@ -39,9 +39,9 @@ namespace Ofelia_Sara
             //  Application.Run(new Visu());
             //  Application.Run(new InicioCierre());
             //  Application.Run(new Registro());
-            // Application.Run(new ActaDenuncia());
+             Application.Run(new ActaDenuncia());
             // Application.Run(new Mecanografia());
-            Application.Run(new Redactador());
+           // Application.Run(new Redactador());
 
 
 
