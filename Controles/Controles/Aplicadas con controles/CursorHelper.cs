@@ -14,7 +14,7 @@ public static class CursorHelper
     {
         public static Cursor ObtenerCursorDesdeRecursos(byte[] cursorBytes)
         {
-            using (MemoryStream stream = new MemoryStream(cursorBytes))
+            using (MemoryStream stream = new(cursorBytes))
             {
                 return new Cursor(stream);
             }

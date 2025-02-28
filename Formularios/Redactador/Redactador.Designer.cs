@@ -34,480 +34,577 @@ namespace Ofelia_Sara.Formularios.Redactador
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.PictureBox iconoEscudo;
+            components = new System.ComponentModel.Container();
+            PictureBox iconoEscudo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Redactador));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.audioVisualizerControl = new Ofelia_Sara.Controles.Redactador.AudioVisualizerControl();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.panel_Botones = new System.Windows.Forms.Panel();
-            this.btn_ReducirTamaño = new System.Windows.Forms.Button();
-            this.btn_AumentarTamaño = new System.Windows.Forms.Button();
-            this.btn_MayusculaMinuscula = new System.Windows.Forms.Button();
-            this.btn_Justificar = new System.Windows.Forms.Button();
-            this.btn_AlinearDerecha = new System.Windows.Forms.Button();
-            this.btn_Centrar = new System.Windows.Forms.Button();
-            this.btn_AlinearIzquierda = new System.Windows.Forms.Button();
-            this.btn_Subrayado = new System.Windows.Forms.Button();
-            this.btn_Cursiva = new System.Windows.Forms.Button();
-            this.btn_Negrita = new System.Windows.Forms.Button();
-            this.richTextBox_Redactor = new System.Windows.Forms.RichTextBox();
-            this.btn_Minimizar = new System.Windows.Forms.Button();
-            this.label_OfeliaSara = new System.Windows.Forms.Label();
-            this.btn_Cerrar = new System.Windows.Forms.Button();
-            this.panel_MenuSuperior = new System.Windows.Forms.Panel();
-            this.panel_SubirAudio = new System.Windows.Forms.Panel();
-            this.label_SubirAudio = new System.Windows.Forms.Label();
-            this.pictureBox_SubirAudio = new System.Windows.Forms.PictureBox();
-            this.btn_Maximizar = new System.Windows.Forms.Button();
-            this.label_Redactador = new System.Windows.Forms.Label();
-            this.timer_Barras = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btn_Microfono = new System.Windows.Forms.Button();
-            iconoEscudo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel_Botones.SuspendLayout();
-            this.panel_MenuSuperior.SuspendLayout();
-            this.panel_SubirAudio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SubirAudio)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            audioVisualizerControl = new AudioVisualizerControl();
+            btn_Guardar = new Button();
+            btn_Limpiar = new Button();
+            panel_Botones = new Panel();
+            btn_ReducirTamaño = new Button();
+            btn_AumentarTamaño = new Button();
+            btn_MayusculaMinuscula = new Button();
+            btn_Justificar = new Button();
+            btn_AlinearDerecha = new Button();
+            btn_Centrar = new Button();
+            btn_AlinearIzquierda = new Button();
+            btn_Subrayado = new Button();
+            btn_Cursiva = new Button();
+            btn_Negrita = new Button();
+            richTextBox_Redactor = new RichTextBox();
+            btn_Actuacion = new Button();
+            btn_Minimizar = new Button();
+            label_OfeliaSara = new Label();
+            btn_Cerrar = new Button();
+            panel_MenuSuperior = new Panel();
+            panel_SubirAudio = new Panel();
+            label_SubirAudio = new Label();
+            pictureBox_SubirAudio = new PictureBox();
+            btn_Maximizar = new Button();
+            label_Redactador = new Label();
+            timer_Barras = new Timer(components);
+            toolTip1 = new ToolTip(components);
+            btn_Microfono = new Button();
+            contextMenuStrip = new ContextMenuStrip(components);
+            MenuCortito = new ToolStripMenuItem();
+            subMenuCortitoHecho = new ToolStripMenuItem();
+            subMenuCortitoHurto = new ToolStripMenuItem();
+            toolStripTextBox3 = new ToolStripMenuItem();
+            toolStripTextBox4 = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            PU = new ToolStripMenuItem();
+            Denuncia = new ToolStripMenuItem();
+            iconoEscudo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)iconoEscudo).BeginInit();
+            panel1.SuspendLayout();
+            panel_Botones.SuspendLayout();
+            panel_MenuSuperior.SuspendLayout();
+            panel_SubirAudio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_SubirAudio).BeginInit();
+            contextMenuStrip.SuspendLayout();
+            SuspendLayout();
             // 
             // iconoEscudo
             // 
-            iconoEscudo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconoEscudo.BackgroundImage")));
-            iconoEscudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            iconoEscudo.Location = new System.Drawing.Point(1, 3);
+            iconoEscudo.BackgroundImage = (Image)resources.GetObject("iconoEscudo.BackgroundImage");
+            iconoEscudo.BackgroundImageLayout = ImageLayout.Stretch;
+            iconoEscudo.Location = new Point(1, 3);
             iconoEscudo.Name = "iconoEscudo";
-            iconoEscudo.Size = new System.Drawing.Size(30, 28);
+            iconoEscudo.Size = new Size(30, 28);
             iconoEscudo.TabIndex = 18;
             iconoEscudo.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(213)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.audioVisualizerControl);
-            this.panel1.Controls.Add(this.btn_Guardar);
-            this.panel1.Controls.Add(this.btn_Limpiar);
-            this.panel1.Controls.Add(this.panel_Botones);
-            this.panel1.Controls.Add(this.richTextBox_Redactor);
-            this.panel1.Location = new System.Drawing.Point(17, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(547, 360);
-            this.panel1.TabIndex = 0;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(audioVisualizerControl);
+            panel1.Controls.Add(btn_Guardar);
+            panel1.Controls.Add(btn_Limpiar);
+            panel1.Controls.Add(panel_Botones);
+            panel1.Controls.Add(richTextBox_Redactor);
+            panel1.Location = new Point(17, 63);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(547, 360);
+            panel1.TabIndex = 0;
             // 
             // audioVisualizerControl
             // 
-            this.audioVisualizerControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.audioVisualizerControl.AutoSize = true;
-            this.audioVisualizerControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.audioVisualizerControl.Location = new System.Drawing.Point(14, 6);
-            this.audioVisualizerControl.Name = "audioVisualizerControl";
-            this.audioVisualizerControl.Size = new System.Drawing.Size(518, 36);
-            this.audioVisualizerControl.TabIndex = 4;
+            audioVisualizerControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            audioVisualizerControl.AutoSize = true;
+            audioVisualizerControl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            audioVisualizerControl.Location = new Point(14, 6);
+            audioVisualizerControl.Margin = new Padding(4, 5, 4, 5);
+            audioVisualizerControl.Name = "audioVisualizerControl";
+            audioVisualizerControl.Size = new Size(691, 56);
+            audioVisualizerControl.TabIndex = 4;
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.BackgroundImage")));
-            this.btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Guardar.Location = new System.Drawing.Point(339, 291);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(64, 58);
-            this.btn_Guardar.TabIndex = 3;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
+            btn_Guardar.Anchor = AnchorStyles.Bottom;
+            btn_Guardar.BackColor = Color.SkyBlue;
+            btn_Guardar.BackgroundImage = (Image)resources.GetObject("btn_Guardar.BackgroundImage");
+            btn_Guardar.BackgroundImageLayout = ImageLayout.Center;
+            btn_Guardar.Cursor = Cursors.Hand;
+            btn_Guardar.Location = new Point(339, 291);
+            btn_Guardar.Name = "btn_Guardar";
+            btn_Guardar.Size = new Size(64, 58);
+            btn_Guardar.TabIndex = 3;
+            btn_Guardar.UseVisualStyleBackColor = false;
+            btn_Guardar.Click += Btn_Guardar_Click;
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Limpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.BackgroundImage")));
-            this.btn_Limpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.Location = new System.Drawing.Point(142, 291);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(64, 58);
-            this.btn_Limpiar.TabIndex = 2;
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
+            btn_Limpiar.Anchor = AnchorStyles.Bottom;
+            btn_Limpiar.BackColor = Color.SkyBlue;
+            btn_Limpiar.BackgroundImage = (Image)resources.GetObject("btn_Limpiar.BackgroundImage");
+            btn_Limpiar.BackgroundImageLayout = ImageLayout.Center;
+            btn_Limpiar.Cursor = Cursors.Hand;
+            btn_Limpiar.Location = new Point(142, 291);
+            btn_Limpiar.Name = "btn_Limpiar";
+            btn_Limpiar.Size = new Size(64, 58);
+            btn_Limpiar.TabIndex = 2;
+            btn_Limpiar.UseVisualStyleBackColor = false;
+            btn_Limpiar.Click += Btn_Eliminar_Click;
             // 
             // panel_Botones
             // 
-            this.panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel_Botones.AutoSize = true;
-            this.panel_Botones.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_Botones.Controls.Add(this.btn_ReducirTamaño);
-            this.panel_Botones.Controls.Add(this.btn_AumentarTamaño);
-            this.panel_Botones.Controls.Add(this.btn_MayusculaMinuscula);
-            this.panel_Botones.Controls.Add(this.btn_Justificar);
-            this.panel_Botones.Controls.Add(this.btn_AlinearDerecha);
-            this.panel_Botones.Controls.Add(this.btn_Centrar);
-            this.panel_Botones.Controls.Add(this.btn_AlinearIzquierda);
-            this.panel_Botones.Controls.Add(this.btn_Subrayado);
-            this.panel_Botones.Controls.Add(this.btn_Cursiva);
-            this.panel_Botones.Controls.Add(this.btn_Negrita);
-            this.panel_Botones.Location = new System.Drawing.Point(142, 40);
-            this.panel_Botones.Name = "panel_Botones";
-            this.panel_Botones.Size = new System.Drawing.Size(261, 28);
-            this.panel_Botones.TabIndex = 1;
+            panel_Botones.Anchor = AnchorStyles.Top;
+            panel_Botones.AutoSize = true;
+            panel_Botones.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel_Botones.Controls.Add(btn_ReducirTamaño);
+            panel_Botones.Controls.Add(btn_AumentarTamaño);
+            panel_Botones.Controls.Add(btn_MayusculaMinuscula);
+            panel_Botones.Controls.Add(btn_Justificar);
+            panel_Botones.Controls.Add(btn_AlinearDerecha);
+            panel_Botones.Controls.Add(btn_Centrar);
+            panel_Botones.Controls.Add(btn_AlinearIzquierda);
+            panel_Botones.Controls.Add(btn_Subrayado);
+            panel_Botones.Controls.Add(btn_Cursiva);
+            panel_Botones.Controls.Add(btn_Negrita);
+            panel_Botones.Location = new Point(142, 40);
+            panel_Botones.Name = "panel_Botones";
+            panel_Botones.Size = new Size(261, 28);
+            panel_Botones.TabIndex = 1;
             // 
             // btn_ReducirTamaño
             // 
-            this.btn_ReducirTamaño.BackColor = System.Drawing.Color.White;
-            this.btn_ReducirTamaño.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ReducirTamaño.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ReducirTamaño.Location = new System.Drawing.Point(102, 3);
-            this.btn_ReducirTamaño.Name = "btn_ReducirTamaño";
-            this.btn_ReducirTamaño.Size = new System.Drawing.Size(21, 22);
-            this.btn_ReducirTamaño.TabIndex = 9;
-            this.btn_ReducirTamaño.Text = "A";
-            this.btn_ReducirTamaño.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_ReducirTamaño.UseVisualStyleBackColor = false;
-            this.btn_ReducirTamaño.Click += new System.EventHandler(this.Btn_DisminuirTamaño_Click);
-            this.btn_ReducirTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
-            this.btn_ReducirTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            btn_ReducirTamaño.BackColor = Color.White;
+            btn_ReducirTamaño.Cursor = Cursors.Hand;
+            btn_ReducirTamaño.Font = new Font("Calibri", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_ReducirTamaño.Location = new Point(102, 3);
+            btn_ReducirTamaño.Name = "btn_ReducirTamaño";
+            btn_ReducirTamaño.Size = new Size(21, 22);
+            btn_ReducirTamaño.TabIndex = 9;
+            btn_ReducirTamaño.Text = "A";
+            btn_ReducirTamaño.TextAlign = ContentAlignment.BottomCenter;
+            btn_ReducirTamaño.UseVisualStyleBackColor = false;
+            btn_ReducirTamaño.Click += Btn_DisminuirTamaño_Click;
+            btn_ReducirTamaño.MouseDown += Btn_MouseDown;
+            btn_ReducirTamaño.MouseUp += Btn_MouseUp;
             // 
             // btn_AumentarTamaño
             // 
-            this.btn_AumentarTamaño.BackColor = System.Drawing.Color.White;
-            this.btn_AumentarTamaño.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AumentarTamaño.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AumentarTamaño.Location = new System.Drawing.Point(81, 3);
-            this.btn_AumentarTamaño.Name = "btn_AumentarTamaño";
-            this.btn_AumentarTamaño.Size = new System.Drawing.Size(21, 22);
-            this.btn_AumentarTamaño.TabIndex = 8;
-            this.btn_AumentarTamaño.Text = "A";
-            this.btn_AumentarTamaño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_AumentarTamaño.UseVisualStyleBackColor = false;
-            this.btn_AumentarTamaño.Click += new System.EventHandler(this.Btn_AumentarTamaño_Click);
-            this.btn_AumentarTamaño.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
-            this.btn_AumentarTamaño.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            btn_AumentarTamaño.BackColor = Color.White;
+            btn_AumentarTamaño.Cursor = Cursors.Hand;
+            btn_AumentarTamaño.Font = new Font("Calibri", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_AumentarTamaño.Location = new Point(81, 3);
+            btn_AumentarTamaño.Name = "btn_AumentarTamaño";
+            btn_AumentarTamaño.Size = new Size(21, 22);
+            btn_AumentarTamaño.TabIndex = 8;
+            btn_AumentarTamaño.Text = "A";
+            btn_AumentarTamaño.TextAlign = ContentAlignment.TopCenter;
+            btn_AumentarTamaño.UseVisualStyleBackColor = false;
+            btn_AumentarTamaño.Click += Btn_AumentarTamaño_Click;
+            btn_AumentarTamaño.MouseDown += Btn_MouseDown;
+            btn_AumentarTamaño.MouseUp += Btn_MouseUp;
             // 
             // btn_MayusculaMinuscula
             // 
-            this.btn_MayusculaMinuscula.BackColor = System.Drawing.Color.White;
-            this.btn_MayusculaMinuscula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_MayusculaMinuscula.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MayusculaMinuscula.Location = new System.Drawing.Point(123, 3);
-            this.btn_MayusculaMinuscula.Name = "btn_MayusculaMinuscula";
-            this.btn_MayusculaMinuscula.Size = new System.Drawing.Size(29, 22);
-            this.btn_MayusculaMinuscula.TabIndex = 7;
-            this.btn_MayusculaMinuscula.Text = "Aa";
-            this.btn_MayusculaMinuscula.UseVisualStyleBackColor = false;
-            this.btn_MayusculaMinuscula.Click += new System.EventHandler(this.Btn_MayusculaMiniscula_Click);
-            this.btn_MayusculaMinuscula.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
-            this.btn_MayusculaMinuscula.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            btn_MayusculaMinuscula.BackColor = Color.White;
+            btn_MayusculaMinuscula.Cursor = Cursors.Hand;
+            btn_MayusculaMinuscula.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_MayusculaMinuscula.Location = new Point(123, 3);
+            btn_MayusculaMinuscula.Name = "btn_MayusculaMinuscula";
+            btn_MayusculaMinuscula.Size = new Size(29, 22);
+            btn_MayusculaMinuscula.TabIndex = 7;
+            btn_MayusculaMinuscula.Text = "Aa";
+            btn_MayusculaMinuscula.UseVisualStyleBackColor = false;
+            btn_MayusculaMinuscula.Click += Btn_MayusculaMiniscula_Click;
+            btn_MayusculaMinuscula.MouseDown += Btn_MouseDown;
+            btn_MayusculaMinuscula.MouseUp += Btn_MouseUp;
             // 
             // btn_Justificar
             // 
-            this.btn_Justificar.BackColor = System.Drawing.Color.White;
-            this.btn_Justificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Justificar.BackgroundImage")));
-            this.btn_Justificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Justificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Justificar.Location = new System.Drawing.Point(237, 3);
-            this.btn_Justificar.Name = "btn_Justificar";
-            this.btn_Justificar.Size = new System.Drawing.Size(21, 22);
-            this.btn_Justificar.TabIndex = 6;
-            this.btn_Justificar.UseVisualStyleBackColor = false;
-            this.btn_Justificar.Click += new System.EventHandler(this.Btn_Justificar_Click);
+            btn_Justificar.BackColor = Color.White;
+            btn_Justificar.BackgroundImage = (Image)resources.GetObject("btn_Justificar.BackgroundImage");
+            btn_Justificar.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_Justificar.Cursor = Cursors.Hand;
+            btn_Justificar.Location = new Point(237, 3);
+            btn_Justificar.Name = "btn_Justificar";
+            btn_Justificar.Size = new Size(21, 22);
+            btn_Justificar.TabIndex = 6;
+            btn_Justificar.UseVisualStyleBackColor = false;
+            btn_Justificar.Click += Btn_Justificar_Click;
             // 
             // btn_AlinearDerecha
             // 
-            this.btn_AlinearDerecha.BackColor = System.Drawing.Color.White;
-            this.btn_AlinearDerecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_AlinearDerecha.BackgroundImage")));
-            this.btn_AlinearDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_AlinearDerecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AlinearDerecha.Location = new System.Drawing.Point(216, 3);
-            this.btn_AlinearDerecha.Name = "btn_AlinearDerecha";
-            this.btn_AlinearDerecha.Size = new System.Drawing.Size(21, 22);
-            this.btn_AlinearDerecha.TabIndex = 5;
-            this.btn_AlinearDerecha.UseVisualStyleBackColor = false;
-            this.btn_AlinearDerecha.Click += new System.EventHandler(this.Btn_AlinearDerecha_Click);
+            btn_AlinearDerecha.BackColor = Color.White;
+            btn_AlinearDerecha.BackgroundImage = (Image)resources.GetObject("btn_AlinearDerecha.BackgroundImage");
+            btn_AlinearDerecha.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_AlinearDerecha.Cursor = Cursors.Hand;
+            btn_AlinearDerecha.Location = new Point(216, 3);
+            btn_AlinearDerecha.Name = "btn_AlinearDerecha";
+            btn_AlinearDerecha.Size = new Size(21, 22);
+            btn_AlinearDerecha.TabIndex = 5;
+            btn_AlinearDerecha.UseVisualStyleBackColor = false;
+            btn_AlinearDerecha.Click += Btn_AlinearDerecha_Click;
             // 
             // btn_Centrar
             // 
-            this.btn_Centrar.BackColor = System.Drawing.Color.White;
-            this.btn_Centrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Centrar.BackgroundImage")));
-            this.btn_Centrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Centrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Centrar.Location = new System.Drawing.Point(195, 3);
-            this.btn_Centrar.Name = "btn_Centrar";
-            this.btn_Centrar.Size = new System.Drawing.Size(21, 22);
-            this.btn_Centrar.TabIndex = 4;
-            this.btn_Centrar.UseVisualStyleBackColor = false;
-            this.btn_Centrar.Click += new System.EventHandler(this.Btn_Centrar_Click);
+            btn_Centrar.BackColor = Color.White;
+            btn_Centrar.BackgroundImage = (Image)resources.GetObject("btn_Centrar.BackgroundImage");
+            btn_Centrar.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_Centrar.Cursor = Cursors.Hand;
+            btn_Centrar.Location = new Point(195, 3);
+            btn_Centrar.Name = "btn_Centrar";
+            btn_Centrar.Size = new Size(21, 22);
+            btn_Centrar.TabIndex = 4;
+            btn_Centrar.UseVisualStyleBackColor = false;
+            btn_Centrar.Click += Btn_Centrar_Click;
             // 
             // btn_AlinearIzquierda
             // 
-            this.btn_AlinearIzquierda.BackColor = System.Drawing.Color.White;
-            this.btn_AlinearIzquierda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_AlinearIzquierda.BackgroundImage")));
-            this.btn_AlinearIzquierda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_AlinearIzquierda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AlinearIzquierda.Location = new System.Drawing.Point(173, 3);
-            this.btn_AlinearIzquierda.Name = "btn_AlinearIzquierda";
-            this.btn_AlinearIzquierda.Size = new System.Drawing.Size(21, 22);
-            this.btn_AlinearIzquierda.TabIndex = 3;
-            this.btn_AlinearIzquierda.UseVisualStyleBackColor = false;
-            this.btn_AlinearIzquierda.Click += new System.EventHandler(this.Btn_AlinearIzquierda_Click);
+            btn_AlinearIzquierda.BackColor = Color.White;
+            btn_AlinearIzquierda.BackgroundImage = (Image)resources.GetObject("btn_AlinearIzquierda.BackgroundImage");
+            btn_AlinearIzquierda.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_AlinearIzquierda.Cursor = Cursors.Hand;
+            btn_AlinearIzquierda.Location = new Point(173, 3);
+            btn_AlinearIzquierda.Name = "btn_AlinearIzquierda";
+            btn_AlinearIzquierda.Size = new Size(21, 22);
+            btn_AlinearIzquierda.TabIndex = 3;
+            btn_AlinearIzquierda.UseVisualStyleBackColor = false;
+            btn_AlinearIzquierda.Click += Btn_AlinearIzquierda_Click;
             // 
             // btn_Subrayado
             // 
-            this.btn_Subrayado.BackColor = System.Drawing.Color.White;
-            this.btn_Subrayado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Subrayado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Subrayado.Location = new System.Drawing.Point(47, 3);
-            this.btn_Subrayado.Name = "btn_Subrayado";
-            this.btn_Subrayado.Size = new System.Drawing.Size(21, 22);
-            this.btn_Subrayado.TabIndex = 2;
-            this.btn_Subrayado.Text = "S";
-            this.btn_Subrayado.UseVisualStyleBackColor = false;
-            this.btn_Subrayado.Click += new System.EventHandler(this.Btn_Subrayado_Click);
+            btn_Subrayado.BackColor = Color.White;
+            btn_Subrayado.Cursor = Cursors.Hand;
+            btn_Subrayado.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            btn_Subrayado.Location = new Point(47, 3);
+            btn_Subrayado.Name = "btn_Subrayado";
+            btn_Subrayado.Size = new Size(21, 22);
+            btn_Subrayado.TabIndex = 2;
+            btn_Subrayado.Text = "S";
+            btn_Subrayado.UseVisualStyleBackColor = false;
+            btn_Subrayado.Click += Btn_Subrayado_Click;
             // 
             // btn_Cursiva
             // 
-            this.btn_Cursiva.BackColor = System.Drawing.Color.White;
-            this.btn_Cursiva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Cursiva.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cursiva.Location = new System.Drawing.Point(26, 3);
-            this.btn_Cursiva.Name = "btn_Cursiva";
-            this.btn_Cursiva.Size = new System.Drawing.Size(21, 22);
-            this.btn_Cursiva.TabIndex = 1;
-            this.btn_Cursiva.Text = "C";
-            this.btn_Cursiva.UseVisualStyleBackColor = false;
-            this.btn_Cursiva.Click += new System.EventHandler(this.btn_Cursiva_Click);
+            btn_Cursiva.BackColor = Color.White;
+            btn_Cursiva.Cursor = Cursors.Hand;
+            btn_Cursiva.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btn_Cursiva.Location = new Point(26, 3);
+            btn_Cursiva.Name = "btn_Cursiva";
+            btn_Cursiva.Size = new Size(21, 22);
+            btn_Cursiva.TabIndex = 1;
+            btn_Cursiva.Text = "C";
+            btn_Cursiva.UseVisualStyleBackColor = false;
+            btn_Cursiva.Click += btn_Cursiva_Click;
             // 
             // btn_Negrita
             // 
-            this.btn_Negrita.BackColor = System.Drawing.Color.White;
-            this.btn_Negrita.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Negrita.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Negrita.Location = new System.Drawing.Point(4, 3);
-            this.btn_Negrita.Name = "btn_Negrita";
-            this.btn_Negrita.Size = new System.Drawing.Size(21, 22);
-            this.btn_Negrita.TabIndex = 0;
-            this.btn_Negrita.Text = "N";
-            this.btn_Negrita.UseVisualStyleBackColor = false;
-            this.btn_Negrita.Click += new System.EventHandler(this.Btn_Negrita_Click);
+            btn_Negrita.BackColor = Color.White;
+            btn_Negrita.Cursor = Cursors.Hand;
+            btn_Negrita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Negrita.Location = new Point(4, 3);
+            btn_Negrita.Name = "btn_Negrita";
+            btn_Negrita.Size = new Size(21, 22);
+            btn_Negrita.TabIndex = 0;
+            btn_Negrita.Text = "N";
+            btn_Negrita.UseVisualStyleBackColor = false;
+            btn_Negrita.Click += Btn_Negrita_Click;
             // 
             // richTextBox_Redactor
             // 
-            this.richTextBox_Redactor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_Redactor.Location = new System.Drawing.Point(10, 74);
-            this.richTextBox_Redactor.Name = "richTextBox_Redactor";
-            this.richTextBox_Redactor.Size = new System.Drawing.Size(527, 201);
-            this.richTextBox_Redactor.TabIndex = 0;
-            this.richTextBox_Redactor.Text = "";
-            this.richTextBox_Redactor.TextChanged += new System.EventHandler(this.RichTextBox_Redactor_TextChanged);
-            this.richTextBox_Redactor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_Redactor_MouseMove);
+            richTextBox_Redactor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_Redactor.Location = new Point(10, 74);
+            richTextBox_Redactor.Name = "richTextBox_Redactor";
+            richTextBox_Redactor.Size = new Size(527, 201);
+            richTextBox_Redactor.TabIndex = 0;
+            richTextBox_Redactor.Text = "";
+            richTextBox_Redactor.TextChanged += RichTextBox_Redactor_TextChanged;
+            richTextBox_Redactor.MouseMove += RichTextBox_Redactor_MouseMove;
+            // 
+            // btn_Actuacion
+            // 
+            btn_Actuacion.BackColor = SystemColors.Highlight;
+            btn_Actuacion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Actuacion.ForeColor = SystemColors.Control;
+            btn_Actuacion.Location = new Point(55, 47);
+            btn_Actuacion.Name = "btn_Actuacion";
+            btn_Actuacion.Size = new Size(110, 29);
+            btn_Actuacion.TabIndex = 20;
+            btn_Actuacion.Text = "ACTUACION";
+            btn_Actuacion.UseVisualStyleBackColor = false;
+            btn_Actuacion.Click += btn_Actuacion_Click;
             // 
             // btn_Minimizar
             // 
-            this.btn_Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Minimizar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Minimizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Minimizar.FlatAppearance.BorderSize = 2;
-            this.btn_Minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Minimizar.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Minimizar.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.btn_Minimizar.Location = new System.Drawing.Point(490, 5);
-            this.btn_Minimizar.Name = "btn_Minimizar";
-            this.btn_Minimizar.Size = new System.Drawing.Size(25, 25);
-            this.btn_Minimizar.TabIndex = 20;
-            this.btn_Minimizar.Text = "-";
-            this.btn_Minimizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolTip1.SetToolTip(this.btn_Minimizar, "Minimizar");
-            this.btn_Minimizar.UseVisualStyleBackColor = false;
-            this.btn_Minimizar.Click += new System.EventHandler(this.Btn_Minimizar_Click);
-            this.btn_Minimizar.MouseLeave += new System.EventHandler(this.Btn_Panel_MouseLeave);
-            this.btn_Minimizar.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
+            btn_Minimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Minimizar.BackColor = SystemColors.ButtonFace;
+            btn_Minimizar.Cursor = Cursors.Hand;
+            btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_Minimizar.FlatAppearance.BorderSize = 2;
+            btn_Minimizar.FlatStyle = FlatStyle.Flat;
+            btn_Minimizar.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Minimizar.ForeColor = SystemColors.WindowFrame;
+            btn_Minimizar.Location = new Point(490, 5);
+            btn_Minimizar.Name = "btn_Minimizar";
+            btn_Minimizar.Size = new Size(25, 25);
+            btn_Minimizar.TabIndex = 20;
+            btn_Minimizar.Text = "-";
+            btn_Minimizar.TextAlign = ContentAlignment.BottomCenter;
+            toolTip1.SetToolTip(btn_Minimizar, "Minimizar");
+            btn_Minimizar.UseVisualStyleBackColor = false;
+            btn_Minimizar.Click += Btn_Minimizar_Click;
+            btn_Minimizar.MouseLeave += Btn_Panel_MouseLeave;
+            btn_Minimizar.MouseHover += Btn_Panel_MouseHover;
             // 
             // label_OfeliaSara
             // 
-            this.label_OfeliaSara.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_OfeliaSara.AutoSize = true;
-            this.label_OfeliaSara.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_OfeliaSara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_OfeliaSara.Font = new System.Drawing.Font("Monotype Corsiva", 16F, System.Drawing.FontStyle.Italic);
-            this.label_OfeliaSara.Location = new System.Drawing.Point(230, 5);
-            this.label_OfeliaSara.Name = "label_OfeliaSara";
-            this.label_OfeliaSara.Size = new System.Drawing.Size(109, 26);
-            this.label_OfeliaSara.TabIndex = 16;
-            this.label_OfeliaSara.Text = "Ofelia - Sara";
-            this.label_OfeliaSara.Click += new System.EventHandler(this.Label_OfeliaSara_Click);
-            this.label_OfeliaSara.Paint += new System.Windows.Forms.PaintEventHandler(this.Label_OfeliaSara_Paint);
-            this.label_OfeliaSara.MouseLeave += new System.EventHandler(this.Label_OfeliaSara_MouseLeave);
-            this.label_OfeliaSara.MouseHover += new System.EventHandler(this.Label_OfeliaSara_MouseHover);
+            label_OfeliaSara.Anchor = AnchorStyles.Top;
+            label_OfeliaSara.AutoSize = true;
+            label_OfeliaSara.Cursor = Cursors.Hand;
+            label_OfeliaSara.FlatStyle = FlatStyle.Flat;
+            label_OfeliaSara.Font = new Font("Monotype Corsiva", 16F, FontStyle.Italic);
+            label_OfeliaSara.Location = new Point(230, 5);
+            label_OfeliaSara.Name = "label_OfeliaSara";
+            label_OfeliaSara.Size = new Size(135, 33);
+            label_OfeliaSara.TabIndex = 16;
+            label_OfeliaSara.Text = "Ofelia - Sara";
+            label_OfeliaSara.Click += Label_OfeliaSara_Click;
+            label_OfeliaSara.Paint += Label_OfeliaSara_Paint;
+            label_OfeliaSara.MouseLeave += Label_OfeliaSara_MouseLeave;
+            label_OfeliaSara.MouseHover += Label_OfeliaSara_MouseHover;
             // 
             // btn_Cerrar
             // 
-            this.btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cerrar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Cerrar.FlatAppearance.BorderSize = 2;
-            this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Cerrar.Location = new System.Drawing.Point(544, 5);
-            this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(25, 25);
-            this.btn_Cerrar.TabIndex = 17;
-            this.btn_Cerrar.Text = "X";
-            this.toolTip1.SetToolTip(this.btn_Cerrar, "Cerrar");
-            this.btn_Cerrar.UseVisualStyleBackColor = false;
-            this.btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
-            this.btn_Cerrar.MouseLeave += new System.EventHandler(this.Btn_Cerrar_MouseLeave);
-            this.btn_Cerrar.MouseHover += new System.EventHandler(this.Btn_Cerrar_MouseHover);
+            btn_Cerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Cerrar.BackColor = SystemColors.ButtonFace;
+            btn_Cerrar.Cursor = Cursors.Hand;
+            btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_Cerrar.FlatAppearance.BorderSize = 2;
+            btn_Cerrar.FlatStyle = FlatStyle.Flat;
+            btn_Cerrar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Cerrar.ForeColor = SystemColors.ControlDarkDark;
+            btn_Cerrar.Location = new Point(544, 5);
+            btn_Cerrar.Name = "btn_Cerrar";
+            btn_Cerrar.Size = new Size(25, 25);
+            btn_Cerrar.TabIndex = 17;
+            btn_Cerrar.Text = "X";
+            toolTip1.SetToolTip(btn_Cerrar, "Cerrar");
+            btn_Cerrar.UseVisualStyleBackColor = false;
+            btn_Cerrar.Click += Btn_Cerrar_Click;
+            btn_Cerrar.MouseLeave += Btn_Cerrar_MouseLeave;
+            btn_Cerrar.MouseHover += Btn_Cerrar_MouseHover;
             // 
             // panel_MenuSuperior
             // 
-            this.panel_MenuSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_MenuSuperior.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel_MenuSuperior.Controls.Add(this.panel_SubirAudio);
-            this.panel_MenuSuperior.Controls.Add(this.btn_Maximizar);
-            this.panel_MenuSuperior.Controls.Add(this.btn_Minimizar);
-            this.panel_MenuSuperior.Controls.Add(this.label_Redactador);
-            this.panel_MenuSuperior.Controls.Add(iconoEscudo);
-            this.panel_MenuSuperior.Controls.Add(this.label_OfeliaSara);
-            this.panel_MenuSuperior.Controls.Add(this.btn_Cerrar);
-            this.panel_MenuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panel_MenuSuperior.Name = "panel_MenuSuperior";
-            this.panel_MenuSuperior.Size = new System.Drawing.Size(576, 34);
-            this.panel_MenuSuperior.TabIndex = 18;
-            this.panel_MenuSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MenuSuperior_MouseDown);
+            panel_MenuSuperior.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel_MenuSuperior.BackColor = SystemColors.Menu;
+            panel_MenuSuperior.Controls.Add(panel_SubirAudio);
+            panel_MenuSuperior.Controls.Add(btn_Maximizar);
+            panel_MenuSuperior.Controls.Add(btn_Minimizar);
+            panel_MenuSuperior.Controls.Add(label_Redactador);
+            panel_MenuSuperior.Controls.Add(iconoEscudo);
+            panel_MenuSuperior.Controls.Add(label_OfeliaSara);
+            panel_MenuSuperior.Controls.Add(btn_Cerrar);
+            panel_MenuSuperior.Location = new Point(0, 0);
+            panel_MenuSuperior.Name = "panel_MenuSuperior";
+            panel_MenuSuperior.Size = new Size(576, 34);
+            panel_MenuSuperior.TabIndex = 18;
+            panel_MenuSuperior.MouseDown += panel_MenuSuperior_MouseDown;
             // 
             // panel_SubirAudio
             // 
-            this.panel_SubirAudio.AutoSize = true;
-            this.panel_SubirAudio.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_SubirAudio.Controls.Add(this.label_SubirAudio);
-            this.panel_SubirAudio.Controls.Add(this.pictureBox_SubirAudio);
-            this.panel_SubirAudio.Location = new System.Drawing.Point(378, 3);
-            this.panel_SubirAudio.Name = "panel_SubirAudio";
-            this.panel_SubirAudio.Size = new System.Drawing.Size(94, 28);
-            this.panel_SubirAudio.TabIndex = 22;
+            panel_SubirAudio.AutoSize = true;
+            panel_SubirAudio.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel_SubirAudio.Controls.Add(label_SubirAudio);
+            panel_SubirAudio.Controls.Add(pictureBox_SubirAudio);
+            panel_SubirAudio.Location = new Point(378, 3);
+            panel_SubirAudio.Name = "panel_SubirAudio";
+            panel_SubirAudio.Size = new Size(116, 28);
+            panel_SubirAudio.TabIndex = 22;
             // 
             // label_SubirAudio
             // 
-            this.label_SubirAudio.AutoSize = true;
-            this.label_SubirAudio.Location = new System.Drawing.Point(32, 5);
-            this.label_SubirAudio.Name = "label_SubirAudio";
-            this.label_SubirAudio.Size = new System.Drawing.Size(59, 13);
-            this.label_SubirAudio.TabIndex = 1;
-            this.label_SubirAudio.Text = "Transcribir ";
-            this.label_SubirAudio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_SubirAudio.Click += new System.EventHandler(this.SubirAudio_Click);
-            this.label_SubirAudio.MouseLeave += new System.EventHandler(this.SubirAudio_MouseLeave);
-            this.label_SubirAudio.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
+            label_SubirAudio.AutoSize = true;
+            label_SubirAudio.Location = new Point(32, 5);
+            label_SubirAudio.Name = "label_SubirAudio";
+            label_SubirAudio.Size = new Size(81, 20);
+            label_SubirAudio.TabIndex = 1;
+            label_SubirAudio.Text = "Transcribir ";
+            label_SubirAudio.TextAlign = ContentAlignment.MiddleLeft;
+            label_SubirAudio.Click += SubirAudio_Click;
+            label_SubirAudio.MouseLeave += SubirAudio_MouseLeave;
+            label_SubirAudio.MouseHover += Btn_Panel_MouseHover;
             // 
             // pictureBox_SubirAudio
             // 
-           // this.pictureBox_SubirAudio.BackgroundImage = global::Ofelia_Sara.Properties.Resources.cargarAudio;
-            this.pictureBox_SubirAudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox_SubirAudio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_SubirAudio.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox_SubirAudio.Name = "pictureBox_SubirAudio";
-            this.pictureBox_SubirAudio.Size = new System.Drawing.Size(32, 24);
-            this.pictureBox_SubirAudio.TabIndex = 0;
-            this.pictureBox_SubirAudio.TabStop = false;
-            this.pictureBox_SubirAudio.Click += new System.EventHandler(this.SubirAudio_Click);
-            this.pictureBox_SubirAudio.MouseLeave += new System.EventHandler(this.SubirAudio_MouseLeave);
-            this.pictureBox_SubirAudio.MouseHover += new System.EventHandler(this.SubirAudio_MouseHover);
+            pictureBox_SubirAudio.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox_SubirAudio.Cursor = Cursors.Hand;
+            pictureBox_SubirAudio.Location = new Point(0, 1);
+            pictureBox_SubirAudio.Name = "pictureBox_SubirAudio";
+            pictureBox_SubirAudio.Size = new Size(32, 24);
+            pictureBox_SubirAudio.TabIndex = 0;
+            pictureBox_SubirAudio.TabStop = false;
+            pictureBox_SubirAudio.Click += SubirAudio_Click;
+            pictureBox_SubirAudio.MouseLeave += SubirAudio_MouseLeave;
+            pictureBox_SubirAudio.MouseHover += SubirAudio_MouseHover;
             // 
             // btn_Maximizar
             // 
-            this.btn_Maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Maximizar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Maximizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Maximizar.BackgroundImage")));
-            this.btn_Maximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Maximizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Maximizar.FlatAppearance.BorderSize = 2;
-            this.btn_Maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Maximizar.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Maximizar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Maximizar.Location = new System.Drawing.Point(517, 5);
-            this.btn_Maximizar.Name = "btn_Maximizar";
-            this.btn_Maximizar.Size = new System.Drawing.Size(25, 25);
-            this.btn_Maximizar.TabIndex = 21;
-            this.btn_Maximizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolTip1.SetToolTip(this.btn_Maximizar, "Maximizar");
-            this.btn_Maximizar.UseVisualStyleBackColor = false;
-            this.btn_Maximizar.Click += new System.EventHandler(this.Btn_Maximizar_Click);
-            this.btn_Maximizar.MouseLeave += new System.EventHandler(this.Btn_Panel_MouseLeave);
-            this.btn_Maximizar.MouseHover += new System.EventHandler(this.Btn_Panel_MouseHover);
+            btn_Maximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Maximizar.BackColor = SystemColors.ButtonFace;
+            btn_Maximizar.BackgroundImage = (Image)resources.GetObject("btn_Maximizar.BackgroundImage");
+            btn_Maximizar.BackgroundImageLayout = ImageLayout.Center;
+            btn_Maximizar.Cursor = Cursors.Hand;
+            btn_Maximizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_Maximizar.FlatAppearance.BorderSize = 2;
+            btn_Maximizar.FlatStyle = FlatStyle.Flat;
+            btn_Maximizar.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Maximizar.ForeColor = SystemColors.ControlDarkDark;
+            btn_Maximizar.Location = new Point(517, 5);
+            btn_Maximizar.Name = "btn_Maximizar";
+            btn_Maximizar.Size = new Size(25, 25);
+            btn_Maximizar.TabIndex = 21;
+            btn_Maximizar.TextAlign = ContentAlignment.BottomCenter;
+            toolTip1.SetToolTip(btn_Maximizar, "Maximizar");
+            btn_Maximizar.UseVisualStyleBackColor = false;
+            btn_Maximizar.Click += Btn_Maximizar_Click;
+            btn_Maximizar.MouseLeave += Btn_Panel_MouseLeave;
+            btn_Maximizar.MouseHover += Btn_Panel_MouseHover;
             // 
             // label_Redactador
             // 
-            this.label_Redactador.AutoSize = true;
-            this.label_Redactador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Redactador.Location = new System.Drawing.Point(37, 9);
-            this.label_Redactador.Name = "label_Redactador";
-            this.label_Redactador.Size = new System.Drawing.Size(112, 18);
-            this.label_Redactador.TabIndex = 19;
-            this.label_Redactador.Text = "REDACTADOR";
+            label_Redactador.AutoSize = true;
+            label_Redactador.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_Redactador.Location = new Point(37, 9);
+            label_Redactador.Name = "label_Redactador";
+            label_Redactador.Size = new Size(141, 24);
+            label_Redactador.TabIndex = 19;
+            label_Redactador.Text = "REDACTADOR";
             // 
             // btn_Microfono
             // 
-            this.btn_Microfono.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Microfono.BackColor = System.Drawing.Color.Red;
-            this.btn_Microfono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Microfono.BackgroundImage")));
-            this.btn_Microfono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Microfono.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Microfono.Location = new System.Drawing.Point(259, 39);
-            this.btn_Microfono.Name = "btn_Microfono";
-            this.btn_Microfono.Size = new System.Drawing.Size(44, 45);
-            this.btn_Microfono.TabIndex = 10;
-            this.btn_Microfono.UseVisualStyleBackColor = false;
-            this.btn_Microfono.Click += new System.EventHandler(this.Btn_Microfono_Click);
+            btn_Microfono.Anchor = AnchorStyles.Top;
+            btn_Microfono.BackColor = Color.Red;
+            btn_Microfono.BackgroundImage = (Image)resources.GetObject("btn_Microfono.BackgroundImage");
+            btn_Microfono.BackgroundImageLayout = ImageLayout.Center;
+            btn_Microfono.Cursor = Cursors.Hand;
+            btn_Microfono.Location = new Point(259, 39);
+            btn_Microfono.Name = "btn_Microfono";
+            btn_Microfono.Size = new Size(44, 45);
+            btn_Microfono.TabIndex = 10;
+            btn_Microfono.UseVisualStyleBackColor = false;
+            btn_Microfono.Click += Btn_Microfono_Click;
+            // 
+            // contextMenuStrip
+            // 
+            contextMenuStrip.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { MenuCortito, PU, Denuncia });
+            contextMenuStrip.Name = "contextMenuStrip";
+            contextMenuStrip.Size = new Size(211, 104);
+            // 
+            // MenuCortito
+            // 
+            MenuCortito.DropDownItems.AddRange(new ToolStripItem[] { subMenuCortitoHecho, toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
+            MenuCortito.Name = "MenuCortito";
+            MenuCortito.Size = new Size(210, 24);
+            MenuCortito.Text = "CORTITO";
+            MenuCortito.Click += cORTITOToolStripMenuItem_Click;
+            // 
+            // subMenuCortitoHecho
+            // 
+            subMenuCortitoHecho.DropDownItems.AddRange(new ToolStripItem[] { subMenuCortitoHurto, toolStripTextBox3, toolStripTextBox4 });
+            subMenuCortitoHecho.Name = "subMenuCortitoHecho";
+            subMenuCortitoHecho.Size = new Size(259, 26);
+            subMenuCortitoHecho.Text = "HECHO";
+            // 
+            // subMenuCortitoHurto
+            // 
+            subMenuCortitoHurto.Name = "subMenuCortitoDelito";
+            subMenuCortitoHurto.Size = new Size(224, 26);
+            subMenuCortitoHurto.Text = "DELITO HURTO / ROBO";
+            subMenuCortitoHurto.Click += subMenuCortitoDelito_Click;
+            // 
+            // toolStripTextBox3
+            // 
+            toolStripTextBox3.Name = "toolStripTextBox3";
+            toolStripTextBox3.Size = new Size(224, 26);
+            toolStripTextBox3.Text = "23.737";
+            // 
+            // toolStripTextBox4
+            // 
+            toolStripTextBox4.Name = "toolStripTextBox4";
+            toolStripTextBox4.Size = new Size(224, 26);
+            toolStripTextBox4.Text = "INFR. TRANSITO";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(259, 26);
+            toolStripMenuItem1.Text = "MOVIMIENTO DETENIDO";
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(259, 26);
+            toolStripMenuItem2.Text = "LIBERTAD";
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(259, 26);
+            toolStripMenuItem3.Text = "CONVERSION";
+            // 
+            // PU
+            // 
+            PU.Name = "PU";
+            PU.Size = new Size(210, 24);
+            PU.Text = "P.U.";
+            // 
+            // Denuncia
+            // 
+            Denuncia.Name = "Denuncia";
+            Denuncia.Size = new Size(210, 24);
+            Denuncia.Text = "DENUNCIA";
             // 
             // Redactador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(174)))));
-            this.ClientSize = new System.Drawing.Size(576, 434);
-            this.Controls.Add(this.panel_MenuSuperior);
-            this.Controls.Add(this.btn_Microfono);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(576, 400);
-            this.Name = "Redactador";
-            this.Text = "REDACTAR TEXTO MEDIANTE VOZ";
-            this.Load += new System.EventHandler(this.Redactador_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Triangulo_Paint);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Redactador_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Redactador_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Redactador_MouseUp);
-            ((System.ComponentModel.ISupportInitialize)(iconoEscudo)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel_Botones.ResumeLayout(false);
-            this.panel_MenuSuperior.ResumeLayout(false);
-            this.panel_MenuSuperior.PerformLayout();
-            this.panel_SubirAudio.ResumeLayout(false);
-            this.panel_SubirAudio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SubirAudio)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(0, 154, 174);
+            ClientSize = new Size(576, 447);
+            Controls.Add(btn_Actuacion);
+            Controls.Add(panel_MenuSuperior);
+            Controls.Add(btn_Microfono);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(576, 400);
+            Name = "Redactador";
+            Text = "REDACTAR TEXTO MEDIANTE VOZ";
+            Load += Redactador_Load;
+            Paint += Triangulo_Paint;
+            MouseDown += Redactador_MouseDown;
+            MouseMove += Redactador_MouseMove;
+            MouseUp += Redactador_MouseUp;
+            Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(btn_Microfono, 0);
+            Controls.SetChildIndex(panel_MenuSuperior, 0);
+            Controls.SetChildIndex(btn_Actuacion, 0);
+            ((System.ComponentModel.ISupportInitialize)iconoEscudo).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel_Botones.ResumeLayout(false);
+            panel_MenuSuperior.ResumeLayout(false);
+            panel_MenuSuperior.PerformLayout();
+            panel_SubirAudio.ResumeLayout(false);
+            panel_SubirAudio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_SubirAudio).EndInit();
+            contextMenuStrip.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
-    }
+        #endregion
 
-#endregion
-
-    private Panel panel1;
+        private Panel panel1;
     private RichTextBox richTextBox_Redactor;
     private Panel panel_Botones;
     private Button btn_Justificar;
@@ -535,6 +632,19 @@ namespace Ofelia_Sara.Formularios.Redactador
         private Panel panel_SubirAudio;
         private PictureBox pictureBox_SubirAudio;
         private Label label_SubirAudio;
+       
+        private Button btn_Actuacion;
+        private ContextMenuStrip contextMenuStrip;
+        private ToolStripMenuItem MenuCortito;
+        private ToolStripMenuItem PU;
+        private ToolStripMenuItem Denuncia;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem subMenuCortitoHecho;
+        private ToolStripMenuItem subMenuCortitoHurto;
+        private ToolStripMenuItem toolStripTextBox3;
+        private ToolStripMenuItem toolStripTextBox4;
     }
 }
 

@@ -1021,7 +1021,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Compromisos.Controls.Add(label_RatificacionPersonal);
             panel_Compromisos.Location = new Point(4, 345);
             panel_Compromisos.Name = "panel_Compromisos";
-            panel_Compromisos.Size = new Size(521, 81);
+            panel_Compromisos.Size = new Size(529, 81);
             panel_Compromisos.TabIndex = 103;
             // 
             // panel_Not247

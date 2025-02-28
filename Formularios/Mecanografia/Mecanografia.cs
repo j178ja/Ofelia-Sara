@@ -42,8 +42,8 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         {
             InitializeComponent();
             
-            RedondearBordes.Aplicar(panel1,15);
-            RedondearBordes.Aplicar(panel_TecladoBase, 25);
+           
+            RedondearBordes.Aplicar(panel_TecladoBase, 8);
 
            
             this.Load += AjustarTamañoForm;//para ajustar el tamaño del formulario
@@ -407,12 +407,14 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         private void CrearLabelTimer()
         {
             // Inicializamos el Label de tiempo
-            label_Tiempo = new Label();
-            label_Tiempo.ForeColor = SystemColors.Highlight; // Color para el texto
-            label_Tiempo.Font = new System.Drawing.Font("Arial", 18);
-            label_Tiempo.Location = new Point(315, 95); // Posición dentro del panel
-            label_Tiempo.AutoSize = true; // Ajusta el tamaño automáticamente
-            label_Tiempo.Visible = true; // Hacerlo visible inicialmente
+            label_Tiempo = new Label
+            {
+                ForeColor = SystemColors.Highlight, // Color para el texto
+                Font = new System.Drawing.Font("Arial", 18),
+                Location = new Point(315, 95), // Posición dentro del panel
+                AutoSize = true, // Ajusta el tamaño automáticamente
+                Visible = true // Hacerlo visible inicialmente
+            };
             panel_Especificaciones.Controls.Add(label_Tiempo); // Añadir al panel
         }
 

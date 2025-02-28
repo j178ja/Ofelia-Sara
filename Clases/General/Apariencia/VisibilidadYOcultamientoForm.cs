@@ -1,31 +1,7 @@
-﻿/* Clase para ocultar formularios y mostrar formularios especificos
- COMO USARLO EJ.
-private void AbrirContacto()
-{
-    Form contacto = new Contacto();
-    contacto.FormClosed += (s, args) =>
-    {
-        // Restaurar todos los formularios minimizados al cerrar Contacto
-        foreach (Form f in Application.OpenForms.Cast<Form>())
-        {
-            f.WindowState = FormWindowState.Normal;
-        }
-    };
+﻿
 
-  VisibilidadYOcultamientoForm.MostrarFormulario(contacto);//MOSTRAR SOLO UN FORMULARIO
-}
-//..........
-private void AbrirVisu()
-{
-    Form visu = new Visu();
-    Form cargo = Application.OpenForms["Cargo"]; // Por ejemplo, recuperar un formulario ya abierto.
-
-   VisibilidadYOcultamientoForm.MostrarFormulario(visu, cargo);//MANTENER DOS FORM VISIBLES
-}
-
- */
-
-
+// OCULTAR    VisibilidadYOcultamientoForm.MostrarFormularioYOcultar(actaDenunciaForm);
+// MINIMIZAR     VisibilidadYOcultamientoForm.MostrarFormulario(actaDenunciaForm);
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,43 +9,77 @@ using System.Windows.Forms;
 namespace Ofelia_Sara.Clases.General.Apariencia
 {
 
-
     public static class VisibilidadYOcultamientoForm
     {
+        private static List<Form> formsModificados = new(); // Almacena los formularios minimizados u ocultos
+        private static bool ocultarEnLugarDeMinimizar = false; // Controla el comportamiento
+
         /// <summary>
-        /// Muestra el formulario especificado y oculta o minimiza los demás.
+        /// Muestra el formulario especificado y minimiza los demás por defecto.
         /// </summary>
-        /// <param name="formToShow">El formulario principal que debe mostrarse.</param>
-        /// <param name="additionalFormsToKeepVisible">Formularios adicionales que deben permanecer visibles.</param>
-        public static void MostrarFormulario(Form formToShow, params Form[] additionalFormsToKeepVisible)
+        /// <param name="formToShow">El formulario que debe mostrarse.</param>
+        public static void MostrarFormulario(Form formToShow)
         {
-            // Obtener todos los formularios abiertos
+            ocultarEnLugarDeMinimizar = false; // Se minimizan los formularios por defecto
+            AplicarAccionSobreFormularios(formToShow);
+        }
+
+        /// <summary>
+        /// Muestra el formulario especificado y oculta los demás en lugar de minimizarlos.
+        /// </summary>
+        /// <param name="formToShow">El formulario que debe mostrarse.</param>
+        public static void MostrarFormularioYOcultar(Form formToShow)
+        {
+            ocultarEnLugarDeMinimizar = true; // Se ocultan los formularios en vez de minimizarlos
+            AplicarAccionSobreFormularios(formToShow);
+        }
+
+        /// <summary>
+        /// Aplica la acción de ocultar o minimizar sobre los formularios abiertos.
+        /// </summary>
+        private static void AplicarAccionSobreFormularios(Form formToShow)
+        {
+            formsModificados.Clear(); // Limpiar la lista de formularios modificados
+
             List<Form> allForms = Application.OpenForms.Cast<Form>().ToList();
 
-            // Formularios que deben permanecer visibles
-            List<Form> formsToKeepVisible = new List<Form> { formToShow };
-            formsToKeepVisible.AddRange(additionalFormsToKeepVisible);
-
-            // Ocultar o minimizar formularios no deseados
             foreach (Form f in allForms)
             {
-                if (!formsToKeepVisible.Contains(f))
+                if (f != formToShow && f.Visible) // Solo afecta a los formularios visibles
                 {
-                    f.WindowState = FormWindowState.Minimized; // Minimizar en lugar de ocultar si se prefiere
+                    formsModificados.Add(f); // Guardamos el formulario en la lista
+
+                    if (ocultarEnLugarDeMinimizar)
+                        f.Hide(); // Ocultar formulario
+                    else
+                        f.WindowState = FormWindowState.Minimized; // Minimizar formulario
                 }
             }
 
-            // Mostrar el formulario principal
+            // Mostrar y traer al frente el formulario principal
             formToShow.Show();
             formToShow.BringToFront();
             formToShow.Activate();
 
-            // Restaurar formularios adicionales, si corresponde
-            foreach (Form f in additionalFormsToKeepVisible)
+            // Restaurar formularios cuando se cierre formToShow
+            formToShow.FormClosed += (s, e) => RestaurarFormularios();
+        }
+
+        /// <summary>
+        /// Restaura todos los formularios ocultos o minimizados.
+        /// </summary>
+        private static void RestaurarFormularios()
+        {
+            foreach (Form f in formsModificados)
             {
-                f.WindowState = FormWindowState.Normal;
-                f.Show();
+                if (f != null && !f.IsDisposed)
+                {
+                    f.WindowState = FormWindowState.Normal; // Restaurar tamaño normal
+                    f.Show(); // Asegurar que esté visible
+                    f.BringToFront();
+                }
             }
+            formsModificados.Clear(); // Limpiar la lista después de restaurar
         }
     }
 }

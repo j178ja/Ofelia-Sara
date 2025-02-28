@@ -8,13 +8,14 @@ namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre
 
     public class ReposicionarSegunAgregado
     {
-        private Form formulario;
-        private Panel panelIpp;
-        private Panel panelCaratula;
-        private Panel panelVictima;
-        private Panel panelImputado;
-        private Panel panelInstruccion;
-        private Panel panelControlesInferiores;
+        private readonly  Form formulario;
+        private readonly  Panel panelIpp;
+        private readonly  Panel panelCaratula;
+        private readonly  Panel panelVictima;
+        private readonly  Panel panelImputado;
+        private readonly  Panel panelInstruccion;
+        private readonly  Panel panelCompromisos;
+        private readonly  Panel panelControlesInferiores;
 
         private Dictionary<Panel, int> panelHeightsOriginales;
 
@@ -24,6 +25,7 @@ namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre
                                           Panel panelVictima,
                                           Panel panelImputado,
                                           Panel panelInstruccion,
+                                          Panel panelCompromisos,
                                           Panel panelControlesInferiores)
         {
             this.formulario = formulario;
@@ -32,6 +34,7 @@ namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre
             this.panelVictima = panelVictima;
             this.panelImputado = panelImputado;
             this.panelInstruccion = panelInstruccion;
+            this.panelCompromisos = panelCompromisos;
             this.panelControlesInferiores = panelControlesInferiores;
 
             // Guardar las alturas originales de los paneles
@@ -40,7 +43,8 @@ namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre
             { panelCaratula, panelCaratula.Height },
             { panelVictima, panelVictima.Height },
             { panelImputado, panelImputado.Height },
-            { panelInstruccion, panelInstruccion.Height }
+            { panelInstruccion, panelInstruccion.Height },
+            { panelCompromisos, panelCompromisos.Height }
         };
 
             // Suscribir al evento SizeChanged de los paneles expansibles
@@ -48,6 +52,7 @@ namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre
             panelVictima.SizeChanged += OnPanelSizeChanged;
             panelImputado.SizeChanged += OnPanelSizeChanged;
             panelInstruccion.SizeChanged += OnPanelSizeChanged;
+            panelCompromisos.SizeChanged += OnPanelSizeChanged;
         }
 
         private void OnPanelSizeChanged(object sender, EventArgs e)
@@ -74,6 +79,10 @@ namespace Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre
             // Reposicionar panelInstruccion
             panelInstruccion.Top = offsetY;
             offsetY = panelInstruccion.Bottom;
+
+            // Reposicionar panelCompromisos
+            panelCompromisos.Top = offsetY;
+            offsetY = panelCompromisos.Bottom;
 
             // Reposicionar panelControlesInferiores (fijo respecto al último panel expansible)
             panelControlesInferiores.Top = offsetY;

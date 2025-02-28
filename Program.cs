@@ -4,6 +4,8 @@ using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal;
+using Ofelia_Sara.Formularios.Mecanografia;
+using Ofelia_Sara.Formularios.Redactador;
 using System;
 using System.Windows.Forms;
 
@@ -24,19 +26,22 @@ namespace Ofelia_Sara
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // //// Mostrar el formulario de presentación y luego continuar con el menú principal
-            //using (Presentacion presentacion = new Presentacion())
-            //{
-            //    Application.Run(presentacion);
-            //}
+            //// Mostrar el formulario de presentación y luego continuar con el menú principal
+            ////using (Presentacion presentacion = new Presentacion())
+            ////{
+            ////    Application.Run(presentacion);
+            ////}
 
             // Después de cerrar Presentacion, abrir MenuPrincipal
-           
-           Application.Run(new MenuPrincipal());
+
+            // Application.Run(new MenuPrincipal());
             //  Application.Run(new MensajeEmail());
-             //  Application.Run(new Visu());
+            //  Application.Run(new Visu());
             //  Application.Run(new InicioCierre());
-           //  Application.Run(new Registro());
+            //  Application.Run(new Registro());
+            // Application.Run(new ActaDenuncia());
+            // Application.Run(new Mecanografia());
+            Application.Run(new Redactador());
 
 
 

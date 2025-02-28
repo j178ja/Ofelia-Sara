@@ -59,6 +59,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Victima,
             panel_Imputado,
             panel_Instruccion,
+            panel_Compromisos,
             panel_ControlesInferiores
             );
 
@@ -87,7 +88,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
 
-
+            panel_Compromisos.Visible = false;
             panel_InsertarSecuestro.Visible = false; // inicializa panel inserte secuetro oculto// se visiviliza con texto en caratula
 
         }
@@ -992,11 +993,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.ErrorConexion);
             }
         }
-
         private void Btn_CrearDenuncia_Click(object sender, EventArgs e)
         {
-             ActaDenuncia actaDenunciaForm  = new();
-            actaDenunciaForm.ShowDialog();
+            ActaDenuncia actaDenunciaForm = new();
+
+            // Posicionar el formulario
+            PosicionarBordeSuPerior.PosicionarFormulario(actaDenunciaForm);
+
+            // Mostrar y ocultar los demás formularios
+            VisibilidadYOcultamientoForm.MostrarFormularioYOcultar(actaDenunciaForm);
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using NAudio.Wave;
+using Ofelia_Sara.Clases.General.Animaciones;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Controles.Controles.Tooltip;
@@ -17,8 +18,10 @@ using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
 namespace Ofelia_Sara.Formularios.Redactador
 {
+
     public partial class Redactador : BaseForm
     {
+        #region mover formulario
         //funcion nativa para ARRASTRAR EL FORMULARIO
         // Importar las funciones de la API de Windows
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
@@ -35,6 +38,8 @@ namespace Ofelia_Sara.Formularios.Redactador
         [DllImport("user32.dll")]
         private static extern bool HideCaret(IntPtr hWnd);
         //-----------------------------------------------------------
+        #endregion
+
         #region VARIABLES
         //AMPLIAR FORMULARIO
         private bool isResizing = false;
@@ -59,8 +64,8 @@ namespace Ofelia_Sara.Formularios.Redactador
         public Redactador()
         {
             InitializeComponent();
-            RedondearBordes.Aplicar(panel1, 15);
-          
+
+
             panel_Botones.BringToFront();  // Coloca el panel encima del AudioVisualizerControl
 
             timer_Barras = new Timer
@@ -68,6 +73,9 @@ namespace Ofelia_Sara.Formularios.Redactador
                 Interval = 100 // Ajusta el intervalo
             };
             timer_Barras.Tick += timer_Barras_Tick;
+
+
+            btn_Actuacion.BringToFront();
 
         }
         #endregion
@@ -77,8 +85,8 @@ namespace Ofelia_Sara.Formularios.Redactador
         {
             audioVisualizerControl.Visible = false;
             ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
-          
 
+            IncrementarTamaño.Incrementar(btn_Actuacion);
 
             this.FormClosing += Redactador_FormClosing;// para mensaje previo a cerrar
 
@@ -149,7 +157,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Cerrar.FlatAppearance.BorderSize = 1;
             btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
         }
-   
+
         private void TimerMinimizar_Tick(object sender, EventArgs e)
         {
             // Detener el timer
@@ -225,8 +233,6 @@ namespace Ofelia_Sara.Formularios.Redactador
         }
 
 
-
-        
         /// <summary>
         /// Método para activar el subrayado en MouseHover
         /// </summary>
@@ -259,7 +265,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             animationTimer.Start(); // Inicia el Timer para la animación
         }
 
-       
+
         /// <summary>
         /// para desactivar el subrayado en MouseLeave
         /// </summary>
@@ -272,8 +278,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             animationTimer?.Stop(); // Detener el Timer
             label_OfeliaSara.Invalidate(); // Redibuja el Label para eliminar el subrayado
         }
-
-
 
         /// <summary>
         /// Método Paint para dibujar el subrayado personalizado
@@ -323,7 +327,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             InstructivoDigital videoInstructivo = new InstructivoDigital(ModuloOrigen.Redactador);
 
             // Posicionar VideoInstructivo al centro-derecho
-            int xVideoInstructivo = xRedactador + formWidth ; // A la derecha de Redactador
+            int xVideoInstructivo = xRedactador + formWidth; // A la derecha de Redactador
             videoInstructivo.StartPosition = FormStartPosition.Manual;
             videoInstructivo.Location = new Point(xVideoInstructivo);
 
@@ -360,13 +364,6 @@ namespace Ofelia_Sara.Formularios.Redactador
         }
 
 
-
-
-
-
-
-
-       
         /// <summary>
         /// para poder arrastrar el formulario
         /// </summary>
@@ -380,9 +377,9 @@ namespace Ofelia_Sara.Formularios.Redactador
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
-       
 
-        private ToolTip toolTip = new ();
+
+        private ToolTip toolTip = new();
 
         private void Btn_Microfono_Click(object sender, EventArgs e)
         {
@@ -406,7 +403,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.Focus();
 
                 // Mostrar ToolTip para activar el micrófono
-              ToolTipGeneral.Mostrar( btn_Microfono, "ACTIVAR micrófono");
+                ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
             }
             else // Activar micrófono
             {
@@ -421,9 +418,6 @@ namespace Ofelia_Sara.Formularios.Redactador
                 timer_Barras.Start(); // Inicia el temporizador para actualizar las barras de visualización
             }
         }
-
-
-
 
         private void StartRecording()
         {
@@ -456,7 +450,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         private void timer_Barras_Tick(object sender, EventArgs e)
         {
             // Generar amplitudes de ejemplo o basadas en datos de audio
-            Random random = new ();
+            Random random = new();
             int[] amplitudes = new int[audioVisualizerControl.Controls.Count];
             for (int i = 0; i < amplitudes.Length; i++)
             {
@@ -466,7 +460,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             // Llamar al método de actualización de visualización en el control de visualización
             audioVisualizerControl.UpdateVisualization(amplitudes);
         }
-      
+
         #region FUNCIONALIDAD DE TECLAS
         private void Btn_Negrita_Click(object sender, EventArgs e)
         {
@@ -534,7 +528,9 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.SelectionFont = new Font(richTextBox_Redactor.SelectionFont, nuevoEstilo);
             }
         }
-        //--------------BOTONES AUMENTAR Y DISMINUIR TAMAÑO----------------
+
+
+        #region Aumentar tamaño fuente
         private void Btn_AumentarTamaño_Click(object sender, EventArgs e)
         {
             CambiarTamañoFuente(2);  // Aumentar el tamaño de la fuente en 2 puntos
@@ -565,11 +561,10 @@ namespace Ofelia_Sara.Formularios.Redactador
                 richTextBox_Redactor.SelectionFont = new Font(richTextBox_Redactor.SelectionFont.FontFamily, nuevoTamaño);
             }
         }
-        //--------------BOTON ALTERNANCIA MAYUSCULA-MINUSCULA------
+        #endregion
 
 
-
-
+        #region Alternancia mayuscula
         // Variable para almacenar si la escritura actual está en mayúsculas o minúsculas
         private bool escribirEnMayusculas = false;
 
@@ -614,6 +609,9 @@ namespace Ofelia_Sara.Formularios.Redactador
                 }
             }
         }
+        #endregion
+
+
         /// <summary>
         /// metodos para cambiar el caret en el richtextBox
         /// </summary>
@@ -754,15 +752,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                // Hacer visibles los botones
-                mensaje.MostrarBotonesConfirmacion(true);
-
-                DialogResult result = mensaje.ShowDialog();
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true; // Cancelar el cierre del formulario
-                }
+                MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
 
@@ -943,7 +933,88 @@ namespace Ofelia_Sara.Formularios.Redactador
             label_SubirAudio.Text = "Transcribir";
         }
 
+        private void btn_Actuacion_Click(object sender, EventArgs e)
+        {
+            // Muestra el menú contextual en la posición del botón
+            contextMenuStrip.Show(btn_Actuacion, new Point(0, btn_Actuacion.Height));
+        }
 
+        private void cORTITOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertarTextoFormato("Nombre del testigo: ", true); // Texto en negrita
+            richTextBox_Redactor.AppendText("________________________\n\n"); // Espacio para completar
+        }
+
+
+        //--------------------------------------------------
+
+
+        /// <summary>
+        /// Inserta un texto en el RichTextBox con formato específico
+        /// </summary>
+        private void InsertarTextoFormato(string texto, bool negrita = false, bool subrayado = false)
+        {
+            richTextBox_Redactor.SelectionStart = richTextBox_Redactor.TextLength;
+            richTextBox_Redactor.SelectionLength = 0;
+
+            // Aplicar formato
+            FontStyle estilo = FontStyle.Regular;
+            if (negrita) estilo |= FontStyle.Bold;
+            if (subrayado) estilo |= FontStyle.Underline;
+
+            richTextBox_Redactor.SelectionFont = new Font(richTextBox_Redactor.Font, estilo);
+            richTextBox_Redactor.AppendText(texto);
+            richTextBox_Redactor.SelectionFont = richTextBox_Redactor.Font; // Restaurar fuente normal
+        }
+
+        Dictionary<string, string> campos = new Dictionary<string, string>();
+        private void CrearPlantilla()
+        {
+         
+                string CortitoDelito = @"
+
+            S.S.R.A.1.-
+            PDS PINAMAR.-
+            CRIA. PINAMAR 1ERA.-
+            FECHA:{Fecha}.-
+            LUGAR DEL HECHO: {Lugar del hecho}
+            HECHO: {Caratula}.-
+            INTERVIENE: UFID NRO.  {Fiscalia}. -
+            DENUNCIANTE: {Denunciante}.-
+            IMPUTADO: {Imputado}.-
+            SINTESIS: Fecha  denuncia  {Denunciante} ({Edad}), D.N.I {Dni} ({turista/residente}) 
+            {Relato del hecho} Crio. Mayor Valerio O. Gallo, jefe PDS Pinamar. Fdo. Crío. Mayor Carlos Abraham Domínguez
+    ";
+
+                richTextBox_Redactor.Text = CortitoDelito; // Cargar la plantilla
+            
+
+           
+                string CortitoDroga = @"
+
+            S.S.R.A.1.-
+            PDS PINAMAR.-
+            CRIA. PINAMAR 1ERA.-
+            FECHA:{Fecha}.-
+            LUGAR DEL HECHO: {Lugar del hecho}
+            HECHO: {Caratula}.-
+            INTERVIENE: UFID NRO.  AYUDANTIA FISCAL ESTUPEFACIENTES PINAMAR.-. -
+            DENUNCIANTE: PERSONAL POLICIAL.-
+            CAUSANTE: {Imputado}.-
+            SINTESIS: Fecha personal de esta dependencia, procede en {Lugar del Hecho}, de este medio a {Relato del Hecho}la identificando a {Imputado},{Edad},{Dni}
+             a quien se el eincauta en su poder sustancia compatible con {Tipo sustancia}, se realiza pesaje el cual arroja guarismo de {gramos sustancia}gms, se labran actuaciones por {Caratula}. 
+            Interviene Ayudantía Fiscal de estupefacientes. 
+            Crio. Mayor Valerio O. Gallo, jefe PDS Pinamar. Fdo. Crío. Mayor Carlos Abraham Domínguez
+    ";
+
+                richTextBox_Redactor.Text = CortitoDroga; // Cargar la plantilla
+            
+        }
+
+        private void subMenuCortitoDelito_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

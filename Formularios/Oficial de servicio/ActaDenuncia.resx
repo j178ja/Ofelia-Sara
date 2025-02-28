@@ -117,4 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="comboBox_ModeloActuacion.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAENJREFUOE9jYBgFKGDD52f/icHo+sAAJKHTUU0UxmoIsgHYFBCSBwNcinCJYwXo
+        itH56OqxAmzhQbRmGCDL5lFAHgAA3o+f6e6UDB4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="comboBox_ModeloActuacion.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAENJREFUOE9jYBgFKGDD52f/icHo+sAAJKHTUU0UxmoIsgHYFBCSBwNcinCJYwXo
+        itH56OqxAmzhQbRmGCDL5lFAHgAA3o+f6e6UDB4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="comboBox_ModeloActuacion.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAO1JREFUOE/tjsFKw0AURW/dtoim0Y0B3UwoNlhoFUHpFNF5+Ycu/ElL0oaAHzIL
+        NwlkrzXJlDIlhSgdSqngRvAs373nvQf888tEYAhwaI6/qLKqs5UZvAUTyw8uJAI4ZmwHDScfkFQWX2KK
+        rpkDIU7KKz9Vx1y/PzxJhN9L1nJ/LevSoxSvsDflmggsv6FEWUNdDOjt8aV50QrhfN6SVHYl+xliXJra
+        BuNJ2y16lC6OuJ7fCTm/F7I4H+r8mlLEcM3+VkTQYkWPkuqqanOd9yl7npzuvmxiRw1Wen6iOpSNps2f
+        yTVn8YG799t/lxV9bFc/yxP04gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="comboBox_ModeloActuacion.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACESURBVDhP7Y47
+        DoJQEEXPCqyks7CBQlw/4ISEhVjQQOImCOQaBN5o8WJsSDzl/cxc+PNjjJSCg5cX5CnzkRtXjAHjTsHJ
+        209NnjIVubcVSDB6jPHtyFqW19NwDLoLmmd0c7Cl5OzKD2ouvhZSkwVLtp/lRREuifzsWY98UX6hydGz
+        d8sEwU1CkxTbyGEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="customComboBox1.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAENJREFUOE9jYBgFKGDD52f/icHo+sAAJKHTUU0UxmoIsgHYFBCSBwNcinCJYwXo
+        itH56OqxAmzhQbRmGCDL5lFAHgAA3o+f6e6UDB4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="customComboBox1.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAENJREFUOE9jYBgFKGDD52f/icHo+sAAJKHTUU0UxmoIsgHYFBCSBwNcinCJYwXo
+        itH56OqxAmzhQbRmGCDL5lFAHgAA3o+f6e6UDB4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="customComboBox1.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAO1JREFUOE/tjsFKw0AURW/dtoim0Y0B3UwoNlhoFUHpFNF5+Ycu/ElL0oaAHzIL
+        NwlkrzXJlDIlhSgdSqngRvAs373nvQf888tEYAhwaI6/qLKqs5UZvAUTyw8uJAI4ZmwHDScfkFQWX2KK
+        rpkDIU7KKz9Vx1y/PzxJhN9L1nJ/LevSoxSvsDflmggsv6FEWUNdDOjt8aV50QrhfN6SVHYl+xliXJra
+        BuNJ2y16lC6OuJ7fCTm/F7I4H+r8mlLEcM3+VkTQYkWPkuqqanOd9yl7npzuvmxiRw1Wen6iOpSNps2f
+        yTVn8YG799t/lxV9bFc/yxP04gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="customComboBox1.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACESURBVDhP7Y47
+        DoJQEEXPCqyks7CBQlw/4ISEhVjQQOImCOQaBN5o8WJsSDzl/cxc+PNjjJSCg5cX5CnzkRtXjAHjTsHJ
+        209NnjIVubcVSDB6jPHtyFqW19NwDLoLmmd0c7Cl5OzKD2ouvhZSkwVLtp/lRREuifzsWY98UX6hydGz
+        d8sEwU1CkxTbyGEAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
