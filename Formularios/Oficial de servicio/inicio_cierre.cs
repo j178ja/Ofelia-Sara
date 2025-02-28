@@ -96,7 +96,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
+          
             IncrementarTamaño.Incrementar(btn_SDA);
+            IncrementarTamaño.Incrementar(btn_CrearDenuncia);
 
 
 

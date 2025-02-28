@@ -122,6 +122,9 @@
     <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\UsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Oficial de servicio\ActaDenuncia.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Oficial de servicio\Agregar Componentes\NuevaDependencia.cs">
       <SubType>Form</SubType>
     </Compile>
