@@ -86,7 +86,7 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         #endregion
 
         #region MENU
-        private ToolStripMenuItem CrearMenuItem(string texto, EventHandler onClick)
+        public ToolStripMenuItem CrearMenuItem(string texto, EventHandler onClick)
         {
             var menuItem = new ToolStripMenuItem(texto);
 
@@ -137,23 +137,23 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
                 timer.Start();
             };
 
-            //// Evento DropDownOpened para cambiar el estilo cuando el submenú está abierto
-            //menuItem.DropDownOpened += (sender, e) =>
-            //{
-            //    // Estilo al abrir el submenú
-            //    menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo submenú
-            //    menuItem.ForeColor = Color.White; // Texto blanco
-            //    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Bold); // Fuente en negrita
-            //};
+            // Evento DropDownOpened para cambiar el estilo cuando el submenú está abierto
+            menuItem.DropDownOpened += (sender, e) =>
+            {
+                // Estilo al abrir el submenú
+                menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo submenú
+                menuItem.ForeColor = Color.White; // Texto blanco
+                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Bold); // Fuente en negrita
+            };
 
-            //// Evento DropDownClosed para restaurar el estilo cuando el submenú está cerrado
-            //menuItem.DropDownClosed += (sender, e) =>
-            //{
-            //    // Restaurar el estilo al cerrar el submenú
-            //    menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
-            //    menuItem.ForeColor = Color.Black; // Texto original
-            //    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
-            //};
+            // Evento DropDownClosed para restaurar el estilo cuando el submenú está cerrado
+            menuItem.DropDownClosed += (sender, e) =>
+            {
+                // Restaurar el estilo al cerrar el submenú
+                menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+                menuItem.ForeColor = Color.Black; // Texto original
+                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
+            };
 
             return menuItem;
         }
@@ -225,7 +225,7 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         /// para aplicar el fondo a los items y a los subitems
         /// </summary>
         /// <param name="item"></param>
-        private static void AplicarEstiloItem(ToolStripItem item)
+        public static void AplicarEstiloItem(ToolStripItem item)
         {
             // Aplicamos el estilo al item principal
             item.BackColor = Color.FromArgb(178, 213, 230); // Fondo predeterminado

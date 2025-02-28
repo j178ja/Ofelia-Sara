@@ -2,6 +2,7 @@
 using Ofelia_Sara.Clases.General.Animaciones;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.General.Botones.btn_Configuracion;
 using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
@@ -64,18 +65,27 @@ namespace Ofelia_Sara.Formularios.Redactador
         public Redactador()
         {
             InitializeComponent();
-
-
+            btn_Actuacion.BringToFront();
             panel_Botones.BringToFront();  // Coloca el panel encima del AudioVisualizerControl
-
+            audioVisualizerControl.Visible = false;
+            //timer para animacion de barras
             timer_Barras = new Timer
             {
-                Interval = 100 // Ajusta el intervalo
+                Interval = 100
             };
             timer_Barras.Tick += timer_Barras_Tick;
 
+            menu_SeleccionPlantilla.Renderer = new CustomMenuStripRenderer();
+            // Aplicar estilos a todos los ítems del menú
+           
+            foreach (ToolStripItem item in menu_SeleccionPlantilla.Items)
+            {
+                AuxiliarConfiguracion.AplicarEstiloItem(item);
+              
+            }
+        
 
-            btn_Actuacion.BringToFront();
+
 
         }
         #endregion
@@ -83,10 +93,19 @@ namespace Ofelia_Sara.Formularios.Redactador
         #region LOAD
         private void Redactador_Load(object sender, EventArgs e)
         {
-            audioVisualizerControl.Visible = false;
-            ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
-
+            
+           
             IncrementarTamaño.Incrementar(btn_Actuacion);
+
+            //metodo recursivo para comportamiento de aumentar tamaño en botones de panel
+            foreach (Control control in panel_Botones.Controls)
+            {
+                if (control is Button boton)
+                {
+                    IncrementarTamaño.Incrementar(boton);
+                }
+            }
+
 
             this.FormClosing += Redactador_FormClosing;// para mensaje previo a cerrar
 
@@ -94,6 +113,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
+            InicializarEstiloBoton(btn_Enviar);
 
             //----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
             timerCerrarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
@@ -102,16 +122,24 @@ namespace Ofelia_Sara.Formularios.Redactador
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
 
             ConfigurarTooltips();
-
+           
             richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
+
+      
+       
         }
+
+        
         #endregion
+
+        #region GENERAL
 
         /// <summary>
         /// agrupa los toltips 
         /// </summary>
         private void ConfigurarTooltips()
         {
+            ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
             ToolTipGeneral.Mostrar(btn_Guardar, "CREAR DOCUMENTO WORD");
             ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR");
             ToolTipGeneral.Mostrar(btn_Negrita, "NEGRITA");
@@ -125,16 +153,20 @@ namespace Ofelia_Sara.Formularios.Redactador
             ToolTipGeneral.Mostrar(btn_AlinearDerecha, "Alinear a la Derecha");
             ToolTipGeneral.Mostrar(btn_Justificar, "JUSTIFICAR");
             ToolTipGeneral.Mostrar(label_OfeliaSara, "Instructivo de la aplicación");
+            ToolTipGeneral.Mostrar(btn_Enviar, "Enviar");// a posteriori establer tooltip personalizado para enviar wwp, email
         }
+
+        #endregion
+
+        #region BTN PANEL MENU_SUPERIO
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
             btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
             btn_Cerrar.ForeColor = SystemColors.Control;
-            btn_Cerrar.FlatAppearance.BorderSize = 1;
+            btn_Cerrar.FlatAppearance.BorderSize = 2;
             btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
             timer_Barras.Stop();
             audioVisualizerControl.Visible = false;
-
             timerCerrarForm.Start();
         }
         private void TimerCerrar_Tick(object sender, EventArgs e)
@@ -166,7 +198,11 @@ namespace Ofelia_Sara.Formularios.Redactador
             // Minimizar solo el formulario actual
             this.WindowState = FormWindowState.Minimized;
         }
-
+        /// <summary>
+        /// EVENTO CLICK MINIMIZAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
             // Cambiar estilo visual del botón de minimizar
@@ -186,7 +222,11 @@ namespace Ofelia_Sara.Formularios.Redactador
                 timerMinimizarForm.Start();
             }
         }
-
+        /// <summary>
+        /// evento click MAXIMIZAR
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Maximizar_Click(object sender, EventArgs e)
         {
             // Cambiar estilo visual del botón de maximizar
@@ -210,6 +250,23 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
         }
 
+        /// <summary>
+        /// para poder arrastrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        #endregion
+
+        #region BTN PANEL BOTONES
         private void Btn_Panel_MouseHover(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -233,6 +290,151 @@ namespace Ofelia_Sara.Formularios.Redactador
         }
 
 
+        #region Aumentar tamaño fuente
+        private void Btn_AumentarTamaño_Click(object sender, EventArgs e)
+        {
+            CambiarTamañoFuente(2);  // Aumentar el tamaño de la fuente en 2 puntos
+            richTextBox_Redactor.Focus();
+        }
+
+        private void Btn_DisminuirTamaño_Click(object sender, EventArgs e)
+        {
+            CambiarTamañoFuente(-2);  // Disminuir el tamaño de la fuente en 2 puntos
+            richTextBox_Redactor.Focus();
+        }
+
+        private void CambiarTamañoFuente(int cambio)
+        {
+            // Verificar si hay texto seleccionado
+            if (richTextBox_Redactor.SelectionFont != null)
+            {
+                // Obtener el tamaño actual de la fuente
+                float tamañoActual = richTextBox_Redactor.SelectionFont.Size;
+
+                // Calcular el nuevo tamaño
+                float nuevoTamaño = tamañoActual + cambio;
+
+                // Asegurarse de que el tamaño no sea menor que un valor mínimo (por ejemplo, 8 puntos)
+                if (nuevoTamaño < 8) nuevoTamaño = 8;
+
+                // Aplicar el nuevo tamaño a la selección
+                richTextBox_Redactor.SelectionFont = new Font(richTextBox_Redactor.SelectionFont.FontFamily, nuevoTamaño);
+            }
+        }
+        #endregion
+
+
+        #region Alternancia mayuscula
+        // Variable para almacenar si la escritura actual está en mayúsculas o minúsculas
+        private bool escribirEnMayusculas = false;
+
+        private void Btn_MayusculaMiniscula_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay texto seleccionado
+            if (richTextBox_Redactor.SelectionLength > 0)
+            {
+                // Obtener el texto seleccionado
+                string textoSeleccionado = richTextBox_Redactor.SelectedText;
+
+                // Alternar entre mayúsculas y minúsculas
+                if (textoSeleccionado == textoSeleccionado.ToUpper())
+                {
+                    // Si está en mayúsculas, cambiar a minúsculas
+                    richTextBox_Redactor.SelectedText = textoSeleccionado.ToLower();
+                    escribirEnMayusculas = false; // Establecer que lo siguiente debe ser en minúsculas
+                    richTextBox_Redactor.Focus();
+                }
+                else
+                {
+                    // Si está en minúsculas, cambiar a mayúsculas
+                    richTextBox_Redactor.SelectedText = textoSeleccionado.ToUpper();
+                    escribirEnMayusculas = true; // Establecer que lo siguiente debe ser en mayúsculas
+                    richTextBox_Redactor.Focus();
+                }
+            }
+            else
+            {
+                // Si no hay texto seleccionado, verificar el último carácter escrito y decidir
+                if (escribirEnMayusculas)
+                {
+                    // Establecer que el siguiente texto escrito debe ser en mayúsculas
+                    richTextBox_Redactor.SelectedText = richTextBox_Redactor.SelectedText.ToUpper();
+                    richTextBox_Redactor.Focus();
+                }
+                else
+                {
+                    // Establecer que el siguiente texto escrito debe ser en minúsculas
+                    richTextBox_Redactor.SelectedText = richTextBox_Redactor.SelectedText.ToLower();
+                    richTextBox_Redactor.Focus();
+                }
+            }
+        }
+        #endregion
+
+        private void Btn_MouseDown(object sender, MouseEventArgs e)
+        {
+            Button boton = sender as Button; // Convertir el sender a tipo Button
+            if (boton != null)
+            {
+                boton.BackColor = Color.SkyBlue;
+            }
+        }
+
+        private void Btn_MouseUp(object sender, MouseEventArgs e)
+        {
+            Button boton = sender as Button; // Convertir el sender a tipo Button
+            if (boton != null)
+            {
+                boton.BackColor = Color.White;
+            }
+        }
+
+        private void Btn_AlinearIzquierda_Click(object sender, EventArgs e)
+        {
+            CambiarAlineacion(btn_AlinearIzquierda, HorizontalAlignment.Left);
+            richTextBox_Redactor.Focus();
+        }
+
+        private void Btn_AlinearDerecha_Click(object sender, EventArgs e)
+        {
+            CambiarAlineacion(btn_AlinearDerecha, HorizontalAlignment.Right);
+            richTextBox_Redactor.Focus();
+        }
+
+        private void Btn_Centrar_Click(object sender, EventArgs e)
+        {
+            CambiarAlineacion(btn_Centrar, HorizontalAlignment.Center);
+            richTextBox_Redactor.Focus();
+        }
+
+        private void Btn_Justificar_Click(object sender, EventArgs e)
+        {
+            CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left); // Usa Center ya que Justify no es soportado directamente
+            richTextBox_Redactor.Focus();
+        }
+
+        private void CambiarAlineacion(Button boton, HorizontalAlignment alineacion)
+        {
+            // Restablecer el color del botón anterior
+            if (botonAlineacionSeleccionado != null)
+            {
+                botonAlineacionSeleccionado.BackColor = Color.White;
+            }
+
+            // Aplicar el nuevo color al botón seleccionado
+            boton.BackColor = Color.SkyBlue;
+
+            // Actualizar la alineación en el RichTextBox
+            richTextBox_Redactor.SelectionAlignment = alineacion;
+
+            // Guardar el botón actual como el botón seleccionado
+            botonAlineacionSeleccionado = boton;
+        }
+
+
+        #endregion
+
+        #region LABEL INSTRUCTIVO DIGITAL
         /// <summary>
         /// Método para activar el subrayado en MouseHover
         /// </summary>
@@ -363,23 +565,11 @@ namespace Ofelia_Sara.Formularios.Redactador
             videoInstructivo.ShowDialog();
         }
 
+        #endregion
 
-        /// <summary>
-        /// para poder arrastrar el formulario
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void panel_MenuSuperior_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
-            }
-        }
+       
 
-
-        private ToolTip toolTip = new();
+        #region FUNCION GRABAR
 
         private void Btn_Microfono_Click(object sender, EventArgs e)
         {
@@ -461,6 +651,8 @@ namespace Ofelia_Sara.Formularios.Redactador
             audioVisualizerControl.UpdateVisualization(amplitudes);
         }
 
+        #endregion
+
         #region FUNCIONALIDAD DE TECLAS
         private void Btn_Negrita_Click(object sender, EventArgs e)
         {
@@ -530,86 +722,6 @@ namespace Ofelia_Sara.Formularios.Redactador
         }
 
 
-        #region Aumentar tamaño fuente
-        private void Btn_AumentarTamaño_Click(object sender, EventArgs e)
-        {
-            CambiarTamañoFuente(2);  // Aumentar el tamaño de la fuente en 2 puntos
-            richTextBox_Redactor.Focus();
-        }
-
-        private void Btn_DisminuirTamaño_Click(object sender, EventArgs e)
-        {
-            CambiarTamañoFuente(-2);  // Disminuir el tamaño de la fuente en 2 puntos
-            richTextBox_Redactor.Focus();
-        }
-
-        private void CambiarTamañoFuente(int cambio)
-        {
-            // Verificar si hay texto seleccionado
-            if (richTextBox_Redactor.SelectionFont != null)
-            {
-                // Obtener el tamaño actual de la fuente
-                float tamañoActual = richTextBox_Redactor.SelectionFont.Size;
-
-                // Calcular el nuevo tamaño
-                float nuevoTamaño = tamañoActual + cambio;
-
-                // Asegurarse de que el tamaño no sea menor que un valor mínimo (por ejemplo, 8 puntos)
-                if (nuevoTamaño < 8) nuevoTamaño = 8;
-
-                // Aplicar el nuevo tamaño a la selección
-                richTextBox_Redactor.SelectionFont = new Font(richTextBox_Redactor.SelectionFont.FontFamily, nuevoTamaño);
-            }
-        }
-        #endregion
-
-
-        #region Alternancia mayuscula
-        // Variable para almacenar si la escritura actual está en mayúsculas o minúsculas
-        private bool escribirEnMayusculas = false;
-
-        private void Btn_MayusculaMiniscula_Click(object sender, EventArgs e)
-        {
-            // Verificar si hay texto seleccionado
-            if (richTextBox_Redactor.SelectionLength > 0)
-            {
-                // Obtener el texto seleccionado
-                string textoSeleccionado = richTextBox_Redactor.SelectedText;
-
-                // Alternar entre mayúsculas y minúsculas
-                if (textoSeleccionado == textoSeleccionado.ToUpper())
-                {
-                    // Si está en mayúsculas, cambiar a minúsculas
-                    richTextBox_Redactor.SelectedText = textoSeleccionado.ToLower();
-                    escribirEnMayusculas = false; // Establecer que lo siguiente debe ser en minúsculas
-                    richTextBox_Redactor.Focus();
-                }
-                else
-                {
-                    // Si está en minúsculas, cambiar a mayúsculas
-                    richTextBox_Redactor.SelectedText = textoSeleccionado.ToUpper();
-                    escribirEnMayusculas = true; // Establecer que lo siguiente debe ser en mayúsculas
-                    richTextBox_Redactor.Focus();
-                }
-            }
-            else
-            {
-                // Si no hay texto seleccionado, verificar el último carácter escrito y decidir
-                if (escribirEnMayusculas)
-                {
-                    // Establecer que el siguiente texto escrito debe ser en mayúsculas
-                    richTextBox_Redactor.SelectedText = richTextBox_Redactor.SelectedText.ToUpper();
-                    richTextBox_Redactor.Focus();
-                }
-                else
-                {
-                    // Establecer que el siguiente texto escrito debe ser en minúsculas
-                    richTextBox_Redactor.SelectedText = richTextBox_Redactor.SelectedText.ToLower();
-                    richTextBox_Redactor.Focus();
-                }
-            }
-        }
-        #endregion
 
 
         /// <summary>
@@ -679,68 +791,8 @@ namespace Ofelia_Sara.Formularios.Redactador
                 }
             }
         }
-        private void Btn_MouseDown(object sender, MouseEventArgs e)
-        {
-            Button boton = sender as Button; // Convertir el sender a tipo Button
-            if (boton != null)
-            {
-                boton.BackColor = Color.SkyBlue;
-            }
-        }
 
-        private void Btn_MouseUp(object sender, MouseEventArgs e)
-        {
-            Button boton = sender as Button; // Convertir el sender a tipo Button
-            if (boton != null)
-            {
-                boton.BackColor = Color.White;
-            }
-        }
-        //-------------------------------------
-        private void Btn_AlinearIzquierda_Click(object sender, EventArgs e)
-        {
-            CambiarAlineacion(btn_AlinearIzquierda, HorizontalAlignment.Left);
-            richTextBox_Redactor.Focus();
-        }
-
-        private void Btn_AlinearDerecha_Click(object sender, EventArgs e)
-        {
-            CambiarAlineacion(btn_AlinearDerecha, HorizontalAlignment.Right);
-            richTextBox_Redactor.Focus();
-        }
-
-        private void Btn_Centrar_Click(object sender, EventArgs e)
-        {
-            CambiarAlineacion(btn_Centrar, HorizontalAlignment.Center);
-            richTextBox_Redactor.Focus();
-        }
-
-        private void Btn_Justificar_Click(object sender, EventArgs e)
-        {
-            CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left); // Usa Center ya que Justify no es soportado directamente
-            richTextBox_Redactor.Focus();
-        }
-
-        private void CambiarAlineacion(Button boton, HorizontalAlignment alineacion)
-        {
-            // Restablecer el color del botón anterior
-            if (botonAlineacionSeleccionado != null)
-            {
-                botonAlineacionSeleccionado.BackColor = Color.White;
-            }
-
-            // Aplicar el nuevo color al botón seleccionado
-            boton.BackColor = Color.SkyBlue;
-
-            // Actualizar la alineación en el RichTextBox
-            richTextBox_Redactor.SelectionAlignment = alineacion;
-
-            // Guardar el botón actual como el botón seleccionado
-            botonAlineacionSeleccionado = boton;
-        }
-
-
-        //------------------------------------
+        #region PANEL CONTROLES INFERIORES
         private void Btn_Eliminar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this);
@@ -761,49 +813,10 @@ namespace Ofelia_Sara.Formularios.Redactador
             datosGuardados = true; // Marcar que los datos fueron guardados
         }
 
-        protected new static void InicializarEstiloBoton(Button boton)
-        {
-            // Variables para almacenar el tamaño y la posición original solo al entrar en el botón
-            Size originalSize = boton.Size;
-            Point originalLocation = boton.Location;
-            Color originalBackColor = boton.BackColor;
-            bool posicionOriginalGuardada = false;
-
-            // Evento MouseEnter: captura la posición original y amplía desde el centro
-            boton.MouseEnter += (sender, e) =>
-            {
-                if (!posicionOriginalGuardada)
-                {
-                    originalSize = boton.Size;
-                    originalLocation = boton.Location;
-                    posicionOriginalGuardada = true;
-                }
-
-                // Ajustar tamaño y posición desde el centro
-                int incremento = 12;
-                int nuevoAncho = originalSize.Width + incremento;
-                int nuevoAlto = originalSize.Height + incremento;
-
-                int deltaX = (nuevoAncho - originalSize.Width) / 2;
-                int deltaY = (nuevoAlto - originalSize.Height) / 2;
-
-                boton.Size = new Size(nuevoAncho, nuevoAlto);
-                boton.Location = new Point(originalLocation.X - deltaX, originalLocation.Y - deltaY);
-                boton.BackColor = Color.FromArgb(51, 174, 189);
-            };
-
-            // Evento MouseLeave: Restaura el tamaño y posición originales
-            boton.MouseLeave += (sender, e) =>
-            {
-                boton.Size = originalSize;
-                boton.Location = originalLocation;
-                boton.BackColor = originalBackColor;
-                posicionOriginalGuardada = false;  // Restablecer la bandera para la próxima entrada
-            };
-        }
+        #endregion
 
 
-
+        #region redimencionar
         private void Redactador_MouseDown(object sender, MouseEventArgs e)
         {
             // Detectar si el usuario está cerca de un borde para redimensionar
@@ -843,6 +856,13 @@ namespace Ofelia_Sara.Formularios.Redactador
         {
             isResizing = false;
         }
+
+        /// <summary>
+        /// TRIANGULO INFERIOR PARA AMPLIAR Y REDUCIR FORMULARIO,
+        ///  CAMBIARLO POR PICTURE O BOTON
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Triangulo_Paint(object sender, PaintEventArgs e)
         {
             // Crear un pincel gris para dibujar el triángulo
@@ -855,6 +875,9 @@ namespace Ofelia_Sara.Formularios.Redactador
                 e.Graphics.FillPolygon(brush, new Point[] { p1, p2, p3 });
             }
         }
+        #endregion
+
+        #region subir audio
 
         private void SubirAudio_MouseHover(object sender, EventArgs e)
         {
@@ -933,20 +956,14 @@ namespace Ofelia_Sara.Formularios.Redactador
             label_SubirAudio.Text = "Transcribir";
         }
 
+        #endregion
+
+        #region seleccion plantilla
         private void btn_Actuacion_Click(object sender, EventArgs e)
         {
             // Muestra el menú contextual en la posición del botón
-            contextMenuStrip.Show(btn_Actuacion, new Point(0, btn_Actuacion.Height));
+            menu_SeleccionPlantilla.Show(btn_Actuacion, new Point(0, btn_Actuacion.Height));
         }
-
-        private void cORTITOToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InsertarTextoFormato("Nombre del testigo: ", true); // Texto en negrita
-            richTextBox_Redactor.AppendText("________________________\n\n"); // Espacio para completar
-        }
-
-
-        //--------------------------------------------------
 
 
         /// <summary>
@@ -970,8 +987,8 @@ namespace Ofelia_Sara.Formularios.Redactador
         Dictionary<string, string> campos = new Dictionary<string, string>();
         private void CrearPlantilla()
         {
-         
-                string CortitoDelito = @"
+
+            string CortitoDelito = @"
 
             S.S.R.A.1.-
             PDS PINAMAR.-
@@ -986,11 +1003,11 @@ namespace Ofelia_Sara.Formularios.Redactador
             {Relato del hecho} Crio. Mayor Valerio O. Gallo, jefe PDS Pinamar. Fdo. Crío. Mayor Carlos Abraham Domínguez
     ";
 
-                richTextBox_Redactor.Text = CortitoDelito; // Cargar la plantilla
-            
+            richTextBox_Redactor.Text = CortitoDelito; // Cargar la plantilla
 
-           
-                string CortitoDroga = @"
+
+
+            string CortitoDroga = @"
 
             S.S.R.A.1.-
             PDS PINAMAR.-
@@ -1007,15 +1024,35 @@ namespace Ofelia_Sara.Formularios.Redactador
             Crio. Mayor Valerio O. Gallo, jefe PDS Pinamar. Fdo. Crío. Mayor Carlos Abraham Domínguez
     ";
 
-                richTextBox_Redactor.Text = CortitoDroga; // Cargar la plantilla
-            
+            richTextBox_Redactor.Text = CortitoDroga; // Cargar la plantilla
+
+
+
+            string CortitoContravension = @"
+
+               S.S.R.A.1.-
+            PDS PINAMAR.-
+            CRIA. PINAMAR 1ERA.-
+            FECHA: {Fecha}.-
+            LUGAR DEL HECHO:{Lugar del hecho}
+            HECHO: INF. ART { Art Infraccion} DECRETO LEY 8031/73.-
+            INTERVIENE: JUZGADO DE PAZ LETRADO PINAMAR.-
+            DENUNCIANTE: PERSONAL POLICIAL.-
+            CAUSANTE: {Imputado} -
+            SINTESIS: Fecha  personal de esta dependencia , constituidos en calle  {Lugar del hecho},proceden  a la aprehensión de {Imputado} ({Edad}), DNI {Dni}, DDO {Domicilio}, 
+            quien se encontraba {Relato del hecho}.Se labran actuaciones por infracción a los artículos {Art Infraccion} DEL DECRETO Ley 8031/73 .- 
+            Interviene Juzgado de Paz Letrado de Pinamar, Dra. Guglielmetti.- Crio. Mayor Valerio O. Gallo, jefe PDS Pinamar. Fdo. Crío. Mayor Carlos Abraham Domíngue
+                ";
+
+            richTextBox_Redactor.Text = CortitoContravension; // Cargar la plantilla
         }
 
-        private void subMenuCortitoDelito_Click(object sender, EventArgs e)
-        {
+        //------------------------------------------
 
-        }
+
+       
     }
 
 }
 
+#endregion

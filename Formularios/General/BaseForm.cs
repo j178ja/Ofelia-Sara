@@ -4,6 +4,7 @@ using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;
+using Ofelia_Sara.Clases.General.Botones.btn_Configuracion;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Controles.General;
@@ -909,8 +910,8 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-
       
+
 
     }
 }

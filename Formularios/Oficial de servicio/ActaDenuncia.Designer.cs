@@ -159,7 +159,7 @@
             comboBox_ModeloActuacion.SelectedText = "";
             comboBox_ModeloActuacion.SelectionStart = 0;
             comboBox_ModeloActuacion.ShowError = false;
-            comboBox_ModeloActuacion.Size = new System.Drawing.Size(442, 23);
+            comboBox_ModeloActuacion.Size = new System.Drawing.Size(403, 23);
             comboBox_ModeloActuacion.TabIndex = 2;
             comboBox_ModeloActuacion.Text = "comboBox_ModeloActuacion";
             comboBox_ModeloActuacion.TextValue = " ";
