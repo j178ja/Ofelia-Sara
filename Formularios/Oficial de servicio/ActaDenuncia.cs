@@ -24,10 +24,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             comboBox_ModeloActuacion.Visible = false;
             groupBox_SeleccionPlantilla.Visible = false;
-            panel1.Height = panel_TipoActuacion.Height + 5;
+          //  panel1.Height = panel_TipoActuacion.Height + 5;
 
             // Ajustar la altura del formulario en base al tamaño de panel1 + 25
-            this.Height = panel1.Bottom + 80;
+         //   this.Height = panel1.Bottom + 80;
         }
 
         private void ActaDenuncia_Load(object sender, EventArgs e)
@@ -90,21 +90,21 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <summary>
         /// Método para ajustar la altura de panel1 y del formulario.
         /// </summary>
-        private void AjustarAlturaFormularioYPaneles()
-        {
-            // Ajustar la altura de panel1
-            if (groupBox_SeleccionPlantilla.Visible)
-            {
-                panel1.Height = panel_TipoActuacion.Height + groupBox_SeleccionPlantilla.Height + 5;
-            }
-            else
-            {
-                panel1.Height = panel_TipoActuacion.Height + 5; // Si no está visible, solo el panel_TipoActuacion
-            }
+        //private void AjustarAlturaFormularioYPaneles()
+        //{
+        //    // Ajustar la altura de panel1
+        //    if (groupBox_SeleccionPlantilla.Visible)
+        //    {
+        //        panel1.Height = panel_TipoActuacion.Height + groupBox_SeleccionPlantilla.Height + 5;
+        //    }
+        //    else
+        //    {
+        //        panel1.Height = panel_TipoActuacion.Height + 5; // Si no está visible, solo el panel_TipoActuacion
+        //    }
 
-            // Ajustar la altura del formulario en base a panel1 y agregar un margen de 25
-            this.Height = panel1.Bottom + 25;
-        }
+        //    // Ajustar la altura del formulario en base a panel1 y agregar un margen de 25
+        //    this.Height = panel1.Bottom + 25;
+        //}
 
         /// <summary>
         /// Método para aplicar el estilo personalizado (negrita y subrayado).
@@ -137,12 +137,35 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             groupBox_SeleccionPlantilla.Height = alturaGroupBox;
             comboBox_ModeloActuacion.Visible = true;
             comboBox_ModeloActuacion.Focus();
+
+            if (radioButton_Acta.Checked)
+            {
+                CargarDatosEnComboBox(listaACTAS);
+            }
+            if (radioButton_Denuncia.Checked)
+            {
+                CargarDatosEnComboBox(listaDENUNCIAS);
+            }
+
         }
 
         private void RadioButton_ActuacionEstandar_CheckedChanged(object sender, EventArgs e)
         {
             comboBox_ModeloActuacion.Visible = false;
             groupBox_SeleccionPlantilla.Height = alturaGroupBox - 25; // Reduce la altura para 'Denuncia'
+
         }
+
+
+
+        private List<string> listaACTAS = new List<string> { "PARADERO", "CAPTURA ACTIVA", "INFR. LEY 23.737","CONTRAVENCION ART 72" };
+        private List<string> listaDENUNCIAS = new List<string> { "ESTAFA", "RUEDA AUXILIO", "HURTO VEHICULO", "HURTO / ROBO" };
+
+        private void CargarDatosEnComboBox(List<string> datos)
+        {
+            comboBox_ModeloActuacion.Items.Clear(); // Limpia los elementos anteriores
+            comboBox_ModeloActuacion.Items.AddRange(datos.ToArray()); // Agrega los nuevos elementos
+        }
+
     }
 }

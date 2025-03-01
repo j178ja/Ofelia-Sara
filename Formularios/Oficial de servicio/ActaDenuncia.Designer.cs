@@ -50,7 +50,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(panel_TipoActuacion);
             panel1.Controls.Add(groupBox_SeleccionPlantilla);
@@ -62,19 +62,21 @@
             // 
             // panel_TipoActuacion
             // 
+            panel_TipoActuacion.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel_TipoActuacion.Controls.Add(radioButton_Acta);
             panel_TipoActuacion.Controls.Add(radioButton_Denuncia);
             panel_TipoActuacion.Controls.Add(pictureBox_Acta);
             panel_TipoActuacion.Controls.Add(pictureBox_Denuncia);
-            panel_TipoActuacion.Location = new System.Drawing.Point(3, 6);
+            panel_TipoActuacion.Dock = System.Windows.Forms.DockStyle.Top;
+            panel_TipoActuacion.Location = new System.Drawing.Point(0, 0);
             panel_TipoActuacion.Name = "panel_TipoActuacion";
-            panel_TipoActuacion.Size = new System.Drawing.Size(734, 68);
+            panel_TipoActuacion.Size = new System.Drawing.Size(740, 68);
             panel_TipoActuacion.TabIndex = 41;
             // 
             // radioButton_Acta
             // 
             radioButton_Acta.Cursor = System.Windows.Forms.Cursors.Hand;
-            radioButton_Acta.Location = new System.Drawing.Point(103, 15);
+            radioButton_Acta.Location = new System.Drawing.Point(129, 15);
             radioButton_Acta.Name = "radioButton_Acta";
             radioButton_Acta.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             radioButton_Acta.Size = new System.Drawing.Size(200, 39);
@@ -87,7 +89,7 @@
             // radioButton_Denuncia
             // 
             radioButton_Denuncia.Cursor = System.Windows.Forms.Cursors.Hand;
-            radioButton_Denuncia.Location = new System.Drawing.Point(469, 15);
+            radioButton_Denuncia.Location = new System.Drawing.Point(495, 15);
             radioButton_Denuncia.Name = "radioButton_Denuncia";
             radioButton_Denuncia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             radioButton_Denuncia.Size = new System.Drawing.Size(159, 39);
@@ -101,7 +103,7 @@
             // 
             pictureBox_Acta.BackgroundImage = Properties.Resources.esposas;
             pictureBox_Acta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pictureBox_Acta.Location = new System.Drawing.Point(61, 16);
+            pictureBox_Acta.Location = new System.Drawing.Point(87, 16);
             pictureBox_Acta.Name = "pictureBox_Acta";
             pictureBox_Acta.Size = new System.Drawing.Size(40, 39);
             pictureBox_Acta.TabIndex = 37;
@@ -111,7 +113,7 @@
             // 
             pictureBox_Denuncia.BackgroundImage = Properties.Resources.denuncia_penal;
             pictureBox_Denuncia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_Denuncia.Location = new System.Drawing.Point(427, 15);
+            pictureBox_Denuncia.Location = new System.Drawing.Point(453, 15);
             pictureBox_Denuncia.Name = "pictureBox_Denuncia";
             pictureBox_Denuncia.Size = new System.Drawing.Size(40, 39);
             pictureBox_Denuncia.TabIndex = 38;
@@ -246,6 +248,7 @@
             ClientSize = new System.Drawing.Size(800, 254);
             Controls.Add(label_TITULO);
             Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             Name = "ActaDenuncia";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "DENUNCIA / ACTA DE PROCEDIMIENTO";

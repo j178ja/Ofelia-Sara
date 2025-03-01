@@ -14,6 +14,9 @@
     <Compile Update="Clases\Mecanografia\Texto_TipearPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Controles\Controles\Aplicadas con controles\FormFlotante.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Controles\General\CustomComboBox.cs">
       <SubType>Component</SubType>
     </Compile>

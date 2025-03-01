@@ -1103,6 +1103,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap selloEscalera {
+            get {
+                object obj = ResourceManager.GetObject("selloEscalera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap siguiente {
             get {
                 object obj = ResourceManager.GetObject("siguiente", resourceCulture);

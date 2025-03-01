@@ -80,12 +80,13 @@ namespace Ofelia_Sara.Formularios.Redactador
 
             menu_SeleccionPlantilla.Renderer = new CustomMenuStripRenderer();
             // Aplicar estilos a todos los ítems del menú
-           
+
             foreach (ToolStripItem item in menu_SeleccionPlantilla.Items)
             {
-                AuxiliarConfiguracion.AplicarEstiloItem(item);
-              
+              //  MessageBox.Show("Aplicando estilo a: " + item.Text);
+                EstiloMenu.AplicarEstiloItem(item);
             }
+
 
             ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR microfono.");//inicializa este tooltip ya que inicia el btn desactivado
 
@@ -1063,7 +1064,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             richTextBox_Redactor.Text = CortitoContravension; // Cargar la plantilla
         }
 
-        //------------------------------------------
+        
 
 
        

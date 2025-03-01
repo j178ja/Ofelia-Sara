@@ -32,12 +32,12 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             ContextMenuStrip menu_Configurar = new ContextMenuStrip();
 
             // Crear ítems para el menú usando el método CrearMenuItem
-            var item_Agregar = CrearMenuItem("AGREGAR", null);
-            var item_Buscar = CrearMenuItem("BUSCAR ...", null);
-            var item_Remover = CrearMenuItem("EDITAR/REMOVER", Item_Remover_Click);
+            var item_Agregar = EstiloMenu.CrearMenuItem("AGREGAR", null);
+            var item_Buscar = EstiloMenu.CrearMenuItem("BUSCAR ...", null);
+            var item_Remover = EstiloMenu.CrearMenuItem("EDITAR/REMOVER", Item_Remover_Click);
             item_Remover.Click += new EventHandler(Item_Remover_Click);
-            var item_Salir = CrearMenuItem("SALIR", null);
-            var SubItem_Agregar_Sellos = CrearMenuItem("SELLOS", null);
+            var item_Salir = EstiloMenu.CrearMenuItem("SALIR", null);
+            var SubItem_Agregar_Sellos = EstiloMenu.CrearMenuItem("SELLOS", null);
 
             // Agregar el evento Click para "EDITAR/REMOVER"
             item_Remover.Click += new EventHandler(Item_Remover_Click);
@@ -77,7 +77,7 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             // Aplicar estilos a todos los ítems del menú
             foreach (ToolStripItem item in menu_Configurar.Items)
             {
-                AplicarEstiloItem(item);
+                EstiloMenu.AplicarEstiloItem(item);
             }
 
             return menu_Configurar;
@@ -86,168 +86,168 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         #endregion
 
         #region MENU
-        public ToolStripMenuItem CrearMenuItem(string texto, EventHandler onClick)
-        {
-            var menuItem = new ToolStripMenuItem(texto);
+        //public ToolStripMenuItem CrearMenuItem(string texto, EventHandler onClick)
+        //{
+        //    var menuItem = new ToolStripMenuItem(texto);
 
-            // Estilo inicial
-            menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
-            menuItem.ForeColor = Color.Black; // Texto original
-            menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente original
+        //    // Estilo inicial
+        //    menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+        //    menuItem.ForeColor = Color.Black; // Texto original
+        //    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente original
 
-            // Evento MouseEnter para cambiar el color al pasar el cursor
-            menuItem.MouseEnter += (sender, e) =>
-            {
-                menuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo al pasar el mouse
-                menuItem.ForeColor = Color.Black; // Texto negro
-                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size + 2, FontStyle.Bold); // Aumentar tamaño y negrita
-            };
+        //    // Evento MouseEnter para cambiar el color al pasar el cursor
+        //    menuItem.MouseEnter += (sender, e) =>
+        //    {
+        //        menuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo al pasar el mouse
+        //        menuItem.ForeColor = Color.Black; // Texto negro
+        //        menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size + 2, FontStyle.Bold); // Aumentar tamaño y negrita
+        //    };
 
-            // Evento MouseLeave para restaurar el color al quitar el cursor
-            menuItem.MouseLeave += (sender, e) =>
-            {
-                menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
-                menuItem.ForeColor = Color.Black; // Texto original
-                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size - 2, FontStyle.Regular); // Fuente regular
-            };
+        //    // Evento MouseLeave para restaurar el color al quitar el cursor
+        //    menuItem.MouseLeave += (sender, e) =>
+        //    {
+        //        menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+        //        menuItem.ForeColor = Color.Black; // Texto original
+        //        menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size - 2, FontStyle.Regular); // Fuente regular
+        //    };
 
-            // Evento Click para cambiar el fondo al hacer clic
-            menuItem.Click += (sender, e) =>
-            {
-                // Cambiar el estilo al hacer clic
-                menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo tras clic
-                menuItem.ForeColor = Color.White; // Texto blanco
-                menuItem.Font = new Font(menuItem.Font, FontStyle.Bold); // Negrita
+        //    // Evento Click para cambiar el fondo al hacer clic
+        //    menuItem.Click += (sender, e) =>
+        //    {
+        //        // Cambiar el estilo al hacer clic
+        //        menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo tras clic
+        //        menuItem.ForeColor = Color.White; // Texto blanco
+        //        menuItem.Font = new Font(menuItem.Font, FontStyle.Bold); // Negrita
 
-                // Configurar un temporizador para restaurar el estilo después de un corto periodo
-                var timer = new Timer { Interval = 300 }; // 300 ms
-                timer.Tick += (s, ev) =>
-                {
-                    timer.Stop();  // Detener el Timer
-                    timer.Dispose(); // Liberar recursos
+        //        // Configurar un temporizador para restaurar el estilo después de un corto periodo
+        //        var timer = new Timer { Interval = 300 }; // 300 ms
+        //        timer.Tick += (s, ev) =>
+        //        {
+        //            timer.Stop();  // Detener el Timer
+        //            timer.Dispose(); // Liberar recursos
 
-                    // Restaurar el estilo original
-                    menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
-                    menuItem.ForeColor = Color.Black; // Texto original
-                    menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
+        //            // Restaurar el estilo original
+        //            menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+        //            menuItem.ForeColor = Color.Black; // Texto original
+        //            menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
 
-                    // Ejecutar la acción asociada
-                    onClick?.Invoke(sender, e); // Llamar al método asociado al clic
-                };
-                timer.Start();
-            };
+        //            // Ejecutar la acción asociada
+        //            onClick?.Invoke(sender, e); // Llamar al método asociado al clic
+        //        };
+        //        timer.Start();
+        //    };
 
-            // Evento DropDownOpened para cambiar el estilo cuando el submenú está abierto
-            menuItem.DropDownOpened += (sender, e) =>
-            {
-                // Estilo al abrir el submenú
-                menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo submenú
-                menuItem.ForeColor = Color.White; // Texto blanco
-                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Bold); // Fuente en negrita
-            };
+        //    // Evento DropDownOpened para cambiar el estilo cuando el submenú está abierto
+        //    menuItem.DropDownOpened += (sender, e) =>
+        //    {
+        //        // Estilo al abrir el submenú
+        //        menuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo submenú
+        //        menuItem.ForeColor = Color.White; // Texto blanco
+        //        menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Bold); // Fuente en negrita
+        //    };
 
-            // Evento DropDownClosed para restaurar el estilo cuando el submenú está cerrado
-            menuItem.DropDownClosed += (sender, e) =>
-            {
-                // Restaurar el estilo al cerrar el submenú
-                menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
-                menuItem.ForeColor = Color.Black; // Texto original
-                menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
-            };
+        //    // Evento DropDownClosed para restaurar el estilo cuando el submenú está cerrado
+        //    menuItem.DropDownClosed += (sender, e) =>
+        //    {
+        //        // Restaurar el estilo al cerrar el submenú
+        //        menuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+        //        menuItem.ForeColor = Color.Black; // Texto original
+        //        menuItem.Font = new Font(menuItem.Font.FontFamily, menuItem.Font.Size, FontStyle.Regular); // Fuente normal
+        //    };
 
-            return menuItem;
-        }
+        //    return menuItem;
+        //}
 
-        #endregion
+        //#endregion
 
-        #region SUBMENU
-        /// <summary>
-        /// AGREGA ITEM AL SUBMENU
-        /// </summary>
-        /// <param name="texto"></param>
-        /// <param name="onClick"></param>
-        /// <returns></returns>
-        private ToolStripMenuItem CrearSubMenuItem(string texto, EventHandler onClick)
-        {
-            var subMenuItem = new ToolStripMenuItem(texto);
+        //#region SUBMENU
+        ///// <summary>
+        ///// AGREGA ITEM AL SUBMENU
+        ///// </summary>
+        ///// <param name="texto"></param>
+        ///// <param name="onClick"></param>
+        ///// <returns></returns>
+        //private ToolStripMenuItem CrearSubMenuItem(string texto, EventHandler onClick)
+        //{
+        //    var subMenuItem = new ToolStripMenuItem(texto);
 
-            // Asociar evento Click principal
-            subMenuItem.Click += onClick;
+        //    // Asociar evento Click principal
+        //    subMenuItem.Click += onClick;
 
-            // Evento MouseEnter para cambiar el color al pasar el cursor
-            subMenuItem.MouseEnter += (sender, e) =>
-            {
-                subMenuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo
-                subMenuItem.ForeColor = Color.Black; // Texto
-                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size + 2, FontStyle.Bold); // Negrita y tamaño incrementado
-            };
+        //    // Evento MouseEnter para cambiar el color al pasar el cursor
+        //    subMenuItem.MouseEnter += (sender, e) =>
+        //    {
+        //        subMenuItem.BackColor = Color.FromArgb(81, 169, 251); // Fondo
+        //        subMenuItem.ForeColor = Color.Black; // Texto
+        //        subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size + 2, FontStyle.Bold); // Negrita y tamaño incrementado
+        //    };
 
-            // Evento MouseLeave para restaurar el color al quitar el cursor
-            subMenuItem.MouseLeave += (sender, e) =>
-            {
-                subMenuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo
-                subMenuItem.ForeColor = Color.Black; // Texto
-                subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size - 2, FontStyle.Regular);
-            };
+        //    // Evento MouseLeave para restaurar el color al quitar el cursor
+        //    subMenuItem.MouseLeave += (sender, e) =>
+        //    {
+        //        subMenuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo
+        //        subMenuItem.ForeColor = Color.Black; // Texto
+        //        subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size - 2, FontStyle.Regular);
+        //    };
 
-            // Evento Click para cambiar el fondo al hacer clic
-            subMenuItem.Click += (sender, e) =>
-            {
-                // Cambiar el estilo al hacer clic
-                subMenuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo tras clic
-                subMenuItem.ForeColor = Color.White; // Texto en blanco para mayor contraste
-                subMenuItem.Font = new Font(subMenuItem.Font, FontStyle.Bold); // Negrita
+        //    // Evento Click para cambiar el fondo al hacer clic
+        //    subMenuItem.Click += (sender, e) =>
+        //    {
+        //        // Cambiar el estilo al hacer clic
+        //        subMenuItem.BackColor = Color.FromArgb(0, 154, 174); // Fondo tras clic
+        //        subMenuItem.ForeColor = Color.White; // Texto en blanco para mayor contraste
+        //        subMenuItem.Font = new Font(subMenuItem.Font, FontStyle.Bold); // Negrita
 
-                // Configurar un temporizador para restaurar el estilo después de un corto periodo
-                var timer = new Timer { Interval = 300 }; // 300 ms
-                timer.Tick += (s, ev) =>
-                {
-                    timer.Stop();  // Detener el Timer
-                    timer.Dispose(); // Liberar recursos
+        //        // Configurar un temporizador para restaurar el estilo después de un corto periodo
+        //        var timer = new Timer { Interval = 300 }; // 300 ms
+        //        timer.Tick += (s, ev) =>
+        //        {
+        //            timer.Stop();  // Detener el Timer
+        //            timer.Dispose(); // Liberar recursos
 
-                    // Restaurar el estilo original
-                    subMenuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
-                    subMenuItem.ForeColor = Color.Black; // Texto original
-                    subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size, FontStyle.Regular); // Fuente normal
+        //            // Restaurar el estilo original
+        //            subMenuItem.BackColor = Color.FromArgb(178, 213, 230); // Fondo original
+        //            subMenuItem.ForeColor = Color.Black; // Texto original
+        //            subMenuItem.Font = new Font(subMenuItem.Font.FontFamily, subMenuItem.Font.Size, FontStyle.Regular); // Fuente normal
 
-                    // Ejecutar la acción asociada
-                    onClick?.Invoke(sender, e); // Llamar al método de apertura del formulario
-                };
-                timer.Start();
-            };
+        //            // Ejecutar la acción asociada
+        //            onClick?.Invoke(sender, e); // Llamar al método de apertura del formulario
+        //        };
+        //        timer.Start();
+        //    };
 
-            return subMenuItem;
-        }
+        //    return subMenuItem;
+        //}
 
-        #endregion
+        //#endregion
 
-        /// <summary>
-        /// para aplicar el fondo a los items y a los subitems
-        /// </summary>
-        /// <param name="item"></param>
-        public static void AplicarEstiloItem(ToolStripItem item)
-        {
-            // Aplicamos el estilo al item principal
-            item.BackColor = Color.FromArgb(178, 213, 230); // Fondo predeterminado
-            item.ForeColor = Color.Black; // Color de texto predeterminado
-            item.Font = new Font(item.Font.FontFamily, item.Font.Size, FontStyle.Regular); // Fuente predeterminada
+        ///// <summary>
+        ///// para aplicar el fondo a los items y a los subitems
+        ///// </summary>
+        ///// <param name="item"></param>
+        //public static void AplicarEstiloItem(ToolStripItem item)
+        //{
+        //    // Aplicamos el estilo al item principal
+        //    item.BackColor = Color.FromArgb(178, 213, 230); // Fondo predeterminado
+        //    item.ForeColor = Color.Black; // Color de texto predeterminado
+        //    item.Font = new Font(item.Font.FontFamily, item.Font.Size, FontStyle.Regular); // Fuente predeterminada
 
-            // Si el item tiene subitems, aplicamos el estilo a cada uno de ellos
-            if (item is ToolStripMenuItem menuItem)
-            {
+        //    // Si el item tiene subitems, aplicamos el estilo a cada uno de ellos
+        //    if (item is ToolStripMenuItem menuItem)
+        //    {
 
-                // Asignar el cursor al contenedor del menú             // Cargar el cursor desde los recursos
-                Cursor cursorPersonalizado = CursorHelper.ObtenerCursorDesdeRecursos(Properties.Resources.hand);
+        //        // Asignar el cursor al contenedor del menú             // Cargar el cursor desde los recursos
+        //        Cursor cursorPersonalizado = CursorHelper.ObtenerCursorDesdeRecursos(Properties.Resources.hand);
 
-                foreach (ToolStripItem subItem in menuItem.DropDownItems)
-                {
-                    subItem.BackColor = Color.FromArgb(186, 223, 249); // Fondo predeterminado
-                    subItem.ForeColor = Color.Black; // Color de texto predeterminado
-                    subItem.Font = new Font(subItem.Font.FontFamily, subItem.Font.Size, FontStyle.Regular); // Fuente predeterminada
-                    menuItem.DropDown.Cursor = cursorPersonalizado; // Aplica el cursor personalizado a los subitems
-                }
-            }
-        }
+        //        foreach (ToolStripItem subItem in menuItem.DropDownItems)
+        //        {
+        //            subItem.BackColor = Color.FromArgb(186, 223, 249); // Fondo predeterminado
+        //            subItem.ForeColor = Color.Black; // Color de texto predeterminado
+        //            subItem.Font = new Font(subItem.Font.FontFamily, subItem.Font.Size, FontStyle.Regular); // Fuente predeterminada
+        //            menuItem.DropDown.Cursor = cursorPersonalizado; // Aplica el cursor personalizado a los subitems
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// agrega subitem al item agregar
@@ -257,11 +257,11 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         private void AgregarSubItemsAgregar(ToolStripMenuItem item_Agregar)
         {
             // Crear y agregar subítems al ítem "AGREGAR"
-            var subItem_Agregar_Secretario = CrearSubMenuItem("SECRETARIO", (s, e) => Agregar_Secretario());
-            var subItem_Agregar_Instructor = CrearSubMenuItem("INSTRUCTOR", (s, e) => Agregar_Instructor());
-            var subItem_Agregar_Dependencia = CrearSubMenuItem("DEPENDENCIA", (s, e) => Agregar_Dependencia());
-            var subItem_Agregar_UFID = CrearSubMenuItem("U.F.I.D.", (s, e) => Agregar_UFID());
-            var subItem_Agregar_AgenteFiscal = CrearSubMenuItem("AGENTE FISCAL", (s, e) => Agregar_AgenteFiscal());
+            var subItem_Agregar_Secretario = EstiloMenu.CrearSubMenuItem("SECRETARIO", (s, e) => Agregar_Secretario());
+            var subItem_Agregar_Instructor = EstiloMenu.CrearSubMenuItem("INSTRUCTOR", (s, e) => Agregar_Instructor());
+            var subItem_Agregar_Dependencia = EstiloMenu.CrearSubMenuItem("DEPENDENCIA", (s, e) => Agregar_Dependencia());
+            var subItem_Agregar_UFID = EstiloMenu.CrearSubMenuItem("U.F.I.D.", (s, e) => Agregar_UFID());
+            var subItem_Agregar_AgenteFiscal = EstiloMenu.CrearSubMenuItem("AGENTE FISCAL", (s, e) => Agregar_AgenteFiscal());
 
 
             item_Agregar.DropDownItems.Add(subItem_Agregar_Secretario);
@@ -271,11 +271,11 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
             item_Agregar.DropDownItems.Add(subItem_Agregar_AgenteFiscal);
 
             // agregar imagen a los subitems
-            subItem_Agregar_Secretario.Image = Properties.Resources.agregar_Usuario;
-            subItem_Agregar_Instructor.Image = Properties.Resources.agregar_Usuario;
+            subItem_Agregar_Secretario.Image = Properties.Resources.agregar_persona;
+            subItem_Agregar_Instructor.Image = Properties.Resources.agregar_persona;
             subItem_Agregar_Dependencia.Image = Properties.Resources.agregar_Dependencia;
             subItem_Agregar_UFID.Image = Properties.Resources.agregar_Dependencia;
-            subItem_Agregar_AgenteFiscal.Image = Properties.Resources.agregar_Usuario;
+            subItem_Agregar_AgenteFiscal.Image = Properties.Resources.agregar_persona;
 
         }
 
@@ -286,15 +286,15 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         private void AgregarSubItemsBuscar(ToolStripMenuItem item_Buscar)
         {
             // Crear y agregar subítems al ítem "BUSCAR"
-            var subItem_Buscar_Ipp = CrearSubMenuItem("N° I.P.P.", (s, e) => Buscar_Ipp());
+            var subItem_Buscar_Ipp = EstiloMenu.CrearSubMenuItem("N° I.P.P.", (s, e) => Buscar_Ipp());
 
-            var subItem_Buscar_Caratula = CrearSubMenuItem("CARATULA", (s, e) => Buscar_Caratula());
-            var subItem_Buscar_Victima = CrearSubMenuItem("VICTIMA", (s, e) => Buscar_Victima());
-            var subItem_Buscar_Imputado = CrearSubMenuItem("IMPUTADO", (s, e) => Buscar_Imputado());
-            var subItem_Buscar_Fecha = CrearSubMenuItem("FECHA", (s, e) => Buscar_Fecha());
-            var subItem_Buscar_Secretario = CrearSubMenuItem("SECRETARIO", (s, e) => Buscar_Secretario());
-            var subItem_Buscar_Instructor = CrearSubMenuItem("INSTRUCTOR", (s, e) => Buscar_Instructor());
-            var subItem_Buscar_Dependencia = CrearSubMenuItem("DEPENDENCIA", (s, e) => Buscar_Dependencia());
+            var subItem_Buscar_Caratula = EstiloMenu.CrearSubMenuItem("CARATULA", (s, e) => Buscar_Caratula());
+            var subItem_Buscar_Victima = EstiloMenu.CrearSubMenuItem("VICTIMA", (s, e) => Buscar_Victima());
+            var subItem_Buscar_Imputado = EstiloMenu.CrearSubMenuItem("IMPUTADO", (s, e) => Buscar_Imputado());
+            var subItem_Buscar_Fecha = EstiloMenu.CrearSubMenuItem("FECHA", (s, e) => Buscar_Fecha());
+            var subItem_Buscar_Secretario = EstiloMenu.CrearSubMenuItem("SECRETARIO", (s, e) => Buscar_Secretario());
+            var subItem_Buscar_Instructor = EstiloMenu.CrearSubMenuItem("INSTRUCTOR", (s, e) => Buscar_Instructor());
+            var subItem_Buscar_Dependencia = EstiloMenu.CrearSubMenuItem("DEPENDENCIA", (s, e) => Buscar_Dependencia());
 
             item_Buscar.DropDownItems.Add(subItem_Buscar_Ipp);
             item_Buscar.DropDownItems.Add(subItem_Buscar_Caratula);
@@ -324,20 +324,20 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         private void AgregarSubItemsSellos(ToolStripMenuItem SubItem_Agregar_Sellos)
         {
             // Crear los subítems y asociar la función correspondiente
-            var subItem_Sello_Medalla = CrearSubMenuItem("SELLO MEDALLA", (s, e) => Sello_Medalla());
-            var subItem_Escalera = CrearSubMenuItem("ESCALERA", (s, e) => Escalera());
-            var subItem_Foliador = CrearSubMenuItem("FOLIADOR", (s, e) => Foliador());
+            var subItem_Sello_Medalla = EstiloMenu.CrearSubMenuItem("SELLO MEDALLA", (s, e) => Sello_Medalla());
+            var subItem_Escalera = EstiloMenu.CrearSubMenuItem("ESCALERA", (s, e) => Escalera());
+            var subItem_Foliador = EstiloMenu.CrearSubMenuItem("FOLIADOR", (s, e) => Foliador());
 
             // Agregar los subítems a "SELLOS"
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Sello_Medalla);
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Escalera);
             SubItem_Agregar_Sellos.DropDownItems.Add(subItem_Foliador);
 
-            AplicarEstiloItem(SubItem_Agregar_Sellos);
+            EstiloMenu.AplicarEstiloItem(SubItem_Agregar_Sellos);
 
             // Agregar imágenes
             subItem_Sello_Medalla.Image = Properties.Resources.EscudoPolicia_PNG;
-            subItem_Escalera.Image = Properties.Resources.EscudoPolicia_PNG;
+            subItem_Escalera.Image = Properties.Resources.selloEscalera;
             subItem_Foliador.Image = Properties.Resources.EscudoPolicia_PNG;
         }
 
@@ -522,3 +522,4 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
     }
 
 }
+#endregion
