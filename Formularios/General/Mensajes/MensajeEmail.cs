@@ -281,7 +281,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
-            MensajeGeneral.Mostrar("Si cancela se eliminaran los datos ingresados");
+            MensajeGeneral.Mostrar("Si cancela se eliminaran los datos ingresados",MensajeGeneral.TipoMensaje.Advertencia, owner: this);
             DialogResult = DialogResult.Cancel;
         }
 

@@ -9,6 +9,7 @@
 using Ofelia_Sara.Clases.General.Apariencia;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -92,7 +93,8 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             Error,
             Exito,
             Cancelacion,
-            ErrorConexion
+            ErrorConexion,
+            MicrofonoDesconectado
         }
 
         /// <summary>
@@ -121,6 +123,14 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
                 case TipoMensaje.ErrorConexion:
                     pictureBox_Icono.Image = Properties.Resources.no_wifi;
                     break;
+                case TipoMensaje.MicrofonoDesconectado:
+                    pictureBox_Icono.Image = Properties.Resources.microfono_desactivado;
+                    pictureBox_Icono.BackColor = Color.FromArgb(234, 40, 0);
+                    pictureBox_Icono.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pictureBox_Icono.Margin = new Padding(3, 6, 3, 6);
+                    RedondearBordes.Aplicar(pictureBox_Icono, 30);
+                    break;
+
                 default:
                     pictureBox_Icono.Image = null;
                     break;
@@ -133,11 +143,44 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         /// <param name="mensaje"></param>
         /// <param name="tipoMensaje"></param>
         /// <param name="posicion"></param>
-        public static void Mostrar(string mensaje, TipoMensaje tipoMensaje = TipoMensaje.Informacion, Point? posicion = null)
+        public static void Mostrar(string mensaje, TipoMensaje tipoMensaje, Point? posicion = null, Form owner = null)
         {
-            using var form = new MensajeGeneral(mensaje, tipoMensaje, posicion);
-            form.ShowDialog(); // Muestra el formulario como modal
+            if (posicion.HasValue)
+            {
+                // Si se pasa la posición, se usa esa para mostrar el mensaje
+                using var form = new MensajeGeneral(mensaje, tipoMensaje, posicion.Value);
+                form.ShowDialog();
+            }
+            else
+            {
+                if (owner != null)
+                {
+                    // Si se pasa un formulario propietario, centrar el mensaje en ese formulario
+                    var mensajeForm = new MensajeGeneral(mensaje, tipoMensaje)
+                    {
+                        StartPosition = FormStartPosition.Manual
+                    };
+
+                    // Calcular la posición para centrar el mensaje respecto al formulario 'owner'
+                    var x = owner.Left + (owner.Width - mensajeForm.Width) / 2;
+                    var y = owner.Top + (owner.Height - mensajeForm.Height) / 2;
+
+                    mensajeForm.Location = new Point(x, y);
+                    mensajeForm.ShowDialog();
+                }
+                else
+                {
+                    // Si no se pasa un formulario propietario, mostrar el mensaje en el centro de la pantalla
+                    using var form = new MensajeGeneral(mensaje, tipoMensaje);
+                    form.StartPosition = FormStartPosition.CenterScreen;
+                    form.ShowDialog();
+                }
+            }
         }
+
+
+
+
 
         /// <summary>
         /// REDIMENSIONA PANEL1 DE ACUERDO A CONTENIDO
@@ -399,15 +442,23 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             throw new NotImplementedException();
         }
 
-        public static void MostrarEnPosicion(string mensaje, TipoMensaje tipo, int x, int y)
+        public static void MostrarEnPosicion(string mensaje, TipoMensaje tipo, Form owner, int x, int y)
         {
             MensajeGeneral mensajeForm = new(mensaje, tipo)
             {
                 StartPosition = FormStartPosition.Manual
             };
-            mensajeForm.Location = new Point(x - (mensajeForm.Width / 2), y);
+
+            // Calcular la ubicación del mensaje para centrarlo respecto al formulario
+            int centerX = owner.Left + (owner.Width / 2) - (mensajeForm.Width / 2);
+            int centerY = owner.Top + (owner.Height / 2) - (mensajeForm.Height / 2);
+
+            // Ajustar la posición en base a las coordenadas x y pasadas
+            mensajeForm.Location = new Point(centerX + x, centerY + y);
+
             mensajeForm.Show();
         }
+
 
     }
 }

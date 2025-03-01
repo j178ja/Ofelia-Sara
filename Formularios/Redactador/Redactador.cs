@@ -576,9 +576,12 @@ namespace Ofelia_Sara.Formularios.Redactador
             // Verificar si hay dispositivos de entrada (micrófono)
             if (WaveIn.DeviceCount == 0)
             {
-                MensajeGeneral.Mostrar("No se ha detectado ningún micrófono conectado. Conecte un micrófono e inténtelo de nuevo.", MensajeGeneral.TipoMensaje.Error);
+                // Pasar el formulario actual ('this') como el propietario del mensaje
+                MensajeGeneral.Mostrar("No se ha detectado ningún micrófono conectado. Conecte un micrófono e inténtelo de nuevo.",
+                                       MensajeGeneral.TipoMensaje.MicrofonoDesconectado, owner: this);
                 return;
             }
+
 
             // Ocultar cualquier ToolTip existente antes de mostrar uno nuevo
             // ToolTipGeneral.HideToolTip(btn_Microfono);
@@ -595,6 +598,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 // Mostrar ToolTip para activar el micrófono
                 ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
             }
+
             else // Activar micrófono
             {
                 btn_Microfono.BackColor = System.Drawing.Color.LimeGreen;
