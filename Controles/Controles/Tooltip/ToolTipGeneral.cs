@@ -5,6 +5,7 @@ using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.Controles.Tooltip
@@ -146,5 +147,19 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
             }
             toolTips.Clear();
         }
+
+        // Método para eliminar todos los ToolTips activos
+        public static void RemoveAll()
+        {
+            // Eliminar todos los ToolTips de los controles
+            foreach (var control in toolTips.Keys.ToList())
+            {
+                toolTips[control].SetToolTip(control, string.Empty); // Establece un ToolTip vacío
+            }
+
+            // Limpiar el diccionario
+            toolTips.Clear();
+        }
+
     }
 }

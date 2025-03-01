@@ -59,12 +59,15 @@ namespace Ofelia_Sara.Formularios.Redactador
         private Timer animationTimer;
         private readonly Timer timerCerrarForm = new();
         private readonly Timer timerMinimizarForm = new();
+
+        private bool estadoMicrofono =false;
         #endregion
 
         #region CONSTRUCTOR
         public Redactador()
         {
             InitializeComponent();
+      
             btn_Actuacion.BringToFront();
             panel_Botones.BringToFront();  // Coloca el panel encima del AudioVisualizerControl
             audioVisualizerControl.Visible = false;
@@ -83,8 +86,8 @@ namespace Ofelia_Sara.Formularios.Redactador
                 AuxiliarConfiguracion.AplicarEstiloItem(item);
               
             }
-        
 
+            ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR microfono.");//inicializa este tooltip ya que inicia el btn desactivado
 
 
         }
@@ -139,7 +142,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         /// </summary>
         private void ConfigurarTooltips()
         {
-            ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
+           
             ToolTipGeneral.Mostrar(btn_Guardar, "CREAR DOCUMENTO WORD");
             ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR");
             ToolTipGeneral.Mostrar(btn_Negrita, "NEGRITA");
@@ -567,7 +570,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
         #endregion
 
-       
+
 
         #region FUNCION GRABAR
 
@@ -581,37 +584,46 @@ namespace Ofelia_Sara.Formularios.Redactador
                                        MensajeGeneral.TipoMensaje.MicrofonoDesconectado, owner: this);
                 return;
             }
+            ConfiguracionMicrofono();
+        }
 
+        private void ConfiguracionMicrofono()
+        {
+            // Eliminar cualquier ToolTip previo
+            ToolTipGeneral.RemoveAll(); // Si tienes un método para eliminar todos los ToolTips
 
-            // Ocultar cualquier ToolTip existente antes de mostrar uno nuevo
-            // ToolTipGeneral.HideToolTip(btn_Microfono);
-
-            // Cambiar el estado del micrófono (activar/desactivar)
-            if (btn_Microfono.BackColor == System.Drawing.Color.LimeGreen) // Desactivar micrófono
+            if (estadoMicrofono) // Si el micrófono está activado
             {
-                timer_Barras.Stop();
+                // Detener la grabación y cambiar el estado del micrófono
                 StopRecording();
+                timer_Barras.Stop();
                 btn_Microfono.BackColor = System.Drawing.Color.Red;
                 audioVisualizerControl.Visible = false;
                 richTextBox_Redactor.Focus();
 
-                // Mostrar ToolTip para activar el micrófono
+                // Actualizar el estado
+                estadoMicrofono = false;
+
+                // Actualizar el ToolTip
                 ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR micrófono");
             }
-
-            else // Activar micrófono
+            else // Si el micrófono está desactivado
             {
+                // Iniciar la grabación y cambiar el estado del micrófono
+                StartRecording();
+                timer_Barras.Start();
                 btn_Microfono.BackColor = System.Drawing.Color.LimeGreen;
                 audioVisualizerControl.Visible = true;
                 richTextBox_Redactor.Focus();
 
-                // Mostrar ToolTip para desactivar el micrófono
-                ToolTipGeneral.Mostrar(btn_Microfono, "DESACTIVAR micrófono");
+                // Actualizar el estado
+                estadoMicrofono = true;
 
-                StartRecording();
-                timer_Barras.Start(); // Inicia el temporizador para actualizar las barras de visualización
+                // Actualizar el ToolTip
+                ToolTipGeneral.Mostrar(btn_Microfono, "DESACTIVAR micrófono");
             }
         }
+
 
         private void StartRecording()
         {
