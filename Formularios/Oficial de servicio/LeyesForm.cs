@@ -56,6 +56,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             listView_Documentos.Font = new Font(listView_Documentos.Font.FontFamily, 12);
             listView_Documentos.View = View.Details;
+         
             listView_Documentos.Scrollable = true;
             listView_Documentos.FullRowSelect = true;
 

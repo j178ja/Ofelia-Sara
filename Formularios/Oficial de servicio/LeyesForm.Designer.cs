@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeyesForm));
             panel1 = new System.Windows.Forms.Panel();
-            label_TITULO = new System.Windows.Forms.Label();
             listView_Documentos = new System.Windows.Forms.ListView();
+            label_TITULO = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,6 +44,16 @@
             panel1.Size = new System.Drawing.Size(529, 262);
             panel1.TabIndex = 2;
             // 
+            // listView_Documentos
+            // 
+            listView_Documentos.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            listView_Documentos.Cursor = System.Windows.Forms.Cursors.Hand;
+            listView_Documentos.Location = new System.Drawing.Point(0, 36);
+            listView_Documentos.Name = "listView_Documentos";
+            listView_Documentos.Size = new System.Drawing.Size(529, 209);
+            listView_Documentos.TabIndex = 2;
+            listView_Documentos.UseCompatibleStateImageBehavior = false;
+            // 
             // label_TITULO
             // 
             label_TITULO.AutoSize = true;
@@ -53,23 +63,13 @@
             label_TITULO.Location = new System.Drawing.Point(157, 9);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(272, 30);
+            label_TITULO.Size = new System.Drawing.Size(328, 35);
             label_TITULO.TabIndex = 1;
             label_TITULO.Text = "LEYES Y DECRETOS";
             // 
-            // listView_Documentos
-            // 
-            listView_Documentos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            listView_Documentos.Cursor = System.Windows.Forms.Cursors.Hand;
-            listView_Documentos.Location = new System.Drawing.Point(3, 36);
-            listView_Documentos.Name = "listView_Documentos";
-            listView_Documentos.Size = new System.Drawing.Size(524, 209);
-            listView_Documentos.TabIndex = 2;
-            listView_Documentos.UseCompatibleStateImageBehavior = false;
-            // 
             // LeyesForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(571, 321);
             Controls.Add(label_TITULO);

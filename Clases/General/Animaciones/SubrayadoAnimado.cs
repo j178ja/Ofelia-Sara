@@ -23,11 +23,11 @@ public static class SubrayadoAnimado
     /// </summary>
     private static readonly Dictionary<object, (Timer Timer, int LineWidth, bool IsAnimating)> Estados = new();
 
-    public static void Aplicar(object target, Graphics g, Color color, int grosor = 3)
+    public static void Aplicar(object target, Graphics g, Color color, int grosor = 3, Rectangle bounds = default)
     {
         if (!Estados.TryGetValue(target, out var estado) || !estado.IsAnimating) return;
 
-        using (Pen pen = new Pen(color, grosor))
+        using (Pen pen = new (color, grosor))
         {
             int width;
             int startX, endX, y;

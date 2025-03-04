@@ -966,12 +966,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         #endregion
 
-
+        /// <summary>
+        /// abre pagina ministerial, pero no funciona porque trabaja con intranet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_SDA_Click(object sender, EventArgs e)
         {
          
             ConexionGeneral.AbrirUrl("https://sda.mseg.gba.gov.ar/sso/login");
         }
+
+        /// <summary>
+        /// abre formulario  para estructura de denuncias y actas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_CrearDenuncia_Click(object sender, EventArgs e)
         {
             ActaDenuncia actaDenunciaForm = new();

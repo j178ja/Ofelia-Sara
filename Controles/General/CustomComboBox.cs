@@ -32,6 +32,7 @@ namespace Ofelia_Sara.Controles.General
         public event EventHandler SelectedIndexChanged;
         private static CustomComboBox activeComboBox; // para guardar el comboBox activo
         private int hoveredIndex = -1; // Índice del elemento bajo el cursor
+        private readonly Color subrayadoColor = Color.Blue; // Color del subrayado
         #endregion
 
         #region CONSTRUCTOR
@@ -108,6 +109,8 @@ namespace Ofelia_Sara.Controles.General
         #endregion
 
         #region LISTA
+      
+
         private void DropdownList_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index < 0) return;
@@ -131,16 +134,33 @@ namespace Ofelia_Sara.Controles.General
                 e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
             }
 
-            // Dibujar texto
+            // Dibujar texto con alineación adecuada
             string itemText = dropdownList.Items[e.Index].ToString();
             using (Brush textBrush = new SolidBrush(textColor))
             {
-                e.Graphics.DrawString(itemText, textFont, textBrush, e.Bounds.Left + 10, e.Bounds.Top + 5);
+                StringFormat format = new()
+                {
+                    LineAlignment = StringAlignment.Center,
+                    Alignment = StringAlignment.Near
+                };
+
+                Rectangle textBounds = new(e.Bounds.Left + 10, e.Bounds.Top, e.Bounds.Width - 10, e.Bounds.Height);
+                e.Graphics.DrawString(itemText, textFont, textBrush, textBounds, format);
             }
 
             // Dibujar borde de foco si es necesario
             e.DrawFocusRectangle();
+
+            // Aplicar subrayado animado si el ítem está en hover
+            if (isHovered)
+            {
+                SubrayadoAnimado.Aplicar(dropdownList, e.Graphics, subrayadoColor, 3, e.Bounds);// la animacion de subrayado al momento no se visualiza
+            }
         }
+
+      
+
+
 
         /// <summary>
         /// metodos para cambiar color al indice del droplist
