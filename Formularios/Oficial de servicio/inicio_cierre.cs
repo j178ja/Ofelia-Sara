@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Office2010.Excel;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.General.Conexion;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.Controles.Reposicionar_paneles.InicioCierre;
@@ -968,30 +969,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Btn_SDA_Click(object sender, EventArgs e)
         {
-            string url = "https://www.google.com";
-
-            if (ConexionInternet.CheckInternetConnection(url))
-            {
-                try
-                {
-                    System.Diagnostics.Process.Start(new ProcessStartInfo
-                    {
-                        FileName = url,
-                        UseShellExecute = true
-                    });
-
-                    // Minimiza la aplicación al abrir la web
-                    this.WindowState = FormWindowState.Minimized;
-                }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al abrir la página web:\n{ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-            }
-            else
-            {
-                MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.ErrorConexion);
-            }
+         
+            ConexionGeneral.AbrirUrl("https://sda.mseg.gba.gov.ar/sso/login");
         }
         private void Btn_CrearDenuncia_Click(object sender, EventArgs e)
         {

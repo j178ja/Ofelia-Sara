@@ -1,6 +1,7 @@
 ﻿using Ofelia_Sara.Clases.General.Animaciones;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones.btn_Configuracion;
+using Ofelia_Sara.Clases.General.Conexion;
 using Ofelia_Sara.Controles.Barra_Busqueda;
 using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Controles.General;
@@ -546,19 +547,8 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Btn_BoletinOficial_Click(object sender, EventArgs e)
         {
-            string url = "https://boletin.mseg.gba.gov.ar/";
-            try
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = url,
-                    UseShellExecute = true // Necesario para abrir el navegador predeterminado
-                });
-            }
-            catch (Exception ex)
-            {
-                MensajeGeneral.Mostrar($"No se pudo abrir la página web: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-            }
+
+            ConexionGeneral.AbrirUrl("https://boletin.mseg.gba.gov.ar/");
         }
 
         /// <summary>

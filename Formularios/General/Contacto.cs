@@ -1,10 +1,11 @@
 ﻿using Ofelia_Sara.Clases.General.Apariencia;
-using Ofelia_Sara.Clases.General.Botones;
+using Ofelia_Sara.Clases.General.Conexion;
 using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+
 
 
 namespace Ofelia_Sara.Formularios.General
@@ -35,30 +36,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-        private static void AbrirUrl(string url)
-        {
-            try
-            {
-                // Verifica si la URL requiere conexión a Internet
-                if (!url.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) &&
-                    !ConexionInternet.CheckInternetConnection())
-                {
-                    MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.ErrorConexion);
-                    return;
-                }
-
-                var processInfo = new ProcessStartInfo
-                {
-                    FileName = url,
-                    UseShellExecute = true // Usa el navegador predeterminado o cliente de correo
-                };
-                Process.Start(processInfo);
-            }
-            catch (Exception ex)
-            {
-                MensajeGeneral.Mostrar($"No se pudo abrir el enlace: {url}. Error: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-            }
-        }
+       
 
         /// <summary>
         /// abre correo electronico y genera mensaje
@@ -78,7 +56,7 @@ namespace Ofelia_Sara.Formularios.General
             {
                 string mailtoUrl = $"mailto:{to}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(body)}";
 
-                AbrirUrl(mailtoUrl);
+                ConexionGeneral.AbrirUrl(mailtoUrl);
             }
             catch (Exception ex)
             {
@@ -104,7 +82,7 @@ namespace Ofelia_Sara.Formularios.General
             {
                 string whatsappUrl = $"https://wa.me/{phoneNumber}?text={Uri.EscapeDataString(message)}";
 
-                AbrirUrl(whatsappUrl);
+                ConexionGeneral.AbrirUrl(whatsappUrl);
             }
             catch (Exception ex)
             {
@@ -124,7 +102,7 @@ namespace Ofelia_Sara.Formularios.General
             try
             {
                 string linkedinProfileUrl = "https://www.linkedin.com/in/jorge-bonato-ba2521271/";
-                AbrirUrl(linkedinProfileUrl);
+                ConexionGeneral.AbrirUrl(linkedinProfileUrl);
             }
             catch (Exception ex)
             {
@@ -145,7 +123,7 @@ namespace Ofelia_Sara.Formularios.General
             try
             {
                 string githubUrl = "https://github.com/j178ja";
-                AbrirUrl(githubUrl); // Llama al método genérico para abrir la URL
+                ConexionGeneral.AbrirUrl(githubUrl); // Llama al método genérico para abrir la URL
             }
             catch (Exception ex)
             {

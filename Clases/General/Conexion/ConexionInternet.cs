@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ofelia_Sara.Clases.General.Botones
+namespace Ofelia_Sara.Clases.General.Conexion
 {
-   /// <summary>
-   /// se la llama desde evento click
-   /// </summary>
+    /// <summary>
+    /// se la llama desde evento click
+    /// </summary>
     public static class ConexionInternet
     {
         /// <summary>
@@ -29,9 +29,9 @@ namespace Ofelia_Sara.Clases.General.Botones
             }
             catch
             {//no recomendado el mensaje pero funciona
-               // MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.Error);
+             // MensajeGeneral.Mostrar("No hay conexión a internet. Verifique su conexión e intente nuevamente.", MensajeGeneral.TipoMensaje.Error);
                 return false; // No hay conexión
-          
+
             }
         }
     }

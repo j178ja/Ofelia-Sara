@@ -58,18 +58,18 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
             // 
             label_DE1.AutoSize = true;
             label_DE1.BackColor = Color.Transparent;
-            label_DE1.Location = new Point(58, 0);
+            label_DE1.Location = new Point(58, 3);
             label_DE1.Name = "label_DE1";
             label_DE1.Size = new Size(28, 20);
             label_DE1.TabIndex = 3;
             label_DE1.Text = "DE";
-            label_DE1.TextAlign = ContentAlignment.MiddleCenter;
+            label_DE1.TextAlign = ContentAlignment.BottomCenter;
             // 
             // label_DE2
             // 
             label_DE2.AutoSize = true;
             label_DE2.BackColor = Color.Transparent;
-            label_DE2.Location = new Point(160, 0);
+            label_DE2.Location = new Point(160, 3);
             label_DE2.Name = "label_DE2";
             label_DE2.Size = new Size(28, 20);
             label_DE2.TabIndex = 4;
