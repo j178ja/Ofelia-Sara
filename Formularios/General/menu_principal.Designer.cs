@@ -371,7 +371,6 @@ namespace Ofelia_Sara.Formularios.General
             btn_Cerrar.Size = new System.Drawing.Size(29, 29);
             btn_Cerrar.TabIndex = 17;
             btn_Cerrar.Text = "X";
-            toolTip1.SetToolTip(btn_Cerrar, "Cerrar");
             btn_Cerrar.UseVisualStyleBackColor = false;
             btn_Cerrar.Click += Btn_Cerrar_Click;
             btn_Cerrar.MouseLeave += Btn_Cerrar_MouseLeave;

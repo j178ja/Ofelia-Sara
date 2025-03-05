@@ -611,6 +611,7 @@ namespace Ofelia_Sara.Formularios.General
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
             ToolTipGeneral.Mostrar(comboBox_Buscar, " Ingrese que tarea desea realizar.");
             ToolTipGeneral.Mostrar(btn_BoletinOficial, "Boletín Informativo.");
+            ToolTipEliminar.Mostrar(btn_Cerrar,"CERRAR");
         }
 
         /// <summary>

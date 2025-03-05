@@ -27,6 +27,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         public DateTimePicker SelectHora_Compromiso { get; private set; }
         private bool datosGuardados = false;
         private Color originalBackColor; // Para almacenar el color original del botón
+        string mensaje ;
 
         #endregion
 
@@ -35,8 +36,12 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         {
             InitializeComponent();
 
-            // Configura el mensaje y el icono
-            label_Texto.Text = mensaje;
+            // Verificar el contenido de 'mensaje'
+            MessageBox.Show("Mensaje recibido: " + mensaje);
+            label_Texto.Text=mensaje;
+
+            // Verificar el contenido del 'Label'
+            MessageBox.Show("Texto del Label: " + label_Texto.Text);
             ConfigurarIcono(tipoMensaje);
 
             Color bordeForm = Color.Black;
@@ -82,6 +87,9 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
             }
         }
         #endregion
+
+
+     
 
         /// <summary>
         /// Propiedad publica para establecer tipo de mensaje
