@@ -157,13 +157,13 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
             {
                 if (control is CustomComboBox comboBox)
                 {
-                    comboBox.Leave += ComboBox_Ipp_Leave;
-                    comboBox.KeyPress += ComboBox_Ipp_KeyPress;
+                    comboBox.InnerTextBox.Leave += ComboBox_Ipp_Leave;
+                    comboBox.InnerTextBox.KeyPress += ComboBox_Ipp_KeyPress;
                 }
                 else if (control is CustomTextBox textBox)
                 {
-                    textBox.Leave += TextBox_NumeroIpp_Leave;
-                    textBox.KeyPress += TextBox_NumeroIpp_KeyPress;
+                    textBox.InnerTextBox.Leave += TextBox_NumeroIpp_Leave;
+                    textBox.InnerTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
                 }
 
                 if (control.HasChildren)

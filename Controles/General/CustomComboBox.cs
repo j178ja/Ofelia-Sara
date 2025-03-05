@@ -637,7 +637,7 @@ namespace Ofelia_Sara.Controles.General
         }
         private GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int radius)
         {
-            GraphicsPath path = new GraphicsPath();
+            GraphicsPath path = new();
 
             // Esquinas redondeadas
             path.AddArc(rect.X, rect.Y, radius, radius, 180, 90); // Superior izquierda

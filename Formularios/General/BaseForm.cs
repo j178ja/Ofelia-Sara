@@ -673,14 +673,18 @@ namespace Ofelia_Sara.Formularios.General
                 }
 
                 // Aplicar restricción de solo números a los IPP
-                if (comboBox.Name == "comboBox_Ipp1" || comboBox.Name == "comboBox_Ipp2" || comboBox.Name == "comboBox_Ipp4")
+                if (comboBox.Name == "comboBox_Ipp1" || comboBox.Name == "comboBox_Ipp2" 
+                    || comboBox.Name == "comboBox_NumeroIpp" || comboBox.Name == "comboBox_Ipp4")
                 {
                     ClaseNumeros.SoloNumeros(comboBox);
                 }
             }
         }
 
-
+        /// <summary>
+        /// limita cantidad de caracteres que se permiten ingresar
+        /// </summary>
+        /// <param name="control"></param>
         private static void MaxLengthControl(Control control)
         {
             if (control is CustomComboBox customComboBox)
