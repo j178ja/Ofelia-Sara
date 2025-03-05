@@ -34,7 +34,7 @@ namespace Ofelia_Sara.Formularios.General
         private Timer errorTimer;
         private DatabaseConnection dbConnection;
         private LinkLabel footerLinkLabel;
-        private AutocompletarManager autocompletarManager;
+      
         private object panel1;
         public Instruccion _instruccion;// llama a clase que contiene todo el coportamiento de panel_Instruccion
         private SaltoDeImput _saltoDeImput;
@@ -48,7 +48,7 @@ namespace Ofelia_Sara.Formularios.General
             }
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
-            autocompletarManager = new AutocompletarManager("autocompletar.json");
+
             _instruccion = new Instruccion(this);
             _saltoDeImput = new SaltoDeImput(this);
         }
@@ -58,6 +58,7 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         protected void InitializeRuntime()
         {
+          
             CargarIconoFormulario();
             InitializeCustomCursors();
             AjustarLabelEnPanel();

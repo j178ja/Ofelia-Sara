@@ -105,7 +105,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
             // Configurar autocompletado para `textBox_Caratula`
-            AutocompletarManager autocompletarManager = new("autocompletar.json");
+            Autocompletar autocompletarManager = new("autocompletar.json");
             autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
 
             timePickerPersonalizado1.SelectedDate = DateTime.Now; //para que actualice automaticamente la fecha

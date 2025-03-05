@@ -14,6 +14,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="BaseDatos\Json\ultimos_ingresos.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Referencias COM -->
     <COMReference Include="Microsoft.Office.Interop.Word">
       <WrapperTool>tlbimp</WrapperTool>

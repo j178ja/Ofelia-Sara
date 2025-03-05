@@ -11,6 +11,7 @@ using BaseDatos.Adm_BD;
 using Ofelia_Sara.Controles.General;
 using System.Collections.Generic;
 using BaseDatos.Entidades;
+using Newtonsoft.Json;
 
 
 namespace Ofelia_Sara.Formularios.General
@@ -22,7 +23,7 @@ namespace Ofelia_Sara.Formularios.General
     {
         #region VARIABLES
         private DatabaseConnection dbConnection;
-        private AutocompletarManager autocompletarManager;
+        private  Autocompletar autocompletar;
         protected ComisariasManager dbManager;
         protected InstructoresManager instructoresManager;
         protected SecretariosManager secretariosManager;
@@ -38,6 +39,8 @@ namespace Ofelia_Sara.Formularios.General
                 try
                 {
                     InitializeComponent(); // Solo se llama al método generado automáticamente
+
+     
                 }
                 catch (Exception ex)
                 {
@@ -61,7 +64,7 @@ namespace Ofelia_Sara.Formularios.General
          
           
             InitializeManagers();
-            ConfigurarAutocompletado(); // CARGA AUTOCOMPLETADO "HOY JSON-MAÑANA DB"
+          
             ConfigurarComboBoxesEnFormulario(this);
         }
 
@@ -72,10 +75,28 @@ namespace Ofelia_Sara.Formularios.General
         {
             try
             {
+                // Inicializa los managers
                 dbManager = new ComisariasManager();
                 instructoresManager = new InstructoresManager();
                 secretariosManager = new SecretariosManager();
-                autocompletarManager = new AutocompletarManager(@"path\to\Cartatulas_Autocompletar.json");
+
+                // Ruta relativa al archivo JSON
+                string rutaRelativa = Path.Combine("BaseDatos", "Json", "ultimos_ingresos.json");
+
+                // Obtener la ruta completa usando la ruta base del ejecutable
+                string rutaCompleta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, rutaRelativa);
+
+                // Crear el archivo si no existe
+                if (!File.Exists(rutaCompleta))
+                {
+                    File.WriteAllText(rutaCompleta, JsonConvert.SerializeObject(new List<string>(), Formatting.Indented));
+                }
+
+                // Inicializa AutocompletarManager con la ruta del archivo JSON
+                autocompletar = new Autocompletar(rutaCompleta);
+
+                // Configura el autocompletado para los controles del formulario
+                ConfigurarAutocompletado();
             }
             catch (Exception ex)
             {
@@ -223,7 +244,10 @@ namespace Ofelia_Sara.Formularios.General
             return null; // Devuelve null por defecto, será sobrescrito en cada formulario específico
         }
 
-
+        /// <summary>
+        /// asocia combobox escalafon y jerarquia
+        /// </summary>
+        /// <param name="parent"></param>
         private void ConfigurarComboBoxesEnFormulario(Control parent)
         {
             CustomComboBox comboBox_Escalafon = null;
@@ -233,7 +257,7 @@ namespace Ofelia_Sara.Formularios.General
             {
                 if (control is CustomComboBox customComboBox)
                 {
-                    // 🔹 Aplicar DropDownList automáticamente
+                    //Aplicar DropDownList automáticamente
                     customComboBox.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
                     // Detectar comboBox_Escalafon
@@ -272,7 +296,12 @@ namespace Ofelia_Sara.Formularios.General
             customComboBox.SelectedIndex = -1; // No seleccionar automáticamente el primer ítem
         }
 
-        // Configura el ComboBox_Jerarquia dependiente de ComboBox_Escalafon
+        
+        /// <summary>
+        /// Configura el ComboBox_Jerarquia dependiente de ComboBox_Escalafon
+        /// </summary>
+        /// <param name="comboBox_Escalafon"></param>
+        /// <param name="comboBox_Jerarquia"></param>
         protected static void ConfigurarComboBoxEscalafonJerarquia(CustomComboBox comboBox_Escalafon, CustomComboBox comboBox_Jerarquia)
         {
             // Configurar el evento SelectedIndexChanged
@@ -304,9 +333,9 @@ namespace Ofelia_Sara.Formularios.General
         {
             foreach (Control control in GetAllControls(this))
             {
-                if (control is CustomTextBox customTextBox)
+                if (control is CustomTextBox or CustomComboBox)
                 {
-                    autocompletarManager.ConfigureAutoComplete(customTextBox);
+                    autocompletar.ConfigureAutoComplete(control);
                 }
             }
         }

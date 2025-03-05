@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text.Json.Serialization;
 
+/// <summary>
+/// para cargar el listado de acciones a list de combobox
+/// </summary>
 public class AccionesManager
 {
     public List<string> Acciones { get; private set; }

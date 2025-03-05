@@ -205,8 +205,6 @@ namespace Ofelia_Sara.Formularios.General
             comboBox_Buscar.TabIndex = 14;
             comboBox_Buscar.Text = " ";
             comboBox_Buscar.TextValue = "";
-            comboBox_Buscar.SelectedIndexChanged += ComboBox_Buscar_SelectedIndexChanged;
-            comboBox_Buscar.MouseHover += ComboBox_Buscar_MouseHover;
             // 
             // btn_Configurar
             // 
@@ -337,7 +335,7 @@ namespace Ofelia_Sara.Formularios.General
             label_MenuPrincipal.Location = new System.Drawing.Point(43, 10);
             label_MenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_MenuPrincipal.Name = "label_MenuPrincipal";
-            label_MenuPrincipal.Size = new System.Drawing.Size(105, 18);
+            label_MenuPrincipal.Size = new System.Drawing.Size(136, 24);
             label_MenuPrincipal.TabIndex = 19;
             label_MenuPrincipal.Text = "Menu Principal";
             // 
@@ -350,7 +348,7 @@ namespace Ofelia_Sara.Formularios.General
             label_OfeliaSara.Location = new System.Drawing.Point(268, 6);
             label_OfeliaSara.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_OfeliaSara.Name = "label_OfeliaSara";
-            label_OfeliaSara.Size = new System.Drawing.Size(109, 26);
+            label_OfeliaSara.Size = new System.Drawing.Size(135, 33);
             label_OfeliaSara.TabIndex = 16;
             label_OfeliaSara.Text = "Ofelia - Sara";
             label_OfeliaSara.Click += Label_OfeliaSara_Click;
@@ -384,7 +382,7 @@ namespace Ofelia_Sara.Formularios.General
             menu_Configurar.ImageScalingSize = new System.Drawing.Size(20, 20);
             menu_Configurar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { aGREGARToolStripMenuItem, bUSCARToolStripMenuItem, salirToolStripMenuItem });
             menu_Configurar.Name = "menu_Configurar";
-            menu_Configurar.Size = new System.Drawing.Size(131, 82);
+            menu_Configurar.Size = new System.Drawing.Size(146, 82);
             // 
             // aGREGARToolStripMenuItem
             // 
@@ -392,7 +390,7 @@ namespace Ofelia_Sara.Formularios.General
             aGREGARToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
             aGREGARToolStripMenuItem.Image = Properties.Resources.editar;
             aGREGARToolStripMenuItem.Name = "aGREGARToolStripMenuItem";
-            aGREGARToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            aGREGARToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             aGREGARToolStripMenuItem.Text = "AGREGAR";
             // 
             // iNSTRUCTORToolStripMenuItem
@@ -400,35 +398,35 @@ namespace Ofelia_Sara.Formularios.General
             iNSTRUCTORToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             iNSTRUCTORToolStripMenuItem.Image = Properties.Resources.editar;
             iNSTRUCTORToolStripMenuItem.Name = "iNSTRUCTORToolStripMenuItem";
-            iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            iNSTRUCTORToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             iNSTRUCTORToolStripMenuItem.Text = "INSTRUCTOR";
             // 
             // sECToolStripMenuItem
             // 
             sECToolStripMenuItem.Image = Properties.Resources.editar;
             sECToolStripMenuItem.Name = "sECToolStripMenuItem";
-            sECToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            sECToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             sECToolStripMenuItem.Text = "SECRETARIO";
             // 
             // uFIDToolStripMenuItem
             // 
             uFIDToolStripMenuItem.Image = Properties.Resources.editar;
             uFIDToolStripMenuItem.Name = "uFIDToolStripMenuItem";
-            uFIDToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            uFIDToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             uFIDToolStripMenuItem.Text = "U.F.I.D.";
             // 
             // aGENTEFISCALToolStripMenuItem
             // 
             aGENTEFISCALToolStripMenuItem.Image = Properties.Resources.editar;
             aGENTEFISCALToolStripMenuItem.Name = "aGENTEFISCALToolStripMenuItem";
-            aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            aGENTEFISCALToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             aGENTEFISCALToolStripMenuItem.Text = "AGENTE FISCAL";
             // 
             // dEPENToolStripMenuItem
             // 
             dEPENToolStripMenuItem.Image = Properties.Resources.editar;
             dEPENToolStripMenuItem.Name = "dEPENToolStripMenuItem";
-            dEPENToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            dEPENToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             dEPENToolStripMenuItem.Text = "DEPENDENCIA";
             // 
             // sELLOSToolStripMenuItem
@@ -436,28 +434,28 @@ namespace Ofelia_Sara.Formularios.General
             sELLOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { mEDALLAToolStripMenuItem, eSCALERAToolStripMenuItem, fOLIADORToolStripMenuItem });
             sELLOSToolStripMenuItem.Image = Properties.Resources.editar;
             sELLOSToolStripMenuItem.Name = "sELLOSToolStripMenuItem";
-            sELLOSToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            sELLOSToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             sELLOSToolStripMenuItem.Text = "SELLOS";
             // 
             // mEDALLAToolStripMenuItem
             // 
             mEDALLAToolStripMenuItem.Image = Properties.Resources.EscudoPolicia_PNG;
             mEDALLAToolStripMenuItem.Name = "mEDALLAToolStripMenuItem";
-            mEDALLAToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            mEDALLAToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             mEDALLAToolStripMenuItem.Text = "MEDALLA";
             // 
             // eSCALERAToolStripMenuItem
             // 
             eSCALERAToolStripMenuItem.Image = Properties.Resources.EscudoPolicia_PNG;
             eSCALERAToolStripMenuItem.Name = "eSCALERAToolStripMenuItem";
-            eSCALERAToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            eSCALERAToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             eSCALERAToolStripMenuItem.Text = "ESCALERA";
             // 
             // fOLIADORToolStripMenuItem
             // 
             fOLIADORToolStripMenuItem.Image = Properties.Resources.EscudoPolicia_PNG;
             fOLIADORToolStripMenuItem.Name = "fOLIADORToolStripMenuItem";
-            fOLIADORToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            fOLIADORToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             fOLIADORToolStripMenuItem.Text = "FOLIADOR";
             // 
             // bUSCARToolStripMenuItem
@@ -465,75 +463,75 @@ namespace Ofelia_Sara.Formularios.General
             bUSCARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nIPPToolStripMenuItem, cARATULAToolStripMenuItem, vICTIMAToolStripMenuItem, iMPUTADOToolStripMenuItem, fECHAToolStripMenuItem, sECRETARIOToolStripMenuItem, iNSTRUCTORToolStripMenuItem1, dEPENDENCIAToolStripMenuItem });
             bUSCARToolStripMenuItem.Image = (System.Drawing.Image)resources.GetObject("bUSCARToolStripMenuItem.Image");
             bUSCARToolStripMenuItem.Name = "bUSCARToolStripMenuItem";
-            bUSCARToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            bUSCARToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             bUSCARToolStripMenuItem.Text = "BUSCAR";
             // 
             // nIPPToolStripMenuItem
             // 
             nIPPToolStripMenuItem.Image = Properties.Resources.buscar75_;
             nIPPToolStripMenuItem.Name = "nIPPToolStripMenuItem";
-            nIPPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            nIPPToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             nIPPToolStripMenuItem.Text = "N° IPP";
             // 
             // cARATULAToolStripMenuItem
             // 
             cARATULAToolStripMenuItem.Image = Properties.Resources.buscar75_;
             cARATULAToolStripMenuItem.Name = "cARATULAToolStripMenuItem";
-            cARATULAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            cARATULAToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             cARATULAToolStripMenuItem.Text = "CARATULA";
             // 
             // vICTIMAToolStripMenuItem
             // 
             vICTIMAToolStripMenuItem.Image = Properties.Resources.buscar75_;
             vICTIMAToolStripMenuItem.Name = "vICTIMAToolStripMenuItem";
-            vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            vICTIMAToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             vICTIMAToolStripMenuItem.Text = "VICTIMA";
             // 
             // iMPUTADOToolStripMenuItem
             // 
             iMPUTADOToolStripMenuItem.Image = Properties.Resources.buscar75_;
             iMPUTADOToolStripMenuItem.Name = "iMPUTADOToolStripMenuItem";
-            iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            iMPUTADOToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             iMPUTADOToolStripMenuItem.Text = "IMPUTADO";
             // 
             // fECHAToolStripMenuItem
             // 
             fECHAToolStripMenuItem.Image = Properties.Resources.buscar75_;
             fECHAToolStripMenuItem.Name = "fECHAToolStripMenuItem";
-            fECHAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            fECHAToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             fECHAToolStripMenuItem.Text = "FECHA";
             // 
             // sECRETARIOToolStripMenuItem
             // 
             sECRETARIOToolStripMenuItem.Image = Properties.Resources.buscar75_;
             sECRETARIOToolStripMenuItem.Name = "sECRETARIOToolStripMenuItem";
-            sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            sECRETARIOToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             sECRETARIOToolStripMenuItem.Text = "SECRETARIO";
             // 
             // iNSTRUCTORToolStripMenuItem1
             // 
             iNSTRUCTORToolStripMenuItem1.Image = Properties.Resources.buscar75_;
             iNSTRUCTORToolStripMenuItem1.Name = "iNSTRUCTORToolStripMenuItem1";
-            iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            iNSTRUCTORToolStripMenuItem1.Size = new System.Drawing.Size(191, 26);
             iNSTRUCTORToolStripMenuItem1.Text = "INSTRUCTOR";
             // 
             // dEPENDENCIAToolStripMenuItem
             // 
             dEPENDENCIAToolStripMenuItem.Image = Properties.Resources.buscar75_;
             dEPENDENCIAToolStripMenuItem.Name = "dEPENDENCIAToolStripMenuItem";
-            dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            dEPENDENCIAToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             dEPENDENCIAToolStripMenuItem.Text = "DEPENDENCIA";
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Image = Properties.Resources.atras;
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            salirToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             salirToolStripMenuItem.Text = "Salir";
             // 
             // MenuPrincipal
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoSize = true;
             BackColor = System.Drawing.Color.FromArgb(0, 154, 174);

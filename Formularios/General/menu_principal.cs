@@ -12,9 +12,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices; // Para la importación de funciones nativas
 using System.Windows.Forms;
+using static iText.Commons.Utils.PlaceHolderTextUtil;
 using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
 
@@ -65,19 +67,11 @@ namespace Ofelia_Sara.Formularios.General
 
             InitializeComponent();
 
-            auxiliarConfiguracion = new AuxiliarConfiguracion(this);
+            auxiliarConfiguracion = new AuxiliarConfiguracion(this);// instancia de clase que crea menu y submenu de btn_configuracion
             PosicionarMenu();
 
              RedondearBordes.Aplicar(this, 12);  // Redondea los bordes del formulario
              RedondearBordes.Aplicar(panel_MenuSuperior, 12, true, true, false, false);  // Redondea solo los bordes superiores del panel
-
-           
-
-
-
-            accionesManager = new AccionesManager("acciones.json");
-            ConfigureComboBox(comboBox_Buscar);
-            CargarAcciones();//para comboBox_Buscar
 
             comboBox_Buscar.BringToFront(); // que comboBoxBuscar está encima de comboBoxGNUA
 
@@ -87,15 +81,14 @@ namespace Ofelia_Sara.Formularios.General
             timerCerrarForm.Tick += TimerCerrar_Tick;
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
 
-            comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
-            comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus;
+            placeholderText = "Buscar tipo de actuación...";
+          
 
-            //para reducir el btn_Mecanografia
-            originalSizeMecanografia = btn_Mecanografia.Size;
-            originalLocationMecanografia = btn_Mecanografia.Location;
-
-         
-
+            comboBox_Buscar.InnerTextBox.GotFocus += ComboBox_Buscar_GotFocus;
+           comboBox_Buscar.InnerTextBox.LostFocus += ComboBox_Buscar_LostFocus;
+          
+            comboBox_Buscar.InnerTextBox.MouseEnter += ComboBox_Buscar_MouseEnter;
+        
         }
         #endregion
 
@@ -104,39 +97,16 @@ namespace Ofelia_Sara.Formularios.General
         {
 
             // Configurar el botón para usar el menú de contexto
-            btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();
-            btn_BuscarTarea.Enabled = false;//deshabilitar btn al cargar
+            btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();// btn_configuracion
+            btn_BuscarTarea.Enabled = false;//deshabilitar btn al cargar //se habilitara al ingresar texto compatible con la lista
 
-            //Para incrementar el tamaño de btn_configuracion y btn_CambiarTema
-            IncrementarTamaño.Incrementar(btn_Configurar);
-            IncrementarTamaño.Incrementar(btn_Leyes);
-            IncrementarTamaño.Incrementar(btn_BoletinOficial);
-            IncrementarTamaño.Incrementar(btn_InicioCierre);
-            IncrementarTamaño.Incrementar(btn_Contravenciones);
-            IncrementarTamaño.Incrementar(btn_Expedientes);
-
-
-            Tooltips();
-
-         
-
-
-            // Asignar eventos de GotFocus y LostFocus para que se vea placeholder
-            comboBox_Buscar.GotFocus += ComboBox_Buscar_GotFocus;
-
-            comboBox_Buscar.LostFocus += ComboBox_Buscar_LostFocus; //se comento porque genera problemas
-
+            Tooltips(); 
             ConfigurarBotones();
-            MostrarPlaceholder();
-
-
-
-
+          
             Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
                                              Properties.Resources.engranajeOriginal);   // Imagen original
 
-            comboBox_Buscar.PlaceholderText = "Buscar tipo de actuación...";
-            comboBox_Buscar.PlaceholderColor = Color.Gray;
+           
         }
         #endregion
 
@@ -351,6 +321,13 @@ namespace Ofelia_Sara.Formularios.General
 
             originalSizes[btn_Redactador] = btn_Redactador.Size;
             originalLocations[btn_Redactador] = btn_Redactador.Location;
+
+            IncrementarTamaño.Incrementar(btn_Configurar);
+            IncrementarTamaño.Incrementar(btn_Leyes);
+            IncrementarTamaño.Incrementar(btn_BoletinOficial);
+            IncrementarTamaño.Incrementar(btn_InicioCierre);
+            IncrementarTamaño.Incrementar(btn_Contravenciones);
+            IncrementarTamaño.Incrementar(btn_Expedientes);
         }
 
 
@@ -401,7 +378,7 @@ namespace Ofelia_Sara.Formularios.General
             if (sender is System.Windows.Forms.Button boton)
             {
                 boton.FlatAppearance.BorderSize = 1;
-                boton.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+                boton.FlatAppearance.BorderColor = Color.FromArgb(108, 156, 173);//borde celeste claro para indicar que esta seleccionado
             }
         }
 
@@ -424,7 +401,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             if (sender is Button boton)
             {
-                boton.BackColor = Color.FromArgb(0, 169, 184); // Fondo al presionar
+                boton.BackColor = Color.FromArgb(136, 198, 219); // Fondo al presionar
 
             }
 
@@ -740,60 +717,18 @@ namespace Ofelia_Sara.Formularios.General
         #endregion
 
         #region BUSCADOR
-        private BindingSource bindingSource;
+       
+       
 
-        private void ConfigureComboBox(CustomComboBox customComboBox)
-        {
-            // Configurar el ComboBox para autocompletado
-            customComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Habilita el autocompletado
-                                                                              // customComboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            // Ajustar la altura de la lista desplegable para mostrar más ítems
-            customComboBox.DropDownHeight = 80;
-            customComboBox.Font = new Font("Arial", 11, FontStyle.Regular); // Cambia a la fuente deseada
-
-            // Cargar las acciones y ordenar
-            CargarAcciones();
-
-            // Inicializar y configurar el BindingSource
-            bindingSource = new BindingSource();
-            bindingSource.DataSource = accionesManager.Acciones;
-
-            // Establecer el DataSource del ComboBox al BindingSource
-            customComboBox.DataSource = bindingSource;
-
-            // Manejar el evento de texto modificado
-            customComboBox.TextChanged += (sender, e) =>
-            {
-                // Filtrar la lista de acciones según el texto ingresado
-                string searchText = customComboBox.Text.ToLower();
-                var filteredActions = accionesManager.Acciones
-                    .Where(a => a.ToLower().Contains(searchText))
-                    .ToList();
-
-                // Actualizar la fuente de datos del ComboBox
-                bindingSource.DataSource = filteredActions;
-
-                // Reabrir la lista desplegable para mostrar las coincidencias
-                if (customComboBox.Items.Count > 0)
-                {
-                    customComboBox.DroppedDown = true;
-                }
-            };
-        }
-
+        /// <summary>
+        /// cargar el listado de acciones al list del comboBox
+        /// </summary>
         private void CargarAcciones()
         {
             try
             {
-                string filePath = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\bin\Debug\acciones.json";
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "acciones.json");
                 accionesManager = new AccionesManager(filePath);
-
-                // Elimina el DataSource si está asignado
-                comboBox_Buscar.DataSource = null;
-
-                // Poblar el ComboBox con las acciones
-                comboBox_Buscar.Items.AddRange(accionesManager.Acciones.ToArray());
             }
             catch (Exception ex)
             {
@@ -816,10 +751,31 @@ namespace Ofelia_Sara.Formularios.General
             if (comboBox_Buscar.SelectedIndex > 0 || !string.IsNullOrWhiteSpace(comboBox_Buscar.TextValue))
             {
                 btn_BuscarTarea.Enabled = true;
+                IncrementarTamaño.Incrementar(btn_BuscarTarea);
             }
             else
             {
                 btn_BuscarTarea.Enabled = false;
+            }
+        }
+      
+
+
+        private void ComboBox_Buscar_MouseEnter(object sender, EventArgs e)
+        {
+            if (!comboBox_Buscar.InnerTextBox.Focused && string.IsNullOrWhiteSpace(comboBox_Buscar.InnerTextBox.Text))
+            {
+                MostrarPlaceholder();
+            }
+        }
+
+
+        private void ComboBox_Buscar_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(comboBox_Buscar.InnerTextBox.Text))
+            {
+                OcultarPlaceholder();
+                comboBox_Buscar.ShowError = false; // Ocultar subrayado si está vacío y no tiene foco
             }
         }
 
@@ -827,8 +783,8 @@ namespace Ofelia_Sara.Formularios.General
         {
             if (comboBox_Buscar.InnerTextBox.Text == placeholderText)
             {
-                comboBox_Buscar.InnerTextBox.Text = "";
-                comboBox_Buscar.ForeColor = Color.Black;
+                comboBox_Buscar.InnerTextBox.Text = string.Empty;
+                comboBox_Buscar.InnerTextBox.ForeColor = Color.Black;
             }
         }
 
@@ -837,29 +793,29 @@ namespace Ofelia_Sara.Formularios.General
         {
             if (string.IsNullOrWhiteSpace(comboBox_Buscar.InnerTextBox.Text))
             {
-                MostrarPlaceholder();
+                OcultarPlaceholder();
+                comboBox_Buscar.ShowError = false; // Ocultar subrayado al perder foco si está vacío
             }
         }
 
-        /// <summary>
-        /// MOSTRAR PLACEHOLDER AL ENTRAR AL BUSCADOR
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Buscar_MouseHover(object sender, EventArgs e)
-        {
-            MostrarPlaceholder();
-        }
-
-        /// <summary>
-        /// CONFIGURAR PLACEHOLDER
-        /// </summary>
         private void MostrarPlaceholder()
         {
-            // Establecer el texto del placeholder y cambiar el color a gris
-            comboBox_Buscar.Text = placeholderText;
-           // comboBox_Buscar.ForeColor = Color.LightGray;
-            comboBox_Buscar.ForeColor = Color.Red;
+            if (!comboBox_Buscar.Focused) // Solo mostrar si el ComboBox no tiene foco
+            {
+                comboBox_Buscar.InnerTextBox.Text = placeholderText;
+                comboBox_Buscar.InnerTextBox.ForeColor = Color.FromArgb(32, 123, 171); // Color del placeholder
+                comboBox_Buscar.ShowError = false; // Asegurar que no aparezca subrayado rojo
+            }
+        }
+
+
+        private void OcultarPlaceholder()
+        {
+            if (comboBox_Buscar.InnerTextBox.Text == placeholderText)
+            {
+                comboBox_Buscar.InnerTextBox.Text = string.Empty;
+                comboBox_Buscar.InnerTextBox.ForeColor = Color.Black;
+            }
         }
 
         #endregion

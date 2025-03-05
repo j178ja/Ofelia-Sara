@@ -32,7 +32,7 @@ namespace Ofelia_Sara.Controles.General
         public event EventHandler SelectedIndexChanged;
         private static CustomComboBox activeComboBox; // para guardar el comboBox activo
         private int hoveredIndex = -1; // Índice del elemento bajo el cursor
-        private readonly Color subrayadoColor = Color.Blue; // Color del subrayado
+        private  Color subrayadoColor = Color.Blue; // Color del subrayado
         #endregion
 
         #region CONSTRUCTOR
@@ -792,8 +792,20 @@ namespace Ofelia_Sara.Controles.General
         public AutoCompleteSource AutoCompleteSource
         {
             get => textBox.AutoCompleteSource;
-            set => textBox.AutoCompleteSource = value;
+            set
+            {
+                // Solo permite CustomSource
+                if (value == AutoCompleteSource.CustomSource)
+                {
+                    textBox.AutoCompleteSource = value;
+                }
+                else
+                {
+                    textBox.AutoCompleteSource = AutoCompleteSource.None; // Desactiva el autocompletado
+                }
+            }
         }
+
 
         // Propiedad DisplayMember
         private string displayMember;
