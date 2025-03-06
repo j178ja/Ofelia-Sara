@@ -1,12 +1,2 @@
 ﻿
 
-en formulario INSTRUCTIVO DIGITAL  hay que modificar, para usar rutas relativas
- y mejorar mucho la estetica
-
- form NUEVO PERSONAL{
- NO SE OBSERVA TOOLTIP ERROR
- }
-
- posicionar label_TITULO en BASEFORM no funciona
-
- el centrado del mensajeAyuda helpbuton , aplicado desde baseForm no se aplica

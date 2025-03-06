@@ -130,4 +130,18 @@ public class DataManager<T>
             dbConnection.CloseConnection();
         }
     }
+
+    // Método para obtener el último ID insertado
+    public int GetLastInsertedId()
+    {
+        using (var connection = new SQLiteConnection("YourConnectionStringHere"))
+        {
+            connection.Open();
+            string query = "SELECT last_insert_rowid()"; // SQLite usa esta función para obtener el último ID insertado
+            using (var cmd = new SQLiteCommand(query, connection))
+            {
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+    }
 }

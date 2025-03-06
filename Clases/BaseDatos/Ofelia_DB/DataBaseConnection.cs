@@ -1,6 +1,8 @@
 ﻿
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.ComponentModel;
+using System.Data;
 using System.Data.SQLite;
 using System.IO;
 
@@ -11,43 +13,36 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
         private SQLiteConnection connection;
         private readonly string databasePath;
 
+        // Constructor
         public DatabaseConnection()
         {
+            // Evitar ejecución en tiempo de diseño
             if (IsInDesignMode())
             {
                 Console.WriteLine("Modo diseño detectado, omitiendo inicialización de DatabaseConnection.");
                 return;
             }
 
-            // Ruta donde se almacenará la base de datos SQLite
-            databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BaseDatos", "baseSqlite.db");
+            // Establecer ruta de la base de datos
+            //   databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Ofelia_DB_Sqlite", "baseSqlite.db");
+            databasePath = @"C:\Users\jbest\Source\Repos\Ofelia-Sara\BaseDatos\Ofelia_DB_Sqlite\baseSqlite.db";
 
-
-            InitializeConnection();
-        }
-
-        private void InitializeConnection()
-        {
-            // Verifica si la base de datos existe; si no, la crea
-            if (!File.Exists(databasePath))
-            {
-                SQLiteConnection.CreateFile(databasePath);
-            }
-
-            // Define la cadena de conexión
+            // Inicializar la conexión
             connection = new SQLiteConnection($"Data Source={databasePath};Version=3;");
         }
 
+        // Método para verificar si está en modo diseño
         private static bool IsInDesignMode()
         {
-            return LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
-                   AppDomain.CurrentDomain.FriendlyName.Contains("DefaultDomain");
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime;
         }
 
+        // Propiedad para obtener la conexión
         public SQLiteConnection Connection
         {
             get
             {
+                // Inicializar la conexión solo si es necesario
                 if (connection == null)
                 {
                     connection = new SQLiteConnection($"Data Source={databasePath};Version=3;");
@@ -57,24 +52,83 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
         }
 
         /// <summary>
-        /// abrir conexion
+        /// Abre la conexión a la base de datos
         /// </summary>
         public void OpenConnection()
         {
-            if (connection?.State == System.Data.ConnectionState.Closed)
+            try
             {
-                connection.Open();
+                if (connection?.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                    Console.WriteLine("Conexión abierta con éxito.");
+                //    MensajeGeneral.Mostrar("Conexión abierta con éxito.",MensajeGeneral.TipoMensaje.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al abrir la conexión: {ex.Message}");
+                
             }
         }
 
         /// <summary>
-        /// cerrar conexion
+        /// Cierra la conexión a la base de datos
         /// </summary>
         public void CloseConnection()
         {
-            if (connection?.State == System.Data.ConnectionState.Open)
+            try
             {
-                connection.Close();
+                if (connection?.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                    Console.WriteLine("Conexión cerrada con éxito.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al cerrar la conexión: {ex.Message}");
+           
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta una consulta de lectura (SELECT)
+        /// </summary>
+        public SQLiteDataReader ExecuteQuery(string query)
+        {
+            try
+            {
+                OpenConnection();  // Abrir la conexión antes de ejecutar la consulta
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                return command.ExecuteReader(); // Retorna un lector de datos
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al ejecutar la consulta: {ex.Message}");
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta una consulta de escritura (INSERT, UPDATE, DELETE)
+        /// </summary>
+        public int ExecuteNonQuery(string query)
+        {
+            try
+            {
+                OpenConnection();  // Abrir la conexión antes de ejecutar la consulta
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                return command.ExecuteNonQuery(); // Retorna el número de filas afectadas
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al ejecutar la consulta: {ex.Message}");
+                return -1;
+            }
+            finally
+            {
+                CloseConnection(); // Asegúrate de cerrar la conexión después de ejecutar la consulta
             }
         }
     }

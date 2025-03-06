@@ -108,6 +108,5 @@
 
   <ItemGroup>
     <Folder Include="BaseDatos\Descargable_SQLITE\" />
-    <Folder Include="BaseDatos\Ofelia_DB_Sqlite\" />
   </ItemGroup>
 </Project>

@@ -29,18 +29,18 @@ namespace BaseDatos.Adm_BD.Manager
         /// <param name="funcion"></param>
         public void InsertSecretario(float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
-            string query = "INSERT INTO Secretario (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@legajo, @subescalafon, @jerarquia, @nombre, @apellido, @dependencia, @funcion)";
+            string query = "INSERT INTO Secretario (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@Legajo, @Subescalafon, @Jerarquia, @Nombre, @Apellido, @Dependencia, @Funcion)";
 
             dbConnection.OpenConnection();
             using var command = new SQLiteCommand(query, dbConnection.Connection);
             // Usar DBNull.Value si legajo es null
-            command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
-            command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
-            command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
-            command.Parameters.AddWithValue("@nombre", nombre.Trim());
-            command.Parameters.AddWithValue("@apellido", apellido.Trim());
-            command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
-            command.Parameters.AddWithValue("@funcion", funcion.Trim());
+            command.Parameters.AddWithValue("@Legajo", (object)legajo ?? DBNull.Value);
+            command.Parameters.AddWithValue("@Subescalafon", subescalafon.Trim());
+            command.Parameters.AddWithValue("@Jerarquia", jerarquia.Trim());
+            command.Parameters.AddWithValue("@Nombre", nombre.Trim());
+            command.Parameters.AddWithValue("@Apellido", apellido.Trim());
+            command.Parameters.AddWithValue("@Dependencia", dependencia.Trim());
+            command.Parameters.AddWithValue("@Funcion", funcion.Trim());
 
             try
             {

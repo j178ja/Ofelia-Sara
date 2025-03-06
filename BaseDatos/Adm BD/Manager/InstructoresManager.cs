@@ -72,13 +72,13 @@ namespace BaseDatos.Adm_BD.Manager
                     instructores.Add(new Instructores
                     {
                         Id = reader.GetInt32("ID"),
-                        Legajo = reader.GetInt32("legajo"),
-                        Subescalafon = reader.GetString("subescalafon"),
-                        Jerarquia = reader.GetString("jerarquia"),
-                        Nombre = reader.GetString("nombre"),
-                        Apellido = reader.GetString("apellido"),
-                        Dependencia = reader.GetString("dependencia"),
-                        Funcion = reader.GetString("funcion")
+                        Legajo = reader.GetInt32("Legajo"),
+                        Subescalafon = reader.GetString("Subescalafon"),
+                        Jerarquia = reader.GetString("Jerarquia"),
+                        Nombre = reader.GetString("Nombre"),
+                        Apellido = reader.GetString("Apellido"),
+                        Dependencia = reader.GetString("Dependencia"),
+                        Funcion = reader.GetString("Funcion")
                     });
                 }
             }
@@ -89,20 +89,20 @@ namespace BaseDatos.Adm_BD.Manager
         /// <summary>
         /// Actualizar un instructor existente
         /// </summary>
-        public void UpdateInstructor(int id, float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
+        public void UpdateInstructor(int Id, float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
-            string query = "UPDATE Instructores SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
+            string query = "UPDATE Instructores SET legajo = @Legajo, subescalafon = @Subescalafon, jerarquia = @Jerarquia, nombre = @Nombre, apellido = @Apellido, dependencia = @Dependencia, funcion = @Funcion WHERE ID = @id";
 
             dbConnection.OpenConnection();  // Abrir la conexión
             using var command = new SQLiteCommand(query, dbConnection.Connection);  // Utilizar SQLiteCommand
                                                                                     // Usar DBNull.Value si legajo es null
-            command.Parameters.AddWithValue("@legajo", (object)legajo ?? DBNull.Value);
-            command.Parameters.AddWithValue("@subescalafon", subescalafon.Trim());
-            command.Parameters.AddWithValue("@jerarquia", jerarquia.Trim());
-            command.Parameters.AddWithValue("@nombre", nombre.Trim());
-            command.Parameters.AddWithValue("@apellido", apellido.Trim());
-            command.Parameters.AddWithValue("@dependencia", dependencia.Trim());
-            command.Parameters.AddWithValue("@funcion", funcion.Trim());
+            command.Parameters.AddWithValue("@Legajo", (object)legajo ?? DBNull.Value);
+            command.Parameters.AddWithValue("@Subescalafon", subescalafon.Trim());
+            command.Parameters.AddWithValue("@Jerarquia", jerarquia.Trim());
+            command.Parameters.AddWithValue("@Nombre", nombre.Trim());
+            command.Parameters.AddWithValue("@Apellido", apellido.Trim());
+            command.Parameters.AddWithValue("@Dependencia", dependencia.Trim());
+            command.Parameters.AddWithValue("@Funcion", funcion.Trim());
             try
             {
                 command.ExecuteNonQuery();  // Ejecutar la consulta

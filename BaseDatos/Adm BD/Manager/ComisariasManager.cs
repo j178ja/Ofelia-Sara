@@ -16,7 +16,6 @@ namespace BaseDatos.Adm_BD.Manager
         // Constructor que inicializa DatabaseConnection y evita ejecución en tiempo de diseño
         public ComisariasManager()
         {
-
             dbConnection = new DatabaseConnection();  // Obtiene la instancia de la conexión SQLite
 
             // Si dbConnection es null, lanza una excepción con un mensaje claro
@@ -26,96 +25,102 @@ namespace BaseDatos.Adm_BD.Manager
             }
         }
 
-
-
         /// <summary>
-        ///  insertar una nueva comisaría en la base de datos
+        /// Insertar una nueva comisaría en la base de datos
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="direccion"></param>
-        /// <param name="localidad"></param>
-        /// <param name="partido"></param>
         public void InsertComisaria(string nombre, string direccion, string localidad, string partido)
         {
             string query = "INSERT INTO Comisarias (nombre, direccion, Localidad, Partido) VALUES (@nombre, @direccion, @localidad, @partido)";
 
-            dbConnection.OpenConnection();
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))
+            try
             {
-                command.Parameters.AddWithValue("@nombre", nombre.Trim());
-                command.Parameters.AddWithValue("@direccion", direccion.Trim());
-                command.Parameters.AddWithValue("@localidad", localidad.Trim());
-                command.Parameters.AddWithValue("@partido", partido.Trim());
-
-                try
+                dbConnection.OpenConnection();
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
                 {
+                    command.Parameters.AddWithValue("@nombre", nombre.Trim());
+                    command.Parameters.AddWithValue("@direccion", direccion.Trim());
+                    command.Parameters.AddWithValue("@localidad", localidad.Trim());
+                    command.Parameters.AddWithValue("@partido", partido.Trim());
+
                     command.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    MensajeGeneral.Mostrar($"Error al insertar comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
-                }
-                finally
-                {
-                    dbConnection.CloseConnection();
-                }
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al insertar comisaría: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
             }
         }
 
-        
         /// <summary>
-        ///  obtener todas las comisarías desde la base de datos
+        /// Obtener todas las comisarías desde la base de datos
         /// </summary>
-        /// <returns></returns>
         public List<Comisarias> GetComisarias()
         {
-            List<Comisarias> comisarias = [];
+            List<Comisarias> comisarias = new List<Comisarias>();
             string query = "SELECT * FROM Comisarias";
 
-            dbConnection.OpenConnection();
-            using (var command = new SQLiteCommand(query, dbConnection.Connection))
+            try
             {
-                using var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    comisarias.Add(new Comisarias
-                    {
-                        Id = reader.IsDBNull(reader.GetOrdinal("ID")) ? 0 : reader.GetInt32("ID"),
-                        Nombre = reader.IsDBNull(reader.GetOrdinal("nombre")) ? string.Empty : reader.GetString("nombre"),
-                        Direccion = reader.IsDBNull(reader.GetOrdinal("direccion")) ? string.Empty : reader.GetString("direccion"),
-                        Localidad = reader.IsDBNull(reader.GetOrdinal("Localidad")) ? string.Empty : reader.GetString("Localidad"),
-                        Partido = reader.IsDBNull(reader.GetOrdinal("Partido")) ? string.Empty : reader.GetString("Partido")
+                // Abrir la conexión
+                dbConnection.OpenConnection();
 
-                    });
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            comisarias.Add(new Comisarias
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("ID")),
+                                Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
+                                Direccion = reader.GetString(reader.GetOrdinal("Direccion")),
+                                Localidad = reader.GetString(reader.GetOrdinal("Localidad")),
+                                Partido = reader.GetString(reader.GetOrdinal("Partido"))
+                            });
+                        }
+                    }
                 }
             }
-            dbConnection.CloseConnection();
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al obtener comisarias: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+            finally
+            {
+                // Asegurarse de cerrar la conexión al finalizar la operación
+                dbConnection.CloseConnection();
+            }
+
             return comisarias;
         }
 
+
+
         /// <summary>
-        /// actualizar una comisaría existente
+        /// Actualizar una comisaría existente
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="nombre"></param>
-        /// <param name="direccion"></param>
-        /// <param name="localidad"></param>
-        /// <param name="partido"></param>
         public void UpdateComisaria(int id, string nombre, string direccion, string localidad, string partido)
         {
             string query = "UPDATE Comisarias SET nombre = @nombre, direccion = @direccion, Localidad = @localidad, Partido = @partido WHERE ID = @id";
 
-            dbConnection.OpenConnection();
-            using var command = new SQLiteCommand(query, dbConnection.Connection);
-            command.Parameters.AddWithValue("@id", id);
-            command.Parameters.AddWithValue("@nombre", nombre.Trim());
-            command.Parameters.AddWithValue("@direccion", direccion.Trim());
-            command.Parameters.AddWithValue("@localidad", localidad.Trim());
-            command.Parameters.AddWithValue("@partido", partido.Trim());
-
             try
             {
-                command.ExecuteNonQuery();
+                dbConnection.OpenConnection();
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@nombre", nombre.Trim());
+                    command.Parameters.AddWithValue("@direccion", direccion.Trim());
+                    command.Parameters.AddWithValue("@localidad", localidad.Trim());
+                    command.Parameters.AddWithValue("@partido", partido.Trim());
+
+                    command.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -128,20 +133,20 @@ namespace BaseDatos.Adm_BD.Manager
         }
 
         /// <summary>
-        /// eliminar una comisaría
+        /// Eliminar una comisaría
         /// </summary>
-        /// <param name="id"></param>
         public void DeleteComisaria(int id)
         {
             string query = "DELETE FROM Comisarias WHERE ID = @id";
 
-            dbConnection.OpenConnection();
-            using var command = new SQLiteCommand(query, dbConnection.Connection);
-            command.Parameters.AddWithValue("@id", id);
-
             try
             {
-                command.ExecuteNonQuery();
+                dbConnection.OpenConnection();
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
