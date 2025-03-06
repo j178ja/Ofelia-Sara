@@ -61,25 +61,19 @@ namespace Ofelia_Sara.Formularios.General
         {
             InitializeComponent(); // Llama primero para inicializar los controles
             this.AutoScaleMode = AutoScaleMode.Dpi;
-         
-          
-            InitializeManagers();
-          
+
+            InitializarAutocompletado();
+            CargarDatosComboBox();
             ConfigurarComboBoxesEnFormulario(this);
         }
 
         /// <summary>
         /// Inicializa los manejadores necesarios.
         /// </summary>
-        private void InitializeManagers()
+        private void InitializarAutocompletado()
         {
             try
             {
-                // Inicializa los managers
-                dbManager = new ComisariasManager();
-                instructoresManager = new InstructoresManager();
-                secretariosManager = new SecretariosManager();
-
                 // Ruta relativa al archivo JSON
                 string rutaRelativa = Path.Combine("BaseDatos", "Json", "ultimos_ingresos.json");
 
@@ -105,6 +99,49 @@ namespace Ofelia_Sara.Formularios.General
         }
 
         #region CARGA DATOS
+
+        /// <summary>
+        /// inicializa conexion y carga los datos dependiendo el nombre del control en todos los formularios,
+        /// </summary>
+        public void CargarDatosComboBox()
+        {
+            try
+            {
+                foreach (Control control in this.Controls)
+                {
+                    if (control is CustomComboBox comboBox)
+                    {
+                        switch (comboBox.Name)
+                        {
+                            case "comboBox_Dependencia":
+                                CargarDatosDependencia(comboBox, new ComisariasManager());
+                                break;
+
+                            case "comboBox_Instructor":
+                                CargarDatosInstructor(comboBox, new InstructoresManager());
+                                break;
+
+                            case "comboBox_Secretario":
+                                CargarDatosSecretario(comboBox, new SecretariosManager());
+                                break;
+
+                            case "comboBox_Fiscalia":
+                                CargarDatosFiscalia(comboBox, new FiscaliasManager());
+                                break;
+
+                                // Agrega más casos si hay más ComboBox que necesiten datos de la base
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al cargar los ComboBox: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+        }
+
+
+
         /// <summary>
         /// CARGAR DATOS DE DEPENDENCIA
         /// </summary>

@@ -46,12 +46,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             CalcularEdad.Inicializar(Fecha_Nacimiento, textBox_Edad);//para automatizar edad
 
-
-            //cargar desde base de datos
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
-            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
-
             SetupBotonDeslizable();  // Configurar el delegado de validación
         }
 

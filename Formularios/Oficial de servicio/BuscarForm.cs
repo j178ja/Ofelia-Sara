@@ -39,9 +39,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             InicializarComboBox();
 
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
-            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
         }
         private void InicializarComboBox()
         {

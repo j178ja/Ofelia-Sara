@@ -67,8 +67,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_NumeroLegajo.MaxLength = 7;//limitando numero de legajo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
-            //cargar desde base de datos
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
+           
         }
         #endregion
 

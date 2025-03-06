@@ -1161,8 +1161,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             comboBox_Escalafon.SelectedIndex = -1;
             comboBox_Dependencia.SelectedIndex = -1;
 
-            // Recargar los datos del ComboBox de instructores
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
+    
         }
         private int ObtenerIdDelInstructorSeleccionado()
         {

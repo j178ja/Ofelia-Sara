@@ -1,4 +1,5 @@
-﻿using BaseDatos.Entidades;
+﻿using BaseDatos.Adm_BD;
+using BaseDatos.Entidades;
 using DocumentFormat.OpenXml.Office2010.Excel;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;
@@ -19,6 +20,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 
@@ -45,6 +47,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
         private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
+       
         #endregion
 
         #region CONSTRUCTOR
@@ -89,9 +92,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
 
-            panel_Compromisos.Visible = false;
-            panel_InsertarSecuestro.Visible = false; // inicializa panel inserte secuetro oculto// se visiviliza con texto en caratula
-
+         //   panel_Compromisos.Visible = false;
+           panel_InsertarSecuestro.Visible = false; // inicializa panel inserte secuetro oculto// se visiviliza con texto en caratula
+            panel_Not247.Visible = false;
+            panel_StudRML.Visible = false;
+            panel_RatificacionPersonal.Visible = false;
+            panel_Cargo.Visible = false;
         }
         #endregion
 
@@ -118,11 +124,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-            //cargar desde base de datos
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
-            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
-
             ActualizarEstado();//PARA LABEL Y CHECK CARGO,labell btn_not247 y btn_StudRML
 
             Btn_ContadorRML.Text = "0";
@@ -134,7 +135,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             SubscribirCaratulaTextchanged();
 
             BotonDeslizable_247();  // Configurar el delegado de validación
-            BotonDeslizable_InserteSecuestro();  // Configurar el delegado de validación
+      
             botonDeslizable_Not247.IsOn = false;// inicializa desactivado
         }
         #endregion
@@ -152,10 +153,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region CONFIGURACIONES
         private void ConfigurarTooltip()
         {
+            
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
             TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia.", "Marcar para establecer fecha de Pericia");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_InsertarSecuestro, "Complete la totalidad de datos para poder solicitar inserte secuestro.","Marcar para generar solicitud de INSERTE SECUESTRO.");
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
             ToolTipGeneral.Mostrar(btn_SDA, "Redirige a página SDA para carga de actuaciones");
             ToolTipGeneral.Mostrar(btn_CrearDenuncia, "Crear DENUNCIA/ACTA");
@@ -250,7 +253,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="control"></param>
         /// <param name="mensajeError"></param>
         /// <returns></returns>
-        private static bool ValidarCampo(Control control, string mensajeError)
+        private static bool ValidarCampo(System.Windows.Forms.Control control, string mensajeError)
         {
             if (string.IsNullOrWhiteSpace(control.Text))
             {
@@ -672,33 +675,48 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Actualiza el color del label y el estado del checkbox según el estado de validación
             if (esTextoValido)
             {
+                //panel CARGO
                 label_Cargo.ForeColor = System.Drawing.Color.Black;
                 label_Cargo.BackColor = System.Drawing.Color.Transparent;
                 checkBox_Cargo.Enabled = true;
                 checkBox_Cargo.BackColor = System.Drawing.Color.Transparent;
 
+                //panel NOT 247
                 label_Not247.ForeColor = System.Drawing.Color.Black;
                 label_Not247.BackColor = System.Drawing.Color.Transparent;
                 botonDeslizable_Not247.Enabled = true;// habilitar btn 247
                 botonDeslizable_Not247.BackColor = System.Drawing.Color.Transparent;
 
+                //panel INSERTAR SECUESTRO
+                panel_InsertarSecuestro.BackColor = System.Drawing.Color.Transparent;
+                label_InsertarSecuestro.ForeColor = System.Drawing.Color.Black;
+                botonDeslizable_InsertarSecuestro.Enabled = true;
 
+                //panel STUD RML
                 Btn_ContadorRML.Visible = true;
                 label_StudRML.Visible = true;
 
             }
             else
             {
+                //panel CARGO
                 label_Cargo.ForeColor = System.Drawing.Color.Tomato;
                 label_Cargo.BackColor = System.Drawing.Color.FromArgb(211, 211, 211); // Gris claro
                 checkBox_Cargo.Enabled = false;
                 checkBox_Cargo.BackColor = System.Drawing.Color.Tomato;
 
+                //panel NOT 247
                 label_Not247.ForeColor = System.Drawing.Color.Tomato;
                 label_Not247.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
                 botonDeslizable_Not247.Enabled = false;// deshabilitar btn 247
                 botonDeslizable_Not247.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
 
+                //panel INSERTAR SECUESTRO
+                panel_InsertarSecuestro.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
+                label_InsertarSecuestro.ForeColor= System.Drawing.Color.Tomato;
+                botonDeslizable_InsertarSecuestro.Enabled = false;
+
+                //panel STUD RML
                 Btn_ContadorRML.Visible = false;
                 label_StudRML.Visible = false;
 
@@ -745,7 +763,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void MostrarInserteSecuestro()
         {
             // Lista de palabras clave a buscar
-            string[] palabrasClave = { "HURTO", "ROBO", "VEHICULO", "MOTOVEHICULO" };
+            string[] palabrasClave = { "HURTO", "ROBO", "VEHICULO", "MOTOVEHICULO","ESTAFA" };
 
             // Obtener todos los CustomTextBox en panel_Caratula
             var textBoxes = panel_Caratula.Controls.OfType<CustomTextBox>().ToList();
@@ -761,6 +779,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Mostrar u ocultar el panel según el resultado
             panel_InsertarSecuestro.Visible = mostrarPanel;
+            // Llamar a MostrarPanelInterno solo si se debe mostrar
+            if (mostrarPanel)
+            {
+                MostrarPanelInterno(panel_InsertarSecuestro);
+
+            }
         }
 
         /// <summary>
@@ -772,6 +796,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             MostrarInserteSecuestro();
         }
+
         private void SubscribirCaratulaTextchanged()
         {
             //subscribir evento textchanged en forma recursiva a todos los textBox de panel caratula
@@ -789,7 +814,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void AsignarEventosCustomTextBox(Control control)
+        private void AsignarEventosCustomTextBox(System.Windows.Forms.Control control)
         {
             // Verificar si el control es un NuevaPersonaControl
             if (control is NuevaPersonaControl personaControl)
@@ -827,6 +852,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
 
+        }
+        /// <summary>
+        /// muestra paneles internos segun se indique
+        /// </summary>
+        /// <param name="panel"></param>
+        private void MostrarPanelInterno(System.Windows.Forms.Panel panel)
+        {
+            // Asegurar que el contenedor principal esté visible
+            if (!panel_Compromisos.Visible)
+                panel_Compromisos.Visible = true;
+
+            // Mostrar solo el panel interno deseado
+            panel.Visible = true;
         }
 
 
@@ -966,6 +1004,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         #endregion
 
+        #region BTN SDA
+
         /// <summary>
         /// abre pagina ministerial, pero no funciona porque trabaja con intranet
         /// </summary>
@@ -977,6 +1017,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             ConexionGeneral.AbrirUrl("https://sda.mseg.gba.gov.ar/sso/login");
         }
 
+        #endregion
+
+        #region CREAR DENUNCIA
         /// <summary>
         /// abre formulario  para estructura de denuncias y actas
         /// </summary>
@@ -992,6 +1035,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // Mostrar y ocultar los demás formularios
             VisibilidadYOcultamientoForm.MostrarFormularioYOcultar(actaDenunciaForm);
         }
-
+        #endregion
     }
 }

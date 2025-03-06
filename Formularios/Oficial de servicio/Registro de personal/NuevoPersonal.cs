@@ -56,7 +56,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             this.Load += new System.EventHandler(this.NuevoPersonal_Load);
 
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);//para cargar desde base de datos
 
             //traer label al frent
             label_TITULO.BringToFront();

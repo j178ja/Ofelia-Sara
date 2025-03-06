@@ -39,12 +39,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
-            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
-
-           
-
             label_Descripcion.BringToFront();
             pictureBox_Descripcion.BringToFront();
 

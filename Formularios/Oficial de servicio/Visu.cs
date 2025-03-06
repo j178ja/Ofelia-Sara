@@ -118,15 +118,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_AñoVehiculo.InnerTextBox.MaxLength = 4;
 
 
-
-            //.......................................................................
-   
-
-            //cargar desde base de datos
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
-            CargarDatosInstructor(comboBox_Instructor, instructoresManager);
-            CargarDatosSecretario(comboBox_Secretario, secretariosManager);
-
             //.....................................................
             // llevar al frente label y picture
             pictureBox_AgregarImagen.BringToFront();

@@ -40,8 +40,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InicializarEstiloBoton(btn_Limpiar);
             InicializarEstiloBoton(btn_Guardar);
 
-      
-
             ActualizarControles();//Inicializa  el estado de los controles pictureBox
 
             // Configura el arrastrar y soltar para los PictureBox
@@ -66,9 +64,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             DependenciaTextChanged?.Invoke(comboBox_Dependencia.Text);
 
             this.Shown += NuevaDependencia_Shown;//para que haga foco en un textBox
-
-            //cargar desde base de datos
-            CargarDatosDependencia(comboBox_Dependencia, dbManager);
 
             this.FormClosing += SellosDependencia_FormClosing;
         }
