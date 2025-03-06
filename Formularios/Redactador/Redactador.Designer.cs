@@ -80,11 +80,14 @@ namespace Ofelia_Sara.Formularios.Redactador
             MovimientoDetenido = new ToolStripMenuItem();
             LibertadDetenido = new ToolStripMenuItem();
             ConversionDetenido = new ToolStripMenuItem();
-            cCARNOVEDADToolStripMenuItem = new ToolStripMenuItem();
             PU = new ToolStripMenuItem();
             Denuncia = new ToolStripMenuItem();
             toolStripMenuItem5 = new ToolStripMenuItem();
             toolStripMenuItem6 = new ToolStripMenuItem();
+            mOVIMIENTODETENIDOToolStripMenuItem = new ToolStripMenuItem();
+            lIBERTADToolStripMenuItem = new ToolStripMenuItem();
+            cONVERSIONToolStripMenuItem = new ToolStripMenuItem();
+            cCARNOVEDADToolStripMenuItem = new ToolStripMenuItem();
             iconoEscudo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)iconoEscudo).BeginInit();
             panel1.SuspendLayout();
@@ -534,7 +537,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             // 
             // MenuCortito
             // 
-            MenuCortito.DropDownItems.AddRange(new ToolStripItem[] { HechosDelictivos, dETENIDOSToolStripMenuItem, cCARNOVEDADToolStripMenuItem });
+            MenuCortito.DropDownItems.AddRange(new ToolStripItem[] { HechosDelictivos, dETENIDOSToolStripMenuItem, MovimientoDetenido, LibertadDetenido, ConversionDetenido, cCARNOVEDADToolStripMenuItem });
             MenuCortito.Image = Properties.Resources.EscudoPolicia_PNG;
             MenuCortito.Name = "MenuCortito";
             MenuCortito.Size = new Size(214, 26);
@@ -545,7 +548,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             HechosDelictivos.DropDownItems.AddRange(new ToolStripItem[] { Hurto_Robo, Estafa, Estupefacientes, Contravencion, InfraccionTransito });
             HechosDelictivos.Image = Properties.Resources.graficos;
             HechosDelictivos.Name = "HechosDelictivos";
-            HechosDelictivos.Size = new Size(233, 26);
+            HechosDelictivos.Size = new Size(259, 26);
             HechosDelictivos.Text = "HECHOS DELICTIVOS";
             // 
             // Hurto_Robo
@@ -585,9 +588,9 @@ namespace Ofelia_Sara.Formularios.Redactador
             // 
             // dETENIDOSToolStripMenuItem
             // 
-            dETENIDOSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MovimientoDetenido, LibertadDetenido, ConversionDetenido });
+            dETENIDOSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mOVIMIENTODETENIDOToolStripMenuItem, lIBERTADToolStripMenuItem, cONVERSIONToolStripMenuItem });
             dETENIDOSToolStripMenuItem.Name = "dETENIDOSToolStripMenuItem";
-            dETENIDOSToolStripMenuItem.Size = new Size(233, 26);
+            dETENIDOSToolStripMenuItem.Size = new Size(259, 26);
             dETENIDOSToolStripMenuItem.Text = "DETENIDOS";
             // 
             // MovimientoDetenido
@@ -610,12 +613,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             ConversionDetenido.Name = "ConversionDetenido";
             ConversionDetenido.Size = new Size(259, 26);
             ConversionDetenido.Text = "CONVERSION";
-            // 
-            // cCARNOVEDADToolStripMenuItem
-            // 
-            cCARNOVEDADToolStripMenuItem.Name = "cCARNOVEDADToolStripMenuItem";
-            cCARNOVEDADToolStripMenuItem.Size = new Size(233, 26);
-            cCARNOVEDADToolStripMenuItem.Text = "CCAR. NOVEDAD";
             // 
             // PU
             // 
@@ -645,6 +642,31 @@ namespace Ofelia_Sara.Formularios.Redactador
             toolStripMenuItem6.Name = "toolStripMenuItem6";
             toolStripMenuItem6.Size = new Size(199, 26);
             toolStripMenuItem6.Text = "RUEDA AUXILIO";
+            // 
+            // mOVIMIENTODETENIDOToolStripMenuItem
+            // 
+            mOVIMIENTODETENIDOToolStripMenuItem.Image = Properties.Resources.esposas;
+            mOVIMIENTODETENIDOToolStripMenuItem.Name = "mOVIMIENTODETENIDOToolStripMenuItem";
+            mOVIMIENTODETENIDOToolStripMenuItem.Size = new Size(259, 26);
+            mOVIMIENTODETENIDOToolStripMenuItem.Text = "MOVIMIENTO DETENIDO";
+            // 
+            // lIBERTADToolStripMenuItem
+            // 
+            lIBERTADToolStripMenuItem.Name = "lIBERTADToolStripMenuItem";
+            lIBERTADToolStripMenuItem.Size = new Size(259, 26);
+            lIBERTADToolStripMenuItem.Text = "LIBERTAD";
+            // 
+            // cONVERSIONToolStripMenuItem
+            // 
+            cONVERSIONToolStripMenuItem.Name = "cONVERSIONToolStripMenuItem";
+            cONVERSIONToolStripMenuItem.Size = new Size(259, 26);
+            cONVERSIONToolStripMenuItem.Text = "CONVERSION";
+            // 
+            // cCARNOVEDADToolStripMenuItem
+            // 
+            cCARNOVEDADToolStripMenuItem.Name = "cCARNOVEDADToolStripMenuItem";
+            cCARNOVEDADToolStripMenuItem.Size = new Size(259, 26);
+            cCARNOVEDADToolStripMenuItem.Text = "CCAR. NOVEDAD";
             // 
             // Redactador
             // 
@@ -737,7 +759,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         private ToolStripMenuItem dETENIDOSToolStripMenuItem;
         private ToolStripMenuItem mOVIMIENTODETENIDOToolStripMenuItem;
         private ToolStripMenuItem lIBERTADToolStripMenuItem;
-        private ToolStripMenuItem ConversionDetenido;
+        private ToolStripMenuItem cONVERSIONToolStripMenuItem;
         private ToolStripMenuItem cCARNOVEDADToolStripMenuItem;
     }
 }
