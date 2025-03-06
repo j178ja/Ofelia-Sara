@@ -60,14 +60,14 @@ namespace Ofelia_Sara.Formularios.Redactador
         private readonly Timer timerCerrarForm = new();
         private readonly Timer timerMinimizarForm = new();
 
-        private bool estadoMicrofono =false;
+        private bool estadoMicrofono = false;
         #endregion
 
         #region CONSTRUCTOR
         public Redactador()
         {
             InitializeComponent();
-      
+
             btn_Actuacion.BringToFront();
             panel_Botones.BringToFront();  // Coloca el panel encima del AudioVisualizerControl
             audioVisualizerControl.Visible = false;
@@ -83,7 +83,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
             foreach (ToolStripItem item in menu_SeleccionPlantilla.Items)
             {
-              //  MessageBox.Show("Aplicando estilo a: " + item.Text);
+                //  MessageBox.Show("Aplicando estilo a: " + item.Text);
                 EstiloMenu.AplicarEstiloItem(item);
             }
 
@@ -97,8 +97,8 @@ namespace Ofelia_Sara.Formularios.Redactador
         #region LOAD
         private void Redactador_Load(object sender, EventArgs e)
         {
-            
-           
+
+
             IncrementarTamaño.Incrementar(btn_Actuacion);
 
             //metodo recursivo para comportamiento de aumentar tamaño en botones de panel
@@ -126,14 +126,14 @@ namespace Ofelia_Sara.Formularios.Redactador
             timerMinimizarForm.Tick += TimerMinimizar_Tick;
 
             ConfigurarTooltips();
-           
+
             richTextBox_Redactor.GotFocus += RichTextBox_Redactor_GotFocus;
 
-      
-       
+
+
         }
 
-        
+
         #endregion
 
         #region GENERAL
@@ -143,7 +143,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         /// </summary>
         private void ConfigurarTooltips()
         {
-           
+
             ToolTipGeneral.Mostrar(btn_Guardar, "CREAR DOCUMENTO WORD");
             ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR");
             ToolTipGeneral.Mostrar(btn_Negrita, "NEGRITA");
@@ -1063,9 +1063,6 @@ namespace Ofelia_Sara.Formularios.Redactador
 
             richTextBox_Redactor.Text = CortitoContravension; // Cargar la plantilla
         }
-
-        
-
 
        
     }
