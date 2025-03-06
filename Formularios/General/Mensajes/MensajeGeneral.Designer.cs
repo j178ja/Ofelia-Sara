@@ -1,4 +1,6 @@
-﻿namespace Ofelia_Sara.Formularios.General.Mensajes
+﻿using Spire.Pdf.Graphics;
+
+namespace Ofelia_Sara.Formularios.General.Mensajes
 {
     partial class MensajeGeneral
     {
@@ -31,7 +33,7 @@
             label_OfeliaSara = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             Fecha_Compromiso = new Controles.Ofl_Sara.DateCompromiso_Control();
-            label_Texto = new System.Windows.Forms.TextBox();
+            label_Texto = new System.Windows.Forms.Label();
             pictureBox_Icono = new System.Windows.Forms.PictureBox();
             btn_Cerrar = new System.Windows.Forms.Button();
             pictureBox_EscudoPolicial = new System.Windows.Forms.PictureBox();
@@ -78,19 +80,16 @@
             // 
             // label_Texto
             // 
-            label_Texto.BackColor = System.Drawing.SystemColors.Control;
+            label_Texto.BackColor = System.Drawing.Color.Transparent;
             label_Texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Texto.ForeColor = System.Drawing.Color.FromArgb(0, 115, 130);
             label_Texto.Location = new System.Drawing.Point(5, 100);
             label_Texto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            label_Texto.Multiline = true;
             label_Texto.Name = "label_Texto";
-            label_Texto.ReadOnly = true;
             label_Texto.Size = new System.Drawing.Size(505, 37);
             label_Texto.TabIndex = 4;
-            label_Texto.TabStop = false;
             label_Texto.Text = "Cargando...";
-            label_Texto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            label_Texto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox_Icono
             // 
@@ -197,7 +196,7 @@
 
         private System.Windows.Forms.Label label_OfeliaSara;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox label_Texto;
+        private System.Windows.Forms.Label label_Texto;
         private System.Windows.Forms.PictureBox pictureBox_Icono;
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.PictureBox pictureBox_EscudoPolicial;

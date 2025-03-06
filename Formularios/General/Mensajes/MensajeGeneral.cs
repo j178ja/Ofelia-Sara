@@ -36,12 +36,10 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         {
             InitializeComponent();
 
-            // Verificar el contenido de 'mensaje'
-            MessageBox.Show("Mensaje recibido: " + mensaje);
+         
             label_Texto.Text=mensaje;
 
-            // Verificar el contenido del 'Label'
-            MessageBox.Show("Texto del Label: " + label_Texto.Text);
+         
             ConfigurarIcono(tipoMensaje);
 
             Color bordeForm = Color.Black;
