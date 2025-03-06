@@ -24,8 +24,19 @@ namespace Ofelia_Sara.Clases.BaseDatos.Ofelia_DB
             }
 
             // Establecer ruta de la base de datos
-            //   databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Ofelia_DB_Sqlite", "baseSqlite.db");
-            databasePath = @"C:\Users\jbest\Source\Repos\Ofelia-Sara\BaseDatos\Ofelia_DB_Sqlite\baseSqlite.db";
+            string databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BaseDatos", "Ofelia_DB_Sqlite", "baseSqlite.db");
+            Console.WriteLine($"Ruta de la base de datos: {databasePath}");
+
+            // Verifica si el archivo existe (por si acaso lo copiaste en otra carpeta en el equipo)
+            if (File.Exists(databasePath))
+            {
+                Console.WriteLine("Base de datos encontrada en: " + databasePath);
+            }
+            else
+            {
+                Console.WriteLine("La base de datos no fue encontrada en la ruta relativa especificada.");
+            }
+
 
             // Inicializar la conexión
             connection = new SQLiteConnection($"Data Source={databasePath};Version=3;");

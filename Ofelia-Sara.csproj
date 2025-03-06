@@ -101,6 +101,9 @@
     <None Update="BaseDatos\Leyes\Reglamento de tramite y correspondencia.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="BaseDatos\Ofelia_DB_Sqlite\baseSqlite.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MyInstaller\Ofelia-Sara.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
