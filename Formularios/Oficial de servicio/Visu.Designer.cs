@@ -778,7 +778,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarCausa.TabIndex = 27;
             btn_AgregarCausa.Text = "+";
             btn_AgregarCausa.UseVisualStyleBackColor = false;
-            btn_AgregarCausa.Click += Btn_AgregarCausa_Click;
+      
             // 
             // panel_Imputado
             // 
@@ -836,7 +836,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarImputado.TabIndex = 29;
             btn_AgregarImputado.Text = "+";
             btn_AgregarImputado.UseVisualStyleBackColor = true;
-            btn_AgregarImputado.Click += Btn_AgregarImputado_Click;
+        
             // 
             // panel_Victima
             // 
@@ -895,7 +895,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarVictima.TabIndex = 28;
             btn_AgregarVictima.Text = "+";
             btn_AgregarVictima.UseVisualStyleBackColor = false;
-            btn_AgregarVictima.Click += Btn_AgregarVictima_Click;
+    
             // 
             // label_DatosInstruccion
             // 

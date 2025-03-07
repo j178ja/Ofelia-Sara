@@ -47,14 +47,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private const string ComboBoxFilePath = "comboBoxDependenciaItems.txt"; // Ruta del archivo
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
         private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
-       
+
         #endregion
 
         #region CONSTRUCTOR
         public InicioCierre()
         {
             InitializeComponent();
-
+         
             //.para reposicionar paneles
             reposicionador = new ReposicionarSegunAgregado(
             this,
@@ -79,25 +79,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
-
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBotonAgregar(btn_AgregarCausa);
-            InicializarEstiloBotonAgregar(btn_AgregarVictima);
-            InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
-
-         //   panel_Compromisos.Visible = false;
-           panel_InsertarSecuestro.Visible = false; // inicializa panel inserte secuetro oculto// se visiviliza con texto en caratula
-            panel_Not247.Visible = false;
-            panel_StudRML.Visible = false;
-            panel_RatificacionPersonal.Visible = false;
-            panel_Cargo.Visible = false;
+      
         }
         #endregion
 
@@ -120,7 +105,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
 
-            InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
 
 
@@ -135,7 +119,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             SubscribirCaratulaTextchanged();
 
             BotonDeslizable_247();  // Configurar el delegado de validación
-      
+
             botonDeslizable_Not247.IsOn = false;// inicializa desactivado
         }
         #endregion
@@ -153,12 +137,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region CONFIGURACIONES
         private void ConfigurarTooltip()
         {
-            
+
             TooltipEnControlDesactivado.DesactivarToolTipsEnControlesDesactivados(this);
             TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_Not247, "Completar la totalidad de campos para establecer fecha pericia.", "Marcar para establecer fecha de Pericia");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, checkBox_Cargo, "Completar la totalidad de campos para realizar Cargo Judicial.", "Marcar si requiere agregar CARGO JUDICIAL");
             TooltipEnControlDesactivado.TooltipActivo(this, checkBox_RatificacionTestimonial, "Marcar para agregar RATIFICACIONES TESTIMONIALES.", checkBox_RatificacionTestimonial.Enabled && checkBox_RatificacionTestimonial.Visible);
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_InsertarSecuestro, "Complete la totalidad de datos para poder solicitar inserte secuestro.","Marcar para generar solicitud de INSERTE SECUESTRO.");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, botonDeslizable_InsertarSecuestro, "Complete la totalidad de datos para poder solicitar inserte secuestro.", "Marcar para generar solicitud de INSERTE SECUESTRO.");
             TooltipEnControlDesactivado.TooltipActivo(this, fecha_Pericia, "Modificar fecha de Pericia.", fecha_Pericia.Enabled && fecha_Pericia.Visible);
             ToolTipGeneral.Mostrar(btn_SDA, "Redirige a página SDA para carga de actuaciones");
             ToolTipGeneral.Mostrar(btn_CrearDenuncia, "Crear DENUNCIA/ACTA");
@@ -174,13 +158,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         private void InvisibilizarDesactivarControles()
         {
-            Btn_Contador247.Visible = false;//invisibiliza el contador hasta que pase a SI btn deslizable
-            fecha_Pericia.Visible = false;  //para ocultar fecha de pericia hasta ques se establesca
-            btn_ContadorRatificaciones.Visible = false;// oculta contador hasta el check
-            Btn_ContadorRML.Visible = false;
-
-            fecha_Pericia.Enabled = false;//deshabilitado e invisible para aplicar el tooltip especial e impedir que se vea
-
+           
+            panel_InsertarSecuestro.Visible = false; // inicializa panel inserte secuetro oculto// se visiviliza con texto en caratula
+            panel_Not247.Visible = false;
+            panel_StudRML.Visible = false;
+            panel_RatificacionPersonal.Visible = false;
+            panel_Cargo.Visible = false;
 
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
@@ -713,7 +696,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                 //panel INSERTAR SECUESTRO
                 panel_InsertarSecuestro.BackColor = System.Drawing.Color.FromArgb(211, 211, 211);
-                label_InsertarSecuestro.ForeColor= System.Drawing.Color.Tomato;
+                label_InsertarSecuestro.ForeColor = System.Drawing.Color.Tomato;
                 botonDeslizable_InsertarSecuestro.Enabled = false;
 
                 //panel STUD RML
@@ -763,7 +746,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void MostrarInserteSecuestro()
         {
             // Lista de palabras clave a buscar
-            string[] palabrasClave = { "HURTO", "ROBO", "VEHICULO", "MOTOVEHICULO","ESTAFA" };
+            string[] palabrasClave = { "HURTO", "ROBO", "VEHICULO", "MOTOVEHICULO", "ESTAFA" };
 
             // Obtener todos los CustomTextBox en panel_Caratula
             var textBoxes = panel_Caratula.Controls.OfType<CustomTextBox>().ToList();
@@ -1013,7 +996,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_SDA_Click(object sender, EventArgs e)
         {
-         
+
             ConexionGeneral.AbrirUrl("https://sda.mseg.gba.gov.ar/sso/login");
         }
 
@@ -1036,5 +1019,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             VisibilidadYOcultamientoForm.MostrarFormularioYOcultar(actaDenunciaForm);
         }
         #endregion
+
+     
     }
 }

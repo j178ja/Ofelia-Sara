@@ -46,7 +46,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private void Registro_Load(object sender, EventArgs e)
         {
             InicializarEstiloBoton(btn_Registrarse);
-            InicializarEstiloBoton(btn_Limpiar);
+          
 
           
             // Configurar el comportamiento de los ComboBox

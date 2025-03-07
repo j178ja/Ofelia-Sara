@@ -209,7 +209,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             MayusculaSola.AplicarAControl(comboBox_Marca);
             MayusculaSola.AplicarAControl(comboBox_Modelo);
             MayusculaSola.AplicarAControl(comboBox_Color);
-
             ClaseNumeros.SoloNumeros(comboBox_AñoVehiculo);
         }
 
@@ -253,59 +252,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
         #region BOTONES
-        private void Btn_AgregarCausa_Click(object sender, EventArgs e)
-        {
-            // Llamar al método en el UserControl para agregar el control
-            //NuevaPersonaControl.NuevaCaratulaControlHelper.AgregarNuevoControl(panel_Caratula);
-
-        }
-        private void Btn_AgregarVictima_Click(object sender, EventArgs e)
-        {
-            // Primero, valida todos los controles existentes en el panel
-            bool controlesCompletos = ValidarControlesExistentes(panel_Victima);
-
-            if (!controlesCompletos)
-            {
-
-                // Muestra un mensaje si algún control en el panel está vacío
-                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar una nueva víctima.", MensajeGeneral.TipoMensaje.Advertencia);
-                return; // Sal de la función para evitar agregar un nuevo control
-            }
-            else
-            {
-                // Llamar al método en el UserControl para agregar el control
-                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Victima, "Victima");
-
-                // Agregar la nueva víctima a la lista
-                string nuevaVictima = "Nombre de la nueva víctima";
-                victimas.Add(nuevaVictima);
-
-                // Actualizar la lista visual en el formulario, si corresponde
-                //lstVictimas.Items.Add(nuevaVictima);
-            }
-        }
-        private void Btn_AgregarImputado_Click(object sender, EventArgs e)
-        {
-            // Primero, valida todos los controles existentes en el panel
-            bool controlesCompletos = ValidarControlesExistentes(panel_Imputado);
-
-            if (!controlesCompletos)
-            {
-                // Muestra un mensaje si algún control en el panel está vacío
-                MensajeGeneral.Mostrar("Todos los campos en los controles existentes deben completarse antes de agregar un nuevo imputado.", MensajeGeneral.TipoMensaje.Advertencia);
-                return; // Sal de la función para evitar agregar un nuevo control
-            }
-            else
-            {
-                // Llamar al método en el UserControl para agregar el control
-                NuevaPersonaControl.NuevaPersonaControlHelper.AgregarNuevoControl(panel_Imputado, "Imputado");
-
-                // Agregar el nuevo imputado a la lista
-                string nuevoImputado = "Nombre del nuevo imputado"; // Aquí deberías obtener el nombre del imputado del nuevo control agregado
-                imputados.Add(nuevoImputado);
-
-            }
-        }
+    
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             // Verificar si los campos básicos están completos

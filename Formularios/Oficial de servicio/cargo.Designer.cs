@@ -137,7 +137,7 @@
             textBox_NumeroCargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroCargo.TextValue = "";
             textBox_NumeroCargo.Whidth = 0;
-            textBox_NumeroCargo.KeyPress += TextBox_NumeroCargo_KeyPress;
+           
             // 
             // label_Barra
             // 
@@ -522,7 +522,7 @@
             comboBox_Localidad.TabIndex = 81;
             comboBox_Localidad.Text = " ";
             comboBox_Localidad.TextValue = " ";
-            comboBox_Localidad.KeyPress += ComboBox_Localidad_KeyPress;
+ 
             // 
             // comboBox_Secretario
             // 
@@ -766,9 +766,7 @@
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.Whidth = 0;
-            textBox_NumeroIpp.TextChanged += TextBox_NumeroIpp_TextChanged;
-            textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
-            textBox_NumeroIpp.Leave += TextBox_NumeroIpp_Leave;
+         
             // 
             // comboBox_Ipp1
             // 
@@ -802,7 +800,7 @@
             comboBox_Ipp1.TabIndex = 3;
             comboBox_Ipp1.Text = "03";
             comboBox_Ipp1.TextValue = " ";
-            comboBox_Ipp1.KeyPress += ComboBox_Ipp_KeyPress;
+           
             // 
             // comboBox_Ipp2
             // 
@@ -836,7 +834,7 @@
             comboBox_Ipp2.TabIndex = 4;
             comboBox_Ipp2.Text = "03";
             comboBox_Ipp2.TextValue = " ";
-            comboBox_Ipp2.KeyPress += ComboBox_Ipp_KeyPress;
+    
             // 
             // lbl_00
             // 
@@ -879,7 +877,7 @@
             comboBox_Ipp4.TabIndex = 6;
             comboBox_Ipp4.Text = "24";
             comboBox_Ipp4.TextValue = " ";
-            comboBox_Ipp4.KeyPress += ComboBox_Ipp_KeyPress;
+        
             // 
             // lbl_Ipp
             // 

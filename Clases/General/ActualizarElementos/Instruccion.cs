@@ -23,8 +23,6 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         private Dictionary<Button, (Panel, string, string, List<string>?, string?)> BotonesConfigurados = [];
         private BaseForm _baseForm = baseForm;
       
-
-
         public object Controls { get; private set; }
 
         #endregion
@@ -43,11 +41,19 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
                         case "comboBox_Ipp1":
                         case "comboBox_Ipp2":
                             ConfigurarItemsComboBox(comboBox);
-                            comboBox.SelectedIndex = 3; // Posición predeterminada
+                            comboBox.SelectedIndex = 3; // Establecer la posición predeterminada
+
+                            // Asegurarse de que el InnerTextBox refleje el valor seleccionado
+                            if (comboBox.InnerTextBox != null)
+                            {
+                                comboBox.InnerTextBox.Text = comboBox.SelectedItem?.ToString() ?? string.Empty;
+                            }
                             break;
                         case "comboBox_Ipp4":
+                        case "comboBox_Año":
                             CargarAño(comboBox);
                             break;
+                        
                     }
                 }
 
@@ -58,6 +64,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
                 }
             }
         }
+
 
         /// <summary>
         /// Configura eventos para los controles IPP.
@@ -151,7 +158,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
 
 
 
-        private void ConfigurarEventosEnControles(System.Windows.Forms.Control.ControlCollection controles)
+        public void ConfigurarEventosEnControles(System.Windows.Forms.Control.ControlCollection controles)
         {
             foreach (Control control in controles)
             {
@@ -372,7 +379,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
     
 
         /// </summary>
-    public void InicializarComboBoxFiscalia(ComboBox comboFiscalia, ComboBox comboAgente, ComboBox comboLocalidad, ComboBox comboDepto)
+    public void InicializarComboBoxFiscalia(CustomComboBox comboFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
         {
             // Obtener los datos únicos para los ComboBox
             comboFiscalia.DataSource = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
@@ -390,7 +397,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         /// <summary>
         /// Maneja la selección de una fiscalía y actualiza los demás ComboBox con los datos correspondientes.
         /// </summary>
-        public void ActualizarComboBoxFiscalia(string nombreFiscalia, ComboBox comboAgente, ComboBox comboLocalidad, ComboBox comboDepto)
+        public void ActualizarComboBoxFiscalia(string nombreFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
         {
             // Desactivar los ComboBox mientras se actualizan
             comboAgente.Enabled = false;

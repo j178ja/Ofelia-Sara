@@ -41,8 +41,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
 
           
 
-            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
-
             this.FormClosing += AgregarDatosPersonalesVictima_FormClosing;//para mensaje de alerta en caso de no guardar datos
             label_Titulo.BringToFront();
         }
@@ -51,10 +49,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         #region LOAD
         private void AgregarDatosPersonalesVictima_Load(object sender, EventArgs e)
         {
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
+       
 
             // Configura el arrastrar y soltar para los PictureBox
             pictureBox_Domicilio.AllowDrop = true;
@@ -69,10 +64,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             // Ajusta el SizeMode de cada PictureBox
             pictureBox_Domicilio.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_Geoposicionamiento.SizeMode = PictureBoxSizeMode.StretchImage;
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
+        
 
             ActualizarControlesPicture();
 

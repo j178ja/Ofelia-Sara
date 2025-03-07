@@ -249,7 +249,7 @@
             textBox_LugarNacimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_LugarNacimiento.TextValue = "";
             textBox_LugarNacimiento.Whidth = 0;
-            textBox_LugarNacimiento.KeyPress += TextBox_LugarNacimiento_KeyPress;
+        
             // 
             // label_LugarNacimiento
             // 
@@ -397,7 +397,6 @@
             comboBox_Nacionalidad.Text = " ";
             comboBox_Nacionalidad.TextValue = " ";
 
-            comboBox_Nacionalidad.KeyPress += ComboBox_Nacionalidad_KeyPress;
             // 
             // textBox_Ocupacion
             // 
@@ -422,7 +421,6 @@
             textBox_Ocupacion.TextValue = "";
             textBox_Ocupacion.Whidth = 0;
           
-            textBox_Ocupacion.KeyPress += TextBox_Ocupacion_KeyPress;
             // 
             // label_Ocupacion
             // 
@@ -456,8 +454,6 @@
             textBox_Apodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Apodo.TextValue = "";
             textBox_Apodo.Whidth = 0;
-           
-            textBox_Apodo.KeyPress += TextBox_Apodo_KeyPress;
             // 
             // label_Apodo
             // 

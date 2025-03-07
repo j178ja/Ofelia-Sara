@@ -26,12 +26,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             this.Load += new EventHandler(NuevoInstructor_Load);// inicializar Load
 
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-
-            
-
             this.FormClosing += NuevoInstructor_FormClosing;
         }
         #endregion

@@ -71,15 +71,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             InicializarEstiloBotonAgregar(btn_AgregarConcubina);// estilo boton, borde rojo cuando esta desactivado
 
 
-            FormatoTexto();//establece mayuscula, numeros  etc
 
             PropiedadesPicture();
 
 
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
 
             ActualizarControlesPictureDOM();
 
@@ -100,26 +95,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         }
         #endregion
 
-        /// <summary>
-        /// establece propiedades de mayuscula minuscula y numeros en los controles
-        /// </summary>
-        private void FormatoTexto()
-        {
-            MayusculaSola.AplicarAControl(comboBox_EstadoCivil.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_Nombre);
-            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
-            MayusculaSola.AplicarAControl(comboBox_Nacionalidad.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_Ocupacion);
-            MayusculaSola.AplicarAControl(textBox_Apodo);
-            MayusculaSola.AplicarAControl(textBox_Localidad);
-            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
-
-            MayusculaSola.AplicarAControl(textBox_LugarNacimiento);
-            MayusculaSola.AplicarAControl(textBox_Ocupacion);
-            MayusculaSola.AplicarAControl(textBox_Domicilio);
-        }
+      
 
         /// <summary>
         /// acumula las propiedades de los picture para cargarlos en load
@@ -310,27 +286,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
         {
             ActualizarControlesPictureDOM();
 
-            // Obtiene el texto actual del TextBox
-            string input = textBox_Domicilio.TextValue;
-
-            // Convierte el texto a mayúsculas
-            string upperText = input.ToUpper();
-
-            // Evita la modificación del texto si ya está en mayúsculas
-            if (textBox_Domicilio.TextValue != upperText)
-            {
-                // Desasocia temporalmente el evento TextChanged para evitar bucles infinitos
-                textBox_Domicilio.TextChanged -= TextBox_Domicilio_TextChanged;
-
-                // Actualiza el texto del TextBox con el texto convertido a mayúsculas
-                textBox_Domicilio.TextValue = upperText;
-
-                // Restaura la posición del cursor al final del texto
-                textBox_Domicilio.SelectionStart = upperText.Length;
-
-                // Vuelve a asociar el evento TextChanged
-                textBox_Domicilio.TextChanged += TextBox_Domicilio_TextChanged;
-            }
+           
         }
 
        
@@ -382,25 +338,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
             }
         }
 
-        /// <summary>
-        /// EVENTO PARA QUE EL COMBOBOX ESPECIFICO DE NACIONALIDAD ACEPTE SOLO LETRAS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permite letras y espacios
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
-            {
-                // Permite el carácter
-                e.Handled = false;
-            }
-            else
-            {
-                // Bloquea el carácter
-                e.Handled = true;
-            }
-        }
+    
 
        
       
@@ -482,58 +420,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
     
 
 
-        private void TextBox_Ocupacion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir teclas de control como Backspace y Enter, así como teclas de navegación
-            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || e.KeyChar == ' ')
-            {
-                // Permitir el carácter
-                e.Handled = false;
-            }
-            else
-            {
-                // Anular el carácter si no es una letra
-                e.Handled = true;
-            }
-        }
-
-
-
-        private void TextBox_Apodo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permite letras y espacios
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
-            {
-                // Permite el carácter
-                e.Handled = false;
-            }
-            else
-            {
-                // Bloquea el carácter
-                e.Handled = true;
-            }
-        }
 
  
 
     
 
-
-
-        private void TextBox_LugarNacimiento_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permite letras y espacios
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || char.IsControl(e.KeyChar))
-            {
-                // Permite el carácter
-                e.Handled = false;
-            }
-            else
-            {
-                // Bloquea el carácter
-                e.Handled = true;
-            }
-        }
 
 
 

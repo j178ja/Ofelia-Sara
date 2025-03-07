@@ -77,10 +77,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void NuevoPersonal_Load(object sender, EventArgs e)
         {
            
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Limpiar);
-
+        
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
             //---Inicializar para desactivar los btn AGREGAR PERSONAL RATIFICACION 
@@ -525,10 +522,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="e"></param>
         private void NuevoPersonal_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MensajeGeneral.Mostrar("Debe completar la totalidad de los campos requeridos." + "Todos ellos serán empleados para completar plantilla de Ratificación policial", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            MostrarMensajeAyuda("Debe completar la totalidad de los campos requeridos." + "Todos ellos serán empleados para completar plantilla de Ratificación policial");
         }
 
         /// <summary>
@@ -678,15 +672,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using MensajeGeneral mensaje = new("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia);
-                // Hacer visibles los botones
-                mensaje.MostrarBotonesConfirmacion(true);
-
-                DialogResult result = mensaje.ShowDialog();
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true; // Cancelar el cierre del formulario
-                }
+               MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
 

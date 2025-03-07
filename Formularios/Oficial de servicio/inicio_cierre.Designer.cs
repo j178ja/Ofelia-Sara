@@ -856,6 +856,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Instruccion.Name = "panel_Instruccion";
             panel_Instruccion.Size = new Size(525, 195);
             panel_Instruccion.TabIndex = 45;
+  
             // 
             // timePickerPersonalizado1
             // 
@@ -1023,25 +1024,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Compromisos.Controls.Add(panel_InsertarSecuestro);
             panel_Compromisos.Location = new Point(4, 345);
             panel_Compromisos.Name = "panel_Compromisos";
-            panel_Compromisos.Size = new Size(529, 81);
+            panel_Compromisos.Size = new Size(535, 81);
             panel_Compromisos.TabIndex = 103;
             // 
             // panel_Cargo
             // 
             panel_Cargo.Controls.Add(label_Cargo);
             panel_Cargo.Controls.Add(checkBox_Cargo);
-            panel_Cargo.Location = new Point(242, 46);
+            panel_Cargo.Location = new Point(242, 43);
             panel_Cargo.Name = "panel_Cargo";
-            panel_Cargo.Size = new Size(90, 32);
+            panel_Cargo.Size = new Size(90, 34);
             panel_Cargo.TabIndex = 19;
             // 
             // label_Cargo
             // 
             label_Cargo.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Cargo.Location = new Point(4, 4);
+            label_Cargo.Location = new Point(4, 7);
             label_Cargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Cargo.Name = "label_Cargo";
-            label_Cargo.Size = new Size(85, 22);
+            label_Cargo.Size = new Size(85, 19);
             label_Cargo.TabIndex = 40;
             label_Cargo.Text = "   Cargo   ";
             label_Cargo.TextAlign = ContentAlignment.MiddleLeft;
@@ -1053,7 +1054,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_RatificacionPersonal.Controls.Add(btn_ContadorRatificaciones);
             panel_RatificacionPersonal.Location = new Point(5, 44);
             panel_RatificacionPersonal.Name = "panel_RatificacionPersonal";
-            panel_RatificacionPersonal.Size = new Size(233, 36);
+            panel_RatificacionPersonal.Size = new Size(236, 33);
             panel_RatificacionPersonal.TabIndex = 19;
             // 
             // label_RatificacionPersonal
@@ -1062,7 +1063,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_RatificacionPersonal.Location = new Point(35, 4);
             label_RatificacionPersonal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_RatificacionPersonal.Name = "label_RatificacionPersonal";
-            label_RatificacionPersonal.Size = new Size(196, 28);
+            label_RatificacionPersonal.Size = new Size(198, 28);
             label_RatificacionPersonal.TabIndex = 38;
             label_RatificacionPersonal.Text = "Ratificación testimonial   ";
             label_RatificacionPersonal.TextAlign = ContentAlignment.MiddleLeft;
@@ -1085,18 +1086,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             panel_StudRML.Controls.Add(label_StudRML);
             panel_StudRML.Controls.Add(Btn_ContadorRML);
-            panel_StudRML.Location = new Point(387, 3);
+            panel_StudRML.Location = new Point(383, 3);
             panel_StudRML.Name = "panel_StudRML";
-            panel_StudRML.Size = new Size(131, 39);
+            panel_StudRML.Size = new Size(148, 39);
             panel_StudRML.TabIndex = 39;
             // 
             // label_StudRML
             // 
             label_StudRML.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_StudRML.Location = new Point(4, 0);
+            label_StudRML.Location = new Point(17, 11);
             label_StudRML.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_StudRML.Name = "label_StudRML";
-            label_StudRML.Size = new Size(122, 37);
+            label_StudRML.Size = new Size(92, 20);
             label_StudRML.TabIndex = 45;
             label_StudRML.Text = "Stud. R.M.L   ";
             label_StudRML.TextAlign = ContentAlignment.MiddleLeft;
@@ -1107,7 +1108,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Btn_ContadorRML.Cursor = System.Windows.Forms.Cursors.Hand;
             Btn_ContadorRML.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Btn_ContadorRML.ForeColor = SystemColors.ControlText;
-            Btn_ContadorRML.Location = new Point(97, 5);
+            Btn_ContadorRML.Location = new Point(118, 6);
             Btn_ContadorRML.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Btn_ContadorRML.MinimumSize = new Size(24, 24);
             Btn_ContadorRML.Name = "Btn_ContadorRML";
@@ -1166,7 +1167,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             botonDeslizable_Not247.Cursor = System.Windows.Forms.Cursors.Hand;
             botonDeslizable_Not247.IsOn = false;
-            botonDeslizable_Not247.Location = new Point(204, 9);
+            botonDeslizable_Not247.Location = new Point(193, 9);
             botonDeslizable_Not247.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             botonDeslizable_Not247.Name = "botonDeslizable_Not247";
             botonDeslizable_Not247.Size = new Size(47, 23);
@@ -1180,7 +1181,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_Not247.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_Not247.Name = "label_Not247";
             label_Not247.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            label_Not247.Size = new Size(221, 24);
+            label_Not247.Size = new Size(201, 24);
             label_Not247.TabIndex = 53;
             label_Not247.Text = "Not. Art. 247 C.P.P.   ";
             label_Not247.TextAlign = ContentAlignment.MiddleLeft;
@@ -1189,16 +1190,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             panel_InsertarSecuestro.Controls.Add(botonDeslizable_InsertarSecuestro);
             panel_InsertarSecuestro.Controls.Add(label_InsertarSecuestro);
-            panel_InsertarSecuestro.Location = new Point(335, 44);
+            panel_InsertarSecuestro.Location = new Point(338, 43);
             panel_InsertarSecuestro.Name = "panel_InsertarSecuestro";
-            panel_InsertarSecuestro.Size = new Size(183, 33);
+            panel_InsertarSecuestro.Size = new Size(194, 34);
             panel_InsertarSecuestro.TabIndex = 102;
             // 
             // botonDeslizable_InsertarSecuestro
             // 
             botonDeslizable_InsertarSecuestro.Cursor = System.Windows.Forms.Cursors.Hand;
             botonDeslizable_InsertarSecuestro.IsOn = false;
-            botonDeslizable_InsertarSecuestro.Location = new Point(136, 4);
+            botonDeslizable_InsertarSecuestro.Location = new Point(146, 7);
             botonDeslizable_InsertarSecuestro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             botonDeslizable_InsertarSecuestro.Name = "botonDeslizable_InsertarSecuestro";
             botonDeslizable_InsertarSecuestro.Size = new Size(47, 23);
@@ -1209,7 +1210,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             label_InsertarSecuestro.AutoSize = true;
             label_InsertarSecuestro.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_InsertarSecuestro.Location = new Point(3, 9);
+            label_InsertarSecuestro.Location = new Point(11, 10);
             label_InsertarSecuestro.Name = "label_InsertarSecuestro";
             label_InsertarSecuestro.Size = new Size(133, 16);
             label_InsertarSecuestro.TabIndex = 100;

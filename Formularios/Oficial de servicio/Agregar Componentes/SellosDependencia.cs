@@ -36,9 +36,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void SellosDependencia_Load(object sender, EventArgs e)
         {
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
+          
 
             ActualizarControles();//Inicializa  el estado de los controles pictureBox
 

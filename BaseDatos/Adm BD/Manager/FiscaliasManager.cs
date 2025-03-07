@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using DocumentFormat.OpenXml.ExtendedProperties;
 
 namespace BaseDatos.Adm_BD
 {
@@ -19,8 +20,8 @@ namespace BaseDatos.Adm_BD
         public List<Fiscalias> GetFiscalias()
         {
             List<Fiscalias> fiscalias = [];
-            string query = "SELECT Id, Ufid, AgenteFiscal, Localidad, DeptoJudicial FROM Fiscalias";
-
+           string query = "SELECT Id, Ufid, AgenteFiscal, Localidad, DeptoJudicial FROM Fiscalias";
+          
             dbConnection.Open();
             using (var command = new SQLiteCommand(query, dbConnection))
             {

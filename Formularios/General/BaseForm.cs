@@ -58,32 +58,29 @@ namespace Ofelia_Sara.Formularios.General
         /// </summary>
         protected void InitializeRuntime()
         {
-          
-            CargarIconoFormulario();
-            InitializeCustomCursors();
-            AjustarLabelEnPanel();
             InitializeComponent();
-            InitializeFooterLinkLabel();
-            AplicarFormatoTexto(this);
-            MaxLengthControl(this);
+            CargarIconoFormulario();
+            InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
           
-
+        
+            InitializeFooterLinkLabel();// footer a todos los formularios
+         
+          
             Load += BaseForm_Load;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-          
+            this.ControlAdded += (s, e) => AplicarCursorEnControl(e.Control);
+            ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
             BordePanel1();// redondea los bordes unicamente de panel 1
             AjustarLabelEnPanel(); //centra unicamente Label_TITULO
-            ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
-                                      // Escuchar cuando se agreguen nuevos controles en tiempo de ejecución
-            AplicarFormatoTexto(this);
-            MaxLengthControl(this);
+            AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
+            _instruccion.ConfigurarEventosEnControles(this.Controls);
+            AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
           
 
-            this.ControlAdded += (s, e) => AplicarCursorEnControl(e.Control);
         }
         protected override void OnControlAdded(ControlEventArgs e)
         {
@@ -96,10 +93,9 @@ namespace Ofelia_Sara.Formularios.General
         private void BaseForm_Load(object sender, EventArgs e)
         {
             ConfigurarCheckBoxesConImagen();
-            InitializeCustomCursors();
+            
             ConfigurarToolTips();
-            AplicarFormatoTexto(this);
-            MaxLengthControl(this);
+          
         }
         #endregion
 
@@ -374,8 +370,35 @@ namespace Ofelia_Sara.Formularios.General
             this.Controls.Add(this.footerLinkLabel);
         }
 
-        #endregion 
+        #endregion
 
+        #region BOTONES
+        protected void AplicarEstilosABotones(Control parent)
+        {
+            foreach (var control in GetAllControls(parent))
+            {
+                if (control is Button btn)
+                {
+                    switch (btn.Name)
+                    {
+                        case "btn_Limpiar":
+                        case "btn_Guardar":
+                        case "btn_Buscar":
+                            InicializarEstiloBoton(btn);
+                            break;
+                        case "btn_AgregarCausa":
+                        case "btn_AgregarVictima":
+                        case "btn_AgregarImputado":
+                            InicializarEstiloBotonAgregar(btn);
+                            break;
+                       
+                    }
+                }
+            }
+        }
+
+
+        #endregion
         /// <summary>
         /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES BUSCAR-GUARDAR-LIMPIAR
         /// </summary>
@@ -587,84 +610,80 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="control"></param>
         protected static  void AplicarFormatoTexto(Control control)
         {
+            //FORMATO TEXTO PARA TEXTBOX
             if (control is CustomTextBox textBox)
             {
                 switch (textBox.Name)
                 {
-                    case "textBox_Caratula":
-                        MayusculaYnumeros.AplicarAControl(textBox);
-                        break;
+                    // MAYUSCULA SOLA
                     case "textBox_Victima":
                     case "textBox_Imputado":
+                    case "textBox_Nombre":
+                    case "textBox_Apellido":
+                    case "textBox_Localidad":
+                    case "textBox_LugarNacimiento":
+                    case "textBox_Ocupacion":
+                    case "textBox_Apodo":
+                    case "textBox_Nacionalidad":
                         MayusculaSola.AplicarAControl(textBox);
                         break;
+
+                    // CAMELCASE
+                    case "textBox_AgenteFiscal":
+                    case "textBox_Partido":
+                    case "textBox_DeptoJudicial":
+                        ConvertirACamelCase.AplicarAControl(textBox);
+                        break;
+
+                    //MAYUSCULA Y NUMEROS
+                    case "textBox_Caratula":
+                    case "textBox_Domicilio":
+                    case "textBox_Fiscalia":
+                        MayusculaYnumeros.AplicarAControl(textBox);
+                        break;
+
+                    // NUMEROS SOLOS
                     case "textBox_Edad":
+                    case "textBox_ArtInfraccion":
+                    case "textBox_NumeroIpp":
+                    case "textBox_NumeroCargo":
                         ClaseNumeros.SoloNumeros(textBox);
                         break;
+
+                    // NUMEROS CON PUNTO
                     case "textBox_Dni":
                         ClaseNumeros.AplicarFormatoYLimite(textBox, 10);
                         break;
                     case "textBox_NumeroLegajo":
-                        ClaseNumeros.AplicarFormatoYLimite(textBox, 7);
+                        ClaseNumeros.AplicarFormatoYLimite(textBox,7);
                         break;
-                    case "textBox_Nombre":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Apellido":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Domicilio":
-                        MayusculaYnumeros.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Localidad":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Partido":
-                        ConvertirACamelCase.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Fiscalia":
-                        MayusculaYnumeros.AplicarAControl(textBox);
-                        break;
-                    case "textBox_AgenteFiscal":
-                        ConvertirACamelCase.AplicarAControl(textBox);
-                        break;
-                    case "textBox_DeptoJudicial":
-                        ConvertirACamelCase.AplicarAControl(textBox);
-                        break;
-                    case "textBox_LugarNacimiento":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Ocupacion":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
-                    case "textBox_Apodo":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
-                    case "textBox_ArtInfraccion":
-                        ClaseNumeros.SoloNumeros(textBox);
-                        break;
-
+                
                 }
             }
+            // FORMATO TEXTO PARA COMBOBOX
             else if (control is CustomComboBox comboBox)
             {
                 switch (comboBox.Name)
                 {
-                    case "comboBox_Fiscalia":
-                        MayusculaYnumeros.AplicarAControl(comboBox);
-                        break;
-                    case "comboBox_AgenteFiscal":
-                    case "comboBox_DeptoJudicial":
-                        ConvertirACamelCase.AplicarAControl(comboBox);
-                        break;
+                    //MAYUSCULA SOLA
                     case "comboBox_Localidad":
                     case "comboBox_Escalafon":
                     case "comboBox_Jerarquia":
                     case "comboBox_Funcion":
                     case "comboBox_Parentesco":
                     case "comboBox_Nacionalidad":
+                    case "comboBox_EstadoCivil":
                         MayusculaSola.AplicarAControl(comboBox);
                         break;
+
+                        //CAMELCASE
+                    case "comboBox_AgenteFiscal":
+                    case "comboBox_DeptoJudicial":
+                        ConvertirACamelCase.AplicarAControl(comboBox);
+                        break;
+
+                        //MAYUSCULAS Y NUMEROS
+                    case "comboBox_Fiscalia":
                     case "comboBox_Instructor":
                     case "comboBox_Secretario":
                     case "comboBox_Dependencia":
@@ -673,8 +692,9 @@ namespace Ofelia_Sara.Formularios.General
                 }
 
                 // Aplicar restricción de solo números a los IPP
-                if (comboBox.Name == "comboBox_Ipp1" || comboBox.Name == "comboBox_Ipp2" 
-                    || comboBox.Name == "comboBox_NumeroIpp" || comboBox.Name == "comboBox_Ipp4")
+                if (comboBox.Name == "comboBox_Ipp1" || 
+                    comboBox.Name == "comboBox_Ipp2" ||
+                    comboBox.Name == "comboBox_Ipp4")
                 {
                     ClaseNumeros.SoloNumeros(comboBox);
                 }
@@ -702,6 +722,9 @@ namespace Ofelia_Sara.Formularios.General
             {
                 switch (textBox.Name)
                 {
+                    case "textBox_NumeroCargo":
+                        textBox.MaxLength = 4;
+                        break;
                     case "textBox_NumeroIpp":
                         textBox.MaxLength = 6;
                         break;
@@ -723,23 +746,7 @@ namespace Ofelia_Sara.Formularios.General
 
         #endregion
 
-        #region COMPORTAMIENTO FISCALIA
-        /// <summary>
-        /// Método para inicializar los ComboBox de fiscalía desde cualquier formulario que herede de BaseForm.
-        /// </summary>
-        protected void InicializarComboBoxFiscalia(ComboBox comboFiscalia, ComboBox comboAgente, ComboBox comboLocalidad, ComboBox comboDepto)
-        {
-            _instruccion.InicializarComboBoxFiscalia(comboFiscalia, comboAgente, comboLocalidad, comboDepto);
-        }
-
-        /// <summary>
-        /// Método para actualizar los ComboBox cuando cambia la selección de fiscalía.
-        /// </summary>
-        protected void ActualizarComboBoxFiscalia(string nombreFiscalia, ComboBox comboAgente, ComboBox comboLocalidad, ComboBox comboDepto)
-        {
-            _instruccion.ActualizarComboBoxFiscalia(nombreFiscalia, comboAgente, comboLocalidad, comboDepto);
-        }
-        #endregion
+  
 
         #region VERIFICACION EN PANEL
 
@@ -770,13 +777,13 @@ namespace Ofelia_Sara.Formularios.General
                 }
 
                 // Verificar CustomComboBox
-                if (control is CustomComboBox customComboBox)
-                {
-                    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
-                    {
-                        return false;
-                    }
-                }
+                //if (control is CustomComboBox customComboBox)
+                //{
+                //    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
+                //    {
+                //        return false;
+                //    }
+                //}
 
                 // Verificar RichTextBox
                 if (control is RichTextBox richTextBox)
@@ -898,25 +905,29 @@ namespace Ofelia_Sara.Formularios.General
 
         #endregion
 
-        /// <summary>
-        /// metodo recursivo para buscar entre controles
-        /// </summary>
-        /// <param name="parent"></param>
-        /// <returns></returns>
-        private static IEnumerable<Control> GetAllControls(Control parent)
+
+
+        private static void AplicarFormatoAControlesRecursivos(Control parent)
         {
-            foreach (Control control in parent.Controls)
+            foreach (var control in GetAllControls(parent))
             {
-                yield return control;
-                foreach (var child in GetAllControls(control))
-                {
-                    yield return child;
-                }
+                AplicarFormatoTexto(control);  // Aplica el formato de texto según el control
+                MaxLengthControl(control);     // Aplica la restricción de longitud según el control
+                VerificarCamposEnPanel(control);
+                Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
+    
+
+
+                // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados
+                // LlamarRegistrarBotonesAgregar(victimas, imputados);
             }
         }
 
-      
-
+        // Método para llamar a RegistrarBotonesAgregar
+        public void LlamarRegistrarBotonesAgregar(List<string> victimas, List<string> imputados)
+        {
+            _instruccion.RegistrarBotonesAgregar(victimas, imputados);
+        }
 
     }
 }

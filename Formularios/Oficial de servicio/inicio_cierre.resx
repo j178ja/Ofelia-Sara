@@ -984,6 +984,72 @@
         RERERERERERERERERERERERERETB7Sc/+f/Ey2IMmP5EcQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="comboBox_DeptoJudicial.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_DeptoJudicial.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_DeptoJudicial.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="comboBox_DeptoJudicial.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Localidad.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Localidad.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
+        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
+        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="comboBox_Localidad.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
+        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
+        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
+        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
+        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="comboBox_Localidad.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
+        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
+        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
+        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btn_SDA.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOsAAABVCAYAAACoyhPQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1346,72 +1412,6 @@
         MQ9nolNRtJATzQ9fkf3zoCjKy7XOnwcvKVlPXjh/LhkpRaGt1qlA+HMD78+eauH3qy3svpJBu2W4xjnL
         JRcCdFrZmgMW9NrX79jQz234+LnCgb944G94Phv5z2fAz3JUNxtyrkZhyb5I5lymYblMw/SZ+u4Ry1Mn
         6xfli/JF8a98QdYvyhflGSlfkPWL8kV5Jgrw/wEomVLYQGeavwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="comboBox_DeptoJudicial.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
-        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="comboBox_DeptoJudicial.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
-        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="comboBox_DeptoJudicial.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
-        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
-        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
-        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
-        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="comboBox_DeptoJudicial.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
-        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
-        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
-        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="comboBox_Localidad.ArrowImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
-        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="comboBox_Localidad.DefaultImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XgAAD14BBc04LQAAAEFJREFUOE9jGAWoYMPnZ/+JwVDlqAAkodNRTRTGagiyAdgUEJIHA1yKiNIMA+iK
-        SdIMA8iaSNYMA2TZPArIAQwMAN6Pn+n70fnZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="comboBox_Localidad.DisabledImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        OAAACzgBG4GUhAAAAOpJREFUOE9jGAXUBrsYVBm2MfBBeZgAJAdSgxXsZND5rer694ud622gQhmoKByI
-        bGOU+W7sdvuXkN1fhh0M2lBhJLCdQfSnnvvTX4J2/z87utwG8uGGgDUbgTX//6nj9pRhP4MIVAoNAJ33
-        3dTtyS8h2/8/jN3uO2/mVuABGvTNHKhZBKTZ/QXDHgYtqGrsIGqLsNoPfbenvwXs/n+1cr391dr19g95
-        2//fTYA272FQgyrDD1y38agCDXkCsvWXsN1/oPNfxG0Rw28zOhDZxagKdPKTXxpuL+x3cJOmGQak9zCp
-        Ee3soQoYGAB9bFc/w73MGgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="comboBox_Localidad.PressedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        PAAACzwB5HwTlgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACLSURBVDhPYxgF
-        1Aa7GFQZtjHwQXmYACQHUoMV7GTQAUr+BeLbQIUyUFEEAImB5EBqdjBoQ0WRwDYGUaDkUyD+j2EIQjNI
-        7inDfgYRqAwaADlvF8MTqML7DNsZFNA0v2DYw6AFVY0D7GFQAypEuATZZpAcUQDVJUTajA4QhpChGQZA
-        Tiba2UMUMDAAAMFNQpMnF/bkAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

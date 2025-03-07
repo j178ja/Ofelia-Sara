@@ -239,10 +239,11 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
-            btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
+            btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);// ROJO ANARANJADO
             btn_Cerrar.ForeColor = SystemColors.Control;
+            btn_Cerrar.Font = new Font(btn_Cerrar.Font, FontStyle.Bold);
             btn_Cerrar.FlatAppearance.BorderSize = 2;
-            btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
+            btn_Cerrar.FlatAppearance.BorderColor = Color.Red;
             timerCerrarForm.Start();
         }
 
@@ -253,9 +254,12 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
         {
-            btn_Cerrar.BackColor = Color.Lavender;
+           // btn_Cerrar.BackColor = Color.Lavender;
             btn_Cerrar.FlatAppearance.BorderSize = 2;
-            btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
+            btn_Cerrar.FlatAppearance.BorderColor = Color.Coral;
+            btn_Cerrar.BackColor = Color.Coral;
+            btn_Cerrar.ForeColor = SystemColors.Control;
+            btn_Cerrar.Font = new Font(btn_Cerrar.Font, FontStyle.Bold);
         }
 
         /// <summary>
@@ -267,8 +271,9 @@ namespace Ofelia_Sara.Formularios.General
         {
             btn_Cerrar.BackColor = SystemColors.ButtonFace;
             btn_Cerrar.ForeColor = SystemColors.ControlDarkDark;
+            btn_Cerrar.Font = new Font(btn_Cerrar.Font, FontStyle.Regular);
             btn_Cerrar.FlatAppearance.BorderSize = 1;
-            btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);//GRIS CLARO
         }
 
         /// <summary>
@@ -278,8 +283,11 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Btn_Minimizar_MouseHover(object sender, EventArgs e)
         {
-            btn_Minimizar.BackColor = Color.Lavender;
+            btn_Minimizar.BackColor = Color.LightBlue;
+            btn_Minimizar.FlatAppearance.BorderSize = 2;
             btn_Minimizar.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
+            btn_Minimizar.ForeColor = SystemColors.Control;
+            btn_Minimizar.Font = new Font(btn_Cerrar.Font, FontStyle.Bold);
         }
 
         /// <summary>
@@ -291,8 +299,9 @@ namespace Ofelia_Sara.Formularios.General
         {
             btn_Minimizar.BackColor = SystemColors.ButtonFace;
             btn_Minimizar.ForeColor = SystemColors.ControlDarkDark;
-            btn_Minimizar.FlatAppearance.BorderSize = 2;
-            btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_Minimizar.FlatAppearance.BorderSize = 1;
+            btn_Minimizar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);//gris claro
+            btn_Minimizar.Font = new Font(btn_Cerrar.Font, FontStyle.Regular);
         }
 
         /// <summary>
@@ -302,10 +311,12 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
-            btn_Minimizar.BackColor = SystemColors.ActiveCaption;
+            btn_Minimizar.BackColor = Color.Blue;
             btn_Minimizar.ForeColor = SystemColors.Control;
+            btn_Minimizar.Font = new Font(btn_Cerrar.Font, FontStyle.Bold);
             btn_Minimizar.FlatAppearance.BorderSize = 2;
             btn_Minimizar.FlatAppearance.BorderColor = SystemColors.Highlight;
+      
             timerMinimizarForm.Start();
 
         }

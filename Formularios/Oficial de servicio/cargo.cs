@@ -91,7 +91,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             botonDeslizable_Visu.IsOnChanged -= BotonDeslizable_Visu_IsOnChanged; 
             botonDeslizable_Visu.IsOnChanged += BotonDeslizable_Visu_IsOnChanged; 
 
-            this.FormClosing += BuscarPersonal_FormClosing;
+            this.FormClosing += Cargo_FormClosing;
             textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
          
@@ -107,10 +107,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
   
-
-            //CargarAño(comboBox_Ipp4);
-            //CargarAño(comboBox_Año);
-
             Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
@@ -294,52 +290,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        private void InicializarComboBoxSECRETARIO()
-        {
-            List<SecretarioJson> secretarios = SecretarioManager.ObtenerSecretarios();
-            comboBox_Secretario.DataSource = secretarios;
-            comboBox_Secretario.DisplayMember = "DescripcionCompleta";
-            comboBox_Secretario.SelectedIndex = -1;
-        }
-
-        private void InicializarComboBoxINSTRUCTOR()
-        {
-            List<InstructorJson> instructores = InstructorManager.ObtenerInstructores();
-            comboBox_Instructor.DataSource = instructores;
-            comboBox_Instructor.DisplayMember = "DescripcionCompleta";
-            comboBox_Instructor.SelectedIndex = -1;
-        }
-
-        private void InicializarComboBoxDEPENDENCIAS()
-        {
-            List<DependenciasPoliciales> dependencias = DependenciaManager.ObtenerDependencias();
-            comboBox_Dependencia.DataSource = dependencias;
-            comboBox_Dependencia.DisplayMember = "Dependencia";
-            comboBox_Dependencia.SelectedIndex = -1;
-        }
 
 
-        private void ComboBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true; // Rechaza caracteres no válidos.
-            }
-            else
-            {
-                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
-            }
-        }
+   
 
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            checkBox_LegajoVehicular.Visible = true;
+           // checkBox_LegajoVehicular.Visible = true;
 
-            InicializarComboBoxSECRETARIO();// INICIALIZA LOS SECRETARIOS DE ACUERDO A ARCHIVO JSON
-            InicializarComboBoxINSTRUCTOR();
-            InicializarComboBoxDEPENDENCIAS();
 
             MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
@@ -409,141 +369,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
+        private void Cargo_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-
-                }
+               MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
 
-        /// <summary>
-        /// VALIDACION SOLO NUMEROS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroCargo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
-
-        /// <summary>
-        /// PARA VALIDAR LIMITE DE 2 NUMEROS EN NUMEROS DE IPP
-        /// </summary>
-        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-        }
-
-        /// <summary>
-        /// LIMITAR Y AUTOCOMPLETAR CON 0 NUMERO IPP
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
-
-            // Verifica si la tecla presionada es Enter
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Obtiene el TextBox que disparó el evento
-                Ofelia_Sara.Controles.General.CustomTextBox customTextBox = sender as Ofelia_Sara.Controles.General.CustomTextBox;
-
-                if (customTextBox != null)
-                {
-                    // Obtiene el texto actual del TextBox
-                    string currentText = customTextBox.TextValue;
-
-                    // Verifica si el texto es numérico
-                    if (int.TryParse(currentText, out _))
-                    {
-                        // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                        string completedText = currentText.PadLeft(6, '0');
-
-                        // Actualiza el texto del TextBox
-                        customTextBox.TextValue = completedText;
-
-                        // Posiciona el cursor al final del texto
-                        customTextBox.SelectionStart = customTextBox.TextValue.Length;
-
-                        // Cancelar el manejo predeterminado de la tecla Enter
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-
-
-        private void TextBox_NumeroIpp_TextChanged(object sender, EventArgs e)
-        {
-            // Limitar a 6 caracteres
-            if (textBox_NumeroIpp.TextValue.Length > 6)
-            {
-                // Si el texto excede los 6 caracteres, cortar el exceso
-                textBox_NumeroIpp.TextValue = textBox_NumeroIpp.TextValue.Substring(0, 6);
-
-                // Mover el cursor al final del texto
-                textBox_NumeroIpp.SelectionStart = textBox_NumeroIpp.TextValue.Length;
-
-            }
-        }
-
-        /// <summary>
-        /// AUTOCOMPLETAR CUANDO PIERDE EL FOCO
-        /// </summary>
-        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
-        {
-            CompletarConCeros(sender as CustomTextBox);
-        }
-
-
-
-        /// <summary>
-        /// Método reutilizable para completar con ceros
-        /// </summary>
-        /// <param name="customtextBox"></param>
-        private static void CompletarConCeros(CustomTextBox customtextBox)
-        {
-            if (customtextBox != null)
-            {
-                // Obtiene el texto actual del TextBox
-                string currentText = customtextBox.TextValue;
-
-                // Verifica si el texto es numérico y no está vacío
-                if (int.TryParse(currentText, out _) && !string.IsNullOrEmpty(currentText))
-                {
-                    // Completa el texto con ceros a la izquierda hasta alcanzar 6 caracteres
-                    customtextBox.TextValue = currentText.PadLeft(6, '0');
-
-                    customtextBox.SelectionStart = customtextBox.TextValue.Length; // Posiciona el cursor al final del texto (opcional)
-                }
-            }
-        }
 
         /// <summary>
         /// MENSAJE AYUDA
@@ -552,11 +385,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Complete los campos y una descripcion de la muestra, para poder generar el cargo", MensajeGeneral.TipoMensaje.Advertencia);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+            MostrarMensajeAyuda("Complete los campos y una descripcion de la muestra, para poder generar el cargo");
         }
 
 
@@ -728,10 +557,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void PictureBox_CheckLegajoVehicular_Click(object sender, EventArgs e)
         {
-            // Manejar lógica para pictureBox_CheckRatificacion
+          //CANCELAR FORMULARIO ESPECIFICO LEGAJO
         
-            checkBox_LegajoVehicular.Visible = true;
-            checkBox_LegajoVehicular.Checked = false;
+       
         }
 
         /// <summary>

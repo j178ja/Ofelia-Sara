@@ -22,11 +22,12 @@ namespace Ofelia_Sara.Formularios.General
     public partial class BaseFormDATOS : Form
     {
         #region VARIABLES
-        private DatabaseConnection dbConnection;
-        private  Autocompletar autocompletar;
-        protected ComisariasManager dbManager;
+        protected DatabaseConnection dbConnection;
+        protected  Autocompletar autocompletar;
+        protected ComisariasManager comisariasManager;
         protected InstructoresManager instructoresManager;
         protected SecretariosManager secretariosManager;
+        protected FiscaliasManager fiscaliasManager;
         protected bool IsInDesignMode => DesignMode ||
                                   LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
                                   Process.GetCurrentProcess().ProcessName == "devenv";
@@ -40,7 +41,6 @@ namespace Ofelia_Sara.Formularios.General
                 {
                     InitializeComponent(); // Solo se llama al método generado automáticamente
 
-     
                 }
                 catch (Exception ex)
                 {
@@ -51,7 +51,15 @@ namespace Ofelia_Sara.Formularios.General
             else
             {
                 InitializeRuntimeMode();
+              
             }
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e); // Llama al método base para no perder funcionalidad
+            InitializarAutocompletado(); //guarda los ultimos ingresos para ser mostrados
+            CargarDatosComboBox(this);//carga los datos en todos los combobox segun su nombre
+            ConfigurarComboBoxesEnFormulario(this);
         }
 
         /// <summary>
@@ -62,13 +70,13 @@ namespace Ofelia_Sara.Formularios.General
             InitializeComponent(); // Llama primero para inicializar los controles
             this.AutoScaleMode = AutoScaleMode.Dpi;
 
-            InitializarAutocompletado();
-            CargarDatosComboBox();
+            InitializarAutocompletado(); //guarda los ultimos ingresos para ser mostrados
+            CargarDatosComboBox(this);//carga los datos en todos los combobox segun su nombre
             ConfigurarComboBoxesEnFormulario(this);
         }
 
         /// <summary>
-        /// Inicializa los manejadores necesarios.
+        /// guarda los ultimos ingresos para ser mostrados y autocompleta
         /// </summary>
         private void InitializarAutocompletado()
         {
@@ -103,11 +111,11 @@ namespace Ofelia_Sara.Formularios.General
         /// <summary>
         /// inicializa conexion y carga los datos dependiendo el nombre del control en todos los formularios,
         /// </summary>
-        public void CargarDatosComboBox()
+        public void CargarDatosComboBox(Control parent)
         {
             try
             {
-                foreach (Control control in this.Controls)
+                foreach (Control control in GetAllControls(parent))
                 {
                     if (control is CustomComboBox comboBox)
                     {
@@ -128,8 +136,6 @@ namespace Ofelia_Sara.Formularios.General
                             case "comboBox_Fiscalia":
                                 CargarDatosFiscalia(comboBox, new FiscaliasManager());
                                 break;
-
-                                // Agrega más casos si hay más ComboBox que necesiten datos de la base
                         }
                     }
                 }
@@ -290,7 +296,8 @@ namespace Ofelia_Sara.Formularios.General
             CustomComboBox comboBox_Escalafon = null;
             CustomComboBox comboBox_Jerarquia = null;
 
-            foreach (Control control in parent.Controls)
+            foreach (Control control in GetAllControls(parent))
+
             {
                 if (control is CustomComboBox customComboBox)
                 {
@@ -381,21 +388,19 @@ namespace Ofelia_Sara.Formularios.General
         /// Método recursivo para buscar controles dentro de contenedores como Panel, GroupBox, etc.
         /// </summary>
         /// <param name="parent"></param>
-        private IEnumerable<Control> GetAllControls(Control parent)
+        // En BaseFormDatos
+        protected static IEnumerable<Control> GetAllControls(Control parent)
         {
             foreach (Control control in parent.Controls)
             {
                 yield return control;
-
-                if (control.HasChildren)
+                foreach (var child in GetAllControls(control))
                 {
-                    foreach (var child in GetAllControls(control))
-                    {
-                        yield return child;
-                    }
+                    yield return child;
                 }
             }
         }
+
         #endregion
 
     }

@@ -29,7 +29,7 @@ namespace BaseDatos.Adm_BD.Manager
         /// <param name="funcion"></param>
         public void InsertSecretario(float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
-            string query = "INSERT INTO Secretario (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@Legajo, @Subescalafon, @Jerarquia, @Nombre, @Apellido, @Dependencia, @Funcion)";
+            string query = "INSERT INTO Secretarios (legajo, subescalafon, jerarquia, nombre, apellido, dependencia, funcion) VALUES (@Legajo, @Subescalafon, @Jerarquia, @Nombre, @Apellido, @Dependencia, @Funcion)";
 
             dbConnection.OpenConnection();
             using var command = new SQLiteCommand(query, dbConnection.Connection);
@@ -110,7 +110,7 @@ namespace BaseDatos.Adm_BD.Manager
         /// <param name="funcion"></param>
         public void UpdateSecretarios(int id, float? legajo, string subescalafon, string jerarquia, string nombre, string apellido, string dependencia, string funcion)
         {
-            string query = "UPDATE Secretario SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
+            string query = "UPDATE Secretarios SET legajo = @legajo, subescalafon = @subescalafon, jerarquia = @jerarquia, nombre = @nombre, apellido = @apellido, dependencia = @dependencia, funcion = @funcion WHERE ID = @id";
 
             dbConnection.OpenConnection();
             using var command = new SQLiteCommand(query, dbConnection.Connection);
@@ -146,7 +146,7 @@ namespace BaseDatos.Adm_BD.Manager
         /// <param name="id"></param>
         public void DeleteSecretario(int id)
         {
-            string query = "DELETE FROM Secretario WHERE ID = @id";
+            string query = "DELETE FROM Secretarios WHERE ID = @id";
 
             dbConnection.OpenConnection();
             using var command = new SQLiteCommand(query, dbConnection.Connection);

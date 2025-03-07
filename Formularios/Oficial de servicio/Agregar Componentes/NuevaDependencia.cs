@@ -35,8 +35,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
             this.Load += new EventHandler(NuevaDependencia_Load);
             // Aplica el estilo de botón de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
+         
             //this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
 
             // Inicializa el estado del Label, el CheckBox y los PictureBox al cargar el formulario

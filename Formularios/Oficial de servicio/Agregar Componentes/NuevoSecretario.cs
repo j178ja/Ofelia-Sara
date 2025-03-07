@@ -64,7 +64,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_FirmaDigitalizada.DragDrop += PictureBox_DragDrop;
             pictureBox_FirmaDigitalizada.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            textBox_NumeroLegajo.MaxLength = 7;//limitando numero de legajo
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
            

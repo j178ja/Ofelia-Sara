@@ -40,16 +40,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         private void BuscarPersonal_Load(object sender, EventArgs e)
         {
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Registrar);
-
+          
             // Llamada para aplicar el estilo de boton de BaseForm
             InicializarEstiloBotonAgregar(btn_AgregarPersonal);
         
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue); //inicializa desactivado si no tiene numero
 
-            textBox_NumeroLegajo.MaxLength = 7;//6 para numero legajo +1 por el "punto"
+            
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
 
