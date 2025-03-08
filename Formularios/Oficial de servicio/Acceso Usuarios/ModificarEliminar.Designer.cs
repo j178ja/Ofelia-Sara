@@ -132,6 +132,7 @@
             btn_Cancelar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Cancelar.BackgroundImage = (System.Drawing.Image)resources.GetObject("btn_Cancelar.BackgroundImage");
             btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btn_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Cancelar.Location = new System.Drawing.Point(61, 12);
             btn_Cancelar.Name = "btn_Cancelar";
             btn_Cancelar.Size = new System.Drawing.Size(69, 68);
@@ -143,8 +144,9 @@
             // btn_Editar
             // 
             btn_Editar.BackColor = System.Drawing.Color.SkyBlue;
-            btn_Editar.BackgroundImage = (System.Drawing.Image)resources.GetObject("btn_Editar.BackgroundImage");
+            btn_Editar.BackgroundImage = Properties.Resources.editarUsuario;
             btn_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btn_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Editar.Location = new System.Drawing.Point(275, 13);
             btn_Editar.Name = "btn_Editar";
             btn_Editar.Size = new System.Drawing.Size(75, 66);

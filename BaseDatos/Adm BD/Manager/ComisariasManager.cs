@@ -60,7 +60,7 @@ namespace BaseDatos.Adm_BD.Manager
         /// </summary>
         public List<Comisarias> GetComisarias()
         {
-            List<Comisarias> comisarias = new List<Comisarias>();
+            List<Comisarias> comisarias = [];//lista de comisarias
             string query = "SELECT * FROM Comisarias";
 
             try

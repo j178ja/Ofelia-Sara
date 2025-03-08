@@ -44,7 +44,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-
             // Asignación de eventos
             comboBox_Marca.TextChanged += (s, e) => ValidarPanelVehiculo();
             comboBox_Marca.SelectedIndexChanged += (s, e) => ValidarPanelVehiculo();
@@ -58,12 +57,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Validar panel al cargar
             this.Load += (s, e) => ValidarPanelVehiculo();
-
-           
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBotonAgregar(btn_AgregarCausa);
-            InicializarEstiloBotonAgregar(btn_AgregarVictima);
-            InicializarEstiloBotonAgregar(btn_AgregarImputado);
 
             panel_Imagenes.Visible = false;
             panel_DatosVehiculo.Visible = false;
@@ -112,13 +105,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Visu_Load(object sender, EventArgs e)
         {
             pictureBox_PanelImagenes.Visible = true;
-            FormatoTexto();
-
-          
-            comboBox_AñoVehiculo.InnerTextBox.MaxLength = 4;
-
-
-            //.....................................................
+        
             // llevar al frente label y picture
             pictureBox_AgregarImagen.BringToFront();
             pictureBox_QuitarImagen.BringToFront();
@@ -196,21 +183,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         #region METODOS GENERALES
 
-        /// <summary>
-        /// ASIGNAR FORMATO DE TEXTO A CONTROLES
-        /// </summary>
-        private void FormatoTexto()
-        {
-       
-            // estilo de letras en panel datos vehiculo
-            MayusculaYnumeros.AplicarAControl(textBox_Dominio);
-            MayusculaYnumeros.AplicarAControl(textBox_Motor);
-            MayusculaYnumeros.AplicarAControl(textBox_Chasis);
-            MayusculaSola.AplicarAControl(comboBox_Marca);
-            MayusculaSola.AplicarAControl(comboBox_Modelo);
-            MayusculaSola.AplicarAControl(comboBox_Color);
-            ClaseNumeros.SoloNumeros(comboBox_AñoVehiculo);
-        }
 
         /// <summary>
         /// OBTENER DATOS DEL FORMULARIO

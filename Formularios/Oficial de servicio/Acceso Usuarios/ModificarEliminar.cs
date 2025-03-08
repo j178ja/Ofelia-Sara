@@ -22,7 +22,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
     {
         #region VARIABLES
         private CustomTextBox textBox_Dependencia;
-        private readonly CustomComboBox comboBox_Dependencia;
+        private  CustomComboBox comboBox_Dependencia;
         private CustomTextBox textBox_Domicilio;
         private CustomTextBox textBox_Localidad;
         private CustomTextBox textBox_Partido;
@@ -31,15 +31,19 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private Label label_Localidad;
         private Label label_Partido;
         private Panel panel_Detalles;
-        private readonly Panel panel_DetallesFiscalia;
-        private readonly CustomComboBox comboBox_Escalafon;
-        private readonly CustomComboBox comboBox_Jerarquia;
-        private readonly CustomTextBox textBox_NumeroLegajo;
-        private readonly CustomTextBox textBox_Nombre;
-        private readonly CustomTextBox textBox_Apellido;
-        private readonly CustomComboBox comboBox_Instructor;
-        private readonly CustomTextBox textBox_Funcion;
+        private Panel panel_DetallesFiscalia;
+        private CustomComboBox comboBox_Escalafon;
+        private CustomComboBox comboBox_Jerarquia;
+        private CustomTextBox textBox_NumeroLegajo;
+        private CustomTextBox textBox_Legajo;
+        private CustomTextBox textBox_Nombre;
+        private CustomTextBox textBox_Apellido;
+        private CustomComboBox comboBox_Instructor;
+        private CustomTextBox textBox_Funcion;
         private new SecretariosManager secretariosManager;
+        private new InstructoresManager instructoresManager;
+        private new ComisariasManager comisariasManager;
+        private new FiscaliasManager fiscaliasManager;
         #endregion
 
         #region CONSTRUCTOR
@@ -52,7 +56,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             InicializarEstiloBotonPropio(btn_Guardar);
             InicializarEstiloBotonPropio(btn_Editar);
 
-    
+            secretariosManager = new SecretariosManager();
+            instructoresManager = new InstructoresManager();
+            comisariasManager = new ComisariasManager();
+            fiscaliasManager = new FiscaliasManager();
         }
         #endregion
 
@@ -69,7 +76,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             listBox_Seleccion.Items.Add("Secretario");
             listBox_Seleccion.Items.Add("Dependencia");
 
-            secretariosManager = new SecretariosManager();
+            
             ConfigurarTooltip(); // establece las los textos de los diferentes tooltips
         }
         #endregion
@@ -101,7 +108,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private void ConfigurarTooltip() 
         {
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Editar, "Seleccione los campos requeridos para poder EDITAR.", "EDITAR");
-            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", "ELIMINAR");
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", null);
+            ToolTipEliminar.Mostrar(btn_Eliminar, "ELIMINAR SELECCIÓN.");
             ToolTipGeneral.Mostrar(btn_Cancelar, "CANCELAR");
         }
 
@@ -184,14 +192,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             try
             {
-                // Elimina el DataSource para evitar conflictos
                 listBox_Datos.DataSource = null;
-                listBox_Datos.Items.Clear(); // Limpia los elementos actuales
+                listBox_Datos.Items.Clear();
 
-                //  List<Fiscalia> fiscalias = FiscaliaManager.ObtenerFiscalias();
-                //  listBox_Datos.DataSource = fiscalias;
-                listBox_Datos.DisplayMember = "NombreFiscalia"; // Lo que se mostrará en el listBox
-                listBox_Datos.SelectedIndex = -1; // Inicializar con ningún elemento seleccionado
+                // Usa la instancia de fiscaliasManager ya creada en el constructor
+                List<Fiscalias> fiscalias = fiscaliasManager.GetFiscalias();
+
+                listBox_Datos.DataSource = fiscalias;
+                listBox_Datos.DisplayMember = "NombreFiscalia";
+                listBox_Datos.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -316,20 +325,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             textBox_Domicilio.TextValue = dependencia.Domicilio;
         }
 
-       /// <summary>
-       /// CONVERTIR CAMELCASE EN TBOX PARTIDO
-       /// </summary>
-       /// <param name="sender"></param>
-       /// <param name="e"></param>
-        private void TextBox_Partido_TextChanged(object sender, EventArgs e)
-        {
-            // Convertir el texto a CamelCase
-            string textoConvertido = ConvertirACamelCase.Convertir(textBox_Partido.TextValue);
-            textBox_Partido.TextChanged -= TextBox_Partido_TextChanged; // Desuscribirse para evitar un bucle
-            textBox_Partido.TextValue = textoConvertido; // Asigna el texto convertido
-            textBox_Partido.SelectionStart = textBox_Partido.TextValue.Length; // Mantiene el cursor al final
-            textBox_Partido.TextChanged += TextBox_Partido_TextChanged; // Volver a suscribirse
-        }
 
         private void FinalizarEdicion()
         {
@@ -539,7 +534,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-            AjustarFormulario();
+          //  AjustarFormulario();
 
 
         }
@@ -567,7 +562,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             //LimpiarControlesInstructor();
 
             // Inicializa los controles para mostrar los detalles
-            CustomTextBox textBox_Legajo = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_NumeroLegajo = new() { ReadOnly = true, Width = 295, Height = 21 };
             CustomComboBox comboBox_Escalafon = new() { Width = 295, Height = 20, Enabled = false };
             CustomComboBox comboBox_Jerarquia = new() { Width = 295, Height = 20, Enabled = false };
             CustomTextBox textBox_Nombre = new() { ReadOnly = true, Width = 295, Height = 21 };
@@ -586,7 +581,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             // Añade los controles al panel
             panel_Detalles.Controls.Add(label_Legajo);
-            panel_Detalles.Controls.Add(textBox_Legajo);
+            panel_Detalles.Controls.Add(textBox_NumeroLegajo);
             panel_Detalles.Controls.Add(label_Escalafon);
             panel_Detalles.Controls.Add(comboBox_Escalafon);
             panel_Detalles.Controls.Add(label_Jerarquia);
@@ -601,7 +596,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             panel_Detalles.Controls.Add(textBox_Funcion);
 
             label_Legajo.Location = new Point(79, 9);
-            textBox_Legajo.Location = new Point(168, 10);
+            textBox_NumeroLegajo.Location = new Point(168, 10);
 
             label_Escalafon.Location = new Point(44, 40);
             comboBox_Escalafon.Location = new Point(168, 40);
@@ -624,7 +619,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-            AjustarFormulario();
+           // AjustarFormulario();
 
 
         }
@@ -654,15 +649,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             textBox_Domicilio = new CustomTextBox { ReadOnly = true, Width = 300, Height = 21 };
             textBox_Localidad = new CustomTextBox { ReadOnly = true, Width = 300, Height = 21 };
             textBox_Partido = new CustomTextBox { ReadOnly = true, Width = 300, Height = 21 };
-            MayusculaYnumeros.AplicarAControl(textBox_Dependencia);
-            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
-            MayusculaYnumeros.AplicarAControl(textBox_Localidad);
-
-            // Suscribirse al evento TextChanged para aplicar CamelCase
-            textBox_Partido.TextChanged += TextBox_Partido_TextChanged;
-
-
-
+         
             // Inicializa los Label para los nombres de los campos con un tamaño de letra más grande
             label_Dependencia = new Label
             {

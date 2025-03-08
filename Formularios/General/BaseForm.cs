@@ -612,7 +612,6 @@ namespace Ofelia_Sara.Formularios.General
                 switch (textBox.Name)
                 {
                     // MAYUSCULA SOLA
-
                     case "textBox_Victima":
                     case "textBox_Imputado":
                     case "textBox_Nombre":
@@ -637,6 +636,12 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_Domicilio":
                     case "textBox_Fiscalia":
                         MayusculaYnumeros.AplicarAControl(textBox);
+                        break;
+                    // MAYUSCULA-NUMEROS Y CARACTERES ESPECIALES
+                    case "textBox_Dominio":
+                    case "textBox_Motor":
+                    case "textBox_Chasis":
+                        MayusculaYnumeros.ConfigurarTextoConEspeciales(textBox);
                         break;
 
                     // NUMEROS SOLOS
@@ -673,6 +678,9 @@ namespace Ofelia_Sara.Formularios.General
                     case "comboBox_Parentesco":
                     case "comboBox_Nacionalidad":
                     case "comboBox_EstadoCivil":
+                    case "comboBox_Marca":
+                    case "comboBox_Modelo":
+                    case "comboBox_Color":
                         MayusculaSola.AplicarAControl(comboBox);
                         break;
 
@@ -695,7 +703,8 @@ namespace Ofelia_Sara.Formularios.General
                 // Aplicar restricción de solo números a los IPP
                 if (comboBox.Name == "comboBox_Ipp1" ||
                     comboBox.Name == "comboBox_Ipp2" ||
-                    comboBox.Name == "comboBox_Ipp4") 
+                    comboBox.Name == "comboBox_Ipp4" ||
+                   comboBox.Name == "comboBox_AñoVehiculo")
                 {
                     ClaseNumeros.SoloNumeros(comboBox);
                 }
@@ -718,6 +727,9 @@ namespace Ofelia_Sara.Formularios.General
                     case "comboBox_Ipp4":
                         customComboBox.InnerTextBox.MaxLength = 2;
                         break;
+                    case "comboBox_AñoVehiculo":
+                        customComboBox.InnerTextBox.MaxLength = 4;
+                        break;
                 }
             }
             else if (control is CustomTextBox textBox)
@@ -736,7 +748,7 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_ArtInfraccion":// corresponde a art infraccion contravenciona
                         textBox.MaxLength = 3;
                         break;
-                        
+                   
                 }
             }
         }

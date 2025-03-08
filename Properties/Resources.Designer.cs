@@ -483,6 +483,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editarUsuario {
+            get {
+                object obj = ResourceManager.GetObject("editarUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eliminarUsuario {
             get {
                 object obj = ResourceManager.GetObject("eliminarUsuario", resourceCulture);
@@ -1176,26 +1186,6 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap teclado24 {
             get {
                 object obj = ResourceManager.GetObject("teclado24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap usuario64 {
-            get {
-                object obj = ResourceManager.GetObject("usuario64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap usuarioEDITAR {
-            get {
-                object obj = ResourceManager.GetObject("usuarioEDITAR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
