@@ -49,7 +49,7 @@ namespace Ofelia_Sara.Formularios.General
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
 
-            _instruccion = new Instruccion(this);
+            _instruccion = new Instruccion(this);// genera instancia de Instruccion (clase que contiene todas las indicaciones de IPP)
             _saltoDeImput = new SaltoDeImput(this);
         }
 
@@ -61,11 +61,7 @@ namespace Ofelia_Sara.Formularios.General
             InitializeComponent();
             CargarIconoFormulario();
             InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
-          
-        
             InitializeFooterLinkLabel();// footer a todos los formularios
-         
-          
             Load += BaseForm_Load;
         }
 
@@ -76,11 +72,10 @@ namespace Ofelia_Sara.Formularios.General
             ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
             BordePanel1();// redondea los bordes unicamente de panel 1
             AjustarLabelEnPanel(); //centra unicamente Label_TITULO
+            AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
             _instruccion.ConfigurarEventosEnControles(this.Controls);
-            AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
-          
-
+       
         }
         protected override void OnControlAdded(ControlEventArgs e)
         {
@@ -398,7 +393,7 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-        #endregion
+      
         /// <summary>
         /// METODO GENERAL PARA CAMBIAR TAMAÑO DE BOTONES BUSCAR-GUARDAR-LIMPIAR
         /// </summary>
@@ -524,6 +519,7 @@ namespace Ofelia_Sara.Formularios.General
             // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
             boton.Invalidate();
         }
+        #endregion
 
         #region MENSAJE HELP
         /// <summary>
@@ -608,7 +604,7 @@ namespace Ofelia_Sara.Formularios.General
         /// Formato de texto de campos especificos
         /// </summary>
         /// <param name="control"></param>
-        protected static  void AplicarFormatoTexto(Control control)
+        protected   void AplicarFormatoTexto(Control control)
         {
             //FORMATO TEXTO PARA TEXTBOX
             if (control is CustomTextBox textBox)
@@ -616,6 +612,7 @@ namespace Ofelia_Sara.Formularios.General
                 switch (textBox.Name)
                 {
                     // MAYUSCULA SOLA
+
                     case "textBox_Victima":
                     case "textBox_Imputado":
                     case "textBox_Nombre":
@@ -648,16 +645,19 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_NumeroIpp":
                     case "textBox_NumeroCargo":
                         ClaseNumeros.SoloNumeros(textBox);
+                        ImpedirCeroPrimerDigito(textBox);
                         break;
 
                     // NUMEROS CON PUNTO
                     case "textBox_Dni":
                         ClaseNumeros.AplicarFormatoYLimite(textBox, 10);
+                        ImpedirCeroPrimerDigito(textBox);
                         break;
                     case "textBox_NumeroLegajo":
-                        ClaseNumeros.AplicarFormatoYLimite(textBox,7);
+                        ClaseNumeros.AplicarFormatoYLimite(textBox, 7);
+                        ImpedirCeroPrimerDigito(textBox);
                         break;
-                
+
                 }
             }
             // FORMATO TEXTO PARA COMBOBOX
@@ -676,13 +676,13 @@ namespace Ofelia_Sara.Formularios.General
                         MayusculaSola.AplicarAControl(comboBox);
                         break;
 
-                        //CAMELCASE
+                    //CAMELCASE
                     case "comboBox_AgenteFiscal":
                     case "comboBox_DeptoJudicial":
                         ConvertirACamelCase.AplicarAControl(comboBox);
                         break;
 
-                        //MAYUSCULAS Y NUMEROS
+                    //MAYUSCULAS Y NUMEROS
                     case "comboBox_Fiscalia":
                     case "comboBox_Instructor":
                     case "comboBox_Secretario":
@@ -691,13 +691,15 @@ namespace Ofelia_Sara.Formularios.General
                         break;
                 }
 
+
                 // Aplicar restricción de solo números a los IPP
-                if (comboBox.Name == "comboBox_Ipp1" || 
+                if (comboBox.Name == "comboBox_Ipp1" ||
                     comboBox.Name == "comboBox_Ipp2" ||
-                    comboBox.Name == "comboBox_Ipp4")
+                    comboBox.Name == "comboBox_Ipp4") 
                 {
                     ClaseNumeros.SoloNumeros(comboBox);
                 }
+
             }
         }
 
@@ -705,7 +707,7 @@ namespace Ofelia_Sara.Formularios.General
         /// limita cantidad de caracteres que se permiten ingresar
         /// </summary>
         /// <param name="control"></param>
-        private static void MaxLengthControl(Control control)
+        private  void MaxLengthControl(Control control)
         {
             if (control is CustomComboBox customComboBox)
             {
@@ -728,25 +730,37 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_NumeroIpp":
                         textBox.MaxLength = 6;
                         break;
-                    case "textBox_NumeroLegajo":
-                        textBox.MaxLength = 7;// tiene en cuenta el punto
-                        break;
-                    case "textBox_Dni":
-                        textBox.MaxLength = 10;
-                        break;
                     case "textBox_Edad":
                         textBox.MaxLength = 2;
                         break;
                     case "textBox_ArtInfraccion":// corresponde a art infraccion contravenciona
                         textBox.MaxLength = 3;
                         break;
+                        
                 }
             }
         }
 
+        /// <summary>
+        /// Impide que el primer digito sea 0
+        /// </summary>
+        /// <param name="textBox"></param>
+        protected void ImpedirCeroPrimerDigito(CustomTextBox textBox)
+        {
+            textBox.KeyPress += (sender, e) =>
+            {
+                // Verifica si el primer carácter es '0' y el textbox está vacío
+                if (e.KeyChar == '0' && textBox.TextValue.Length == 0)
+                {
+                    e.Handled = true; // Bloquea la entrada del '0'
+                }
+            };
+        }
+
+
         #endregion
 
-  
+
 
         #region VERIFICACION EN PANEL
 
@@ -777,13 +791,13 @@ namespace Ofelia_Sara.Formularios.General
                 }
 
                 // Verificar CustomComboBox
-                //if (control is CustomComboBox customComboBox)
-                //{
-                //    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
-                //    {
-                //        return false;
-                //    }
-                //}
+                if (control is CustomComboBox customComboBox)
+                {
+                    if (customComboBox.SelectedIndex == -1 && string.IsNullOrWhiteSpace(customComboBox.TextValue)) // Usa TextValue si es necesario
+                    {
+                        return false;
+                    }
+                }
 
                 // Verificar RichTextBox
                 if (control is RichTextBox richTextBox)
@@ -907,7 +921,7 @@ namespace Ofelia_Sara.Formularios.General
 
 
 
-        private static void AplicarFormatoAControlesRecursivos(Control parent)
+        private  void AplicarFormatoAControlesRecursivos(Control parent)
         {
             foreach (var control in GetAllControls(parent))
             {

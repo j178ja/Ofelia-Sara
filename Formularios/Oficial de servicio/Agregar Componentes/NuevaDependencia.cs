@@ -34,21 +34,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InitializeComponent();
             // Asocia el evento Load del formulario al manejador NuevaDependencia_Load
             this.Load += new EventHandler(NuevaDependencia_Load);
-            // Aplica el estilo de botón de BaseForm
-         
-            //this.FormClosed += new FormClosedEventHandler(NuevaDependencia_FormClosed);
-
-            // Inicializa el estado del Label, el CheckBox y los PictureBox al cargar el formulario
-            ActualizarEstado();
+            
+            ActualizarEstado();// Inicializa el estado del Label, el CheckBox y los PictureBox al cargar el formulario
 
             // Asocia el evento TextChanged del TextBox
             textBox_Dependencia.TextChanged += TextBox_Dependencia_TextChanged;
-
-          
-
-
-            dbManager = new ComisariasManager(); // Inicializar la instancia para cargar datos DB
-
             this.FormClosing += NuevaDependencia_FormClosing;
         }
         #endregion
@@ -56,11 +46,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void NuevaDependencia_Load(object sender, EventArgs e)
         {
-            
-
-            // Configurar todos los TextBoxes en el formulario
-            ConfigurarTextBoxes(this);
-
             // Inicializar el formulario SellosDependencia
             sellosDependenciaForm = new SellosDependencia();
 
@@ -79,8 +64,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         /// <param name="e"></param>
         private void NuevaDependencia_Shown(object sender, EventArgs e)
         {
-            // Asegura que el cursor esté en textBox_Dependencia
-            textBox_Dependencia.Focus();
+            textBox_Dependencia.Focus();            // Asegura que el cursor esté en textBox_Dependencia
         }
       
         private void Btn_Guardar_Click(object sender, EventArgs e)
@@ -129,47 +113,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             ActualizarEstado();//habilita check y modifica label
 
-
             // Dispara el evento si hay suscriptores
             DependenciaTextChanged?.Invoke(textBox_Dependencia.TextValue);
         }
         private void TextBox_Localidad_TextChanged(object sender, EventArgs e)
         {
             ActualizarEstado();//habilita check y modifica label
-
-           
-
             // Dispara el evento si hay suscriptores
             LocalidadTextChanged?.Invoke(textBox_Localidad.TextValue);
         }
 
-        /// <summary>
-        /// CONTROLAR QUE SEAN MAYUSCULAS-
-        /// </summary>
-        /// <param name="parent"></param>
-        private static void ConfigurarTextBoxes(Control parent)
-        {
-            foreach (Control control in parent.Controls)
-            {
-                if (control is CustomTextBox customtextBox)
-                {
-                    customtextBox.TextChanged += (s, e) =>
-                    {
-                        CustomTextBox tb = s as CustomTextBox;
-                        if (tb != null)
-                        {
-                            int pos = tb.SelectionStart;
-                             tb.Text = MayusculaYnumeros.ConvertirAMayusculasIgnorandoEspeciales(tb.TextValue);
-                            tb.SelectionStart = pos;
-                        }
-                    };
-                }
-                else if (control.HasChildren)
-                {
-                    ConfigurarTextBoxes(control);
-                }
-            }
-        }
+     
 
         /// <summary>
         /// MENSAJE AYUDA

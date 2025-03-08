@@ -1002,12 +1002,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
                 secretarioManager.DeleteSecretario(selectedSecretario.Id);
                 EliminarElementoDeLista(selectedSecretario);
             }
-            //else if (selectedItem is Fiscalia selectedFiscalia)
-            //{
-            //    var fiscaliaManager = new FiscaliasManager();
-            //    fiscaliaManager.DeleteFiscalia(selectedFiscalia.Id);
-            //    EliminarElementoDeLista(selectedFiscalia);
-            //}
+            else if (selectedItem is Fiscalias selectedFiscalia)
+            {
+                var fiscaliaManager = new FiscaliasManager();
+                fiscaliaManager.DeleteFiscalia(selectedFiscalia.Id);
+                EliminarElementoDeLista(selectedFiscalia);
+            }
             else
             {
                 MensajeGeneral.Mostrar("Tipo de elemento no soportado para eliminación.", MensajeGeneral.TipoMensaje.Error);

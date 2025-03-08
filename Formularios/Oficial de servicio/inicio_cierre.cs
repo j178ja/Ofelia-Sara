@@ -77,9 +77,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Secretario.SelectedIndexChanged += (s, e) => ActualizarEstado();
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
-
-
-
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
 
       
@@ -105,16 +102,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             ConfigurarTooltip();//agrega la totalidad de tooltip al LOAD
 
-
-
-
             ActualizarEstado();//PARA LABEL Y CHECK CARGO,labell btn_not247 y btn_StudRML
 
             Btn_ContadorRML.Text = "0";
 
             fecha_Pericia.ValidatingType = typeof(DateTime); // Configurar tipo de validación
-
-
 
             SubscribirCaratulaTextchanged();
 
@@ -135,6 +127,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
         #region CONFIGURACIONES
+        /// <summary>
+        /// CONTIENE LOS TOOLTIPS DE LOS CONTROLES DEL FORM INICIO-CIERRE
+        /// </summary>
         private void ConfigurarTooltip()
         {
 
@@ -369,13 +364,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-
-
-
-
-
-
-
         /// <summary>
         /// METODO PARA AGREGAR PERSONAL A LAS RATIFICACIONES
         /// </summary>
@@ -445,10 +433,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 buscarPersonalForm.ShowDialog();
             }
         }
-
-
-
-
 
         private void CheckBox_Cargo_CheckedChanged(object sender, EventArgs e)
         {

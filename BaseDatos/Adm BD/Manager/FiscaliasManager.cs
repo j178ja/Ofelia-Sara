@@ -6,13 +6,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using DocumentFormat.OpenXml.ExtendedProperties;
+using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 
-namespace BaseDatos.Adm_BD
+namespace BaseDatos.Adm_BD.Manager
 {
-    public class FiscaliasManager(SQLiteConnection connection = null)
+    public class FiscaliasManager
     {
-        private readonly SQLiteConnection dbConnection = connection ?? new SQLiteConnection("Data Source=baseSqlite.db;Version=3;");
 
+        private readonly DatabaseConnection dbConnection;
+        
+        public FiscaliasManager()
+        {
+            dbConnection = new DatabaseConnection();
+            // Si dbConnection es null, lanza una excepción con un mensaje claro
+            if (dbConnection == null)
+            {
+                throw new InvalidOperationException("DatabaseConnection no pudo inicializarse. Verifica que la aplicación no esté en modo diseño y que la configuración de la base de datos sea válida.");
+            }
+        }
+
+     
         /// <summary>
         /// obtener todas las fiscalías
         /// </summary>
@@ -22,8 +35,8 @@ namespace BaseDatos.Adm_BD
             List<Fiscalias> fiscalias = [];
            string query = "SELECT Id, Ufid, AgenteFiscal, Localidad, DeptoJudicial FROM Fiscalias";
           
-            dbConnection.Open();
-            using (var command = new SQLiteCommand(query, dbConnection))
+            dbConnection.OpenConnection();
+            using (var command = new SQLiteCommand(query, dbConnection.Connection))
             {
                 using (var reader = command.ExecuteReader())
                 {
@@ -42,7 +55,7 @@ namespace BaseDatos.Adm_BD
                     }
                 }
             }
-            dbConnection.Close();
+            dbConnection.CloseConnection();
             return fiscalias;
         }
 
@@ -57,8 +70,8 @@ namespace BaseDatos.Adm_BD
 
             try
             {
-                dbConnection.Open();
-                using (var command = new SQLiteCommand(query, dbConnection))
+                dbConnection.OpenConnection();
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
                 {
                     command.Parameters.AddWithValue("@Ufid", fiscalia.Ufid);
                     command.Parameters.AddWithValue("@AgenteFiscal", fiscalia.AgenteFiscal);
@@ -74,7 +87,7 @@ namespace BaseDatos.Adm_BD
             }
             finally
             {
-                dbConnection.Close();
+                dbConnection.CloseConnection();
             }
         }
 
@@ -90,8 +103,8 @@ namespace BaseDatos.Adm_BD
 
             try
             {
-                dbConnection.Open();
-                using (var command = new SQLiteCommand(query, dbConnection))
+                dbConnection.OpenConnection();
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
                 {
                     command.Parameters.AddWithValue("@Id", fiscalia.Id);
                     command.Parameters.AddWithValue("@Ufid", fiscalia.Ufid);
@@ -108,7 +121,7 @@ namespace BaseDatos.Adm_BD
             }
             finally
             {
-                dbConnection.Close();
+                dbConnection.CloseConnection();
             }
         }
 
@@ -124,8 +137,8 @@ namespace BaseDatos.Adm_BD
 
             try
             {
-                dbConnection.Open();
-                using (var command = new SQLiteCommand(query, dbConnection))
+                dbConnection.OpenConnection();
+                using (var command = new SQLiteCommand(query, dbConnection.Connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
                     command.ExecuteNonQuery();
@@ -137,7 +150,7 @@ namespace BaseDatos.Adm_BD
             }
             finally
             {
-                dbConnection.Close();
+                dbConnection.CloseConnection();
             }
         }
 

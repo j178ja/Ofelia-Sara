@@ -207,7 +207,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_ArtInfraccion.ShowError = false;
             textBox_ArtInfraccion.Size = new System.Drawing.Size(65, 20);
             textBox_ArtInfraccion.TabIndex = 1;
-            textBox_ArtInfraccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            textBox_ArtInfraccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_ArtInfraccion.TextValue = "";
             textBox_ArtInfraccion.Whidth = 0;
             // 
@@ -586,11 +586,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // Fecha_Instruccion
             // 
+            Fecha_Instruccion.AñoMaximo = 2025;
+            Fecha_Instruccion.AñoMinimo = 1930;
             Fecha_Instruccion.BackColor = System.Drawing.SystemColors.Window;
             Fecha_Instruccion.FechaSeleccionada = new System.DateTime(0L);
             Fecha_Instruccion.Location = new System.Drawing.Point(153, 476);
             Fecha_Instruccion.Name = "Fecha_Instruccion";
             Fecha_Instruccion.Size = new System.Drawing.Size(296, 21);
+            Fecha_Instruccion.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
+            Fecha_Instruccion.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             Fecha_Instruccion.TabIndex = 103;
             // 
             // FechaAudiencia
@@ -611,7 +615,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             botonDeslizable_StarPlana.Location = new System.Drawing.Point(127, 304);
             botonDeslizable_StarPlana.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             botonDeslizable_StarPlana.Name = "botonDeslizable_StarPlana";
-            botonDeslizable_StarPlana.Size = new System.Drawing.Size(40, 20);
+            botonDeslizable_StarPlana.Size = new System.Drawing.Size(47, 23);
             botonDeslizable_StarPlana.TabIndex = 101;
             botonDeslizable_StarPlana.ValidarCampos = null;
             // 
@@ -666,7 +670,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             Fecha_Nacimiento.ControlInvocador = null;
             Fecha_Nacimiento.Location = new System.Drawing.Point(195, 254);
             Fecha_Nacimiento.Name = "Fecha_Nacimiento";
-            Fecha_Nacimiento.Size = new System.Drawing.Size(149, 21);
+            Fecha_Nacimiento.Size = new System.Drawing.Size(159, 21);
             Fecha_Nacimiento.SubrayadoGeneralErrorColor = System.Drawing.Color.Red;
             Fecha_Nacimiento.SubrayadoGeneralFocusColor = System.Drawing.Color.Blue;
             Fecha_Nacimiento.TabIndex = 91;
