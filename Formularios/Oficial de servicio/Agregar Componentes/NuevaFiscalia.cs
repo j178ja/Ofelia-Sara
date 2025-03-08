@@ -35,11 +35,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void Fiscalia_Load(object sender, EventArgs e)
         {
-          
-
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
             this.Shown += Focus_Shown;//para que haga foco en un textBox
         }
         #endregion

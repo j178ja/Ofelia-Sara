@@ -17,11 +17,7 @@ namespace Ofelia_Sara.Formularios.General
         {
 
             InitializeComponent();
-            label_TITULO.BringToFront();
-
-
-            Color customBorderColor = Color.FromArgb(0, 154, 174);
-            panel1.ApplyRoundedCorners(borderRadius: 15, borderSize: 7, borderColor: customBorderColor);
+ 
 
             // Crear un ejemplo de Verificador_ACTUACION y añadirlo al TableLayoutPanel
             Verificador_ACTUACION verificador = new Verificador_ACTUACION(this);// amodo de prueba

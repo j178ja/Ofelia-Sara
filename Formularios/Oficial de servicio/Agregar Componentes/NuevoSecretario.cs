@@ -28,9 +28,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InitializeComponent();
             this.Load += new EventHandler(NuevoSecretario_Load);// inicializar Load
 
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
+           
 
  
 

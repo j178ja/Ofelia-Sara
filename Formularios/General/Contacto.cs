@@ -16,7 +16,6 @@ namespace Ofelia_Sara.Formularios.General
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
         }
 
 

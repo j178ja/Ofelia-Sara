@@ -45,7 +45,7 @@ namespace Ofelia_Sara.Formularios.General
                 catch (Exception ex)
                 {
                     // Log o manejo de errores para evitar bloqueos en el diseñador
-                    Console.WriteLine("Error en tiempo de diseño: {ex.Message}" );
+                    Console.WriteLine($"Error en tiempo de diseño: {ex.Message}");
                 }
             }
             else

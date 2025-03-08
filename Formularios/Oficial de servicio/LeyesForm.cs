@@ -28,7 +28,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-            RedondearBordes.Aplicar(panel1, 15);
+        
             // Eventos del ListView
             listView_Documentos.Click += ListView_Documentos_Click;
           //  listView_Documentos.SelectedIndexChanged += ListView_Documentos_SelectedIndexChanged;

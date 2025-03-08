@@ -42,7 +42,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales
           
 
             this.FormClosing += AgregarDatosPersonalesVictima_FormClosing;//para mensaje de alerta en caso de no guardar datos
-            label_Titulo.BringToFront();
+           
         }
         #endregion
 

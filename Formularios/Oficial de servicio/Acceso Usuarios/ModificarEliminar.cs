@@ -21,25 +21,30 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
     public partial class ModificarEliminar : BaseForm
     {
         #region VARIABLES
-        private CustomTextBox textBox_Dependencia;
-        private  CustomComboBox comboBox_Dependencia;
-        private CustomTextBox textBox_Domicilio;
-        private CustomTextBox textBox_Localidad;
-        private CustomTextBox textBox_Partido;
+    
         private Label label_Dependencia;
         private Label label_Domicilio;
         private Label label_Localidad;
         private Label label_Partido;
+
         private Panel panel_Detalles;
         private Panel panel_DetallesFiscalia;
+
         private CustomComboBox comboBox_Escalafon;
         private CustomComboBox comboBox_Jerarquia;
+        private CustomComboBox comboBox_Dependencia;
+        private CustomComboBox comboBox_Instructor;
+
         private CustomTextBox textBox_NumeroLegajo;
         private CustomTextBox textBox_Legajo;
         private CustomTextBox textBox_Nombre;
         private CustomTextBox textBox_Apellido;
-        private CustomComboBox comboBox_Instructor;
         private CustomTextBox textBox_Funcion;
+        private CustomTextBox textBox_Domicilio;
+        private CustomTextBox textBox_Localidad;
+        private CustomTextBox textBox_Partido;
+        private CustomTextBox textBox_Dependencia;
+
         private new SecretariosManager secretariosManager;
         private new InstructoresManager instructoresManager;
         private new ComisariasManager comisariasManager;
@@ -109,7 +114,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Editar, "Seleccione los campos requeridos para poder EDITAR.", "EDITAR");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", null);
-            ToolTipEliminar.Mostrar(btn_Eliminar, "ELIMINAR SELECCIÓN.");
+         
             ToolTipGeneral.Mostrar(btn_Cancelar, "CANCELAR");
         }
 
@@ -476,7 +481,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             };
 
             // Inicializa los controles para mostrar los detalles
-            CustomTextBox textBox_Legajo = new() { ReadOnly = true, Width = 295, Height = 21 };
+            CustomTextBox textBox_NumeroLegajo = new() { ReadOnly = true, Width = 295, Height = 21 };
             CustomComboBox comboBox_Escalafon = new() { Width = 295, Height = 20, Enabled = false };
             CustomComboBox comboBox_Jerarquia = new() { Width = 295, Height = 20, Enabled = false };
             CustomTextBox textBox_Nombre = new() { ReadOnly = true, Width = 295, Height = 21 };
@@ -495,7 +500,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             // Añade los controles al panel
             panel_Detalles.Controls.Add(label_Legajo);
-            panel_Detalles.Controls.Add(textBox_Legajo);
+            panel_Detalles.Controls.Add(textBox_NumeroLegajo);
             panel_Detalles.Controls.Add(label_Escalafon);
             panel_Detalles.Controls.Add(comboBox_Escalafon);
             panel_Detalles.Controls.Add(label_Jerarquia);
@@ -511,7 +516,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
             // Organiza la posición de los controles dentro del panel
             label_Legajo.Location = new Point(79, 9);
-            textBox_Legajo.Location = new Point(168, 10);
+            textBox_NumeroLegajo.Location = new Point(168, 10);
 
             label_Escalafon.Location = new Point(44, 40);
             comboBox_Escalafon.Location = new Point(168, 40);
@@ -534,7 +539,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-          //  AjustarFormulario();
+            AjustarFormulario();
 
 
         }
@@ -619,7 +624,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             // Añade el panel_Detalles dentro de panel1
             panel1.Controls.Add(panel_Detalles);
 
-           // AjustarFormulario();
+            AjustarFormulario();
 
 
         }
@@ -826,20 +831,20 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// CARGA EN CADA CAMPO LOS DATOS DE SECRETARIO
         /// </summary>
         /// <param name="selectedFiscalia"></param>
-        private void CargarDatosFiscalia(Secretarios selectedFiscalia)
+        private void CargarDatosFiscalia(Fiscalias selectedFiscalia)
         {
             try
             {
                 // Carga datos de Fiscalia
 
-                 textBox_NombreFiscalia.TextValue = ;
-                 textBox_NombreFiscalia.ReadOnly = false ;
-                 textBox_AgenteFiscalia.TextValue = ;
-                 textBox_AgenteFiscalia.ReadOnly = false;
-                 textBox_Localidad.TextValue = ;
-                 textBox_Localidad.ReadOnly = false;
-                 textBox_DeptoJudicial.TextValue = ;
-                 textBox_DeptoJudicial.ReadOnly = false;
+                 //textBox_NombreFiscalia.TextValue = selectedFiscalia.NombreFiscalia.ToString();
+                 //textBox_NombreFiscalia.ReadOnly = false ;
+                 //textBox_AgenteFiscal.TextValue = selectedFiscalia.AgenteFiscal.ToString();
+                 //textBox_AgenteFiscal.ReadOnly = false;
+                 //textBox_Localidad.TextValue = selectedFiscalia.Localidad.ToString();
+                 //textBox_Localidad.ReadOnly = false;
+                 //textBox_DeptoJudicial.TextValue = selectedFiscalia.DeptoJudicial.ToString();
+                 //textBox_DeptoJudicial.ReadOnly = false;
 
             }
             catch (Exception ex)

@@ -88,7 +88,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         private void Btn_Registrar_Click(object sender, EventArgs e)
         {
             // Obtener el texto del TextBox_NumeroLegajo en BuscarPersonal
-            string numeroLegajo = textBox_NumeroLegajo.Text;
+            string numeroLegajo = textBox_NumeroLegajo.TextValue;
 
             // Crear y mostrar el formulario NuevoPersonal, pasando el número de legajo
             NuevoPersonal nuevoPersonalForm = new(numeroLegajo);

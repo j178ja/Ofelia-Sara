@@ -33,8 +33,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void NuevoInstructor_Load(object sender, EventArgs e)
         {
-            // Configurar todos los TextBoxes en el formulario
-            TextoEspecialCampos();
+            
             InicializarPictureBox();//para inicializar estilo pickturebox
 
             ConfigurarComboBoxEscalafon(comboBox_Escalafon);
@@ -51,7 +50,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_FirmaDigitalizada.DragDrop += PictureBox_DragDrop;
             pictureBox_FirmaDigitalizada.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            textBox_NumeroLegajo.MaxLength = 7; //limitando numero de legajo
+           
             this.Shown += Focus_Shown;//para que haga foco en un textBox
 
          
@@ -159,35 +158,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        /// <summary>
-        /// CONTROLAR QUE SEAN MAYUSCULAS
-        /// </summary>
-        private void TextoEspecialCampos()
-        {
-            // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
-            Dictionary<string, bool> textBoxExcepciones = new Dictionary<string, bool>
-    {
-        { "textBox_Nombre", false },
-        { "textBox_Apellido", false },
-        { "textBox_NumeroLegajo", true },
-        { "texBox_Funcion", false }
-    };
 
-            // Configurar ComboBox (acepta números, letras, y espacios, convierte a mayúsculas)
-            Dictionary<string, bool> comboBoxExcepciones = new Dictionary<string, bool>
-    {
-
-        { "comboBox_Dependencia", true },
-        { "comboBox_Escalafon", false } // Configuración según la opción seleccionada
-    };
-
-          
-
-            //  deshabilitar la edición del ComboBox_Escalafon
-            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-
-        }
 
         /// <summary>
         /// MENSAJE DE AYUDA

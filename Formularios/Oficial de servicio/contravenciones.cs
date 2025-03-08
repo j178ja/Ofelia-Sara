@@ -32,17 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             this.FormClosing += BuscarPersonal_FormClosing;
             //Fecha_Instruccion.SelectedDate = DateTime.Now;
-            //// Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
-
-          
-            MayusculaYnumeros.AplicarAControl(textBox_Domicilio);
-            MayusculaYnumeros.AplicarAControl(textBox_Localidad);
-            MayusculaSola.AplicarAControl(textBox_Nombre);
-
-            MayusculaSola.AplicarAControl(comboBox_Nacionalidad.InnerTextBox);
+         
 
             CalcularEdad.Inicializar(Fecha_Nacimiento, textBox_Edad);//para automatizar edad
 
@@ -51,7 +41,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
             comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
@@ -61,13 +51,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         //------------BOTON GUARDAR---------------
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             //Verificar si los campos están completados
-            if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.TextValue) ||
+                string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
 
-                string.IsNullOrWhiteSpace(textBox_Dni.Text))
+                string.IsNullOrWhiteSpace(textBox_Dni.TextValue))
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
@@ -86,17 +76,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-                using (MensajeGeneral mensaje = new MensajeGeneral("No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?", MensajeGeneral.TipoMensaje.Advertencia))
-                {
-                    // Hacer visibles los botones
-                    mensaje.MostrarBotonesConfirmacion(true);
-
-                    DialogResult result = mensaje.ShowDialog();
-                    if (result == DialogResult.No)
-                    {
-                        e.Cancel = true; // Cancelar el cierre del formulario
-                    }
-                }
+               
+                    MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
         //------------------------------------------------------------------------------------------------
@@ -118,12 +99,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             var fechaNacimiento = customDateTextBox.ObtenerFecha(); // Llamada al método de instancia
 
             // Añadimos los valores de los controles al diccionario
-            datosFormulario.Add("Nombre", textBox_Nombre.Text);  // "Nombre" es el marcador en Word
+            datosFormulario.Add("Nombre", textBox_Nombre.TextValue);  // "Nombre" es el marcador en Word
 
-            datosFormulario.Add("Dni", textBox_Dni.Text);
-            datosFormulario.Add("Edad", textBox_Edad.Text);
-            datosFormulario.Add("Domicilio", textBox_Domicilio.Text);
-            datosFormulario.Add("Localidad", textBox_Localidad.Text);
+            datosFormulario.Add("Dni", textBox_Dni.TextValue);
+            datosFormulario.Add("Edad", textBox_Edad.TextValue);
+            datosFormulario.Add("Domicilio", textBox_Domicilio.TextValue);
+            datosFormulario.Add("Localidad", textBox_Localidad.TextValue);
             datosFormulario.Add("Nacionalidad", comboBox_Nacionalidad.SelectedItem.ToString());
             datosFormulario.Add("Instructor", comboBox_Instructor.SelectedItem.ToString());
             datosFormulario.Add("Secretario", comboBox_Secretario.SelectedItem.ToString());
@@ -150,10 +131,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private bool ValidarDatosFormulario()
         {
             //Verificar si los campos están completados
-            if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.Text) ||
-                string.IsNullOrWhiteSpace(textBox_Nombre.Text) ||
+            if (string.IsNullOrWhiteSpace(textBox_ArtInfraccion.TextValue) ||
+                string.IsNullOrWhiteSpace(textBox_Nombre.TextValue) ||
 
-                string.IsNullOrWhiteSpace(textBox_Dni.Text))
+                string.IsNullOrWhiteSpace(textBox_Dni.TextValue))
             {
                 // Si alguno de los campos está vacío, mostrar un mensaje de advertencia
                 // crea ventana con icono de advertencia y titulo de advertencia
@@ -181,7 +162,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Validar ComboBox Nacionalidad
             if (comboBox_Nacionalidad.Items.Count == 0 ||
-                string.IsNullOrWhiteSpace(comboBox_Nacionalidad.Text))
+                string.IsNullOrWhiteSpace(comboBox_Nacionalidad.TextValue))
             {
                 MensajeGeneral.Mostrar("Por favor, seleccione o ingrese una nacionalidad.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Nacionalidad.Focus();
@@ -190,7 +171,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Validar ComboBox Instructor
             if (comboBox_Instructor.Items.Count == 0 ||
-                string.IsNullOrWhiteSpace(comboBox_Instructor.Text))
+                string.IsNullOrWhiteSpace(comboBox_Instructor.TextValue))
             {
                 MensajeGeneral.Mostrar("Por favor, seleccione o ingrese un instructor.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Instructor.Focus();
@@ -199,7 +180,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Validar ComboBox Secretario
             if (comboBox_Secretario.Items.Count == 0 ||
-                string.IsNullOrWhiteSpace(comboBox_Secretario.Text))
+                string.IsNullOrWhiteSpace(comboBox_Secretario.TextValue))
             {
                 MensajeGeneral.Mostrar("Por favor, seleccione o ingrese un Secretario.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Secretario.Focus();
@@ -208,7 +189,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             // Validar ComboBox Dependencia
             if (comboBox_Dependencia.Items.Count == 0 ||
-                string.IsNullOrWhiteSpace(comboBox_Dependencia.Text))
+                string.IsNullOrWhiteSpace(comboBox_Dependencia.TextValue))
             {
                 MensajeGeneral.Mostrar("Por favor, seleccione o ingrese una Dependencia.", MensajeGeneral.TipoMensaje.Advertencia);
                 comboBox_Dependencia.Focus();
@@ -218,7 +199,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
         //------------BOTON IMPRIMIR---------------
 
-        private void btn_Imprimir_Click(object sender, EventArgs e)
+        private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
 
             // Llamar al método de validación

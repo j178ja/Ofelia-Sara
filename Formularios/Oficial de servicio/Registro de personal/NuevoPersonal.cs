@@ -58,7 +58,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
 
             //traer label al frent
-            label_TITULO.BringToFront();
+           
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
             label_Destino.BringToFront();
@@ -109,7 +109,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             ToolTipGeneral.Mostrar(btn_AmpliarReducir_DESTINO, "Ampliar/Reducir DESTINO LABORAL.");
 
             //traer label al frent
-            label_TITULO.BringToFront();
+          
             label_SituacionRevista.BringToFront();
             label_Armamento.BringToFront();
             label_Destino.BringToFront();

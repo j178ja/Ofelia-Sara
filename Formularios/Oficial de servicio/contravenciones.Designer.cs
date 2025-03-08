@@ -513,7 +513,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Guardar.Size = new System.Drawing.Size(75, 67);
             btn_Guardar.TabIndex = 45;
             btn_Guardar.UseVisualStyleBackColor = false;
-            btn_Guardar.Click += btn_Guardar_Click;
+            btn_Guardar.Click += Btn_Guardar_Click;
             // 
             // btn_Limpiar
             // 
@@ -525,7 +525,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 46;
             btn_Limpiar.UseVisualStyleBackColor = false;
-            btn_Limpiar.Click += btnLimpiar_Click;
+            btn_Limpiar.Click += Btn_Limpiar_Click;
             // 
             // btn_Imprimir
             // 
@@ -537,7 +537,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Imprimir.Size = new System.Drawing.Size(122, 93);
             btn_Imprimir.TabIndex = 47;
             btn_Imprimir.UseVisualStyleBackColor = false;
-            btn_Imprimir.Click += btn_Imprimir_Click;
+            btn_Imprimir.Click += Btn_Imprimir_Click;
             // 
             // panel1
             // 

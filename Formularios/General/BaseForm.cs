@@ -200,8 +200,8 @@ namespace Ofelia_Sara.Formularios.General
             var btn_Imprimir = this.Controls.Find("btn_Imprimir", true).FirstOrDefault() as Button;
 
             if (btn_Buscar != null) ToolTipGeneral.Mostrar(btn_Buscar, "BUSCAR archivos creados, estadísticas y antecedentes");
-            if (btn_Guardar != null) ToolTipGeneral.Mostrar(btn_Guardar, "GUARDAR datos ingresados y documentos generados");
-            if (btn_Limpiar != null) ToolTipGeneral.Mostrar(btn_Limpiar, "ELIMINAR los datos ingresados en este formulario");
+            if (btn_Guardar != null) ToolTipGeneral.Mostrar(btn_Guardar, "GUARDAR.");
+            if (btn_Limpiar != null) ToolTipEliminar.Mostrar(btn_Limpiar, "ELIMINAR.");
             if (btn_Imprimir != null) ToolTipGeneral.Mostrar(btn_Imprimir, "IMPRIMIR este documento específico");
         }
 
@@ -641,6 +641,7 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_Dominio":
                     case "textBox_Motor":
                     case "textBox_Chasis":
+                    case "textBox_NombreFiscalia":
                         MayusculaYnumeros.ConfigurarTextoConEspeciales(textBox);
                         break;
 
@@ -772,6 +773,22 @@ namespace Ofelia_Sara.Formularios.General
 
         #endregion
 
+        #region DESHABILITAR INGRESO DE TEXTO ESCALAFON - JERARQUIA
+
+        #endregion
+        protected void DeshabilitarTextoEnJerarquiaYescalafon()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is CustomComboBox comboBox)
+                {
+                    if (comboBox.Name == "comboBox_Escalafon" || comboBox.Name == "comboBox_Jerarquia")
+                    {
+                        comboBox.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
+                    }
+                }
+            }
+        }
 
 
         #region VERIFICACION EN PANEL
@@ -941,7 +958,7 @@ namespace Ofelia_Sara.Formularios.General
                 MaxLengthControl(control);     // Aplica la restricción de longitud según el control
                 VerificarCamposEnPanel(control);
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
-    
+                DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
 
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados

@@ -29,8 +29,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
 
-           
-
             panel_ControlesInferiores.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             groupBox_TextosConvertidos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
@@ -44,13 +42,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             this.FormClosing += Expedientes_FormClosing;
 
-            InicializarEstiloBoton(btn_Buscar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Limpiar);
-
-          
-         
-
+        
             pictureBox_APdf.AllowDrop = true;
             pictureBox_AWord.AllowDrop = true;
 

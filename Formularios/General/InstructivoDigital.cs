@@ -29,7 +29,7 @@ namespace Ofelia_Sara.Formularios.General
         {
             InitializeComponent();
             
-            RedondearBordes.Aplicar(panel1, 16);
+           
             RedondearBordes.Aplicar(panel2, 16);
 
             this.Height = panel1.Height + 90; // Ajustar la altura al tamaño de panel1

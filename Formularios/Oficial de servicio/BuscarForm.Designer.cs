@@ -128,8 +128,7 @@
             comboBox_Secretario.Size = new System.Drawing.Size(363, 26);
             comboBox_Secretario.TabIndex = 28;
             comboBox_Secretario.TextValue = " ";
-            comboBox_Secretario.TextChanged += ComboBox_Secretario_TextChanged;
-            comboBox_Secretario.KeyPress += ComboBox_Secretario_KeyPress;
+         
             // 
             // comboBox_Instructor
             // 
@@ -162,8 +161,7 @@
             comboBox_Instructor.Size = new System.Drawing.Size(363, 26);
             comboBox_Instructor.TabIndex = 27;
             comboBox_Instructor.TextValue = " ";
-            comboBox_Instructor.TextChanged += ComboBox_Instructor_TextChanged;
-            comboBox_Instructor.KeyPress += ComboBox_Instructor_KeyPress;
+           
             // 
             // comboBox_Dependencia
             // 
@@ -196,8 +194,7 @@
             comboBox_Dependencia.Size = new System.Drawing.Size(363, 26);
             comboBox_Dependencia.TabIndex = 26;
             comboBox_Dependencia.TextValue = " ";
-            comboBox_Dependencia.TextChanged += ComboBox_Dependencia_TextChanged;
-            comboBox_Dependencia.KeyPress += ComboBox_Dependencia_KeyPress;
+        
             // 
             // label_00
             // 
@@ -240,7 +237,7 @@
             comboBox_Ipp4.Size = new System.Drawing.Size(57, 26);
             comboBox_Ipp4.TabIndex = 24;
             comboBox_Ipp4.TextValue = " ";
-            comboBox_Ipp4.KeyPress += ComboBox_Ipp4_KeyPress;
+      
             // 
             // comboBox_Ipp2
             // 
@@ -273,7 +270,7 @@
             comboBox_Ipp2.Size = new System.Drawing.Size(57, 26);
             comboBox_Ipp2.TabIndex = 23;
             comboBox_Ipp2.TextValue = " ";
-            comboBox_Ipp2.KeyPress += ComboBox_Ipp2_KeyPress;
+  
             // 
             // comboBox_Ipp1
             // 
@@ -306,7 +303,7 @@
             comboBox_Ipp1.Size = new System.Drawing.Size(57, 26);
             comboBox_Ipp1.TabIndex = 3;
             comboBox_Ipp1.TextValue = " ";
-            comboBox_Ipp1.KeyPress += ComboBox_Ipp1_KeyPress;
+       
             // 
             // label_Caratula
             // 
@@ -341,7 +338,7 @@
             textBox_Caratula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Caratula.TextValue = "";
             textBox_Caratula.Whidth = 0;
-            textBox_Caratula.TextChanged += TextBox_Caratula_TextChanged;
+      
             // 
             // btn_Buscar
             // 
@@ -353,7 +350,7 @@
             btn_Buscar.Size = new System.Drawing.Size(75, 67);
             btn_Buscar.TabIndex = 8;
             btn_Buscar.UseVisualStyleBackColor = false;
-            btn_Buscar.Click += Btn_Buscar_Click;
+    
             // 
             // btn_Limpiar
             // 
@@ -451,8 +448,7 @@
             textBox_NumeroIpp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroIpp.TextValue = "";
             textBox_NumeroIpp.Whidth = 0;
-            textBox_NumeroIpp.TextChanged += TextBox_NumeroIpp_TextChanged;
-            textBox_NumeroIpp.KeyPress += TextBox_NumeroIpp_KeyPress;
+           
             // 
             // textBox_Imputado
             // 
@@ -477,8 +473,7 @@
             textBox_Imputado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Imputado.TextValue = "";
             textBox_Imputado.Whidth = 0;
-            textBox_Imputado.TextChanged += TextBox_Imputado_TextChanged;
-            textBox_Imputado.KeyPress += TextBox_Imputado_KeyPress;
+          
             // 
             // textBox_Victima
             // 
@@ -503,8 +498,7 @@
             textBox_Victima.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Victima.TextValue = "";
             textBox_Victima.Whidth = 0;
-            textBox_Victima.TextChanged += TextBox_Victima_TextChanged;
-            textBox_Victima.KeyPress += TextBox_Victima_KeyPress;
+          
             // 
             // label_Ipp
             // 

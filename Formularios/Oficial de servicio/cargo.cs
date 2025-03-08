@@ -92,21 +92,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             botonDeslizable_Visu.IsOnChanged += BotonDeslizable_Visu_IsOnChanged; 
 
             this.FormClosing += Cargo_FormClosing;
-            textBox_NumeroCargo.MaxLength = 4;//limita a 4 caracteres el numero de cargo
+           
             this.Shown += Focus_Shown;//para que haga foco en un textBox
          
 
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
-            InicializarEstiloBoton(btn_Buscar);
-
-            // Llamada para aplicar el estilo de boton de BaseForm
-            InicializarEstiloBotonAgregar(btn_AgregarCausa);
-            InicializarEstiloBotonAgregar(btn_AgregarVictima);
-            InicializarEstiloBotonAgregar(btn_AgregarImputado);
-
-  
             Fecha_Instruccion.SelectedDate = DateTime.Now;//para tomar el dia actual
 
             //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
