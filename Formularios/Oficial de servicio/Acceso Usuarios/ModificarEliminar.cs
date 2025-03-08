@@ -83,7 +83,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
         #region COMPORTAMIENTO GENERAL
 
-        
+
 
         /// <summary>
         /// OCULTA DESHABILITA Y VICEBERSA
@@ -145,16 +145,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
                 switch (listBox_Seleccion.SelectedItem.ToString())
                 {
                     case "Fiscalía":
-                        CargarDatosFiscalia();
+                        CargarFiscalias();
                         break;
                     case "Instructor":
-                        CargarDatosInstructor();
+                        CargarInstructores();
                         break;
                     case "Secretario":
-                        CargarDatosSecretario();
+                        CargarSecretarios();
                         break;
                     case "Dependencia":
-                        CargarDatosDependencia();
+                        CargarDependencias();
                         break;
                 }
             }
@@ -188,7 +188,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <summary>
         /// EXHIVE LISTADO DE FISCALIAS
         /// </summary>
-        private void CargarDatosFiscalia()
+        private void CargarFiscalias()
         {
             try
             {
@@ -211,7 +211,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <summary>
         /// EXHIBE LISTADO DE INSTRUCTORES
         /// </summary>
-        private void CargarDatosInstructor()
+        private void CargarInstructores()
         {
             try
             {
@@ -242,7 +242,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <summary>
         /// EXHIBE LISTADO DE SECRETARIOS
         /// </summary>
-        private void CargarDatosSecretario()
+        private void CargarSecretarios()
         {
             try
             {
@@ -273,7 +273,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <summary>
         /// EXHIBE LISTADO DE DEPENDENCIAS
         /// </summary>
-        private void CargarDatosDependencia()
+        private void CargarDependencias()
         {
             try
             {
@@ -741,6 +741,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             {
                 CargarDatosSecretario(selectedSecretario);
             }
+            else if (listBox_Datos.SelectedItem is Fiscalias selectedFiscalia)
+            {
+                CargarDatosFiscalia(selectedFiscalia);
+            }
         }
 
         /// <summary>
@@ -813,6 +817,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             catch (Exception ex)
             {
                 MensajeGeneral.Mostrar($"Error al cargar los datos del secretario seleccionado" +
+                    $" : {ex.Message}", MensajeGeneral.TipoMensaje.Error);
+            }
+        }
+
+
+        /// <summary>
+        /// CARGA EN CADA CAMPO LOS DATOS DE SECRETARIO
+        /// </summary>
+        /// <param name="selectedFiscalia"></param>
+        private void CargarDatosFiscalia(Secretarios selectedFiscalia)
+        {
+            try
+            {
+                // Carga datos de Fiscalia
+
+                 textBox_NombreFiscalia.TextValue = ;
+                 textBox_NombreFiscalia.ReadOnly = false ;
+                 textBox_AgenteFiscalia.TextValue = ;
+                 textBox_AgenteFiscalia.ReadOnly = false;
+                 textBox_Localidad.TextValue = ;
+                 textBox_Localidad.ReadOnly = false;
+                 textBox_DeptoJudicial.TextValue = ;
+                 textBox_DeptoJudicial.ReadOnly = false;
+
+            }
+            catch (Exception ex)
+            {
+                MensajeGeneral.Mostrar($"Error al cargar los datos de Fiscalia seleccionada" +
                     $" : {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
