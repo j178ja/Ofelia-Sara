@@ -67,7 +67,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         public Redactador()
         {
             InitializeComponent();
-
+            LabelVideoInstructivo(label_OfeliaSara);// llama al metodo baseform para el comportamiento del label
             btn_Actuacion.BringToFront();
             panel_Botones.BringToFront();  // Coloca el panel encima del AudioVisualizerControl
             audioVisualizerControl.Visible = false;
@@ -115,8 +115,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
             CambiarAlineacion(btn_Justificar, HorizontalAlignment.Left);// para que inicie en justificado
 
-            InicializarEstiloBoton(btn_Limpiar);
-            InicializarEstiloBoton(btn_Guardar);
+         
             InicializarEstiloBoton(btn_Enviar);
 
             //----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
@@ -439,81 +438,15 @@ namespace Ofelia_Sara.Formularios.Redactador
         #endregion
 
         #region LABEL INSTRUCTIVO DIGITAL
-        /// <summary>
-        /// Método para activar el subrayado en MouseHover
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Label_OfeliaSara_MouseHover(object sender, EventArgs e)
-        {
-            isAnimating = true;
-            lineWidth = 0;
 
-            // Configurar el Timer si aún no está configurado
-            if (animationTimer == null)
-            {
-                animationTimer = new Timer();
-                animationTimer.Interval = 15; // Intervalo en ms para una animación suave
-                animationTimer.Tick += (s, args) =>
-                {
-                    if (lineWidth < label_OfeliaSara.Width / 2)
-                    {
-                        lineWidth += 2; // Aumenta gradualmente la longitud de la línea
-                        label_OfeliaSara.Invalidate(); // Redibuja el Label
-                    }
-                    else
-                    {
-                        animationTimer.Stop(); // Detiene el Timer cuando se completa la animación
-                    }
-                };
-            }
-
-            animationTimer.Start(); // Inicia el Timer para la animación
-        }
-
-
-        /// <summary>
-        /// para desactivar el subrayado en MouseLeave
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Label_OfeliaSara_MouseLeave(object sender, EventArgs e)
-        {
-            isAnimating = false;
-            lineWidth = 0;
-            animationTimer?.Stop(); // Detener el Timer
-            label_OfeliaSara.Invalidate(); // Redibuja el Label para eliminar el subrayado
-        }
-
-        /// <summary>
-        /// Método Paint para dibujar el subrayado personalizado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Label_OfeliaSara_Paint(object sender, PaintEventArgs e)
-        {
-            if (isAnimating)
-            {
-                // Define el color y grosor de la línea
-                using Pen pen = new Pen(SystemColors.Highlight, 3);
-                // Centro del Label
-                int centerX = label_OfeliaSara.Width / 2;
-                int y = label_OfeliaSara.Font.Height; // Posición 3 píxeles debajo del texto
-
-                // Dibuja la línea desde el centro hacia los extremos
-                e.Graphics.DrawLine(pen, centerX - lineWidth, y, centerX + lineWidth, y);
-            }
-        }
-
+ 
         //// Variable para almacenar la posición original del formulario Redactador
         private Point posicionOriginalRedactador;
         private List<(Form formulario, Point posicion)> otrasInstanciasRedactador = new List<(Form, Point)>(); // Lista para almacenar las instancias ocultas y sus posiciones originales
 
         private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
-            // Cambiar color y subrayar el texto del Label
-            label_OfeliaSara.ForeColor = Color.Coral;
-            label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline);
+          
 
             // Guardar la posición original del formulario actual
             posicionOriginalRedactador = this.Location;
@@ -549,11 +482,9 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
 
             // Restaurar posiciones originales y estado de otras instancias al cerrar VideoInstructivo
-            videoInstructivo.FormClosed += (s, args) =>
+            videoInstructivo.FormClosed += (s, args) => RestaurarLabelVideoInstructivo(label_OfeliaSara);
             {
-                // Restaurar estilo original del Label
-                label_OfeliaSara.ForeColor = SystemColors.ControlText;
-                label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular);
+               
 
                 // Restaurar la posición del formulario Redactador actual
                 this.Location = posicionOriginalRedactador;

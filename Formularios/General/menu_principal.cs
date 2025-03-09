@@ -74,7 +74,7 @@ namespace Ofelia_Sara.Formularios.General
              RedondearBordes.Aplicar(panel_MenuSuperior, 12, true, true, false, false);  // Redondea solo los bordes superiores del panel
 
             comboBox_Buscar.BringToFront(); // que comboBoxBuscar está encima de comboBoxGNUA
-
+            LabelVideoInstructivo(label_OfeliaSara);// llama al metodo baseform para el comportamiento del label
             //----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
             timerCerrarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
             timerMinimizarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
@@ -841,9 +841,7 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
-            // Cambiar estilo del Label
-            label_OfeliaSara.ForeColor = Color.Coral;
-            label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Underline); // Subrayar
+            
 
             if (videoInstructivo == null || videoInstructivo.IsDisposed) // Verifica si no está abierto
             {
@@ -851,11 +849,8 @@ namespace Ofelia_Sara.Formularios.General
                 videoInstructivo = new InstructivoDigital(ModuloOrigen.InicioCierre);
 
                 // Suscribirse al evento FormClosed para restaurar el Label
-                videoInstructivo.FormClosed += (s, args) =>
-                {
-                    label_OfeliaSara.ForeColor = SystemColors.ControlText;
-                    label_OfeliaSara.Font = new Font(label_OfeliaSara.Font, FontStyle.Regular); // Eliminar subrayado
-                };
+                videoInstructivo.FormClosed += (s, args) => RestaurarLabelVideoInstructivo(label_OfeliaSara);
+               
 
                 // Obtener la ubicación y tamaño del formulario principal
                 Point menuPrincipalLocation = this.Location;
@@ -877,51 +872,9 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        /// <summary>
-        /// DIBUJAR SUBRAYADO AL INGRESAR AL CONTROL
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Subrayado_MouseEnter(object sender, EventArgs e)
-        {
-
-            if (sender is Control control)
-            {
-                SubrayadoAnimado.Iniciar(control);
-
-            }
-        }
-
-        /// <summary>
-        /// QUITAR SUBRAYADO AL SALIR DEL CONTROL
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Subrayado_MouseLeave(object sender, EventArgs e)
-        {
-            if (sender is Control control)
-            {
-                SubrayadoAnimado.Detener(control);
-                control.Invalidate(); // Redibuja para eliminar el subrayado
-            }
-        }
-
-        /// <summary>
-        /// DIBUJAR EL SUBRAYADO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Subrayado_Paint(object sender, PaintEventArgs e)
-        {
-            if (videoInstructivo == null || videoInstructivo.IsDisposed) // Aplica subrayado solo si el formulario no está abierto
-            {
-                if (sender is Control control)
-                {
-                    // Asegúrate de que se use el método correcto
-                    SubrayadoAnimado.Aplicar(control, e.Graphics, SystemColors.Highlight, 3);
-                }
-            }
-        }
+     
+       
+   
 
         #endregion
 

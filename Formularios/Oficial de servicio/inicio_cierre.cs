@@ -1,5 +1,5 @@
 ﻿using BaseDatos.Adm_BD;
-using BaseDatos.Entidades;
+
 using DocumentFormat.OpenXml.Office2010.Excel;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;

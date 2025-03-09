@@ -1,6 +1,5 @@
 ﻿
 
-using BaseDatos.Entidades;
 using Ofelia_Sara.Clases.BaseDatos.Ofelia_DB;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
 using Ofelia_Sara.Clases.General.Apariencia;
@@ -34,7 +33,7 @@ namespace Ofelia_Sara.Formularios.General
         private Timer errorTimer;
         private DatabaseConnection dbConnection;
         private LinkLabel footerLinkLabel;
-      
+        private Form videoInstructivo; // Variable para almacenar la instancia del formulario
         private object panel1;
         public Instruccion _instruccion;// llama a clase que contiene todo el coportamiento de panel_Instruccion
         private SaltoDeImput _saltoDeImput;
@@ -350,6 +349,55 @@ namespace Ofelia_Sara.Formularios.General
 
 
 
+        #endregion
+
+        #region LABEL VIDEO INSTRUCTIVO
+
+        /// <summary>
+        /// centraliza la logica de comportamiento estetico del label OfeliaSara que abre videoInstructivo
+        /// </summary>
+        /// <param name="label"></param>
+        protected void LabelVideoInstructivo(Label label)
+        {
+            if (label == null) return;
+
+            // Eventos de Hover (subrayado y color al pasar el mouse)
+            label.MouseEnter += (s, e) => SubrayadoAnimado.Iniciar(label);
+            label.MouseLeave += (s, e) =>
+            {
+                SubrayadoAnimado.Detener(label);
+                label.Invalidate(); // Redibuja para eliminar el subrayado
+            };
+
+            // Evento de Paint (dibujo del subrayado)
+            label.Paint += (s, e) =>
+            {
+                if (videoInstructivo == null || videoInstructivo.IsDisposed)
+                {
+                    SubrayadoAnimado.Aplicar(label, e.Graphics, SystemColors.Highlight, 3);
+                }
+            };
+
+            // Evento de Click (solo efectos visuales)
+            label.Click += (s, e) =>
+            {
+                label.ForeColor = Color.Coral;
+                label.Font = new Font(label.Font, FontStyle.Underline);
+            };
+        }
+
+        /// <summary>
+        /// Centraliza la restauración del estilo del label cuando se cierra el formulario videoInstructivo.
+        /// </summary>
+        protected void RestaurarLabelVideoInstructivo(Label label)
+        {
+            if (label == null || label.Name != "label_OfeliaSara") return;
+            if (label != null)
+            {
+                label.ForeColor = SystemColors.ControlText;
+                label.Font = new Font(label.Font, FontStyle.Regular);
+            }
+        }
         #endregion
 
         #region FOOTER
@@ -962,6 +1010,7 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
+
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados
                 // LlamarRegistrarBotonesAgregar(victimas, imputados);

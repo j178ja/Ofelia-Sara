@@ -41,11 +41,8 @@ namespace Ofelia_Sara.Formularios.Mecanografia
         public Mecanografia()
         {
             InitializeComponent();
-            
-           
             RedondearBordes.Aplicar(panel_TecladoBase, 8);
-
-           
+ 
             this.Load += AjustarTamañoForm;//para ajustar el tamaño del formulario
 
             panel_Especificaciones.Visible = false;

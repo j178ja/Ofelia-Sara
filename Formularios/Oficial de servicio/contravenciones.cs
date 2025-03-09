@@ -44,9 +44,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            comboBox_Nacionalidad.SelectedIndex = -1; //para que no aparesca ningun item del combobox
-            comboBox_Dependencia.SelectedIndex = -1;
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+   
 
         }
 

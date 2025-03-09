@@ -584,9 +584,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             // Llama al método estático Limpiar de la clase LimpiarFormulario
             LimpiarFormulario.Limpiar(this);
-            comboBox_Dependencia.SelectedIndex = -1;
-            comboBox_Secretario.SelectedIndex = -1;
-            comboBox_Instructor.SelectedIndex = -1;
+            
             groupBox_TextosConvertidos.Visible = false;
 
             // Verifica si hay algún control en el panel
@@ -605,8 +603,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 AjustarTamañoFormulario(alturaControlRemovido, eliminar: true);
             }
 
-            // Muestra un mensaje indicando que el formulario fue limpiado
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+           
         }
 
 

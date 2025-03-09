@@ -245,7 +245,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion); ;
 
         }
 
