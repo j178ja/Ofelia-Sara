@@ -26,9 +26,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         public SellosDependencia()
         {
             InitializeComponent();
-
-        
-
             textBox_Localidad.Enabled = false;// inicializar en false
         }
         #endregion
@@ -148,8 +145,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            comboBox_Dependencia.SelectedIndex = -1;
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+         
         }
 
         /// <summary>

@@ -86,7 +86,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                     MensajeGeneral.Mostrar("Se ha guardado la nueva Dependencia en la base de datos.", MensajeGeneral.TipoMensaje.Exito);
                     datosGuardados = true; // Marcar que los datos fueron guardados
                     // Limpiar el formulario
-                    LimpiarFormulario.Limpiar(this);
+                    LimpiarFormulario.Limpiar(this, true, false);
                    
                 }
                 catch (Exception ex)
@@ -106,8 +106,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         {
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
-            // Muestra un mensaje de información
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+           
         }
         private void TextBox_Dependencia_TextChanged(object sender, EventArgs e)
         {

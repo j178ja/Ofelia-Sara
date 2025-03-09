@@ -58,9 +58,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;//inicializa con la imagen predeterminada de inicio
             //pictureBox_OjoContraseña.Enabled = false;
 
-            //  deshabilitar la edición del ComboBox_Escalafon
-            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
         }
         #endregion
@@ -118,12 +115,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-            comboBox_Escalafon.SelectedIndex = -1; //deberia dejar el comboBox vacio y por ende jerarquia tamb queda vacio
             //sobre ojo
             pictureBox_OjoContraseña.Image = Properties.Resources.ojoINICIO;
             pictureBox_OjoContraseña.Enabled = false;
 
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Advertencia);//esto muestra una ventana con boton aceptar
         }
 
         /// <summary>

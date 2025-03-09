@@ -28,14 +28,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InitializeComponent();
             this.Load += new EventHandler(NuevoSecretario_Load);// inicializar Load
 
-           
-
- 
-
             this.FormClosing += NuevoSecretario_FormClosing;
-
-            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
 
         }
         #endregion
@@ -48,9 +41,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             InicializarPictureBox();//para deshabilitar pictureBox al cargar formulario
 
 
-            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
-            // Configurar el comportamiento de los ComboBox
-            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
 
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.SelectedIndex = -1; // No selecciona ningún ítem
@@ -94,11 +84,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
-        {
-            customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
-        }
-
         /// <summary>
         /// BOTON LIMPIAR -EVENTO CLICK
         /// </summary>
@@ -107,10 +92,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            comboBox_Escalafon.SelectedIndex = -1;
-            comboBox_Jerarquia.SelectedIndex = -1;
-
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+        
         }
 
         /// <summary>

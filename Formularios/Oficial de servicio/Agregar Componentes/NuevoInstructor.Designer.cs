@@ -228,7 +228,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_NumeroLegajo.TextValue = "";
             textBox_NumeroLegajo.Whidth = 0;
     
-            textBox_NumeroLegajo.KeyPress += TextBox_NumeroLegajo_KeyPress;
             // 
             // label_Legajo
             // 

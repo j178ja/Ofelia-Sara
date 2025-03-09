@@ -27,7 +27,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
 
             this.Load += new EventHandler(Fiscalia_Load);// inicializar Load
 
-      
             this.FormClosing += NuevaFiscalia_FormClosing;
         }
         #endregion
@@ -82,10 +81,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-                                             // Mensaje para confirmar la limpieza
-                                             //MessageBox.Show("Formulario eliminado.");//esto muestra una ventana con boton aceptar
-
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
         //---------BOTON GUARDAR---------------------------------------
         private void Btn_Guardar_Click(object sender, EventArgs e)

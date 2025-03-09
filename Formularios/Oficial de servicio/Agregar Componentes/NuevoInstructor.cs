@@ -36,10 +36,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             
             InicializarPictureBox();//para inicializar estilo pickturebox
 
-            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
-            // Configurar el comportamiento de los ComboBox
-             ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
-
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
@@ -83,25 +79,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             }
         }
 
-        /// <summary>
-        /// VALIDA SOLO NUMEROS
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_NumeroLegajo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo permite dígitos y teclas de control
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-    
-        protected static void ConfigurarComboBoxEscalafon(CustomComboBox customComboBox)
-        {
-            customComboBox.DataSource = JerarquiasManager.ObtenerEscalafones();
-        }
+   
+       
 
         /// <summary>
         /// BOTON LIMPIAR-click
@@ -111,9 +90,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-            comboBox_Escalafon.SelectedIndex = -1;
-            comboBox_Dependencia.SelectedIndex = -1;
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+
 
         }
 

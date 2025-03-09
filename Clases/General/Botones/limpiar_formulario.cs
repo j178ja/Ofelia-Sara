@@ -4,6 +4,7 @@
 
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Controles.Ofl_Sara;
+using Ofelia_Sara.Formularios.General.Mensajes;
 using System;
 using System.Windows.Forms;
 using Control = System.Windows.Forms.Control;
@@ -19,95 +20,107 @@ namespace Ofelia_Sara.Clases.General.Botones
         /// Itera a través de todos los controles dentro del control proporcionado (form o panel)
         /// </summary>
         /// <param name="control"></param>
+        //NO MUESTRA MENSAJE:Limpiar(Formulario, true, false);
+        // MUESTRA MENSAJE : LimpiarFormulario.Limpiar(this);
 
-        public static void Limpiar(Control control)
+        public static void Limpiar(Control control, bool mostrarMensaje = true, bool forzarMensaje = true)
         {
+            bool limpiezaRealizada = false;
+
             foreach (Control c in control.Controls)
             {
                 switch (c)
                 {
-                    // Si el control es un CustomTextBox, limpia su contenido
                     case CustomTextBox textBox:
-                        textBox.Clear(); // Limpia el texto del CustomTextBox
+                        textBox.Clear();
                         textBox.ShowError = false;
-                        textBox.RestorePlaceholders(); // Restaura los placeholders si es necesario
+                        textBox.RestorePlaceholders();
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un CustomComboBox, limpia pero conserva las imágenes
                     case CustomComboBox comboBox:
                         comboBox.ShowError = false;
+                        comboBox.SelectedIndex = -1;
                         LimpiarYRestaurarComboBox(comboBox);
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un DateTimePicker, restablece su valor a la fecha actual
                     case DateTimePicker dateTimePicker:
                         dateTimePicker.Value = DateTime.Now;
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un CheckBox, desmarca la casilla
                     case CheckBox checkBox:
                         checkBox.Checked = false;
                         checkBox.Visible = true;
                         checkBox.BringToFront();
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un RadioButton, desmarca el botón
                     case RadioButton radioButton:
                         radioButton.Checked = false;
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un PictureBox, solo limpia la imagen si no forma parte de un CustomComboBox
                     case PictureBox pictureBox when !(pictureBox.Parent is CustomComboBox):
                         pictureBox.Image = null;
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un CustomDate, limpia los campos y restaura los placeholders
                     case CustomDate customDateTextBox:
                         customDateTextBox.ClearDate();
                         customDateTextBox.RestorePlaceholders();
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un EmailControl, limpia los campos y restaura los placeholders
                     case EmailControl customEmailTextBox:
                         customEmailTextBox.ClearEmailFields();
                         customEmailTextBox.RestorePlaceholders();
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un NumeroTelefonicoControl, limpia los campos y restaura los placeholders
                     case NumeroTelefonicoControl numeroTelefonico:
                         numeroTelefonico.ClearTelefonoFields();
                         numeroTelefonico.RestorePlaceholders();
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control es un BotonDeslizable, restablece su estado a apagado
                     case BotonDeslizable botonDeslizable:
                         botonDeslizable.IsOn = false;
+                        limpiezaRealizada = true;
                         break;
 
-                    // Si el control tiene controles hijos, aplica la limpieza recursivamente
                     case Control nestedControl when nestedControl.HasChildren:
-                        Limpiar(nestedControl);
+                        Limpiar(nestedControl, false, forzarMensaje); // Llamada recursiva sin mostrar mensaje
+                        limpiezaRealizada = true;
                         break;
 
-                   
                     case NuevaPersonaControl _:
                         control.Controls.Remove(c);
                         c.Dispose();
+                        limpiezaRealizada = true;
                         break;
 
                     case NuevaImagen nuevaImagen:
-                        nuevaImagen.RestaurarImagenPredeterminada(); // Restaurar la imagen predeterminada
+                        nuevaImagen.RestaurarImagenPredeterminada();
+                        limpiezaRealizada = true;
                         break;
 
                     case RichTextBox richTextBox:
                         richTextBox.Clear();
+                        limpiezaRealizada = true;
                         break;
-
                 }
+            }
+
+            // Solo mostrar el mensaje si estamos en la primera llamada y se hizo una limpieza
+            if (mostrarMensaje && limpiezaRealizada && forzarMensaje)
+            {
+                MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
             }
         }
 
-        
+
         /// <summary>
         /// para limpiar y restaurar un CustomComboBox
         /// </summary>

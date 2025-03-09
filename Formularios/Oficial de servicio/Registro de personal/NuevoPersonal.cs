@@ -84,11 +84,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             btn_AgregarPersonal.Enabled = !string.IsNullOrWhiteSpace(textBox_NumeroLegajo.TextValue);
 
 
-            //para que se despliege la lista en los comboBox ESCALAFON -JERARQUIA
-            ConfigurarComboBoxEscalafon(comboBox_Escalafon);
-            // Configurar el comportamiento de los ComboBox
-            ConfigurarComboBoxEscalafonJerarquia(comboBox_Escalafon, comboBox_Jerarquia);
-
             comboBox_Escalafon.SelectedIndex = -1; // No selecciona ningún ítem
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
@@ -534,15 +529,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         {
             // Limpia el formulario
             LimpiarFormulario.Limpiar(this);
-            comboBox_Dependencia.SelectedIndex = -1;
-            comboBox_Nacionalidad.SelectedIndex = -1;
-            comboBox_EstadoCivil.SelectedIndex = -1;
-            comboBox_Escalafon.SelectedIndex = -1;
-            comboBox_Jerarquia.SelectedIndex = -1;
+       
             EstadoInicialPaneles();
             InicializarValidaciones();//vuelve a colocar imagen y borde rojo
-            // Muestra un mensaje de información
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
+       
         }
 
         /// <summary>

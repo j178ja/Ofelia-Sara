@@ -790,6 +790,8 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
+       
+
 
         #region VERIFICACION EN PANEL
 
@@ -959,7 +961,7 @@ namespace Ofelia_Sara.Formularios.General
                 VerificarCamposEnPanel(control);
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
-
+                CargarEscalafon();
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados
                 // LlamarRegistrarBotonesAgregar(victimas, imputados);

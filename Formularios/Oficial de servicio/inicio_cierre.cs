@@ -90,8 +90,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             IncrementarTamaño.Incrementar(btn_SDA);
             IncrementarTamaño.Incrementar(btn_CrearDenuncia);
 
-
-
             // Configurar autocompletado para `textBox_Caratula`
             Autocompletar autocompletarManager = new("autocompletar.json");
             autocompletarManager.ConfigureAutoComplete(textBox_Caratula);
@@ -257,18 +255,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
 
-
-
-            comboBox_Dependencia.SelectedIndex = -1;
-            comboBox_Instructor.SelectedIndex = -1;
-            comboBox_Secretario.SelectedIndex = -1;
-
             Btn_Contador247.Visible = false;
             Btn_Contador247.Enabled = false;
             fecha_Pericia.Visible = false;
             fecha_Pericia.Enabled = false;
 
-            MensajeGeneral.Mostrar("Formulario eliminado.", MensajeGeneral.TipoMensaje.Cancelacion);
         }
 
         /// <summary>
@@ -342,8 +333,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
         #region METODOS GENERALES
-
-
 
         /// <summary>
         ///  CARGAR DATOS DESDE FORMULARIO INICIO-CIERRE
