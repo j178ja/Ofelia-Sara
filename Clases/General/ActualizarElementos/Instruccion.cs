@@ -72,6 +72,8 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         public void ConfigurarEventosIpp()
         {
             ConfigurarEventosEnControles(_baseForm.Controls);
+          
+
 
         }
 
@@ -252,7 +254,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
             return true;
         }
 
-        private void AsignarEventosCustomTextBox(Control nuevoControl)
+        public void AsignarEventosCustomTextBox(Control nuevoControl)
         {
             if (nuevoControl is CustomTextBox customTextBox)
             {

@@ -267,7 +267,7 @@ namespace Ofelia_Sara.Formularios.General
                 // Recorrer la lista de fiscalías y agregar los datos al ComboBox
                 foreach (Fiscalias fiscalia in fiscalias)
                 {
-                    string item = $"{fiscalia.Ufid} - {fiscalia.AgenteFiscal} - {fiscalia.Localidad}"; // Puedes personalizar el formato
+                    string item = $"{fiscalia.Ufid} "; //carga unicamente columna fiscalia 
                     comboBox.Items.Add(item);
                 }
             }
@@ -291,7 +291,7 @@ namespace Ofelia_Sara.Formularios.General
         /// asocia combobox escalafon y jerarquia
         /// </summary>
         /// <param name="parent"></param>
-        private void ConfigurarEscalafonYjerarquia(Control parent) //ConfigurarComboBoxEscalafon(comboBox_Escalafon);
+        protected void ConfigurarEscalafonYjerarquia(Control parent) //ConfigurarComboBoxEscalafon(comboBox_Escalafon);
         {
             CustomComboBox comboBox_Escalafon = null;
             CustomComboBox comboBox_Jerarquia = null;

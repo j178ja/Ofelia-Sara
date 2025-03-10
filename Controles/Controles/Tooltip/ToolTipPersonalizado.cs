@@ -194,7 +194,7 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
                 float lineHeight = font.GetHeight(e.Graphics) + 6;
                 float textY = e.Bounds.Y + 4;
                 int leftMargin = 30;
-                int rightMargin = 10;
+                int rightMargin = 5;
 
                 if (config.icono != null)
                 {
@@ -235,8 +235,8 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
                     totalHeight += textSize.Height;
                 }
 
-                int leftMargin = 35;
-                int rightMargin = 15;
+                int leftMargin = 30;
+                int rightMargin = 5;
                 e.ToolTipSize = new Size((int)(maxWidth + leftMargin + rightMargin), (int)(totalHeight + 8));
             }
             catch (Exception ex)

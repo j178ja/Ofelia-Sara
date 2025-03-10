@@ -124,9 +124,6 @@
   <data name="hand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cursor\hand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditarPersonaSinFondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagenes\ofl-sara\EditarPersonaSinFondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="teclado24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\Mecanografia\teclado24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -192,9 +189,6 @@
   </data>
   <data name="flechaG_Roja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\General\flechaG-Roja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="impresora64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagenes\ofl-sara\impresora64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="derecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\Redactador\derecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -273,9 +267,6 @@
   </data>
   <data name="AGREGAR_IMAGEN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\ofl-sara\AGREGAR_IMAGEN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="editarSfondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagenes\ofl-sara\editarSfondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dobleFlechaARRIBA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagenes\General\dobleFlechaARRIBA .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -474,5 +465,8 @@
   </data>
   <data name="minimizar_tooltip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimizar_tooltip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagenes\ofl-sara\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

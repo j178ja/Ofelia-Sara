@@ -37,6 +37,8 @@ namespace Ofelia_Sara.Formularios.General
         private object panel1;
         public Instruccion _instruccion;// llama a clase que contiene todo el coportamiento de panel_Instruccion
         private SaltoDeImput _saltoDeImput;
+        protected Button btn_Cerrar;
+        protected Button btn_Minimizar;
         #endregion
         public BaseForm()
         {
@@ -61,6 +63,7 @@ namespace Ofelia_Sara.Formularios.General
             CargarIconoFormulario();
             InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
             InitializeFooterLinkLabel();// footer a todos los formularios
+            BotonesControlFormulario(this, btn_Cerrar, btn_Minimizar);
             Load += BaseForm_Load;
         }
 
@@ -73,8 +76,9 @@ namespace Ofelia_Sara.Formularios.General
             AjustarLabelEnPanel(); //centra unicamente Label_TITULO
             AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
+            AsignarImagenesBotones();//asigna las imagenes a los botones
             _instruccion.ConfigurarEventosEnControles(this.Controls);
-       
+  
         }
         protected override void OnControlAdded(ControlEventArgs e)
         {
@@ -196,11 +200,17 @@ namespace Ofelia_Sara.Formularios.General
             var btn_Buscar = this.Controls.Find("btn_Buscar", true).FirstOrDefault() as Button;
             var btn_Guardar = this.Controls.Find("btn_Guardar", true).FirstOrDefault() as Button;
             var btn_Limpiar = this.Controls.Find("btn_Limpiar", true).FirstOrDefault() as Button;
+            var btn_Cerrar = this.Controls.Find("btn_Cerrar", true).FirstOrDefault() as Button;
+            var btn_Minimizar = this.Controls.Find("btn_Minimizar", true).FirstOrDefault() as Button;
+            var btn_Maximizar = this.Controls.Find("btn_Maximizar", true).FirstOrDefault() as Button;
             var btn_Imprimir = this.Controls.Find("btn_Imprimir", true).FirstOrDefault() as Button;
 
             if (btn_Buscar != null) ToolTipGeneral.Mostrar(btn_Buscar, "BUSCAR archivos creados, estadísticas y antecedentes");
             if (btn_Guardar != null) ToolTipGeneral.Mostrar(btn_Guardar, "GUARDAR.");
             if (btn_Limpiar != null) ToolTipPersonalizado.Mostrar(btn_Limpiar, "ELIMINAR.", ToolTipPersonalizado.TipoToolTip.Eliminar);
+            if (btn_Minimizar != null) ToolTipPersonalizado.Mostrar(btn_Minimizar, "MINIMIZAR.", ToolTipPersonalizado.TipoToolTip.Minimizar);
+            if (btn_Maximizar != null) ToolTipPersonalizado.Mostrar(btn_Maximizar, "MAXIMIZAR.", ToolTipPersonalizado.TipoToolTip.Maximizar);
+            if (btn_Cerrar != null) ToolTipPersonalizado.Mostrar(btn_Cerrar, "CERRAR.", ToolTipPersonalizado.TipoToolTip.Eliminar);
             if (btn_Imprimir != null) ToolTipGeneral.Mostrar(btn_Imprimir, "IMPRIMIR este documento específico");
         }
 
@@ -436,6 +446,7 @@ namespace Ofelia_Sara.Formularios.General
                             break;
                        
                     }
+                    Cursor = Cursors.Hand;
                 }
             }
         }
@@ -567,7 +578,160 @@ namespace Ofelia_Sara.Formularios.General
             // Llama a Invalidate para asegurarse de que el borde se dibuje inicialmente
             boton.Invalidate();
         }
+
+
+        /// <summary>
+        /// asigna imagenes a botones // sujeto a ampliar con animacion en hover y click
+        /// </summary>
+        /// <param name="btn"></param>
+        /// <param name="tipo"></param>
+        protected void AsignarImagenesBotones()
+        {
+            foreach (Control control in GetAllControls(this)) // Obtener todos los controles del formulario
+            {
+                if (control is Button btn) // Verificar si el control es un botón
+                {
+                    switch (btn.Name) // Se usa el nombre del botón
+                    {
+                        case "btn_Buscar":
+                            btn.Image = Properties.Resources.buscar;
+                            break;
+                        case "btn_Limpiar":
+                            btn.Image = Properties.Resources.portapapeles;
+                            break;
+                        case "btn_Guardar":
+                            btn.Image = Properties.Resources.guardar;
+                            break;
+                        case "btn_Imprimir":
+                            btn.Image = Properties.Resources.imprimir;
+                            break;
+
+                        case "btn_AgregarDatosVictima": //usados en panel instruccion
+                        case "btn_AgregarDatosImputado":
+                        case "btn_AgregarDatosPersona"://se usa en el control nuevaPersonaConrtol
+                            btn.Image = Properties.Resources.agregarPersona15px;
+                            break;
+                    }
+         
+                }
+            }
+        }
+
+        /// <summary>
+        /// asigna comportamiento de boton minimizar-maximizar y cerrar
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="btnCerrar"></param>
+        /// <param name="btnMinimizar"></param>
+        protected void BotonesControlFormulario(Form form, Button btnCerrar, Button btnMinimizar)
+        {
+            // Asignar eventos al botón de Cerrar
+            if (btnCerrar != null)
+            {
+                btnCerrar.Click += Btn_Cerrar_Click;
+                btnCerrar.MouseHover += Btn_Cerrar_MouseHover;
+                btnCerrar.MouseLeave += Btn_Cerrar_MouseLeave;
+            }
+
+            // Asignar eventos al botón de Minimizar
+            if (btnMinimizar != null)
+            {
+                btnMinimizar.Click += Btn_Minimizar_Click;
+                btnMinimizar.MouseHover += Btn_Minimizar_MouseHover;
+                btnMinimizar.MouseLeave += Btn_Minimizar_MouseLeave;
+            }
+        }
+
+        #region EVENTOS BOTÓN CERRAR
+        private async void Btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+            btn.BackColor = Color.FromArgb(255, 69, 58); // Rojo anaranjado
+            btn.ForeColor = SystemColors.Control;
+            btn.Font = new Font(btn.Font, FontStyle.Bold);
+            btn.FlatAppearance.BorderSize = 2;
+            btn.FlatAppearance.BorderColor = Color.Red;
+
+            await Task.Delay(300); // Pequeño retraso de 300 ms
+
+            Application.Exit();
+            }
+        }
+
+        private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.FlatAppearance.BorderSize = 2;
+                btn.FlatAppearance.BorderColor = Color.Coral;
+                btn.BackColor = Color.Coral;
+                btn.ForeColor = SystemColors.Control;
+                btn.Font = new Font(btn.Font, FontStyle.Bold);
+            }
+        }
+
+        private void Btn_Cerrar_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = SystemColors.ButtonFace;
+                btn.ForeColor = SystemColors.ControlDarkDark;
+                btn.Font = new Font(btn.Font, FontStyle.Regular);
+                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224); // Gris claro
+            }
+        }
         #endregion
+
+        #region EVENTOS BOTÓN MINIMIZAR
+    
+
+        private async void Btn_Minimizar_Click(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+            btn.BackColor = Color.Blue;
+            btn.ForeColor = SystemColors.Control;
+            btn.Font = new Font(btn.Font, FontStyle.Bold);
+            btn.FlatAppearance.BorderSize = 2;
+            btn.FlatAppearance.BorderColor = SystemColors.Highlight;
+
+            await Task.Delay(300); // Pequeño retraso de 300 ms
+
+            this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+
+        private void Btn_Minimizar_MouseHover(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = Color.LightBlue;
+                btn.FlatAppearance.BorderSize = 2;
+                btn.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
+                btn.ForeColor = SystemColors.Control;
+                btn.Font = new Font(btn.Font, FontStyle.Bold);
+            }
+        }
+
+        private void Btn_Minimizar_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = SystemColors.ButtonFace;
+                btn.ForeColor = SystemColors.ControlDarkDark;
+                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224); // Gris claro
+                btn.Font = new Font(btn.Font, FontStyle.Regular);
+            }
+        }
+        #endregion
+
+
+
+#endregion
 
         #region MENSAJE HELP
         /// <summary>
@@ -1010,6 +1174,8 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
+              //  ConfigurarEscalafonYjerarquia();
+              //  Instruccion.AsignarEventosCustomTextBox();
 
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados

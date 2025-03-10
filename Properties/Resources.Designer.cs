@@ -463,26 +463,6 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EditarPersonaSinFondo {
-            get {
-                object obj = ResourceManager.GetObject("EditarPersonaSinFondo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap editarSfondo {
-            get {
-                object obj = ResourceManager.GetObject("editarSfondo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap editarUsuario {
             get {
                 object obj = ResourceManager.GetObject("editarUsuario", resourceCulture);
@@ -793,9 +773,9 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap impresora64px {
+        internal static System.Drawing.Bitmap imprimir {
             get {
-                object obj = ResourceManager.GetObject("impresora64px", resourceCulture);
+                object obj = ResourceManager.GetObject("imprimir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

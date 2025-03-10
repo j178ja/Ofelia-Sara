@@ -87,9 +87,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 EstiloMenu.AplicarEstiloItem(item);
             }
 
-            ToolTipPersonalizado.Mostrar(btn_Minimizar,"MINIMIZAR", ToolTipPersonalizado.TipoToolTip.Minimizar);
-            ToolTipPersonalizado.Mostrar(btn_Maximizar,"MAXIMIZAR", ToolTipPersonalizado.TipoToolTip.Maximizar);
-            ToolTipPersonalizado.Mostrar(btn_Cerrar,"CERRAR", ToolTipPersonalizado.TipoToolTip.Cerrar);
+           
             ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR microfono.");//inicializa este tooltip ya que inicia el btn desactivado
 
 
