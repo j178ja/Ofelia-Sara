@@ -923,6 +923,16 @@ namespace Ofelia_Sara.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maximizar_tooltip {
+            get {
+                object obj = ResourceManager.GetObject("maximizar_tooltip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap microfono {
             get {
                 object obj = ResourceManager.GetObject("microfono", resourceCulture);
@@ -966,6 +976,26 @@ namespace Ofelia_Sara.Properties {
         internal static System.Drawing.Bitmap microfono24 {
             get {
                 object obj = ResourceManager.GetObject("microfono24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizar {
+            get {
+                object obj = ResourceManager.GetObject("minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizar_tooltip {
+            get {
+                object obj = ResourceManager.GetObject("minimizar_tooltip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

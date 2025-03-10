@@ -200,7 +200,7 @@ namespace Ofelia_Sara.Formularios.General
 
             if (btn_Buscar != null) ToolTipGeneral.Mostrar(btn_Buscar, "BUSCAR archivos creados, estadísticas y antecedentes");
             if (btn_Guardar != null) ToolTipGeneral.Mostrar(btn_Guardar, "GUARDAR.");
-            if (btn_Limpiar != null) ToolTipEliminar.Mostrar(btn_Limpiar, "ELIMINAR.");
+            if (btn_Limpiar != null) ToolTipPersonalizado.Mostrar(btn_Limpiar, "ELIMINAR.", ToolTipPersonalizado.TipoToolTip.Eliminar);
             if (btn_Imprimir != null) ToolTipGeneral.Mostrar(btn_Imprimir, "IMPRIMIR este documento específico");
         }
 
@@ -823,7 +823,7 @@ namespace Ofelia_Sara.Formularios.General
 
         #region DESHABILITAR INGRESO DE TEXTO ESCALAFON - JERARQUIA
 
-        #endregion
+    
         protected void DeshabilitarTextoEnJerarquiaYescalafon()
         {
             foreach (Control control in this.Controls)
@@ -838,7 +838,7 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-       
+        #endregion
 
 
         #region VERIFICACION EN PANEL

@@ -66,7 +66,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Maximizar = new Button();
             label_Redactador = new Label();
             timer_Barras = new Timer(components);
-            toolTip1 = new ToolTip(components);
             btn_Microfono = new Button();
             menu_SeleccionPlantilla = new ContextMenuStrip(components);
             MenuCortito = new ToolStripMenuItem();
@@ -79,12 +78,12 @@ namespace Ofelia_Sara.Formularios.Redactador
             dETENIDOSToolStripMenuItem = new ToolStripMenuItem();
             mOVIMIENTODETENIDOToolStripMenuItem = new ToolStripMenuItem();
             LibertadDetenido = new ToolStripMenuItem();
+            cONVERSIONToolStripMenuItem = new ToolStripMenuItem();
             cCARNOVEDADToolStripMenuItem = new ToolStripMenuItem();
             PU = new ToolStripMenuItem();
             Denuncia = new ToolStripMenuItem();
             toolStripMenuItem5 = new ToolStripMenuItem();
             toolStripMenuItem6 = new ToolStripMenuItem();
-            cONVERSIONToolStripMenuItem = new ToolStripMenuItem();
             iconoEscudo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)iconoEscudo).BeginInit();
             panel1.SuspendLayout();
@@ -178,7 +177,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             audioVisualizerControl.Location = new Point(14, 6);
             audioVisualizerControl.Margin = new Padding(4, 5, 4, 5);
             audioVisualizerControl.Name = "audioVisualizerControl";
-            audioVisualizerControl.Size = new Size(605, 41);
+            audioVisualizerControl.Size = new Size(691, 56);
             audioVisualizerControl.TabIndex = 4;
             // 
             // panel_Botones
@@ -380,7 +379,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Minimizar.TabIndex = 20;
             btn_Minimizar.Text = "-";
             btn_Minimizar.TextAlign = ContentAlignment.BottomCenter;
-            toolTip1.SetToolTip(btn_Minimizar, "Minimizar");
             btn_Minimizar.UseVisualStyleBackColor = false;
             btn_Minimizar.Click += Btn_Minimizar_Click;
             btn_Minimizar.MouseLeave += Btn_Panel_MouseLeave;
@@ -395,13 +393,10 @@ namespace Ofelia_Sara.Formularios.Redactador
             label_OfeliaSara.Font = new Font("Monotype Corsiva", 16F, FontStyle.Italic);
             label_OfeliaSara.Location = new Point(230, 5);
             label_OfeliaSara.Name = "label_OfeliaSara";
-            label_OfeliaSara.Size = new Size(109, 26);
+            label_OfeliaSara.Size = new Size(135, 33);
             label_OfeliaSara.TabIndex = 16;
             label_OfeliaSara.Text = "Ofelia - Sara";
             label_OfeliaSara.Click += Label_OfeliaSara_Click;
-            label_OfeliaSara.Paint += Label_OfeliaSara_Paint;
-            label_OfeliaSara.MouseLeave += Label_OfeliaSara_MouseLeave;
-            label_OfeliaSara.MouseHover += Label_OfeliaSara_MouseHover;
             // 
             // btn_Cerrar
             // 
@@ -418,7 +413,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Cerrar.Size = new Size(25, 25);
             btn_Cerrar.TabIndex = 17;
             btn_Cerrar.Text = "X";
-            toolTip1.SetToolTip(btn_Cerrar, "Cerrar");
             btn_Cerrar.UseVisualStyleBackColor = false;
             btn_Cerrar.Click += Btn_Cerrar_Click;
             btn_Cerrar.MouseLeave += Btn_Cerrar_MouseLeave;
@@ -449,7 +443,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             panel_SubirAudio.Controls.Add(pictureBox_SubirAudio);
             panel_SubirAudio.Location = new Point(378, 3);
             panel_SubirAudio.Name = "panel_SubirAudio";
-            panel_SubirAudio.Size = new Size(99, 28);
+            panel_SubirAudio.Size = new Size(116, 28);
             panel_SubirAudio.TabIndex = 22;
             // 
             // label_SubirAudio
@@ -457,7 +451,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             label_SubirAudio.AutoSize = true;
             label_SubirAudio.Location = new Point(32, 5);
             label_SubirAudio.Name = "label_SubirAudio";
-            label_SubirAudio.Size = new Size(64, 15);
+            label_SubirAudio.Size = new Size(81, 20);
             label_SubirAudio.TabIndex = 1;
             label_SubirAudio.Text = "Transcribir ";
             label_SubirAudio.TextAlign = ContentAlignment.MiddleLeft;
@@ -495,7 +489,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Maximizar.Size = new Size(25, 25);
             btn_Maximizar.TabIndex = 21;
             btn_Maximizar.TextAlign = ContentAlignment.BottomCenter;
-            toolTip1.SetToolTip(btn_Maximizar, "Maximizar");
             btn_Maximizar.UseVisualStyleBackColor = false;
             btn_Maximizar.Click += Btn_Maximizar_Click;
             btn_Maximizar.MouseLeave += Btn_Panel_MouseLeave;
@@ -507,7 +500,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             label_Redactador.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_Redactador.Location = new Point(37, 9);
             label_Redactador.Name = "label_Redactador";
-            label_Redactador.Size = new Size(112, 18);
+            label_Redactador.Size = new Size(141, 24);
             label_Redactador.TabIndex = 19;
             label_Redactador.Text = "REDACTADOR";
             // 
@@ -530,14 +523,14 @@ namespace Ofelia_Sara.Formularios.Redactador
             menu_SeleccionPlantilla.ImageScalingSize = new Size(20, 20);
             menu_SeleccionPlantilla.Items.AddRange(new ToolStripItem[] { MenuCortito, PU, Denuncia });
             menu_SeleccionPlantilla.Name = "contextMenuStrip";
-            menu_SeleccionPlantilla.Size = new Size(185, 104);
+            menu_SeleccionPlantilla.Size = new Size(180, 82);
             // 
             // MenuCortito
             // 
             MenuCortito.DropDownItems.AddRange(new ToolStripItem[] { HechosDelictivos, dETENIDOSToolStripMenuItem, cCARNOVEDADToolStripMenuItem });
             MenuCortito.Image = Properties.Resources.EscudoPolicia_PNG;
             MenuCortito.Name = "MenuCortito";
-            MenuCortito.Size = new Size(184, 26);
+            MenuCortito.Size = new Size(179, 26);
             MenuCortito.Text = "INFORME WPP";
             // 
             // HechosDelictivos
@@ -545,42 +538,42 @@ namespace Ofelia_Sara.Formularios.Redactador
             HechosDelictivos.DropDownItems.AddRange(new ToolStripItem[] { Hurto_Robo, Estafa, Estupefacientes, Contravencion, InfraccionTransito });
             HechosDelictivos.Image = Properties.Resources.graficos;
             HechosDelictivos.Name = "HechosDelictivos";
-            HechosDelictivos.Size = new Size(190, 26);
+            HechosDelictivos.Size = new Size(233, 26);
             HechosDelictivos.Text = "HECHOS DELICTIVOS";
             // 
             // Hurto_Robo
             // 
             Hurto_Robo.Image = Properties.Resources.pistola;
             Hurto_Robo.Name = "Hurto_Robo";
-            Hurto_Robo.Size = new Size(171, 22);
+            Hurto_Robo.Size = new Size(212, 26);
             Hurto_Robo.Text = " HURTO / ROBO";
             // 
             // Estafa
             // 
             Estafa.Image = Properties.Resources.dinero;
             Estafa.Name = "Estafa";
-            Estafa.Size = new Size(171, 22);
+            Estafa.Size = new Size(212, 26);
             Estafa.Text = "ESTAFA";
             // 
             // Estupefacientes
             // 
             Estupefacientes.Image = Properties.Resources.estupefacientes;
             Estupefacientes.Name = "Estupefacientes";
-            Estupefacientes.Size = new Size(171, 22);
+            Estupefacientes.Size = new Size(212, 26);
             Estupefacientes.Text = "LEY 23.737";
             // 
             // Contravencion
             // 
             Contravencion.Image = Properties.Resources.persona;
             Contravencion.Name = "Contravencion";
-            Contravencion.Size = new Size(171, 22);
+            Contravencion.Size = new Size(212, 26);
             Contravencion.Text = "CONTRAVENCION";
             // 
             // InfraccionTransito
             // 
             InfraccionTransito.Image = Properties.Resources.moto;
             InfraccionTransito.Name = "InfraccionTransito";
-            InfraccionTransito.Size = new Size(171, 22);
+            InfraccionTransito.Size = new Size(212, 26);
             InfraccionTransito.Text = "INFR. TRANSITO";
             // 
             // dETENIDOSToolStripMenuItem
@@ -588,34 +581,41 @@ namespace Ofelia_Sara.Formularios.Redactador
             dETENIDOSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mOVIMIENTODETENIDOToolStripMenuItem, LibertadDetenido, cONVERSIONToolStripMenuItem });
             dETENIDOSToolStripMenuItem.Image = Properties.Resources.arresto_policial;
             dETENIDOSToolStripMenuItem.Name = "dETENIDOSToolStripMenuItem";
-            dETENIDOSToolStripMenuItem.Size = new Size(190, 26);
+            dETENIDOSToolStripMenuItem.Size = new Size(233, 26);
             dETENIDOSToolStripMenuItem.Text = "DETENIDOS";
             // 
             // mOVIMIENTODETENIDOToolStripMenuItem
             // 
             mOVIMIENTODETENIDOToolStripMenuItem.Image = Properties.Resources.esposas;
             mOVIMIENTODETENIDOToolStripMenuItem.Name = "mOVIMIENTODETENIDOToolStripMenuItem";
-            mOVIMIENTODETENIDOToolStripMenuItem.Size = new Size(209, 26);
+            mOVIMIENTODETENIDOToolStripMenuItem.Size = new Size(259, 26);
             mOVIMIENTODETENIDOToolStripMenuItem.Text = "MOVIMIENTO DETENIDO";
             // 
             // LibertadDetenido
             // 
             LibertadDetenido.Image = Properties.Resources.libertadDetenido;
             LibertadDetenido.Name = "LibertadDetenido";
-            LibertadDetenido.Size = new Size(209, 26);
+            LibertadDetenido.Size = new Size(259, 26);
             LibertadDetenido.Text = "LIBERTAD";
+            // 
+            // cONVERSIONToolStripMenuItem
+            // 
+            cONVERSIONToolStripMenuItem.Image = Properties.Resources.detencion;
+            cONVERSIONToolStripMenuItem.Name = "cONVERSIONToolStripMenuItem";
+            cONVERSIONToolStripMenuItem.Size = new Size(259, 26);
+            cONVERSIONToolStripMenuItem.Text = "CONVERSION";
             // 
             // cCARNOVEDADToolStripMenuItem
             // 
             cCARNOVEDADToolStripMenuItem.Name = "cCARNOVEDADToolStripMenuItem";
-            cCARNOVEDADToolStripMenuItem.Size = new Size(190, 26);
+            cCARNOVEDADToolStripMenuItem.Size = new Size(233, 26);
             cCARNOVEDADToolStripMenuItem.Text = "CCAR. NOVEDAD";
             // 
             // PU
             // 
             PU.Image = Properties.Resources.EscudoPolicia_PNG;
             PU.Name = "PU";
-            PU.Size = new Size(184, 26);
+            PU.Size = new Size(179, 26);
             PU.Text = "P.U.";
             // 
             // Denuncia
@@ -623,33 +623,26 @@ namespace Ofelia_Sara.Formularios.Redactador
             Denuncia.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem5, toolStripMenuItem6 });
             Denuncia.Image = Properties.Resources.denuncia_penal;
             Denuncia.Name = "Denuncia";
-            Denuncia.Size = new Size(184, 26);
+            Denuncia.Size = new Size(179, 26);
             Denuncia.Text = "DENUNCIA";
             // 
             // toolStripMenuItem5
             // 
             toolStripMenuItem5.Image = Properties.Resources.dinero;
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(158, 22);
+            toolStripMenuItem5.Size = new Size(199, 26);
             toolStripMenuItem5.Text = "ESTAFA";
             // 
             // toolStripMenuItem6
             // 
             toolStripMenuItem6.Image = Properties.Resources.rueda;
             toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(158, 22);
+            toolStripMenuItem6.Size = new Size(199, 26);
             toolStripMenuItem6.Text = "RUEDA AUXILIO";
-            // 
-            // cONVERSIONToolStripMenuItem
-            // 
-            cONVERSIONToolStripMenuItem.Image = Properties.Resources.detencion;
-            cONVERSIONToolStripMenuItem.Name = "cONVERSIONToolStripMenuItem";
-            cONVERSIONToolStripMenuItem.Size = new Size(209, 26);
-            cONVERSIONToolStripMenuItem.Text = "CONVERSION";
             // 
             // Redactador
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 154, 174);
             ClientSize = new Size(576, 409);
@@ -712,7 +705,6 @@ namespace Ofelia_Sara.Formularios.Redactador
         private Button btn_Cerrar;
         private Button btn_Maximizar;
         private Timer timer_Barras;
-        private ToolTip toolTip1;
         private Panel panel_SubirAudio;
         private PictureBox pictureBox_SubirAudio;
         private Label label_SubirAudio;

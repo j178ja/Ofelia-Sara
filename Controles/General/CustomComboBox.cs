@@ -2,8 +2,11 @@
 
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
+
 using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.General
@@ -33,6 +36,9 @@ namespace Ofelia_Sara.Controles.General
         private static CustomComboBox activeComboBox; // para guardar el comboBox activo
         private int hoveredIndex = -1; // Índice del elemento bajo el cursor
         private  Color subrayadoColor = Color.Blue; // Color del subrayado
+        private Dictionary<int, int> subrayadoAncho = new(); // Guarda la animación por índice
+        private Timer animTimer;
+      
         #endregion
 
         #region CONSTRUCTOR
@@ -81,7 +87,7 @@ namespace Ofelia_Sara.Controles.General
                 BackColor = Color.FromArgb(165, 224, 247),
                 ForeColor = Color.Black,
                 Cursor = Cursors.Hand,
-                ItemHeight = 25 // Ajuste de altura de los elementos
+          
             };
             dropdownList.SelectedIndexChanged += DropdownList_SelectedIndexChanged;
             dropdownList.MouseClick += DropdownList_MouseClick;//para seleccionar el item
@@ -109,7 +115,7 @@ namespace Ofelia_Sara.Controles.General
         #endregion
 
         #region LISTA
-      
+
 
         private void DropdownList_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -152,13 +158,71 @@ namespace Ofelia_Sara.Controles.General
             e.DrawFocusRectangle();
 
             // Aplicar subrayado animado si el ítem está en hover
-            if (isHovered)
-            {
-                SubrayadoAnimado.Aplicar(dropdownList, e.Graphics, subrayadoColor, 3, e.Bounds);// la animacion de subrayado al momento no se visualiza
-            }
+            //if (isHovered)
+            //{
+            //    using (Pen underlinePen = new Pen(subrayadoColor, 3))
+            //    {
+            //        int y = e.Bounds.Bottom - 2; // Ajuste fino de la posición del subrayado
+            //        e.Graphics.DrawLine(underlinePen, e.Bounds.Left + 10, y, e.Bounds.Right - 10, y);
+            //    }
+            //}
         }
+        //private void DropdownList_DrawItem(object sender, DrawItemEventArgs e)
+        //{
+        //    if (e.Index < 0) return;
 
-      
+        //    bool isHovered = (e.Index == hoveredIndex);
+        //    Color backgroundColor = isHovered ? Color.FromArgb(0, 154, 174) : dropdownList.BackColor;
+        //    Color textColor = isHovered ? Color.White : dropdownList.ForeColor;
+
+        //    using (Brush backgroundBrush = new SolidBrush(backgroundColor))
+        //        e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+
+        //    string itemText = dropdownList.Items[e.Index].ToString();
+        //    using (Brush textBrush = new SolidBrush(textColor))
+        //        e.Graphics.DrawString(itemText, dropdownList.Font, textBrush, e.Bounds);
+
+        //    if (isHovered && subrayadoAncho.ContainsKey(e.Index))
+        //    {
+        //        using (Pen underlinePen = new Pen(subrayadoColor, 3))
+        //        {
+        //            int y = e.Bounds.Bottom - 2;
+        //            int ancho = subrayadoAncho[e.Index];
+        //            int startX = e.Bounds.Left + (e.Bounds.Width - ancho) / 2;
+        //            e.Graphics.DrawLine(underlinePen, startX, y, startX + ancho, y);
+        //        }
+        //    }
+        //}
+
+
+
+        //private void IniciarAnimacion(int index)
+        //{
+        //    if (animTimer == null)
+        //    {
+        //        animTimer = new Timer { Interval = 15 };
+        //        animTimer.Tick += (s, e) =>
+        //        {
+        //            bool actualizar = false;
+        //            foreach (var key in subrayadoAncho.Keys.ToList())
+        //            {
+        //                if (subrayadoAncho[key] < dropdownList.Width - 20)
+        //                {
+        //                    subrayadoAncho[key] += 10; // Incrementar progresivamente
+        //                    actualizar = true;
+        //                }
+        //            }
+        //            if (actualizar)
+        //                dropdownList.Invalidate(); // Redibujar para mostrar el cambio
+        //            else
+        //                animTimer.Stop(); // Detener si no hay cambios
+        //        };
+        //    }
+
+        //    animTimer.Start();
+        //}
+
+
 
 
 
@@ -177,6 +241,22 @@ namespace Ofelia_Sara.Controles.General
                 dropdownList.Invalidate(); // Redibuja el control
             }
         }
+        //private void DropdownList_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    int index = dropdownList.IndexFromPoint(e.Location);
+        //    if (index != hoveredIndex)
+        //    {
+        //        hoveredIndex = index;
+        //        if (index >= 0)
+        //        {
+        //            if (!subrayadoAncho.ContainsKey(index))
+        //                subrayadoAncho[index] = 0; // Inicializar animación para el ítem
+        //            IniciarAnimacion(index);
+        //        }
+        //        dropdownList.Invalidate(); // Forzar redibujado
+        //    }
+        //}
+
         private void DropdownList_MouseLeave(object sender, EventArgs e)
         {
             hoveredIndex = -1; // Resetea el índice hover
@@ -306,51 +386,54 @@ namespace Ofelia_Sara.Controles.General
             }
 
             // Dibujar borde de color
-            using Pen borderPen = new(Color.FromArgb(0, 154, 174), 4);
+            using Pen borderPen = new(Color.FromArgb(0, 154, 174), 2);
             g.DrawPath(borderPen, path);
         }
-        //private void AjustarAlturaDesplegable()
-        //{
-        //    // Ajustar la altura del ListBox para mostrar el número deseado de ítems
-        //    int itemHeight = dropdownList.ItemHeight;
-        //    dropdownList.Height = itemHeight * maxDropDownItems + 2; // +2 para el borde
-        //}
         private void AjustarAlturaDesplegable()
         {
-            int itemHeight = dropdownList.ItemHeight;
-            int itemCount = dropdownList.Items.Count;
+            int itemHeight = 23; // Altura de cada elemento en la lista
             int maxVisibleItems = maxDropDownItems;
+            int itemCount = dropdownList.Items.Count;
+
+            dropdownList.IntegralHeight = false; // Permitir ajustes en la altura
 
             if (itemCount == 0)
             {
-                dropdownList.Visible = false;
+                // Limpiar y agregar mensaje de no elementos
+                dropdownList.Items.Clear();
+                dropdownList.Items.Add("NO HAY ELEMENTOS A MOSTRAR");
+                dropdownList.ForeColor = Color.Red;
+                dropdownList.Height = itemHeight ; // Ajustar altura a un solo ítem
+                dropdownList.Enabled = false;
                 return;
             }
 
+            // Si hay elementos, restablecer valores
+            dropdownList.Enabled = true;
+            dropdownList.ForeColor = Color.Black;
             dropdownList.Visible = true;
-            dropdownList.IntegralHeight = false; // Permitir alturas personalizadas
 
+            // Ajustar la altura del desplegable
             if (itemCount <= maxVisibleItems)
             {
-                dropdownList.Height = Math.Max(10, (itemHeight * itemCount) + 4);
+                dropdownList.Height = (itemHeight * itemCount) ;
                 dropdownList.ScrollAlwaysVisible = false;
             }
             else
             {
-                dropdownList.Height = (itemHeight * maxVisibleItems) + 4;
+                dropdownList.Height = (itemHeight * maxVisibleItems) ;
                 dropdownList.ScrollAlwaysVisible = true;
             }
 
+            // Forzar actualización del control para reflejar cambios
             dropdownList.Parent = this.Parent;
             dropdownList.Top = this.Bottom;
             dropdownList.Left = this.Left;
             dropdownList.BringToFront();
             dropdownList.Invalidate();
-
-            // Depuración: Verificar valores
-            Console.WriteLine($"Items: {itemCount}, Altura: {dropdownList.Height}, Scroll: {dropdownList.ScrollAlwaysVisible}");
+            dropdownList.Refresh(); // Forzar repintado inmediato
+       
         }
-
 
 
 
@@ -829,7 +912,7 @@ namespace Ofelia_Sara.Controles.General
                 if (value > 0)
                 {
                     maxDropDownItems = value;
-                    AjustarAlturaDesplegable();
+            
                 }
             }
         }

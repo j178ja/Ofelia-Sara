@@ -72,6 +72,10 @@ namespace Ofelia_Sara.Formularios.General
 
              RedondearBordes.Aplicar(this, 12);  // Redondea los bordes del formulario
              RedondearBordes.Aplicar(panel_MenuSuperior, 12, true, true, false, false);  // Redondea solo los bordes superiores del panel
+             SubrayadoAnimado.AplicarABoton(btn_InicioCierre, SystemColors.Highlight);
+             SubrayadoAnimado.AplicarABoton(btn_Contravenciones, SystemColors.Highlight);
+             SubrayadoAnimado.AplicarABoton(btn_Expedientes, SystemColors.Highlight);
+           
 
             comboBox_Buscar.BringToFront(); // que comboBoxBuscar está encima de comboBoxGNUA
             LabelVideoInstructivo(label_OfeliaSara);// llama al metodo baseform para el comportamiento del label
@@ -622,7 +626,8 @@ namespace Ofelia_Sara.Formularios.General
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
             ToolTipGeneral.Mostrar(comboBox_Buscar, " Ingrese que tarea desea realizar.");
             ToolTipGeneral.Mostrar(btn_BoletinOficial, "Boletín Informativo.");
-            ToolTipEliminar.Mostrar(btn_Cerrar,"CERRAR");
+            ToolTipPersonalizado.Mostrar(btn_Cerrar,"CERRAR", ToolTipPersonalizado.TipoToolTip.Cerrar);
+            ToolTipPersonalizado.Mostrar(btn_Minimizar,"MINIMIZAR", ToolTipPersonalizado.TipoToolTip.Minimizar);
         }
 
         /// <summary>

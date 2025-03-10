@@ -65,7 +65,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
         private void NuevaPersonaControl_Load(object sender, EventArgs e)
         {
             ConfigurarTooltipAgregarDatos();
-            ToolTipEliminar.Mostrar(btn_EliminarControl, "Eliminar este elemento");
+            ToolTipPersonalizado.Mostrar(btn_EliminarControl, "Eliminar este elemento", ToolTipPersonalizado.TipoToolTip.Eliminar);
         }
         #endregion
         public static class NuevaPersonaControlHelper
