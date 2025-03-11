@@ -38,7 +38,7 @@ namespace Ofelia_Sara.Controles.General
         private  Color subrayadoColor = Color.Blue; // Color del subrayado
         private Dictionary<int, int> subrayadoAncho = new(); // Guarda la animación por índice
         private Timer animTimer;
-      
+       
         #endregion
 
         #region CONSTRUCTOR
@@ -96,7 +96,7 @@ namespace Ofelia_Sara.Controles.General
             dropdownList.DrawItem += DropdownList_DrawItem;
 
             // Agregar evento de redibujado para bordes personalizados
-            dropdownList.Paint += DropdownList_Paint;
+        
             dropdownList.MouseMove += DropdownList_MouseMove;
             dropdownList.MouseLeave += DropdownList_MouseLeave;
             Controls.Add(dropdownList);
@@ -150,79 +150,16 @@ namespace Ofelia_Sara.Controles.General
                     Alignment = StringAlignment.Near
                 };
 
-                Rectangle textBounds = new(e.Bounds.Left + 10, e.Bounds.Top, e.Bounds.Width - 10, e.Bounds.Height);
+                Rectangle textBounds = new(e.Bounds.Left + 5, e.Bounds.Top, e.Bounds.Width , e.Bounds.Height); // el texto interno levemente hacia la derecha
                 e.Graphics.DrawString(itemText, textFont, textBrush, textBounds, format);
             }
 
             // Dibujar borde de foco si es necesario
             e.DrawFocusRectangle();
 
-            // Aplicar subrayado animado si el ítem está en hover
-            //if (isHovered)
-            //{
-            //    using (Pen underlinePen = new Pen(subrayadoColor, 3))
-            //    {
-            //        int y = e.Bounds.Bottom - 2; // Ajuste fino de la posición del subrayado
-            //        e.Graphics.DrawLine(underlinePen, e.Bounds.Left + 10, y, e.Bounds.Right - 10, y);
-            //    }
-            //}
+          
         }
-        //private void DropdownList_DrawItem(object sender, DrawItemEventArgs e)
-        //{
-        //    if (e.Index < 0) return;
-
-        //    bool isHovered = (e.Index == hoveredIndex);
-        //    Color backgroundColor = isHovered ? Color.FromArgb(0, 154, 174) : dropdownList.BackColor;
-        //    Color textColor = isHovered ? Color.White : dropdownList.ForeColor;
-
-        //    using (Brush backgroundBrush = new SolidBrush(backgroundColor))
-        //        e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
-
-        //    string itemText = dropdownList.Items[e.Index].ToString();
-        //    using (Brush textBrush = new SolidBrush(textColor))
-        //        e.Graphics.DrawString(itemText, dropdownList.Font, textBrush, e.Bounds);
-
-        //    if (isHovered && subrayadoAncho.ContainsKey(e.Index))
-        //    {
-        //        using (Pen underlinePen = new Pen(subrayadoColor, 3))
-        //        {
-        //            int y = e.Bounds.Bottom - 2;
-        //            int ancho = subrayadoAncho[e.Index];
-        //            int startX = e.Bounds.Left + (e.Bounds.Width - ancho) / 2;
-        //            e.Graphics.DrawLine(underlinePen, startX, y, startX + ancho, y);
-        //        }
-        //    }
-        //}
-
-
-
-        //private void IniciarAnimacion(int index)
-        //{
-        //    if (animTimer == null)
-        //    {
-        //        animTimer = new Timer { Interval = 15 };
-        //        animTimer.Tick += (s, e) =>
-        //        {
-        //            bool actualizar = false;
-        //            foreach (var key in subrayadoAncho.Keys.ToList())
-        //            {
-        //                if (subrayadoAncho[key] < dropdownList.Width - 20)
-        //                {
-        //                    subrayadoAncho[key] += 10; // Incrementar progresivamente
-        //                    actualizar = true;
-        //                }
-        //            }
-        //            if (actualizar)
-        //                dropdownList.Invalidate(); // Redibujar para mostrar el cambio
-        //            else
-        //                animTimer.Stop(); // Detener si no hay cambios
-        //        };
-        //    }
-
-        //    animTimer.Start();
-        //}
-
-
+     
 
 
 
@@ -241,21 +178,7 @@ namespace Ofelia_Sara.Controles.General
                 dropdownList.Invalidate(); // Redibuja el control
             }
         }
-        //private void DropdownList_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    int index = dropdownList.IndexFromPoint(e.Location);
-        //    if (index != hoveredIndex)
-        //    {
-        //        hoveredIndex = index;
-        //        if (index >= 0)
-        //        {
-        //            if (!subrayadoAncho.ContainsKey(index))
-        //                subrayadoAncho[index] = 0; // Inicializar animación para el ítem
-        //            IniciarAnimacion(index);
-        //        }
-        //        dropdownList.Invalidate(); // Forzar redibujado
-        //    }
-        //}
+      
 
         private void DropdownList_MouseLeave(object sender, EventArgs e)
         {
@@ -314,6 +237,7 @@ namespace Ofelia_Sara.Controles.General
             if (dropdownList.Visible) return;
 
             dropdownList.Visible = true;
+           AjustarAlturaDesplegable();
             dropdownList.BringToFront();
             activeComboBox = this;
 
@@ -349,7 +273,7 @@ namespace Ofelia_Sara.Controles.General
         }
         private void DropdownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // SelectedIndexChanged?.Invoke(this, e);
+             SelectedIndexChanged?.Invoke(this, e);
             if (dropdownList.SelectedItem != null)
             {
                 textBox.Text = dropdownList.SelectedItem.ToString();
@@ -363,36 +287,14 @@ namespace Ofelia_Sara.Controles.General
 
             SelectedIndexChanged?.Invoke(this, e); // Invocar evento si es necesario
         }
-        private void DropdownList_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.AntiAlias;
 
-            // Rectángulo del control con esquinas redondeadas
-            int radius = 10; // Radio para las esquinas redondeadas
-            Rectangle rect = new(0, 0, dropdownList.Width - 1, dropdownList.Height - 1);
-            using GraphicsPath path = CreateRoundedRectanglePath(rect, radius);
-            // Dibujar sombra
-            using (Brush shadowBrush = new SolidBrush(Color.FromArgb(50, 0, 0, 0)))
-            {
-                Rectangle shadowRect = new(rect.X + 2, rect.Y + 2, rect.Width, rect.Height);
-                g.FillPath(shadowBrush, CreateRoundedRectanglePath(shadowRect, radius));
-            }
+   
 
-            // Dibujar fondo
-            using (Brush backgroundBrush = new SolidBrush(dropdownList.BackColor))
-            {
-                g.FillPath(backgroundBrush, path);
-            }
 
-            // Dibujar borde de color
-            using Pen borderPen = new(Color.FromArgb(0, 154, 174), 2);
-            g.DrawPath(borderPen, path);
-        }
         private void AjustarAlturaDesplegable()
         {
             int itemHeight = 23; // Altura de cada elemento en la lista
-            int maxVisibleItems = maxDropDownItems;
+            int maxVisibleItems = maxDropDownItems;//cantidad max  item es igual a variable de max can
             int itemCount = dropdownList.Items.Count;
 
             dropdownList.IntegralHeight = false; // Permitir ajustes en la altura
@@ -414,14 +316,14 @@ namespace Ofelia_Sara.Controles.General
             dropdownList.Visible = true;
 
             // Ajustar la altura del desplegable
-            if (itemCount <= maxVisibleItems)
+            if (itemCount <= maxDropDownItems)
             {
                 dropdownList.Height = (itemHeight * itemCount) ;
                 dropdownList.ScrollAlwaysVisible = false;
             }
             else
             {
-                dropdownList.Height = (itemHeight * maxVisibleItems) ;
+                dropdownList.Height = (itemHeight * maxDropDownItems) ;
                 dropdownList.ScrollAlwaysVisible = true;
             }
 
@@ -430,9 +332,9 @@ namespace Ofelia_Sara.Controles.General
             dropdownList.Top = this.Bottom;
             dropdownList.Left = this.Left;
             dropdownList.BringToFront();
-            dropdownList.Invalidate();
-            dropdownList.Refresh(); // Forzar repintado inmediato
        
+            dropdownList.Invalidate();
+            Application.DoEvents();  // Forzar a que el control se actualice
         }
 
 
@@ -574,10 +476,10 @@ namespace Ofelia_Sara.Controles.General
             }
             else
             {
-                // Mostrar el dropdownList y posicionarlo correctamente
-                MostrarDropdown();
-                // Dar foco al TextBox
-                textBox.Focus();
+                
+                MostrarDropdown();// Mostrar el dropdownList y posicionarlo correctamente
+              
+                textBox.Focus();  // Dar foco al TextBox
             }
 
             Form parentForm = FindForm();
@@ -590,7 +492,7 @@ namespace Ofelia_Sara.Controles.General
             // Establecer la posición y tamaño del ListBox
             Point locationOnForm = PointToScreen(Point.Empty);
             Point dropdownLocation = parentForm.PointToClient(locationOnForm);
-            dropdownList.Location = new Point(dropdownLocation.X, dropdownLocation.Y + Height);
+            dropdownList.Location = new Point(dropdownLocation.X, dropdownLocation.Y + Height);// lo posiciona justo debajo del control
             dropdownList.Width = Width;
 
           

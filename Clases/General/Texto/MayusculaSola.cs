@@ -2,9 +2,8 @@
 using System;
 using System.Text;
 using System.Windows.Forms;
-public static class MayusculaSola
+public class MayusculaSola
 {
-    
     /// <summary>
     /// Método para aplicar la lógica de conversión a mayúsculas a cualquier control de texto.
     /// </summary>
@@ -13,9 +12,8 @@ public static class MayusculaSola
     /// <exception cref="ArgumentException"></exception>
     public static void AplicarAControl(Control control)
     {
-      
         // Configurar eventos para convertir texto a mayúsculas y filtrar caracteres
-        if (control is TextBoxBase textBox)
+        if (control is TextBoxBase textBox)// para rich textBox y otros controles de texto base
         {
             ConfigurarEventosTextBox(textBox);
         }
@@ -29,9 +27,6 @@ public static class MayusculaSola
         }
     }
 
-
-
-    
     /// <summary>
     /// Configurar eventos para controles TextBox o RichTextBox
     /// </summary>
@@ -55,23 +50,22 @@ public static class MayusculaSola
             // Convierte el texto a mayúsculas
             string convertedText = FiltrarYConvertirAMayusculas(textBox.Text);
 
-            // Actualiza el texto del TextBox y posiciona el cursor al final
+            // Actualiza el texto del TextBox y reposiciona el cursor
             if (textBox.Text != convertedText)
             {
                 textBox.Text = convertedText;
-                textBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final
+                textBox.SelectionStart = selectionStart; // Mantiene la posición original del cursor
             }
         };
     }
 
-    
     /// <summary>
-    /// Configurar eventos para ComboBox
+    /// Configurar eventos para CustomComboBox
     /// </summary>
-    /// <param name="CustomComboBox"></param>
-    private static void ConfigurarEventosComboBox(CustomComboBox CustomComboBox)
+    /// <param name="customComboBox"></param>
+    private static void ConfigurarEventosComboBox(CustomComboBox customComboBox)
     {
-        CustomComboBox.KeyPress += (sender, e) =>
+        customComboBox.KeyPress += (sender, e) =>
         {
             // Permite letras, espacios y caracteres de control
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
@@ -85,7 +79,10 @@ public static class MayusculaSola
         };
     }
 
-    // Configurar eventos para CustomTextBox
+    /// <summary>
+    /// Configurar eventos para CustomTextBox
+    /// </summary>
+    /// <param name="customTextBox"></param>
     private static void ConfigurarEventosCustomTextBox(CustomTextBox customTextBox)
     {
         customTextBox.KeyPress += (sender, e) =>
@@ -105,18 +102,17 @@ public static class MayusculaSola
             // Convierte el texto a mayúsculas
             string convertedText = FiltrarYConvertirAMayusculas(customTextBox.TextValue);
 
-            // Actualiza el texto del CustomTextBox y posiciona el cursor al final
+            // Actualiza el texto del CustomTextBox y reposiciona el cursor
             if (customTextBox.TextValue != convertedText)
             {
                 customTextBox.TextValue = convertedText;
-                customTextBox.SelectionStart = convertedText.Length; // Establece la posición del cursor al final
+                customTextBox.SelectionStart = selectionStart; // Mantiene la posición original del cursor
             }
         };
     }
 
-
     /// <summary>
-    /// filtrar el texto permitiendo solo letras y espacios en blanco
+    /// Filtra el texto permitiendo solo letras y espacios en blanco, y convierte a mayúsculas
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
@@ -125,7 +121,7 @@ public static class MayusculaSola
         if (string.IsNullOrEmpty(input))
             return string.Empty;
 
-        StringBuilder filteredText = new ();
+        StringBuilder filteredText = new();
         foreach (char c in input)
         {
             if (char.IsLetter(c) || char.IsWhiteSpace(c))

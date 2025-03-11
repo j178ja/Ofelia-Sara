@@ -64,7 +64,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarCausa = new System.Windows.Forms.Button();
             btn_AgregarVictima = new System.Windows.Forms.Button();
             btn_AgregarImputado = new System.Windows.Forms.Button();
-            toolTip = new System.Windows.Forms.ToolTip(components);
             checkBox_RatificacionTestimonial = new System.Windows.Forms.CheckBox();
             btn_AgregarDatosImputado = new System.Windows.Forms.Button();
             btn_AgregarDatosVictima = new System.Windows.Forms.Button();
@@ -103,6 +102,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_InsertarSecuestro = new System.Windows.Forms.Label();
             panel_ControlesInferiores = new System.Windows.Forms.Panel();
             label_TITULO = new System.Windows.Forms.Label();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
             panel1.SuspendLayout();
             panel_DatosIppCompleta.SuspendLayout();
             panel_Ipp.SuspendLayout();
@@ -686,10 +686,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarImputado.TabIndex = 29;
             btn_AgregarImputado.Text = "+";
             btn_AgregarImputado.UseVisualStyleBackColor = true;
-            // 
-            // toolTip
-            // 
-            toolTip.AutomaticDelay = 300;
             // 
             // checkBox_RatificacionTestimonial
             // 
@@ -1320,7 +1316,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Button btn_AgregarCausa;
         private System.Windows.Forms.Button btn_AgregarVictima;
         private System.Windows.Forms.Button btn_AgregarImputado;
-        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_TITULO;
         private System.Windows.Forms.Label lbl_DeptoJudicial;
@@ -1359,5 +1354,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Panel panel_StudRML;
         private System.Windows.Forms.Panel panel_RatificacionPersonal;
         private System.Windows.Forms.Panel panel_Cargo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

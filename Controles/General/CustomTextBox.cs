@@ -6,138 +6,8 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Controles.General
 {
-    //public partial class CustomTextBox : Control
-    //{
-    //    #region VARIABLES
-    //    private TextBox textBox;
-    //private Timer animationTimer;
-    //private int animationProgress;
-    //private bool isFocused;
-    //private bool showError;
-    //private Color focusColor = Color.Blue;
-    //private Color errorColor = Color.Red;
-    //private string placeholderText = string.Empty;
-    //private Color placeholderColor = Color.Gray;
-    //private bool isPlaceholderVisible;
-    //#endregion
-
-    //    #region CONSTRUCTOR
-    //    public CustomTextBox()
-    //    {
-    //        // Configuración del TextBox
-    //        textBox = new TextBox
-    //        {
-    //            Size = new Size(21, this.Height),
-    //            BorderStyle = BorderStyle.None,
-
-    //            TextAlign = HorizontalAlignment.Center,
-    //            BackColor = Color.White, // color provisorio para analizar errores
-    //            ForeColor = this.ForeColor,
-
-    //        };
-    //        textBox.GotFocus += TextBox_GotFocus;
-    //        textBox.LostFocus += TextBox_LostFocus;
-    //        textBox.TextChanged += TextBox_TextChanged;
-    //        Controls.Add(textBox);
-
-    //        // Configuración del Timer para animaciones
-    //        animationTimer = new Timer { Interval = 15 };
-    //        animationTimer.Tick += AnimationTimer_Tick;
-
-    //        // Estilo inicial
-    //        this.Height = 30;
-    //        this.Width = 200;
-    //        this.BackColor = Color.White;
-    //    }
-    //    #endregion
-
-    //    #region VALIDACIONES Y METODOS
-    //    private void TextBox_GotFocus(object sender, EventArgs e)
-    //    {
-    //        isFocused = true;
-    //        showError = false; // Quita el subrayado rojo si estaba activo
-    //        animationProgress = 0; // Reinicia la animación
-    //        animationTimer.Start();
-
-    //        Invalidate(); // Redibuja el control
-    //    }
-
-    //    /// <summary>
-    //    /// COMPORTAMIENTO CUANDO PIERDE EL FOCO
-    //    /// </summary>
-    //    /// <param name="sender"></param>
-    //    /// <param name="e"></param>
-    //    private void TextBox_LostFocus(object sender, EventArgs e)
-    //    {
-    //        isFocused = false;
-
-    //        // Verifica si el texto está vacío para activar el subrayado rojo
-    //        if (string.IsNullOrWhiteSpace(textBox.Text))
-    //        {
-    //            showError = true; // Activa el subrayado rojo
-    //        }
-    //        else
-    //        {
-    //            showError = false; // Desactiva el subrayado rojo
-    //        }
-
-    //        animationProgress = 0; // Reinicia la animación
-    //        animationTimer.Start();
-
-    //        Invalidate(); // Redibuja el control para reflejar los cambios
-    //    }
-    //    private void TextBox_TextChanged(object sender, EventArgs e)
-    //    {
-    //        OnTextChanged(e);
-    //    }
-    //    private void AnimationTimer_Tick(object sender, EventArgs e)
-    //    {
-    //        animationProgress = Math.Min(animationProgress + 5, 100);
-    //        this.Invalidate();
-    //        if (animationProgress == 100) animationTimer.Stop();
-    //    }
-    //    protected override void OnResize(EventArgs e)
-    //    {
-    //        base.OnResize(e);
-
-    //        // Calcula la altura ajustada del TextBox para adaptarlo al control
-    //        int textBoxHeight = (int)(this.Height * 0.9); // El TextBox ocupa el 80% de la altura del control
-    //        int verticalPadding = (this.Height - textBoxHeight) / 2; // Espaciado vertical para centrar el TextBox
-
-    //        // Ajusta las dimensiones y posición del TextBox dentro del control
-    //        textBox.SetBounds(
-    //            5,                   // Margen izquierdo
-    //            verticalPadding,     // Margen superior
-    //            this.Width - 10,     // Ancho ajustado (control - márgenes)
-    //            textBoxHeight        // Altura ajustada
-    //        );
-    //    }
-    //    protected override void OnPaint(PaintEventArgs e)
-    //    {
-    //        base.OnPaint(e);
-    //        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-    //        using (Brush brush = new SolidBrush(isFocused ? focusColor : (showError ? errorColor : this.BackColor)))
-    //        {
-    //            int lineWidth = 3;
-    //            float progress = animationProgress / 100f;
-    //            int startX = (int)(this.Width / 2 - (this.Width / 2) * progress);
-    //            int endX = (int)(this.Width / 2 + (this.Width / 2) * progress);
-    //            e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
-    //        }
-
-    //        // Si el control está vacío y no tiene foco, muestra el placeholder
-    //        if (string.IsNullOrEmpty(this.Text) && !this.Focused && !string.IsNullOrEmpty(PlaceholderText))
-    //        {
-    //            using (Brush brush = new SolidBrush(PlaceholderColor))
-    //            {
-    //                e.Graphics.DrawString(PlaceholderText, this.Font, brush, new PointF(1, 1));
-    //            }
-    //        }
-    //    }
 
 
-    //    #endregion
 
     public partial class CustomTextBox : Control
     {
@@ -155,9 +25,9 @@ namespace Ofelia_Sara.Controles.General
         private Color placeholderColor = Color.Gray;
         private bool isPlaceholderVisible;
 
-    
 
-     
+
+
         #endregion
 
         #region CONSTRUCTOR
@@ -225,20 +95,16 @@ namespace Ofelia_Sara.Controles.General
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 showError = true;
-               // isValidText = false;
+
             }
             else
             {
                 showError = false;
-                //isValidText = EsTextoValido(textBox.Text);
+
             }
         }
 
-        //private bool EsTextoValido(string texto)
-        //{
-        //    // Ejemplo de validación: acepta solo letras y espacios, y debe tener al menos 3 caracteres
-        //    return System.Text.RegularExpressions.Regex.IsMatch(texto, @"^[a-zA-Z\s]{3,}$");
-        //}
+
         #endregion
 
         #region DIBUJADO
@@ -249,7 +115,7 @@ namespace Ofelia_Sara.Controles.General
 
             Color underlineColor = isFocused ? focusColor :
                                    showError ? errorColor :
-                                  // isValidText ? validColor :
+
                                    this.BackColor;
 
             using (Brush brush = new SolidBrush(underlineColor))
@@ -261,7 +127,7 @@ namespace Ofelia_Sara.Controles.General
                 e.Graphics.FillRectangle(brush, startX, this.Height - lineWidth, endX - startX, lineWidth);
             }
 
-           // Placeholder
+            // Placeholder
             if (string.IsNullOrEmpty(textBox.Text) && !textBox.Focused && !string.IsNullOrEmpty(PlaceholderText))
             {
                 using Brush brush = new SolidBrush(PlaceholderColor);
@@ -507,7 +373,7 @@ namespace Ofelia_Sara.Controles.General
                 isPlaceholderVisible = false;
             }
         }
-        
+
 
         public int Whidth { get; set; }
         public new int Height { get; set; }

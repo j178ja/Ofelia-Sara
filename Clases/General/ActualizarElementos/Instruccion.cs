@@ -72,10 +72,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         public void ConfigurarEventosIpp()
         {
             ConfigurarEventosEnControles(_baseForm.Controls);
-          
-
-
-        }
+         }
 
 
 

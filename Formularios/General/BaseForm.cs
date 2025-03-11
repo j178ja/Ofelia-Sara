@@ -90,18 +90,16 @@ namespace Ofelia_Sara.Formularios.General
         }
         private void AjustarEscala()
         {
-            using (Graphics g = this.CreateGraphics())
-            {
-                float escalaDpi = g.DpiX / 96f;
+            using Graphics g = this.CreateGraphics();
+            float escalaDpi = g.DpiX / 96f;
 
-                foreach (Control ctrl in this.Controls)
-                {
-                    ctrl.Font = new Font(ctrl.Font.FontFamily, ctrl.Font.Size * escalaDpi, ctrl.Font.Style);
-                    ctrl.Width = (int)(ctrl.Width * escalaDpi);
-                    ctrl.Height = (int)(ctrl.Height * escalaDpi);
-                    ctrl.Left = (int)(ctrl.Left * escalaDpi);
-                    ctrl.Top = (int)(ctrl.Top * escalaDpi);
-                }
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.Font = new Font(ctrl.Font.FontFamily, ctrl.Font.Size * escalaDpi, ctrl.Font.Style);
+                ctrl.Width = (int)(ctrl.Width * escalaDpi);
+                ctrl.Height = (int)(ctrl.Height * escalaDpi);
+                ctrl.Left = (int)(ctrl.Left * escalaDpi);
+                ctrl.Top = (int)(ctrl.Top * escalaDpi);
             }
         }
 
@@ -777,8 +775,6 @@ namespace Ofelia_Sara.Formularios.General
         }
         #endregion
 
-
-
         #region EVENTOS BOTÓN MINIMIZAR
 
 
@@ -907,67 +903,69 @@ namespace Ofelia_Sara.Formularios.General
         /// Formato de texto de campos especificos
         /// </summary>
         /// <param name="control"></param>
-        protected   void AplicarFormatoTexto(Control control)
+        protected   void AplicarFormatoTexto(Control parent)
         {
-            //FORMATO TEXTO PARA TEXTBOX
-            if (control is CustomTextBox textBox)
+            foreach (var control in GetAllControls(parent))
+            {
+                //FORMATO TEXTO PARA TEXTBOX
+                if (control is CustomTextBox textBox)
             {
                 switch (textBox.Name)
                 {
-                    // MAYUSCULA SOLA
-                    case "textBox_Victima":
-                    case "textBox_Imputado":
-                    case "textBox_Nombre":
-                    case "textBox_Apellido":
-                    case "textBox_Localidad":
-                    case "textBox_LugarNacimiento":
-                    case "textBox_Ocupacion":
-                    case "textBox_Apodo":
-                    case "textBox_Nacionalidad":
-                        MayusculaSola.AplicarAControl(textBox);
-                        break;
+                        // MAYUSCULA SOLA
+                        case "textBox_Victima":
+                        case "textBox_Imputado":
+                        case "textBox_Nombre":
+                        case "textBox_Apellido":
+                        case "textBox_Localidad":
+                        case "textBox_LugarNacimiento":
+                        case "textBox_Ocupacion":
+                        case "textBox_Apodo":
+                        case "textBox_Nacionalidad":
+                            MayusculaSola.AplicarAControl(textBox);
+                            break;
 
-                    // CAMELCASE
-                    case "textBox_AgenteFiscal":
-                    case "textBox_Partido":
-                    case "textBox_DeptoJudicial":
-                        ConvertirACamelCase.AplicarAControl(textBox);
-                        break;
+                        // CAMELCASE
+                        case "textBox_AgenteFiscal":
+                        case "textBox_Partido":
+                        case "textBox_DeptoJudicial":
+                            ConvertirACamelCase.AplicarAControl(textBox);
+                            break;
 
-                    //MAYUSCULA Y NUMEROS
-                    case "textBox_Caratula":
-                    case "textBox_Domicilio":
-                    case "textBox_Fiscalia":
-                        MayusculaYnumeros.AplicarAControl(textBox);
-                        break;
-                    // MAYUSCULA-NUMEROS Y CARACTERES ESPECIALES
-                    case "textBox_Dominio":
-                    case "textBox_Motor":
-                    case "textBox_Chasis":
-                    case "textBox_NombreFiscalia":
-                        MayusculaYnumeros.ConfigurarTextoConEspeciales(textBox);
-                        break;
+                        //MAYUSCULA Y NUMEROS
+                        case "textBox_Caratula":
+                        case "textBox_Domicilio":
+                        case "textBox_Fiscalia":
+                            MayusculaYnumeros.AplicarAControl(textBox);
+                            break;
+                        // MAYUSCULA-NUMEROS Y CARACTERES ESPECIALES
+                        case "textBox_Dominio":
+                        case "textBox_Motor":
+                        case "textBox_Chasis":
+                        case "textBox_NombreFiscalia":
+                            MayusculaYnumeros.ConfigurarTextoConEspeciales(textBox);
+                            break;
 
-                    // NUMEROS SOLOS
-                    case "textBox_Edad":
-                    case "textBox_ArtInfraccion":
-                    case "textBox_NumeroIpp":
-                    case "textBox_NumeroCargo":
-                        ClaseNumeros.SoloNumeros(textBox);
-                        ImpedirCeroPrimerDigito(textBox);
-                        break;
+                        // NUMEROS SOLOS
+                        case "textBox_Edad":
+                        case "textBox_ArtInfraccion":
+                        case "textBox_NumeroIpp":
+                        case "textBox_NumeroCargo":
+                            ClaseNumeros.SoloNumeros(textBox);
+                            ImpedirCeroPrimerDigito(textBox);
+                            break;
 
-                    // NUMEROS CON PUNTO
-                    case "textBox_Dni":
-                        ClaseNumeros.AplicarFormatoYLimite(textBox, 10);
-                        ImpedirCeroPrimerDigito(textBox);
-                        break;
-                    case "textBox_NumeroLegajo":
-                        ClaseNumeros.AplicarFormatoYLimite(textBox, 7);
-                        ImpedirCeroPrimerDigito(textBox);
-                        break;
+                        // NUMEROS CON PUNTO
+                        case "textBox_Dni":
+                            ClaseNumeros.AplicarFormatoYLimite(textBox, 10);
+                            ImpedirCeroPrimerDigito(textBox);
+                            break;
+                        case "textBox_NumeroLegajo":
+                            ClaseNumeros.AplicarFormatoYLimite(textBox, 7);
+                            ImpedirCeroPrimerDigito(textBox);
+                            break;
 
-                }
+                    }
             }
             // FORMATO TEXTO PARA COMBOBOX
             else if (control is CustomComboBox comboBox)
@@ -1012,7 +1010,7 @@ namespace Ofelia_Sara.Formularios.General
                 {
                     ClaseNumeros.SoloNumeros(comboBox);
                 }
-
+                }
             }
         }
 
@@ -1265,7 +1263,7 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
-            
+         
                 //  ConfigurarEscalafonYjerarquia();
                 //  Instruccion.AsignarEventosCustomTextBox();
 
