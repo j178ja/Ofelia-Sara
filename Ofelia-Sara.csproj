@@ -111,5 +111,6 @@
 
   <ItemGroup>
     <Folder Include="BaseDatos\Descargable_SQLITE\" />
+    <Folder Include="Documentacion Proyecto\" />
   </ItemGroup>
 </Project>

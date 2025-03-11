@@ -415,8 +415,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Cerrar.Text = "X";
             btn_Cerrar.UseVisualStyleBackColor = false;
             btn_Cerrar.Click += Btn_Cerrar_Click;
-            btn_Cerrar.MouseLeave += Btn_Cerrar_MouseLeave;
-            btn_Cerrar.MouseHover += Btn_Cerrar_MouseHover;
+            
             // 
             // panel_MenuSuperior
             // 

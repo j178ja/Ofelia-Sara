@@ -70,29 +70,25 @@ namespace Ofelia_Sara.Formularios.General
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);// instancia de clase que crea menu y submenu de btn_configuracion
             PosicionarMenu();
 
-             RedondearBordes.Aplicar(this, 12);  // Redondea los bordes del formulario
-             RedondearBordes.Aplicar(panel_MenuSuperior, 12, true, true, false, false);  // Redondea solo los bordes superiores del panel
-             SubrayadoAnimado.AplicarABoton(btn_InicioCierre, SystemColors.Highlight);
-             SubrayadoAnimado.AplicarABoton(btn_Contravenciones, SystemColors.Highlight);
-             SubrayadoAnimado.AplicarABoton(btn_Expedientes, SystemColors.Highlight);
-           
+            RedondearBordes.Aplicar(this, 12);  // Redondea los bordes del formulario
+            RedondearBordes.Aplicar(panel_MenuSuperior, 12, true, true, false, false);  // Redondea solo los bordes superiores del panel
+            SubrayadoAnimado.AplicarABoton(btn_InicioCierre, SystemColors.Highlight);
+            SubrayadoAnimado.AplicarABoton(btn_Contravenciones, SystemColors.Highlight);
+            SubrayadoAnimado.AplicarABoton(btn_Expedientes, SystemColors.Highlight);
+
 
             comboBox_Buscar.BringToFront(); // que comboBoxBuscar está encima de comboBoxGNUA
             LabelVideoInstructivo(label_OfeliaSara);// llama al metodo baseform para el comportamiento del label
-            ////----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
-            //timerCerrarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
-            //timerMinimizarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
-            //timerCerrarForm.Tick += TimerCerrar_Tick;
-            //timerMinimizarForm.Tick += TimerMinimizar_Tick;
+            BotonesControlFormulario(this, btn_Cerrar, null, btn_Minimizar);//invoca metodos baseform para minimizar y cerrar formulario
 
             placeholderText = "Buscar tipo de actuación...";
-          
+
 
             comboBox_Buscar.InnerTextBox.GotFocus += ComboBox_Buscar_GotFocus;
-           comboBox_Buscar.InnerTextBox.LostFocus += ComboBox_Buscar_LostFocus;
-          
+            comboBox_Buscar.InnerTextBox.LostFocus += ComboBox_Buscar_LostFocus;
+
             comboBox_Buscar.InnerTextBox.MouseEnter += ComboBox_Buscar_MouseEnter;
-        
+
         }
         #endregion
 
@@ -104,13 +100,13 @@ namespace Ofelia_Sara.Formularios.General
             btn_Configurar.ContextMenuStrip = auxiliarConfiguracion.CrearMenuConfigurar();// btn_configuracion
             btn_BuscarTarea.Enabled = false;//deshabilitar btn al cargar //se habilitara al ingresar texto compatible con la lista
 
-            Tooltips(); 
+            Tooltips();
             ConfigurarBotones();
-          
+
             Rotacion.Aplicar(btn_Configurar, Properties.Resources.engranajeConfiguracion, // Imagen para animar
                                              Properties.Resources.engranajeOriginal);   // Imagen original
 
-           
+
         }
         #endregion
 
@@ -320,7 +316,7 @@ namespace Ofelia_Sara.Formularios.General
         //    btn_Minimizar.Font = new Font(btn_Cerrar.Font, FontStyle.Bold);
         //    btn_Minimizar.FlatAppearance.BorderSize = 2;
         //    btn_Minimizar.FlatAppearance.BorderColor = SystemColors.Highlight;
-      
+
         //    timerMinimizarForm.Start();
 
         //}
@@ -587,28 +583,16 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-        ///// <summary>
-        ///// TIMER PARA BTN CERRAR FORMULARIO MENU PRINCIPAL
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void TimerCerrar_Tick(object sender, EventArgs e)
-        //{
-        //    timerCerrarForm.Stop();
-        //    Application.Exit();
-        //}
 
-        ///// <summary>
-        ///// TIMER PARA BTN MINIMIZAR
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void TimerMinimizar_Tick(object sender, EventArgs e)
-        //{
-        //    timerMinimizarForm.Stop();
-        //    this.WindowState = FormWindowState.Minimized;
-        //}
+        private void Btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void Btn_Minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
         #endregion
 
         #region METODOS GENERALES
@@ -626,8 +610,8 @@ namespace Ofelia_Sara.Formularios.General
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_BuscarTarea, "Seleccione o indique una tarea antes de realizar busqueda.", "Buscar tarea seleccionada.");
             ToolTipGeneral.Mostrar(comboBox_Buscar, " Ingrese que tarea desea realizar.");
             ToolTipGeneral.Mostrar(btn_BoletinOficial, "Boletín Informativo.");
-            ToolTipPersonalizado.Mostrar(btn_Cerrar,"CERRAR", ToolTipPersonalizado.TipoToolTip.Cerrar);
-            ToolTipPersonalizado.Mostrar(btn_Minimizar,"MINIMIZAR", ToolTipPersonalizado.TipoToolTip.Minimizar);
+            ToolTipPersonalizado.Mostrar(btn_Cerrar, "CERRAR", ToolTipPersonalizado.TipoToolTip.Cerrar);
+            ToolTipPersonalizado.Mostrar(btn_Minimizar, "MINIMIZAR", ToolTipPersonalizado.TipoToolTip.Minimizar);
         }
 
         /// <summary>
@@ -734,8 +718,8 @@ namespace Ofelia_Sara.Formularios.General
         #endregion
 
         #region BUSCADOR
-       
-       
+
+
 
         /// <summary>
         /// cargar el listado de acciones al list del comboBox
@@ -775,7 +759,7 @@ namespace Ofelia_Sara.Formularios.General
                 btn_BuscarTarea.Enabled = false;
             }
         }
-      
+
 
 
         private void ComboBox_Buscar_MouseEnter(object sender, EventArgs e)
@@ -846,7 +830,7 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="e"></param>
         private void Label_OfeliaSara_Click(object sender, EventArgs e)
         {
-            
+
 
             if (videoInstructivo == null || videoInstructivo.IsDisposed) // Verifica si no está abierto
             {
@@ -855,7 +839,7 @@ namespace Ofelia_Sara.Formularios.General
 
                 // Suscribirse al evento FormClosed para restaurar el Label
                 videoInstructivo.FormClosed += (s, args) => RestaurarLabelVideoInstructivo(label_OfeliaSara);
-               
+
 
                 // Obtener la ubicación y tamaño del formulario principal
                 Point menuPrincipalLocation = this.Location;
@@ -877,12 +861,13 @@ namespace Ofelia_Sara.Formularios.General
             }
         }
 
-     
-       
-   
+
+
+
 
         #endregion
 
-       
+
+   
     }
 }

@@ -60,10 +60,11 @@ namespace Ofelia_Sara.Formularios.General
         protected void InitializeRuntime()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.Dpi;
             CargarIconoFormulario();
             InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
             InitializeFooterLinkLabel();// footer a todos los formularios
-            BotonesControlFormulario(this, btn_Cerrar, btn_Minimizar);
+    
             Load += BaseForm_Load;
         }
 
@@ -78,14 +79,30 @@ namespace Ofelia_Sara.Formularios.General
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
             AsignarImagenesBotones();//asigna las imagenes a los botones
             _instruccion.ConfigurarEventosEnControles(this.Controls);
-  
+            AjustarEscala();
         }
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
             AplicarCursorEnControl(e.Control);
+           
         }
-       
+        private void AjustarEscala()
+        {
+            using (Graphics g = this.CreateGraphics())
+            {
+                float escalaDpi = g.DpiX / 96f;
+
+                foreach (Control ctrl in this.Controls)
+                {
+                    ctrl.Font = new Font(ctrl.Font.FontFamily, ctrl.Font.Size * escalaDpi, ctrl.Font.Style);
+                    ctrl.Width = (int)(ctrl.Width * escalaDpi);
+                    ctrl.Height = (int)(ctrl.Height * escalaDpi);
+                    ctrl.Left = (int)(ctrl.Left * escalaDpi);
+                    ctrl.Top = (int)(ctrl.Top * escalaDpi);
+                }
+            }
+        }
 
         #region LOAD
         private void BaseForm_Load(object sender, EventArgs e)
@@ -623,7 +640,7 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="form"></param>
         /// <param name="btnCerrar"></param>
         /// <param name="btnMinimizar"></param>
-        protected void BotonesControlFormulario(Form form, Button btnCerrar, Button btnMinimizar)
+        protected void BotonesControlFormulario(Form form, Button btnCerrar,Button btnMaximizar, Button btnMinimizar)
         {
             // Asignar eventos al botón de Cerrar
             if (btnCerrar != null)
@@ -631,6 +648,13 @@ namespace Ofelia_Sara.Formularios.General
                 btnCerrar.Click += Btn_Cerrar_Click;
                 btnCerrar.MouseHover += Btn_Cerrar_MouseHover;
                 btnCerrar.MouseLeave += Btn_Cerrar_MouseLeave;
+            }
+            // Asignar eventos al botón de Maximizar
+            if (btnMaximizar != null)
+            {
+                btnMaximizar.Click += Btn_Maximizar_Click;
+                btnMaximizar.MouseHover += Btn_Maximizar_MouseHover;
+                btnMaximizar.MouseLeave += Btn_Maximizar_MouseLeave;
             }
 
             // Asignar eventos al botón de Minimizar
@@ -655,7 +679,7 @@ namespace Ofelia_Sara.Formularios.General
 
             await Task.Delay(300); // Pequeño retraso de 300 ms
 
-            Application.Exit();
+           
             }
         }
 
@@ -684,8 +708,61 @@ namespace Ofelia_Sara.Formularios.General
         }
         #endregion
 
+        #region EVENTOS BOTON MAXIMIZAR
+        private void Btn_Maximizar_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.BackColor = Color.Lavender;
+                btn.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
+            }
+        }
+
+        private void Btn_Maximizar_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.BackColor = SystemColors.ButtonFace;
+                btn.ForeColor = SystemColors.ControlDarkDark;
+                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            }
+        }
+
+        private void Btn_Maximizar_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                // Cambiar estilo visual del botón de maximizar
+                btn.BackColor = SystemColors.ActiveCaption;
+            btn.ForeColor = SystemColors.Control;
+            btn.FlatAppearance.BorderSize = 2;
+
+            // Verificar si el formulario está maximizado
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                // Si está maximizado, restaurar al tamaño mínimo
+                this.WindowState = FormWindowState.Normal;
+                this.Size = this.MinimumSize;
+         
+            }
+            else
+            {
+                // Si no está maximizado, maximizar el formulario
+                this.WindowState = FormWindowState.Maximized;
+            
+            }
+            }
+        }
+        #endregion
+
+
+
         #region EVENTOS BOTÓN MINIMIZAR
-    
+
 
         private async void Btn_Minimizar_Click(object sender, EventArgs e)
         {
@@ -699,7 +776,7 @@ namespace Ofelia_Sara.Formularios.General
 
             await Task.Delay(300); // Pequeño retraso de 300 ms
 
-            this.WindowState = FormWindowState.Minimized;
+          
             }
         }
 
@@ -1174,8 +1251,9 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
-              //  ConfigurarEscalafonYjerarquia();
-              //  Instruccion.AsignarEventosCustomTextBox();
+            
+                //  ConfigurarEscalafonYjerarquia();
+                //  Instruccion.AsignarEventosCustomTextBox();
 
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados

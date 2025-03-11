@@ -87,9 +87,7 @@ namespace Ofelia_Sara.Formularios.Redactador
                 EstiloMenu.AplicarEstiloItem(item);
             }
 
-           
             ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR microfono.");//inicializa este tooltip ya que inicia el btn desactivado
-
 
         }
         #endregion
@@ -118,11 +116,7 @@ namespace Ofelia_Sara.Formularios.Redactador
          
             InicializarEstiloBoton(btn_Enviar);
 
-            //----timer para que se vea efecto de cambio de color en los btn cerrar y minimizar
-            timerCerrarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
-            timerMinimizarForm.Interval = 500;  // Tiempo en milisegundos (500 ms = 0.5 segundos)
-            timerCerrarForm.Tick += TimerCerrar_Tick;
-            timerMinimizarForm.Tick += TimerMinimizar_Tick;
+            BotonesControlFormulario(this, btn_Cerrar,btn_Maximizar, btn_Minimizar);
 
             ConfigurarTooltips();
 
@@ -164,43 +158,14 @@ namespace Ofelia_Sara.Formularios.Redactador
         #region BTN PANEL MENU_SUPERIO
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
-            btn_Cerrar.BackColor = Color.FromArgb(255, 69, 58);
-            btn_Cerrar.ForeColor = SystemColors.Control;
-            btn_Cerrar.FlatAppearance.BorderSize = 2;
-            btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
-            timer_Barras.Stop();
-            audioVisualizerControl.Visible = false;
-            timerCerrarForm.Start();
-        }
-        private void TimerCerrar_Tick(object sender, EventArgs e)
-        {
-            timerCerrarForm.Stop();
             this.Close();
         }
+      
 
-        private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
-        {
-            btn_Cerrar.BackColor = Color.Lavender;
-            btn_Cerrar.FlatAppearance.BorderSize = 1;
-            btn_Cerrar.FlatAppearance.BorderColor = Color.LightCoral;
-        }
+    
 
-        private void Btn_Cerrar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_Cerrar.BackColor = SystemColors.ButtonFace;
-            btn_Cerrar.ForeColor = SystemColors.ControlDarkDark;
-            btn_Cerrar.FlatAppearance.BorderSize = 1;
-            btn_Cerrar.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-        }
 
-        private void TimerMinimizar_Tick(object sender, EventArgs e)
-        {
-            // Detener el timer
-            timerMinimizarForm.Stop();
-
-            // Minimizar solo el formulario actual
-            this.WindowState = FormWindowState.Minimized;
-        }
+     
         /// <summary>
         /// EVENTO CLICK MINIMIZAR
         /// </summary>
@@ -208,22 +173,13 @@ namespace Ofelia_Sara.Formularios.Redactador
         /// <param name="e"></param>
         private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
-            // Cambiar estilo visual del botón de minimizar
-            btn_Minimizar.BackColor = SystemColors.ActiveCaption;
-            btn_Minimizar.ForeColor = SystemColors.Control;
-            btn_Minimizar.FlatAppearance.BorderSize = 2;
-            btn_Minimizar.FlatAppearance.BorderColor = SystemColors.Highlight;
-
+           
             // Si el formulario actual es menuPrincipal, minimizarlo
             if (this.Name == "menuPrincipal")
             {
                 this.WindowState = FormWindowState.Minimized;
             }
-            else
-            {
-                // Iniciar el timer solo para minimizar el formulario actual (no el menuPrincipal)
-                timerMinimizarForm.Start();
-            }
+           
         }
         /// <summary>
         /// evento click MAXIMIZAR
@@ -232,10 +188,7 @@ namespace Ofelia_Sara.Formularios.Redactador
         /// <param name="e"></param>
         private void Btn_Maximizar_Click(object sender, EventArgs e)
         {
-            // Cambiar estilo visual del botón de maximizar
-            btn_Maximizar.BackColor = SystemColors.ActiveCaption;
-            btn_Maximizar.ForeColor = SystemColors.Control;
-            btn_Maximizar.FlatAppearance.BorderSize = 2;
+            
 
             // Verificar si el formulario está maximizado
             if (this.WindowState == FormWindowState.Maximized)

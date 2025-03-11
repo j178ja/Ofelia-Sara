@@ -12,6 +12,7 @@ using Ofelia_Sara.Controles.General;
 using System.Collections.Generic;
 using BaseDatos.Entidades;
 using Newtonsoft.Json;
+using System.Windows.Media;
 
 
 namespace Ofelia_Sara.Formularios.General
@@ -68,12 +69,13 @@ namespace Ofelia_Sara.Formularios.General
         protected void InitializeRuntimeMode()
         {
             InitializeComponent(); // Llama primero para inicializar los controles
-            this.AutoScaleMode = AutoScaleMode.Dpi;
-
+    
+         
             InitializarAutocompletado(); //guarda los ultimos ingresos para ser mostrados
             CargarDatosComboBox(this);//carga los datos en todos los combobox segun su nombre
             ConfigurarEscalafonYjerarquia(this);
         }
+   
 
         /// <summary>
         /// guarda los ultimos ingresos para ser mostrados y autocompleta

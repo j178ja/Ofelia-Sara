@@ -92,9 +92,7 @@ namespace Ofelia_Sara.Formularios.General
             btn_InicioCierre.Text = "I.P.P.";
             btn_InicioCierre.UseVisualStyleBackColor = false;
             btn_InicioCierre.Click += Btn_InicioCierre_Click;
-     
             btn_InicioCierre.MouseDown += Boton_MouseDown;
-            
             btn_InicioCierre.MouseUp += Boton_MouseUp;
             // 
             // btn_Expedientes
@@ -111,7 +109,6 @@ namespace Ofelia_Sara.Formularios.General
             btn_Expedientes.Text = "EXPEDIENTES";
             btn_Expedientes.UseVisualStyleBackColor = false;
             btn_Expedientes.Click += Btn_Expedientes_Click;
-
             btn_Expedientes.MouseDown += Boton_MouseDown;
             btn_Expedientes.MouseUp += Boton_MouseUp;
             // 
@@ -129,9 +126,7 @@ namespace Ofelia_Sara.Formularios.General
             btn_Contravenciones.Text = "CONTRAVENCIONES";
             btn_Contravenciones.UseVisualStyleBackColor = false;
             btn_Contravenciones.Click += Btn_Contravenciones_Click;
-     
             btn_Contravenciones.MouseDown += Boton_MouseDown;
-
             btn_Contravenciones.MouseUp += Boton_MouseUp;
             // 
             // panel1
@@ -321,8 +316,6 @@ namespace Ofelia_Sara.Formularios.General
             toolTip1.SetToolTip(btn_Minimizar, "Minimizar");
             btn_Minimizar.UseVisualStyleBackColor = false;
             btn_Minimizar.Click += Btn_Minimizar_Click;
-            btn_Minimizar.MouseLeave += Btn_Minimizar_MouseLeave;
-            btn_Minimizar.MouseHover += Btn_Minimizar_MouseHover;
             // 
             // label_MenuPrincipal
             // 
@@ -348,7 +341,6 @@ namespace Ofelia_Sara.Formularios.General
             label_OfeliaSara.TabIndex = 16;
             label_OfeliaSara.Text = "Ofelia - Sara";
             label_OfeliaSara.Click += Label_OfeliaSara_Click;
-       
             // 
             // btn_Cerrar
             // 
@@ -367,8 +359,6 @@ namespace Ofelia_Sara.Formularios.General
             btn_Cerrar.Text = "X";
             btn_Cerrar.UseVisualStyleBackColor = false;
             btn_Cerrar.Click += Btn_Cerrar_Click;
-            btn_Cerrar.MouseLeave += Btn_Cerrar_MouseLeave;
-            btn_Cerrar.MouseHover += Btn_Cerrar_MouseHover;
             // 
             // menu_Configurar
             // 
