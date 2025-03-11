@@ -315,7 +315,7 @@ namespace Ofelia_Sara.Formularios.General
             btn_Minimizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             toolTip1.SetToolTip(btn_Minimizar, "Minimizar");
             btn_Minimizar.UseVisualStyleBackColor = false;
-            btn_Minimizar.Click += Btn_Minimizar_Click;
+
             // 
             // label_MenuPrincipal
             // 

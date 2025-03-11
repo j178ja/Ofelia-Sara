@@ -64,7 +64,7 @@ namespace Ofelia_Sara.Formularios.General
             CargarIconoFormulario();
             InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
             InitializeFooterLinkLabel();// footer a todos los formularios
-    
+          
             Load += BaseForm_Load;
         }
 
@@ -80,6 +80,7 @@ namespace Ofelia_Sara.Formularios.General
             AsignarImagenesBotones();//asigna las imagenes a los botones
             _instruccion.ConfigurarEventosEnControles(this.Controls);
             AjustarEscala();
+            this.ShowInTaskbar = true; // Asegurar que siempre se vea en la barra de tareas
         }
         protected override void OnControlAdded(ControlEventArgs e)
         {
@@ -227,8 +228,8 @@ namespace Ofelia_Sara.Formularios.General
             if (btn_Limpiar != null) ToolTipPersonalizado.Mostrar(btn_Limpiar, "ELIMINAR.", ToolTipPersonalizado.TipoToolTip.Eliminar);
             if (btn_Minimizar != null) ToolTipPersonalizado.Mostrar(btn_Minimizar, "MINIMIZAR.", ToolTipPersonalizado.TipoToolTip.Minimizar);
             if (btn_Maximizar != null) ToolTipPersonalizado.Mostrar(btn_Maximizar, "MAXIMIZAR.", ToolTipPersonalizado.TipoToolTip.Maximizar);
-            if (btn_Cerrar != null) ToolTipPersonalizado.Mostrar(btn_Cerrar, "CERRAR.", ToolTipPersonalizado.TipoToolTip.Eliminar);
-            if (btn_Imprimir != null) ToolTipGeneral.Mostrar(btn_Imprimir, "IMPRIMIR este documento específico");
+            if (btn_Cerrar != null) ToolTipPersonalizado.Mostrar(btn_Cerrar, "CERRAR.", ToolTipPersonalizado.TipoToolTip.Cerrar);
+            if (btn_Imprimir != null) ToolTipPersonalizado.Mostrar(btn_Imprimir, "IMPRIMIR este documento específico", ToolTipPersonalizado.TipoToolTip.Imprimir);
         }
 
         #endregion
@@ -671,17 +672,30 @@ namespace Ofelia_Sara.Formularios.General
         {
             if (sender is Button btn)
             {
-            btn.BackColor = Color.FromArgb(255, 69, 58); // Rojo anaranjado
-            btn.ForeColor = SystemColors.Control;
-            btn.Font = new Font(btn.Font, FontStyle.Bold);
-            btn.FlatAppearance.BorderSize = 2;
-            btn.FlatAppearance.BorderColor = Color.Red;
+                btn.BackColor = Color.FromArgb(255, 69, 58); // Rojo anaranjado
+                btn.ForeColor = SystemColors.Control;
+                btn.Font = new Font(btn.Font, FontStyle.Bold);
+                btn.FlatAppearance.BorderSize = 2;
+                btn.FlatAppearance.BorderColor = Color.Red;
 
-            await Task.Delay(300); // Pequeño retraso de 300 ms
+                await Task.Delay(300); // Pequeño retraso de 300 ms
 
-           
+                // Obtener el formulario contenedor y cerrarlo o salir de la aplicación
+                Form parentForm = btn.FindForm();
+                if (parentForm != null)
+                {
+                    if (parentForm.Name == "menu_Principal")
+                    {
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        parentForm.Close();
+                    }
+                }
             }
         }
+
 
         private void Btn_Cerrar_MouseHover(object sender, EventArgs e)
         {
@@ -737,24 +751,28 @@ namespace Ofelia_Sara.Formularios.General
             if (btn != null)
             {
                 // Cambiar estilo visual del botón de maximizar
-                btn.BackColor = SystemColors.ActiveCaption;
+            btn.BackColor = SystemColors.ActiveCaption;
             btn.ForeColor = SystemColors.Control;
             btn.FlatAppearance.BorderSize = 2;
 
-            // Verificar si el formulario está maximizado
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                // Si está maximizado, restaurar al tamaño mínimo
-                this.WindowState = FormWindowState.Normal;
-                this.Size = this.MinimumSize;
-         
-            }
-            else
-            {
-                // Si no está maximizado, maximizar el formulario
-                this.WindowState = FormWindowState.Maximized;
-            
-            }
+                // Obtener el área de trabajo de la pantalla (sin incluir la barra de tareas)
+                Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+
+                // Verificar si el formulario está maximizado
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    // Restaurar al tamaño mínimo
+                    this.WindowState = FormWindowState.Normal;
+                    this.Size = this.MinimumSize;
+                }
+                else
+                {
+                    // Ajustar el tamaño del formulario para no cubrir la barra de tareas
+                    this.WindowState = FormWindowState.Normal;
+                    this.Size = new Size(workingArea.Width, workingArea.Height);
+                    this.Location = new Point(workingArea.X, workingArea.Y);
+                }
+
             }
         }
         #endregion
@@ -776,7 +794,12 @@ namespace Ofelia_Sara.Formularios.General
 
             await Task.Delay(300); // Pequeño retraso de 300 ms
 
-          
+                // Obtener el formulario contenedor y minimizarlo
+                Form parentForm = btn.FindForm();
+                if (parentForm != null)
+                {
+                    parentForm.WindowState = FormWindowState.Minimized;
+                }
             }
         }
 

@@ -66,7 +66,7 @@ namespace Ofelia_Sara.Formularios.General
         {
 
             InitializeComponent();
-
+          
             auxiliarConfiguracion = new AuxiliarConfiguracion(this);// instancia de clase que crea menu y submenu de btn_configuracion
             PosicionarMenu();
 
@@ -586,13 +586,10 @@ namespace Ofelia_Sara.Formularios.General
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           // Application.Exit();
         }
 
-        private void Btn_Minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+       
         #endregion
 
         #region METODOS GENERALES

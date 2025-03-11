@@ -166,21 +166,7 @@ namespace Ofelia_Sara.Formularios.Redactador
 
 
      
-        /// <summary>
-        /// EVENTO CLICK MINIMIZAR
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_Minimizar_Click(object sender, EventArgs e)
-        {
-           
-            // Si el formulario actual es menuPrincipal, minimizarlo
-            if (this.Name == "menuPrincipal")
-            {
-                this.WindowState = FormWindowState.Minimized;
-            }
-           
-        }
+      
         /// <summary>
         /// evento click MAXIMIZAR
         /// </summary>
@@ -188,22 +174,9 @@ namespace Ofelia_Sara.Formularios.Redactador
         /// <param name="e"></param>
         private void Btn_Maximizar_Click(object sender, EventArgs e)
         {
-            
-
-            // Verificar si el formulario está maximizado
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                // Si está maximizado, restaurar al tamaño mínimo
-                this.WindowState = FormWindowState.Normal;
-                this.Size = this.MinimumSize;
+        
                 richTextBox_Redactor.Focus();
-            }
-            else
-            {
-                // Si no está maximizado, maximizar el formulario
-                this.WindowState = FormWindowState.Maximized;
-                richTextBox_Redactor.Focus();
-            }
+           
         }
 
         /// <summary>

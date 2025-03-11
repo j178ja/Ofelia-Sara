@@ -380,7 +380,6 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Minimizar.Text = "-";
             btn_Minimizar.TextAlign = ContentAlignment.BottomCenter;
             btn_Minimizar.UseVisualStyleBackColor = false;
-            btn_Minimizar.Click += Btn_Minimizar_Click;
             btn_Minimizar.MouseLeave += Btn_Panel_MouseLeave;
             btn_Minimizar.MouseHover += Btn_Panel_MouseHover;
             // 

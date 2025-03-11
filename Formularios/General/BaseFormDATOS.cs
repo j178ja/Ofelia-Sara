@@ -69,8 +69,6 @@ namespace Ofelia_Sara.Formularios.General
         protected void InitializeRuntimeMode()
         {
             InitializeComponent(); // Llama primero para inicializar los controles
-    
-         
             InitializarAutocompletado(); //guarda los ultimos ingresos para ser mostrados
             CargarDatosComboBox(this);//carga los datos en todos los combobox segun su nombre
             ConfigurarEscalafonYjerarquia(this);

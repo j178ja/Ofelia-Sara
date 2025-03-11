@@ -136,7 +136,7 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
 
     public static class ToolTipPersonalizado
     {
-        public enum TipoToolTip { Eliminar,Cerrar, Minimizar, Maximizar }
+        public enum TipoToolTip { Eliminar,Cerrar, Minimizar, Maximizar,Imprimir}
 
         private static readonly Dictionary<Control, ToolTip> toolTips = new();
 
@@ -146,7 +146,8 @@ namespace Ofelia_Sara.Controles.Controles.Tooltip
         { TipoToolTip.Eliminar,  (Properties.Resources.borrar, Color.FromArgb(200, 50, 50)) },   // Rojo tenue
         { TipoToolTip.Cerrar,  (Properties.Resources.IconoError, Color.FromArgb(200, 50, 50)) },   // Rojo tenue
         { TipoToolTip.Minimizar, (Properties.Resources.minimizar_tooltip, Color.FromArgb(50, 100, 200)) }, // Azul tenue
-        { TipoToolTip.Maximizar, (Properties.Resources.maximizar_tooltip, Color.FromArgb(50, 150, 50)) }  // Verde tenue
+        { TipoToolTip.Maximizar, (Properties.Resources.maximizar_tooltip, Color.FromArgb(50, 150, 50)) }, // Verde tenue
+        { TipoToolTip.Imprimir, (Properties.Resources.imprimir, Color.FromArgb(17, 139, 184)) }  // Verde agua a revisar
     };
 
         public static void Mostrar(Control control, string toolTipText, TipoToolTip tipo)
