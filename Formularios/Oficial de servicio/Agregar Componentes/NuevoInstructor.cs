@@ -130,8 +130,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 datosGuardados = true;
                 MensajeGeneral.Mostrar("Se ha guardado un nuevo instructor.", MensajeGeneral.TipoMensaje.Exito);
                 LimpiarFormulario.Limpiar(this);
-                comboBox_Escalafon.SelectedIndex = -1;
-                comboBox_Dependencia.SelectedIndex = -1;
+              
             }
         }
 

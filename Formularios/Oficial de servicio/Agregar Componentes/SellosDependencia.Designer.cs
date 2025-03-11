@@ -51,6 +51,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(textBox_Localidad);
             panel1.Controls.Add(label_Localidad);
@@ -66,18 +67,19 @@
             panel1.Controls.Add(btn_Guardar);
             panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(529, 483);
+            panel1.Size = new System.Drawing.Size(624, 483);
             panel1.TabIndex = 0;
             // 
             // textBox_Localidad
             // 
+            textBox_Localidad.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Localidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Localidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Localidad.BackColor = System.Drawing.Color.White;
             textBox_Localidad.ErrorColor = System.Drawing.Color.Red;
             textBox_Localidad.FocusColor = System.Drawing.Color.Blue;
             textBox_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            textBox_Localidad.Location = new System.Drawing.Point(146, 82);
+            textBox_Localidad.Location = new System.Drawing.Point(217, 82);
             textBox_Localidad.MaxLength = 32767;
             textBox_Localidad.Multiline = false;
             textBox_Localidad.Name = "textBox_Localidad";
@@ -87,7 +89,7 @@
             textBox_Localidad.ReadOnly = false;
             textBox_Localidad.SelectionStart = 0;
             textBox_Localidad.ShowError = false;
-            textBox_Localidad.Size = new System.Drawing.Size(355, 24);
+            textBox_Localidad.Size = new System.Drawing.Size(334, 24);
             textBox_Localidad.TabIndex = 46;
             textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Localidad.TextValue = "";
@@ -97,7 +99,7 @@
             // 
             label_Localidad.AutoSize = true;
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Localidad.Location = new System.Drawing.Point(49, 87);
+            label_Localidad.Location = new System.Drawing.Point(71, 84);
             label_Localidad.Name = "label_Localidad";
             label_Localidad.Size = new System.Drawing.Size(98, 16);
             label_Localidad.TabIndex = 44;
@@ -105,6 +107,7 @@
             // 
             // comboBox_Dependencia
             // 
+            comboBox_Dependencia.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             comboBox_Dependencia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Dependencia.ArrowImage");
             comboBox_Dependencia.ArrowPictureBox = null;
             comboBox_Dependencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -120,7 +123,8 @@
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            comboBox_Dependencia.Location = new System.Drawing.Point(146, 47);
+            comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
+            comboBox_Dependencia.Location = new System.Drawing.Point(217, 47);
             comboBox_Dependencia.MaxDropDownItems = 5;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
             comboBox_Dependencia.PlaceholderColor = System.Drawing.Color.Gray;
@@ -131,8 +135,9 @@
             comboBox_Dependencia.SelectedText = "";
             comboBox_Dependencia.SelectionStart = 0;
             comboBox_Dependencia.ShowError = false;
-            comboBox_Dependencia.Size = new System.Drawing.Size(355, 26);
+            comboBox_Dependencia.Size = new System.Drawing.Size(334, 26);
             comboBox_Dependencia.TabIndex = 43;
+            comboBox_Dependencia.Text = " ";
             comboBox_Dependencia.TextValue = " ";
             comboBox_Dependencia.SelectedIndexChanged += ComboBox_Dependencia_SelectedIndexChanged;
             comboBox_Dependencia.TextChanged += ComboBox_Dependencia_TextChanged;
@@ -141,7 +146,7 @@
             // 
             label_Dependencia.AutoSize = true;
             label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Dependencia.Location = new System.Drawing.Point(24, 50);
+            label_Dependencia.Location = new System.Drawing.Point(71, 50);
             label_Dependencia.Name = "label_Dependencia";
             label_Dependencia.Size = new System.Drawing.Size(123, 16);
             label_Dependencia.TabIndex = 41;
@@ -149,10 +154,11 @@
             // 
             // pictureBox_SelloFoliador
             // 
+            pictureBox_SelloFoliador.Anchor = System.Windows.Forms.AnchorStyles.Top;
             pictureBox_SelloFoliador.BackColor = System.Drawing.SystemColors.ControlLight;
             pictureBox_SelloFoliador.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_SelloFoliador.BackgroundImage");
             pictureBox_SelloFoliador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_SelloFoliador.Location = new System.Drawing.Point(352, 126);
+            pictureBox_SelloFoliador.Location = new System.Drawing.Point(400, 126);
             pictureBox_SelloFoliador.Name = "pictureBox_SelloFoliador";
             pictureBox_SelloFoliador.Size = new System.Drawing.Size(151, 213);
             pictureBox_SelloFoliador.TabIndex = 40;
@@ -164,10 +170,11 @@
             // 
             // pictureBox_SelloEscalera
             // 
+            pictureBox_SelloEscalera.Anchor = System.Windows.Forms.AnchorStyles.Top;
             pictureBox_SelloEscalera.BackColor = System.Drawing.SystemColors.ControlLight;
             pictureBox_SelloEscalera.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_SelloEscalera.BackgroundImage");
             pictureBox_SelloEscalera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_SelloEscalera.Location = new System.Drawing.Point(187, 126);
+            pictureBox_SelloEscalera.Location = new System.Drawing.Point(235, 126);
             pictureBox_SelloEscalera.Name = "pictureBox_SelloEscalera";
             pictureBox_SelloEscalera.Size = new System.Drawing.Size(151, 213);
             pictureBox_SelloEscalera.TabIndex = 39;
@@ -179,10 +186,11 @@
             // 
             // pictureBox_SelloMedalla
             // 
+            pictureBox_SelloMedalla.Anchor = System.Windows.Forms.AnchorStyles.Top;
             pictureBox_SelloMedalla.BackColor = System.Drawing.SystemColors.ControlLight;
             pictureBox_SelloMedalla.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_SelloMedalla.BackgroundImage");
             pictureBox_SelloMedalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            pictureBox_SelloMedalla.Location = new System.Drawing.Point(23, 126);
+            pictureBox_SelloMedalla.Location = new System.Drawing.Point(71, 126);
             pictureBox_SelloMedalla.Name = "pictureBox_SelloMedalla";
             pictureBox_SelloMedalla.Size = new System.Drawing.Size(151, 213);
             pictureBox_SelloMedalla.TabIndex = 38;
@@ -194,9 +202,10 @@
             // 
             // label_SelloFoliador
             // 
+            label_SelloFoliador.Anchor = System.Windows.Forms.AnchorStyles.Top;
             label_SelloFoliador.AutoSize = true;
             label_SelloFoliador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_SelloFoliador.Location = new System.Drawing.Point(362, 351);
+            label_SelloFoliador.Location = new System.Drawing.Point(410, 351);
             label_SelloFoliador.Name = "label_SelloFoliador";
             label_SelloFoliador.Size = new System.Drawing.Size(137, 16);
             label_SelloFoliador.TabIndex = 3;
@@ -204,9 +213,10 @@
             // 
             // label_SelloEscalera
             // 
+            label_SelloEscalera.Anchor = System.Windows.Forms.AnchorStyles.Top;
             label_SelloEscalera.AutoSize = true;
             label_SelloEscalera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_SelloEscalera.Location = new System.Drawing.Point(195, 351);
+            label_SelloEscalera.Location = new System.Drawing.Point(243, 351);
             label_SelloEscalera.Name = "label_SelloEscalera";
             label_SelloEscalera.Size = new System.Drawing.Size(141, 16);
             label_SelloEscalera.TabIndex = 2;
@@ -214,9 +224,10 @@
             // 
             // label_SelloMedalla
             // 
+            label_SelloMedalla.Anchor = System.Windows.Forms.AnchorStyles.Top;
             label_SelloMedalla.AutoSize = true;
             label_SelloMedalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_SelloMedalla.Location = new System.Drawing.Point(36, 351);
+            label_SelloMedalla.Location = new System.Drawing.Point(84, 351);
             label_SelloMedalla.Name = "label_SelloMedalla";
             label_SelloMedalla.Size = new System.Drawing.Size(135, 16);
             label_SelloMedalla.TabIndex = 1;
@@ -224,10 +235,11 @@
             // 
             // btn_Limpiar
             // 
+            btn_Limpiar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
-            btn_Limpiar.Location = new System.Drawing.Point(127, 400);
+            btn_Limpiar.Location = new System.Drawing.Point(175, 400);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 5;
@@ -236,10 +248,11 @@
             // 
             // btn_Guardar
             // 
+            btn_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
-            btn_Guardar.Location = new System.Drawing.Point(345, 400);
+            btn_Guardar.Location = new System.Drawing.Point(393, 400);
             btn_Guardar.Name = "btn_Guardar";
             btn_Guardar.Size = new System.Drawing.Size(75, 67);
             btn_Guardar.TabIndex = 4;
@@ -263,7 +276,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(569, 545);
+            ClientSize = new System.Drawing.Size(664, 545);
             Controls.Add(panel1);
             Controls.Add(label_TITULO);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

@@ -840,35 +840,26 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="mensaje"></param>
 
         protected void MostrarMensajeAyuda(string mensaje)
-        {
-            if (this.ParentForm != null)
             {
-                // Obtener el formulario que activó el HelpButton
-                Form formularioActivo = this.FindForm();
-                if (formularioActivo == null) return;
+        // Obtener el formulario que activó el HelpButton
+        Form formularioActivo = this.FindForm();//usar findForm para obtener el formulario al que pertenece el control
+        if (formularioActivo == null) return;
 
-                // Crear la instancia del mensaje
-                MensajeGeneral mensajeAyuda = new(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
+            // Crear la instancia del mensaje
+            MensajeGeneral mensajeAyuda = new MensajeGeneral(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
 
-                // Calcular la posición centrada respecto al formulario activo
-                int x = formularioActivo.Left + (formularioActivo.Width - mensajeAyuda.Width) / 2;
-                int y = formularioActivo.Top + (formularioActivo.Height - mensajeAyuda.Height) / 2;
+            // Calcular la posición centrada respecto al formulario activo
+            int x = formularioActivo.Left + (formularioActivo.Width - mensajeAyuda.Width) / 2;
+            int y = formularioActivo.Top + (formularioActivo.Height - mensajeAyuda.Height) / 2;
 
-                // Establecer la posición centrada
-                mensajeAyuda.StartPosition = FormStartPosition.Manual; // Establecer la posición manualmente
-                mensajeAyuda.Location = new Point(x, y);
+            // Establecer la posición centrada
+            mensajeAyuda.StartPosition = FormStartPosition.Manual; // Establecer la posición manualmente
+            mensajeAyuda.Location = new Point(x, y);
 
-                // Mostrar el mensaje
-                mensajeAyuda.ShowDialog(formularioActivo);
-            }
-            else
-            {
-                // Si no hay un ParentForm, usar un tamaño y posición por defecto
-                MensajeGeneral mensajeAyuda = new(mensaje, MensajeGeneral.TipoMensaje.Informacion, null);
-                mensajeAyuda.StartPosition = FormStartPosition.CenterScreen; // Usar CenterScreen si no hay ParentForm
-                mensajeAyuda.ShowDialog();
-            }
+            // Mostrar el mensaje
+            mensajeAyuda.ShowDialog(formularioActivo);
         }
+
 
         #endregion
 

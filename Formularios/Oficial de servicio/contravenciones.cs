@@ -254,24 +254,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-
-        //---------------------------------------------------------------------------------------------
-        private void textBox_Edad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Si no es un dígito ni una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-
-            // Verificar si el texto actual del TextBox tiene menos de 2 caracteres
-            if (textBox_Edad.Text.Length >= 2 && !char.IsControl(e.KeyChar))
-            {
-                // Si ya tiene 2 caracteres y no es una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-        }
         private void textBox_Edad_TextChanged(object sender, EventArgs e)
         {
             // Verificar si el texto actual del TextBox es "0" o "00"
@@ -283,58 +265,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        private void textBox_Dni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si la tecla presionada es un dígito o una tecla de control (como Backspace)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                // Si no es un dígito ni una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
+      
 
-            // Verificar si el texto actual del TextBox tiene  10 caracteres
-            if (textBox_Dni.Text.Length >= 10 && !char.IsControl(e.KeyChar))
-            {
-                // Si ya tiene 10 caracteres y no es una tecla de control, cancelar el evento
-                e.Handled = true;
-            }
-        }
-
-        private void textBox_Dni_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-
-            // Obtener la posición del cursor antes del formateo
-            int cursorPosition = textBox.SelectionStart;
-
-            // Usar la clase separada para formatear el texto con puntos
-            string textoFormateado = ClaseNumeros.FormatearNumeroConPuntos(textBox.Text);
-
-            // Actualizar el texto en el TextBox
-            textBox.Text = textoFormateado;
-
-            // Asegurarse de que el cursor se posicione al final del texto
-            textBox.SelectionStart = textBox.Text.Length;
-        }
-
-        private void textBox_Localidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true; // Rechaza caracteres no válidos.
-            }
-            else
-            {
-                e.KeyChar = char.ToUpper(e.KeyChar); // Convierte a mayúsculas.
-            }
-        }
+   
         private void Contravenciones_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            // Mostrar un mensaje de ayuda
-            MensajeGeneral.Mostrar("Complete la totalidad de campos requeridos para generar el documento.", MensajeGeneral.TipoMensaje.Informacion);
-
-            // Cancelar el evento para que no se cierre el formulario
-            e.Cancel = true;
+        {  
+            MostrarMensajeAyuda("Complete la totalidad de campos requeridos para generar el documento.");
         }
 
         //-------BOTON STAR PLANA---------------------------------
@@ -358,16 +294,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 else
                 {
                     // Mostrar mensaje de éxito si los campos están completos
-                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario  se enviara automaticamente la solicitud de plana" +
-                        "", MensajeGeneral.TipoMensaje.Exito);
+                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario  se enviara automaticamente la solicitud de plana" 
+                        , MensajeGeneral.TipoMensaje.Exito);
                     return true; // Retorna true si los campos están completos
                 }
             };
         }
 
-        private void Fecha_Instruccion_Load(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

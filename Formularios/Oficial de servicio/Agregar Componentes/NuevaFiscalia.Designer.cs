@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(btn_Limpiar);
             panel1.Controls.Add(btn_Guardar);
@@ -60,15 +61,16 @@
             panel1.Controls.Add(label_Ufid);
             panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(525, 243);
+            panel1.Size = new System.Drawing.Size(620, 243);
             panel1.TabIndex = 2;
             // 
             // btn_Limpiar
             // 
+            btn_Limpiar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
-            btn_Limpiar.Location = new System.Drawing.Point(147, 162);
+            btn_Limpiar.Location = new System.Drawing.Point(218, 163);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 30;
@@ -77,10 +79,11 @@
             // 
             // btn_Guardar
             // 
+            btn_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
-            btn_Guardar.Location = new System.Drawing.Point(367, 162);
+            btn_Guardar.Location = new System.Drawing.Point(438, 163);
             btn_Guardar.Name = "btn_Guardar";
             btn_Guardar.Size = new System.Drawing.Size(75, 67);
             btn_Guardar.TabIndex = 29;
@@ -96,18 +99,19 @@
             label_TITULO.Location = new System.Drawing.Point(159, -16);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(279, 35);
+            label_TITULO.Size = new System.Drawing.Size(235, 30);
             label_TITULO.TabIndex = 0;
             label_TITULO.Text = "DATOS FISCALIA";
             // 
             // textBox_DeptoJudicial
             // 
+            textBox_DeptoJudicial.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_DeptoJudicial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_DeptoJudicial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_DeptoJudicial.BackColor = System.Drawing.Color.White;
             textBox_DeptoJudicial.ErrorColor = System.Drawing.Color.Red;
             textBox_DeptoJudicial.FocusColor = System.Drawing.Color.Blue;
-            textBox_DeptoJudicial.Location = new System.Drawing.Point(147, 124);
+            textBox_DeptoJudicial.Location = new System.Drawing.Point(170, 125);
             textBox_DeptoJudicial.MaxLength = 32767;
             textBox_DeptoJudicial.Multiline = false;
             textBox_DeptoJudicial.Name = "textBox_DeptoJudicial";
@@ -117,7 +121,7 @@
             textBox_DeptoJudicial.ReadOnly = false;
             textBox_DeptoJudicial.SelectionStart = 0;
             textBox_DeptoJudicial.ShowError = false;
-            textBox_DeptoJudicial.Size = new System.Drawing.Size(295, 20);
+            textBox_DeptoJudicial.Size = new System.Drawing.Size(390, 20);
             textBox_DeptoJudicial.TabIndex = 3;
             textBox_DeptoJudicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_DeptoJudicial.TextValue = "";
@@ -125,12 +129,13 @@
             // 
             // textBox_Localidad
             // 
+            textBox_Localidad.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Localidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Localidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Localidad.BackColor = System.Drawing.Color.White;
             textBox_Localidad.ErrorColor = System.Drawing.Color.Red;
             textBox_Localidad.FocusColor = System.Drawing.Color.Blue;
-            textBox_Localidad.Location = new System.Drawing.Point(147, 98);
+            textBox_Localidad.Location = new System.Drawing.Point(170, 99);
             textBox_Localidad.MaxLength = 32767;
             textBox_Localidad.Multiline = false;
             textBox_Localidad.Name = "textBox_Localidad";
@@ -140,7 +145,7 @@
             textBox_Localidad.ReadOnly = false;
             textBox_Localidad.SelectionStart = 0;
             textBox_Localidad.ShowError = false;
-            textBox_Localidad.Size = new System.Drawing.Size(295, 20);
+            textBox_Localidad.Size = new System.Drawing.Size(390, 20);
             textBox_Localidad.TabIndex = 2;
             textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Localidad.TextValue = "";
@@ -148,12 +153,13 @@
             // 
             // textBox_AgenteFiscal
             // 
+            textBox_AgenteFiscal.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_AgenteFiscal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_AgenteFiscal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_AgenteFiscal.BackColor = System.Drawing.Color.White;
             textBox_AgenteFiscal.ErrorColor = System.Drawing.Color.Red;
             textBox_AgenteFiscal.FocusColor = System.Drawing.Color.Blue;
-            textBox_AgenteFiscal.Location = new System.Drawing.Point(147, 72);
+            textBox_AgenteFiscal.Location = new System.Drawing.Point(170, 73);
             textBox_AgenteFiscal.MaxLength = 32767;
             textBox_AgenteFiscal.Multiline = false;
             textBox_AgenteFiscal.Name = "textBox_AgenteFiscal";
@@ -163,7 +169,7 @@
             textBox_AgenteFiscal.ReadOnly = false;
             textBox_AgenteFiscal.SelectionStart = 0;
             textBox_AgenteFiscal.ShowError = false;
-            textBox_AgenteFiscal.Size = new System.Drawing.Size(295, 20);
+            textBox_AgenteFiscal.Size = new System.Drawing.Size(390, 20);
             textBox_AgenteFiscal.TabIndex = 1;
             textBox_AgenteFiscal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_AgenteFiscal.TextValue = "";
@@ -171,12 +177,13 @@
             // 
             // textBox_Fiscalia
             // 
+            textBox_Fiscalia.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Fiscalia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Fiscalia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Fiscalia.BackColor = System.Drawing.Color.White;
             textBox_Fiscalia.ErrorColor = System.Drawing.Color.Red;
             textBox_Fiscalia.FocusColor = System.Drawing.Color.Blue;
-            textBox_Fiscalia.Location = new System.Drawing.Point(147, 46);
+            textBox_Fiscalia.Location = new System.Drawing.Point(170, 47);
             textBox_Fiscalia.MaxLength = 32767;
             textBox_Fiscalia.Multiline = false;
             textBox_Fiscalia.Name = "textBox_Fiscalia";
@@ -186,7 +193,7 @@
             textBox_Fiscalia.ReadOnly = false;
             textBox_Fiscalia.SelectionStart = 0;
             textBox_Fiscalia.ShowError = false;
-            textBox_Fiscalia.Size = new System.Drawing.Size(295, 20);
+            textBox_Fiscalia.Size = new System.Drawing.Size(390, 20);
             textBox_Fiscalia.TabIndex = 5;
             textBox_Fiscalia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Fiscalia.TextValue = "";
@@ -196,9 +203,9 @@
             // 
             label_DptoJudicial.AutoSize = true;
             label_DptoJudicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_DptoJudicial.Location = new System.Drawing.Point(31, 125);
+            label_DptoJudicial.Location = new System.Drawing.Point(54, 126);
             label_DptoJudicial.Name = "label_DptoJudicial";
-            label_DptoJudicial.Size = new System.Drawing.Size(137, 20);
+            label_DptoJudicial.Size = new System.Drawing.Size(110, 16);
             label_DptoJudicial.TabIndex = 4;
             label_DptoJudicial.Text = "Dpto. Judicial :";
             // 
@@ -206,9 +213,9 @@
             // 
             label_Localidad.AutoSize = true;
             label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Localidad.Location = new System.Drawing.Point(43, 99);
+            label_Localidad.Location = new System.Drawing.Point(66, 100);
             label_Localidad.Name = "label_Localidad";
-            label_Localidad.Size = new System.Drawing.Size(127, 20);
+            label_Localidad.Size = new System.Drawing.Size(98, 16);
             label_Localidad.TabIndex = 3;
             label_Localidad.Text = "LOCALIDAD :";
             // 
@@ -216,9 +223,9 @@
             // 
             label_Dr.AutoSize = true;
             label_Dr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Dr.Location = new System.Drawing.Point(106, 72);
+            label_Dr.Location = new System.Drawing.Point(129, 73);
             label_Dr.Name = "label_Dr";
-            label_Dr.Size = new System.Drawing.Size(47, 20);
+            label_Dr.Size = new System.Drawing.Size(35, 16);
             label_Dr.TabIndex = 2;
             label_Dr.Text = "Dr. :";
             // 
@@ -226,17 +233,17 @@
             // 
             label_Ufid.AutoSize = true;
             label_Ufid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Ufid.Location = new System.Drawing.Point(79, 46);
+            label_Ufid.Location = new System.Drawing.Point(102, 47);
             label_Ufid.Name = "label_Ufid";
-            label_Ufid.Size = new System.Drawing.Size(78, 20);
+            label_Ufid.Size = new System.Drawing.Size(62, 16);
             label_Ufid.TabIndex = 1;
             label_Ufid.Text = "U.F.I.D.:";
             // 
             // NuevaFiscalia
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(569, 306);
+            ClientSize = new System.Drawing.Size(664, 306);
             Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             HelpButton = true;

@@ -36,8 +36,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
         #region LOAD
         private void NuevoSecretario_Load(object sender, EventArgs e)
         {
-            // Configurar todos los TextBoxes en el formulario
-            TextoEspecialCampos();
+           
             InicializarPictureBox();//para deshabilitar pictureBox al cargar formulario
 
 
@@ -131,39 +130,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
                 datosGuardados = true;
                 MensajeGeneral.Mostrar("Se ha guardado un nuevo secretario.", MensajeGeneral.TipoMensaje.Exito);
                 LimpiarFormulario.Limpiar(this);
-                comboBox_Escalafon.SelectedIndex = -1;
-                comboBox_Dependencia.SelectedIndex = -1;
+               
             }
         }
-        /// <summary>
-        /// CONTROLAR QUE SEAN MAYUSCULAS
-        /// </summary>
-        private void TextoEspecialCampos()
-        {
-            // Configurar TextBox(solo letras y espacios, convertir a mayúsculas)
-            Dictionary<string, bool> textBoxExcepciones = new Dictionary<string, bool>
-    {
-        { "textBox_Nombre", false },
-        { "textBox_Apellido", false },
-        { "textBox_NumeroLegajo", true },
-        { "texBox_Funcion", false }
-    };
-
-            // Configurar ComboBox (acepta números, letras, y espacios, convierte a mayúsculas)
-            Dictionary<string, bool> comboBoxExcepciones = new Dictionary<string, bool>
-    {
-
-        { "comboBox_Dependencia", true },
-        { "comboBox_Escalafon", false } // Configuración según la opción seleccionada
-    };
-
-
-            //  deshabilitar la edición del ComboBox_Escalafon
-            comboBox_Escalafon.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-            comboBox_Jerarquia.DropDownStyle = (CustomComboBox.CustomComboBoxStyle)ComboBoxStyle.DropDownList;
-
-        }
-
+     
         
 
        

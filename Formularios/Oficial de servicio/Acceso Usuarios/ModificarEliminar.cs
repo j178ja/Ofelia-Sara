@@ -115,7 +115,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Editar, "Seleccione los campos requeridos para poder EDITAR.", "EDITAR");
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_Eliminar, "Seleccione los campos requeridos para poder ELIMINARLO.", null);
          
-            ToolTipGeneral.Mostrar(btn_Cancelar, "CANCELAR");
+            ToolTipPersonalizado.Mostrar(btn_Cancelar, "CANCELAR", ToolTipPersonalizado.TipoToolTip.Cerrar);
         }
 
         /// <summary>

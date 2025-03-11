@@ -256,8 +256,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Dni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Dni.TextValue = "";
             textBox_Dni.Whidth = 0;
-            textBox_Dni.TextChanged += textBox_Dni_TextChanged;
-            textBox_Dni.KeyPress += textBox_Dni_KeyPress;
+     
             // 
             // textBox_Edad
             // 
@@ -282,7 +281,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Edad.TextValue = "";
             textBox_Edad.Whidth = 0;
             textBox_Edad.TextChanged += textBox_Edad_TextChanged;
-            textBox_Edad.KeyPress += textBox_Edad_KeyPress;
+ 
             // 
             // textBox_Localidad
             // 
@@ -306,7 +305,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Localidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             textBox_Localidad.TextValue = "";
             textBox_Localidad.Whidth = 0;
-            textBox_Localidad.KeyPress += textBox_Localidad_KeyPress;
+
             // 
             // textBox_Domicilio
             // 
