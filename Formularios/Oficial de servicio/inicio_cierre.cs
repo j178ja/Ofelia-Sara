@@ -48,6 +48,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private AgregarDatosPersonalesVictima agregarDatosPersonalesVictima;
         private AgregarDatosPersonalesImputado agregarDatosPersonalesImputado;
 
+
+
         #endregion
 
         #region CONSTRUCTOR
@@ -55,17 +57,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             InitializeComponent();
          
-            //.para reposicionar paneles
-            reposicionador = new ReposicionarSegunAgregado(
-            this,
-            panel_Ipp,
-            panel_Caratula,
-            panel_Victima,
-            panel_Imputado,
-            panel_Instruccion,
-            panel_Compromisos,
-            panel_ControlesInferiores
-            );
+            ////.para reposicionar paneles
+            //reposicionador = new ReposicionarSegunAgregado(
+            //this,
+            //panel_Ipp,
+            //panel_Caratula,
+            //panel_Victima,
+            //panel_Imputado,
+            //panel_Instruccion,
+            //panel_Compromisos,
+            //panel_ControlesInferiores
+            //);
 
             textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
@@ -78,8 +80,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_Dependencia.SelectedIndexChanged += (s, e) => ActualizarEstado();
 
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
+          panel_Compromisos.Visible = false;
 
-      
+
         }
         #endregion
 
@@ -111,8 +114,40 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             BotonDeslizable_247();  // Configurar el delegado de validación
 
             botonDeslizable_Not247.IsOn = false;// inicializa desactivado
+
+            AjustarTamanoFormularioPanelCompromisos();
         }
         #endregion
+        private void AjustarTamanoFormularioPanelCompromisos()
+        {
+            // Tamaño base del formulario (sin el panel oculto)
+            int alturaBase = panel1.Height;  
+            int alturaPanelOculto = panel_Compromisos.Height;
+
+            // Calcula la nueva posición de panel_ControlesInferiores
+            if (panel_Compromisos.Visible)
+            {
+                // Si el panel está visible, se mantiene debajo de compromisos
+                panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Left, panel_Compromisos.Bottom );
+            }
+            else
+            {
+                panel1.Height = alturaBase - alturaPanelOculto;
+              
+                // Si el panel se oculta, sube debajo de panel_Instruccion
+                panel_ControlesInferiores.Location = new Point(panel_ControlesInferiores.Left +5, panel_DatosIppCompleta.Bottom );
+                // Ajusta la altura del formulario para que coincida con el panel1 más un pequeño margen
+                this.Height = panel1.Bottom + 80;
+
+                // Forzar la actualización inmediata
+                this.Invalidate();
+                this.Update();
+                this.Refresh();
+
+
+            }
+        }
+
 
         #region PROPIEDADES PUBLICAS
         /// <summary>

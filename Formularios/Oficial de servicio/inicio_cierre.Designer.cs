@@ -754,7 +754,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1.Controls.Add(panel_ControlesInferiores);
             panel1.Location = new Point(21, 23);
             panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            panel1.MinimumSize = new Size(532, 542);
             panel1.Name = "panel1";
             panel1.Size = new Size(539, 542);
             panel1.TabIndex = 30;
@@ -1249,7 +1248,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MaximizeBox = false;
-            MinimumSize = new Size(599, 645);
             Name = "InicioCierre";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ACTUACIONES SUMARIALES PREVENCIONALES";
