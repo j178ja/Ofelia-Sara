@@ -122,7 +122,7 @@
     <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\UsuarioForm.cs">
+    <Compile Update="Formularios\Oficial de servicio\Acceso Usuarios\AccesoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Oficial de servicio\ActaDenuncia.cs">

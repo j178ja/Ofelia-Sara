@@ -37,20 +37,22 @@
             // 
             // panel1
             // 
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(listView_Documentos);
             panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(529, 262);
+            panel1.Size = new System.Drawing.Size(616, 262);
             panel1.TabIndex = 2;
             // 
             // listView_Documentos
             // 
+            listView_Documentos.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             listView_Documentos.BackColor = System.Drawing.SystemColors.ControlLightLight;
             listView_Documentos.Cursor = System.Windows.Forms.Cursors.Hand;
             listView_Documentos.Location = new System.Drawing.Point(0, 36);
             listView_Documentos.Name = "listView_Documentos";
-            listView_Documentos.Size = new System.Drawing.Size(529, 209);
+            listView_Documentos.Size = new System.Drawing.Size(616, 209);
             listView_Documentos.TabIndex = 2;
             listView_Documentos.UseCompatibleStateImageBehavior = false;
             // 
@@ -71,7 +73,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(571, 321);
+            ClientSize = new System.Drawing.Size(658, 321);
             Controls.Add(label_TITULO);
             Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

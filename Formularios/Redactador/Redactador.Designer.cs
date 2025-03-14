@@ -115,17 +115,18 @@ namespace Ofelia_Sara.Formularios.Redactador
             panel1.Controls.Add(richTextBox_Redactor);
             panel1.Location = new Point(17, 63);
             panel1.Name = "panel1";
-            panel1.Size = new Size(547, 309);
+            panel1.Size = new Size(641, 309);
             panel1.TabIndex = 0;
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(btn_Enviar);
             panel2.Controls.Add(btn_Limpiar);
             panel2.Controls.Add(btn_Guardar);
             panel2.Location = new Point(10, 221);
             panel2.Name = "panel2";
-            panel2.Size = new Size(527, 86);
+            panel2.Size = new Size(621, 86);
             panel2.TabIndex = 6;
             // 
             // btn_Enviar
@@ -135,7 +136,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Enviar.BackgroundImage = Properties.Resources.EnviarWhatsApp;
             btn_Enviar.BackgroundImageLayout = ImageLayout.Zoom;
             btn_Enviar.Cursor = Cursors.Hand;
-            btn_Enviar.Location = new Point(391, 8);
+            btn_Enviar.Location = new Point(438, 8);
             btn_Enviar.Name = "btn_Enviar";
             btn_Enviar.Size = new Size(82, 68);
             btn_Enviar.TabIndex = 5;
@@ -148,7 +149,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Limpiar.BackgroundImage = (Image)resources.GetObject("btn_Limpiar.BackgroundImage");
             btn_Limpiar.BackgroundImageLayout = ImageLayout.Center;
             btn_Limpiar.Cursor = Cursors.Hand;
-            btn_Limpiar.Location = new Point(66, 13);
+            btn_Limpiar.Location = new Point(113, 13);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new Size(64, 58);
             btn_Limpiar.TabIndex = 2;
@@ -162,7 +163,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Guardar.BackgroundImage = (Image)resources.GetObject("btn_Guardar.BackgroundImage");
             btn_Guardar.BackgroundImageLayout = ImageLayout.Center;
             btn_Guardar.Cursor = Cursors.Hand;
-            btn_Guardar.Location = new Point(220, 13);
+            btn_Guardar.Location = new Point(267, 13);
             btn_Guardar.Name = "btn_Guardar";
             btn_Guardar.Size = new Size(64, 58);
             btn_Guardar.TabIndex = 3;
@@ -195,7 +196,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             panel_Botones.Controls.Add(btn_Subrayado);
             panel_Botones.Controls.Add(btn_Cursiva);
             panel_Botones.Controls.Add(btn_Negrita);
-            panel_Botones.Location = new Point(142, 40);
+            panel_Botones.Location = new Point(189, 40);
             panel_Botones.Name = "panel_Botones";
             panel_Botones.Size = new Size(261, 28);
             panel_Botones.TabIndex = 1;
@@ -343,7 +344,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             richTextBox_Redactor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox_Redactor.Location = new Point(10, 74);
             richTextBox_Redactor.Name = "richTextBox_Redactor";
-            richTextBox_Redactor.Size = new Size(527, 141);
+            richTextBox_Redactor.Size = new Size(621, 141);
             richTextBox_Redactor.TabIndex = 0;
             richTextBox_Redactor.Text = "";
             richTextBox_Redactor.TextChanged += RichTextBox_Redactor_TextChanged;
@@ -373,7 +374,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Minimizar.FlatStyle = FlatStyle.Flat;
             btn_Minimizar.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Minimizar.ForeColor = SystemColors.WindowFrame;
-            btn_Minimizar.Location = new Point(490, 5);
+            btn_Minimizar.Location = new Point(584, 5);
             btn_Minimizar.Name = "btn_Minimizar";
             btn_Minimizar.Size = new Size(25, 25);
             btn_Minimizar.TabIndex = 20;
@@ -390,7 +391,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             label_OfeliaSara.Cursor = Cursors.Hand;
             label_OfeliaSara.FlatStyle = FlatStyle.Flat;
             label_OfeliaSara.Font = new Font("Monotype Corsiva", 16F, FontStyle.Italic);
-            label_OfeliaSara.Location = new Point(230, 5);
+            label_OfeliaSara.Location = new Point(277, 2);
             label_OfeliaSara.Name = "label_OfeliaSara";
             label_OfeliaSara.Size = new Size(135, 33);
             label_OfeliaSara.TabIndex = 16;
@@ -407,14 +408,13 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Cerrar.FlatStyle = FlatStyle.Flat;
             btn_Cerrar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Cerrar.ForeColor = SystemColors.ControlDarkDark;
-            btn_Cerrar.Location = new Point(544, 5);
+            btn_Cerrar.Location = new Point(638, 5);
             btn_Cerrar.Name = "btn_Cerrar";
             btn_Cerrar.Size = new Size(25, 25);
             btn_Cerrar.TabIndex = 17;
             btn_Cerrar.Text = "X";
             btn_Cerrar.UseVisualStyleBackColor = false;
             btn_Cerrar.Click += Btn_Cerrar_Click;
-            
             // 
             // panel_MenuSuperior
             // 
@@ -429,7 +429,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             panel_MenuSuperior.Controls.Add(btn_Cerrar);
             panel_MenuSuperior.Location = new Point(0, 0);
             panel_MenuSuperior.Name = "panel_MenuSuperior";
-            panel_MenuSuperior.Size = new Size(576, 34);
+            panel_MenuSuperior.Size = new Size(670, 34);
             panel_MenuSuperior.TabIndex = 18;
             panel_MenuSuperior.MouseDown += panel_MenuSuperior_MouseDown;
             // 
@@ -439,7 +439,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             panel_SubirAudio.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel_SubirAudio.Controls.Add(label_SubirAudio);
             panel_SubirAudio.Controls.Add(pictureBox_SubirAudio);
-            panel_SubirAudio.Location = new Point(378, 3);
+            panel_SubirAudio.Location = new Point(465, 3);
             panel_SubirAudio.Name = "panel_SubirAudio";
             panel_SubirAudio.Size = new Size(116, 28);
             panel_SubirAudio.TabIndex = 22;
@@ -447,7 +447,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             // label_SubirAudio
             // 
             label_SubirAudio.AutoSize = true;
-            label_SubirAudio.Location = new Point(32, 5);
+            label_SubirAudio.Location = new Point(32, 4);
             label_SubirAudio.Name = "label_SubirAudio";
             label_SubirAudio.Size = new Size(81, 20);
             label_SubirAudio.TabIndex = 1;
@@ -482,7 +482,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Maximizar.FlatStyle = FlatStyle.Flat;
             btn_Maximizar.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Maximizar.ForeColor = SystemColors.ControlDarkDark;
-            btn_Maximizar.Location = new Point(517, 5);
+            btn_Maximizar.Location = new Point(611, 5);
             btn_Maximizar.Name = "btn_Maximizar";
             btn_Maximizar.Size = new Size(25, 25);
             btn_Maximizar.TabIndex = 21;
@@ -509,7 +509,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             btn_Microfono.BackgroundImage = (Image)resources.GetObject("btn_Microfono.BackgroundImage");
             btn_Microfono.BackgroundImageLayout = ImageLayout.Center;
             btn_Microfono.Cursor = Cursors.Hand;
-            btn_Microfono.Location = new Point(259, 39);
+            btn_Microfono.Location = new Point(306, 39);
             btn_Microfono.Name = "btn_Microfono";
             btn_Microfono.Size = new Size(44, 45);
             btn_Microfono.TabIndex = 10;
@@ -643,14 +643,14 @@ namespace Ofelia_Sara.Formularios.Redactador
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 154, 174);
-            ClientSize = new Size(576, 409);
+            ClientSize = new Size(670, 409);
             Controls.Add(btn_Actuacion);
             Controls.Add(panel_MenuSuperior);
             Controls.Add(btn_Microfono);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(576, 409);
+            MinimumSize = new Size(670, 409);
             Name = "Redactador";
             Text = "REDACTAR TEXTO MEDIANTE VOZ";
             Load += Redactador_Load;

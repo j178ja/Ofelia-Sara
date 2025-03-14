@@ -18,8 +18,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         #region VARIABLES
         private Timer capsLockTimer; // Timer para verificar Caps Lock
         private bool capsLockState; // Timer para verificar Caps Lock
-                                   
-       private bool esContraseñaVisible = false; // Define una variable para llevar el control del estado de visibilidad
+
+        private bool esContraseñaVisible = false; // Define una variable para llevar el control del estado de visibilidad
         #endregion
 
         #region CONSTRUCTOR
@@ -32,7 +32,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             textBox_Contraseña.InnerTextBox.KeyPress += (s, e) => IndicadorMayusculaActivado();
             textBox_Contraseña.InnerTextBox.LostFocus += (s, e) => pictureBox_MayusculaActivada.Visible = false;
             InicializarCapsLockTimer(); // Inicializar el Timer
-        
+
             // Inicializa el estado de Caps Lock al cargar el formulario
             capsLockState = Control.IsKeyLocked(Keys.CapsLock);
             IndicadorMayusculaActivado(); // Muestra u oculta el indicador inicial
@@ -46,11 +46,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         private void Registro_Load(object sender, EventArgs e)
         {
             InicializarEstiloBoton(btn_Registrarse);
-          
 
-          
+
+
             // Configurar el comportamiento de los ComboBox
-           
+
             comboBox_Jerarquia.Enabled = false;
             comboBox_Jerarquia.DataSource = null;
 
@@ -61,9 +61,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 
         }
         #endregion
-       
-      
-      
+
+
+
         private void Btn_Registrarse_Click(object sender, EventArgs e)
         {
             // Verificar si los campos están completados
@@ -75,7 +75,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             else
             {
                 //AGREGAR LOGICA PARA ALMACENAR EL NUEVO REGISTRO DE USUARIO
-                 MensajeGeneral.Mostrar("Se ha registrado un nuevo Usuario.", MensajeGeneral.TipoMensaje.Exito);
+                MensajeGeneral.Mostrar("Se ha registrado un nuevo Usuario.", MensajeGeneral.TipoMensaje.Exito);
 
             }
         }
@@ -128,10 +128,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         /// <param name="e"></param>
         private void Registro_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-        
+
             MostrarMensajeAyuda("Complete la totalidad de los campos para poder registrar un nuevo Usuario.");
         }
-     
+
         /// <summary>
         /// MUESTRA CONTRASEÑA
         /// </summary>
@@ -174,11 +174,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             }
         }
 
-    
+
 
         /// <summary>
-  /// INICIALIZA VERIFICADOR DE MAYUSCULA
-  /// </summary>
+        /// INICIALIZA VERIFICADOR DE MAYUSCULA
+        /// </summary>
         private void InicializarCapsLockTimer()
         {
             capsLockTimer = new Timer
@@ -234,6 +234,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
             base.OnFormClosing(e);
         }
 
-      
+
     }
 }

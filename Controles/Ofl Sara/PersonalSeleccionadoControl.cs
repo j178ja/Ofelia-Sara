@@ -86,7 +86,7 @@ namespace Ofelia_Sara.Controles.Controles.Ofl_Sara
         private void Btn_ModificarPersonal_Click(object sender, EventArgs e)
         {
             // Mostrar el formulario de usuario para la validación previa
-            using (UsuarioForm usuarioForm = new UsuarioForm())
+            using (AccesoUsuario usuarioForm = new AccesoUsuario())
             {
                 DialogResult result = usuarioForm.ShowDialog();
 

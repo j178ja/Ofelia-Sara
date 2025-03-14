@@ -59,6 +59,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(pictureBox_MayusculaActivada);
             panel1.Controls.Add(numeroTelefonicoControl1);
@@ -83,7 +84,7 @@
             panel1.Controls.Add(label_Usuario);
             panel1.Location = new System.Drawing.Point(20, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(527, 409);
+            panel1.Size = new System.Drawing.Size(616, 409);
             panel1.TabIndex = 110;
             // 
             // pictureBox_MayusculaActivada
@@ -101,11 +102,11 @@
             // 
             numeroTelefonicoControl1.AutoSize = true;
             numeroTelefonicoControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            numeroTelefonicoControl1.ControlWidth = 198;
+            numeroTelefonicoControl1.ControlWidth = 226;
             numeroTelefonicoControl1.Location = new System.Drawing.Point(225, 274);
             numeroTelefonicoControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             numeroTelefonicoControl1.Name = "numeroTelefonicoControl1";
-            numeroTelefonicoControl1.Size = new System.Drawing.Size(198, 25);
+            numeroTelefonicoControl1.Size = new System.Drawing.Size(226, 33);
             numeroTelefonicoControl1.TabIndex = 8;
             // 
             // label_TelValidacion2
@@ -114,7 +115,7 @@
             label_TelValidacion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TelValidacion2.Location = new System.Drawing.Point(60, 289);
             label_TelValidacion2.Name = "label_TelValidacion2";
-            label_TelValidacion2.Size = new System.Drawing.Size(126, 16);
+            label_TelValidacion2.Size = new System.Drawing.Size(154, 20);
             label_TelValidacion2.TabIndex = 110;
             label_TelValidacion2.Text = "RECUPERACION";
             // 
@@ -124,15 +125,16 @@
             label_TelValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TelValidacion.Location = new System.Drawing.Point(78, 272);
             label_TelValidacion.Name = "label_TelValidacion";
-            label_TelValidacion.Size = new System.Drawing.Size(87, 16);
+            label_TelValidacion.Size = new System.Drawing.Size(107, 20);
             label_TelValidacion.TabIndex = 109;
             label_TelValidacion.Text = "TELEFONO";
             // 
             // pictureBox_OjoContraseña
             // 
+            pictureBox_OjoContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             pictureBox_OjoContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             pictureBox_OjoContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox_OjoContraseña.Location = new System.Drawing.Point(429, 242);
+            pictureBox_OjoContraseña.Location = new System.Drawing.Point(518, 242);
             pictureBox_OjoContraseña.Name = "pictureBox_OjoContraseña";
             pictureBox_OjoContraseña.Size = new System.Drawing.Size(32, 19);
             pictureBox_OjoContraseña.TabIndex = 27;
@@ -142,6 +144,7 @@
             // 
             // comboBox_Jerarquia
             // 
+            comboBox_Jerarquia.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             comboBox_Jerarquia.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Jerarquia.ArrowImage");
             comboBox_Jerarquia.ArrowPictureBox = null;
             comboBox_Jerarquia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -169,13 +172,14 @@
             comboBox_Jerarquia.SelectedText = "";
             comboBox_Jerarquia.SelectionStart = 0;
             comboBox_Jerarquia.ShowError = false;
-            comboBox_Jerarquia.Size = new System.Drawing.Size(232, 21);
+            comboBox_Jerarquia.Size = new System.Drawing.Size(321, 21);
             comboBox_Jerarquia.TabIndex = 1;
             comboBox_Jerarquia.Text = " ";
             comboBox_Jerarquia.TextValue = " ";
             // 
             // comboBox_Escalafon
             // 
+            comboBox_Escalafon.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             comboBox_Escalafon.ArrowImage = (System.Drawing.Image)resources.GetObject("comboBox_Escalafon.ArrowImage");
             comboBox_Escalafon.ArrowPictureBox = null;
             comboBox_Escalafon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -203,7 +207,7 @@
             comboBox_Escalafon.SelectedText = "";
             comboBox_Escalafon.SelectionStart = 0;
             comboBox_Escalafon.ShowError = false;
-            comboBox_Escalafon.Size = new System.Drawing.Size(232, 21);
+            comboBox_Escalafon.Size = new System.Drawing.Size(321, 21);
             comboBox_Escalafon.TabIndex = 0;
             comboBox_Escalafon.Text = " ";
             comboBox_Escalafon.TextValue = " ";
@@ -214,16 +218,17 @@
             label_Subescalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Subescalafon.Location = new System.Drawing.Point(50, 41);
             label_Subescalafon.Name = "label_Subescalafon";
-            label_Subescalafon.Size = new System.Drawing.Size(135, 16);
+            label_Subescalafon.Size = new System.Drawing.Size(169, 20);
             label_Subescalafon.TabIndex = 101;
             label_Subescalafon.Text = "SUBESCALAFON :";
             // 
             // btn_Limpiar
             // 
+            btn_Limpiar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
-            btn_Limpiar.Location = new System.Drawing.Point(129, 322);
+            btn_Limpiar.Location = new System.Drawing.Point(174, 322);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 10;
@@ -232,10 +237,11 @@
             // 
             // btn_Registrarse
             // 
+            btn_Registrarse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             btn_Registrarse.BackColor = System.Drawing.Color.SkyBlue;
             btn_Registrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Registrarse.Image = (System.Drawing.Image)resources.GetObject("btn_Registrarse.Image");
-            btn_Registrarse.Location = new System.Drawing.Point(370, 322);
+            btn_Registrarse.Location = new System.Drawing.Point(415, 322);
             btn_Registrarse.Name = "btn_Registrarse";
             btn_Registrarse.Size = new System.Drawing.Size(75, 67);
             btn_Registrarse.TabIndex = 9;
@@ -248,12 +254,13 @@
             label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Legajo.Location = new System.Drawing.Point(112, 170);
             label_Legajo.Name = "label_Legajo";
-            label_Legajo.Size = new System.Drawing.Size(73, 16);
+            label_Legajo.Size = new System.Drawing.Size(94, 20);
             label_Legajo.TabIndex = 105;
             label_Legajo.Text = "LEGAJO :";
             // 
             // textBox_NumeroLegajo
             // 
+            textBox_NumeroLegajo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_NumeroLegajo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_NumeroLegajo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_NumeroLegajo.BackColor = System.Drawing.Color.White;
@@ -270,11 +277,12 @@
             textBox_NumeroLegajo.ReadOnly = false;
             textBox_NumeroLegajo.SelectionStart = 0;
             textBox_NumeroLegajo.ShowError = false;
-            textBox_NumeroLegajo.Size = new System.Drawing.Size(232, 21);
+            textBox_NumeroLegajo.Size = new System.Drawing.Size(321, 21);
             textBox_NumeroLegajo.TabIndex = 5;
             textBox_NumeroLegajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_NumeroLegajo.TextValue = "";
             textBox_NumeroLegajo.Whidth = 0;
+
             // 
             // label_Apellido
             // 
@@ -282,12 +290,13 @@
             label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Apellido.Location = new System.Drawing.Point(98, 142);
             label_Apellido.Name = "label_Apellido";
-            label_Apellido.Size = new System.Drawing.Size(87, 16);
+            label_Apellido.Size = new System.Drawing.Size(112, 20);
             label_Apellido.TabIndex = 104;
             label_Apellido.Text = "APELLIDO :";
             // 
             // textBox_Apellido
             // 
+            textBox_Apellido.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Apellido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Apellido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Apellido.BackColor = System.Drawing.Color.White;
@@ -304,7 +313,7 @@
             textBox_Apellido.ReadOnly = false;
             textBox_Apellido.SelectionStart = 0;
             textBox_Apellido.ShowError = false;
-            textBox_Apellido.Size = new System.Drawing.Size(232, 21);
+            textBox_Apellido.Size = new System.Drawing.Size(321, 21);
             textBox_Apellido.TabIndex = 4;
             textBox_Apellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Apellido.TextValue = "";
@@ -312,6 +321,7 @@
             // 
             // textBox_Nombre
             // 
+            textBox_Nombre.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Nombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Nombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Nombre.BackColor = System.Drawing.Color.White;
@@ -328,11 +338,12 @@
             textBox_Nombre.ReadOnly = false;
             textBox_Nombre.SelectionStart = 0;
             textBox_Nombre.ShowError = false;
-            textBox_Nombre.Size = new System.Drawing.Size(232, 21);
+            textBox_Nombre.Size = new System.Drawing.Size(321, 21);
             textBox_Nombre.TabIndex = 2;
             textBox_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Nombre.TextValue = "";
             textBox_Nombre.Whidth = 0;
+        
             // 
             // label_Nombre
             // 
@@ -340,7 +351,7 @@
             label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Nombre.Location = new System.Drawing.Point(105, 112);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new System.Drawing.Size(80, 16);
+            label_Nombre.Size = new System.Drawing.Size(101, 20);
             label_Nombre.TabIndex = 103;
             label_Nombre.Text = "NOMBRE :";
             // 
@@ -350,12 +361,13 @@
             label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Jerarquia.Location = new System.Drawing.Point(84, 71);
             label_Jerarquia.Name = "label_Jerarquia";
-            label_Jerarquia.Size = new System.Drawing.Size(101, 16);
+            label_Jerarquia.Size = new System.Drawing.Size(125, 20);
             label_Jerarquia.TabIndex = 102;
             label_Jerarquia.Text = "JERARQUIA :";
             // 
             // textBox_Contraseña
             // 
+            textBox_Contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Contraseña.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Contraseña.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Contraseña.BackColor = System.Drawing.Color.White;
@@ -372,7 +384,7 @@
             textBox_Contraseña.ReadOnly = false;
             textBox_Contraseña.SelectionStart = 0;
             textBox_Contraseña.ShowError = false;
-            textBox_Contraseña.Size = new System.Drawing.Size(232, 21);
+            textBox_Contraseña.Size = new System.Drawing.Size(321, 21);
             textBox_Contraseña.TabIndex = 7;
             textBox_Contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Contraseña.TextValue = "";
@@ -381,6 +393,7 @@
             // 
             // textBox_Usuario
             // 
+            textBox_Usuario.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             textBox_Usuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             textBox_Usuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             textBox_Usuario.BackColor = System.Drawing.Color.White;
@@ -397,7 +410,7 @@
             textBox_Usuario.ReadOnly = false;
             textBox_Usuario.SelectionStart = 0;
             textBox_Usuario.ShowError = false;
-            textBox_Usuario.Size = new System.Drawing.Size(232, 21);
+            textBox_Usuario.Size = new System.Drawing.Size(321, 21);
             textBox_Usuario.TabIndex = 6;
             textBox_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Usuario.TextValue = "";
@@ -409,7 +422,7 @@
             label_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Contraseña.Location = new System.Drawing.Point(66, 242);
             label_Contraseña.Name = "label_Contraseña";
-            label_Contraseña.Size = new System.Drawing.Size(119, 16);
+            label_Contraseña.Size = new System.Drawing.Size(146, 20);
             label_Contraseña.TabIndex = 107;
             label_Contraseña.Text = "CONTRASEÑA :";
             // 
@@ -419,7 +432,7 @@
             label_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Usuario.Location = new System.Drawing.Point(102, 212);
             label_Usuario.Name = "label_Usuario";
-            label_Usuario.Size = new System.Drawing.Size(83, 16);
+            label_Usuario.Size = new System.Drawing.Size(103, 20);
             label_Usuario.TabIndex = 106;
             label_Usuario.Text = "USUARIO :";
             // 
@@ -432,15 +445,15 @@
             label_TITULO.Location = new System.Drawing.Point(95, 12);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(370, 26);
+            label_TITULO.Size = new System.Drawing.Size(432, 31);
             label_TITULO.TabIndex = 100;
             label_TITULO.Text = "REGISTRO DE NUEVOS USUARIOS";
             // 
             // Registro
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(569, 468);
+            ClientSize = new System.Drawing.Size(658, 468);
             Controls.Add(panel1);
             Controls.Add(label_TITULO);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

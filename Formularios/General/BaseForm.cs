@@ -109,7 +109,7 @@ namespace Ofelia_Sara.Formularios.General
             ConfigurarCheckBoxesConImagen();
             
             ConfigurarToolTips();
-          
+            Instruccion.InicializarComboBoxIpp(this);
         }
         #endregion
 

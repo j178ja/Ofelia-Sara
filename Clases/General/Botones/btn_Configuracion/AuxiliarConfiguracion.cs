@@ -448,7 +448,7 @@ namespace Ofelia_Sara.Clases.General.Botones.btn_Configuracion
         // ------PARA Btn REMOVER----------------------
         private void Item_Remover_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<UsuarioForm>();
+            AbrirFormulario<AccesoUsuario>();
         }
 
         #endregion

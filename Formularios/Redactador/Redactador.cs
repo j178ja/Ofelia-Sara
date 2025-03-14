@@ -88,7 +88,7 @@ namespace Ofelia_Sara.Formularios.Redactador
             }
 
             ToolTipGeneral.Mostrar(btn_Microfono, "ACTIVAR microfono.");//inicializa este tooltip ya que inicia el btn desactivado
-
+            ToolTipGeneral.Mostrar(btn_Actuacion,"Seleccione modelo de actuación y/o plantilla");
         }
         #endregion
 

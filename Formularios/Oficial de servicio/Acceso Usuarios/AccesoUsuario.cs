@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
 {
-    public partial class UsuarioForm : BaseForm
+    public partial class AccesoUsuario : BaseForm
     {
         #region VARIABLES
         private Timer capsLockTimer; // Timer para verificar Caps Lock
@@ -25,7 +25,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios
         #endregion
 
         #region CONSTRUCTOR
-        public UsuarioForm()
+        public AccesoUsuario()
         {
             InitializeComponent();
 

@@ -49,22 +49,23 @@
             // 
             // panel1
             // 
-            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel1.Controls.Add(panel_Superior);
             panel1.Controls.Add(panel_Botones);
             panel1.Location = new System.Drawing.Point(15, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(541, 209);
+            panel1.Size = new System.Drawing.Size(630, 209);
             panel1.TabIndex = 2;
             // 
             // panel_Superior
             // 
+            panel_Superior.Anchor = System.Windows.Forms.AnchorStyles.Top;
             panel_Superior.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel_Superior.Controls.Add(listBox_Seleccion);
             panel_Superior.Controls.Add(label_Seleccion);
             panel_Superior.Controls.Add(listBox_Datos);
-            panel_Superior.Location = new System.Drawing.Point(12, 37);
+            panel_Superior.Location = new System.Drawing.Point(57, 37);
             panel_Superior.Name = "panel_Superior";
             panel_Superior.Size = new System.Drawing.Size(514, 72);
             panel_Superior.TabIndex = 35;
@@ -77,7 +78,7 @@
             listBox_Seleccion.Items.AddRange(new object[] { "FISCALIA", "INSTRUCTOR", "SECRETARIO", "DEDPENDENCIA", "PERSONAL " });
             listBox_Seleccion.Location = new System.Drawing.Point(260, 10);
             listBox_Seleccion.Name = "listBox_Seleccion";
-            listBox_Seleccion.Size = new System.Drawing.Size(198, 20);
+            listBox_Seleccion.Size = new System.Drawing.Size(198, 4);
             listBox_Seleccion.TabIndex = 29;
             listBox_Seleccion.SelectedIndexChanged += ListBox_Seleccion_SelectedIndexChanged;
             // 
@@ -87,7 +88,7 @@
             label_Seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_Seleccion.Location = new System.Drawing.Point(38, 14);
             label_Seleccion.Name = "label_Seleccion";
-            label_Seleccion.Size = new System.Drawing.Size(216, 16);
+            label_Seleccion.Size = new System.Drawing.Size(270, 20);
             label_Seleccion.TabIndex = 26;
             label_Seleccion.Text = "SELECCION DE ELEMENTOS:";
             // 
@@ -95,22 +96,22 @@
             // 
             listBox_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             listBox_Datos.FormattingEnabled = true;
-            listBox_Datos.ItemHeight = 20;
+            listBox_Datos.ItemHeight = 25;
             listBox_Datos.Location = new System.Drawing.Point(61, 45);
             listBox_Datos.Name = "listBox_Datos";
-            listBox_Datos.Size = new System.Drawing.Size(397, 24);
+            listBox_Datos.Size = new System.Drawing.Size(397, 4);
             listBox_Datos.TabIndex = 30;
             listBox_Datos.SelectedIndexChanged += ListBox_Datos_SelectedIndexChanged;
             // 
             // panel_Botones
             // 
-            panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            panel_Botones.Anchor = System.Windows.Forms.AnchorStyles.Top;
             panel_Botones.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel_Botones.Controls.Add(btn_Guardar);
             panel_Botones.Controls.Add(btn_Cancelar);
             panel_Botones.Controls.Add(btn_Editar);
             panel_Botones.Controls.Add(btn_Eliminar);
-            panel_Botones.Location = new System.Drawing.Point(12, 112);
+            panel_Botones.Location = new System.Drawing.Point(57, 112);
             panel_Botones.Name = "panel_Botones";
             panel_Botones.Size = new System.Drawing.Size(514, 91);
             panel_Botones.TabIndex = 34;
@@ -175,16 +176,16 @@
             label_TITULO.Location = new System.Drawing.Point(111, 12);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            label_TITULO.Size = new System.Drawing.Size(360, 26);
+            label_TITULO.Size = new System.Drawing.Size(425, 31);
             label_TITULO.TabIndex = 14;
             label_TITULO.Text = "ADMINISTRADOR DE ELEMENTOS";
             // 
             // ModificarEliminar
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            ClientSize = new System.Drawing.Size(573, 262);
+            ClientSize = new System.Drawing.Size(662, 262);
             Controls.Add(panel1);
             Controls.Add(label_TITULO);
             HelpButton = true;
