@@ -25,8 +25,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             comboBox_ModeloActuacion.Visible = false;
             groupBox_SeleccionPlantilla.Visible = false;
 
-          panel1.Height = panel_TipoActuacion.Height + 10;
-            this.Height = panel1.Height + 80;
+            AjustarTamanoFormulario();
 
         }
 
