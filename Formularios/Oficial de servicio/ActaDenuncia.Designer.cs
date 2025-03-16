@@ -154,7 +154,7 @@
             comboBox_ModeloActuacion.MaxDropDownItems = 5;
             comboBox_ModeloActuacion.Name = "comboBox_ModeloActuacion";
             comboBox_ModeloActuacion.PlaceholderColor = System.Drawing.Color.Gray;
-            comboBox_ModeloActuacion.PlaceholderText = " ";
+            comboBox_ModeloActuacion.PlaceholderText = " SELECCIONE MODELO DE ACTUACIÓN";
             comboBox_ModeloActuacion.PressedImage = (System.Drawing.Image)resources.GetObject("comboBox_ModeloActuacion.PressedImage");
             comboBox_ModeloActuacion.SelectedIndex = -1;
             comboBox_ModeloActuacion.SelectedItem = null;
@@ -172,7 +172,7 @@
             radioButton_ActuacionEstandar.Cursor = System.Windows.Forms.Cursors.Hand;
             radioButton_ActuacionEstandar.Location = new System.Drawing.Point(346, 22);
             radioButton_ActuacionEstandar.Name = "radioButton_ActuacionEstandar";
-            radioButton_ActuacionEstandar.Size = new System.Drawing.Size(144, 19);
+            radioButton_ActuacionEstandar.Size = new System.Drawing.Size(183, 24);
             radioButton_ActuacionEstandar.TabIndex = 1;
             radioButton_ActuacionEstandar.TabStop = true;
             radioButton_ActuacionEstandar.Text = "Actuación ESTANDAR";
@@ -186,7 +186,7 @@
             radioButton_ModeloActuacion.Cursor = System.Windows.Forms.Cursors.Hand;
             radioButton_ModeloActuacion.Location = new System.Drawing.Point(87, 22);
             radioButton_ModeloActuacion.Name = "radioButton_ModeloActuacion";
-            radioButton_ModeloActuacion.Size = new System.Drawing.Size(155, 19);
+            radioButton_ModeloActuacion.Size = new System.Drawing.Size(193, 24);
             radioButton_ModeloActuacion.TabIndex = 0;
             radioButton_ModeloActuacion.TabStop = true;
             radioButton_ModeloActuacion.Text = "MODELOS de actuación";
@@ -237,13 +237,13 @@
             label_TITULO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            label_TITULO.Size = new System.Drawing.Size(240, 24);
+            label_TITULO.Size = new System.Drawing.Size(296, 29);
             label_TITULO.TabIndex = 32;
             label_TITULO.Text = "TIPO DE ACTUACION";
             // 
             // ActaDenuncia
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 254);
             Controls.Add(label_TITULO);

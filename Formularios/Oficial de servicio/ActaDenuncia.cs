@@ -16,7 +16,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     public partial class ActaDenuncia : BaseForm
     {
         private int alturaGroupBox;
-       
+
 
         public ActaDenuncia()
         {
@@ -24,18 +24,45 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             comboBox_ModeloActuacion.Visible = false;
             groupBox_SeleccionPlantilla.Visible = false;
-          //  panel1.Height = panel_TipoActuacion.Height + 5;
 
-            // Ajustar la altura del formulario en base al tamaño de panel1 + 25
-         //   this.Height = panel1.Bottom + 80;
+          panel1.Height = panel_TipoActuacion.Height + 10;
+            this.Height = panel1.Height + 80;
+
         }
 
         private void ActaDenuncia_Load(object sender, EventArgs e)
         {
             // Inicializa alturaGroupBox con la altura original
             alturaGroupBox = groupBox_SeleccionPlantilla.Height;
-          
+       
         }
+
+        private void AjustarTamanoFormulario()
+        {
+            int alturaBase = panel_TipoActuacion.Height + 10;
+
+            if (groupBox_SeleccionPlantilla.Parent != null && groupBox_SeleccionPlantilla.Parent.Visible)
+            {
+                panel1.Height = alturaBase + alturaGroupBox + 15;
+            }
+
+            else
+            {   
+                panel1.Height = alturaBase ;
+
+            }
+            this.Height = panel1.Bottom + 80;
+
+            // Forzar actualización visual
+            panel1.Invalidate();
+            panel1.Update();
+            panel1.Refresh();
+            
+        }
+
+      
+
+
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -43,68 +70,40 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             if (radioButton.Checked)
             {
-                // Aplica el estilo personalizado (negrita y subrayado)
                 ApplyCustomFontStyle(radioButton);
-
-                // Muestra el groupBox
                 groupBox_SeleccionPlantilla.Visible = true;
-
                 radioButton_ModeloActuacion.Checked = false;
                 radioButton_ActuacionEstandar.Checked = false;
                 comboBox_ModeloActuacion.Visible = false;
-
-                // Restaura los estilos por defecto de los PictureBox
                 ResetPictureBoxStyles();
 
-                // Cambia la imagen y el color de fondo del PictureBox correspondiente
                 if (radioButton == radioButton_Acta)
                 {
-                    // Estilos para 'Acta'
-                    RedondearBordes.Aplicar(pictureBox_Acta, 6, true, false, false, true); // Solo esquinas izquierdas
-                    pictureBox_Acta.BackColor = Color.FromArgb(4, 234, 0); // Color de fondo verde
-                    RedondearBordes.Aplicar(radioButton, 6, false, true, true, false); // Bordes redondeados en el radioButton
+                    RedondearBordes.Aplicar(pictureBox_Acta, 6, true, false, false, true);
+                    pictureBox_Acta.BackColor = Color.FromArgb(4, 234, 0);
+                    RedondearBordes.Aplicar(radioButton, 6, false, true, true, false);
                 }
                 else if (radioButton == radioButton_Denuncia)
                 {
-                    // Estilos para 'Denuncia'
-                    RedondearBordes.Aplicar(pictureBox_Denuncia, 6, true, false, false, true); // Solo esquinas izquierdas
-                    pictureBox_Denuncia.BackColor = Color.FromArgb(4, 234, 0); // Color de fondo verde
-                    RedondearBordes.Aplicar(radioButton, 6, false, true, true, false); // Bordes redondeados en el radioButton
+                    RedondearBordes.Aplicar(pictureBox_Denuncia, 6, true, false, false, true);
+                    pictureBox_Denuncia.BackColor = Color.FromArgb(4, 234, 0);
+                    RedondearBordes.Aplicar(radioButton, 6, false, true, true, false);
                 }
             }
             else
             {
-                // Restaura el estilo normal si el RadioButton se desmarca
                 radioButton.Font = new System.Drawing.Font(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Regular);
                 radioButton.ForeColor = SystemColors.ControlText;
                 radioButton.BackColor = Color.FromArgb(178, 213, 230);
-
-                // Si se desmarca, también ocultamos el groupBox
                 groupBox_SeleccionPlantilla.Visible = false;
-
-             
             }
+
+            AjustarTamanoFormulario();
+         
         }
 
 
-        /// <summary>
-        /// Método para ajustar la altura de panel1 y del formulario.
-        /// </summary>
-        //private void AjustarAlturaFormularioYPaneles()
-        //{
-        //    // Ajustar la altura de panel1
-        //    if (groupBox_SeleccionPlantilla.Visible)
-        //    {
-        //        panel1.Height = panel_TipoActuacion.Height + groupBox_SeleccionPlantilla.Height + 5;
-        //    }
-        //    else
-        //    {
-        //        panel1.Height = panel_TipoActuacion.Height + 5; // Si no está visible, solo el panel_TipoActuacion
-        //    }
 
-        //    // Ajustar la altura del formulario en base a panel1 y agregar un margen de 25
-        //    this.Height = panel1.Bottom + 25;
-        //}
 
         /// <summary>
         /// Método para aplicar el estilo personalizado (negrita y subrayado).
@@ -160,6 +159,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private List<string> listaACTAS = new List<string> { "PARADERO", "CAPTURA ACTIVA", "INFR. LEY 23.737","CONTRAVENCION ART 72" };
         private List<string> listaDENUNCIAS = new List<string> { "ESTAFA", "RUEDA AUXILIO", "HURTO VEHICULO", "HURTO / ROBO" };
+        private object radioButton;
 
         private void CargarDatosEnComboBox(List<string> datos)
         {

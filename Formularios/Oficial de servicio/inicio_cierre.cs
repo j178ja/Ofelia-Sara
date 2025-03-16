@@ -144,7 +144,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 this.Update();
                 this.Refresh();
 
-
             }
         }
 
