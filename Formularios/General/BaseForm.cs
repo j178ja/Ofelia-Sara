@@ -903,15 +903,15 @@ namespace Ofelia_Sara.Formularios.General
         /// Formato de texto de campos especificos
         /// </summary>
         /// <param name="control"></param>
-        protected   void AplicarFormatoTexto(Control parent)
+        protected void AplicarFormatoTexto(Control parent)
         {
             foreach (var control in GetAllControls(parent))
             {
                 //FORMATO TEXTO PARA TEXTBOX
                 if (control is CustomTextBox textBox)
-            {
-                switch (textBox.Name)
                 {
+                    switch (textBox.Name)
+                    {
                         // MAYUSCULA SOLA
                         case "textBox_Victima":
                         case "textBox_Imputado":
@@ -966,50 +966,50 @@ namespace Ofelia_Sara.Formularios.General
                             break;
 
                     }
-            }
-            // FORMATO TEXTO PARA COMBOBOX
-            else if (control is CustomComboBox comboBox)
-            {
-                switch (comboBox.Name)
-                {
-                    //MAYUSCULA SOLA
-                    case "comboBox_Localidad":
-                    case "comboBox_Escalafon":
-                    case "comboBox_Jerarquia":
-                    case "comboBox_Funcion":
-                    case "comboBox_Parentesco":
-                    case "comboBox_Nacionalidad":
-                    case "comboBox_EstadoCivil":
-                    case "comboBox_Marca":
-                    case "comboBox_Modelo":
-                    case "comboBox_Color":
-                        MayusculaSola.AplicarAControl(comboBox);
-                        break;
-
-                    //CAMELCASE
-                    case "comboBox_AgenteFiscal":
-                    case "comboBox_DeptoJudicial":
-                        ConvertirACamelCase.AplicarAControl(comboBox);
-                        break;
-
-                    //MAYUSCULAS Y NUMEROS
-                    case "comboBox_Fiscalia":
-                    case "comboBox_Instructor":
-                    case "comboBox_Secretario":
-                    case "comboBox_Dependencia":
-                        MayusculaYnumeros.AplicarAControl(comboBox);
-                        break;
                 }
-
-
-                // Aplicar restricción de solo números a los IPP
-                if (comboBox.Name == "comboBox_Ipp1" ||
-                    comboBox.Name == "comboBox_Ipp2" ||
-                    comboBox.Name == "comboBox_Ipp4" ||
-                   comboBox.Name == "comboBox_AñoVehiculo")
+                // FORMATO TEXTO PARA COMBOBOX
+                else if (control is CustomComboBox comboBox)
                 {
-                    ClaseNumeros.SoloNumeros(comboBox);
-                }
+                    switch (comboBox.Name)
+                    {
+                        //MAYUSCULA SOLA
+                        case "comboBox_Localidad":
+                        case "comboBox_Escalafon":
+                        case "comboBox_Jerarquia":
+                        case "comboBox_Funcion":
+                        case "comboBox_Parentesco":
+                        case "comboBox_Nacionalidad":
+                        case "comboBox_EstadoCivil":
+                        case "comboBox_Marca":
+                        case "comboBox_Modelo":
+                        case "comboBox_Color":
+                            MayusculaSola.AplicarAControl(comboBox);
+                            break;
+
+                        //CAMELCASE
+                        case "comboBox_AgenteFiscal":
+                        case "comboBox_DeptoJudicial":
+                            ConvertirACamelCase.AplicarAControl(comboBox);
+                            break;
+
+                        //MAYUSCULAS Y NUMEROS
+                        case "comboBox_Fiscalia":
+                        case "comboBox_Instructor":
+                        case "comboBox_Secretario":
+                        case "comboBox_Dependencia":
+                            MayusculaYnumeros.AplicarAControl(comboBox);
+                            break;
+                    }
+
+
+                    // Aplicar restricción de solo números a los IPP
+                    if (comboBox.Name == "comboBox_Ipp1" ||
+                        comboBox.Name == "comboBox_Ipp2" ||
+                        comboBox.Name == "comboBox_Ipp4" ||
+                        comboBox.Name == "comboBox_AñoVehiculo")
+                    {
+                        ClaseNumeros.SoloNumeros(comboBox);
+                    }
                 }
             }
         }
@@ -1050,7 +1050,7 @@ namespace Ofelia_Sara.Formularios.General
                     case "textBox_ArtInfraccion":// corresponde a art infraccion contravenciona
                         textBox.MaxLength = 3;
                         break;
-                   
+
                 }
             }
         }
@@ -1096,11 +1096,11 @@ namespace Ofelia_Sara.Formularios.General
 
         #region VERIFICACION EN PANEL
 
-        /// <summary>
-        /// VERIFICA QUE TODOS LOS CAMPOS CONTENGAN ELEMENTOS
-        /// </summary>
-        /// <param name="panel"></param>
-        /// <returns></returns>
+        ///// <summary>
+        ///// VERIFICA QUE TODOS LOS CAMPOS CONTENGAN ELEMENTOS
+        ///// </summary>
+        ///// <param name="panel"></param>
+        ///// <returns></returns>
         public static bool VerificarCamposEnPanel(Control parentControl)
         {
             foreach (Control control in parentControl.Controls)
@@ -1263,9 +1263,9 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
-         
-                //  ConfigurarEscalafonYjerarquia();
-                //  Instruccion.AsignarEventosCustomTextBox();
+
+               // ConfigurarEscalafonYjerarquia();
+               // Instruccion.AsignarEventosCustomTextBox();
 
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados
@@ -1276,7 +1276,7 @@ namespace Ofelia_Sara.Formularios.General
         // Método para llamar a RegistrarBotonesAgregar
         public void LlamarRegistrarBotonesAgregar(List<string> victimas, List<string> imputados)
         {
-            _instruccion.RegistrarBotonesAgregar(victimas, imputados);
+           _instruccion.RegistrarBotonesAgregar(victimas, imputados);
         }
 
     }

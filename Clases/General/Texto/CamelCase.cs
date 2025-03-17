@@ -54,23 +54,27 @@ namespace Ofelia_Sara.Clases.General.Texto
                     if (sender is CustomTextBox tb)
                     {
                         int cursorPos = tb.SelectionStart; // Guardar posición del cursor
-                        tb.TextValue = Convertir(tb.TextValue);
-                        tb.SelectionStart = Math.Min(cursorPos, tb.TextValue.Length); // Restaurar posición del cursor
+                        tb.TextValue = Convertir(tb.InnerTextBox.Text);
+                        tb.SelectionStart = Math.Min(cursorPos, tb.InnerTextBox.Text.Length); // Restaurar posición del cursor
                     }
                 };
             }
             else if (control is CustomComboBox customComboBox)
             {
-                customComboBox.TextChanged += (sender, e) =>
+                if (customComboBox.InnerTextBox is not null) // es necesario acceder al textbox interno
                 {
-                    if (sender is CustomComboBox cb)
+                    customComboBox.InnerTextBox.TextChanged += (sender, e) =>
                     {
-                        int cursorPos = cb.SelectionStart; // Guardar posición del cursor
-                        cb.TextValue = Convertir(cb.TextValue);
-                        cb.SelectionStart = Math.Min(cursorPos, cb.TextValue.Length); // Restaurar posición del cursor
-                    }
-                };
+                        if (sender is TextBox innerTextBox)
+                        {
+                            int cursorPos = innerTextBox.SelectionStart; // Guardar posición del cursor
+                            innerTextBox.Text = Convertir(innerTextBox.Text);
+                            innerTextBox.SelectionStart = Math.Min(cursorPos, innerTextBox.Text.Length); // Restaurar posición del cursor
+                        }
+                    };
+                }
             }
+
             else if (control.HasChildren) // Si el control tiene hijos (como un Panel o Form), aplicamos recursivamente
             {
                 foreach (Control child in control.Controls)

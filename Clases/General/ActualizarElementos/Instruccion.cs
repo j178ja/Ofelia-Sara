@@ -156,27 +156,27 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         }
 
 
-
+        // ESTE TRAIA PROBLEMAS
         public void ConfigurarEventosEnControles(System.Windows.Forms.Control.ControlCollection controles)
         {
-            foreach (Control control in controles)
-            {
-                if (control is CustomComboBox comboBox)
-                {
-                    comboBox.InnerTextBox.Leave += ComboBox_Ipp_Leave;
-                    comboBox.InnerTextBox.KeyPress += ComboBox_Ipp_KeyPress;
-                }
-                else if (control is CustomTextBox textBox)
-                {
-                    textBox.InnerTextBox.Leave += TextBox_NumeroIpp_Leave;
-                    textBox.InnerTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
-                }
+            //foreach (Control control in controles)
+            //{
+            //    if (control is CustomComboBox comboBox)
+            //    {
+            //        comboBox.InnerTextBox.Leave += ComboBox_Ipp_Leave;
+            //        comboBox.InnerTextBox.KeyPress += ComboBox_Ipp_KeyPress;
+            //    }
+            //    else if (control is CustomTextBox textBox)
+            //    {
+            //        textBox.InnerTextBox.Leave += TextBox_NumeroIpp_Leave;
+            //        textBox.InnerTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
+            //    }
 
-                if (control.HasChildren)
-                {
-                    ConfigurarEventosEnControles(control.Controls);
-                }
-            }
+            //    if (control.HasChildren)
+            //    {
+            //        ConfigurarEventosEnControles(control.Controls);
+            //    }
+            //}
         }
 
 
