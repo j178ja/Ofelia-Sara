@@ -700,10 +700,14 @@ namespace Ofelia_Sara.Controles.General
             get => dropdownList.SelectedIndex;
             set
             {
-          //      dropdownList.SelectedIndex = value;
-                textBox.Text = dropdownList.SelectedItem?.ToString();
+                if (value >= 0 && value < dropdownList.Items.Count)
+                {
+                    dropdownList.SelectedIndex = value;
+                    textBox.Text = dropdownList.Items[value].ToString();
+                }
             }
         }
+
 
         // Propiedad pública para acceder al TextBox interno
         public TextBox InnerTextBox => textBox;

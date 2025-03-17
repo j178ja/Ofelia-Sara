@@ -42,7 +42,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
                         case "comboBox_Ipp2":
                             ConfigurarItemsComboBox(comboBox);
                             comboBox.SelectedIndex = 3; // Establecer la posición predeterminada
-
+                      
                             // Asegurarse de que el InnerTextBox refleje el valor seleccionado
                             if (comboBox.InnerTextBox != null)
                             {
@@ -357,6 +357,11 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
             {
                 int ultimosDosDigitos = (anioActual - i) % 100;
                 customComboBox.Items.Add(ultimosDosDigitos.ToString("D2"));
+            }
+            // Selecciona automáticamente el año actual (el primer elemento cargado)
+            if (customComboBox.Items.Count > 0)
+            {
+                customComboBox.SelectedIndex = 0;
             }
         }
 

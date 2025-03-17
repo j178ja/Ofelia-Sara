@@ -56,18 +56,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         public InicioCierre()
         {
             InitializeComponent();
-         
-            ////.para reposicionar paneles
-            //reposicionador = new ReposicionarSegunAgregado(
-            //this,
-            //panel_Ipp,
-            //panel_Caratula,
-            //panel_Victima,
-            //panel_Imputado,
-            //panel_Instruccion,
-            //panel_Compromisos,
-            //panel_ControlesInferiores
-            //);
+
+            //.para reposicionar paneles
+            reposicionador = new ReposicionarSegunAgregado(
+            this,
+            panel_Ipp,
+            panel_Caratula,
+            panel_Victima,
+            panel_Imputado,
+            panel_Instruccion,
+            panel_Compromisos,
+            panel_ControlesInferiores
+            );
 
             textBox_NumeroIpp.TextChanged += (s, e) => ActualizarEstado();
             textBox_Caratula.TextChanged += (s, e) => ActualizarEstado();
