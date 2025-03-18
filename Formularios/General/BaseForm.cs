@@ -39,6 +39,7 @@ namespace Ofelia_Sara.Formularios.General
         private SaltoDeImput _saltoDeImput;
         protected Button btn_Cerrar;
         protected Button btn_Minimizar;
+        private Instruccion instruccion;
         #endregion
         public BaseForm()
         {
@@ -49,7 +50,7 @@ namespace Ofelia_Sara.Formularios.General
             }
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
-
+            instruccion = new Instruccion(this);
             _instruccion = new Instruccion(this);// genera instancia de Instruccion (clase que contiene todas las indicaciones de IPP)
             _saltoDeImput = new SaltoDeImput(this);
         }
@@ -64,7 +65,7 @@ namespace Ofelia_Sara.Formularios.General
             CargarIconoFormulario();
             InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
             InitializeFooterLinkLabel();// footer a todos los formularios
-          
+    
             Load += BaseForm_Load;
         }
 
@@ -78,7 +79,7 @@ namespace Ofelia_Sara.Formularios.General
             AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
             AsignarImagenesBotones();//asigna las imagenes a los botones
-
+          
             AjustarEscala();
             this.ShowInTaskbar = true; // Asegurar que siempre se vea en la barra de tareas
         }
@@ -1264,6 +1265,7 @@ namespace Ofelia_Sara.Formularios.General
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
                  ConfigurarEscalafonYjerarquia(control );
+                instruccion.ConfigurarEventosInstruccion(this);
 
                 InicializarCombosFiscaliaEnBaseForm();
 
@@ -1292,19 +1294,6 @@ namespace Ofelia_Sara.Formularios.General
         }
 
 
-        #region ASIGNAR AUTOCOMPLETAR CON 0 EN NUMERO IPP
-        protected void ConfigurarEventosCustomComboBox(CustomComboBox comboBox)
-        {
-            comboBox.Leave += Instruccion.ComboBox_Ipp_Leave;
-            comboBox.KeyPress += Instruccion.ComboBox_Ipp_KeyPress;
-        }
-
-        protected void ConfigurarEventosCustomTextBox(CustomTextBox textBox)
-        {
-            textBox.KeyPress += Instruccion.TextBox_NumeroIpp_KeyPress;
-            textBox.Leave += Instruccion.TextBox_NumeroIpp_Leave;
-        }
-        #endregion
     }
 }
 

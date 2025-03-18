@@ -27,47 +27,6 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
 
         #endregion
 
-        /// <summary>
-        /// Inicializa valores por defecto en los ComboBox IPP.
-        /// </summary>
-        public static void InicializarComboBoxIpp(Control parent)
-        {
-            foreach (Control control in parent.Controls)
-            {
-                if (control is CustomComboBox comboBox)
-                {
-                    switch (comboBox.Name)
-                    {
-                        case "comboBox_Ipp1":
-                        case "comboBox_Ipp2":
-                            ConfigurarItemsComboBox(comboBox);
-                            comboBox.SelectedIndex = 3; // Establecer la posición predeterminada
-                      
-                            // Asegurarse de que el InnerTextBox refleje el valor seleccionado
-                            if (comboBox.InnerTextBox != null)
-                            {
-                                comboBox.InnerTextBox.Text = comboBox.SelectedItem?.ToString() ?? string.Empty;
-                            }
-                            break;
-                        case "comboBox_Ipp4":
-                        case "comboBox_Año":
-                            CargarAño(comboBox);
-                            break;
-                        
-                    }
-                }
-
-                // Si el control tiene hijos, llamar recursivamente al método
-                if (control.HasChildren)
-                {
-                    InicializarComboBoxIpp(control);
-                }
-            }
-        }
-
-
-
-
 
         /// <summary>
         /// Registra botones para agregar nuevos controles.
@@ -314,7 +273,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         }
         #endregion
 
-        #region MÉTODOS ESTÁTICOS
+        #region CARGAR AÑO ITEMS INDICE
 
         /// <summary>
         /// carga listado de años desde el actual hacia atras 5 años
@@ -351,11 +310,85 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
                 comboBox.Items.Add(i.ToString("D2"));
             }
         }
+
+        /// <summary>
+        /// Inicializa valores por defecto en los ComboBox IPP.
+        /// </summary>
+        public static void InicializarComboBoxIpp(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is CustomComboBox comboBox)
+                {
+                    switch (comboBox.Name)
+                    {
+                        case "comboBox_Ipp1":
+                        case "comboBox_Ipp2":
+                            ConfigurarItemsComboBox(comboBox);
+                            comboBox.SelectedIndex = 3; // Establecer la posición predeterminada
+
+                            // Asegurarse de que el InnerTextBox refleje el valor seleccionado
+                            if (comboBox.InnerTextBox != null)
+                            {
+                                comboBox.InnerTextBox.Text = comboBox.SelectedItem?.ToString() ?? string.Empty;
+                            }
+                            break;
+                        case "comboBox_Ipp4":
+                        case "comboBox_Año":
+                            CargarAño(comboBox);
+                            break;
+
+                    }
+                }
+
+                // Si el control tiene hijos, llamar recursivamente al método
+                if (control.HasChildren)
+                {
+                    InicializarComboBoxIpp(control);
+                }
+            }
+        }
+        public  void ConfigurarEventosInstruccion(Control control)
+        {
+            if (control is CustomComboBox comboBox &&
+                (comboBox.Name == "comboBox_Ipp1" ||
+                 comboBox.Name == "comboBox_Ipp2" ||
+                 comboBox.Name == "comboBox_Ipp4"))
+            {
+                ConfigurarEventosCustomComboBox(comboBox);
+            }
+            else if (control is CustomTextBox textBox && textBox.Name == "textBox_NumeroIpp")
+            {
+                ConfigurarEventosCustomTextBox(textBox);
+            }
+            else if (control.HasChildren)
+            {
+                foreach (Control child in control.Controls)
+                {
+                    ConfigurarEventosInstruccion(child);
+                }
+            }
+        }
+
+
+
+        private void ConfigurarEventosCustomComboBox(CustomComboBox comboBox)
+        {
+            comboBox.Leave += Instruccion.ComboBox_Ipp_Leave;
+            comboBox.KeyPress += Instruccion.ComboBox_Ipp_KeyPress;
+        }
+
+        private void ConfigurarEventosCustomTextBox(CustomTextBox textBox)
+        {
+            textBox.KeyPress += Instruccion.TextBox_NumeroIpp_KeyPress;
+            textBox.Leave += Instruccion.TextBox_NumeroIpp_Leave;
+        }
+        
         #endregion
-    
+
 
         /// </summary>
-    public static void InicializarComboBoxFiscalia(CustomComboBox comboFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
+        public static void InicializarComboBoxFiscalia(CustomComboBox comboFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
         {
             // Obtener los datos únicos para los ComboBox
             comboFiscalia.DataSource = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
