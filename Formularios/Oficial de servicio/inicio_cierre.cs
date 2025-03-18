@@ -193,7 +193,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Cargo.Visible = false;
 
 
-            //---Inicializar para desactivar los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
+            //---Inicializa desactivado los btn AGREGAR CAUSA,VICTIMA, IMPUTADO
             btn_AgregarCausa.Enabled = !string.IsNullOrWhiteSpace(textBox_Caratula.TextValue);//inicializacion de deshabilitacion de btn_agregarVictima
             btn_AgregarVictima.Enabled = !string.IsNullOrWhiteSpace(textBox_Victima.TextValue);
             btn_AgregarImputado.Enabled = !string.IsNullOrWhiteSpace(textBox_Imputado.TextValue);
@@ -527,13 +527,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
                     // Reposicionar el formulario original en el centro de la pantalla
                     originalForm.Location = new Point(centerX, centerY);
-
-
                 };
 
                 // Mostrar el nuevo formulario
                 cargo.ShowDialog();
-
             }
 
         }
@@ -961,13 +958,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             fecha_Pericia.ForeColor = SystemColors.WindowText; // Cambiar el color del texto al color de texto de la ventana
 
         }
-
-        #endregion
-
-
-        #region BTN AGREGAR CAUSA/VMA/IMP
-
-
 
         #endregion
 

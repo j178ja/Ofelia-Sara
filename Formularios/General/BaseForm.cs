@@ -65,7 +65,7 @@ namespace Ofelia_Sara.Formularios.General
             CargarIconoFormulario();
             InitializeCustomCursors(); //cursores persoanlizados / flecha, mano y lapiz
             InitializeFooterLinkLabel();// footer a todos los formularios
-    
+   
             Load += BaseForm_Load;
         }
 
@@ -79,7 +79,7 @@ namespace Ofelia_Sara.Formularios.General
             AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
             AsignarImagenesBotones();//asigna las imagenes a los botones
-          
+        
             AjustarEscala();
             this.ShowInTaskbar = true; // Asegurar que siempre se vea en la barra de tareas
         }
@@ -1266,7 +1266,7 @@ namespace Ofelia_Sara.Formularios.General
                 CargarEscalafon();
                  ConfigurarEscalafonYjerarquia(control );
                 instruccion.ConfigurarEventosInstruccion(this);
-
+                instruccion.ConfigurarHabilitacionBotones();
                 InicializarCombosFiscaliaEnBaseForm();
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados

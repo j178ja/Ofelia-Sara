@@ -54,6 +54,58 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
             }
         }
 
+        public void ConfigurarHabilitacionBotones()
+        {
+            var configuraciones = new Dictionary<CustomTextBox, Button>
+            {
+          {
+        _baseForm.Controls.Find("textBox_Caratula", true).FirstOrDefault() as CustomTextBox,
+        _baseForm.Controls.Find("btn_AgregarCausa", true).FirstOrDefault() as Button
+        },
+        {
+        _baseForm.Controls.Find("textBox_Victima", true).FirstOrDefault() as CustomTextBox,
+        _baseForm.Controls.Find("btn_AgregarVictima", true).FirstOrDefault() as Button
+        },
+        {
+        _baseForm.Controls.Find("textBox_Imputado", true).FirstOrDefault() as CustomTextBox,
+        _baseForm.Controls.Find("btn_AgregarImputado", true).FirstOrDefault() as Button
+         }
+        };
+
+            foreach (var (textBox, boton) in configuraciones)
+            {
+                if (textBox != null && boton != null)
+                {
+                    textBox.InnerTextBox.TextChanged -= CustomTextBox_TextChanged;
+                    textBox.InnerTextBox.TextChanged += CustomTextBox_TextChanged;
+                }
+              
+            }
+        }
+
+        private void CustomTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is CustomTextBox textBox)
+            {
+                var configuraciones = new Dictionary<string, string>
+        {
+            { "textBox_Caratula", "btn_AgregarCausa" },
+            { "textBox_Victima", "btn_AgregarVictima" },
+            { "textBox_Imputado", "btn_AgregarImputado" }
+        };
+
+                if (configuraciones.TryGetValue(textBox.Name, out string botonNombre))
+                {
+                    Button boton = _baseForm.Controls.Find(botonNombre, true).FirstOrDefault() as Button;
+                    if (boton != null)
+                    {
+                        // Se habilita si el texto tiene al menos 3 caracteres (ajústalo si necesitas otro número)
+                        boton.Enabled = textBox.Text.Length >= 3;
+                    }
+                }
+            }
+        }
+
 
         /// <summary>
         /// Abre un formulario secundario y lo posiciona junto al formulario principal.
