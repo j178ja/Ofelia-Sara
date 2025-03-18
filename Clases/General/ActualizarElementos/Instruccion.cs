@@ -267,7 +267,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ComboBox_Ipp_Leave(object sender, EventArgs e)
+        public static  void ComboBox_Ipp_Leave(object sender, EventArgs e)
         {
             if (sender is CustomComboBox customComboBox && int.TryParse(customComboBox.TextValue, out _))
             {
@@ -281,7 +281,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
+        public static void TextBox_NumeroIpp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -300,7 +300,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
+        public static void TextBox_NumeroIpp_Leave(object sender, EventArgs e)
         {
             CompletarConCeros(sender as CustomTextBox);
         }
@@ -323,7 +323,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
+        public static void ComboBox_Ipp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {

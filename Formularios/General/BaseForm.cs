@@ -1263,9 +1263,19 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
+                // Configura eventos solo si el control es un CustomComboBox
+                if (control is CustomComboBox customComboBox)
+                {
+                    ConfigurarEventosCustomComboBox(customComboBox);
+                }
 
-               // ConfigurarEscalafonYjerarquia();
-               // Instruccion.AsignarEventosCustomTextBox();
+                // Configura eventos solo si el control es un CustomTextBox
+                if (control is CustomTextBox customTextBox)
+                {
+                    ConfigurarEventosCustomTextBox(customTextBox);
+                }
+                // ConfigurarEscalafonYjerarquia();
+                // Instruccion.AsignarEventosCustomTextBox();
 
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados
@@ -1279,6 +1289,19 @@ namespace Ofelia_Sara.Formularios.General
            _instruccion.RegistrarBotonesAgregar(victimas, imputados);
         }
 
+
+
+        protected void ConfigurarEventosCustomComboBox(CustomComboBox comboBox)
+        {
+            comboBox.Leave += Instruccion.ComboBox_Ipp_Leave;
+            comboBox.KeyPress += Instruccion.ComboBox_Ipp_KeyPress;
+        }
+
+        protected void ConfigurarEventosCustomTextBox(CustomTextBox textBox)
+        {
+            textBox.KeyPress += Instruccion.TextBox_NumeroIpp_KeyPress;
+            textBox.Leave += Instruccion.TextBox_NumeroIpp_Leave;
+        }
     }
 }
 
