@@ -78,7 +78,7 @@ namespace Ofelia_Sara.Formularios.General
             AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
             AsignarImagenesBotones();//asigna las imagenes a los botones
-            _instruccion.ConfigurarEventosEnControles(this.Controls);
+
             AjustarEscala();
             this.ShowInTaskbar = true; // Asegurar que siempre se vea en la barra de tareas
         }
@@ -1263,20 +1263,9 @@ namespace Ofelia_Sara.Formularios.General
                 Instruccion.InicializarComboBoxIpp(control);//inicializa en indice 3 /a futuro hacer una clase que observe los mas usados y se inicialice de acuerdo a eso
                 DeshabilitarTextoEnJerarquiaYescalafon();//deshabilita el ingreso de texto en comboBox JERARQUIA - ESCALAFON
                 CargarEscalafon();
-                // Configura eventos solo si el control es un CustomComboBox
-                if (control is CustomComboBox customComboBox)
-                {
-                    ConfigurarEventosCustomComboBox(customComboBox);
-                }
+                 ConfigurarEscalafonYjerarquia(control );
 
-                // Configura eventos solo si el control es un CustomTextBox
-                if (control is CustomTextBox customTextBox)
-                {
-                    ConfigurarEventosCustomTextBox(customTextBox);
-                }
-                // ConfigurarEscalafonYjerarquia();
-                // Instruccion.AsignarEventosCustomTextBox();
-
+                InicializarCombosFiscaliaEnBaseForm();
 
                 // Llamamos a RegistrarBotonesAgregar con las listas de victimas e imputados
                 // LlamarRegistrarBotonesAgregar(victimas, imputados);
@@ -1289,8 +1278,21 @@ namespace Ofelia_Sara.Formularios.General
            _instruccion.RegistrarBotonesAgregar(victimas, imputados);
         }
 
+        protected void InicializarCombosFiscaliaEnBaseForm()
+        {
+            var comboFiscalia = Controls.Find("comboFiscalia", true).FirstOrDefault() as CustomComboBox;
+            var comboAgente = Controls.Find("comboAgente", true).FirstOrDefault() as CustomComboBox;
+            var comboLocalidad = Controls.Find("comboLocalidad", true).FirstOrDefault() as CustomComboBox;
+            var comboDepto = Controls.Find("comboDepto", true).FirstOrDefault() as CustomComboBox;
+
+            if (comboFiscalia != null && comboAgente != null && comboLocalidad != null && comboDepto != null)
+            {
+                Instruccion.InicializarComboBoxFiscalia(comboFiscalia, comboAgente, comboLocalidad, comboDepto);
+            }
+        }
 
 
+        #region ASIGNAR AUTOCOMPLETAR CON 0 EN NUMERO IPP
         protected void ConfigurarEventosCustomComboBox(CustomComboBox comboBox)
         {
             comboBox.Leave += Instruccion.ComboBox_Ipp_Leave;
@@ -1302,6 +1304,7 @@ namespace Ofelia_Sara.Formularios.General
             textBox.KeyPress += Instruccion.TextBox_NumeroIpp_KeyPress;
             textBox.Leave += Instruccion.TextBox_NumeroIpp_Leave;
         }
+        #endregion
     }
 }
 

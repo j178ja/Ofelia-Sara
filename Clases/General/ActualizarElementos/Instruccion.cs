@@ -66,13 +66,6 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         }
 
 
-        /// <summary>
-        /// Configura eventos para los controles IPP.
-        /// </summary>
-        public void ConfigurarEventosIpp()
-        {
-            ConfigurarEventosEnControles(_baseForm.Controls);
-         }
 
 
 
@@ -156,28 +149,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         }
 
 
-        // ESTE TRAIA PROBLEMAS
-        public void ConfigurarEventosEnControles(System.Windows.Forms.Control.ControlCollection controles)
-        {
-            //foreach (Control control in controles)
-            //{
-            //    if (control is CustomComboBox comboBox)
-            //    {
-            //        comboBox.InnerTextBox.Leave += ComboBox_Ipp_Leave;
-            //        comboBox.InnerTextBox.KeyPress += ComboBox_Ipp_KeyPress;
-            //    }
-            //    else if (control is CustomTextBox textBox)
-            //    {
-            //        textBox.InnerTextBox.Leave += TextBox_NumeroIpp_Leave;
-            //        textBox.InnerTextBox.KeyPress += TextBox_NumeroIpp_KeyPress;
-            //    }
-
-            //    if (control.HasChildren)
-            //    {
-            //        ConfigurarEventosEnControles(control.Controls);
-            //    }
-            //}
-        }
+       
 
 
 
@@ -383,7 +355,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
     
 
         /// </summary>
-    public void InicializarComboBoxFiscalia(CustomComboBox comboFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
+    public static void InicializarComboBoxFiscalia(CustomComboBox comboFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
         {
             // Obtener los datos únicos para los ComboBox
             comboFiscalia.DataSource = FiscaliaManager.ObtenerNombresFiscalias().Distinct().ToList();
@@ -401,7 +373,7 @@ namespace Ofelia_Sara.Clases.General.ActualizarElementos
         /// <summary>
         /// Maneja la selección de una fiscalía y actualiza los demás ComboBox con los datos correspondientes.
         /// </summary>
-        public void ActualizarComboBoxFiscalia(string nombreFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
+        public static void ActualizarComboBoxFiscalia(string nombreFiscalia, CustomComboBox comboAgente, CustomComboBox comboLocalidad, CustomComboBox comboDepto)
         {
             // Desactivar los ComboBox mientras se actualizan
             comboAgente.Enabled = false;

@@ -187,6 +187,7 @@ namespace Ofelia_Sara.Controles.General
         /// Propiedad para exponer el TextBox interno
         /// </summary>
         public TextBox InnerTextBox => textBox;
+       
 
         // Propiedad pública para acceder al TextBox
         public TextBox TextBoxControl

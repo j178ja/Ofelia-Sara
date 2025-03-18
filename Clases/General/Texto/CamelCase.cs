@@ -49,15 +49,18 @@ namespace Ofelia_Sara.Clases.General.Texto
         {
             if (control is CustomTextBox customTextBox)
             {
-                customTextBox.TextChanged += (sender, e) =>
+                if (customTextBox.InnerTextBox is not null) // es necesario acceder al textbox interno
                 {
-                    if (sender is CustomTextBox tb)
+                    customTextBox.InnerTextBox.TextChanged += (sender, e) =>
+                {
+                    if (sender is TextBox tb)
                     {
                         int cursorPos = tb.SelectionStart; // Guardar posición del cursor
-                        tb.TextValue = Convertir(tb.InnerTextBox.Text);
-                        tb.SelectionStart = Math.Min(cursorPos, tb.InnerTextBox.Text.Length); // Restaurar posición del cursor
+                        tb.Text = Convertir(tb.Text);
+                        tb.SelectionStart = Math.Min(cursorPos, tb.Text.Length); // Restaurar posición del cursor
                     }
                 };
+                }
             }
             else if (control is CustomComboBox customComboBox)
             {

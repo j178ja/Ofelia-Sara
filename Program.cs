@@ -1,6 +1,6 @@
 ﻿using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
-
+using Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.Acceso_Usuarios;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using Ofelia_Sara.Formularios.Oficial_de_servicio.DatosPersonales;
@@ -44,6 +44,7 @@ namespace Ofelia_Sara
             // Application.Run(new Mecanografia());
           // Application.Run(new Redactador());
          //  Application.Run(new ModificarEliminar());
+        //   Application.Run(new NuevaFiscalia());
 
 
 
