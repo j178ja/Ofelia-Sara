@@ -50,6 +50,17 @@ namespace Ofelia_Sara.Clases.General.Botones
                         limpiezaRealizada = true;
                         break;
 
+                    case TimePickerPersonalizado timePickerPersonalizado:
+                        timePickerPersonalizado.Value = DateTime.Now;
+                        limpiezaRealizada = true;
+                        break;
+
+                    //case DateCompromiso_Control dateCompromiso_Control:
+                    //    dateCompromiso_Control.Value = DateTime.Now;
+                    //    limpiezaRealizada = true;
+                    //    break;
+
+
                     case CheckBox checkBox:
                         checkBox.Checked = false;
                         checkBox.Visible = true;
@@ -72,6 +83,8 @@ namespace Ofelia_Sara.Clases.General.Botones
                         customDateTextBox.RestorePlaceholders();
                         limpiezaRealizada = true;
                         break;
+
+                    
 
                     case EmailControl customEmailTextBox:
                         customEmailTextBox.ClearEmailFields();

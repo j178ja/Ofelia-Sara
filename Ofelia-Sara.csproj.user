@@ -29,7 +29,7 @@
     <Compile Update="Controles\Ofl Sara\CustomDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Controles\Ofl Sara\DataTimePickerPersonalizado.cs">
+    <Compile Update="Controles\Ofl Sara\TimePickerPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Controles\Ofl Sara\SelectorCalendario.cs">
