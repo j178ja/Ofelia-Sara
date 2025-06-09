@@ -202,7 +202,7 @@
             panel_ControlesInferiores.Controls.Add(btn_Guardar);
             panel_ControlesInferiores.Controls.Add(btn_Buscar);
             panel_ControlesInferiores.EstaContraido = false;
-            panel_ControlesInferiores.Location = new System.Drawing.Point(30, 296);
+            panel_ControlesInferiores.Location = new System.Drawing.Point(30, 357);
             panel_ControlesInferiores.Name = "panel_ControlesInferiores";
             panel_ControlesInferiores.NeonColorCompleto = System.Drawing.Color.FromArgb(0, 255, 0);
             panel_ControlesInferiores.NeonColorIncompleto = System.Drawing.Color.FromArgb(255, 0, 0);
@@ -310,7 +310,7 @@
             // 
             // panel_Actuacion
             // 
-            panel_Actuacion.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panel_Actuacion.AutoSize = true;
             panel_Actuacion.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel_Actuacion.Controls.Add(label_TipoActuacion);
             panel_Actuacion.Controls.Add(richTextBox_Actuacion);
@@ -325,7 +325,7 @@
             label_TipoActuacion.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_TipoActuacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label_TipoActuacion.ForeColor = System.Drawing.Color.PaleGreen;
-            label_TipoActuacion.Location = new System.Drawing.Point(280, -3);
+            label_TipoActuacion.Location = new System.Drawing.Point(299, -3);
             label_TipoActuacion.Name = "label_TipoActuacion";
             label_TipoActuacion.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label_TipoActuacion.Size = new System.Drawing.Size(137, 28);
@@ -335,9 +335,10 @@
             // 
             // richTextBox_Actuacion
             // 
-            richTextBox_Actuacion.Location = new System.Drawing.Point(15, 19);
+            richTextBox_Actuacion.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            richTextBox_Actuacion.Location = new System.Drawing.Point(14, 28);
             richTextBox_Actuacion.Name = "richTextBox_Actuacion";
-            richTextBox_Actuacion.Size = new System.Drawing.Size(706, 49);
+            richTextBox_Actuacion.Size = new System.Drawing.Size(712, 49);
             richTextBox_Actuacion.TabIndex = 0;
             richTextBox_Actuacion.Text = "";
             // 
@@ -345,7 +346,8 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 448);
+            AutoSize = true;
+            ClientSize = new System.Drawing.Size(800, 509);
             Controls.Add(panel_Actuacion);
             Controls.Add(panel_ControlesInferiores);
             Controls.Add(label_TITULO);

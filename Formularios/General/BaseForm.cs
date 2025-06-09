@@ -75,6 +75,7 @@ namespace Ofelia_Sara.Formularios.General
             this.ControlAdded += (s, e) => AplicarCursorEnControl(e.Control);
             ReemplazarCursores(this); // Recorre todos los controles del formulario y reemplaza los cursores
             BordePanel1();// redondea los bordes unicamente de panel 1
+            PosicionarPanel1();//Posiciona todos los panel 1 con el mismo margen
             AjustarLabelEnPanel(); //centra unicamente Label_TITULO
             AplicarFormatoAControlesRecursivos(this); //aplica recursividad para paneles dentro de otros
             AplicarEstilosABotones(this);// da formato a los botones agregar y a los botones del panel_Inferior (guardar/limpiar etc)
@@ -89,6 +90,13 @@ namespace Ofelia_Sara.Formularios.General
             AplicarCursorEnControl(e.Control);
            
         }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            PosicionarPanel1();
+        }
+
         private void AjustarEscala()
         {
             using Graphics g = this.CreateGraphics();
@@ -253,7 +261,7 @@ namespace Ofelia_Sara.Formularios.General
             ResumeLayout(false);
         }
 
-        #region BORDES PANEL 1
+        #region  PANEL 1
         /// <summary>
         /// Configura la apariencia general del formulario, aplicando el redondeo a los paneles.
         /// </summary>
@@ -272,6 +280,35 @@ namespace Ofelia_Sara.Formularios.General
                 }
             }
         }
+
+        /// <summary>
+        /// POSICIONAMIENTO DE PANEL1
+        /// </summary>
+        protected void PosicionarPanel1()
+        {
+            const int margenIzquierdo = 21;
+            const int margenSuperior = 25;
+            const int margenDerecho = 21;
+
+            var panel = this.Controls.Find("panel1", true).FirstOrDefault() as Panel;
+            if (panel == null) return;
+
+            // Buscar si existe un panel_MenuSuperior
+            var panelMenu = this.Controls.Find("panel_MenuSuperior", true).FirstOrDefault() as Panel;
+
+            int top = margenSuperior;
+
+            if (panelMenu != null)
+            {
+                // Si el panel superior existe, panel1 se posiciona mas abao
+                top = panelMenu.Bottom + margenSuperior;
+            }
+
+            panel.Left = margenIzquierdo;
+            panel.Top = top;
+            panel.Width = this.ClientSize.Width - margenIzquierdo - margenDerecho;
+        }
+
         #endregion
 
         #region FONDO DEGRADE

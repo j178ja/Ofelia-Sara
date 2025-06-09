@@ -33,10 +33,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Actuacion.Visible = false;
             comboBox_ModeloActuacion.Enabled = false;//desactiva el combobox hasta q se seleccione actuacion estandar o de modelo de actuacion
 
+            panel_Actuacion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
 
 
             //  AjustarTamanoFormulario();
 
+        }
+        #endregion
+
+        #region LOAD
+        private void ActaDenuncia_Load(object sender, EventArgs e)
+        {
+            this.FormClosing += ActaDenuncia_FormClosing;
         }
         #endregion
 
@@ -101,47 +109,38 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
 
             // AjustarTamanoFormulario(); 
+            ActualizarTextoTipoActuacion();
         }
 
         /// <summary>
         /// Centra el label de tipo de actuacion sin importar el largo
         /// </summary>
         /// <param name="nuevoTexto"></param>
-        private void ActualizarTextoLabel(string nuevoTexto)
+        private void ActualizarTextoTipoActuacion()
         {
-            label_TipoActuacion.Text = nuevoTexto;
+            string tipo = "";
+            string complemento = "";
 
-            // Centrar horizontalmente respecto a panel_Actuacion
+            if (radioButton_Acta.Checked)
+                tipo = "ACTA";
+            else if (radioButton_Denuncia.Checked)
+                tipo = "DENUNCIA";
+
+            if (radioButton_ActuacionEstandar.Checked)
+                complemento = "ESTANDAR";
+            else if (radioButton_ModeloActuacion.Checked && comboBox_ModeloActuacion.SelectedItem != null)
+                complemento = comboBox_ModeloActuacion.SelectedItem.ToString();
+
+            string textoFinal = string.IsNullOrWhiteSpace(complemento) ? tipo : $"{tipo} {complemento}";
+
+            label_TipoActuacion.Text = textoFinal;
+
+            // Centrar en el panel
             label_TipoActuacion.Left = (panel_Actuacion.Width - label_TipoActuacion.Width) / 2;
         }
 
 
 
-        /// <summary>
-        /// Método para aplicar el estilo personalizado (negrita y color de fondo ).
-        /// </summary>
-        private static void ApplyCustomFontStyle(RadioButton radioButton)
-        {
-            // Crea una fuente con negrita
-            System.Drawing.Font customFont = new(radioButton.Font.FontFamily, radioButton.Font.Size, FontStyle.Bold);
-
-            // Cambia la fuente del RadioButton
-            radioButton.Font = customFont;
-            radioButton.ForeColor = SystemColors.HotTrack;
-            radioButton.BackColor = Color.FromArgb(228, 247, 222);
-
-            // Redibuja el RadioButton para reflejar el cambio
-            radioButton.Invalidate();
-        }
-
-        /// <summary>
-        /// Restaura los estilos por defecto de todos los PictureBox.
-        /// </summary>
-        private void ResetPictureBoxStyles()
-        {
-            pictureBox_Acta.BackColor = Color.FromArgb(178, 213, 230);
-            pictureBox_Denuncia.BackColor = Color.FromArgb(178, 213, 230);
-        }
 
         /// <summary>
         /// carga lista en combobox segun se seleccione
@@ -164,16 +163,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 CargarDatosEnComboBox(listaDENUNCIAS);
             }
-           // AjustarTamanoFormulario();
+            // AjustarTamanoFormulario();
+            ActualizarTextoTipoActuacion();
         }
 
         private void RadioButton_ActuacionEstandar_CheckedChanged(object sender, EventArgs e)
         {
             comboBox_ModeloActuacion.Visible = false;
-            richTextBox_Actuacion.Visible = true;
+           panel_Actuacion.Visible = true;
             richTextBox_Actuacion.Focus();
-         //   groupBox_SeleccionPlantilla.Height = alturaOriginalGroupBox - 25; // Reduce la altura para 'Denuncia'
-           // AjustarTamanoFormulario();
+            //   groupBox_SeleccionPlantilla.Height = alturaOriginalGroupBox - 25; // Reduce la altura para 'Denuncia'
+            // AjustarTamanoFormulario();
+            ActualizarTextoTipoActuacion();
         }
 
 
@@ -186,26 +187,25 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             comboBox_ModeloActuacion.Items.Clear(); // Limpia los elementos anteriores
             comboBox_ModeloActuacion.Items.AddRange(datos.ToArray()); // Agrega los nuevos elementos
+            ActualizarTextoTipoActuacion();
         }
 
+        #region MENSAJE CIERRE
         /// <summary>
         /// MENSAJE CONFIRMACION AL CIERRE
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Cargo_FormClosing(object sender, FormClosingEventArgs e)
+        private void ActaDenuncia_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
                 MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
+        #endregion
 
-        private void ActaDenuncia_Load(object sender, EventArgs e)
-        {
 
-        }
 
-      
     }
 }
