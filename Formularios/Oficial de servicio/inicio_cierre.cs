@@ -83,14 +83,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             InvisibilizarDesactivarControles();//invisibilizar controles al cargar
           panel_Compromisos.Visible = false;
 
-
+        
         }
         #endregion
 
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
-            Desplazamiento.AnimarDesplazamiento(label_TITULO, DireccionDesplazamiento.Centro);
+         
             IncrementarTamaño.Incrementar(btn_SDA);
             IncrementarTamaño.Incrementar(btn_CrearDenuncia);
 
