@@ -2,6 +2,7 @@
 
 using DocumentFormat.OpenXml.Office2010.Excel;
 using Ofelia_Sara.Clases.General.ActualizarElementos;
+using Ofelia_Sara.Clases.General.Animaciones;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Conexion;
@@ -89,7 +90,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #region LOAD
         private void InicioCierre_Load(object sender, EventArgs e)
         {
-
+            Desplazamiento.AnimarDesplazamiento(label_TITULO, DireccionDesplazamiento.Centro);
             IncrementarTamaño.Incrementar(btn_SDA);
             IncrementarTamaño.Incrementar(btn_CrearDenuncia);
 

@@ -12,31 +12,33 @@ namespace Ofelia_Sara.Formularios.General
 {
     public partial class Contacto : BaseForm
     {
+        #region CONSTRUCTOR
         public Contacto()
         {
             InitializeComponent();
 
         }
+        #endregion
 
-
-
+        #region LOAD
         private void Contacto_Load(object sender, EventArgs e)
         {
+            PosicionarPanel1();//Posiciona  panel 1 con el mismo margen que en todo el proyecto(se coloca porque este formulario no depende de baseform)
             Txt_Curriculum(); //carga el texto
             //incrementar imagen de los picture en el hover
             IncrementarTamaño.Incrementar(pictureBox_Linkedin);
             IncrementarTamaño.Incrementar(pictureBox_Github);
             IncrementarTamaño.Incrementar(pictureBox_Wpp);
             IncrementarTamaño.Incrementar(pictureBox_Correo);
-            ToolTipGeneral.Mostrar(pictureBox_Linkedin, " Revise perfil de trajo.");
+            ToolTipGeneral.Mostrar(pictureBox_Linkedin, " Revise perfil de trabajo.");
             ToolTipGeneral.Mostrar(pictureBox_Github, " Explore portafolio de proyectos.");
             ToolTipGeneral.Mostrar(pictureBox_Wpp, " Comuniquese mediante mensaje WhatsApp.");
             ToolTipGeneral.Mostrar(pictureBox_Correo, " Envíe un correo electronico.");
         }
 
+        #endregion
 
-       
-
+        #region BOTONES DE CONTACTO Y PERFIL
         /// <summary>
         /// abre correo electronico y genera mensaje
         /// </summary>
@@ -129,7 +131,9 @@ namespace Ofelia_Sara.Formularios.General
                 MensajeGeneral.Mostrar($"No se pudo abrir Github. Error: {ex.Message}", MensajeGeneral.TipoMensaje.Error);
             }
         }
+        #endregion
 
+        #region TEXTO CENTRAL
         /// <summary>
         /// contiene el texto que se mostrara 
         /// </summary>
@@ -142,5 +146,6 @@ namespace Ofelia_Sara.Formularios.General
                                 "ESTUDIANTE AUTODIDACTA DE PROGRAMACION." + Environment.NewLine + Environment.NewLine +
                                 "ESTUDIANTE DE FILOSOFIA Y ANALISIS DELICTUAL.";
         }
+        #endregion
     }
 }

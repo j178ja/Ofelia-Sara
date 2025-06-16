@@ -50,6 +50,7 @@ namespace Ofelia_Sara.Formularios.General
             }
             // Inicialización en tiempo de ejecución
             InitializeRuntime();
+            this.Paint += BaseForm_Paint;
             instruccion = new Instruccion(this);
             _instruccion = new Instruccion(this);// genera instancia de Instruccion (clase que contiene todas las indicaciones de IPP)
             _saltoDeImput = new SaltoDeImput(this);
@@ -67,6 +68,21 @@ namespace Ofelia_Sara.Formularios.General
             InitializeFooterLinkLabel();// footer a todos los formularios
     
             Load += BaseForm_Load;
+        }
+        /// <summary>
+        /// Método generado por el diseñador para inicializar componentes.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            SuspendLayout();
+            // 
+            // BaseForm
+            // 
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            ClientSize = new Size(800, 600);
+            Name = "BaseForm";
+            Load += BaseForm_Load;
+            ResumeLayout(false);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -119,6 +135,8 @@ namespace Ofelia_Sara.Formularios.General
             
             ConfigurarToolTips();
             Instruccion.InicializarComboBoxIpp(this);
+         
+
         }
         #endregion
 
@@ -241,26 +259,6 @@ namespace Ofelia_Sara.Formularios.General
 
         #endregion
 
-
-
-
-
-        /// <summary>
-        /// Método generado por el diseñador para inicializar componentes.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-            // 
-            // BaseForm
-            // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            ClientSize = new Size(800, 600);
-            Name = "BaseForm";
-            Load += BaseForm_Load;
-            ResumeLayout(false);
-        }
-
         #region  PANEL 1
         /// <summary>
         /// Configura la apariencia general del formulario, aplicando el redondeo a los paneles.
@@ -307,6 +305,9 @@ namespace Ofelia_Sara.Formularios.General
             panel.Left = margenIzquierdo;
             panel.Top = top;
             panel.Width = this.ClientSize.Width - margenIzquierdo - margenDerecho;
+
+            // Color centralizado
+            panel.BackColor = Color.FromArgb(178, 213, 230);
         }
 
         #endregion
@@ -320,15 +321,31 @@ namespace Ofelia_Sara.Formularios.General
         /// <param name="height"></param>
         private static void DibujarFondoDegradado(Graphics g, int width, int height)
         {
-            // Definir el centro del área de degradado
-            PointF center = new(width / 2f, height / 2f);
+            // Color base
+            Color colorBase = Color.FromArgb(0, 154, 174);
 
-            // Ajustar el radio máximo del degradado para que se ajuste al tamaño del formulario
-            float maxRadius = Math.Max(width, height) * 0.75f; // Ajusta el valor según sea necesario
+            // Colores para el degradado (pueden ajustarse)
+            Color colorClaro = ControlPaint.Light(colorBase, 0.1f);  // más claro
+            Color colorOscuro = ControlPaint.Dark(colorBase, 0f); // más oscuro
 
-            // Crear un rectángulo que envuelve el área del degradado
-            _ = new RectangleF(center.X - maxRadius, center.Y - maxRadius, maxRadius * 2, maxRadius * 2);
+            using var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                new Point(0, 0),
+                 
+                new Point(0, height),
+     
+                colorOscuro,
+                colorClaro
+                
+                
+            );
+
+            g.FillRectangle(brush, 0, 0, width, height);
         }
+
+
+    
+
+
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
@@ -337,7 +354,8 @@ namespace Ofelia_Sara.Formularios.General
             int height = this.ClientSize.Height;
 
             // Llamar al método que dibuja el fondo degradado
-            DibujarFondoDegradado(e.Graphics, width, height);
+            //  DibujarFondoDegradado(e.Graphics, width, height); // no me gusta como esta quedando
+            
         }
         #endregion
 

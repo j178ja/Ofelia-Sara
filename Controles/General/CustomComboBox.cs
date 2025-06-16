@@ -38,7 +38,9 @@ namespace Ofelia_Sara.Controles.General
         private  Color subrayadoColor = Color.Blue; // Color del subrayado
         private Dictionary<int, int> subrayadoAncho = new(); // Guarda la animación por índice
         private Timer animTimer;
-       
+        private bool sinResultados = false;
+        private const string MENSAJE_SIN_ELEMENTOS = "NO HAY ELEMENTOS A MOSTRAR";
+
         #endregion
 
         #region CONSTRUCTOR
@@ -273,22 +275,25 @@ namespace Ofelia_Sara.Controles.General
         }
         private void DropdownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-             SelectedIndexChanged?.Invoke(this, e);
-            if (dropdownList.SelectedItem != null)
+            if (sinResultados || dropdownList.SelectedItem?.ToString() == MENSAJE_SIN_ELEMENTOS)
             {
-                textBox.Text = dropdownList.SelectedItem.ToString();
-                showError = false; // Quitar subrayado rojo
-                isFocused = false; // Desactivar el estado de foco
-                animationProgress = 100; // Completar la animación
-                animationTimer.Stop();
-
-                Invalidate(); // Redibujar el control
+                dropdownList.SelectedIndex = -1;
+                return;
             }
 
-            SelectedIndexChanged?.Invoke(this, e); // Invocar evento si es necesario
+            // Lógica normal
+            textBox.Text = dropdownList.SelectedItem.ToString();
+            showError = false;
+            isFocused = false;
+            animationProgress = 100;
+            animationTimer.Stop();
+
+            Invalidate();
         }
 
-   
+
+
+
 
 
         private void AjustarAlturaDesplegable()
@@ -301,14 +306,22 @@ namespace Ofelia_Sara.Controles.General
 
             if (itemCount == 0)
             {
-                // Limpiar y agregar mensaje de no elementos
+                sinResultados = true;
                 dropdownList.Items.Clear();
-                dropdownList.Items.Add("NO HAY ELEMENTOS A MOSTRAR");
+                dropdownList.Items.Add(MENSAJE_SIN_ELEMENTOS);
+
                 dropdownList.ForeColor = Color.Red;
-                dropdownList.Height = itemHeight ; // Ajustar altura a un solo ítem
-                dropdownList.Enabled = false;
+                dropdownList.Height = itemHeight;
+                dropdownList.Enabled = true; // debe estar en true si querés mostrarlo sin scroll
+
                 return;
             }
+            else
+            {
+                sinResultados = false;
+            }
+
+
 
             // Si hay elementos, restablecer valores
             dropdownList.Enabled = true;
@@ -337,6 +350,7 @@ namespace Ofelia_Sara.Controles.General
             Application.DoEvents();  // Forzar a que el control se actualice
         }
 
+       
 
 
         #endregion

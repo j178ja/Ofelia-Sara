@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Ofelia_Sara.Formularios.General;
 
 
 namespace Ofelia_Sara.Formularios.General.Mensajes
@@ -441,7 +442,7 @@ namespace Ofelia_Sara.Formularios.General.Mensajes
         {
             IncrementarTamaño.Incrementar(btn_Cerrar);
             IncrementarTamaño.Incrementar(btn_No);
-        }
+          }
 
         internal void SetTexto(string mensaje)
         {
