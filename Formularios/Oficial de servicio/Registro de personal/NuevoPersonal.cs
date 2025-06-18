@@ -706,7 +706,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// </summary>
         /// <param name="sender"></param>
         ///<param name="e"></param>
-        private void AlternarPanel(PanelConBordeNeon panelConNeon, Panel panelDetalle, ref bool panelExpandido,
+        public void AlternarPanel(PanelConBordeNeon panelConNeon, Panel panelDetalle, ref bool panelExpandido,
                                    Button btnAmpliarReducir, Image imgExpandir, Image imgContraer,
                                    int alturaOriginal, int alturaContraida)
         {

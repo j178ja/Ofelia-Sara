@@ -80,9 +80,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             panel1.Controls.Add(label_AgregaFirma);
             panel1.Controls.Add(btn_Limpiar);
             panel1.Controls.Add(btn_Guardar);
-            panel1.Location = new System.Drawing.Point(23, 25);
+            panel1.Location = new System.Drawing.Point(21, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(618, 461);
+            panel1.Size = new System.Drawing.Size(622, 440);
             panel1.TabIndex = 2;
             // 
             // comboBox_Dependencia
@@ -103,7 +103,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Dependencia.ErrorColor = System.Drawing.Color.Red;
             comboBox_Dependencia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Dependencia.ForeColor = System.Drawing.Color.Gray;
-            comboBox_Dependencia.Location = new System.Drawing.Point(179, 211);
+            comboBox_Dependencia.Location = new System.Drawing.Point(181, 193);
             comboBox_Dependencia.MaxDropDownItems = 10;
             comboBox_Dependencia.Name = "comboBox_Dependencia";
             comboBox_Dependencia.PlaceholderColor = System.Drawing.Color.Gray;
@@ -123,9 +123,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Dependencia.AutoSize = true;
             label_Dependencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Dependencia.Location = new System.Drawing.Point(49, 209);
+            label_Dependencia.Location = new System.Drawing.Point(51, 191);
             label_Dependencia.Name = "label_Dependencia";
-            label_Dependencia.Size = new System.Drawing.Size(123, 16);
+            label_Dependencia.Size = new System.Drawing.Size(153, 20);
             label_Dependencia.TabIndex = 63;
             label_Dependencia.Text = "DEPENDENCIA :";
             // 
@@ -148,7 +148,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Jerarquia.FocusColor = System.Drawing.Color.Blue;
             comboBox_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             comboBox_Jerarquia.ForeColor = System.Drawing.Color.Gray;
-            comboBox_Jerarquia.Location = new System.Drawing.Point(179, 107);
+            comboBox_Jerarquia.Location = new System.Drawing.Point(181, 89);
             comboBox_Jerarquia.Margin = new Padding(0);
             comboBox_Jerarquia.MaxDropDownItems = 10;
             comboBox_Jerarquia.Name = "comboBox_Jerarquia";
@@ -184,7 +184,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             comboBox_Escalafon.FocusColor = System.Drawing.Color.Blue;
             comboBox_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             comboBox_Escalafon.ForeColor = System.Drawing.Color.Gray;
-            comboBox_Escalafon.Location = new System.Drawing.Point(179, 80);
+            comboBox_Escalafon.Location = new System.Drawing.Point(181, 62);
             comboBox_Escalafon.MaxDropDownItems = 10;
             comboBox_Escalafon.Name = "comboBox_Escalafon";
             comboBox_Escalafon.PlaceholderColor = System.Drawing.Color.Gray;
@@ -204,9 +204,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Escalafon.AutoSize = true;
             label_Escalafon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Escalafon.Location = new System.Drawing.Point(37, 79);
+            label_Escalafon.Location = new System.Drawing.Point(39, 61);
             label_Escalafon.Name = "label_Escalafon";
-            label_Escalafon.Size = new System.Drawing.Size(135, 16);
+            label_Escalafon.Size = new System.Drawing.Size(169, 20);
             label_Escalafon.TabIndex = 60;
             label_Escalafon.Text = "SUBESCALAFON :";
             // 
@@ -214,9 +214,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Jerarquia.AutoSize = true;
             label_Jerarquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Jerarquia.Location = new System.Drawing.Point(70, 106);
+            label_Jerarquia.Location = new System.Drawing.Point(72, 88);
             label_Jerarquia.Name = "label_Jerarquia";
-            label_Jerarquia.Size = new System.Drawing.Size(101, 16);
+            label_Jerarquia.Size = new System.Drawing.Size(125, 20);
             label_Jerarquia.TabIndex = 59;
             label_Jerarquia.Text = "JERARQUIA :";
             // 
@@ -228,7 +228,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_NumeroLegajo.ErrorColor = System.Drawing.Color.Red;
             textBox_NumeroLegajo.FocusColor = System.Drawing.Color.Blue;
             textBox_NumeroLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            textBox_NumeroLegajo.Location = new System.Drawing.Point(179, 53);
+            textBox_NumeroLegajo.Location = new System.Drawing.Point(181, 35);
             textBox_NumeroLegajo.MaxLength = 32767;
             textBox_NumeroLegajo.Multiline = false;
             textBox_NumeroLegajo.Name = "textBox_NumeroLegajo";
@@ -248,9 +248,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Legajo.AutoSize = true;
             label_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Legajo.Location = new System.Drawing.Point(100, 53);
+            label_Legajo.Location = new System.Drawing.Point(102, 35);
             label_Legajo.Name = "label_Legajo";
-            label_Legajo.Size = new System.Drawing.Size(73, 16);
+            label_Legajo.Size = new System.Drawing.Size(94, 20);
             label_Legajo.TabIndex = 52;
             label_Legajo.Text = "LEGAJO :";
             // 
@@ -260,7 +260,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             pictureBox_FirmaDigitalizada.BackColor = System.Drawing.SystemColors.ControlLight;
             pictureBox_FirmaDigitalizada.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox_FirmaDigitalizada.BackgroundImage");
             pictureBox_FirmaDigitalizada.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(358, 275);
+            pictureBox_FirmaDigitalizada.Location = new System.Drawing.Point(360, 257);
             pictureBox_FirmaDigitalizada.Name = "pictureBox_FirmaDigitalizada";
             pictureBox_FirmaDigitalizada.Size = new System.Drawing.Size(218, 81);
             pictureBox_FirmaDigitalizada.TabIndex = 51;
@@ -279,7 +279,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Funcion.ErrorColor = System.Drawing.Color.Red;
             textBox_Funcion.FocusColor = System.Drawing.Color.Blue;
             textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            textBox_Funcion.Location = new System.Drawing.Point(179, 238);
+            textBox_Funcion.Location = new System.Drawing.Point(181, 220);
             textBox_Funcion.MaxLength = 32767;
             textBox_Funcion.Multiline = false;
             textBox_Funcion.Name = "textBox_Funcion";
@@ -299,9 +299,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Funcion.AutoSize = true;
             label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Funcion.Location = new System.Drawing.Point(90, 238);
+            label_Funcion.Location = new System.Drawing.Point(92, 220);
             label_Funcion.Name = "label_Funcion";
-            label_Funcion.Size = new System.Drawing.Size(82, 16);
+            label_Funcion.Size = new System.Drawing.Size(103, 20);
             label_Funcion.TabIndex = 49;
             label_Funcion.Text = "FUNCION :";
             // 
@@ -314,7 +314,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Apellido.ErrorColor = System.Drawing.Color.Red;
             textBox_Apellido.FocusColor = System.Drawing.Color.Blue;
             textBox_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            textBox_Apellido.Location = new System.Drawing.Point(179, 174);
+            textBox_Apellido.Location = new System.Drawing.Point(181, 156);
             textBox_Apellido.MaxLength = 32767;
             textBox_Apellido.Multiline = false;
             textBox_Apellido.Name = "textBox_Apellido";
@@ -334,9 +334,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Apellido.AutoSize = true;
             label_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Apellido.Location = new System.Drawing.Point(84, 174);
+            label_Apellido.Location = new System.Drawing.Point(86, 156);
             label_Apellido.Name = "label_Apellido";
-            label_Apellido.Size = new System.Drawing.Size(87, 16);
+            label_Apellido.Size = new System.Drawing.Size(112, 20);
             label_Apellido.TabIndex = 47;
             label_Apellido.Text = "APELLIDO :";
             // 
@@ -349,7 +349,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             textBox_Nombre.ErrorColor = System.Drawing.Color.Red;
             textBox_Nombre.FocusColor = System.Drawing.Color.Blue;
             textBox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            textBox_Nombre.Location = new System.Drawing.Point(179, 145);
+            textBox_Nombre.Location = new System.Drawing.Point(181, 127);
             textBox_Nombre.MaxLength = 32767;
             textBox_Nombre.Multiline = false;
             textBox_Nombre.Name = "textBox_Nombre";
@@ -369,9 +369,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_Nombre.AutoSize = true;
             label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Nombre.Location = new System.Drawing.Point(91, 143);
+            label_Nombre.Location = new System.Drawing.Point(93, 125);
             label_Nombre.Name = "label_Nombre";
-            label_Nombre.Size = new System.Drawing.Size(80, 16);
+            label_Nombre.Size = new System.Drawing.Size(101, 20);
             label_Nombre.TabIndex = 45;
             label_Nombre.Text = "NOMBRE :";
             // 
@@ -380,9 +380,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             checkBox_AgregarFirma.AutoSize = true;
             checkBox_AgregarFirma.Cursor = Cursors.Hand;
             checkBox_AgregarFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            checkBox_AgregarFirma.Location = new System.Drawing.Point(292, 306);
+            checkBox_AgregarFirma.Location = new System.Drawing.Point(294, 288);
             checkBox_AgregarFirma.Name = "checkBox_AgregarFirma";
-            checkBox_AgregarFirma.Size = new System.Drawing.Size(15, 14);
+            checkBox_AgregarFirma.Size = new System.Drawing.Size(18, 17);
             checkBox_AgregarFirma.TabIndex = 4;
             checkBox_AgregarFirma.UseVisualStyleBackColor = true;
             checkBox_AgregarFirma.CheckedChanged += CheckBox_AgregarFirma_CheckedChanged;
@@ -391,9 +391,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             // 
             label_AgregaFirma.AutoSize = true;
             label_AgregaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_AgregaFirma.Location = new System.Drawing.Point(70, 305);
+            label_AgregaFirma.Location = new System.Drawing.Point(72, 287);
             label_AgregaFirma.Name = "label_AgregaFirma";
-            label_AgregaFirma.Size = new System.Drawing.Size(212, 15);
+            label_AgregaFirma.Size = new System.Drawing.Size(257, 18);
             label_AgregaFirma.TabIndex = 43;
             label_AgregaFirma.Text = "AGREGAR FIRMA DIGITALIZADA";
             // 
@@ -403,7 +403,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Limpiar.Cursor = Cursors.Hand;
             btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
-            btn_Limpiar.Location = new System.Drawing.Point(129, 375);
+            btn_Limpiar.Location = new System.Drawing.Point(131, 357);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 6;
@@ -416,7 +416,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Guardar.Cursor = Cursors.Hand;
             btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
-            btn_Guardar.Location = new System.Drawing.Point(456, 375);
+            btn_Guardar.Location = new System.Drawing.Point(458, 357);
             btn_Guardar.Name = "btn_Guardar";
             btn_Guardar.Size = new System.Drawing.Size(75, 67);
             btn_Guardar.TabIndex = 5;
@@ -432,15 +432,15 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Agregar_Componentes
             label_TITULO.Location = new System.Drawing.Point(168, 12);
             label_TITULO.Name = "label_TITULO";
             label_TITULO.Padding = new Padding(10, 0, 10, 0);
-            label_TITULO.Size = new System.Drawing.Size(240, 24);
+            label_TITULO.Size = new System.Drawing.Size(295, 29);
             label_TITULO.TabIndex = 38;
             label_TITULO.Text = "NUEVO SECRETARIO";
             // 
             // NuevoSecretario
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(664, 522);
+            ClientSize = new System.Drawing.Size(664, 504);
             Controls.Add(panel1);
             Controls.Add(label_TITULO);
             FormBorderStyle = FormBorderStyle.Fixed3D;

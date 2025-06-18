@@ -5,6 +5,7 @@ using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
 using Ofelia_Sara.Controles.Controles.Tooltip;
+using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
@@ -27,8 +28,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     public partial class Contravenciones : BaseForm
     {
         #region VARIABLES
+
+        // Variables para rastrear el estado de los paneles
+        private bool panelExpandido_Infraccion = true;
+        private bool panelExpandido_Infractor = true;
+        private bool panelExpandido_Instruccion = true;
+      
+
+        // Altura original y contraída de los paneles (es usado para cuando se reduce y se amplia el panel)
+        private int alturaOriginalPanel_Infraccion;
+        private int alturaOriginalPanel_Infractor;
+        private int alturaOriginalPanel_Instruccion;
+     
+        private int alturaContraidaPanel = 30; //establece altura minima del panel contraido
+
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
-    
+
         #endregion
 
         #region CONSTRUCTOR
@@ -52,6 +67,22 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             CalcularEdad.Inicializar(Fecha_Nacimiento, textBox_Edad);//para automatizar edad
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
+
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_INFRACCION, "Ampliar/Reducir DATOS INFRACCION.");
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_INFRACTOR, "Ampliar/Reducir DATOS INFRACTOR.");
+            ToolTipGeneral.Mostrar(btn_AmpliarReducir_INSTRUCCION, "Ampliar/Reducir DATOS INSTRUCCION.");
+
+            //traer label al frent
+
+            label_DatosInstruccion.BringToFront();
+            label_DatosInfractor.BringToFront();
+            label_DatosInfraccion.BringToFront();
+
+            //// Guardar la altura original del panel
+            alturaOriginalPanel_Infraccion = panel_DatosInfraccion.Height;
+            alturaOriginalPanel_Infractor = panel_DatosInfractor.Height;
+            alturaOriginalPanel_Instruccion = panel_DatosInstruccion.Height;
+
         }
         #endregion
 
@@ -426,7 +457,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 textBox_ArtInfraccion.Clear();
                 textBox_ArtInfraccion.Focus();
                 return false;
-              
+
             }
 
             // 4. Verificar si el artículo existe en el JSON
@@ -523,5 +554,27 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        private void Btn_AmpliarReducir_INFRACCION_Click(object sender, EventArgs e)
+        {
+            AlternarPanel(panel_DatosInfraccion, panel_Detalle_Infraccion, ref panelExpandido_Infraccion,
+                         btn_AmpliarReducir_INFRACCION, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
+                         alturaOriginalPanel_Infraccion, alturaContraidaPanel);
+          //  InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
+        }
+
+        private void AlternarPanel(PanelConBordeNeon panel_DatosInfraccion, Panel panel_Detalle_Infraccion, ref bool panelExpandido_Infraccion, Button btn_AmpliarReducir_INFRACCION, Bitmap dobleFlechaABAJO, Bitmap dobleFlechaARRIBA, int alturaOriginalPanel_Infraccion, int alturaContraidaPanel)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Btn_AmpliarReducir_INFRACTOR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
