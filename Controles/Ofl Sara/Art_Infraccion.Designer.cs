@@ -65,6 +65,8 @@
             label_NumeroArt.TabIndex = 47;
             label_NumeroArt.Text = "000";
             label_NumeroArt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label_NumeroArt.MouseEnter += label_NumeroArt_MouseEnter;
+            label_NumeroArt.MouseLeave += label_NumeroArt_MouseLeave;
             // 
             // Art_Infraccion
             // 

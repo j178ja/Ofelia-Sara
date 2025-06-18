@@ -545,7 +545,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             btn_BuscarArt.BackgroundImage = Properties.Resources.buscar75_;
             btn_BuscarArt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            btn_BuscarArt.Location = new System.Drawing.Point(5, 78);
+            btn_BuscarArt.Location = new System.Drawing.Point(5, 76);
             btn_BuscarArt.Name = "btn_BuscarArt";
             btn_BuscarArt.Size = new System.Drawing.Size(37, 33);
             btn_BuscarArt.TabIndex = 0;

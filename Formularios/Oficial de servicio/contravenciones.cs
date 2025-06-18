@@ -19,6 +19,7 @@ using System.Windows.Forms;
 
 
 
+
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 {
 
@@ -360,6 +361,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             if (!btn_AgregarArtContravencion.Enabled)
                 return;
 
+            if (!ValidarArticuloParaAgregar(out string error))
+            {
+                MensajeGeneral.Mostrar(error, MensajeGeneral.TipoMensaje.Advertencia);
+                return;
+            }
             // Contar cuántos controles Art_Infraccion hay en el panel
             int cantidadActual = panel_ArtInfraccion.Controls
                 .OfType<Art_Infraccion>()
@@ -388,6 +394,69 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             RecentrarControlesHorizontales();
             textBox_ArtInfraccion.Clear();
         }
+
+        private bool ValidarArticuloParaAgregar(out string mensajeError)
+        {
+            mensajeError = "";
+
+            string texto = textBox_ArtInfraccion.TextValue.Trim();
+
+            // 1. Verificar si el TextBox está vacío
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                mensajeError = "Debe ingresar un número de artículo.";
+                return false;
+            }
+
+            // 2. Verificar si el contenido es un número
+            if (!int.TryParse(texto, out int numero))
+            {
+                mensajeError = "El número de artículo ingresado no es válido.";
+                return false;
+            }
+
+            // 3. Verificar si ya existe un control con ese artículo en el panel
+            bool yaExiste = panel_ArtInfraccion.Controls
+                .OfType<Art_Infraccion>()
+                .Any(ctrl => int.TryParse(ctrl.NumeroArticulo, out int n) && n == numero);
+
+            if (yaExiste)
+            {
+                mensajeError = $"El artículo {numero} ya fue agregado.";
+                textBox_ArtInfraccion.Clear();
+                textBox_ArtInfraccion.Focus();
+                return false;
+              
+            }
+
+            // 4. Verificar si el artículo existe en el JSON
+            string ruta = Path.Combine(Application.StartupPath, "BaseDatos", "Json", "contravencion.json");
+            if (!File.Exists(ruta))
+            {
+                mensajeError = "No se encontró el archivo de artículos.";
+                textBox_ArtInfraccion.Clear();
+                textBox_ArtInfraccion.Focus();
+                return false;
+            }
+
+            string json = File.ReadAllText(ruta);
+            List<Capitulos> capitulos = JsonSerializer.Deserialize<List<Capitulos>>(json);
+
+            bool existeEnJson = capitulos
+                .SelectMany(c => c.Articulos)
+                .Any(art => art.Articulo == numero);
+
+            if (!existeEnJson)
+            {
+                mensajeError = $"El artículo {numero} no corresponde a una falta contravencional.";
+                textBox_ArtInfraccion.Clear();
+                textBox_ArtInfraccion.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
 
 
         private void RecentrarControlesHorizontales()
@@ -420,6 +489,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             RecentrarControlesHorizontales();
         }
 
+        /// <summary>
+        /// METODO PARA BUSCAR EL ART Y MOSTRARLO EN MENSAJE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_BuscarArt_Click(object sender, EventArgs e)
         {
             // Obtener número desde el CustomTextBox
