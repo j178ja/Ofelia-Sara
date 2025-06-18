@@ -1,4 +1,6 @@
-﻿using Ofelia_Sara.Clases.General.Apariencia;
+﻿using Ofelia_Sara.Clases.General.Animaciones;
+
+using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.Oficial_de_servicio;
 using System;
@@ -92,6 +94,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 radioButton_ActuacionEstandar.Checked = false;
                 comboBox_ModeloActuacion.Visible = true;
 
+                Animar.CrecimientoY(groupBox_SeleccionPlantilla, altoInicial: 0, duracion: 500); // hace que aparesca el group expandiendose hacia abajo
+
                 EstiloRadiobuttom.AplicarEstiloSeleccionRadioButton(
                     radioButton,
                     radioButton_Acta,
@@ -171,10 +175,14 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         {
             comboBox_ModeloActuacion.Visible = false;
            panel_Actuacion.Visible = true;
-            richTextBox_Actuacion.Focus();
+            Desplazar.DesplazamientoDesde(label_TipoActuacion, DireccionDesplazamiento.DesdeIzquierdaAlCentroX, duracion: 800);
+
+
             //   groupBox_SeleccionPlantilla.Height = alturaOriginalGroupBox - 25; // Reduce la altura para 'Denuncia'
             // AjustarTamanoFormulario();
             ActualizarTextoTipoActuacion();
+            Animar.CrecimientoY(richTextBox_Actuacion, altoInicial: 0, duracion: 500);
+            richTextBox_Actuacion.Focus();
         }
 
 

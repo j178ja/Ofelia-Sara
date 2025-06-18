@@ -13,111 +13,128 @@ using System.Windows.Forms;
 namespace Ofelia_Sara.Clases.General.Animaciones
 {
 
-
-    public enum DireccionDesplazamiento
-    {
-        Izquierda,
-        Derecha,
-        Arriba,
-        Abajo,
-        Centro
-    }
-
-
-    public static class Desplazamiento
-    {
-        private static readonly Dictionary<Control, Timer> animacionesActivas = new();
-
-        public static void AnimarDesplazamiento(
-            Control control,
-            DireccionDesplazamiento direccion,
-            int distancia = 100,
-            int duracion = 500,
-            bool regresar = false,
-            Action? alTerminar = null)
+    
+        // ENUM por fuera de la clase principal
+        public enum DireccionDesplazamiento
         {
-            if (animacionesActivas.ContainsKey(control))
-                return; // Ya hay una animación en curso para este control
-
-            int pasos = 30;
-            int intervalo = duracion / pasos;
-            int pasoActual = 0;
-
-            Point posicionInicial = control.Location;
-            Point destino = CalcularDestino(posicionInicial, direccion, distancia,control);
-
-            Timer timer = new() { Interval = intervalo };
-            animacionesActivas[control] = timer;
-
-            timer.Tick += (s, e) =>
-            {
-                pasoActual++;
-
-                double progreso = (double)pasoActual / pasos;
-                double easing = EaseOut(progreso);
-
-                int nuevoX = (int)(posicionInicial.X + (destino.X - posicionInicial.X) * easing);
-                int nuevoY = (int)(posicionInicial.Y + (destino.Y - posicionInicial.Y) * easing);
-
-                control.Location = new Point(nuevoX, nuevoY);
-
-                if (pasoActual >= pasos)
-                {
-                    timer.Stop();
-                    animacionesActivas.Remove(control);
-                    timer.Dispose();
-
-                    if (regresar)
-                    {
-                        AnimarDesplazamiento(control, DireccionOpuesta(direccion), distancia, duracion, false, alTerminar);
-                    }
-                    else
-                    {
-                        alTerminar?.Invoke();
-                    }
-                }
-            };
-
-            timer.Start();
+            Izquierda,
+            Derecha,
+            Arriba,
+            Abajo,
+            Centro,
+            DesdeIzquierdaAlCentroX,
+            DesdeDerechaAlCentroX
         }
 
-        private static Point CalcularDestino(Point inicio, DireccionDesplazamiento direccion, int distancia, Control control)
+        public static class Desplazar
         {
-            if (direccion == DireccionDesplazamiento.Centro && control.Parent != null)
+            private static Dictionary<Control, Timer> animacionesActivas = new();
+
+            private static double EaseOut(double t)
             {
-                var parent = control.Parent;
-                int destinoX = (parent.Width - control.Width) / 2;
-                int destinoY = (parent.Height - control.Height) / 2;
-                return new Point(destinoX, destinoY);
+                return 1 - Math.Pow(1 - t, 3);
             }
 
-            return direccion switch
+            public static void DesplazamientoDesde(Control control, DireccionDesplazamiento direccion, int distancia = 100, int duracion = 500, Action? alTerminar = null)
             {
-                DireccionDesplazamiento.Izquierda => new Point(inicio.X - distancia, inicio.Y),
-                DireccionDesplazamiento.Derecha => new Point(inicio.X + distancia, inicio.Y),
-                DireccionDesplazamiento.Arriba => new Point(inicio.X, inicio.Y - distancia),
-                DireccionDesplazamiento.Abajo => new Point(inicio.X, inicio.Y + distancia),
-                _ => inicio
-            };
-        }
+                if (animacionesActivas.ContainsKey(control))
+                    return;
 
+                int pasos = 30;
+                int intervalo = duracion / pasos;
+                int pasoActual = 0;
 
-        private static DireccionDesplazamiento DireccionOpuesta(DireccionDesplazamiento direccion)
-        {
-            return direccion switch
+                Point posicionFinal = control.Location;
+
+                if (direccion == DireccionDesplazamiento.DesdeIzquierdaAlCentroX || direccion == DireccionDesplazamiento.DesdeDerechaAlCentroX)
+                {
+                    if (control.Parent != null)
+                    {
+                        int centroX = CalcularCentroX(control);
+                        posicionFinal = new Point(centroX, control.Location.Y);
+                    }
+                }
+
+                Point posicionInicial = direccion switch
+                {
+                    DireccionDesplazamiento.Izquierda => new Point(posicionFinal.X - distancia, posicionFinal.Y),
+                    DireccionDesplazamiento.Derecha => new Point(posicionFinal.X + distancia, posicionFinal.Y),
+                    DireccionDesplazamiento.Arriba => new Point(posicionFinal.X, posicionFinal.Y - distancia),
+                    DireccionDesplazamiento.Abajo => new Point(posicionFinal.X, posicionFinal.Y + distancia),
+                    DireccionDesplazamiento.DesdeIzquierdaAlCentroX => new Point(-control.Width, posicionFinal.Y),
+                    DireccionDesplazamiento.DesdeDerechaAlCentroX => new Point(
+                        control.Parent?.Width ?? (posicionFinal.X + distancia + control.Width),
+                        posicionFinal.Y
+                    ),
+                    DireccionDesplazamiento.Centro => CalcularDestino(posicionFinal, direccion, distancia, control),
+                    _ => posicionFinal
+                };
+
+                control.Location = posicionInicial;
+
+                Timer timer = new() { Interval = intervalo };
+                animacionesActivas[control] = timer;
+
+                timer.Tick += (s, e) =>
+                {
+                    pasoActual++;
+                    double progreso = (double)pasoActual / pasos;
+                    double easing = EaseOut(progreso);
+
+                    int nuevoX = (int)(posicionInicial.X + (posicionFinal.X - posicionInicial.X) * easing);
+                    int nuevoY = (int)(posicionInicial.Y + (posicionFinal.Y - posicionInicial.Y) * easing);
+                    control.Location = new Point(nuevoX, nuevoY);
+
+                    if (pasoActual >= pasos)
+                    {
+                        control.Location = posicionFinal;
+                        timer.Stop();
+                        timer.Dispose();
+                        animacionesActivas.Remove(control);
+                        alTerminar?.Invoke();
+                    }
+                };
+
+                timer.Start();
+            }
+
+            private static Point CalcularDestino(Point inicio, DireccionDesplazamiento direccion, int distancia, Control control)
             {
-                DireccionDesplazamiento.Izquierda => DireccionDesplazamiento.Derecha,
-                DireccionDesplazamiento.Derecha => DireccionDesplazamiento.Izquierda,
-                DireccionDesplazamiento.Arriba => DireccionDesplazamiento.Abajo,
-                DireccionDesplazamiento.Abajo => DireccionDesplazamiento.Arriba,
-                _ => direccion
-            };
-        }
+                if (direccion == DireccionDesplazamiento.Centro && control.Parent != null)
+                {
+                    var parent = control.Parent;
+                    int destinoX = (parent.Width - control.Width) / 2;
+                    int destinoY = (parent.Height - control.Height) / 2;
+                    return new Point(destinoX, destinoY);
+                }
 
-        // Curva de desaceleración (ease-out)
-        private static double EaseOut(double t)
-        {
-            return 1 - Math.Pow(1 - t, 3); // cúbica suave
+                return inicio;
+            }
+
+            private static int CalcularCentroX(Control control)
+            {
+                if (control.Parent != null)
+                {
+               // int ajusteManual = -45; //se recurrio a esto ya que ante al usar desplazamiento no quedaba centrado pese al calculo
+                return (control.Parent.ClientSize.Width - control.Width) / 2 /*+ ajusteManual*/;
+
+            }
+            return control.Location.X;
+            }
+
+            private static DireccionDesplazamiento DireccionOpuesta(DireccionDesplazamiento direccion)
+            {
+                return direccion switch
+                {
+                    DireccionDesplazamiento.Izquierda => DireccionDesplazamiento.Derecha,
+                    DireccionDesplazamiento.Derecha => DireccionDesplazamiento.Izquierda,
+                    DireccionDesplazamiento.Arriba => DireccionDesplazamiento.Abajo,
+                    DireccionDesplazamiento.Abajo => DireccionDesplazamiento.Arriba,
+                    _ => direccion
+                };
+            }
         }
     }
-}
+
+
+

@@ -66,9 +66,9 @@
             panel1.Controls.Add(radioButton_Denuncia);
             panel1.Controls.Add(pictureBox_Acta);
             panel1.Controls.Add(pictureBox_Denuncia);
-            panel1.Location = new System.Drawing.Point(30, 33);
+            panel1.Location = new System.Drawing.Point(21, 25);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(740, 165);
+            panel1.Size = new System.Drawing.Size(758, 165);
             panel1.TabIndex = 1;
             // 
             // radioButton_Acta
@@ -314,13 +314,14 @@
             panel_Actuacion.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
             panel_Actuacion.Controls.Add(label_TipoActuacion);
             panel_Actuacion.Controls.Add(richTextBox_Actuacion);
-            panel_Actuacion.Location = new System.Drawing.Point(30, 204);
+            panel_Actuacion.Location = new System.Drawing.Point(21, 204);
             panel_Actuacion.Name = "panel_Actuacion";
-            panel_Actuacion.Size = new System.Drawing.Size(740, 86);
+            panel_Actuacion.Size = new System.Drawing.Size(758, 86);
             panel_Actuacion.TabIndex = 96;
             // 
             // label_TipoActuacion
             // 
+            label_TipoActuacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             label_TipoActuacion.AutoSize = true;
             label_TipoActuacion.BackColor = System.Drawing.Color.FromArgb(0, 154, 174);
             label_TipoActuacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
@@ -338,7 +339,7 @@
             richTextBox_Actuacion.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             richTextBox_Actuacion.Location = new System.Drawing.Point(14, 28);
             richTextBox_Actuacion.Name = "richTextBox_Actuacion";
-            richTextBox_Actuacion.Size = new System.Drawing.Size(712, 49);
+            richTextBox_Actuacion.Size = new System.Drawing.Size(730, 49);
             richTextBox_Actuacion.TabIndex = 0;
             richTextBox_Actuacion.Text = "";
             // 

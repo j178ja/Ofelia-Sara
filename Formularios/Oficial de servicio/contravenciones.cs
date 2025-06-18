@@ -3,6 +3,7 @@ using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
 using Ofelia_Sara.Controles.Controles.Aplicadas_con_controles;
+using Ofelia_Sara.Controles.Controles.Tooltip;
 using Ofelia_Sara.Controles.Ofl_Sara;
 using Ofelia_Sara.Formularios.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
@@ -11,7 +12,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -20,35 +23,43 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
     public partial class Contravenciones : BaseForm
     {
+        #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+        #endregion
+
+        #region CONSTRUCTOR
         public Contravenciones()
         {
             InitializeComponent();
 
-         
+            TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarArtContravencion, "Ingrese un Articulo para poder agregar uno adicional", "INGRESAR NUEVO ARTICULO");
         }
+        #endregion
 
+        #region LOAD
         private void Contravenciones_Load(object sender, EventArgs e)
         {
             this.FormClosing += BuscarPersonal_FormClosing;
             //Fecha_Instruccion.SelectedDate = DateTime.Now;
-         
+
+            TextBox_ArtInfraccion_TextChanged(textBox_ArtInfraccion, EventArgs.Empty);//permite validacion desde que se carga el formulario
 
             CalcularEdad.Inicializar(Fecha_Nacimiento, textBox_Edad);//para automatizar edad
 
             SetupBotonDeslizable();  // Configurar el delegado de validación
         }
+        #endregion
 
-
-
+        #region BOTON LIMPIAR
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario.Limpiar(this); // Llama al método estático Limpiar de la clase LimpiarFormulario
-   
+
 
         }
+        #endregion
 
-        //------------BOTON GUARDAR---------------
+        #region BOTON GUARDAR
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
             //Verificar si los campos están completados
@@ -67,20 +78,23 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
             }
         }
-        //--------------------------------------------------------------------------------------------
+        #endregion
+
+        #region FORMCLOSING
 
         // Evento FormClosing para verificar si los datos están guardados antes de cerrar
         private void BuscarPersonal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!datosGuardados) // Si los datos no han sido guardados
             {
-               
-                    MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
+
+                MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
             }
         }
-        //------------------------------------------------------------------------------------------------
-        //   METODO PARA OBTENER DATOS DEL FORMULARIO
+        #endregion
 
+
+        #region OBTENER DATOS DEL FORMULARIO
         public Dictionary<string, string> ObtenerDatosFormulario()
         {
             var datosFormulario = new Dictionary<string, string>();
@@ -125,7 +139,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
             return datosFormulario;
         }
-        //------------------------------------------------------------------------------------
+        #endregion
+
+        #region VALIDAR DATOS
         private bool ValidarDatosFormulario()
         {
             //Verificar si los campos están completados
@@ -195,8 +211,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
             return true; // Indica que la validación fue exitosa
         }
-        //------------BOTON IMPRIMIR---------------
+        #endregion
 
+        #region BOTON IMPRIMIR
         private void Btn_Imprimir_Click(object sender, EventArgs e)
         {
 
@@ -252,9 +269,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        #endregion
 
 
-        private void textBox_Edad_TextChanged(object sender, EventArgs e)
+        private void TextBox_Edad_TextChanged(object sender, EventArgs e)
         {
             // Verificar si el texto actual del TextBox es "0" o "00"
             if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
@@ -265,15 +283,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-      
 
-   
+        #region MENSAJE AYUDA
+
         private void Contravenciones_HelpButtonClicked(object sender, CancelEventArgs e)
-        {  
+        {
             MostrarMensajeAyuda("Complete la totalidad de campos requeridos para generar el documento.");
         }
+        #endregion
 
-        //-------BOTON STAR PLANA---------------------------------
+        #region SOLICITAR PLANA
         private void SetupBotonDeslizable()
         {
             // Configurar el delegado de validación en el control BotonDeslizable
@@ -294,13 +313,106 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 else
                 {
                     // Mostrar mensaje de éxito si los campos están completos
-                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario  se enviara automaticamente la solicitud de plana" 
+                    MensajeGeneral.Mostrar("Datos Guardados para solicitar plana del ciudadano. Cuando imprima formulario  se enviara automaticamente la solicitud de plana"
                         , MensajeGeneral.TipoMensaje.Exito);
                     return true; // Retorna true si los campos están completos
                 }
             };
         }
 
-  
+        #endregion
+
+        /// <summary>
+        /// VALIDACION DE BTN AGREGAR ART 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_ArtInfraccion_TextChanged(object sender, EventArgs e)
+        {
+            bool habilitar = !string.IsNullOrWhiteSpace(textBox_ArtInfraccion.TextValue);
+            btn_AgregarArtContravencion.Enabled = habilitar;
+
+            if (habilitar)
+            {
+                btn_AgregarArtContravencion.BackColor = Color.LightGreen;
+                btn_AgregarArtContravencion.ForeColor = Color.White;
+            }
+            else
+            {
+                btn_AgregarArtContravencion.BackColor = Color.Tomato;
+                btn_AgregarArtContravencion.ForeColor = Color.Black;
+            }
+        }
+
+        /// <summary>
+        /// AGREGA UN NUEVO CONTROL DE INFRACCION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_AgregarArtContravencion_Click(object sender, EventArgs e)
+        {
+            if (!btn_AgregarArtContravencion.Enabled)
+                return;
+
+            // Contar cuántos controles Art_Infraccion hay en el panel
+            int cantidadActual = panel_ArtInfraccion.Controls
+                .OfType<Art_Infraccion>()
+                .Count();
+
+            if (cantidadActual >= 5) 
+            {
+                MensajeGeneral.Mostrar("No se pueden agregar más de 5 artículos de infracción.",
+                                MensajeGeneral.TipoMensaje.Informacion);
+                return;
+            }
+
+            // Crear nuevo control
+            Art_Infraccion nuevoControl = new Art_Infraccion();
+
+            // Transferir texto desde el TextBox al Label del nuevo control
+            nuevoControl.NumeroArticulo = textBox_ArtInfraccion.TextValue;
+
+
+            nuevoControl.Eliminado += (s, args) =>
+            {
+                RecentrarControlesHorizontales();
+            };
+
+            panel_ArtInfraccion.Controls.Add(nuevoControl);
+            RecentrarControlesHorizontales();
+            textBox_ArtInfraccion.Clear();
+        }
+
+
+        private void RecentrarControlesHorizontales()
+        {
+            int margen = 6;
+
+            // Obtener los controles relevantes
+            var controles = panel_ArtInfraccion.Controls
+                .OfType<Art_Infraccion>()
+                .ToList();
+
+            if (controles.Count == 0) return;
+
+            // Calcular ancho total requerido (sumatoria de los controles + márgenes)
+            int totalWidth = controles.Sum(c => c.Width) + margen * (controles.Count - 1);
+
+            // Posición inicial X (centrado)
+            int startX = (panel_ArtInfraccion.Width - totalWidth) / 2;
+            int y = (panel_ArtInfraccion.Height - controles[0].Height) / 2; // centrado vertical opcional
+
+            foreach (var ctrl in controles)
+            {
+                ctrl.Location = new Point(startX, y);
+                startX += ctrl.Width + margen;
+            }
+        }
+
+        private void panel_ArtInfraccion_Resize(object sender, EventArgs e)
+        {
+            RecentrarControlesHorizontales();
+        }
+
     }
 }

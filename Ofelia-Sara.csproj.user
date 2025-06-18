@@ -23,6 +23,9 @@
     <Compile Update="Controles\General\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Controles\Ofl Sara\Art_Infraccion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controles\Ofl Sara\Boton_Contador.cs">
       <SubType>Component</SubType>
     </Compile>
