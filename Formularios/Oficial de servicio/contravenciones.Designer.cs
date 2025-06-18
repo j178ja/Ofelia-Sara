@@ -60,9 +60,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Limpiar = new System.Windows.Forms.Button();
             btn_Imprimir = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
-            panel_ArtInfraccion = new System.Windows.Forms.Panel();
+            btn_BuscarArt = new System.Windows.Forms.Button();
             label_ArtInfraccion = new System.Windows.Forms.Label();
             btn_AgregarArtContravencion = new System.Windows.Forms.Button();
+            panel_ArtInfraccion = new System.Windows.Forms.Panel();
             textBox_ArtInfraccion = new CustomTextBox();
             Fecha_Instruccion = new Controles.Ofl_Sara.TimePickerPersonalizado();
             FechaAudiencia = new Controles.Ofl_Sara.DateCompromiso_Control();
@@ -497,6 +498,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(btn_BuscarArt);
             panel1.Controls.Add(label_ArtInfraccion);
             panel1.Controls.Add(btn_AgregarArtContravencion);
             panel1.Controls.Add(panel_ArtInfraccion);
@@ -539,12 +541,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel1.Size = new System.Drawing.Size(680, 620);
             panel1.TabIndex = 48;
             // 
-            // panel_ArtInfraccion
+            // btn_BuscarArt
             // 
-            panel_ArtInfraccion.Location = new System.Drawing.Point(153, 70);
-            panel_ArtInfraccion.Name = "panel_ArtInfraccion";
-            panel_ArtInfraccion.Size = new System.Drawing.Size(501, 41);
-            panel_ArtInfraccion.TabIndex = 104;
+            btn_BuscarArt.BackgroundImage = Properties.Resources.buscar75_;
+            btn_BuscarArt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            btn_BuscarArt.Location = new System.Drawing.Point(5, 78);
+            btn_BuscarArt.Name = "btn_BuscarArt";
+            btn_BuscarArt.Size = new System.Drawing.Size(37, 33);
+            btn_BuscarArt.TabIndex = 0;
+            btn_BuscarArt.UseVisualStyleBackColor = true;
+            btn_BuscarArt.Click += Btn_BuscarArt_Click;
             // 
             // label_ArtInfraccion
             // 
@@ -565,6 +571,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_AgregarArtContravencion.Text = "+";
             btn_AgregarArtContravencion.UseVisualStyleBackColor = true;
             btn_AgregarArtContravencion.Click += Btn_AgregarArtContravencion_Click;
+            // 
+            // panel_ArtInfraccion
+            // 
+            panel_ArtInfraccion.Location = new System.Drawing.Point(153, 70);
+            panel_ArtInfraccion.Name = "panel_ArtInfraccion";
+            panel_ArtInfraccion.Size = new System.Drawing.Size(501, 41);
+            panel_ArtInfraccion.TabIndex = 104;
             // 
             // textBox_ArtInfraccion
             // 
@@ -762,5 +775,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private Ofelia_Sara.Controles.Ofl_Sara.DateCompromiso_Control FechaAudiencia;
         private Ofelia_Sara.Controles.Ofl_Sara.TimePickerPersonalizado Fecha_Instruccion;
         private System.Windows.Forms.Panel panel_ArtInfraccion;
+        private System.Windows.Forms.Button btn_BuscarArt;
     }
 }

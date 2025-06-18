@@ -13,7 +13,7 @@ namespace Ofelia_Sara.Controles.Ofl_Sara
 {
     public partial class Art_Infraccion : UserControl
     {
-        public event EventHandler Eliminado;
+        public event EventHandler Eliminado; //Evento para invocar el centrado de los controles al elimianr
 
         public Art_Infraccion()
         {

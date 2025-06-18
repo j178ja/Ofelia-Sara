@@ -83,6 +83,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="BaseDatos\Json\contravencion.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="BaseDatos\Leyes\Codigo Penal de la Nación.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

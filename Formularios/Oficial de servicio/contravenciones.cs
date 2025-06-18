@@ -1,4 +1,5 @@
-﻿using Ofelia_Sara.Clases.General.Apariencia;
+﻿using Ofelia_Sara.BaseDatos.Json_generador_de_archivos;
+using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
 using Ofelia_Sara.Clases.GenerarDocumentos;
@@ -13,6 +14,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Windows.Forms;
 
 
@@ -25,14 +27,16 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
     {
         #region VARIABLES
         private bool datosGuardados = false; // Variable que indica si los datos fueron guardados
+    
         #endregion
 
         #region CONSTRUCTOR
         public Contravenciones()
         {
             InitializeComponent();
-
+            btn_BuscarArt.Visible = false;//ocultar al cargar formulario
             TooltipEnControlDesactivado.ConfigurarToolTip(this, btn_AgregarArtContravencion, "Ingrese un Articulo para poder agregar uno adicional", "INGRESAR NUEVO ARTICULO");
+            ToolTipGeneral.Mostrar(btn_BuscarArt, "BUSCAR detalle del Articulo");
         }
         #endregion
 
@@ -336,11 +340,13 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             {
                 btn_AgregarArtContravencion.BackColor = Color.LightGreen;
                 btn_AgregarArtContravencion.ForeColor = Color.White;
+                btn_BuscarArt.Visible = true;
             }
             else
             {
                 btn_AgregarArtContravencion.BackColor = Color.Tomato;
                 btn_AgregarArtContravencion.ForeColor = Color.Black;
+                btn_BuscarArt.Visible = false;
             }
         }
 
@@ -359,7 +365,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 .OfType<Art_Infraccion>()
                 .Count();
 
-            if (cantidadActual >= 5) 
+            if (cantidadActual >= 5)
             {
                 MensajeGeneral.Mostrar("No se pueden agregar más de 5 artículos de infracción.",
                                 MensajeGeneral.TipoMensaje.Informacion);
@@ -412,6 +418,35 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private void panel_ArtInfraccion_Resize(object sender, EventArgs e)
         {
             RecentrarControlesHorizontales();
+        }
+
+        private void Btn_BuscarArt_Click(object sender, EventArgs e)
+        {
+            // Obtener número desde el CustomTextBox
+            int numeroBuscado = int.Parse(textBox_ArtInfraccion.TextValue.Trim());
+
+            // Ruta del archivo JSON
+            string ruta = Path.Combine(Application.StartupPath, "BaseDatos", "Json", "contravencion.json");
+
+            // Leer y deserializar JSON
+            string json = File.ReadAllText(ruta);
+            List<Capitulos> capitulos = JsonSerializer.Deserialize<List<Capitulos>>(json);
+
+            // Buscar el artículo
+            var resultado = capitulos
+                .SelectMany(c => c.Articulos, (cap, art) => new { cap.Capitulo, art.Articulo, art.Contenido })
+                .FirstOrDefault(x => x.Articulo == numeroBuscado);
+
+            // Mostrar resultado
+            if (resultado != null)
+            {
+                string mensaje = $"Capítulo: {resultado.Capitulo}\nArtículo: {resultado.Articulo}\n\n{resultado.Contenido}";
+                MensajeGeneral.Mostrar(mensaje, MensajeGeneral.TipoMensaje.Informacion);
+            }
+            else
+            {
+                MensajeGeneral.Mostrar("No se encontró ningún artículo con ese número.", MensajeGeneral.TipoMensaje.Advertencia);
+            }
         }
 
     }
