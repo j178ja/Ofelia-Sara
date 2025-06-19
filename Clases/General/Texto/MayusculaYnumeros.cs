@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Ofelia_Sara.Controles.General;
 using Ofelia_Sara.Formularios.General.Mensajes;
+using System.Text.RegularExpressions;
 public class MayusculaYnumeros
 {
     /// <summary>
@@ -151,8 +152,30 @@ public class MayusculaYnumeros
                 }
                 else
                 {
-                    e.KeyChar = char.ToUpper(e.KeyChar);
+                    // Obtener el texto actual + la nueva tecla
+                    if (sender is CustomTextBox tb)
+                    {
+                        MessageBox.Show("Procesando entrada...", "Debug");
+                        int cursorPos = tb.SelectionStart;
+                        string textoActual = tb.TextValue;
+                       
+                        // Insertar la nueva tecla en la posición del cursor
+                        string textoNuevo = textoActual.Substring(0, cursorPos) +
+                                            e.KeyChar +
+                                            textoActual.Substring(cursorPos);
+
+                        // Procesar el texto nuevo
+                        string textoConvertido = ConvertirAMayusculasSoloLetrasNumeros(textoNuevo);
+
+                        // Cancelar la entrada original
+                        e.Handled = true;
+
+                        // Aplicar el texto procesado
+                        tb.TextValue = textoConvertido;
+                        tb.SelectionStart = Math.Min(cursorPos + 1, tb.TextValue.Length);
+                    }
                 }
+
             };
 
         }
@@ -161,21 +184,60 @@ public class MayusculaYnumeros
     /// <summary>
     /// Convierte una cadena a mayúsculas, permitiendo solo letras y números.
     /// </summary>
+    //private static string ConvertirAMayusculasSoloLetrasNumeros(string input)
+    //{
+    //    if (input == null)
+    //        return string.Empty;
+
+    //    StringBuilder resultado = new(input.Length);
+    //    foreach (char c in input)
+    //    {
+    //        if (char.IsLetterOrDigit(c) || char.IsWhiteSpace(c))
+    //        {
+    //            resultado.Append(char.ToUpper(c));
+    //        }
+    //    }
+
+    //    return resultado.ToString();
+    //}
     private static string ConvertirAMayusculasSoloLetrasNumeros(string input)
     {
-        if (input == null)
+        if (string.IsNullOrWhiteSpace(input))
             return string.Empty;
 
         StringBuilder resultado = new(input.Length);
+        char? ultimoTipo = null; // 'L' = letra, 'D' = dígito, 'S' = espacio
+
         foreach (char c in input)
         {
-            if (char.IsLetterOrDigit(c) || char.IsWhiteSpace(c))
+            if (char.IsWhiteSpace(c))
             {
-                resultado.Append(char.ToUpper(c));
+                if (resultado.Length > 0 && resultado[^1] != ' ')
+                    resultado.Append(' ');
+
+                ultimoTipo = 'S';
             }
+            else if (char.IsLetter(c))
+            {
+                if (ultimoTipo == 'D' || ultimoTipo == 'S')
+                    resultado.Append(' ');
+
+                resultado.Append(char.ToUpper(c));
+                ultimoTipo = 'L';
+            }
+            else if (char.IsDigit(c))
+            {
+                if (ultimoTipo == 'L' || ultimoTipo == 'S')
+                    resultado.Append(' ');
+
+                resultado.Append(c);
+                ultimoTipo = 'D';
+            }
+            // otros caracteres: ignorar
         }
 
-        return resultado.ToString();
+        // Eliminar espacios duplicados y recortar bordes
+        return Regex.Replace(resultado.ToString(), @"\s{2,}", " ").Trim();
     }
 
     /// <summary>
@@ -183,20 +245,52 @@ public class MayusculaYnumeros
     /// </summary>
     private static string ConvertirAMayusculasConEspeciales(string input)
     {
-        if (input == null)
+        if (string.IsNullOrWhiteSpace(input))
             return string.Empty;
 
         StringBuilder resultado = new(input.Length);
+        char? ultimoTipo = null; // 'L' = letra, 'D' = dígito, 'S' = espacio, 'E' = especial
+
         foreach (char c in input)
         {
-            if (char.IsLetterOrDigit(c) || char.IsWhiteSpace(c) || c == '*' || c == '/' || c == '-')
+            if (char.IsWhiteSpace(c))
             {
-                resultado.Append(char.ToUpper(c));
+                if (resultado.Length > 0 && resultado[^1] != ' ')
+                    resultado.Append(' ');
+
+                ultimoTipo = 'S';
             }
+            else if (char.IsLetter(c))
+            {
+                if (ultimoTipo == 'D' || ultimoTipo == 'S' || ultimoTipo == 'E')
+                    resultado.Append(' ');
+
+                resultado.Append(char.ToUpper(c));
+                ultimoTipo = 'L';
+            }
+            else if (char.IsDigit(c))
+            {
+                if (ultimoTipo == 'L' || ultimoTipo == 'S' || ultimoTipo == 'E')
+                    resultado.Append(' ');
+
+                resultado.Append(c);
+                ultimoTipo = 'D';
+            }
+            else if (c == '*' || c == '/' || c == '-')
+            {
+                if (ultimoTipo == 'L' || ultimoTipo == 'D')
+                    resultado.Append(' ');
+
+                resultado.Append(c);
+                ultimoTipo = 'E';
+            }
+            // cualquier otro carácter: ignorar
         }
 
-        return resultado.ToString();
+        // Eliminar espacios duplicados y recortar
+        return Regex.Replace(resultado.ToString(), @"\s{2,}", " ").Trim();
     }
+
 
     /// <summary>
     /// Verifica si un carácter es permitido según la configuración especificada.

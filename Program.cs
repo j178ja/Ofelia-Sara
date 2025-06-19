@@ -35,7 +35,9 @@ namespace Ofelia_Sara
 
             // Después de cerrar Presentacion, abrir MenuPrincipal
 
-            Application.Run(new MenuPrincipal());
+           // Application.Run(new MenuPrincipal());
+           // Application.Run(new Contravenciones());
+           Application.Run(new NuevoPersonal());
             //  Application.Run(new MensajeEmail());
             //  Application.Run(new Visu());
             //  Application.Run(new InicioCierre());

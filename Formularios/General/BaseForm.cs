@@ -991,6 +991,8 @@ namespace Ofelia_Sara.Formularios.General
                         //MAYUSCULA Y NUMEROS
                         case "textBox_Caratula":
                         case "textBox_Domicilio":
+                        case "textBox_DomicilioPnal":
+                        case "textBox_DomicilioDependencia":
                         case "textBox_Fiscalia":
                             MayusculaYnumeros.AplicarAControl(textBox);
                             break;

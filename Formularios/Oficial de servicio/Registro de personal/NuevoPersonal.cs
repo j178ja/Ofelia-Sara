@@ -2,6 +2,7 @@
 using BaseDatos.Adm_BD.Modelos;
 using BaseDatos.Entidades;
 using MySql.Data.MySqlClient;
+using Ofelia_Sara.Clases.General.AmpliarReducir_Paneles;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
@@ -580,11 +581,12 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
             textBox_LocalidadDependencia.Clear();
             textBox_PartidoDependencia.Clear();
 
-            // También puedes habilitar los TextBox si es necesario
+            
             textBox_DomicilioDependencia.ReadOnly = false;
             textBox_LocalidadDependencia.ReadOnly = false;
             textBox_PartidoDependencia.ReadOnly = false;
         }
+
         /// <summary>
         /// METODO PARA MOSTRAR QUE NO SE PUEDE MODIFICAR EL CAMPO DOMICILIO DE DEPENDENCIA
         /// </summary>
@@ -700,104 +702,93 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         #endregion
 
-        #region COMPORTAMIENTO DINAMICO
-        /// <summary>
-        /// METODOS PARA LOS BOTONES AMPLIAR Y REDUCIR PANELES
-        /// </summary>
-        /// <param name="sender"></param>
-        ///<param name="e"></param>
-        public void AlternarPanel(PanelConBordeNeon panelConNeon, Panel panelDetalle, ref bool panelExpandido,
-                                   Button btnAmpliarReducir, Image imgExpandir, Image imgContraer,
-                                   int alturaOriginal, int alturaContraida)
-        {
-            if (panelConNeon == null || panelDetalle == null || btnAmpliarReducir == null)
-                return;
+        #region EVENTOS PARA AMPLIAR Y REDUCIR CADA PANEL ESPECIFICO
 
-            if (panelExpandido)
-            {
-
-                //  CONTRAER EL PANEL
-                panelConNeon.Height = alturaContraida;
-                btnAmpliarReducir.Image = imgExpandir; // Flecha abajo
-                panelExpandido = false;
-
-                // Cambiar el borde a contraído
-                panelConNeon.CambiarEstado(true, false);
-
-                // Mover el botón al panel principal (padre)
-                btnAmpliarReducir.Parent = panelConNeon;
-                btnAmpliarReducir.Location = new System.Drawing.Point(646, 1);
-
-                // Ocultar todos los controles dentro del `panel_Detalle`, excepto el botón de ampliación
-                foreach (Control control in panelDetalle.Controls)
-                {
-                    control.Visible = control == btnAmpliarReducir;
-                }
-
-                panelDetalle.Visible = false;
-            }
-            else
-            {
-                //  EXPANDIR EL PANEL
-                panelConNeon.Height = alturaOriginal;
-                panelConNeon.BorderStyle = BorderStyle.None;
-                btnAmpliarReducir.Image = imgContraer; // Flecha arriba
-                panelExpandido = true;
-                panelDetalle.Visible = true;
-
-                // Cambiar el borde a expandido
-                panelConNeon.CambiarEstado(false, false);
-
-                // Mover el botón dentro del `panel_Detalle`
-                btnAmpliarReducir.Parent = panelDetalle;
-                btnAmpliarReducir.Location = new System.Drawing.Point(646, 1);
-
-                // Mostrar todos los controles dentro del `panel_Detalle`
-                foreach (Control control in panelDetalle.Controls)
-                {
-                    control.Visible = true;
-                }
-            }
-
-            // Ajustar tamaño del formulario después del cambio
-            AjustarTamanoFormulario();
-        }
 
         /// <summary>
-        /// EVENTOS PARA AMPLIAR Y REDUCIR CADA PANEL ESPECIFICO
+        /// ampliar  panel datos personales
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Btn_AmpliarReducir_DATOSPERSONALES_Click(object sender, EventArgs e)
         {
-            AlternarPanel(panel_DatosPersonales, panel_Detalle_Personal, ref panelExpandido_DatosPersonales,
-                          btn_AmpliarReducir_DATOSPERSONALES, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
-                          alturaOriginalPanel_DatosPersonales, alturaContraidaPanel);
+            AmpliarReducirPanel.AlternarPanel(
+        panelConNeon: panel_DatosPersonales,
+        panelDetalle: panel_Detalle_Personal,
+        panelExpandido: ref panelExpandido_DatosPersonales,
+        btnAmpliarReducir: btn_AmpliarReducir_DATOSPERSONALES,
+        imgExpandir: Properties.Resources.dobleFlechaABAJO,
+        imgContraer: Properties.Resources.dobleFlechaARRIBA,
+        alturaOriginal: alturaOriginalPanel_DatosPersonales,
+        alturaContraida: alturaContraidaPanel,
+        ajustarFormulario: AjustarTamanoFormulario
+        );
             InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 
+        /// <summary>
+        /// ampliar panel situacion de revista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_AmpliarReducir_SITUACIONREVISTA_Click(object sender, EventArgs e)
         {
-            AlternarPanel(panel_Revista, panel_Detalle_Revista, ref panelExpandido_Revista,
-                          btn_AmpliarReducir_REVISTA, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
-                          alturaOriginalPanel_Revista, alturaContraidaPanel);
+            AmpliarReducirPanel.AlternarPanel(
+             panelConNeon: panel_Revista,
+             panelDetalle: panel_Detalle_Revista,
+             panelExpandido: ref panelExpandido_Revista,
+             btnAmpliarReducir: btn_AmpliarReducir_REVISTA,
+             imgExpandir: Properties.Resources.dobleFlechaABAJO,
+             imgContraer: Properties.Resources.dobleFlechaARRIBA,
+             alturaOriginal: alturaOriginalPanel_Revista,
+             alturaContraida: alturaContraidaPanel,
+             ajustarFormulario: AjustarTamanoFormulario
+             );
             InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no
 
         }
 
+        /// <summary>
+        /// ampliar panel armamento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_AmpliarReducir_ARMAMENTO_Click(object sender, EventArgs e)
         {
-            AlternarPanel(panel_Armamento, panel_Detalle_Armamento, ref panelExpandido_Armamento,
-                          btn_AmpliarReducir_ARMAMENTO, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
-                          alturaOriginalPanel_Armamento, alturaContraidaPanel);
+            AmpliarReducirPanel.AlternarPanel(
+            panelConNeon: panel_Armamento,
+            panelDetalle: panel_Detalle_Armamento,
+            panelExpandido: ref panelExpandido_Armamento,
+            btnAmpliarReducir: btn_AmpliarReducir_ARMAMENTO,
+            imgExpandir: Properties.Resources.dobleFlechaABAJO,
+            imgContraer: Properties.Resources.dobleFlechaARRIBA,
+            alturaOriginal: alturaOriginalPanel_Armamento,
+            alturaContraida: alturaContraidaPanel,
+            ajustarFormulario: AjustarTamanoFormulario
+            );
+            
             InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 
+        /// <summary>
+        /// ampliar panel destino
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_AmpliarReducir_DESTINO_Click(object sender, EventArgs e)
         {
-            AlternarPanel(panel_Destino, panel_Detalle_Destino, ref panelExpandido_Destino,
-                          btn_AmpliarReducir_DESTINO, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
-                          alturaOriginalPanel_Destino, alturaContraidaPanel);
+            AmpliarReducirPanel.AlternarPanel(
+            panelConNeon: panel_Destino,
+            panelDetalle: panel_Detalle_Destino,
+            panelExpandido: ref panelExpandido_Destino,
+            btnAmpliarReducir: btn_AmpliarReducir_DESTINO,
+            imgExpandir: Properties.Resources.dobleFlechaABAJO,
+            imgContraer: Properties.Resources.dobleFlechaARRIBA,
+            alturaOriginal: alturaOriginalPanel_Destino,
+            alturaContraida: alturaContraidaPanel,
+            ajustarFormulario: AjustarTamanoFormulario
+            );
+         
             InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 

@@ -1,4 +1,5 @@
 ﻿using Ofelia_Sara.BaseDatos.Json_generador_de_archivos;
+using Ofelia_Sara.Clases.General.AmpliarReducir_Paneles;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
@@ -308,16 +309,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         #endregion
 
 
-        private void TextBox_Edad_TextChanged(object sender, EventArgs e)
-        {
-            // Verificar si el texto actual del TextBox es "0" o "00"
-            if (/*textBox_Edad.Text == "0" || */textBox_Edad.Text == "00")
-            {
-                // Mostrar un mensaje de error y limpiar el TextBox
-                MensajeGeneral.Mostrar("El valor no puede ser 0 o 00", MensajeGeneral.TipoMensaje.Error);
-                textBox_Edad.Clear();
-            }
-        }
+  
 
 
         #region MENSAJE AYUDA
@@ -357,6 +349,8 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
         #endregion
+
+        #region ART INFRACCION
 
         /// <summary>
         /// VALIDACION DE BTN AGREGAR ART 
@@ -426,6 +420,11 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_ArtInfraccion.Clear();
         }
 
+        /// <summary>
+        /// VALIDA QUE EL ART NO SE HAYA AGREGADO PREVIAMENTE Y QUE PERTENESCA A UN ART REGISTRADO COMO INFRACCION
+        /// </summary>
+        /// <param name="mensajeError"></param>
+        /// <returns></returns>
         private bool ValidarArticuloParaAgregar(out string mensajeError)
         {
             mensajeError = "";
@@ -489,7 +488,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
-
+        /// <summary>
+        /// CENTRA TODOS LOS ART DENTRO DEL PANEL ya sea se agregan o se eliminan
+        /// </summary>
         private void RecentrarControlesHorizontales()
         {
             int margen = 6;
@@ -554,27 +555,118 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
+        #endregion
+
+        #region BOTONES AMPLIAR REDUCIR
         private void Btn_AmpliarReducir_INFRACCION_Click(object sender, EventArgs e)
         {
-            AlternarPanel(panel_DatosInfraccion, panel_Detalle_Infraccion, ref panelExpandido_Infraccion,
-                         btn_AmpliarReducir_INFRACCION, Properties.Resources.dobleFlechaABAJO, Properties.Resources.dobleFlechaARRIBA,
-                         alturaOriginalPanel_Infraccion, alturaContraidaPanel);
-          //  InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
+            AmpliarReducirPanel.AlternarPanel(
+             panelConNeon: panel_DatosInfraccion,
+             panelDetalle: panel_Detalle_Infraccion,
+             panelExpandido: ref panelExpandido_Infraccion,
+             btnAmpliarReducir: btn_AmpliarReducir_INFRACCION,
+             imgExpandir: Properties.Resources.dobleFlechaABAJO,
+             imgContraer: Properties.Resources.dobleFlechaARRIBA,
+             alturaOriginal: alturaOriginalPanel_Infraccion,
+             alturaContraida: alturaContraidaPanel,
+             ajustarFormulario: AjustarTamanoFormulario
+             );
+            //  InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
 
-        private void AlternarPanel(PanelConBordeNeon panel_DatosInfraccion, Panel panel_Detalle_Infraccion, ref bool panelExpandido_Infraccion, Button btn_AmpliarReducir_INFRACCION, Bitmap dobleFlechaABAJO, Bitmap dobleFlechaARRIBA, int alturaOriginalPanel_Infraccion, int alturaContraidaPanel)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         private void Btn_AmpliarReducir_INFRACTOR_Click(object sender, EventArgs e)
         {
-
+            AmpliarReducirPanel.AlternarPanel(
+            panelConNeon: panel_DatosInfractor,
+            panelDetalle: panel_Detalle_Infractor,
+            panelExpandido: ref panelExpandido_Infractor,
+            btnAmpliarReducir: btn_AmpliarReducir_INFRACTOR,
+            imgExpandir: Properties.Resources.dobleFlechaABAJO,
+            imgContraer: Properties.Resources.dobleFlechaARRIBA,
+            alturaOriginal: alturaOriginalPanel_Infractor,
+            alturaContraida: alturaContraidaPanel,
+            ajustarFormulario: AjustarTamanoFormulario
+            );
         }
 
         private void Btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
         {
-
+            AmpliarReducirPanel.AlternarPanel(
+            panelConNeon: panel_DatosInstruccion,
+            panelDetalle: panel_Detalle_Instruccion,
+            panelExpandido: ref panelExpandido_Instruccion,
+            btnAmpliarReducir: btn_AmpliarReducir_INSTRUCCION,
+            imgExpandir: Properties.Resources.dobleFlechaABAJO,
+            imgContraer: Properties.Resources.dobleFlechaARRIBA,
+            alturaOriginal: alturaOriginalPanel_Instruccion,
+            alturaContraida: alturaContraidaPanel,
+            ajustarFormulario: AjustarTamanoFormulario
+            );
         }
+        
+        /// <summary>
+        /// METODO PARA AJUSTAR TAMAÑO DE FORMULARIO Y REPOSICIONAR PANELES
+        /// </summary>
+        private void AjustarTamanoFormulario()
+        {
+            //int posicionVertical = 65; // Comienza desde la parte superior de panel1
+
+            //// Ajustar posición de panel DATOS PERSONALES
+            //if (panel_DatosPersonales.Visible)
+            //{
+            //    panel_DatosPersonales.Location = new System.Drawing.Point(panel_DatosPersonales.Location.X, posicionVertical);
+            //    posicionVertical += panel_DatosPersonales.Height;
+            //    // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
+            //    posicionVertical += 5;
+            //}
+
+            //// Ajustar posición de panel REVISTA
+            //if (panel_Revista.Visible)
+            //{
+            //    panel_Revista.Location = new System.Drawing.Point(panel_Revista.Location.X, posicionVertical);
+            //    posicionVertical += panel_Revista.Height;
+            //    posicionVertical += 5;
+            //}
+
+            //// Ajustar posición de panel ARMAMENTO
+            //if (panel_Armamento.Visible)
+            //{
+            //    panel_Armamento.Location = new System.Drawing.Point(panel_Armamento.Location.X, posicionVertical);
+            //    posicionVertical += panel_Armamento.Height;
+            //    posicionVertical += 5;
+            //}
+
+            //// Ajustar posición de panel DESTINO
+            //if (panel_Destino.Visible)
+            //{
+            //    panel_Destino.Location = new System.Drawing.Point(panel_Destino.Location.X, posicionVertical);
+            //    posicionVertical += panel_Destino.Height;
+
+            //}
+
+            //// Ajustar posición de panel_ControlesInferiores
+            //panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, posicionVertical);
+            //posicionVertical += panel_ControlesInferiores.Height;
+
+            //// Ajustar la altura de panel1 para que se ajuste al contenido visible
+            //panel1.Height = posicionVertical;
+
+            //// Ajustar la altura del formulario sumando un margen adicional de 20 px
+            //this.Height = panel1.Location.Y + panel1.Height + 75;
+
+
+            //// Activar scroll si la altura del formulario supera los 800 píxeles
+            //if (this.Height > 800)
+            //{
+            //    this.AutoScroll = true;
+            //}
+            //else
+            //{
+            //    this.AutoScroll = false;
+            //}
+        }
+#endregion
     }
 }

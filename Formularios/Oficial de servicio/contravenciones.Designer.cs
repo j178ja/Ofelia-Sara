@@ -280,7 +280,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
             textBox_Edad.Whidth = 0;
-            textBox_Edad.TextChanged += TextBox_Edad_TextChanged;
+          
             // 
             // textBox_Localidad
             // 
