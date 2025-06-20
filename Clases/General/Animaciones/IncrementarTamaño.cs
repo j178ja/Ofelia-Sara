@@ -1,6 +1,7 @@
-﻿
+﻿#region MODO DE USO
 
 // se lo utiliza-- IncrementarTamaño.Incrementar(btn_xxx);
+#endregion
 
 using System.Drawing;
 using System.Windows.Forms;

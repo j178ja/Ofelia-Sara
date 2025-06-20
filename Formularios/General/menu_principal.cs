@@ -19,10 +19,10 @@ using System.Windows.Forms;
 using static iText.Commons.Utils.PlaceHolderTextUtil;
 using static Ofelia_Sara.Formularios.General.InstructivoDigital;
 
-
+ 
 namespace Ofelia_Sara.Formularios.General
 {
-
+    
     public partial class MenuPrincipal : BaseForm
     {
         //funcion nativa para ARRASTRAR EL FORMULARIO
@@ -499,9 +499,14 @@ namespace Ofelia_Sara.Formularios.General
                 nuevaRedactadorForm.StartPosition = FormStartPosition.Manual;
                 nuevaRedactadorForm.Location = new Point(baseX + 10, baseY); // Derecha
             }
-
+          
             // Mostrar el formulario
+         
+            
+            int altoFinal = nuevaRedactadorForm.Height;
+            nuevaRedactadorForm.Height = 0;
             nuevaRedactadorForm.Show();
+            Animar.CrecimientoY(nuevaRedactadorForm,altoInicial: 0, duracion: 500);
 
             // Agregar la nueva instancia a la lista
             redactadorForms.Add(nuevaRedactadorForm);
@@ -573,7 +578,11 @@ namespace Ofelia_Sara.Formularios.General
                 mecanografia.StartPosition = FormStartPosition.Manual;
                 mecanografia.Location = new Point(x, y);
 
+               // FIXME: AL APLICAR ANIMACION SE OBSERVA LINEA HORIZONTAL
+                //int altoFinal = mecanografia.Height;
+                //mecanografia.Height = 0;
                 mecanografia.Show();
+                //Animar.CrecimientoY(mecanografia);
             }
             else
             {

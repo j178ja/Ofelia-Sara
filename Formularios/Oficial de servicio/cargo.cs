@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Ofelia_Sara.Clases.General.AmpliarReducir_Paneles;
 
 
 namespace Ofelia_Sara.Formularios.Oficial_de_servicio
@@ -281,7 +282,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
 
 
-   
+        #region BOTONES
 
         private void Btn_Limpiar_Click(object sender, EventArgs e)
         {
@@ -306,6 +307,66 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                                    // Mostrar mensaje de confirmación al guardar exitosamente
             MensajeGeneral.Mostrar("Formulario guardado.", MensajeGeneral.TipoMensaje.Exito);
         }
+
+        private void Btn_Imprimir_Click(object sender, EventArgs e)
+        {
+            // Llamar al método de validación
+            if (!ValidarAntesde_IMPRIMIR())
+            {
+                return; // Detener el proceso si la validación falla
+            }
+            datosGuardados = true;
+            // Usar FolderBrowserDialog para obtener la ruta donde el usuario quiere guardar los documentos
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "Seleccione la carpeta donde desea guardar los documentos generados";
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Ruta donde el usuario quiere guardar los documentos
+                    string rutaCarpetaSalida = folderBrowserDialog.SelectedPath;
+
+                    // Obtener el texto de textBox_Apellido y formar el nombre de la carpeta
+                    string nombreCarpeta = $"Cargo {textBox_NumeroCargo.TextValue}";
+                    string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida, nombreCarpeta);
+
+                    // Crear la carpeta si no existe
+                    if (!Directory.Exists(rutaSubcarpeta))
+                    {
+                        Directory.CreateDirectory(rutaSubcarpeta);
+                    }
+
+                    // rutas de las plantillas-->DEBEN REEMPLASARSE A RUTAS RELATIVAS
+                    string rutaPlantillaCargo = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CARGO JUDICIAL.docx";
+                    string rutaPlantillaCadenaCustodia = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CADENA DE CUSTODIA.docx";
+                    string rutaPlantillaFaja = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\FAJA DE SECUESTRO.doc";
+                    string rutaPlantillaVisu = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\VISU.docx";
+
+                    // Obtener los datos del formulario
+                    var datosFormulario = ObtenerDatosFormulario();
+
+                    // Generar cada documento con su respectiva plantilla y guardarlo en la carpeta
+                    GeneradorDocumentos generador = new GeneradorDocumentos();
+                    generador.GenerarYGuardarDocumento(rutaPlantillaCargo, rutaSubcarpeta, "CARGO", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaCadenaCustodia, rutaSubcarpeta, "CADENA DE CUSTODIA", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaFaja, rutaSubcarpeta, "FAJA SECUESTRO", datosFormulario);
+                    generador.GenerarYGuardarDocumento(rutaPlantillaVisu, rutaSubcarpeta, "VISU", datosFormulario);
+
+                    // Mostrar mensaje de éxito
+                    // MessageBox.Show("Los documentos han sido generados correctamente.");
+
+                    MensajeCargarImprimir mensajeCargarImprimir = new MensajeCargarImprimir();
+                    mensajeCargarImprimir.ShowDialog();
+
+                    // Abrir la ubicación de la carpeta generada
+                    System.Diagnostics.Process.Start("explorer.exe", rutaSubcarpeta);
+                }
+            }
+        }
+
+        #endregion
+
+        #region VALIDACIONES
 
         /// <summary>
         /// VALIDA CAMPOS OBLIGATORIOS ANTES DE GUARDAR
@@ -348,32 +409,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //ClearError(control);
             return true;
         }
-
-
-        /// <summary>
-        /// MENSAJE CONFIRMACION AL CIERRE
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Cargo_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!datosGuardados) // Si los datos no han sido guardados
-            {
-               MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
-            }
-        }
-
-
-        /// <summary>
-        /// MENSAJE AYUDA
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            MostrarMensajeAyuda("Complete los campos y una descripcion de la muestra, para poder generar el cargo");
-        }
-
 
         /// <summary>
         /// Validar datos previo impresion 
@@ -445,7 +480,34 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         }
 
 
+        #endregion
 
+        /// <summary>
+        /// MENSAJE CONFIRMACION AL CIERRE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cargo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!datosGuardados) // Si los datos no han sido guardados
+            {
+               MostrarMensajeCierre(e, "No has guardado los cambios. ¿Estás seguro de que deseas cerrar sin guardar?");
+            }
+        }
+
+
+        /// <summary>
+        /// MENSAJE AYUDA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cargo_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            MostrarMensajeAyuda("Complete los campos y una descripcion de la muestra, para poder generar el cargo");
+        }
+
+
+   
         /// <summary>
         /// METODO PARA OBTENER DATOS DEL FORMULARIO
         /// </summary>
@@ -480,61 +542,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             return datosFormulario;
         }
 
-        private void Btn_Imprimir_Click(object sender, EventArgs e)
-        {
-            // Llamar al método de validación
-            if (!ValidarAntesde_IMPRIMIR())
-            {
-                return; // Detener el proceso si la validación falla
-            }
-            datosGuardados = true;
-            // Usar FolderBrowserDialog para obtener la ruta donde el usuario quiere guardar los documentos
-            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
-            {
-                folderBrowserDialog.Description = "Seleccione la carpeta donde desea guardar los documentos generados";
 
-                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Ruta donde el usuario quiere guardar los documentos
-                    string rutaCarpetaSalida = folderBrowserDialog.SelectedPath;
-
-                    // Obtener el texto de textBox_Apellido y formar el nombre de la carpeta
-                    string nombreCarpeta = $"Cargo {textBox_NumeroCargo.TextValue}";
-                    string rutaSubcarpeta = Path.Combine(rutaCarpetaSalida, nombreCarpeta);
-
-                    // Crear la carpeta si no existe
-                    if (!Directory.Exists(rutaSubcarpeta))
-                    {
-                        Directory.CreateDirectory(rutaSubcarpeta);
-                    }
-
-                    // rutas de las plantillas-->DEBEN REEMPLASARSE A RUTAS RELATIVAS
-                    string rutaPlantillaCargo = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CARGO JUDICIAL.docx";
-                    string rutaPlantillaCadenaCustodia = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\CADENA DE CUSTODIA.docx";
-                    string rutaPlantillaFaja = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\FAJA DE SECUESTRO.doc";
-                    string rutaPlantillaVisu = @"C:\Users\Usuario\OneDrive\Escritorio\Ofelia-Sara\Documentos\IPP\VISU.docx";
-
-                    // Obtener los datos del formulario
-                    var datosFormulario = ObtenerDatosFormulario();
-
-                    // Generar cada documento con su respectiva plantilla y guardarlo en la carpeta
-                    GeneradorDocumentos generador = new GeneradorDocumentos();
-                    generador.GenerarYGuardarDocumento(rutaPlantillaCargo, rutaSubcarpeta, "CARGO", datosFormulario);
-                    generador.GenerarYGuardarDocumento(rutaPlantillaCadenaCustodia, rutaSubcarpeta, "CADENA DE CUSTODIA", datosFormulario);
-                    generador.GenerarYGuardarDocumento(rutaPlantillaFaja, rutaSubcarpeta, "FAJA SECUESTRO", datosFormulario);
-                    generador.GenerarYGuardarDocumento(rutaPlantillaVisu, rutaSubcarpeta, "VISU", datosFormulario);
-
-                    // Mostrar mensaje de éxito
-                    // MessageBox.Show("Los documentos han sido generados correctamente.");
-
-                    MensajeCargarImprimir mensajeCargarImprimir = new MensajeCargarImprimir();
-                    mensajeCargarImprimir.ShowDialog();
-
-                    // Abrir la ubicación de la carpeta generada
-                    System.Diagnostics.Process.Start("explorer.exe", rutaSubcarpeta);
-                }
-            }
-        }
 
         /// <summary>
         /// DESELECCIONAR LEGAJO VEHICULAR
@@ -569,87 +577,101 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
         {
-            if (panel_Instruccion is PanelConBordeNeon panelConNeon)
-            {
-                if (panelExpandido_Instruccion)
-                {
-                    // Contraer el panel
-                    panel_Instruccion.Height = alturaContraidaPanel;
-                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                    panelExpandido_Instruccion = false; //PANEL CONTRAIDO
+            //TODO: CORREGIR PARA QUE EMPLEE LA CLASE AMPLIAR PANEL
 
-                    // Cambiar el estilo del borde
-                    // Aplicar borde neón para el estado contraído
-                    bool camposCompletos = VerificarCamposEnPanel(panel_DatosInstruccion); // Método personalizado para verificar campos
-                    panelConNeon.CambiarEstado(true, camposCompletos);
+            //if (panel_Instruccion is PanelConBordeNeon panelConNeon)
+            //{
+            //    if (panelExpandido_Instruccion)
+            //    {
+            //        // Contraer el panel
+            //        panel_Instruccion.Height = alturaContraidaPanel;
+            //        btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+            //        panelExpandido_Instruccion = false; //PANEL CONTRAIDO
 
-                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
-                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
-                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(422, 0);
+            //        // Cambiar el estilo del borde
+            //        // Aplicar borde neón para el estado contraído
+            //        bool camposCompletos = VerificarCamposEnPanel(panel_DatosInstruccion); // Método personalizado para verificar campos
+            //        panelConNeon.CambiarEstado(true, camposCompletos);
 
-                    // Ocultar todos los controles excepto el botón de ampliación/reducción
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        if (control == btn_AmpliarReducir_INSTRUCCION)
-                        {
-                            control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
-                        }
-                        else
-                        {
-                            control.Visible = false; // Oculta los demás controles
-                            panel_DatosInstruccion.Visible = false;
-                        }
-                    }
+            //        // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+            //        btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
+            //        btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(422, 0);
 
-                    // Ocultar controles de error personalizados
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-                        {
-                            control.Visible = false; // Ocultar imágenes de error
-                        }
-                    }
-                }
-                else
-                {
-                    // Expandir el panel
-                    panel_Instruccion.Height = alturaOriginalPanel_Instruccion;
-                    panel_Instruccion.BorderStyle = BorderStyle.None;
-                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-                    panelExpandido_Instruccion = true;
-                    panel_DatosInstruccion.Visible = true;
-                    label_DatosInstruccion.BringToFront();
-                    pictureBox_PanelInstruccion.BringToFront();
+            //        // Ocultar todos los controles excepto el botón de ampliación/reducción
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            if (control == btn_AmpliarReducir_INSTRUCCION)
+            //            {
+            //                control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+            //            }
+            //            else
+            //            {
+            //                control.Visible = false; // Oculta los demás controles
+            //                panel_DatosInstruccion.Visible = false;
+            //            }
+            //        }
 
-                    // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+            //        // Ocultar controles de error personalizados
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+            //            {
+            //                control.Visible = false; // Ocultar imágenes de error
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        // Expandir el panel
+            //        panel_Instruccion.Height = alturaOriginalPanel_Instruccion;
+            //        panel_Instruccion.BorderStyle = BorderStyle.None;
+            //        btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
+            //        panelExpandido_Instruccion = true;
+            //        panel_DatosInstruccion.Visible = true;
+            //        label_DatosInstruccion.BringToFront();
+            //        pictureBox_PanelInstruccion.BringToFront();
 
-                    // Mover el botón al panel_DatosEspecificos
-                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
-                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(418, 0);
+            //        // Cambiar el estilo del borde
+            //        panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
 
-                    // Mostrar todos los controles
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        control.Visible = true;
-                    }
+            //        // Mover el botón al panel_DatosEspecificos
+            //        btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
+            //        btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(418, 0);
 
-                    // Asegurarte de que las imágenes de error se muestren si es necesario
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-                        {
-                            control.Visible = true; // Mostrar imágenes de error
-                        }
-                    }
-                    panel_DatosInstruccion.Visible = true;
-                }
-                AjustarTamanoFormulario();
-            }
+            //        // Mostrar todos los controles
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            control.Visible = true;
+            //        }
+
+            //        // Asegurarte de que las imágenes de error se muestren si es necesario
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+            //            {
+            //                control.Visible = true; // Mostrar imágenes de error
+            //            }
+            //        }
+            //        panel_DatosInstruccion.Visible = true;
+            //    }
+            //    AjustarTamanoFormulario();
+            //}
+
+
+
+            AmpliarReducirPanel.AlternarPanel(
+                panelConNeon: panel_Instruccion,
+                panelDetalle: panel_DatosInstruccion,
+                panelExpandido: ref panelExpandido_Instruccion,
+                btnAmpliarReducir: btn_AmpliarReducir_INSTRUCCION,
+                imgExpandir: Properties.Resources.dobleFlechaABAJO,
+                imgContraer: Properties.Resources.dobleFlechaARRIBA,
+                alturaOriginal: alturaOriginalPanel_Instruccion,
+                alturaContraida: alturaContraidaPanel,
+                ajustarFormulario: AjustarTamanoFormulario
+                );
 
         }
-
-
         /// <summary>
         /// METODO PARA VALIDAR DAROS DE LOS PANELES
         /// </summary>
@@ -706,53 +728,65 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         /// <param name="e"></param>
         private void Btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
         {
-            // Verificar si el panel es de tipo PanelConBordeNeon
-            if (panel_Descripcion is PanelConBordeNeon panelConNeon)
-            {
-                if (panelExpandido_Descripcion)
-                {
-                    // Contraer el panel
-                    panelConNeon.Height = alturaContraidaPanel;
-                    btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                    panelExpandido_Descripcion = false;
+            //// Verificar si el panel es de tipo PanelConBordeNeon
+            //if (panel_Descripcion is PanelConBordeNeon panelConNeon)
+            //{
+            //    if (panelExpandido_Descripcion)
+            //    {
+            //        // Contraer el panel
+            //        panelConNeon.Height = alturaContraidaPanel;
+            //        btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+            //        panelExpandido_Descripcion = false;
 
-                    // Aplicar borde neón para el estado contraído
-                    bool camposCompletos = VerificarCamposEnPanel(panel_Descripcion); // Método personalizado para verificar campos
-                    panelConNeon.CambiarEstado(true, camposCompletos);
+            //        // Aplicar borde neón para el estado contraído
+            //        bool camposCompletos = VerificarCamposEnPanel(panel_Descripcion); // Método personalizado para verificar campos
+            //        panelConNeon.CambiarEstado(true, camposCompletos);
 
-                    foreach (Control control in panelConNeon.Controls)
-                    {
-                        if (control == btn_AmpliarReducir_DESCRIPCION ||
-                            control == label_Descripcion ||
-                            control == pictureBox_Descripcion) // Compara directamente el control
-                        {
-                            control.Visible = true; // Mantener visible
-                        }
-                        else
-                        {
-                            control.Visible = false; // Ocultar los demás controles
-                        }
-                    }
-                }
-                else
-                {
-                    // Expandir el panel
-                    panelConNeon.Height = alturaOriginalPanel_Descripcion;
-                    btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaARRIBA;
-                    panelExpandido_Descripcion = true;
+            //        foreach (Control control in panelConNeon.Controls)
+            //        {
+            //            if (control == btn_AmpliarReducir_DESCRIPCION ||
+            //                control == label_Descripcion ||
+            //                control == pictureBox_Descripcion) // Compara directamente el control
+            //            {
+            //                control.Visible = true; // Mantener visible
+            //            }
+            //            else
+            //            {
+            //                control.Visible = false; // Ocultar los demás controles
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        // Expandir el panel
+            //        panelConNeon.Height = alturaOriginalPanel_Descripcion;
+            //        btn_AmpliarReducir_DESCRIPCION.Image = Properties.Resources.dobleFlechaARRIBA;
+            //        panelExpandido_Descripcion = true;
 
-                    // Eliminar el efecto neón para el estado expandido
-                    panelConNeon.CambiarEstado(false, false);
+            //        // Eliminar el efecto neón para el estado expandido
+            //        panelConNeon.CambiarEstado(false, false);
 
-                    // Mostrar los demás controles del panel
-                    foreach (Control control in panelConNeon.Controls)
-                    {
-                        control.Visible = true;
-                    }
-                }
-                AjustarTamanoFormulario();
-            }
+            //        // Mostrar los demás controles del panel
+            //        foreach (Control control in panelConNeon.Controls)
+            //        {
+            //            control.Visible = true;
+            //        }
+            //    }
+            //    AjustarTamanoFormulario();
+            //}
 
+
+            AmpliarReducirPanel.AlternarPanel(
+                panelConNeon: panel_Descripcion,
+                panelDetalle: panel_Descripcion,// HACK : VERIFICAR O AGREGAR PANEL
+                panelExpandido: ref panelExpandido_Descripcion,
+                btnAmpliarReducir: btn_AmpliarReducir_DESCRIPCION,
+                imgExpandir: Properties.Resources.dobleFlechaABAJO,
+                imgContraer: Properties.Resources.dobleFlechaARRIBA,
+                alturaOriginal: alturaOriginalPanel_Descripcion,
+                alturaContraida: alturaContraidaPanel,
+                ajustarFormulario: AjustarTamanoFormulario
+                );
         }
 
 
@@ -866,56 +900,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 this.AutoScroll = false;
             }
         }
-
-
-        /// <summary>
-        /// COLOCA MAYUSCULA AL INICIO Y DESPUES DE PUNTO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RichTextBox_Descripcion_TextChanged(object sender, EventArgs e)
-        {
-            if (sender is RichTextBox rtb && !string.IsNullOrWhiteSpace(rtb.Text))
-            {
-                int cursorPos = rtb.SelectionStart; // Guardar la posición del cursor
-
-                // Convertir a mayúscula el primer carácter y después de un punto "."
-                string texto = rtb.Text;
-                StringBuilder textoFormateado = new StringBuilder();
-
-                bool convertirSiguiente = true; // Indica si la siguiente letra debe ser mayúscula
-
-                foreach (char c in texto)
-                {
-                    if (convertirSiguiente && char.IsLetter(c))
-                    {
-                        textoFormateado.Append(char.ToUpper(c));
-                        convertirSiguiente = false;
-                    }
-                    else
-                    {
-                        textoFormateado.Append(c);
-                    }
-
-                    // Si el carácter es un punto, la siguiente letra debe ser mayúscula
-                    if (c == '.')
-                    {
-                        convertirSiguiente = true;
-                    }
-                }
-
-                // Evitar bucle infinito y restaurar la posición del cursor
-                if (rtb.Text != textoFormateado.ToString())
-                {
-                    rtb.Text = textoFormateado.ToString();
-                    rtb.SelectionStart = Math.Min(cursorPos, rtb.Text.Length); // Restaurar la posición del cursor
-                    CompartirTexto.Descripcion = richTextBox_Descripcion.Text;
-                }
-            }
-        }
-
-
-       
 
 
         public void CambiarEstadoBotonDeslizable(bool estado)

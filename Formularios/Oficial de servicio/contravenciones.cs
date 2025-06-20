@@ -569,7 +569,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
              imgContraer: Properties.Resources.dobleFlechaARRIBA,
              alturaOriginal: alturaOriginalPanel_Infraccion,
              alturaContraida: alturaContraidaPanel,
-             ajustarFormulario: AjustarTamanoFormulario
+             borderStyleAlExpandir: BorderStyle.None,
+             ajustarFormulario: AjustarTamanoFormulario,
+              usarAnimacion: true
              );
             //  InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
         }
@@ -587,7 +589,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             imgContraer: Properties.Resources.dobleFlechaARRIBA,
             alturaOriginal: alturaOriginalPanel_Infractor,
             alturaContraida: alturaContraidaPanel,
-            ajustarFormulario: AjustarTamanoFormulario
+            borderStyleAlExpandir: BorderStyle.None,
+            ajustarFormulario: AjustarTamanoFormulario,
+             usarAnimacion: true
             );
         }
 
@@ -602,7 +606,9 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             imgContraer: Properties.Resources.dobleFlechaARRIBA,
             alturaOriginal: alturaOriginalPanel_Instruccion,
             alturaContraida: alturaContraidaPanel,
-            ajustarFormulario: AjustarTamanoFormulario
+            borderStyleAlExpandir: BorderStyle.None,
+            ajustarFormulario: AjustarTamanoFormulario,
+             usarAnimacion: true
             );
         }
         

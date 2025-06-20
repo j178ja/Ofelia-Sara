@@ -10,6 +10,10 @@ using Ofelia_Sara.Formularios.General.Mensajes;
 using System.Text.RegularExpressions;
 public class MayusculaYnumeros
 {
+    private static bool evitandoReentrada = false; //
+
+
+
     /// <summary>
     /// Aplica la conversión a mayúsculas y restringe los caracteres permitidos en CustomTextBox y CustomComboBox.
     /// </summary>
@@ -26,7 +30,7 @@ public class MayusculaYnumeros
         {
             ConfigurarComboBox(customComboBox);
         }
-        else if (control.HasChildren)
+        else if (control.HasChildren) //para que aplique a controles hijos
         {
             foreach (Control child in control.Controls)
             {
@@ -39,74 +43,133 @@ public class MayusculaYnumeros
     /// Configura un CustomTextBox para que solo acepte letras, números y espacios.
     /// Además, evita que el primer carácter sea un espacio.
     /// </summary>
+
     private static void ConfigurarTextBox(CustomTextBox customTextBox)
     {
-        customTextBox.TextChanged += (sender, e) =>
+        if (customTextBox == null || (bool)(customTextBox.Tag ?? false))
+            return;
+
+        customTextBox.Tag = true; // Marcar como configurado
+
+        string textoFormateado = ConvertirAMayusculasSoloLetrasNumeros(customTextBox.TextValue);
+
+        if (customTextBox.TextValue != textoFormateado)
         {
-            if (sender is CustomTextBox tb)
-            {
-                int cursorPos = tb.SelectionStart;
-                string textoConvertido = ConvertirAMayusculasSoloLetrasNumeros(tb.TextValue);
+            customTextBox.TextValue = textoFormateado;
 
-                if (tb.TextValue != textoConvertido)
-                {
-                    tb.TextValue = textoConvertido;
-                    tb.SelectionStart = Math.Min(cursorPos, tb.TextValue.Length);
-                }
-            }
-        };
+            // Poner el cursor al final
+            customTextBox.SelectionStart = customTextBox.TextValue.Length;
+        }
 
+        // --- Evento KeyPress ---
         customTextBox.KeyPress += (sender, e) =>
         {
-            // Permitir tecla "Borrar" (Backspace) y "Eliminar" (Delete)
             if (e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
-            {
                 return;
-            }
+
             if (!EsCaracterPermitido(e.KeyChar, permitirEspeciales: false))
             {
                 e.Handled = true;
                 MostrarAlerta(customTextBox, "Solo puede ingresar letras, números y espacios.");
+                return;
             }
-            else if (customTextBox.TextValue.Length == 0 && char.IsWhiteSpace(e.KeyChar))
+
+            if (customTextBox.TextValue.Length == 0 && char.IsWhiteSpace(e.KeyChar))
             {
-                e.Handled = true; // Evita que el primer carácter sea un espacio
+                e.Handled = true; // No permitir espacios iniciales
+                return;
             }
-            else
+
+            // Insertar en la posición actual
+            int cursorPos = customTextBox.SelectionStart;
+            string textoActual = customTextBox.TextValue;
+            string textoNuevo = textoActual.Substring(0, cursorPos) + e.KeyChar + textoActual.Substring(cursorPos);
+
+            string textoConvertido = ConvertirAMayusculasSoloLetrasNumeros(textoNuevo);
+
+            e.Handled = true;
+            customTextBox.TextValue = textoConvertido;
+            customTextBox.SelectionStart = Math.Min(cursorPos + 1, customTextBox.TextValue.Length);
+        };
+
+        // --- Evento TextChanged ---
+        customTextBox.TextChanged += (sender, e) =>
+        {
+            if (evitandoReentrada)
+                return;
+
+            if (sender is CustomTextBox tb)
             {
-                e.KeyChar = char.ToUpper(e.KeyChar);
+                int cursorPos = tb.SelectionStart;
+                string convertido = ConvertirAMayusculasSoloLetrasNumeros(tb.TextValue);
+
+                if (tb.TextValue != convertido)
+                {
+                    evitandoReentrada = true;
+                    tb.TextValue = convertido;
+                    tb.SelectionStart = Math.Min(cursorPos, tb.TextValue.Length);
+                    evitandoReentrada = false;
+                }
             }
         };
     }
-
     /// <summary>
     /// Configura un CustomComboBox para que solo acepte letras, números y espacios.
     /// Además, evita que el primer carácter sea un espacio.
     /// </summary>
     private static void ConfigurarComboBox(CustomComboBox customComboBox)
     {
+        if (customComboBox == null)
+            return;
+
         customComboBox.KeyPress += (sender, e) =>
         {
-            // Permitir tecla "Borrar" (Backspace) y "Eliminar" (Delete)
             if (e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
-            {
                 return;
-            }
+
             if (!EsCaracterPermitido(e.KeyChar, permitirEspeciales: false))
             {
                 e.Handled = true;
-                MostrarAlerta(customComboBox, "Solo puede ingresar letras, números y espacios.");
+                if (!customComboBox.Tag?.ToString().Contains("alerta") ?? true)
+                {
+                    customComboBox.Tag = "alerta";
+                    MostrarAlerta(customComboBox, "Solo puede ingresar letras, números y espacios.");
+                    customComboBox.Tag = null;
+                }
+                return;
             }
-            else if (customComboBox.Text.Length == 0 && char.IsWhiteSpace(e.KeyChar))
+
+            if (customComboBox.Text.Length == 0 && char.IsWhiteSpace(e.KeyChar))
             {
-                e.Handled = true; // Evita que el primer carácter sea un espacio
+                e.Handled = true;
+                return;
             }
-            else
+
+            int cursorPos = customComboBox.SelectionStart;
+            string nuevoTexto = customComboBox.Text[..cursorPos] + e.KeyChar + customComboBox.Text[cursorPos..];
+            string convertido = ConvertirAMayusculasSoloLetrasNumeros(nuevoTexto);
+
+            e.Handled = true;
+            customComboBox.Text = convertido;
+            customComboBox.SelectionStart = Math.Min(cursorPos + 1, customComboBox.Text.Length);
+        };
+
+        customComboBox.TextChanged += (sender, e) =>
+        {
+            if (sender is CustomComboBox cb)
             {
-                e.KeyChar = char.ToUpper(e.KeyChar);
+                int cursorPos = cb.SelectionStart;
+                string convertido = ConvertirAMayusculasSoloLetrasNumeros(cb.Text);
+
+                if (cb.Text != convertido)
+                {
+                    cb.Text = convertido;
+                    cb.SelectionStart = Math.Min(cursorPos, cb.Text.Length);
+                }
             }
         };
     }
+
 
     /// <summary>
     /// Configura un CustomTextBox para que permita letras, números, espacios y los caracteres "*", "/", "-", "-".
@@ -155,7 +218,7 @@ public class MayusculaYnumeros
                     // Obtener el texto actual + la nueva tecla
                     if (sender is CustomTextBox tb)
                     {
-                        MessageBox.Show("Procesando entrada...", "Debug");
+                      
                         int cursorPos = tb.SelectionStart;
                         string textoActual = tb.TextValue;
                        
@@ -206,39 +269,60 @@ public class MayusculaYnumeros
             return string.Empty;
 
         StringBuilder resultado = new(input.Length);
-        char? ultimoTipo = null; // 'L' = letra, 'D' = dígito, 'S' = espacio
+        char? ultimoTipo = null;
+        bool primerCaracterAgregado = false;
 
         foreach (char c in input)
         {
-            if (char.IsWhiteSpace(c))
-            {
-                if (resultado.Length > 0 && resultado[^1] != ' ')
-                    resultado.Append(' ');
+            char caracter = char.ToUpper(c);
 
-                ultimoTipo = 'S';
+            if (char.IsWhiteSpace(caracter))
+            {
+                if (primerCaracterAgregado && resultado[^1] != ' ')
+                {
+                    resultado.Append(' ');
+                    ultimoTipo = 'S';
+                }
             }
-            else if (char.IsLetter(c))
+            else if (char.IsLetter(caracter))
             {
-                if (ultimoTipo == 'D' || ultimoTipo == 'S')
-                    resultado.Append(' ');
+                if (ultimoTipo == 'D')
+                    resultado.Append("  ");
 
-                resultado.Append(char.ToUpper(c));
+                if (!primerCaracterAgregado)
+                {
+                    resultado.Append(caracter);
+                    primerCaracterAgregado = true;
+                }
+                else
+                {
+                    resultado.Append(caracter);
+                }
+
                 ultimoTipo = 'L';
             }
-            else if (char.IsDigit(c))
+            else if (char.IsDigit(caracter))
             {
-                if (ultimoTipo == 'L' || ultimoTipo == 'S')
-                    resultado.Append(' ');
+                if (!primerCaracterAgregado && caracter == '0')
+                    continue;
 
-                resultado.Append(c);
+                if (ultimoTipo == 'L')
+                    resultado.Append("  ");
+
+                resultado.Append(caracter);
+                primerCaracterAgregado = true;
                 ultimoTipo = 'D';
             }
-            // otros caracteres: ignorar
+            else
+            {
+                // Caracter especial → ignorado
+                continue;
+            }
         }
 
-        // Eliminar espacios duplicados y recortar bordes
-        return Regex.Replace(resultado.ToString(), @"\s{2,}", " ").Trim();
+        return resultado.ToString().Trim();
     }
+
 
     /// <summary>
     /// Convierte una cadena a mayúsculas, permitiendo letras, números, espacios y los caracteres "*", "/", "-".

@@ -1,0 +1,11 @@
+System.IO.FileNotFoundException: No se puede cargar el archivo o ensamblado 'Microsoft.VisualStudio.VCProjectEngine, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' ni una de sus dependencias. El sistema no puede encontrar el archivo especificado.
+Nombre de archivo: 'Microsoft.VisualStudio.VCProjectEngine, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+   en Microsoft.SdvMenuCommand.DriverVerificationLicense.ReadProjectInfo(Project project)
+   en Microsoft.SdvMenuCommand.DriverVerificationLicense..ctor()
+   en Microsoft.SdvMenuCommand.SdvMenuCommandPackage.StaticToolsLogoMenuItemCallback(Object sender, EventArgs e)
+
+AVS: El registro del enlace de ensamblado está desactivado.
+Para habilitar el registro de errores del enlace de ensamblado, establezca el valor de Registro [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) como 1.
+Nota: existe una disminución del rendimiento asociada registro de errores del enlace de ensamblado.
+Para desactivar esta característica, elimine el valor de Registro [HKLM\Software\Microsoft\Fusion!EnableLog].
+

@@ -1025,6 +1025,14 @@ namespace Ofelia_Sara.Formularios.General
 
                     }
                 }
+                //FORMATO PARA RICHTEXTBOX
+                if (control is RichTextBox rtb)
+                {
+                    rtb.TextChanged += (s, e) =>
+                    {
+                        RichTextBoxUtils.FormatearOracionYMayuscula(rtb);
+                    };
+                }
                 // FORMATO TEXTO PARA COMBOBOX
                 else if (control is CustomComboBox comboBox)
                 {

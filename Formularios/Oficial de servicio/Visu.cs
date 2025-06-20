@@ -1,4 +1,5 @@
 ﻿using BaseDatos.Entidades;
+using Ofelia_Sara.Clases.General.AmpliarReducir_Paneles;
 using Ofelia_Sara.Clases.General.Apariencia;
 using Ofelia_Sara.Clases.General.Botones;
 using Ofelia_Sara.Clases.General.Texto;
@@ -256,207 +257,246 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
 
         private void Btn_AmpliarReducir_INSTRUCCION_Click(object sender, EventArgs e)
         {
-            if (panel_Instruccion is PanelConBordeNeon panelConNeon)
-            {
-                if (panelExpandido_Instruccion)
-                {
-                    // Contraer el panel
-                    panel_Instruccion.Height = alturaContraidaPanel;
-                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                    panelExpandido_Instruccion = false; //PANEL CONTRAIDO
+            //if (panel_Instruccion is PanelConBordeNeon panelConNeon)
+            //{
+            //    if (panelExpandido_Instruccion)
+            //    {
+            //        // Contraer el panel
+            //        panel_Instruccion.Height = alturaContraidaPanel;
+            //        btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+            //        panelExpandido_Instruccion = false; //PANEL CONTRAIDO
 
-                    // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
+            //        // Cambiar el estilo del borde
+            //        panelConNeon.CambiarEstado(true, false); // Panel contraído, campos no completos
 
-                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
-                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
-                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(561, 1);
+            //        // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+            //        btn_AmpliarReducir_INSTRUCCION.Parent = panel_Instruccion;
+            //        btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(561, 1);
 
 
-                    // Ocultar todos los controles excepto el botón de ampliación/reducción
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        if (control == btn_AmpliarReducir_INSTRUCCION)
-                        {
-                            control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
-                        }
-                        else
-                        {
-                            control.Visible = false; // Oculta los demás controles
-                            panel_DatosInstruccion.Visible = false;
-                        }
-                    }
+            //        // Ocultar todos los controles excepto el botón de ampliación/reducción
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            if (control == btn_AmpliarReducir_INSTRUCCION)
+            //            {
+            //                control.Visible = true; // Mantén visible el botón btn_AmpliarReducir
+            //            }
+            //            else
+            //            {
+            //                control.Visible = false; // Oculta los demás controles
+            //                panel_DatosInstruccion.Visible = false;
+            //            }
+            //        }
 
-                    // Ocultar controles de error personalizados
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-                        {
-                            control.Visible = false; // Ocultar imágenes de error
-                        }
-                    }
-                }
-                else
-                {
-                    // Expandir el panel
-                    panel_Instruccion.Height = alturaOriginalPanel_Instruccion;
-                    panel_Instruccion.BorderStyle = BorderStyle.None;
-                    btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-                    panelExpandido_Instruccion = true;
-                    panel_DatosInstruccion.Visible = true;
+            //        // Ocultar controles de error personalizados
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+            //            {
+            //                control.Visible = false; // Ocultar imágenes de error
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        // Expandir el panel
+            //        panel_Instruccion.Height = alturaOriginalPanel_Instruccion;
+            //        panel_Instruccion.BorderStyle = BorderStyle.None;
+            //        btn_AmpliarReducir_INSTRUCCION.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
+            //        panelExpandido_Instruccion = true;
+            //        panel_DatosInstruccion.Visible = true;
 
-                    // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+            //        // Cambiar el estilo del borde
+            //        panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
 
-                    // Mover el botón al panel_DatosEspecificos
-                    btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
-                    btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(558, 1);
+            //        // Mover el botón al panel_DatosEspecificos
+            //        btn_AmpliarReducir_INSTRUCCION.Parent = panel_DatosInstruccion;
+            //        btn_AmpliarReducir_INSTRUCCION.Location = new System.Drawing.Point(558, 1);
 
-                    // Mostrar todos los controles
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        control.Visible = true;
-                    }
+            //        // Mostrar todos los controles
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            control.Visible = true;
+            //        }
 
-                    // Asegurarte de que las imágenes de error se muestren si es necesario
-                    foreach (Control control in panel_DatosInstruccion.Controls)
-                    {
-                        if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
-                        {
-                            control.Visible = true; // Mostrar imágenes de error
-                        }
-                    }
-                }
-                AjustarTamanoFormulario();
-            }
-
+            //        // Asegurarte de que las imágenes de error se muestren si es necesario
+            //        foreach (Control control in panel_DatosInstruccion.Controls)
+            //        {
+            //            if (control is PictureBox pictureBox && pictureBox.Name.Contains("Error"))
+            //            {
+            //                control.Visible = true; // Mostrar imágenes de error
+            //            }
+            //        }
+            //    }
+            //    AjustarTamanoFormulario();
+            //}
+                        AmpliarReducirPanel.AlternarPanel(
+             panelConNeon: panel_Instruccion,
+             panelDetalle: panel_DatosInstruccion,
+             panelExpandido: ref panelExpandido_Instruccion,
+             btnAmpliarReducir: btn_AmpliarReducir_INSTRUCCION,
+             imgExpandir: Properties.Resources.dobleFlechaABAJO,
+             imgContraer: Properties.Resources.dobleFlechaARRIBA,
+             alturaOriginal: alturaOriginalPanel_Instruccion,
+             alturaContraida: alturaContraidaPanel,
+               borderStyleAlExpandir: BorderStyle.None,
+             ajustarFormulario: AjustarTamanoFormulario,
+              usarAnimacion: true
+            );
         }
         private void Btn_AmpliarReducir_IMAGENES_Click(object sender, EventArgs e)
         {
-            if (panel_Imagenes is PanelConBordeNeon panelConNeon)
-            {
-                if (panelExpandido_Imagenes)
-                {
-                    // Contraer el panel
-                    panel_Imagenes.Height = alturaContraidaPanel;
-                    btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaABAJO;
-                    panel_Imagenes.BorderStyle = BorderStyle.None;
-                    panelExpandido_Imagenes = false;
-                    panelConNeon.CambiarEstado(true, false);
+            //if (panel_Imagenes is PanelConBordeNeon panelConNeon)
+            //{
+            //    if (panelExpandido_Imagenes)
+            //    {
+            //        // Contraer el panel
+            //        panel_Imagenes.Height = alturaContraidaPanel;
+            //        btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaABAJO;
+            //        panel_Imagenes.BorderStyle = BorderStyle.None;
+            //        panelExpandido_Imagenes = false;
+            //        panelConNeon.CambiarEstado(true, false);
 
-                    // Crear Label si no existe
-                    if (labelImagenes == null)
-                    {
-                        labelImagenes = new Label
-                        {
-                            BackColor = Color.FromArgb(0, 192, 192),
-                            Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline),
-                            ForeColor = SystemColors.ControlText,
-                            Padding = new Padding(20, 3, 20, 5),
-                            Text = "IMAGENES",
-                            AutoSize = true,
-                            Location = new System.Drawing.Point(23, 1)
-                        };
+            //        // Crear Label si no existe
+            //        if (labelImagenes == null)
+            //        {
+            //            labelImagenes = new Label
+            //            {
+            //                BackColor = Color.FromArgb(0, 192, 192),
+            //                Font = new System.Drawing.Font("Times New Roman", 11.25f, FontStyle.Bold | FontStyle.Underline),
+            //                ForeColor = SystemColors.ControlText,
+            //                Padding = new Padding(20, 3, 20, 5),
+            //                Text = "IMAGENES",
+            //                AutoSize = true,
+            //                Location = new System.Drawing.Point(23, 1)
+            //            };
 
-                        panel_Imagenes.Controls.Add(labelImagenes);
-                        labelImagenes.BringToFront();
-                    }
+            //            panel_Imagenes.Controls.Add(labelImagenes);
+            //            labelImagenes.BringToFront();
+            //        }
 
-                    foreach (Control control in panel_Imagenes.Controls)
-                    {
-                        control.Visible = control == btn_AmpliarReducir_IMAGENES || control == labelImagenes || control == pictureBox_PanelImagenes;
-                    }
-                    pictureBox_PanelImagenes.Visible = true;
-                }
-                else
-                {
-                    // Expandir el panel
-                    panel_Imagenes.Height = alturaOriginalPanel_Imagenes;
-                    btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
-                    panelExpandido_Imagenes = true;
-                    panel_Imagenes.BorderStyle = BorderStyle.FixedSingle;
+            //        foreach (Control control in panel_Imagenes.Controls)
+            //        {
+            //            control.Visible = control == btn_AmpliarReducir_IMAGENES || control == labelImagenes || control == pictureBox_PanelImagenes;
+            //        }
+            //        pictureBox_PanelImagenes.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        // Expandir el panel
+            //        panel_Imagenes.Height = alturaOriginalPanel_Imagenes;
+            //        btn_AmpliarReducir_IMAGENES.Image = Properties.Resources.dobleFlechaARRIBA; // Cambiar la imagen a "Flecha hacia arriba"
+            //        panelExpandido_Imagenes = true;
+            //        panel_Imagenes.BorderStyle = BorderStyle.FixedSingle;
 
-                    // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+            //        // Cambiar el estilo del borde
+            //        panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
 
-                    // Ocultar o quitar el Label cuando el panel se expande
-                    foreach (Control control in panel_Imagenes.Controls)
-                    {
-                        if (control is Label && control.Text == "IMAGENES")
-                        {
-                            control.Visible = false; //OCULTAR ESTE CONTROL
+            //        // Ocultar o quitar el Label cuando el panel se expande
+            //        foreach (Control control in panel_Imagenes.Controls)
+            //        {
+            //            if (control is Label && control.Text == "IMAGENES")
+            //            {
+            //                control.Visible = false; //OCULTAR ESTE CONTROL
 
-                        }
-                        else
-                        {
-                            control.Visible = true; // Mostrar los demás controles
-                        }
-                    }
-                }
-                AjustarTamanoFormulario();
-            }
+            //            }
+            //            else
+            //            {
+            //                control.Visible = true; // Mostrar los demás controles
+            //            }
+            //        }
+            //    }
+            //    AjustarTamanoFormulario();
+            //}
+            AmpliarReducirPanel.AlternarPanel(
+       panelConNeon: panel_Imagenes,
+       panelDetalle: panel_AgregarImagenes,
+       panelExpandido: ref panelExpandido_Imagenes,
+       btnAmpliarReducir: btn_AmpliarReducir_IMAGENES,
+       imgExpandir: Properties.Resources.dobleFlechaABAJO,
+       imgContraer: Properties.Resources.dobleFlechaARRIBA,
+       alturaOriginal: alturaOriginalPanel_Imagenes,
+       alturaContraida: alturaContraidaPanel,
+         borderStyleAlExpandir: BorderStyle.None,
+       ajustarFormulario: AjustarTamanoFormulario,
+        usarAnimacion: true
+   );
         }
         private void Btn_AmpliarReducir_VEHICULO_Click(object sender, EventArgs e)
         {
-            if (panel_DatosVehiculo is PanelConBordeNeon panelConNeon)
-            {
-                if (panelExpandido_Vehiculo)
-                {
-                    // Contraer el panel
-                    panel_DatosVehiculo.Height = alturaContraidaPanel;
-                    panel_DatosVehiculo.BorderStyle = BorderStyle.None;
+            //if (panel_DatosVehiculo is PanelConBordeNeon panelConNeon)
+            //{
+            //    if (panelExpandido_Vehiculo)
+            //    {
+            //        // Contraer el panel
+            //        panel_DatosVehiculo.Height = alturaContraidaPanel;
+            //        panel_DatosVehiculo.BorderStyle = BorderStyle.None;
 
-                    btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
-                    panelExpandido_Vehiculo = false;
+            //        btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaABAJO; // Cambiar la imagen a "Flecha hacia abajo"
+            //        panelExpandido_Vehiculo = false;
 
-                    // Aplicar borde neón para el estado contraído
-                    bool camposCompletos = VerificarCamposEnPanel(panel_DatosEspecificos); // Método personalizado para verificar campos
-                    panelConNeon.CambiarEstado(true, camposCompletos);
+            //        // Aplicar borde neón para el estado contraído
+            //        bool camposCompletos = VerificarCamposEnPanel(panel_DatosEspecificos); // Método personalizado para verificar campos
+            //        panelConNeon.CambiarEstado(true, camposCompletos);
 
-                    // Cambiar la posición y el padre del botón al panel_DatosVehiculo
-                    btn_AmpliarReducir_VEHICULO.Parent = panel_DatosVehiculo;
-                    btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(561, 1);
+            //        // Cambiar la posición y el padre del botón al panel_DatosVehiculo
+            //        btn_AmpliarReducir_VEHICULO.Parent = panel_DatosVehiculo;
+            //        btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(561, 1);
 
 
-                    panel_DatosEspecificos.Visible = false;
-                }
-                else
-                {
-                    // Expandir el panel
-                    panel_DatosVehiculo.Height = alturaOriginalPanel_Vehiculo;
-                    btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaARRIBA;
-                    panelExpandido_Vehiculo = true;
-                    panel_DatosVehiculo.BorderStyle = BorderStyle.None;
+            //        panel_DatosEspecificos.Visible = false;
+            //    }
+            //    else
+            //    {
+            //        // Expandir el panel
+            //        panel_DatosVehiculo.Height = alturaOriginalPanel_Vehiculo;
+            //        btn_AmpliarReducir_VEHICULO.Image = Properties.Resources.dobleFlechaARRIBA;
+            //        panelExpandido_Vehiculo = true;
+            //        panel_DatosVehiculo.BorderStyle = BorderStyle.None;
 
-                    // Cambiar el estilo del borde
-                    panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
+            //        // Cambiar el estilo del borde
+            //        panelConNeon.CambiarEstado(false, false); // Panel expandido, campos completos
 
-                    // Mover el botón al panel_DatosEspecificos
-                    btn_AmpliarReducir_VEHICULO.Parent = panel_DatosEspecificos;
-                    btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(558, 1);
+            //        // Mover el botón al panel_DatosEspecificos
+            //        btn_AmpliarReducir_VEHICULO.Parent = panel_DatosEspecificos;
+            //        btn_AmpliarReducir_VEHICULO.Location = new System.Drawing.Point(558, 1);
 
-                    // Buscar y ocultar o eliminar el Label dinámico
-                    Control labelVehiculo = panel_DatosVehiculo.Controls["labelVehiculo"];
-                    if (labelVehiculo != null)
-                    {
-                        panel_DatosVehiculo.Controls.Remove(labelVehiculo);
-                        labelVehiculo.Dispose(); // Liberar recursos del Label
-                    }
+            //        // Buscar y ocultar o eliminar el Label dinámico
+            //        Control labelVehiculo = panel_DatosVehiculo.Controls["labelVehiculo"];
+            //        if (labelVehiculo != null)
+            //        {
+            //            panel_DatosVehiculo.Controls.Remove(labelVehiculo);
+            //            labelVehiculo.Dispose(); // Liberar recursos del Label
+            //        }
 
-                    // Mostrar los demás controles del panel
-                    foreach (Control control in panel_DatosVehiculo.Controls)
-                    {
-                        control.Visible = true;
-                    }
-                }
+            //        // Mostrar los demás controles del panel
+            //        foreach (Control control in panel_DatosVehiculo.Controls)
+            //        {
+            //            control.Visible = true;
+            //        }
+            //    }
 
-                // Ajustar el tamaño del formulario si es necesario
-                AjustarTamanoFormulario();
-            }
+            //    // Ajustar el tamaño del formulario si es necesario
+            //    AjustarTamanoFormulario();
+            //}
+            AmpliarReducirPanel.AlternarPanel(
+              panelConNeon: panel_DatosVehiculo,
+              panelDetalle: panel_DatosEspecificos,
+              panelExpandido: ref panelExpandido_Vehiculo,
+              btnAmpliarReducir: btn_AmpliarReducir_VEHICULO,
+              imgExpandir: Properties.Resources.dobleFlechaABAJO,
+              imgContraer: Properties.Resources.dobleFlechaARRIBA,
+              alturaOriginal: alturaOriginalPanel_Vehiculo,
+              alturaContraida: alturaContraidaPanel,
+               borderStyleAlExpandir: BorderStyle.None,
+              ajustarFormulario: AjustarTamanoFormulario,
+               usarAnimacion: true
+               );
+       
         }
         private void Btn_AmpliarReducir_DESCRIPCION_Click(object sender, EventArgs e)
         {
-            // Verificar si el panel es de tipo PanelConBordeNeon
+           // Verificar si el panel es de tipo PanelConBordeNeon
             if (panel_Descripcion is PanelConBordeNeon panelConNeon)
             {
                 if (panelExpandido_Descripcion)
@@ -502,6 +542,18 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
                 }
                 AjustarTamanoFormulario();
             }
+            //            AmpliarReducirPanel.AlternarPanel(
+            //panelConNeon: panel_Descripcion,
+            //panelDetalle: panelDetalle,
+            //panelExpandido: ref panelExpandido_Descripcion,
+            //btnAmpliarReducir: btn_AmpliarReducir_DESCRIPCION,
+            //imgExpandir: Properties.Resources.dobleFlechaABAJO,
+            //imgContraer: Properties.Resources.dobleFlechaARRIBA,
+            //alturaOriginal: alturaOriginalPanel_Descripcion,
+            //alturaContraida: alturaContraidaPanel,
+            //ajustarFormulario: AjustarTamanoFormulario,
+            // usarAnimacion: true
+            // );
         }
 
         #endregion
@@ -1000,52 +1052,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             }
         }
 
-        /// <summary>
-        /// COLOCA MAYUSCULA AL INICIO Y DESPUES DE PUNTO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RichTextBox_Descripcion_TextChanged(object sender, EventArgs e)
-        {
-            if (sender is RichTextBox rtb && !string.IsNullOrWhiteSpace(rtb.Text))
-            {
-                int cursorPos = rtb.SelectionStart; // Guardar la posición del cursor
-
-                // Convertir a mayúscula el primer carácter y después de un punto "."
-                string texto = rtb.Text;
-                StringBuilder textoFormateado = new StringBuilder();
-
-                bool convertirSiguiente = true; // Indica si la siguiente letra debe ser mayúscula
-
-                foreach (char c in texto)
-                {
-                    if (convertirSiguiente && char.IsLetter(c))
-                    {
-                        textoFormateado.Append(char.ToUpper(c));
-                        convertirSiguiente = false;
-                    }
-                    else
-                    {
-                        textoFormateado.Append(c);
-                    }
-
-                    // Si el carácter es un punto, la siguiente letra debe ser mayúscula
-                    if (c == '.')
-                    {
-                        convertirSiguiente = true;
-                    }
-                }
-
-                // Evitar bucle infinito y restaurar la posición del cursor
-                if (rtb.Text != textoFormateado.ToString())
-                {
-                    rtb.Text = textoFormateado.ToString();
-                    rtb.SelectionStart = Math.Min(cursorPos, rtb.Text.Length); // Restaurar la posición del cursor
-                    CompartirTexto.Descripcion = richTextBox_Descripcion.Text;
-                }
-            }
-        }
-
+      
        
     }
 

@@ -280,7 +280,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             textBox_Edad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             textBox_Edad.TextValue = "";
             textBox_Edad.Whidth = 0;
-          
             // 
             // textBox_Localidad
             // 
@@ -559,6 +558,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // panel_Detalle_Infraccion
             // 
+            panel_Detalle_Infraccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel_Detalle_Infraccion.Controls.Add(btn_AmpliarReducir_INFRACCION);
             panel_Detalle_Infraccion.Controls.Add(label1);
             panel_Detalle_Infraccion.Controls.Add(label_FechaAudiencia);
@@ -643,7 +643,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             TextBox_LugarDelHecho.ReadOnly = false;
             TextBox_LugarDelHecho.SelectionStart = 0;
             TextBox_LugarDelHecho.ShowError = false;
-            TextBox_LugarDelHecho.Size = new System.Drawing.Size(296, 21);
+            TextBox_LugarDelHecho.Size = new System.Drawing.Size(294, 21);
             TextBox_LugarDelHecho.TabIndex = 111;
             TextBox_LugarDelHecho.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             TextBox_LugarDelHecho.TextValue = "";
@@ -738,6 +738,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // panel_Detalle_Instruccion
             // 
+            panel_Detalle_Instruccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel_Detalle_Instruccion.Controls.Add(btn_AmpliarReducir_INSTRUCCION);
             panel_Detalle_Instruccion.Controls.Add(panel_RatificacionPersonal);
             panel_Detalle_Instruccion.Controls.Add(label_Secretario);
@@ -981,6 +982,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             // panel_Detalle_Infractor
             // 
+            panel_Detalle_Infractor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel_Detalle_Infractor.Controls.Add(btn_AmpliarReducir_INFRACTOR);
             panel_Detalle_Infractor.Controls.Add(textBox_Nombre);
             panel_Detalle_Infractor.Controls.Add(textBox_Edad);

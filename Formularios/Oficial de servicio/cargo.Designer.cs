@@ -288,7 +288,7 @@
             richTextBox_Descripcion.Size = new System.Drawing.Size(458, 117);
             richTextBox_Descripcion.TabIndex = 87;
             richTextBox_Descripcion.Text = "";
-            richTextBox_Descripcion.TextChanged += RichTextBox_Descripcion_TextChanged;
+          
             // 
             // btn_AmpliarReducir_DESCRIPCION
             // 

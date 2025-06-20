@@ -1,4 +1,20 @@
-﻿using System;
+﻿#region MODO DE USO
+/*
+var frm = new RedactadorForm();
+int altoFinal = frm.Height;
+frm.Height = 0;
+frm.Show();
+Animar.CrecimientoY(frm);
+
+
+miPanel.Visible = true;
+Animar.CrecimientoY(miPanel, altoInicial: 0);*/
+#endregion
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +28,7 @@ namespace Ofelia_Sara.Clases.General.Animaciones
     {
         // Campo para manejar animaciones activas
         private static Dictionary<Control, Timer> animacionesActivas = new();
+        private static int altoFinal;
 
         // Función de interpolación 
         private static double EaseOut(double t)
@@ -70,26 +87,22 @@ namespace Ofelia_Sara.Clases.General.Animaciones
         /// <param name="altoInicial"></param>
         /// <param name="duracion"></param>
         /// <param name="alTerminar"></param>
-        public static void CrecimientoY(Control control, int altoInicial = 0, int duracion = 500, Action? alTerminar = null)
+        public static void CrecimientoY(Control control, int altoInicial, int altoFinal, int duracion = 300, Action? alTerminar = null)
         {
-            if (animacionesActivas.ContainsKey(control))
+            if (control == null)
                 return;
 
             int pasos = 30;
             int intervalo = duracion / pasos;
             int pasoActual = 0;
 
-            int altoFinal = control.Height;
-            control.Height = altoInicial;
-
             Timer timer = new() { Interval = intervalo };
-            animacionesActivas[control] = timer;
 
             timer.Tick += (s, e) =>
             {
                 pasoActual++;
                 double progreso = (double)pasoActual / pasos;
-                double easing = EaseOut(progreso);
+                double easing = EaseOut(progreso); // suavizado
 
                 int nuevoAlto = (int)(altoInicial + (altoFinal - altoInicial) * easing);
                 control.Height = nuevoAlto;
@@ -99,13 +112,46 @@ namespace Ofelia_Sara.Clases.General.Animaciones
                     control.Height = altoFinal;
                     timer.Stop();
                     timer.Dispose();
-                    animacionesActivas.Remove(control);
                     alTerminar?.Invoke();
                 }
             };
 
             timer.Start();
         }
+
+        public static void CrecimientoY(Control control, int altoInicial, int duracion = 300, Action? alTerminar = null)
+        {
+            if (control == null)
+                return;
+
+            int pasos = 30;
+            int intervalo = duracion / pasos;
+            int pasoActual = 0;
+
+            Timer timer = new() { Interval = intervalo };
+
+            timer.Tick += (s, e) =>
+            {
+                pasoActual++;
+                double progreso = (double)pasoActual / pasos;
+                double easing = EaseOut(progreso); // suavizado
+
+                int nuevoAlto = (int)(altoInicial + (altoFinal - altoInicial) * easing);
+                control.Height = nuevoAlto;
+
+                if (pasoActual >= pasos)
+                {
+                    control.Height = altoFinal;
+                    timer.Stop();
+                    timer.Dispose();
+                    alTerminar?.Invoke();
+                }
+            };
+
+            timer.Start();
+        }
+
+
     }
 }
 
