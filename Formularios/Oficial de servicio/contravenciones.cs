@@ -620,37 +620,31 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             //int posicionVertical = 65; // Comienza desde la parte superior de panel1
 
             //// Ajustar posición de panel DATOS PERSONALES
-            //if (panel_DatosPersonales.Visible)
+            //if (panel_Detalle_Infraccion.Visible)
             //{
-            //    panel_DatosPersonales.Location = new System.Drawing.Point(panel_DatosPersonales.Location.X, posicionVertical);
-            //    posicionVertical += panel_DatosPersonales.Height;
+            //    panel_DatosInfraccion.Location = new System.Drawing.Point(panel_DatosInfraccion.Location.X, posicionVertical);
+            //    posicionVertical += panel_DatosInfraccion.Height;
             //    // Agregar separación de 10 píxeles entre panel_Instruccion y panel_SeleccionVisu
             //    posicionVertical += 5;
             //}
 
             //// Ajustar posición de panel REVISTA
-            //if (panel_Revista.Visible)
+            //if (panel_Detalle_Infractor.Visible)
             //{
-            //    panel_Revista.Location = new System.Drawing.Point(panel_Revista.Location.X, posicionVertical);
-            //    posicionVertical += panel_Revista.Height;
+            //    panel_DatosInfractor.Location = new System.Drawing.Point(panel_DatosInfractor.Location.X, posicionVertical);
+            //    posicionVertical += panel_DatosInfractor.Height;
             //    posicionVertical += 5;
             //}
 
             //// Ajustar posición de panel ARMAMENTO
-            //if (panel_Armamento.Visible)
+            //if (panel_Detalle_Instruccion.Visible)
             //{
-            //    panel_Armamento.Location = new System.Drawing.Point(panel_Armamento.Location.X, posicionVertical);
-            //    posicionVertical += panel_Armamento.Height;
+            //    panel_DatosInstruccion.Location = new System.Drawing.Point(panel_DatosInstruccion.Location.X, posicionVertical);
+            //    posicionVertical += panel_DatosInstruccion.Height;
             //    posicionVertical += 5;
             //}
 
-            //// Ajustar posición de panel DESTINO
-            //if (panel_Destino.Visible)
-            //{
-            //    panel_Destino.Location = new System.Drawing.Point(panel_Destino.Location.X, posicionVertical);
-            //    posicionVertical += panel_Destino.Height;
-
-            //}
+          
 
             //// Ajustar posición de panel_ControlesInferiores
             //panel_ControlesInferiores.Location = new System.Drawing.Point(panel_ControlesInferiores.Location.X, posicionVertical);

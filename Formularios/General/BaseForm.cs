@@ -974,10 +974,17 @@ namespace Ofelia_Sara.Formularios.General
                         case "textBox_Nombre":
                         case "textBox_Apellido":
                         case "textBox_Localidad":
+                        case "textBox_LocalidadPnal":
+                        case "textBox_LocalidadDependencia":
+                        case "textBox_PartidoPnal":
+                        case "textBox_PartidoDependencia":
                         case "textBox_LugarNacimiento":
                         case "textBox_Ocupacion":
+                        case "textBox_Funcion":
                         case "textBox_Apodo":
                         case "textBox_Nacionalidad":
+                        case "textBox_ArmaMarca":
+                        case "textBox_ChalecoMarca":
                             MayusculaSola.AplicarAControl(textBox);
                             break;
 
@@ -1001,6 +1008,12 @@ namespace Ofelia_Sara.Formularios.General
                         case "textBox_Motor":
                         case "textBox_Chasis":
                         case "textBox_NombreFiscalia":
+                        case "textBox_ChalecoModelo":
+                        case "textBox_ChalecoNumero":
+                        case "textBox_ArmaModelo":
+                        case "textBox_ArmaNumero":
+                        
+                        
                             MayusculaYnumeros.ConfigurarTextoConEspeciales(textBox);
                             break;
 
@@ -1012,7 +1025,11 @@ namespace Ofelia_Sara.Formularios.General
                             ClaseNumeros.SoloNumeros(textBox);
                             ImpedirCeroPrimerDigito(textBox);
                             break;
-
+                            //NUMEROS QUE PUEDEN TENER 0 COMO PRIMER DIGITO
+                        case "textBox_AntiguedadAños":
+                        case "textBox_AntiguedadMeses":
+                            ClaseNumeros.SoloNumeros(textBox);
+                            break;
                         // NUMEROS CON PUNTO
                         case "textBox_Dni":
                             ClaseNumeros.AplicarFormatoYLimite(textBox, 10);
@@ -1093,6 +1110,7 @@ namespace Ofelia_Sara.Formularios.General
                     case "comboBox_Ipp1":
                     case "comboBox_Ipp2":
                     case "comboBox_Ipp4":
+                    
                         customComboBox.InnerTextBox.MaxLength = 2;
                         break;
                     case "comboBox_AñoVehiculo":
@@ -1111,6 +1129,8 @@ namespace Ofelia_Sara.Formularios.General
                         textBox.MaxLength = 6;
                         break;
                     case "textBox_Edad":
+                    case "textBox_AntiguedadAños":
+                    case "textBox_AntiguedadMeses":
                         textBox.MaxLength = 2;
                         break;
                     case "textBox_ArtInfraccion":// corresponde a art infraccion contravenciona

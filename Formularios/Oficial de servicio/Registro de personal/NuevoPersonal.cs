@@ -148,7 +148,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
             InicializarValidaciones();//revisa los paneles y cambia su estado de acuerdo si esta completo o no 
 
-            ConfigurarTextoEnControles();//para formato de texto que ingresa
 
             this.FormClosing += NuevoPersonal_FormClosing;
 
@@ -164,40 +163,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
 
         #region VALIDACIONES
 
-        /// <summary>
-        /// METODO PARA APLICAR FORMATO A TEXTO DE CONTROLES
-        /// </summary>
-        private void ConfigurarTextoEnControles()
-        {
-            MayusculaSola.AplicarAControl(textBox_Nombre.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_Apellido.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_LugarNacimiento.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_LocalidadPnal.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_PartidoPnal.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_Funcion.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_LocalidadDependencia.InnerTextBox);
-            MayusculaSola.AplicarAControl(textBox_PartidoDependencia.InnerTextBox);
-
-            MayusculaSola.AplicarAControl(comboBox_Nacionalidad.InnerTextBox);
-
-            MayusculaYnumeros.AplicarAControl(comboBox_Dependencia.InnerTextBox);
-
-            MayusculaYnumeros.AplicarAControl(textBox_DomicilioPnal.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(textBox_ArmaMarca.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(textBox_ArmaModelo.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(textBox_ArmaNumero.InnerTextBox);
-
-            MayusculaYnumeros.AplicarAControl(textBox_ChalecoMarca.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(textBox_ChalecoModelo.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(textBox_ChalecoNumero.InnerTextBox);
-            MayusculaYnumeros.AplicarAControl(textBox_DomicilioDependencia.InnerTextBox);
-
-            ClaseNumeros.AplicarFormatoYLimite(textBox_Dni, 10);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_Edad, 2);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_AntiguedadAños, 2);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_AntiguedadMeses, 2);
-            ClaseNumeros.AplicarFormatoYLimite(textBox_NumeroLegajo, 7);
-        }
+      
         /// <summary>
         /// VALIDACION  SOLO NUMEROS APLICADA A CAMPO DNI Y EDAD
         /// </summary>
@@ -205,10 +171,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio.Registro_de_personal
         /// <param name="e"></param>
         private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancelar la entrada si no es un número
-            }
+            //if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = true; // Cancelar la entrada si no es un número
+            //}
         }
 
         /// <summary>

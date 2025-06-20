@@ -97,6 +97,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             botonDeslizable_StarPlana = new BotonDeslizable();
             label_TITULO = new System.Windows.Forms.Label();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
+            panel_ControlesInferiores = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             panel_DatosInfraccion.SuspendLayout();
             panel_Detalle_Infraccion.SuspendLayout();
@@ -106,6 +107,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_Cargo.SuspendLayout();
             panel_DatosInfractor.SuspendLayout();
             panel_Detalle_Infractor.SuspendLayout();
+            panel_ControlesInferiores.SuspendLayout();
             SuspendLayout();
             // 
             // label_DatosInfraccion
@@ -483,7 +485,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Buscar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Buscar.Image = (System.Drawing.Image)resources.GetObject("btn_Buscar.Image");
-            btn_Buscar.Location = new System.Drawing.Point(40, 673);
+            btn_Buscar.Location = new System.Drawing.Point(36, 26);
             btn_Buscar.Name = "btn_Buscar";
             btn_Buscar.Size = new System.Drawing.Size(75, 67);
             btn_Buscar.TabIndex = 44;
@@ -494,7 +496,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Guardar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Guardar.Image = (System.Drawing.Image)resources.GetObject("btn_Guardar.Image");
-            btn_Guardar.Location = new System.Drawing.Point(203, 673);
+            btn_Guardar.Location = new System.Drawing.Point(199, 26);
             btn_Guardar.Name = "btn_Guardar";
             btn_Guardar.Size = new System.Drawing.Size(75, 67);
             btn_Guardar.TabIndex = 45;
@@ -506,7 +508,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Limpiar.BackColor = System.Drawing.Color.SkyBlue;
             btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Limpiar.Image = (System.Drawing.Image)resources.GetObject("btn_Limpiar.Image");
-            btn_Limpiar.Location = new System.Drawing.Point(369, 673);
+            btn_Limpiar.Location = new System.Drawing.Point(365, 26);
             btn_Limpiar.Name = "btn_Limpiar";
             btn_Limpiar.Size = new System.Drawing.Size(75, 67);
             btn_Limpiar.TabIndex = 46;
@@ -518,7 +520,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             btn_Imprimir.BackColor = System.Drawing.Color.SkyBlue;
             btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_Imprimir.Image = (System.Drawing.Image)resources.GetObject("btn_Imprimir.Image");
-            btn_Imprimir.Location = new System.Drawing.Point(519, 655);
+            btn_Imprimir.Location = new System.Drawing.Point(515, 8);
             btn_Imprimir.Name = "btn_Imprimir";
             btn_Imprimir.Size = new System.Drawing.Size(122, 93);
             btn_Imprimir.TabIndex = 47;
@@ -529,13 +531,10 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             // 
             panel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             panel1.BackColor = System.Drawing.Color.FromArgb(178, 213, 230);
+            panel1.Controls.Add(panel_ControlesInferiores);
             panel1.Controls.Add(panel_DatosInfraccion);
             panel1.Controls.Add(panel_DatosInstruccion);
             panel1.Controls.Add(panel_DatosInfractor);
-            panel1.Controls.Add(btn_Imprimir);
-            panel1.Controls.Add(btn_Limpiar);
-            panel1.Controls.Add(btn_Guardar);
-            panel1.Controls.Add(btn_Buscar);
             panel1.Location = new System.Drawing.Point(21, 25);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(680, 763);
@@ -1103,6 +1102,17 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             label_TITULO.TabIndex = 49;
             label_TITULO.Text = "CONTRAVENCIONES";
             // 
+            // panel_ControlesInferiores
+            // 
+            panel_ControlesInferiores.Controls.Add(btn_Imprimir);
+            panel_ControlesInferiores.Controls.Add(btn_Buscar);
+            panel_ControlesInferiores.Controls.Add(btn_Guardar);
+            panel_ControlesInferiores.Controls.Add(btn_Limpiar);
+            panel_ControlesInferiores.Location = new System.Drawing.Point(16, 646);
+            panel_ControlesInferiores.Name = "panel_ControlesInferiores";
+            panel_ControlesInferiores.Size = new System.Drawing.Size(651, 109);
+            panel_ControlesInferiores.TabIndex = 120;
+            // 
             // Contravenciones
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1138,6 +1148,7 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
             panel_DatosInfractor.ResumeLayout(false);
             panel_Detalle_Infractor.ResumeLayout(false);
             panel_Detalle_Infractor.PerformLayout();
+            panel_ControlesInferiores.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1209,5 +1220,6 @@ namespace Ofelia_Sara.Formularios.Oficial_de_servicio
         private System.Windows.Forms.Panel panel_Detalle_Infraccion;
         private PanelConBordeNeon panel_DatosInfraccion;
         private System.Windows.Forms.Button btn_AmpliarReducir_INFRACCION;
+        private System.Windows.Forms.Panel panel_ControlesInferiores;
     }
 }

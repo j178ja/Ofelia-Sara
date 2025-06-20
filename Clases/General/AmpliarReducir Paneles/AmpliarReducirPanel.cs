@@ -105,14 +105,14 @@ namespace Ofelia_Sara.Clases.General.AmpliarReducir_Paneles
                     Animar.CrecimientoY(panelConNeon, panelConNeon.Height, alturaContraida, 300, () =>
                     {
                         panelDetalle.Visible = false;
-                        AmpliarReducirPanel.PosicionarBotonDerecha(btnAmpliarReducir);
+                        AmpliarReducirPanel.PosicionarBoton(btnAmpliarReducir);
                     });
                 }
                 else
                 {
                     panelConNeon.Height = alturaContraida;
                     panelDetalle.Visible = false;
-                    AmpliarReducirPanel.PosicionarBotonDerecha(btnAmpliarReducir);
+                    AmpliarReducirPanel.PosicionarBoton(btnAmpliarReducir);
                 }
 
                 foreach (Control control in panelDetalle.Controls)
@@ -132,13 +132,13 @@ namespace Ofelia_Sara.Clases.General.AmpliarReducir_Paneles
                     panelConNeon.Height = alturaContraida; // arranca desde contraído
                     Animar.CrecimientoY(panelConNeon, alturaContraida, alturaOriginal, 300, () =>
                     {
-                        AmpliarReducirPanel.PosicionarBotonDerecha(btnAmpliarReducir);
+                        AmpliarReducirPanel.PosicionarBoton(btnAmpliarReducir);
                     });
                 }
                 else
                 {
                     panelConNeon.Height = alturaOriginal;
-                    AmpliarReducirPanel.PosicionarBotonDerecha(btnAmpliarReducir);
+                    AmpliarReducirPanel.PosicionarBoton(btnAmpliarReducir);
                 }
 
                 foreach (Control control in panelDetalle.Controls)
@@ -153,7 +153,7 @@ namespace Ofelia_Sara.Clases.General.AmpliarReducir_Paneles
 
 
 
-        public static void PosicionarBotonDerecha(Control boton, int paddingDerecho = 10, int offsetY = 1)
+        public static void PosicionarBoton(Control boton, int paddingDerecho = 10, int offsetY = 1)
         {
             if (boton?.Parent == null) return;
 
